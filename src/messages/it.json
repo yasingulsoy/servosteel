@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Linee di profilatura, taglio longitudinale e a misura",
+    "description": "Linee di profilatura (roll forming), taglio longitudinale di coil, taglio a misura e sistemi di alimentazione presse su misura. Esportiamo da Istanbul in oltre 48 paesi."
+  },
+  "topbar": {
+    "export": "Esportiamo in 48+ paesi",
+    "theme": "Tema chiaro/scuro"
+  },
+  "nav": {
+    "rollform": "Linee di Profilatura",
+    "slitting": "Linee di Taglio Longitudinale",
+    "ctl": "Linee di Taglio a Misura",
+    "machines": "Macchine",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "quote": "Richiedi Preventivo",
+    "seeAll": "Vedi tutto →",
+    "mainAria": "Menu principale",
+    "mobileAria": "Menu mobile",
+    "homeAria": "Home page Servosteel",
+    "menuOpen": "Apri menu",
+    "menuClose": "Chiudi menu",
+    "langAria": "Seleziona lingua",
+    "langTitle": "Scegli la lingua",
+    "langDesc": "Seleziona la lingua in cui desideri consultare il sito."
+  },
+  "footer": {
+    "blurb": "Progettazione su misura, produzione e installazione chiavi in mano di linee di lavorazione coil e profilatura. Da Istanbul in oltre 48 paesi.",
+    "products": "Prodotti",
+    "corporate": "Azienda",
+    "contact": "Contatti",
+    "youtube": "Il nostro canale YouTube",
+    "rights": "Tutti i diritti riservati.",
+    "tagline": "Lavorazione coil e tecnologie di profilatura",
+    "refs": "Referenze",
+    "videos": "Video",
+    "slitting": "Linee di Taglio Longitudinale"
+  },
+  "common": {
+    "home": "Home",
+    "breadcrumbAria": "Percorso di navigazione",
+    "details": "Vedi Dettagli",
+    "examine": "Esplora",
+    "lineExamine": "Esplora la Linea",
+    "seeAll": "Vedi tutte",
+    "sendDrawing": "Invia il tuo disegno"
+  },
+  "cta": {
+    "title": "Progettiamo la linea per il tuo progetto",
+    "text": "Inviaci il disegno del profilo o i requisiti di capacità: il nostro team di ingegneria risponde entro 48 ore.",
+    "quote": "Richiedi Preventivo"
+  },
+  "home": {
+    "badge": "Da Istanbul in oltre 48 paesi",
+    "h1l1": "Linee che trasformano",
+    "h1l2": "il coil di acciaio",
+    "h1l3": "in prodotto",
+    "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
+    "cta1": "Preventivo per il tuo Progetto",
+    "cta2": "Esplora le Linee",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Anni di esperienza" },
+      { "value": "48+", "label": "Paesi di export" },
+      { "value": "99%", "label": "Consegne puntuali" },
+      { "value": "99%", "label": "Approvazione qualità" }
+    ],
+    "solutionsEyebrow": "La nostra specializzazione",
+    "solutionsTitle": "Tre linee principali, un'unica firma",
+    "solutionsText": "Ogni componente, dallo svolgitore all'impilatore, è prodotto nel nostro stabilimento: un solo interlocutore, una linea perfettamente integrata.",
+    "solutions": {
+      "rollform": {
+        "title": "Linee di Profilatura",
+        "desc": "Linee complete per 7 famiglie di profili, dalle canaline alle barriere stradali: ogni unità, dallo svolgitore alla cesoia, è produzione Servosteel."
+      },
+      "slitting": {
+        "title": "Linee di Taglio Longitudinale",
+        "desc": "Serie leggera e pesante che tagliano coil larghi in nastri su misura: capacità 1.500–15.000 kg, spessori 0,5–5 mm."
+      },
+      "ctl": {
+        "title": "Linee di Taglio a Misura",
+        "desc": "Taglio di precisione da coil a foglio: raddrizzatura, alimentazione servo e cesoia a ghigliottina controllate da un unico PLC."
+      }
+    },
+    "rollformEyebrow": "Linee di profilatura",
+    "rollformTitle": "Know-how collaudato per 7 famiglie di profili",
+    "rollformSeeAll": "Vedi tutte le linee",
+    "customText": "Ti serve un profilo non a catalogo? Le nostre linee sono progettate <b>sul tuo disegno</b>.",
+    "machinesEyebrow": "Sistemi di alimentazione presse",
+    "machinesTitle": "Macchine che completano la linea",
+    "machinesSeeAll": "Tutte le macchine",
+    "processEyebrow": "Come lavoriamo",
+    "processTitle": "Dall'idea all'approvazione della produzione in 4 passi",
+    "process": [
+      {
+        "title": "Consulenza",
+        "text": "Analizziamo la tua esigenza in loco o online e definiamo insieme la configurazione corretta della linea."
+      },
+      {
+        "title": "Offerta Dettagliata",
+        "text": "Un'offerta trasparente e su base tecnica, con disegni, calcolo della capacità e tempi di consegna."
+      },
+      {
+        "title": "Produzione",
+        "text": "Tutta l'attrezzatura è prodotta nel nostro stabilimento e collaudata con sistemi di controllo Schneider."
+      },
+      {
+        "title": "Installazione e Messa in Servizio",
+        "text": "Ti seguiamo nel montaggio, nella formazione degli operatori e fino all'approvazione della produzione."
+      }
+    ],
+    "videoEyebrow": "Dal campo",
+    "videoTitle": "Guarda le nostre linee in funzione",
+    "videoText": "Dalle linee di taglio alla profilatura, HMI e software di reportistica: oltre 100 video sul nostro canale YouTube.",
+    "videoCta": "Guarda i Video",
+    "videoBadge": "109 video · 2,9 mila iscritti",
+    "videoAria": "Canale YouTube ServoSteel"
+  },
+  "hub": {
+    "eyebrow": "La nostra specializzazione",
+    "title": "Linee di Profilatura",
+    "desc": "Dal coil al profilo finito: linee di produzione complete per 7 famiglie di profili, progettate sul tuo progetto — tutto, dallo svolgitore all'impilatore, porta la firma Servosteel.",
+    "metaDesc": "Linee complete di profilatura su misura per canaline, profili solari, scaffalature, tavole da ponteggio, barriere stradali e acustiche e profili C/Sigma/Omega.",
+    "flow": ["Svolgitore", "Raddrizzatrice", "Alimentatore Servo", "Stazioni di Punzonatura", "Profilatrice", "Taglio", "Impilaggio"],
+    "customTitle": "Linea per Profilo Speciale",
+    "customText": "Produci una sezione non elencata? Dalla progettazione dei rulli all'automazione, la linea è studiata sul tuo disegno di profilo.",
+    "customCta": "Invia il tuo Disegno",
+    "ctaTitle": "Una linea di profilatura costruita sul tuo profilo"
+  },
+  "machinesHub": {
+    "eyebrow": "Sistemi di alimentazione presse",
+    "title": "Macchine",
+    "metaTitle": "Macchine — Sistemi di Alimentazione Presse",
+    "metaDesc": "Svolgitori, alimentatori servo, alimentatori servo con raddrizzatrice e linee compatte: soluzioni di alimentazione presse su misura.",
+    "desc": "Un unico interlocutore per ogni anello della linea: svolgitori, alimentatori servo, alimentatori con raddrizzatrice e linee compatte — tutto prodotto nel nostro stabilimento e dimensionato sulle tue esigenze.",
+    "ctaTitle": "Scegliamo insieme la macchina giusta"
+  },
+  "detail": {
+    "features": "Caratteristiche principali",
+    "components": "Componenti della linea",
+    "componentsNote": "Tutti i componenti sono prodotti nello stabilimento Servosteel; la linea completa è collaudata in fabbrica prima della spedizione.",
+    "sectors": "Applicazioni",
+    "usage": "Ambiti d'uso",
+    "otherLines": "Altre linee di profilatura",
+    "otherMachines": "Altre macchine",
+    "lineQuote": "Preventivo per Questa Linea",
+    "machineQuote": "Preventivo per Questa Macchina",
+    "quoteTitle": "Richiedi un preventivo per {name}",
+    "eyebrowLine": "Linea di profilatura",
+    "eyebrowMachine": "Sistemi di alimentazione presse",
+    "profileNote": "Le dimensioni del profilo e il campo di spessori sono definiti <b>dal tuo progetto</b>; l'attrezzatura dei rulli è progettata sul tuo disegno.",
+    "whyTitle": "Perché Servosteel?",
+    "why": [
+      "Dimensionamento e progettazione su misura",
+      "Sistemi di controllo su base Schneider",
+      "Collaudo completo in fabbrica, messa in servizio in loco",
+      "Esperienza sul campo in oltre 48 paesi",
+      "Ricambi e supporto da remoto"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Linee di Taglio Longitudinale",
+    "metaDesc": "Linee di taglio longitudinale con capacità 1.500-15.000 kg: tagliano coil larghi in nastri su misura. Spessori 0,5-5 mm, controllo Schneider.",
+    "eyebrow": "La nostra specializzazione",
+    "title": "Linee di Taglio Longitudinale",
+    "desc": "Linee complete che tagliano coil larghi in nastri alla tua misura esatta: ogni unità, dallo svolgitore al ribobinatore, è prodotta nello stabilimento Servosteel, collaudata in fabbrica e messa in servizio chiavi in mano.",
+    "highlights": [
+      {
+        "title": "Molti nastri da un coil",
+        "text": "Il coil madre viene tagliato in una sola passata in più nastri secondo le tue misure: meno sfrido e meno costi di magazzino."
+      },
+      {
+        "title": "Precisione della larghezza",
+        "text": "La regolazione precisa delle lame e la ribobinatura in tensione mantengono le larghezze in tolleranze strette."
+      },
+      {
+        "title": "Dimensionamento sulla capacità",
+        "text": "Telai di serie leggera e pesante per coil da 1,5 a 15 tonnellate."
+      },
+      {
+        "title": "Architettura di controllo Schneider",
+        "text": "Controllo velocità su base Lexium e Altivar; l'intera linea si gestisce da un unico pannello operatore."
+      }
+    ],
+    "tableTitle": "Opzioni di capacità e spessore",
+    "tableHead": ["Serie", "Peso coil", "Spessore lamiera"],
+    "tableRows": [
+      ["Serie leggera", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Serie pesante", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "I valori sono serie standard; larghezza coil, numero di nastri e velocità di linea sono dimensionati sul tuo progetto.",
+    "components": [
+      "Svolgitore",
+      "Carrello di carico coil",
+      "Sistema di centraggio automatico",
+      "Unità raddrizzatrice",
+      "Alimentazione automatica",
+      "Unità di taglio (gruppo lame)",
+      "Scarico automatico dei coil",
+      "Sistema ribobinatore"
+    ],
+    "ctaTitle": "Dimensioniamo la tua linea di taglio",
+    "ctaText": "Comunicaci peso del coil, spessore e larghezze dei nastri; definiremo insieme la serie e il layout."
+  },
+  "boykesme": {
+    "metaTitle": "Linee di Taglio a Misura",
+    "metaDesc": "Linee di taglio a misura: taglio di precisione da coil a foglio. Raddrizzatura, alimentazione servo, ghigliottina e impilaggio gestiti da un unico PLC.",
+    "eyebrow": "La nostra specializzazione",
+    "title": "Linee di Taglio a Misura",
+    "desc": "Linee complete che trasformano il coil in fogli esattamente della lunghezza che ti serve: raddrizzatura, alimentazione servo, ghigliottina e impilaggio — tutto prodotto nel nostro stabilimento e gestito da un unico PLC.",
+    "highlights": [
+      {
+        "title": "Precisione di lunghezza",
+        "text": "L'alimentazione servo e la misura con encoder tagliano i fogli in tolleranze strette, con ripetibilità in serie."
+      },
+      {
+        "title": "Taglio pulito",
+        "text": "Il gioco lame della ghigliottina si regola sullo spessore: tagli senza bave né deformazioni."
+      },
+      {
+        "title": "Controllo da un solo punto",
+        "text": "L'intera linea si gestisce da un pannello via PLC; lunghezze, quantità e ricette sono salvate nell'HMI."
+      },
+      {
+        "title": "Protezione della superficie",
+        "text": "L'unità opzionale di film PVC protegge le superfici delicate dai graffi prima dell'impilaggio."
+      }
+    ],
+    "whyTitle": "Perché una linea di taglio Servosteel?",
+    "paras": [
+      "Ogni unità, dal primo anello all'ultima pila, proviene <b>da un unico costruttore</b>: svolgitore, raddrizzatrice, alimentazione, cesoia e impilatore sono dimensionati tra loro. I problemi di compatibilità delle linee assemblate da più fornitori sono eliminati fin dall'inizio.",
+      "Per il controllo velocità si usano azionamenti serie <b>Schneider Lexium e Altivar</b>; la linea è montata e collaudata completa nel nostro stabilimento prima della spedizione, così la messa in servizio in loco è breve.",
+      "La configurazione è studiata su spessore, peso del coil e dimensioni del foglio; se necessario la linea si combina con un'unità di taglio longitudinale per produrre nastri e fogli."
+    ],
+    "components": [
+      "Svolgitore",
+      "Carrello di carico coil",
+      "Unità raddrizzatrice",
+      "Alimentazione servo automatica",
+      "Cesoia a ghigliottina",
+      "Unità di impilaggio automatico",
+      "Applicazione automatica film PVC"
+    ],
+    "ctaTitle": "Progettiamo la tua linea di taglio a misura",
+    "ctaText": "Comunicaci spessore, peso del coil e dimensioni del foglio; torniamo con il layout e l'offerta tecnica."
+  },
+  "about": {
+    "metaTitle": "Chi Siamo",
+    "metaDesc": "Servosteel: oltre 10 anni di esperienza in sistemi di alimentazione presse e linee di lavorazione coil. Produzione su misura, da Istanbul in 48+ paesi.",
+    "eyebrow": "Servosteel",
+    "title": "Ingegneria che dà forma all'acciaio",
+    "desc": "Servosteel è un costruttore turco di macchine specializzato in sistemi di alimentazione presse e linee di lavorazione coil. Da oltre un decennio progettiamo, produciamo e mettiamo in servizio ogni macchina secondo l'esigenza del cliente.",
+    "stats": [
+      { "value": "10+", "label": "Anni di esperienza" },
+      { "value": "48+", "label": "Paesi di export" },
+      { "value": "27+", "label": "Team esperto" },
+      { "value": "99%", "label": "Consegne puntuali" }
+    ],
+    "storyTitle": "Dalla singola macchina alla linea completa",
+    "story": [
+      "Servosteel è partita dalle macchine che alimentano le linee di pressa: svolgitori, raddrizzatrici e alimentatori servo. L'esperienza sul campo è diventata ingegneria di linee complete: oggi installiamo chiavi in mano linee di taglio longitudinale, a misura e di profilatura.",
+      "Ciò che ci distingue è che ogni anello della linea è prodotto <b>sotto lo stesso tetto</b>: progettazione meccanica, produzione, software di automazione e messa in servizio nello stesso team. I clienti hanno un solo interlocutore e i componenti arrivano perfettamente integrati.",
+      "Le linee costruite nel nostro stabilimento di Sancaktepe, Istanbul, producono oggi in <b>oltre 48 paesi</b>: Europa, Medio Oriente, Africa ed Estremo Oriente."
+    ],
+    "values": [
+      {
+        "title": "La nostra missione",
+        "text": "Fornire la macchina industriale giusta con il miglior servizio e valore: ogni linea è progettata sull'esigenza reale del cliente — niente di meno, niente di più."
+      },
+      {
+        "title": "La nostra visione",
+        "text": "Diventare il marchio turco di riferimento mondiale nella lavorazione coil, sviluppando macchine per una produzione sostenibile e riciclabile."
+      },
+      {
+        "title": "Il nostro approccio produttivo",
+        "text": "Ogni componente, dallo svolgitore all'impilatore, è prodotto nel nostro stabilimento; la linea è montata e collaudata completa prima della spedizione."
+      },
+      {
+        "title": "Il nostro team",
+        "text": "Un team esperto di oltre 27 persone, dalla progettazione meccanica all'automazione; dopo la vendita, gli stessi ingegneri restano al tuo fianco."
+      }
+    ],
+    "journeyEyebrow": "Il nostro percorso",
+    "journeyTitle": "Competenza costruita passo dopo passo",
+    "timeline": [
+      {
+        "title": "Origini nell'alimentazione presse",
+        "text": "Il percorso è iniziato con svolgitori, raddrizzatrici e alimentatori servo per alimentare la lamiera con precisione."
+      },
+      {
+        "title": "Passaggio alle linee complete",
+        "text": "Dalla singola macchina alla soluzione completa: le linee di taglio longitudinale e a misura sono entrate in gamma."
+      },
+      {
+        "title": "Competenza nella profilatura",
+        "text": "Sono state sviluppate linee di profilatura per 7 famiglie di profili, dalle canaline alle barriere stradali."
+      },
+      {
+        "title": "Export in 48+ paesi",
+        "text": "Oggi le linee Servosteel producono su quattro continenti, dall'Europa all'Estremo Oriente."
+      }
+    ],
+    "ctaTitle": "Parliamo del tuo progetto",
+    "ctaText": "Che ti serva una singola macchina o una linea completa, il nostro team di ingegneria è pronto ad ascoltare."
+  },
+  "refs": {
+    "metaTitle": "Referenze",
+    "metaDesc": "Le linee Servosteel producono in oltre 48 paesi tra Europa, Medio Oriente, Africa ed Estremo Oriente. Le nostre referenze per regione e settore.",
+    "eyebrow": "Prove dal campo",
+    "title": "In produzione in 48+ paesi",
+    "desc": "Le linee Servosteel operano in stabilimenti di produttori su quattro continenti e in molti settori. Per accordi di riservatezza non pubblichiamo la lista clienti online; condividiamo referenze del tuo settore su richiesta.",
+    "regions": [
+      {
+        "name": "Europa",
+        "text": "Dalla Spagna alla Polonia, dall'Ungheria all'Italia: linee Servosteel operano in stabilimenti che producono secondo gli standard UE."
+      },
+      {
+        "name": "Medio Oriente",
+        "text": "Le nostre linee di taglio e profilatura producono in una regione ricca di investimenti in profili strutturali e infrastrutture."
+      },
+      {
+        "name": "Africa",
+        "text": "Siamo presenti in regioni industriali in crescita con sistemi di alimentazione presse e linee di taglio a misura."
+      },
+      {
+        "name": "Estremo Oriente",
+        "text": "Un'ingegneria e un rapporto prezzo/prestazioni scelti anche nella geografia più competitiva."
+      }
+    ],
+    "sectorsTitle": "Settori che serviamo",
+    "sectors": [
+      "Centri servizi acciaio",
+      "Scaffalature e stoccaggio",
+      "Produttori di strutture solari",
+      "Produttori di canaline",
+      "Sistemi di sicurezza stradale",
+      "Fornitori automotive",
+      "Fornitori elettrodomestici",
+      "Ponteggi e casseforme",
+      "Imballaggio metallico"
+    ],
+    "videoProofTitle": "La migliore referenza: una linea in funzione",
+    "videoProofText": "Trovi oltre 100 video reali di montaggi e messe in servizio sul nostro canale YouTube.",
+    "videoCta": "Guarda i Video",
+    "ctaTitle": "Richiedi referenze del tuo settore",
+    "ctaText": "Condividiamo installazioni presso stabilimenti come il tuo e organizziamo visite."
+  },
+  "videos": {
+    "metaTitle": "Video",
+    "metaDesc": "Guarda le linee Servosteel in funzione: video reali di linee di taglio, profilatura e sistemi di alimentazione presse.",
+    "eyebrow": "Dal campo",
+    "title": "Guarda le nostre linee in funzione",
+    "desc": "Non promesse da brochure, ma linee in funzione: immagini reali di montaggi, collaudi in fabbrica e stabilimenti dei clienti.",
+    "items": [
+      {
+        "title": "Sistemi di Alimentazione Presse",
+        "text": "Svolgitore, raddrizzatrice e alimentatore servo in sincronia con la linea di pressa."
+      },
+      {
+        "title": "Linea di Taglio a Misura — Collaudo in Fabbrica",
+        "text": "Una linea di taglio a misura durante il collaudo pre-spedizione."
+      },
+      {
+        "title": "Produzione di Componenti per Ascensori",
+        "text": "Produzione di componenti per ascensori con un sistema di alimentazione presse."
+      }
+    ],
+    "bannerTitle": "109 video, 2,9 mila iscritti",
+    "bannerText": "L'intero archivio è sul nostro canale YouTube, dalle linee di taglio all'HMI e al software di reportistica; nuovi video vengono aggiunti regolarmente.",
+    "bannerCta": "Vai al Canale YouTube",
+    "ctaTitle": "Cerchi una linea simile?",
+    "ctaText": "Progettiamo per il tuo stabilimento una linea come quella del video."
+  },
+  "contact": {
+    "metaTitle": "Contatti",
+    "metaDesc": "Contatti Servosteel: sede Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Per preventivi e domande tecniche.",
+    "eyebrow": "Mettiti in contatto",
+    "title": "Contatti",
+    "desc": "Un preventivo, un dettaglio tecnico o una visita in stabilimento: qualunque sia il tema, puoi contattare direttamente il nostro team di ingegneria.",
+    "phoneTitle": "Telefono",
+    "phoneNote": "Feriali 08:30 – 18:00 (TRT)",
+    "emailTitle": "E-mail",
+    "emailNote": "Risposta entro 24 ore",
+    "waTitle": "WhatsApp",
+    "waValue": "Messaggio rapido",
+    "waNote": "Ideale per condividere foto e disegni tecnici",
+    "addressTitle": "Sede e Stabilimento",
+    "country": "Turchia",
+    "hours": "Lunedì – venerdì: 08:30 – 18:00",
+    "directions": "Ottieni Indicazioni",
+    "mapTitle": "Mappa della sede Servosteel",
+    "quoteBoxTitle": "Cerchi un preventivo?",
+    "quoteBoxText": "Invia prodotto, capacità e misure tramite il modulo strutturato; il nostro team di ingegneria risponde entro 48 ore.",
+    "quoteBoxCta": "Vai al Modulo"
+  },
+  "quote": {
+    "metaTitle": "Richiedi Preventivo",
+    "metaDesc": "Richiedi un preventivo per linee di profilatura, taglio longitudinale e a misura: invia prodotto e capacità, rispondiamo entro 48 ore.",
+    "eyebrow": "Risposta entro 48 ore",
+    "title": "Preventivo per il tuo progetto",
+    "desc": "Più dettagli fornisci, più preciso è il preventivo — ma se sei indeciso non c'è problema: definiamo insieme la configurazione giusta.",
+    "processTitle": "Come funziona?",
+    "steps": [
+      "La tua richiesta arriva lo stesso giorno al team di ingegneria",
+      "Se serve, chiariamo l'esigenza per telefono",
+      "L'offerta è preparata con disegni e calcolo della capacità",
+      "Preventivo scritto nelle tue mani entro 48 ore"
+    ],
+    "directTitle": "Preferisci il contatto diretto?",
+    "form": {
+      "name": "Nome e cognome *",
+      "namePh": "Il tuo nome completo",
+      "company": "Azienda *",
+      "companyPh": "Ragione sociale",
+      "email": "E-mail *",
+      "emailPh": "esempio@azienda.com",
+      "phone": "Telefono *",
+      "phonePh": "+39 ...",
+      "location": "Paese / Città",
+      "locationPh": "Paese / Città",
+      "product": "Prodotto di interesse *",
+      "specs": "Spessore lamiera / peso coil / misura profilo",
+      "specsPh": "Es.: lamiera 0,5-2 mm, coil 10 t, profilo solare 41x41",
+      "message": "Il tuo messaggio",
+      "messagePh": "Descrivi brevemente il progetto; se hai un disegno di profilo, allegalo alla e-mail.",
+      "submit": "Invia Richiesta",
+      "wa": "Scrivi su WhatsApp",
+      "note": "Il pulsante \"Invia\" apre la tua richiesta come messaggio pronto nella tua app di posta: puoi rivederla e allegare disegni o foto prima di inviarla.",
+      "waPrefill": "Salve, vorrei un preventivo per {product}.",
+      "mailSubject": "Richiesta di preventivo — {product}",
+      "mailIntro": "Nuova richiesta di preventivo (modulo web)",
+      "mailFields": {
+        "name": "Nome",
+        "company": "Azienda",
+        "email": "E-mail",
+        "phone": "Telefono",
+        "location": "Paese/Città",
+        "product": "Prodotto di interesse",
+        "specs": "Spessore / capacità",
+        "message": "Messaggio"
+      },
+      "options": [
+        "Linea di Profilatura — Canalina",
+        "Linea di Profilatura — Profilo Solare",
+        "Linea di Profilatura — Scaffalatura",
+        "Linea di Profilatura — Tavola da Ponteggio",
+        "Linea di Profilatura — Barriera Stradale",
+        "Linea di Profilatura — Barriera Acustica",
+        "Linea di Profilatura — C+/Sigma/Omega",
+        "Linea di Profilatura — Profilo Speciale",
+        "Linea di Taglio Longitudinale",
+        "Linea di Taglio a Misura",
+        "Svolgitore",
+        "Alimentatore Servo",
+        "Alimentatore Servo con Raddrizzatrice",
+        "Linea Compatta",
+        "Altro / Indeciso"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "text": "La pagina che cerchi potrebbe essere stata spostata o non essere mai esistita.",
+    "back": "Torna alla home"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Linea di Produzione Canaline",
+        "short": "Linea completa per canaline forate e cieche, passerelle e coperchi.",
+        "hero": "Una linea di profilatura completa che produce canaline — la spina dorsale dell'infrastruttura elettrica — dal coil al prodotto finito: svolgitore, raddrizzatrice, alimentazione servo, punzonatura, profilatrice e taglio gestiti da un unico PLC.",
+        "meta": "Linea canaline: soluzione completa di profilatura su misura per canaline forate/cieche, passerelle e coperchi.",
+        "features": [
+          {
+            "title": "Punzonatura in linea",
+            "text": "I fori di ventilazione e montaggio sono punzonati da stazioni servo dentro la linea, senza operazioni separate."
+          },
+          {
+            "title": "Cambio misura rapido",
+            "text": "Cambio a ricette tra le larghezze di canalina; i tempi di attrezzaggio si riducono al minimo."
+          },
+          {
+            "title": "Adatta alla lamiera zincata",
+            "text": "I rulli sono lavorati e temprati per non danneggiare il rivestimento di zinco (acciaio 4140, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Svolgitore (idraulico o meccanico)",
+          "Unità raddrizzatrice",
+          "Alimentatore servo",
+          "Stazioni di punzonatura",
+          "Profilatrice",
+          "Unità di taglio (cesoia finale)",
+          "Nastro di uscita e impilaggio"
+        ],
+        "sectors": ["Infrastruttura elettrica", "Data center", "Impianti industriali", "Centri commerciali ed edilizia"]
+      },
+      "solar-profil": {
+        "name": "Linea di Produzione Profili Solari",
+        "short": "Profilatura ad alta velocità per profili di montaggio fotovoltaico.",
+        "hero": "Una linea che produce profili hat, C e Omega per le strutture degli impianti solari direttamente dal coil; la punzonatura apre i fori di montaggio in linea e i profili arrivano in cantiere pronti al montaggio.",
+        "meta": "Linea profili di montaggio solare: linea completa di profilatura ad alta velocità con punzonatura per strutture fotovoltaiche.",
+        "features": [
+          {
+            "title": "Forma profilo su progetto",
+            "text": "L'attrezzatura è progettata per sezioni hat, C, U od Omega secondo il progetto strutturale dell'EPC."
+          },
+          {
+            "title": "Adatta a Magnelis® e zincato",
+            "text": "Le lamiere ad alta resistenza alla corrosione sono formate con superfici di rullo che proteggono il rivestimento."
+          },
+          {
+            "title": "Ricette di lunghezza e foratura",
+            "text": "Schema fori e lunghezza per ogni tipo di struttura sono scelti come ricetta sull'HMI."
+          }
+        ],
+        "components": [
+          "Svolgitore",
+          "Raddrizzatrice + alimentatore servo",
+          "Stazioni di punzonatura servo",
+          "Profilatrice",
+          "Cesoia volante",
+          "Impilaggio automatico"
+        ],
+        "sectors": ["Solare / aziende EPC", "Fotovoltaico su tetto", "Impianti a terra", "Agri-PV"]
+      },
+      "agir-raf": {
+        "name": "Linea di Produzione Scaffalature Pesanti",
+        "short": "Linea con punzonatura per montanti e correnti di scaffalature.",
+        "hero": "Una linea che produce i montanti portanti e i correnti dei magazzini logistici; le file multiple di fori sono punzonate in linea con servopunzoni e la stabilità dimensionale è mantenuta anche su lamiera spessa.",
+        "meta": "Linea scaffalature pesanti: profilatura su misura con punzonatura per montanti e correnti.",
+        "features": [
+          {
+            "title": "Punzonatura multifila",
+            "text": "I fori di aggancio dei montanti sono punzonati senza ridurre la velocità di linea."
+          },
+          {
+            "title": "Capacità su lamiera spessa",
+            "text": "Telaio e rulli dimensionati per gli spessori elevati richiesti dalle scaffalature."
+          },
+          {
+            "title": "Ripetibilità dimensionale",
+            "text": "Alimentazione servo e controllo encoder mantengono la precisione tra i fori in serie."
+          }
+        ],
+        "components": [
+          "Svolgitore serie pesante",
+          "Unità raddrizzatrice",
+          "Alimentatore servo",
+          "Gruppo di punzonatura multi-stazione",
+          "Profilatrice",
+          "Unità di taglio",
+          "Sistema di impilaggio"
+        ],
+        "sectors": ["Magazzino e logistica", "Produttori di scaffalature", "Magazzini e-commerce", "Celle frigorifere"]
+      },
+      "iskele-kalas": {
+        "name": "Linea di Produzione Tavole da Ponteggio",
+        "short": "Produzione di piani e tavole da ponteggio antiscivolo.",
+        "hero": "Una linea che produce i piani di camminamento in acciaio dei ponteggi da cantiere; le bugne antiscivolo e i fori di drenaggio sono formati in linea, e si può integrare una stazione di pressa per i ganci d'estremità.",
+        "meta": "Linea tavole da ponteggio: profilatura completa di piani e tavole in acciaio antiscivolo.",
+        "features": [
+          {
+            "title": "Superficie antiscivolo",
+            "text": "Le bugne a diamante/zigrino sono impresse in continuo nelle stazioni di profilatura."
+          },
+          {
+            "title": "Fori di drenaggio e alleggerimento",
+            "text": "Gli schemi fori sono punzonati in linea: il piano diventa più leggero e più sicuro."
+          },
+          {
+            "title": "Integrazione lavorazione estremità",
+            "text": "Piegatura dei ganci e taglio finale possono essere integrati come stazione a fine linea."
+          }
+        ],
+        "components": [
+          "Svolgitore",
+          "Raddrizzatrice + alimentatore servo",
+          "Stazioni di punzonatura",
+          "Profilatrice",
+          "Unità di taglio",
+          "Stazione estremità (opzionale)"
+        ],
+        "sectors": ["Sistemi di ponteggio", "Attrezzature edili", "Noleggio casseforme e ponteggi", "Sicurezza in cantiere"]
+      },
+      "yol-bariyeri": {
+        "name": "Linea di Produzione Barriere Stradali",
+        "short": "Profilatura pesante per guardrail a onda (W-beam).",
+        "hero": "Una linea heavy-duty che produce guardrail W-beam (doppia onda) e a tre onde — lo standard della sicurezza stradale; forma l'onda su lamiera zincata spessa con precisione a norma.",
+        "meta": "Linea barriere stradali: profilatura pesante di guardrail W-beam e a tre onde.",
+        "features": [
+          {
+            "title": "Forma a norma",
+            "text": "Progettazione dei rulli e controllo forma per le geometrie di barriera nell'ambito EN 1317."
+          },
+          {
+            "title": "Struttura pesante",
+            "text": "Corpo rigido e azionamento potente per guidare lamiera zincata 3-4 mm senza sfarfallio."
+          },
+          {
+            "title": "Precisione fori e lunghezza",
+            "text": "Fori di collegamento e lunghezze di taglio fissati da servo; il montaggio in strada è semplice."
+          }
+        ],
+        "components": [
+          "Svolgitore pesante (10-15 t)",
+          "Unità raddrizzatrice",
+          "Alimentazione servo + punzonatura",
+          "Profilatrice heavy-duty",
+          "Taglio idraulico",
+          "Impilaggio"
+        ],
+        "sectors": ["Imprese stradali", "Progetti autostradali", "Impianti di zincatura", "Esportatori di infrastrutture"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Linea di Produzione Barriere Acustiche",
+        "short": "Profilatura di cassette e pannelli per barriere acustiche.",
+        "hero": "Una linea che produce le cassette in alluminio/acciaio delle barriere acustiche lungo autostrade e ferrovie; il pannello frontale forato (assorbente) e quello posteriore cieco si producono sulla stessa piattaforma.",
+        "meta": "Linea barriere acustiche: profilatura di cassette e pannelli forati e ciechi.",
+        "features": [
+          {
+            "title": "Pannelli forati",
+            "text": "La foratura frontale per l'assorbimento acustico è integrata in linea o prima dell'alimentazione."
+          },
+          {
+            "title": "Alluminio e acciaio",
+            "text": "Le regolazioni di pressione dei rulli per i diversi materiali e spessori sono gestite con ricette."
+          },
+          {
+            "title": "Pannelli lunghi",
+            "text": "Taglio a misura preciso e impilaggio sicuro secondo i moduli della barriera."
+          }
+        ],
+        "components": [
+          "Svolgitore",
+          "Raddrizzatrice + alimentatore servo",
+          "Unità di foratura/punzonatura",
+          "Profilatrice",
+          "Unità di taglio",
+          "Impilaggio"
+        ],
+        "sectors": ["Progetti autostradali", "Ferrovia e metro", "Ingegneria ambientale", "Infrastruttura urbana"]
+      },
+      "c-sigma-omega": {
+        "name": "Linea Profili C+ / Sigma / Omega",
+        "short": "Profili in acciaio leggero: più sezioni su una linea.",
+        "hero": "Una soluzione flessibile che produce profili C, Sigma e Omega — i portanti delle strutture in acciaio leggero — su un'unica linea; il cambio sezione avviene in pochi minuti grazie ai gruppi di rulli regolabili e al sistema di ricette.",
+        "meta": "Linea profili C, Sigma e Omega: profilatura regolabile multi-sezione per strutture in acciaio leggero.",
+        "features": [
+          {
+            "title": "Tre sezioni su una linea",
+            "text": "Le forme C, Sigma e Omega sono prodotte sulla stessa linea con stazioni regolabili; l'investimento cala."
+          },
+          {
+            "title": "Regolazione automatica larghezza/altezza",
+            "text": "I cambi misura avvengono con assi servo tramite ricette dell'HMI."
+          },
+          {
+            "title": "Schemi fori strutturali",
+            "text": "Fori per bulloni e di servizio sono punzonati in linea secondo il progetto."
+          }
+        ],
+        "components": [
+          "Svolgitore",
+          "Raddrizzatrice + alimentatore servo",
+          "Stazioni di punzonatura",
+          "Profilatrice regolabile",
+          "Cesoia volante",
+          "Impilaggio"
+        ],
+        "sectors": ["Acciaio leggero", "Struttura solare", "Edifici prefabbricati", "Capannoni industriali", "Arcarecci"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Svolgitori",
+        "short": "Idraulici 6-20 t e meccanici 500-2.500 kg.",
+        "hero": "Il primo anello di ogni linea: svolgitori idraulici e meccanici che sostengono il coil in sicurezza e lo svolgono a tensione controllata. Progettati su capacità, larghezza lamiera e livello di automazione.",
+        "meta": "Svolgitori idraulici (6-20 t) e meccanici (500-2.500 kg): soluzioni su misura per alimentazione presse e linee coil.",
+        "features": [
+          {
+            "title": "Espansione idraulica del mandrino",
+            "text": "Nelle serie pesanti il diametro interno del coil è serrato idraulicamente; il carico è rapido e sicuro."
+          },
+          {
+            "title": "Opzione carrello di carico",
+            "text": "Un carrello idraulico porta i coil pesanti in linea senza attendere la gru."
+          },
+          {
+            "title": "Sincronizzazione con la linea",
+            "text": "Con controllo a braccio ballerino/fotocellula, lo svolgitore si adatta da solo alla velocità di linea."
+          }
+        ],
+        "sectors": ["Alimentazione presse", "Linee di taglio longitudinale", "Linee di taglio a misura", "Linee di profilatura"],
+        "table": {
+          "title": "Opzioni di capacità",
+          "head": ["Serie", "Modelli"],
+          "rows": [
+            ["Svolgitori idraulici", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Svolgitori meccanici", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Alimentatori Servo",
+        "short": "Alimentazione a passo di precisione alle presse; serie standard e mini.",
+        "hero": "Gli alimentatori servo avanzano la lamiera nello stampo a passi millimetrici; la tecnologia servo Schneider Lexium offre alta ripetibilità, sincronizzazione con la pressa e gestione facile delle ricette.",
+        "meta": "Alimentatori servo: serie standard e mini per linee di pressa, alimentazione di precisione su base Schneider Lexium.",
+        "features": [
+          {
+            "title": "Precisione millimetrica di passo",
+            "text": "La combinazione servomotore + riduttore di precisione mantiene le tolleranze di passo in serie."
+          },
+          {
+            "title": "Sincronizzazione con la pressa",
+            "text": "Funzionamento sincrono con il segnale a camma della pressa; la funzione di rilascio piloti è di serie."
+          },
+          {
+            "title": "Uso semplice",
+            "text": "Passo, velocità e rampe sono salvati come ricette sull'HMI touch."
+          }
+        ],
+        "sectors": ["Officine di stampaggio", "Fornitori automotive", "Elettrodomestici", "Elettrico-elettronico"],
+        "table": {
+          "title": "Serie",
+          "head": ["Serie", "Uso"],
+          "rows": [
+            ["Alimentatori servo standard", "Lamiera media e larga, presse ad alto tonnellaggio"],
+            ["Alimentatori servo mini", "Lamiera stretta e linee compatte"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Alimentatori Servo con Raddrizzatrice",
+        "short": "Raddrizzatura e alimentazione in un solo corpo: spazio e investimento ridotti.",
+        "hero": "Una soluzione compatta che unisce in un solo corpo i rulli raddrizzatori che eliminano la memoria del coil e l'alimentazione servo; elimina la raddrizzatrice separata e il suo ingombro.",
+        "meta": "Alimentatori servo con raddrizzatrice: raddrizzatura + alimentazione di precisione in una macchina. Versioni cassettata e mini.",
+        "features": [
+          {
+            "title": "Due processi, una macchina",
+            "text": "Raddrizzatura e alimentazione nello stesso corpo; la linea si accorcia e l'installazione si semplifica."
+          },
+          {
+            "title": "Pressione di raddrizzatura regolabile",
+            "text": "Le pressioni dei rulli si regolano in continuo sullo spessore."
+          },
+          {
+            "title": "Versioni cassettata e mini",
+            "text": "In base a larghezza e spessore si sceglie la serie cassettata (pesante) o mini."
+          }
+        ],
+        "sectors": ["Alimentazione presse", "Fornitori automotive", "Imballaggio metallico", "Lavorazione lamiera in generale"],
+        "table": {
+          "title": "Serie",
+          "head": ["Serie", "Uso"],
+          "rows": [
+            ["Con raddrizzatrice, versione cassettata", "Lamiera spessa, alta esigenza di raddrizzatura"],
+            ["Con raddrizzatrice, versione mini", "Lamiera sottile, linee compatte"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Linee Compatte",
+        "short": "Svolgitore + raddrizzatrice + alimentatore su una piattaforma.",
+        "hero": "Le linee compatte riuniscono svolgimento, raddrizzatura e alimentazione servo su un'unica piattaforma; pensate per le aziende che vogliono un'alimentazione presse completa in spazi ridotti.",
+        "meta": "Linee compatte di alimentazione presse: svolgitore, raddrizzatrice e alimentatore servo su una piattaforma.",
+        "features": [
+          {
+            "title": "Ingombro minimo",
+            "text": "Il lavoro di tre macchine su un telaio; grande risparmio di spazio rispetto al layout classico."
+          },
+          {
+            "title": "Controllo da un solo punto",
+            "text": "Svolgitore, raddrizzatrice e alimentatore si gestiscono da un unico HMI; meno carico per l'operatore."
+          },
+          {
+            "title": "Messa in servizio rapida",
+            "text": "Un corpo unico collaudato in fabbrica; installazione e messa in servizio brevi."
+          }
+        ],
+        "sectors": ["PMI di stampaggio", "Fornitori automotive", "Attrezzerie", "Produzione conto terzi"]
+      }
+    }
+  }
+}

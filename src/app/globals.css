@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
+/* Dark mode: .dark sınıfıyla manuel kontrol (ThemeToggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Moda göre dönen yüzey/metin tonları */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface: #ffffff;
+  --surface-alt: #f6f6f3;
+  --card: #ffffff;
+  --ink: #161616;
+  --muted: #62676e;
+  --line: #e6e5e1;
+  --accent-ink: #8f6400;
+}
+
+.dark {
+  --surface: #0d0e10;
+  --surface-alt: #121316;
+  --card: #17181c;
+  --ink: #f5f5f3;
+  --muted: #9b9fa5;
+  --line: #26272c;
+  --accent-ink: #f0b428;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-montserrat);
+
+  /* Logo paleti: altın + siyah + gümüş */
+  --color-accent: #e7a300;
+  --color-accent-strong: #c98d00;
+  --color-silver: #c8c8c8;
+
+  /* Her iki modda da koyu kalan kabuk bölümler (hero, süreç, footer) */
+  --color-shell: #0b0c0e;
+  --color-shell-soft: #16171b;
+
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent-ink: var(--accent-ink);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+::selection {
+  background: #e7a300;
+  color: #161616;
+}
+
+/* ---------- Animasyonlar ---------- */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -192;
+  }
+}
+
+.animate-flow {
+  stroke-dasharray: 70 26;
+  animation: flow 4s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes breathe {
+  from {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 7s ease-in-out infinite alternate;
+}
+
+/* Kaydırınca görünme (Reveal bileşeni) */
+[data-reveal] {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity 0.7s ease,
+    translate 0.7s ease;
+}
+
+[data-reveal].reveal-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    translate: 0;
+    transition: none;
+  }
+  .animate-rise,
+  .animate-spin-slow,
+  .animate-flow,
+  .animate-breathe {
+    animation: none;
+  }
 }

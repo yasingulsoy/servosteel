@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Rollform-, Längsteil- und Querteilanlagen",
+    "description": "Kundenspezifische Rollformanlagen, Längsteilanlagen, Querteilanlagen und Pressenzuführsysteme. Export aus Istanbul in 48+ Länder."
+  },
+  "topbar": {
+    "export": "Export in 48+ Länder",
+    "theme": "Helles/dunkles Design"
+  },
+  "nav": {
+    "rollform": "Rollformanlagen",
+    "slitting": "Längsteilanlagen",
+    "ctl": "Querteilanlagen",
+    "machines": "Maschinen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "quote": "Angebot anfordern",
+    "seeAll": "Alle anzeigen →",
+    "mainAria": "Hauptmenü",
+    "mobileAria": "Mobiles Menü",
+    "homeAria": "Servosteel Startseite",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "langAria": "Sprache wählen",
+    "langTitle": "Sprache wählen",
+    "langDesc": "Wählen Sie die Sprache, in der Sie die Website ansehen möchten."
+  },
+  "footer": {
+    "blurb": "Kundenspezifische Konstruktion, Fertigung und schlüsselfertige Installation von Coil-Verarbeitungs- und Rollformanlagen. Von Istanbul in 48+ Länder.",
+    "products": "Produkte",
+    "corporate": "Unternehmen",
+    "contact": "Kontakt",
+    "youtube": "Unser YouTube-Kanal",
+    "rights": "Alle Rechte vorbehalten.",
+    "tagline": "Coil-Verarbeitung & Rollform-Technologien",
+    "refs": "Referenzen",
+    "videos": "Videos",
+    "slitting": "Längsteilanlagen"
+  },
+  "common": {
+    "home": "Startseite",
+    "breadcrumbAria": "Brotkrumennavigation",
+    "details": "Details ansehen",
+    "examine": "Entdecken",
+    "lineExamine": "Anlage entdecken",
+    "seeAll": "Alle ansehen",
+    "sendDrawing": "Zeichnung senden"
+  },
+  "cta": {
+    "title": "Wir konstruieren die Anlage für Ihr Projekt",
+    "text": "Senden Sie uns Ihre Profilzeichnung oder Kapazitätsanforderungen — unser Engineering-Team meldet sich innerhalb von 48 Stunden.",
+    "quote": "Angebot anfordern"
+  },
+  "home": {
+    "badge": "Export aus Istanbul in 48+ Länder",
+    "h1l1": "Anlagen, die Coils",
+    "h1l2": "in Produkte",
+    "h1l3": "verwandeln",
+    "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
+    "cta1": "Angebot für Ihr Projekt",
+    "cta2": "Anlagen entdecken",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Jahre Erfahrung" },
+      { "value": "48+", "label": "Exportländer" },
+      { "value": "99%", "label": "Termintreue" },
+      { "value": "99%", "label": "QS-Freigabe" }
+    ],
+    "solutionsEyebrow": "Unsere Kompetenz",
+    "solutionsTitle": "Drei Kernanlagen, eine Handschrift",
+    "solutionsText": "Jede Komponente vom Abwickler bis zum Stapler entsteht im eigenen Werk — ein Ansprechpartner, eine perfekt abgestimmte Anlage.",
+    "solutions": {
+      "rollform": {
+        "title": "Rollformanlagen",
+        "desc": "Komplettanlagen für 7 Profilfamilien, von Kabelrinnen bis Leitplanken: jede Einheit vom Abwickler bis zur Schere kommt von Servosteel."
+      },
+      "slitting": {
+        "title": "Längsteilanlagen",
+        "desc": "Leichte und schwere Baureihen, die breite Coils in Spaltbänder nach Maß teilen: 1.500–15.000 kg Kapazität, 0,5–5 mm Blechdicke."
+      },
+      "ctl": {
+        "title": "Querteilanlagen",
+        "desc": "Präzises Schneiden vom Coil zur Tafel: Richten, Servovorschub und Tafelschere über eine zentrale SPS gesteuert."
+      }
+    },
+    "rollformEyebrow": "Rollformanlagen",
+    "rollformTitle": "Bewährtes Know-how für 7 Profilfamilien",
+    "rollformSeeAll": "Alle Anlagen ansehen",
+    "customText": "Sie brauchen ein Profil, das nicht im Katalog steht? Unsere Anlagen werden <b>nach Ihrer Zeichnung</b> konstruiert.",
+    "machinesEyebrow": "Pressenzuführsysteme",
+    "machinesTitle": "Maschinen, die die Anlage komplettieren",
+    "machinesSeeAll": "Alle Maschinen",
+    "processEyebrow": "So arbeiten wir",
+    "processTitle": "Von der Idee zur Produktionsfreigabe in 4 Schritten",
+    "process": [
+      {
+        "title": "Beratung",
+        "text": "Wir analysieren Ihren Bedarf vor Ort oder online und definieren gemeinsam die richtige Anlagenkonfiguration."
+      },
+      {
+        "title": "Detailliertes Angebot",
+        "text": "Ein transparentes, ingenieurbasiertes Angebot mit Zeichnungen, Kapazitätsberechnung und Lieferzeit."
+      },
+      {
+        "title": "Fertigung",
+        "text": "Die gesamte Ausrüstung entsteht im eigenen Werk und wird mit Schneider-Steuerungstechnik getestet."
+      },
+      {
+        "title": "Montage & Inbetriebnahme",
+        "text": "Wir begleiten Sie bei Montage, Bedienerschulung und bis zur Produktionsabnahme."
+      }
+    ],
+    "videoEyebrow": "Aus der Praxis",
+    "videoTitle": "Sehen Sie unsere Anlagen im Einsatz",
+    "videoText": "Von Längsteilanlagen über Rollforming bis zu HMI- und Reporting-Software — über 100 Videos auf unserem YouTube-Kanal.",
+    "videoCta": "Videos ansehen",
+    "videoBadge": "109 Videos · 2,9 Tsd. Abonnenten",
+    "videoAria": "ServoSteel YouTube-Kanal"
+  },
+  "hub": {
+    "eyebrow": "Unsere Kompetenz",
+    "title": "Rollformanlagen",
+    "desc": "Vom Coil zum fertigen Profil: Komplettanlagen für 7 Profilfamilien, projektbezogen konstruiert — alles vom Abwickler bis zum Stapler trägt die Handschrift von Servosteel.",
+    "metaDesc": "Kundenspezifische Rollform-Komplettanlagen für Kabelrinnen, Solarprofile, Regale, Gerüstböden, Leitplanken, Lärmschutzwände und C/Sigma/Omega-Profile.",
+    "flow": ["Abwickler", "Richtmaschine", "Servovorschub", "Stanzstationen", "Rollformmaschine", "Schneiden", "Stapeln"],
+    "customTitle": "Sonderprofil-Anlage",
+    "customText": "Sie fertigen einen Querschnitt, der hier nicht aufgeführt ist? Vom Rollensatz bis zur Automatisierung wird die Anlage nach Ihrer Profilzeichnung projektiert.",
+    "customCta": "Zeichnung senden",
+    "ctaTitle": "Eine Rollformanlage rund um Ihr Profil"
+  },
+  "machinesHub": {
+    "eyebrow": "Pressenzuführsysteme",
+    "title": "Maschinen",
+    "metaTitle": "Maschinen — Pressenzuführsysteme",
+    "metaDesc": "Abwickelhaspeln, Servovorschübe, Richt-Servovorschübe und Kompaktanlagen: kundenspezifische Pressenzuführlösungen.",
+    "desc": "Jedes Glied der Anlage unter einem Dach: Abwickler, Servovorschübe, Richtvorschübe und Kompaktanlagen — alles im eigenen Werk gefertigt und auf Ihren Bedarf ausgelegt.",
+    "ctaTitle": "Wählen wir gemeinsam die richtige Maschine"
+  },
+  "detail": {
+    "features": "Wichtigste Merkmale",
+    "components": "Anlagenkomponenten",
+    "componentsNote": "Alle Komponenten werden im Servosteel-Werk gefertigt; die komplette Anlage wird vor Versand im Haus getestet.",
+    "sectors": "Anwendungen",
+    "usage": "Einsatzbereiche",
+    "otherLines": "Weitere Rollformanlagen",
+    "otherMachines": "Weitere Maschinen",
+    "lineQuote": "Angebot für diese Anlage",
+    "machineQuote": "Angebot für diese Maschine",
+    "quoteTitle": "Angebot anfordern: {name}",
+    "eyebrowLine": "Rollformanlage",
+    "eyebrowMachine": "Pressenzuführsysteme",
+    "profileNote": "Profilmaße und Dickenbereich richten sich <b>nach Ihrem Projekt</b>; der Rollensatz wird nach Ihrer Zeichnung konstruiert.",
+    "whyTitle": "Warum Servosteel?",
+    "why": [
+      "Kundenspezifische Auslegung und Konstruktion",
+      "Steuerungstechnik auf Schneider-Basis",
+      "Kompletter Werkstest, Inbetriebnahme vor Ort",
+      "Praxiserfahrung in 48+ Ländern",
+      "Ersatzteile und Fernsupport"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Längsteilanlagen",
+    "metaDesc": "Längsteilanlagen mit 1.500-15.000 kg Kapazität: breite Coils werden in Spaltbänder nach Maß geteilt. 0,5-5 mm Blechdicke, Schneider-Steuerungen.",
+    "eyebrow": "Unsere Kompetenz",
+    "title": "Längsteilanlagen",
+    "desc": "Komplettanlagen, die breite Coils in Spaltbänder nach Ihren Maßen teilen: jede Einheit vom Abwickler bis zum Aufwickler entsteht im Servosteel-Werk, wird werksgetestet und vor Ort schlüsselfertig in Betrieb genommen.",
+    "highlights": [
+      {
+        "title": "Viele Bänder aus einem Coil",
+        "text": "Das breite Muttercoil wird in einem Durchlauf in mehrere Bänder nach Auftragsmaß geteilt — weniger Verschnitt und Lagerkosten."
+      },
+      {
+        "title": "Präzise Bandbreiten",
+        "text": "Exakte Messereinstellung und gespanntes Aufwickeln halten die Bandbreiten in engen Toleranzen."
+      },
+      {
+        "title": "Auslegung nach Kapazität",
+        "text": "Leichte und schwere Rahmenbaureihen für Coilgewichte von 1,5 bis 15 Tonnen."
+      },
+      {
+        "title": "Schneider-Steuerungsarchitektur",
+        "text": "Drehzahlregelung auf Lexium- und Altivar-Basis; die gesamte Anlage wird über ein Bedienpult gefahren."
+      }
+    ],
+    "tableTitle": "Kapazitäts- und Dickenoptionen",
+    "tableHead": ["Baureihe", "Coilgewicht", "Blechdicke"],
+    "tableRows": [
+      ["Leichte Baureihe", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Schwere Baureihe", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "Die Werte sind Standardbaureihen; Coilbreite, Bandanzahl und Liniengeschwindigkeit werden projektbezogen ausgelegt.",
+    "components": [
+      "Abwickelhaspel",
+      "Coil-Ladewagen",
+      "Automatisches Ausrichtsystem",
+      "Richtmaschine",
+      "Automatischer Vorschub",
+      "Längsteileinheit (Messersatz)",
+      "Automatische Coil-Abladung",
+      "Aufwickler (Rekoiler)"
+    ],
+    "ctaTitle": "Legen wir Ihre Längsteilanlage aus",
+    "ctaText": "Nennen Sie Coilgewicht, Blechdicke und Bandmaße; gemeinsam definieren wir die passende Baureihe und das Layout."
+  },
+  "boykesme": {
+    "metaTitle": "Querteilanlagen",
+    "metaDesc": "Querteilanlagen: präzises Schneiden vom Coil zur Tafel. Richten, Servovorschub, Tafelschere und Stapeln über eine zentrale SPS. Schneider-Steuerungen.",
+    "eyebrow": "Unsere Kompetenz",
+    "title": "Querteilanlagen",
+    "desc": "Komplettanlagen, die Coils in Tafeln exakt nach Ihrer Länge verwandeln: Richten, Servovorschub, Tafelschere und Stapeln — komplett im eigenen Werk gefertigt und über eine zentrale SPS gesteuert.",
+    "highlights": [
+      {
+        "title": "Längengenauigkeit",
+        "text": "Servovorschub und Encoder-Messung schneiden Tafellängen in engen Toleranzen — mit Wiederholgenauigkeit in Serie."
+      },
+      {
+        "title": "Sauberer Schnitt",
+        "text": "Der Scherenspalt wird auf die Blechdicke eingestellt; grat- und verzugsfreie Schnitte."
+      },
+      {
+        "title": "Zentrale Bedienung",
+        "text": "Die gesamte Anlage läuft über ein Bedienpult per SPS; Längen, Stückzahlen und Rezepte liegen im HMI."
+      },
+      {
+        "title": "Oberflächenschutz",
+        "text": "Eine optionale PVC-Folieneinheit schützt empfindliche Oberflächen vor dem Stapeln vor Kratzern."
+      }
+    ],
+    "whyTitle": "Warum eine Servosteel-Querteilanlage?",
+    "paras": [
+      "Jede Einheit vom ersten Glied bis zum letzten Stapel kommt <b>aus einer Hand</b>: Abwickler, Richtmaschine, Vorschub, Schere und Stapler sind aufeinander ausgelegt. Kompatibilitätsprobleme zusammengekaufter Anlagen entfallen von Anfang an.",
+      "Für die Drehzahlregelung kommen Antriebe der Serien <b>Schneider Lexium und Altivar</b> zum Einsatz; die Anlage wird vor Versand komplett bei uns aufgebaut und getestet — die Inbetriebnahme vor Ort bleibt kurz.",
+      "Die Konfiguration wird nach Blechdicke, Coilgewicht und Tafelmaßen projektiert; bei Bedarf lässt sich die Anlage mit einer Längsteileinheit kombinieren und produziert Bänder und Tafeln."
+    ],
+    "components": [
+      "Abwickelhaspel",
+      "Coil-Ladewagen",
+      "Richtmaschine",
+      "Automatischer Servovorschub",
+      "Tafelschere",
+      "Automatische Stapeleinheit",
+      "Automatische PVC-Folienanlage"
+    ],
+    "ctaTitle": "Projektieren wir Ihre Querteilanlage",
+    "ctaText": "Nennen Sie Blechdicke, Coilgewicht und Tafelmaße; wir melden uns mit Layout und technischem Angebot."
+  },
+  "about": {
+    "metaTitle": "Über uns",
+    "metaDesc": "Servosteel: 10+ Jahre Erfahrung in Pressenzuführsystemen und Coil-Verarbeitungsanlagen. Kundenspezifischer Maschinenbau, aus Istanbul in 48+ Länder.",
+    "eyebrow": "Servosteel",
+    "title": "Engineering, das Stahl formt",
+    "desc": "Servosteel ist ein türkischer Maschinenbauer, spezialisiert auf Pressenzuführsysteme und Coil-Verarbeitungsanlagen. Seit über einem Jahrzehnt konstruieren, fertigen und übergeben wir jede Maschine nach dem Bedarf des Kunden.",
+    "stats": [
+      { "value": "10+", "label": "Jahre Erfahrung" },
+      { "value": "48+", "label": "Exportländer" },
+      { "value": "27+", "label": "Fachkräfte" },
+      { "value": "99%", "label": "Termintreue" }
+    ],
+    "storyTitle": "Von der Einzelmaschine zur Komplettanlage",
+    "story": [
+      "Servosteel begann mit Maschinen, die Pressenlinien versorgen: Abwickelhaspeln, Richtmaschinen und Servovorschübe. Aus der Praxiserfahrung wuchs das Engineering kompletter Anlagen — heute installieren wir Längsteil-, Querteil- und Rollformanlagen schlüsselfertig.",
+      "Was uns unterscheidet: Jedes Glied der Anlage entsteht <b>unter einem Dach</b> — Konstruktion, Fertigung, Automatisierungssoftware und Inbetriebnahme im selben Team. Unsere Kunden haben einen Ansprechpartner, und die Komponenten kommen perfekt abgestimmt an.",
+      "Anlagen aus unserem Werk in Istanbul-Sancaktepe produzieren heute in <b>über 48 Ländern</b> — in Europa, dem Nahen Osten, Afrika und Fernost."
+    ],
+    "values": [
+      {
+        "title": "Unsere Mission",
+        "text": "Die richtige Industriemaschine mit bestem Service und Wert liefern: Jede Anlage wird auf den realen Bedarf des Kunden projektiert — nichts fehlt, nichts ist überflüssig."
+      },
+      {
+        "title": "Unsere Vision",
+        "text": "Durch Maschinen für nachhaltige, recyclingfähige Produktion die weltweit bevorzugte türkische Marke der Coil-Verarbeitung werden."
+      },
+      {
+        "title": "Unser Fertigungsansatz",
+        "text": "Jede Komponente vom Abwickler bis zum Stapler entsteht im eigenen Werk; die Anlage wird vor Versand komplett aufgebaut und getestet."
+      },
+      {
+        "title": "Unser Team",
+        "text": "Ein erfahrenes Team von 27+ Fachleuten von der Konstruktion bis zur Automatisierung; nach dem Verkauf bleiben dieselben Ingenieure an Ihrem Projekt."
+      }
+    ],
+    "journeyEyebrow": "Unser Weg",
+    "journeyTitle": "Schritt für Schritt gewachsene Kompetenz",
+    "timeline": [
+      {
+        "title": "Wurzeln in der Pressenzuführung",
+        "text": "Der Weg begann mit Abwicklern, Richtmaschinen und Servovorschüben für die präzise Blechzuführung."
+      },
+      {
+        "title": "Schritt zu Komplettanlagen",
+        "text": "Von der Einzelmaschine zur Komplettlösung: Längsteil- und Querteilanlagen erweiterten das Programm."
+      },
+      {
+        "title": "Rollform-Kompetenz",
+        "text": "Rollformanlagen für 7 Profilfamilien entstanden, von Kabelrinnen bis Leitplanken."
+      },
+      {
+        "title": "Export in 48+ Länder",
+        "text": "Heute produzieren Servosteel-Anlagen auf vier Kontinenten, von Europa bis Fernost."
+      }
+    ],
+    "ctaTitle": "Sprechen wir über Ihr Projekt",
+    "ctaText": "Ob Einzelmaschine oder Komplettanlage — unser Engineering-Team hört zu."
+  },
+  "refs": {
+    "metaTitle": "Referenzen",
+    "metaDesc": "Servosteel-Anlagen produzieren in über 48 Ländern in Europa, Nahost, Afrika und Fernost. Unsere Referenzen nach Region und Branche.",
+    "eyebrow": "Beweise aus der Praxis",
+    "title": "In 48+ Ländern in Produktion",
+    "desc": "Servosteel-Anlagen laufen in Werken auf vier Kontinenten und in vielen Branchen. Aufgrund von Vertraulichkeitsvereinbarungen veröffentlichen wir unsere Kundenliste nicht online; branchenrelevante Referenzen teilen wir auf Anfrage.",
+    "regions": [
+      {
+        "name": "Europa",
+        "text": "Von Spanien bis Polen, von Ungarn bis Italien: Servosteel-Anlagen laufen in Werken, die nach EU-Standards fertigen."
+      },
+      {
+        "name": "Naher Osten",
+        "text": "In einer Region intensiver Profil- und Infrastrukturinvestitionen produzieren unsere Längsteil- und Rollformanlagen."
+      },
+      {
+        "name": "Afrika",
+        "text": "In wachsenden Industrieregionen sind wir mit Pressenzuführsystemen und Querteilanlagen vertreten."
+      },
+      {
+        "name": "Fernost",
+        "text": "Engineering und Preis-Leistung, die selbst in der wettbewerbsintensivsten Region überzeugen."
+      }
+    ],
+    "sectorsTitle": "Branchen, die wir bedienen",
+    "sectors": [
+      "Stahl-Servicezentren",
+      "Regal- und Lagersysteme",
+      "Solar-Unterkonstruktionsbauer",
+      "Kabelrinnenhersteller",
+      "Straßensicherheitssysteme",
+      "Automobilzulieferer",
+      "Hausgerätezulieferer",
+      "Gerüst- und Schalungssysteme",
+      "Metallverpackung"
+    ],
+    "videoProofTitle": "Die beste Referenz: eine laufende Anlage",
+    "videoProofText": "Über 100 echte Praxisvideos von Montagen und Inbetriebnahmen auf unserem YouTube-Kanal.",
+    "videoCta": "Videos ansehen",
+    "ctaTitle": "Fordern Sie Referenzen aus Ihrer Branche an",
+    "ctaText": "Wir zeigen Installationen bei Herstellern wie Ihnen und organisieren Werksbesuche."
+  },
+  "videos": {
+    "metaTitle": "Videos",
+    "metaDesc": "Servosteel-Anlagen im Einsatz: echte Praxisvideos von Längsteilanlagen, Querteilanlagen, Rollforming und Pressenzuführsystemen.",
+    "eyebrow": "Aus der Praxis",
+    "title": "Sehen Sie unsere Anlagen im Einsatz",
+    "desc": "Keine Prospektversprechen, sondern laufende Anlagen: echte Aufnahmen von Montagen, Werkstests und Kundenstandorten.",
+    "items": [
+      {
+        "title": "Pressenzuführsysteme",
+        "text": "Abwickler, Richtmaschine und Servovorschub synchron mit der Pressenlinie."
+      },
+      {
+        "title": "Querteilanlage — Werkstest",
+        "text": "Eine Querteilanlage im Testlauf vor der Auslieferung."
+      },
+      {
+        "title": "Fertigung von Aufzugskomponenten",
+        "text": "Produktion von Aufzugskomponenten mit einem Pressenzuführsystem."
+      }
+    ],
+    "bannerTitle": "109 Videos, 2,9 Tsd. Abonnenten",
+    "bannerText": "Das gesamte Archiv auf unserem YouTube-Kanal, von Längsteilanlagen bis HMI- und Reporting-Software — neue Videos kommen regelmäßig.",
+    "bannerCta": "Zum YouTube-Kanal",
+    "ctaTitle": "Suchen Sie eine ähnliche Anlage?",
+    "ctaText": "Wir projektieren eine Anlage wie im Video für Ihr Werk."
+  },
+  "contact": {
+    "metaTitle": "Kontakt",
+    "metaDesc": "Servosteel Kontakt: Zentrale Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Für Angebote und technische Fragen.",
+    "eyebrow": "Kontakt aufnehmen",
+    "title": "Kontakt",
+    "desc": "Angebot, technisches Detail oder Werksbesuch — Sie erreichen unser Engineering-Team direkt.",
+    "phoneTitle": "Telefon",
+    "phoneNote": "Werktags 08:30 – 18:00 (TRT)",
+    "emailTitle": "E-Mail",
+    "emailNote": "Antwort innerhalb von 24 Stunden",
+    "waTitle": "WhatsApp",
+    "waValue": "Schnelle Nachricht",
+    "waNote": "Ideal für Fotos und Zeichnungen",
+    "addressTitle": "Zentrale & Produktionswerk",
+    "country": "Türkei",
+    "hours": "Montag – Freitag: 08:30 – 18:00",
+    "directions": "Route planen",
+    "mapTitle": "Servosteel Standortkarte",
+    "quoteBoxTitle": "Sie möchten ein Angebot?",
+    "quoteBoxText": "Senden Sie Produkt-, Kapazitäts- und Maßangaben über das strukturierte Formular; unser Engineering-Team antwortet innerhalb von 48 Stunden.",
+    "quoteBoxCta": "Zum Angebotsformular"
+  },
+  "quote": {
+    "metaTitle": "Angebot anfordern",
+    "metaDesc": "Angebot für Rollform-, Längsteil- und Querteilanlagen anfordern: Produkt- und Kapazitätsdaten senden, Antwort innerhalb von 48 Stunden.",
+    "eyebrow": "Antwort in 48 Stunden",
+    "title": "Angebot für Ihr Projekt",
+    "desc": "Je mehr Details, desto präziser das Angebot — aber auch unentschlossen sind Sie willkommen: die richtige Konfiguration definieren wir gemeinsam.",
+    "processTitle": "Wie läuft es ab?",
+    "steps": [
+      "Ihre Anfrage erreicht noch am selben Tag das Engineering-Team",
+      "Bei Bedarf klären wir den Bedarf telefonisch",
+      "Das Angebot entsteht mit Zeichnungen und Kapazitätsberechnung",
+      "Innerhalb von 48 Stunden liegt das schriftliche Angebot vor"
+    ],
+    "directTitle": "Lieber direkt Kontakt aufnehmen?",
+    "form": {
+      "name": "Vor- und Nachname *",
+      "namePh": "Ihr vollständiger Name",
+      "company": "Firma *",
+      "companyPh": "Firmenname",
+      "email": "E-Mail *",
+      "emailPh": "beispiel@firma.com",
+      "phone": "Telefon *",
+      "phonePh": "+49 ...",
+      "location": "Land / Stadt",
+      "locationPh": "Land / Stadt",
+      "product": "Produkt von Interesse *",
+      "specs": "Blechdicke / Coilgewicht / Profilmaß",
+      "specsPh": "z. B. 0,5-2 mm Blech, 10-t-Coil, Solarprofil 41x41",
+      "message": "Ihre Nachricht",
+      "messagePh": "Beschreiben Sie kurz Ihr Projekt; eine Profilzeichnung können Sie der E-Mail anhängen.",
+      "submit": "Anfrage senden",
+      "wa": "Per WhatsApp schreiben",
+      "note": "Der Button „Senden“ öffnet Ihre Anfrage als fertige Nachricht in Ihrem E-Mail-Programm — Sie können sie prüfen und Zeichnungen/Fotos anhängen.",
+      "waPrefill": "Hallo, ich möchte ein Angebot für {product} anfordern.",
+      "mailSubject": "Angebotsanfrage — {product}",
+      "mailIntro": "Neue Angebotsanfrage (Website-Formular)",
+      "mailFields": {
+        "name": "Name",
+        "company": "Firma",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "location": "Land/Stadt",
+        "product": "Produkt von Interesse",
+        "specs": "Blechdicke / Kapazität",
+        "message": "Nachricht"
+      },
+      "options": [
+        "Rollformanlage — Kabelrinne",
+        "Rollformanlage — Solarprofil",
+        "Rollformanlage — Schwerlastregal",
+        "Rollformanlage — Gerüstboden",
+        "Rollformanlage — Leitplanke",
+        "Rollformanlage — Lärmschutzwand",
+        "Rollformanlage — C+/Sigma/Omega",
+        "Rollformanlage — Sonderprofil",
+        "Längsteilanlage",
+        "Querteilanlage",
+        "Abwickelhaspel",
+        "Servovorschub",
+        "Richt-Servovorschub",
+        "Kompaktanlage",
+        "Sonstiges / Unentschlossen"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "text": "Die gesuchte Seite wurde möglicherweise verschoben oder existiert nicht.",
+    "back": "Zur Startseite"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Kabelrinnen-Produktionsanlage",
+        "short": "Komplettanlage für gelochte und ungelochte Kabelrinnen, -wannen und Deckel.",
+        "hero": "Eine komplette Rollformanlage, die Kabelrinnen — das Rückgrat der Elektroinfrastruktur — vom Coil zum fertigen Produkt fertigt: Abwickler, Richtmaschine, Servovorschub, Stanzstationen, Rollformmaschine und Schneideeinheit laufen über eine zentrale SPS.",
+        "meta": "Kabelrinnen-Produktionsanlage: kundenspezifische Rollform-Komplettlösung für gelochte/ungelochte Rinnen, Wannen und Deckelprofile.",
+        "features": [
+          {
+            "title": "Inline-Stanzen",
+            "text": "Lüftungs- und Montagelöcher entstehen an Servo-Stanzstationen direkt in der Linie — ohne separaten Arbeitsgang."
+          },
+          {
+            "title": "Schneller Maßwechsel",
+            "text": "Rezeptbasierter Wechsel zwischen Rinnenbreiten; Rüstzeiten sinken auf ein Minimum."
+          },
+          {
+            "title": "Geeignet für verzinktes Blech",
+            "text": "Die Rollen sind so bearbeitet und gehärtet, dass die Zinkschicht geschont wird (Stahl 4140, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel (hydraulisch oder mechanisch)",
+          "Richtmaschine",
+          "Servovorschub",
+          "Stanzstationen",
+          "Rollformmaschine",
+          "Schneideeinheit (Endschere)",
+          "Auslaufband und Stapelung"
+        ],
+        "sectors": ["Elektroinfrastruktur", "Rechenzentren", "Industrieanlagen", "Einkaufszentren und Bauprojekte"]
+      },
+      "solar-profil": {
+        "name": "Solarprofil-Produktionsanlage",
+        "short": "Schnelles Rollforming für PV-Montageprofile.",
+        "hero": "Eine Anlage, die Hut-, C- und Omega-Profile für die Unterkonstruktion von Solarkraftwerken direkt vom Coil fertigt; Stanzstationen setzen die Montagelöcher inline — die Profile kommen montagefertig auf die Baustelle.",
+        "meta": "Solarmontageprofil-Anlage: komplette Hochgeschwindigkeits-Rollformanlage mit Stanzstationen für PV-Konstruktionsprofile.",
+        "features": [
+          {
+            "title": "Profilform nach Projekt",
+            "text": "Der Rollensatz wird nach der Statik des EPC für Hut-, C-, U- oder Omega-Querschnitte ausgelegt."
+          },
+          {
+            "title": "Für Magnelis® und Zink geeignet",
+            "text": "Hochkorrosionsbeständig beschichtete Bleche werden mit beschichtungsschonenden Rollenoberflächen umgeformt."
+          },
+          {
+            "title": "Längen- und Lochrezepte",
+            "text": "Lochbilder und Längen für verschiedene Tischtypen werden am HMI als Rezept gewählt."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel",
+          "Richtmaschine + Servovorschub",
+          "Servo-Stanzstationen",
+          "Rollformmaschine",
+          "Fliegende Schere",
+          "Automatische Stapelung"
+        ],
+        "sectors": ["Solar-/EPC-Unternehmen", "Dach-PV", "Freiflächenanlagen", "Agri-PV"]
+      },
+      "agir-raf": {
+        "name": "Schwerlastregal-Produktionsanlage",
+        "short": "Anlage mit Stanzstationen für Regalstützen und Traversen.",
+        "hero": "Eine Anlage für die tragenden Regalstützen (Uprights) und Traversen von Logistiklagern; mehrreihige Montagelöcher entstehen inline an Servostanzen, die Maßhaltigkeit bleibt auch bei dickem Blech erhalten.",
+        "meta": "Schwerlastregal-Anlage: kundenspezifisches Rollforming mit Stanzstationen für Regalstützen und Traversenprofile.",
+        "features": [
+          {
+            "title": "Mehrreihiges Stanzen",
+            "text": "Die Einhängelöcher der Stützprofile entstehen an Servostationen, ohne die Liniengeschwindigkeit zu senken."
+          },
+          {
+            "title": "Dickblech-Kompetenz",
+            "text": "Rahmen- und Rollenauslegung für die hohen Wanddicken von Regalsystemen."
+          },
+          {
+            "title": "Maßwiederholbarkeit",
+            "text": "Servovorschub und Encoder-Kontrolle sichern die Lochabstände in der Serie."
+          }
+        ],
+        "components": [
+          "Schwere Abwickelhaspel",
+          "Richtmaschine",
+          "Servovorschub",
+          "Mehrstationen-Stanzgruppe",
+          "Rollformmaschine",
+          "Schneideeinheit",
+          "Stapelsystem"
+        ],
+        "sectors": ["Lager und Logistik", "Regalhersteller", "E-Commerce-Lager", "Kühllager"]
+      },
+      "iskele-kalas": {
+        "name": "Gerüstboden-Produktionsanlage",
+        "short": "Fertigung rutschfester Gerüstbeläge und Bohlenprofile.",
+        "hero": "Eine Anlage für die begehbaren Stahlböden von Baugerüsten; rutschhemmende Prägungen und Drainagelöcher entstehen inline, eine Pressstation für Hakenenden lässt sich integrieren.",
+        "meta": "Gerüstboden-Anlage: komplettes Rollforming für rutschfeste Stahlbeläge und Bohlenprofile.",
+        "features": [
+          {
+            "title": "Rutschhemmende Prägung",
+            "text": "Riffel-/Warzenprägungen werden kontinuierlich in den Rollformstationen gedrückt."
+          },
+          {
+            "title": "Drainage- und Erleichterungslöcher",
+            "text": "Lochbilder entstehen inline; der Belag wird leichter und sicherer zugleich."
+          },
+          {
+            "title": "Endenbearbeitung integrierbar",
+            "text": "Haken-Biegung und Endbeschnitt lassen sich am Linienende als Station integrieren."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel",
+          "Richtmaschine + Servovorschub",
+          "Stanzstationen",
+          "Rollformmaschine",
+          "Schneideeinheit",
+          "Endenbearbeitung (optional)"
+        ],
+        "sectors": ["Gerüstsysteme", "Bautechnik", "Schalungs- und Gerüstvermietung", "Baustellensicherheit"]
+      },
+      "yol-bariyeri": {
+        "name": "Leitplanken-Produktionsanlage",
+        "short": "Schweres Rollforming für W-Profil-Schutzplanken.",
+        "hero": "Eine Schwerlastanlage für W-Profil- (Zweiwellen) und Dreiwellen-Schutzplanken — den Standard der Verkehrssicherheit; sie formt die Welle in dickem verzinktem Blech mit normgerechter Präzision.",
+        "meta": "Leitplanken-Anlage: schweres Rollforming für W-Profil- und Dreiwellen-Schutzplanken.",
+        "features": [
+          {
+            "title": "Normgerechte Form",
+            "text": "Rollensatz-Design und Formkontrolle für Barrieregeometrien nach EN 1317."
+          },
+          {
+            "title": "Schwere Rahmenstruktur",
+            "text": "Steifer Körper und starker Antrieb führen 3-4 mm verzinktes Blech auch in der Wellenform schlagfrei."
+          },
+          {
+            "title": "Loch- und Längenpräzision",
+            "text": "Verbindungslöcher und Schnittlängen sind servogeregelt fixiert; die Montage an der Strecke läuft reibungslos."
+          }
+        ],
+        "components": [
+          "Schwere Abwickelhaspel (10-15 t)",
+          "Richtmaschine",
+          "Servovorschub + Stanzen",
+          "Schwere Rollformmaschine",
+          "Hydraulisches Schneiden",
+          "Stapelung"
+        ],
+        "sectors": ["Straßenbauunternehmen", "Autobahnprojekte", "Feuerverzinkereien", "Infrastruktur-Exporteure"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Lärmschutzwand-Produktionsanlage",
+        "short": "Rollforming für Kassetten- und Paneelprofile von Lärmschutzwänden.",
+        "hero": "Eine Anlage für die Aluminium-/Stahlkassetten von Lärmschutzwänden an Autobahnen und Bahnstrecken; gelochte Frontplatten (Absorber) und geschlossene Rückplatten entstehen auf derselben Plattform.",
+        "meta": "Lärmschutzwand-Anlage: Rollforming für gelochte und geschlossene Kassetten- und Paneelprofile.",
+        "features": [
+          {
+            "title": "Gelochte Paneele",
+            "text": "Die Frontperforation für die Schallabsorption wird inline oder vor der Zuführung integriert."
+          },
+          {
+            "title": "Aluminium und Stahl",
+            "text": "Rollendruck-Einstellungen für unterschiedliche Werkstoffe und Dicken laufen über Rezepte."
+          },
+          {
+            "title": "Lange Paneele",
+            "text": "Präziser Längenschnitt und sicheres Stapeln nach Modullängen der Wand."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel",
+          "Richtmaschine + Servovorschub",
+          "Perforations-/Stanzeinheit",
+          "Rollformmaschine",
+          "Schneideeinheit",
+          "Stapelung"
+        ],
+        "sectors": ["Autobahnprojekte", "Bahn und Metro", "Umwelttechnik", "Stadtinfrastruktur"]
+      },
+      "c-sigma-omega": {
+        "name": "C+ / Sigma / Omega Profilanlage",
+        "short": "Leichtbau-Stahlprofile: mehrere Querschnitte auf einer Anlage.",
+        "hero": "Eine flexible Lösung, die C-, Sigma- und Omega-Profile — die Träger des Stahlleichtbaus — auf einer Anlage fertigt; der Wechsel zwischen Querschnitten dauert dank verstellbarer Rollengruppen und Rezeptsystem nur Minuten.",
+        "meta": "C-, Sigma- und Omega-Profilanlage: verstellbares Mehrquerschnitt-Rollforming für den Stahlleichtbau.",
+        "features": [
+          {
+            "title": "Drei Querschnitte, eine Anlage",
+            "text": "C-, Sigma- und Omega-Formen entstehen mit verstellbaren Stationen auf derselben Anlage; die Investition sinkt."
+          },
+          {
+            "title": "Automatische Breiten-/Höhenverstellung",
+            "text": "Maßwechsel erfolgen über Servoachsen mit HMI-Rezepten."
+          },
+          {
+            "title": "Statikgerechte Lochbilder",
+            "text": "Schrauben- und Servicelöcher werden projektgerecht inline gestanzt."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel",
+          "Richtmaschine + Servovorschub",
+          "Stanzstationen",
+          "Verstellbare Rollformmaschine",
+          "Fliegende Schere",
+          "Stapelung"
+        ],
+        "sectors": ["Stahlleichtbau", "Solar-Unterkonstruktion", "Fertigbauten", "Industriebauten", "Pfettenprofile"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Abwickelhaspeln",
+        "short": "Hydraulisch 6-20 t, mechanisch 500-2.500 kg.",
+        "hero": "Das erste Glied jeder Anlage: hydraulische und mechanische Haspeln, die das Coil sicher tragen und mit kontrollierter Spannung abwickeln. Ausgelegt nach Kapazität, Blechbreite und Automatisierungsgrad.",
+        "meta": "Hydraulische (6-20 t) und mechanische (500-2.500 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
+        "features": [
+          {
+            "title": "Hydraulische Dornspreizung",
+            "text": "Bei schweren Baureihen wird der Coil-Innendurchmesser hydraulisch gespannt; das Laden ist schnell und sicher."
+          },
+          {
+            "title": "Ladewagen-Option",
+            "text": "Ein hydraulischer Ladewagen bringt schwere Coils ohne Kranwartezeit an die Linie."
+          },
+          {
+            "title": "Liniensynchronisation",
+            "text": "Mit Tänzerarm-/Fotozellensteuerung passt sich die Haspel automatisch der Liniengeschwindigkeit an."
+          }
+        ],
+        "sectors": ["Pressenzuführung", "Längsteilanlagen", "Querteilanlagen", "Rollformanlagen"],
+        "table": {
+          "title": "Kapazitätsoptionen",
+          "head": ["Baureihe", "Modelle"],
+          "rows": [
+            ["Hydraulische Haspeln", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Mechanische Haspeln", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Servovorschübe",
+        "short": "Präziser Schrittvorschub in Pressenlinien; Standard- und Mini-Serie.",
+        "hero": "Servovorschübe führen das Blech in millimetergenauen Schritten ins Werkzeug; Schneider-Lexium-Servotechnik liefert hohe Wiederholgenauigkeit, Pressensynchronisation und einfache Rezeptverwaltung.",
+        "meta": "Servovorschübe: Standard- und Mini-Serie für Pressenzuführlinien, präziser Blechvorschub auf Schneider-Lexium-Basis.",
+        "features": [
+          {
+            "title": "Millimetergenaue Schritte",
+            "text": "Die Kombination Servomotor + Präzisionsgetriebe hält Schritttoleranzen in der Serie."
+          },
+          {
+            "title": "Pressensynchronisation",
+            "text": "Voll synchroner Lauf mit dem Nockensignal der Presse; Pilot-Release-Funktion ist Standard."
+          },
+          {
+            "title": "Einfache Bedienung",
+            "text": "Schrittlänge, Geschwindigkeit und Rampen werden am Touch-HMI als Rezepte gespeichert."
+          }
+        ],
+        "sectors": ["Stanzbetriebe", "Automobilzulieferer", "Hausgeräte", "Elektro-Elektronik"],
+        "table": {
+          "title": "Baureihen",
+          "head": ["Baureihe", "Einsatz"],
+          "rows": [
+            ["Standard-Servovorschübe", "Mittleres und breites Blech, Pressen hoher Tonnage"],
+            ["Mini-Servovorschübe", "Schmales Blech und kompakte Pressenlinien"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Richt-Servovorschübe",
+        "short": "Richten und Servovorschub in einem Körper: spart Platz und Investition.",
+        "hero": "Eine kompakte Lösung, die Richtrollen zur Beseitigung der Coil-Krümmung mit dem Servovorschub in einem Körper vereint; die separate Richtmaschine und ihre Stellfläche entfallen.",
+        "meta": "Richt-Servovorschübe: Richten + präziser Vorschub in einer Maschine. Kompakte Lösung mit Kassetten- und Mini-Ausführung.",
+        "features": [
+          {
+            "title": "Zwei Prozesse, eine Maschine",
+            "text": "Richten und Vorschub im selben Körper; die Linie wird kürzer, die Installation einfacher."
+          },
+          {
+            "title": "Einstellbarer Richtdruck",
+            "text": "Die Rollendrücke werden stufenlos auf die Blechdicke eingestellt."
+          },
+          {
+            "title": "Kassetten- und Mini-Ausführung",
+            "text": "Je nach Blechbreite und -dicke wird die Kassetten- (schwer) oder Mini-Serie gewählt."
+          }
+        ],
+        "sectors": ["Pressenzuführung", "Automobilzulieferer", "Metallverpackung", "Allgemeine Blechverarbeitung"],
+        "table": {
+          "title": "Baureihen",
+          "head": ["Baureihe", "Einsatz"],
+          "rows": [
+            ["Kassetten-Richt-Servovorschübe", "Dickes Blech, hoher Richtbedarf"],
+            ["Mini-Richt-Servovorschübe", "Dünnes Blech, kompakte Linien"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Kompaktanlagen",
+        "short": "Haspel + Richtmaschine + Vorschub auf einer Plattform.",
+        "hero": "Kompaktanlagen vereinen Abwickeln, Richten und Servovorschub auf einer Plattform; entwickelt für Betriebe, die volle Pressenzuführung auf begrenzter Fläche brauchen.",
+        "meta": "Kompakte Pressenzuführanlagen: Haspel, Richtmaschine und Servovorschub auf einer Plattform. Die Komplettlösung für enge Flächen.",
+        "features": [
+          {
+            "title": "Minimale Stellfläche",
+            "text": "Die Arbeit dreier Maschinen auf einem Chassis; deutliche Platzersparnis gegenüber dem klassischen Layout."
+          },
+          {
+            "title": "Zentrale Bedienung",
+            "text": "Haspel, Richtmaschine und Vorschub laufen über ein HMI; die Bedienerlast sinkt."
+          },
+          {
+            "title": "Schnelle Inbetriebnahme",
+            "text": "Ein werksgetesteter Einzelkörper; Montage und Inbetriebnahme vor Ort sind kurz."
+          }
+        ],
+        "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"]
+      }
+    }
+  }
+}

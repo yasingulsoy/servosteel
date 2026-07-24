@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Líneas de perfilado, corte longitudinal y corte a medida",
+    "description": "Líneas de perfilado (roll forming), corte longitudinal de bobinas, corte a medida y sistemas de alimentación de prensas a medida. Exportamos desde Estambul a más de 48 países."
+  },
+  "topbar": {
+    "export": "Exportamos a 48+ países",
+    "theme": "Tema claro/oscuro"
+  },
+  "nav": {
+    "rollform": "Líneas de Perfilado",
+    "slitting": "Líneas de Corte Longitudinal",
+    "ctl": "Líneas de Corte a Medida",
+    "machines": "Máquinas",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "quote": "Pedir Presupuesto",
+    "seeAll": "Ver todo →",
+    "mainAria": "Menú principal",
+    "mobileAria": "Menú móvil",
+    "homeAria": "Página de inicio de Servosteel",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "langAria": "Seleccionar idioma",
+    "langTitle": "Elegir idioma",
+    "langDesc": "Seleccione el idioma en el que desea navegar por el sitio."
+  },
+  "footer": {
+    "blurb": "Diseño a medida, fabricación e instalación llave en mano de líneas de procesado de bobinas y perfilado. De Estambul a más de 48 países.",
+    "products": "Productos",
+    "corporate": "Empresa",
+    "contact": "Contacto",
+    "youtube": "Nuestro canal de YouTube",
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Procesado de bobinas y tecnologías de perfilado",
+    "refs": "Referencias",
+    "videos": "Vídeos",
+    "slitting": "Líneas de Corte Longitudinal"
+  },
+  "common": {
+    "home": "Inicio",
+    "breadcrumbAria": "Ruta de navegación",
+    "details": "Ver Detalles",
+    "examine": "Explorar",
+    "lineExamine": "Explorar la Línea",
+    "seeAll": "Ver todas",
+    "sendDrawing": "Envíe su plano"
+  },
+  "cta": {
+    "title": "Diseñemos la línea para su proyecto",
+    "text": "Envíenos su plano de perfil o sus necesidades de capacidad; nuestro equipo de ingeniería le responderá en 48 horas.",
+    "quote": "Pedir Presupuesto"
+  },
+  "home": {
+    "badge": "De Estambul a más de 48 países",
+    "h1l1": "Líneas que convierten",
+    "h1l2": "la bobina de acero",
+    "h1l3": "en producto",
+    "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
+    "cta1": "Presupuesto para su Proyecto",
+    "cta2": "Ver las Líneas",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Años de experiencia" },
+      { "value": "48+", "label": "Países de exportación" },
+      { "value": "99%", "label": "Entregas a tiempo" },
+      { "value": "99%", "label": "Aprobación de calidad" }
+    ],
+    "solutionsEyebrow": "Nuestra especialidad",
+    "solutionsTitle": "Tres líneas principales, una sola firma",
+    "solutionsText": "Cada equipo, del desbobinador al apilador, se fabrica en nuestra planta: un solo interlocutor, una línea totalmente compatible.",
+    "solutions": {
+      "rollform": {
+        "title": "Líneas de Perfilado",
+        "desc": "Líneas completas para 7 familias de perfiles, de bandejas portacables a barreras viales: todo el equipo, del desbobinador a la cizalla, es fabricación Servosteel."
+      },
+      "slitting": {
+        "title": "Líneas de Corte Longitudinal",
+        "desc": "Series ligera y pesada que cortan bobinas anchas en flejes a su medida: capacidad de 1.500–15.000 kg, espesores de 0,5–5 mm."
+      },
+      "ctl": {
+        "title": "Líneas de Corte a Medida",
+        "desc": "Corte de precisión de bobina a chapa: enderezado, alimentación servo y guillotina controlados desde un único PLC."
+      }
+    },
+    "rollformEyebrow": "Líneas de perfilado",
+    "rollformTitle": "Know-how probado para 7 familias de perfiles",
+    "rollformSeeAll": "Ver todas las líneas",
+    "customText": "¿Necesita un perfil que no está en el catálogo? Nuestras líneas se diseñan <b>según su plano</b>.",
+    "machinesEyebrow": "Sistemas de alimentación de prensas",
+    "machinesTitle": "Máquinas que completan la línea",
+    "machinesSeeAll": "Todas las máquinas",
+    "processEyebrow": "Cómo trabajamos",
+    "processTitle": "De la idea a la aprobación de producción en 4 pasos",
+    "process": [
+      {
+        "title": "Asesoramiento",
+        "text": "Analizamos su necesidad in situ u online y definimos juntos la configuración correcta de la línea."
+      },
+      {
+        "title": "Oferta Detallada",
+        "text": "Una oferta transparente y de base técnica, con planos, cálculo de capacidad y plazo de entrega."
+      },
+      {
+        "title": "Fabricación",
+        "text": "Todo el equipo se fabrica en nuestra planta y se prueba con sistemas de control Schneider."
+      },
+      {
+        "title": "Montaje y Puesta en Marcha",
+        "text": "Le acompañamos en el montaje, la formación de operarios y hasta la aprobación de producción."
+      }
+    ],
+    "videoEyebrow": "Desde el terreno",
+    "videoTitle": "Vea nuestras líneas en funcionamiento",
+    "videoText": "De líneas de corte a perfilado, HMI y software de informes: más de 100 vídeos en nuestro canal de YouTube.",
+    "videoCta": "Ver los Vídeos",
+    "videoBadge": "109 vídeos · 2,9 mil suscriptores",
+    "videoAria": "Canal de YouTube de ServoSteel"
+  },
+  "hub": {
+    "eyebrow": "Nuestra especialidad",
+    "title": "Líneas de Perfilado",
+    "desc": "De la bobina al perfil terminado: líneas de producción completas para 7 familias de perfiles, diseñadas para su proyecto; todo, del desbobinador al apilador, lleva la firma Servosteel.",
+    "metaDesc": "Líneas completas de perfilado a medida para bandejas portacables, perfiles solares, estanterías, plataformas de andamio, barreras viales y acústicas y perfiles C/Sigma/Omega.",
+    "flow": ["Desbobinador", "Enderezadora", "Alimentador Servo", "Estaciones de Punzonado", "Perfiladora", "Corte", "Apilado"],
+    "customTitle": "Línea de Perfil Especial",
+    "customText": "¿Va a producir una sección que no está en la lista? Del utillaje de rodillos a la automatización, la línea se proyecta según su plano de perfil.",
+    "customCta": "Envíe su Plano",
+    "ctaTitle": "Una línea de perfilado en torno a su perfil"
+  },
+  "machinesHub": {
+    "eyebrow": "Sistemas de alimentación de prensas",
+    "title": "Máquinas",
+    "metaTitle": "Máquinas — Sistemas de Alimentación de Prensas",
+    "metaDesc": "Desbobinadoras, alimentadores servo, alimentadores servo con enderezadora y líneas compactas: soluciones de alimentación de prensas a medida.",
+    "desc": "Un solo techo para cada eslabón de la línea: desbobinadoras, alimentadores servo, alimentadores con enderezadora y líneas compactas, todo fabricado en nuestra planta y dimensionado a su necesidad.",
+    "ctaTitle": "Elijamos juntos la máquina adecuada"
+  },
+  "detail": {
+    "features": "Características destacadas",
+    "components": "Componentes de la línea",
+    "componentsNote": "Todos los componentes se fabrican en la planta de Servosteel; la línea completa se prueba en fábrica antes del envío.",
+    "sectors": "Aplicaciones",
+    "usage": "Ámbitos de uso",
+    "otherLines": "Otras líneas de perfilado",
+    "otherMachines": "Otras máquinas",
+    "lineQuote": "Presupuesto para Esta Línea",
+    "machineQuote": "Presupuesto para Esta Máquina",
+    "quoteTitle": "Pida presupuesto para {name}",
+    "eyebrowLine": "Línea de perfilado",
+    "eyebrowMachine": "Sistemas de alimentación de prensas",
+    "profileNote": "Las dimensiones del perfil y el rango de espesores se definen <b>según su proyecto</b>; el utillaje de rodillos se diseña sobre su plano.",
+    "whyTitle": "¿Por qué Servosteel?",
+    "why": [
+      "Dimensionado y diseño a medida de cada cliente",
+      "Sistemas de control basados en Schneider",
+      "Prueba completa en fábrica, puesta en marcha in situ",
+      "Experiencia de campo en más de 48 países",
+      "Repuestos y soporte remoto"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Líneas de Corte Longitudinal",
+    "metaDesc": "Líneas de corte longitudinal de 1.500-15.000 kg de capacidad: cortan bobinas anchas en flejes a medida. Espesores de 0,5-5 mm, control Schneider.",
+    "eyebrow": "Nuestra especialidad",
+    "title": "Líneas de Corte Longitudinal",
+    "desc": "Líneas completas que cortan bobinas anchas en flejes a su medida exacta: todo el equipo, del desbobinador al rebobinador, se fabrica en la planta de Servosteel, se prueba en fábrica y se entrega llave en mano.",
+    "highlights": [
+      {
+        "title": "Muchos flejes de una bobina",
+        "text": "La bobina madre se corta a la vez en varios flejes según sus medidas de pedido: menos merma y menos coste de stock."
+      },
+      {
+        "title": "Precisión de ancho de fleje",
+        "text": "El ajuste preciso de las cuchillas y el rebobinado con tensión mantienen los anchos en tolerancias estrechas."
+      },
+      {
+        "title": "Dimensionado a su capacidad",
+        "text": "Bastidores de serie ligera y pesada para bobinas de 1,5 a 15 toneladas."
+      },
+      {
+        "title": "Arquitectura de control Schneider",
+        "text": "Control de velocidad basado en Lexium y Altivar; toda la línea se maneja desde un único panel."
+      }
+    ],
+    "tableTitle": "Opciones de capacidad y espesor",
+    "tableHead": ["Serie", "Peso de bobina", "Espesor de chapa"],
+    "tableRows": [
+      ["Serie ligera", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Serie pesada", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "Los valores corresponden a series estándar; el ancho de bobina, el número de flejes y la velocidad se dimensionan según su proyecto.",
+    "components": [
+      "Desbobinador",
+      "Carro de carga de bobinas",
+      "Sistema de centrado automático",
+      "Unidad enderezadora",
+      "Alimentación automática",
+      "Unidad de corte (grupo de cuchillas)",
+      "Descarga automática de bobinas",
+      "Sistema rebobinador"
+    ],
+    "ctaTitle": "Dimensionemos su línea de corte",
+    "ctaText": "Indíquenos peso de bobina, espesor y anchos de fleje; definiremos juntos la serie adecuada y el layout."
+  },
+  "boykesme": {
+    "metaTitle": "Líneas de Corte a Medida",
+    "metaDesc": "Líneas de corte a medida: corte de precisión de bobina a chapa. Enderezado, alimentación servo, guillotina y apilado gestionados por un único PLC.",
+    "eyebrow": "Nuestra especialidad",
+    "title": "Líneas de Corte a Medida",
+    "desc": "Líneas completas que convierten la bobina en chapas exactamente a la longitud que necesita: enderezado, alimentación servo, guillotina y apilado, todo fabricado en nuestra planta y gestionado por un único PLC.",
+    "highlights": [
+      {
+        "title": "Precisión de longitud",
+        "text": "La alimentación servo y la medición por encoder cortan las chapas en tolerancias estrechas, con repetibilidad en serie."
+      },
+      {
+        "title": "Corte limpio",
+        "text": "La luz entre cuchillas de la guillotina se ajusta al espesor: cortes sin rebabas ni deformación."
+      },
+      {
+        "title": "Control desde un punto",
+        "text": "Toda la línea se gestiona desde un panel vía PLC; longitudes, cantidades y recetas se guardan en el HMI."
+      },
+      {
+        "title": "Protección de superficie",
+        "text": "La unidad opcional de film PVC protege las superficies delicadas de arañazos antes del apilado."
+      }
+    ],
+    "whyTitle": "¿Por qué una línea de corte Servosteel?",
+    "paras": [
+      "Todo el equipo, del primer eslabón a la última pila, sale <b>de un único fabricante</b>: desbobinador, enderezadora, alimentación, cizalla y apilador se dimensionan entre sí. Los problemas de compatibilidad de las líneas montadas con varios proveedores desaparecen desde el principio.",
+      "El control de velocidad usa variadores <b>Schneider Lexium y Altivar</b>; la línea se monta y prueba completa en nuestra fábrica antes del envío, por lo que la puesta en marcha in situ es corta.",
+      "La configuración se proyecta según su espesor de chapa, peso de bobina y dimensiones; si hace falta, la línea se combina con una unidad de corte longitudinal para producir flejes y chapas."
+    ],
+    "components": [
+      "Desbobinador",
+      "Carro de carga de bobinas",
+      "Unidad enderezadora",
+      "Alimentación servo automática",
+      "Cizalla guillotina",
+      "Unidad de apilado automático",
+      "Aplicación automática de film PVC"
+    ],
+    "ctaTitle": "Proyectemos su línea de corte a medida",
+    "ctaText": "Indíquenos espesor, peso de bobina y dimensiones de chapa; volveremos con el layout y la oferta técnica."
+  },
+  "about": {
+    "metaTitle": "Nosotros",
+    "metaDesc": "Servosteel: más de 10 años de experiencia en sistemas de alimentación de prensas y líneas de procesado de bobinas. Fabricación a medida, de Estambul a 48+ países.",
+    "eyebrow": "Servosteel",
+    "title": "Ingeniería que da forma al acero",
+    "desc": "Servosteel es un fabricante turco de maquinaria especializado en sistemas de alimentación de prensas y líneas de procesado de bobinas. Desde hace más de una década diseñamos, fabricamos y entregamos cada máquina según la necesidad del cliente.",
+    "stats": [
+      { "value": "10+", "label": "Años de experiencia" },
+      { "value": "48+", "label": "Países de exportación" },
+      { "value": "27+", "label": "Equipo experto" },
+      { "value": "99%", "label": "Entregas a tiempo" }
+    ],
+    "storyTitle": "De la máquina individual a la línea completa",
+    "story": [
+      "Servosteel empezó con las máquinas que alimentan las líneas de prensa: desbobinadoras, enderezadoras y alimentadores servo. La experiencia de campo se convirtió en ingeniería de líneas completas: hoy instalamos llave en mano líneas de corte longitudinal, corte a medida y perfilado.",
+      "Lo que nos distingue es que cada eslabón de la línea se produce <b>bajo un mismo techo</b>: diseño mecánico, fabricación, software de automatización y puesta en marcha en el mismo equipo. Nuestros clientes tratan con un solo interlocutor y los componentes llegan perfectamente compatibles.",
+      "Las líneas fabricadas en nuestra planta de Sancaktepe, Estambul, producen hoy en <b>más de 48 países</b>: Europa, Oriente Medio, África y Extremo Oriente."
+    ],
+    "values": [
+      {
+        "title": "Nuestra misión",
+        "text": "Entregar la máquina industrial correcta con el mejor servicio y valor: cada línea se proyecta según la necesidad real del cliente, ni más ni menos."
+      },
+      {
+        "title": "Nuestra visión",
+        "text": "Ser la marca turca de referencia mundial en procesado de bobinas, desarrollando máquinas que contribuyen a una producción sostenible y reciclable."
+      },
+      {
+        "title": "Nuestro enfoque productivo",
+        "text": "Cada componente, del desbobinador al apilador, se fabrica en nuestra planta; la línea se monta y prueba completa antes del envío."
+      },
+      {
+        "title": "Nuestro equipo",
+        "text": "Un equipo experimentado de más de 27 personas, del diseño mecánico a la automatización; tras la venta, los mismos ingenieros siguen con su proyecto."
+      }
+    ],
+    "journeyEyebrow": "Nuestro camino",
+    "journeyTitle": "Experiencia construida paso a paso",
+    "timeline": [
+      {
+        "title": "Origen en la alimentación de prensas",
+        "text": "El camino empezó con desbobinadoras, enderezadoras y alimentadores servo para alimentar chapa con precisión."
+      },
+      {
+        "title": "Paso a las líneas completas",
+        "text": "De la máquina individual a la solución completa: las líneas de corte longitudinal y a medida se sumaron a la gama."
+      },
+      {
+        "title": "Especialización en perfilado",
+        "text": "Se desarrollaron líneas de perfilado para 7 familias de perfiles, de bandejas portacables a barreras viales."
+      },
+      {
+        "title": "Exportación a 48+ países",
+        "text": "Hoy las líneas Servosteel producen en cuatro continentes, de Europa a Extremo Oriente."
+      }
+    ],
+    "ctaTitle": "Hablemos de su proyecto",
+    "ctaText": "Ya necesite una sola máquina o una línea completa, nuestro equipo de ingeniería está listo para escuchar."
+  },
+  "refs": {
+    "metaTitle": "Referencias",
+    "metaDesc": "Las líneas Servosteel producen en más de 48 países de Europa, Oriente Medio, África y Extremo Oriente. Nuestras referencias por región e industria.",
+    "eyebrow": "Pruebas del terreno",
+    "title": "En producción en 48+ países",
+    "desc": "Las líneas Servosteel funcionan en plantas de fabricantes de cuatro continentes y de muchos sectores. Por acuerdos de confidencialidad no publicamos nuestra lista de clientes en la web; compartimos referencias de su sector bajo petición.",
+    "regions": [
+      {
+        "name": "Europa",
+        "text": "De España a Polonia, de Hungría a Italia: líneas Servosteel funcionando en plantas que producen bajo estándares de la UE."
+      },
+      {
+        "name": "Oriente Medio",
+        "text": "Nuestras líneas de corte y perfilado producen en una región intensiva en perfiles estructurales e infraestructuras."
+      },
+      {
+        "name": "África",
+        "text": "Presentes en regiones industriales en crecimiento con sistemas de alimentación de prensas y líneas de corte a medida."
+      },
+      {
+        "name": "Extremo Oriente",
+        "text": "Una ingeniería y una relación precio/prestaciones elegidas incluso en la geografía más competitiva."
+      }
+    ],
+    "sectorsTitle": "Sectores a los que servimos",
+    "sectors": [
+      "Centros de servicio de acero",
+      "Estanterías y almacenaje",
+      "Fabricantes de estructura solar",
+      "Fabricantes de bandejas portacables",
+      "Sistemas de seguridad vial",
+      "Proveedores de automoción",
+      "Proveedores de electrodomésticos",
+      "Andamios y encofrados",
+      "Envase metálico"
+    ],
+    "videoProofTitle": "La mejor referencia: una línea funcionando",
+    "videoProofText": "Encuentre más de 100 vídeos reales de montajes y puestas en marcha en nuestro canal de YouTube.",
+    "videoCta": "Ver los Vídeos",
+    "ctaTitle": "Pida referencias de su sector",
+    "ctaText": "Compartiremos instalaciones en plantas como la suya y organizaremos visitas."
+  },
+  "videos": {
+    "metaTitle": "Vídeos",
+    "metaDesc": "Vea las líneas Servosteel en funcionamiento: vídeos reales de líneas de corte, perfilado y sistemas de alimentación de prensas.",
+    "eyebrow": "Desde el terreno",
+    "title": "Vea nuestras líneas en funcionamiento",
+    "desc": "No promesas de folleto, sino líneas funcionando: imágenes reales de montajes, pruebas de fábrica y plantas de clientes.",
+    "items": [
+      {
+        "title": "Sistemas de Alimentación de Prensas",
+        "text": "Desbobinador, enderezadora y alimentador servo en sincronía con la línea de prensa."
+      },
+      {
+        "title": "Línea de Corte a Medida — Prueba de Fábrica",
+        "text": "Una línea de corte a medida durante su prueba previa al envío."
+      },
+      {
+        "title": "Producción de Componentes de Ascensor",
+        "text": "Producción de componentes de ascensor con un sistema de alimentación de prensas."
+      }
+    ],
+    "bannerTitle": "109 vídeos, 2,9 mil suscriptores",
+    "bannerText": "Todo el archivo está en nuestro canal de YouTube, de líneas de corte a HMI y software de informes; se añaden vídeos nuevos con regularidad.",
+    "bannerCta": "Ir al Canal de YouTube",
+    "ctaTitle": "¿Busca una línea similar?",
+    "ctaText": "Proyectemos para su planta una línea como la del vídeo."
+  },
+  "contact": {
+    "metaTitle": "Contacto",
+    "metaDesc": "Contacto Servosteel: sede en Sancaktepe/Estambul, +90 216 415 30 05, info@servosteel.com.tr. Para presupuestos y consultas técnicas.",
+    "eyebrow": "Contacte con nosotros",
+    "title": "Contacto",
+    "desc": "Un presupuesto, un detalle técnico o una visita a planta: sea cual sea el tema, puede contactar directamente con nuestro equipo de ingeniería.",
+    "phoneTitle": "Teléfono",
+    "phoneNote": "Laborables 08:30 – 18:00 (TRT)",
+    "emailTitle": "Correo electrónico",
+    "emailNote": "Respuesta en 24 horas",
+    "waTitle": "WhatsApp",
+    "waValue": "Mensaje rápido",
+    "waNote": "Ideal para compartir fotos y planos técnicos",
+    "addressTitle": "Sede y Planta de Producción",
+    "country": "Turquía",
+    "hours": "Lunes – viernes: 08:30 – 18:00",
+    "directions": "Cómo Llegar",
+    "mapTitle": "Mapa de ubicación de Servosteel",
+    "quoteBoxTitle": "¿Necesita un presupuesto?",
+    "quoteBoxText": "Envíe producto, capacidad y medidas con el formulario estructurado; nuestro equipo de ingeniería responderá en 48 horas.",
+    "quoteBoxCta": "Ir al Formulario"
+  },
+  "quote": {
+    "metaTitle": "Pedir Presupuesto",
+    "metaDesc": "Solicite presupuesto para líneas de perfilado, corte longitudinal y corte a medida: envíe producto y capacidad, respondemos en 48 horas.",
+    "eyebrow": "Respuesta en 48 horas",
+    "title": "Presupuesto para su proyecto",
+    "desc": "Cuantos más detalles, más precisa la oferta; pero si aún no lo tiene claro, no pasa nada: definiremos juntos la configuración correcta.",
+    "processTitle": "¿Cómo funciona?",
+    "steps": [
+      "Su solicitud llega el mismo día al equipo de ingeniería",
+      "Si hace falta, aclaramos la necesidad por teléfono",
+      "La oferta se prepara con planos y cálculo de capacidad",
+      "Presupuesto por escrito en sus manos en 48 horas"
+    ],
+    "directTitle": "¿Prefiere el contacto directo?",
+    "form": {
+      "name": "Nombre y apellidos *",
+      "namePh": "Su nombre completo",
+      "company": "Empresa *",
+      "companyPh": "Razón social",
+      "email": "Correo electrónico *",
+      "emailPh": "ejemplo@empresa.com",
+      "phone": "Teléfono *",
+      "phonePh": "+34 ...",
+      "location": "País / Ciudad",
+      "locationPh": "País / Ciudad",
+      "product": "Producto de interés *",
+      "specs": "Espesor de chapa / peso de bobina / medida de perfil",
+      "specsPh": "Ej.: chapa 0,5-2 mm, bobina 10 t, perfil solar 41x41",
+      "message": "Su mensaje",
+      "messagePh": "Describa brevemente su proyecto; si tiene plano de perfil, adjúntelo al correo.",
+      "submit": "Enviar Solicitud",
+      "wa": "Escribir por WhatsApp",
+      "note": "El botón \"Enviar\" abre su solicitud como mensaje listo en su aplicación de correo: puede revisarla y adjuntar planos o fotos antes de enviarla.",
+      "waPrefill": "Hola, quisiera un presupuesto de {product}.",
+      "mailSubject": "Solicitud de presupuesto — {product}",
+      "mailIntro": "Nueva solicitud de presupuesto (formulario web)",
+      "mailFields": {
+        "name": "Nombre",
+        "company": "Empresa",
+        "email": "Correo",
+        "phone": "Teléfono",
+        "location": "País/Ciudad",
+        "product": "Producto de interés",
+        "specs": "Espesor / capacidad",
+        "message": "Mensaje"
+      },
+      "options": [
+        "Línea de Perfilado — Bandeja Portacables",
+        "Línea de Perfilado — Perfil Solar",
+        "Línea de Perfilado — Estantería",
+        "Línea de Perfilado — Plataforma de Andamio",
+        "Línea de Perfilado — Barrera Vial",
+        "Línea de Perfilado — Barrera Acústica",
+        "Línea de Perfilado — C+/Sigma/Omega",
+        "Línea de Perfilado — Perfil Especial",
+        "Línea de Corte Longitudinal",
+        "Línea de Corte a Medida",
+        "Desbobinadora",
+        "Alimentador Servo",
+        "Alimentador Servo con Enderezadora",
+        "Línea Compacta",
+        "Otro / Sin decidir"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "La página que busca puede haberse movido o no existir.",
+    "back": "Volver al inicio"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Línea de Producción de Bandejas Portacables",
+        "short": "Línea completa para bandejas perforadas y ciegas, escalerillas y tapas.",
+        "hero": "Una línea de perfilado completa que produce bandejas portacables — la columna vertebral de la infraestructura eléctrica — de la bobina al producto final: desbobinador, enderezadora, alimentación servo, punzonado, perfiladora y corte gestionados por un único PLC.",
+        "meta": "Línea de bandejas portacables: solución completa de perfilado a medida para bandejas perforadas/ciegas, escalerillas y tapas.",
+        "features": [
+          {
+            "title": "Punzonado en línea",
+            "text": "Los agujeros de ventilación y montaje se punzonan en estaciones servo dentro de la línea, sin operación aparte."
+          },
+          {
+            "title": "Cambio rápido de medida",
+            "text": "Cambio por recetas entre anchos de bandeja; los tiempos de ajuste se reducen al mínimo."
+          },
+          {
+            "title": "Apta para chapa galvanizada",
+            "text": "Los rodillos se mecanizan y templan para no dañar el recubrimiento de zinc (acero 4140, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Desbobinador (hidráulico o mecánico)",
+          "Unidad enderezadora",
+          "Alimentador servo",
+          "Estaciones de punzonado",
+          "Perfiladora",
+          "Unidad de corte (cizalla final)",
+          "Transportador de salida y apilado"
+        ],
+        "sectors": ["Infraestructura eléctrica", "Centros de datos", "Plantas industriales", "Centros comerciales y edificación"]
+      },
+      "solar-profil": {
+        "name": "Línea de Producción de Perfil Solar",
+        "short": "Perfilado de alta velocidad para perfiles de montaje fotovoltaico.",
+        "hero": "Una línea que produce perfiles hat, C y Omega para las estructuras de plantas solares directamente desde la bobina; el punzonado abre los agujeros de montaje en línea y los perfiles llegan a obra listos para instalar.",
+        "meta": "Línea de perfiles de montaje solar: línea completa de perfilado de alta velocidad con punzonado para estructuras fotovoltaicas.",
+        "features": [
+          {
+            "title": "Forma de perfil según proyecto",
+            "text": "El utillaje se diseña para secciones hat, C, U u Omega según el proyecto estructural del EPC."
+          },
+          {
+            "title": "Apta para Magnelis® y galvanizado",
+            "text": "Las chapas de alta resistencia a la corrosión se conforman con superficies de rodillo que protegen el recubrimiento."
+          },
+          {
+            "title": "Recetas de longitud y taladro",
+            "text": "El patrón de agujeros y la longitud para cada tipo de mesa se eligen como receta en el HMI."
+          }
+        ],
+        "components": [
+          "Desbobinador",
+          "Enderezadora + alimentador servo",
+          "Estaciones de punzonado servo",
+          "Perfiladora",
+          "Cizalla volante",
+          "Apilado automático"
+        ],
+        "sectors": ["Solar / empresas EPC", "Fotovoltaica de cubierta", "Plantas en suelo", "Agri-PV"]
+      },
+      "agir-raf": {
+        "name": "Línea de Producción de Estantería de Carga",
+        "short": "Línea con punzonado para montantes y largueros de estantería.",
+        "hero": "Una línea que produce los montantes y largueros portantes de los almacenes logísticos; las filas múltiples de agujeros se punzonan en línea con servopunzones y la estabilidad dimensional se mantiene incluso en chapa gruesa.",
+        "meta": "Línea de estanterías de carga: perfilado a medida con punzonado para montantes y largueros.",
+        "features": [
+          {
+            "title": "Punzonado multifila",
+            "text": "Los agujeros de enganche de los montantes se punzonan sin reducir la velocidad de la línea."
+          },
+          {
+            "title": "Capacidad de chapa gruesa",
+            "text": "Bastidor y rodillos dimensionados para los espesores altos que exige la estantería."
+          },
+          {
+            "title": "Repetibilidad dimensional",
+            "text": "La alimentación servo y el control por encoder mantienen la precisión entre agujeros en serie."
+          }
+        ],
+        "components": [
+          "Desbobinador de serie pesada",
+          "Unidad enderezadora",
+          "Alimentador servo",
+          "Grupo de punzonado multiestación",
+          "Perfiladora",
+          "Unidad de corte",
+          "Sistema de apilado"
+        ],
+        "sectors": ["Almacén y logística", "Fabricantes de estanterías", "Almacenes e-commerce", "Cámaras frigoríficas"]
+      },
+      "iskele-kalas": {
+        "name": "Línea de Producción de Plataforma de Andamio",
+        "short": "Producción de plataformas y tablones antideslizantes de andamio.",
+        "hero": "Una línea que produce las plataformas de tránsito de acero de los andamios; el grabado antideslizante y los agujeros de drenaje se forman en línea, y puede integrarse una estación de prensa para los ganchos de los extremos.",
+        "meta": "Línea de plataformas de andamio: perfilado completo de plataformas y tablones de acero antideslizantes.",
+        "features": [
+          {
+            "title": "Superficie antideslizante",
+            "text": "El grabado tipo diamante/estriado se imprime de forma continua en las estaciones de perfilado."
+          },
+          {
+            "title": "Agujeros de drenaje y aligerado",
+            "text": "Los patrones se punzonan en línea: la plataforma es más ligera y más segura a la vez."
+          },
+          {
+            "title": "Integración de extremos",
+            "text": "El plegado de ganchos y el corte final pueden integrarse como estación al final de la línea."
+          }
+        ],
+        "components": [
+          "Desbobinador",
+          "Enderezadora + alimentador servo",
+          "Estaciones de punzonado",
+          "Perfiladora",
+          "Unidad de corte",
+          "Estación de extremos (opcional)"
+        ],
+        "sectors": ["Sistemas de andamio", "Equipos de construcción", "Alquiler de encofrado y andamio", "Seguridad en obra"]
+      },
+      "yol-bariyeri": {
+        "name": "Línea de Producción de Barrera Vial",
+        "short": "Perfilado pesado para barreras bionda (W-beam).",
+        "hero": "Una línea de servicio pesado que produce las barreras W-beam (bionda) y de tres ondas — el estándar de la seguridad vial; forma la onda en chapa galvanizada gruesa con precisión conforme a norma.",
+        "meta": "Línea de barreras viales: perfilado pesado de barreras W-beam y de tres ondas.",
+        "features": [
+          {
+            "title": "Forma conforme a norma",
+            "text": "Diseño de utillaje y control de forma para geometrías de barrera dentro de EN 1317."
+          },
+          {
+            "title": "Bastidor pesado",
+            "text": "Cuerpo rígido y accionamiento potente para guiar chapa galvanizada de 3-4 mm sin oscilaciones."
+          },
+          {
+            "title": "Precisión de agujeros y longitud",
+            "text": "Agujeros de unión y longitudes de corte fijados por servo; el montaje en carretera es sencillo."
+          }
+        ],
+        "components": [
+          "Desbobinador pesado (10-15 t)",
+          "Unidad enderezadora",
+          "Alimentación servo + punzonado",
+          "Perfiladora de servicio pesado",
+          "Corte hidráulico",
+          "Apilado"
+        ],
+        "sectors": ["Contratistas viales", "Proyectos de autopista", "Plantas de galvanizado", "Exportadores de infraestructura"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Línea de Producción de Barrera Acústica",
+        "short": "Perfilado de casetes y paneles de barrera acústica.",
+        "hero": "Una línea que produce los casetes de aluminio/acero de las barreras acústicas de autopistas y ferrocarriles; el panel frontal perforado (absorbente) y el trasero ciego se producen en la misma plataforma.",
+        "meta": "Línea de barreras acústicas: perfilado de casetes y paneles perforados y ciegos.",
+        "features": [
+          {
+            "title": "Paneles perforados",
+            "text": "La perforación frontal para absorción acústica se integra en línea o antes de la alimentación."
+          },
+          {
+            "title": "Aluminio y acero",
+            "text": "Los ajustes de presión de rodillo para cada material y espesor se gestionan con recetas."
+          },
+          {
+            "title": "Paneles largos",
+            "text": "Corte a longitud preciso y apilado seguro según los módulos de la barrera."
+          }
+        ],
+        "components": [
+          "Desbobinador",
+          "Enderezadora + alimentador servo",
+          "Unidad de perforación/punzonado",
+          "Perfiladora",
+          "Unidad de corte",
+          "Apilado"
+        ],
+        "sectors": ["Proyectos de autopista", "Ferrocarril y metro", "Ingeniería ambiental", "Infraestructura urbana"]
+      },
+      "c-sigma-omega": {
+        "name": "Línea de Perfiles C+ / Sigma / Omega",
+        "short": "Perfiles de acero ligero: varias secciones en una línea.",
+        "hero": "Una solución flexible que produce perfiles C, Sigma y Omega — los portantes de la construcción en acero ligero — en una sola línea; el cambio de sección se hace en minutos gracias a los grupos de rodillos regulables y al sistema de recetas.",
+        "meta": "Línea de perfiles C, Sigma y Omega: perfilado regulable multisección para estructura de acero ligero.",
+        "features": [
+          {
+            "title": "Tres secciones en una línea",
+            "text": "Las formas C, Sigma y Omega se producen en la misma línea con estaciones regulables; baja la inversión."
+          },
+          {
+            "title": "Ajuste automático de ancho/alto",
+            "text": "Los cambios de medida se hacen con ejes servo mediante recetas del HMI."
+          },
+          {
+            "title": "Patrones de agujeros estructurales",
+            "text": "Agujeros de tornillería y de servicio se punzonan en línea según el proyecto."
+          }
+        ],
+        "components": [
+          "Desbobinador",
+          "Enderezadora + alimentador servo",
+          "Estaciones de punzonado",
+          "Perfiladora regulable",
+          "Cizalla volante",
+          "Apilado"
+        ],
+        "sectors": ["Acero ligero", "Estructura solar", "Construcción prefabricada", "Nave industrial", "Correas"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Desbobinadoras",
+        "short": "Hidráulicas de 6-20 t y mecánicas de 500-2.500 kg.",
+        "hero": "El primer eslabón de toda línea: desbobinadoras hidráulicas y mecánicas que sostienen la bobina con seguridad y la desenrollan con tensión controlada. Se proyectan según capacidad, ancho de chapa y nivel de automatización.",
+        "meta": "Desbobinadoras hidráulicas (6-20 t) y mecánicas (500-2.500 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
+        "features": [
+          {
+            "title": "Expansión hidráulica del mandril",
+            "text": "En las series pesadas el diámetro interior se fija hidráulicamente; la carga es rápida y segura."
+          },
+          {
+            "title": "Opción de carro de carga",
+            "text": "Un carro hidráulico permite subir bobinas pesadas a la línea sin esperar a la grúa."
+          },
+          {
+            "title": "Sincronización con la línea",
+            "text": "Con control por brazo bailarín/fotocélula, la desbobinadora se adapta sola a la velocidad de la línea."
+          }
+        ],
+        "sectors": ["Alimentación de prensas", "Líneas de corte longitudinal", "Líneas de corte a medida", "Líneas de perfilado"],
+        "table": {
+          "title": "Opciones de capacidad",
+          "head": ["Serie", "Modelos"],
+          "rows": [
+            ["Desbobinadoras hidráulicas", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Desbobinadoras mecánicas", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Alimentadores Servo",
+        "short": "Alimentación por pasos de precisión a prensas; series estándar y mini.",
+        "hero": "Los alimentadores servo avanzan la chapa hacia el troquel en pasos milimétricos; la tecnología servo Schneider Lexium ofrece alta repetibilidad, sincronización con la prensa y gestión sencilla de recetas.",
+        "meta": "Alimentadores servo: series estándar y mini para líneas de prensa, alimentación de precisión basada en Schneider Lexium.",
+        "features": [
+          {
+            "title": "Precisión milimétrica de paso",
+            "text": "La combinación servomotor + reductor de precisión mantiene las tolerancias de paso en serie."
+          },
+          {
+            "title": "Sincronización con la prensa",
+            "text": "Funcionamiento síncrono con la señal de leva; la función de liberación de pilotos es estándar."
+          },
+          {
+            "title": "Manejo sencillo",
+            "text": "Paso, velocidad y rampas se guardan como recetas en el HMI táctil."
+          }
+        ],
+        "sectors": ["Talleres de estampación", "Proveedores de automoción", "Electrodomésticos", "Electricidad-electrónica"],
+        "table": {
+          "title": "Series",
+          "head": ["Serie", "Uso"],
+          "rows": [
+            ["Alimentadores servo estándar", "Chapa media y ancha, prensas de alto tonelaje"],
+            ["Alimentadores servo mini", "Chapa estrecha y líneas compactas"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Alimentadores Servo con Enderezadora",
+        "short": "Enderezado y alimentación en un cuerpo: ahorro de espacio e inversión.",
+        "hero": "Una solución compacta que une en un solo cuerpo los rodillos enderezadores que eliminan la memoria de la bobina y la alimentación servo; elimina la enderezadora aparte y su espacio.",
+        "meta": "Alimentadores servo con enderezadora: enderezado + alimentación de precisión en una máquina. Versiones de casete y mini.",
+        "features": [
+          {
+            "title": "Dos procesos, una máquina",
+            "text": "Enderezado y alimentación en el mismo cuerpo; la línea se acorta y la instalación se simplifica."
+          },
+          {
+            "title": "Presión de enderezado regulable",
+            "text": "La presión de los rodillos se ajusta de forma continua al espesor."
+          },
+          {
+            "title": "Versiones de casete y mini",
+            "text": "Según ancho y espesor de chapa se elige la serie de casete (pesada) o mini."
+          }
+        ],
+        "sectors": ["Alimentación de prensas", "Proveedores de automoción", "Envase metálico", "Chapa en general"],
+        "table": {
+          "title": "Series",
+          "head": ["Serie", "Uso"],
+          "rows": [
+            ["Con enderezadora, versión casete", "Chapa gruesa, alta necesidad de enderezado"],
+            ["Con enderezadora, versión mini", "Chapa fina, líneas compactas"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Líneas Compactas",
+        "short": "Desbobinador + enderezadora + alimentador en una plataforma.",
+        "hero": "Las líneas compactas reúnen desbobinado, enderezado y alimentación servo en una sola plataforma; pensadas para empresas que quieren alimentación de prensa completa en un espacio limitado.",
+        "meta": "Líneas compactas de alimentación de prensas: desbobinadora, enderezadora y alimentador servo en una plataforma.",
+        "features": [
+          {
+            "title": "Mínimo espacio",
+            "text": "El trabajo de tres máquinas en un chasis; gran ahorro de espacio frente al layout clásico."
+          },
+          {
+            "title": "Control desde un punto",
+            "text": "Desbobinador, enderezadora y alimentador se manejan desde un solo HMI; menos carga para el operario."
+          },
+          {
+            "title": "Puesta en marcha rápida",
+            "text": "Un solo cuerpo probado en fábrica; la instalación y puesta en marcha son breves."
+          }
+        ],
+        "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"]
+      }
+    }
+  }
+}

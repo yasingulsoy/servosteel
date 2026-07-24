@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Linie profilujące, wzdłużne i poprzeczne cięcie",
+    "description": "Linie profilujące (roll forming), linie cięcia wzdłużnego, linie cięcia poprzecznego i systemy podawania do pras na zamówienie. Eksport ze Stambułu do ponad 48 krajów."
+  },
+  "topbar": {
+    "export": "Eksport do 48+ krajów",
+    "theme": "Motyw jasny/ciemny"
+  },
+  "nav": {
+    "rollform": "Linie Profilujące",
+    "slitting": "Linie Cięcia Wzdłużnego",
+    "ctl": "Linie Cięcia Poprzecznego",
+    "machines": "Maszyny",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "quote": "Zapytanie ofertowe",
+    "seeAll": "Zobacz wszystko →",
+    "mainAria": "Menu główne",
+    "mobileAria": "Menu mobilne",
+    "homeAria": "Strona główna Servosteel",
+    "menuOpen": "Otwórz menu",
+    "menuClose": "Zamknij menu",
+    "langAria": "Wybierz język",
+    "langTitle": "Wybierz język",
+    "langDesc": "Wybierz język, w którym chcesz przeglądać stronę."
+  },
+  "footer": {
+    "blurb": "Projektowanie na zamówienie, produkcja i montaż pod klucz linii do przetwarzania kręgów i profilowania. Ze Stambułu do ponad 48 krajów.",
+    "products": "Produkty",
+    "corporate": "Firma",
+    "contact": "Kontakt",
+    "youtube": "Nasz kanał YouTube",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "tagline": "Przetwarzanie kręgów i technologie profilowania",
+    "refs": "Referencje",
+    "videos": "Filmy",
+    "slitting": "Linie Cięcia Wzdłużnego"
+  },
+  "common": {
+    "home": "Strona główna",
+    "breadcrumbAria": "Ścieżka nawigacji",
+    "details": "Zobacz Szczegóły",
+    "examine": "Poznaj",
+    "lineExamine": "Poznaj Linię",
+    "seeAll": "Zobacz wszystkie",
+    "sendDrawing": "Wyślij swój rysunek"
+  },
+  "cta": {
+    "title": "Zaprojektujmy linię do Twojego projektu",
+    "text": "Prześlij rysunek profilu lub wymagania dotyczące wydajności — nasz zespół inżynierów odpowie w ciągu 48 godzin.",
+    "quote": "Zapytanie ofertowe"
+  },
+  "home": {
+    "badge": "Ze Stambułu do ponad 48 krajów",
+    "h1l1": "Linie, które zmieniają",
+    "h1l2": "krąg stalowy",
+    "h1l3": "w produkt",
+    "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
+    "cta1": "Oferta dla Twojego Projektu",
+    "cta2": "Zobacz Linie",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Lat doświadczenia" },
+      { "value": "48+", "label": "Krajów eksportu" },
+      { "value": "99%", "label": "Terminowość dostaw" },
+      { "value": "99%", "label": "Zatwierdzenie jakości" }
+    ],
+    "solutionsEyebrow": "Nasza specjalizacja",
+    "solutionsTitle": "Trzy główne linie, jeden podpis",
+    "solutionsText": "Każde urządzenie, od odwijaka po układarkę, powstaje we własnym zakładzie — jeden partner, w pełni zgrana linia.",
+    "solutions": {
+      "rollform": {
+        "title": "Linie Profilujące",
+        "desc": "Kompletne linie dla 7 rodzin profili, od koryt kablowych po bariery drogowe: każdy element od odwijaka po nożyce to produkcja Servosteel."
+      },
+      "slitting": {
+        "title": "Linie Cięcia Wzdłużnego",
+        "desc": "Serie lekka i ciężka tnące szerokie kręgi na taśmy na wymiar: wydajność 1.500–15.000 kg, grubość 0,5–5 mm."
+      },
+      "ctl": {
+        "title": "Linie Cięcia Poprzecznego",
+        "desc": "Precyzyjne cięcie z kręgu na arkusz: prostowanie, podawanie serwo i gilotyna sterowane z jednego PLC."
+      }
+    },
+    "rollformEyebrow": "Linie profilujące",
+    "rollformTitle": "Sprawdzone know-how dla 7 rodzin profili",
+    "rollformSeeAll": "Zobacz wszystkie linie",
+    "customText": "Potrzebujesz profilu spoza katalogu? Nasze linie projektujemy <b>według Twojego rysunku</b>.",
+    "machinesEyebrow": "Systemy podawania do pras",
+    "machinesTitle": "Maszyny, które dopełniają linię",
+    "machinesSeeAll": "Wszystkie maszyny",
+    "processEyebrow": "Jak pracujemy",
+    "processTitle": "Od pomysłu do zatwierdzenia produkcji w 4 krokach",
+    "process": [
+      {
+        "title": "Konsultacja",
+        "text": "Analizujemy Twoje potrzeby na miejscu lub online i wspólnie określamy właściwą konfigurację linii."
+      },
+      {
+        "title": "Szczegółowa Oferta",
+        "text": "Przejrzysta oferta na bazie inżynierskiej, z rysunkami, obliczeniem wydajności i terminem realizacji."
+      },
+      {
+        "title": "Produkcja",
+        "text": "Całe wyposażenie powstaje we własnym zakładzie i jest testowane z systemami sterowania Schneider."
+      },
+      {
+        "title": "Montaż i Uruchomienie",
+        "text": "Towarzyszymy Ci przy montażu, szkoleniu operatorów i aż do odbioru produkcji."
+      }
+    ],
+    "videoEyebrow": "Z terenu",
+    "videoTitle": "Zobacz nasze linie w działaniu",
+    "videoText": "Od linii cięcia po profilowanie, HMI i oprogramowanie raportowe — ponad 100 filmów na naszym kanale YouTube.",
+    "videoCta": "Zobacz Filmy",
+    "videoBadge": "109 filmów · 2,9 tys. subskrybentów",
+    "videoAria": "Kanał YouTube ServoSteel"
+  },
+  "hub": {
+    "eyebrow": "Nasza specjalizacja",
+    "title": "Linie Profilujące",
+    "desc": "Z kręgu do gotowego profilu: kompletne linie produkcyjne dla 7 rodzin profili, projektowane pod Twój projekt — wszystko, od odwijaka po układarkę, nosi podpis Servosteel.",
+    "metaDesc": "Kompletne linie profilujące na zamówienie do koryt kablowych, profili solarnych, regałów, pomostów rusztowaniowych, barier drogowych i akustycznych oraz profili C/Sigma/Omega.",
+    "flow": ["Odwijak", "Prostownica", "Podajnik Serwo", "Stacje Wykrawania", "Profilarka", "Cięcie", "Układanie"],
+    "customTitle": "Linia Profilu Specjalnego",
+    "customText": "Produkujesz przekrój spoza listy? Od projektu narzędzi rolkowych po automatykę linia jest projektowana według Twojego rysunku profilu.",
+    "customCta": "Wyślij Rysunek",
+    "ctaTitle": "Linia profilująca zbudowana wokół Twojego profilu"
+  },
+  "machinesHub": {
+    "eyebrow": "Systemy podawania do pras",
+    "title": "Maszyny",
+    "metaTitle": "Maszyny — Systemy Podawania do Pras",
+    "metaDesc": "Odwijaki, podajniki serwo, podajniki serwo z prostownicą i linie kompaktowe: rozwiązania podawania do pras na zamówienie.",
+    "desc": "Jeden dostawca dla każdego ogniwa linii: odwijaki, podajniki serwo, podajniki z prostownicą i linie kompaktowe — wszystko produkowane we własnym zakładzie i dobierane do Twoich potrzeb.",
+    "ctaTitle": "Dobierzmy razem właściwą maszynę"
+  },
+  "detail": {
+    "features": "Najważniejsze cechy",
+    "components": "Elementy linii",
+    "componentsNote": "Wszystkie elementy powstają w zakładzie Servosteel; kompletna linia jest testowana fabrycznie przed wysyłką.",
+    "sectors": "Zastosowania",
+    "usage": "Obszary zastosowań",
+    "otherLines": "Inne linie profilujące",
+    "otherMachines": "Inne maszyny",
+    "lineQuote": "Oferta na Tę Linię",
+    "machineQuote": "Oferta na Tę Maszynę",
+    "quoteTitle": "Zapytaj o ofertę: {name}",
+    "eyebrowLine": "Linia profilująca",
+    "eyebrowMachine": "Systemy podawania do pras",
+    "profileNote": "Wymiary profilu i zakres grubości określa <b>Twój projekt</b>; narzędzia rolkowe projektujemy według Twojego rysunku.",
+    "whyTitle": "Dlaczego Servosteel?",
+    "why": [
+      "Indywidualny dobór i projekt",
+      "Systemy sterowania oparte na Schneider",
+      "Pełny test fabryczny, uruchomienie na miejscu",
+      "Doświadczenie terenowe w ponad 48 krajach",
+      "Części zamienne i wsparcie zdalne"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Linie Cięcia Wzdłużnego",
+    "metaDesc": "Linie cięcia wzdłużnego o wydajności 1.500-15.000 kg: tną szerokie kręgi na taśmy na wymiar. Grubość 0,5-5 mm, sterowanie Schneider.",
+    "eyebrow": "Nasza specjalizacja",
+    "title": "Linie Cięcia Wzdłużnego",
+    "desc": "Kompletne linie tnące szerokie kręgi na taśmy o Twoim dokładnym wymiarze: każdy element od odwijaka po nawijarkę powstaje w zakładzie Servosteel, jest testowany fabrycznie i uruchamiany pod klucz.",
+    "highlights": [
+      {
+        "title": "Wiele taśm z jednego kręgu",
+        "text": "Szeroki krąg macierzysty jest cięty za jednym przejściem na wiele taśm według wymiarów zamówienia — mniej odpadu i kosztów magazynowych."
+      },
+      {
+        "title": "Precyzja szerokości taśmy",
+        "text": "Dokładne ustawienie noży i nawijanie z naprężeniem utrzymują szerokości w wąskich tolerancjach."
+      },
+      {
+        "title": "Dobór do wydajności",
+        "text": "Ramy w serii lekkiej i ciężkiej dla kręgów od 1,5 do 15 ton."
+      },
+      {
+        "title": "Architektura sterowania Schneider",
+        "text": "Regulacja prędkości oparta na Lexium i Altivar; cała linia obsługiwana z jednego pulpitu."
+      }
+    ],
+    "tableTitle": "Opcje wydajności i grubości",
+    "tableHead": ["Seria", "Masa kręgu", "Grubość blachy"],
+    "tableRows": [
+      ["Seria lekka", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Seria ciężka", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "Wartości w tabeli to serie standardowe; szerokość kręgu, liczba taśm i prędkość linii są dobierane pod Twój projekt.",
+    "components": [
+      "Odwijak",
+      "Wózek załadowczy kręgu",
+      "Automatyczny system centrowania",
+      "Zespół prostujący",
+      "Automatyczne podawanie",
+      "Zespół cięcia (grupa noży)",
+      "Automatyczny rozładunek kręgów",
+      "System nawijarki (recoiler)"
+    ],
+    "ctaTitle": "Dobierzmy Twoją linię cięcia",
+    "ctaText": "Podaj masę kręgu, grubość blachy i wymiary taśm; wspólnie ustalimy właściwą serię i układ linii."
+  },
+  "boykesme": {
+    "metaTitle": "Linie Cięcia Poprzecznego",
+    "metaDesc": "Linie cięcia poprzecznego: precyzyjne cięcie z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i układanie sterowane z jednego PLC. Sterowanie Schneider.",
+    "eyebrow": "Nasza specjalizacja",
+    "title": "Linie Cięcia Poprzecznego",
+    "desc": "Kompletne linie zmieniające krąg w arkusze dokładnie takiej długości, jakiej potrzebujesz: prostowanie, podawanie serwo, gilotyna i układanie — wszystko produkowane we własnym zakładzie i sterowane z jednego PLC.",
+    "highlights": [
+      {
+        "title": "Dokładność długości",
+        "text": "Podawanie serwo i pomiar enkoderem tną długości arkuszy w wąskich tolerancjach, z powtarzalnością w serii."
+      },
+      {
+        "title": "Czyste cięcie",
+        "text": "Szczelinę noży gilotyny ustawia się do grubości blachy: cięcia bez zadziorów i odkształceń."
+      },
+      {
+        "title": "Sterowanie z jednego punktu",
+        "text": "Cała linia obsługiwana z jednego pulpitu przez PLC; długości, ilości i receptury zapisane w HMI."
+      },
+      {
+        "title": "Ochrona powierzchni",
+        "text": "Opcjonalny zespół folii PVC chroni delikatne powierzchnie przed zarysowaniami przed układaniem."
+      }
+    ],
+    "whyTitle": "Dlaczego linia cięcia Servosteel?",
+    "paras": [
+      "Każdy element, od pierwszego ogniwa linii po ostatni stos, pochodzi <b>od jednego producenta</b>: odwijak, prostownica, podawanie, nożyce i układarka są dobrane do siebie. Problemy zgodności linii składanych z wielu dostawców znikają od samego początku.",
+      "Do regulacji prędkości stosujemy napędy serii <b>Schneider Lexium i Altivar</b>; linia jest w całości montowana i testowana w naszej fabryce przed wysyłką, dzięki czemu uruchomienie na miejscu jest krótkie.",
+      "Konfigurację projektujemy pod grubość blachy, masę kręgu i wymiary arkusza; w razie potrzeby linię łączymy z zespołem cięcia wzdłużnego, aby produkowała taśmy i arkusze."
+    ],
+    "components": [
+      "Odwijak",
+      "Wózek załadowczy kręgu",
+      "Zespół prostujący",
+      "Automatyczne podawanie serwo",
+      "Nożyce gilotynowe",
+      "Automatyczny zespół układania",
+      "Automatyczny system folii PVC"
+    ],
+    "ctaTitle": "Zaprojektujmy Twoją linię cięcia poprzecznego",
+    "ctaText": "Podaj grubość blachy, masę kręgu i wymiary arkusza; wrócimy z układem linii i ofertą techniczną."
+  },
+  "about": {
+    "metaTitle": "O nas",
+    "metaDesc": "Servosteel: 10+ lat doświadczenia w systemach podawania do pras i liniach przetwarzania kręgów. Produkcja maszyn na zamówienie, ze Stambułu do 48+ krajów.",
+    "eyebrow": "Servosteel",
+    "title": "Inżynieria, która kształtuje stal",
+    "desc": "Servosteel to turecki producent maszyn wyspecjalizowany w systemach podawania do pras i liniach przetwarzania kręgów. Od ponad dekady projektujemy, produkujemy i uruchamiamy każdą maszynę według potrzeb klienta.",
+    "stats": [
+      { "value": "10+", "label": "Lat doświadczenia" },
+      { "value": "48+", "label": "Krajów eksportu" },
+      { "value": "27+", "label": "Zespół ekspertów" },
+      { "value": "99%", "label": "Terminowość dostaw" }
+    ],
+    "storyTitle": "Od pojedynczej maszyny do kompletnej linii",
+    "story": [
+      "Servosteel zaczynał od maszyn zasilających linie prasowe: odwijaków, prostownic i podajników serwo. Doświadczenie terenowe stopniowo przerodziło się w inżynierię kompletnych linii — dziś instalujemy pod klucz linie cięcia wzdłużnego, poprzecznego i profilujące.",
+      "Wyróżnia nas to, że każde ogniwo linii powstaje <b>pod jednym dachem</b>: projekt mechaniczny, produkcja, oprogramowanie automatyki i uruchomienie w tym samym zespole. Nasi klienci współpracują z jednym partnerem, a elementy przychodzą idealnie dopasowane.",
+      "Linie zbudowane w naszym zakładzie w Sancaktepe w Stambule produkują dziś w <b>ponad 48 krajach</b> — w Europie, na Bliskim Wschodzie, w Afryce i na Dalekim Wschodzie."
+    ],
+    "values": [
+      {
+        "title": "Nasza misja",
+        "text": "Dostarczyć właściwą maszynę przemysłową z najlepszą obsługą i wartością: każda linia jest projektowana pod realną potrzebę klienta — nic zbędnego, nic brakującego."
+      },
+      {
+        "title": "Nasza wizja",
+        "text": "Stać się preferowaną na świecie turecką marką w przetwarzaniu kręgów, rozwijając maszyny wspierające produkcję zrównoważoną i zdatną do recyklingu."
+      },
+      {
+        "title": "Nasze podejście produkcyjne",
+        "text": "Każdy element, od odwijaka po układarkę, powstaje we własnym zakładzie; linia jest w całości montowana i testowana przed wysyłką."
+      },
+      {
+        "title": "Nasz zespół",
+        "text": "Doświadczony zespół ponad 27 osób, od projektu mechanicznego po automatykę; po sprzedaży ci sami inżynierowie zostają przy Twoim projekcie."
+      }
+    ],
+    "journeyEyebrow": "Nasza droga",
+    "journeyTitle": "Kompetencja budowana krok po kroku",
+    "timeline": [
+      {
+        "title": "Korzenie w podawaniu do pras",
+        "text": "Droga zaczęła się od odwijaków, prostownic i podajników serwo do precyzyjnego podawania blachy do pras."
+      },
+      {
+        "title": "Krok ku kompletnym liniom",
+        "text": "Od pojedynczej maszyny do kompletnego rozwiązania: linie cięcia wzdłużnego i poprzecznego dołączyły do oferty."
+      },
+      {
+        "title": "Kompetencja w profilowaniu",
+        "text": "Powstały linie profilujące obejmujące 7 rodzin profili, od koryt kablowych po bariery drogowe."
+      },
+      {
+        "title": "Eksport do 48+ krajów",
+        "text": "Dziś linie Servosteel produkują na czterech kontynentach, od Europy po Daleki Wschód."
+      }
+    ],
+    "ctaTitle": "Porozmawiajmy o Twoim projekcie",
+    "ctaText": "Niezależnie od tego, czy potrzebujesz jednej maszyny, czy kompletnej linii — nasz zespół inżynierów jest gotów słuchać."
+  },
+  "refs": {
+    "metaTitle": "Referencje",
+    "metaDesc": "Linie Servosteel produkują w ponad 48 krajach Europy, Bliskiego Wschodu, Afryki i Dalekiego Wschodu. Nasze referencje według regionu i branży.",
+    "eyebrow": "Dowody z terenu",
+    "title": "W produkcji w 48+ krajach",
+    "desc": "Linie Servosteel pracują w zakładach producentów na czterech kontynentach i w wielu branżach. Ze względu na umowy poufności nie publikujemy listy klientów online; referencje z Twojej branży udostępniamy na życzenie.",
+    "regions": [
+      {
+        "name": "Europa",
+        "text": "Od Hiszpanii po Polskę, od Węgier po Włochy: linie Servosteel pracują w zakładach produkujących wg standardów UE."
+      },
+      {
+        "name": "Bliski Wschód",
+        "text": "W regionie intensywnych inwestycji w profile konstrukcyjne i infrastrukturę produkują nasze linie cięcia i profilujące."
+      },
+      {
+        "name": "Afryka",
+        "text": "Jesteśmy obecni w rozwijających się regionach przemysłowych z systemami podawania do pras i liniami cięcia poprzecznego."
+      },
+      {
+        "name": "Daleki Wschód",
+        "text": "Inżynieria i relacja cena/wydajność wybierane nawet w najbardziej konkurencyjnej geografii."
+      }
+    ],
+    "sectorsTitle": "Branże, które obsługujemy",
+    "sectors": [
+      "Centra serwisowe stali",
+      "Systemy regałowe i magazynowe",
+      "Producenci konstrukcji solarnych",
+      "Producenci koryt kablowych",
+      "Systemy bezpieczeństwa drogowego",
+      "Dostawcy motoryzacyjni",
+      "Dostawcy AGD",
+      "Systemy rusztowań i szalunków",
+      "Opakowania metalowe"
+    ],
+    "videoProofTitle": "Najlepsza referencja: działająca linia",
+    "videoProofText": "Ponad 100 prawdziwych filmów z montaży i uruchomień znajdziesz na naszym kanale YouTube.",
+    "videoCta": "Zobacz Filmy",
+    "ctaTitle": "Poproś o referencje ze swojej branży",
+    "ctaText": "Udostępnimy instalacje w zakładach podobnych do Twojego i zorganizujemy wizyty."
+  },
+  "videos": {
+    "metaTitle": "Filmy",
+    "metaDesc": "Zobacz linie Servosteel w działaniu: prawdziwe filmy z linii cięcia, profilowania i systemów podawania do pras.",
+    "eyebrow": "Z terenu",
+    "title": "Zobacz nasze linie w działaniu",
+    "desc": "Nie obietnice z folderu, lecz działające linie: prawdziwe ujęcia z montaży, testów fabrycznych i zakładów klientów.",
+    "items": [
+      {
+        "title": "Systemy Podawania do Pras",
+        "text": "Odwijak, prostownica i podajnik serwo w synchronizacji z linią prasy."
+      },
+      {
+        "title": "Linia Cięcia Poprzecznego — Test Fabryczny",
+        "text": "Linia cięcia poprzecznego podczas testu przed wysyłką."
+      },
+      {
+        "title": "Produkcja Komponentów Dźwigowych",
+        "text": "Produkcja komponentów dźwigowych z systemem podawania do pras."
+      }
+    ],
+    "bannerTitle": "109 filmów, 2,9 tys. subskrybentów",
+    "bannerText": "Całe archiwum na naszym kanale YouTube, od linii cięcia po HMI i oprogramowanie raportowe — nowe filmy dodawane regularnie.",
+    "bannerCta": "Przejdź na kanał YouTube",
+    "ctaTitle": "Szukasz podobnej linii?",
+    "ctaText": "Zaprojektujemy dla Twojego zakładu linię jak z filmu."
+  },
+  "contact": {
+    "metaTitle": "Kontakt",
+    "metaDesc": "Kontakt Servosteel: siedziba Sancaktepe/Stambuł, +90 216 415 30 05, info@servosteel.com.tr. W sprawie ofert i pytań technicznych.",
+    "eyebrow": "Skontaktuj się",
+    "title": "Kontakt",
+    "desc": "Oferta, szczegół techniczny czy wizyta w zakładzie — niezależnie od tematu, możesz skontaktować się bezpośrednio z naszym zespołem inżynierów.",
+    "phoneTitle": "Telefon",
+    "phoneNote": "Dni robocze 08:30 – 18:00 (TRT)",
+    "emailTitle": "E-mail",
+    "emailNote": "Odpowiedź w ciągu 24 godzin",
+    "waTitle": "WhatsApp",
+    "waValue": "Szybka wiadomość",
+    "waNote": "Idealny do dzielenia się zdjęciami i rysunkami",
+    "addressTitle": "Siedziba i Zakład Produkcyjny",
+    "country": "Turcja",
+    "hours": "Poniedziałek – piątek: 08:30 – 18:00",
+    "directions": "Wyznacz Trasę",
+    "mapTitle": "Mapa lokalizacji Servosteel",
+    "quoteBoxTitle": "Potrzebujesz oferty?",
+    "quoteBoxText": "Prześlij dane produktu, wydajności i wymiarów przez uporządkowany formularz; nasz zespół inżynierów odpowie w ciągu 48 godzin.",
+    "quoteBoxCta": "Przejdź do Formularza"
+  },
+  "quote": {
+    "metaTitle": "Zapytanie ofertowe",
+    "metaDesc": "Poproś o ofertę na linie profilujące, cięcia wzdłużnego i poprzecznego: prześlij dane produktu i wydajności, odpowiadamy w ciągu 48 godzin.",
+    "eyebrow": "Odpowiedź w 48 godzin",
+    "title": "Oferta dla Twojego projektu",
+    "desc": "Im więcej szczegółów podasz, tym trafniejsza oferta — ale jeśli jeszcze nie wiesz, to nic: właściwą konfigurację ustalimy wspólnie.",
+    "processTitle": "Jak to działa?",
+    "steps": [
+      "Twoje zapytanie tego samego dnia trafia do zespołu inżynierów",
+      "W razie potrzeby doprecyzowujemy potrzebę telefonicznie",
+      "Oferta powstaje z rysunkami i obliczeniem wydajności",
+      "Pisemna oferta w Twoich rękach w ciągu 48 godzin"
+    ],
+    "directTitle": "Wolisz kontakt bezpośredni?",
+    "form": {
+      "name": "Imię i nazwisko *",
+      "namePh": "Twoje imię i nazwisko",
+      "company": "Firma *",
+      "companyPh": "Nazwa firmy",
+      "email": "E-mail *",
+      "emailPh": "przyklad@firma.com",
+      "phone": "Telefon *",
+      "phonePh": "+48 ...",
+      "location": "Kraj / Miasto",
+      "locationPh": "Kraj / Miasto",
+      "product": "Produkt, który Cię interesuje *",
+      "specs": "Grubość blachy / masa kręgu / wymiar profilu",
+      "specsPh": "Np.: blacha 0,5-2 mm, krąg 10 t, profil solarny 41x41",
+      "message": "Twoja wiadomość",
+      "messagePh": "Opisz krótko projekt; jeśli masz rysunek profilu, dołącz go do e-maila.",
+      "submit": "Wyślij Zapytanie",
+      "wa": "Napisz na WhatsApp",
+      "note": "Przycisk „Wyślij” otwiera Twoje zapytanie jako gotową wiadomość w aplikacji poczty — przed wysłaniem możesz je sprawdzić i dołączyć rysunki lub zdjęcia.",
+      "waPrefill": "Dzień dobry, chciałbym otrzymać ofertę na: {product}.",
+      "mailSubject": "Zapytanie ofertowe — {product}",
+      "mailIntro": "Nowe zapytanie ofertowe (formularz na stronie)",
+      "mailFields": {
+        "name": "Imię i nazwisko",
+        "company": "Firma",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "location": "Kraj/Miasto",
+        "product": "Produkt",
+        "specs": "Grubość / wydajność",
+        "message": "Wiadomość"
+      },
+      "options": [
+        "Linia Profilująca — Koryto Kablowe",
+        "Linia Profilująca — Profil Solarny",
+        "Linia Profilująca — Regał Ciężki",
+        "Linia Profilująca — Pomost Rusztowaniowy",
+        "Linia Profilująca — Bariera Drogowa",
+        "Linia Profilująca — Ekran Akustyczny",
+        "Linia Profilująca — C+/Sigma/Omega",
+        "Linia Profilująca — Profil Specjalny",
+        "Linia Cięcia Wzdłużnego",
+        "Linia Cięcia Poprzecznego",
+        "Odwijak",
+        "Podajnik Serwo",
+        "Podajnik Serwo z Prostownicą",
+        "Linia Kompaktowa",
+        "Inne / Niezdecydowany"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "text": "Szukana strona mogła zostać przeniesiona lub nigdy nie istniała.",
+    "back": "Powrót na stronę główną"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Linia Produkcji Koryt Kablowych",
+        "short": "Kompletna linia do koryt perforowanych i pełnych, tras i pokryw.",
+        "hero": "Kompletna linia profilująca produkująca koryta kablowe — kręgosłup infrastruktury elektrycznej — z kręgu do gotowego produktu: odwijak, prostownica, podawanie serwo, stacje wykrawania, profilarka i zespół cięcia sterowane z jednego PLC.",
+        "meta": "Linia koryt kablowych: kompletne rozwiązanie profilujące na zamówienie do koryt perforowanych/pełnych, tras i pokryw.",
+        "features": [
+          {
+            "title": "Wykrawanie w linii",
+            "text": "Otwory wentylacyjne i montażowe wykrawają stacje serwo w linii, bez osobnej operacji."
+          },
+          {
+            "title": "Szybka zmiana wymiaru",
+            "text": "Zmiana recepturowa między szerokościami koryta; czasy przezbrojenia ograniczone do minimum."
+          },
+          {
+            "title": "Do blachy ocynkowanej",
+            "text": "Rolki są obrabiane i hartowane tak, by nie uszkadzać powłoki cynkowej (stal 4140, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Odwijak (hydrauliczny lub mechaniczny)",
+          "Zespół prostujący",
+          "Podajnik serwo",
+          "Stacje wykrawania",
+          "Profilarka",
+          "Zespół cięcia (nożyce końcowe)",
+          "Przenośnik wyjściowy i układanie"
+        ],
+        "sectors": ["Infrastruktura elektryczna", "Centra danych", "Obiekty przemysłowe", "Galerie i projekty budowlane"]
+      },
+      "solar-profil": {
+        "name": "Linia Produkcji Profili Solarnych",
+        "short": "Szybkie profilowanie profili montażowych PV.",
+        "hero": "Linia produkująca profile hat, C i Omega do konstrukcji nośnych elektrowni słonecznych bezpośrednio z kręgu; stacje wykrawania wykonują otwory montażowe w linii, a profile trafiają na budowę gotowe do montażu.",
+        "meta": "Linia profili montażowych solarnych: kompletna, szybka linia profilująca ze stacjami wykrawania do konstrukcji PV.",
+        "features": [
+          {
+            "title": "Kształt profilu pod projekt",
+            "text": "Narzędzia rolkowe projektujemy pod przekroje hat, C, U lub Omega wg projektu statycznego EPC."
+          },
+          {
+            "title": "Do Magnelis® i ocynku",
+            "text": "Blachy o wysokiej odporności na korozję są kształtowane powierzchniami rolek chroniącymi powłokę."
+          },
+          {
+            "title": "Receptury długości i otworów",
+            "text": "Wzór otworów i długość dla różnych typów stołów wybiera się jako recepturę w HMI."
+          }
+        ],
+        "components": [
+          "Odwijak",
+          "Prostownica + podajnik serwo",
+          "Stacje wykrawania serwo",
+          "Profilarka",
+          "Nożyce latające",
+          "Automatyczne układanie"
+        ],
+        "sectors": ["Solar / firmy EPC", "PV dachowe", "Elektrownie gruntowe", "Agro-PV"]
+      },
+      "agir-raf": {
+        "name": "Linia Produkcji Regałów Ciężkich",
+        "short": "Linia ze stacjami wykrawania do słupów i belek regałowych.",
+        "hero": "Linia produkująca nośne słupy (uprights) i belki regałów magazynów logistycznych; wielorzędowe otwory montażowe są wykrawane w linii serwowykrawakami, a stabilność wymiarowa jest utrzymana nawet na grubej blasze.",
+        "meta": "Linia regałów ciężkich: profilowanie na zamówienie ze stacjami wykrawania do słupów i belek regałowych.",
+        "features": [
+          {
+            "title": "Wykrawanie wielorzędowe",
+            "text": "Otwory zaczepowe słupów są wykrawane przez stacje serwo bez zmniejszania prędkości linii."
+          },
+          {
+            "title": "Praca z grubą blachą",
+            "text": "Rama i rolki dobrane do dużych grubości ścianek wymaganych przez systemy regałowe."
+          },
+          {
+            "title": "Powtarzalność wymiarowa",
+            "text": "Podawanie serwo i kontrola enkoderem utrzymują dokładność między otworami w serii."
+          }
+        ],
+        "components": [
+          "Odwijak serii ciężkiej",
+          "Zespół prostujący",
+          "Podajnik serwo",
+          "Wielostanowiskowa grupa wykrawająca",
+          "Profilarka",
+          "Zespół cięcia",
+          "System układania"
+        ],
+        "sectors": ["Magazyny i logistyka", "Producenci regałów", "Magazyny e-commerce", "Chłodnie"]
+      },
+      "iskele-kalas": {
+        "name": "Linia Produkcji Pomostów Rusztowaniowych",
+        "short": "Produkcja antypoślizgowych pomostów i pomostów rusztowaniowych.",
+        "hero": "Linia produkująca stalowe pomosty komunikacyjne rusztowań budowlanych; antypoślizgowe przetłoczenia powierzchni i otwory odwadniające powstają w linii, a do zaginania haków końcowych można zintegrować stację prasy.",
+        "meta": "Linia pomostów rusztowaniowych: kompletne profilowanie antypoślizgowych stalowych pomostów.",
+        "features": [
+          {
+            "title": "Powierzchnia antypoślizgowa",
+            "text": "Przetłoczenia romboidalne/ryflowane są tłoczone w sposób ciągły w stacjach profilujących."
+          },
+          {
+            "title": "Otwory odwadniające i odciążające",
+            "text": "Wzory otworów są wykrawane w linii; pomost staje się lżejszy i bezpieczniejszy jednocześnie."
+          },
+          {
+            "title": "Integracja obróbki końców",
+            "text": "Zaginanie haków i cięcie końcowe można zintegrować jako stację na końcu linii."
+          }
+        ],
+        "components": [
+          "Odwijak",
+          "Prostownica + podajnik serwo",
+          "Stacje wykrawania",
+          "Profilarka",
+          "Zespół cięcia",
+          "Stacja obróbki końców (opcja)"
+        ],
+        "sectors": ["Systemy rusztowań", "Sprzęt budowlany", "Wynajem szalunków i rusztowań", "Bezpieczeństwo na budowie"]
+      },
+      "yol-bariyeri": {
+        "name": "Linia Produkcji Barier Drogowych",
+        "short": "Ciężkie profilowanie barier typu W (W-beam).",
+        "hero": "Linia dużej wydajności produkująca bariery W-beam (dwufalowe) i trójfalowe — standard bezpieczeństwa drogowego; kształtuje falę na grubej blasze ocynkowanej z dokładnością zgodną z normą.",
+        "meta": "Linia barier drogowych: ciężkie profilowanie barier W-beam i trójfalowych.",
+        "features": [
+          {
+            "title": "Kształt zgodny z normą",
+            "text": "Projekt narzędzi rolkowych i kontrola kształtu dla geometrii barier wg EN 1317."
+          },
+          {
+            "title": "Ciężka konstrukcja ramy",
+            "text": "Sztywny korpus i mocny napęd prowadzą blachę ocynkowaną 3-4 mm bez bicia nawet w formie fali."
+          },
+          {
+            "title": "Dokładność otworów i długości",
+            "text": "Otwory łączące i długości cięcia ustalone sterowaniem serwo; montaż na trasie jest bezproblemowy."
+          }
+        ],
+        "components": [
+          "Odwijak ciężki (10-15 t)",
+          "Zespół prostujący",
+          "Podawanie serwo + wykrawanie",
+          "Profilarka dużej wydajności",
+          "Cięcie hydrauliczne",
+          "Układanie"
+        ],
+        "sectors": ["Wykonawcy drogowi", "Projekty autostradowe", "Ocynkownie", "Eksporterzy infrastruktury"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Linia Produkcji Ekranów Akustycznych",
+        "short": "Profilowanie kaset i paneli ekranów akustycznych.",
+        "hero": "Linia produkująca aluminiowe/stalowe profile kasetowe ekranów akustycznych wzdłuż autostrad i kolei; perforowany panel przedni (absorber) i pełny panel tylny mogą powstawać na tej samej platformie.",
+        "meta": "Linia ekranów akustycznych: profilowanie perforowanych i pełnych profili kasetowych i panelowych.",
+        "features": [
+          {
+            "title": "Panele perforowane",
+            "text": "Perforacja przedniej strony dla pochłaniania akustycznego jest integrowana w linii lub przed podawaniem."
+          },
+          {
+            "title": "Aluminium i stal",
+            "text": "Ustawienia nacisku rolek dla różnych materiałów i grubości są zarządzane recepturami."
+          },
+          {
+            "title": "Długie panele",
+            "text": "Precyzyjne cięcie na długość i bezpieczne układanie według modułów ekranu."
+          }
+        ],
+        "components": [
+          "Odwijak",
+          "Prostownica + podajnik serwo",
+          "Zespół perforacji/wykrawania",
+          "Profilarka",
+          "Zespół cięcia",
+          "Układanie"
+        ],
+        "sectors": ["Projekty autostradowe", "Kolej i metro", "Inżynieria środowiska", "Infrastruktura miejska"]
+      },
+      "c-sigma-omega": {
+        "name": "Linia Profili C+ / Sigma / Omega",
+        "short": "Profile lekkiej konstrukcji stalowej: wiele przekrojów na jednej linii.",
+        "hero": "Elastyczne rozwiązanie produkujące profile C, Sigma i Omega — nośne elementy lekkich konstrukcji stalowych — na jednej linii; zmiana przekroju zajmuje minuty dzięki regulowanym grupom rolek i systemowi receptur.",
+        "meta": "Linia profili C, Sigma i Omega: regulowane, wieloprzekrojowe profilowanie do lekkich konstrukcji stalowych.",
+        "features": [
+          {
+            "title": "Trzy przekroje na jednej linii",
+            "text": "Formy C, Sigma i Omega powstają na tej samej linii z regulowanymi stacjami; inwestycja maleje."
+          },
+          {
+            "title": "Automatyczna regulacja szerokości/wysokości",
+            "text": "Zmiany wymiaru wykonywane osiami serwo za pomocą receptur HMI."
+          },
+          {
+            "title": "Konstrukcyjne wzory otworów",
+            "text": "Otwory na śruby i serwisowe są wykrawane w linii wg projektu."
+          }
+        ],
+        "components": [
+          "Odwijak",
+          "Prostownica + podajnik serwo",
+          "Stacje wykrawania",
+          "Regulowana profilarka",
+          "Nożyce latające",
+          "Układanie"
+        ],
+        "sectors": ["Lekka konstrukcja stalowa", "Konstrukcja solarna", "Budynki prefabrykowane", "Hale przemysłowe", "Płatwie"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Odwijaki",
+        "short": "Hydrauliczne 6-20 t i mechaniczne 500-2.500 kg.",
+        "hero": "Pierwsze ogniwo każdej linii: odwijaki hydrauliczne i mechaniczne, które bezpiecznie utrzymują krąg i rozwijają go z kontrolowanym naprężeniem. Projektowane pod wydajność, szerokość blachy i poziom automatyzacji.",
+        "meta": "Odwijaki hydrauliczne (6-20 t) i mechaniczne (500-2.500 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
+        "features": [
+          {
+            "title": "Hydrauliczne rozpieranie trzpienia",
+            "text": "W seriach ciężkich średnica wewnętrzna kręgu jest zaciskana hydraulicznie; załadunek jest szybki i bezpieczny."
+          },
+          {
+            "title": "Opcja wózka załadowczego",
+            "text": "Wózek hydrauliczny pozwala wprowadzić ciężkie kręgi na linię bez oczekiwania na suwnicę."
+          },
+          {
+            "title": "Synchronizacja z linią",
+            "text": "Ze sterowaniem ramieniem tańczącym / fotokomórką odwijak sam dostosowuje się do prędkości linii."
+          }
+        ],
+        "sectors": ["Podawanie do pras", "Linie cięcia wzdłużnego", "Linie cięcia poprzecznego", "Linie profilujące"],
+        "table": {
+          "title": "Opcje wydajności",
+          "head": ["Seria", "Modele"],
+          "rows": [
+            ["Odwijaki hydrauliczne", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Odwijaki mechaniczne", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Podajniki Serwo",
+        "short": "Precyzyjne podawanie krokowe do pras; seria standardowa i mini.",
+        "hero": "Podajniki serwo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
+        "meta": "Podajniki serwo: seria standardowa i mini do linii prasowych, precyzyjne podawanie oparte na Schneider Lexium.",
+        "features": [
+          {
+            "title": "Precyzja kroku milimetrowa",
+            "text": "Połączenie serwosilnik + przekładnia precyzyjna utrzymuje tolerancje kroku w serii."
+          },
+          {
+            "title": "Synchronizacja z prasą",
+            "text": "W pełni synchroniczna praca z sygnałem krzywki prasy; funkcja zwolnienia pilotów w standardzie."
+          },
+          {
+            "title": "Łatwa obsługa",
+            "text": "Długość kroku, prędkość i rampy zapisywane jako receptury na dotykowym HMI."
+          }
+        ],
+        "sectors": ["Tłocznie metalu", "Dostawcy motoryzacyjni", "AGD", "Elektryka-elektronika"],
+        "table": {
+          "title": "Serie",
+          "head": ["Seria", "Zastosowanie"],
+          "rows": [
+            ["Podajniki serwo standardowe", "Blacha średnia i szeroka, prasy o dużym tonażu"],
+            ["Podajniki serwo mini", "Wąska blacha i kompaktowe linie prasowe"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Podajniki Serwo z Prostownicą",
+        "short": "Prostowanie i podawanie w jednym korpusie: oszczędność miejsca i inwestycji.",
+        "hero": "Kompaktowe rozwiązanie łączące w jednym korpusie rolki prostujące usuwające pamięć kręgu z podawaniem serwo; eliminuje osobną prostownicę i jej powierzchnię.",
+        "meta": "Podajniki serwo z prostownicą: prostowanie + precyzyjne podawanie w jednej maszynie. Wersja szafowa i mini.",
+        "features": [
+          {
+            "title": "Dwie operacje, jedna maszyna",
+            "text": "Prostowanie i podawanie w tym samym korpusie; linia się skraca, instalacja upraszcza."
+          },
+          {
+            "title": "Regulowany nacisk prostowania",
+            "text": "Naciski rolek regulowane bezstopniowo do grubości blachy."
+          },
+          {
+            "title": "Wersja szafowa i mini",
+            "text": "W zależności od szerokości i grubości wybiera się serię szafową (ciężką) lub mini."
+          }
+        ],
+        "sectors": ["Podawanie do pras", "Dostawcy motoryzacyjni", "Opakowania metalowe", "Ogólna obróbka blachy"],
+        "table": {
+          "title": "Serie",
+          "head": ["Seria", "Zastosowanie"],
+          "rows": [
+            ["Z prostownicą, wersja szafowa", "Gruba blacha, duża potrzeba prostowania"],
+            ["Z prostownicą, wersja mini", "Cienka blacha, linie kompaktowe"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Linie Kompaktowe",
+        "short": "Odwijak + prostownica + podajnik na jednej platformie.",
+        "hero": "Linie kompaktowe łączą odwijanie, prostowanie i podawanie serwo na jednej platformie; przeznaczone dla zakładów, które chcą pełne podawanie do pras na ograniczonej powierzchni.",
+        "meta": "Kompaktowe linie podawania do pras: odwijak, prostownica i podajnik serwo na jednej platformie.",
+        "features": [
+          {
+            "title": "Minimalna powierzchnia",
+            "text": "Praca trzech maszyn na jednej ramie; znaczna oszczędność miejsca względem klasycznego układu."
+          },
+          {
+            "title": "Sterowanie z jednego punktu",
+            "text": "Odwijak, prostownica i podajnik obsługiwane z jednego HMI; mniejsze obciążenie operatora."
+          },
+          {
+            "title": "Szybkie uruchomienie",
+            "text": "Jeden korpus przetestowany fabrycznie; instalacja i uruchomienie na miejscu są krótkie."
+          }
+        ],
+        "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"]
+      }
+    }
+  }
+}

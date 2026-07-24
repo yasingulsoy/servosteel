@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Roll Form, Rulo Dilme ve Boy Kesme Hatları",
+    "description": "Roll form hatları, rulo dilme hatları, boy kesme hatları ve pres besleme sistemlerinde müşteriye özel tasarım ve üretim. İstanbul'dan 48+ ülkeye ihracat."
+  },
+  "topbar": {
+    "export": "48+ ülkeye ihracat",
+    "theme": "Açık/koyu tema"
+  },
+  "nav": {
+    "rollform": "Roll Form Hatları",
+    "slitting": "Dilme Hatları",
+    "ctl": "Boy Kesme Hatları",
+    "machines": "Makineler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "quote": "Teklif Al",
+    "seeAll": "Tümünü Gör →",
+    "mainAria": "Ana menü",
+    "mobileAria": "Mobil menü",
+    "homeAria": "Servosteel ana sayfa",
+    "menuOpen": "Menüyü aç",
+    "menuClose": "Menüyü kapat",
+    "langAria": "Dil seçin",
+    "langTitle": "Dil Seçin",
+    "langDesc": "Siteyi görüntülemek istediğiniz dili seçin."
+  },
+  "footer": {
+    "blurb": "Rulo sac işleme ve roll form hatlarında müşteriye özel tasarım, üretim ve anahtar teslim kurulum. İstanbul'dan 48+ ülkeye.",
+    "products": "Ürünler",
+    "corporate": "Kurumsal",
+    "contact": "İletişim",
+    "youtube": "YouTube kanalımız",
+    "rights": "Tüm hakları saklıdır.",
+    "tagline": "Rulo sac işleme & roll form teknolojileri",
+    "refs": "Referanslar",
+    "videos": "Videolar",
+    "slitting": "Rulo Dilme Hatları"
+  },
+  "common": {
+    "home": "Ana Sayfa",
+    "breadcrumbAria": "Sayfa yolu",
+    "details": "Detayları Gör",
+    "examine": "İncele",
+    "lineExamine": "Hattı İncele",
+    "seeAll": "Tümünü gör",
+    "sendDrawing": "Çiziminizi gönderin"
+  },
+  "cta": {
+    "title": "Projenize özel hat tasarlayalım",
+    "text": "Profil çiziminizi veya kapasite ihtiyacınızı iletin; mühendislik ekibimiz 48 saat içinde dönüş yapsın.",
+    "quote": "Teklif Al"
+  },
+  "home": {
+    "badge": "İstanbul'dan 48+ ülkeye ihracat",
+    "h1l1": "Rulo sacı",
+    "h1l2": "ürüne dönüştüren",
+    "h1l3": "hatlar",
+    "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
+    "cta1": "Projeniz İçin Teklif Alın",
+    "cta2": "Hatları İnceleyin",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Yıl tecrübe" },
+      { "value": "48+", "label": "İhracat ülkesi" },
+      { "value": "%99", "label": "Zamanında teslimat" },
+      { "value": "%99", "label": "Kalite kontrol onayı" }
+    ],
+    "solutionsEyebrow": "Uzmanlık alanlarımız",
+    "solutionsTitle": "Üç ana hat, tek imza",
+    "solutionsText": "Açıcıdan istifleyiciye kadar her ekipman kendi tesisimizde üretilir — tek muhatap, tam uyumlu hat.",
+    "solutions": {
+      "rollform": {
+        "title": "Roll Form Hatları",
+        "desc": "Kablo kanalından yol bariyerine 7 profil ailesi için komple hat: açıcıdan kesme ünitesine kadar tüm ekipman Servosteel üretimi."
+      },
+      "slitting": {
+        "title": "Rulo Dilme Hatları",
+        "desc": "Geniş ruloyu istenen ölçüde şeritlere dilen hafif ve ağır seri hatlar: 1.500–15.000 kg kapasite, 0,5–5 mm kalınlık aralığı."
+      },
+      "ctl": {
+        "title": "Boy Kesme Hatları",
+        "desc": "Rulodan plakaya hassas kesim: doğrultma, servo besleme ve giyotin tek noktadan PLC ile kontrol edilen komple çözüm."
+      }
+    },
+    "rollformEyebrow": "Roll form hatları",
+    "rollformTitle": "7 profil ailesi için hazır know-how",
+    "rollformSeeAll": "Tüm hatları gör",
+    "customText": "Katalogda olmayan bir profil mi lazım? Hatlarımız <b>müşteri çizimine göre</b> tasarlanır.",
+    "machinesEyebrow": "Pres besleme sistemleri",
+    "machinesTitle": "Hattı tamamlayan makineler",
+    "machinesSeeAll": "Tüm makineler",
+    "processEyebrow": "Nasıl çalışıyoruz",
+    "processTitle": "Fikirden üretim onayına 4 adım",
+    "process": [
+      {
+        "title": "Danışmanlık",
+        "text": "İhtiyacınızı yerinde veya çevrim içi analiz ediyor, doğru hat konfigürasyonunu birlikte belirliyoruz."
+      },
+      {
+        "title": "Detaylı Teklif",
+        "text": "Teknik çizim, kapasite hesabı ve terminiyle şeffaf, mühendislik temelli teklif sunuyoruz."
+      },
+      {
+        "title": "Üretim",
+        "text": "Tüm ekipman kendi tesisimizde üretiliyor; Schneider kontrol sistemleriyle test ediliyor."
+      },
+      {
+        "title": "Kurulum & Devreye Alma",
+        "text": "Sahada montaj, operatör eğitimi ve üretim onayına kadar yanınızdayız."
+      }
+    ],
+    "videoEyebrow": "Sahadan görüntüler",
+    "videoTitle": "Hatlarımızı çalışırken izleyin",
+    "videoText": "Dilme hattından roll form üretimine, HMI ve raporlama yazılımına kadar 100'den fazla videoyu YouTube kanalımızda bulabilirsiniz.",
+    "videoCta": "Videoları İzleyin",
+    "videoBadge": "109 video · 2,9 B abone",
+    "videoAria": "ServoSteel YouTube kanalı"
+  },
+  "hub": {
+    "eyebrow": "Uzmanlık alanımız",
+    "title": "Roll Form Hatları",
+    "desc": "Rulodan nihai profile: 7 profil ailesi için açıcıdan istifleyiciye kadar tamamı Servosteel imzalı, projeye özel tasarlanan komple üretim hatları.",
+    "metaDesc": "Kablo kanalı, solar profil, raf, iskele kalası, yol ve gürültü bariyeri, C/Sigma/Omega profilleri için müşteriye özel komple roll form hatları.",
+    "flow": ["Rulo Açıcı", "Doğrultma", "Servo Besleme", "Zımba İstasyonları", "Roll Form Makinesi", "Kesme", "İstifleme"],
+    "customTitle": "Özel Profil Hattı",
+    "customText": "Bu listede olmayan bir kesit mi üreteceksiniz? Merdane tasarımından otomasyona kadar hat, profil çiziminize göre projelendirilir.",
+    "customCta": "Çiziminizi Gönderin",
+    "ctaTitle": "Profilinize özel roll form hattı"
+  },
+  "machinesHub": {
+    "eyebrow": "Pres besleme sistemleri",
+    "title": "Makineler",
+    "metaTitle": "Makineler — Pres Besleme Sistemleri",
+    "metaDesc": "Rulo açıcılar, servo sürücüler, doğrultmalı servo sürücüler ve kompakt hatlar: pres besleme sistemlerinde müşteriye özel çözümler.",
+    "desc": "Hattın her halkası için tek çatı: rulo açıcılar, servo sürücüler, doğrultmalı sürücüler ve kompakt hatlar — hepsi kendi tesisimizde, ihtiyacınıza göre boyutlandırılarak üretilir.",
+    "ctaTitle": "Doğru makineyi birlikte seçelim"
+  },
+  "detail": {
+    "features": "Öne çıkan özellikler",
+    "components": "Hat bileşenleri",
+    "componentsNote": "Tüm bileşenler Servosteel tesisinde üretilir ve hat, sevkiyat öncesi fabrikada komple test edilir.",
+    "sectors": "Uygulama alanları",
+    "usage": "Kullanım alanları",
+    "otherLines": "Diğer roll form hatları",
+    "otherMachines": "Diğer makineler",
+    "lineQuote": "Bu Hat İçin Teklif Al",
+    "machineQuote": "Bu Makine İçin Teklif Al",
+    "quoteTitle": "{name} için teklif alın",
+    "eyebrowLine": "Roll form hattı",
+    "eyebrowMachine": "Pres besleme sistemleri",
+    "profileNote": "Profil ölçüleri ve kalınlık aralığı <b>projenize göre</b> belirlenir; merdane tasarımı çiziminize yapılır.",
+    "whyTitle": "Neden Servosteel?",
+    "why": [
+      "Müşteriye özel boyutlandırma ve tasarım",
+      "Schneider tabanlı kontrol sistemleri",
+      "Fabrikada komple test, sahada devreye alma",
+      "48+ ülkede saha tecrübesi",
+      "Yedek parça ve uzaktan destek"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Rulo Dilme Hatları",
+    "metaDesc": "1.500-15.000 kg kapasiteli rulo dilme hatları: geniş ruloları istenen ölçüde şeritlere diler. 0,5-5 mm kalınlık aralığı, Schneider kontrol sistemleri.",
+    "eyebrow": "Uzmanlık alanımız",
+    "title": "Rulo Dilme Hatları",
+    "desc": "Geniş ruloları istediğiniz ölçüde şeritlere dilen komple hatlar: açıcıdan sarıcıya kadar tüm ekipman Servosteel tesisinde üretilir, fabrikada test edilir, sahada anahtar teslim devreye alınır.",
+    "highlights": [
+      {
+        "title": "Tek rulodan çok şerit",
+        "text": "Geniş ana rulo, sipariş ölçülerinize göre aynı anda birden çok şeride dilinir; fire ve stok maliyeti düşer."
+      },
+      {
+        "title": "Şerit genişliği hassasiyeti",
+        "text": "Bıçak gruplarının hassas ayarı ve gergin sarma sayesinde şerit genişlikleri dar toleranslarda kalır."
+      },
+      {
+        "title": "Kapasiteye göre boyutlandırma",
+        "text": "1,5 tondan 15 tona kadar rulo ağırlıkları için hafif ve ağır seri şase seçenekleri."
+      },
+      {
+        "title": "Schneider kontrol mimarisi",
+        "text": "Lexium ve Altivar tabanlı hız kontrolü; hat tek operatör paneli üzerinden yönetilir."
+      }
+    ],
+    "tableTitle": "Kapasite ve kalınlık seçenekleri",
+    "tableHead": ["Seri", "Rulo kapasitesi", "Sac kalınlığı"],
+    "tableRows": [
+      ["Hafif seri", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Ağır seri", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "Tablodaki değerler standart serilerdir; rulo genişliği, şerit sayısı ve hat hızı projenize göre boyutlandırılır.",
+    "components": [
+      "Rulo açıcı",
+      "Rulo yükleme arabası",
+      "Otomatik gönye sistemi",
+      "Doğrultma ünitesi",
+      "Otomatik besleme",
+      "Dilme ünitesi (bıçak grubu)",
+      "Otomatik rulo döküm sistemi",
+      "Sarma (recoiler) sistemi"
+    ],
+    "ctaTitle": "Dilme hattınızı boyutlandıralım",
+    "ctaText": "Rulo ağırlığı, sac kalınlığı ve şerit ölçülerinizi iletin; size uygun seriyi ve hat yerleşimini birlikte netleştirelim."
+  },
+  "boykesme": {
+    "metaTitle": "Boy Kesme Hatları",
+    "metaDesc": "Boy kesme hatları: rulodan plakaya hassas kesim. Doğrultma, servo besleme, giyotin ve istifleme tek PLC üzerinden yönetilir. Schneider kontrol sistemleri.",
+    "eyebrow": "Uzmanlık alanımız",
+    "title": "Boy Kesme Hatları",
+    "desc": "Ruloyu istediğiniz boyda plakaya dönüştüren komple hatlar: doğrultma, servo besleme, giyotin ve istifleme — tamamı kendi tesisimizde üretilir, tek PLC üzerinden yönetilir.",
+    "highlights": [
+      {
+        "title": "Boy hassasiyeti",
+        "text": "Servo besleme ve enkoder ölçümüyle plaka boyları dar toleransta kesilir; seri üretimde tekrarlılık korunur."
+      },
+      {
+        "title": "Temiz kesim",
+        "text": "Giyotin makas bıçak boşluğu sac kalınlığına göre ayarlanır; çapaksız, çarpılmasız kesim elde edilir."
+      },
+      {
+        "title": "Tek noktadan kontrol",
+        "text": "Hattın tamamı PLC üzerinden tek operatör panelinden yönetilir; boy, adet ve reçeteler HMI'da saklanır."
+      },
+      {
+        "title": "Yüzey koruma",
+        "text": "Opsiyonel PVC folyo uygulama ünitesi, hassas yüzeyli sacları istifleme öncesi çizilmeye karşı korur."
+      }
+    ],
+    "whyTitle": "Neden Servosteel boy kesme hattı?",
+    "paras": [
+      "Hattın ilk halkasından son istifine kadar tüm ekipman <b>tek üreticiden</b> çıkar: açıcı, doğrultucu, besleme, makas ve istifleme birbirine göre boyutlandırılır. Farklı tedarikçilerden toplanan hatlarda görülen uyum problemleri baştan ortadan kalkar.",
+      "Hız kontrolünde <b>Schneider Lexium ve Altivar</b> serisi sürücüler kullanılır; hat sevkiyattan önce fabrikamızda komple kurulup test edilir, sahada devreye alma bu sayede kısa sürer.",
+      "Sac kalınlığı, rulo ağırlığı ve plaka ölçülerinize göre hat konfigürasyonu projelendirilir; ihtiyaç halinde hat, dilme ünitesiyle kombine edilerek hem şerit hem plaka üretecek şekilde tasarlanabilir."
+    ],
+    "components": [
+      "Rulo açıcı",
+      "Rulo yükleme arabası",
+      "Doğrultma ünitesi",
+      "Otomatik servo besleme",
+      "Giyotin makas",
+      "Otomatik istifleme ünitesi",
+      "Otomatik PVC folyo uygulama sistemi"
+    ],
+    "ctaTitle": "Boy kesme hattınızı projelendirelim",
+    "ctaText": "Sac kalınlığı, rulo ağırlığı ve plaka ölçülerinizi iletin; hat yerleşimi ve teknik teklifle dönelim."
+  },
+  "about": {
+    "metaTitle": "Hakkımızda",
+    "metaDesc": "Servosteel: pres besleme sistemleri ve rulo sac işleme hatlarında 10+ yıllık tecrübe. İstanbul'dan 48+ ülkeye müşteriye özel makine üretimi.",
+    "eyebrow": "Servosteel",
+    "title": "Çeliğe şekil veren mühendislik",
+    "desc": "Servosteel, pres besleme sistemleri ve rulo sac işleme hatlarında uzmanlaşmış bir Türk makine üreticisidir. 10 yılı aşkın süredir her makineyi müşterinin ihtiyacına göre tasarlıyor, üretiyor ve devreye alıyoruz.",
+    "stats": [
+      { "value": "10+", "label": "Yıl tecrübe" },
+      { "value": "48+", "label": "İhracat ülkesi" },
+      { "value": "27+", "label": "Uzman kadro" },
+      { "value": "%99", "label": "Zamanında teslimat" }
+    ],
+    "storyTitle": "Tek makineden komple hatta",
+    "story": [
+      "Servosteel, pres hatlarını besleyen makinelerle yola çıktı: rulo açıcılar, doğrultucular ve servo sürücüler. Sahada kazanılan tecrübe, zamanla komple hat mühendisliğine dönüştü — bugün rulo dilme, boy kesme ve roll form hatlarını anahtar teslim kuruyoruz.",
+      "Bizi farklı kılan şey, hattın her halkasının <b>tek çatı altında</b> üretilmesi: mekanik tasarım, imalat, otomasyon yazılımı ve devreye alma aynı ekipte. Müşterilerimiz tek muhatapla çalışır; hat bileşenleri birbiriyle tam uyumlu gelir.",
+      "İstanbul Sancaktepe'deki tesisimizden çıkan hatlar bugün <b>48'den fazla ülkede</b> — Avrupa, Orta Doğu, Afrika ve Uzak Doğu'da — üretim yapıyor."
+    ],
+    "values": [
+      {
+        "title": "Misyonumuz",
+        "text": "Doğru endüstriyel makineyi, en iyi hizmet ve değerle sunmak: her hat, müşterinin gerçek ihtiyacına göre projelendirilir — ne eksik, ne fazla."
+      },
+      {
+        "title": "Vizyonumuz",
+        "text": "Sürdürülebilir ve geri dönüştürülebilir üretime katkı sağlayan makineler geliştirerek, rulo sac işlemede dünya çapında tercih edilen Türk markası olmak."
+      },
+      {
+        "title": "Üretim yaklaşımımız",
+        "text": "Açıcıdan istifleyiciye her bileşen kendi tesisimizde üretilir; hat sevkiyat öncesi fabrikada komple kurulup test edilir."
+      },
+      {
+        "title": "Ekibimiz",
+        "text": "Mekanik tasarımdan otomasyona 27+ kişilik deneyimli kadro; satış sonrasında da aynı mühendisler projenizin yanında."
+      }
+    ],
+    "journeyEyebrow": "Yolculuğumuz",
+    "journeyTitle": "Adım adım büyüyen uzmanlık",
+    "timeline": [
+      {
+        "title": "Pres besleme kökeni",
+        "text": "Yolculuk, pres hatlarına hassas sac besleyen açıcı, doğrultucu ve servo sürücülerle başladı."
+      },
+      {
+        "title": "Komple hatlara geçiş",
+        "text": "Tek makineden komple çözüme: dilme ve boy kesme hatları ürün gamına eklendi."
+      },
+      {
+        "title": "Roll form uzmanlığı",
+        "text": "Kablo kanalından yol bariyerine 7 profil ailesini kapsayan roll form hatları geliştirildi."
+      },
+      {
+        "title": "48+ ülkeye ihracat",
+        "text": "Bugün Avrupa'dan Uzak Doğu'ya dört kıtada Servosteel hatları üretim yapıyor."
+      }
+    ],
+    "ctaTitle": "Projenizi konuşalım",
+    "ctaText": "İhtiyacınız ister tek makine ister komple hat olsun — mühendislik ekibimiz dinlemeye hazır."
+  },
+  "refs": {
+    "metaTitle": "Referanslar",
+    "metaDesc": "Servosteel hatları Avrupa, Orta Doğu, Afrika ve Uzak Doğu'da 48'den fazla ülkede üretim yapıyor. Sektör ve bölge bazlı referanslarımız.",
+    "eyebrow": "Sahadan kanıt",
+    "title": "48+ ülkede üretimde",
+    "desc": "Servosteel hatları dört kıtada, farklı sektörlerden üreticilerin tesislerinde çalışıyor. Gizlilik anlaşmaları gereği müşteri listemizi web'de yayınlamıyoruz; sektörünüze uygun referansları talep üzerine paylaşıyoruz.",
+    "regions": [
+      {
+        "name": "Avrupa",
+        "text": "İspanya'dan Polonya'ya, Macaristan'dan İtalya'ya: AB standartlarında üretim yapan tesislerde Servosteel hatları çalışıyor."
+      },
+      {
+        "name": "Orta Doğu",
+        "text": "Yapısal profil ve altyapı yatırımlarının yoğun olduğu bölgede dilme ve roll form hatlarımız üretimde."
+      },
+      {
+        "name": "Afrika",
+        "text": "Gelişen sanayi bölgelerinde pres besleme sistemleri ve boy kesme hatlarıyla yer alıyoruz."
+      },
+      {
+        "name": "Uzak Doğu",
+        "text": "Rekabetin en yoğun olduğu coğrafyada dahi tercih edilen mühendislik ve fiyat/performans dengesi."
+      }
+    ],
+    "sectorsTitle": "Hizmet verdiğimiz sektörler",
+    "sectors": [
+      "Çelik servis merkezleri",
+      "Raf ve depolama sistemleri",
+      "GES konstrüksiyon üreticileri",
+      "Kablo kanalı üreticileri",
+      "Karayolu güvenlik sistemleri",
+      "Otomotiv yan sanayi",
+      "Beyaz eşya yan sanayi",
+      "İskele ve kalıp sistemleri",
+      "Metal ambalaj"
+    ],
+    "videoProofTitle": "En iyi referans: çalışan hat",
+    "videoProofText": "YouTube kanalımızda kurulum ve devreye alma süreçlerinden 100'den fazla gerçek saha videosu bulabilirsiniz.",
+    "videoCta": "Videoları İzleyin",
+    "ctaTitle": "Sektörünüzden referans isteyin",
+    "ctaText": "Size benzer üretim yapan tesislerdeki kurulumlarımızı ve saha ziyareti imkanlarını paylaşalım."
+  },
+  "videos": {
+    "metaTitle": "Videolar",
+    "metaDesc": "Servosteel hatlarını çalışırken izleyin: dilme hattı, boy kesme, roll form üretimi ve pres besleme sistemlerinden gerçek saha videoları.",
+    "eyebrow": "Sahadan görüntüler",
+    "title": "Hatlarımızı çalışırken izleyin",
+    "desc": "Broşür vaadi değil, çalışan hat: kurulumlardan, fabrika testlerinden ve müşteri sahalarından gerçek görüntüler.",
+    "items": [
+      {
+        "title": "Pres Besleme Sistemleri",
+        "text": "Rulo açıcı, doğrultucu ve servo sürücünün pres hattıyla senkron çalışması."
+      },
+      {
+        "title": "Boy Kesme Hattı — Test Aşaması",
+        "text": "Sevkiyat öncesi fabrika testinde boy kesme hattının çalışması."
+      },
+      {
+        "title": "Asansör Bağlantı Elemanları Üretimi",
+        "text": "Pres besleme sistemiyle asansör komponenti üretimi."
+      }
+    ],
+    "bannerTitle": "109 video, 2,9 B abone",
+    "bannerText": "Dilme hattından HMI ve raporlama yazılımına kadar tüm arşiv YouTube kanalımızda — yeni kurulum videoları düzenli olarak ekleniyor.",
+    "bannerCta": "YouTube Kanalına Git",
+    "ctaTitle": "Benzer bir hat mı arıyorsunuz?",
+    "ctaText": "Videoda gördüğünüz hatların benzerini tesisiniz için projelendirelim."
+  },
+  "contact": {
+    "metaTitle": "İletişim",
+    "metaDesc": "Servosteel iletişim: Sancaktepe/İstanbul merkez, +90 216 415 30 05, info@servosteel.com.tr. Teklif ve teknik sorularınız için bize ulaşın.",
+    "eyebrow": "Bize ulaşın",
+    "title": "İletişim",
+    "desc": "Teklif, teknik detay veya saha ziyareti — hangi konuda olursa olsun, mühendislik ekibimize doğrudan ulaşabilirsiniz.",
+    "phoneTitle": "Telefon",
+    "phoneNote": "Hafta içi 08:30 – 18:00",
+    "emailTitle": "E-posta",
+    "emailNote": "24 saat içinde dönüş",
+    "waTitle": "WhatsApp",
+    "waValue": "Hızlı mesaj",
+    "waNote": "Teknik fotoğraf/çizim paylaşımı için ideal",
+    "addressTitle": "Merkez & Üretim Tesisi",
+    "country": "Türkiye",
+    "hours": "Pazartesi – Cuma: 08:30 – 18:00",
+    "directions": "Yol Tarifi Al",
+    "mapTitle": "Servosteel konum haritası",
+    "quoteBoxTitle": "Teklif mi istiyorsunuz?",
+    "quoteBoxText": "Ürün, kapasite ve ölçü bilgilerinizi yapılandırılmış formla iletin; mühendislik ekibimiz 48 saat içinde dönüş yapsın.",
+    "quoteBoxCta": "Teklif Formuna Git"
+  },
+  "quote": {
+    "metaTitle": "Teklif Al",
+    "metaDesc": "Roll form, dilme ve boy kesme hatları için teklif isteyin: ürün ve kapasite bilgilerinizi iletin, mühendislik ekibimiz 48 saat içinde dönüş yapsın.",
+    "eyebrow": "48 saatte dönüş",
+    "title": "Projeniz için teklif alın",
+    "desc": "Ne kadar detay verirseniz teklif o kadar isabetli olur — ama kararsızsanız da sorun değil: doğru konfigürasyonu birlikte belirleriz.",
+    "processTitle": "Süreç nasıl işler?",
+    "steps": [
+      "Talebiniz aynı gün mühendislik ekibine düşer",
+      "Gerekirse telefonla ihtiyaç netleştirilir",
+      "Teknik çizim ve kapasite hesabıyla teklif hazırlanır",
+      "48 saat içinde yazılı teklif elinizde"
+    ],
+    "directTitle": "Doğrudan ulaşmak isterseniz:",
+    "form": {
+      "name": "Ad Soyad *",
+      "namePh": "Adınız Soyadınız",
+      "company": "Firma *",
+      "companyPh": "Firma unvanı",
+      "email": "E-posta *",
+      "emailPh": "ornek@firma.com",
+      "phone": "Telefon *",
+      "phonePh": "+90 ...",
+      "location": "Ülke / Şehir",
+      "locationPh": "Türkiye / İstanbul",
+      "product": "İlgilendiğiniz ürün *",
+      "specs": "Sac kalınlığı / rulo kapasitesi / profil ölçüsü",
+      "specsPh": "Örn: 0,5-2 mm sac, 10 ton rulo, 41x41 solar profil",
+      "message": "Mesajınız",
+      "messagePh": "Projenizi kısaca anlatın; profil çiziminiz varsa e-postaya ek olarak gönderebilirsiniz.",
+      "submit": "Teklif Talebini Gönder",
+      "wa": "WhatsApp'tan Yazın",
+      "note": "\"Gönder\" butonu, talebinizi e-posta uygulamanızda hazır bir mesaj olarak açar — göndermeden önce içeriği görebilir ve çizim/fotoğraf ekleyebilirsiniz.",
+      "waPrefill": "Merhaba, {product} hakkında teklif almak istiyorum.",
+      "mailSubject": "Teklif Talebi — {product}",
+      "mailIntro": "Yeni teklif talebi (web sitesi formu)",
+      "mailFields": {
+        "name": "Ad Soyad",
+        "company": "Firma",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "location": "Ülke/Şehir",
+        "product": "İlgilenilen ürün",
+        "specs": "Sac kalınlığı / kapasite",
+        "message": "Mesaj"
+      },
+      "options": [
+        "Roll Form Hattı — Kablo Kanalı",
+        "Roll Form Hattı — Solar Profil",
+        "Roll Form Hattı — Ağır Raf",
+        "Roll Form Hattı — İskele Kalas",
+        "Roll Form Hattı — Yol Bariyeri",
+        "Roll Form Hattı — Gürültü Bariyeri",
+        "Roll Form Hattı — C+/Sigma/Omega",
+        "Roll Form Hattı — Özel Profil",
+        "Rulo Dilme Hattı",
+        "Boy Kesme Hattı",
+        "Rulo Açıcı",
+        "Servo Sürücü",
+        "Doğrultmalı Servo Sürücü",
+        "Kompakt Hat",
+        "Diğer / Kararsızım"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "text": "Aradığınız sayfa taşınmış veya hiç var olmamış olabilir.",
+    "back": "Ana sayfaya dön"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Kablo Kanalı Üretim Hattı",
+        "short": "Delikli ve deliksiz kablo kanalı, tava ve kapak profilleri için komple hat.",
+        "hero": "Elektrik altyapısının omurgası olan kablo kanallarını rulodan nihai ürüne kesintisiz üreten komple roll form hattı: açıcı, doğrultucu, servo besleme, zımba istasyonları, roll form makinesi ve kesme ünitesi tek PLC üzerinden yönetilir.",
+        "meta": "Kablo kanalı üretim hattı: delikli/deliksiz kanal, tava ve kapak profilleri için müşteriye özel tasarlanan komple roll form çözümü.",
+        "features": [
+          {
+            "title": "Hat üstü delik zımbalama",
+            "text": "Havalandırma ve montaj delikleri, ayrı bir operasyona gerek kalmadan hat üzerindeki servo zımba istasyonlarında açılır."
+          },
+          {
+            "title": "Hızlı ölçü değişimi",
+            "text": "Farklı genişlikteki kanal ölçüleri arasında reçete tabanlı geçiş; ayar süreleri en aza iner."
+          },
+          {
+            "title": "Galvaniz saca uygun",
+            "text": "Merdaneler galvaniz kaplamayı zedelemeyecek şekilde işlenir ve sertleştirilir (4140 çelik, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Rulo açıcı (hidrolik veya mekanik)",
+          "Doğrultma ünitesi",
+          "Servo besleme",
+          "Zımba/delme istasyonları",
+          "Roll form makinesi",
+          "Kesme ünitesi (hat sonu makas)",
+          "Çıkış konveyörü ve istifleme"
+        ],
+        "sectors": ["Elektrik altyapı", "Veri merkezleri", "Endüstriyel tesisler", "AVM ve bina projeleri"]
+      },
+      "solar-profil": {
+        "name": "Solar Profil Üretim Hattı",
+        "short": "GES konstrüksiyon profilleri için yüksek hızlı roll form çözümü.",
+        "hero": "Güneş enerjisi santrallerinin taşıyıcı konstrüksiyonunda kullanılan hat, C ve Omega profilleri rulodan doğrudan üreten hat; delme istasyonları montaj deliklerini hat üzerinde açar, profiller sahaya montaja hazır iner.",
+        "meta": "Solar panel montaj profili üretim hattı: GES konstrüksiyon profilleri için delme istasyonlu, yüksek hızlı komple roll form hattı.",
+        "features": [
+          {
+            "title": "Projeye özel profil formu",
+            "text": "EPC firmasının statik projesine göre hat profili, C, U veya Omega kesitler için merdane tasarımı yapılır."
+          },
+          {
+            "title": "Magnelis® ve galvanize uygun",
+            "text": "Yüksek korozyon dirençli kaplamalı saclar, kaplamaya zarar vermeyen merdane yüzeyleriyle şekillendirilir."
+          },
+          {
+            "title": "Uzunluk ve delik reçeteleri",
+            "text": "Farklı masa tipleri için delik paterni ve boy ölçüsü HMI üzerinden reçete olarak seçilir."
+          }
+        ],
+        "components": [
+          "Rulo açıcı",
+          "Doğrultma + servo besleme",
+          "Servo zımba istasyonları",
+          "Roll form makinesi",
+          "Uçan kesme (flying shear)",
+          "Otomatik istifleme"
+        ],
+        "sectors": ["GES / EPC firmaları", "Çatı GES uygulamaları", "Arazi tipi santraller", "Tarım GES (Agri-PV)"]
+      },
+      "agir-raf": {
+        "name": "Ağır Raf Üretim Hattı",
+        "short": "Depo raf dikmesi ve travers profilleri için delme istasyonlu hat.",
+        "hero": "Lojistik depoların taşıyıcı raf dikmelerini (upright) ve traversleri üreten hat; çok sıralı montaj delikleri hat üzerinde servo zımbalarla açılır, kalın sacda dahi ölçü kararlılığı korunur.",
+        "meta": "Ağır raf (storage rack) üretim hattı: raf dikmesi ve travers profilleri için delme istasyonlu, müşteriye özel roll form çözümü.",
+        "features": [
+          {
+            "title": "Çok sıralı delik zımbalama",
+            "text": "Dikme profillerindeki kanca delikleri, hat hızını düşürmeden servo zımba istasyonlarında açılır."
+          },
+          {
+            "title": "Kalın sac kabiliyeti",
+            "text": "Raf sistemlerinin gerektirdiği yüksek et kalınlıklarına uygun şase ve merdane boyutlandırması."
+          },
+          {
+            "title": "Ölçü tekrarlılığı",
+            "text": "Servo besleme ve enkoder kontrolüyle delikler arası hassasiyet seri üretimde korunur."
+          }
+        ],
+        "components": [
+          "Ağır seri rulo açıcı",
+          "Doğrultma ünitesi",
+          "Servo besleme",
+          "Çok istasyonlu zımba grubu",
+          "Roll form makinesi",
+          "Kesme ünitesi",
+          "İstifleme sistemi"
+        ],
+        "sectors": ["Depo ve lojistik", "Raf sistemi üreticileri", "E-ticaret depoları", "Soğuk hava depoları"]
+      },
+      "iskele-kalas": {
+        "name": "İskele Kalas Üretim Hattı",
+        "short": "Kaymaz yüzeyli iskele platform ve kalas profilleri üretimi.",
+        "hero": "İnşaat iskelelerinin yürüme platformlarını (çelik kalas) üreten hat; kaymaz yüzey kabartmaları ve drenaj delikleri hat üzerinde formlanır, kancalı uç bükümleri için pres istasyonu entegre edilebilir.",
+        "meta": "İskele kalas üretim hattı: kaymaz yüzeyli çelik platform ve kalas profilleri için komple roll form hattı.",
+        "features": [
+          {
+            "title": "Kaymaz yüzey formu",
+            "text": "Baklava/tırtıl kabartmaları roll form istasyonlarında sürekli proseste basılır."
+          },
+          {
+            "title": "Drenaj ve hafifletme delikleri",
+            "text": "Delik paternleri hat üstü zımbalarla açılır; platform hem hafifler hem güvenli hale gelir."
+          },
+          {
+            "title": "Uç işleme entegrasyonu",
+            "text": "Kanca bükümü ve uç kesimi için hat sonuna pres/istasyon entegre edilebilir."
+          }
+        ],
+        "components": [
+          "Rulo açıcı",
+          "Doğrultma + servo besleme",
+          "Zımba istasyonları",
+          "Roll form makinesi",
+          "Kesme ünitesi",
+          "Uç işleme istasyonu (opsiyonel)"
+        ],
+        "sectors": ["İskele sistemleri", "İnşaat ekipmanları", "Kalıp-iskele kiralama", "Şantiye güvenliği"]
+      },
+      "yol-bariyeri": {
+        "name": "Yol Bariyeri Üretim Hattı",
+        "short": "W-beam otokorkuluk profilleri için ağır hizmet roll form hattı.",
+        "hero": "Karayolu güvenliğinin standardı W-beam (iki dalga) ve üç dalga otokorkuluk profillerini üreten ağır hizmet hattı; kalın galvaniz sacda dalga formunu standartlara uygun hassasiyetle verir.",
+        "meta": "Yol bariyeri (guardrail) üretim hattı: W-beam ve üç dalga otokorkuluk profilleri için ağır hizmet roll form çözümü.",
+        "features": [
+          {
+            "title": "Standartlara uygun form",
+            "text": "EN 1317 kapsamındaki bariyer geometrileri için merdane tasarımı ve form kontrolü."
+          },
+          {
+            "title": "Ağır şase yapısı",
+            "text": "3-4 mm galvaniz sacın dalga formunda dahi salgısız ilerlemesi için rijit gövde ve güçlü tahrik."
+          },
+          {
+            "title": "Delik ve boy hassasiyeti",
+            "text": "Bağlantı delikleri ve boy kesim ölçüleri servo kontrolle sabitlenir; sahada montaj sorunsuzdur."
+          }
+        ],
+        "components": [
+          "Ağır seri rulo açıcı (10-15 ton)",
+          "Doğrultma ünitesi",
+          "Servo besleme + zımba",
+          "Ağır hizmet roll form makinesi",
+          "Hidrolik kesme",
+          "İstifleme"
+        ],
+        "sectors": ["Karayolları müteahhitleri", "Otoyol projeleri", "Galvaniz kaplama tesisleri", "Altyapı ihracatçıları"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Gürültü Bariyeri Üretim Hattı",
+        "short": "Ses bariyeri kaset ve panel profilleri için roll form hattı.",
+        "hero": "Otoyol ve demiryolu kenarlarındaki ses bariyerlerinin alüminyum/çelik kaset profillerini üreten hat; delikli ön yüz (absorber) ve kapalı arka yüz panelleri aynı hat platformunda üretilebilir.",
+        "meta": "Gürültü bariyeri üretim hattı: ses bariyeri kaset ve panel profilleri için delikli/deliksiz üretim yapabilen roll form çözümü.",
+        "features": [
+          {
+            "title": "Delikli panel üretimi",
+            "text": "Akustik yutuculuk için ön yüz perforasyonu hat üstünde veya besleme öncesi entegre edilir."
+          },
+          {
+            "title": "Alüminyum ve çelik uyumu",
+            "text": "Farklı malzeme ve kalınlıklara göre merdane baskı ayarları reçetelerle yönetilir."
+          },
+          {
+            "title": "Uzun panel kabiliyeti",
+            "text": "Bariyer modül boylarına göre hassas boy kesme ve güvenli istifleme."
+          }
+        ],
+        "components": [
+          "Rulo açıcı",
+          "Doğrultma + servo besleme",
+          "Perforasyon/zımba ünitesi",
+          "Roll form makinesi",
+          "Kesme ünitesi",
+          "İstifleme"
+        ],
+        "sectors": ["Otoyol projeleri", "Demiryolu ve metro", "Çevre mühendisliği", "Şehir içi altyapı"]
+      },
+      "c-sigma-omega": {
+        "name": "C+ / Sigma / Omega Profil Hattı",
+        "short": "Hafif çelik yapı profilleri: tek hatta birden çok kesit.",
+        "hero": "Hafif çelik yapıların taşıyıcıları olan C, Sigma ve Omega profilleri tek hat üzerinde üreten esnek çözüm; kesitler arası geçiş ayarlanabilir merdane grupları ve reçete sistemiyle dakikalar içinde yapılır.",
+        "meta": "C, Sigma ve Omega profil üretim hattı: hafif çelik yapı profilleri için ayarlanabilir, çok kesitli roll form çözümü.",
+        "features": [
+          {
+            "title": "Tek hatta üç kesit",
+            "text": "C, Sigma ve Omega formları ayarlanabilir istasyonlarla aynı hatta üretilir; yatırım maliyeti düşer."
+          },
+          {
+            "title": "Otomatik genişlik/yükseklik ayarı",
+            "text": "Profil ölçü değişimleri HMI reçeteleriyle servo eksenler üzerinden yapılır."
+          },
+          {
+            "title": "Yapısal delik paternleri",
+            "text": "Cıvata delikleri ve servis delikleri hat üstü zımbalarla projeye göre açılır."
+          }
+        ],
+        "components": [
+          "Rulo açıcı",
+          "Doğrultma + servo besleme",
+          "Zımba istasyonları",
+          "Ayarlanabilir roll form makinesi",
+          "Uçan kesme",
+          "İstifleme"
+        ],
+        "sectors": ["Hafif çelik yapı", "GES konstrüksiyon", "Prefabrik yapılar", "Endüstriyel bina", "Aşık profilleri"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Rulo Açıcılar",
+        "short": "Hidrolik 6-20 ton, mekanik 500-2.500 kg rulo açma çözümleri.",
+        "hero": "Her hattın ilk halkası: ruloyu güvenle taşıyan, gerginliği kontrol ederek açan hidrolik ve mekanik açıcılar. Kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
+        "meta": "Hidrolik (6-20 ton) ve mekanik (500-2.500 kg) rulo açıcılar: pres besleme ve sac işleme hatları için müşteriye özel çözümler.",
+        "features": [
+          {
+            "title": "Hidrolik mandren genişletme",
+            "text": "Ağır serilerde rulo iç çapı hidrolik olarak sıkılır; yükleme hızlı ve güvenlidir."
+          },
+          {
+            "title": "Yükleme arabası opsiyonu",
+            "text": "Ağır ruloların vinç beklemeden hatta alınması için hidrolik yükleme arabası eklenebilir."
+          },
+          {
+            "title": "Hat senkronizasyonu",
+            "text": "Dans kolu / fotosel kontrolüyle açıcı, hattın hızına otomatik uyum sağlar."
+          }
+        ],
+        "sectors": ["Pres besleme", "Dilme hatları", "Boy kesme hatları", "Roll form hatları"],
+        "table": {
+          "title": "Kapasite seçenekleri",
+          "head": ["Seri", "Modeller"],
+          "rows": [
+            ["Hidrolik açıcılar", "6 – 8 – 10 – 12 – 15 – 20 ton"],
+            ["Mekanik açıcılar", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Servo Sürücüler",
+        "short": "Pres hatlarına hassas adımlı sac besleme; standart ve mini seri.",
+        "hero": "Kalıba giden sacın milimetrik adımlarla ilerlemesini sağlayan servo sürücüler; Schneider Lexium servo teknolojisiyle yüksek tekrarlılık, pres senkronu ve kolay reçete yönetimi sunar.",
+        "meta": "Servo sürücüler (servo feeder): pres besleme hatları için standart ve mini seri, Schneider Lexium tabanlı hassas sac besleme.",
+        "features": [
+          {
+            "title": "Milimetrik adım hassasiyeti",
+            "text": "Servo motor + hassas redüktör kombinasyonuyla adım toleransları seri üretimde korunur."
+          },
+          {
+            "title": "Pres senkronizasyonu",
+            "text": "Pres kam sinyaliyle tam senkron çalışma; pilot pim bırakma (release) fonksiyonu standarttır."
+          },
+          {
+            "title": "Kolay kullanım",
+            "text": "Dokunmatik HMI üzerinden adım boyu, hız ve rampa değerleri reçete olarak saklanır."
+          }
+        ],
+        "sectors": ["Metal pres atölyeleri", "Otomotiv yan sanayi", "Beyaz eşya", "Elektrik-elektronik"],
+        "table": {
+          "title": "Seriler",
+          "head": ["Seri", "Kullanım"],
+          "rows": [
+            ["Standart servo sürücüler", "Orta ve geniş sac, yüksek tonajlı presler"],
+            ["Mini servo sürücüler", "Dar sac ve kompakt pres hatları"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Doğrultmalı Servo Sürücüler",
+        "short": "Doğrultma ve servo besleme tek gövdede: yerden ve yatırımdan tasarruf.",
+        "hero": "Rulodaki kıvrım hafızasını alan doğrultma merdaneleri ile servo beslemeyi tek gövdede birleştiren kompakt çözüm; ayrı doğrultucu yatırımını ve yer ihtiyacını ortadan kaldırır.",
+        "meta": "Doğrultmalı servo sürücüler: doğrultma + hassas besleme tek makinede. Kasalı ve mini seçenekleriyle pres hatları için kompakt çözüm.",
+        "features": [
+          {
+            "title": "İki işlem tek makine",
+            "text": "Doğrultma ve besleme aynı gövdede; hat kısalır, kurulum basitleşir."
+          },
+          {
+            "title": "Ayarlanabilir doğrultma baskısı",
+            "text": "Merdane baskıları sac kalınlığına göre kademesiz ayarlanır."
+          },
+          {
+            "title": "Kasalı ve mini seçenekler",
+            "text": "Sac genişliği ve kalınlığına göre kasalı (ağır) veya mini seri seçilir."
+          }
+        ],
+        "sectors": ["Pres besleme", "Otomotiv yan sanayi", "Metal ambalaj", "Genel sac işleme"],
+        "table": {
+          "title": "Seriler",
+          "head": ["Seri", "Kullanım"],
+          "rows": [
+            ["Kasalı doğrultmalı servo sürücüler", "Kalın sac, yüksek doğrultma ihtiyacı"],
+            ["Mini doğrultmalı servo sürücüler", "İnce sac, kompakt hatlar"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Kompakt Hatlar",
+        "short": "Açıcı + doğrultucu + sürücü tek platformda: dar alan çözümü.",
+        "hero": "Rulo açma, doğrultma ve servo beslemeyi tek platformda toplayan kompakt hatlar; sınırlı alanda tam fonksiyonlu pres besleme kurmak isteyen işletmeler için tasarlanır.",
+        "meta": "Kompakt pres besleme hatları: rulo açıcı, doğrultucu ve servo sürücü tek platformda. Dar alanlar için komple çözüm.",
+        "features": [
+          {
+            "title": "Minimum yer ihtiyacı",
+            "text": "Üç makinenin işi tek şaside; klasik hat dizilimine göre ciddi alan tasarrufu."
+          },
+          {
+            "title": "Tek noktadan kontrol",
+            "text": "Açıcı, doğrultucu ve sürücü tek HMI'dan yönetilir; operatör yükü azalır."
+          },
+          {
+            "title": "Hızlı devreye alma",
+            "text": "Fabrikada test edilmiş tek gövde; sahada kurulum ve devreye alma süresi kısadır."
+          }
+        ],
+        "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"]
+      }
+    }
+  }
+}

@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Roll Forming, Coil Slitting and Cut-to-Length Lines",
+    "description": "Custom-designed roll forming lines, coil slitting lines, cut-to-length lines and press feeding systems. Exporting from Istanbul to 48+ countries."
+  },
+  "topbar": {
+    "export": "Exporting to 48+ countries",
+    "theme": "Light/dark theme"
+  },
+  "nav": {
+    "rollform": "Roll Forming Lines",
+    "slitting": "Slitting Lines",
+    "ctl": "Cut-to-Length Lines",
+    "machines": "Machines",
+    "about": "About Us",
+    "contact": "Contact",
+    "quote": "Get a Quote",
+    "seeAll": "View All →",
+    "mainAria": "Main menu",
+    "mobileAria": "Mobile menu",
+    "homeAria": "Servosteel homepage",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "langAria": "Select language",
+    "langTitle": "Choose Language",
+    "langDesc": "Select the language you'd like to browse the site in."
+  },
+  "footer": {
+    "blurb": "Custom design, manufacturing and turnkey installation of coil processing and roll forming lines. From Istanbul to 48+ countries.",
+    "products": "Products",
+    "corporate": "Company",
+    "contact": "Contact",
+    "youtube": "Our YouTube channel",
+    "rights": "All rights reserved.",
+    "tagline": "Coil processing & roll forming technologies",
+    "refs": "References",
+    "videos": "Videos",
+    "slitting": "Coil Slitting Lines"
+  },
+  "common": {
+    "home": "Home",
+    "breadcrumbAria": "Breadcrumb",
+    "details": "View Details",
+    "examine": "Explore",
+    "lineExamine": "Explore the Line",
+    "seeAll": "View all",
+    "sendDrawing": "Send your drawing"
+  },
+  "cta": {
+    "title": "Let's design a line for your project",
+    "text": "Send us your profile drawing or capacity requirements — our engineering team will get back to you within 48 hours.",
+    "quote": "Get a Quote"
+  },
+  "home": {
+    "badge": "Exporting from Istanbul to 48+ countries",
+    "h1l1": "Lines that turn",
+    "h1l2": "steel coils into",
+    "h1l3": "products",
+    "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
+    "cta1": "Get a Quote for Your Project",
+    "cta2": "Explore the Lines",
+    "measure": "±0.1 mm",
+    "stats": [
+      { "value": "10+", "label": "Years of experience" },
+      { "value": "48+", "label": "Export countries" },
+      { "value": "99%", "label": "On-time delivery" },
+      { "value": "99%", "label": "QC approval" }
+    ],
+    "solutionsEyebrow": "Our expertise",
+    "solutionsTitle": "Three core lines, one signature",
+    "solutionsText": "Every piece of equipment, from decoiler to stacker, is built in our own facility — one partner, one fully matched line.",
+    "solutions": {
+      "rollform": {
+        "title": "Roll Forming Lines",
+        "desc": "Complete lines for 7 profile families, from cable trays to guardrails: every unit from decoiler to shear is made by Servosteel."
+      },
+      "slitting": {
+        "title": "Coil Slitting Lines",
+        "desc": "Light and heavy-duty lines that slit wide coils into strips to your exact widths: 1,500–15,000 kg capacity, 0.5–5 mm thickness range."
+      },
+      "ctl": {
+        "title": "Cut-to-Length Lines",
+        "desc": "Precision cutting from coil to sheet: straightening, servo feeding and guillotine controlled from a single PLC."
+      }
+    },
+    "rollformEyebrow": "Roll forming lines",
+    "rollformTitle": "Proven know-how for 7 profile families",
+    "rollformSeeAll": "View all lines",
+    "customText": "Need a profile that isn't in the catalogue? Our lines are designed <b>to your drawing</b>.",
+    "machinesEyebrow": "Press feeding systems",
+    "machinesTitle": "Machines that complete the line",
+    "machinesSeeAll": "All machines",
+    "processEyebrow": "How we work",
+    "processTitle": "From idea to production approval in 4 steps",
+    "process": [
+      {
+        "title": "Consultation",
+        "text": "We analyse your requirements on site or online and define the right line configuration together."
+      },
+      {
+        "title": "Detailed Quotation",
+        "text": "A transparent, engineering-based offer with technical drawings, capacity calculations and lead time."
+      },
+      {
+        "title": "Manufacturing",
+        "text": "All equipment is built in our own facility and tested with Schneider control systems."
+      },
+      {
+        "title": "Installation & Commissioning",
+        "text": "We stay with you through on-site assembly, operator training and production sign-off."
+      }
+    ],
+    "videoEyebrow": "From the field",
+    "videoTitle": "Watch our lines in action",
+    "videoText": "From slitting lines to roll forming, HMI and reporting software — find more than 100 videos on our YouTube channel.",
+    "videoCta": "Watch the Videos",
+    "videoBadge": "109 videos · 2.9K subscribers",
+    "videoAria": "ServoSteel YouTube channel"
+  },
+  "hub": {
+    "eyebrow": "Our expertise",
+    "title": "Roll Forming Lines",
+    "desc": "From coil to finished profile: complete production lines for 7 profile families, engineered to your project — everything from decoiler to stacker carries the Servosteel signature.",
+    "metaDesc": "Custom complete roll forming lines for cable trays, solar profiles, racking, scaffolding planks, guardrails, noise barriers and C/Sigma/Omega profiles.",
+    "flow": ["Decoiler", "Straightener", "Servo Feeder", "Punching Stations", "Roll Forming Machine", "Cutting", "Stacking"],
+    "customTitle": "Custom Profile Line",
+    "customText": "Producing a section that isn't listed here? From roll tooling design to automation, the line is engineered to your profile drawing.",
+    "customCta": "Send Your Drawing",
+    "ctaTitle": "A roll forming line built around your profile"
+  },
+  "machinesHub": {
+    "eyebrow": "Press feeding systems",
+    "title": "Machines",
+    "metaTitle": "Machines — Press Feeding Systems",
+    "metaDesc": "Decoilers, servo feeders, straightener servo feeders and compact lines: custom-built press feeding solutions.",
+    "desc": "One roof for every link in the line: decoilers, servo feeders, straightener feeders and compact lines — all built in our facility and sized to your needs.",
+    "ctaTitle": "Let's choose the right machine together"
+  },
+  "detail": {
+    "features": "Key features",
+    "components": "Line components",
+    "componentsNote": "All components are manufactured at the Servosteel facility, and the complete line is tested in-house before shipment.",
+    "sectors": "Applications",
+    "usage": "Areas of use",
+    "otherLines": "Other roll forming lines",
+    "otherMachines": "Other machines",
+    "lineQuote": "Get a Quote for This Line",
+    "machineQuote": "Get a Quote for This Machine",
+    "quoteTitle": "Get a quote for {name}",
+    "eyebrowLine": "Roll forming line",
+    "eyebrowMachine": "Press feeding systems",
+    "profileNote": "Profile dimensions and thickness range are defined <b>by your project</b>; roll tooling is designed to your drawing.",
+    "whyTitle": "Why Servosteel?",
+    "why": [
+      "Custom sizing and design for every customer",
+      "Schneider-based control systems",
+      "Full factory testing, on-site commissioning",
+      "Field experience in 48+ countries",
+      "Spare parts and remote support"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Coil Slitting Lines",
+    "metaDesc": "Coil slitting lines with 1,500-15,000 kg capacity: slitting wide coils into strips to your widths. 0.5-5 mm thickness range, Schneider control systems.",
+    "eyebrow": "Our expertise",
+    "title": "Coil Slitting Lines",
+    "desc": "Complete lines that slit wide coils into strips to your exact widths: every unit from decoiler to recoiler is built at the Servosteel facility, factory-tested and commissioned turnkey on site.",
+    "highlights": [
+      {
+        "title": "Many strips from one coil",
+        "text": "The wide master coil is slit into multiple strips at once, to your order sizes — reducing scrap and stock costs."
+      },
+      {
+        "title": "Strip width precision",
+        "text": "Precise knife setup and controlled tension recoiling keep strip widths within tight tolerances."
+      },
+      {
+        "title": "Sized to your capacity",
+        "text": "Light and heavy-duty frame options for coil weights from 1.5 to 15 tonnes."
+      },
+      {
+        "title": "Schneider control architecture",
+        "text": "Lexium and Altivar based speed control; the whole line is run from a single operator panel."
+      }
+    ],
+    "tableTitle": "Capacity and thickness options",
+    "tableHead": ["Series", "Coil capacity", "Sheet thickness"],
+    "tableRows": [
+      ["Light-duty", "1,500 / 2,500 / 3,000 / 4,000 kg", "0.5 – 1 mm · 0.5 – 2 mm"],
+      ["Heavy-duty", "6,000 / 8,000 / 10,000 / 15,000 kg", "0.8 – 3 mm · 1.0 – 5 mm"]
+    ],
+    "tableNote": "The values above are standard series; coil width, number of strips and line speed are sized to your project.",
+    "components": [
+      "Decoiler",
+      "Coil loading car",
+      "Automatic squaring system",
+      "Straightening unit",
+      "Automatic feeding",
+      "Slitting unit (knife group)",
+      "Automatic coil unloading system",
+      "Recoiler system"
+    ],
+    "ctaTitle": "Let's size your slitting line",
+    "ctaText": "Send us your coil weight, sheet thickness and strip widths; we'll define the right series and line layout together."
+  },
+  "boykesme": {
+    "metaTitle": "Cut-to-Length Lines",
+    "metaDesc": "Cut-to-length lines: precision cutting from coil to sheet. Straightening, servo feeding, guillotine and stacking managed by a single PLC. Schneider control systems.",
+    "eyebrow": "Our expertise",
+    "title": "Cut-to-Length Lines",
+    "desc": "Complete lines that turn coils into sheets at exactly the length you need: straightening, servo feeding, guillotine and stacking — all built in our facility and managed by a single PLC.",
+    "highlights": [
+      {
+        "title": "Length accuracy",
+        "text": "Servo feeding and encoder measurement cut sheet lengths within tight tolerances, with repeatability in serial production."
+      },
+      {
+        "title": "Clean cutting",
+        "text": "The guillotine blade gap is set to the sheet thickness for burr-free, distortion-free cuts."
+      },
+      {
+        "title": "Single-point control",
+        "text": "The whole line is managed from one operator panel via PLC; lengths, quantities and recipes are stored on the HMI."
+      },
+      {
+        "title": "Surface protection",
+        "text": "An optional PVC film application unit protects sensitive sheet surfaces from scratches before stacking."
+      }
+    ],
+    "whyTitle": "Why a Servosteel cut-to-length line?",
+    "paras": [
+      "Every unit, from the first link of the line to the final stack, comes <b>from a single manufacturer</b>: decoiler, straightener, feeder, shear and stacker are sized to each other. Compatibility problems seen in lines assembled from multiple suppliers are eliminated from the start.",
+      "Speed control uses <b>Schneider Lexium and Altivar</b> series drives; the line is fully assembled and tested at our factory before shipment, which keeps on-site commissioning short.",
+      "The line configuration is engineered to your sheet thickness, coil weight and sheet dimensions; if needed, it can be combined with a slitting unit to produce both strips and sheets."
+    ],
+    "components": [
+      "Decoiler",
+      "Coil loading car",
+      "Straightening unit",
+      "Automatic servo feeding",
+      "Guillotine shear",
+      "Automatic stacking unit",
+      "Automatic PVC film application system"
+    ],
+    "ctaTitle": "Let's engineer your cut-to-length line",
+    "ctaText": "Send us your sheet thickness, coil weight and sheet dimensions; we'll come back with a line layout and a technical offer."
+  },
+  "about": {
+    "metaTitle": "About Us",
+    "metaDesc": "Servosteel: 10+ years of experience in press feeding systems and coil processing lines. Custom machine manufacturing from Istanbul to 48+ countries.",
+    "eyebrow": "Servosteel",
+    "title": "Engineering that shapes steel",
+    "desc": "Servosteel is a Turkish machine manufacturer specialised in press feeding systems and coil processing lines. For more than a decade we have designed, built and commissioned every machine around the customer's needs.",
+    "stats": [
+      { "value": "10+", "label": "Years of experience" },
+      { "value": "48+", "label": "Export countries" },
+      { "value": "27+", "label": "Expert team" },
+      { "value": "99%", "label": "On-time delivery" }
+    ],
+    "storyTitle": "From single machines to complete lines",
+    "story": [
+      "Servosteel started with the machines that feed press lines: decoilers, straighteners and servo feeders. Field experience gradually grew into complete line engineering — today we install coil slitting, cut-to-length and roll forming lines turnkey.",
+      "What sets us apart is that every link of the line is produced <b>under one roof</b>: mechanical design, manufacturing, automation software and commissioning are all in the same team. Our customers work with a single partner, and the line components arrive perfectly matched.",
+      "Lines built at our facility in Sancaktepe, Istanbul are producing today in <b>more than 48 countries</b> — across Europe, the Middle East, Africa and the Far East."
+    ],
+    "values": [
+      {
+        "title": "Our mission",
+        "text": "To deliver the right industrial machine with the best service and value: every line is engineered to the customer's real need — nothing missing, nothing extra."
+      },
+      {
+        "title": "Our vision",
+        "text": "To become the globally preferred Turkish brand in coil processing by developing machines that contribute to sustainable, recyclable production."
+      },
+      {
+        "title": "Our production approach",
+        "text": "Every component from decoiler to stacker is built in our own facility; the line is fully assembled and tested before shipment."
+      },
+      {
+        "title": "Our team",
+        "text": "An experienced team of 27+ people from mechanical design to automation; after the sale, the same engineers stay with your project."
+      }
+    ],
+    "journeyEyebrow": "Our journey",
+    "journeyTitle": "Expertise built step by step",
+    "timeline": [
+      {
+        "title": "Press feeding roots",
+        "text": "The journey began with decoilers, straighteners and servo feeders delivering precise sheet feeding to press lines."
+      },
+      {
+        "title": "Moving to complete lines",
+        "text": "From single machines to complete solutions: slitting and cut-to-length lines joined the product range."
+      },
+      {
+        "title": "Roll forming expertise",
+        "text": "Roll forming lines covering 7 profile families were developed, from cable trays to guardrails."
+      },
+      {
+        "title": "Exporting to 48+ countries",
+        "text": "Today Servosteel lines are producing on four continents, from Europe to the Far East."
+      }
+    ],
+    "ctaTitle": "Let's talk about your project",
+    "ctaText": "Whether you need a single machine or a complete line — our engineering team is ready to listen."
+  },
+  "refs": {
+    "metaTitle": "References",
+    "metaDesc": "Servosteel lines are producing in more than 48 countries across Europe, the Middle East, Africa and the Far East. Our references by region and industry.",
+    "eyebrow": "Proof from the field",
+    "title": "In production in 48+ countries",
+    "desc": "Servosteel lines run in manufacturers' facilities across four continents and many industries. Due to confidentiality agreements we don't publish our customer list online; we share references relevant to your industry on request.",
+    "regions": [
+      {
+        "name": "Europe",
+        "text": "From Spain to Poland, Hungary to Italy: Servosteel lines run in facilities producing to EU standards."
+      },
+      {
+        "name": "Middle East",
+        "text": "Our slitting and roll forming lines are in production in a region dense with structural profile and infrastructure investment."
+      },
+      {
+        "name": "Africa",
+        "text": "We are present in growing industrial regions with press feeding systems and cut-to-length lines."
+      },
+      {
+        "name": "Far East",
+        "text": "An engineering and price/performance balance preferred even in the most competitive geography."
+      }
+    ],
+    "sectorsTitle": "Industries we serve",
+    "sectors": [
+      "Steel service centres",
+      "Racking and storage systems",
+      "Solar mounting manufacturers",
+      "Cable tray manufacturers",
+      "Road safety systems",
+      "Automotive suppliers",
+      "Home appliance suppliers",
+      "Scaffolding and formwork systems",
+      "Metal packaging"
+    ],
+    "videoProofTitle": "The best reference: a running line",
+    "videoProofText": "Find more than 100 real field videos of installations and commissioning on our YouTube channel.",
+    "videoCta": "Watch the Videos",
+    "ctaTitle": "Ask for references from your industry",
+    "ctaText": "We'll share installations at facilities producing like yours, and arrange site visits."
+  },
+  "videos": {
+    "metaTitle": "Videos",
+    "metaDesc": "Watch Servosteel lines in action: real field videos of slitting lines, cut-to-length, roll forming production and press feeding systems.",
+    "eyebrow": "From the field",
+    "title": "Watch our lines in action",
+    "desc": "Not brochure promises — running lines: real footage from installations, factory tests and customer sites.",
+    "items": [
+      {
+        "title": "Press Feeding Systems",
+        "text": "Decoiler, straightener and servo feeder working in sync with the press line."
+      },
+      {
+        "title": "Cut-to-Length Line — Factory Test",
+        "text": "A cut-to-length line running its pre-shipment factory test."
+      },
+      {
+        "title": "Elevator Component Production",
+        "text": "Producing elevator components with a press feeding system."
+      }
+    ],
+    "bannerTitle": "109 videos, 2.9K subscribers",
+    "bannerText": "The whole archive is on our YouTube channel, from slitting lines to HMI and reporting software — new installation videos are added regularly.",
+    "bannerCta": "Go to the YouTube Channel",
+    "ctaTitle": "Looking for a similar line?",
+    "ctaText": "Let's engineer a line like the one in the video for your facility."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDesc": "Contact Servosteel: headquarters in Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Reach us for quotes and technical questions.",
+    "eyebrow": "Get in touch",
+    "title": "Contact",
+    "desc": "A quote, a technical detail or a site visit — whatever the topic, you can reach our engineering team directly.",
+    "phoneTitle": "Phone",
+    "phoneNote": "Weekdays 08:30 – 18:00 (TRT)",
+    "emailTitle": "E-mail",
+    "emailNote": "Reply within 24 hours",
+    "waTitle": "WhatsApp",
+    "waValue": "Quick message",
+    "waNote": "Ideal for sharing technical photos/drawings",
+    "addressTitle": "Headquarters & Production Facility",
+    "country": "Türkiye",
+    "hours": "Monday – Friday: 08:30 – 18:00",
+    "directions": "Get Directions",
+    "mapTitle": "Servosteel location map",
+    "quoteBoxTitle": "Looking for a quote?",
+    "quoteBoxText": "Send your product, capacity and dimension details through the structured form; our engineering team will reply within 48 hours.",
+    "quoteBoxCta": "Go to the Quote Form"
+  },
+  "quote": {
+    "metaTitle": "Get a Quote",
+    "metaDesc": "Request a quote for roll forming, slitting and cut-to-length lines: send your product and capacity details, our engineering team replies within 48 hours.",
+    "eyebrow": "Reply within 48 hours",
+    "title": "Get a quote for your project",
+    "desc": "The more detail you give, the more accurate the offer — but it's fine if you're undecided: we'll define the right configuration together.",
+    "processTitle": "How does it work?",
+    "steps": [
+      "Your request reaches the engineering team the same day",
+      "If needed, we clarify the requirements by phone",
+      "The offer is prepared with technical drawings and capacity calculations",
+      "A written quotation in your hands within 48 hours"
+    ],
+    "directTitle": "Prefer to reach us directly?",
+    "form": {
+      "name": "Full Name *",
+      "namePh": "Your full name",
+      "company": "Company *",
+      "companyPh": "Company name",
+      "email": "E-mail *",
+      "emailPh": "example@company.com",
+      "phone": "Phone *",
+      "phonePh": "+1 ...",
+      "location": "Country / City",
+      "locationPh": "Country / City",
+      "product": "Product of interest *",
+      "specs": "Sheet thickness / coil capacity / profile size",
+      "specsPh": "e.g. 0.5-2 mm sheet, 10 t coil, 41x41 solar profile",
+      "message": "Your message",
+      "messagePh": "Briefly describe your project; if you have a profile drawing, you can attach it to the e-mail.",
+      "submit": "Send Quote Request",
+      "wa": "Write on WhatsApp",
+      "note": "The \"Send\" button opens your request as a ready-made message in your e-mail app — you can review it and attach drawings/photos before sending.",
+      "waPrefill": "Hello, I would like to get a quote for {product}.",
+      "mailSubject": "Quote Request — {product}",
+      "mailIntro": "New quote request (website form)",
+      "mailFields": {
+        "name": "Full name",
+        "company": "Company",
+        "email": "E-mail",
+        "phone": "Phone",
+        "location": "Country/City",
+        "product": "Product of interest",
+        "specs": "Sheet thickness / capacity",
+        "message": "Message"
+      },
+      "options": [
+        "Roll Forming Line — Cable Tray",
+        "Roll Forming Line — Solar Profile",
+        "Roll Forming Line — Storage Rack",
+        "Roll Forming Line — Scaffolding Plank",
+        "Roll Forming Line — Guardrail",
+        "Roll Forming Line — Noise Barrier",
+        "Roll Forming Line — C+/Sigma/Omega",
+        "Roll Forming Line — Custom Profile",
+        "Coil Slitting Line",
+        "Cut-to-Length Line",
+        "Decoiler",
+        "Servo Feeder",
+        "Straightener Servo Feeder",
+        "Compact Line",
+        "Other / Undecided"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for may have moved or never existed.",
+    "back": "Back to homepage"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Cable Tray Production Line",
+        "short": "A complete line for perforated and solid cable trays, ladders and covers.",
+        "hero": "A complete roll forming line producing cable trays — the backbone of electrical infrastructure — from coil to finished product: decoiler, straightener, servo feeder, punching stations, roll forming machine and cutting unit are managed by a single PLC.",
+        "meta": "Cable tray production line: a complete custom roll forming solution for perforated/solid trays, ladders and cover profiles.",
+        "features": [
+          {
+            "title": "In-line punching",
+            "text": "Ventilation and mounting holes are punched by servo punching stations on the line — no separate operation needed."
+          },
+          {
+            "title": "Fast size changeover",
+            "text": "Recipe-based switching between different tray widths keeps setup times to a minimum."
+          },
+          {
+            "title": "Galvanized-sheet friendly",
+            "text": "Rolls are machined and hardened to avoid damaging the zinc coating (4140 steel, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Decoiler (hydraulic or mechanical)",
+          "Straightening unit",
+          "Servo feeder",
+          "Punching stations",
+          "Roll forming machine",
+          "Cutting unit (end-of-line shear)",
+          "Exit conveyor and stacking"
+        ],
+        "sectors": ["Electrical infrastructure", "Data centres", "Industrial facilities", "Malls and building projects"]
+      },
+      "solar-profil": {
+        "name": "Solar Profile Production Line",
+        "short": "A high-speed roll forming solution for PV mounting profiles.",
+        "hero": "A line producing hat, C and Omega profiles for solar power plant mounting structures directly from coil; punching stations open the mounting holes in-line, so profiles arrive on site ready to install.",
+        "meta": "Solar mounting profile production line: a complete, high-speed roll forming line with punching stations for PV structure profiles.",
+        "features": [
+          {
+            "title": "Profile form to your project",
+            "text": "Roll tooling is designed for hat, C, U or Omega sections according to the EPC's structural design."
+          },
+          {
+            "title": "Suitable for Magnelis® and galvanized",
+            "text": "High-corrosion-resistant coated sheets are formed with roll surfaces that protect the coating."
+          },
+          {
+            "title": "Length and hole recipes",
+            "text": "Hole patterns and lengths for different table types are selected as recipes on the HMI."
+          }
+        ],
+        "components": [
+          "Decoiler",
+          "Straightener + servo feeder",
+          "Servo punching stations",
+          "Roll forming machine",
+          "Flying shear",
+          "Automatic stacking"
+        ],
+        "sectors": ["Solar / EPC companies", "Rooftop PV", "Utility-scale plants", "Agri-PV"]
+      },
+      "agir-raf": {
+        "name": "Storage Rack Production Line",
+        "short": "A punching-station line for rack uprights and beam profiles.",
+        "hero": "A line producing the load-bearing rack uprights and beams of logistics warehouses; multi-row mounting holes are punched in-line by servo punches, and dimensional stability is maintained even in thick sheet.",
+        "meta": "Storage rack production line: a custom roll forming solution with punching stations for rack uprights and beam profiles.",
+        "features": [
+          {
+            "title": "Multi-row punching",
+            "text": "The hook holes of upright profiles are punched by servo stations without slowing the line down."
+          },
+          {
+            "title": "Thick sheet capability",
+            "text": "Frame and roll sizing suited to the high wall thicknesses racking systems demand."
+          },
+          {
+            "title": "Dimensional repeatability",
+            "text": "Servo feeding and encoder control keep hole-to-hole precision in serial production."
+          }
+        ],
+        "components": [
+          "Heavy-duty decoiler",
+          "Straightening unit",
+          "Servo feeder",
+          "Multi-station punching group",
+          "Roll forming machine",
+          "Cutting unit",
+          "Stacking system"
+        ],
+        "sectors": ["Warehousing and logistics", "Racking manufacturers", "E-commerce warehouses", "Cold storage"]
+      },
+      "iskele-kalas": {
+        "name": "Scaffolding Plank Production Line",
+        "short": "Production of anti-slip scaffolding platforms and plank profiles.",
+        "hero": "A line producing the steel walking platforms of construction scaffolding; anti-slip surface embossing and drainage holes are formed in-line, and a press station for hook-end forming can be integrated.",
+        "meta": "Scaffolding plank production line: a complete roll forming line for anti-slip steel platform and plank profiles.",
+        "features": [
+          {
+            "title": "Anti-slip surface forming",
+            "text": "Diamond/knurl embossing is pressed continuously in the roll forming stations."
+          },
+          {
+            "title": "Drainage and lightening holes",
+            "text": "Hole patterns are punched in-line; the platform gets lighter and safer at once."
+          },
+          {
+            "title": "End-processing integration",
+            "text": "A press/station for hook bending and end trimming can be integrated at the end of the line."
+          }
+        ],
+        "components": [
+          "Decoiler",
+          "Straightener + servo feeder",
+          "Punching stations",
+          "Roll forming machine",
+          "Cutting unit",
+          "End-processing station (optional)"
+        ],
+        "sectors": ["Scaffolding systems", "Construction equipment", "Formwork-scaffolding rental", "Site safety"]
+      },
+      "yol-bariyeri": {
+        "name": "Guardrail Production Line",
+        "short": "A heavy-duty roll forming line for W-beam guardrail profiles.",
+        "hero": "A heavy-duty line producing W-beam (two-wave) and three-wave guardrail profiles — the standard of road safety; it forms the wave profile in thick galvanized sheet with standard-compliant precision.",
+        "meta": "Guardrail production line: a heavy-duty roll forming solution for W-beam and three-wave highway barrier profiles.",
+        "features": [
+          {
+            "title": "Standard-compliant forming",
+            "text": "Roll tooling design and form control for barrier geometries within EN 1317."
+          },
+          {
+            "title": "Heavy frame structure",
+            "text": "A rigid body and strong drive keep 3-4 mm galvanized sheet running true even in the wave form."
+          },
+          {
+            "title": "Hole and length precision",
+            "text": "Connection holes and cut lengths are fixed under servo control; on-site assembly is trouble-free."
+          }
+        ],
+        "components": [
+          "Heavy-duty decoiler (10-15 t)",
+          "Straightening unit",
+          "Servo feeder + punching",
+          "Heavy-duty roll forming machine",
+          "Hydraulic cutting",
+          "Stacking"
+        ],
+        "sectors": ["Road contractors", "Highway projects", "Galvanizing plants", "Infrastructure exporters"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Noise Barrier Production Line",
+        "short": "A roll forming line for sound barrier cassette and panel profiles.",
+        "hero": "A line producing the aluminium/steel cassette profiles of noise barriers along highways and railways; perforated front (absorber) and closed back panels can be produced on the same line platform.",
+        "meta": "Noise barrier production line: a roll forming solution producing perforated and solid sound barrier cassette and panel profiles.",
+        "features": [
+          {
+            "title": "Perforated panel production",
+            "text": "Front-face perforation for acoustic absorption is integrated in-line or before feeding."
+          },
+          {
+            "title": "Aluminium and steel compatibility",
+            "text": "Roll pressure settings for different materials and thicknesses are managed with recipes."
+          },
+          {
+            "title": "Long panel capability",
+            "text": "Precise cut-to-length and safe stacking for barrier module lengths."
+          }
+        ],
+        "components": [
+          "Decoiler",
+          "Straightener + servo feeder",
+          "Perforation/punching unit",
+          "Roll forming machine",
+          "Cutting unit",
+          "Stacking"
+        ],
+        "sectors": ["Highway projects", "Railways and metro", "Environmental engineering", "Urban infrastructure"]
+      },
+      "c-sigma-omega": {
+        "name": "C+ / Sigma / Omega Profile Line",
+        "short": "Light steel framing profiles: multiple sections on one line.",
+        "hero": "A flexible solution producing C, Sigma and Omega profiles — the load-bearers of light steel structures — on a single line; changeover between sections takes minutes thanks to adjustable roll groups and the recipe system.",
+        "meta": "C, Sigma and Omega profile production line: an adjustable, multi-section roll forming solution for light steel framing profiles.",
+        "features": [
+          {
+            "title": "Three sections on one line",
+            "text": "C, Sigma and Omega forms are produced on the same line with adjustable stations, lowering the investment cost."
+          },
+          {
+            "title": "Automatic width/height adjustment",
+            "text": "Profile size changes are made via servo axes with HMI recipes."
+          },
+          {
+            "title": "Structural hole patterns",
+            "text": "Bolt holes and service holes are punched in-line according to the project."
+          }
+        ],
+        "components": [
+          "Decoiler",
+          "Straightener + servo feeder",
+          "Punching stations",
+          "Adjustable roll forming machine",
+          "Flying shear",
+          "Stacking"
+        ],
+        "sectors": ["Light steel framing", "Solar structures", "Prefabricated buildings", "Industrial buildings", "Purlin profiles"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Decoilers",
+        "short": "Hydraulic 6-20 t and mechanical 500-2,500 kg decoiling solutions.",
+        "hero": "The first link of every line: hydraulic and mechanical decoilers that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
+        "meta": "Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers: custom solutions for press feeding and coil processing lines.",
+        "features": [
+          {
+            "title": "Hydraulic mandrel expansion",
+            "text": "On heavy-duty series the coil inner diameter is clamped hydraulically; loading is fast and safe."
+          },
+          {
+            "title": "Loading car option",
+            "text": "A hydraulic loading car can be added so heavy coils reach the line without waiting for a crane."
+          },
+          {
+            "title": "Line synchronisation",
+            "text": "With dancer arm / photocell control, the decoiler automatically matches the line speed."
+          }
+        ],
+        "sectors": ["Press feeding", "Slitting lines", "Cut-to-length lines", "Roll forming lines"],
+        "table": {
+          "title": "Capacity options",
+          "head": ["Series", "Models"],
+          "rows": [
+            ["Hydraulic decoilers", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Mechanical decoilers", "500 – 750 – 1,500 – 2,500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Servo Feeders",
+        "short": "Precise step feeding into press lines; standard and mini series.",
+        "hero": "Servo feeders advance the sheet into the die in millimetric steps; Schneider Lexium servo technology delivers high repeatability, press synchronisation and easy recipe management.",
+        "meta": "Servo feeders: standard and mini series for press feeding lines, Schneider Lexium based precise sheet feeding.",
+        "features": [
+          {
+            "title": "Millimetric step precision",
+            "text": "The servo motor + precision gearbox combination keeps step tolerances in serial production."
+          },
+          {
+            "title": "Press synchronisation",
+            "text": "Fully synchronous operation with the press cam signal; pilot release function is standard."
+          },
+          {
+            "title": "Easy operation",
+            "text": "Step length, speed and ramp values are stored as recipes on the touch HMI."
+          }
+        ],
+        "sectors": ["Metal stamping shops", "Automotive suppliers", "Home appliances", "Electrical-electronics"],
+        "table": {
+          "title": "Series",
+          "head": ["Series", "Use"],
+          "rows": [
+            ["Standard servo feeders", "Medium and wide sheet, high-tonnage presses"],
+            ["Mini servo feeders", "Narrow sheet and compact press lines"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Straightener Servo Feeders",
+        "short": "Straightening and servo feeding in one body: saves space and investment.",
+        "hero": "A compact solution combining straightening rolls that remove coil-set memory with servo feeding in a single body; it eliminates the separate straightener investment and its floor space.",
+        "meta": "Straightener servo feeders: straightening + precise feeding in one machine. A compact solution for press lines with cabinet and mini options.",
+        "features": [
+          {
+            "title": "Two operations, one machine",
+            "text": "Straightening and feeding in the same body; the line gets shorter and installation simpler."
+          },
+          {
+            "title": "Adjustable straightening pressure",
+            "text": "Roll pressures are steplessly adjusted to the sheet thickness."
+          },
+          {
+            "title": "Cabinet and mini options",
+            "text": "Cabinet (heavy) or mini series is chosen by sheet width and thickness."
+          }
+        ],
+        "sectors": ["Press feeding", "Automotive suppliers", "Metal packaging", "General sheet processing"],
+        "table": {
+          "title": "Series",
+          "head": ["Series", "Use"],
+          "rows": [
+            ["Cabinet straightener servo feeders", "Thick sheet, high straightening demand"],
+            ["Mini straightener servo feeders", "Thin sheet, compact lines"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Compact Lines",
+        "short": "Decoiler + straightener + feeder on one platform: the tight-space solution.",
+        "hero": "Compact lines combine decoiling, straightening and servo feeding on a single platform; designed for businesses that want full-featured press feeding in limited space.",
+        "meta": "Compact press feeding lines: decoiler, straightener and servo feeder on one platform. A complete solution for tight spaces.",
+        "features": [
+          {
+            "title": "Minimum floor space",
+            "text": "The work of three machines on one chassis; serious space savings versus a classic line layout."
+          },
+          {
+            "title": "Single-point control",
+            "text": "Decoiler, straightener and feeder are managed from one HMI; operator workload drops."
+          },
+          {
+            "title": "Fast commissioning",
+            "text": "A factory-tested single body; on-site installation and commissioning take little time."
+          }
+        ],
+        "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"]
+      }
+    }
+  }
+}

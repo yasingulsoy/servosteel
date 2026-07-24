@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "title": "Servosteel | Görgős profilozó, hasító és keresztvágó sorok",
+    "description": "Egyedi tervezésű görgős profilozó sorok, tekercshasító sorok, keresztvágó sorok és présadagoló rendszerek. Isztambulból 48+ országba exportálunk."
+  },
+  "topbar": {
+    "export": "Export 48+ országba",
+    "theme": "Világos/sötét téma"
+  },
+  "nav": {
+    "rollform": "Profilozó Sorok",
+    "slitting": "Hasító Sorok",
+    "ctl": "Keresztvágó Sorok",
+    "machines": "Gépek",
+    "about": "Rólunk",
+    "contact": "Kapcsolat",
+    "quote": "Ajánlatkérés",
+    "seeAll": "Összes megtekintése →",
+    "mainAria": "Főmenü",
+    "mobileAria": "Mobil menü",
+    "homeAria": "Servosteel kezdőlap",
+    "menuOpen": "Menü megnyitása",
+    "menuClose": "Menü bezárása",
+    "langAria": "Nyelv kiválasztása",
+    "langTitle": "Nyelv választása",
+    "langDesc": "Válassza ki, milyen nyelven szeretné böngészni az oldalt."
+  },
+  "footer": {
+    "blurb": "Egyedi tervezés, gyártás és kulcsrakész telepítés tekercsfeldolgozó és görgős profilozó sorokhoz. Isztambulból 48+ országba.",
+    "products": "Termékek",
+    "corporate": "Vállalat",
+    "contact": "Kapcsolat",
+    "youtube": "YouTube-csatornánk",
+    "rights": "Minden jog fenntartva.",
+    "tagline": "Tekercsfeldolgozás és görgős profilozási technológiák",
+    "refs": "Referenciák",
+    "videos": "Videók",
+    "slitting": "Hasító Sorok"
+  },
+  "common": {
+    "home": "Kezdőlap",
+    "breadcrumbAria": "Morzsamenü",
+    "details": "Részletek",
+    "examine": "Felfedezés",
+    "lineExamine": "Sor Felfedezése",
+    "seeAll": "Összes megtekintése",
+    "sendDrawing": "Küldje el rajzát"
+  },
+  "cta": {
+    "title": "Tervezzük meg a sort a projektjéhez",
+    "text": "Küldje el profilrajzát vagy kapacitásigényét — mérnökcsapatunk 48 órán belül válaszol.",
+    "quote": "Ajánlatkérés"
+  },
+  "home": {
+    "badge": "Isztambulból 48+ országba",
+    "h1l1": "Sorok, amelyek az",
+    "h1l2": "acéltekercset",
+    "h1l3": "termékké alakítják",
+    "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
+    "cta1": "Ajánlatkérés a Projektjéhez",
+    "cta2": "Sorok Megtekintése",
+    "measure": "±0,1 mm",
+    "stats": [
+      { "value": "10+", "label": "Év tapasztalat" },
+      { "value": "48+", "label": "Exportország" },
+      { "value": "99%", "label": "Határidőre szállítás" },
+      { "value": "99%", "label": "Minőségi jóváhagyás" }
+    ],
+    "solutionsEyebrow": "Szakterületünk",
+    "solutionsTitle": "Három fő sor, egyetlen kézjegy",
+    "solutionsText": "Minden berendezés a lecsévélőtől a rakatolóig saját üzemünkben készül — egy partner, tökéletesen összehangolt sor.",
+    "solutions": {
+      "rollform": {
+        "title": "Profilozó Sorok",
+        "desc": "Komplett sorok 7 profilcsaládhoz, a kábeltálcától a szalagkorlátig: minden egység a lecsévélőtől az ollóig Servosteel-gyártmány."
+      },
+      "slitting": {
+        "title": "Hasító Sorok",
+        "desc": "Könnyű és nehéz szériák, amelyek a széles tekercset méretre hasítják szalagokra: 1.500–15.000 kg kapacitás, 0,5–5 mm vastagság."
+      },
+      "ctl": {
+        "title": "Keresztvágó Sorok",
+        "desc": "Pontos vágás tekercsből táblává: egyengetés, szervoadagolás és olló egyetlen PLC-ről vezérelve."
+      }
+    },
+    "rollformEyebrow": "Profilozó sorok",
+    "rollformTitle": "Bevált know-how 7 profilcsaládhoz",
+    "rollformSeeAll": "Összes sor megtekintése",
+    "customText": "Katalógusban nem szereplő profilra van szüksége? Sorainkat <b>az Ön rajza alapján</b> tervezzük.",
+    "machinesEyebrow": "Présadagoló rendszerek",
+    "machinesTitle": "Gépek, amelyek teljessé teszik a sort",
+    "machinesSeeAll": "Összes gép",
+    "processEyebrow": "Hogyan dolgozunk",
+    "processTitle": "Az ötlettől a gyártási jóváhagyásig 4 lépésben",
+    "process": [
+      {
+        "title": "Konzultáció",
+        "text": "Helyszínen vagy online elemezzük az igényét, és közösen határozzuk meg a megfelelő sorkonfigurációt."
+      },
+      {
+        "title": "Részletes Ajánlat",
+        "text": "Átlátható, mérnöki alapú ajánlat rajzokkal, kapacitásszámítással és szállítási határidővel."
+      },
+      {
+        "title": "Gyártás",
+        "text": "A teljes berendezés saját üzemünkben készül, és Schneider vezérlőrendszerekkel teszteljük."
+      },
+      {
+        "title": "Telepítés és Üzembe helyezés",
+        "text": "Végigkísérjük a helyszíni szereléstől a kezelői betanításon át a gyártási jóváhagyásig."
+      }
+    ],
+    "videoEyebrow": "A terepről",
+    "videoTitle": "Nézze meg sorainkat működés közben",
+    "videoText": "A hasító soroktól a profilozásig, HMI- és riportszoftverig — több mint 100 videó a YouTube-csatornánkon.",
+    "videoCta": "Videók Megtekintése",
+    "videoBadge": "109 videó · 2,9 E feliratkozó",
+    "videoAria": "ServoSteel YouTube-csatorna"
+  },
+  "hub": {
+    "eyebrow": "Szakterületünk",
+    "title": "Profilozó Sorok",
+    "desc": "Tekercstől a kész profilig: komplett gyártósorok 7 profilcsaládhoz, a projektjére tervezve — a lecsévélőtől a rakatolóig minden a Servosteel kézjegyét viseli.",
+    "metaDesc": "Egyedi, komplett görgős profilozó sorok kábeltálcákhoz, napelemes profilokhoz, polcokhoz, állványpallókhoz, szalagkorlátokhoz, zajvédő falakhoz és C/Sigma/Omega profilokhoz.",
+    "flow": ["Lecsévélő", "Egyengető", "Szervoadagoló", "Lyukasztó Állomások", "Profilozó Gép", "Vágás", "Rakatolás"],
+    "customTitle": "Egyedi Profil Sor",
+    "customText": "Itt nem szereplő keresztmetszetet gyártana? A görgőszerszámtól az automatizálásig a sort az Ön profilrajza alapján tervezzük.",
+    "customCta": "Küldje el a Rajzot",
+    "ctaTitle": "Profilozó sor az Ön profiljára szabva"
+  },
+  "machinesHub": {
+    "eyebrow": "Présadagoló rendszerek",
+    "title": "Gépek",
+    "metaTitle": "Gépek — Présadagoló Rendszerek",
+    "metaDesc": "Lecsévélők, szervoadagolók, egyengetős szervoadagolók és kompakt sorok: egyedi présadagoló megoldások.",
+    "desc": "Egy tető alatt a sor minden láncszeme: lecsévélők, szervoadagolók, egyengetős adagolók és kompakt sorok — mind saját üzemünkben gyártva, az igényére méretezve.",
+    "ctaTitle": "Válasszuk ki együtt a megfelelő gépet"
+  },
+  "detail": {
+    "features": "Fő jellemzők",
+    "components": "Sor részegységei",
+    "componentsNote": "Minden részegység a Servosteel üzemében készül; a teljes sort szállítás előtt gyárilag teszteljük.",
+    "sectors": "Alkalmazások",
+    "usage": "Felhasználási területek",
+    "otherLines": "További profilozó sorok",
+    "otherMachines": "További gépek",
+    "lineQuote": "Ajánlat Erre a Sorra",
+    "machineQuote": "Ajánlat Erre a Gépre",
+    "quoteTitle": "Kérjen ajánlatot: {name}",
+    "eyebrowLine": "Profilozó sor",
+    "eyebrowMachine": "Présadagoló rendszerek",
+    "profileNote": "A profil méreteit és a vastagságtartományt <b>a projektje</b> határozza meg; a görgőszerszámot az Ön rajza alapján tervezzük.",
+    "whyTitle": "Miért a Servosteel?",
+    "why": [
+      "Egyedi méretezés és tervezés",
+      "Schneider alapú vezérlőrendszerek",
+      "Teljes gyári teszt, helyszíni üzembe helyezés",
+      "Terepi tapasztalat 48+ országban",
+      "Alkatrészek és távoli támogatás"
+    ]
+  },
+  "dilme": {
+    "metaTitle": "Hasító Sorok",
+    "metaDesc": "Hasító sorok 1.500-15.000 kg kapacitással: a széles tekercset méretre hasítják szalagokra. 0,5-5 mm vastagság, Schneider vezérlés.",
+    "eyebrow": "Szakterületünk",
+    "title": "Hasító Sorok",
+    "desc": "Komplett sorok, amelyek a széles tekercset pontos méretre hasítják szalagokra: minden egység a lecsévélőtől a felcsévélőig a Servosteel üzemében készül, gyárilag tesztelve, kulcsrakészen üzembe helyezve.",
+    "highlights": [
+      {
+        "title": "Sok szalag egy tekercsből",
+        "text": "A széles anyatekercset egy menetben több szalagra hasítjuk a rendelési méret szerint — kevesebb hulladék és készletköltség."
+      },
+      {
+        "title": "Szalagszélesség pontossága",
+        "text": "A késcsoportok pontos beállítása és a feszített felcsévélés szűk tűrésben tartja a szalagszélességeket."
+      },
+      {
+        "title": "Kapacitásra méretezve",
+        "text": "Könnyű és nehéz szériás keretek 1,5–15 tonnás tekercssúlyokhoz."
+      },
+      {
+        "title": "Schneider vezérlési architektúra",
+        "text": "Lexium és Altivar alapú fordulatszám-szabályozás; a teljes sor egyetlen kezelőpultról üzemel."
+      }
+    ],
+    "tableTitle": "Kapacitás- és vastagságopciók",
+    "tableHead": ["Széria", "Tekercssúly", "Lemezvastagság"],
+    "tableRows": [
+      ["Könnyű széria", "1.500 / 2.500 / 3.000 / 4.000 kg", "0,5 – 1 mm · 0,5 – 2 mm"],
+      ["Nehéz széria", "6.000 / 8.000 / 10.000 / 15.000 kg", "0,8 – 3 mm · 1,0 – 5 mm"]
+    ],
+    "tableNote": "A táblázat értékei standard szériák; a tekercsszélesség, a szalagszám és a sorsebesség a projektjére van méretezve.",
+    "components": [
+      "Lecsévélő",
+      "Tekercsberakó kocsi",
+      "Automatikus központozó rendszer",
+      "Egyengető egység",
+      "Automatikus adagolás",
+      "Hasító egység (késcsoport)",
+      "Automatikus tekercskirakó",
+      "Felcsévélő (recoiler) rendszer"
+    ],
+    "ctaTitle": "Méretezzük a hasító sorát",
+    "ctaText": "Adja meg a tekercssúlyt, a lemezvastagságot és a szalagméreteket; közösen tisztázzuk a megfelelő szériát és az elrendezést."
+  },
+  "boykesme": {
+    "metaTitle": "Keresztvágó Sorok",
+    "metaDesc": "Keresztvágó sorok: pontos vágás tekercsből táblává. Egyengetés, szervoadagolás, olló és rakatolás egyetlen PLC-ről vezérelve. Schneider vezérlés.",
+    "eyebrow": "Szakterületünk",
+    "title": "Keresztvágó Sorok",
+    "desc": "Komplett sorok, amelyek a tekercset pontosan a kívánt hosszúságú táblákká alakítják: egyengetés, szervoadagolás, olló és rakatolás — mind saját üzemünkben gyártva, egyetlen PLC-ről vezérelve.",
+    "highlights": [
+      {
+        "title": "Hosszpontosság",
+        "text": "A szervoadagolás és az enkóderes mérés szűk tűrésben vágja a táblahosszakat, sorozatban is ismételhetően."
+      },
+      {
+        "title": "Tiszta vágás",
+        "text": "Az olló késhézagát a lemezvastagsághoz állítjuk; sorja- és torzulásmentes vágás."
+      },
+      {
+        "title": "Vezérlés egy pontról",
+        "text": "A teljes sor egy kezelőpultról, PLC-vel vezérelve; a hosszak, darabszámok és receptek a HMI-ben tárolódnak."
+      },
+      {
+        "title": "Felületvédelem",
+        "text": "Az opcionális PVC-fóliázó egység rakatolás előtt megvédi az érzékeny felületeket a karcolástól."
+      }
+    ],
+    "whyTitle": "Miért Servosteel keresztvágó sor?",
+    "paras": [
+      "Minden egység a sor első láncszemétől az utolsó rakatig <b>egyetlen gyártótól</b> származik: a lecsévélő, egyengető, adagoló, olló és rakatoló egymáshoz méretezve. A több beszállítóból összeállított sorok illesztési problémái már az elején kiküszöbölődnek.",
+      "A fordulatszám-szabályozásban <b>Schneider Lexium és Altivar</b> szériás hajtásokat használunk; a sort szállítás előtt üzemünkben teljesen összeszereljük és teszteljük, így a helyszíni üzembe helyezés rövid.",
+      "A sorkonfigurációt a lemezvastagsághoz, tekercssúlyhoz és táblaméretekhez tervezzük; szükség esetén a sor hasító egységgel kombinálható, és szalagokat és táblákat is gyárthat."
+    ],
+    "components": [
+      "Lecsévélő",
+      "Tekercsberakó kocsi",
+      "Egyengető egység",
+      "Automatikus szervoadagolás",
+      "Ollós vágó (giljotin)",
+      "Automatikus rakatoló egység",
+      "Automatikus PVC-fóliázó rendszer"
+    ],
+    "ctaTitle": "Tervezzük meg a keresztvágó sorát",
+    "ctaText": "Adja meg a lemezvastagságot, tekercssúlyt és táblaméreteket; elrendezéssel és műszaki ajánlattal jelentkezünk."
+  },
+  "about": {
+    "metaTitle": "Rólunk",
+    "metaDesc": "Servosteel: 10+ év tapasztalat présadagoló rendszerekben és tekercsfeldolgozó sorokban. Egyedi gépgyártás, Isztambulból 48+ országba.",
+    "eyebrow": "Servosteel",
+    "title": "Mérnöki munka, amely acélt formál",
+    "desc": "A Servosteel présadagoló rendszerekre és tekercsfeldolgozó sorokra szakosodott török gépgyártó. Több mint egy évtizede minden gépet az ügyfél igénye szerint tervezünk, gyártunk és helyezünk üzembe.",
+    "stats": [
+      { "value": "10+", "label": "Év tapasztalat" },
+      { "value": "48+", "label": "Exportország" },
+      { "value": "27+", "label": "Szakértő csapat" },
+      { "value": "99%", "label": "Határidőre szállítás" }
+    ],
+    "storyTitle": "Egyetlen géptől a komplett sorig",
+    "story": [
+      "A Servosteel a présorokat tápláló gépekkel indult: lecsévélők, egyengetők és szervoadagolók. A terepi tapasztalat idővel komplett sorok mérnöki munkájává nőtt — ma kulcsrakészen telepítünk hasító, keresztvágó és profilozó sorokat.",
+      "Ami megkülönböztet minket: a sor minden láncszeme <b>egy tető alatt</b> készül — a mechanikai tervezés, gyártás, automatizálási szoftver és üzembe helyezés ugyanabban a csapatban. Ügyfeleink egy partnerrel dolgoznak, és a részegységek tökéletesen összehangoltan érkeznek.",
+      "Az isztambuli Sancaktepe üzemünkben készült sorok ma már <b>több mint 48 országban</b> — Európában, a Közel-Keleten, Afrikában és a Távol-Keleten — gyártanak."
+    ],
+    "values": [
+      {
+        "title": "Küldetésünk",
+        "text": "A megfelelő ipari gépet a legjobb szolgáltatással és értékkel szállítani: minden sort az ügyfél valós igényére tervezünk — semmi hiány, semmi felesleg."
+      },
+      {
+        "title": "Jövőképünk",
+        "text": "A fenntartható, újrahasznosítható gyártást szolgáló gépek fejlesztésével a tekercsfeldolgozás világszerte preferált török márkájává válni."
+      },
+      {
+        "title": "Gyártási megközelítésünk",
+        "text": "Minden részegység a lecsévélőtől a rakatolóig saját üzemünkben készül; a sort szállítás előtt teljesen összeszereljük és teszteljük."
+      },
+      {
+        "title": "Csapatunk",
+        "text": "Tapasztalt, 27+ fős csapat a mechanikai tervezéstől az automatizálásig; az eladás után ugyanazok a mérnökök maradnak a projektje mellett."
+      }
+    ],
+    "journeyEyebrow": "Utunk",
+    "journeyTitle": "Lépésről lépésre épült szakértelem",
+    "timeline": [
+      {
+        "title": "Présadagolási gyökerek",
+        "text": "Az út lecsévélőkkel, egyengetőkkel és szervoadagolókkal kezdődött a présorok pontos lemezellátásához."
+      },
+      {
+        "title": "Lépés a komplett sorok felé",
+        "text": "Egyetlen géptől a komplett megoldásig: a hasító és keresztvágó sorok bekerültek a kínálatba."
+      },
+      {
+        "title": "Profilozási szakértelem",
+        "text": "7 profilcsaládot lefedő profilozó sorok készültek, a kábeltálcától a szalagkorlátig."
+      },
+      {
+        "title": "Export 48+ országba",
+        "text": "Ma a Servosteel sorai négy kontinensen gyártanak, Európától a Távol-Keletig."
+      }
+    ],
+    "ctaTitle": "Beszéljünk a projektjéről",
+    "ctaText": "Akár egyetlen gépre, akár komplett sorra van szüksége — mérnökcsapatunk készen áll a figyelemre."
+  },
+  "refs": {
+    "metaTitle": "Referenciák",
+    "metaDesc": "A Servosteel sorai több mint 48 országban gyártanak Európában, a Közel-Keleten, Afrikában és a Távol-Keleten. Referenciáink régió és iparág szerint.",
+    "eyebrow": "Bizonyíték a terepről",
+    "title": "Gyártásban 48+ országban",
+    "desc": "A Servosteel sorai négy kontinens és számos iparág gyártóinak üzemeiben működnek. Titoktartási megállapodások miatt ügyféllistánkat nem tesszük közzé; az iparágának megfelelő referenciákat kérésre megosztjuk.",
+    "regions": [
+      {
+        "name": "Európa",
+        "text": "Spanyolországtól Lengyelországig, Magyarországtól Olaszországig: Servosteel sorok működnek EU-szabvány szerint gyártó üzemekben."
+      },
+      {
+        "name": "Közel-Kelet",
+        "text": "A szerkezeti profil- és infrastruktúra-beruházásokban gazdag régióban hasító és profilozó soraink gyártanak."
+      },
+      {
+        "name": "Afrika",
+        "text": "A növekvő ipari régiókban présadagoló rendszerekkel és keresztvágó sorokkal vagyunk jelen."
+      },
+      {
+        "name": "Távol-Kelet",
+        "text": "Olyan mérnöki munka és ár/érték arány, amelyet a legversenyzőbb térségben is választanak."
+      }
+    ],
+    "sectorsTitle": "Iparágak, amelyeket kiszolgálunk",
+    "sectors": [
+      "Acélszerviz-központok",
+      "Polc- és tárolórendszerek",
+      "Napelemes tartószerkezet-gyártók",
+      "Kábeltálca-gyártók",
+      "Közúti biztonsági rendszerek",
+      "Autóipari beszállítók",
+      "Háztartásigép-beszállítók",
+      "Állvány- és zsaluzatrendszerek",
+      "Fémcsomagolás"
+    ],
+    "videoProofTitle": "A legjobb referencia: egy működő sor",
+    "videoProofText": "Több mint 100 valódi terepi videó szerelésekről és üzembe helyezésekről a YouTube-csatornánkon.",
+    "videoCta": "Videók Megtekintése",
+    "ctaTitle": "Kérjen referenciákat az iparágából",
+    "ctaText": "Megosztjuk az Önéhez hasonló üzemekben lévő telepítéseinket, és üzemlátogatást szervezünk."
+  },
+  "videos": {
+    "metaTitle": "Videók",
+    "metaDesc": "Nézze meg a Servosteel sorait működés közben: valódi terepi videók hasító sorokról, profilozásról és présadagoló rendszerekről.",
+    "eyebrow": "A terepről",
+    "title": "Nézze meg sorainkat működés közben",
+    "desc": "Nem brosúraígéretek, hanem működő sorok: valódi felvételek szerelésekről, gyári tesztekről és ügyfélüzemekből.",
+    "items": [
+      {
+        "title": "Présadagoló Rendszerek",
+        "text": "Lecsévélő, egyengető és szervoadagoló a présorral szinkronban."
+      },
+      {
+        "title": "Keresztvágó Sor — Gyári Teszt",
+        "text": "Egy keresztvágó sor a szállítás előtti gyári teszten."
+      },
+      {
+        "title": "Liftalkatrészek Gyártása",
+        "text": "Liftalkatrészek gyártása présadagoló rendszerrel."
+      }
+    ],
+    "bannerTitle": "109 videó, 2,9 E feliratkozó",
+    "bannerText": "A teljes archívum a YouTube-csatornánkon, a hasító soroktól a HMI- és riportszoftverig — rendszeresen kerülnek fel új videók.",
+    "bannerCta": "Tovább a YouTube-csatornára",
+    "ctaTitle": "Hasonló sort keres?",
+    "ctaText": "Tervezünk az üzemének egy olyan sort, mint a videóban."
+  },
+  "contact": {
+    "metaTitle": "Kapcsolat",
+    "metaDesc": "Servosteel kapcsolat: központ Sancaktepe/Isztambul, +90 216 415 30 05, info@servosteel.com.tr. Ajánlatokért és műszaki kérdésekért.",
+    "eyebrow": "Lépjen kapcsolatba",
+    "title": "Kapcsolat",
+    "desc": "Ajánlat, műszaki részlet vagy üzemlátogatás — bármi legyen a téma, közvetlenül elérheti mérnökcsapatunkat.",
+    "phoneTitle": "Telefon",
+    "phoneNote": "Hétköznap 08:30 – 18:00 (TRT)",
+    "emailTitle": "E-mail",
+    "emailNote": "Válasz 24 órán belül",
+    "waTitle": "WhatsApp",
+    "waValue": "Gyors üzenet",
+    "waNote": "Ideális műszaki fotók/rajzok megosztásához",
+    "addressTitle": "Központ és Gyártóüzem",
+    "country": "Törökország",
+    "hours": "Hétfő – péntek: 08:30 – 18:00",
+    "directions": "Útvonalterv",
+    "mapTitle": "Servosteel helyszíntérkép",
+    "quoteBoxTitle": "Ajánlatra van szüksége?",
+    "quoteBoxText": "Küldje el a termék-, kapacitás- és mérethAdatokat a strukturált űrlapon; mérnökcsapatunk 48 órán belül válaszol.",
+    "quoteBoxCta": "Tovább az Űrlaphoz"
+  },
+  "quote": {
+    "metaTitle": "Ajánlatkérés",
+    "metaDesc": "Kérjen ajánlatot profilozó, hasító és keresztvágó sorokra: küldje el a termék- és kapacitásadatokat, 48 órán belül válaszolunk.",
+    "eyebrow": "Válasz 48 órán belül",
+    "title": "Ajánlat a projektjéhez",
+    "desc": "Minél több részletet ad meg, annál pontosabb az ajánlat — de ha bizonytalan, az sem baj: a megfelelő konfigurációt közösen határozzuk meg.",
+    "processTitle": "Hogyan működik?",
+    "steps": [
+      "Kérése még aznap a mérnökcsapathoz kerül",
+      "Ha szükséges, telefonon pontosítjuk az igényt",
+      "Az ajánlat rajzokkal és kapacitásszámítással készül",
+      "Írásos ajánlat a kezében 48 órán belül"
+    ],
+    "directTitle": "Inkább közvetlenül keresne minket?",
+    "form": {
+      "name": "Teljes név *",
+      "namePh": "Az Ön teljes neve",
+      "company": "Cég *",
+      "companyPh": "Cégnév",
+      "email": "E-mail *",
+      "emailPh": "pelda@ceg.com",
+      "phone": "Telefon *",
+      "phonePh": "+36 ...",
+      "location": "Ország / Város",
+      "locationPh": "Ország / Város",
+      "product": "Érdeklődés tárgya *",
+      "specs": "Lemezvastagság / tekercssúly / profilméret",
+      "specsPh": "Pl.: 0,5-2 mm lemez, 10 t tekercs, 41x41 napelemes profil",
+      "message": "Üzenete",
+      "messagePh": "Írja le röviden a projektet; ha van profilrajza, csatolhatja az e-mailhez.",
+      "submit": "Kérés Elküldése",
+      "wa": "Írjon WhatsApp-on",
+      "note": "A „Küldés” gomb kész üzenetként nyitja meg kérését az e-mail alkalmazásában — küldés előtt átnézheti, és rajzokat/fotókat csatolhat.",
+      "waPrefill": "Üdvözlöm! Ajánlatot szeretnék kérni erre: {product}.",
+      "mailSubject": "Ajánlatkérés — {product}",
+      "mailIntro": "Új ajánlatkérés (weboldal űrlap)",
+      "mailFields": {
+        "name": "Név",
+        "company": "Cég",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "location": "Ország/Város",
+        "product": "Érdeklődés tárgya",
+        "specs": "Lemezvastagság / kapacitás",
+        "message": "Üzenet"
+      },
+      "options": [
+        "Profilozó Sor — Kábeltálca",
+        "Profilozó Sor — Napelemes Profil",
+        "Profilozó Sor — Nehéz Polc",
+        "Profilozó Sor — Állványpalló",
+        "Profilozó Sor — Szalagkorlát",
+        "Profilozó Sor — Zajvédő Fal",
+        "Profilozó Sor — C+/Sigma/Omega",
+        "Profilozó Sor — Egyedi Profil",
+        "Hasító Sor",
+        "Keresztvágó Sor",
+        "Lecsévélő",
+        "Szervoadagoló",
+        "Egyengetős Szervoadagoló",
+        "Kompakt Sor",
+        "Egyéb / Bizonytalan"
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Az oldal nem található",
+    "text": "A keresett oldal áthelyezésre kerülhetett, vagy soha nem is létezett.",
+    "back": "Vissza a kezdőlapra"
+  },
+  "products": {
+    "rollform": {
+      "kablo-kanali": {
+        "name": "Kábeltálca Gyártósor",
+        "short": "Komplett sor perforált és zárt kábeltálcákhoz, tálcákhoz és fedelekhez.",
+        "hero": "Komplett görgős profilozó sor, amely a kábeltálcákat — az elektromos infrastruktúra gerincét — a tekercstől a kész termékig gyártja: lecsévélő, egyengető, szervoadagolás, lyukasztó állomások, profilozó gép és vágóegység egyetlen PLC-ről vezérelve.",
+        "meta": "Kábeltálca gyártósor: egyedi, komplett görgős profilozó megoldás perforált/zárt tálcákhoz, tálcákhoz és fedélprofilokhoz.",
+        "features": [
+          {
+            "title": "Soron belüli lyukasztás",
+            "text": "A szellőző- és rögzítőlyukakat a soron belüli szervo lyukasztó állomások készítik, külön művelet nélkül."
+          },
+          {
+            "title": "Gyors méretváltás",
+            "text": "Recept alapú váltás a különböző tálcaszélességek között; a beállítási idő minimálisra csökken."
+          },
+          {
+            "title": "Horganyzott lemezhez alkalmas",
+            "text": "A görgőket úgy munkáljuk meg és edzzük, hogy ne sértsék a cinkbevonatot (4140 acél, 58-60 HRC)."
+          }
+        ],
+        "components": [
+          "Lecsévélő (hidraulikus vagy mechanikus)",
+          "Egyengető egység",
+          "Szervoadagoló",
+          "Lyukasztó állomások",
+          "Profilozó gép",
+          "Vágóegység (sorvégi olló)",
+          "Kihordó szalag és rakatolás"
+        ],
+        "sectors": ["Elektromos infrastruktúra", "Adatközpontok", "Ipari létesítmények", "Plázák és épületprojektek"]
+      },
+      "solar-profil": {
+        "name": "Napelemes Profil Gyártósor",
+        "short": "Nagy sebességű profilozás fotovoltaikus tartóprofilokhoz.",
+        "hero": "Sor, amely a napelemes erőművek tartószerkezetének hat-, C- és Omega-profiljait közvetlenül a tekercsből gyártja; a lyukasztó állomások a rögzítőlyukakat soron belül készítik, és a profilok szerelésre készen érkeznek a helyszínre.",
+        "meta": "Napelemes tartóprofil gyártósor: komplett, nagy sebességű profilozó sor lyukasztó állomásokkal fotovoltaikus szerkezetekhez.",
+        "features": [
+          {
+            "title": "Profilforma a projekthez",
+            "text": "A görgőszerszámot hat-, C-, U- vagy Omega-keresztmetszetekhez tervezzük az EPC statikai terve szerint."
+          },
+          {
+            "title": "Magnelis®-hez és horganyzotthoz",
+            "text": "A nagy korrózióállóságú bevonatos lemezeket bevonatkímélő görgőfelületekkel alakítjuk."
+          },
+          {
+            "title": "Hossz- és lyukreceptek",
+            "text": "A különböző asztaltípusokhoz tartozó lyukmintát és hosszat receptként választjuk ki a HMI-n."
+          }
+        ],
+        "components": [
+          "Lecsévélő",
+          "Egyengető + szervoadagoló",
+          "Szervo lyukasztó állomások",
+          "Profilozó gép",
+          "Repülő olló",
+          "Automatikus rakatolás"
+        ],
+        "sectors": ["Napelem / EPC cégek", "Tetős napelem", "Szabadtéri erőművek", "Agro-PV"]
+      },
+      "agir-raf": {
+        "name": "Nehéz Polc Gyártósor",
+        "short": "Lyukasztó állomásos sor polcállványokhoz és tartókhoz.",
+        "hero": "Sor, amely a logisztikai raktárak teherhordó polcállványait (upright) és tartóit gyártja; a többsoros rögzítőlyukakat soron belül, szervolyukasztókkal készíti, és a mérethűség vastag lemezen is megmarad.",
+        "meta": "Nehéz polc gyártósor: egyedi profilozó megoldás lyukasztó állomásokkal polcállványokhoz és tartóprofilokhoz.",
+        "features": [
+          {
+            "title": "Többsoros lyukasztás",
+            "text": "Az állványprofilok akasztólyukait a szervoállomások a sorsebesség csökkentése nélkül készítik."
+          },
+          {
+            "title": "Vastag lemez képesség",
+            "text": "A polcrendszerek nagy falvastagságához méretezett keret és görgők."
+          },
+          {
+            "title": "Mérethű ismételhetőség",
+            "text": "A szervoadagolás és enkóderes vezérlés sorozatban is tartja a lyukak közötti pontosságot."
+          }
+        ],
+        "components": [
+          "Nehéz szériás lecsévélő",
+          "Egyengető egység",
+          "Szervoadagoló",
+          "Többállomásos lyukasztó csoport",
+          "Profilozó gép",
+          "Vágóegység",
+          "Rakatoló rendszer"
+        ],
+        "sectors": ["Raktár és logisztika", "Polcrendszer-gyártók", "E-kereskedelmi raktárak", "Hűtőraktárak"]
+      },
+      "iskele-kalas": {
+        "name": "Állványpalló Gyártósor",
+        "short": "Csúszásmentes állványpallók és pallóprofilok gyártása.",
+        "hero": "Sor, amely az építőállványok acél járópallóit gyártja; a csúszásmentes felületi dombornyomás és a vízelvezető lyukak soron belül alakulnak ki, a kampós véghajlításhoz préssel integrálható.",
+        "meta": "Állványpalló gyártósor: komplett profilozás csúszásmentes acélpallókhoz és pallóprofilokhoz.",
+        "features": [
+          {
+            "title": "Csúszásmentes felület",
+            "text": "A rombusz-/recézett dombornyomás folyamatosan, a profilozó állomásokban készül."
+          },
+          {
+            "title": "Vízelvezető és könnyítő lyukak",
+            "text": "A lyukmintákat soron belül lyukasztjuk; a palló könnyebb és biztonságosabb lesz egyszerre."
+          },
+          {
+            "title": "Végmegmunkálás integrálása",
+            "text": "A kampóhajlítás és a végvágás állomásként integrálható a sor végére."
+          }
+        ],
+        "components": [
+          "Lecsévélő",
+          "Egyengető + szervoadagoló",
+          "Lyukasztó állomások",
+          "Profilozó gép",
+          "Vágóegység",
+          "Végmegmunkáló állomás (opcionális)"
+        ],
+        "sectors": ["Állványrendszerek", "Építőipari berendezések", "Zsalu-állvány bérlés", "Építkezési biztonság"]
+      },
+      "yol-bariyeri": {
+        "name": "Szalagkorlát Gyártósor",
+        "short": "Nehéz üzemű profilozás W-szelvényű szalagkorlátokhoz.",
+        "hero": "Nehéz üzemű sor, amely a közúti biztonság szabványát, a W-szelvényű (kéthullámú) és háromhullámú szalagkorlátokat gyártja; a hullámformát vastag horganyzott lemezen, szabvány szerinti pontossággal alakítja.",
+        "meta": "Szalagkorlát gyártósor: nehéz üzemű profilozás W-szelvényű és háromhullámú korlátokhoz.",
+        "features": [
+          {
+            "title": "Szabvány szerinti forma",
+            "text": "Görgőszerszám-tervezés és formakontroll az EN 1317 szerinti korlátgeometriákhoz."
+          },
+          {
+            "title": "Nehéz keretszerkezet",
+            "text": "Merev test és erős hajtás a 3-4 mm horganyzott lemez ütésmentes vezetéséhez a hullámformában is."
+          },
+          {
+            "title": "Lyuk- és hosszpontosság",
+            "text": "A csatlakozólyukak és vágáshosszak szervo vezérléssel rögzítettek; a helyszíni szerelés zökkenőmentes."
+          }
+        ],
+        "components": [
+          "Nehéz szériás lecsévélő (10-15 t)",
+          "Egyengető egység",
+          "Szervoadagoló + lyukasztás",
+          "Nehéz üzemű profilozó gép",
+          "Hidraulikus vágás",
+          "Rakatolás"
+        ],
+        "sectors": ["Útépítő vállalkozók", "Autópálya-projektek", "Horganyzó üzemek", "Infrastruktúra-exportőrök"]
+      },
+      "gurultu-bariyeri": {
+        "name": "Zajvédő Fal Gyártósor",
+        "short": "Profilozás zajvédő kazetta- és panelprofilokhoz.",
+        "hero": "Sor, amely az autópályák és vasutak menti zajvédő falak alumínium/acél kazettaprofiljait gyártja; a perforált előlap (elnyelő) és a zárt hátlap ugyanazon a platformon készíthető.",
+        "meta": "Zajvédő fal gyártósor: profilozás perforált és zárt kazetta- és panelprofilokhoz.",
+        "features": [
+          {
+            "title": "Perforált panelek",
+            "text": "Az akusztikus elnyeléshez szükséges előlapi perforáció soron belül vagy az adagolás előtt integrálódik."
+          },
+          {
+            "title": "Alumínium és acél",
+            "text": "A különböző anyagokhoz és vastagságokhoz tartozó görgőnyomás-beállítások recepttel kezelhetők."
+          },
+          {
+            "title": "Hosszú panelek",
+            "text": "Pontos hosszra vágás és biztonságos rakatolás a fal modulhosszai szerint."
+          }
+        ],
+        "components": [
+          "Lecsévélő",
+          "Egyengető + szervoadagoló",
+          "Perforáló/lyukasztó egység",
+          "Profilozó gép",
+          "Vágóegység",
+          "Rakatolás"
+        ],
+        "sectors": ["Autópálya-projektek", "Vasút és metró", "Környezetmérnökség", "Városi infrastruktúra"]
+      },
+      "c-sigma-omega": {
+        "name": "C+ / Sigma / Omega Profil Sor",
+        "short": "Könnyűszerkezetes acélprofilok: több keresztmetszet egy soron.",
+        "hero": "Rugalmas megoldás, amely a könnyűszerkezetes építés tartóit, a C-, Sigma- és Omega-profilokat egyetlen soron gyártja; a keresztmetszetek közötti váltás percek alatt megy a állítható görgőcsoportok és a receptrendszer révén.",
+        "meta": "C, Sigma és Omega profil gyártósor: állítható, több keresztmetszetű profilozás könnyűszerkezetes építéshez.",
+        "features": [
+          {
+            "title": "Három keresztmetszet egy soron",
+            "text": "A C-, Sigma- és Omega-formák ugyanazon a soron, állítható állomásokkal készülnek; a beruházás csökken."
+          },
+          {
+            "title": "Automatikus szélesség/magasság állítás",
+            "text": "A méretváltás szervotengelyekkel, HMI-receptekkel történik."
+          },
+          {
+            "title": "Szerkezeti lyukminták",
+            "text": "A csavar- és szervizlyukakat soron belül, a projekt szerint lyukasztjuk."
+          }
+        ],
+        "components": [
+          "Lecsévélő",
+          "Egyengető + szervoadagoló",
+          "Lyukasztó állomások",
+          "Állítható profilozó gép",
+          "Repülő olló",
+          "Rakatolás"
+        ],
+        "sectors": ["Könnyűszerkezetes építés", "Napelemes szerkezet", "Előregyártott épületek", "Ipari csarnok", "Szelemenprofilok"]
+      }
+    },
+    "machines": {
+      "rulo-acicilar": {
+        "name": "Lecsévélők",
+        "short": "Hidraulikus 6-20 t, mechanikus 500-2.500 kg.",
+        "hero": "Minden sor első láncszeme: hidraulikus és mechanikus lecsévélők, amelyek biztonságosan tartják a tekercset és szabályozott feszültséggel csévélik le. Kapacitásra, lemezszélességre és automatizáltsági szintre tervezve.",
+        "meta": "Hidraulikus (6-20 t) és mechanikus (500-2.500 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
+        "features": [
+          {
+            "title": "Hidraulikus tüskefeszítés",
+            "text": "A nehéz szériákban a tekercs belső átmérőjét hidraulikusan szorítjuk; a berakás gyors és biztonságos."
+          },
+          {
+            "title": "Berakó kocsi opció",
+            "text": "Hidraulikus berakó kocsi a nehéz tekercsek darus várakozás nélküli sorba juttatásához."
+          },
+          {
+            "title": "Sorszinkronizáció",
+            "text": "Táncoltató karos / fotocellás vezérléssel a lecsévélő automatikusan a sorsebességhez igazodik."
+          }
+        ],
+        "sectors": ["Présadagolás", "Hasító sorok", "Keresztvágó sorok", "Profilozó sorok"],
+        "table": {
+          "title": "Kapacitásopciók",
+          "head": ["Széria", "Modellek"],
+          "rows": [
+            ["Hidraulikus lecsévélők", "6 – 8 – 10 – 12 – 15 – 20 t"],
+            ["Mechanikus lecsévélők", "500 – 750 – 1.500 – 2.500 kg"]
+          ]
+        }
+      },
+      "servo-suruculer": {
+        "name": "Szervoadagolók",
+        "short": "Pontos léptető lemezadagolás présorokba; standard és mini széria.",
+        "hero": "A szervoadagolók milliméteres léptékben juttatják a lemezt a szerszámba; a Schneider Lexium szervotechnológia nagy ismételhetőséget, présszinkront és egyszerű receptkezelést kínál.",
+        "meta": "Szervoadagolók: standard és mini széria présorokhoz, Schneider Lexium alapú pontos lemezadagolás.",
+        "features": [
+          {
+            "title": "Milliméteres léptékpontosság",
+            "text": "A szervomotor + precíziós hajtómű kombináció sorozatban is tartja a léptéktűréseket."
+          },
+          {
+            "title": "Présszinkronizáció",
+            "text": "Teljesen szinkron működés a prés bütyökjelével; a pilotoldó (release) funkció alap."
+          },
+          {
+            "title": "Egyszerű kezelés",
+            "text": "A lépéshossz, sebesség és rámpa értékek receptként tárolódnak az érintő HMI-n."
+          }
+        ],
+        "sectors": ["Fémsajtoló üzemek", "Autóipari beszállítók", "Háztartási gépek", "Elektromos-elektronikai"],
+        "table": {
+          "title": "Szériák",
+          "head": ["Széria", "Felhasználás"],
+          "rows": [
+            ["Standard szervoadagolók", "Közepes és széles lemez, nagy tonnázsú présök"],
+            ["Mini szervoadagolók", "Keskeny lemez és kompakt présorok"]
+          ]
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "name": "Egyengetős Szervoadagolók",
+        "short": "Egyengetés és szervoadagolás egy testben: hely és beruházás megtakarítása.",
+        "hero": "Kompakt megoldás, amely a tekercs hajlási memóriáját megszüntető egyengető görgőket és a szervoadagolást egy testben egyesíti; kiváltja a külön egyengetőt és annak helyigényét.",
+        "meta": "Egyengetős szervoadagolók: egyengetés + pontos adagolás egy gépben. Szekrényes és mini kivitel.",
+        "features": [
+          {
+            "title": "Két művelet, egy gép",
+            "text": "Egyengetés és adagolás ugyanabban a testben; a sor rövidül, a telepítés egyszerűsödik."
+          },
+          {
+            "title": "Állítható egyengetőnyomás",
+            "text": "A görgőnyomások fokozatmentesen állíthatók a lemezvastagsághoz."
+          },
+          {
+            "title": "Szekrényes és mini kivitel",
+            "text": "A lemezszélesség és -vastagság szerint szekrényes (nehéz) vagy mini szériát választunk."
+          }
+        ],
+        "sectors": ["Présadagolás", "Autóipari beszállítók", "Fémcsomagolás", "Általános lemezfeldolgozás"],
+        "table": {
+          "title": "Szériák",
+          "head": ["Széria", "Felhasználás"],
+          "rows": [
+            ["Szekrényes egyengetős szervoadagolók", "Vastag lemez, nagy egyengetési igény"],
+            ["Mini egyengetős szervoadagolók", "Vékony lemez, kompakt sorok"]
+          ]
+        }
+      },
+      "kompakt-hatlar": {
+        "name": "Kompakt Sorok",
+        "short": "Lecsévélő + egyengető + adagoló egy platformon.",
+        "hero": "A kompakt sorok a lecsévélést, egyengetést és szervoadagolást egyetlen platformon egyesítik; olyan üzemeknek, amelyek korlátozott helyen teljes értékű présadagolást szeretnének.",
+        "meta": "Kompakt présadagoló sorok: lecsévélő, egyengető és szervoadagoló egy platformon.",
+        "features": [
+          {
+            "title": "Minimális helyigény",
+            "text": "Három gép munkája egy vázon; jelentős helymegtakarítás a klasszikus elrendezéshez képest."
+          },
+          {
+            "title": "Vezérlés egy pontról",
+            "text": "A lecsévélő, egyengető és adagoló egy HMI-ről vezérelhető; kevesebb kezelői terhelés."
+          },
+          {
+            "title": "Gyors üzembe helyezés",
+            "text": "Gyárilag tesztelt, egyetlen test; a helyszíni telepítés és üzembe helyezés rövid."
+          }
+        ],
+        "sectors": ["KKV sajtoló üzemek", "Autóipari beszállítók", "Szerszámüzemek", "Bérgyártás"]
+      }
+    }
+  }
+}
