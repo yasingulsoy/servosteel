@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, ChevronDown, Cog, Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { SocialIcons } from "@/components/social-icons";
@@ -11,6 +11,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { rollFormItems, machineItems } from "@/lib/catalog";
+import { getAkademiUi } from "@/lib/akademi-ui";
 
 type MegaItem = { label: string; href: string; desc: string; icon?: string };
 
@@ -173,6 +174,7 @@ export function SiteHeader() {
   const tRoll = useTranslations("products.rollform");
   const tMach = useTranslations("products.machines");
   const tHub = useTranslations("hub");
+  const ak = getAkademiUi(useLocale());
   const pathname = usePathname();
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -254,6 +256,7 @@ export function SiteHeader() {
             width="w-[400px]"
           />
           <NavLink href="/hakkimizda" label={t("about")} active={isActive("/hakkimizda")} overHero={overHero} />
+          <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} overHero={overHero} />
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} overHero={overHero} />
         </nav>
 
@@ -350,6 +353,9 @@ export function SiteHeader() {
             </details>
             <Link href="/hakkimizda" onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt">
               {t("about")}
+            </Link>
+            <Link href="/akademi" onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt">
+              {ak.nav}
             </Link>
             <Link href="/iletisim" onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt">
               {t("contact")}

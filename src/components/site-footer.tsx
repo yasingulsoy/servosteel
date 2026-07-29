@@ -1,13 +1,15 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SocialIcons } from "@/components/social-icons";
 import { CONTACT } from "@/lib/site";
+import { getAkademiUi } from "@/lib/akademi-ui";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
+  const ak = getAkademiUi(useLocale());
 
   const productLinks = [
     { label: tn("rollform"), href: "/roll-form-hatlari" },
@@ -18,6 +20,7 @@ export function SiteFooter() {
 
   const companyLinks = [
     { label: tn("about"), href: "/hakkimizda" },
+    { label: ak.nav, href: "/akademi" },
     { label: t("refs"), href: "/referanslar" },
     { label: t("videos"), href: "/videolar" },
     { label: tn("contact"), href: "/iletisim" },

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight as ArrowRightIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -90,19 +91,30 @@ export default async function Home({ params }: Props) {
             <Reveal key={s.href} delay={i * 100}>
               <Link
                 href={s.href}
-                className="group flex h-full flex-col rounded-2xl border border-line bg-card p-7 text-accent transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card text-accent transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
               >
-                <SolutionIcon name={s.icon} className="size-14 text-ink transition-colors group-hover:text-accent" />
-                <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-tight text-ink">
-                  {t(`solutions.${s.key}.title`)}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                  {t(`solutions.${s.key}.desc`)}
-                </p>
-                <span className="mt-6 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                  {t("cta2")}
-                  <ArrowRight />
-                </span>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-alt">
+                  <Image
+                    src={`/gorseller${s.href}.jpg`}
+                    alt={t(`solutions.${s.key}.title`)}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <SolutionIcon name={s.icon} className="size-10 text-accent" />
+                  <h3 className="font-display mt-4 text-xl font-bold uppercase tracking-tight text-ink">
+                    {t(`solutions.${s.key}.title`)}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                    {t(`solutions.${s.key}.desc`)}
+                  </p>
+                  <span className="mt-6 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                    {t("cta2")}
+                    <ArrowRight />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}
@@ -132,12 +144,23 @@ export default async function Home({ params }: Props) {
               <Reveal key={line.slug} delay={(i % 4) * 80}>
                 <Link
                   href={`/roll-form-hatlari/${line.slug}`}
-                  className="group block h-full rounded-xl border border-line bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
+                  className="group block h-full overflow-hidden rounded-xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
                 >
-                  <ProfileIcon k={line.icon} className="size-11 text-muted transition-colors group-hover:text-accent" />
-                  <h3 className="mt-4 text-sm font-semibold leading-snug text-ink">
-                    {tRoll(`${line.slug}.name`)}
-                  </h3>
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
+                    <Image
+                      src={`/gorseller/${line.slug}.jpg`}
+                      alt={tRoll(`${line.slug}.name`)}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2.5 p-4">
+                    <ProfileIcon k={line.icon} className="size-7 shrink-0 text-accent" />
+                    <h3 className="text-sm font-semibold leading-snug text-ink">
+                      {tRoll(`${line.slug}.name`)}
+                    </h3>
+                  </div>
                 </Link>
               </Reveal>
             ))}
@@ -176,16 +199,27 @@ export default async function Home({ params }: Props) {
             <Reveal key={m.slug} delay={i * 80}>
               <Link
                 href={`/makineler/${m.slug}`}
-                className="group block h-full rounded-2xl border border-line bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
+                className="group block h-full overflow-hidden rounded-2xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
               >
-                <h3 className="font-display text-lg font-bold uppercase tracking-tight text-ink">
-                  {tMach(`${m.slug}.name`)}
-                </h3>
-                <p className="mt-2 text-sm text-muted">{tMach(`${m.slug}.short`)}</p>
-                <span className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                  {t("cta2")}
-                  <ArrowRight />
-                </span>
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
+                  <Image
+                    src={`/gorseller/${m.slug}.jpg`}
+                    alt={tMach(`${m.slug}.name`)}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-lg font-bold uppercase tracking-tight text-ink">
+                    {tMach(`${m.slug}.name`)}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">{tMach(`${m.slug}.short`)}</p>
+                  <span className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                    {t("cta2")}
+                    <ArrowRight />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}

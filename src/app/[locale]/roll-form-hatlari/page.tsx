@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -64,17 +65,30 @@ export default async function RollFormHatlariPage({ params }: Props) {
             <Reveal key={line.slug} delay={(i % 3) * 100}>
               <Link
                 href={`/roll-form-hatlari/${line.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-line bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
               >
-                <ProfileIcon k={line.icon} className="size-12 text-muted transition-colors group-hover:text-accent" />
-                <h2 className="font-display mt-5 text-lg font-bold uppercase tracking-tight text-ink">
-                  {tRoll(`${line.slug}.name`)}
-                </h2>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{tRoll(`${line.slug}.short`)}</p>
-                <span className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                  {tc("details")}
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden />
-                </span>
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-alt">
+                  <Image
+                    src={`/gorseller/${line.slug}.jpg`}
+                    alt={tRoll(`${line.slug}.name`)}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <div className="flex items-center gap-2.5">
+                    <ProfileIcon k={line.icon} className="size-8 shrink-0 text-accent" />
+                    <h2 className="font-display text-lg font-bold uppercase tracking-tight text-ink">
+                      {tRoll(`${line.slug}.name`)}
+                    </h2>
+                  </div>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{tRoll(`${line.slug}.short`)}</p>
+                  <span className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                    {tc("details")}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}
