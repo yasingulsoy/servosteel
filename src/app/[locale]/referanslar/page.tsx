@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Globe2 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { SpecularButton } from "@/components/specular-button";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -72,13 +72,10 @@ export default async function ReferanslarPage({ params }: Props) {
               </h2>
               <p className="mt-2 max-w-2xl text-muted">{t("videoProofText")}</p>
             </div>
-            <Link
-              href="/videolar"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-lg bg-ink px-6 py-3.5 text-sm font-semibold text-surface transition-opacity hover:opacity-85"
-            >
+            <SpecularButton href="/videolar" variant="dark" size="lg" className="shrink-0">
               {t("videoCta")}
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden />
-            </Link>
+              <ArrowRight className="size-4" strokeWidth={1.8} aria-hidden />
+            </SpecularButton>
           </div>
         </Reveal>
       </section>

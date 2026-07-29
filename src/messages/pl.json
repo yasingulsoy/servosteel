@@ -53,8 +53,8 @@
   },
   "home": {
     "badge": "Ze Stambułu do ponad 48 krajów",
-    "h1l1": "Linie, które zmieniają",
-    "h1l2": "krąg stalowy",
+    "h1l1": "Inżynieria, która",
+    "h1l2": "kształtuje stal",
     "h1l3": "w produkt",
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
@@ -694,11 +694,15 @@
         ],
         "sectors": ["Podawanie do pras", "Linie cięcia wzdłużnego", "Linie cięcia poprzecznego", "Linie profilujące"],
         "table": {
-          "title": "Opcje wydajności",
-          "head": ["Seria", "Modele"],
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Mechaniczne", "Hydrauliczne"],
           "rows": [
-            ["Odwijaki hydrauliczne", "6 – 8 – 10 – 12 – 15 – 20 t"],
-            ["Odwijaki mechaniczne", "500 – 750 – 1.500 – 2.500 kg"]
+            ["Modele", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Szerokość kręgu", "30 – 500 mm", "80 – 1.000 mm"],
+            ["Średnica wewnętrzna kręgu", "300 mm", "450 – 560 mm"],
+            ["Średnica zewnętrzna (maks.)", "1.600 mm", "1.600 mm"],
+            ["Rozprężanie trzpienia", "Mechaniczne", "Hydrauliczne"],
+            ["Sterowanie", "Regulacja prędkości + hamulec", "Schneider PLC"]
           ]
         }
       },
@@ -723,11 +727,15 @@
         ],
         "sectors": ["Tłocznie metalu", "Dostawcy motoryzacyjni", "AGD", "Elektryka-elektronika"],
         "table": {
-          "title": "Serie",
-          "head": ["Seria", "Zastosowanie"],
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Wartość"],
           "rows": [
-            ["Podajniki serwo standardowe", "Blacha średnia i szeroka, prasy o dużym tonażu"],
-            ["Podajniki serwo mini", "Wąska blacha i kompaktowe linie prasowe"]
+            ["Grubość materiału", "0,4 – 4,0 mm"],
+            ["Szerokość taśmy", "≤ 1.600 mm"],
+            ["Prędkość podawania swobodnego", "35 m/min"],
+            ["Rolki podające", "2 × Ø85 mm"],
+            ["Wyświetlacz", "dotykowy HMI 7\""],
+            ["Pamięć narzędzi", "250 receptur"]
           ]
         }
       },
@@ -752,11 +760,14 @@
         ],
         "sectors": ["Podawanie do pras", "Dostawcy motoryzacyjni", "Opakowania metalowe", "Ogólna obróbka blachy"],
         "table": {
-          "title": "Serie",
-          "head": ["Seria", "Zastosowanie"],
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Wartość"],
           "rows": [
-            ["Z prostownicą, wersja szafowa", "Gruba blacha, duża potrzeba prostowania"],
-            ["Z prostownicą, wersja mini", "Cienka blacha, linie kompaktowe"]
+            ["Szerokość taśmy", "≤ 1.600 mm"],
+            ["Grubość materiału", "0,5 – 4,0 mm"],
+            ["Rolki prostujące", "7 / 9 / 11 / 13"],
+            ["Pamięć narzędzi", "250 receptur"],
+            ["Sterowanie", "kolorowy dotykowy LCD Schneider"]
           ]
         }
       },
@@ -779,7 +790,21 @@
             "text": "Jeden korpus przetestowany fabrycznie; instalacja i uruchomienie na miejscu są krótkie."
           }
         ],
-        "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"]
+        "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"],
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Wartość"],
+          "rows": [
+            ["Szerokość materiału", "40 – 1.300 mm"],
+            ["Grubość materiału", "0,5 – 4,0 mm"],
+            ["Prędkość swobodna", "40 m/min"],
+            ["Dokładność podawania", "± 0,1 mm"],
+            ["Waga kręgu", "2.500 – 10.000 kg"],
+            ["Średnica wewn. / zewn. kręgu", "450 – 560 / 1.300 – 1.600 mm"],
+            ["Rolki podające", "2 + 2"],
+            ["Rolki prostujące", "5 × Ø85 mm"]
+          ]
+        }
       }
     }
   }

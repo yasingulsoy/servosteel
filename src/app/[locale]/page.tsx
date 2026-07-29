@@ -1,9 +1,12 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ArrowRight as ArrowRightIcon, Play } from "lucide-react";
+import { ArrowRight as ArrowRightIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
+import { SpecularButton } from "@/components/specular-button";
+import { VideoBand } from "@/components/video-band";
+import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
 import { SolutionIcon } from "@/components/solution-icon";
 import { rollFormItems, machineItems } from "@/lib/catalog";
@@ -35,45 +38,6 @@ function ArrowRight() {
   );
 }
 
-function CoilIllustration({ measure }: { measure: string }) {
-  return (
-    <svg viewBox="0 0 520 400" fill="none" className="w-full" aria-hidden>
-      <g stroke="#3f3f46" strokeWidth="0.6" opacity="0.35">
-        {Array.from({ length: 11 }, (_, i) => (
-          <line key={`v${i}`} x1={20 + i * 48} y1="20" x2={20 + i * 48} y2="380" />
-        ))}
-        {Array.from({ length: 8 }, (_, i) => (
-          <line key={`h${i}`} x1="20" y1={20 + i * 48} x2="500" y2={20 + i * 48} />
-        ))}
-      </g>
-      <g transform="translate(150 200)">
-        <circle r="118" stroke="#71717a" strokeWidth="2.5" />
-        <circle r="96" stroke="#52525b" strokeWidth="1.5" className="animate-spin-slow" strokeDasharray="10 14" />
-        <circle r="74" stroke="#52525b" strokeWidth="1.5" />
-        <circle r="52" stroke="#52525b" strokeWidth="1.5" />
-        <circle r="30" stroke="#e7a300" strokeWidth="2.5" />
-        <circle r="8" fill="#e7a300" />
-      </g>
-      <g strokeLinecap="round">
-        <path d="M150 82 H 470" stroke="#71717a" strokeWidth="10" opacity="0.9" />
-        <path d="M150 82 H 470" stroke="#a1a1aa" strokeWidth="3" opacity="0.5" />
-        <path d="M256 148 C 330 148 360 128 470 126" stroke="#e7a300" strokeWidth="10" className="animate-flow" />
-        <path d="M266 190 C 340 192 380 172 470 168" stroke="#71717a" strokeWidth="10" opacity="0.9" />
-        <path d="M266 214 C 340 216 380 208 470 210" stroke="#71717a" strokeWidth="10" opacity="0.7" />
-        <path d="M256 256 C 330 258 370 250 470 252" stroke="#71717a" strokeWidth="10" opacity="0.5" />
-      </g>
-      <g stroke="#e7a300" strokeWidth="1.2">
-        <line x1="470" y1="112" x2="470" y2="140" />
-        <line x1="486" y1="112" x2="486" y2="140" />
-        <line x1="470" y1="126" x2="486" y2="126" />
-      </g>
-      <text x="494" y="130" className="fill-accent-ink" fontSize="11" fontFamily="var(--font-inter)">
-        {measure}
-      </text>
-    </svg>
-  );
-}
-
 const solutionMeta = [
   { key: "rollform", href: "/roll-form-hatlari", icon: "rollform" as const },
   { key: "slitting", href: "/dilme-hatlari", icon: "slitting" as const },
@@ -92,60 +56,21 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-surface text-ink">
-        <div
-          aria-hidden
-          className="animate-breathe pointer-events-none absolute -right-40 -top-40 size-[480px] rounded-full bg-accent/15 blur-[120px]"
-        />
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
-          <div>
-            <p className="animate-rise flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
-              <span className="size-1.5 rounded-full bg-accent" aria-hidden />
-              {t("badge")}
-            </p>
-            <h1 className="font-display animate-rise mt-5 text-4xl font-extrabold uppercase leading-[1.08] tracking-tight [animation-delay:100ms] sm:text-5xl lg:text-6xl">
-              {t("h1l1")}
-              <br />
-              <span className="text-accent">{t("h1l2")}</span>
-              <br />
-              {t("h1l3")}
-            </h1>
-            <p className="animate-rise mt-6 max-w-lg text-lg leading-relaxed text-ink/80 [animation-delay:200ms]">
-              {t("sub")}
-            </p>
-            <div className="animate-rise mt-9 flex flex-wrap gap-4 [animation-delay:300ms]">
-              <Link
-                href="/teklif-al"
-                className="rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-zinc-950 shadow-lg shadow-accent/30 transition-all hover:bg-accent-strong hover:shadow-accent/50"
-              >
-                {t("cta1")}
-              </Link>
-              <Link
-                href="/roll-form-hatlari"
-                className="rounded-lg border border-ink/25 px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-ink/50 hover:bg-ink/5"
-              >
-                {t("cta2")}
-              </Link>
-            </div>
-          </div>
-          <div className="animate-rise relative hidden [animation-delay:250ms] lg:block">
-            <CoilIllustration measure={t("measure")} />
-          </div>
-        </div>
+      {/* HERO — tam ekran arka plan videosu */}
+      <HeroVideo />
 
-        <div className="border-t border-line bg-surface-alt">
-          <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-4 py-9 lg:grid-cols-4">
-            {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={i * 80}>
-                <div className="flex flex-col-reverse items-center gap-1 text-center">
-                  <dt className="text-sm text-muted">{stat.label}</dt>
-                  <dd className="font-display text-4xl font-bold text-ink">{stat.value}</dd>
-                </div>
-              </Reveal>
-            ))}
-          </dl>
-        </div>
+      {/* İSTATİSTİK ŞERİDİ */}
+      <section className="border-b border-line bg-surface-alt">
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-4 py-9 lg:grid-cols-4">
+          {stats.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 80}>
+              <div className="flex flex-col-reverse items-center gap-1 text-center">
+                <dt className="text-sm text-muted">{stat.label}</dt>
+                <dd className="font-display text-4xl font-bold text-ink">{stat.value}</dd>
+              </div>
+            </Reveal>
+          ))}
+        </dl>
       </section>
 
       {/* 3 ANA ÇÖZÜM */}
@@ -183,6 +108,8 @@ export default async function Home({ params }: Props) {
           ))}
         </div>
       </section>
+
+      <VideoBand />
 
       {/* ROLL FORM ALT HATLARI */}
       <section className="bg-surface-alt">
@@ -301,33 +228,26 @@ export default async function Home({ params }: Props) {
               {t("videoTitle")}
             </h2>
             <p className="mt-5 max-w-lg leading-relaxed text-muted">{t("videoText")}</p>
-            <Link
-              href="/videolar"
-              className="group mt-8 inline-flex items-center gap-2 rounded-lg bg-ink px-6 py-3.5 text-sm font-semibold text-surface transition-opacity hover:opacity-85"
-            >
+            <SpecularButton href="/videolar" variant="dark" size="lg" className="mt-8">
               {t("videoCta")}
               <ArrowRight />
-            </Link>
+            </SpecularButton>
           </Reveal>
           <Reveal delay={150}>
-            <a
-              href="https://www.youtube.com/@ServoSteel.ServoMold"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl bg-shell"
-              aria-label={t("videoAria")}
-            >
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-40 [background:repeating-linear-gradient(115deg,transparent_0_26px,rgba(200,200,200,0.1)_26px_27px)]"
-              />
-              <span className="flex size-20 items-center justify-center rounded-full bg-accent shadow-2xl shadow-accent/40 transition-transform duration-300 group-hover:scale-110">
-                <Play className="ml-1 size-8 fill-current text-zinc-950" aria-hidden />
-              </span>
-              <span className="absolute bottom-5 left-5 text-sm font-medium text-zinc-400">
-                {t("videoBadge")}
-              </span>
-            </a>
+            <div className="overflow-hidden rounded-2xl border border-line bg-shell shadow-xl shadow-black/10">
+              <div className="aspect-video">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/2tgCtC8n_1E"
+                  title={t("videoAria")}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="size-full"
+                />
+              </div>
+              <p className="px-4 py-3 text-sm font-medium text-zinc-400">{t("videoBadge")}</p>
+            </div>
           </Reveal>
         </div>
       </section>

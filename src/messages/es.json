@@ -53,8 +53,8 @@
   },
   "home": {
     "badge": "De Estambul a más de 48 países",
-    "h1l1": "Líneas que convierten",
-    "h1l2": "la bobina de acero",
+    "h1l1": "Ingeniería que",
+    "h1l2": "da forma al acero",
     "h1l3": "en producto",
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
@@ -694,11 +694,15 @@
         ],
         "sectors": ["Alimentación de prensas", "Líneas de corte longitudinal", "Líneas de corte a medida", "Líneas de perfilado"],
         "table": {
-          "title": "Opciones de capacidad",
-          "head": ["Serie", "Modelos"],
+          "title": "Especificaciones técnicas",
+          "head": ["Característica", "Mecánico", "Hidráulico"],
           "rows": [
-            ["Desbobinadoras hidráulicas", "6 – 8 – 10 – 12 – 15 – 20 t"],
-            ["Desbobinadoras mecánicas", "500 – 750 – 1.500 – 2.500 kg"]
+            ["Modelos", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Ancho de bobina", "30 – 500 mm", "80 – 1.000 mm"],
+            ["Diámetro interior de bobina", "300 mm", "450 – 560 mm"],
+            ["Diámetro exterior (máx.)", "1.600 mm", "1.600 mm"],
+            ["Expansión del mandril", "Mecánico", "Hidráulico"],
+            ["Control", "Control de velocidad + freno", "Schneider PLC"]
           ]
         }
       },
@@ -723,11 +727,15 @@
         ],
         "sectors": ["Talleres de estampación", "Proveedores de automoción", "Electrodomésticos", "Electricidad-electrónica"],
         "table": {
-          "title": "Series",
-          "head": ["Serie", "Uso"],
+          "title": "Especificaciones técnicas",
+          "head": ["Característica", "Valor"],
           "rows": [
-            ["Alimentadores servo estándar", "Chapa media y ancha, prensas de alto tonelaje"],
-            ["Alimentadores servo mini", "Chapa estrecha y líneas compactas"]
+            ["Espesor de material", "0,4 – 4,0 mm"],
+            ["Ancho de fleje", "≤ 1.600 mm"],
+            ["Velocidad de avance libre", "35 m/min"],
+            ["Rodillos de avance", "2 × Ø85 mm"],
+            ["Pantalla", "HMI táctil de 7\""],
+            ["Memoria de moldes", "250 recetas"]
           ]
         }
       },
@@ -752,11 +760,14 @@
         ],
         "sectors": ["Alimentación de prensas", "Proveedores de automoción", "Envase metálico", "Chapa en general"],
         "table": {
-          "title": "Series",
-          "head": ["Serie", "Uso"],
+          "title": "Especificaciones técnicas",
+          "head": ["Característica", "Valor"],
           "rows": [
-            ["Con enderezadora, versión casete", "Chapa gruesa, alta necesidad de enderezado"],
-            ["Con enderezadora, versión mini", "Chapa fina, líneas compactas"]
+            ["Ancho de fleje", "≤ 1.600 mm"],
+            ["Espesor de material", "0,5 – 4,0 mm"],
+            ["Rodillos enderezadores", "7 / 9 / 11 / 13"],
+            ["Memoria de moldes", "250 recetas"],
+            ["Control", "LCD táctil a color Schneider"]
           ]
         }
       },
@@ -779,7 +790,21 @@
             "text": "Un solo cuerpo probado en fábrica; la instalación y puesta en marcha son breves."
           }
         ],
-        "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"]
+        "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"],
+        "table": {
+          "title": "Especificaciones técnicas",
+          "head": ["Característica", "Valor"],
+          "rows": [
+            ["Ancho de material", "40 – 1.300 mm"],
+            ["Espesor de material", "0,5 – 4,0 mm"],
+            ["Velocidad libre", "40 m/min"],
+            ["Precisión de avance", "± 0,1 mm"],
+            ["Peso de bobina", "2.500 – 10.000 kg"],
+            ["Diámetro int. / ext. de bobina", "450 – 560 / 1.300 – 1.600 mm"],
+            ["Rodillos de avance", "2 + 2"],
+            ["Rodillos enderezadores", "5 × Ø85 mm"]
+          ]
+        }
       }
     }
   }

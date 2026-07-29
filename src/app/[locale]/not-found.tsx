@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { SpecularButton } from "@/components/specular-button";
 
 export default function NotFound() {
   const t = useTranslations("notFound");
@@ -10,12 +10,9 @@ export default function NotFound() {
         {t("title")}
       </h1>
       <p className="mt-4 max-w-md leading-relaxed text-muted">{t("text")}</p>
-      <Link
-        href="/"
-        className="mt-8 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
-      >
+      <SpecularButton href="/" variant="gold" size="lg" className="mt-8">
         {t("back")}
-      </Link>
+      </SpecularButton>
     </section>
   );
 }

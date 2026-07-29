@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
+import { SpecularButton } from "@/components/specular-button";
 import { CONTACT } from "@/lib/site";
 
 /** Sayfa sonu altın CTA bandı — başlık/metin verilmezse çeviriden gelir */
@@ -18,18 +18,12 @@ export function CtaBand({ title, text }: { title?: string; text?: string }) {
         </Reveal>
         <Reveal delay={120}>
           <div className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/teklif-al"
-              className="rounded-lg bg-zinc-950 px-6 py-3.5 text-sm font-bold text-white shadow-xl transition-transform hover:scale-[1.03]"
-            >
+            <SpecularButton href="/teklif-al" variant="dark" size="lg">
               {t("quote")}
-            </Link>
-            <a
-              href={CONTACT.phoneHref}
-              className="rounded-lg border border-zinc-950/40 px-6 py-3.5 text-sm font-bold transition-colors hover:bg-zinc-950/10"
-            >
+            </SpecularButton>
+            <SpecularButton href={CONTACT.phoneHref} variant="ghost" size="lg" className="text-zinc-950">
               {CONTACT.phoneDisplay}
-            </a>
+            </SpecularButton>
           </div>
         </Reveal>
       </div>

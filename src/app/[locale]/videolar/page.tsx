@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -69,15 +70,16 @@ export default async function VideolarPage({ params }: Props) {
               </h2>
               <p className="mt-2 max-w-2xl text-zinc-400">{t("bannerText")}</p>
             </div>
-            <a
+            <SpecularButton
               href="https://www.youtube.com/@ServoSteel.ServoMold"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
+              external
+              variant="gold"
+              size="lg"
+              className="shrink-0"
             >
               {t("bannerCta")}
               <ExternalLink className="size-4" strokeWidth={2} aria-hidden />
-            </a>
+            </SpecularButton>
           </div>
         </Reveal>
       </section>

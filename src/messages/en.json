@@ -53,8 +53,8 @@
   },
   "home": {
     "badge": "Exporting from Istanbul to 48+ countries",
-    "h1l1": "Lines that turn",
-    "h1l2": "steel coils into",
+    "h1l1": "Engineering that shapes",
+    "h1l2": "steel",
     "h1l3": "products",
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
@@ -694,11 +694,15 @@
         ],
         "sectors": ["Press feeding", "Slitting lines", "Cut-to-length lines", "Roll forming lines"],
         "table": {
-          "title": "Capacity options",
-          "head": ["Series", "Models"],
+          "title": "Technical specifications",
+          "head": ["Specification", "Mechanical", "Hydraulic"],
           "rows": [
-            ["Hydraulic decoilers", "6 – 8 – 10 – 12 – 15 – 20 t"],
-            ["Mechanical decoilers", "500 – 750 – 1,500 – 2,500 kg"]
+            ["Models", "500 · 750 · 1,500 · 2,500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Coil width", "30 – 500 mm", "80 – 1,000 mm"],
+            ["Coil inner diameter", "300 mm", "450 – 560 mm"],
+            ["Coil outer diameter (max.)", "1,600 mm", "1,600 mm"],
+            ["Mandrel expansion", "Mechanical", "Hydraulic"],
+            ["Control", "Speed control + brake system", "Schneider PLC"]
           ]
         }
       },
@@ -723,11 +727,15 @@
         ],
         "sectors": ["Metal stamping shops", "Automotive suppliers", "Home appliances", "Electrical-electronics"],
         "table": {
-          "title": "Series",
-          "head": ["Series", "Use"],
+          "title": "Technical specifications",
+          "head": ["Specification", "Value"],
           "rows": [
-            ["Standard servo feeders", "Medium and wide sheet, high-tonnage presses"],
-            ["Mini servo feeders", "Narrow sheet and compact press lines"]
+            ["Material thickness", "0.4 – 4.0 mm"],
+            ["Strip width", "≤ 1,600 mm"],
+            ["Free feed speed", "35 m/min"],
+            ["Feed rolls", "2 × Ø85 mm"],
+            ["Display", "7\" touchscreen HMI"],
+            ["Mold memory", "250 recipes"]
           ]
         }
       },
@@ -752,11 +760,14 @@
         ],
         "sectors": ["Press feeding", "Automotive suppliers", "Metal packaging", "General sheet processing"],
         "table": {
-          "title": "Series",
-          "head": ["Series", "Use"],
+          "title": "Technical specifications",
+          "head": ["Specification", "Value"],
           "rows": [
-            ["Cabinet straightener servo feeders", "Thick sheet, high straightening demand"],
-            ["Mini straightener servo feeders", "Thin sheet, compact lines"]
+            ["Strip width", "≤ 1,600 mm"],
+            ["Material thickness", "0.5 – 4.0 mm"],
+            ["Straightening rolls", "7 / 9 / 11 / 13"],
+            ["Mold memory", "250 recipes"],
+            ["Control", "Schneider colour LCD touchscreen"]
           ]
         }
       },
@@ -779,7 +790,21 @@
             "text": "A factory-tested single body; on-site installation and commissioning take little time."
           }
         ],
-        "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"]
+        "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"],
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Value"],
+          "rows": [
+            ["Material width", "40 – 1,300 mm"],
+            ["Material thickness", "0.5 – 4.0 mm"],
+            ["Free speed", "40 m/min"],
+            ["Feed accuracy", "± 0.1 mm"],
+            ["Coil weight", "2,500 – 10,000 kg"],
+            ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
+            ["Feed rolls", "2 + 2"],
+            ["Straightening rolls", "5 × Ø85 mm"]
+          ]
+        }
       }
     }
   }

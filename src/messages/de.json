@@ -53,8 +53,8 @@
   },
   "home": {
     "badge": "Export aus Istanbul in 48+ Länder",
-    "h1l1": "Anlagen, die Coils",
-    "h1l2": "in Produkte",
+    "h1l1": "Ingenieurskunst, die",
+    "h1l2": "Stahl formt",
     "h1l3": "verwandeln",
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
@@ -694,11 +694,15 @@
         ],
         "sectors": ["Pressenzuführung", "Längsteilanlagen", "Querteilanlagen", "Rollformanlagen"],
         "table": {
-          "title": "Kapazitätsoptionen",
-          "head": ["Baureihe", "Modelle"],
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Mechanisch", "Hydraulisch"],
           "rows": [
-            ["Hydraulische Haspeln", "6 – 8 – 10 – 12 – 15 – 20 t"],
-            ["Mechanische Haspeln", "500 – 750 – 1.500 – 2.500 kg"]
+            ["Modelle", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Bundbreite", "30 – 500 mm", "80 – 1.000 mm"],
+            ["Bund-Innendurchmesser", "300 mm", "450 – 560 mm"],
+            ["Bund-Außendurchmesser (max.)", "1.600 mm", "1.600 mm"],
+            ["Dornaufweitung", "Mechanisch", "Hydraulisch"],
+            ["Steuerung", "Drehzahlregelung + Bremse", "Schneider PLC"]
           ]
         }
       },
@@ -723,11 +727,15 @@
         ],
         "sectors": ["Stanzbetriebe", "Automobilzulieferer", "Hausgeräte", "Elektro-Elektronik"],
         "table": {
-          "title": "Baureihen",
-          "head": ["Baureihe", "Einsatz"],
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Wert"],
           "rows": [
-            ["Standard-Servovorschübe", "Mittleres und breites Blech, Pressen hoher Tonnage"],
-            ["Mini-Servovorschübe", "Schmales Blech und kompakte Pressenlinien"]
+            ["Materialstärke", "0,4 – 4,0 mm"],
+            ["Bandbreite", "≤ 1.600 mm"],
+            ["Freie Vorschubgeschwindigkeit", "35 m/min"],
+            ["Vorschubwalzen", "2 × Ø85 mm"],
+            ["Display", "7\" Touch-HMI"],
+            ["Werkzeugspeicher", "250 Rezepte"]
           ]
         }
       },
@@ -752,11 +760,14 @@
         ],
         "sectors": ["Pressenzuführung", "Automobilzulieferer", "Metallverpackung", "Allgemeine Blechverarbeitung"],
         "table": {
-          "title": "Baureihen",
-          "head": ["Baureihe", "Einsatz"],
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Wert"],
           "rows": [
-            ["Kassetten-Richt-Servovorschübe", "Dickes Blech, hoher Richtbedarf"],
-            ["Mini-Richt-Servovorschübe", "Dünnes Blech, kompakte Linien"]
+            ["Bandbreite", "≤ 1.600 mm"],
+            ["Materialstärke", "0,5 – 4,0 mm"],
+            ["Richtwalzen", "7 / 9 / 11 / 13"],
+            ["Werkzeugspeicher", "250 Rezepte"],
+            ["Steuerung", "Schneider Farb-LCD-Touch"]
           ]
         }
       },
@@ -779,7 +790,21 @@
             "text": "Ein werksgetesteter Einzelkörper; Montage und Inbetriebnahme vor Ort sind kurz."
           }
         ],
-        "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"]
+        "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"],
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Wert"],
+          "rows": [
+            ["Materialbreite", "40 – 1.300 mm"],
+            ["Materialstärke", "0,5 – 4,0 mm"],
+            ["Freie Geschwindigkeit", "40 m/min"],
+            ["Vorschubgenauigkeit", "± 0,1 mm"],
+            ["Bundgewicht", "2.500 – 10.000 kg"],
+            ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
+            ["Vorschubwalzen", "2 + 2"],
+            ["Richtwalzen", "5 × Ø85 mm"]
+          ]
+        }
       }
     }
   }

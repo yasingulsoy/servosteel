@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { Reveal } from "@/components/reveal";
 import { rollFormItems, isRollFormSlug, rollFormIcon } from "@/lib/catalog";
@@ -113,12 +114,9 @@ export default async function RollFormLinePage({ params }: Props) {
                 <p className="mt-6 border-t border-white/10 pt-5 text-xs leading-relaxed text-zinc-400">
                   {td("componentsNote")}
                 </p>
-                <Link
-                  href="/teklif-al"
-                  className="mt-6 block rounded-lg bg-accent px-5 py-3 text-center text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
-                >
+                <SpecularButton href="/teklif-al" variant="gold" size="md" className="mt-6 w-full">
                   {td("lineQuote")}
-                </Link>
+                </SpecularButton>
               </div>
             </Reveal>
           </aside>

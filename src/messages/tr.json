@@ -53,8 +53,8 @@
   },
   "home": {
     "badge": "İstanbul'dan 48+ ülkeye ihracat",
-    "h1l1": "Rulo sacı",
-    "h1l2": "ürüne dönüştüren",
+    "h1l1": "Çeliği şekillendiren",
+    "h1l2": "mühendislik",
     "h1l3": "hatlar",
     "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
     "cta1": "Projeniz İçin Teklif Alın",
@@ -694,11 +694,15 @@
         ],
         "sectors": ["Pres besleme", "Dilme hatları", "Boy kesme hatları", "Roll form hatları"],
         "table": {
-          "title": "Kapasite seçenekleri",
-          "head": ["Seri", "Modeller"],
+          "title": "Teknik özellikler",
+          "head": ["Özellik", "Mekanik", "Hidrolik"],
           "rows": [
-            ["Hidrolik açıcılar", "6 – 8 – 10 – 12 – 15 – 20 ton"],
-            ["Mekanik açıcılar", "500 – 750 – 1.500 – 2.500 kg"]
+            ["Modeller", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 ton"],
+            ["Rulo genişliği", "30 – 500 mm", "80 – 1.000 mm"],
+            ["Rulo iç çapı", "300 mm", "450 – 560 mm"],
+            ["Rulo dış çapı (maks.)", "1.600 mm", "1.600 mm"],
+            ["Mandren genişletme", "Mekanik", "Hidrolik"],
+            ["Kontrol", "Hız kontrol + fren sistemi", "Schneider PLC"]
           ]
         }
       },
@@ -723,11 +727,15 @@
         ],
         "sectors": ["Metal pres atölyeleri", "Otomotiv yan sanayi", "Beyaz eşya", "Elektrik-elektronik"],
         "table": {
-          "title": "Seriler",
-          "head": ["Seri", "Kullanım"],
+          "title": "Teknik özellikler",
+          "head": ["Özellik", "Değer"],
           "rows": [
-            ["Standart servo sürücüler", "Orta ve geniş sac, yüksek tonajlı presler"],
-            ["Mini servo sürücüler", "Dar sac ve kompakt pres hatları"]
+            ["Malzeme kalınlığı", "0,4 – 4,0 mm"],
+            ["Sac genişliği", "≤ 1.600 mm"],
+            ["Serbest besleme hızı", "35 m/dk"],
+            ["Besleme silindiri", "2 × Ø85 mm"],
+            ["Ekran", "7\" dokunmatik HMI"],
+            ["Kalıp hafızası", "250 reçete"]
           ]
         }
       },
@@ -752,11 +760,14 @@
         ],
         "sectors": ["Pres besleme", "Otomotiv yan sanayi", "Metal ambalaj", "Genel sac işleme"],
         "table": {
-          "title": "Seriler",
-          "head": ["Seri", "Kullanım"],
+          "title": "Teknik özellikler",
+          "head": ["Özellik", "Değer"],
           "rows": [
-            ["Kasalı doğrultmalı servo sürücüler", "Kalın sac, yüksek doğrultma ihtiyacı"],
-            ["Mini doğrultmalı servo sürücüler", "İnce sac, kompakt hatlar"]
+            ["Sac genişliği", "≤ 1.600 mm"],
+            ["Malzeme kalınlığı", "0,5 – 4,0 mm"],
+            ["Doğrultma silindiri", "7 / 9 / 11 / 13"],
+            ["Kalıp hafızası", "250 reçete"],
+            ["Kontrol", "Schneider renkli LCD dokunmatik"]
           ]
         }
       },
@@ -779,7 +790,21 @@
             "text": "Fabrikada test edilmiş tek gövde; sahada kurulum ve devreye alma süresi kısadır."
           }
         ],
-        "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"]
+        "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"],
+        "table": {
+          "title": "Teknik özellikler",
+          "head": ["Özellik", "Değer"],
+          "rows": [
+            ["Malzeme genişliği", "40 – 1.300 mm"],
+            ["Malzeme kalınlığı", "0,5 – 4,0 mm"],
+            ["Serbest hız", "40 m/dk"],
+            ["Besleme hassasiyeti", "± 0,1 mm"],
+            ["Rulo ağırlığı", "2.500 – 10.000 kg"],
+            ["Rulo iç / dış çapı", "450 – 560 / 1.300 – 1.600 mm"],
+            ["Besleme silindiri", "2 + 2"],
+            ["Doğrultma silindiri", "5 × Ø85 mm"]
+          ]
+        }
       }
     }
   }

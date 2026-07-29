@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
-import { Link } from "@/i18n/navigation";
+import { SpecularButton } from "@/components/specular-button";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
@@ -78,15 +78,15 @@ export default async function IletisimPage({ params }: Props) {
                 {t("hours")}
               </p>
               <div className="mt-auto pt-6">
-                <a
+                <SpecularButton
                   href="https://www.google.com/maps/search/?api=1&query=Servosteel+Yunusemre+İskenderpaşa+Sancaktepe+İstanbul"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
+                  external
+                  variant="gold"
+                  size="md"
                 >
                   {t("directions")}
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
-                </a>
+                  <ArrowRight className="size-4" strokeWidth={2} aria-hidden />
+                </SpecularButton>
               </div>
             </div>
           </Reveal>
@@ -112,13 +112,10 @@ export default async function IletisimPage({ params }: Props) {
               </h2>
               <p className="mt-2 max-w-2xl text-muted">{t("quoteBoxText")}</p>
             </div>
-            <Link
-              href="/teklif-al"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
-            >
+            <SpecularButton href="/teklif-al" variant="gold" size="lg" className="shrink-0">
               {t("quoteBoxCta")}
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
-            </Link>
+              <ArrowRight className="size-4" strokeWidth={2} aria-hidden />
+            </SpecularButton>
           </div>
         </Reveal>
       </section>

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { machineItems, isMachineSlug } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
@@ -134,12 +135,9 @@ export default async function MachinePage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/teklif-al"
-                  className="mt-6 block rounded-lg bg-accent px-5 py-3 text-center text-sm font-bold text-zinc-950 transition-colors hover:bg-accent-strong"
-                >
+                <SpecularButton href="/teklif-al" variant="gold" size="md" className="mt-6 w-full">
                   {td("machineQuote")}
-                </Link>
+                </SpecularButton>
               </div>
             </Reveal>
           </aside>

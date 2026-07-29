@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Send } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
+import { SpecularButton } from "@/components/specular-button";
 import { CONTACT } from "@/lib/site";
 
 const inputClass =
@@ -113,22 +114,20 @@ export function RfqForm() {
       </div>
 
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
-        <button
-          type="submit"
-          className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-bold text-zinc-950 shadow-lg shadow-accent/25 transition-all hover:bg-accent-strong hover:shadow-accent/40"
-        >
+        <SpecularButton type="submit" variant="gold" size="lg">
           <Send className="size-4" strokeWidth={2} aria-hidden />
           {t("submit")}
-        </button>
-        <a
+        </SpecularButton>
+        <SpecularButton
           href={`https://wa.me/902164153005?text=${waText}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-line px-6 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-accent/50 hover:text-accent-ink"
+          external
+          variant="ghost"
+          size="lg"
+          className="text-ink"
         >
           <FaWhatsapp className="size-4" aria-hidden />
           {t("wa")}
-        </a>
+        </SpecularButton>
       </div>
       <p className="text-xs leading-relaxed text-muted sm:col-span-2">{t("note")}</p>
     </form>

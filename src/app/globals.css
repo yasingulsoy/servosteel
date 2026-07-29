@@ -144,6 +144,47 @@ body {
   animation: breathe 7s ease-in-out infinite alternate;
 }
 
+/* Specular button — imleci takip eden ışık + otomatik parıltı süpürmesi */
+.specular-glow {
+  background: radial-gradient(
+    110px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0) 62%
+  );
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  55%,
+  100% {
+    transform: translateX(340%) skewX(-20deg);
+  }
+}
+
+.specular-sheen {
+  animation: sheen 3.4s ease-in-out infinite;
+}
+
+/* ---------- RTL (Arapça) ---------- */
+/* Inter/Montserrat Arapça glif içermez → RTL'de Arapça font'a (Cairo) geç */
+[dir="rtl"] {
+  --font-inter: var(--font-arabic);
+  --font-montserrat: var(--font-arabic);
+}
+
+/* Arapça harflerin bitişikliği letter-spacing ile bozulur → tüm izleri sıfırla */
+[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}
+
+/* Yön belirten oklar/chevron'lar sağdan-sola okuma yönünde ters döner */
+[dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] .lucide-chevron-right {
+  transform: scaleX(-1);
+}
+
 /* Kaydırınca görünme (Reveal bileşeni) */
 [data-reveal] {
   opacity: 0;
@@ -167,7 +208,8 @@ body {
   .animate-rise,
   .animate-spin-slow,
   .animate-flow,
-  .animate-breathe {
+  .animate-breathe,
+  .specular-sheen {
     animation: none;
   }
 }

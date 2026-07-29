@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Montserrat, Cairo } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { routing, type AppLocale } from "@/i18n/routing";
+import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
 import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS } from "@/lib/site";
 import "../globals.css";
@@ -19,6 +19,13 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["600", "700", "800"],
+});
+
+/* Arapça için ayrı font — Inter/Montserrat Arapça glif içermez. RTL'de devreye girer. */
+const cairo = Cairo({
+  variable: "--font-arabic",
+  subsets: ["arabic", "latin"],
+  weight: ["400", "600", "700", "800"],
 });
 
 export function generateStaticParams() {
@@ -41,6 +48,7 @@ export async function generateMetadata({
     hu: "hu_HU",
     pl: "pl_PL",
     ru: "ru_RU",
+    ar: "ar_SA",
   };
 
   return {
@@ -125,8 +133,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      dir={isRtl(locale) ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${inter.variable} ${montserrat.variable} ${cairo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />

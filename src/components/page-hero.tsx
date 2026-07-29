@@ -40,7 +40,7 @@ export function PageHero({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <div className="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-6 lg:py-8">
         <nav aria-label={t("breadcrumbAria")} className="flex flex-wrap items-center gap-1 text-xs text-muted">
           {allCrumbs.map((c, i) => {
             const last = i === allCrumbs.length - 1;
@@ -61,18 +61,24 @@ export function PageHero({
           })}
         </nav>
 
-        {eyebrow && (
-          <p className="mt-6 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
-            <span className="h-px w-8 bg-accent" aria-hidden />
-            {eyebrow}
-          </p>
-        )}
-        <h1 className="font-display mt-3 max-w-3xl text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl lg:text-5xl">
-          {title}
-        </h1>
-        {description && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{description}</p>
-        )}
+        <div className="mt-3 flex flex-col gap-2.5 md:flex-row md:items-end md:justify-between md:gap-10">
+          <div className="min-w-0">
+            {eyebrow && (
+              <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-ink">
+                <span className="h-px w-6 bg-accent" aria-hidden />
+                {eyebrow}
+              </p>
+            )}
+            <h1 className="font-display mt-1.5 text-2xl font-extrabold uppercase leading-[1.1] tracking-tight text-ink sm:text-3xl lg:text-4xl">
+              {title}
+            </h1>
+          </div>
+          {description && (
+            <p className="max-w-xl text-sm leading-relaxed text-muted md:max-w-md md:shrink-0 md:text-end">
+              {description}
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );

@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# self-hosted video dosyaları (büyük — CDN'e veya host'a ayrı yüklenir, git'e girmez)
+/public/videos/*
+!/public/videos/.gitkeep
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
