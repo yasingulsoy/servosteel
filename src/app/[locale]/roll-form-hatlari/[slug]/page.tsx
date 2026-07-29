@@ -7,6 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
+import { ProductShot } from "@/components/product-shot";
 import { Reveal } from "@/components/reveal";
 import { rollFormItems, isRollFormSlug, rollFormIcon } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
@@ -54,6 +55,12 @@ export default async function RollFormLinePage({ params }: Props) {
         title={t("name")}
         description={t("hero")}
       />
+
+      <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
+        <Reveal>
+          <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} priority />
+        </Reveal>
+      </div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">

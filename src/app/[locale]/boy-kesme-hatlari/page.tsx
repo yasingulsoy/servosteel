@@ -4,6 +4,7 @@ import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { ProductShot } from "@/components/product-shot";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -38,6 +39,12 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
         title={t("title")}
         description={t("desc")}
       />
+
+      <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
+        <Reveal>
+          <ProductShot src="/gorseller/boy-kesme-hatlari.jpg" alt={t("title")} priority />
+        </Reveal>
+      </div>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

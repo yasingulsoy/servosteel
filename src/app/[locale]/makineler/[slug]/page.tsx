@@ -7,6 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
+import { ProductShot } from "@/components/product-shot";
 import { machineItems, isMachineSlug } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
@@ -121,7 +122,10 @@ export default async function MachinePage({ params }: Props) {
             </Reveal>
           </div>
 
-          <aside>
+          <aside className="space-y-6">
+            <Reveal>
+              <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} ratio="4/3" fit="contain" sizes="(max-width: 1024px) 100vw, 400px" />
+            </Reveal>
             <Reveal delay={120}>
               <div className="rounded-2xl bg-shell p-7 text-white">
                 <h2 className="font-display text-lg font-bold uppercase tracking-tight">
