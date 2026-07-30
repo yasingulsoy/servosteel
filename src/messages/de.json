@@ -199,6 +199,30 @@
       "Automatische Coil-Abladung",
       "Aufwickler (Rekoiler)"
     ],
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Häufige Fragen zu Längsteilanlagen",
+    "faq": [
+      {
+        "q": "Was macht eine Längsteilanlage?",
+        "a": "Sie schneidet ein breites Stahlband der Länge nach in schmalere Streifen der gewünschten Breite und wickelt diese wieder auf. Aus einem Mutterbund entstehen so mehrere auftragsgerechte Streifen — das senkt Verschnitt und Lagerkosten."
+      },
+      {
+        "q": "Welche Kapazität soll ich wählen?",
+        "a": "Entscheidend ist das maximale Bundgewicht. Leichte Baureihen sind für 1.500–4.000 kg und 0,5–2 mm ausgelegt, schwere für 6.000–15.000 kg und 0,8–5 mm. Legen Sie nach Ihrem Volumen in 2–3 Jahren aus, nicht nach heute — der Rahmen lässt sich später nicht vergrößern."
+      },
+      {
+        "q": "Längsteilanlage oder Querteilanlage?",
+        "a": "Der Unterschied liegt in der Form des Ergebnisses. Die Längsteilanlage schneidet den Bund längs, das Ergebnis ist wieder ein Bund — in schmalen Streifen. Die Querteilanlage schneidet quer, das Ergebnis ist eine ebene Tafel. Für Streifen: Längsteilen. Für Tafeln in fester Länge: Querteilen. Beides lässt sich in einer Linie kombinieren."
+      },
+      {
+        "q": "Wovon hängt der Preis einer Längsteilanlage ab?",
+        "a": "Vier Faktoren bestimmen ihn am stärksten: Bundgewichtskapazität, Materialstärkenbereich, Anzahl der gleichzeitig geschnittenen Streifen und Automatisierungsgrad (Bundwagen, automatische Zentrierung, Aufwickelspannungsregelung). Deshalb kalkulieren wir projektbezogen statt nach Katalog — senden Sie uns Bundgewicht, Materialstärke und Zielstreifenmaße."
+      },
+      {
+        "q": "Wie läuft die Inbetriebnahme ab?",
+        "a": "Die Anlage wird vor dem Versand in unserem Werk komplett aufgebaut und getestet; vor Ort bleiben nur Montage und Inbetriebnahme. Das verkürzt die Installationszeit deutlich. Die Bedienerschulung erfolgt während der Inbetriebnahme."
+      }
+    ],
     "ctaTitle": "Legen wir Ihre Längsteilanlage aus",
     "ctaText": "Nennen Sie Coilgewicht, Blechdicke und Bandmaße; gemeinsam definieren wir die passende Baureihe und das Layout."
   },

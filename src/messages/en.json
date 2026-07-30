@@ -199,6 +199,30 @@
       "Automatic coil unloading system",
       "Recoiler system"
     ],
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Common questions about coil slitting lines",
+    "faq": [
+      {
+        "q": "What does a coil slitting line do?",
+        "a": "It cuts a wide steel coil lengthwise into narrower strips of the width you need, then re-coils those strips. One master coil therefore yields several strips sized to your orders, which lowers both scrap and stock cost."
+      },
+      {
+        "q": "Which capacity should I choose?",
+        "a": "The deciding factor is the maximum coil weight you will process. Light series are built for 1,500–4,000 kg and 0.5–2 mm sheet thickness; heavy series for 6,000–15,000 kg and 0.8–5 mm. Size for your volume 2–3 years out rather than today — the frame cannot be enlarged later."
+      },
+      {
+        "q": "Should I buy a slitting line or a cut-to-length line?",
+        "a": "The difference is the shape of the output. A slitting line cuts the coil lengthwise and the output is still a coil — in narrow strips. A cut-to-length line cuts across the coil and the output is a flat sheet. Choose slitting if you sell strip, cut-to-length if you sell sheet to fixed dimensions. The two can also be combined in one line."
+      },
+      {
+        "q": "What determines the price of a coil slitting line?",
+        "a": "Four things drive it most: coil weight capacity, the sheet thickness range, how many strips are cut at once, and the level of automation (loading car, automatic setsquare, recoiler tension control). That is why we quote per project rather than from a catalogue — send your coil weight, thickness and target strip dimensions and we will size it."
+      },
+      {
+        "q": "How does commissioning work?",
+        "a": "The line is fully assembled and tested at our own facility before shipment, so on site only installation and commissioning remain. That keeps installation time short. Operator training is given during commissioning."
+      }
+    ],
     "ctaTitle": "Let's size your slitting line",
     "ctaText": "Send us your coil weight, sheet thickness and strip widths; we'll define the right series and line layout together."
   },

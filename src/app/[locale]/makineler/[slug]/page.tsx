@@ -2,12 +2,14 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check, Cog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, localePath } from "@/i18n/seo";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
+import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { machineItems, isMachineSlug } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
@@ -46,9 +48,42 @@ export default async function MachinePage({ params }: Props) {
   const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
   const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
   const others = machineItems.filter((m) => m.slug !== slug);
+  /* FAQ opsiyoneldir — yalnızca mesaj dosyasında tanımlı makinelerde görünür. */
+  const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
+
+  /**
+   * Product şeması — spec tablosundan otomatik üretilir.
+   * Amacı iki yönlü: (1) sayısal spec'leri makine tarafından okunabilir kılıp
+   * yapay zeka aramalarında doğru şekilde Servosteel'e atfedilmesini sağlamak,
+   * (2) `manufacturer` bağıyla "üretici mi tedarikçi mi" belirsizliğini kapatmak.
+   * Fiyat bilgisi bilinçli olarak YOK — bu makineler tekliflendirilerek satılır.
+   */
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${SITE_URL}${localePath(locale as AppLocale, `/makineler/${slug}`)}#product`,
+    name: t("name"),
+    description: t("meta"),
+    image: `${SITE_URL}/gorseller/${slug}.jpg`,
+    brand: { "@type": "Brand", name: SITE_NAME },
+    manufacturer: { "@id": `${SITE_URL}/#organization` },
+    ...(hasTable && tableRows.length
+      ? {
+          additionalProperty: tableRows.map((row) => ({
+            "@type": "PropertyValue",
+            name: row[0],
+            value: row.slice(1).filter(Boolean).join(" / "),
+          })),
+        }
+      : {}),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       <PageHero
         crumbs={[
           { label: tm(`${slug}.name`), href: `/makineler/${slug}` },
@@ -172,6 +207,8 @@ export default async function MachinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
+
+      <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 
       <CtaBand title={td("quoteTitle", { name: t("name") })} />
     </>

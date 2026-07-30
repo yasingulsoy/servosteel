@@ -7,6 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ProfileIcon } from "@/components/profile-icon";
 import { Reveal } from "@/components/reveal";
+import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { rollFormItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -29,6 +30,7 @@ export default async function RollFormHatlariPage({ params }: Props) {
   const tRoll = await getTranslations("products.rollform");
   const tc = await getTranslations("common");
   const flow = t.raw("flow") as string[];
+  const faq = t.raw("faq") as FaqItem[];
 
   return (
     <>
@@ -107,6 +109,8 @@ export default async function RollFormHatlariPage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />
 
       <CtaBand title={t("ctaTitle")} />
     </>

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
+import { FaqSection, type FaqItem } from "@/components/faq-section";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -30,6 +31,7 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
   const highlights = t.raw("highlights") as { title: string; text: string }[];
   const paras = t.raw("paras") as string[];
   const components = t.raw("components") as string[];
+  const faq = t.raw("faq") as FaqItem[];
 
   return (
     <>
@@ -97,6 +99,8 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
           </aside>
         </div>
       </section>
+
+      <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />
 
       <CtaBand title={t("ctaTitle")} text={t("ctaText")} />
     </>

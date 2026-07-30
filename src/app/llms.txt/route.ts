@@ -29,7 +29,8 @@ Servosteel designs and builds tailor-made steel coil processing lines in Sancakt
 - [Decoilers](${SITE_URL}/en/makineler/rulo-acicilar): Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers.
 - [Servo Feeders](${SITE_URL}/en/makineler/servo-suruculer): Precision servo feeders for press lines, 0.4-4 mm thickness, up to 1,600 mm width.
 - [Straightener Servo Feeders](${SITE_URL}/en/makineler/dogrultmali-servo-suruculer): Combined straightening and servo feeding in one body (7/9/11/13 straightening rolls).
-- [Compact Lines](${SITE_URL}/en/makineler/kompakt-hatlar): Decoiler, straightener and servo feeder on a single platform for tight spaces.
+- [Compact Lines](${SITE_URL}/en/makineler/kompakt-hatlar): Decoiler, straightener and servo feeder on a single platform for tight spaces — ± 0.1 mm feed accuracy, 2,500-10,000 kg coil weight.
+- [Tooling and Roll Sets](${SITE_URL}/en/makineler/kalip-ve-merdane): Roll forming tooling and progressive press dies, designed with the line — 4140 alloy steel rolls hardened to 58-60 HRC.
 
 ## Academy (technical guides)
 ${academy}
@@ -40,6 +41,9 @@ ${academy}
 - [Videos](${SITE_URL}/en/videolar): 100+ real field videos of running lines.
 - [Contact](${SITE_URL}/en/iletisim): Yunusemre Mah. İskenderpaşa Cad. 21/1, Sancaktepe, Istanbul, Türkiye · +90 216 415 30 05 · info@servosteel.com.tr
 - [Request a Quote](${SITE_URL}/en/teklif-al): Send sheet thickness, coil weight and target strip/sheet dimensions for a custom line proposal.
+
+## Languages
+The same pages are published in 9 languages: Turkish (site root), English (/en), German (/de), Spanish (/es), Italian (/it), Hungarian (/hu), Polish (/pl), Russian (/ru) and Arabic (/ar, right-to-left). Replace /en/ with any other locale code for the same page in that language. Priority export markets: European Union, MENA (Arabic) and CIS / Central Asia (Russian).
 `;
 
   return new Response(body, {

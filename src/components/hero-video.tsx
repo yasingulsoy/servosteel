@@ -33,11 +33,13 @@ export function HeroVideo() {
         muted
         loop
         playsInline
-        preload="auto"
+        /* preload="none": 7,5 MB'lık video kritik yükleme yolundan çıkarılır.
+           Poster hemen boyanır, video oynatma useEffect'teki play() ile başlar.
+           preload="auto" iken mobilde LCP 6,3 sn'ye çıkıyordu. */
+        preload="none"
         poster="/hero-poster.jpg"
       >
         <source src="/hero.mp4" type="video/mp4" />
-        <source src="/hero.webm" type="video/webm" />
       </video>
 
       {/* Okunabilirlik için koyu degrade örtüler — metnin durduğu sol tarafta

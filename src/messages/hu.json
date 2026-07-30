@@ -199,6 +199,30 @@
       "Automatikus tekercskirakó",
       "Felcsévélő (recoiler) rendszer"
     ],
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Gyakori kérdések a hasítósorokról",
+    "faq": [
+      {
+        "q": "Mire való a hasítósor?",
+        "a": "Egy széles acéltekercset hosszirányban vág a kívánt szélességű, keskenyebb szalagokra, majd azokat újra feltekercseli. Egyetlen anyatekercsből így több, a megrendeléshez illeszkedő szalag készül, ami csökkenti a hulladékot és a készletköltséget."
+      },
+      {
+        "q": "Melyik kapacitást válasszam?",
+        "a": "A döntő tényező a feldolgozandó maximális tekercstömeg. A könnyű sorozatok 1.500–4.000 kg-ra és 0,5–2 mm vastagságra, a nehezek 6.000–15.000 kg-ra és 0,8–5 mm-re készülnek. A 2–3 év múlvai mennyiségre méretezzen, ne a maira: a váz később nem bővíthető."
+      },
+      {
+        "q": "Hasítósor vagy keresztvágó sor kell?",
+        "a": "A különbség a végtermék alakjában van. A hasítósor hosszirányban vág, és az eredmény továbbra is tekercs — keskeny szalagokban. A keresztvágó sor keresztben vág, és az eredmény sík tábla. Ha szalagot értékesít, hasítósor kell; ha rögzített méretű táblát, keresztvágó. A kettő egyetlen sorban is kombinálható."
+      },
+      {
+        "q": "Mitől függ a hasítósor ára?",
+        "a": "Négy tényező határozza meg leginkább: a tekercstömeg-kapacitás, a vastagsági tartomány, az egyszerre vágott szalagok száma és az automatizáltság szintje (rakodókocsi, automatikus központosítás, felcsévélési feszességszabályzás). Ezért projektre adunk ajánlatot katalógusár helyett — küldje el a tekercstömeget, a vastagságot és a cél szalagméreteket."
+      },
+      {
+        "q": "Hogyan zajlik az üzembe helyezés?",
+        "a": "A sort szállítás előtt saját üzemünkben teljesen felépítjük és teszteljük; a helyszínen már csak a telepítés és az üzembe helyezés marad. Ez érezhetően lerövidíti a telepítési időt. A kezelők betanítása az üzembe helyezés során történik."
+      }
+    ],
     "ctaTitle": "Méretezzük a hasító sorát",
     "ctaText": "Adja meg a tekercssúlyt, a lemezvastagságot és a szalagméreteket; közösen tisztázzuk a megfelelő szériát és az elrendezést."
   },

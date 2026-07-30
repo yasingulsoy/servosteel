@@ -199,6 +199,30 @@
       "Descarga automática de bobinas",
       "Sistema rebobinador"
     ],
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas frecuentes sobre líneas de corte longitudinal",
+    "faq": [
+      {
+        "q": "¿Para qué sirve una línea de corte longitudinal?",
+        "a": "Corta una bobina de acero ancha a lo largo en flejes más estrechos del ancho que necesita y los vuelve a bobinar. Así, de una sola bobina madre obtiene varios flejes a la medida de sus pedidos, reduciendo merma y coste de stock."
+      },
+      {
+        "q": "¿Qué capacidad debo elegir?",
+        "a": "Lo decisivo es el peso máximo de bobina que va a procesar. Las series ligeras se diseñan para 1.500–4.000 kg y espesores de 0,5–2 mm; las pesadas para 6.000–15.000 kg y 0,8–5 mm. Dimensione según su volumen dentro de 2–3 años, no el de hoy: el bastidor no se puede ampliar después."
+      },
+      {
+        "q": "¿Línea de corte longitudinal o línea de corte a medida?",
+        "a": "La diferencia está en la forma del producto final. La línea longitudinal corta la bobina a lo largo y el resultado sigue siendo bobina, en flejes estrechos. La línea de corte a medida corta transversalmente y el resultado es una chapa plana. Si vende fleje, necesita corte longitudinal; si vende chapa a medida fija, corte a medida. Ambas pueden combinarse en una sola línea."
+      },
+      {
+        "q": "¿De qué depende el precio de una línea de corte longitudinal?",
+        "a": "Cuatro factores lo determinan: la capacidad de peso de bobina, el rango de espesor, cuántos flejes se cortan a la vez y el nivel de automatización (carro de carga, escuadrado automático, control de tensión de rebobinado). Por eso cotizamos por proyecto y no por catálogo: envíenos peso de bobina, espesor y medidas de fleje objetivo."
+      },
+      {
+        "q": "¿Cómo es la puesta en marcha?",
+        "a": "La línea se monta y prueba por completo en nuestras instalaciones antes del envío; en obra solo quedan el montaje y la puesta en marcha. Eso acorta el tiempo de instalación. La formación del operario se imparte durante la puesta en marcha."
+      }
+    ],
     "ctaTitle": "Dimensionemos su línea de corte",
     "ctaText": "Indíquenos peso de bobina, espesor y anchos de fleje; definiremos juntos la serie adecuada y el layout."
   },

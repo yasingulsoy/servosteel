@@ -106,9 +106,26 @@ const themeInit = `try{if(localStorage.getItem("theme")==="dark")document.docume
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo-full.png`,
+  /* "Üretici mi, tedarikçi mi?" belirsizliğini şema düzeyinde de kapatır. */
+  description:
+    "Servosteel; roll form hatları, rulo dilme hatları, boy kesme hatları, pres besleme sistemleri ve progresif pres kalıplarını müşteriye özel tasarlayan, kendi tesisinde üreten ve anahtar teslim devreye alan bir Türk makine üreticisidir. Çelik tedarikçisi değil, makine imalatçısıdır.",
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/logo-full.png`,
+  },
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Roll forming machinery",
+    "Coil slitting lines",
+    "Cut-to-length lines",
+    "Servo feeders",
+    "Press feeding systems",
+    "Progressive press dies",
+    "Coil processing",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: CONTACT.addressStreet,
@@ -123,7 +140,7 @@ const orgJsonLd = {
       email: CONTACT.email,
       contactType: "sales",
       areaServed: "Worldwide",
-      availableLanguage: ["Turkish", "English", "German", "Spanish", "Italian", "Hungarian", "Polish", "Russian"],
+      availableLanguage: ["Turkish", "English", "German", "Spanish", "Italian", "Hungarian", "Polish", "Russian", "Arabic"],
     },
   ],
   sameAs: SOCIAL_URLS,

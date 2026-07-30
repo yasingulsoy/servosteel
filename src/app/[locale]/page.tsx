@@ -56,6 +56,12 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
+      {/*
+        Hero posteri LCP öğesidir — video artık preload="none" olduğu için
+        posterin yarışı kazanması gerekir. Next bu link'i <head>'e taşır.
+      */}
+      <link rel="preload" as="image" href="/hero-poster.jpg" fetchPriority="high" />
+
       {/* HERO — tam ekran arka plan videosu */}
       <HeroVideo />
 

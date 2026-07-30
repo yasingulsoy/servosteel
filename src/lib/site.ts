@@ -17,7 +17,20 @@ export const SITE_URL = envSiteUrl || PRODUCTION_URL;
  * Canlıya geçerken NEXT_PUBLIC_SITE_URL=https://servosteel.com.tr yapılması (veya hiç
  * tanımlanmaması) yeterlidir — indeksleme kendiliğinden açılır.
  */
-export const IS_PRODUCTION_SITE = SITE_URL === PRODUCTION_URL;
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./i, "").toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * Karşılaştırma HOST üzerinden yapılır (protokol ve "www." yok sayılır).
+ * Tam string eşleşmesi kullanılsaydı, canlıda yanlışlıkla "www." veya "http://"
+ * yazılması TÜM siteyi sessizce noindex yapardı — bu sessiz felaket engellenir.
+ */
+export const IS_PRODUCTION_SITE = hostOf(SITE_URL) === hostOf(PRODUCTION_URL);
 export const SITE_NAME = "Servosteel";
 
 export const SITE_TITLE =

@@ -11,7 +11,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { localePath } from "@/i18n/seo";
-import { localeHreflang, type AppLocale } from "@/i18n/routing";
+import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -24,9 +24,17 @@ export async function generateMetadata({ params }: Props) {
   const post = getPost(locale, slug);
   if (!post) return {};
 
+  const postLocales = getPostLocales(slug);
   const languages: Record<string, string> = {};
-  for (const l of getPostLocales(slug)) {
+  for (const l of postLocales) {
     languages[localeHreflang[l]] = localePath(l, `/akademi/${slug}`);
+  }
+  /* x-default: yazı varsayılan dilde varsa onu, yoksa mevcut ilk dili işaret eder. */
+  const defaultLocale = postLocales.includes(routing.defaultLocale)
+    ? routing.defaultLocale
+    : postLocales[0];
+  if (defaultLocale) {
+    languages["x-default"] = localePath(defaultLocale, `/akademi/${slug}`);
   }
 
   return {

@@ -199,6 +199,30 @@
       "Otomatik rulo döküm sistemi",
       "Sarma (recoiler) sistemi"
     ],
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Rulo dilme hatları hakkında merak edilenler",
+    "faq": [
+      {
+        "q": "Rulo dilme hattı ne işe yarar?",
+        "a": "Geniş bir çelik ruloyu, boyuna kesip istenen genişlikte daha dar şeritlere ayırır ve bu şeritleri tekrar rulo halinde sarar. Böylece tek bir ana rulodan, sipariş ölçülerinize uygun birden çok şerit elde edilir; fire ve stok maliyeti düşer."
+      },
+      {
+        "q": "Hangi kapasiteyi seçmeliyim?",
+        "a": "Belirleyici olan işleyeceğiniz maksimum rulo ağırlığıdır. Hafif seriler 1.500–4.000 kg ve 0,5–2 mm sac kalınlığı için; ağır seriler 6.000–15.000 kg ve 0,8–5 mm için tasarlanır. Kapasiteyi bugünkü değil, 2–3 yıl sonraki hacminize göre seçin; şase sonradan büyütülemez."
+      },
+      {
+        "q": "Dilme hattı mı, boy kesme hattı mı almalıyım?",
+        "a": "Fark, çıkan ürünün biçimindedir. Dilme hattı ruloyu boyuna keser ve çıktı yine rulodur — dar şeritler halinde. Boy kesme hattı ise ruloyu enine keser ve çıktı düz plakadır. Şerit üretiyorsanız dilme, sabit ölçüde levha üretiyorsanız boy kesme hattı gerekir. İkisi tek hatta birleştirilebilir."
+      },
+      {
+        "q": "Rulo dilme hattı fiyatı neye göre değişir?",
+        "a": "Fiyatı en çok belirleyen dört şey: rulo ağırlığı kapasitesi, sac kalınlığı aralığı, aynı anda kesilecek şerit sayısı ve otomasyon seviyesi (yükleme arabası, otomatik gönye, sarma gerginlik kontrolü). Bu yüzden katalog fiyatı yerine projeye özel teklif veriyoruz — rulo ağırlığı, kalınlık ve hedef şerit ölçülerinizi iletmeniz yeterli."
+      },
+      {
+        "q": "Devreye alma nasıl ilerliyor?",
+        "a": "Hat, sevkiyattan önce kendi tesisimizde komple kurulup test edilir; sahada yalnızca montaj ve devreye alma yapılır. Bu yüzden kurulum süresi kısalır. Operatör eğitimi devreye alma sırasında verilir."
+      }
+    ],
     "ctaTitle": "Dilme hattınızı boyutlandıralım",
     "ctaText": "Rulo ağırlığı, sac kalınlığı ve şerit ölçülerinizi iletin; size uygun seriyi ve hat yerleşimini birlikte netleştirelim."
   },

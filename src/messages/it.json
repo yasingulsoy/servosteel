@@ -199,6 +199,30 @@
       "Scarico automatico dei coil",
       "Sistema ribobinatore"
     ],
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande frequenti sulle linee di taglio longitudinale",
+    "faq": [
+      {
+        "q": "A cosa serve una linea di taglio longitudinale?",
+        "a": "Taglia un coil d'acciaio largo per il lungo in nastri più stretti della larghezza richiesta e li riavvolge. Da un solo coil madre si ottengono così più nastri su misura per i vostri ordini, riducendo sfrido e costi di magazzino."
+      },
+      {
+        "q": "Quale capacità devo scegliere?",
+        "a": "Il fattore decisivo è il peso massimo del coil da lavorare. Le serie leggere sono progettate per 1.500–4.000 kg e spessori 0,5–2 mm; quelle pesanti per 6.000–15.000 kg e 0,8–5 mm. Dimensionate sul volume che avrete tra 2–3 anni, non su quello odierno: il telaio non può essere ampliato in seguito."
+      },
+      {
+        "q": "Meglio una linea di taglio longitudinale o una linea a misura?",
+        "a": "La differenza sta nella forma del prodotto finito. La linea longitudinale taglia il coil per il lungo e il risultato è ancora un coil, in nastri stretti. La linea a misura taglia in senso trasversale e il risultato è una lamiera piana. Se vendete nastro serve il taglio longitudinale; se vendete lamiere a misura fissa serve il taglio a misura. Le due funzioni possono essere combinate in un'unica linea."
+      },
+      {
+        "q": "Da cosa dipende il prezzo di una linea di taglio longitudinale?",
+        "a": "Quattro elementi lo determinano soprattutto: capacità di peso coil, intervallo di spessore, numero di nastri tagliati contemporaneamente e livello di automazione (carrello di carico, squadratura automatica, controllo tensione di riavvolgimento). Per questo quotiamo per progetto e non a catalogo: inviateci peso coil, spessore e misure nastro obiettivo."
+      },
+      {
+        "q": "Come avviene la messa in servizio?",
+        "a": "La linea viene montata e collaudata integralmente nel nostro stabilimento prima della spedizione; in cantiere restano solo montaggio e avviamento. Questo riduce sensibilmente i tempi di installazione. La formazione degli operatori avviene durante la messa in servizio."
+      }
+    ],
     "ctaTitle": "Dimensioniamo la tua linea di taglio",
     "ctaText": "Comunicaci peso del coil, spessore e larghezze dei nastri; definiremo insieme la serie e il layout."
   },

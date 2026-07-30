@@ -199,6 +199,30 @@
       "Automatyczny rozładunek kręgów",
       "System nawijarki (recoiler)"
     ],
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Najczęstsze pytania o linie wzdłużnego cięcia",
+    "faq": [
+      {
+        "q": "Do czego służy linia wzdłużnego cięcia?",
+        "a": "Tnie szeroki krąg stalowy wzdłuż na węższe taśmy o wymaganej szerokości i ponownie je nawija. Z jednego kręgu macierzystego powstaje więc kilka taśm dopasowanych do zamówień, co obniża odpad i koszt zapasów."
+      },
+      {
+        "q": "Jaką wydajność wybrać?",
+        "a": "Decyduje maksymalna masa kręgu, którą będziesz przetwarzać. Serie lekkie projektuje się na 1.500–4.000 kg i grubość 0,5–2 mm, ciężkie na 6.000–15.000 kg i 0,8–5 mm. Dobieraj pod wolumen za 2–3 lata, nie dzisiejszy — ramy nie da się później powiększyć."
+      },
+      {
+        "q": "Linia wzdłużnego cięcia czy linia cięcia poprzecznego?",
+        "a": "Różnica polega na postaci wyrobu. Linia wzdłużna tnie krąg wzdłuż i efektem nadal jest krąg — w wąskich taśmach. Linia poprzeczna tnie w poprzek, a efektem jest płaski arkusz. Jeśli sprzedajesz taśmę, potrzebujesz cięcia wzdłużnego; jeśli arkusze o stałym wymiarze — poprzecznego. Obie funkcje można połączyć w jednej linii."
+      },
+      {
+        "q": "Od czego zależy cena linii wzdłużnego cięcia?",
+        "a": "Cztery rzeczy decydują najbardziej: wydajność masy kręgu, zakres grubości, liczba taśm ciętych jednocześnie oraz poziom automatyzacji (wózek załadowczy, automatyczne centrowanie, kontrola naciągu nawijaka). Dlatego wyceniamy projektowo, a nie katalogowo — przyślij masę kręgu, grubość i docelowe wymiary taśm."
+      },
+      {
+        "q": "Jak przebiega uruchomienie?",
+        "a": "Linia jest w całości montowana i testowana w naszym zakładzie przed wysyłką; na miejscu pozostaje tylko montaż i rozruch. To wyraźnie skraca czas instalacji. Szkolenie operatorów odbywa się podczas rozruchu."
+      }
+    ],
     "ctaTitle": "Dobierzmy Twoją linię cięcia",
     "ctaText": "Podaj masę kręgu, grubość blachy i wymiary taśm; wspólnie ustalimy właściwą serię i układ linii."
   },
