@@ -832,9 +832,9 @@
       },
       "kalip-ve-merdane": {
         "name": "Stampi e Set di Rulli",
-        "short": "Progettazione e produzione di stampi per le nostre linee: rulli di profilatura e stampi di taglio.",
-        "hero": "Sono i rulli a determinare realmente le misure del profilo, i raggi degli spigoli e la qualità superficiale. Servosteel progetta e produce internamente gli utensili delle proprie linee; lo stampo viene progettato insieme alla linea stessa.",
-        "meta": "Produzione di rulli di profilatura e stampi: progettazione sul vostro disegno di profilo, rulli in acciaio legato 4140 temprati a 58-60 HRC.",
+        "short": "Rulli di profilatura e stampi per pressa: progettazione e produzione di utensili per le vostre linee.",
+        "hero": "Ciò che una linea produce lo decidono gli stampi, non le macchine. Servosteel progetta e produce internamente sia i rulli di profilatura sia gli stampi per pressa; l'utensile viene progettato insieme alla linea stessa.",
+        "meta": "Produzione di rulli di profilatura e stampi progressivi: progettazione sul vostro disegno, rulli in acciaio legato 4140 temprati a 58-60 HRC. Linea e stampo dallo stesso costruttore.",
         "features": [
           {
             "title": "Progettati con la linea",
@@ -845,18 +845,23 @@
             "text": "I rulli sono realizzati in acciaio legato 4140 e temprati a 58-60 HRC, mantenendo la stabilità dimensionale nella produzione di serie."
           },
           {
+            "title": "Stampi progressivi",
+            "text": "Progettazione e produzione di stampi progressivi per particolari in lamiera. Uno stampo progressivo richiede un avanzamento a passo preciso: poiché realizziamo sia lo stampo sia la linea di alimentazione, tolleranza di passo e accoppiamento dello stampo sono definiti fin dall'inizio."
+          },
+          {
             "title": "Sul vostro disegno",
-            "text": "Non una sezione da catalogo: il set di rulli viene progettato sul disegno di profilo che ci inviate, sezioni speciali comprese."
+            "text": "Non una sezione da catalogo: il set di rulli o lo stampo viene progettato sul disegno che ci inviate, sezioni speciali comprese."
           }
         ],
-        "sectors": ["Linee di profilatura", "Passerelle portacavi", "Profili solari", "Guardrail", "Strutture in acciaio leggero"],
+        "sectors": ["Linee di profilatura", "Officine di stampaggio", "Fornitori automotive", "Passerelle portacavi", "Profili solari", "Guardrail"],
         "table": {
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Valore"],
           "rows": [
             ["Materiale del rullo", "Acciaio legato 4140"],
             ["Durezza del rullo", "58 – 60 HRC"],
-            ["Ambito", "Rulli di profilatura, stampi di taglio e punzonatura"],
+            ["Ambito", "Rulli di profilatura, stampi per pressa, stampi di taglio e punzonatura"],
+            ["Tipo di stampo", "Progressivo"],
             ["Input di progetto", "Disegno del profilo (DWG / DXF / PDF)"],
             ["Progettazione", "Insieme alla linea, un unico team"]
           ]

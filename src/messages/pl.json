@@ -832,9 +832,9 @@
       },
       "kalip-ve-merdane": {
         "name": "Narzędzia i Zestawy Rolek",
-        "short": "Projektowanie i produkcja narzędzi do naszych linii: rolki profilujące i narzędzia tnące.",
-        "hero": "To rolki decydują o wymiarach profilu, promieniach naroży i jakości powierzchni. Servosteel projektuje i wykonuje oprzyrządowanie swoich linii we własnym zakresie; narzędzie powstaje razem z samą linią.",
-        "meta": "Produkcja rolek profilujących i narzędzi: projekt według Twojego rysunku profilu, rolki ze stali stopowej 4140 hartowane do 58-60 HRC.",
+        "short": "Rolki profilujące i tłoczniki: projektowanie i produkcja oprzyrządowania do Twoich linii.",
+        "hero": "O tym, co produkuje linia, decydują narzędzia, a nie maszyny. Servosteel projektuje i wykonuje we własnym zakresie zarówno rolki profilujące, jak i tłoczniki; narzędzie powstaje razem z samą linią.",
+        "meta": "Produkcja rolek profilujących i tłoczników postępowych: projekt według Twojego rysunku, rolki ze stali stopowej 4140 hartowane do 58-60 HRC. Linia i narzędzie od jednego producenta.",
         "features": [
           {
             "title": "Projektowane razem z linią",
@@ -845,18 +845,23 @@
             "text": "Rolki wykonujemy ze stali stopowej 4140 i hartujemy do 58-60 HRC; stabilność wymiarowa zostaje zachowana w produkcji seryjnej."
           },
           {
+            "title": "Tłoczniki postępowe",
+            "text": "Projektowanie i produkcja tłoczników postępowych do detali z blachy. Tłocznik postępowy wymaga precyzyjnego posuwu skokowego — ponieważ wykonujemy zarówno tłocznik, jak i linię podawania, tolerancja skoku i dopasowanie tłocznika są ustalone od początku."
+          },
+          {
             "title": "Według Twojego rysunku",
-            "text": "Nie przekrój z katalogu: zestaw rolek projektujemy na podstawie przesłanego rysunku profilu — łącznie z przekrojami nietypowymi."
+            "text": "Nie przekrój z katalogu: zestaw rolek lub tłocznik projektujemy na podstawie przesłanego rysunku — łącznie z przekrojami nietypowymi."
           }
         ],
-        "sectors": ["Linie profilujące", "Korytka kablowe", "Profile solarne", "Bariery drogowe", "Lekkie konstrukcje stalowe"],
+        "sectors": ["Linie profilujące", "Tłocznie", "Dostawcy motoryzacji", "Korytka kablowe", "Profile solarne", "Bariery drogowe"],
         "table": {
           "title": "Dane techniczne",
           "head": ["Parametr", "Wartość"],
           "rows": [
             ["Materiał rolki", "Stal stopowa 4140"],
             ["Twardość rolki", "58 – 60 HRC"],
-            ["Zakres", "Rolki profilujące, narzędzia tnące i wykrawające"],
+            ["Zakres", "Rolki profilujące, tłoczniki, narzędzia tnące i wykrawające"],
+            ["Typ tłocznika", "Postępowy"],
             ["Dane wejściowe", "Rysunek profilu (DWG / DXF / PDF)"],
             ["Projektowanie", "Razem z linią, jeden zespół"]
           ]

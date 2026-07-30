@@ -834,7 +834,7 @@
         "name": "Werkzeuge und Rollensätze",
         "short": "Rollformwerkzeuge und Presswerkzeuge: Werkzeugkonstruktion und -fertigung für Ihre Anlagen.",
         "hero": "Was eine Anlage produziert, entscheiden die Werkzeuge, nicht die Maschinen. Servosteel konstruiert und fertigt sowohl Rollformwerkzeuge als auch Presswerkzeuge im eigenen Haus — das Werkzeug wird gemeinsam mit der Anlage projektiert.",
-        "meta": "Rollform- und Presswerkzeugfertigung: Konstruktion nach Ihrer Zeichnung, Rollen aus 4140 Legierungsstahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
+        "meta": "Rollformwerkzeuge und Folgeverbundwerkzeuge: Konstruktion nach Ihrer Zeichnung, Rollen aus 4140 Legierungsstahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
         "features": [
           {
             "title": "Gemeinsam mit der Anlage konstruiert",
@@ -845,8 +845,8 @@
             "text": "Die Rollen werden aus 4140 Legierungsstahl gefertigt und auf 58-60 HRC gehärtet; die Maßhaltigkeit bleibt in der Serie erhalten."
           },
           {
-            "title": "Presswerkzeuge",
-            "text": "Konstruktion und Fertigung von Presswerkzeugen für Blechteile; Werkzeug und Pressenzuführung kommen vom selben Hersteller, Schrittmaß und Vorschub sind von Anfang an abgestimmt."
+            "title": "Folgeverbundwerkzeuge",
+            "text": "Konstruktion und Fertigung von Folgeverbundwerkzeugen für Blechteile. Ein Folgeverbundwerkzeug verlangt präzisen Vorschub — da Werkzeug und Zuführanlage von uns kommen, stimmen Schrittmaßtoleranz und Werkzeug von Anfang an."
           },
           {
             "title": "Nach Ihrer Zeichnung",
@@ -861,6 +861,7 @@
             ["Rollenwerkstoff", "4140 Legierungsstahl"],
             ["Rollenhärte", "58 – 60 HRC"],
             ["Umfang", "Rollformwerkzeuge, Presswerkzeuge, Schneid- und Stanzwerkzeuge"],
+            ["Presswerkzeugtyp", "Folgeverbundwerkzeug"],
             ["Konstruktionsgrundlage", "Profilzeichnung (DWG / DXF / PDF)"],
             ["Projektierung", "Gemeinsam mit der Anlage, ein Team"]
           ]

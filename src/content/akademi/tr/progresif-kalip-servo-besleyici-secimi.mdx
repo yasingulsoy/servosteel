@@ -1,0 +1,69 @@
+---
+title: "Progresif Kalıp İçin Doğru Servo Besleyici Nasıl Seçilir?"
+description: "Progresif kalıpta her vuruş doğru yere düşmeli. Servo besleyici seçerken bakılacak 6 kriter: adım hassasiyeti, adım boyu, sac kalınlığı, pres senkronu, doğrultma ve reçete hafızası."
+date: "2026-07-30"
+author: "Servosteel Mühendislik"
+cover: "/gorseller/kalip-ve-merdane.jpg"
+tags: ["progresif kalıp", "servo besleyici", "pres besleme"]
+---
+
+Progresif kalıpta parça tek istasyonda bitmez: sac, her pres vuruşunda bir istasyon ilerler ve sırayla delinir, kesilir, bükülür. Bu yüzden kalıbın performansını belirleyen şey çoğu zaman kalıbın kendisi değil, **sacı ilerleten besleyicidir.** Adım birkaç yüzde milimetre kayarsa zımba merkezden çıkar, çapak başlar, en kötü ihtimalle kalıp zarar görür.
+
+Aşağıdaki 6 kriter, progresif kalıbınıza besleyici seçerken netleştirmeniz gerekenleri özetliyor.
+
+## 1. Adım hassasiyeti — en kritik sayı
+
+Progresif kalıpta biriken hata affetmez: her istasyonda tekrarlanan küçük sapma, son istasyonda toplam kaymaya döner. Bu yüzden bakılacak ilk değer **besleme hassasiyetidir.**
+
+Servosteel servo sürücülerinde besleme hassasiyeti **± 0,1 mm** seviyesindedir. Kalıbınızın tolerans bütçesini çıkarırken bu değeri istasyon sayısıyla birlikte değerlendirin.
+
+## 2. Adım boyu ve istasyon sayısı
+
+Kalıbın istasyon aralığı (pitch), besleyicinin her vuruşta ilerletmesi gereken mesafedir. Uzun adım + yüksek strok sayısı, besleyiciden daha yüksek hız ve daha sert ivmelenme ister.
+
+Teklif aşamasında şu üçünü birlikte verin: **adım boyu, istasyon sayısı ve presin dakikadaki strok sayısı.** Besleyici bu üçlüye göre boyutlandırılır.
+
+## 3. Sac kalınlığı ve genişliği
+
+Kalın sac daha yüksek tutma kuvveti, geniş sac daha uzun silindir ister. Servosteel servo sürücüleri **0,4 – 4,0 mm** kalınlık ve **1.600 mm'ye kadar** genişlikte çalışır; besleme silindirleri 2 × Ø85 mm'dir.
+
+Serbest besleme hızı **35 m/dk**'dır — pres hızınızla uyumlu olup olmadığı hesaplanmalıdır.
+
+## 4. Pres senkronu ve pilot pim
+
+Besleyici presten bağımsız çalışamaz. Pres kam sinyaliyle **tam senkron** çalışması ve kalıbın pilot pimleri sacı yakaladığı anda besleyicinin serbest bırakması (pilot release) gerekir. Bu fonksiyon yoksa pilot pimler sacı zorlar, delik konumları kayar.
+
+Servosteel sürücülerinde pilot pim bırakma fonksiyonu standarttır.
+
+## 5. Doğrultma ihtiyacını atlamayın
+
+Rulodan gelen sacın kıvrım hafızası (coil-set) progresif kalıpta doğrudan sorun çıkarır: sac kalıba düz girmezse istasyon hizası bozulur. Talebiniz hassassa besleyiciyi doğrultucuyla birlikte düşünün.
+
+Bunun için ayrı makine almak yerine [doğrultmalı servo sürücü](/makineler/dogrultmali-servo-suruculer) tercih edilebilir — doğrultma ve besleme tek gövdede toplanır, 7/9/11/13 merdane seçenekleriyle sac kalınlığına göre yapılandırılır.
+
+## 6. Reçete hafızası — çok kalıplı atölyelerin gerçeği
+
+Bir atölyede genelde tek kalıp yoktur. Her kalıp değişiminde adım boyu, hız ve rampa değerlerini yeniden ayarlamak hem zaman kaybıdır hem hata kaynağıdır.
+
+Servosteel sürücülerinde **250 reçete** saklanabilir; kalıp değişiminde operatör reçeteyi çağırır, ayar tekrarlanmaz.
+
+## Referans değerler
+
+| Özellik | Değer |
+|---|---|
+| Besleme hassasiyeti | ± 0,1 mm |
+| Malzeme kalınlığı | 0,4 – 4,0 mm |
+| Sac genişliği | ≤ 1.600 mm |
+| Serbest besleme hızı | 35 m/dk |
+| Besleme silindiri | 2 × Ø85 mm |
+| Kalıp hafızası | 250 reçete |
+
+## Kalıbı ve besleyiciyi aynı yerden almanın farkı
+
+Progresif kalıp ile besleyici birbirine bağımlı iki parçadır: adım toleransı, pilot bırakma zamanlaması ve şerit yerleşimi ancak birlikte tasarlanırsa oturur. Farklı tedarikçilerden alındığında sorumluluk sınırı belirsizleşir — kalıpçı besleyiciyi, besleyici üreticisi kalıbı işaret eder.
+
+Servosteel hem [progresif pres kalıbını](/makineler/kalip-ve-merdane) hem [servo besleyiciyi](/makineler/servo-suruculer) kendi tesisinde üretir; ikisi aynı ekipte projelendirilir.
+
+## Sonuç
+
+Parça çiziminizi, kalıp adım boyunu ve pres strok sayınızı hazırlayın — doğru besleyici bu üç bilgiyle boyutlandırılır. Projeniz için [teklif alın](/teklif-al), sac kalınlığı ve şerit ölçülerinize göre dönelim.

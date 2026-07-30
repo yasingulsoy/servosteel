@@ -834,7 +834,7 @@
         "name": "Tooling and Roll Sets",
         "short": "Roll forming tooling and press dies: die design and manufacture for your lines.",
         "hero": "What a line produces is decided by the tooling, not the machines. Servosteel designs and manufactures both its roll forming tooling and its press dies in-house; the tooling is engineered together with the line itself.",
-        "meta": "Roll forming tooling and press die manufacturing: designed to your drawing, 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
+        "meta": "Roll forming tooling and progressive press die manufacturing: designed to your drawing, 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
         "features": [
           {
             "title": "Engineered with the line",
@@ -845,8 +845,8 @@
             "text": "Rolls are produced from 4140 alloy steel and hardened to 58-60 HRC, holding dimensional stability in series production."
           },
           {
-            "title": "Press dies",
-            "text": "Design and manufacture of press dies for sheet metal parts; die and press feeding line come from the same maker, so pitch and feed are matched from the start."
+            "title": "Progressive press dies",
+            "text": "Design and manufacture of progressive press dies for sheet metal parts. A progressive die demands precise pitch feeding — because we build both the die and the feeding line, pitch tolerance and die match are set from the start."
           },
           {
             "title": "Built to your drawing",
@@ -861,6 +861,7 @@
             ["Roll material", "4140 alloy steel"],
             ["Roll hardness", "58 – 60 HRC"],
             ["Scope", "Roll forming tooling, press dies, cutting and punching dies"],
+            ["Press die type", "Progressive"],
             ["Design input", "Profile drawing (DWG / DXF / PDF)"],
             ["Engineering", "Together with the line, one team"]
           ]

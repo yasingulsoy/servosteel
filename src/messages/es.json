@@ -834,7 +834,7 @@
         "name": "Troqueles y Juegos de Rodillos",
         "short": "Rodillos de perfilado y troqueles de prensa: diseño y fabricación de utillaje para sus líneas.",
         "hero": "Lo que produce una línea lo deciden los troqueles, no las máquinas. Servosteel diseña y fabrica internamente tanto sus rodillos de perfilado como sus troqueles de prensa; el utillaje se proyecta junto con la propia línea.",
-        "meta": "Fabricación de rodillos de perfilado y troqueles de prensa: diseño según su plano, rodillos de acero aleado 4140 templados a 58-60 HRC. Línea y troquel del mismo fabricante.",
+        "meta": "Fabricación de rodillos de perfilado y troqueles progresivos: diseño según su plano, rodillos de acero aleado 4140 templados a 58-60 HRC. Línea y troquel del mismo fabricante.",
         "features": [
           {
             "title": "Proyectado con la línea",
@@ -845,8 +845,8 @@
             "text": "Los rodillos se fabrican en acero aleado 4140 y se templan a 58-60 HRC, manteniendo la estabilidad dimensional en producción en serie."
           },
           {
-            "title": "Troqueles de prensa",
-            "text": "Diseño y fabricación de troqueles de prensa para piezas de chapa; el troquel y la línea de alimentación vienen del mismo fabricante, con paso y avance ajustados desde el inicio."
+            "title": "Troqueles progresivos",
+            "text": "Diseño y fabricación de troqueles progresivos para piezas de chapa. Un troquel progresivo exige un avance de paso preciso: como fabricamos tanto el troquel como la línea de alimentación, la tolerancia de paso y el ajuste del troquel quedan definidos desde el inicio."
           },
           {
             "title": "Según su plano",
@@ -861,6 +861,7 @@
             ["Material del rodillo", "Acero aleado 4140"],
             ["Dureza del rodillo", "58 – 60 HRC"],
             ["Alcance", "Rodillos de perfilado, troqueles de prensa, troqueles de corte y punzonado"],
+            ["Tipo de troquel", "Progresivo"],
             ["Entrada de diseño", "Plano del perfil (DWG / DXF / PDF)"],
             ["Ingeniería", "Junto con la línea, un solo equipo"]
           ]

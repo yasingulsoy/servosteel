@@ -834,7 +834,7 @@
         "name": "Kalıp ve Merdane",
         "short": "Roll form merdaneleri ve pres kalıpları: hatlarınıza yönelik kalıp tasarımı ve imalatı.",
         "hero": "Bir hattın ne ürettiğini makineler değil kalıplar belirler. Servosteel hem roll form merdanelerini hem pres kalıplarını kendi bünyesinde tasarlar ve üretir; kalıp, hattın kendisiyle birlikte projelendirilir.",
-        "meta": "Roll form merdanesi ve pres kalıbı imalatı: çiziminize göre tasarım, 4140 alaşımlı çelik merdane, 58-60 HRC sertlik. Hat ve kalıp tek üreticiden.",
+        "meta": "Roll form merdanesi ve progresif pres kalıbı imalatı: çiziminize göre tasarım, 4140 alaşımlı çelik merdane, 58-60 HRC sertlik. Hat ve kalıp tek üreticiden.",
         "features": [
           {
             "title": "Hatla birlikte tasarım",
@@ -845,8 +845,8 @@
             "text": "Merdaneler 4140 alaşımlı çelikten üretilir ve 58-60 HRC sertliğe getirilir; seri üretimde ölçü kararlılığı korunur."
           },
           {
-            "title": "Pres kalıpları",
-            "text": "Sac parça için pres kalıbı tasarımı ve imalatı; pres besleme hattıyla kalıp aynı üreticiden gelir, adım ve besleme uyumu baştan kurulur."
+            "title": "Progresif pres kalıpları",
+            "text": "Sac parça için progresif (kademeli) pres kalıbı tasarımı ve imalatı. Progresif kalıp hassas adım beslemesi ister — kalıbı da besleme hattını da biz ürettiğimiz için adım toleransı ve kalıp uyumu baştan kurulur."
           },
           {
             "title": "Çiziminize göre",
@@ -861,6 +861,7 @@
             ["Merdane malzemesi", "4140 alaşımlı çelik"],
             ["Merdane sertliği", "58 – 60 HRC"],
             ["Kapsam", "Roll form merdaneleri, pres kalıpları, kesme ve delme kalıpları"],
+            ["Pres kalıbı tipi", "Progresif (kademeli)"],
             ["Tasarım girdisi", "Profil çizimi (DWG / DXF / PDF)"],
             ["Projelendirme", "Hat ile birlikte, tek ekip"]
           ]
