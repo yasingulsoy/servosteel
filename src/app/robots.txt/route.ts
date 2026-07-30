@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, IS_PRODUCTION_SITE, PRODUCTION_URL } from "@/lib/site";
 
 /**
  * /robots.txt — raw route handler (Next metadata objesi yorum/özel satır desteklemediği için).
@@ -23,6 +23,15 @@ const AI_BOTS = [
 ];
 
 export function GET() {
+  /* Demo / önizleme kopyası: hiçbir bot indekslemesin — canlı site kendi kopyasıyla yarışmasın. */
+  if (!IS_PRODUCTION_SITE) {
+    return new Response(
+      `# Bu bir demo/önizleme kopyasıdır — arama motorlarına kapalıdır.\n` +
+        `# Canlı site: ${PRODUCTION_URL}\n\nUser-agent: *\nDisallow: /\n`,
+      { headers: { "Content-Type": "text/plain; charset=utf-8" } }
+    );
+  }
+
   const aiRules = AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /`).join("\n\n");
 
   const body = `# Servosteel — robots.txt

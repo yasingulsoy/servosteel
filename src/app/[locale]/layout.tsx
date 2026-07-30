@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
-import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS } from "@/lib/site";
+import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
 import "../globals.css";
 
 const inter = Inter({
@@ -72,16 +72,19 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
+    /* Demo/önizleme kopyaları indekslenmez; yalnızca canlı domain aramaya açıktır. */
+    robots: IS_PRODUCTION_SITE
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        }
+      : { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false } },
     /* Arama motoru site sahipliği doğrulaması — .env.local'de tanımlıysa basılır */
     verification: {
       google: process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined,
