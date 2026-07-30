@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "Da Istanbul in oltre 48 paesi",
-    "h1l1": "Ingegneria che",
-    "h1l2": "dà forma all'acciaio",
-    "h1l3": "in prodotto",
+    "h1l1": "Operative in 48 paesi",
+    "h1l2": "linee di lavorazione coil",
     "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
     "cta1": "Preventivo per il tuo Progetto",
     "cta2": "Esplora le Linee",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Team esperto" },
       { "value": "99%", "label": "Consegne puntuali" }
     ],
+    "facilityEyebrow": "Il nostro stabilimento",
+    "facilityTitle": "Dove nasce la vostra linea",
+    "facility": [
+      {
+        "alt": "Linea di profilatura Servosteel in produzione con pannello HMI",
+        "caption": "Una linea di profilatura assemblata nel nostro stabilimento di Sancaktepe: ogni linea viene montata e collaudata completamente prima della spedizione."
+      },
+      {
+        "alt": "Stabilimento e uffici Servosteel a Sancaktepe, Istanbul",
+        "caption": "Il nostro stabilimento a Sancaktepe / Istanbul: progettazione, produzione e automazione sotto un unico tetto."
+      },
+      {
+        "alt": "Aspo svolgitore idraulico e carrello portacoil in officina",
+        "caption": "Dall'aspo svolgitore all'impilatore, ogni componente è prodotto nella nostra officina."
+      }
+    ],
     "storyTitle": "Dalla singola macchina alla linea completa",
     "story": [
-      "Servosteel è partita dalle macchine che alimentano le linee di pressa: svolgitori, raddrizzatrici e alimentatori servo. L'esperienza sul campo è diventata ingegneria di linee complete: oggi installiamo chiavi in mano linee di taglio longitudinale, a misura e di profilatura.",
+      "Servosteel è nata quando un gruppo di giovani ingegneri ha deciso di costruire sistemi di alimentazione presse <b>economici e facili da controllare</b>. Siamo partiti da svolgitori, raddrizzatrici e alimentatori servo; l'esperienza sul campo è diventata ingegneria di linee complete: oggi installiamo chiavi in mano linee di taglio longitudinale, a misura e di profilatura.",
       "Ciò che ci distingue è che ogni anello della linea è prodotto <b>sotto lo stesso tetto</b>: progettazione meccanica, produzione, software di automazione e messa in servizio nello stesso team. I clienti hanno un solo interlocutore e i componenti arrivano perfettamente integrati.",
       "Le linee costruite nel nostro stabilimento di Sancaktepe, Istanbul, producono oggi in <b>oltre 48 paesi</b>: Europa, Medio Oriente, Africa ed Estremo Oriente."
     ],
+    "vmEyebrow": "Azienda",
+    "visionTitle": "La nostra visione",
+    "visionText": "Essere un solido marchio turco preferito a livello mondiale nelle tecnologie di profilatura e lavorazione del coil, grazie a un'ingegneria su misura, un'automazione affidabile e un approccio produttivo sostenibile.",
+    "missionTitle": "La nostra missione",
+    "missionText": [
+      "In ServoSTEEL, nella profilatura, nel taglio a misura, nel taglio longitudinale, nell'alimentazione presse e nei sistemi di impilaggio automatico — così come nella progettazione e produzione degli stampi richiesti da queste linee — analizziamo con precisione le esigenze produttive dei nostri clienti e sviluppiamo soluzioni di alta precisione, efficienti, affidabili e di lunga durata.",
+      "Unendo il nostro know-how tecnologico all'esperienza sul campo, offriamo linee di produzione complete e soluzioni di stampi personalizzate che aumentano la capacità produttiva, garantiscono continuità qualitativa, sono facili da usare e da manutenere e contribuiscono a ridurre i costi di esercizio.",
+      "Dalla progettazione di macchine e stampi alla produzione, dall'automazione all'installazione e messa in servizio, collaboriamo strettamente con i nostri clienti in ogni fase; con il nostro supporto post-vendita, il nostro impegno al miglioramento continuo e la nostra attenzione all'efficienza delle risorse, creiamo valore nel lungo periodo."
+    ],
     "values": [
       {
-        "title": "La nostra missione",
-        "text": "Fornire la macchina industriale giusta con il miglior servizio e valore: ogni linea è progettata sull'esigenza reale del cliente — niente di meno, niente di più."
+        "title": "Ingegneria su misura",
+        "text": "Analizziamo con precisione la vostra esigenza produttiva e sviluppiamo soluzioni di alta precisione, efficienti, affidabili e durevoli: non un articolo di catalogo, ma una linea per il vostro progetto."
       },
       {
-        "title": "La nostra visione",
-        "text": "Diventare il marchio turco di riferimento mondiale nella lavorazione coil, sviluppando macchine per una produzione sostenibile e riciclabile."
+        "title": "Progettazione e produzione stampi",
+        "text": "Anche gli stampi della vostra linea sono nostri: rulli e soluzioni di stampo vengono progettati insieme alla linea stessa."
       },
       {
         "title": "Il nostro approccio produttivo",
@@ -803,6 +827,38 @@
             ["Diametro interno / esterno coil", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rulli di avanzamento", "2 + 2"],
             ["Rulli raddrizzatori", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Stampi e Set di Rulli",
+        "short": "Progettazione e produzione di stampi per le nostre linee: rulli di profilatura e stampi di taglio.",
+        "hero": "Sono i rulli a determinare realmente le misure del profilo, i raggi degli spigoli e la qualità superficiale. Servosteel progetta e produce internamente gli utensili delle proprie linee; lo stampo viene progettato insieme alla linea stessa.",
+        "meta": "Produzione di rulli di profilatura e stampi: progettazione sul vostro disegno di profilo, rulli in acciaio legato 4140 temprati a 58-60 HRC.",
+        "features": [
+          {
+            "title": "Progettati con la linea",
+            "text": "Stampi e rulli nascono sotto lo stesso tetto della macchina: nessun disallineamento tra linea e utensile."
+          },
+          {
+            "title": "Rulli temprati",
+            "text": "I rulli sono realizzati in acciaio legato 4140 e temprati a 58-60 HRC, mantenendo la stabilità dimensionale nella produzione di serie."
+          },
+          {
+            "title": "Sul vostro disegno",
+            "text": "Non una sezione da catalogo: il set di rulli viene progettato sul disegno di profilo che ci inviate, sezioni speciali comprese."
+          }
+        ],
+        "sectors": ["Linee di profilatura", "Passerelle portacavi", "Profili solari", "Guardrail", "Strutture in acciaio leggero"],
+        "table": {
+          "title": "Specifiche tecniche",
+          "head": ["Caratteristica", "Valore"],
+          "rows": [
+            ["Materiale del rullo", "Acciaio legato 4140"],
+            ["Durezza del rullo", "58 – 60 HRC"],
+            ["Ambito", "Rulli di profilatura, stampi di taglio e punzonatura"],
+            ["Input di progetto", "Disegno del profilo (DWG / DXF / PDF)"],
+            ["Progettazione", "Insieme alla linea, un unico team"]
           ]
         }
       }

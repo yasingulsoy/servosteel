@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "İstanbul'dan 48+ ülkeye ihracat",
-    "h1l1": "Çeliği şekillendiren",
-    "h1l2": "mühendislik",
-    "h1l3": "hatlar",
+    "h1l1": "48 ülkede çalışan",
+    "h1l2": "rulo işleme hatları",
     "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
     "cta1": "Projeniz İçin Teklif Alın",
     "cta2": "Hatları İnceleyin",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Uzman kadro" },
       { "value": "%99", "label": "Zamanında teslimat" }
     ],
+    "facilityEyebrow": "Tesisimiz",
+    "facilityTitle": "Hatlarınızın üretildiği yer",
+    "facility": [
+      {
+        "alt": "Servosteel roll form hattı — üretim halinde, HMI paneli ile",
+        "caption": "Sancaktepe tesisimizde montajı tamamlanan bir roll form hattı; her hat sevkiyat öncesi fabrikada komple kurulur ve test edilir."
+      },
+      {
+        "alt": "Servosteel fabrika ve ofis binası, Sancaktepe İstanbul",
+        "caption": "Sancaktepe / İstanbul'daki tesisimiz — tasarım, imalat ve otomasyon aynı çatı altında."
+      },
+      {
+        "alt": "Atölyede hidrolik rulo açıcı ve yükleme arabası",
+        "caption": "Rulo açıcıdan istifleyiciye kadar her bileşen kendi atölyemizde üretilir."
+      }
+    ],
     "storyTitle": "Tek makineden komple hatta",
     "story": [
-      "Servosteel, pres hatlarını besleyen makinelerle yola çıktı: rulo açıcılar, doğrultucular ve servo sürücüler. Sahada kazanılan tecrübe, zamanla komple hat mühendisliğine dönüştü — bugün rulo dilme, boy kesme ve roll form hatlarını anahtar teslim kuruyoruz.",
+      "Servosteel, bir grup genç mühendisin <b>maliyeti verimli ve kolay kontrol edilebilir</b> pres besleme sistemleri üretme kararıyla kuruldu. Yola rulo açıcılar, doğrultucular ve servo sürücülerle çıktık; sahada kazanılan tecrübe zamanla komple hat mühendisliğine dönüştü — bugün rulo dilme, boy kesme ve roll form hatlarını anahtar teslim kuruyoruz.",
       "Bizi farklı kılan şey, hattın her halkasının <b>tek çatı altında</b> üretilmesi: mekanik tasarım, imalat, otomasyon yazılımı ve devreye alma aynı ekipte. Müşterilerimiz tek muhatapla çalışır; hat bileşenleri birbiriyle tam uyumlu gelir.",
       "İstanbul Sancaktepe'deki tesisimizden çıkan hatlar bugün <b>48'den fazla ülkede</b> — Avrupa, Orta Doğu, Afrika ve Uzak Doğu'da — üretim yapıyor."
     ],
+    "vmEyebrow": "Kurumsal",
+    "visionTitle": "Vizyonumuz",
+    "visionText": "Rulo sac şekillendirme ve işleme teknolojilerinde; özel mühendislik, güvenilir otomasyon ve sürdürülebilir üretim yaklaşımıyla dünya çapında tercih edilen güçlü bir Türk markası olmak.",
+    "missionTitle": "Misyonumuz",
+    "missionText": [
+      "ServoSTEEL olarak; roll form, boy kesme, dilme, pres besleme ve otomatik istifleme sistemleri ile bu hatlara yönelik kalıp tasarımı ve imalatında, müşterilerimizin üretim ihtiyaçlarını doğru analiz ederek yüksek hassasiyetli, verimli, güvenilir ve uzun ömürlü çözümler geliştiriyoruz.",
+      "Teknoloji birikimimizi saha tecrübemizle birleştirerek; üretim kapasitesini artıran, kalite sürekliliği sağlayan, kullanımı ve bakımı kolay, işletme maliyetlerinin azaltılmasına katkı sağlayan komple üretim hatları ve özel kalıp çözümleri sunuyoruz.",
+      "Makine ve kalıp tasarımından imalata, otomasyondan kurulum ve devreye almaya kadar tüm süreçlerde müşterilerimizle yakın iş birliği içinde çalışıyor; satış sonrası desteğimiz, sürekli iyileştirme anlayışımız ve kaynak verimliliğini gözeten yaklaşımımızla uzun vadeli değer yaratıyoruz."
+    ],
     "values": [
       {
-        "title": "Misyonumuz",
-        "text": "Doğru endüstriyel makineyi, en iyi hizmet ve değerle sunmak: her hat, müşterinin gerçek ihtiyacına göre projelendirilir — ne eksik, ne fazla."
+        "title": "Müşteriye özel mühendislik",
+        "text": "Üretim ihtiyacınızı doğru analiz ederek yüksek hassasiyetli, verimli, güvenilir ve uzun ömürlü çözümler geliştiriyoruz — katalog değil, projeye özel hat."
       },
       {
-        "title": "Vizyonumuz",
-        "text": "Sürdürülebilir ve geri dönüştürülebilir üretime katkı sağlayan makineler geliştirerek, rulo sac işlemede dünya çapında tercih edilen Türk markası olmak."
+        "title": "Kalıp tasarımı ve imalatı",
+        "text": "Hatlara yönelik kalıp tasarımı ve imalatı da bizde: merdane ve kalıp çözümleri hattın kendisiyle birlikte projelendirilir."
       },
       {
         "title": "Üretim yaklaşımımız",
@@ -803,6 +827,42 @@
             ["Rulo iç / dış çapı", "450 – 560 / 1.300 – 1.600 mm"],
             ["Besleme silindiri", "2 + 2"],
             ["Doğrultma silindiri", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Kalıp ve Merdane",
+        "short": "Roll form merdaneleri ve pres kalıpları: hatlarınıza yönelik kalıp tasarımı ve imalatı.",
+        "hero": "Bir hattın ne ürettiğini makineler değil kalıplar belirler. Servosteel hem roll form merdanelerini hem pres kalıplarını kendi bünyesinde tasarlar ve üretir; kalıp, hattın kendisiyle birlikte projelendirilir.",
+        "meta": "Roll form merdanesi ve pres kalıbı imalatı: çiziminize göre tasarım, 4140 alaşımlı çelik merdane, 58-60 HRC sertlik. Hat ve kalıp tek üreticiden.",
+        "features": [
+          {
+            "title": "Hatla birlikte tasarım",
+            "text": "Kalıp ve merdane, makineyi tasarlayan ekiple aynı çatı altında projelendirilir; hat ile takım arasında uyum sorunu çıkmaz."
+          },
+          {
+            "title": "Sertleştirilmiş merdane",
+            "text": "Merdaneler 4140 alaşımlı çelikten üretilir ve 58-60 HRC sertliğe getirilir; seri üretimde ölçü kararlılığı korunur."
+          },
+          {
+            "title": "Pres kalıpları",
+            "text": "Sac parça için pres kalıbı tasarımı ve imalatı; pres besleme hattıyla kalıp aynı üreticiden gelir, adım ve besleme uyumu baştan kurulur."
+          },
+          {
+            "title": "Çiziminize göre",
+            "text": "Katalog kesiti değil, gönderdiğiniz çizime göre merdane seti veya kalıp tasarlanır — özel kesitler dahil."
+          }
+        ],
+        "sectors": ["Roll form hatları", "Pres atölyeleri", "Otomotiv yan sanayi", "Kablo kanalı", "Solar profil", "Yol bariyeri"],
+        "table": {
+          "title": "Teknik özellikler",
+          "head": ["Özellik", "Değer"],
+          "rows": [
+            ["Merdane malzemesi", "4140 alaşımlı çelik"],
+            ["Merdane sertliği", "58 – 60 HRC"],
+            ["Kapsam", "Roll form merdaneleri, pres kalıpları, kesme ve delme kalıpları"],
+            ["Tasarım girdisi", "Profil çizimi (DWG / DXF / PDF)"],
+            ["Projelendirme", "Hat ile birlikte, tek ekip"]
           ]
         }
       }

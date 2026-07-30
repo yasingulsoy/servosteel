@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "Exporting from Istanbul to 48+ countries",
-    "h1l1": "Engineering that shapes",
-    "h1l2": "steel",
-    "h1l3": "products",
+    "h1l1": "Running in 48 countries",
+    "h1l2": "coil processing lines",
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
     "cta2": "Explore the Lines",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Expert team" },
       { "value": "99%", "label": "On-time delivery" }
     ],
+    "facilityEyebrow": "Our facility",
+    "facilityTitle": "Where your line is built",
+    "facility": [
+      {
+        "alt": "Servosteel roll forming line in production with HMI panel",
+        "caption": "A roll forming line assembled at our Sancaktepe facility — every line is fully built and tested in-house before shipment."
+      },
+      {
+        "alt": "Servosteel factory and office building in Sancaktepe, Istanbul",
+        "caption": "Our facility in Sancaktepe / Istanbul — design, manufacturing and automation under one roof."
+      },
+      {
+        "alt": "Hydraulic decoiler and coil loading car in the workshop",
+        "caption": "From decoiler to stacker, every component is produced in our own workshop."
+      }
+    ],
     "storyTitle": "From single machines to complete lines",
     "story": [
-      "Servosteel started with the machines that feed press lines: decoilers, straighteners and servo feeders. Field experience gradually grew into complete line engineering — today we install coil slitting, cut-to-length and roll forming lines turnkey.",
+      "Servosteel was founded when a group of young engineers set out to build <b>cost-effective and easy-to-control</b> press feeding systems. We started with decoilers, straighteners and servo feeders; field experience gradually grew into complete line engineering — today we install coil slitting, cut-to-length and roll forming lines turnkey.",
       "What sets us apart is that every link of the line is produced <b>under one roof</b>: mechanical design, manufacturing, automation software and commissioning are all in the same team. Our customers work with a single partner, and the line components arrive perfectly matched.",
       "Lines built at our facility in Sancaktepe, Istanbul are producing today in <b>more than 48 countries</b> — across Europe, the Middle East, Africa and the Far East."
     ],
+    "vmEyebrow": "Corporate",
+    "visionTitle": "Our vision",
+    "visionText": "To be a strong Turkish brand preferred worldwide in coil forming and processing technologies, through custom engineering, reliable automation and a sustainable production approach.",
+    "missionTitle": "Our mission",
+    "missionText": [
+      "At ServoSTEEL, in roll forming, cut-to-length, slitting, press feeding and automatic stacking systems — and in the design and manufacture of the dies these lines require — we analyse our customers' production needs accurately and develop high-precision, efficient, reliable and long-life solutions.",
+      "By combining our technological know-how with our field experience, we offer complete production lines and custom die solutions that increase production capacity, ensure consistent quality, are easy to operate and maintain, and help reduce operating costs.",
+      "From machine and die design through manufacturing, automation, installation and commissioning, we work in close cooperation with our customers at every stage; with our after-sales support, our commitment to continuous improvement and our attention to resource efficiency, we create long-term value."
+    ],
     "values": [
       {
-        "title": "Our mission",
-        "text": "To deliver the right industrial machine with the best service and value: every line is engineered to the customer's real need — nothing missing, nothing extra."
+        "title": "Custom engineering",
+        "text": "We analyse your production need accurately and develop high-precision, efficient, reliable and long-life solutions — not a catalogue item, a line built for your project."
       },
       {
-        "title": "Our vision",
-        "text": "To become the globally preferred Turkish brand in coil processing by developing machines that contribute to sustainable, recyclable production."
+        "title": "Die design and manufacture",
+        "text": "The dies your line needs are ours too: roll tooling and die solutions are engineered together with the line itself."
       },
       {
         "title": "Our production approach",
@@ -803,6 +827,42 @@
             ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
             ["Feed rolls", "2 + 2"],
             ["Straightening rolls", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Tooling and Roll Sets",
+        "short": "Roll forming tooling and press dies: die design and manufacture for your lines.",
+        "hero": "What a line produces is decided by the tooling, not the machines. Servosteel designs and manufactures both its roll forming tooling and its press dies in-house; the tooling is engineered together with the line itself.",
+        "meta": "Roll forming tooling and press die manufacturing: designed to your drawing, 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
+        "features": [
+          {
+            "title": "Engineered with the line",
+            "text": "Tooling and rolls are designed under the same roof as the machine, so there is never a mismatch between line and tooling."
+          },
+          {
+            "title": "Hardened rolls",
+            "text": "Rolls are produced from 4140 alloy steel and hardened to 58-60 HRC, holding dimensional stability in series production."
+          },
+          {
+            "title": "Press dies",
+            "text": "Design and manufacture of press dies for sheet metal parts; die and press feeding line come from the same maker, so pitch and feed are matched from the start."
+          },
+          {
+            "title": "Built to your drawing",
+            "text": "Not a catalogue section: the roll set or die is designed from the drawing you send — custom sections included."
+          }
+        ],
+        "sectors": ["Roll forming lines", "Stamping shops", "Automotive suppliers", "Cable tray", "Solar profiles", "Guardrail"],
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Value"],
+          "rows": [
+            ["Roll material", "4140 alloy steel"],
+            ["Roll hardness", "58 – 60 HRC"],
+            ["Scope", "Roll forming tooling, press dies, cutting and punching dies"],
+            ["Design input", "Profile drawing (DWG / DXF / PDF)"],
+            ["Engineering", "Together with the line, one team"]
           ]
         }
       }

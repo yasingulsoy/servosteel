@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Factory, Globe2, Target, Users } from "lucide-react";
+import { Factory, Target, Users, Wrench } from "lucide-react";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -8,7 +9,7 @@ import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
 
-const valueIcons = [Target, Globe2, Factory, Users];
+const valueIcons = [Target, Wrench, Factory, Users];
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -29,6 +30,8 @@ export default async function HakkimizdaPage({ params }: Props) {
   const story = t.raw("story") as string[];
   const values = t.raw("values") as { title: string; text: string }[];
   const timeline = t.raw("timeline") as { title: string; text: string }[];
+  const facility = t.raw("facility") as { alt: string; caption: string }[];
+  const missionText = t.raw("missionText") as string[];
 
   return (
     <>
@@ -50,6 +53,57 @@ export default async function HakkimizdaPage({ params }: Props) {
             </Reveal>
           ))}
         </dl>
+      </section>
+
+      {/* TESİS — gerçek fabrika ve üretim fotoğrafları */}
+      <section className="mx-auto max-w-7xl px-4 pt-16 lg:pt-20">
+        <Reveal>
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
+            <span className="h-px w-8 bg-accent" aria-hidden />
+            {t("facilityEyebrow")}
+          </p>
+          <h2 className="font-display mt-4 max-w-2xl text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl">
+            {t("facilityTitle")}
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100}>
+          <figure className="mt-8">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-line bg-surface-alt">
+              <Image
+                src="/gorseller/tesis-uretim.jpg"
+                alt={facility[0].alt}
+                fill
+                sizes="(max-width: 1280px) 100vw, 1216px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-muted">{facility[0].caption}</figcaption>
+          </figure>
+        </Reveal>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          {[
+            { src: "/gorseller/tesis-bina.jpg", i: 1 },
+            { src: "/gorseller/tesis-atolye.jpg", i: 2 },
+          ].map(({ src, i }) => (
+            <Reveal key={src} delay={150 + i * 80}>
+              <figure>
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-surface-alt">
+                  <Image
+                    src={src}
+                    alt={facility[i].alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-muted">{facility[i].caption}</figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
@@ -82,6 +136,44 @@ export default async function HakkimizdaPage({ params }: Props) {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* VİZYON & MİSYON — resmî kurumsal metin */}
+      <section className="border-y border-line bg-surface-alt">
+        <div className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+          <Reveal>
+            <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
+              <span className="h-px w-8 bg-accent" aria-hidden />
+              {t("vmEyebrow")}
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid gap-10 lg:grid-cols-5 lg:gap-14">
+            <Reveal>
+              <div className="lg:col-span-2">
+                <div className="rounded-2xl border-s-4 border-accent bg-card p-7 shadow-sm">
+                  <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+                    {t("visionTitle")}
+                  </h2>
+                  <p className="mt-4 leading-relaxed text-muted">{t("visionText")}</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="lg:col-span-3">
+                <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+                  {t("missionTitle")}
+                </h2>
+                <div className="mt-4 space-y-4 leading-relaxed text-muted">
+                  {missionText.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

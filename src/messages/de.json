@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "Export aus Istanbul in 48+ Länder",
-    "h1l1": "Ingenieurskunst, die",
-    "h1l2": "Stahl formt",
-    "h1l3": "verwandeln",
+    "h1l1": "In 48 Ländern im Einsatz",
+    "h1l2": "Anlagen zur Bandverarbeitung",
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
     "cta2": "Anlagen entdecken",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Fachkräfte" },
       { "value": "99%", "label": "Termintreue" }
     ],
+    "facilityEyebrow": "Unser Werk",
+    "facilityTitle": "Hier entsteht Ihre Anlage",
+    "facility": [
+      {
+        "alt": "Servosteel Rollformanlage in der Fertigung mit HMI-Panel",
+        "caption": "Eine in unserem Werk in Sancaktepe montierte Rollformanlage — jede Anlage wird vor dem Versand komplett aufgebaut und getestet."
+      },
+      {
+        "alt": "Servosteel Fabrik- und Bürogebäude in Sancaktepe, Istanbul",
+        "caption": "Unser Werk in Sancaktepe / Istanbul — Konstruktion, Fertigung und Automatisierung unter einem Dach."
+      },
+      {
+        "alt": "Hydraulische Abwickelhaspel und Bundwagen in der Werkstatt",
+        "caption": "Von der Abwickelhaspel bis zum Stapler wird jede Komponente in unserer eigenen Werkstatt gefertigt."
+      }
+    ],
     "storyTitle": "Von der Einzelmaschine zur Komplettanlage",
     "story": [
-      "Servosteel begann mit Maschinen, die Pressenlinien versorgen: Abwickelhaspeln, Richtmaschinen und Servovorschübe. Aus der Praxiserfahrung wuchs das Engineering kompletter Anlagen — heute installieren wir Längsteil-, Querteil- und Rollformanlagen schlüsselfertig.",
+      "Servosteel entstand, als eine Gruppe junger Ingenieure beschloss, <b>kostengünstige und einfach zu steuernde</b> Pressenzuführsysteme zu bauen. Wir begannen mit Abwickelhaspeln, Richtmaschinen und Servovorschüben; aus der Praxiserfahrung wuchs das Engineering kompletter Anlagen — heute installieren wir Längsteil-, Querteil- und Rollformanlagen schlüsselfertig.",
       "Was uns unterscheidet: Jedes Glied der Anlage entsteht <b>unter einem Dach</b> — Konstruktion, Fertigung, Automatisierungssoftware und Inbetriebnahme im selben Team. Unsere Kunden haben einen Ansprechpartner, und die Komponenten kommen perfekt abgestimmt an.",
       "Anlagen aus unserem Werk in Istanbul-Sancaktepe produzieren heute in <b>über 48 Ländern</b> — in Europa, dem Nahen Osten, Afrika und Fernost."
     ],
+    "vmEyebrow": "Unternehmen",
+    "visionTitle": "Unsere Vision",
+    "visionText": "Eine starke türkische Marke zu sein, die in den Technologien der Bandumformung und -verarbeitung weltweit bevorzugt wird — durch kundenspezifisches Engineering, zuverlässige Automatisierung und einen nachhaltigen Produktionsansatz.",
+    "missionTitle": "Unsere Mission",
+    "missionText": [
+      "Bei ServoSTEEL analysieren wir in den Bereichen Rollformen, Querteilen, Längsteilen, Pressenzuführung und automatische Stapelsysteme — sowie in der Konstruktion und Fertigung der dafür erforderlichen Werkzeuge — den Produktionsbedarf unserer Kunden genau und entwickeln hochpräzise, effiziente, zuverlässige und langlebige Lösungen.",
+      "Indem wir unser technologisches Know-how mit unserer Praxiserfahrung verbinden, bieten wir Komplettanlagen und individuelle Werkzeuglösungen, die die Produktionskapazität steigern, gleichbleibende Qualität sichern, einfach zu bedienen und zu warten sind und zur Senkung der Betriebskosten beitragen.",
+      "Von der Maschinen- und Werkzeugkonstruktion über die Fertigung, die Automatisierung bis zur Installation und Inbetriebnahme arbeiten wir in jeder Phase eng mit unseren Kunden zusammen; mit unserem After-Sales-Support, unserem Anspruch der kontinuierlichen Verbesserung und unserem Blick auf Ressourceneffizienz schaffen wir langfristigen Wert."
+    ],
     "values": [
       {
-        "title": "Unsere Mission",
-        "text": "Die richtige Industriemaschine mit bestem Service und Wert liefern: Jede Anlage wird auf den realen Bedarf des Kunden projektiert — nichts fehlt, nichts ist überflüssig."
+        "title": "Kundenspezifisches Engineering",
+        "text": "Wir analysieren Ihren Produktionsbedarf genau und entwickeln hochpräzise, effiziente, zuverlässige und langlebige Lösungen — kein Katalogartikel, sondern eine Anlage für Ihr Projekt."
       },
       {
-        "title": "Unsere Vision",
-        "text": "Durch Maschinen für nachhaltige, recyclingfähige Produktion die weltweit bevorzugte türkische Marke der Coil-Verarbeitung werden."
+        "title": "Werkzeugkonstruktion und -fertigung",
+        "text": "Auch die Werkzeuge Ihrer Anlage kommen von uns: Rollwerkzeuge und Werkzeuglösungen werden gemeinsam mit der Anlage konstruiert."
       },
       {
         "title": "Unser Fertigungsansatz",
@@ -803,6 +827,42 @@
             ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
             ["Vorschubwalzen", "2 + 2"],
             ["Richtwalzen", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Werkzeuge und Rollensätze",
+        "short": "Rollformwerkzeuge und Presswerkzeuge: Werkzeugkonstruktion und -fertigung für Ihre Anlagen.",
+        "hero": "Was eine Anlage produziert, entscheiden die Werkzeuge, nicht die Maschinen. Servosteel konstruiert und fertigt sowohl Rollformwerkzeuge als auch Presswerkzeuge im eigenen Haus — das Werkzeug wird gemeinsam mit der Anlage projektiert.",
+        "meta": "Rollform- und Presswerkzeugfertigung: Konstruktion nach Ihrer Zeichnung, Rollen aus 4140 Legierungsstahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
+        "features": [
+          {
+            "title": "Gemeinsam mit der Anlage konstruiert",
+            "text": "Werkzeuge und Rollen entstehen unter demselben Dach wie die Maschine — Anlage und Werkzeug passen von Anfang an zusammen."
+          },
+          {
+            "title": "Gehärtete Rollen",
+            "text": "Die Rollen werden aus 4140 Legierungsstahl gefertigt und auf 58-60 HRC gehärtet; die Maßhaltigkeit bleibt in der Serie erhalten."
+          },
+          {
+            "title": "Presswerkzeuge",
+            "text": "Konstruktion und Fertigung von Presswerkzeugen für Blechteile; Werkzeug und Pressenzuführung kommen vom selben Hersteller, Schrittmaß und Vorschub sind von Anfang an abgestimmt."
+          },
+          {
+            "title": "Nach Ihrer Zeichnung",
+            "text": "Kein Katalogquerschnitt: Rollensatz oder Werkzeug werden nach der von Ihnen gesendeten Zeichnung konstruiert — auch Sonderquerschnitte."
+          }
+        ],
+        "sectors": ["Rollformanlagen", "Stanzereien", "Automobilzulieferer", "Kabelkanäle", "Solarprofile", "Schutzplanken"],
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Wert"],
+          "rows": [
+            ["Rollenwerkstoff", "4140 Legierungsstahl"],
+            ["Rollenhärte", "58 – 60 HRC"],
+            ["Umfang", "Rollformwerkzeuge, Presswerkzeuge, Schneid- und Stanzwerkzeuge"],
+            ["Konstruktionsgrundlage", "Profilzeichnung (DWG / DXF / PDF)"],
+            ["Projektierung", "Gemeinsam mit der Anlage, ein Team"]
           ]
         }
       }

@@ -67,7 +67,65 @@ Aynı maliyet yapısı, aynı ihracat pazarları. **Türkçe aramalarda çıkan 
 
 **Dikkat — dizin sitesi rakip gibi davranıyor:** [makinaturkiye.com](https://www.makinaturkiye.com/roll-form-makinalari-firmalari-sc-104981) Türkçe head kelimede **1 numara**. Buraya kayıt olmak bedava, yüksek getirili trafik demek.
 
-⚠️ **Strateji açısından kritik ön bulgu (doğrulanmalı):** EAE Machinery'nin YouTube kanalında ~**113 video** olduğu bilgisi geldi (523 abone). Doğruysa, "109 videoyla en zengin video arşivi" avantajımız **tek değil** — video sayısı değil **videonun nasıl kullanıldığı** fark yaratır (bkz. Bölüm 5). Bir başka Türk kanalı ~85 video. **Bunların ilk iş olarak doğrulanması gerekiyor.**
+⚠️ **Video sayısı ön bulgusu (doğrulanmalı):** EAE Machinery kanalında ~**113 video** (523 abone) olduğu bilgisi geldi; bir başka Türk kanalı ~85 video. Doğruysa "109 videoyla en zengin arşiv" avantajımız **tek değil** — fark video sayısı değil, **videonun nasıl kullanıldığıdır** (bkz. Bölüm 5).
+
+---
+
+### Segment A+ — Dört rakibin doğrulanmış site denetimi (2026-07-30)
+
+#### ⭐ AGMLine = Sacform — **aynı firma, iki domain**
+[agmline.com](https://agmline.com/) (Türkçe) ve [sacform.com](https://sacform.com/) (İngilizce) **aynı şirket**: aynı telefonlar (+90 534 646 02 29 / +90 216 508 27 05), aynı e-postalar (info@ / export@sacform.com), aynı YouTube kanalı (@agmline-sacform).
+
+**Bu, en yakın rakibimiz — hem üründe hem dijitalde.** Coiltech'ten daha tehlikeli olabilir:
+- **Ürün örtüşmesi neredeyse %100:** pres besleme (servo besleyici, doğrultucu, çift kafalı hidrolik açıcı), rulo dilme, boy kesme, kombine dilme-kesme, perforasyon, iskele, asma tavan + roll form (yol bariyeri, akustik bariyer, kablo kanalı, depo rafı, solar profil, özel profil) — **7 roll-form nişimizin neredeyse aynısı**
+- **Aktif içerik pazarlaması var:** İngilizce tarafta ~10+ yazı, teknik konular dahil ("Roll Forming Efficiency", "Operator Training", "Coil Slitting Machines"), Ocak 2024–Ekim 2025 aralığı. Türkçe tarafta 6 haber.
+- **Büyük Avrupa fuarlarına gidiyorlar:** Blechexpo, EuroBLECH, BIEMH, BUMATECH
+- Teklif formu (KVKK onaylı) + WhatsApp + ayrı `export@` adresi + YouTube
+- Slogan: *"Kalite & inovasyon, anahtar teslim çözümler"*
+- **ZAYIF NOKTALARI:** sadece **2 dil** (TR/EN) · **gerçek spec tablosu YOK** (sadece pazarlama metni) · sertifika beyanı yok · kuruluş yılı belirtilmemiş
+
+> ⚠️ **İki-domain stratejisini kopyalamayın.** Aynı içeriği iki domaine bölmek domain otoritesini böler — SEO'da zayıflatır. Bizim tek domain + 9 locale yapımız doğru olan.
+
+#### EAE Machinery — [eaemachinery.com](https://www.eaemachinery.com/)
+- **1996'dan beri, "20 yıllık deneyim"** beyanı — sektörde en köklülerden
+- Roll form hatları (CFL 01-04 serisi), rulo doğrultucular, elektronik rulo sürücüler, mekanik/hidrolik açıcılar, servo besleyiciler, entegre hatlar (kablo kanalı, güvenlik bariyeri, raf)
+- **3 dil: TR / EN / RU** — Rusça'sı var, bu bizim BDT avantajımızı kısmen dengeliyor
+- Slogan: *"Geleceği şekillendiren öncü kuruluş"*
+- **ZAYIF:** spec tablosu yok · blog neredeyse yok (tek fuar duyurusu) · **teklif formu yok, WhatsApp yok** · sertifika beyanı yok
+
+#### Etcoma Mühendislik — [etcoma.com.tr](https://www.etcoma.com.tr/)
+- **Farklı segment:** rollform tasarım + kalıp + özel makine imalatı. **Dilme / boy kesme / pres besleme YOK** → çekirdek ürünlerimizde rakip değil, roll form tarafında rakip.
+- ⭐ **Türk grubunun en iyi hero başlığı — alıcı odaklı:** *"Siz sadece ne üretmek istediğinize karar verin!"* (bizim tartıştığımız "alıcının derdine konuşma" yaklaşımının tam örneği)
+- ⭐ **En güçlü sosyal kanıt:** **30+ müşteri logosu — Bosch, Renault, Tofaş, Faurecia.** Bu bizde yok ve ciddi bir eksik.
+- 2 dil (TR/EN) · © 2014
+- **ZAYIF:** blog yok · spec tablosu yok · teklif formu/WhatsApp yok
+
+#### Akdeniz Sanayi Makinaları — [akdenizsanayimakinalari.com](https://akdenizsanayimakinalari.com/)
+- Ürün listesi bizimle birebir; **hero başlığı bile yok** (sadece resim karuseli), spec yok, blog yok
+
+---
+
+### 📊 TÜRK RAKİP DİJİTAL KARNESİ (doğrulanmış)
+
+| Firma | Dil | RU | AR | Gerçek spec | Blog | Video | Teklif formu |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **★ Servosteel (biz)** | **9** | ✅ | ✅ | ✅ | ✅ Akademi | ✅ ~109 | ✅ + WhatsApp |
+| AGMLine / Sacform | 2 | ❌ | ❌ | ❌ | ✅ **aktif ~10+** | ✅ | ✅ + WhatsApp |
+| EAE Machinery | 3 | ✅ | ❌ | ❌ | ⚠️ yok denecek | ✅ | ❌ |
+| Coiltech | 3* | ❌ | ❌ | ⚠️ | ❌ | ⚠️ | ⚠️ |
+| Etcoma | 2 | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Akdeniz | ⚠️ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ⚠️ |
+| Rollser | ⚠️ | ❌ | ❌ | ⚠️ | ✅ | ⚠️ | ⚠️ |
+
+<sub>* Coiltech TR/EN/DE — önceki turda not edildi, bu denetimde doğrulanmadı. ⚠️ = doğrulanamadı</sub>
+
+### Bu denetimin 5 sonucu
+
+1. ✅ **Gerçek spec tabloları GERÇEK bir üstünlük.** İncelenen **hiçbir** Türk rakipte sayısal spec tablosu yok — hepsi pazarlama metni. Bizim 9 dilde gerçek sayılarımız var. Mühendis alıcı bunu arıyor.
+2. ✅ **Dil avantajı doğrulandı ve büyük:** rakipler 2–3 dil; **biz 9.** **Arapça hiçbirinde yok.** ES/IT/HU/PL de yok. MENA ve Güney Avrupa'da dilsiz rekabet ediyoruz.
+3. ⚠️ **Blog artık ayırt edici değil.** AGMLine/Sacform teknik içerik üretiyor, Rollser de. Akademi'nin sadece *var olması* yetmez — **daha derin, daha çok dilde, gerçek sayılarla** olmalı.
+4. ❌ **Müşteri logosu eksiğimiz var.** Etcoma Bosch/Renault/Tofaş/Faurecia gösteriyor. Servosteel'in benzer referansları varsa **siteye konmalı** — en güçlü güven aracı.
+5. ✅ **Teklif formu + WhatsApp'ta öndeyiz.** EAE ve Etcoma'da teklif formu bile yok. Sadece AGMLine bizimle aynı seviyede.
 
 ---
 

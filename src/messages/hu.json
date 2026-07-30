@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "Isztambulból 48+ országba",
-    "h1l1": "Mérnöki munka,",
-    "h1l2": "amely acélt formál",
-    "h1l3": "termékké alakítják",
+    "h1l1": "48 országban működnek",
+    "h1l2": "tekercsfeldolgozó sorok",
     "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
     "cta1": "Ajánlatkérés a Projektjéhez",
     "cta2": "Sorok Megtekintése",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Szakértő csapat" },
       { "value": "99%", "label": "Határidőre szállítás" }
     ],
+    "facilityEyebrow": "Üzemünk",
+    "facilityTitle": "Itt készül a soruk",
+    "facility": [
+      {
+        "alt": "Servosteel profilozó sor gyártás közben, HMI panellel",
+        "caption": "Sancaktepe-i üzemünkben összeállított profilozó sor — minden sort szállítás előtt teljesen felépítünk és tesztelünk."
+      },
+      {
+        "alt": "Servosteel gyár- és irodaépület Sancaktepében, Isztambul",
+        "caption": "Üzemünk Sancaktepében / Isztambulban — tervezés, gyártás és automatizálás egy tető alatt."
+      },
+      {
+        "alt": "Hidraulikus lecsévélő és tekercsszállító kocsi a műhelyben",
+        "caption": "A lecsévélőtől a rakatolóig minden alkatrész a saját műhelyünkben készül."
+      }
+    ],
     "storyTitle": "Egyetlen géptől a komplett sorig",
     "story": [
-      "A Servosteel a présorokat tápláló gépekkel indult: lecsévélők, egyengetők és szervoadagolók. A terepi tapasztalat idővel komplett sorok mérnöki munkájává nőtt — ma kulcsrakészen telepítünk hasító, keresztvágó és profilozó sorokat.",
+      "A Servosteel akkor született, amikor fiatal mérnökök egy csoportja elhatározta, hogy <b>költséghatékony és könnyen vezérelhető</b> présadagoló rendszereket épít. Lecsévélőkkel, egyengetőkkel és szervoadagolókkal indultunk; a terepi tapasztalat idővel komplett sorok mérnöki munkájává nőtt — ma kulcsrakészen telepítünk hasító, keresztvágó és profilozó sorokat.",
       "Ami megkülönböztet minket: a sor minden láncszeme <b>egy tető alatt</b> készül — a mechanikai tervezés, gyártás, automatizálási szoftver és üzembe helyezés ugyanabban a csapatban. Ügyfeleink egy partnerrel dolgoznak, és a részegységek tökéletesen összehangoltan érkeznek.",
       "Az isztambuli Sancaktepe üzemünkben készült sorok ma már <b>több mint 48 országban</b> — Európában, a Közel-Keleten, Afrikában és a Távol-Keleten — gyártanak."
     ],
+    "vmEyebrow": "Vállalati",
+    "visionTitle": "Jövőképünk",
+    "visionText": "Erős török márkává válni, amelyet a tekercsalakítási és -feldolgozási technológiákban világszerte preferálnak — egyedi mérnöki munkával, megbízható automatizálással és fenntartható gyártási megközelítéssel.",
+    "missionTitle": "Küldetésünk",
+    "missionText": [
+      "A ServoSTEEL-nél a görgős profilozás, keresztvágás, hasítás, présadagolás és automatikus rakatolás rendszereiben — valamint az ezekhez a sorokhoz szükséges szerszámok tervezésében és gyártásában — pontosan felmérjük ügyfeleink gyártási igényeit, és nagy pontosságú, hatékony, megbízható és hosszú élettartamú megoldásokat fejlesztünk.",
+      "Technológiai tudásunkat terepi tapasztalatunkkal ötvözve olyan komplett gyártósorokat és egyedi szerszámmegoldásokat kínálunk, amelyek növelik a gyártási kapacitást, biztosítják a minőség folyamatosságát, könnyen kezelhetők és karbantarthatók, valamint hozzájárulnak az üzemeltetési költségek csökkentéséhez.",
+      "A gép- és szerszámtervezéstől a gyártásig, az automatizálástól a telepítésig és az üzembe helyezésig minden szakaszban szorosan együttműködünk ügyfeleinkkel; értékesítés utáni támogatásunkkal, a folyamatos fejlesztés iránti elkötelezettségünkkel és az erőforrás-hatékonyságra fordított figyelmünkkel hosszú távú értéket teremtünk."
+    ],
     "values": [
       {
-        "title": "Küldetésünk",
-        "text": "A megfelelő ipari gépet a legjobb szolgáltatással és értékkel szállítani: minden sort az ügyfél valós igényére tervezünk — semmi hiány, semmi felesleg."
+        "title": "Egyedi mérnöki munka",
+        "text": "Pontosan felmérjük gyártási igényét, és nagy pontosságú, hatékony, megbízható és hosszú élettartamú megoldásokat fejlesztünk — nem katalógustermék, hanem az Ön projektjére készült sor."
       },
       {
-        "title": "Jövőképünk",
-        "text": "A fenntartható, újrahasznosítható gyártást szolgáló gépek fejlesztésével a tekercsfeldolgozás világszerte preferált török márkájává válni."
+        "title": "Szerszámtervezés és -gyártás",
+        "text": "A sorhoz szükséges szerszámok is tőlünk származnak: a görgős szerszámok és szerszámmegoldások magával a sorral együtt készülnek."
       },
       {
         "title": "Gyártási megközelítésünk",
@@ -803,6 +827,38 @@
             ["Tekercs belső / külső átmérő", "450 – 560 / 1.300 – 1.600 mm"],
             ["Előtoló hengerek", "2 + 2"],
             ["Egyengető hengerek", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Szerszámok és Görgőkészletek",
+        "short": "Szerszámtervezés és -gyártás sorainkhoz: profilozó görgők és vágószerszámok.",
+        "hero": "Valójában a görgők határozzák meg a profil méretét, sarokrádiuszát és felületi minőségét. A Servosteel saját házon belül tervezi és gyártja a soraihoz tartozó szerszámokat; a szerszám magával a sorral együtt készül.",
+        "meta": "Profilozó görgők és szerszámgyártás: tervezés az Ön profilrajza alapján, 4140 ötvözött acél görgők 58-60 HRC keménységre edzve.",
+        "features": [
+          {
+            "title": "A sorral együtt tervezve",
+            "text": "A szerszámok és görgők ugyanazon tető alatt készülnek, mint a gép — így sosem lép fel eltérés a sor és a szerszám között."
+          },
+          {
+            "title": "Edzett görgők",
+            "text": "A görgők 4140 ötvözött acélból készülnek és 58-60 HRC keménységre edzettek; a méretstabilitás sorozatgyártásban is megmarad."
+          },
+          {
+            "title": "Az Ön rajza alapján",
+            "text": "Nem katalógus-keresztmetszet: a görgőkészletet az Ön által küldött profilrajz alapján tervezzük — egyedi keresztmetszetekkel együtt."
+          }
+        ],
+        "sectors": ["Profilozó sorok", "Kábeltálca", "Napelemes profilok", "Szalagkorlát", "Könnyűszerkezetes acél"],
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Érték"],
+          "rows": [
+            ["Görgő anyaga", "4140 ötvözött acél"],
+            ["Görgő keménysége", "58 – 60 HRC"],
+            ["Terjedelem", "Profilozó görgők, vágó- és lyukasztószerszámok"],
+            ["Tervezési bemenet", "Profilrajz (DWG / DXF / PDF)"],
+            ["Mérnöki munka", "A sorral együtt, egy csapat"]
           ]
         }
       }

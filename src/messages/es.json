@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "De Estambul a más de 48 países",
-    "h1l1": "Ingeniería que",
-    "h1l2": "da forma al acero",
-    "h1l3": "en producto",
+    "h1l1": "Operando en 48 países",
+    "h1l2": "líneas de procesamiento de bobina",
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
     "cta2": "Ver las Líneas",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Equipo experto" },
       { "value": "99%", "label": "Entregas a tiempo" }
     ],
+    "facilityEyebrow": "Nuestras instalaciones",
+    "facilityTitle": "Donde se construye su línea",
+    "facility": [
+      {
+        "alt": "Línea de perfilado Servosteel en producción con panel HMI",
+        "caption": "Una línea de perfilado montada en nuestras instalaciones de Sancaktepe: cada línea se monta y prueba por completo antes del envío."
+      },
+      {
+        "alt": "Edificio de fábrica y oficinas de Servosteel en Sancaktepe, Estambul",
+        "caption": "Nuestras instalaciones en Sancaktepe / Estambul: diseño, fabricación y automatización bajo un solo techo."
+      },
+      {
+        "alt": "Desbobinadora hidráulica y carro de carga de bobina en el taller",
+        "caption": "Desde la desbobinadora hasta el apilador, cada componente se produce en nuestro propio taller."
+      }
+    ],
     "storyTitle": "De la máquina individual a la línea completa",
     "story": [
-      "Servosteel empezó con las máquinas que alimentan las líneas de prensa: desbobinadoras, enderezadoras y alimentadores servo. La experiencia de campo se convirtió en ingeniería de líneas completas: hoy instalamos llave en mano líneas de corte longitudinal, corte a medida y perfilado.",
+      "Servosteel nació cuando un grupo de jóvenes ingenieros decidió fabricar sistemas de alimentación de prensas <b>rentables y fáciles de controlar</b>. Empezamos con desbobinadoras, enderezadoras y alimentadores servo; la experiencia de campo se convirtió en ingeniería de líneas completas: hoy instalamos llave en mano líneas de corte longitudinal, corte a medida y perfilado.",
       "Lo que nos distingue es que cada eslabón de la línea se produce <b>bajo un mismo techo</b>: diseño mecánico, fabricación, software de automatización y puesta en marcha en el mismo equipo. Nuestros clientes tratan con un solo interlocutor y los componentes llegan perfectamente compatibles.",
       "Las líneas fabricadas en nuestra planta de Sancaktepe, Estambul, producen hoy en <b>más de 48 países</b>: Europa, Oriente Medio, África y Extremo Oriente."
     ],
+    "vmEyebrow": "Corporativo",
+    "visionTitle": "Nuestra visión",
+    "visionText": "Ser una sólida marca turca preferida en todo el mundo en tecnologías de conformado y procesado de bobina, mediante ingeniería a medida, automatización fiable y un enfoque de producción sostenible.",
+    "missionTitle": "Nuestra misión",
+    "missionText": [
+      "En ServoSTEEL, en perfilado, corte a medida, corte longitudinal, alimentación de prensas y sistemas de apilado automático —así como en el diseño y la fabricación de los troqueles que estas líneas requieren— analizamos con precisión las necesidades de producción de nuestros clientes y desarrollamos soluciones de alta precisión, eficientes, fiables y de larga vida útil.",
+      "Combinando nuestro conocimiento tecnológico con nuestra experiencia de campo, ofrecemos líneas de producción completas y soluciones de troqueles a medida que aumentan la capacidad productiva, garantizan la continuidad de la calidad, son fáciles de operar y mantener, y contribuyen a reducir los costes de explotación.",
+      "Desde el diseño de máquinas y troqueles hasta la fabricación, la automatización, la instalación y la puesta en marcha, trabajamos en estrecha colaboración con nuestros clientes en todas las etapas; con nuestro soporte posventa, nuestra mejora continua y nuestra atención a la eficiencia de los recursos, creamos valor a largo plazo."
+    ],
     "values": [
       {
-        "title": "Nuestra misión",
-        "text": "Entregar la máquina industrial correcta con el mejor servicio y valor: cada línea se proyecta según la necesidad real del cliente, ni más ni menos."
+        "title": "Ingeniería a medida",
+        "text": "Analizamos con precisión su necesidad de producción y desarrollamos soluciones de alta precisión, eficientes, fiables y duraderas: no un artículo de catálogo, sino una línea para su proyecto."
       },
       {
-        "title": "Nuestra visión",
-        "text": "Ser la marca turca de referencia mundial en procesado de bobinas, desarrollando máquinas que contribuyen a una producción sostenible y reciclable."
+        "title": "Diseño y fabricación de troqueles",
+        "text": "Los troqueles que necesita su línea también son nuestros: los rodillos y las soluciones de troquel se proyectan junto con la propia línea."
       },
       {
         "title": "Nuestro enfoque productivo",
@@ -803,6 +827,42 @@
             ["Diámetro int. / ext. de bobina", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rodillos de avance", "2 + 2"],
             ["Rodillos enderezadores", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Troqueles y Juegos de Rodillos",
+        "short": "Rodillos de perfilado y troqueles de prensa: diseño y fabricación de utillaje para sus líneas.",
+        "hero": "Lo que produce una línea lo deciden los troqueles, no las máquinas. Servosteel diseña y fabrica internamente tanto sus rodillos de perfilado como sus troqueles de prensa; el utillaje se proyecta junto con la propia línea.",
+        "meta": "Fabricación de rodillos de perfilado y troqueles de prensa: diseño según su plano, rodillos de acero aleado 4140 templados a 58-60 HRC. Línea y troquel del mismo fabricante.",
+        "features": [
+          {
+            "title": "Proyectado con la línea",
+            "text": "Troqueles y rodillos se diseñan bajo el mismo techo que la máquina; nunca hay desajuste entre línea y utillaje."
+          },
+          {
+            "title": "Rodillos templados",
+            "text": "Los rodillos se fabrican en acero aleado 4140 y se templan a 58-60 HRC, manteniendo la estabilidad dimensional en producción en serie."
+          },
+          {
+            "title": "Troqueles de prensa",
+            "text": "Diseño y fabricación de troqueles de prensa para piezas de chapa; el troquel y la línea de alimentación vienen del mismo fabricante, con paso y avance ajustados desde el inicio."
+          },
+          {
+            "title": "Según su plano",
+            "text": "No es una sección de catálogo: el juego de rodillos o el troquel se diseña a partir del plano que nos envíe, incluidas secciones especiales."
+          }
+        ],
+        "sectors": ["Líneas de perfilado", "Talleres de estampación", "Proveedores de automoción", "Bandeja portacables", "Perfiles solares", "Bionda / guardarraíl"],
+        "table": {
+          "title": "Especificaciones técnicas",
+          "head": ["Característica", "Valor"],
+          "rows": [
+            ["Material del rodillo", "Acero aleado 4140"],
+            ["Dureza del rodillo", "58 – 60 HRC"],
+            ["Alcance", "Rodillos de perfilado, troqueles de prensa, troqueles de corte y punzonado"],
+            ["Entrada de diseño", "Plano del perfil (DWG / DXF / PDF)"],
+            ["Ingeniería", "Junto con la línea, un solo equipo"]
           ]
         }
       }

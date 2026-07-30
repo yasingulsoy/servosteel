@@ -53,9 +53,8 @@
   },
   "home": {
     "badge": "Ze Stambułu do ponad 48 krajów",
-    "h1l1": "Inżynieria, która",
-    "h1l2": "kształtuje stal",
-    "h1l3": "w produkt",
+    "h1l1": "Pracują w 48 krajach",
+    "h1l2": "linie do przetwarzania kręgów",
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
     "cta2": "Zobacz Linie",
@@ -257,20 +256,45 @@
       { "value": "27+", "label": "Zespół ekspertów" },
       { "value": "99%", "label": "Terminowość dostaw" }
     ],
+    "facilityEyebrow": "Nasz zakład",
+    "facilityTitle": "Tu powstaje Twoja linia",
+    "facility": [
+      {
+        "alt": "Linia profilująca Servosteel w produkcji z panelem HMI",
+        "caption": "Linia profilująca zmontowana w naszym zakładzie w Sancaktepe — każda linia jest w całości budowana i testowana przed wysyłką."
+      },
+      {
+        "alt": "Budynek fabryki i biura Servosteel w Sancaktepe, Istambuł",
+        "caption": "Nasz zakład w Sancaktepe / Istambule — projektowanie, produkcja i automatyka pod jednym dachem."
+      },
+      {
+        "alt": "Hydrauliczny odwijak i wózek do kręgów w warsztacie",
+        "caption": "Od odwijaka do sztaplarki każdy komponent produkujemy we własnym warsztacie."
+      }
+    ],
     "storyTitle": "Od pojedynczej maszyny do kompletnej linii",
     "story": [
-      "Servosteel zaczynał od maszyn zasilających linie prasowe: odwijaków, prostownic i podajników serwo. Doświadczenie terenowe stopniowo przerodziło się w inżynierię kompletnych linii — dziś instalujemy pod klucz linie cięcia wzdłużnego, poprzecznego i profilujące.",
+      "Servosteel powstał, gdy grupa młodych inżynierów postanowiła budować <b>ekonomiczne i łatwe w sterowaniu</b> systemy podawania do pras. Zaczynaliśmy od odwijaków, prostownic i podajników serwo; doświadczenie terenowe stopniowo przerodziło się w inżynierię kompletnych linii — dziś instalujemy pod klucz linie cięcia wzdłużnego, poprzecznego i profilujące.",
       "Wyróżnia nas to, że każde ogniwo linii powstaje <b>pod jednym dachem</b>: projekt mechaniczny, produkcja, oprogramowanie automatyki i uruchomienie w tym samym zespole. Nasi klienci współpracują z jednym partnerem, a elementy przychodzą idealnie dopasowane.",
       "Linie zbudowane w naszym zakładzie w Sancaktepe w Stambule produkują dziś w <b>ponad 48 krajach</b> — w Europie, na Bliskim Wschodzie, w Afryce i na Dalekim Wschodzie."
     ],
+    "vmEyebrow": "Firma",
+    "visionTitle": "Nasza wizja",
+    "visionText": "Być silną turecką marką preferowaną na całym świecie w technologiach kształtowania i przetwarzania kręgów — poprzez inżynierię na zamówienie, niezawodną automatykę i zrównoważone podejście do produkcji.",
+    "missionTitle": "Nasza misja",
+    "missionText": [
+      "W ServoSTEEL — w profilowaniu, cięciu poprzecznym, cięciu wzdłużnym, podawaniu do pras i automatycznych systemach sztaplowania, a także w projektowaniu i produkcji narzędzi wymaganych przez te linie — dokładnie analizujemy potrzeby produkcyjne naszych klientów i opracowujemy rozwiązania o wysokiej precyzji, wydajne, niezawodne i o długiej żywotności.",
+      "Łącząc naszą wiedzę technologiczną z doświadczeniem terenowym, oferujemy kompletne linie produkcyjne i indywidualne rozwiązania narzędziowe, które zwiększają zdolność produkcyjną, zapewniają ciągłość jakości, są łatwe w obsłudze i utrzymaniu oraz pomagają obniżyć koszty eksploatacji.",
+      "Od projektowania maszyn i narzędzi przez produkcję, automatykę, montaż aż po rozruch współpracujemy blisko z naszymi klientami na każdym etapie; dzięki wsparciu posprzedażowemu, dążeniu do ciągłego doskonalenia i dbałości o efektywność zasobów tworzymy wartość w długim okresie."
+    ],
     "values": [
       {
-        "title": "Nasza misja",
-        "text": "Dostarczyć właściwą maszynę przemysłową z najlepszą obsługą i wartością: każda linia jest projektowana pod realną potrzebę klienta — nic zbędnego, nic brakującego."
+        "title": "Inżynieria na zamówienie",
+        "text": "Dokładnie analizujemy Twoją potrzebę produkcyjną i opracowujemy rozwiązania precyzyjne, wydajne, niezawodne i trwałe — nie pozycja z katalogu, a linia pod Twój projekt."
       },
       {
-        "title": "Nasza wizja",
-        "text": "Stać się preferowaną na świecie turecką marką w przetwarzaniu kręgów, rozwijając maszyny wspierające produkcję zrównoważoną i zdatną do recyklingu."
+        "title": "Projektowanie i produkcja narzędzi",
+        "text": "Narzędzia dla Twojej linii również są nasze: rolki formujące i rozwiązania narzędziowe projektujemy razem z samą linią."
       },
       {
         "title": "Nasze podejście produkcyjne",
@@ -803,6 +827,38 @@
             ["Średnica wewn. / zewn. kręgu", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rolki podające", "2 + 2"],
             ["Rolki prostujące", "5 × Ø85 mm"]
+          ]
+        }
+      },
+      "kalip-ve-merdane": {
+        "name": "Narzędzia i Zestawy Rolek",
+        "short": "Projektowanie i produkcja narzędzi do naszych linii: rolki profilujące i narzędzia tnące.",
+        "hero": "To rolki decydują o wymiarach profilu, promieniach naroży i jakości powierzchni. Servosteel projektuje i wykonuje oprzyrządowanie swoich linii we własnym zakresie; narzędzie powstaje razem z samą linią.",
+        "meta": "Produkcja rolek profilujących i narzędzi: projekt według Twojego rysunku profilu, rolki ze stali stopowej 4140 hartowane do 58-60 HRC.",
+        "features": [
+          {
+            "title": "Projektowane razem z linią",
+            "text": "Narzędzia i rolki powstają pod tym samym dachem co maszyna — nigdy nie ma niedopasowania między linią a oprzyrządowaniem."
+          },
+          {
+            "title": "Hartowane rolki",
+            "text": "Rolki wykonujemy ze stali stopowej 4140 i hartujemy do 58-60 HRC; stabilność wymiarowa zostaje zachowana w produkcji seryjnej."
+          },
+          {
+            "title": "Według Twojego rysunku",
+            "text": "Nie przekrój z katalogu: zestaw rolek projektujemy na podstawie przesłanego rysunku profilu — łącznie z przekrojami nietypowymi."
+          }
+        ],
+        "sectors": ["Linie profilujące", "Korytka kablowe", "Profile solarne", "Bariery drogowe", "Lekkie konstrukcje stalowe"],
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Wartość"],
+          "rows": [
+            ["Materiał rolki", "Stal stopowa 4140"],
+            ["Twardość rolki", "58 – 60 HRC"],
+            ["Zakres", "Rolki profilujące, narzędzia tnące i wykrawające"],
+            ["Dane wejściowe", "Rysunek profilu (DWG / DXF / PDF)"],
+            ["Projektowanie", "Razem z linią, jeden zespół"]
           ]
         }
       }
