@@ -82,6 +82,13 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
+    /* Arama motoru site sahipliği doğrulaması — .env.local'de tanımlıysa basılır */
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined,
+      other: process.env.BING_SITE_VERIFICATION?.trim()
+        ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION.trim() }
+        : undefined,
+    },
   };
 }
 

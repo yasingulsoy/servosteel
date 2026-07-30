@@ -1,6 +1,12 @@
 /** Site geneli sabitler — SEO, JSON-LD ve sitemap tek yerden beslenir */
 
-export const SITE_URL = "https://servosteel.com.tr";
+/**
+ * Site kök adresi. Ortam değişkeninden okunur; yoksa canlı adrese düşer.
+ * NEXT_PUBLIC_ önekli, çünkü bu dosya client bileşenlerinden de import ediliyor.
+ * Sondaki "/" temizlenir — SITE_URL her yerde `${SITE_URL}/yol` şeklinde birleştiriliyor.
+ */
+const envSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+export const SITE_URL = envSiteUrl || "https://servosteel.com.tr";
 export const SITE_NAME = "Servosteel";
 
 export const SITE_TITLE =

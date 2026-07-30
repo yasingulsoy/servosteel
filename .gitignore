@@ -30,8 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — gerçek değerler ASLA git'e girmez
 .env*
+# ...ama şablon dosyası girer (içinde sır yok, sadece değişken adları)
+!.env.example
 
 # vercel
 .vercel
