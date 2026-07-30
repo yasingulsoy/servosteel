@@ -208,11 +208,12 @@ export function SiteHeader() {
       className={`sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
         overHero
           ? "border-b border-transparent bg-transparent"
-          : "border-b border-line bg-surface/80 shadow-sm shadow-black/5 backdrop-blur-md supports-[backdrop-filter]:bg-surface/70"
+          : "border-b border-line bg-surface/95 shadow-sm shadow-black/5 backdrop-blur-md supports-[backdrop-filter]:bg-surface/90"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4">
-        <Link href="/" aria-label={t("homeAria")} className="shrink-0">
+        <Link href="/" aria-label={t("homeAria")} className="relative shrink-0">
+          {/* Açık zeminde: orijinal logo (altın + koyu yazı) */}
           <Image
             src="/logo-full.png"
             alt="Servosteel"
@@ -220,8 +221,21 @@ export function SiteHeader() {
             height={113}
             priority
             loading="eager"
-            className={`h-14 w-auto transition-[filter] duration-300 ${
-              overHero ? "brightness-0 invert" : "dark:invert dark:hue-rotate-180"
+            className={`h-14 w-auto transition-opacity duration-300 ${
+              overHero ? "opacity-0" : "opacity-100 dark:opacity-0"
+            }`}
+          />
+          {/* Koyu zeminde (hero videosu / koyu tema): altın korunur, yazı beyaz */}
+          <Image
+            src="/logo-full-light.png"
+            alt=""
+            aria-hidden
+            width={256}
+            height={113}
+            priority
+            loading="eager"
+            className={`absolute inset-0 h-14 w-auto transition-opacity duration-300 ${
+              overHero ? "opacity-100" : "opacity-0 dark:opacity-100"
             }`}
           />
         </Link>

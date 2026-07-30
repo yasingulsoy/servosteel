@@ -52,7 +52,6 @@ export default async function Home({ params }: Props) {
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
 
-  const stats = t.raw("stats") as { value: string; label: string }[];
   const process = t.raw("process") as { title: string; text: string }[];
 
   return (
@@ -60,19 +59,8 @@ export default async function Home({ params }: Props) {
       {/* HERO — tam ekran arka plan videosu */}
       <HeroVideo />
 
-      {/* İSTATİSTİK ŞERİDİ */}
-      <section className="border-b border-line bg-surface-alt">
-        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-4 py-9 lg:grid-cols-4">
-          {stats.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 80}>
-              <div className="flex flex-col-reverse items-center gap-1 text-center">
-                <dt className="text-sm text-muted">{stat.label}</dt>
-                <dd className="font-display text-4xl font-bold text-ink">{stat.value}</dd>
-              </div>
-            </Reveal>
-          ))}
-        </dl>
-      </section>
+      {/* İSTATİSTİK ŞERİDİ — şimdilik kaldırıldı. Geri açmak için: metinler 9 dilde
+          messages/{locale}.json içinde "home.stats" altında hazır duruyor. */}
 
       {/* 3 ANA ÇÖZÜM */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:py-24">

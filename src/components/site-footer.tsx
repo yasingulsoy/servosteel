@@ -34,11 +34,11 @@ export function SiteFooter() {
           <div>
             <Link href="/" aria-label={tn("homeAria")} className="inline-block">
               <Image
-                src="/logo-full.png"
+                src="/logo-full-light.png"
                 alt="Servosteel"
                 width={256}
                 height={113}
-                className="h-12 w-auto invert hue-rotate-180"
+                className="h-12 w-auto"
               />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">{t("blurb")}</p>

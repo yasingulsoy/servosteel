@@ -37,15 +37,13 @@
 - Yatırım mantıklı hale geliyor: müşterinin **500 MW+ proje hattı** olduğunda
 - → Satış konuşmasında kullanılacak: "500 MW'lık bir boru hattınız varsa hat kendini amorti eder"
 
-### Fuar takvimi (temas noktaları)
-| Fuar | Tarih | Yer |
-|---|---|---|
-| **Lamiera** | 11–14 Mayıs 2026 | Milano, İtalya |
-| **EuroBLECH** (dünyanın en büyüğü) | 20–23 Ekim 2026 | Hannover, Almanya |
-| Blechexpo | 26–29 Ekim 2027 | Stuttgart, Almanya |
-| EMO | 2027 | Milano |
+### Fuar / offline kanallar
+Bu rapor **dijital rekabete** odaklıdır. Fuar takvimi, bayi ağı ve saha planı ayrı dokümana taşındı:
+→ **[Fuar-ve-Saha-Plani.md](Fuar-ve-Saha-Plani.md)** (ikincil öncelik)
 
-⚠️ MENA ve Orta Asya sanayi fuarları ayrıca araştırılmalı (Körfez inşaat/enerji fuarları en yüksek getirili olabilir).
+Oradaki en kritik bulgu: **FABEX / Metal & Steel Saudi Arabia, 11–14 Ekim 2026, Riyad** — Vision 2030 desteğiyle Suudi çelik/metal sanayisinde 6 milyar $+ yeni proje var, yerel içerik şartı argümanımızla birebir örtüşüyor.
+
+**Dijital aksiyon planı için:** → **[Dijital-Erisim-ve-Aksiyon-Plani.md](Dijital-Erisim-ve-Aksiyon-Plani.md)**
 
 ---
 

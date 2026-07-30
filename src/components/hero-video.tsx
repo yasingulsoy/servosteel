@@ -40,24 +40,28 @@ export function HeroVideo() {
         <source src="/hero.webm" type="video/webm" />
       </video>
 
-      {/* Okunabilirlik için koyu degrade örtüler */}
+      {/* Okunabilirlik için koyu degrade örtüler — metnin durduğu sol tarafta
+          kontrast korunur, sağ taraf ve video belirgin şekilde daha parlak kalır. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 rtl:bg-gradient-to-l"
+        className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent rtl:bg-gradient-to-l"
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 to-transparent"
+        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/30 to-transparent"
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-shell via-transparent to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-shell/55 via-transparent to-transparent"
       />
 
       {/* İçerik */}
       <div className="relative mx-auto w-full max-w-7xl px-4 py-24 lg:py-0">
         <div className="max-w-2xl me-auto">
-          <h1 className="font-display animate-rise text-4xl font-extrabold uppercase leading-[1.05] tracking-tight [animation-delay:100ms] sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1
+            className="font-display animate-rise text-4xl font-extrabold uppercase leading-[1.05] tracking-tight [animation-delay:100ms] sm:text-5xl lg:text-6xl xl:text-7xl"
+            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.55)" }}
+          >
             {t("h1l1")}
             <br />
             <span className="text-accent">{t("h1l2")}</span>
