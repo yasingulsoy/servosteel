@@ -125,6 +125,26 @@
     "customTitle": "Línea de Perfil Especial",
     "customText": "¿Va a producir una sección que no está en la lista? Del utillaje de rodillos a la automatización, la línea se proyecta según su plano de perfil.",
     "customCta": "Envíe su Plano",
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas frecuentes sobre líneas de perfilado",
+    "faq": [
+      {
+        "q": "¿Para qué sirve una línea de perfilado?",
+        "a": "Hace pasar la chapa de bobina por estaciones de rodillos sucesivas, conformándola paso a paso hasta el perfil requerido. El punzonado y el corte también pueden hacerse en línea, logrando producción continua de la bobina al perfil acabado."
+      },
+      {
+        "q": "¿De qué depende el precio de una línea de perfilado?",
+        "a": "Cuatro factores mandan: la complejidad de la sección del perfil (número de estaciones), el espesor y ancho de chapa, la velocidad de línea y el nivel de automatización (estación de punzonado, cizalla volante, apilado automático). Por eso no publicamos precios de catálogo: envíenos su plano de perfil y dimensionamos la línea con su presupuesto."
+      },
+      {
+        "q": "¿Pueden fabricar un perfil que no está en su catálogo?",
+        "a": "Sí. El juego de rodillos se diseña a partir del plano que nos envíe y se fabrica en nuestra propia planta. Las siete familias de perfiles listadas son un punto de partida, no un límite."
+      },
+      {
+        "q": "¿Puedo producir varios perfiles en la misma línea?",
+        "a": "Sí, cambiando el juego de rodillos. Lo determinante aquí es el tiempo de cambio: si va a producir muchas secciones, el cambio rápido afecta directamente a la ocupación y, con ella, al retorno de la línea."
+      }
+    ],
     "ctaTitle": "Una línea de perfilado en torno a su perfil"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Línea de perfilado",
     "eyebrowMachine": "Sistemas de alimentación de prensas",
     "profileNote": "Las dimensiones del perfil y el rango de espesores se definen <b>según su proyecto</b>; el utillaje de rodillos se diseña sobre su plano.",
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas frecuentes",
     "whyTitle": "¿Por qué Servosteel?",
     "why": [
       "Dimensionado y diseño a medida de cada cliente",
@@ -264,6 +286,26 @@
       "Cizalla guillotina",
       "Unidad de apilado automático",
       "Aplicación automática de film PVC"
+    ],
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas frecuentes sobre líneas de corte a medida",
+    "faq": [
+      {
+        "q": "¿Para qué sirve una línea de corte a medida?",
+        "a": "Desbobina, endereza y corta la banda en chapas planas de la longitud que fije. El resultado no es una bobina, sino chapa de dimensiones fijas. La línea la forman desbobinadora, enderezadora, alimentador servo, guillotina y unidad de apilado."
+      },
+      {
+        "q": "¿Línea de corte a medida o de corte longitudinal?",
+        "a": "La diferencia está en la forma del producto. La línea a medida corta transversalmente y produce chapa plana. La longitudinal corta a lo largo; el resultado sigue siendo bobina, en flejes estrechos. Si vende chapa a medidas fijas, corte a medida; si vende fleje, corte longitudinal. Ambas pueden combinarse en una línea."
+      },
+      {
+        "q": "¿Cómo se consigue la planitud de la chapa?",
+        "a": "La memoria de curvatura se elimina en la unidad enderezadora, con presiones de rodillo ajustadas al espesor. La holgura de la cuchilla de la guillotina también se ajusta al espesor, de modo que el corte queda sin rebabas ni deformación. Para superficies delicadas, una unidad opcional de film PVC protege la chapa antes del apilado."
+      },
+      {
+        "q": "¿De qué depende el precio?",
+        "a": "La capacidad de peso de bobina, el espesor y ancho de chapa, la precisión de corte y el nivel de automatización (carro de carga, apilado automático, film PVC) son los factores clave. Por eso cotizamos por proyecto y no por catálogo."
+      }
     ],
     "ctaTitle": "Proyectemos su línea de corte a medida",
     "ctaText": "Indíquenos espesor, peso de bobina y dimensiones de chapa; volveremos con el layout y la oferta técnica."
@@ -875,6 +917,24 @@
           {
             "title": "Según su plano",
             "text": "No es una sección de catálogo: el juego de rodillos o el troquel se diseña a partir del plano que nos envíe, incluidas secciones especiales."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Qué es un troquel progresivo?",
+            "a": "Es un troquel de prensa en el que la pieza se completa en varias estaciones sucesivas y no en una sola. Con cada golpe de prensa la banda avanza una estación y se punzona, corta y conforma por turnos. Como el error se acumula en cada estación, la precisión de paso del alimentador es crítica."
+          },
+          {
+            "q": "¿De qué material son los rodillos?",
+            "a": "Los rodillos se fabrican en acero aleado 4140 y se templan a 58-60 HRC. Con rodillos sin templar, la deriva dimensional y la reposición temprana elevan en silencio el coste de explotación de la línea."
+          },
+          {
+            "q": "¿Qué necesitan de mí para diseñar el utillaje?",
+            "a": "Basta con el plano del perfil o de la pieza (DWG, DXF o PDF), el espesor de chapa y el tipo de material. Nada se toma de un catálogo: el diseño se hace sobre el plano que nos envíe, incluidas secciones especiales."
+          },
+          {
+            "q": "¿Puedo comprar el utillaje por separado de la línea?",
+            "a": "Sí. Pero cuando el troquel y la línea de alimentación vienen del mismo fabricante, la tolerancia de paso, el momento de liberación de pilotos y el despiece de la banda se diseñan juntos; con proveedores distintos, la responsabilidad de ese ajuste se difumina."
           }
         ],
         "sectors": ["Líneas de perfilado", "Talleres de estampación", "Proveedores de automoción", "Bandeja portacables", "Perfiles solares", "Bionda / guardarraíl"],

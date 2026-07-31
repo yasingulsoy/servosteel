@@ -125,6 +125,26 @@
     "customTitle": "Özel Profil Hattı",
     "customText": "Bu listede olmayan bir kesit mi üreteceksiniz? Merdane tasarımından otomasyona kadar hat, profil çiziminize göre projelendirilir.",
     "customCta": "Çiziminizi Gönderin",
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Roll form hatları hakkında merak edilenler",
+    "faq": [
+      {
+        "q": "Roll form hattı ne işe yarar?",
+        "a": "Rulo sacı, arka arkaya dizilmiş merdane istasyonlarından geçirerek kademeli olarak istenen profile şekillendirir. Kesme ve delme işlemleri de hat üzerinde yapılabildiği için rulodan nihai profile kesintisiz üretim sağlanır."
+      },
+      {
+        "q": "Roll form hattı fiyatı neye göre değişir?",
+        "a": "En çok dört şey belirler: profil kesitinin karmaşıklığı (istasyon sayısı), sac kalınlığı ve genişliği, hat hızı ve otomasyon seviyesi (zımba istasyonu, uçan makas, otomatik istifleme). Bu yüzden katalog fiyatı vermiyoruz — profil çiziminizi gönderin, hattı boyutlandırıp teklif verelim."
+      },
+      {
+        "q": "Katalogda olmayan bir profil ürettirebilir miyim?",
+        "a": "Evet. Merdane seti, gönderdiğiniz profil çizimine göre tasarlanır ve kendi tesisimizde üretilir. Yedi hazır profil ailesi başlangıç noktasıdır, sınır değil."
+      },
+      {
+        "q": "Aynı hatta birden fazla profil üretebilir miyim?",
+        "a": "Evet, merdane seti değiştirilerek. Burada belirleyici olan değişim süresidir: çok çeşit üretecekseniz hızlı değişim özelliği doluluk oranını doğrudan etkiler, bu da hattın geri dönüşünü belirler."
+      }
+    ],
     "ctaTitle": "Profilinize özel roll form hattı"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Roll form hattı",
     "eyebrowMachine": "Pres besleme sistemleri",
     "profileNote": "Profil ölçüleri ve kalınlık aralığı <b>projenize göre</b> belirlenir; merdane tasarımı çiziminize yapılır.",
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Merak edilenler",
     "whyTitle": "Neden Servosteel?",
     "why": [
       "Müşteriye özel boyutlandırma ve tasarım",
@@ -264,6 +286,26 @@
       "Giyotin makas",
       "Otomatik istifleme ünitesi",
       "Otomatik PVC folyo uygulama sistemi"
+    ],
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Boy kesme hatları hakkında merak edilenler",
+    "faq": [
+      {
+        "q": "Boy kesme hattı ne işe yarar?",
+        "a": "Ruloyu açar, doğrultur ve istediğiniz boyda düz plakalar halinde keser. Çıktı rulo değil, sabit ölçüde levhadır. Hat açıcı, doğrultucu, servo besleme, giyotin makas ve istifleme ünitesinden oluşur."
+      },
+      {
+        "q": "Boy kesme mi, dilme hattı mı almalıyım?",
+        "a": "Fark çıktının biçimindedir. Boy kesme hattı ruloyu enine keser ve düz plaka üretir. Dilme hattı ise boyuna keser; çıktı yine rulodur, dar şeritler halinde. Sabit ölçüde levha satıyorsanız boy kesme, şerit satıyorsanız dilme hattı gerekir. İkisi tek hatta birleştirilebilir."
+      },
+      {
+        "q": "Plakaların düzlüğü nasıl sağlanıyor?",
+        "a": "Rulodaki kıvrım hafızası doğrultma ünitesinde alınır; merdane baskıları sac kalınlığına göre ayarlanır. Giyotin bıçak boşluğu da kalınlığa göre ayarlandığı için kesim çapaksız ve çarpılmasız olur. Hassas yüzeyli saclarda opsiyonel PVC folyo ünitesi istifleme öncesi çizilmeyi önler."
+      },
+      {
+        "q": "Fiyat neye göre değişir?",
+        "a": "Rulo ağırlığı kapasitesi, sac kalınlığı ve genişliği, kesim hassasiyeti ve otomasyon seviyesi (yükleme arabası, otomatik istifleme, PVC folyo) belirleyicidir. Bu yüzden katalog fiyatı yerine projeye özel teklif veriyoruz."
+      }
     ],
     "ctaTitle": "Boy kesme hattınızı projelendirelim",
     "ctaText": "Sac kalınlığı, rulo ağırlığı ve plaka ölçülerinizi iletin; hat yerleşimi ve teknik teklifle dönelim."
@@ -875,6 +917,24 @@
           {
             "title": "Çiziminize göre",
             "text": "Katalog kesiti değil, gönderdiğiniz çizime göre merdane seti veya kalıp tasarlanır — özel kesitler dahil."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Progresif kalıp nedir?",
+            "a": "Parçanın tek istasyonda değil, sırayla birden çok istasyonda tamamlandığı pres kalıbıdır. Sac her pres vuruşunda bir istasyon ilerler ve sırayla delinir, kesilir, bükülür. Hata her istasyonda biriktiği için sacı ilerleten besleyicinin adım hassasiyeti kritiktir."
+          },
+          {
+            "q": "Merdaneler ne malzemeden üretiliyor?",
+            "a": "Merdaneler 4140 alaşımlı çelikten üretilir ve 58-60 HRC sertliğe getirilir. Sertleştirilmemiş merdanede ölçü kayması ve erken yenileme, hattın işletme maliyetini sessizce yükseltir."
+          },
+          {
+            "q": "Kalıp tasarımı için sizden ne isteniyor?",
+            "a": "Profil veya parça çizimi (DWG, DXF ya da PDF), sac kalınlığı ve malzeme cinsi yeterlidir. Katalog kesiti değil, gönderdiğiniz çizime göre tasarım yapılır — özel kesitler dahil."
+          },
+          {
+            "q": "Kalıbı hattan ayrı alabilir miyim?",
+            "a": "Evet. Ancak kalıp ile besleme hattı aynı üreticiden geldiğinde adım toleransı, pilot pim bırakma zamanlaması ve şerit yerleşimi birlikte tasarlanır; farklı tedarikçilerde bu uyum sorumluluğu belirsizleşir."
           }
         ],
         "sectors": ["Roll form hatları", "Pres atölyeleri", "Otomotiv yan sanayi", "Kablo kanalı", "Solar profil", "Yol bariyeri"],

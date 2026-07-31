@@ -125,6 +125,26 @@
     "customTitle": "Sonderprofil-Anlage",
     "customText": "Sie fertigen einen Querschnitt, der hier nicht aufgeführt ist? Vom Rollensatz bis zur Automatisierung wird die Anlage nach Ihrer Profilzeichnung projektiert.",
     "customCta": "Zeichnung senden",
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Häufige Fragen zu Rollformanlagen",
+    "faq": [
+      {
+        "q": "Was macht eine Rollformanlage?",
+        "a": "Sie führt das Band durch hintereinander angeordnete Rollenstationen und formt es schrittweise zum gewünschten Profil. Stanzen und Schneiden können ebenfalls in der Linie erfolgen, sodass vom Bund bis zum fertigen Profil ohne Unterbrechung produziert wird."
+      },
+      {
+        "q": "Wovon hängt der Preis einer Rollformanlage ab?",
+        "a": "Vier Faktoren bestimmen ihn am stärksten: die Komplexität des Profilquerschnitts (Anzahl der Stationen), Materialstärke und -breite, Anlagengeschwindigkeit sowie der Automatisierungsgrad (Stanzstation, fliegende Schere, automatisches Stapeln). Deshalb veröffentlichen wir keine Katalogpreise — senden Sie Ihre Profilzeichnung, wir legen die Anlage aus und erstellen ein Angebot."
+      },
+      {
+        "q": "Können Sie ein Profil fertigen, das nicht im Katalog steht?",
+        "a": "Ja. Der Rollensatz wird nach Ihrer Profilzeichnung konstruiert und im eigenen Werk gefertigt. Die sieben gelisteten Profilfamilien sind ein Ausgangspunkt, keine Grenze."
+      },
+      {
+        "q": "Kann ich mehrere Profile auf derselben Anlage fahren?",
+        "a": "Ja, durch Wechsel des Rollensatzes. Entscheidend ist dabei die Rüstzeit: Bei vielen Querschnittstypen wirkt sich schnelles Rüsten unmittelbar auf die Auslastung aus — und damit auf die Amortisation der Anlage."
+      }
+    ],
     "ctaTitle": "Eine Rollformanlage rund um Ihr Profil"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Rollformanlage",
     "eyebrowMachine": "Pressenzuführsysteme",
     "profileNote": "Profilmaße und Dickenbereich richten sich <b>nach Ihrem Projekt</b>; der Rollensatz wird nach Ihrer Zeichnung konstruiert.",
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Häufig gestellte Fragen",
     "whyTitle": "Warum Servosteel?",
     "why": [
       "Kundenspezifische Auslegung und Konstruktion",
@@ -264,6 +286,26 @@
       "Tafelschere",
       "Automatische Stapeleinheit",
       "Automatische PVC-Folienanlage"
+    ],
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Häufige Fragen zu Querteilanlagen",
+    "faq": [
+      {
+        "q": "Was macht eine Querteilanlage?",
+        "a": "Sie wickelt das Band ab, richtet es und schneidet es in ebene Tafeln der von Ihnen eingestellten Länge. Das Ergebnis ist kein Bund, sondern Tafeln in fester Abmessung. Die Anlage besteht aus Abwickelhaspel, Richtmaschine, Servovorschub, Tafelschere und Stapeleinheit."
+      },
+      {
+        "q": "Querteil- oder Längsteilanlage?",
+        "a": "Der Unterschied liegt in der Form des Ergebnisses. Die Querteilanlage schneidet quer und liefert ebene Tafeln. Die Längsteilanlage schneidet längs; das Ergebnis ist wieder ein Bund, in schmalen Streifen. Für Tafeln in festen Maßen: Querteilen. Für Streifen: Längsteilen. Beides lässt sich in einer Linie kombinieren."
+      },
+      {
+        "q": "Wie wird die Planheit der Tafeln erreicht?",
+        "a": "Die Krümmungsmemory des Bundes wird in der Richteinheit entfernt, die Walzendrücke werden auf die Materialstärke eingestellt. Auch das Messerspiel der Schere richtet sich nach der Stärke, sodass der Schnitt grat- und verzugsfrei bleibt. Bei empfindlichen Oberflächen schützt eine optionale PVC-Folieneinheit die Tafel vor dem Stapeln."
+      },
+      {
+        "q": "Wovon hängt der Preis ab?",
+        "a": "Bundgewichtskapazität, Materialstärke und -breite, Schnittgenauigkeit und Automatisierungsgrad (Bundwagen, automatisches Stapeln, PVC-Folie) sind maßgeblich. Deshalb kalkulieren wir projektbezogen statt nach Katalog."
+      }
     ],
     "ctaTitle": "Projektieren wir Ihre Querteilanlage",
     "ctaText": "Nennen Sie Blechdicke, Coilgewicht und Tafelmaße; wir melden uns mit Layout und technischem Angebot."
@@ -875,6 +917,24 @@
           {
             "title": "Nach Ihrer Zeichnung",
             "text": "Kein Katalogquerschnitt: Rollensatz oder Werkzeug werden nach der von Ihnen gesendeten Zeichnung konstruiert — auch Sonderquerschnitte."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Was ist ein Folgeverbundwerkzeug?",
+            "a": "Ein Presswerkzeug, bei dem das Teil nicht an einer, sondern nacheinander an mehreren Stationen entsteht. Mit jedem Pressenhub rückt der Streifen eine Station weiter und wird gelocht, geschnitten und umgeformt. Da sich Fehler an jeder Station summieren, ist die Schrittgenauigkeit des Vorschubs entscheidend."
+          },
+          {
+            "q": "Aus welchem Werkstoff bestehen die Rollen?",
+            "a": "Die Rollen werden aus 4140 Legierungsstahl gefertigt und auf 58-60 HRC gehärtet. Bei ungehärteten Rollen erhöhen Maßabweichung und früher Ersatz die Betriebskosten der Anlage unbemerkt."
+          },
+          {
+            "q": "Was benötigen Sie für die Werkzeugkonstruktion?",
+            "a": "Die Profil- oder Teilezeichnung (DWG, DXF oder PDF), die Materialstärke und die Werkstoffgüte genügen. Nichts stammt aus dem Katalog: konstruiert wird nach Ihrer Zeichnung, auch Sonderquerschnitte."
+          },
+          {
+            "q": "Kann ich Werkzeuge getrennt von der Anlage kaufen?",
+            "a": "Ja. Kommen Werkzeug und Zuführanlage jedoch vom selben Hersteller, werden Schrittmaßtoleranz, Timing der Pilotfreigabe und Streifenlayout gemeinsam ausgelegt; bei getrennten Lieferanten wird die Verantwortung für diese Abstimmung unklar."
           }
         ],
         "sectors": ["Rollformanlagen", "Stanzereien", "Automobilzulieferer", "Kabelkanäle", "Solarprofile", "Schutzplanken"],

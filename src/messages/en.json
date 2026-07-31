@@ -125,6 +125,26 @@
     "customTitle": "Custom Profile Line",
     "customText": "Producing a section that isn't listed here? From roll tooling design to automation, the line is engineered to your profile drawing.",
     "customCta": "Send Your Drawing",
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Common questions about roll forming lines",
+    "faq": [
+      {
+        "q": "What does a roll forming line do?",
+        "a": "It passes coil sheet through a series of roll stations, forming it into the required profile step by step. Punching and cutting can also be done in line, giving uninterrupted production from coil to finished profile."
+      },
+      {
+        "q": "What determines the price of a roll forming line?",
+        "a": "Four things drive it most: the complexity of the profile section (number of stations), sheet thickness and width, line speed, and the level of automation (punching station, flying shear, automatic stacking). That is why we do not publish catalogue prices — send your profile drawing and we will size the line and quote it."
+      },
+      {
+        "q": "Can you produce a profile that is not in your catalogue?",
+        "a": "Yes. The roll set is designed from the profile drawing you send and manufactured in our own facility. The seven listed profile families are a starting point, not a limit."
+      },
+      {
+        "q": "Can I run more than one profile on the same line?",
+        "a": "Yes, by changing the roll set. What matters here is changeover time: if you will run many section types, fast changeover directly affects utilisation, which in turn drives the line's payback."
+      }
+    ],
     "ctaTitle": "A roll forming line built around your profile"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Roll forming line",
     "eyebrowMachine": "Press feeding systems",
     "profileNote": "Profile dimensions and thickness range are defined <b>by your project</b>; roll tooling is designed to your drawing.",
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Common questions",
     "whyTitle": "Why Servosteel?",
     "why": [
       "Custom sizing and design for every customer",
@@ -264,6 +286,26 @@
       "Guillotine shear",
       "Automatic stacking unit",
       "Automatic PVC film application system"
+    ],
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Common questions about cut-to-length lines",
+    "faq": [
+      {
+        "q": "What does a cut-to-length line do?",
+        "a": "It uncoils, straightens and cuts the strip into flat sheets at the length you set. The output is not a coil but sheet to fixed dimensions. The line consists of a decoiler, straightener, servo feeder, guillotine shear and stacking unit."
+      },
+      {
+        "q": "Should I buy a cut-to-length line or a slitting line?",
+        "a": "The difference is the shape of the output. A cut-to-length line cuts across the coil and produces flat sheet. A slitting line cuts lengthwise; the output is still a coil, in narrow strips. Choose cut-to-length if you sell sheet to fixed sizes, slitting if you sell strip. The two can be combined in one line."
+      },
+      {
+        "q": "How is sheet flatness achieved?",
+        "a": "Coil-set memory is removed in the straightening unit, with roll pressures adjusted to the sheet thickness. The guillotine blade clearance is also set to thickness, so the cut is free of burrs and distortion. For sensitive surfaces, an optional PVC film unit protects the sheet from scratching before stacking."
+      },
+      {
+        "q": "What determines the price?",
+        "a": "Coil weight capacity, sheet thickness and width, cutting accuracy and the level of automation (loading car, automatic stacking, PVC film) are the drivers. That is why we quote per project rather than from a catalogue."
+      }
     ],
     "ctaTitle": "Let's engineer your cut-to-length line",
     "ctaText": "Send us your sheet thickness, coil weight and sheet dimensions; we'll come back with a line layout and a technical offer."
@@ -875,6 +917,24 @@
           {
             "title": "Built to your drawing",
             "text": "Not a catalogue section: the roll set or die is designed from the drawing you send — custom sections included."
+          }
+        ],
+        "faq": [
+          {
+            "q": "What is a progressive die?",
+            "a": "It is a press die in which the part is completed across several stations in sequence rather than at one. With every press stroke the strip advances one station and is punched, cut and formed in turn. Because error accumulates at each station, the pitch accuracy of the feeder advancing the strip is critical."
+          },
+          {
+            "q": "What material are the rolls made from?",
+            "a": "Rolls are produced from 4140 alloy steel and hardened to 58-60 HRC. With unhardened rolls, dimensional drift and early replacement quietly raise the running cost of the line."
+          },
+          {
+            "q": "What do you need from me to design the tooling?",
+            "a": "The profile or part drawing (DWG, DXF or PDF), the sheet thickness and the material grade are enough. Nothing is taken from a catalogue: the design is built from the drawing you send, custom sections included."
+          },
+          {
+            "q": "Can I buy tooling separately from the line?",
+            "a": "Yes. But when the die and the feeding line come from the same manufacturer, pitch tolerance, pilot release timing and strip layout are designed together; with separate suppliers, responsibility for that fit becomes unclear."
           }
         ],
         "sectors": ["Roll forming lines", "Stamping shops", "Automotive suppliers", "Cable tray", "Solar profiles", "Guardrail"],

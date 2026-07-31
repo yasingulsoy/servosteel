@@ -125,6 +125,26 @@
     "customTitle": "Linea per Profilo Speciale",
     "customText": "Produci una sezione non elencata? Dalla progettazione dei rulli all'automazione, la linea è studiata sul tuo disegno di profilo.",
     "customCta": "Invia il tuo Disegno",
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande frequenti sulle linee di profilatura",
+    "faq": [
+      {
+        "q": "A cosa serve una linea di profilatura?",
+        "a": "Fa passare il nastro attraverso stazioni di rulli in successione, formandolo gradualmente nel profilo richiesto. Anche punzonatura e taglio possono avvenire in linea, garantendo una produzione continua dal coil al profilo finito."
+      },
+      {
+        "q": "Da cosa dipende il prezzo di una linea di profilatura?",
+        "a": "Quattro elementi contano di più: la complessità della sezione (numero di stazioni), spessore e larghezza del nastro, velocità di linea e livello di automazione (stazione di punzonatura, cesoia volante, impilaggio automatico). Per questo non pubblichiamo prezzi da catalogo: inviateci il disegno del profilo e dimensioniamo la linea con il preventivo."
+      },
+      {
+        "q": "Potete produrre un profilo non presente a catalogo?",
+        "a": "Sì. Il set di rulli viene progettato sul disegno che ci inviate e realizzato nel nostro stabilimento. Le sette famiglie di profili elencate sono un punto di partenza, non un limite."
+      },
+      {
+        "q": "Posso produrre più profili sulla stessa linea?",
+        "a": "Sì, cambiando il set di rulli. Ciò che conta è il tempo di cambio: con molte sezioni diverse, un cambio rapido incide direttamente sulla saturazione e quindi sul ritorno dell'investimento."
+      }
+    ],
     "ctaTitle": "Una linea di profilatura costruita sul tuo profilo"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Linea di profilatura",
     "eyebrowMachine": "Sistemi di alimentazione presse",
     "profileNote": "Le dimensioni del profilo e il campo di spessori sono definiti <b>dal tuo progetto</b>; l'attrezzatura dei rulli è progettata sul tuo disegno.",
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande frequenti",
     "whyTitle": "Perché Servosteel?",
     "why": [
       "Dimensionamento e progettazione su misura",
@@ -264,6 +286,26 @@
       "Cesoia a ghigliottina",
       "Unità di impilaggio automatico",
       "Applicazione automatica film PVC"
+    ],
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande frequenti sulle linee di taglio a misura",
+    "faq": [
+      {
+        "q": "A cosa serve una linea di taglio a misura?",
+        "a": "Svolge il coil, lo raddrizza e lo taglia in fogli piani della lunghezza impostata. Il risultato non è un coil ma lamiera a misura fissa. La linea è composta da aspo svolgitore, raddrizzatrice, alimentatore servo, cesoia a ghigliottina e unità di impilaggio."
+      },
+      {
+        "q": "Meglio una linea a misura o una linea di taglio longitudinale?",
+        "a": "La differenza sta nella forma del prodotto. La linea a misura taglia trasversalmente e produce lamiera piana. Quella longitudinale taglia per il lungo; il risultato è ancora un coil, in nastri stretti. Se vendete lamiere a misura fissa serve il taglio a misura, se vendete nastro serve il longitudinale. Le due possono essere combinate in un'unica linea."
+      },
+      {
+        "q": "Come si ottiene la planarità delle lamiere?",
+        "a": "La memoria di curvatura del coil viene eliminata nel gruppo raddrizzatore, con pressioni dei rulli regolate sullo spessore. Anche il gioco della lama della cesoia è regolato sullo spessore, così il taglio resta privo di bave e deformazioni. Per superfici delicate, un'unità opzionale di film PVC protegge la lamiera prima dell'impilaggio."
+      },
+      {
+        "q": "Da cosa dipende il prezzo?",
+        "a": "Capacità di peso coil, spessore e larghezza della lamiera, precisione di taglio e livello di automazione (carrello di carico, impilaggio automatico, film PVC) sono determinanti. Per questo quotiamo per progetto e non a catalogo."
+      }
     ],
     "ctaTitle": "Progettiamo la tua linea di taglio a misura",
     "ctaText": "Comunicaci spessore, peso del coil e dimensioni del foglio; torniamo con il layout e l'offerta tecnica."
@@ -875,6 +917,24 @@
           {
             "title": "Sul vostro disegno",
             "text": "Non una sezione da catalogo: il set di rulli o lo stampo viene progettato sul disegno che ci inviate, sezioni speciali comprese."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Che cos'è uno stampo progressivo?",
+            "a": "È uno stampo per pressa in cui il pezzo si completa in più stazioni successive anziché in una sola. A ogni colpo di pressa il nastro avanza di una stazione e viene punzonato, tagliato e formato in sequenza. Poiché l'errore si accumula a ogni stazione, la precisione del passo dell'alimentatore è determinante."
+          },
+          {
+            "q": "Di quale materiale sono fatti i rulli?",
+            "a": "I rulli sono realizzati in acciaio legato 4140 e temprati a 58-60 HRC. Con rulli non temprati, la deriva dimensionale e la sostituzione anticipata alzano silenziosamente il costo di esercizio della linea."
+          },
+          {
+            "q": "Cosa vi serve per progettare l'attrezzatura?",
+            "a": "Bastano il disegno del profilo o del pezzo (DWG, DXF o PDF), lo spessore della lamiera e il tipo di materiale. Nulla è preso da un catalogo: la progettazione parte dal disegno che ci inviate, sezioni speciali comprese."
+          },
+          {
+            "q": "Posso acquistare lo stampo separatamente dalla linea?",
+            "a": "Sì. Ma quando lo stampo e la linea di alimentazione provengono dallo stesso costruttore, tolleranza di passo, tempistica di rilascio dei pilotini e sviluppo del nastro vengono progettati insieme; con fornitori diversi la responsabilità di questo accoppiamento si sfuma."
           }
         ],
         "sectors": ["Linee di profilatura", "Officine di stampaggio", "Fornitori automotive", "Passerelle portacavi", "Profili solari", "Guardrail"],

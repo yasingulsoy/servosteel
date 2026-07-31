@@ -1,7 +1,7 @@
 # Servosteel — SEO Denetim Raporu
 
 **Denetlenen:** `https://demo.yasingulsoy.cloud` (yeni sitenin canlı kopyası)
-**Tarih:** 2026-07-31
+**Denetim tarihi:** 2026-07-31 · **Son güncelleme:** 2026-07-31 (düzeltmeler sonrası)
 **Yöntem:** Canlı site taraması + Lighthouse (mobil/masaüstü) + kaynak kod incelemesi
 **Not:** `servosteel.com.tr` hâlâ **eski WordPress** sitesini gösteriyor. Denetim yeni siteye yapıldı.
 
@@ -11,11 +11,13 @@
 
 Site teknik olarak **sağlam kurulmuş**. 15 sayfada tek H1, tüm görsellerde alt metin, 9 dilde eksiksiz hreflang, geçerli sitemap, JSON-LD — bu sektörde nadir bir taban.
 
-Denetimde **1 kritik, 3 yüksek, 5 orta** öncelikli sorun bulundu. **Kritik ve yüksek olanların tamamı düzeltildi ve doğrulandı.**
+Denetimde **1 kritik, 3 yüksek, 5 orta** öncelikli sorun bulundu. **Kritik ve yüksek olanların tamamı düzeltildi ve doğrulandı.** Ardından en büyük içerik boşluğu olan FAQ da kapatıldı (bkz. bölüm 10).
 
 En değerli iki bulgu:
 1. **Demo sitesi tamamen indekslenebilirdi** — canlıya geçişte kendi kopyasıyla yarışacaktı.
 2. **Mobil LCP 6,3 saniye** (kötü) — 7,5 MB'lık hero videosu yüzünden. Masaüstünde 2,0 sn (iyi) olması sorunun kaynağını kanıtlıyordu.
+
+**Toplam çıktı:** 243 statik sayfa · 9 dil · 4 şema tipi (Organization, BreadcrumbList, Article, Product, FAQPage) · 17 FAQ sorusu × 9 dil
 
 ---
 
@@ -100,11 +102,31 @@ Tablolar sadece görsel HTML'di — yapay zekanın "±0,1 mm" değerini Servoste
 
 ---
 
+## 10. FAQ — denetim sonrası eklendi ✅
+
+Denetimin en yüksek öncelikli **içerik** boşluğuydu: alıcıların gerçekten aradığı sorular sitede hiç cevaplanmıyordu.
+
+**Eklenen:** 4 sayfaya, **9 dilde, toplam 17 soru** — hepsi FAQPage şemalı.
+
+| Sayfa | Soru | Kapattığı boşluk |
+|---|:---:|---|
+| `/dilme-hatlari` | 5 | Ne işe yarar · kapasite seçimi · **dilme mi boy kesme mi** · **fiyat neye göre değişir** · devreye alma |
+| `/boy-kesme-hatlari` | 4 | Karşılaştırmanın diğer yüzü · plaka düzlüğü · fiyat |
+| `/roll-form-hatlari` | 4 | **Roll form hattı maliyeti** · katalog dışı profil · çok profilli kullanım |
+| `/makineler/kalip-ve-merdane` | 4 | **"Progresif kalıp nedir"** · merdane malzemesi (4140 / 58-60 HRC) · tasarım girdisi |
+
+**Teknik notlar:**
+- `<details>/<summary>` kullanıldı: cevap metni kapalıyken bile HTML'de bulunur, yani arama motorları ve yapay zeka motorları okuyabilir. JavaScript ile gizlenen içerikte bu garanti yoktur.
+- Şema, sayfadaki görünür metinle **birebir aynı** — Google'ın kuralı budur.
+- FAQ opsiyoneldir: yalnızca içeriği tanımlı sayfalarda görünür, diğer makine sayfalarında bölüm hiç render edilmez.
+- Fiyat sorularında **rakam verilmiyor**; fiyatı belirleyen etkenler açıklanıp teklife yönlendiriliyor.
+
+---
+
 ## 📋 Kalan işler (düzeltilmedi — karar/onay gerekiyor)
 
 **Yüksek**
-- **`alt.mp4` 17,9 MB** — yükleme stratejisi doğru (lazy) ama boyut çok yüksek. Yeniden kodlama %40–60 kazandırır.
-- **FAQ içeriği yok.** "Progresif kalıp nedir", "roll form hattı maliyeti" gibi sorular hiç cevaplanmıyor. Görünür FAQ bölümü + FAQPage şeması eklenmeli.
+- **`alt.mp4` 17,9 MB.** Yükleme stratejisi zaten doğru (lazy, `preload="none"`). Yeniden kodlama denendi: **orijinal kaynaktan aynı ayarlarla kodlayınca hiç kazanç çıkmadı** — dosya zaten optimize edilmiş, boyutun sebebi **49 saniyelik süre**. Gerçek kaldıraç süreyi kısaltmak (ör. 20 sn → yaklaşık yarı boyut, kalite kaybı yok). Çözünürlük düşürme denendi ve **elendi**: 1600px'e indirince gözle görülür yumuşama oluşuyor. *Süre kısaltma içerik kararı olduğu için yapılmadı.*
 
 **Orta**
 - **Spec çelişkisi:** Akademi makalesi servo besleyici için **±0,1 mm** diyor, ama bu değer sadece kompakt hat spec tablosunda var — servo sürücü tablosunda yok. Eski sitede de yalnızca kompakt hatta yayınlanmıştı. **Mühendislikle netleştirilmeli:** servo sürücü için de geçerliyse tabloya eklenmeli, değilse makale düzeltilmeli.

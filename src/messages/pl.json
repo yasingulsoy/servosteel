@@ -125,6 +125,26 @@
     "customTitle": "Linia Profilu Specjalnego",
     "customText": "Produkujesz przekrój spoza listy? Od projektu narzędzi rolkowych po automatykę linia jest projektowana według Twojego rysunku profilu.",
     "customCta": "Wyślij Rysunek",
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Najczęstsze pytania o linie profilujące",
+    "faq": [
+      {
+        "q": "Do czego służy linia profilująca?",
+        "a": "Przeprowadza blachę z kręgu przez kolejne stacje rolek, stopniowo kształtując ją w wymagany profil. Wykrawanie i cięcie również mogą odbywać się w linii, dzięki czemu produkcja od kręgu do gotowego profilu przebiega bez przerw."
+      },
+      {
+        "q": "Od czego zależy cena linii profilującej?",
+        "a": "Decydują cztery rzeczy: złożoność przekroju profilu (liczba stacji), grubość i szerokość blachy, prędkość linii oraz poziom automatyzacji (stacja wykrawająca, nożyce latające, automatyczne sztaplowanie). Dlatego nie publikujemy cen katalogowych — przyślij rysunek profilu, dobierzemy linię i przedstawimy ofertę."
+      },
+      {
+        "q": "Czy możecie wykonać profil, którego nie ma w katalogu?",
+        "a": "Tak. Zestaw rolek projektujemy na podstawie przesłanego rysunku i wykonujemy we własnym zakładzie. Wymienionych siedem rodzin profili to punkt wyjścia, a nie granica."
+      },
+      {
+        "q": "Czy mogę produkować kilka profili na jednej linii?",
+        "a": "Tak, wymieniając zestaw rolek. Kluczowy jest tu czas przezbrojenia: przy wielu przekrojach szybkie przezbrojenie wprost wpływa na wykorzystanie mocy, a więc na zwrot z linii."
+      }
+    ],
     "ctaTitle": "Linia profilująca zbudowana wokół Twojego profilu"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Linia profilująca",
     "eyebrowMachine": "Systemy podawania do pras",
     "profileNote": "Wymiary profilu i zakres grubości określa <b>Twój projekt</b>; narzędzia rolkowe projektujemy według Twojego rysunku.",
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Najczęstsze pytania",
     "whyTitle": "Dlaczego Servosteel?",
     "why": [
       "Indywidualny dobór i projekt",
@@ -264,6 +286,26 @@
       "Nożyce gilotynowe",
       "Automatyczny zespół układania",
       "Automatyczny system folii PVC"
+    ],
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Najczęstsze pytania o linie cięcia poprzecznego",
+    "faq": [
+      {
+        "q": "Do czego służy linia cięcia poprzecznego?",
+        "a": "Odwija krąg, prostuje go i tnie na płaskie arkusze o zadanej długości. Efektem nie jest krąg, lecz arkusz o stałym wymiarze. Linię tworzą odwijak, prostownica, podajnik serwo, nożyce gilotynowe i sztaplarka."
+      },
+      {
+        "q": "Linia cięcia poprzecznego czy wzdłużnego?",
+        "a": "Różnica polega na postaci wyrobu. Linia poprzeczna tnie w poprzek i daje płaski arkusz. Wzdłużna tnie wzdłuż; efektem nadal jest krąg, w wąskich taśmach. Jeśli sprzedajesz arkusze o stałych wymiarach, potrzebujesz poprzecznej; jeśli taśmę — wzdłużnej. Obie można połączyć w jednej linii."
+      },
+      {
+        "q": "Jak zapewniana jest płaskość arkuszy?",
+        "a": "Pamięć krzywizny kręgu usuwana jest w zespole prostującym, a naciski rolek dobiera się do grubości blachy. Luz noża gilotyny również ustawia się pod grubość, dzięki czemu cięcie jest bez zadziorów i odkształceń. Przy wrażliwych powierzchniach opcjonalny moduł folii PVC chroni arkusz przed sztaplowaniem."
+      },
+      {
+        "q": "Od czego zależy cena?",
+        "a": "Decydują wydajność masy kręgu, grubość i szerokość blachy, dokładność cięcia oraz poziom automatyzacji (wózek załadowczy, automatyczne sztaplowanie, folia PVC). Dlatego wyceniamy projektowo, a nie katalogowo."
+      }
     ],
     "ctaTitle": "Zaprojektujmy Twoją linię cięcia poprzecznego",
     "ctaText": "Podaj grubość blachy, masę kręgu i wymiary arkusza; wrócimy z układem linii i ofertą techniczną."
@@ -875,6 +917,24 @@
           {
             "title": "Według Twojego rysunku",
             "text": "Nie przekrój z katalogu: zestaw rolek lub tłocznik projektujemy na podstawie przesłanego rysunku — łącznie z przekrojami nietypowymi."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Czym jest tłocznik postępowy?",
+            "a": "To tłocznik, w którym detal powstaje nie na jednym, lecz na kilku kolejnych stanowiskach. Przy każdym skoku prasy taśma przesuwa się o jedno stanowisko i jest kolejno dziurkowana, cięta i kształtowana. Ponieważ błąd kumuluje się na każdym stanowisku, dokładność skoku podajnika jest krytyczna."
+          },
+          {
+            "q": "Z jakiego materiału są rolki?",
+            "a": "Rolki wykonujemy ze stali stopowej 4140 i hartujemy do 58-60 HRC. Przy rolkach niehartowanych dryf wymiarowy i wcześniejsza wymiana po cichu podnoszą koszt eksploatacji linii."
+          },
+          {
+            "q": "Czego potrzebujecie, aby zaprojektować oprzyrządowanie?",
+            "a": "Wystarczy rysunek profilu lub detalu (DWG, DXF lub PDF), grubość blachy i gatunek materiału. Nic nie pochodzi z katalogu: projekt powstaje na podstawie przesłanego rysunku, łącznie z przekrojami nietypowymi."
+          },
+          {
+            "q": "Czy mogę kupić tłocznik osobno, bez linii?",
+            "a": "Tak. Ale gdy tłocznik i linia podawania pochodzą od tego samego producenta, tolerancja skoku, moment zwolnienia trzpieni i rozkrój taśmy projektowane są razem; przy różnych dostawcach odpowiedzialność za to dopasowanie się rozmywa."
           }
         ],
         "sectors": ["Linie profilujące", "Tłocznie", "Dostawcy motoryzacji", "Korytka kablowe", "Profile solarne", "Bariery drogowe"],

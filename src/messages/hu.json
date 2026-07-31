@@ -125,6 +125,26 @@
     "customTitle": "Egyedi Profil Sor",
     "customText": "Itt nem szereplő keresztmetszetet gyártana? A görgőszerszámtól az automatizálásig a sort az Ön profilrajza alapján tervezzük.",
     "customCta": "Küldje el a Rajzot",
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Gyakori kérdések a profilozó sorokról",
+    "faq": [
+      {
+        "q": "Mire való a profilozó sor?",
+        "a": "A tekercslemezt egymás után sorakozó görgőállomásokon vezeti át, és fokozatosan a kívánt profillá alakítja. A lyukasztás és a vágás is elvégezhető a soron belül, így a tekercstől a kész profilig megszakítás nélküli a gyártás."
+      },
+      {
+        "q": "Mitől függ a profilozó sor ára?",
+        "a": "Négy tényező a meghatározó: a profilszelvény bonyolultsága (állomások száma), az anyagvastagság és -szélesség, a sorsebesség, valamint az automatizáltság szintje (lyukasztóállomás, repülő olló, automatikus rakatolás). Ezért nem adunk katalógusárat — küldje el a profilrajzot, méretezzük a sort és ajánlatot adunk."
+      },
+      {
+        "q": "Tudnak olyan profilt gyártani, ami nincs a katalógusban?",
+        "a": "Igen. A görgőkészletet az Ön által küldött profilrajz alapján tervezzük és saját üzemünkben gyártjuk. A felsorolt hét profilcsalád kiindulópont, nem korlát."
+      },
+      {
+        "q": "Gyárthatok több profilt ugyanazon a soron?",
+        "a": "Igen, a görgőkészlet cseréjével. Itt az átállási idő a döntő: sokféle szelvény esetén a gyors átállás közvetlenül befolyásolja a kihasználtságot, ez pedig a sor megtérülését."
+      }
+    ],
     "ctaTitle": "Profilozó sor az Ön profiljára szabva"
   },
   "machinesHub": {
@@ -149,6 +169,8 @@
     "eyebrowLine": "Profilozó sor",
     "eyebrowMachine": "Présadagoló rendszerek",
     "profileNote": "A profil méreteit és a vastagságtartományt <b>a projektje</b> határozza meg; a görgőszerszámot az Ön rajza alapján tervezzük.",
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Gyakori kérdések",
     "whyTitle": "Miért a Servosteel?",
     "why": [
       "Egyedi méretezés és tervezés",
@@ -264,6 +286,26 @@
       "Ollós vágó (giljotin)",
       "Automatikus rakatoló egység",
       "Automatikus PVC-fóliázó rendszer"
+    ],
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Gyakori kérdések a keresztvágó sorokról",
+    "faq": [
+      {
+        "q": "Mire való a keresztvágó sor?",
+        "a": "Lecsévéli a tekercset, egyengeti, majd az Ön által beállított hosszúságú sík táblákra vágja. Az eredmény nem tekercs, hanem rögzített méretű tábla. A sor lecsévélőből, egyengetőből, szervoadagolóból, tábla­ollóból és rakatoló egységből áll."
+      },
+      {
+        "q": "Keresztvágó vagy hasítósor kell?",
+        "a": "A különbség a végtermék alakjában van. A keresztvágó sor keresztben vág és sík táblát ad. A hasítósor hosszirányban vág; az eredmény továbbra is tekercs, keskeny szalagokban. Ha rögzített méretű táblát értékesít, keresztvágó kell; ha szalagot, hasítósor. A kettő egyetlen sorban is kombinálható."
+      },
+      {
+        "q": "Hogyan biztosított a táblák síkfekvése?",
+        "a": "A tekercs görbületi memóriáját az egyengető egység szünteti meg, a hengernyomások az anyagvastagsághoz igazítva. Az olló késhézaga szintén a vastagsághoz áll be, így a vágás sorja- és vetemedésmentes. Érzékeny felületeknél opcionális PVC-fólia egység óvja a táblát a rakatolás előtt."
+      },
+      {
+        "q": "Mitől függ az ár?",
+        "a": "A tekercstömeg-kapacitás, az anyagvastagság és -szélesség, a vágási pontosság és az automatizáltság szintje (rakodókocsi, automatikus rakatolás, PVC-fólia) a meghatározó. Ezért projektre adunk ajánlatot katalógusár helyett."
+      }
     ],
     "ctaTitle": "Tervezzük meg a keresztvágó sorát",
     "ctaText": "Adja meg a lemezvastagságot, tekercssúlyt és táblaméreteket; elrendezéssel és műszaki ajánlattal jelentkezünk."
@@ -875,6 +917,24 @@
           {
             "title": "Az Ön rajza alapján",
             "text": "Nem katalógus-keresztmetszet: a görgőkészletet vagy a szerszámot az Ön által küldött rajz alapján tervezzük — egyedi keresztmetszetekkel együtt."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Mi az a követő szerszám?",
+            "a": "Olyan présszerszám, amelyben az alkatrész nem egyetlen, hanem több egymást követő állomáson készül el. Minden préslöketnél a szalag egy állomással előrébb lép, és sorra lyukasztják, vágják, alakítják. Mivel a hiba állomásonként halmozódik, az adagoló lépéspontossága kritikus."
+          },
+          {
+            "q": "Milyen anyagból készülnek a görgők?",
+            "a": "A görgők 4140 ötvözött acélból készülnek és 58-60 HRC keménységre edzettek. Edzetlen görgőnél a méretelcsúszás és a korai csere csendben megemeli a sor üzemeltetési költségét."
+          },
+          {
+            "q": "Mit kérnek tőlem a szerszámtervezéshez?",
+            "a": "Elég a profil- vagy alkatrészrajz (DWG, DXF vagy PDF), az anyagvastagság és az anyagminőség. Semmi nem katalógusból származik: a tervezés az Ön által küldött rajz alapján készül, egyedi keresztmetszetekkel együtt."
+          },
+          {
+            "q": "Megvásárolhatom a szerszámot a sortól külön?",
+            "a": "Igen. De ha a szerszám és az adagolósor ugyanattól a gyártótól érkezik, a lépésköztűrés, a pilotoldás időzítése és a szalagkiosztás együtt készül; külön beszállítóknál ennek az illeszkedésnek a felelőssége elmosódik."
           }
         ],
         "sectors": ["Profilozó sorok", "Présüzemek", "Autóipari beszállítók", "Kábeltálca", "Napelemes profilok", "Szalagkorlát"],
