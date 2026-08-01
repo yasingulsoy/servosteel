@@ -6,7 +6,7 @@ import { pageAlternates } from "@/i18n/seo";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
-import { VideoBand } from "@/components/video-band";
+import { VideoBand, VideoStack } from "@/components/video-band";
 import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
 import { SolutionIcon } from "@/components/solution-icon";
@@ -65,6 +65,16 @@ export default async function Home({ params }: Props) {
       {/* HERO — tam ekran arka plan videosu */}
       <HeroVideo />
 
+      {/*
+        Hero'nun hemen altındaki video yığını — aralıksız, hero yüksekliğinde.
+        Sıra: alt2 → (pres besleme videosu düzenlenince buraya eklenecek).
+      */}
+      <VideoStack
+        heightClass="h-[100svh] min-h-[600px]"
+        dim={2}
+        items={[{ src: "/alt2.mp4", poster: "/alt2-poster.jpg", label: t("videoAria") }]}
+      />
+
       {/* İSTATİSTİK ŞERİDİ — şimdilik kaldırıldı. Geri açmak için: metinler 9 dilde
           messages/{locale}.json içinde "home.stats" altında hazır duruyor. */}
 
@@ -115,7 +125,7 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
-      <VideoBand />
+      <VideoBand src="/alt.mp4" poster="/alt-poster.jpg" label={t("videoAria")} />
 
       {/* ROLL FORM ALT HATLARI */}
       <section className="bg-surface-alt">
