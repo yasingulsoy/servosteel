@@ -453,6 +453,30 @@ body {
   translate: 0 0;
 }
 
+/* Cam panel: destekleyen tarayıcıda giriş, kaydırma İLERLEMESİNE bağlanır —
+   bant görünüme girdikçe panel süzülerek yükselir, geri kaydırınca geri iner.
+   (Desteklemeyende yukarıdaki band-inview geçişi çalışmaya devam eder.) */
+@supports (animation-timeline: view()) {
+  [data-video-band] .overlay-card {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+    animation: card-scroll linear both;
+    animation-timeline: view();
+    animation-range: entry 15% cover 45%;
+  }
+  @keyframes card-scroll {
+    from {
+      opacity: 0;
+      transform: translateY(56px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
 /* Koyu bantlara ince film greni — premium doku, tamamen statik */
 .grain::before {
   content: "";
@@ -489,6 +513,7 @@ body {
     opacity: 1;
     translate: 0 0;
     transition: none;
+    animation: none;
   }
   .marquee-track,
   .drift-slow,

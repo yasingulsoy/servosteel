@@ -5,6 +5,7 @@ import { SpecularButton } from "@/components/specular-button";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
+import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -108,6 +109,21 @@ export default async function IletisimPage({ params }: Props) {
             </div>
           </Reveal>
         </div>
+
+        {/* İLETİŞİM FORMU — teklif değil, genel mesaj kanalı */}
+        <Reveal>
+          <div className="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-10">
+            <div className="max-w-2xl">
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl">
+                {t("form.title")}
+              </h2>
+              <p className="mt-3 text-muted">{t("form.text")}</p>
+            </div>
+            <div className="mt-8">
+              <ContactForm />
+            </div>
+          </div>
+        </Reveal>
 
         <Reveal>
           <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl bg-surface-alt p-8 lg:flex-row lg:items-center">
