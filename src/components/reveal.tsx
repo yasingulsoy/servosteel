@@ -2,15 +2,28 @@
 
 import { useEffect, useRef } from "react";
 
-/** Görünüm alanına girince yumuşakça beliren sarmalayıcı (CSS: [data-reveal]) */
+type Variant = "up" | "left" | "right" | "zoom";
+
+/**
+ * Görünüm alanına girince yumuşakça beliren sarmalayıcı (CSS: [data-reveal]).
+ *
+ * variant — giriş yönü: "up" (varsayılan), "left", "right", "zoom".
+ *           Yatay yönler RTL'de otomatik aynalanır (globals.css).
+ * group   — true ise kapsayıcı değil ÇOCUKLAR animasyonlanır: tek observer,
+ *           çocuklar 90ms arayla sırayla belirir (kart ızgaraları için).
+ */
 export function Reveal({
   children,
   delay = 0,
   className = "",
+  variant = "up",
+  group = false,
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  variant?: Variant;
+  group?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,7 +46,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      data-reveal
+      {...(group ? { "data-reveal-group": "" } : { "data-reveal": variant })}
       className={className}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >

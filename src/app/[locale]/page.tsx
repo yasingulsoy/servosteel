@@ -5,6 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
+import { StatsBand } from "@/components/stats-band";
+import { Marquee } from "@/components/marquee";
 import { SpecularButton } from "@/components/specular-button";
 import { VideoBand, VideoStack } from "@/components/video-band";
 import { VideoOverlayCard } from "@/components/video-overlay-card";
@@ -24,7 +26,8 @@ export async function generateMetadata({ params }: Props) {
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
-      <span className="h-px w-8 bg-accent" aria-hidden />
+      {/* grow-line: çizgi, bölüm görünür olunca soldan çizilir */}
+      <span className="grow-line h-px w-8 bg-accent" aria-hidden />
       {children}
     </p>
   );
@@ -112,8 +115,9 @@ export default async function Home({ params }: Props) {
         ]}
       />
 
-      {/* İSTATİSTİK ŞERİDİ — şimdilik kaldırıldı. Geri açmak için: metinler 9 dilde
-          messages/{locale}.json içinde "home.stats" altında hazır duruyor. */}
+      {/* İSTATİSTİK ŞERİDİ — eski sitedeki kredibilite figürleri (10+ yıl,
+          48+ ülke, %99). Sayılar görünüm alanına girince 0'dan sayar. */}
+      <StatsBand items={t.raw("stats") as { value: string; label: string }[]} />
 
       {/* 3 ANA ÇÖZÜM */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
@@ -132,9 +136,10 @@ export default async function Home({ params }: Props) {
             <Reveal key={s.href} delay={i * 100}>
               <Link
                 href={s.href}
+                data-spotlight
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card text-accent transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-alt">
+                <div className="img-shine relative aspect-[16/10] w-full overflow-hidden bg-surface-alt">
                   <Image
                     src={`/gorseller${s.href}.jpg`}
                     alt={t(`solutions.${s.key}.title`)}
@@ -194,9 +199,10 @@ export default async function Home({ params }: Props) {
               <Reveal key={line.slug} delay={(i % 4) * 80}>
                 <Link
                   href={`/roll-form-hatlari/${line.slug}`}
+                  data-spotlight
                   className="group block h-full overflow-hidden rounded-xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
+                  <div className="img-shine relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
                     <Image
                       src={`/gorseller/${line.slug}.jpg`}
                       alt={tRoll(`${line.slug}.name`)}
@@ -249,9 +255,10 @@ export default async function Home({ params }: Props) {
             <Reveal key={m.slug} delay={i * 80}>
               <Link
                 href={`/makineler/${m.slug}`}
+                data-spotlight
                 className="group block h-full overflow-hidden rounded-2xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
+                <div className="img-shine relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
                   <Image
                     src={`/gorseller/${m.slug}.jpg`}
                     alt={tMach(`${m.slug}.name`)}
@@ -276,8 +283,17 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
+      {/* AKAN ÜRÜN ŞERİDİ — dev hayalet tipografi, ürün sayfalarına bağlanır.
+          Adlar zaten 9 dilde çevrili (products.rollform.*), yeni metin yok. */}
+      <Marquee
+        items={rollFormItems.map((line) => ({
+          label: tRoll(`${line.slug}.name`),
+          href: `/roll-form-hatlari/${line.slug}`,
+        }))}
+      />
+
       {/* SÜREÇ */}
-      <section className="bg-shell text-white">
+      <section className="grain relative bg-shell text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
           <Reveal>
             <SectionEyebrow>{t("processEyebrow")}</SectionEyebrow>
@@ -291,9 +307,12 @@ export default async function Home({ params }: Props) {
               <Reveal key={step.title} delay={i * 120}>
                 <li className="list-none">
                   <div className="font-display text-5xl font-extrabold text-accent">
-                    {String(i + 1).padStart(2, "0")}
+                    {/* Numara, adım görünür olunca maskeden yükselir */}
+                    <span className="num-mask">
+                      <span className="num-rise">{String(i + 1).padStart(2, "0")}</span>
+                    </span>
                   </div>
-                  <div className="mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
+                  <div className="grow-line mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
                   <h3 className="font-display mt-4 text-lg font-bold uppercase tracking-tight">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.text}</p>
                 </li>
@@ -306,7 +325,7 @@ export default async function Home({ params }: Props) {
       {/* VİDEO */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          <Reveal>
+          <Reveal variant="left">
             <SectionEyebrow>{t("videoEyebrow")}</SectionEyebrow>
             <h2 className="font-display mt-4 text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
               {t("videoTitle")}
@@ -317,7 +336,7 @@ export default async function Home({ params }: Props) {
               <ArrowRight />
             </SpecularButton>
           </Reveal>
-          <Reveal delay={150}>
+          <Reveal variant="right" delay={150}>
             <div className="overflow-hidden rounded-2xl border border-line bg-shell shadow-xl shadow-black/10">
               <div className="aspect-video">
                 <iframe

@@ -54,6 +54,13 @@ const ROLLFORM: Record<string, string> = {
 const M = "/en/makineler";
 
 const nextConfig: NextConfig = {
+  /* React ViewTransition entegrasyonu — rota geçişlerinde içerik yumuşakça
+     akar (globals.css'teki ::view-transition kuralları). Desteklemeyen
+     tarayıcıda hiçbir şey olmaz, sayfa normal değişir. */
+  experimental: {
+    viewTransition: true,
+  },
+
   async redirects() {
     return [
       /* --- Makineler --- */

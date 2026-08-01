@@ -61,20 +61,22 @@ export function PageHero({
           })}
         </nav>
 
+        {/* Giriş animasyonu: eyebrow → başlık → açıklama sırayla yükselir.
+            Scroll-reveal değil, sayfa açılış animasyonu (hep görünüm alanında). */}
         <div className="mt-3 flex flex-col gap-2.5 md:flex-row md:items-end md:justify-between md:gap-10">
           <div className="min-w-0">
             {eyebrow && (
-              <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-ink">
+              <p className="animate-rise flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-ink [animation-delay:40ms]">
                 <span className="h-px w-6 bg-accent" aria-hidden />
                 {eyebrow}
               </p>
             )}
-            <h1 className="font-display mt-1.5 text-2xl font-extrabold uppercase leading-[1.1] tracking-tight text-ink sm:text-3xl lg:text-4xl">
+            <h1 className="font-display animate-rise mt-1.5 text-2xl font-extrabold uppercase leading-[1.1] tracking-tight text-ink [animation-delay:120ms] sm:text-3xl lg:text-4xl">
               {title}
             </h1>
           </div>
           {description && (
-            <p className="max-w-xl text-sm leading-relaxed text-muted md:max-w-md md:shrink-0 md:text-end">
+            <p className="animate-rise max-w-xl text-sm leading-relaxed text-muted [animation-delay:220ms] md:max-w-md md:shrink-0 md:text-end">
               {description}
             </p>
           )}

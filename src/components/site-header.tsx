@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight, ChevronDown, Cog, Menu, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -14,6 +14,47 @@ import { rollFormItems, machineItems } from "@/lib/catalog";
 import { getAkademiUi } from "@/lib/akademi-ui";
 
 type MegaItem = { label: string; href: string; desc: string; icon?: string };
+
+/**
+ * Header'ın alt kenarında ince altın okuma çubuğu — sayfanın ne kadarının
+ * kaydırıldığını gösterir. rAF ile kısılır; state değil doğrudan transform
+ * yazılır, yani kaydırma sırasında React yeniden çizim yapmaz.
+ */
+function ScrollProgress() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      el.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+    };
+    const schedule = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      aria-hidden
+      className="absolute bottom-0 left-0 h-0.5 w-full origin-left bg-gradient-to-r from-accent to-accent-strong rtl:origin-right"
+      style={{ transform: "scaleX(0)" }}
+    />
+  );
+}
 
 /* Aktif sayfa tespiti (locale önekleri usePathname tarafından kırpılır) */
 function useIsActive() {
@@ -232,6 +273,9 @@ export function SiteHeader() {
 
   return (
     <header
+      /* viewTransitionName: sayfa geçişinde header kıpırdamaz — kullanıcının
+         mekânsal çapası (globals.css ::view-transition-group(site-header)) */
+      style={{ viewTransitionName: "site-header" }}
       className={`sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
         overHero
           ? "border-b border-transparent bg-transparent"
@@ -414,6 +458,10 @@ export function SiteHeader() {
           </nav>
         </div>
       )}
+
+      {/* Okuma ilerlemesi — yalnızca navbar solid'ken görünür olsun diye
+          video üzerindeyken gizlenir (şeffaf zeminde çizgi havada kalırdı). */}
+      {!overHero && <ScrollProgress />}
     </header>
   );
 }

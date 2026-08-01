@@ -28,7 +28,7 @@ export function VideoOverlayCard({ eyebrow, title, chips = [], href, cta }: Vide
   return (
     <div className="pointer-events-none absolute inset-0 flex items-end">
       <div className="mx-auto w-full max-w-7xl px-4 pb-4 sm:px-6 sm:pb-10 lg:pb-14">
-        <div className="pointer-events-auto max-w-md rounded-xl border border-white/20 bg-black/45 p-4 text-white shadow-2xl supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-xl sm:rounded-2xl sm:p-6">
+        <div className="overlay-card pointer-events-auto max-w-md rounded-xl border border-white/20 bg-black/45 p-4 text-white shadow-2xl supports-[backdrop-filter]:bg-white/10 supports-[backdrop-filter]:backdrop-blur-xl sm:rounded-2xl sm:p-6">
           {eyebrow && (
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs">
               {eyebrow}

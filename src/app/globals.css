@@ -192,25 +192,321 @@ body {
   translate: 0 28px;
   transition:
     opacity 0.7s ease,
-    translate 0.7s ease;
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Yön varyantları — soldan/sağdan kayarak veya hafif büyüyerek giriş */
+[data-reveal="left"] {
+  translate: -36px 0;
+}
+[data-reveal="right"] {
+  translate: 36px 0;
+}
+[data-reveal="zoom"] {
+  translate: 0 0;
+  scale: 0.94;
+  transition:
+    opacity 0.7s ease,
+    scale 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* RTL'de yatay girişler ayna */
+[dir="rtl"] [data-reveal="left"] {
+  translate: 36px 0;
+}
+[dir="rtl"] [data-reveal="right"] {
+  translate: -36px 0;
 }
 
 [data-reveal].reveal-visible {
   opacity: 1;
   translate: 0 0;
+  scale: 1;
+}
+
+/* Grup reveal: kapsayıcı görünür olunca ÇOCUKLAR sırayla belirir.
+   Tek observer, n çocuk — kart ızgaraları için per-item Reveal'dan ucuz. */
+[data-reveal-group] > * {
+  opacity: 0;
+  translate: 0 26px;
+  transition:
+    opacity 0.6s ease,
+    translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-reveal-group].reveal-visible > * {
+  opacity: 1;
+  translate: 0 0;
+}
+[data-reveal-group].reveal-visible > *:nth-child(2) { transition-delay: 90ms; }
+[data-reveal-group].reveal-visible > *:nth-child(3) { transition-delay: 180ms; }
+[data-reveal-group].reveal-visible > *:nth-child(4) { transition-delay: 270ms; }
+[data-reveal-group].reveal-visible > *:nth-child(5) { transition-delay: 360ms; }
+[data-reveal-group].reveal-visible > *:nth-child(6) { transition-delay: 450ms; }
+[data-reveal-group].reveal-visible > *:nth-child(7) { transition-delay: 540ms; }
+[data-reveal-group].reveal-visible > *:nth-child(8) { transition-delay: 630ms; }
+
+/* Reveal ile birlikte çizilen vurgu çizgisi (eyebrow altı, süreç adımları) */
+.grow-line {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+}
+[dir="rtl"] .grow-line {
+  transform-origin: right center;
+}
+.reveal-visible .grow-line,
+[data-reveal-group].reveal-visible .grow-line {
+  transform: scaleX(1);
+}
+
+/* Hero başlığı: kelimeler maske içinden yukarı kayarak girer */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em; /* harf kuyruklarının (g, ş, ç) kesilmemesi için */
+  margin-bottom: -0.08em;
+}
+.word-mask > span {
+  display: inline-block;
+  translate: 0 115%;
+  animation: word-rise 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation-delay: var(--wd, 0ms);
+}
+@keyframes word-rise {
+  to {
+    translate: 0 0;
+  }
+}
+
+/* Sonsuz yatay şerit (ürün adları) — hover'da durur, kenarlarda erir */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
+}
+
+/* Dekoratif ışımalar için kaydırmaya bağlı hafif paralaks —
+   yalnızca destekleyen tarayıcılarda; yoksa öğe sabit durur. */
+@supports (animation-timeline: view()) {
+  .drift-slow {
+    animation: drift linear both;
+    animation-timeline: view();
+  }
+  @keyframes drift {
+    from {
+      transform: translateY(56px);
+    }
+    to {
+      transform: translateY(-56px);
+    }
+  }
+}
+
+/* Hero içeriği: sayfa kaydırıldıkça geride kalıp erir (video'ya dokunulmaz).
+   Yalnızca scroll-timeline destekleyen tarayıcılarda etkin. */
+@supports (animation-timeline: scroll()) {
+  .hero-scroll-fade {
+    animation: hero-out linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100vh;
+  }
+  @keyframes hero-out {
+    to {
+      opacity: 0;
+      transform: translateY(90px);
+    }
+  }
+}
+
+/* ---------- Sayfa geçişleri (React ViewTransition) ---------- */
+/* Eski içerik hızla çekilir, yeni içerik hafif yükselerek gelir.
+   Header kendi adıyla sabitlenir — geçiş sırasında kıpırdamaz. */
+::view-transition-old(.page-out) {
+  animation: 170ms ease-in both vt-fade reverse;
+}
+::view-transition-new(.page-in) {
+  animation:
+    240ms ease-out 120ms both vt-fade,
+    460ms cubic-bezier(0.2, 0.7, 0.2, 1) both vt-rise;
+}
+@keyframes vt-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes vt-rise {
+  from {
+    transform: translateY(16px);
+  }
+  to {
+    transform: none;
+  }
+}
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 60;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+/* ---------- Kart mikro-etkileşimleri ---------- */
+
+/* İmleci takip eden altın ışık (PointerGlow --px/--py değişkenlerini yazar) */
+[data-spotlight] {
+  position: relative;
+}
+[data-spotlight]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--px, 50%) var(--py, 50%),
+    rgb(231 163 0 / 0.13),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+[data-spotlight]:hover::after {
+  opacity: 1;
+}
+
+/* Görsel üzerinde çapraz parlama süpürmesi — kart hover'ında bir kez akar */
+.img-shine::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: -45%;
+  width: 38%;
+  transform: skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.3), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+.group:hover .img-shine::after {
+  animation: shine-sweep 0.8s ease forwards;
+}
+@keyframes shine-sweep {
+  from {
+    transform: translateX(0) skewX(-18deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(440%) skewX(-18deg);
+    opacity: 1;
+  }
+}
+
+/* Video bandı görünüme girince cam panel aşağıdan süzülür; banttan çıkıp
+   geri gelince yeniden oynar (sınıfı VideoBand'in observer'ı yönetir). */
+[data-video-band] .overlay-card {
+  opacity: 0;
+  translate: 0 34px;
+  transition:
+    opacity 0.7s ease 0.12s,
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s;
+}
+[data-video-band].band-inview .overlay-card {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Süreç numaraları (01–04) maskeden yükselir */
+.num-mask {
+  display: inline-block;
+  overflow: hidden;
+}
+.num-rise {
+  display: inline-block;
+  translate: 0 110%;
+  transition: translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s;
+}
+.reveal-visible .num-rise {
+  translate: 0 0;
+}
+
+/* Koyu bantlara ince film greni — premium doku, tamamen statik */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
+  [data-reveal],
+  [data-reveal-group] > * {
     opacity: 1;
     translate: 0;
+    scale: 1;
     transition: none;
   }
+  [data-reveal="zoom"] {
+    scale: 1;
+  }
+  .grow-line {
+    transform: scaleX(1);
+    transition: none;
+  }
+  .word-mask > span,
+  .num-rise {
+    translate: 0 0;
+    animation: none;
+    transition: none;
+  }
+  [data-video-band] .overlay-card {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+  }
+  .marquee-track,
+  .drift-slow,
+  .hero-scroll-fade,
   .animate-rise,
   .animate-spin-slow,
   .animate-flow,
   .animate-breathe,
   .specular-sheen {
     animation: none;
+  }
+  .group:hover .img-shine::after {
+    animation: none;
+  }
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
   }
 }

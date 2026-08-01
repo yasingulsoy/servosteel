@@ -42,6 +42,8 @@ export const SITE_DESCRIPTION =
 export const CONTACT = {
   phoneDisplay: "+90 216 415 30 05",
   phoneHref: "tel:+902164153005",
+  /* Eski sitedeki NAP kaydından — parite için korunuyor */
+  faxDisplay: "+90 216 415 30 06",
   email: "info@servosteel.com.tr",
   addressStreet: "Yunusemre Mah. İskenderpaşa Cad. 21/1",
   addressLocality: "Sancaktepe",

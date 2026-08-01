@@ -5,6 +5,7 @@ import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { CountUp } from "@/components/count-up";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -48,7 +49,9 @@ export default async function HakkimizdaPage({ params }: Props) {
             <Reveal key={stat.label} delay={i * 80}>
               <div className="flex flex-col-reverse items-center gap-1 text-center">
                 <dt className="text-sm text-muted">{stat.label}</dt>
-                <dd className="font-display text-4xl font-bold text-ink">{stat.value}</dd>
+                <dd className="font-display text-4xl font-bold text-ink">
+                  <CountUp value={stat.value} className="tabular-nums" />
+                </dd>
               </div>
             </Reveal>
           ))}

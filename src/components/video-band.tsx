@@ -37,10 +37,15 @@ export function VideoBand({ src, poster, label, children }: VideoBandItem) {
     v.muted = true;
     const io = new IntersectionObserver(
       ([entry]) => {
+        /* band-inview: cam panelin giriş animasyonunu tetikler; banttan
+           çıkıp geri gelince panel yeniden süzülerek girer. */
+        const band = v.closest("[data-video-band]");
         if (entry.isIntersecting) {
+          band?.classList.add("band-inview");
           const p = v.play();
           if (p && typeof p.catch === "function") p.catch(() => {});
         } else {
+          band?.classList.remove("band-inview");
           v.pause();
         }
       },

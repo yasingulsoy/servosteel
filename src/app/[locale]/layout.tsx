@@ -5,6 +5,9 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { ViewTransition } from "@/components/view-transition";
+import { PointerGlow } from "@/components/pointer-glow";
+import { PageAttention } from "@/components/page-attention";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
 import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
@@ -137,6 +140,7 @@ const orgJsonLd = {
     {
       "@type": "ContactPoint",
       telephone: "+90-216-415-30-05",
+      faxNumber: "+90-216-415-30-06",
       email: CONTACT.email,
       contactType: "sales",
       areaServed: "Worldwide",
@@ -172,8 +176,17 @@ export default async function LocaleLayout({
         />
         <NextIntlClientProvider>
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          {/* Rota değişiminde içerik yumuşakça akar; header sabit kalır
+              (globals.css ::view-transition kuralları). */}
+          <main className="flex-1">
+            <ViewTransition enter="page-in" exit="page-out" default="none">
+              {children}
+            </ViewTransition>
+          </main>
           <SiteFooter />
+          {/* Görünmez yardımcılar: kart ışığı + sekme/video dikkat yönetimi */}
+          <PointerGlow />
+          <PageAttention />
         </NextIntlClientProvider>
       </body>
     </html>

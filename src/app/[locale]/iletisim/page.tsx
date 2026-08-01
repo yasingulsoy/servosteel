@@ -1,5 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, Phone, Printer } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { SpecularButton } from "@/components/specular-button";
 import { pageAlternates } from "@/i18n/seo";
@@ -48,6 +48,7 @@ export default async function IletisimPage({ params }: Props) {
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                data-spotlight
                 className="group block h-full rounded-2xl border border-line bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
               >
                 <c.icon className="size-8 text-accent" strokeWidth={1.8} aria-hidden />
@@ -76,6 +77,10 @@ export default async function IletisimPage({ params }: Props) {
               <p className="mt-4 flex items-center gap-2 text-sm text-zinc-400">
                 <Clock className="size-4" strokeWidth={1.8} aria-hidden />
                 {t("hours")}
+              </p>
+              <p className="mt-2 flex items-center gap-2 text-sm text-zinc-400">
+                <Printer className="size-4" strokeWidth={1.8} aria-hidden />
+                {t("faxTitle")}: {CONTACT.faxDisplay}
               </p>
               <div className="mt-auto pt-6">
                 <SpecularButton
