@@ -220,6 +220,31 @@ export function SiteHeader() {
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [overVideo, setOverVideo] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const menuInnerRef = useRef<HTMLDivElement>(null);
+
+  /**
+   * Menü yüksekliğini --menu-h değişkenine yazar (CSS oradan animasyonlar).
+   * ResizeObserver kullanılıyor ki içerideki alt menü (<details>) açıldığında
+   * da yükseklik anında güncellensin; sabit ölçüm bayatlardı.
+   */
+  useEffect(() => {
+    const el = menuRef.current;
+    const inner = menuInnerRef.current;
+    if (!el || !inner) return;
+    const sync = () => el.style.setProperty("--menu-h", `${inner.scrollHeight}px`);
+
+    /* İlk ölçüm doğrudan yapılır: ResizeObserver'ın ilk çağrısı render
+       döngüsüne bağlıdır ve sekme arka plandayken hiç gelmeyebilir. */
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(inner);
+    window.addEventListener("resize", sync);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", sync);
+    };
+  }, []);
 
   /**
    * Navbar, ARDINDA bir video bandı olduğu sürece şeffaf kalır.
@@ -408,8 +433,8 @@ export function SiteHeader() {
         (grid 0fr↔1fr). Kapalıyken inert: bağlantılar Tab sırasına ve ekran
         okuyucuya girmez, yani görünmez menü tuzağı oluşmaz.
       */}
-      <div className={`menu-collapse xl:hidden ${mobileOpen ? "is-open" : ""}`}>
-        <div inert={!mobileOpen}>
+      <div ref={menuRef} className={`menu-collapse xl:hidden ${mobileOpen ? "is-open" : ""}`}>
+        <div ref={menuInnerRef} inert={!mobileOpen}>
           <nav
             className="menu-stagger mx-auto max-h-[calc(100svh-5rem)] max-w-7xl space-y-1 overflow-y-auto border-t border-line bg-surface px-4 py-4"
             aria-label={t("mobileAria")}

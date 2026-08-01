@@ -478,20 +478,19 @@ body {
 }
 
 /* ---------- Mobil menü ---------- */
-/* Açılma/kapanma yüksekliği grid-template-rows 0fr↔1fr ile animasyonlanır;
-   içerik DOM'da kalır, bu yüzden kapanış da yumuşaktır (koşullu render'da
-   çıkış animasyonu mümkün değildir). Kapalıyken inert ile odak dışı bırakılır. */
+/* Açılma/kapanma yüksekliği animasyonlanır; içerik DOM'da kalır, bu yüzden
+   kapanış da yumuşaktır (koşullu render'da çıkış animasyonu mümkün değildir).
+   Kapalıyken inert ile odak dışı bırakılır.
+   --menu-h, içeriğin gerçek yüksekliğidir; JS tarafında ResizeObserver ile
+   yazılır (alt menü açılınca da güncellenir). grid 0fr↔1fr yöntemi burada
+   kullanılamadı: transition açıkken Chrome fr değerini 0'da sabitliyor. */
 .menu-collapse {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .menu-collapse.is-open {
-  grid-template-rows: 1fr;
-}
-.menu-collapse > * {
-  min-height: 0;
-  overflow: hidden;
+  height: var(--menu-h, auto);
 }
 
 /* Açılırken satırlar sırayla düşer */
