@@ -477,6 +477,57 @@ body {
   }
 }
 
+/* ---------- Mobil menü ---------- */
+/* Açılma/kapanma yüksekliği grid-template-rows 0fr↔1fr ile animasyonlanır;
+   içerik DOM'da kalır, bu yüzden kapanış da yumuşaktır (koşullu render'da
+   çıkış animasyonu mümkün değildir). Kapalıyken inert ile odak dışı bırakılır. */
+.menu-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.menu-collapse.is-open {
+  grid-template-rows: 1fr;
+}
+.menu-collapse > * {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Açılırken satırlar sırayla düşer */
+.menu-stagger > * {
+  opacity: 0;
+  translate: 0 -10px;
+}
+.is-open .menu-stagger > * {
+  animation: menu-item 0.36s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes menu-item {
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.is-open .menu-stagger > *:nth-child(1) { animation-delay: 60ms; }
+.is-open .menu-stagger > *:nth-child(2) { animation-delay: 105ms; }
+.is-open .menu-stagger > *:nth-child(3) { animation-delay: 150ms; }
+.is-open .menu-stagger > *:nth-child(4) { animation-delay: 195ms; }
+.is-open .menu-stagger > *:nth-child(5) { animation-delay: 240ms; }
+.is-open .menu-stagger > *:nth-child(6) { animation-delay: 285ms; }
+.is-open .menu-stagger > *:nth-child(7) { animation-delay: 330ms; }
+.is-open .menu-stagger > *:nth-child(8) { animation-delay: 375ms; }
+
+/* Hamburger ↔ çarpı: dönerek geçiş */
+.menu-icon {
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.2s ease;
+}
+.menu-icon-hidden {
+  transform: rotate(-90deg) scale(0.6);
+  opacity: 0;
+}
+
 /* Koyu bantlara ince film greni — premium doku, tamamen statik */
 .grain::before {
   content: "";
@@ -514,6 +565,18 @@ body {
     translate: 0 0;
     transition: none;
     animation: none;
+  }
+  .menu-collapse {
+    transition: none;
+  }
+  .menu-stagger > * {
+    opacity: 1;
+    translate: 0 0;
+  }
+  .is-open .menu-stagger > *,
+  .menu-icon {
+    animation: none;
+    transition: none;
   }
   .marquee-track,
   .drift-slow,

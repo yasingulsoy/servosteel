@@ -363,15 +363,15 @@ export function SiteHeader() {
             />
           )}
           <span className={`mx-1 hidden h-5 w-px xl:block ${overHero ? "bg-white/20" : "bg-line"}`} aria-hidden />
-          <div className="hidden xl:block">
-            <LanguageSwitcher
-              buttonClassName={`rounded-lg border px-3 py-2 transition-colors ${
-                overHero
-                  ? "border-white/25 text-white hover:bg-white/10"
-                  : "border-line text-ink hover:bg-surface-alt"
-              }`}
-            />
-          </div>
+          {/* Dil değiştirici HER boyutta görünür — mobilde tema düğmesinin
+              yanında, daha dar iç boşlukla. */}
+          <LanguageSwitcher
+            buttonClassName={`rounded-lg border px-2 py-1.5 text-sm transition-colors xl:px-3 xl:py-2 ${
+              overHero
+                ? "border-white/25 text-white hover:bg-white/10"
+                : "border-line text-ink hover:bg-surface-alt"
+            }`}
+          />
           <ThemeToggle
             className={`size-10 transition-colors ${
               overHero ? "text-white hover:bg-white/10" : "text-ink hover:bg-surface-alt"
@@ -386,15 +386,34 @@ export function SiteHeader() {
               overHero ? "text-white hover:bg-white/10" : "text-ink hover:bg-surface-alt"
             }`}
           >
-            {mobileOpen ? <X className="size-5" strokeWidth={2} aria-hidden /> : <Menu className="size-5" strokeWidth={2} aria-hidden />}
+            {/* İki ikon üst üste durur; açık/kapalı duruma göre dönerek yer değiştirir */}
+            <span className="relative block size-5">
+              <Menu
+                className={`menu-icon absolute inset-0 size-5 ${mobileOpen ? "menu-icon-hidden" : ""}`}
+                strokeWidth={2}
+                aria-hidden
+              />
+              <X
+                className={`menu-icon absolute inset-0 size-5 ${mobileOpen ? "" : "menu-icon-hidden"}`}
+                strokeWidth={2}
+                aria-hidden
+              />
+            </span>
           </button>
         </div>
       </div>
 
-      {/* Mobil / tablet menü */}
-      {mobileOpen && (
-        <div className="border-t border-line bg-surface xl:hidden">
-          <nav className="mx-auto max-h-[calc(100svh-5rem)] max-w-7xl space-y-1 overflow-y-auto px-4 py-4" aria-label={t("mobileAria")}>
+      {/*
+        Mobil / tablet menü — içerik DOM'da kalır, yükseklik animasyonlanır
+        (grid 0fr↔1fr). Kapalıyken inert: bağlantılar Tab sırasına ve ekran
+        okuyucuya girmez, yani görünmez menü tuzağı oluşmaz.
+      */}
+      <div className={`menu-collapse xl:hidden ${mobileOpen ? "is-open" : ""}`}>
+        <div inert={!mobileOpen}>
+          <nav
+            className="menu-stagger mx-auto max-h-[calc(100svh-5rem)] max-w-7xl space-y-1 overflow-y-auto border-t border-line bg-surface px-4 py-4"
+            aria-label={t("mobileAria")}
+          >
             <details className="group/d">
               <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt [&::-webkit-details-marker]:hidden">
                 {t("rollform")}
@@ -446,8 +465,9 @@ export function SiteHeader() {
               {t("contact")}
             </Link>
 
-            <div className="mt-2 flex items-center justify-between gap-3 border-t border-line pt-4">
-              <LanguageSwitcher align="left" buttonClassName="rounded-lg border border-line px-3 py-2.5 text-ink hover:bg-surface-alt" />
+            {/* Dil seçimi artık üst çubukta (tema düğmesinin yanında) durduğu
+                için buradan kaldırıldı — iki ayrı yerde bulunmuyor. */}
+            <div className="mt-2 flex items-center justify-center border-t border-line pt-4">
               <SocialIcons
                 variant="brand"
                 className="gap-1.5"
@@ -457,7 +477,7 @@ export function SiteHeader() {
             </div>
           </nav>
         </div>
-      )}
+      </div>
 
       {/* Okuma ilerlemesi — yalnızca navbar solid'ken görünür olsun diye
           video üzerindeyken gizlenir (şeffaf zeminde çizgi havada kalırdı). */}
