@@ -1,48 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import { VideoScrim } from "@/components/video-scrim";
 
 export type VideoBandItem = {
-  /** public/ altındaki mp4 yolu, ör. "/dilme-hatti-2.mp4" */
+  /** public/ altındaki mp4 yolu, ör. "/alt3.mp4" */
   src: string;
   /** İlk kare olarak gösterilecek poster görseli (video yüklenene kadar) */
   poster: string;
   /** Ekran okuyucular için kısa açıklama */
   label?: string;
+  /** Videonun üzerine binecek içerik (cam panel vb.) */
+  children?: ReactNode;
 };
-
-type BandProps = VideoBandItem & {
-  /** Bant yüksekliği (Tailwind sınıfı). Varsayılan tek bant için 90vh. */
-  heightClass?: string;
-  /**
-   * Video üzerine karartma perdesi (hero'daki gibi).
-   * Karartma, sıkıştırmadan gelen yumuşamayı ve gürültüyü gizler; ayrıca
-   * hero ile aynı görsel dili kurar. 0 = kapalı.
-   */
-  dim?: 0 | 1 | 2 | 3;
-};
-
-/** Karartma yoğunlukları — 1 hafif, 3 hero'ya yakın koyu. */
-const DIM = {
-  1: "bg-black/20",
-  2: "bg-black/35",
-  3: "bg-black/50",
-} as const;
 
 /**
- * Tam genişlik, metinsiz sinematik video bandı.
+ * Tam genişlik, tam kare video bandı.
+ *
+ * Boyut: bant videonun kendi oranını (16:9) alır — kırpma YOK. Daha önce sabit
+ * ekran yüksekliği veriliyordu; 16:9 video daha basık olduğu için object-cover
+ * üstten/alttan kesiyor, videoların başındaki logo jeneriği kırpılıyordu.
+ *
+ * Karartma: hero ile birebir aynı perde (VideoScrim). Seviye ayarı bilerek
+ * bileşen dışına açılmadı — tek kaynak olsun, sayfadan sayfaya kaymasın.
  *
  * Performans: preload="none" + IntersectionObserver — video ancak görünüm
  * alanına girince yüklenir ve oynar, çıkınca durur. Böylece sayfa açılışında
  * hiç video baytı inmez.
  */
-export function VideoBand({
-  src,
-  poster,
-  label,
-  heightClass = "h-[90vh] min-h-[520px]",
-  dim = 0,
-}: BandProps) {
+export function VideoBand({ src, poster, label, children }: VideoBandItem) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -65,9 +51,15 @@ export function VideoBand({
   }, []);
 
   return (
-    <section className={`relative w-full overflow-hidden bg-shell ${heightClass}`} aria-label={label}>
+    <section
+      data-video-band
+      className="relative aspect-video w-full overflow-hidden bg-shell"
+      aria-label={label}
+    >
       <video
         ref={ref}
+        /* Oran bantla aynı olduğu için object-cover kırpmaz; yuvarlama
+           farklarında kıl payı taşmayı emmesi için yine de cover. */
         className="absolute inset-0 size-full object-cover"
         muted
         loop
@@ -78,7 +70,10 @@ export function VideoBand({
         <source src={src} type="video/mp4" />
       </video>
 
-      {dim !== 0 && <div aria-hidden className={`absolute inset-0 ${DIM[dim]}`} />}
+      {/* Karartma perdesi — hero ile ortak (bkz. video-scrim.tsx) */}
+      <VideoScrim />
+
+      {children && <div className="relative size-full">{children}</div>}
     </section>
   );
 }
@@ -87,21 +82,13 @@ export function VideoBand({
  * Birden çok video bandını ARALIKSIZ alt alta dizer.
  * Bantlar arasında hiçbir geçiş/boşluk yoktur — videolar gerçekten bitişiktir.
  */
-export function VideoStack({
-  items,
-  heightClass = "h-[60vh] min-h-[360px]",
-  dim = 0,
-}: {
-  items: VideoBandItem[];
-  heightClass?: string;
-  dim?: 0 | 1 | 2 | 3;
-}) {
+export function VideoStack({ items }: { items: VideoBandItem[] }) {
   if (!items.length) return null;
 
   return (
     <div className="w-full">
       {items.map((item) => (
-        <VideoBand key={item.src} {...item} heightClass={heightClass} dim={dim} />
+        <VideoBand key={item.src} {...item} />
       ))}
     </div>
   );

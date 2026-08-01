@@ -7,6 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { VideoBand, VideoStack } from "@/components/video-band";
+import { VideoOverlayCard } from "@/components/video-overlay-card";
 import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
 import { SolutionIcon } from "@/components/solution-icon";
@@ -51,8 +52,17 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations("home");
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
+  const tSlit = await getTranslations("dilme");
+  const tAbout = await getTranslations("about");
+  const tCommon = await getTranslations("common");
 
   const process = t.raw("process") as { title: string; text: string }[];
+
+  /* Video panellerindeki etiketler — hepsi sayfada zaten çevrili olan
+     metinlerden geliyor, ayrıca çeviri gerektirmiyor. */
+  const titlesOf = (rows: { title: string }[]) => rows.slice(0, 3).map((r) => r.title);
+  const slittingChips = titlesOf(tSlit.raw("highlights") as { title: string }[]);
+  const feederChips = titlesOf(tMach.raw("servo-suruculer.features") as { title: string }[]);
 
   return (
     <>
@@ -67,12 +77,39 @@ export default async function Home({ params }: Props) {
 
       {/*
         Hero'nun hemen altındaki video yığını — aralıksız, hero yüksekliğinde.
-        Sıra: alt2 → (pres besleme videosu düzenlenince buraya eklenecek).
+        Sayfadaki sıra: 1) hero  2) alt2  3) alt3 (pres besleme).
+        Bantlar dekoratiftir; anlattıkları her şey sayfadaki metinlerde zaten
+        yazılı olduğu için ekran okuyucuya ayrıca etiket verilmiyor.
       */}
       <VideoStack
-        heightClass="h-[100svh] min-h-[600px]"
-        dim={2}
-        items={[{ src: "/alt2.mp4", poster: "/alt2-poster.jpg", label: t("videoAria") }]}
+        items={[
+          {
+            src: "/alt2.mp4",
+            poster: "/alt2-poster.jpg",
+            children: (
+              <VideoOverlayCard
+                eyebrow={t("videoEyebrow")}
+                title={tSlit("title")}
+                chips={slittingChips}
+                href="/dilme-hatlari"
+                cta={tCommon("lineExamine")}
+              />
+            ),
+          },
+          {
+            src: "/alt3.mp4",
+            poster: "/alt3-poster.jpg",
+            children: (
+              <VideoOverlayCard
+                eyebrow={t("machinesEyebrow")}
+                title={tMach("servo-suruculer.name")}
+                chips={feederChips}
+                href="/makineler/servo-suruculer"
+                cta={tCommon("details")}
+              />
+            ),
+          },
+        ]}
       />
 
       {/* İSTATİSTİK ŞERİDİ — şimdilik kaldırıldı. Geri açmak için: metinler 9 dilde
@@ -125,7 +162,16 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
-      <VideoBand src="/alt.mp4" poster="/alt-poster.jpg" label={t("videoAria")} />
+      {/* Bu video ürün değil, tesisi gösteriyor (CNC atölyesi + montaj) —
+          panel de ona göre üretim kabiliyetini anlatıyor. */}
+      <VideoBand src="/alt.mp4" poster="/alt-poster.jpg">
+        <VideoOverlayCard
+          eyebrow={tAbout("facilityEyebrow")}
+          title={tAbout("facilityTitle")}
+          href="/hakkimizda"
+          cta={tCommon("details")}
+        />
+      </VideoBand>
 
       {/* ROLL FORM ALT HATLARI */}
       <section className="bg-surface-alt">

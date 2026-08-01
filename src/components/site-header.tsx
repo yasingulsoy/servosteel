@@ -178,18 +178,45 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [overVideo, setOverVideo] = useState(false);
 
+  /**
+   * Navbar, ARDINDA bir video bandı olduğu sürece şeffaf kalır.
+   * Sadece "sayfanın tepesinde mi" bakmak yetmiyordu: hero'nun altına ikinci
+   * bir video geldiğinde onun üzerinde de şeffaf olması gerekiyor.
+   * Video bölümleri kendilerini [data-video-band] ile işaretler.
+   */
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const HEADER_H = 80; // h-20
+    let bands: Element[] = [];
 
-  // Ana sayfada koyu hero var → tepede şeffaf. Diğer sayfalarda hep solid.
-  const isHome = pathname === "/";
-  const overHero = isHome && !scrolled && !mobileOpen;
+    const collect = () => {
+      bands = Array.from(document.querySelectorAll("[data-video-band]"));
+    };
+    const check = () => {
+      // Header 0–80px arasını kaplar; bir bant bu şeritle kesişiyorsa üzerindeyiz.
+      const over = bands.some((b) => {
+        const r = b.getBoundingClientRect();
+        return r.top < HEADER_H && r.bottom > 0;
+      });
+      setOverVideo(over);
+    };
+    const onResize = () => {
+      collect();
+      check();
+    };
+
+    collect();
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [pathname]);
+
+  const overHero = overVideo && !mobileOpen;
 
   const rollFormMega: MegaItem[] = rollFormItems.map((i) => ({
     label: tRoll(`${i.slug}.name`),

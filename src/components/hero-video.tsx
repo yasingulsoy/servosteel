@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
+import { VideoScrim } from "@/components/video-scrim";
 
 /**
  * Tam ekran arka plan videolu hero.
@@ -24,7 +25,10 @@ export function HeroVideo() {
   }, []);
 
   return (
-    <section className="relative -mt-20 flex min-h-[600px] items-center overflow-hidden bg-shell text-white h-[100svh]">
+    <section
+      data-video-band
+      className="relative -mt-20 flex min-h-[600px] items-center overflow-hidden bg-shell text-white h-[100svh]"
+    >
       {/* Arka plan videosu */}
       <video
         ref={ref}
@@ -42,20 +46,8 @@ export function HeroVideo() {
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Okunabilirlik için koyu degrade örtüler — metnin durduğu sol tarafta
-          kontrast korunur, sağ taraf ve video belirgin şekilde daha parlak kalır. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent rtl:bg-gradient-to-l"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/30 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-shell/55 via-transparent to-transparent"
-      />
+      {/* Karartma perdesi — tüm video bantlarıyla ortak (bkz. video-scrim.tsx) */}
+      <VideoScrim />
 
       {/* İçerik */}
       <div className="relative mx-auto w-full max-w-7xl px-4 py-24 lg:py-0">
