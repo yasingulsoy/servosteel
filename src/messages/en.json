@@ -437,7 +437,7 @@
     "ctaText": "We'll share installations at facilities producing like yours, and arrange site visits."
   },
   "videos": {
-    "metaTitle": "Videos",
+    "metaTitle": "Machine Videos: Our Lines Running on Site",
     "metaDesc": "Watch Servosteel lines in action: real field videos of slitting lines, cut-to-length, roll forming production and press feeding systems.",
     "eyebrow": "From the field",
     "title": "Watch our lines in action",
@@ -463,7 +463,7 @@
     "ctaText": "Let's engineer a line like the one in the video for your facility."
   },
   "contact": {
-    "metaTitle": "Contact",
+    "metaTitle": "Contact: Quotes, Technical Support & Site Visits",
     "metaDesc": "Contact Servosteel: headquarters in Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Reach us for quotes and technical questions.",
     "eyebrow": "Get in touch",
     "title": "Contact",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Go to the Quote Form"
   },
   "quote": {
-    "metaTitle": "Get a Quote",
+    "metaTitle": "Get a Quote: Custom Pricing Within 48 Hours",
     "metaDesc": "Request a quote for roll forming, slitting and cut-to-length lines: send your product and capacity details, our engineering team replies within 48 hours.",
     "eyebrow": "Reply within 48 hours",
     "title": "Get a quote for your project",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Press feeding", "Slitting lines", "Cut-to-length lines", "Roll forming lines"],
+        "faq": [
+          {
+            "q": "What is the difference between hydraulic and mechanical decoilers?",
+            "a": "The mechanical series carries 500–2500 kg coils on a handwheel-tightened mandrel; the hydraulic series reaches 6–20 tons with hydraulic mandrel expansion and braking. For heavy coils and high line speeds, hydraulic is the safe choice."
+          },
+          {
+            "q": "What capacity should I choose?",
+            "a": "Leave one step of margin above your heaviest coil: 6 tons for a 5-ton coil, 10 tons for an 8-ton coil. We verify the choice against coil width and inner diameter (450–560 mm) together."
+          },
+          {
+            "q": "What does bidirectional operation provide?",
+            "a": "Since the shaft rotates both ways, the strip can be fed from the top or the bottom — you handle coils wound in either direction without changing your line layout."
+          },
+          {
+            "q": "When is a loading car necessary?",
+            "a": "Mounting heavy coils onto the shaft with a forklift is risky and slow; a hydraulic loading car aligns the coil and seats it on the mandrel in seconds. We recommend it as standard above 6 tons."
+          }
+        ],
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Mechanical", "Hydraulic"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Metal stamping shops", "Automotive suppliers", "Home appliances", "Electrical-electronics"],
+        "faq": [
+          {
+            "q": "What determines the feeding pitch accuracy?",
+            "a": "The servo motor–gearbox pair, the pressure of the Ø85 mm feed rollers and synchronization with the press cam. Settings are stored as recipes; with 250-die memory, no readjustment is needed after a die change."
+          },
+          {
+            "q": "What material range does it handle?",
+            "a": "0.4–4.0 mm thickness and strip widths up to 1600 mm, with a free feeding speed of 35 m/min. For material outside this range we size the line together with you."
+          },
+          {
+            "q": "When is the mini series sufficient?",
+            "a": "For narrow strip and small presses, the mini series saves floor space and cost; pitch accuracy is identical to the standard series. Strip width and coil weight define the limits."
+          },
+          {
+            "q": "How is press synchronization set up?",
+            "a": "The press cam signal is wired to the feeder; feeding is timed to the press dead center and a pilot-pin release is applied. Our team performs commissioning on site."
+          }
+        ],
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Value"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Press feeding", "Automotive suppliers", "Metal packaging", "General sheet processing"],
+        "faq": [
+          {
+            "q": "When do I need a straightener servo feeder?",
+            "a": "If coil set and curvature in the strip are degrading part quality, combining feeding and straightening in one frame saves both floor space and investment."
+          },
+          {
+            "q": "How many straightening rollers should I choose?",
+            "a": "Thin and surface-critical sheets need more rollers, thick sheets fewer. We help you pick the right variant among 7 / 9 / 11 / 13 rollers for your material."
+          },
+          {
+            "q": "How does it differ from a separate straightener and feeder?",
+            "a": "One frame, one control, one operator panel: the synchronization problem between two machines disappears, the line gets shorter, wiring and commissioning become simpler."
+          },
+          {
+            "q": "How is the straightening pressure adjusted?",
+            "a": "Pressure is set according to sheet thickness and stored in the recipe; the SCHNEIDER touchscreen keeps up to 250 die memories. It works up to 0.5–4 mm thickness and 1600 mm width."
+          }
+        ],
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Value"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"],
+        "faq": [
+          {
+            "q": "Compact line or separate machines?",
+            "a": "If space is tight and coils are up to 10 tons, combining decoiler, straightener and feeder on one platform solves installation, synchronization and floor-space issues at once. For larger capacities, separate machines offer flexibility."
+          },
+          {
+            "q": "Which configurations are available?",
+            "a": "We offer three setups: decoiler–straightener, straightener–feeder and decoiler–straightener–feeder. The choice depends on your press line and existing equipment."
+          },
+          {
+            "q": "What are the speed and accuracy figures?",
+            "a": "Free speed is 40 m/min and feeder accuracy is −0.1 mm; the 2+2 feed and 5 straightening rollers are Ø85 mm in diameter."
+          },
+          {
+            "q": "What coil and sheet sizes does it handle?",
+            "a": "Strip width 40–1300 mm, thickness 0.5–4 mm, coil weight 2500–10000 kg; inner diameter 450–560 mm, outer diameter up to 1600 mm."
+          }
+        ],
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Value"],

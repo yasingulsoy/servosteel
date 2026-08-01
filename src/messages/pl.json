@@ -437,7 +437,7 @@
     "ctaText": "Udostępnimy instalacje w zakładach podobnych do Twojego i zorganizujemy wizyty."
   },
   "videos": {
-    "metaTitle": "Filmy",
+    "metaTitle": "Filmy maszyn: nasze linie podczas pracy",
     "metaDesc": "Zobacz linie Servosteel w działaniu: prawdziwe filmy z linii cięcia, profilowania i systemów podawania do pras.",
     "eyebrow": "Z terenu",
     "title": "Zobacz nasze linie w działaniu",
@@ -463,7 +463,7 @@
     "ctaText": "Zaprojektujemy dla Twojego zakładu linię jak z filmu."
   },
   "contact": {
-    "metaTitle": "Kontakt",
+    "metaTitle": "Kontakt: wycena, wsparcie techniczne i wizyty",
     "metaDesc": "Kontakt Servosteel: siedziba Sancaktepe/Stambuł, +90 216 415 30 05, info@servosteel.com.tr. W sprawie ofert i pytań technicznych.",
     "eyebrow": "Skontaktuj się",
     "title": "Kontakt",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Przejdź do Formularza"
   },
   "quote": {
-    "metaTitle": "Zapytanie ofertowe",
+    "metaTitle": "Zapytanie ofertowe: wycena projektu w 48 godzin",
     "metaDesc": "Poproś o ofertę na linie profilujące, cięcia wzdłużnego i poprzecznego: prześlij dane produktu i wydajności, odpowiadamy w ciągu 48 godzin.",
     "eyebrow": "Odpowiedź w 48 godzin",
     "title": "Oferta dla Twojego projektu",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Podawanie do pras", "Linie cięcia wzdłużnego", "Linie cięcia poprzecznego", "Linie profilujące"],
+        "faq": [
+          {
+            "q": "Czym różnią się odwijaki hydrauliczne od mechanicznych?",
+            "a": "Seria mechaniczna obsługuje kręgi 500–2500 kg na trzpieniu rozprężanym pokrętłem; hydrauliczna sięga 6–20 ton z hydraulicznym rozprężaniem trzpienia i hamulcem. Przy ciężkich kręgach i szybkich liniach bezpiecznym wyborem jest hydraulika."
+          },
+          {
+            "q": "Jaki udźwig wybrać?",
+            "a": "Zostaw jeden stopień zapasu ponad najcięższy krąg: 6 ton dla kręgu 5-tonowego, 10 ton dla 8-tonowego. Wybór weryfikujemy razem z szerokością kręgu i średnicą wewnętrzną (450–560 mm)."
+          },
+          {
+            "q": "Co daje praca dwukierunkowa?",
+            "a": "Wał obraca się w obu kierunkach, więc taśmę można podawać od góry lub od dołu — pracujesz z kręgami nawiniętymi w dowolną stronę bez zmiany układu linii."
+          },
+          {
+            "q": "Kiedy potrzebny jest wózek załadowczy?",
+            "a": "Zakładanie ciężkich kręgów na wał wózkiem widłowym jest ryzykowne i powolne; hydrauliczny wózek załadowczy pozycjonuje krąg i osadza go na trzpieniu w kilka sekund. Powyżej 6 ton zalecamy go w standardzie."
+          }
+        ],
         "table": {
           "title": "Dane techniczne",
           "head": ["Parametr", "Mechaniczne", "Hydrauliczne"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Tłocznie metalu", "Dostawcy motoryzacyjni", "AGD", "Elektryka-elektronika"],
+        "faq": [
+          {
+            "q": "Co decyduje o dokładności kroku podawania?",
+            "a": "Para serwosilnik–przekładnia, docisk rolek podających Ø85 mm i synchronizacja z krzywką prasy. Ustawienia zapisują się jako receptury; pamięć 250 narzędzi eliminuje ponowną regulację po zmianie tłocznika."
+          },
+          {
+            "q": "Jaki zakres materiału obsługuje?",
+            "a": "Grubości 0,4–4,0 mm i szerokości taśmy do 1600 mm przy swobodnej prędkości podawania 35 m/min. Dla materiału spoza zakresu dobieramy linię wspólnie."
+          },
+          {
+            "q": "Kiedy wystarczy seria mini?",
+            "a": "Przy wąskiej taśmie i małych prasach seria mini oszczędza miejsce i koszty; dokładność kroku jest taka sama jak w serii standardowej. Granice wyznaczają szerokość taśmy i masa kręgu."
+          },
+          {
+            "q": "Jak konfiguruje się synchronizację z prasą?",
+            "a": "Sygnał krzywki prasy łączy się z podajnikiem; podawanie jest taktowane względem martwego punktu prasy, z luzowaniem pod piloty. Uruchomienie wykonuje nasz zespół na miejscu."
+          }
+        ],
         "table": {
           "title": "Dane techniczne",
           "head": ["Parametr", "Wartość"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Podawanie do pras", "Dostawcy motoryzacyjni", "Opakowania metalowe", "Ogólna obróbka blachy"],
+        "faq": [
+          {
+            "q": "Kiedy potrzebny jest podajnik serwo z prostownicą?",
+            "a": "Jeśli krzywizna kręgu i deformacje taśmy psują jakość detalu, połączenie podawania i prostowania w jednym korpusie oszczędza zarazem miejsce i inwestycję."
+          },
+          {
+            "q": "Ile rolek prostujących wybrać?",
+            "a": "Cienkie blachy o delikatnej powierzchni wymagają więcej rolek, grube — mniej. Spośród wariantów 7 / 9 / 11 / 13 rolek wspólnie dobieramy właściwy dla Twojego materiału."
+          },
+          {
+            "q": "Czym różni się od osobnej prostownicy i podajnika?",
+            "a": "Jeden korpus, jedno sterowanie, jeden panel operatora: znika problem synchronizacji dwóch maszyn, linia się skraca, okablowanie i uruchomienie stają się prostsze."
+          },
+          {
+            "q": "Jak reguluje się nacisk prostowania?",
+            "a": "Nacisk ustawia się według grubości blachy i zapisuje w recepturze; ekran dotykowy SCHNEIDER mieści do 250 narzędzi. Zakres pracy: grubość 0,5–4 mm, szerokość do 1600 mm."
+          }
+        ],
         "table": {
           "title": "Dane techniczne",
           "head": ["Parametr", "Wartość"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"],
+        "faq": [
+          {
+            "q": "Linia kompaktowa czy osobne maszyny?",
+            "a": "Gdy miejsca jest mało, a kręgi ważą do 10 ton, zebranie odwijaka, prostownicy i podajnika na jednej platformie rozwiązuje montaż, synchronizację i brak miejsca za jednym razem. Przy większych wydajnościach osobne maszyny dają elastyczność."
+          },
+          {
+            "q": "Jakie konfiguracje są dostępne?",
+            "a": "Oferujemy trzy układy: odwijak–prostownica, prostownica–podajnik oraz odwijak–prostownica–podajnik. Wybór zależy od linii prasy i posiadanego wyposażenia."
+          },
+          {
+            "q": "Jakie są parametry prędkości i dokładności?",
+            "a": "Prędkość swobodna to 40 m/min, dokładność podajnika −0,1 mm; rolki podające 2+2 i 5 rolek prostujących mają średnicę Ø85 mm."
+          },
+          {
+            "q": "Z jakimi wymiarami kręgów i blach pracuje?",
+            "a": "Szerokość taśmy 40–1300 mm, grubość 0,5–4 mm, masa kręgu 2500–10000 kg; średnica wewnętrzna 450–560 mm, zewnętrzna do 1600 mm."
+          }
+        ],
         "table": {
           "title": "Dane techniczne",
           "head": ["Parametr", "Wartość"],

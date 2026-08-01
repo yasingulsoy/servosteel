@@ -437,7 +437,7 @@
     "ctaText": "Condividiamo installazioni presso stabilimenti come il tuo e organizziamo visite."
   },
   "videos": {
-    "metaTitle": "Video",
+    "metaTitle": "Video macchine: le nostre linee in funzione",
     "metaDesc": "Guarda le linee Servosteel in funzione: video reali di linee di taglio, profilatura e sistemi di alimentazione presse.",
     "eyebrow": "Dal campo",
     "title": "Guarda le nostre linee in funzione",
@@ -463,7 +463,7 @@
     "ctaText": "Progettiamo per il tuo stabilimento una linea come quella del video."
   },
   "contact": {
-    "metaTitle": "Contatti",
+    "metaTitle": "Contatti: preventivi, supporto tecnico e visite",
     "metaDesc": "Contatti Servosteel: sede Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Per preventivi e domande tecniche.",
     "eyebrow": "Mettiti in contatto",
     "title": "Contatti",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Vai al Modulo"
   },
   "quote": {
-    "metaTitle": "Richiedi Preventivo",
+    "metaTitle": "Richiedi offerta: prezzo su misura in 48 ore",
     "metaDesc": "Richiedi un preventivo per linee di profilatura, taglio longitudinale e a misura: invia prodotto e capacità, rispondiamo entro 48 ore.",
     "eyebrow": "Risposta entro 48 ore",
     "title": "Preventivo per il tuo progetto",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Alimentazione presse", "Linee di taglio longitudinale", "Linee di taglio a misura", "Linee di profilatura"],
+        "faq": [
+          {
+            "q": "Che differenza c'è tra svolgitori idraulici e meccanici?",
+            "a": "La serie meccanica gestisce coil da 500–2500 kg con mandrino serrato a volantino; quella idraulica arriva a 6–20 tonnellate con espansione del mandrino e freno idraulici. Con coil pesanti e linee veloci, l'idraulico è la scelta sicura."
+          },
+          {
+            "q": "Quale capacità dovrei scegliere?",
+            "a": "Lasciate un gradino di margine sopra il coil più pesante: 6 tonnellate per un coil da 5, 10 per uno da 8. Verifichiamo la scelta insieme a larghezza e diametro interno (450–560 mm)."
+          },
+          {
+            "q": "Cosa offre il funzionamento bidirezionale?",
+            "a": "Poiché l'albero ruota in entrambi i sensi, il nastro può scorrere dall'alto o dal basso: lavorate coil avvolti in qualsiasi direzione senza modificare il layout della linea."
+          },
+          {
+            "q": "Quando serve il carrello di carico?",
+            "a": "Montare coil pesanti sull'albero con il muletto è rischioso e lento; il carrello idraulico allinea il coil e lo posiziona sul mandrino in pochi secondi. Lo consigliamo di serie oltre le 6 tonnellate."
+          }
+        ],
         "table": {
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Meccanico", "Idraulico"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Officine di stampaggio", "Fornitori automotive", "Elettrodomestici", "Elettrico-elettronico"],
+        "faq": [
+          {
+            "q": "Cosa determina la precisione del passo di alimentazione?",
+            "a": "La coppia servomotore-riduttore, la pressione dei rulli Ø85 mm e la sincronizzazione con la camma della pressa. Le impostazioni sono salvate come ricette; con memoria per 250 stampi non servono regolazioni dopo il cambio."
+          },
+          {
+            "q": "Quale gamma di materiale gestisce?",
+            "a": "Spessori 0,4–4,0 mm e larghezze nastro fino a 1600 mm, con velocità libera di 35 m/min. Per materiali fuori gamma dimensioniamo la linea insieme a voi."
+          },
+          {
+            "q": "Quando basta la serie mini?",
+            "a": "Con nastri stretti e presse piccole la serie mini fa risparmiare spazio e costi; la precisione del passo è identica alla serie standard. Larghezza del nastro e peso del coil ne definiscono i limiti."
+          },
+          {
+            "q": "Come si imposta la sincronizzazione con la pressa?",
+            "a": "Il segnale camma della pressa viene cablato all'alimentatore; l'avanzamento è temporizzato sul punto morto e viene applicato il rilascio per i piloti. La messa in servizio è eseguita in loco dal nostro team."
+          }
+        ],
         "table": {
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Valore"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Alimentazione presse", "Fornitori automotive", "Imballaggio metallico", "Lavorazione lamiera in generale"],
+        "faq": [
+          {
+            "q": "Quando serve un alimentatore servo con raddrizzatrice?",
+            "a": "Se la curvatura del coil e le deformazioni del nastro degradano la qualità del pezzo, unire alimentazione e raddrizzatura in un unico telaio fa risparmiare spazio e investimento insieme."
+          },
+          {
+            "q": "Quanti rulli raddrizzatori scegliere?",
+            "a": "Le lamiere sottili e delicate in superficie richiedono più rulli, quelle spesse meno. Tra le varianti a 7 / 9 / 11 / 13 rulli scegliamo insieme quella adatta al vostro materiale."
+          },
+          {
+            "q": "In cosa differisce da raddrizzatrice e alimentatore separati?",
+            "a": "Un telaio, un controllo, un pannello operatore: sparisce il problema di sincronizzazione tra due macchine, la linea si accorcia, cablaggio e avviamento si semplificano."
+          },
+          {
+            "q": "Come si regola la pressione di raddrizzatura?",
+            "a": "La pressione si regola in base allo spessore e si salva nella ricetta; il touchscreen SCHNEIDER memorizza fino a 250 stampi. Lavora con spessori 0,5–4 mm e larghezze fino a 1600 mm."
+          }
+        ],
         "table": {
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Valore"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["PMI di stampaggio", "Fornitori automotive", "Attrezzerie", "Produzione conto terzi"],
+        "faq": [
+          {
+            "q": "Linea compatta o macchine separate?",
+            "a": "Se lo spazio è poco e i coil arrivano a 10 tonnellate, riunire svolgitore, raddrizzatrice e alimentatore su una piattaforma risolve installazione, sincronizzazione e ingombro in una volta. Per capacità maggiori le macchine separate danno flessibilità."
+          },
+          {
+            "q": "Quali configurazioni sono disponibili?",
+            "a": "Offriamo tre allestimenti: svolgitore–raddrizzatrice, raddrizzatrice–alimentatore e svolgitore–raddrizzatrice–alimentatore. La scelta dipende dalla vostra linea pressa e dalle attrezzature esistenti."
+          },
+          {
+            "q": "Quali sono velocità e precisione?",
+            "a": "La velocità libera è 40 m/min e la precisione dell'alimentatore −0,1 mm; i rulli di alimentazione 2+2 e i 5 di raddrizzatura sono Ø85 mm."
+          },
+          {
+            "q": "Con quali misure di coil e lamiera lavora?",
+            "a": "Larghezza nastro 40–1300 mm, spessore 0,5–4 mm, peso coil 2500–10000 kg; diametro interno 450–560 mm, esterno fino a 1600 mm."
+          }
+        ],
         "table": {
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Valore"],

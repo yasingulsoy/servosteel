@@ -437,7 +437,7 @@
     "ctaText": "Wir zeigen Installationen bei Herstellern wie Ihnen und organisieren Werksbesuche."
   },
   "videos": {
-    "metaTitle": "Videos",
+    "metaTitle": "Maschinenvideos: unsere Anlagen im Einsatz",
     "metaDesc": "Servosteel-Anlagen im Einsatz: echte Praxisvideos von Längsteilanlagen, Querteilanlagen, Rollforming und Pressenzuführsystemen.",
     "eyebrow": "Aus der Praxis",
     "title": "Sehen Sie unsere Anlagen im Einsatz",
@@ -463,7 +463,7 @@
     "ctaText": "Wir projektieren eine Anlage wie im Video für Ihr Werk."
   },
   "contact": {
-    "metaTitle": "Kontakt",
+    "metaTitle": "Kontakt: Angebot, technischer Support & Werksbesuch",
     "metaDesc": "Servosteel Kontakt: Zentrale Sancaktepe/Istanbul, +90 216 415 30 05, info@servosteel.com.tr. Für Angebote und technische Fragen.",
     "eyebrow": "Kontakt aufnehmen",
     "title": "Kontakt",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Zum Angebotsformular"
   },
   "quote": {
-    "metaTitle": "Angebot anfordern",
+    "metaTitle": "Angebot anfordern: Projektpreis in 48 Stunden",
     "metaDesc": "Angebot für Rollform-, Längsteil- und Querteilanlagen anfordern: Produkt- und Kapazitätsdaten senden, Antwort innerhalb von 48 Stunden.",
     "eyebrow": "Antwort in 48 Stunden",
     "title": "Angebot für Ihr Projekt",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Pressenzuführung", "Längsteilanlagen", "Querteilanlagen", "Rollformanlagen"],
+        "faq": [
+          {
+            "q": "Was unterscheidet hydraulische von mechanischen Abwickelhaspeln?",
+            "a": "Die mechanische Serie trägt Coils von 500–2500 kg auf einem per Handrad gespannten Dorn; die hydraulische Serie reicht bis 6–20 Tonnen mit hydraulischer Dornspreizung und Bremse. Bei schweren Coils und hohen Liniengeschwindigkeiten ist Hydraulik die sichere Wahl."
+          },
+          {
+            "q": "Welche Kapazität sollte ich wählen?",
+            "a": "Planen Sie eine Stufe Reserve über Ihrem schwersten Coil ein: 6 Tonnen für ein 5-Tonnen-Coil, 10 Tonnen für ein 8-Tonnen-Coil. Wir prüfen die Wahl gemeinsam anhand von Coilbreite und Innendurchmesser (450–560 mm)."
+          },
+          {
+            "q": "Was bringt der Zweirichtungsbetrieb?",
+            "a": "Da die Welle in beide Richtungen dreht, kann das Band von oben oder unten ablaufen — Sie verarbeiten Coils beider Wickelrichtungen, ohne das Linienlayout zu ändern."
+          },
+          {
+            "q": "Wann ist ein Ladewagen erforderlich?",
+            "a": "Schwere Coils per Stapler auf die Welle zu setzen ist riskant und langsam; der hydraulische Ladewagen richtet das Coil aus und setzt es in Sekunden auf den Dorn. Ab 6 Tonnen empfehlen wir ihn als Standard."
+          }
+        ],
         "table": {
           "title": "Technische Daten",
           "head": ["Merkmal", "Mechanisch", "Hydraulisch"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Stanzbetriebe", "Automobilzulieferer", "Hausgeräte", "Elektro-Elektronik"],
+        "faq": [
+          {
+            "q": "Was bestimmt die Genauigkeit des Vorschubschritts?",
+            "a": "Das Servomotor-Getriebe-Paar, der Anpressdruck der Ø85-mm-Vorschubrollen und die Synchronisation mit dem Pressennocken. Einstellungen werden als Rezepte gespeichert; mit 250 Werkzeugspeichern entfällt das Nachjustieren beim Werkzeugwechsel."
+          },
+          {
+            "q": "Welchen Materialbereich deckt er ab?",
+            "a": "0,4–4,0 mm Dicke und Bandbreiten bis 1600 mm bei 35 m/min freier Vorschubgeschwindigkeit. Für Material außerhalb dieses Bereichs dimensionieren wir die Linie gemeinsam."
+          },
+          {
+            "q": "Wann genügt die Mini-Serie?",
+            "a": "Bei schmalem Band und kleinen Pressen spart die Mini-Serie Platz und Kosten; die Schrittgenauigkeit ist identisch mit der Standardserie. Bandbreite und Coilgewicht setzen die Grenzen."
+          },
+          {
+            "q": "Wie wird die Pressensynchronisation eingerichtet?",
+            "a": "Das Nockensignal der Presse wird mit dem Vorschub verdrahtet; der Vorschub wird auf den Totpunkt der Presse getaktet, mit Freigabe für die Pilotstifte. Die Inbetriebnahme übernimmt unser Team vor Ort."
+          }
+        ],
         "table": {
           "title": "Technische Daten",
           "head": ["Merkmal", "Wert"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Pressenzuführung", "Automobilzulieferer", "Metallverpackung", "Allgemeine Blechverarbeitung"],
+        "faq": [
+          {
+            "q": "Wann brauche ich einen Richt-Servovorschub?",
+            "a": "Wenn Coilkrümmung und Verwerfungen im Band die Teilequalität beeinträchtigen, spart die Kombination von Vorschub und Richten in einem Rahmen Platz und Investition zugleich."
+          },
+          {
+            "q": "Wie viele Richtrollen sollte ich wählen?",
+            "a": "Dünne und oberflächenkritische Bleche brauchen mehr Rollen, dicke weniger. Aus den Varianten mit 7 / 9 / 11 / 13 Rollen wählen wir gemeinsam die passende für Ihr Material."
+          },
+          {
+            "q": "Was ist der Unterschied zu getrenntem Richtapparat und Vorschub?",
+            "a": "Ein Rahmen, eine Steuerung, ein Bedienpanel: Das Synchronisationsproblem zwischen zwei Maschinen entfällt, die Linie wird kürzer, Verkabelung und Inbetriebnahme werden einfacher."
+          },
+          {
+            "q": "Wie wird der Richtdruck eingestellt?",
+            "a": "Der Druck wird nach Blechdicke eingestellt und im Rezept gespeichert; der SCHNEIDER-Touchscreen hält bis zu 250 Werkzeugspeicher. Einsatzbereich: 0,5–4 mm Dicke, bis 1600 mm Breite."
+          }
+        ],
         "table": {
           "title": "Technische Daten",
           "head": ["Merkmal", "Wert"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"],
+        "faq": [
+          {
+            "q": "Kompaktanlage oder Einzelmaschinen?",
+            "a": "Bei knappem Platz und Coils bis 10 Tonnen löst die Kombination von Haspel, Richtapparat und Vorschub auf einer Plattform Aufstellung, Synchronisation und Platzfrage auf einmal. Bei größeren Kapazitäten bieten Einzelmaschinen mehr Flexibilität."
+          },
+          {
+            "q": "Welche Konfigurationen gibt es?",
+            "a": "Drei Aufbauten: Haspel–Richtapparat, Richtapparat–Vorschub und Haspel–Richtapparat–Vorschub. Die Wahl richtet sich nach Ihrer Pressenlinie und vorhandener Ausrüstung."
+          },
+          {
+            "q": "Wie sind Geschwindigkeit und Genauigkeit?",
+            "a": "Die freie Geschwindigkeit beträgt 40 m/min, die Vorschubgenauigkeit −0,1 mm; die 2+2 Vorschub- und 5 Richtrollen haben Ø85 mm."
+          },
+          {
+            "q": "Mit welchen Coil- und Blechmaßen arbeitet sie?",
+            "a": "Bandbreite 40–1300 mm, Dicke 0,5–4 mm, Coilgewicht 2500–10000 kg; Innendurchmesser 450–560 mm, Außendurchmesser bis 1600 mm."
+          }
+        ],
         "table": {
           "title": "Technische Daten",
           "head": ["Merkmal", "Wert"],

@@ -437,7 +437,7 @@
     "ctaText": "Compartiremos instalaciones en plantas como la suya y organizaremos visitas."
   },
   "videos": {
-    "metaTitle": "Vídeos",
+    "metaTitle": "Vídeos de máquinas: nuestras líneas en marcha",
     "metaDesc": "Vea las líneas Servosteel en funcionamiento: vídeos reales de líneas de corte, perfilado y sistemas de alimentación de prensas.",
     "eyebrow": "Desde el terreno",
     "title": "Vea nuestras líneas en funcionamiento",
@@ -463,7 +463,7 @@
     "ctaText": "Proyectemos para su planta una línea como la del vídeo."
   },
   "contact": {
-    "metaTitle": "Contacto",
+    "metaTitle": "Contacto: oferta, soporte técnico y visitas",
     "metaDesc": "Contacto Servosteel: sede en Sancaktepe/Estambul, +90 216 415 30 05, info@servosteel.com.tr. Para presupuestos y consultas técnicas.",
     "eyebrow": "Contacte con nosotros",
     "title": "Contacto",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Ir al Formulario"
   },
   "quote": {
-    "metaTitle": "Pedir Presupuesto",
+    "metaTitle": "Solicitar oferta: precio a medida en 48 horas",
     "metaDesc": "Solicite presupuesto para líneas de perfilado, corte longitudinal y corte a medida: envíe producto y capacidad, respondemos en 48 horas.",
     "eyebrow": "Respuesta en 48 horas",
     "title": "Presupuesto para su proyecto",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Alimentación de prensas", "Líneas de corte longitudinal", "Líneas de corte a medida", "Líneas de perfilado"],
+        "faq": [
+          {
+            "q": "¿Cuál es la diferencia entre desbobinadoras hidráulicas y mecánicas?",
+            "a": "La serie mecánica maneja bobinas de 500–2500 kg con mandril apretado por volante; la hidráulica llega a 6–20 toneladas con expansión de mandril y freno hidráulicos. Con bobinas pesadas y líneas rápidas, la hidráulica es la opción segura."
+          },
+          {
+            "q": "¿Qué capacidad debo elegir?",
+            "a": "Deje un escalón de margen sobre su bobina más pesada: 6 toneladas para una bobina de 5, 10 para una de 8. Verificamos la elección junto con el ancho y el diámetro interior (450–560 mm)."
+          },
+          {
+            "q": "¿Qué aporta el funcionamiento bidireccional?",
+            "a": "Como el eje gira en ambos sentidos, el fleje puede alimentarse por arriba o por abajo: trabaja con bobinas enrolladas en cualquier dirección sin cambiar la disposición de la línea."
+          },
+          {
+            "q": "¿Cuándo es necesario el carro de carga?",
+            "a": "Montar bobinas pesadas en el eje con carretilla es arriesgado y lento; el carro hidráulico alinea la bobina y la asienta en el mandril en segundos. Lo recomendamos como estándar por encima de 6 toneladas."
+          }
+        ],
         "table": {
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Mecánico", "Hidráulico"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Talleres de estampación", "Proveedores de automoción", "Electrodomésticos", "Electricidad-electrónica"],
+        "faq": [
+          {
+            "q": "¿Qué determina la precisión del paso de alimentación?",
+            "a": "El conjunto servomotor-reductor, la presión de los rodillos de Ø85 mm y la sincronización con la leva de la prensa. Los ajustes se guardan como recetas; con memoria para 250 troqueles no hay que reajustar tras el cambio."
+          },
+          {
+            "q": "¿Qué rango de material admite?",
+            "a": "Espesores de 0,4–4,0 mm y anchos de fleje hasta 1600 mm, con velocidad libre de 35 m/min. Para material fuera de este rango dimensionamos la línea con usted."
+          },
+          {
+            "q": "¿Cuándo basta la serie mini?",
+            "a": "Con fleje estrecho y prensas pequeñas, la serie mini ahorra espacio y coste; la precisión de paso es idéntica a la serie estándar. El ancho del fleje y el peso de la bobina marcan los límites."
+          },
+          {
+            "q": "¿Cómo se configura la sincronización con la prensa?",
+            "a": "La señal de leva de la prensa se cablea al alimentador; la alimentación se sincroniza con el punto muerto y se aplica la liberación para los pilotos. Nuestro equipo realiza la puesta en marcha in situ."
+          }
+        ],
         "table": {
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Valor"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Alimentación de prensas", "Proveedores de automoción", "Envase metálico", "Chapa en general"],
+        "faq": [
+          {
+            "q": "¿Cuándo necesito un alimentador servo con enderezadora?",
+            "a": "Si la curvatura de bobina y las deformaciones del fleje degradan la calidad de la pieza, combinar alimentación y enderezado en un solo bastidor ahorra espacio e inversión a la vez."
+          },
+          {
+            "q": "¿Cuántos rodillos enderezadores debo elegir?",
+            "a": "Las chapas finas y de superficie delicada piden más rodillos; las gruesas, menos. Entre las variantes de 7 / 9 / 11 / 13 rodillos elegimos juntos la adecuada para su material."
+          },
+          {
+            "q": "¿En qué se diferencia de enderezadora y alimentador separados?",
+            "a": "Un bastidor, un control, un panel de operador: desaparece el problema de sincronización entre dos máquinas, la línea se acorta y el cableado y la puesta en marcha se simplifican."
+          },
+          {
+            "q": "¿Cómo se ajusta la presión de enderezado?",
+            "a": "La presión se ajusta según el espesor y se guarda en la receta; la pantalla táctil SCHNEIDER almacena hasta 250 troqueles. Trabaja con 0,5–4 mm de espesor y hasta 1600 mm de ancho."
+          }
+        ],
         "table": {
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Valor"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"],
+        "faq": [
+          {
+            "q": "¿Línea compacta o máquinas separadas?",
+            "a": "Si el espacio es limitado y las bobinas llegan hasta 10 toneladas, reunir desbobinadora, enderezadora y alimentador en una plataforma resuelve instalación, sincronización y espacio de una vez. Para capacidades mayores, las máquinas separadas dan flexibilidad."
+          },
+          {
+            "q": "¿Qué configuraciones existen?",
+            "a": "Ofrecemos tres montajes: desbobinadora–enderezadora, enderezadora–alimentador y desbobinadora–enderezadora–alimentador. La elección depende de su línea de prensa y del equipo existente."
+          },
+          {
+            "q": "¿Cuáles son las cifras de velocidad y precisión?",
+            "a": "La velocidad libre es de 40 m/min y la precisión del alimentador de −0,1 mm; los rodillos de alimentación 2+2 y los 5 de enderezado son de Ø85 mm."
+          },
+          {
+            "q": "¿Con qué medidas de bobina y chapa trabaja?",
+            "a": "Ancho de fleje 40–1300 mm, espesor 0,5–4 mm, peso de bobina 2500–10000 kg; diámetro interior 450–560 mm, exterior hasta 1600 mm."
+          }
+        ],
         "table": {
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Valor"],

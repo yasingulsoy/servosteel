@@ -3,13 +3,9 @@
 import { useEffect } from "react";
 
 /**
- * "Akla gelmeyecek" sekme davranışları:
- *
- * 1) Sekme arka plana düşünce TÜM videolar durur — arka planda boşa
- *    çözümleme/pil tüketimi olmaz. Geri dönünce yalnızca o an görünüm
- *    alanında duran videolar kaldığı yerden sürer.
- * 2) Sekme başlığının önüne ⏸ gelir — kullanıcı onlarca sekme arasında
- *    "duraklattığı" siteyi tek bakışta bulur. Dil bağımsız (simge).
+ * Sekme arka plana düşünce TÜM videolar durur — arka planda boşa
+ * çözümleme/pil tüketimi olmaz. Geri dönünce yalnızca o an görünüm
+ * alanında duran videolar kaldığı yerden sürer.
  */
 export function PageAttention() {
   useEffect(() => {
@@ -26,9 +22,7 @@ export function PageAttention() {
             v.pause();
           }
         });
-        if (!document.title.startsWith("⏸ ")) document.title = `⏸ ${document.title}`;
       } else {
-        if (document.title.startsWith("⏸ ")) document.title = document.title.slice(2);
         wasPlaying.forEach((v) => {
           const r = v.getBoundingClientRect();
           const inView = r.bottom > 0 && r.top < window.innerHeight;

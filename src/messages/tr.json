@@ -437,7 +437,7 @@
     "ctaText": "Size benzer üretim yapan tesislerdeki kurulumlarımızı ve saha ziyareti imkanlarını paylaşalım."
   },
   "videos": {
-    "metaTitle": "Videolar",
+    "metaTitle": "Makine Videoları: Hatlarımız Sahada Çalışırken",
     "metaDesc": "Servosteel hatlarını çalışırken izleyin: dilme hattı, boy kesme, roll form üretimi ve pres besleme sistemlerinden gerçek saha videoları.",
     "eyebrow": "Sahadan görüntüler",
     "title": "Hatlarımızı çalışırken izleyin",
@@ -463,7 +463,7 @@
     "ctaText": "Videoda gördüğünüz hatların benzerini tesisiniz için projelendirelim."
   },
   "contact": {
-    "metaTitle": "İletişim",
+    "metaTitle": "İletişim: Teklif, Teknik Destek ve Saha Ziyareti",
     "metaDesc": "Servosteel iletişim: Sancaktepe/İstanbul merkez, +90 216 415 30 05, info@servosteel.com.tr. Teklif ve teknik sorularınız için bize ulaşın.",
     "eyebrow": "Bize ulaşın",
     "title": "İletişim",
@@ -486,7 +486,7 @@
     "quoteBoxCta": "Teklif Formuna Git"
   },
   "quote": {
-    "metaTitle": "Teklif Al",
+    "metaTitle": "Teklif Al: 48 Saatte Projenize Özel Fiyat",
     "metaDesc": "Roll form, dilme ve boy kesme hatları için teklif isteyin: ürün ve kapasite bilgilerinizi iletin, mühendislik ekibimiz 48 saat içinde dönüş yapsın.",
     "eyebrow": "48 saatte dönüş",
     "title": "Projeniz için teklif alın",
@@ -784,6 +784,24 @@
           }
         ],
         "sectors": ["Pres besleme", "Dilme hatları", "Boy kesme hatları", "Roll form hatları"],
+        "faq": [
+          {
+            "q": "Hidrolik ve mekanik rulo açıcı arasındaki fark nedir?",
+            "a": "Mekanik seri 500–2500 kg ruloları volanla sıkılan göbekle taşır; hidrolik seri 6–20 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo ve yüksek hat hızında güvenli seçim hidroliktir."
+          },
+          {
+            "q": "Kaç ton kapasiteli açıcı seçmeliyim?",
+            "a": "En ağır rulonuzun üzerine bir kademe pay bırakın: 5 tonluk rulo için 6 ton, 8 tonluk için 10 ton gibi. Seçimi rulo genişliği ve iç çapla (450–560 mm) birlikte doğruluyoruz."
+          },
+          {
+            "q": "Çift yönlü çalışma ne sağlar?",
+            "a": "Şaft iki yöne de dönebildiğinden sac üstten veya alttan verilebilir; farklı sarım yönündeki rulolarla hat yerleşimini değiştirmeden çalışırsınız."
+          },
+          {
+            "q": "Yükleme arabası ne zaman gerekli olur?",
+            "a": "Ağır rulolarda forkliftle şafta rulo takmak riskli ve yavaştır; hidrolik yükleme arabası ruloyu hizalar ve göbeğe saniyeler içinde oturtur. 6 ton üzeri hatlarda standart öneririz."
+          }
+        ],
         "table": {
           "title": "Teknik özellikler",
           "head": ["Özellik", "Mekanik", "Hidrolik"],
@@ -817,6 +835,24 @@
           }
         ],
         "sectors": ["Metal pres atölyeleri", "Otomotiv yan sanayi", "Beyaz eşya", "Elektrik-elektronik"],
+        "faq": [
+          {
+            "q": "Besleme adımının hassasiyetini ne belirler?",
+            "a": "Servo motor–redüktör çifti, Ø85 mm besleme silindirlerinin baskısı ve pres kamıyla senkron çalışma. Ayarlar reçete olarak saklanır; 250 kalıp hafızasıyla kalıp değişiminde yeniden ayar gerekmez."
+          },
+          {
+            "q": "Hangi sac aralığında çalışır?",
+            "a": "0,4–4,0 mm kalınlık ve 1600 mm'ye kadar şerit genişliğinde; serbest besleme hızı 35 m/dk'dır. Aralık dışı malzeme için hattı birlikte boyutlandırıyoruz."
+          },
+          {
+            "q": "Mini seri hangi işler için yeterli?",
+            "a": "Dar şerit ve küçük preslerde mini seri yerden ve maliyetten kazandırır; adım hassasiyeti standart seriyle aynıdır. Sınırları şerit genişliği ve rulo ağırlığı belirler."
+          },
+          {
+            "q": "Presle senkronizasyon nasıl kurulur?",
+            "a": "Presin kam sinyali sürücüye bağlanır; besleme, presin ölü noktasına göre zamanlanır ve pilot pimler için bırakma (release) yapılır. Devreye almayı sahada ekibimiz gerçekleştirir."
+          }
+        ],
         "table": {
           "title": "Teknik özellikler",
           "head": ["Özellik", "Değer"],
@@ -850,6 +886,24 @@
           }
         ],
         "sectors": ["Pres besleme", "Otomotiv yan sanayi", "Metal ambalaj", "Genel sac işleme"],
+        "faq": [
+          {
+            "q": "Doğrultmalı servo sürücü ne zaman gerekir?",
+            "a": "Rulodan gelen sacdaki sarım izi ve çarpıklık parça kalitesini bozuyorsa beslemeyle doğrultmayı tek gövdede birleştirmek hem yerden hem yatırımdan kazandırır."
+          },
+          {
+            "q": "Kaç doğrultma silindiri seçmeliyim?",
+            "a": "İnce ve yüzeyi hassas saclar daha çok, kalın saclar daha az silindir ister. 7 / 9 / 11 / 13 silindirli varyantlardan malzemenize uygununu birlikte belirliyoruz."
+          },
+          {
+            "q": "Ayrı doğrultucu ve sürücü kullanmaktan farkı nedir?",
+            "a": "Tek şase, tek kontrol, tek operatör paneli: iki makinenin senkron sorunu ortadan kalkar, hat boyu kısalır, kablolama ve devreye alma sadeleşir."
+          },
+          {
+            "q": "Doğrultma baskısı nasıl ayarlanır?",
+            "a": "Baskı, sac kalınlığına göre ayarlanır ve reçeteye kaydedilir; SCHNEIDER dokunmatik ekran 250 kalıba kadar hafıza tutar. 0,5–4 mm kalınlık ve 1600 mm genişliğe kadar çalışır."
+          }
+        ],
         "table": {
           "title": "Teknik özellikler",
           "head": ["Özellik", "Değer"],
@@ -882,6 +936,24 @@
           }
         ],
         "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"],
+        "faq": [
+          {
+            "q": "Kompakt hat mı, ayrı makineler mi tercih etmeliyim?",
+            "a": "Alan darsa ve rulo 10 tona kadarsa açıcı, doğrultucu ve sürücüyü tek platformda toplamak kurulumu, senkronu ve yer sorununu tek seferde çözer. Daha büyük kapasitelerde ayrı makineler esneklik sağlar."
+          },
+          {
+            "q": "Hangi konfigürasyonlar mevcut?",
+            "a": "Üç kurulum sunuyoruz: açıcı–doğrultucu, doğrultucu–sürücü ve açıcı–doğrultucu–sürücü. Seçim, pres hattınıza ve mevcut ekipmanınıza göre yapılır."
+          },
+          {
+            "q": "Hız ve hassasiyet değerleri nedir?",
+            "a": "Serbest hız 40 m/dk, sürücü hassasiyeti −0,1 mm'dir; 2+2 besleme ve 5 doğrultma silindiri Ø85 mm çapındadır."
+          },
+          {
+            "q": "Hangi rulo ve sac ölçüleriyle çalışır?",
+            "a": "40–1300 mm şerit genişliği, 0,5–4 mm kalınlık, 2500–10000 kg rulo ağırlığı; iç çap 450–560 mm, dış çap 1600 mm'ye kadar."
+          }
+        ],
         "table": {
           "title": "Teknik özellikler",
           "head": ["Özellik", "Değer"],
