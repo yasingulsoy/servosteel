@@ -9,6 +9,7 @@ import { getAkademiUi } from "@/lib/akademi-ui";
 export function SiteFooter() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
+  const tCalc = useTranslations("calc");
   const ak = getAkademiUi(useLocale());
 
   const productLinks = [
@@ -21,6 +22,7 @@ export function SiteFooter() {
   const companyLinks = [
     { label: tn("about"), href: "/hakkimizda" },
     { label: ak.nav, href: "/akademi" },
+    { label: tCalc("title"), href: "/hesaplayicilar" },
     { label: t("refs"), href: "/referanslar" },
     { label: t("videos"), href: "/videolar" },
     { label: tn("contact"), href: "/iletisim" },

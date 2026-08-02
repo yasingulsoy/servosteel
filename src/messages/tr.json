@@ -436,26 +436,88 @@
     "ctaTitle": "Sektörünüzden referans isteyin",
     "ctaText": "Size benzer üretim yapan tesislerdeki kurulumlarımızı ve saha ziyareti imkanlarını paylaşalım."
   },
+  "calc": {
+    "metaTitle": "Hesaplama Araçları: Rulo Ağırlığı, Besleme ve Dilme Verimi",
+    "metaDesc": "Ücretsiz mühendislik hesaplayıcıları: rulo ağırlığı ve uzunluğu, pres besleme kapasitesi, dilme fire oranı. Kayıt gerekmez.",
+    "eyebrow": "Mühendislik araçları",
+    "title": "Hesaplama araçları",
+    "desc": "Teklif beklemeden hızlı ön hesap yapın: rulo ağırlığı, saatlik parça çıktısı ve dilme fire oranı. Tüm sonuçlar geometriden türetilir.",
+    "disclaimer": "Bu araçlar ön değerlendirme içindir; sonuçlar geometri ve malzeme yoğunluğundan hesaplanır. Kesin hat boyutlandırması için mühendislik ekibimize danışın.",
+    "material": "Malzeme",
+    "steel": "Çelik",
+    "stainless": "Paslanmaz",
+    "aluminium": "Alüminyum",
+    "copper": "Bakır",
+    "coilTitle": "Rulo ağırlığı ve uzunluğu",
+    "od": "Dış çap",
+    "id": "İç çap (göbek)",
+    "cwidth": "Rulo genişliği",
+    "thickness": "Sac kalınlığı",
+    "weight": "Rulo ağırlığı",
+    "clength": "Şerit uzunluğu",
+    "turns": "Sarım sayısı",
+    "feedTitle": "Pres besleme çıktısı",
+    "feedLen": "Adım boyu",
+    "spm": "Pres strok/dk",
+    "perStroke": "Strok başına parça",
+    "coilLen": "Rulo uzunluğu (ops.)",
+    "parts": "Saatlik parça",
+    "speed": "Ortalama hat hızı",
+    "metersH": "Saatlik tüketim",
+    "coilHours": "Rulo ömrü",
+    "pcsH": "adet/saat",
+    "hour": "saat",
+    "feedNote": "Hat hızı ORTALAMA ilerlemedir; pres her strokta durduğu için sürücünün anlık tepe hızı daha yüksektir. Sürücü seçiminde tepe hız esas alınır.",
+    "yieldTitle": "Dilme verimi",
+    "coilWidth": "Ana rulo genişliği",
+    "stripWidth": "Şerit genişliği",
+    "trim": "Toplam kenar traşı",
+    "strips": "Şerit adedi",
+    "wastePct": "Fire oranı",
+    "waste": "Fire genişliği",
+    "yieldNote": "Şerit sayısı tam sayıya yuvarlanır; artan genişlik kenar traşıyla birlikte fireye eklenir. Şerit genişliğini ayarlayarak fireyi düşürebilirsiniz.",
+    "invalid": "Girilen değerler geçersiz."
+  },
   "videos": {
     "metaTitle": "Makine Videoları: Hatlarımız Sahada Çalışırken",
     "metaDesc": "Servosteel hatlarını çalışırken izleyin: dilme hattı, boy kesme, roll form üretimi ve pres besleme sistemlerinden gerçek saha videoları.",
     "eyebrow": "Sahadan görüntüler",
     "title": "Hatlarımızı çalışırken izleyin",
     "desc": "Broşür vaadi değil, çalışan hat: kurulumlardan, fabrika testlerinden ve müşteri sahalarından gerçek görüntüler.",
-    "items": [
-      {
-        "title": "Pres Besleme Sistemleri",
-        "text": "Rulo açıcı, doğrultucu ve servo sürücünün pres hattıyla senkron çalışması."
-      },
-      {
-        "title": "Boy Kesme Hattı — Test Aşaması",
-        "text": "Sevkiyat öncesi fabrika testinde boy kesme hattının çalışması."
-      },
-      {
-        "title": "Asansör Bağlantı Elemanları Üretimi",
-        "text": "Pres besleme sistemiyle asansör komponenti üretimi."
-      }
-    ],
+    "groups": {
+      "slitting": "Rulo Dilme Hatları",
+      "ctl": "Boy Kesme Hatları",
+      "rollform": "Roll Form Hatları",
+      "solar": "Solar Profil Hatları",
+      "feeding": "Pres Besleme Sistemleri",
+      "machines": "Makineler"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Rulo dilme hattı — açıcıdan sarıcıya komple hat",
+      "GEYcBSPqutQ": "Dilme hattı — bıçak grubu ve gergin sarma",
+      "hc_Znq2u8MI": "Dilme ve delik delme hattı bir arada",
+      "JOHZwMBLqKo": "Dilme ile boy kesme tek hatta",
+      "4QETxHS-CD4": "Boy kesme hattı — komple hat çalışması",
+      "mwZx6X1mV0c": "Boy kesme — giyotin ve istifleme ünitesi",
+      "H-h-IF4QbUI": "Kenar ve boy kesme hattı",
+      "_lOTZE21aGE": "Klima santrali sac işleme hattı",
+      "qmWM1NgcACw": "Yapısal U-C profil hattı — 350 × 5 mm",
+      "NR25bt36uQg": "HMI ve üretim raporlama yazılımı",
+      "UCeR9epppK8": "Otomatik istifleyici — U ve C profil",
+      "MaJswAJo8JQ": "Kablo kanalı üretim hattı",
+      "J-O8xfI2ovA": "Ağır hizmet raf profili hattı",
+      "3xmcJvv6LNc": "Solar panel profil hattı",
+      "5vVTpg3hltE": "Sigma ve solar C profil hattı",
+      "tm520w7WsBI": "Solar C profil üretim hattı",
+      "2tgCtC8n_1E": "Pres besleme sistemleri — genel tanıtım",
+      "ONmiUo8vtvk": "Kompakt hat — açıcı, doğrultucu ve sürücü",
+      "a7W3BzFYiow": "Sahada pres besleme — otomotiv presi",
+      "7RcuUmfN7QE": "Kompakt hat testi — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 doğrultmalı servo sürücü + 2,5 t açıcı",
+      "bc5nAkQXJTw": "MDS302 mini doğrultmalı sürücü + SRV500 açıcı",
+      "AqcEyDbbWtA": "Hidrolik rulo açıcı — fren balata sistemi",
+      "v9_1snhusMY": "Hidrolik rulo sarıcı"
+    },
     "bannerTitle": "109 video, 2,9 B abone",
     "bannerText": "Dilme hattından HMI ve raporlama yazılımına kadar tüm arşiv YouTube kanalımızda — yeni kurulum videoları düzenli olarak ekleniyor.",
     "bannerCta": "YouTube Kanalına Git",
@@ -605,6 +667,20 @@
           "Kesme ünitesi (hat sonu makas)",
           "Çıkış konveyörü ve istifleme"
         ],
+        "faq": [
+          {
+            "q": "Delikli ve deliksiz kanalı aynı hatta üretebilir miyim?",
+            "a": "Evet. Delik grubu hatta entegre edilir; reçete değiştirilerek delikli veya düz kanal üretilir. Delik deseni ve adımı sipariş bazında kalıplanır."
+          },
+          {
+            "q": "Kanal ölçüsü değişince ne kadar sürede geçiş yapılır?",
+            "a": "Genişlik ayarı kaset yapısıyla yapılır; operatör ölçüyü panelden seçer, mekanik ayar dakikalar sürer. Yükseklik değişimi merdane grubu değişimi gerektirebilir."
+          },
+          {
+            "q": "Hangi sac türleriyle çalışır?",
+            "a": "DKP, galvaniz, alüminyum ve paslanmaz sac işlenir. Galvaniz kaplamayı korumak için merdane yüzeyleri ve baskı değerleri malzemeye göre ayarlanır."
+          }
+        ],
         "sectors": ["Elektrik altyapı", "Veri merkezleri", "Endüstriyel tesisler", "AVM ve bina projeleri"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Roll form makinesi",
           "Uçan kesme (flying shear)",
           "Otomatik istifleme"
+        ],
+        "faq": [
+          {
+            "q": "Aynı hatta hem C hem U profil üretebilir miyim?",
+            "a": "Evet; kaset değişimiyle C, U ve sigma kesitleri aynı şasede üretilir. Sık geçiş yapılacaksa hızlı kaset değişimli konfigürasyon öneriyoruz."
+          },
+          {
+            "q": "Delik ve slot delme hatta mı yapılıyor?",
+            "a": "Hidrolik pres ünitesi hatta entegre edilir; montaj delikleri ve ayar slotları profil kesilmeden delinir, ikinci bir tezgâh gerekmez."
+          },
+          {
+            "q": "Sıcak daldırma galvaniz sac profil kalitesini bozar mı?",
+            "a": "Merdane yüzeyi ve baskı kaplamaya göre ayarlandığında kaplama korunur. Merdanelerimiz 4140 çelikten üretilir ve 58-60 Rockwell sertliğe kadar sertleştirilir."
+          }
         ],
         "sectors": ["GES / EPC firmaları", "Çatı GES uygulamaları", "Arazi tipi santraller", "Tarım GES (Agri-PV)"]
       },
@@ -664,6 +754,20 @@
           "Kesme ünitesi",
           "İstifleme sistemi"
         ],
+        "faq": [
+          {
+            "q": "Raf direği ve traversi aynı hatta üretilir mi?",
+            "a": "Kesitleri farklı olduğu için genelde iki ayrı merdane grubu gerekir. Sipariş karmasına göre tek şase üzerinde iki grup çalıştıran çözüm de kurulabilir."
+          },
+          {
+            "q": "Delik deseni nasıl belirleniyor?",
+            "a": "Raf sisteminizin kanca adımına göre kalıplanır; adım ve delik biçimi projeye özeldir. Mevcut sisteminizle uyum için numune veya teknik resim yeterlidir."
+          },
+          {
+            "q": "Hat hangi sac kalınlığında çalışır?",
+            "a": "Ağır hizmet raf profilleri tipik olarak kalın sac ister; kesit ve kalınlık aralığı projeye göre boyutlandırılır. Kapasiteyi çiziminiz üzerinden birlikte belirliyoruz."
+          }
+        ],
         "sectors": ["Depo ve lojistik", "Raf sistemi üreticileri", "E-ticaret depoları", "Soğuk hava depoları"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Roll form makinesi",
           "Kesme ünitesi",
           "Uç işleme istasyonu (opsiyonel)"
+        ],
+        "faq": [
+          {
+            "q": "Kaymaz yüzey delikleri hatta mı açılıyor?",
+            "a": "Evet, kabartmalı delme ünitesi hatta entegredir; kalas yüzeyindeki kaymaz desen profil şekillendirilirken oluşturulur."
+          },
+          {
+            "q": "Kalas boyu nasıl ayarlanıyor?",
+            "a": "Boy, kontrol panelinden reçete olarak girilir; kesim uzunluğu servo kontrollüdür ve parti içinde değiştirilebilir."
+          },
+          {
+            "q": "Uç kapakları hattın parçası mı?",
+            "a": "Uç kapak presleme ünitesi opsiyoneldir. Talep edilirse hat sonuna eklenir, aksi halde ayrı istasyonda yapılır."
+          }
         ],
         "sectors": ["İskele sistemleri", "İnşaat ekipmanları", "Kalıp-iskele kiralama", "Şantiye güvenliği"]
       },
@@ -722,6 +840,20 @@
           "Hidrolik kesme",
           "İstifleme"
         ],
+        "faq": [
+          {
+            "q": "W ve thrie profilleri aynı hatta üretebilir miyim?",
+            "a": "İki kesit farklı merdane grubu ister. Aynı şase üzerinde grup değişimiyle her ikisi üretilebilir; sık geçişte hızlı değişim düzeneği öneriyoruz."
+          },
+          {
+            "q": "Galvaniz sac mı işleniyor, üretim sonrası mı galvanizleniyor?",
+            "a": "Her ikisi de mümkündür. Ön galvanizli sac işlenecekse merdane yüzeyi ve baskı buna göre ayarlanır; sonradan galvaniz için profil çıplak sacdan üretilir."
+          },
+          {
+            "q": "Delik ve montaj slotları nasıl açılıyor?",
+            "a": "Hidrolik pres ünitesi hatta entegre edilir; bağlantı delikleri ve slotlar profil hattan çıkmadan açılır."
+          }
+        ],
         "sectors": ["Karayolları müteahhitleri", "Otoyol projeleri", "Galvaniz kaplama tesisleri", "Altyapı ihracatçıları"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Kesme ünitesi",
           "İstifleme"
         ],
+        "faq": [
+          {
+            "q": "Delikli ön panel ile kaset arka panel aynı hatta mı üretiliyor?",
+            "a": "İki farklı kesit olduğundan genelde iki merdane grubu kullanılır. Delikli panel için delme ünitesi hatta entegre edilir."
+          },
+          {
+            "q": "Delik deseni akustik performansı etkiler mi?",
+            "a": "Evet; delik çapı ve açık alan oranı ses yutumunu doğrudan belirler. Akustik projede tanımlı deseni kalıplayıp üretiyoruz."
+          },
+          {
+            "q": "Alüminyum panel üretebilir misiniz?",
+            "a": "Evet. Alüminyum daha düşük baskı ve farklı merdane yüzeyi gerektirir; hat malzemeye göre ayarlanır."
+          }
+        ],
         "sectors": ["Otoyol projeleri", "Demiryolu ve metro", "Çevre mühendisliği", "Şehir içi altyapı"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Ayarlanabilir roll form makinesi",
           "Uçan kesme",
           "İstifleme"
+        ],
+        "faq": [
+          {
+            "q": "Üç kesiti tek hatta üretmek mümkün mü?",
+            "a": "Evet, kaset değişimli konfigürasyonla C, sigma ve omega aynı şasede üretilir. Kesit sayısı arttıkça hızlı değişim düzeneği yatırımı kendini amorti eder."
+          },
+          {
+            "q": "Profil yüksekliği değişince ne gerekiyor?",
+            "a": "Ayarlanabilir kaset yapısında yükseklik panelden seçilir; kesit ailesi değişiyorsa merdane grubu değiştirilir."
+          },
+          {
+            "q": "Merdaneler ne kadar ömürlü?",
+            "a": "Merdaneler 4140 çelikten üretilir ve 58-60 Rockwell sertliğe kadar sertleştirilir; doğru baskı ayarıyla milyonlarca metre profil üretebilir."
+          }
         ],
         "sectors": ["Hafif çelik yapı", "GES konstrüksiyon", "Prefabrik yapılar", "Endüstriyel bina", "Aşık profilleri"]
       }

@@ -436,26 +436,88 @@
     "ctaTitle": "Fordern Sie Referenzen aus Ihrer Branche an",
     "ctaText": "Wir zeigen Installationen bei Herstellern wie Ihnen und organisieren Werksbesuche."
   },
+  "calc": {
+    "metaTitle": "Rechner: Coilgewicht, Vorschubleistung und Spaltausbeute",
+    "metaDesc": "Kostenlose Engineering-Rechner: Coilgewicht und -länge, Pressenvorschubleistung, Spaltverschnitt. Ohne Anmeldung.",
+    "eyebrow": "Engineering-Werkzeuge",
+    "title": "Rechner",
+    "desc": "Schnelle Vorabschätzung ohne Angebot: Coilgewicht, Teile pro Stunde und Spaltverschnitt. Alle Ergebnisse folgen aus der Geometrie.",
+    "disclaimer": "Diese Werkzeuge dienen der Vorbewertung; die Ergebnisse werden aus Geometrie und Materialdichte berechnet. Für die genaue Anlagenauslegung wenden Sie sich an unser Engineering.",
+    "material": "Werkstoff",
+    "steel": "Stahl",
+    "stainless": "Edelstahl",
+    "aluminium": "Aluminium",
+    "copper": "Kupfer",
+    "coilTitle": "Coilgewicht und -länge",
+    "od": "Außendurchmesser",
+    "id": "Innendurchmesser (Kern)",
+    "cwidth": "Coilbreite",
+    "thickness": "Blechdicke",
+    "weight": "Coilgewicht",
+    "clength": "Bandlänge",
+    "turns": "Anzahl Windungen",
+    "feedTitle": "Pressenvorschubleistung",
+    "feedLen": "Vorschubschritt",
+    "spm": "Pressenhübe/min",
+    "perStroke": "Teile pro Hub",
+    "coilLen": "Coillänge (opt.)",
+    "parts": "Teile pro Stunde",
+    "speed": "Mittlere Liniengeschwindigkeit",
+    "metersH": "Verbrauch pro Stunde",
+    "coilHours": "Coil-Laufzeit",
+    "pcsH": "Stk/h",
+    "hour": "h",
+    "feedNote": "Die Liniengeschwindigkeit ist der MITTLERE Vorschub; da die Presse bei jedem Hub anhält, ist die Momentanspitze des Vorschubs höher. Die Auswahl richtet sich nach der Spitzengeschwindigkeit.",
+    "yieldTitle": "Spaltausbeute",
+    "coilWidth": "Muttercoilbreite",
+    "stripWidth": "Streifenbreite",
+    "trim": "Gesamter Besäumschnitt",
+    "strips": "Anzahl Streifen",
+    "wastePct": "Verschnittquote",
+    "waste": "Verschnittbreite",
+    "yieldNote": "Die Streifenzahl wird abgerundet; die Restbreite geht zusammen mit dem Besäumschnitt in den Verschnitt. Eine angepasste Streifenbreite senkt den Verschnitt.",
+    "invalid": "Die eingegebenen Werte sind ungültig."
+  },
   "videos": {
     "metaTitle": "Maschinenvideos: unsere Anlagen im Einsatz",
     "metaDesc": "Servosteel-Anlagen im Einsatz: echte Praxisvideos von Längsteilanlagen, Querteilanlagen, Rollforming und Pressenzuführsystemen.",
     "eyebrow": "Aus der Praxis",
     "title": "Sehen Sie unsere Anlagen im Einsatz",
     "desc": "Keine Prospektversprechen, sondern laufende Anlagen: echte Aufnahmen von Montagen, Werkstests und Kundenstandorten.",
-    "items": [
-      {
-        "title": "Pressenzuführsysteme",
-        "text": "Abwickler, Richtmaschine und Servovorschub synchron mit der Pressenlinie."
-      },
-      {
-        "title": "Querteilanlage — Werkstest",
-        "text": "Eine Querteilanlage im Testlauf vor der Auslieferung."
-      },
-      {
-        "title": "Fertigung von Aufzugskomponenten",
-        "text": "Produktion von Aufzugskomponenten mit einem Pressenzuführsystem."
-      }
-    ],
+    "groups": {
+      "slitting": "Längsteilanlagen",
+      "ctl": "Querteilanlagen",
+      "rollform": "Rollformanlagen",
+      "solar": "Solarprofil-Anlagen",
+      "feeding": "Pressenvorschubsysteme",
+      "machines": "Maschinen"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Längsteilanlage — Komplettanlage von Haspel bis Wickler",
+      "GEYcBSPqutQ": "Längsteilanlage — Messersatz und Zugwicklung",
+      "hc_Znq2u8MI": "Kombinierte Längsteil- und Stanzanlage",
+      "JOHZwMBLqKo": "Längs- und Querteilen in einer Anlage",
+      "4QETxHS-CD4": "Querteilanlage — Gesamtanlage im Betrieb",
+      "mwZx6X1mV0c": "Querteilen — Schere und Stapeleinheit",
+      "H-h-IF4QbUI": "Besäum- und Querteilanlage",
+      "_lOTZE21aGE": "Blechbearbeitungsanlage für Lüftungsgeräte",
+      "qmWM1NgcACw": "U-C-Profilanlage für Stahlbau — 350 × 5 mm",
+      "NR25bt36uQg": "HMI und Produktionsberichtssoftware",
+      "UCeR9epppK8": "Automatischer Stapler — U- und C-Profile",
+      "MaJswAJo8JQ": "Kabeltrassen-Produktionsanlage",
+      "J-O8xfI2ovA": "Schwerlastregal-Profilanlage",
+      "3xmcJvv6LNc": "Solarpanel-Profilanlage",
+      "5vVTpg3hltE": "Sigma- und Solar-C-Profilanlage",
+      "tm520w7WsBI": "Solar-C-Profil-Produktionsanlage",
+      "2tgCtC8n_1E": "Pressenvorschubsysteme — Überblick",
+      "ONmiUo8vtvk": "Kompaktanlage — Haspel, Richtapparat und Vorschub",
+      "a7W3BzFYiow": "Pressenvorschub vor Ort — Automobilpresse",
+      "7RcuUmfN7QE": "Kompaktanlagen-Test — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 Richt-Servovorschub + 2,5-t-Haspel",
+      "bc5nAkQXJTw": "MDS302 Mini-Richtvorschub + SRV500 Haspel",
+      "AqcEyDbbWtA": "Hydraulische Haspel — Bremsbelagsystem",
+      "v9_1snhusMY": "Hydraulischer Aufwickler"
+    },
     "bannerTitle": "109 Videos, 2,9 Tsd. Abonnenten",
     "bannerText": "Das gesamte Archiv auf unserem YouTube-Kanal, von Längsteilanlagen bis HMI- und Reporting-Software — neue Videos kommen regelmäßig.",
     "bannerCta": "Zum YouTube-Kanal",
@@ -605,6 +667,20 @@
           "Schneideeinheit (Endschere)",
           "Auslaufband und Stapelung"
         ],
+        "faq": [
+          {
+            "q": "Kann ich gelochte und ungelochte Kanäle auf derselben Anlage fertigen?",
+            "a": "Ja. Die Stanzeinheit ist in die Anlage integriert; per Rezeptwechsel wird gelochter oder glatter Kanal produziert. Lochbild und Teilung werden auftragsbezogen bewerkzeugt."
+          },
+          {
+            "q": "Wie lange dauert ein Formatwechsel?",
+            "a": "Die Breite wird über die Kassettenbauweise eingestellt; der Bediener wählt das Maß am Panel, die mechanische Einstellung dauert Minuten. Eine Höhenänderung kann einen Rollensatzwechsel erfordern."
+          },
+          {
+            "q": "Welche Blechwerkstoffe werden verarbeitet?",
+            "a": "Kaltgewalztes, verzinktes, Aluminium- und Edelstahlblech. Zum Schutz der Zinkschicht werden Rollenoberflächen und Anpressdrücke auf das Material abgestimmt."
+          }
+        ],
         "sectors": ["Elektroinfrastruktur", "Rechenzentren", "Industrieanlagen", "Einkaufszentren und Bauprojekte"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Rollformmaschine",
           "Fliegende Schere",
           "Automatische Stapelung"
+        ],
+        "faq": [
+          {
+            "q": "Kann ich C- und U-Profile auf derselben Anlage fertigen?",
+            "a": "Ja; mit einem Kassettenwechsel laufen C-, U- und Sigma-Querschnitte auf demselben Rahmen. Bei häufigem Wechsel empfehlen wir eine Schnellwechsel-Konfiguration."
+          },
+          {
+            "q": "Werden Löcher und Langlöcher in der Linie gestanzt?",
+            "a": "Eine hydraulische Presseneinheit ist integriert; Montagelöcher und Justierschlitze werden vor dem Ablängen gestanzt — kein zweiter Arbeitsgang nötig."
+          },
+          {
+            "q": "Leidet feuerverzinktes Blech beim Umformen?",
+            "a": "Mit auf die Beschichtung abgestimmter Rollenoberfläche und Anpressung bleibt sie intakt. Unsere Rollen bestehen aus 4140-Stahl und sind auf 58-60 Rockwell gehärtet."
+          }
         ],
         "sectors": ["Solar-/EPC-Unternehmen", "Dach-PV", "Freiflächenanlagen", "Agri-PV"]
       },
@@ -664,6 +754,20 @@
           "Schneideeinheit",
           "Stapelsystem"
         ],
+        "faq": [
+          {
+            "q": "Können Ständer und Traversen auf einer Anlage laufen?",
+            "a": "Ihre Querschnitte unterscheiden sich, daher sind meist zwei Rollensätze nötig. Je nach Auftragsmix ist auch ein Rahmen mit zwei Sätzen realisierbar."
+          },
+          {
+            "q": "Wie wird das Lochbild festgelegt?",
+            "a": "Es wird auf die Hakenteilung Ihres Regalsystems bewerkzeugt; Teilung und Lochform sind projektspezifisch. Ein Muster oder eine technische Zeichnung genügt."
+          },
+          {
+            "q": "Welche Blechdicke verarbeitet die Anlage?",
+            "a": "Schwerlastregalprofile erfordern typischerweise dickes Material; Querschnitt und Dickenbereich werden projektbezogen ausgelegt. Die Kapazität bestimmen wir gemeinsam anhand Ihrer Zeichnung."
+          }
+        ],
         "sectors": ["Lager und Logistik", "Regalhersteller", "E-Commerce-Lager", "Kühllager"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Rollformmaschine",
           "Schneideeinheit",
           "Endenbearbeitung (optional)"
+        ],
+        "faq": [
+          {
+            "q": "Wird die Antirutsch-Lochung in der Linie erzeugt?",
+            "a": "Ja, die Präge- und Stanzeinheit ist integriert; das Antirutschmuster entsteht auf der Bohlenoberfläche während des Rollformens."
+          },
+          {
+            "q": "Wie wird die Bohlenlänge eingestellt?",
+            "a": "Die Länge wird als Rezept am Bedienpanel eingegeben; die Schnittlänge ist servogesteuert und innerhalb einer Charge änderbar."
+          },
+          {
+            "q": "Sind die Endkappen Teil der Anlage?",
+            "a": "Die Endkappen-Presseinheit ist optional. Auf Wunsch wird sie am Linienende ergänzt, sonst erfolgt der Schritt an einer separaten Station."
+          }
         ],
         "sectors": ["Gerüstsysteme", "Bautechnik", "Schalungs- und Gerüstvermietung", "Baustellensicherheit"]
       },
@@ -722,6 +840,20 @@
           "Hydraulisches Schneiden",
           "Stapelung"
         ],
+        "faq": [
+          {
+            "q": "Kann ich W- und Thrie-Profile auf einer Anlage fertigen?",
+            "a": "Die beiden Querschnitte benötigen unterschiedliche Rollensätze. Beide laufen auf demselben Rahmen durch Satzwechsel; bei häufigem Wechsel empfehlen wir eine Schnellwechseleinrichtung."
+          },
+          {
+            "q": "Wird verzinktes Blech verarbeitet oder nachträglich verzinkt?",
+            "a": "Beides ist möglich. Bei vorverzinktem Blech werden Rollenoberfläche und Anpressung entsprechend eingestellt; für die Nachverzinkung wird aus blankem Stahl gerollt."
+          },
+          {
+            "q": "Wie werden Löcher und Montageschlitze erzeugt?",
+            "a": "Eine hydraulische Presseneinheit ist integriert; Verbindungslöcher und Schlitze werden gestanzt, bevor das Profil die Linie verlässt."
+          }
+        ],
         "sectors": ["Straßenbauunternehmen", "Autobahnprojekte", "Feuerverzinkereien", "Infrastruktur-Exporteure"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Schneideeinheit",
           "Stapelung"
         ],
+        "faq": [
+          {
+            "q": "Werden gelochte Front- und Kassettenrückwand auf einer Anlage gefertigt?",
+            "a": "Es sind zwei verschiedene Querschnitte, daher werden meist zwei Rollensätze eingesetzt. Für die gelochte Platte ist die Stanzeinheit integriert."
+          },
+          {
+            "q": "Beeinflusst das Lochbild die akustische Leistung?",
+            "a": "Ja; Lochdurchmesser und freier Querschnittsanteil bestimmen die Schallabsorption unmittelbar. Wir bewerkzeugen und fertigen das in Ihrer Akustikplanung definierte Muster."
+          },
+          {
+            "q": "Können Sie Aluminiumpaneele fertigen?",
+            "a": "Ja. Aluminium erfordert geringere Anpressung und eine andere Rollenoberfläche; die Anlage wird auf das Material eingerichtet."
+          }
+        ],
         "sectors": ["Autobahnprojekte", "Bahn und Metro", "Umwelttechnik", "Stadtinfrastruktur"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Verstellbare Rollformmaschine",
           "Fliegende Schere",
           "Stapelung"
+        ],
+        "faq": [
+          {
+            "q": "Lassen sich alle drei Querschnitte auf einer Anlage fahren?",
+            "a": "Ja, mit Kassettenwechsel laufen C, Sigma und Omega auf demselben Rahmen. Je mehr Querschnitte, desto schneller amortisiert sich eine Schnellwechseleinrichtung."
+          },
+          {
+            "q": "Was ist bei einer Höhenänderung des Profils nötig?",
+            "a": "Bei verstellbarer Kassettenbauweise wird die Höhe am Panel gewählt; wechselt die Querschnittsfamilie, wird der Rollensatz getauscht."
+          },
+          {
+            "q": "Wie lange halten die Rollen?",
+            "a": "Die Rollen bestehen aus 4140-Stahl und sind auf 58-60 Rockwell gehärtet; bei korrekter Anpressung fertigen sie Millionen Meter Profil."
+          }
         ],
         "sectors": ["Stahlleichtbau", "Solar-Unterkonstruktion", "Fertigbauten", "Industriebauten", "Pfettenprofile"]
       }

@@ -1,16 +1,17 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
+import { VideoCard } from "@/components/video-card";
+import { VideoSchema } from "@/components/video-schema";
+import { allVideos, videoGroups } from "@/lib/videos";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
-
-/* youtube-nocookie: çerezsiz gömme */
-const videoIds = ["2tgCtC8n_1E", "5JRpTEUXun4", "WfSe7M60W3Y"];
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -26,10 +27,15 @@ export default async function VideolarPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("videos");
-  const items = t.raw("items") as { title: string; text: string }[];
+  const tc = await getTranslations("common");
+
+  const titleOf = (id: string) => t(`items.${id}`);
 
   return (
     <>
+      {/* Sayfadaki 24 videonun tamamı için VideoObject — gerçek tarih ve süreyle */}
+      <VideoSchema items={allVideos} titleOf={titleOf} description={t("metaDesc")} />
+
       <PageHero
         crumbs={[{ label: t("metaTitle"), href: "/videolar" }]}
         eyebrow={t("eyebrow")}
@@ -38,32 +44,46 @@ export default async function VideolarPage({ params }: Props) {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((v, i) => (
-            <Reveal key={videoIds[i]} delay={i * 100}>
-              <figure className="overflow-hidden rounded-2xl border border-line bg-card">
-                <div className="aspect-video">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${videoIds[i]}`}
-                    title={v.title}
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    className="size-full"
-                  />
-                </div>
-                <figcaption className="p-5">
-                  <h2 className="font-semibold text-ink">{v.title}</h2>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{v.text}</p>
-                </figcaption>
-              </figure>
+        {videoGroups.map((group, gi) => (
+          <div key={group.key} className={gi > 0 ? "mt-16" : ""}>
+            <Reveal>
+              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
+                <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
+                  {t(`groups.${group.key}`)}
+                </h2>
+                {group.href && (
+                  <Link
+                    href={group.href}
+                    className="group flex items-center gap-1.5 text-sm font-semibold text-accent-ink"
+                  >
+                    {tc("details")}
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-0.5"
+                      strokeWidth={1.8}
+                      aria-hidden
+                    />
+                  </Link>
+                )}
+              </div>
             </Reveal>
-          ))}
-        </div>
+
+            <Reveal group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((v, i) => (
+                <VideoCard
+                  key={v.id}
+                  id={v.id}
+                  title={titleOf(v.id)}
+                  sec={v.sec}
+                  /* İlk grubun ilk iki önizlemesi LCP adayı — öncelikli yüklenir */
+                  priority={gi === 0 && i < 2}
+                />
+              ))}
+            </Reveal>
+          </div>
+        ))}
 
         <Reveal>
-          <div className="mt-14 flex flex-col items-start justify-between gap-6 rounded-2xl bg-shell p-8 text-white lg:flex-row lg:items-center">
+          <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-2xl bg-shell p-8 text-white lg:flex-row lg:items-center">
             <div>
               <h2 className="font-display text-xl font-bold uppercase tracking-tight">
                 {t("bannerTitle")}

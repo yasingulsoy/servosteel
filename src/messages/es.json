@@ -436,26 +436,88 @@
     "ctaTitle": "Pida referencias de su sector",
     "ctaText": "Compartiremos instalaciones en plantas como la suya y organizaremos visitas."
   },
+  "calc": {
+    "metaTitle": "Calculadoras: peso de bobina, alimentación y rendimiento de corte",
+    "metaDesc": "Calculadoras de ingeniería gratuitas: peso y longitud de bobina, capacidad de alimentación, merma de corte longitudinal. Sin registro.",
+    "eyebrow": "Herramientas de ingeniería",
+    "title": "Calculadoras",
+    "desc": "Haga una estimación rápida sin esperar una oferta: peso de bobina, piezas por hora y merma de corte. Todos los resultados derivan de la geometría.",
+    "disclaimer": "Estas herramientas son para una evaluación preliminar; los resultados se calculan a partir de la geometría y la densidad del material. Para el dimensionado exacto, consulte a nuestro equipo de ingeniería.",
+    "material": "Material",
+    "steel": "Acero",
+    "stainless": "Inoxidable",
+    "aluminium": "Aluminio",
+    "copper": "Cobre",
+    "coilTitle": "Peso y longitud de bobina",
+    "od": "Diámetro exterior",
+    "id": "Diámetro interior (núcleo)",
+    "cwidth": "Ancho de bobina",
+    "thickness": "Espesor de chapa",
+    "weight": "Peso de bobina",
+    "clength": "Longitud de fleje",
+    "turns": "Número de vueltas",
+    "feedTitle": "Salida de alimentación",
+    "feedLen": "Paso de avance",
+    "spm": "Golpes de prensa/min",
+    "perStroke": "Piezas por golpe",
+    "coilLen": "Longitud de bobina (opc.)",
+    "parts": "Piezas por hora",
+    "speed": "Velocidad media de línea",
+    "metersH": "Consumo por hora",
+    "coilHours": "Autonomía de bobina",
+    "pcsH": "uds/h",
+    "hour": "h",
+    "feedNote": "La velocidad de línea es el avance MEDIO; como la prensa se detiene en cada golpe, la velocidad punta instantánea del alimentador es mayor. La selección se basa en la velocidad punta.",
+    "yieldTitle": "Rendimiento de corte",
+    "coilWidth": "Ancho de bobina madre",
+    "stripWidth": "Ancho de fleje",
+    "trim": "Refilado total de bordes",
+    "strips": "Número de flejes",
+    "wastePct": "Tasa de merma",
+    "waste": "Ancho de merma",
+    "yieldNote": "El número de flejes se redondea a la baja; el ancho sobrante se suma a la merma junto con el refilado. Ajustar el ancho de fleje reduce la merma.",
+    "invalid": "Los valores introducidos no son válidos."
+  },
   "videos": {
     "metaTitle": "Vídeos de máquinas: nuestras líneas en marcha",
     "metaDesc": "Vea las líneas Servosteel en funcionamiento: vídeos reales de líneas de corte, perfilado y sistemas de alimentación de prensas.",
     "eyebrow": "Desde el terreno",
     "title": "Vea nuestras líneas en funcionamiento",
     "desc": "No promesas de folleto, sino líneas funcionando: imágenes reales de montajes, pruebas de fábrica y plantas de clientes.",
-    "items": [
-      {
-        "title": "Sistemas de Alimentación de Prensas",
-        "text": "Desbobinador, enderezadora y alimentador servo en sincronía con la línea de prensa."
-      },
-      {
-        "title": "Línea de Corte a Medida — Prueba de Fábrica",
-        "text": "Una línea de corte a medida durante su prueba previa al envío."
-      },
-      {
-        "title": "Producción de Componentes de Ascensor",
-        "text": "Producción de componentes de ascensor con un sistema de alimentación de prensas."
-      }
-    ],
+    "groups": {
+      "slitting": "Líneas de Corte Longitudinal",
+      "ctl": "Líneas de Corte a Medida",
+      "rollform": "Líneas de Perfilado",
+      "solar": "Líneas de Perfil Solar",
+      "feeding": "Sistemas de Alimentación para Prensas",
+      "machines": "Máquinas"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Línea de corte longitudinal — línea completa de desbobinadora a bobinadora",
+      "GEYcBSPqutQ": "Línea de corte longitudinal — juego de cuchillas y bobinado con tensión",
+      "hc_Znq2u8MI": "Línea combinada de corte longitudinal y punzonado",
+      "JOHZwMBLqKo": "Corte longitudinal y a medida en una sola línea",
+      "4QETxHS-CD4": "Línea de corte a medida — línea completa en funcionamiento",
+      "mwZx6X1mV0c": "Corte a medida — cizalla y unidad de apilado",
+      "H-h-IF4QbUI": "Línea de refilado y corte a medida",
+      "_lOTZE21aGE": "Línea de proceso de chapa para climatizadores",
+      "qmWM1NgcACw": "Línea de perfiles estructurales U-C — 350 × 5 mm",
+      "NR25bt36uQg": "HMI y software de informes de producción",
+      "UCeR9epppK8": "Apilador automático — perfiles U y C",
+      "MaJswAJo8JQ": "Línea de producción de bandejas portacables",
+      "J-O8xfI2ovA": "Línea de perfiles para estanterías de carga pesada",
+      "3xmcJvv6LNc": "Línea de perfiles para paneles solares",
+      "5vVTpg3hltE": "Línea de perfiles Sigma y solar C",
+      "tm520w7WsBI": "Línea de producción de perfil solar C",
+      "2tgCtC8n_1E": "Sistemas de alimentación para prensas — presentación",
+      "ONmiUo8vtvk": "Línea compacta — desbobinadora, enderezadora y alimentador",
+      "a7W3BzFYiow": "Alimentación de prensa en planta — prensa de automoción",
+      "7RcuUmfN7QE": "Prueba de línea compacta — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 alimentador servo con enderezadora + desbobinadora 2,5 t",
+      "bc5nAkQXJTw": "MDS302 mini alimentador con enderezadora + desbobinadora SRV500",
+      "AqcEyDbbWtA": "Desbobinadora hidráulica — sistema de freno de zapata",
+      "v9_1snhusMY": "Bobinadora hidráulica"
+    },
     "bannerTitle": "109 vídeos, 2,9 mil suscriptores",
     "bannerText": "Todo el archivo está en nuestro canal de YouTube, de líneas de corte a HMI y software de informes; se añaden vídeos nuevos con regularidad.",
     "bannerCta": "Ir al Canal de YouTube",
@@ -605,6 +667,20 @@
           "Unidad de corte (cizalla final)",
           "Transportador de salida y apilado"
         ],
+        "faq": [
+          {
+            "q": "¿Puedo producir bandejas perforadas y lisas en la misma línea?",
+            "a": "Sí. La unidad de punzonado está integrada; cambiando la receta se produce bandeja perforada o lisa. El patrón y el paso de agujeros se utillan por pedido."
+          },
+          {
+            "q": "¿Cuánto tarda un cambio de medida?",
+            "a": "El ancho se ajusta mediante la estructura de casetes; el operario selecciona la medida en el panel y el ajuste mecánico lleva minutos. Un cambio de altura puede requerir cambiar el juego de rodillos."
+          },
+          {
+            "q": "¿Con qué materiales trabaja?",
+            "a": "Chapa laminada en frío, galvanizada, aluminio e inoxidable. Para proteger el recubrimiento de zinc, las superficies de rodillo y las presiones se ajustan al material."
+          }
+        ],
         "sectors": ["Infraestructura eléctrica", "Centros de datos", "Plantas industriales", "Centros comerciales y edificación"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Perfiladora",
           "Cizalla volante",
           "Apilado automático"
+        ],
+        "faq": [
+          {
+            "q": "¿Puedo producir perfiles C y U en la misma línea?",
+            "a": "Sí; con un cambio de casete, las secciones C, U y sigma se fabrican en el mismo bastidor. Si cambia a menudo, recomendamos configuración de casete de cambio rápido."
+          },
+          {
+            "q": "¿Los agujeros y ranuras se punzonan en línea?",
+            "a": "Una unidad de prensa hidráulica está integrada; los agujeros de montaje y las ranuras de ajuste se punzonan antes del corte, sin segunda operación."
+          },
+          {
+            "q": "¿El galvanizado en caliente sufre durante el conformado?",
+            "a": "Con la superficie de rodillo y la presión adaptadas al recubrimiento, se mantiene intacto. Nuestros rodillos son de acero 4140 templado a 58-60 Rockwell."
+          }
         ],
         "sectors": ["Solar / empresas EPC", "Fotovoltaica de cubierta", "Plantas en suelo", "Agri-PV"]
       },
@@ -664,6 +754,20 @@
           "Unidad de corte",
           "Sistema de apilado"
         ],
+        "faq": [
+          {
+            "q": "¿Puentes y largueros pueden ir en la misma línea?",
+            "a": "Sus secciones difieren, por lo que normalmente hacen falta dos juegos de rodillos. Según la mezcla de pedidos, también puede construirse un bastidor con dos juegos."
+          },
+          {
+            "q": "¿Cómo se define el patrón de agujeros?",
+            "a": "Se utilla según el paso de enganche de su sistema de estanterías; paso y forma son específicos del proyecto. Basta una muestra o un plano técnico."
+          },
+          {
+            "q": "¿Qué espesor de chapa admite la línea?",
+            "a": "Los perfiles de estantería pesada suelen requerir material grueso; la sección y el rango de espesor se dimensionan por proyecto a partir de su plano."
+          }
+        ],
         "sectors": ["Almacén y logística", "Fabricantes de estanterías", "Almacenes e-commerce", "Cámaras frigoríficas"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Perfiladora",
           "Unidad de corte",
           "Estación de extremos (opcional)"
+        ],
+        "faq": [
+          {
+            "q": "¿La perforación antideslizante se hace en línea?",
+            "a": "Sí, la unidad de embutición y punzonado está integrada; el patrón antideslizante se forma en la superficie mientras se perfila."
+          },
+          {
+            "q": "¿Cómo se ajusta la longitud del tablón?",
+            "a": "La longitud se introduce como receta en el panel; el corte es servocontrolado y puede cambiarse dentro de un lote."
+          },
+          {
+            "q": "¿Las tapas de extremo forman parte de la línea?",
+            "a": "La unidad de prensado de tapas es opcional. Si se solicita se añade al final de la línea; en caso contrario se hace en una estación aparte."
+          }
         ],
         "sectors": ["Sistemas de andamio", "Equipos de construcción", "Alquiler de encofrado y andamio", "Seguridad en obra"]
       },
@@ -722,6 +840,20 @@
           "Corte hidráulico",
           "Apilado"
         ],
+        "faq": [
+          {
+            "q": "¿Puedo producir perfiles W y thrie en la misma línea?",
+            "a": "Las dos secciones necesitan juegos de rodillos distintos. Ambas pueden correr en el mismo bastidor cambiando el juego; para cambios frecuentes recomendamos un sistema de cambio rápido."
+          },
+          {
+            "q": "¿Se procesa chapa galvanizada o se galvaniza después?",
+            "a": "Ambas opciones son posibles. Con chapa pregalvanizada se ajustan superficie y presión; para galvanizar después, el perfil se conforma en acero desnudo."
+          },
+          {
+            "q": "¿Cómo se hacen agujeros y ranuras de montaje?",
+            "a": "Una unidad de prensa hidráulica está integrada; los agujeros de unión y las ranuras se punzonan antes de que el perfil salga de la línea."
+          }
+        ],
         "sectors": ["Contratistas viales", "Proyectos de autopista", "Plantas de galvanizado", "Exportadores de infraestructura"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Unidad de corte",
           "Apilado"
         ],
+        "faq": [
+          {
+            "q": "¿El panel frontal perforado y el trasero tipo casete se hacen en una línea?",
+            "a": "Son dos secciones distintas, por lo que normalmente se usan dos juegos de rodillos. Para el panel perforado, la unidad de punzonado está integrada."
+          },
+          {
+            "q": "¿El patrón de agujeros afecta al rendimiento acústico?",
+            "a": "Sí; el diámetro y la relación de área abierta determinan directamente la absorción acústica. Utillamos y producimos el patrón definido en su proyecto acústico."
+          },
+          {
+            "q": "¿Pueden producir paneles de aluminio?",
+            "a": "Sí. El aluminio requiere menor presión y una superficie de rodillo distinta; la línea se prepara según el material."
+          }
+        ],
         "sectors": ["Proyectos de autopista", "Ferrocarril y metro", "Ingeniería ambiental", "Infraestructura urbana"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Perfiladora regulable",
           "Cizalla volante",
           "Apilado"
+        ],
+        "faq": [
+          {
+            "q": "¿Es posible fabricar las tres secciones en una línea?",
+            "a": "Sí, con configuración de cambio de casete, C, sigma y omega se producen en el mismo bastidor. Cuantas más secciones, antes se amortiza el cambio rápido."
+          },
+          {
+            "q": "¿Qué hace falta cuando cambia la altura del perfil?",
+            "a": "Con estructura de casete ajustable, la altura se selecciona en el panel; si cambia la familia de sección, se sustituye el juego de rodillos."
+          },
+          {
+            "q": "¿Cuánto duran los rodillos?",
+            "a": "Los rodillos son de acero 4140 templado a 58-60 Rockwell; con la presión correcta pueden producir millones de metros de perfil."
+          }
         ],
         "sectors": ["Acero ligero", "Estructura solar", "Construcción prefabricada", "Nave industrial", "Correas"]
       }

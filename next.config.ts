@@ -61,6 +61,14 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
 
+  images: {
+    /* Next varsayılanı yalnızca WebP'dir. AVIF tipik olarak WebP'nin de
+       %20-30 altına iner; sıra önemli — tarayıcı ilk desteklediğini alır. */
+    formats: ["image/avif", "image/webp"],
+    /* YouTube önizleme görselleri (videolar sayfası) */
+    remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" }],
+  },
+
   async redirects() {
     return [
       /* --- Makineler --- */

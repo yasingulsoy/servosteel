@@ -17,6 +17,7 @@ const paths = [
   { path: "/iletisim", priority: 0.7 },
   { path: "/teklif-al", priority: 0.8 },
   { path: "/akademi", priority: 0.6 },
+  { path: "/hesaplayicilar", priority: 0.7 },
   ...rollFormItems.map((p) => ({ path: `/roll-form-hatlari/${p.slug}`, priority: 0.8 })),
   ...machineItems.map((p) => ({ path: `/makineler/${p.slug}`, priority: 0.7 })),
 ];

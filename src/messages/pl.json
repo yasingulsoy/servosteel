@@ -436,26 +436,88 @@
     "ctaTitle": "Poproś o referencje ze swojej branży",
     "ctaText": "Udostępnimy instalacje w zakładach podobnych do Twojego i zorganizujemy wizyty."
   },
+  "calc": {
+    "metaTitle": "Kalkulatory: masa kręgu, wydajność podawania, uzysk cięcia",
+    "metaDesc": "Bezpłatne kalkulatory inżynierskie: masa i długość kręgu, wydajność podawania do prasy, odpad przy cięciu wzdłużnym. Bez rejestracji.",
+    "eyebrow": "Narzędzia inżynierskie",
+    "title": "Kalkulatory",
+    "desc": "Zrób szybkie oszacowanie bez czekania na ofertę: masa kręgu, sztuki na godzinę i odpad przy cięciu. Wszystkie wyniki wynikają z geometrii.",
+    "disclaimer": "Narzędzia służą wstępnej ocenie; wyniki liczone są z geometrii i gęstości materiału. Po dokładny dobór linii skontaktuj się z naszym działem inżynieryjnym.",
+    "material": "Materiał",
+    "steel": "Stal",
+    "stainless": "Nierdzewna",
+    "aluminium": "Aluminium",
+    "copper": "Miedź",
+    "coilTitle": "Masa i długość kręgu",
+    "od": "Średnica zewnętrzna",
+    "id": "Średnica wewnętrzna (rdzeń)",
+    "cwidth": "Szerokość kręgu",
+    "thickness": "Grubość blachy",
+    "weight": "Masa kręgu",
+    "clength": "Długość taśmy",
+    "turns": "Liczba zwojów",
+    "feedTitle": "Wydajność podawania",
+    "feedLen": "Skok podawania",
+    "spm": "Suwy prasy/min",
+    "perStroke": "Sztuk na suw",
+    "coilLen": "Długość kręgu (opc.)",
+    "parts": "Sztuk na godzinę",
+    "speed": "Średnia prędkość linii",
+    "metersH": "Zużycie na godzinę",
+    "coilHours": "Czas pracy kręgu",
+    "pcsH": "szt./h",
+    "hour": "h",
+    "feedNote": "Prędkość linii to ŚREDNI posuw; ponieważ prasa zatrzymuje się przy każdym suwie, chwilowa prędkość szczytowa podajnika jest wyższa. Dobór opiera się na prędkości szczytowej.",
+    "yieldTitle": "Uzysk cięcia",
+    "coilWidth": "Szerokość kręgu matki",
+    "stripWidth": "Szerokość taśmy",
+    "trim": "Łączne obcięcie krawędzi",
+    "strips": "Liczba taśm",
+    "wastePct": "Udział odpadu",
+    "waste": "Szerokość odpadu",
+    "yieldNote": "Liczba taśm jest zaokrąglana w dół; pozostała szerokość trafia do odpadu razem z obcięciem krawędzi. Dopasowanie szerokości taśmy zmniejsza odpad.",
+    "invalid": "Wprowadzone wartości są nieprawidłowe."
+  },
   "videos": {
     "metaTitle": "Filmy maszyn: nasze linie podczas pracy",
     "metaDesc": "Zobacz linie Servosteel w działaniu: prawdziwe filmy z linii cięcia, profilowania i systemów podawania do pras.",
     "eyebrow": "Z terenu",
     "title": "Zobacz nasze linie w działaniu",
     "desc": "Nie obietnice z folderu, lecz działające linie: prawdziwe ujęcia z montaży, testów fabrycznych i zakładów klientów.",
-    "items": [
-      {
-        "title": "Systemy Podawania do Pras",
-        "text": "Odwijak, prostownica i podajnik serwo w synchronizacji z linią prasy."
-      },
-      {
-        "title": "Linia Cięcia Poprzecznego — Test Fabryczny",
-        "text": "Linia cięcia poprzecznego podczas testu przed wysyłką."
-      },
-      {
-        "title": "Produkcja Komponentów Dźwigowych",
-        "text": "Produkcja komponentów dźwigowych z systemem podawania do pras."
-      }
-    ],
+    "groups": {
+      "slitting": "Linie Wzdłużnego Cięcia",
+      "ctl": "Linie Cięcia na Wymiar",
+      "rollform": "Linie Profilowania",
+      "solar": "Linie Profili Solarnych",
+      "feeding": "Systemy Podawania do Pras",
+      "machines": "Maszyny"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Linia wzdłużnego cięcia — kompletna linia od odwijaka do nawijaka",
+      "GEYcBSPqutQ": "Linia cięcia — zestaw noży i nawijanie z naciągiem",
+      "hc_Znq2u8MI": "Połączona linia cięcia i wykrawania",
+      "JOHZwMBLqKo": "Cięcie wzdłużne i na wymiar na jednej linii",
+      "4QETxHS-CD4": "Linia cięcia na wymiar — pełna linia w pracy",
+      "mwZx6X1mV0c": "Cięcie na wymiar — nożyce i układ sztaplowania",
+      "H-h-IF4QbUI": "Linia obcinania krawędzi i cięcia na wymiar",
+      "_lOTZE21aGE": "Linia obróbki blachy do central wentylacyjnych",
+      "qmWM1NgcACw": "Linia profili konstrukcyjnych U-C — 350 × 5 mm",
+      "NR25bt36uQg": "HMI i oprogramowanie raportowania produkcji",
+      "UCeR9epppK8": "Automatyczny sztapler — profile U i C",
+      "MaJswAJo8JQ": "Linia produkcji koryt kablowych",
+      "J-O8xfI2ovA": "Linia profili do regałów ciężkich",
+      "3xmcJvv6LNc": "Linia profili do paneli solarnych",
+      "5vVTpg3hltE": "Linia profili Sigma i solarnych C",
+      "tm520w7WsBI": "Linia produkcji profilu solarnego C",
+      "2tgCtC8n_1E": "Systemy podawania do pras — przegląd",
+      "ONmiUo8vtvk": "Linia kompaktowa — odwijak, prostownica i podajnik",
+      "a7W3BzFYiow": "Podawanie do prasy w zakładzie — prasa motoryzacyjna",
+      "7RcuUmfN7QE": "Test linii kompaktowej — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 podajnik serwo z prostownicą + odwijak 2,5 t",
+      "bc5nAkQXJTw": "MDS302 mini podajnik z prostownicą + odwijak SRV500",
+      "AqcEyDbbWtA": "Odwijak hydrauliczny — układ hamulca szczękowego",
+      "v9_1snhusMY": "Nawijak hydrauliczny"
+    },
     "bannerTitle": "109 filmów, 2,9 tys. subskrybentów",
     "bannerText": "Całe archiwum na naszym kanale YouTube, od linii cięcia po HMI i oprogramowanie raportowe — nowe filmy dodawane regularnie.",
     "bannerCta": "Przejdź na kanał YouTube",
@@ -605,6 +667,20 @@
           "Zespół cięcia (nożyce końcowe)",
           "Przenośnik wyjściowy i układanie"
         ],
+        "faq": [
+          {
+            "q": "Czy mogę produkować koryta perforowane i gładkie na tej samej linii?",
+            "a": "Tak. Zespół wykrawania jest zintegrowany z linią; zmiana receptury przełącza między korytem perforowanym a gładkim. Wzór i podziałka otworów są oprzyrządowane pod zamówienie."
+          },
+          {
+            "q": "Ile trwa przezbrojenie na inny wymiar?",
+            "a": "Szerokość ustawia konstrukcja kasetowa; operator wybiera wymiar na panelu, a regulacja mechaniczna zajmuje minuty. Zmiana wysokości może wymagać wymiany zestawu rolek."
+          },
+          {
+            "q": "Z jakimi materiałami pracuje?",
+            "a": "Blacha walcowana na zimno, ocynkowana, aluminium i stal nierdzewna. Aby chronić powłokę cynkową, powierzchnie rolek i naciski dobiera się do materiału."
+          }
+        ],
         "sectors": ["Infrastruktura elektryczna", "Centra danych", "Obiekty przemysłowe", "Galerie i projekty budowlane"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Profilarka",
           "Nożyce latające",
           "Automatyczne układanie"
+        ],
+        "faq": [
+          {
+            "q": "Czy mogę produkować profile C i U na jednej linii?",
+            "a": "Tak; po wymianie kasety profile C, U i sigma powstają na tej samej ramie. Przy częstych zmianach zalecamy konfigurację z szybką wymianą kaset."
+          },
+          {
+            "q": "Czy otwory i szczeliny są wykrawane na linii?",
+            "a": "Zintegrowany jest zespół prasy hydraulicznej; otwory montażowe i szczeliny regulacyjne wykrawane są przed cięciem, bez drugiej operacji."
+          },
+          {
+            "q": "Czy cynkowanie ogniowe ucierpi podczas profilowania?",
+            "a": "Przy powierzchni rolek i nacisku dobranych do powłoki pozostaje nienaruszone. Nasze rolki wykonano ze stali 4140, hartowanej do 58-60 Rockwella."
+          }
         ],
         "sectors": ["Solar / firmy EPC", "PV dachowe", "Elektrownie gruntowe", "Agro-PV"]
       },
@@ -664,6 +754,20 @@
           "Zespół cięcia",
           "System układania"
         ],
+        "faq": [
+          {
+            "q": "Czy słupy i belki mogą iść na jednej linii?",
+            "a": "Ich przekroje się różnią, więc zwykle potrzebne są dwa zestawy rolek. W zależności od struktury zamówień można też zbudować jedną ramę z dwoma zestawami."
+          },
+          {
+            "q": "Jak definiuje się wzór otworów?",
+            "a": "Jest oprzyrządowany pod podziałkę zaczepów Państwa systemu regałowego; podziałka i kształt są specyficzne dla projektu. Wystarczy próbka lub rysunek techniczny."
+          },
+          {
+            "q": "Jaką grubość blachy obsługuje linia?",
+            "a": "Profile regałów ciężkich wymagają zwykle grubego materiału; przekrój i zakres grubości dobiera się projektowo na podstawie rysunku."
+          }
+        ],
         "sectors": ["Magazyny i logistyka", "Producenci regałów", "Magazyny e-commerce", "Chłodnie"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Profilarka",
           "Zespół cięcia",
           "Stacja obróbki końców (opcja)"
+        ],
+        "faq": [
+          {
+            "q": "Czy perforacja antypoślizgowa powstaje na linii?",
+            "a": "Tak, zespół tłoczenia i wykrawania jest zintegrowany; wzór antypoślizgowy powstaje na powierzchni podczas profilowania."
+          },
+          {
+            "q": "Jak ustawia się długość podestu?",
+            "a": "Długość wprowadza się jako recepturę na panelu; długość cięcia jest sterowana serwonapędem i można ją zmienić w obrębie partii."
+          },
+          {
+            "q": "Czy zaślepki końcowe są częścią linii?",
+            "a": "Zespół prasowania zaślepek jest opcjonalny. Na życzenie dodaje się go na końcu linii, w przeciwnym razie operację wykonuje się na osobnym stanowisku."
+          }
         ],
         "sectors": ["Systemy rusztowań", "Sprzęt budowlany", "Wynajem szalunków i rusztowań", "Bezpieczeństwo na budowie"]
       },
@@ -722,6 +840,20 @@
           "Cięcie hydrauliczne",
           "Układanie"
         ],
+        "faq": [
+          {
+            "q": "Czy mogę produkować profile W i thrie na jednej linii?",
+            "a": "Oba przekroje wymagają różnych zestawów rolek. Oba mogą pracować na tej samej ramie po wymianie zestawu; przy częstych zmianach zalecamy układ szybkiej wymiany."
+          },
+          {
+            "q": "Czy przetwarzana jest blacha ocynkowana, czy profil cynkuje się później?",
+            "a": "Możliwe są oba warianty. Przy blasze wstępnie ocynkowanej dobiera się powierzchnię rolek i nacisk; do cynkowania po profilowaniu używa się stali surowej."
+          },
+          {
+            "q": "Jak wykonywane są otwory i szczeliny montażowe?",
+            "a": "Zintegrowany jest zespół prasy hydraulicznej; otwory łączeniowe i szczeliny wykrawane są zanim profil opuści linię."
+          }
+        ],
         "sectors": ["Wykonawcy drogowi", "Projekty autostradowe", "Ocynkownie", "Eksporterzy infrastruktury"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Zespół cięcia",
           "Układanie"
         ],
+        "faq": [
+          {
+            "q": "Czy panel przedni perforowany i tylny kasetonowy powstają na jednej linii?",
+            "a": "To dwa różne przekroje, więc zwykle stosuje się dwa zestawy rolek. Do panelu perforowanego zespół wykrawania jest zintegrowany."
+          },
+          {
+            "q": "Czy wzór otworów wpływa na parametry akustyczne?",
+            "a": "Tak; średnica otworów i udział powierzchni otwartej bezpośrednio określają pochłanianie dźwięku. Oprzyrządowujemy i produkujemy wzór zdefiniowany w projekcie akustycznym."
+          },
+          {
+            "q": "Czy produkują Państwo panele aluminiowe?",
+            "a": "Tak. Aluminium wymaga niższego nacisku i innej powierzchni rolek; linia jest przygotowywana pod materiał."
+          }
+        ],
         "sectors": ["Projekty autostradowe", "Kolej i metro", "Inżynieria środowiska", "Infrastruktura miejska"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Regulowana profilarka",
           "Nożyce latające",
           "Układanie"
+        ],
+        "faq": [
+          {
+            "q": "Czy da się wykonywać wszystkie trzy przekroje na jednej linii?",
+            "a": "Tak, w konfiguracji z wymianą kaset C, sigma i omega powstają na tej samej ramie. Im więcej przekrojów, tym szybciej zwraca się szybka wymiana."
+          },
+          {
+            "q": "Co jest potrzebne przy zmianie wysokości profilu?",
+            "a": "Przy regulowanej konstrukcji kasetowej wysokość wybiera się na panelu; jeśli zmienia się rodzina przekrojów, wymienia się zestaw rolek."
+          },
+          {
+            "q": "Jak długo wytrzymują rolki?",
+            "a": "Rolki wykonano ze stali 4140, hartowanej do 58-60 Rockwella; przy prawidłowych nastawach nacisku mogą wyprodukować miliony metrów profilu."
+          }
         ],
         "sectors": ["Lekka konstrukcja stalowa", "Konstrukcja solarna", "Budynki prefabrykowane", "Hale przemysłowe", "Płatwie"]
       }

@@ -436,26 +436,88 @@
     "ctaTitle": "Richiedi referenze del tuo settore",
     "ctaText": "Condividiamo installazioni presso stabilimenti come il tuo e organizziamo visite."
   },
+  "calc": {
+    "metaTitle": "Calcolatori: peso coil, resa di alimentazione e taglio",
+    "metaDesc": "Calcolatori tecnici gratuiti: peso e lunghezza coil, capacità di alimentazione presse, sfrido di taglio longitudinale. Senza registrazione.",
+    "eyebrow": "Strumenti tecnici",
+    "title": "Calcolatori",
+    "desc": "Fate una stima rapida senza attendere un'offerta: peso coil, pezzi all'ora e sfrido di taglio. Tutti i risultati derivano dalla geometria.",
+    "disclaimer": "Questi strumenti servono a una valutazione preliminare; i risultati sono calcolati da geometria e densità del materiale. Per il dimensionamento esatto contattate il nostro ufficio tecnico.",
+    "material": "Materiale",
+    "steel": "Acciaio",
+    "stainless": "Inox",
+    "aluminium": "Alluminio",
+    "copper": "Rame",
+    "coilTitle": "Peso e lunghezza coil",
+    "od": "Diametro esterno",
+    "id": "Diametro interno (anima)",
+    "cwidth": "Larghezza coil",
+    "thickness": "Spessore lamiera",
+    "weight": "Peso coil",
+    "clength": "Lunghezza nastro",
+    "turns": "Numero di spire",
+    "feedTitle": "Resa alimentazione pressa",
+    "feedLen": "Passo di avanzamento",
+    "spm": "Colpi pressa/min",
+    "perStroke": "Pezzi per colpo",
+    "coilLen": "Lunghezza coil (opz.)",
+    "parts": "Pezzi all'ora",
+    "speed": "Velocità media linea",
+    "metersH": "Consumo orario",
+    "coilHours": "Autonomia coil",
+    "pcsH": "pz/h",
+    "hour": "h",
+    "feedNote": "La velocità di linea è l'avanzamento MEDIO; poiché la pressa si ferma a ogni colpo, la velocità di picco istantanea dell'alimentatore è superiore. La scelta si basa sul picco.",
+    "yieldTitle": "Resa di taglio",
+    "coilWidth": "Larghezza coil madre",
+    "stripWidth": "Larghezza nastro",
+    "trim": "Rifilo bordi totale",
+    "strips": "Numero di nastri",
+    "wastePct": "Percentuale di sfrido",
+    "waste": "Larghezza sfrido",
+    "yieldNote": "Il numero di nastri è arrotondato per difetto; la larghezza residua si somma allo sfrido insieme al rifilo. Regolare la larghezza del nastro riduce lo sfrido.",
+    "invalid": "I valori inseriti non sono validi."
+  },
   "videos": {
     "metaTitle": "Video macchine: le nostre linee in funzione",
     "metaDesc": "Guarda le linee Servosteel in funzione: video reali di linee di taglio, profilatura e sistemi di alimentazione presse.",
     "eyebrow": "Dal campo",
     "title": "Guarda le nostre linee in funzione",
     "desc": "Non promesse da brochure, ma linee in funzione: immagini reali di montaggi, collaudi in fabbrica e stabilimenti dei clienti.",
-    "items": [
-      {
-        "title": "Sistemi di Alimentazione Presse",
-        "text": "Svolgitore, raddrizzatrice e alimentatore servo in sincronia con la linea di pressa."
-      },
-      {
-        "title": "Linea di Taglio a Misura — Collaudo in Fabbrica",
-        "text": "Una linea di taglio a misura durante il collaudo pre-spedizione."
-      },
-      {
-        "title": "Produzione di Componenti per Ascensori",
-        "text": "Produzione di componenti per ascensori con un sistema di alimentazione presse."
-      }
-    ],
+    "groups": {
+      "slitting": "Linee di Taglio Longitudinale",
+      "ctl": "Linee di Taglio a Misura",
+      "rollform": "Linee di Profilatura",
+      "solar": "Linee per Profili Solari",
+      "feeding": "Sistemi di Alimentazione Presse",
+      "machines": "Macchine"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Linea di taglio longitudinale — linea completa da svolgitore a avvolgitore",
+      "GEYcBSPqutQ": "Linea di taglio — gruppo lame e avvolgimento in tensione",
+      "hc_Znq2u8MI": "Linea combinata di taglio e punzonatura",
+      "JOHZwMBLqKo": "Taglio longitudinale e a misura in un'unica linea",
+      "4QETxHS-CD4": "Linea di taglio a misura — linea completa in funzione",
+      "mwZx6X1mV0c": "Taglio a misura — cesoia e unità di impilaggio",
+      "H-h-IF4QbUI": "Linea di rifilatura e taglio a misura",
+      "_lOTZE21aGE": "Linea di lavorazione lamiera per unità di trattamento aria",
+      "qmWM1NgcACw": "Linea profili strutturali U-C — 350 × 5 mm",
+      "NR25bt36uQg": "HMI e software di reportistica di produzione",
+      "UCeR9epppK8": "Impilatore automatico — profili U e C",
+      "MaJswAJo8JQ": "Linea di produzione passerelle portacavi",
+      "J-O8xfI2ovA": "Linea profili per scaffalature pesanti",
+      "3xmcJvv6LNc": "Linea profili per pannelli solari",
+      "5vVTpg3hltE": "Linea profili Sigma e solare C",
+      "tm520w7WsBI": "Linea di produzione profilo solare C",
+      "2tgCtC8n_1E": "Sistemi di alimentazione presse — panoramica",
+      "ONmiUo8vtvk": "Linea compatta — svolgitore, raddrizzatrice e alimentatore",
+      "a7W3BzFYiow": "Alimentazione pressa in stabilimento — pressa automotive",
+      "7RcuUmfN7QE": "Test linea compatta — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 alimentatore servo con raddrizzatrice + svolgitore 2,5 t",
+      "bc5nAkQXJTw": "MDS302 mini alimentatore con raddrizzatrice + svolgitore SRV500",
+      "AqcEyDbbWtA": "Svolgitore idraulico — sistema freno a ceppi",
+      "v9_1snhusMY": "Avvolgitore idraulico"
+    },
     "bannerTitle": "109 video, 2,9 mila iscritti",
     "bannerText": "L'intero archivio è sul nostro canale YouTube, dalle linee di taglio all'HMI e al software di reportistica; nuovi video vengono aggiunti regolarmente.",
     "bannerCta": "Vai al Canale YouTube",
@@ -605,6 +667,20 @@
           "Unità di taglio (cesoia finale)",
           "Nastro di uscita e impilaggio"
         ],
+        "faq": [
+          {
+            "q": "Posso produrre passerelle forate e lisce sulla stessa linea?",
+            "a": "Sì. L'unità di punzonatura è integrata; cambiando ricetta si produce passerella forata o liscia. Disegno e passo dei fori sono attrezzati per commessa."
+          },
+          {
+            "q": "Quanto dura un cambio formato?",
+            "a": "La larghezza si imposta con la struttura a cassetti; l'operatore seleziona la misura dal pannello e la regolazione meccanica richiede minuti. Un cambio di altezza può richiedere la sostituzione del gruppo rulli."
+          },
+          {
+            "q": "Quali materiali lavora?",
+            "a": "Lamiera laminata a freddo, zincata, alluminio e inox. Per proteggere lo strato di zinco, superfici dei rulli e pressioni sono regolate sul materiale."
+          }
+        ],
         "sectors": ["Infrastruttura elettrica", "Data center", "Impianti industriali", "Centri commerciali ed edilizia"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Profilatrice",
           "Cesoia volante",
           "Impilaggio automatico"
+        ],
+        "faq": [
+          {
+            "q": "Posso produrre profili C e U sulla stessa linea?",
+            "a": "Sì; con un cambio cassetto le sezioni C, U e sigma girano sullo stesso telaio. Se cambiate spesso, consigliamo la configurazione a cambio rapido."
+          },
+          {
+            "q": "Fori e asole vengono punzonati in linea?",
+            "a": "Un'unità pressa idraulica è integrata; fori di montaggio e asole di regolazione sono punzonati prima del taglio, senza seconda operazione."
+          },
+          {
+            "q": "La zincatura a caldo si rovina durante la profilatura?",
+            "a": "Con superficie rulli e pressione adeguate al rivestimento resta integra. I nostri rulli sono in acciaio 4140 temprato a 58-60 Rockwell."
+          }
         ],
         "sectors": ["Solare / aziende EPC", "Fotovoltaico su tetto", "Impianti a terra", "Agri-PV"]
       },
@@ -664,6 +754,20 @@
           "Unità di taglio",
           "Sistema di impilaggio"
         ],
+        "faq": [
+          {
+            "q": "Montanti e traverse possono girare sulla stessa linea?",
+            "a": "Le sezioni differiscono, quindi servono di norma due gruppi rulli. In base al mix di ordini si può realizzare un telaio con due gruppi."
+          },
+          {
+            "q": "Come si definisce il disegno dei fori?",
+            "a": "Viene attrezzato sul passo dei ganci del vostro sistema; passo e forma sono specifici del progetto. Basta un campione o un disegno tecnico."
+          },
+          {
+            "q": "Quale spessore lamiera gestisce la linea?",
+            "a": "I profili per scaffalature pesanti richiedono in genere materiale spesso; sezione e range di spessore sono dimensionati per progetto dal vostro disegno."
+          }
+        ],
         "sectors": ["Magazzino e logistica", "Produttori di scaffalature", "Magazzini e-commerce", "Celle frigorifere"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Profilatrice",
           "Unità di taglio",
           "Stazione estremità (opzionale)"
+        ],
+        "faq": [
+          {
+            "q": "La foratura antiscivolo è fatta in linea?",
+            "a": "Sì, l'unità di goffratura e punzonatura è integrata; il motivo antiscivolo si forma sulla superficie durante la profilatura."
+          },
+          {
+            "q": "Come si imposta la lunghezza della tavola?",
+            "a": "La lunghezza si inserisce come ricetta sul pannello; il taglio è servocontrollato e modificabile all'interno del lotto."
+          },
+          {
+            "q": "I tappi terminali fanno parte della linea?",
+            "a": "L'unità di pressatura tappi è opzionale. Su richiesta viene aggiunta a fine linea, altrimenti si esegue in una stazione separata."
+          }
         ],
         "sectors": ["Sistemi di ponteggio", "Attrezzature edili", "Noleggio casseforme e ponteggi", "Sicurezza in cantiere"]
       },
@@ -722,6 +840,20 @@
           "Taglio idraulico",
           "Impilaggio"
         ],
+        "faq": [
+          {
+            "q": "Posso produrre profili W e thrie sulla stessa linea?",
+            "a": "Le due sezioni richiedono gruppi rulli diversi. Entrambe girano sullo stesso telaio cambiando gruppo; per cambi frequenti consigliamo un dispositivo a cambio rapido."
+          },
+          {
+            "q": "Si lavora lamiera zincata o si zinca dopo?",
+            "a": "Entrambe le soluzioni sono possibili. Con lamiera prezincata si regolano superficie e pressione; per la zincatura successiva il profilo si forma da acciaio nudo."
+          },
+          {
+            "q": "Come si realizzano fori e asole di montaggio?",
+            "a": "Un'unità pressa idraulica è integrata; fori di collegamento e asole sono punzonati prima che il profilo esca dalla linea."
+          }
+        ],
         "sectors": ["Imprese stradali", "Progetti autostradali", "Impianti di zincatura", "Esportatori di infrastrutture"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Unità di taglio",
           "Impilaggio"
         ],
+        "faq": [
+          {
+            "q": "Pannello frontale forato e posteriore a cassetta si fanno su una linea?",
+            "a": "Sono due sezioni diverse, quindi si usano di norma due gruppi rulli. Per il pannello forato l'unità di punzonatura è integrata."
+          },
+          {
+            "q": "Il disegno dei fori influenza la prestazione acustica?",
+            "a": "Sì; diametro e rapporto di area aperta determinano direttamente l'assorbimento acustico. Attrezziamo e produciamo il motivo definito nel vostro progetto acustico."
+          },
+          {
+            "q": "Potete produrre pannelli in alluminio?",
+            "a": "Sì. L'alluminio richiede pressione inferiore e una diversa superficie dei rulli; la linea viene predisposta per il materiale."
+          }
+        ],
         "sectors": ["Progetti autostradali", "Ferrovia e metro", "Ingegneria ambientale", "Infrastruttura urbana"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Profilatrice regolabile",
           "Cesoia volante",
           "Impilaggio"
+        ],
+        "faq": [
+          {
+            "q": "È possibile realizzare le tre sezioni su una linea?",
+            "a": "Sì, con configurazione a cambio cassetto C, sigma e omega girano sullo stesso telaio. Più sezioni si producono, prima il cambio rapido si ripaga."
+          },
+          {
+            "q": "Cosa serve quando cambia l'altezza del profilo?",
+            "a": "Con struttura a cassetto regolabile l'altezza si seleziona dal pannello; se cambia la famiglia di sezione si sostituisce il gruppo rulli."
+          },
+          {
+            "q": "Quanto durano i rulli?",
+            "a": "I rulli sono in acciaio 4140 temprato a 58-60 Rockwell; con pressioni corrette possono produrre milioni di metri di profilo."
+          }
         ],
         "sectors": ["Acciaio leggero", "Struttura solare", "Edifici prefabbricati", "Capannoni industriali", "Arcarecci"]
       }

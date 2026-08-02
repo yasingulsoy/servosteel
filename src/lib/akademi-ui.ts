@@ -12,6 +12,7 @@ export type AkademiUi = {
   minRead: string;
   empty: string;
   published: string;
+  toc: string;
 };
 
 const FALLBACK: AkademiUi = {
@@ -23,6 +24,7 @@ const FALLBACK: AkademiUi = {
   minRead: "min read",
   empty: "New articles coming soon.",
   published: "Published",
+  toc: "Contents",
 };
 
 export const akademiUi: Record<string, AkademiUi> = {
@@ -36,6 +38,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "dk okuma",
     empty: "Yakında yeni içerikler yayınlanacak.",
     published: "Yayınlandı",
+    toc: "İçindekiler",
   },
   en: {
     nav: "Academy",
@@ -47,6 +50,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "min read",
     empty: "New articles coming soon.",
     published: "Published",
+    toc: "Contents",
   },
   de: {
     nav: "Akademie",
@@ -58,6 +62,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "Min. Lesezeit",
     empty: "Bald neue Inhalte.",
     published: "Veröffentlicht",
+    toc: "Inhalt",
   },
   es: {
     nav: "Academia",
@@ -69,6 +74,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "min de lectura",
     empty: "Pronto nuevos artículos.",
     published: "Publicado",
+    toc: "Contenido",
   },
   it: {
     nav: "Accademia",
@@ -80,6 +86,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "min di lettura",
     empty: "Presto nuovi contenuti.",
     published: "Pubblicato",
+    toc: "Indice",
   },
   hu: {
     nav: "Akadémia",
@@ -91,6 +98,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "perc olvasás",
     empty: "Hamarosan új tartalmak.",
     published: "Közzétéve",
+    toc: "Tartalom",
   },
   pl: {
     nav: "Akademia",
@@ -102,6 +110,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "min czytania",
     empty: "Wkrótce nowe treści.",
     published: "Opublikowano",
+    toc: "Spis treści",
   },
   ru: {
     nav: "Академия",
@@ -113,6 +122,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "мин чтения",
     empty: "Скоро новые материалы.",
     published: "Опубликовано",
+    toc: "Содержание",
   },
   ar: {
     nav: "الأكاديمية",
@@ -124,6 +134,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     minRead: "دقيقة قراءة",
     empty: "محتوى جديد قريبًا.",
     published: "نُشر في",
+    toc: "المحتويات",
   },
 };
 

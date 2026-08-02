@@ -9,6 +9,7 @@ import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { ProductShot } from "@/components/product-shot";
 import { Reveal } from "@/components/reveal";
+import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { rollFormItems, isRollFormSlug, rollFormIcon } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
@@ -44,6 +45,8 @@ export default async function RollFormLinePage({ params }: Props) {
   const components = t.raw("components") as string[];
   const sectors = t.raw("sectors") as string[];
   const others = rollFormItems.filter((l) => l.slug !== slug).slice(0, 3);
+  /* FAQ opsiyoneldir — tanımlı olmayan üründe bölüm hiç basılmaz. */
+  const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
 
   return (
     <>
@@ -155,6 +158,8 @@ export default async function RollFormLinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
+
+      <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 
       <CtaBand title={td("quoteTitle", { name: t("name") })} />
     </>

@@ -436,26 +436,88 @@
     "ctaTitle": "Ask for references from your industry",
     "ctaText": "We'll share installations at facilities producing like yours, and arrange site visits."
   },
+  "calc": {
+    "metaTitle": "Calculators: Coil Weight, Feed Output and Slitting Yield",
+    "metaDesc": "Free engineering calculators: coil weight and length, press feed capacity, slitting scrap rate. No sign-up required.",
+    "eyebrow": "Engineering tools",
+    "title": "Calculators",
+    "desc": "Run a quick estimate without waiting for a quote: coil weight, parts per hour and slitting scrap rate. Every result is derived from geometry.",
+    "disclaimer": "These tools are for preliminary assessment; results are computed from geometry and material density. For exact line sizing, consult our engineering team.",
+    "material": "Material",
+    "steel": "Steel",
+    "stainless": "Stainless",
+    "aluminium": "Aluminium",
+    "copper": "Copper",
+    "coilTitle": "Coil weight and length",
+    "od": "Outer diameter",
+    "id": "Inner diameter (core)",
+    "cwidth": "Coil width",
+    "thickness": "Sheet thickness",
+    "weight": "Coil weight",
+    "clength": "Strip length",
+    "turns": "Number of wraps",
+    "feedTitle": "Press feed output",
+    "feedLen": "Feed pitch",
+    "spm": "Press strokes/min",
+    "perStroke": "Parts per stroke",
+    "coilLen": "Coil length (opt.)",
+    "parts": "Parts per hour",
+    "speed": "Average line speed",
+    "metersH": "Consumption per hour",
+    "coilHours": "Coil runtime",
+    "pcsH": "pcs/h",
+    "hour": "h",
+    "feedNote": "Line speed is the AVERAGE advance; since the press stops at every stroke, the feeder's instantaneous peak speed is higher. Feeder selection is based on peak speed.",
+    "yieldTitle": "Slitting yield",
+    "coilWidth": "Master coil width",
+    "stripWidth": "Strip width",
+    "trim": "Total edge trim",
+    "strips": "Number of strips",
+    "wastePct": "Scrap rate",
+    "waste": "Scrap width",
+    "yieldNote": "The strip count is rounded down; the leftover width is added to scrap together with the edge trim. Adjusting strip width can reduce scrap.",
+    "invalid": "The entered values are not valid."
+  },
   "videos": {
     "metaTitle": "Machine Videos: Our Lines Running on Site",
     "metaDesc": "Watch Servosteel lines in action: real field videos of slitting lines, cut-to-length, roll forming production and press feeding systems.",
     "eyebrow": "From the field",
     "title": "Watch our lines in action",
     "desc": "Not brochure promises — running lines: real footage from installations, factory tests and customer sites.",
-    "items": [
-      {
-        "title": "Press Feeding Systems",
-        "text": "Decoiler, straightener and servo feeder working in sync with the press line."
-      },
-      {
-        "title": "Cut-to-Length Line — Factory Test",
-        "text": "A cut-to-length line running its pre-shipment factory test."
-      },
-      {
-        "title": "Elevator Component Production",
-        "text": "Producing elevator components with a press feeding system."
-      }
-    ],
+    "groups": {
+      "slitting": "Coil Slitting Lines",
+      "ctl": "Cut-to-Length Lines",
+      "rollform": "Roll Forming Lines",
+      "solar": "Solar Profile Lines",
+      "feeding": "Press Feeding Systems",
+      "machines": "Machines"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Coil slitting line — complete line from decoiler to recoiler",
+      "GEYcBSPqutQ": "Slitting line — knife set and tension recoiling",
+      "hc_Znq2u8MI": "Combined slitting and punching line",
+      "JOHZwMBLqKo": "Slitting and cut-to-length on one line",
+      "4QETxHS-CD4": "Cut-to-length line — full line in operation",
+      "mwZx6X1mV0c": "Cut to length — shear and stacking unit",
+      "H-h-IF4QbUI": "Edge trimming and cut-to-length line",
+      "_lOTZE21aGE": "Sheet processing line for air handling units",
+      "qmWM1NgcACw": "Structural U-C profile line — 350 × 5 mm",
+      "NR25bt36uQg": "HMI and production reporting software",
+      "UCeR9epppK8": "Automatic stacker — U and C profiles",
+      "MaJswAJo8JQ": "Cable tray production line",
+      "J-O8xfI2ovA": "Heavy duty rack profile line",
+      "3xmcJvv6LNc": "Solar panel profile line",
+      "5vVTpg3hltE": "Sigma and solar C profile line",
+      "tm520w7WsBI": "Solar C profile production line",
+      "2tgCtC8n_1E": "Press feeding systems — overview",
+      "ONmiUo8vtvk": "Compact line — decoiler, straightener and feeder",
+      "a7W3BzFYiow": "Press feeding on site — automotive press",
+      "7RcuUmfN7QE": "Compact line test — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 straightener servo feeder + 2.5 t decoiler",
+      "bc5nAkQXJTw": "MDS302 mini straightener feeder + SRV500 decoiler",
+      "AqcEyDbbWtA": "Hydraulic decoiler — brake pad system",
+      "v9_1snhusMY": "Hydraulic recoiler"
+    },
     "bannerTitle": "109 videos, 2.9K subscribers",
     "bannerText": "The whole archive is on our YouTube channel, from slitting lines to HMI and reporting software — new installation videos are added regularly.",
     "bannerCta": "Go to the YouTube Channel",
@@ -605,6 +667,20 @@
           "Cutting unit (end-of-line shear)",
           "Exit conveyor and stacking"
         ],
+        "faq": [
+          {
+            "q": "Can I produce perforated and plain trays on the same line?",
+            "a": "Yes. The punching unit is integrated into the line; changing the recipe switches between perforated and plain tray. Hole pattern and pitch are tooled per order."
+          },
+          {
+            "q": "How long does a size changeover take?",
+            "a": "Width is set by the cassette structure; the operator selects the size on the panel and the mechanical adjustment takes minutes. A height change may require swapping the roller set."
+          },
+          {
+            "q": "Which sheet materials does it handle?",
+            "a": "Cold rolled, galvanized, aluminium and stainless steel. To protect the zinc coating, roller surfaces and pressure values are set according to the material."
+          }
+        ],
         "sectors": ["Electrical infrastructure", "Data centres", "Industrial facilities", "Malls and building projects"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Roll forming machine",
           "Flying shear",
           "Automatic stacking"
+        ],
+        "faq": [
+          {
+            "q": "Can I produce both C and U profiles on the same line?",
+            "a": "Yes; with a cassette change, C, U and sigma sections run on the same frame. If you switch often, we recommend a quick-change cassette configuration."
+          },
+          {
+            "q": "Are holes and slots punched inline?",
+            "a": "A hydraulic press unit is integrated into the line; mounting holes and adjustment slots are punched before the profile is cut — no second operation needed."
+          },
+          {
+            "q": "Does hot-dip galvanized sheet suffer in forming?",
+            "a": "With roller surface and pressure matched to the coating, it stays intact. Our rollers are made from 4140 steel and hardened to 58-60 Rockwell."
+          }
         ],
         "sectors": ["Solar / EPC companies", "Rooftop PV", "Utility-scale plants", "Agri-PV"]
       },
@@ -664,6 +754,20 @@
           "Cutting unit",
           "Stacking system"
         ],
+        "faq": [
+          {
+            "q": "Can uprights and beams run on the same line?",
+            "a": "Their sections differ, so two roller sets are normally needed. Depending on your order mix, a single frame carrying two sets can also be built."
+          },
+          {
+            "q": "How is the hole pattern defined?",
+            "a": "It is tooled to the hook pitch of your rack system; pitch and hole shape are project specific. A sample or technical drawing is enough to match your existing system."
+          },
+          {
+            "q": "What sheet thickness does the line handle?",
+            "a": "Heavy duty rack profiles typically call for thick material; the section and thickness range are sized per project. We define capacity together from your drawing."
+          }
+        ],
         "sectors": ["Warehousing and logistics", "Racking manufacturers", "E-commerce warehouses", "Cold storage"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Roll forming machine",
           "Cutting unit",
           "End-processing station (optional)"
+        ],
+        "faq": [
+          {
+            "q": "Is the anti-slip perforation made inline?",
+            "a": "Yes, the embossing and punching unit is integrated; the anti-slip pattern is formed on the plank surface while the profile is being rolled."
+          },
+          {
+            "q": "How is plank length set?",
+            "a": "Length is entered as a recipe on the control panel; the cut length is servo controlled and can be changed within a batch."
+          },
+          {
+            "q": "Are the end caps part of the line?",
+            "a": "The end-cap pressing unit is optional. On request it is added at the end of the line; otherwise it is done at a separate station."
+          }
         ],
         "sectors": ["Scaffolding systems", "Construction equipment", "Formwork-scaffolding rental", "Site safety"]
       },
@@ -722,6 +840,20 @@
           "Hydraulic cutting",
           "Stacking"
         ],
+        "faq": [
+          {
+            "q": "Can I produce W-beam and thrie-beam on the same line?",
+            "a": "The two sections need different roller sets. Both can run on the same frame by changing the set; for frequent switching we recommend a quick-change arrangement."
+          },
+          {
+            "q": "Is galvanized sheet processed, or is the profile galvanized afterwards?",
+            "a": "Both are possible. For pre-galvanized sheet the roller surface and pressure are set accordingly; for post-galvanizing the profile is rolled from bare steel."
+          },
+          {
+            "q": "How are holes and mounting slots made?",
+            "a": "A hydraulic press unit is integrated into the line; connection holes and slots are punched before the profile leaves the line."
+          }
+        ],
         "sectors": ["Road contractors", "Highway projects", "Galvanizing plants", "Infrastructure exporters"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Cutting unit",
           "Stacking"
         ],
+        "faq": [
+          {
+            "q": "Are the perforated front panel and cassette back panel made on one line?",
+            "a": "They are two different sections, so two roller sets are normally used. For the perforated panel the punching unit is integrated into the line."
+          },
+          {
+            "q": "Does the hole pattern affect acoustic performance?",
+            "a": "Yes; hole diameter and open area ratio directly determine sound absorption. We tool and produce the pattern defined in your acoustic design."
+          },
+          {
+            "q": "Can you produce aluminium panels?",
+            "a": "Yes. Aluminium requires lower pressure and a different roller surface; the line is set up for the material."
+          }
+        ],
         "sectors": ["Highway projects", "Railways and metro", "Environmental engineering", "Urban infrastructure"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Adjustable roll forming machine",
           "Flying shear",
           "Stacking"
+        ],
+        "faq": [
+          {
+            "q": "Is it possible to run all three sections on one line?",
+            "a": "Yes, with a cassette-change configuration C, sigma and omega run on the same frame. The more sections you run, the faster a quick-change arrangement pays for itself."
+          },
+          {
+            "q": "What is needed when the profile height changes?",
+            "a": "With an adjustable cassette structure the height is selected on the panel; if the section family changes, the roller set is swapped."
+          },
+          {
+            "q": "How long do the rollers last?",
+            "a": "Rollers are made from 4140 steel and hardened to 58-60 Rockwell; with correct pressure settings they can produce millions of metres of profile."
+          }
         ],
         "sectors": ["Light steel framing", "Solar structures", "Prefabricated buildings", "Industrial buildings", "Purlin profiles"]
       }

@@ -436,26 +436,88 @@
     "ctaTitle": "Kérjen referenciákat az iparágából",
     "ctaText": "Megosztjuk az Önéhez hasonló üzemekben lévő telepítéseinket, és üzemlátogatást szervezünk."
   },
+  "calc": {
+    "metaTitle": "Kalkulátorok: tekercssúly, adagolási teljesítmény, hasítási kihozatal",
+    "metaDesc": "Ingyenes mérnöki kalkulátorok: tekercssúly és -hossz, présadagolási kapacitás, hasítási hulladékarány. Regisztráció nélkül.",
+    "eyebrow": "Mérnöki eszközök",
+    "title": "Kalkulátorok",
+    "desc": "Készítsen gyors becslést ajánlat nélkül: tekercssúly, óránkénti darabszám és hasítási hulladék. Minden eredmény geometriából származik.",
+    "disclaimer": "Ezek az eszközök előzetes felméréshez valók; az eredmények geometriából és anyagsűrűségből számítanak. Pontos sorméretezéshez forduljon mérnöki csapatunkhoz.",
+    "material": "Anyag",
+    "steel": "Acél",
+    "stainless": "Rozsdamentes",
+    "aluminium": "Alumínium",
+    "copper": "Réz",
+    "coilTitle": "Tekercssúly és -hossz",
+    "od": "Külső átmérő",
+    "id": "Belső átmérő (mag)",
+    "cwidth": "Tekercsszélesség",
+    "thickness": "Lemezvastagság",
+    "weight": "Tekercssúly",
+    "clength": "Szalaghossz",
+    "turns": "Menetszám",
+    "feedTitle": "Présadagolási teljesítmény",
+    "feedLen": "Adagolási lépés",
+    "spm": "Présütés/perc",
+    "perStroke": "Darab ütésenként",
+    "coilLen": "Tekercshossz (opc.)",
+    "parts": "Óránkénti darab",
+    "speed": "Átlagos sorsebesség",
+    "metersH": "Óránkénti fogyás",
+    "coilHours": "Tekercs élettartam",
+    "pcsH": "db/óra",
+    "hour": "óra",
+    "feedNote": "A sorsebesség az ÁTLAGOS előtolás; mivel a prés minden ütésnél megáll, az adagoló pillanatnyi csúcssebessége magasabb. A kiválasztás a csúcssebességen alapul.",
+    "yieldTitle": "Hasítási kihozatal",
+    "coilWidth": "Anyatekercs szélessége",
+    "stripWidth": "Szalagszélesség",
+    "trim": "Teljes élvágás",
+    "strips": "Szalagok száma",
+    "wastePct": "Hulladékarány",
+    "waste": "Hulladék szélessége",
+    "yieldNote": "A szalagszám lefelé kerekít; a maradék szélesség az élvágással együtt hulladék lesz. A szalagszélesség hangolása csökkenti a hulladékot.",
+    "invalid": "A megadott értékek érvénytelenek."
+  },
   "videos": {
     "metaTitle": "Gépvideók: gépsoraink működés közben",
     "metaDesc": "Nézze meg a Servosteel sorait működés közben: valódi terepi videók hasító sorokról, profilozásról és présadagoló rendszerekről.",
     "eyebrow": "A terepről",
     "title": "Nézze meg sorainkat működés közben",
     "desc": "Nem brosúraígéretek, hanem működő sorok: valódi felvételek szerelésekről, gyári tesztekről és ügyfélüzemekből.",
-    "items": [
-      {
-        "title": "Présadagoló Rendszerek",
-        "text": "Lecsévélő, egyengető és szervoadagoló a présorral szinkronban."
-      },
-      {
-        "title": "Keresztvágó Sor — Gyári Teszt",
-        "text": "Egy keresztvágó sor a szállítás előtti gyári teszten."
-      },
-      {
-        "title": "Liftalkatrészek Gyártása",
-        "text": "Liftalkatrészek gyártása présadagoló rendszerrel."
-      }
-    ],
+    "groups": {
+      "slitting": "Hasítósorok",
+      "ctl": "Daraboló Sorok",
+      "rollform": "Profilhengerlő Sorok",
+      "solar": "Napelemprofil Sorok",
+      "feeding": "Présadagoló Rendszerek",
+      "machines": "Gépek"
+    },
+    "items": {
+      "h7aPJ6rJc_U": "Hasítósor — komplett sor a lecsévélőtől a felcsévélőig",
+      "GEYcBSPqutQ": "Hasítósor — késkészlet és feszített felcsévélés",
+      "hc_Znq2u8MI": "Kombinált hasító és lyukasztó sor",
+      "JOHZwMBLqKo": "Hasítás és darabolás egy soron",
+      "4QETxHS-CD4": "Daraboló sor — teljes sor működés közben",
+      "mwZx6X1mV0c": "Darabolás — olló és rakatoló egység",
+      "H-h-IF4QbUI": "Szélvágó és daraboló sor",
+      "_lOTZE21aGE": "Lemezfeldolgozó sor légkezelő berendezésekhez",
+      "qmWM1NgcACw": "Szerkezeti U-C profil sor — 350 × 5 mm",
+      "NR25bt36uQg": "HMI és termelésjelentő szoftver",
+      "UCeR9epppK8": "Automata rakatoló — U és C profilok",
+      "MaJswAJo8JQ": "Kábeltálca gyártósor",
+      "J-O8xfI2ovA": "Nehéz igénybevételű polcprofil sor",
+      "3xmcJvv6LNc": "Napelem profil sor",
+      "5vVTpg3hltE": "Szigma és napelem C profil sor",
+      "tm520w7WsBI": "Napelem C profil gyártósor",
+      "2tgCtC8n_1E": "Présadagoló rendszerek — áttekintés",
+      "ONmiUo8vtvk": "Kompakt sor — lecsévélő, egyengető és adagoló",
+      "a7W3BzFYiow": "Présadagolás üzemben — autóipari prés",
+      "7RcuUmfN7QE": "Kompakt sor teszt — SRV606 6 mm / SRV3000 3 t",
+      "P3zbB3c6NBY": "SRV504 egyengetős szervoadagoló + 2,5 t lecsévélő",
+      "bc5nAkQXJTw": "MDS302 mini egyengetős adagoló + SRV500 lecsévélő",
+      "AqcEyDbbWtA": "Hidraulikus lecsévélő — fékbetétes rendszer",
+      "v9_1snhusMY": "Hidraulikus felcsévélő"
+    },
     "bannerTitle": "109 videó, 2,9 E feliratkozó",
     "bannerText": "A teljes archívum a YouTube-csatornánkon, a hasító soroktól a HMI- és riportszoftverig — rendszeresen kerülnek fel új videók.",
     "bannerCta": "Tovább a YouTube-csatornára",
@@ -605,6 +667,20 @@
           "Vágóegység (sorvégi olló)",
           "Kihordó szalag és rakatolás"
         ],
+        "faq": [
+          {
+            "q": "Perforált és sima tálcát ugyanazon a soron gyárthatok?",
+            "a": "Igen. A lyukasztó egység a sorba épített; receptváltással perforált vagy sima tálca készül. A lyukkép és osztás rendelésre szerszámozott."
+          },
+          {
+            "q": "Mennyi ideig tart egy méretváltás?",
+            "a": "A szélességet a kazettás felépítés állítja; a kezelő a panelen választ méretet, a mechanikai beállítás percek kérdése. Magasságváltás görgőkészlet-cserét igényelhet."
+          },
+          {
+            "q": "Milyen lemezanyagokkal dolgozik?",
+            "a": "Hidegen hengerelt, horganyzott, alumínium és rozsdamentes lemez. A cinkréteg védelmére a görgőfelület és a nyomás az anyaghoz igazodik."
+          }
+        ],
         "sectors": ["Elektromos infrastruktúra", "Adatközpontok", "Ipari létesítmények", "Plázák és épületprojektek"]
       },
       "solar-profil": {
@@ -633,6 +709,20 @@
           "Profilozó gép",
           "Repülő olló",
           "Automatikus rakatolás"
+        ],
+        "faq": [
+          {
+            "q": "C és U profilt is gyárthatok ugyanazon a soron?",
+            "a": "Igen; kazettacserével a C, U és szigma szelvények ugyanazon a vázon futnak. Gyakori váltásnál gyorscserés kazettát javaslunk."
+          },
+          {
+            "q": "A lyukakat és hosszlyukakat a sor készíti?",
+            "a": "Hidraulikus présegység van beépítve; a rögzítőfuratok és állítóhornyok a darabolás előtt készülnek, második művelet nélkül."
+          },
+          {
+            "q": "A tűzihorganyzott lemez károsodik alakításkor?",
+            "a": "A bevonathoz illesztett görgőfelülettel és nyomással sértetlen marad. Görgőink 4140 acélból készülnek, 58-60 Rockwell keménységre edzve."
+          }
         ],
         "sectors": ["Napelem / EPC cégek", "Tetős napelem", "Szabadtéri erőművek", "Agro-PV"]
       },
@@ -664,6 +754,20 @@
           "Vágóegység",
           "Rakatoló rendszer"
         ],
+        "faq": [
+          {
+            "q": "Az oszlop és a gerenda futhat egy soron?",
+            "a": "Szelvényük eltér, ezért általában két görgőkészlet kell. A rendelési összetételtől függően egy vázra két készlet is építhető."
+          },
+          {
+            "q": "Hogyan határozzák meg a lyukképet?",
+            "a": "A polcrendszer akasztóosztásához szerszámozzuk; az osztás és a lyukforma projektfüggő. Minta vagy műszaki rajz elegendő."
+          },
+          {
+            "q": "Milyen lemezvastagságot bír a sor?",
+            "a": "A nehéz igénybevételű polcprofilok jellemzően vastag anyagot igényelnek; a szelvény és vastagságtartomány projektre méretezett, a rajz alapján."
+          }
+        ],
         "sectors": ["Raktár és logisztika", "Polcrendszer-gyártók", "E-kereskedelmi raktárak", "Hűtőraktárak"]
       },
       "iskele-kalas": {
@@ -692,6 +796,20 @@
           "Profilozó gép",
           "Vágóegység",
           "Végmegmunkáló állomás (opcionális)"
+        ],
+        "faq": [
+          {
+            "q": "A csúszásgátló perforáció a soron készül?",
+            "a": "Igen, a domborító és lyukasztó egység beépített; a csúszásgátló minta a profilozás közben alakul ki a felületen."
+          },
+          {
+            "q": "Hogyan állítható a pallóhossz?",
+            "a": "A hosszt receptként adják meg a kezelőpanelen; a vágáshossz szervovezérelt és tételen belül változtatható."
+          },
+          {
+            "q": "A végsapkák a sor részét képezik?",
+            "a": "A végsapka-préselő egység opcionális. Kérésre a sor végére kerül, egyébként külön állomáson történik."
+          }
         ],
         "sectors": ["Állványrendszerek", "Építőipari berendezések", "Zsalu-állvány bérlés", "Építkezési biztonság"]
       },
@@ -722,6 +840,20 @@
           "Hidraulikus vágás",
           "Rakatolás"
         ],
+        "faq": [
+          {
+            "q": "W és thrie profil futhat egy soron?",
+            "a": "A két szelvény eltérő görgőkészletet igényel. Mindkettő futhat ugyanazon a vázon készletcserével; gyakori váltásnál gyorscserés megoldást javaslunk."
+          },
+          {
+            "q": "Horganyzott lemezt dolgoznak fel, vagy utólag horganyoznak?",
+            "a": "Mindkettő lehetséges. Előhorganyzott lemeznél a görgőfelület és a nyomás ehhez igazodik; utólagos horganyzáshoz csupasz acélból profiloznak."
+          },
+          {
+            "q": "Hogyan készülnek a furatok és szerelőhornyok?",
+            "a": "Hidraulikus présegység van beépítve; a kötőfuratok és hornyok a profil sorról való kilépése előtt készülnek."
+          }
+        ],
         "sectors": ["Útépítő vállalkozók", "Autópálya-projektek", "Horganyzó üzemek", "Infrastruktúra-exportőrök"]
       },
       "gurultu-bariyeri": {
@@ -751,6 +883,20 @@
           "Vágóegység",
           "Rakatolás"
         ],
+        "faq": [
+          {
+            "q": "A perforált elülső és a kazettás hátsó panel egy soron készül?",
+            "a": "Két különböző szelvény, ezért általában két görgőkészletet használunk. A perforált panelhez a lyukasztó egység beépített."
+          },
+          {
+            "q": "A lyukkép befolyásolja az akusztikai teljesítményt?",
+            "a": "Igen; a lyukátmérő és a nyitott felület aránya közvetlenül meghatározza a hangelnyelést. Az akusztikai tervben megadott mintát szerszámozzuk és gyártjuk."
+          },
+          {
+            "q": "Tudnak alumínium panelt gyártani?",
+            "a": "Igen. Az alumínium kisebb nyomást és eltérő görgőfelületet igényel; a sort az anyaghoz állítjuk be."
+          }
+        ],
         "sectors": ["Autópálya-projektek", "Vasút és metró", "Környezetmérnökség", "Városi infrastruktúra"]
       },
       "c-sigma-omega": {
@@ -779,6 +925,20 @@
           "Állítható profilozó gép",
           "Repülő olló",
           "Rakatolás"
+        ],
+        "faq": [
+          {
+            "q": "Lehetséges mindhárom szelvényt egy soron gyártani?",
+            "a": "Igen, kazettacserés kialakítással a C, szigma és omega ugyanazon a vázon fut. Minél több szelvény, annál gyorsabban megtérül a gyorscsere."
+          },
+          {
+            "q": "Mi kell a profilmagasság változásakor?",
+            "a": "Állítható kazettás felépítésnél a magasság a panelen választható; ha a szelvénycsalád változik, a görgőkészletet cserélik."
+          },
+          {
+            "q": "Meddig bírják a görgők?",
+            "a": "A görgők 4140 acélból készülnek, 58-60 Rockwell keménységre edzve; helyes nyomásbeállítással több millió méter profilt gyárthatnak."
+          }
         ],
         "sectors": ["Könnyűszerkezetes építés", "Napelemes szerkezet", "Előregyártott épületek", "Ipari csarnok", "Szelemenprofilok"]
       }

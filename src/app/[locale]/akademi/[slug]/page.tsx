@@ -10,6 +10,8 @@ import { CtaBand } from "@/components/cta-band";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
+import { TableOfContents } from "@/components/table-of-contents";
+import { extractToc, slugifyHeading, textOf } from "@/lib/toc";
 import { localePath } from "@/i18n/seo";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
@@ -51,17 +53,52 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-/* MDX içindeki dahili linkler locale-önekli Link'e, dış linkler yeni sekmeye. */
-const mdxComponents = {
-  a: ({ href = "", children }: { href?: string; children?: ReactNode }) =>
-    href.startsWith("/") ? (
-      <Link href={href}>{children}</Link>
-    ) : (
-      <a href={href} target="_blank" rel="noopener noreferrer">
+/**
+ * Başlığa çapa + tıklanabilir "#" bağlantısı.
+ *
+ * Çapa, içindekilerle AYNI slug fonksiyonundan üretilir (src/lib/toc.ts);
+ * aynı metinli başlıklarda sıra numarası eklenerek çakışma engellenir —
+ * bu yüzden sayaç render sırasında tutulur, ToC'deki mantıkla birebir aynı.
+ */
+function makeHeading(level: 2 | 3, counter: Map<string, number>) {
+  const Tag = level === 2 ? "h2" : "h3";
+  return function Heading({ children }: { children?: ReactNode }) {
+    const base = slugifyHeading(textOf(children));
+    const n = counter.get(base) ?? 0;
+    counter.set(base, n + 1);
+    const id = n === 0 ? base : `${base}-${n}`;
+    return (
+      // scroll-mt: sabit header başlığı kesmesin diye çapa hedefi aşağı kaydırılır
+      <Tag id={id} className="group/h scroll-mt-28">
         {children}
-      </a>
-    ),
-};
+        <a
+          href={`#${id}`}
+          aria-label={textOf(children)}
+          className="ms-2 text-accent no-underline opacity-0 transition-opacity group-hover/h:opacity-100 focus:opacity-100"
+        >
+          #
+        </a>
+      </Tag>
+    );
+  };
+}
+
+/* MDX içindeki dahili linkler locale-önekli Link'e, dış linkler yeni sekmeye. */
+function makeMdxComponents() {
+  const counter = new Map<string, number>();
+  return {
+    h2: makeHeading(2, counter),
+    h3: makeHeading(3, counter),
+    a: ({ href = "", children }: { href?: string; children?: ReactNode }) =>
+      href.startsWith("/") ? (
+        <Link href={href}>{children}</Link>
+      ) : (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      ),
+  };
+}
 
 export default async function AkademiPostPage({ params }: Props) {
   const { locale, slug } = await params;
@@ -71,6 +108,7 @@ export default async function AkademiPostPage({ params }: Props) {
 
   const ui = getAkademiUi(locale);
   const df = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" });
+  const toc = extractToc(post.content);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -128,11 +166,20 @@ export default async function AkademiPostPage({ params }: Props) {
         </div>
       )}
 
-      <div className="mx-auto mt-10 max-w-3xl px-4">
-        <div className="prose prose-zinc max-w-none dark:prose-invert prose-headings:font-display prose-headings:tracking-tight prose-a:font-medium prose-a:text-accent-ink prose-img:rounded-xl">
+      {/* İçerik + içindekiler.
+          xl altında ToC yazının üstünde açılır kart, xl'de sağda sabit sütun.
+          Yazı sütunu her iki durumda da max-w-3xl kalır — okuma genişliği bozulmaz. */}
+      <div className="mx-auto mt-10 max-w-3xl px-4 xl:grid xl:max-w-6xl xl:grid-cols-[minmax(0,1fr)_230px] xl:items-start xl:gap-12">
+        {/* DOM'da önce gelir ki dar ekranda açılır kart yazının ÜSTÜNDE dursun;
+            xl'de order ile sağ sütuna geçer. */}
+        <div className="xl:order-2">
+          <TableOfContents items={toc} label={ui.toc} />
+        </div>
+
+        <div className="prose prose-zinc max-w-none dark:prose-invert prose-headings:font-display prose-headings:tracking-tight prose-a:font-medium prose-a:text-accent-ink prose-img:rounded-xl xl:order-1 xl:max-w-3xl">
           <MDXRemote
             source={post.content}
-            components={mdxComponents}
+            components={makeMdxComponents()}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
           />
         </div>
