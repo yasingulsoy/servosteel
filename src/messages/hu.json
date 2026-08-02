@@ -436,6 +436,163 @@
     "ctaTitle": "Kérjen referenciákat az iparágából",
     "ctaText": "Megosztjuk az Önéhez hasonló üzemekben lévő telepítéseinket, és üzemlátogatást szervezünk."
   },
+  "compare": {
+    "metaTitle": "Összehasonlítások: válassza a megfelelő gépet",
+    "metaDesc": "Szervo vagy mechanikus adagolás? Hasítás vagy darabolás? Hidraulikus vagy mechanikus lecsévélő? Hasonlítsa össze a különbségeket a beruházás előtt.",
+    "eyebrow": "Választási útmutató",
+    "title": "Összehasonlítások",
+    "desc": "Azok a kérdések, amelyek közvetlenül a beruházási döntés előtt merülnek fel. Minden összehasonlítás azonos szempontok szerint állítja szembe a két megoldást.",
+    "tableTitle": "Egymás mellett",
+    "criterion": "Szempont",
+    "verdictTitle": "Röviden",
+    "seeProduct": "Ugrás a termékoldalra",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Szervoadagoló vagy mechanikus adagoló?",
+        "metaTitle": "Szervoadagoló vs mechanikus adagoló: összehasonlítás",
+        "metaDesc": "A szervoadagolás és a mechanikus/pneumatikus adagolók közötti különbségek: pontosság, szerszámcsere, sebesség és beruházás.",
+        "hero": "Kétféleképpen lehet szalagot juttatni a préssorba. A különbség nem csak az ár: változik az alkatrésztűrés, az átállási idő és a rugalmasság is.",
+        "aName": "Szervoadagoló",
+        "bName": "Mechanikus / pneumatikus adagoló",
+        "rows": [
+          {
+            "label": "Lépéspontosság",
+            "a": "Zárt hurok szervomotorral és jeladóval; a tűrés sorozatban is tartható",
+            "b": "Bütyök vagy pneumatikus löket korlátozza; a lépés kopással elcsúszik"
+          },
+          {
+            "label": "Lépéshossz módosítása",
+            "a": "Érték a panelen, másodpercek kérdése",
+            "b": "Mechanikus állítás vagy bütyökcsere kell"
+          },
+          {
+            "label": "Szerszámcsere",
+            "a": "Receptmemória 250 szerszámig; nincs újrabeállítás",
+            "b": "Minden szerszámnál újrabeállítás"
+          },
+          {
+            "label": "Présszinkron",
+            "a": "Teljes szinkron a bütyökjellel, vezetőcsap-oldás alapkivitel",
+            "b": "Korlátozott; magas ütemszámnál nehezebb"
+          },
+          {
+            "label": "Beruházás és üzemeltetés",
+            "a": "Magasabb belépő, kevesebb hulladék és állásidő",
+            "b": "Alacsonyabb belépő, több beállítási idő és hulladék"
+          }
+        ],
+        "chooseATitle": "Szervoadagolót válasszon, ha",
+        "chooseA": [
+          "Az alkatrésztűrés szűk, és a sorozat végéig tartania kell",
+          "Egy műszakon belül több szerszámot cserél",
+          "Vezetőcsapot használ vagy magas ütemszámmal dolgozik"
+        ],
+        "chooseBTitle": "Mechanikus adagoló elég, ha",
+        "chooseB": [
+          "Hosszú sorozatokat gyárt egyetlen szerszámmal",
+          "A lépéstűrés tág, a felület nem kritikus",
+          "A költségvetés határozza meg a belépő beruházást"
+        ],
+        "verdict": "Ahogy nő a szerszámválaszték, a szervo beállítási és hulladékmegtakarítása behozza az árkülönbséget. Egyetlen alkatrész hosszú sorozatánál a mechanikus adagoló továbbra is ésszerű."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Hasítósor vagy daraboló sor?",
+        "metaTitle": "Hasítás vs darabolás: sor-összehasonlítás",
+        "metaDesc": "A hasítósor és a daraboló sor közötti különbség: termék, vágásirány, berendezés és alkalmazások.",
+        "hero": "Mindkét sor tekercset dolgoz fel, de más irányban vág: az egyik szalagtekercset ad, a másik sík táblát. A terméke dönti el, melyik kell.",
+        "aName": "Hasítósor",
+        "bName": "Daraboló sor",
+        "rows": [
+          {
+            "label": "Vágásirány",
+            "a": "Hosszirányú — a szalag mentén",
+            "b": "Keresztirányú — a szélesség mentén"
+          },
+          {
+            "label": "Termék",
+            "a": "Keskeny szalagtekercsek",
+            "b": "Sík, méretre vágott táblák"
+          },
+          {
+            "label": "Vágóegység",
+            "a": "Körkéses készletek",
+            "b": "Olló vagy repülő vágás"
+          },
+          {
+            "label": "Sor vége",
+            "a": "Felcsévélő és feszítőrendszer",
+            "b": "Rakatoló egység"
+          },
+          {
+            "label": "Tipikus vevő",
+            "a": "Profilhengerlő, profil- és csőgyártók",
+            "b": "Présüzemek, lézervágók, lemezmegmunkálók"
+          }
+        ],
+        "chooseATitle": "Hasítósort válasszon, ha",
+        "chooseA": [
+          "A terméke tekercs formájú szalag lesz",
+          "A szalagokat saját profilhengerlő vagy csősorába vezeti",
+          "Széles anyatekercset akar rendelési szélességekre bontani"
+        ],
+        "chooseBTitle": "Daraboló sort válasszon, ha",
+        "chooseB": [
+          "A terméke adott hosszúságú sík tábla lesz",
+          "A táblák prést, lézert vagy élhajlítót táplálnak",
+          "A síkfekvés minőségkritikus"
+        ],
+        "verdict": "Nem alternatívái egymásnak — más terméket adnak. Ha mindkettőre szüksége van, beszéljünk a hasítást és darabolást egy vázon egyesítő kombinált sorokról."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Hidraulikus vagy mechanikus lecsévélő?",
+        "metaTitle": "Hidraulikus vs mechanikus lecsévélő: összehasonlítás",
+        "metaDesc": "A hidraulikus és mechanikus lecsévélő különbségei: kapacitás, tüsketágítás, fékezés és betöltés. Melyik illik a tekercssúlyához?",
+        "hero": "A különbség nem csak a kapacitás: az is változik, hogyan szorít a tüske, hogyan fékeződik a tekercs és hogyan kerül a tengelyre.",
+        "aName": "Hidraulikus lecsévélő",
+        "bName": "Mechanikus lecsévélő",
+        "rows": [
+          {
+            "label": "Kapacitástartomány",
+            "a": "6 – 20 tonna",
+            "b": "500 – 4 000 kg"
+          },
+          {
+            "label": "Tüsketágítás",
+            "a": "Hidraulikus — panelről vezérelve",
+            "b": "Mechanikus — kézikerékkel szorítva"
+          },
+          {
+            "label": "Fékezés",
+            "a": "Hidraulikus fék, a sorsebességhez szabályozva",
+            "b": "Fékbetétes rendszer"
+          },
+          {
+            "label": "Tekercsbetöltés",
+            "a": "Hidraulikus betöltőkocsival igazítva",
+            "b": "Targoncával a tengelyre helyezve"
+          },
+          {
+            "label": "Kezelői terhelés",
+            "a": "Alacsony — beállítás a panelről",
+            "b": "Magas — kézi szorítás minden tekercsnél"
+          }
+        ],
+        "chooseATitle": "Hidraulikusat válasszon, ha",
+        "chooseA": [
+          "Tekercsei 5 tonna felettiek",
+          "Műszakon belül gyakran cserél tekercset",
+          "A sorsebesség magas és szabályozott fékezés kell"
+        ],
+        "chooseBTitle": "Mechanikus elég, ha",
+        "chooseB": [
+          "Tekercsei 2,5 tonna alattiak és keskenyek",
+          "A tekercscsere ritka",
+          "A beruházást a lehető legalacsonyabban kell tartani"
+        ],
+        "verdict": "Nehéz tekercs és gyakori csere esetén a hidraulikus gyorsan megtérül a kezelői időn és a munkabiztonságon. Keskeny szalagnál és könnyű tekercsnél a mechanikus széria marad a leggazdaságosabb."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Kalkulátorok: tekercssúly, adagolási teljesítmény, hasítási kihozatal",
     "metaDesc": "Ingyenes mérnöki kalkulátorok: tekercssúly és -hossz, présadagolási kapacitás, hasítási hulladékarány. Regisztráció nélkül.",

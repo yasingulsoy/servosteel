@@ -436,6 +436,163 @@
     "ctaTitle": "Ask for references from your industry",
     "ctaText": "We'll share installations at facilities producing like yours, and arrange site visits."
   },
+  "compare": {
+    "metaTitle": "Comparisons: Choose the Right Equipment",
+    "metaDesc": "Servo or mechanical feeding? Slitting or cut-to-length? Hydraulic or mechanical decoiler? Compare the differences side by side before you invest.",
+    "eyebrow": "Selection guide",
+    "title": "Comparisons",
+    "desc": "The questions asked right before an investment decision. Each comparison puts two options side by side against the same criteria and says when each is right.",
+    "tableTitle": "Side-by-side comparison",
+    "criterion": "Criterion",
+    "verdictTitle": "In short",
+    "seeProduct": "Go to product page",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Servo feeder or mechanical feeder?",
+        "metaTitle": "Servo Feeder vs Mechanical Feeder: Comparison",
+        "metaDesc": "Differences between servo feeding and mechanical/pneumatic feeders: accuracy, die change, speed and investment. Which is right for your job?",
+        "hero": "There are two ways to feed strip into a press line. The difference is not only price: part tolerance, die change time and line flexibility all change.",
+        "aName": "Servo feeder",
+        "bName": "Mechanical / pneumatic feeder",
+        "rows": [
+          {
+            "label": "Pitch accuracy",
+            "a": "Closed loop with servo motor and encoder; tolerance holds in series production",
+            "b": "Limited by mechanical cam or pneumatic stroke; pitch drifts with wear"
+          },
+          {
+            "label": "Changing the pitch",
+            "a": "Value entered on the panel, takes seconds",
+            "b": "Requires mechanical adjustment or a cam change"
+          },
+          {
+            "label": "Die change",
+            "a": "Recipe memory for up to 250 dies; no re-setup",
+            "b": "Re-adjustment on every die"
+          },
+          {
+            "label": "Press synchronization",
+            "a": "Fully synchronized via cam signal, pilot release standard",
+            "b": "Limited; synchronization gets harder at high stroke rates"
+          },
+          {
+            "label": "Investment and running cost",
+            "a": "Higher up front, lower scrap and downtime",
+            "b": "Lower up front, higher setup time and scrap"
+          }
+        ],
+        "chooseATitle": "Choose a servo feeder if",
+        "chooseA": [
+          "Your part tolerance is tight and must hold across a production run",
+          "You change several dies within a shift",
+          "You use pilot pins or run at high stroke rates"
+        ],
+        "chooseBTitle": "A mechanical feeder is enough if",
+        "chooseB": [
+          "You run long series with a single die",
+          "Pitch tolerance is loose and surface is not critical",
+          "Budget constraints drive the initial investment"
+        ],
+        "verdict": "As die variety grows, the setup and scrap savings of a servo feeder close the initial price gap. If you produce one part in long runs, a mechanical feeder is still a reasonable choice."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Slitting line or cut-to-length line?",
+        "metaTitle": "Coil Slitting vs Cut-to-Length: Line Comparison",
+        "metaDesc": "The difference between a slitting line and a cut-to-length line: output product, cutting direction, equipment and applications. Which line fits your business?",
+        "hero": "Both lines process coil, but they cut in different directions: one produces strip coils, the other flat sheets. Your output decides the line.",
+        "aName": "Coil slitting line",
+        "bName": "Cut-to-length line",
+        "rows": [
+          {
+            "label": "Cutting direction",
+            "a": "Longitudinal — along the strip",
+            "b": "Transverse — across the width"
+          },
+          {
+            "label": "Output product",
+            "a": "Narrow strip coils",
+            "b": "Flat sheets cut to size"
+          },
+          {
+            "label": "Cutting unit",
+            "a": "Circular knife sets",
+            "b": "Shear or flying cut"
+          },
+          {
+            "label": "End of line",
+            "a": "Recoiler and tension system",
+            "b": "Stacking unit"
+          },
+          {
+            "label": "Typical customer",
+            "a": "Roll forming, profile and tube producers",
+            "b": "Press shops, laser cutting and sheet fabricators"
+          }
+        ],
+        "chooseATitle": "Choose a slitting line if",
+        "chooseA": [
+          "Your output will be strip in coil form",
+          "You will feed the strips into your own roll forming or tube line",
+          "You want to split wide master coils into ordered widths"
+        ],
+        "chooseBTitle": "Choose a cut-to-length line if",
+        "chooseB": [
+          "Your output will be flat sheets at a defined length",
+          "The sheets will feed a press, laser or press brake",
+          "Flatness quality is critical"
+        ],
+        "verdict": "These are not alternatives to each other — they make different products. If you need both strip and sheet, let us discuss combined lines that do slitting and cut-to-length on one frame."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Hydraulic or mechanical decoiler?",
+        "metaTitle": "Hydraulic vs Mechanical Decoiler: Comparison",
+        "metaDesc": "Differences between hydraulic and mechanical decoilers: capacity, mandrel expansion, braking and loading. Which one suits your coil weight?",
+        "hero": "The difference is not just capacity: how the mandrel clamps, how the coil is braked and how it is loaded onto the shaft all change.",
+        "aName": "Hydraulic decoiler",
+        "bName": "Mechanical decoiler",
+        "rows": [
+          {
+            "label": "Capacity range",
+            "a": "6 – 20 tonnes",
+            "b": "500 – 4,000 kg"
+          },
+          {
+            "label": "Mandrel expansion",
+            "a": "Hydraulic — controlled from the panel",
+            "b": "Mechanical — hand-tightened with a handwheel"
+          },
+          {
+            "label": "Braking",
+            "a": "Hydraulic brake, controlled to line speed",
+            "b": "Brake pad system"
+          },
+          {
+            "label": "Coil loading",
+            "a": "Aligned with a hydraulic loading car",
+            "b": "Mounted on the shaft by forklift"
+          },
+          {
+            "label": "Operator effort",
+            "a": "Low — settings from the panel",
+            "b": "High — manual clamping on every coil"
+          }
+        ],
+        "chooseATitle": "Choose hydraulic if",
+        "chooseA": [
+          "Your coils are above 5 tonnes",
+          "You change coils frequently during a shift",
+          "Your line speed is high and controlled braking is needed"
+        ],
+        "chooseBTitle": "Mechanical is enough if",
+        "chooseB": [
+          "Your coils are under 2.5 tonnes and narrow",
+          "Coil changes are infrequent",
+          "You need to keep the investment as low as possible"
+        ],
+        "verdict": "With heavy coils and frequent changes, hydraulic pays for itself quickly through operator time and safety. For narrow strip and light coils, the mechanical series is still the most economical solution."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Calculators: Coil Weight, Feed Output and Slitting Yield",
     "metaDesc": "Free engineering calculators: coil weight and length, press feed capacity, slitting scrap rate. No sign-up required.",

@@ -1,0 +1,122 @@
+---
+title: "Hogyan számítsunk tekercssúlyt és szalaghosszt?"
+description: "Tekercssúly- és szalaghossz-képletek, lépésről lépésre kidolgozott példa, gyakori hibák és hatásuk a sorválasztásra."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["tekercsszámítás", "lemezfeldolgozás", "sorválasztás"]
+---
+
+A tekercs súlyának és a benne lévő szalag hosszának ismerete két döntést befolyásol közvetlenül: **milyen kapacitású lecsévélő kell**, és **hány órát bír egy tekercs**. Egyiket sem lehet találgatni. Szerencsére mindkettő egyetlen geometriai tényből következik, és kézzel kiszámítható.
+
+Ha azonnal az eredményre van szüksége, használja a tekercskalkulátort a [kalkulátorok](/hesaplayicilar) oldalon; alább a mögötte álló logikát fejtjük ki.
+
+## A tekercs geometriája: minden egy körgyűrűre vezet vissza
+
+Oldalról nézve a feltekercselt anyag egy **körgyűrű**: a külső átmérő (OD) és a belső átmérő (ID) közötti sáv. Területe:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+A lényeg: letekercseléskor ez a terület **megmarad**. Az acél már nem gyűrű, hanem hosszú téglalap — a keresztmetszet viszont ugyanaz. A téglalap egyik oldala a lemezvastagság (t), a másik a szalaghossz (L):
+
+```
+A = L × t   →   L = A / t
+```
+
+A hossz nem más, mint terület osztva vastagsággal.
+
+## A súlyképlet
+
+A súlyhoz a gyűrűterületet megszorozzuk a tekercsszélességgel (W), így kapjuk a térfogatot, majd a sűrűséggel (ρ):
+
+```
+Súly (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000
+```
+
+Az OD, ID és W milliméterben, a ρ g/cm³-ben értendő. Az egymillióval való osztás az a mértékegység-tényező, amely a mm³ és g/cm³ keverékét kilogrammá alakítja — ezt hagyják ki a legtöbbször.
+
+### Gyakori sűrűségek
+
+| Anyag | ρ (g/cm³) |
+|---|---|
+| Acél | 7,85 |
+| Rozsdamentes | 7,90 |
+| Alumínium | 2,70 |
+| Réz | 8,96 |
+
+Figyelje meg, hogy az alumínium nagyjából **harmada** az acél súlyának: azonos geometriájú tekercs az acél érték 34 %-át adja. A lecsévélő kapacitását az anyag figyelembevétele nélkül választani ezért félrevezető.
+
+## Kidolgozott példa
+
+Tegyük fel, hogy ez a tekercsünk:
+
+- Külső átmérő: **1 400 mm**
+- Belső átmérő (mag): **508 mm**
+- Szélesség: **1 250 mm**
+- Vastagság: **2 mm**
+- Anyag: acél (7,85 g/cm³)
+
+**1. Gyűrűterület**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1 960 000 − 258 064)
+A = π/4 × 1 701 936 ≈ 1 336 663 mm²
+```
+
+**2. Súly**
+
+```
+1 336 663 × 1 250 × 7,85 / 1 000 000 ≈ 13 116 kg
+```
+
+Nagyjából **13,1 tonna**. Ehhez a tekercshez 15 tonnás lecsévélő kell; a 12 tonnás széria nem elég.
+
+**3. Szalaghossz**
+
+```
+L = 1 336 663 / 2 = 668 331 mm ≈ 668 m
+```
+
+## Hatás a sorválasztásra
+
+A hossz ismeretében azt is tudja, **meddig tart a tekercs**. Vegyünk egy préssort 250 mm-es lépéssel, percenként 40 ütéssel:
+
+```
+Percenként: 250 × 40 = 10 000 mm = 10 m
+Óránként:   10 × 60 = 600 m
+```
+
+Egy 668 m-es tekercs ezen a soron kb. **1,1 órát** bír: műszakonként mintegy 7 tekercscsere, és minden csere állásidő. Itt két út adódik: nehezebb tekercs (nagyobb lecsévélő) vagy gyorsabb csere (betöltőkocsi). Számítás nélkül ez a vita el sem kezdhető.
+
+## Három gyakori hiba
+
+**A mag figyelmen kívül hagyása.** Ha a tekercset tömör hengernek tekintjük a belső átmérő levonása helyett, a súly erősen felfújódik. Egy 508 mm-es mag 1 400 mm-es tekercsen a keresztmetszet mintegy 13 %-a.
+
+**A névleges vastagságban bízni.** A lemeztűrés elérheti a ±5 %-ot. Mivel a hossz **fordítottan** arányos a vastagsággal, a 2 mm helyett valójában 2,1 mm-es anyag 5 %-kal rövidebb: 668 m helyett 636 m.
+
+**Mértékegységet keverni.** A képletben minden hossz milliméterben szerepeljen. A szélességet méterben megadni ezerszeresére növeli az eredményt; ez a hiba az ajánlati szakaszban rendszeresen felbukkan.
+
+## Visszafelé: súlyból hosszra
+
+Ha a beszállító megadja a tekercs súlyát, de az átmérőket nem, a hossz közvetlenül is megkapható:
+
+```
+L (m) = Súly (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Acélra ρ = 7 850 kg/m³. Ellenőrizzük a fenti példán:
+
+```
+13 116 / (1,25 × 0,002 × 7 850) ≈ 668 m
+```
+
+Ugyanaz az eredmény — bizonyíték arra, hogy a számítás konzisztens. Két úton ugyanahhoz a számhoz jutni a legpraktikusabb módja a bemenetek ellenőrzésének.
+
+## Összefoglalás
+
+A tekercsszámítás nem megérzés, hanem két sor geometria. A súly gyűrűterület × szélesség × sűrűség; a hossz gyűrűterület ÷ vastagság. E két szám birtokában a lecsévélő kapacitása, a cseregyakoriság és a műszaktervezés is megvitathatóvá válik.
+
+Próbálja ki saját értékeivel a [tekercskalkulátorban](/hesaplayicilar), és [írjon nekünk](/iletisim), ha a sorméretezésről szeretne beszélni.

@@ -436,6 +436,163 @@
     "ctaTitle": "Fordern Sie Referenzen aus Ihrer Branche an",
     "ctaText": "Wir zeigen Installationen bei Herstellern wie Ihnen und organisieren Werksbesuche."
   },
+  "compare": {
+    "metaTitle": "Vergleiche: die richtige Ausrüstung wählen",
+    "metaDesc": "Servo- oder Mechanikvorschub? Längs- oder Querteilen? Hydraulische oder mechanische Haspel? Vergleichen Sie die Unterschiede vor der Investition.",
+    "eyebrow": "Auswahlhilfe",
+    "title": "Vergleiche",
+    "desc": "Die Fragen unmittelbar vor der Investitionsentscheidung. Jeder Vergleich stellt zwei Optionen nach denselben Kriterien gegenüber und sagt, wann welche richtig ist.",
+    "tableTitle": "Gegenüberstellung",
+    "criterion": "Kriterium",
+    "verdictTitle": "Kurz gesagt",
+    "seeProduct": "Zur Produktseite",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Servovorschub oder mechanischer Vorschub?",
+        "metaTitle": "Servovorschub vs. mechanischer Vorschub: Vergleich",
+        "metaDesc": "Unterschiede zwischen Servovorschub und mechanischem/pneumatischem Vorschub: Genauigkeit, Werkzeugwechsel, Geschwindigkeit und Investition.",
+        "hero": "Es gibt zwei Wege, Band in eine Pressenlinie zu führen. Der Unterschied liegt nicht nur im Preis: Teiletoleranz, Rüstzeit und Linienflexibilität ändern sich ebenfalls.",
+        "aName": "Servovorschub",
+        "bName": "Mechanischer / pneumatischer Vorschub",
+        "rows": [
+          {
+            "label": "Schrittgenauigkeit",
+            "a": "Geschlossener Regelkreis mit Servomotor und Encoder; Toleranz bleibt in der Serie erhalten",
+            "b": "Durch Nocken oder Pneumatikhub begrenzt; Schritt driftet mit Verschleiß"
+          },
+          {
+            "label": "Schrittlänge ändern",
+            "a": "Wert am Panel eingeben, dauert Sekunden",
+            "b": "Mechanische Verstellung oder Nockenwechsel nötig"
+          },
+          {
+            "label": "Werkzeugwechsel",
+            "a": "Rezeptspeicher für bis zu 250 Werkzeuge; kein Nachrüsten",
+            "b": "Neueinstellung bei jedem Werkzeug"
+          },
+          {
+            "label": "Pressensynchronisation",
+            "a": "Voll synchron über Nockensignal, Pilotfreigabe serienmäßig",
+            "b": "Begrenzt; bei hohen Hubzahlen schwieriger"
+          },
+          {
+            "label": "Investition und Betrieb",
+            "a": "Höher in der Anschaffung, weniger Ausschuss und Stillstand",
+            "b": "Günstiger in der Anschaffung, mehr Rüstzeit und Ausschuss"
+          }
+        ],
+        "chooseATitle": "Servovorschub wählen, wenn",
+        "chooseA": [
+          "Ihre Teiletoleranz eng ist und über die Serie halten muss",
+          "Sie mehrere Werkzeuge pro Schicht wechseln",
+          "Sie Pilotstifte verwenden oder mit hoher Hubzahl fahren"
+        ],
+        "chooseBTitle": "Mechanischer Vorschub genügt, wenn",
+        "chooseB": [
+          "Sie lange Serien mit einem einzigen Werkzeug fahren",
+          "Die Schritttoleranz weit ist und die Oberfläche unkritisch",
+          "Das Budget die Erstinvestition bestimmt"
+        ],
+        "verdict": "Mit wachsender Werkzeugvielfalt schließen die Rüst- und Ausschussersparnisse des Servovorschubs die Preisdifferenz. Bei einem Teil in langen Serien bleibt der mechanische Vorschub eine vernünftige Wahl."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Längsteil- oder Querteilanlage?",
+        "metaTitle": "Längsteilen vs. Querteilen: Anlagenvergleich",
+        "metaDesc": "Der Unterschied zwischen Längsteil- und Querteilanlage: Produkt, Schnittrichtung, Ausrüstung und Einsatzgebiete. Welche Anlage passt zu Ihnen?",
+        "hero": "Beide Anlagen verarbeiten Coils, schneiden aber in unterschiedliche Richtungen: die eine liefert Spaltbandcoils, die andere ebene Tafeln. Ihr Produkt entscheidet.",
+        "aName": "Längsteilanlage",
+        "bName": "Querteilanlage",
+        "rows": [
+          {
+            "label": "Schnittrichtung",
+            "a": "Längs — in Bandrichtung",
+            "b": "Quer — über die Breite"
+          },
+          {
+            "label": "Produkt",
+            "a": "Schmale Spaltbandcoils",
+            "b": "Ebene, abgelängte Tafeln"
+          },
+          {
+            "label": "Schneideinheit",
+            "a": "Kreismessersätze",
+            "b": "Schere oder fliegender Schnitt"
+          },
+          {
+            "label": "Linienende",
+            "a": "Aufwickler und Zugsystem",
+            "b": "Stapeleinheit"
+          },
+          {
+            "label": "Typischer Kunde",
+            "a": "Rollform-, Profil- und Rohrhersteller",
+            "b": "Pressenwerke, Laserschneider, Blechfertiger"
+          }
+        ],
+        "chooseATitle": "Längsteilanlage wählen, wenn",
+        "chooseA": [
+          "Ihr Produkt Spaltband in Coilform ist",
+          "Sie die Bänder in Ihrer eigenen Rollform- oder Rohranlage einsetzen",
+          "Sie breite Muttercoils auf Bestellbreiten teilen wollen"
+        ],
+        "chooseBTitle": "Querteilanlage wählen, wenn",
+        "chooseB": [
+          "Ihr Produkt abgelängte ebene Tafeln sind",
+          "Die Tafeln Presse, Laser oder Abkantpresse beschicken",
+          "Die Planheit qualitätskritisch ist"
+        ],
+        "verdict": "Die beiden sind keine Alternativen — sie erzeugen unterschiedliche Produkte. Brauchen Sie beides, sprechen wir über Kombianlagen, die Längs- und Querteilen auf einem Rahmen vereinen."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Hydraulische oder mechanische Haspel?",
+        "metaTitle": "Hydraulische vs. mechanische Abwickelhaspel: Vergleich",
+        "metaDesc": "Unterschiede zwischen hydraulischer und mechanischer Haspel: Kapazität, Dornspreizung, Bremse und Beladung. Welche passt zu Ihrem Coilgewicht?",
+        "hero": "Der Unterschied ist nicht nur die Kapazität: auch wie der Dorn klemmt, wie das Coil gebremst und wie es auf die Welle geladen wird, ändert sich.",
+        "aName": "Hydraulische Haspel",
+        "bName": "Mechanische Haspel",
+        "rows": [
+          {
+            "label": "Kapazitätsbereich",
+            "a": "6 – 20 Tonnen",
+            "b": "500 – 4.000 kg"
+          },
+          {
+            "label": "Dornspreizung",
+            "a": "Hydraulisch — vom Panel gesteuert",
+            "b": "Mechanisch — per Handrad gespannt"
+          },
+          {
+            "label": "Bremsung",
+            "a": "Hydraulische Bremse, auf Liniengeschwindigkeit geregelt",
+            "b": "Bremsbelagsystem"
+          },
+          {
+            "label": "Coilbeladung",
+            "a": "Mit hydraulischem Ladewagen ausgerichtet",
+            "b": "Per Stapler auf die Welle gesetzt"
+          },
+          {
+            "label": "Bedieneraufwand",
+            "a": "Gering — Einstellungen am Panel",
+            "b": "Hoch — manuelles Spannen bei jedem Coil"
+          }
+        ],
+        "chooseATitle": "Hydraulisch wählen, wenn",
+        "chooseA": [
+          "Ihre Coils über 5 Tonnen wiegen",
+          "Sie während der Schicht häufig Coils wechseln",
+          "Ihre Liniengeschwindigkeit hoch ist und geregeltes Bremsen nötig ist"
+        ],
+        "chooseBTitle": "Mechanisch genügt, wenn",
+        "chooseB": [
+          "Ihre Coils unter 2,5 Tonnen und schmal sind",
+          "Coilwechsel selten vorkommen",
+          "Die Investition so niedrig wie möglich bleiben soll"
+        ],
+        "verdict": "Bei schweren Coils und häufigem Wechsel amortisiert sich die hydraulische Haspel schnell über Bedienerzeit und Arbeitssicherheit. Für schmales Band und leichte Coils bleibt die mechanische Baureihe die wirtschaftlichste Lösung."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Rechner: Coilgewicht, Vorschubleistung und Spaltausbeute",
     "metaDesc": "Kostenlose Engineering-Rechner: Coilgewicht und -länge, Pressenvorschubleistung, Spaltverschnitt. Ohne Anmeldung.",

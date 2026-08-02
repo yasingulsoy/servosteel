@@ -1,0 +1,122 @@
+---
+title: "How to Calculate Coil Weight and Length"
+description: "Coil weight and strip length formulas, a step-by-step worked example, common mistakes and how the result drives line selection."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["coil calculation", "sheet processing", "line selection"]
+---
+
+Knowing the weight of a coil and the length of strip inside it drives two decisions directly: **what decoiler capacity you need** and **how many hours one coil will run**. Neither can be handled by guesswork. Fortunately both follow from a single geometric fact and can be worked out by hand.
+
+If you want the answer right away, use the coil calculator on our [calculators](/hesaplayicilar) page; below we explain the reasoning behind it.
+
+## Coil geometry: it all comes down to an annulus
+
+Seen from the side, a wound coil is an **annulus**: the band between the outer diameter (OD) and the inner diameter (ID). Its area is:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+Here is the key point: when the coil is unwound, that area is **conserved**. The steel is no longer a ring but a long rectangle — yet the cross-section is the same. One side of that rectangle is the sheet thickness (t) and the other is the strip length (L), so:
+
+```
+A = L × t   →   L = A / t
+```
+
+Length is nothing more than area divided by thickness.
+
+## The weight formula
+
+For weight, multiply the annulus area by the coil width (W) to get volume, then multiply by density (ρ):
+
+```
+Weight (kg) = π/4 × (OD² − ID²) × W × ρ / 1,000,000
+```
+
+OD, ID and W are in millimetres and ρ is in g/cm³. That division by one million is the unit factor converting a mix of mm³ and g/cm³ into kilograms — it is the detail most often skipped.
+
+### Common densities
+
+| Material | ρ (g/cm³) |
+|---|---|
+| Steel | 7.85 |
+| Stainless | 7.90 |
+| Aluminium | 2.70 |
+| Copper | 8.96 |
+
+Note that aluminium is roughly **one third** the weight of steel: a coil with identical geometry comes out at 34% of the steel figure. Choosing decoiler capacity without looking at the material is therefore misleading.
+
+## Worked example
+
+Suppose we have this coil:
+
+- Outer diameter: **1,400 mm**
+- Inner diameter (core): **508 mm**
+- Width: **1,250 mm**
+- Thickness: **2 mm**
+- Material: steel (7.85 g/cm³)
+
+**1. Annulus area**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1,960,000 − 258,064)
+A = π/4 × 1,701,936 ≈ 1,336,663 mm²
+```
+
+**2. Weight**
+
+```
+1,336,663 × 1,250 × 7.85 / 1,000,000 ≈ 13,116 kg
+```
+
+About **13.1 tonnes**. This coil calls for a 15-tonne decoiler; the 12-tonne series will not do.
+
+**3. Strip length**
+
+```
+L = 1,336,663 / 2 = 668,331 mm ≈ 668 m
+```
+
+## How the result drives line selection
+
+Once you know the length, you also know **how long the coil will last**. Consider a press line running a 250 mm pitch at 40 strokes per minute:
+
+```
+Per minute: 250 × 40 = 10,000 mm = 10 m
+Per hour:   10 × 60 = 600 m
+```
+
+A 668 m coil lasts roughly **1.1 hours** on that line. That means about 7 coil changes per shift — and every change is downtime. At this point two options appear: heavier coils (a bigger decoiler) or faster coil changes (a loading car). Without the calculation, that discussion cannot even start.
+
+## Three common mistakes
+
+**Ignoring the core.** Treating the coil as a solid cylinder instead of subtracting the inner diameter inflates the weight badly. A 508 mm core is about 13% of the cross-section on a 1,400 mm coil.
+
+**Trusting the nominal thickness.** Sheet tolerance can reach ±5%. Because length is **inversely** proportional to thickness, material that measures 2.1 mm instead of 2 mm yields 5% less length — 636 m instead of 668 m.
+
+**Mixing units.** Every length in the formula must be in millimetres. Entering the width in metres inflates the result a thousandfold; this mistake shows up regularly at the quotation stage.
+
+## Working backwards: from weight to length
+
+If the supplier gives you the coil weight but not the diameters, you can get the length directly:
+
+```
+L (m) = Weight (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+For steel, ρ = 7,850 kg/m³. Let us test it against the example above:
+
+```
+13,116 / (1.25 × 0.002 × 7,850) ≈ 668 m
+```
+
+The same answer — proof that the calculation is consistent. Arriving at the same number by two routes is the most practical way to validate your inputs.
+
+## Summary
+
+Coil calculation is not intuition, it is two lines of geometry. Weight is annulus area × width × density; length is annulus area ÷ thickness. With those two numbers in hand, decoiler capacity, coil change frequency and shift planning all become discussable.
+
+Try it with your own figures using the [coil calculator](/hesaplayicilar), and [get in touch](/iletisim) if you would like to talk line sizing.

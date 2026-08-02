@@ -436,6 +436,163 @@
     "ctaTitle": "Pida referencias de su sector",
     "ctaText": "Compartiremos instalaciones en plantas como la suya y organizaremos visitas."
   },
+  "compare": {
+    "metaTitle": "Comparativas: elija el equipo adecuado",
+    "metaDesc": "¿Alimentación servo o mecánica? ¿Corte longitudinal o a medida? ¿Desbobinadora hidráulica o mecánica? Compare las diferencias antes de invertir.",
+    "eyebrow": "Guía de selección",
+    "title": "Comparativas",
+    "desc": "Las preguntas que surgen justo antes de decidir la inversión. Cada comparativa enfrenta dos opciones con los mismos criterios y dice cuándo conviene cada una.",
+    "tableTitle": "Comparativa lado a lado",
+    "criterion": "Criterio",
+    "verdictTitle": "En resumen",
+    "seeProduct": "Ir a la página de producto",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "¿Alimentador servo o mecánico?",
+        "metaTitle": "Alimentador servo vs mecánico: comparativa",
+        "metaDesc": "Diferencias entre alimentación servo y alimentadores mecánicos/neumáticos: precisión, cambio de troquel, velocidad e inversión.",
+        "hero": "Hay dos formas de alimentar fleje a una línea de prensa. La diferencia no es solo el precio: cambian la tolerancia de pieza, el tiempo de cambio y la flexibilidad.",
+        "aName": "Alimentador servo",
+        "bName": "Alimentador mecánico / neumático",
+        "rows": [
+          {
+            "label": "Precisión de paso",
+            "a": "Lazo cerrado con servomotor y encóder; la tolerancia se mantiene en serie",
+            "b": "Limitada por leva mecánica o carrera neumática; el paso deriva con el desgaste"
+          },
+          {
+            "label": "Cambio de paso",
+            "a": "Se introduce el valor en el panel, cuestión de segundos",
+            "b": "Requiere ajuste mecánico o cambio de leva"
+          },
+          {
+            "label": "Cambio de troquel",
+            "a": "Memoria de recetas para hasta 250 troqueles; sin reajuste",
+            "b": "Reajuste en cada troquel"
+          },
+          {
+            "label": "Sincronización con prensa",
+            "a": "Totalmente sincronizado por señal de leva, liberación de pilotos de serie",
+            "b": "Limitada; se complica a alta cadencia"
+          },
+          {
+            "label": "Inversión y explotación",
+            "a": "Mayor inversión inicial, menor merma y parada",
+            "b": "Menor inversión inicial, más tiempo de ajuste y merma"
+          }
+        ],
+        "chooseATitle": "Elija servo si",
+        "chooseA": [
+          "Su tolerancia de pieza es estrecha y debe mantenerse en toda la serie",
+          "Cambia varios troqueles dentro de un turno",
+          "Usa pilotos o trabaja a alta cadencia de prensa"
+        ],
+        "chooseBTitle": "El mecánico basta si",
+        "chooseB": [
+          "Produce series largas con un solo troquel",
+          "La tolerancia de paso es amplia y la superficie no es crítica",
+          "El presupuesto determina la inversión inicial"
+        ],
+        "verdict": "A medida que crece la variedad de troqueles, el ahorro en ajuste y merma del servo compensa la diferencia inicial. Si fabrica una pieza en series largas, el alimentador mecánico sigue siendo razonable."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "¿Línea de corte longitudinal o a medida?",
+        "metaTitle": "Corte longitudinal vs corte a medida: comparativa de líneas",
+        "metaDesc": "Diferencia entre línea de corte longitudinal y línea de corte a medida: producto, dirección de corte, equipo y aplicaciones.",
+        "hero": "Ambas líneas procesan bobina, pero cortan en direcciones distintas: una produce flejes en bobina y la otra chapas planas. Su producto decide la línea.",
+        "aName": "Línea de corte longitudinal",
+        "bName": "Línea de corte a medida",
+        "rows": [
+          {
+            "label": "Dirección de corte",
+            "a": "Longitudinal — a lo largo del fleje",
+            "b": "Transversal — a lo ancho"
+          },
+          {
+            "label": "Producto obtenido",
+            "a": "Bobinas de fleje estrecho",
+            "b": "Chapas planas cortadas a medida"
+          },
+          {
+            "label": "Unidad de corte",
+            "a": "Juegos de cuchillas circulares",
+            "b": "Cizalla o corte al vuelo"
+          },
+          {
+            "label": "Fin de línea",
+            "a": "Bobinadora y sistema de tensión",
+            "b": "Unidad de apilado"
+          },
+          {
+            "label": "Cliente típico",
+            "a": "Perfiladores, fabricantes de perfil y tubo",
+            "b": "Talleres de prensa, corte láser y chapistería"
+          }
+        ],
+        "chooseATitle": "Elija corte longitudinal si",
+        "chooseA": [
+          "Su producto será fleje en forma de bobina",
+          "Alimentará los flejes a su propia línea de perfilado o tubo",
+          "Quiere dividir bobinas madre anchas en anchos de pedido"
+        ],
+        "chooseBTitle": "Elija corte a medida si",
+        "chooseB": [
+          "Su producto serán chapas planas de longitud definida",
+          "Las chapas alimentarán prensa, láser o plegadora",
+          "La planitud es crítica para la calidad"
+        ],
+        "verdict": "No son alternativas entre sí: fabrican productos distintos. Si necesita fleje y chapa, hablemos de líneas combinadas que integran corte longitudinal y a medida en un solo bastidor."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "¿Desbobinadora hidráulica o mecánica?",
+        "metaTitle": "Desbobinadora hidráulica vs mecánica: comparativa",
+        "metaDesc": "Diferencias entre desbobinadora hidráulica y mecánica: capacidad, expansión de mandril, frenado y carga. ¿Cuál conviene a su peso de bobina?",
+        "hero": "La diferencia no es solo la capacidad: cambian también cómo aprieta el mandril, cómo se frena la bobina y cómo se carga en el eje.",
+        "aName": "Desbobinadora hidráulica",
+        "bName": "Desbobinadora mecánica",
+        "rows": [
+          {
+            "label": "Rango de capacidad",
+            "a": "6 – 20 toneladas",
+            "b": "500 – 4.000 kg"
+          },
+          {
+            "label": "Expansión del mandril",
+            "a": "Hidráulica — mandada desde el panel",
+            "b": "Mecánica — apriete manual con volante"
+          },
+          {
+            "label": "Frenado",
+            "a": "Freno hidráulico, regulado a la velocidad de línea",
+            "b": "Sistema de freno de zapata"
+          },
+          {
+            "label": "Carga de bobina",
+            "a": "Alineada con carro de carga hidráulico",
+            "b": "Montada en el eje con carretilla"
+          },
+          {
+            "label": "Carga del operario",
+            "a": "Baja — ajustes desde el panel",
+            "b": "Alta — apriete manual en cada bobina"
+          }
+        ],
+        "chooseATitle": "Elija hidráulica si",
+        "chooseA": [
+          "Sus bobinas superan las 5 toneladas",
+          "Cambia bobina con frecuencia durante el turno",
+          "Su velocidad de línea es alta y necesita frenado controlado"
+        ],
+        "chooseBTitle": "La mecánica basta si",
+        "chooseB": [
+          "Sus bobinas son de menos de 2,5 toneladas y estrechas",
+          "El cambio de bobina es poco frecuente",
+          "Necesita mantener la inversión lo más baja posible"
+        ],
+        "verdict": "Con bobinas pesadas y cambios frecuentes, la hidráulica se amortiza rápido por tiempo de operario y seguridad. Para fleje estrecho y bobinas ligeras, la serie mecánica sigue siendo lo más económico."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Calculadoras: peso de bobina, alimentación y rendimiento de corte",
     "metaDesc": "Calculadoras de ingeniería gratuitas: peso y longitud de bobina, capacidad de alimentación, merma de corte longitudinal. Sin registro.",

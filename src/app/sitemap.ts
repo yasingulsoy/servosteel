@@ -4,6 +4,7 @@ import { rollFormItems, machineItems } from "@/lib/catalog";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 import { localePath } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
+import { compareItems } from "@/lib/compare";
 
 const paths = [
   { path: "", priority: 1 },
@@ -18,6 +19,8 @@ const paths = [
   { path: "/teklif-al", priority: 0.8 },
   { path: "/akademi", priority: 0.6 },
   { path: "/hesaplayicilar", priority: 0.7 },
+  { path: "/karsilastirma", priority: 0.7 },
+  ...compareItems.map((c) => ({ path: `/karsilastirma/${c.slug}`, priority: 0.7 })),
   ...rollFormItems.map((p) => ({ path: `/roll-form-hatlari/${p.slug}`, priority: 0.8 })),
   ...machineItems.map((p) => ({ path: `/makineler/${p.slug}`, priority: 0.7 })),
 ];

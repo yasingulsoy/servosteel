@@ -436,6 +436,163 @@
     "ctaTitle": "Sektörünüzden referans isteyin",
     "ctaText": "Size benzer üretim yapan tesislerdeki kurulumlarımızı ve saha ziyareti imkanlarını paylaşalım."
   },
+  "compare": {
+    "metaTitle": "Karşılaştırmalar: Doğru Ekipmanı Seçin",
+    "metaDesc": "Servo mu mekanik besleme? Dilme mi boy kesme? Hidrolik mi mekanik açıcı? Yatırım kararından önce farkları tablo halinde karşılaştırın.",
+    "eyebrow": "Seçim rehberi",
+    "title": "Karşılaştırmalar",
+    "desc": "Yatırım kararının hemen öncesinde sorulan sorular. Her karşılaştırma, iki seçeneği aynı kriterlerle yan yana koyar ve hangisinin ne zaman doğru olduğunu söyler.",
+    "tableTitle": "Yan yana karşılaştırma",
+    "criterion": "Kriter",
+    "verdictTitle": "Özetle",
+    "seeProduct": "Ürün sayfasına git",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Servo sürücü mü, mekanik besleyici mi?",
+        "metaTitle": "Servo Sürücü mü Mekanik Besleyici mi? Karşılaştırma",
+        "metaDesc": "Servo besleme ile mekanik/pnömatik besleyici arasındaki farklar: hassasiyet, kalıp değişimi, hız ve yatırım. Hangisi hangi işte doğru?",
+        "hero": "Pres hattına sac beslemenin iki yolu var. Fark yalnızca fiyatta değil; parça toleransı, kalıp değişim süresi ve hat esnekliği de değişiyor.",
+        "aName": "Servo sürücü",
+        "bName": "Mekanik / pnömatik besleyici",
+        "rows": [
+          {
+            "label": "Adım hassasiyeti",
+            "a": "Servo motor ve enkoder ile kapalı çevrim; tolerans seri üretimde korunur",
+            "b": "Mekanik kam veya pnömatik strok ile sınırlı; aşınmayla adım kayar"
+          },
+          {
+            "label": "Adım boyu değişimi",
+            "a": "Panelden değer girilir, saniyeler sürer",
+            "b": "Mekanik ayar veya kam değişimi gerekir"
+          },
+          {
+            "label": "Kalıp değişimi",
+            "a": "250 kalıba kadar reçete hafızası; ayar tekrar yapılmaz",
+            "b": "Her kalıpta yeniden ayar"
+          },
+          {
+            "label": "Pres senkronizasyonu",
+            "a": "Kam sinyaliyle tam senkron, pilot pim bırakma standart",
+            "b": "Sınırlı; yüksek strok hızında senkron zorlaşır"
+          },
+          {
+            "label": "Yatırım ve işletme",
+            "a": "İlk yatırım yüksek, fire ve duruş düşük",
+            "b": "İlk yatırım düşük, ayar süresi ve fire yüksek"
+          }
+        ],
+        "chooseATitle": "Servo sürücü seçin — eğer",
+        "chooseA": [
+          "Parça toleransınız dar ve seri üretimde sabit kalmalı",
+          "Gün içinde birden çok kalıp değiştiriyorsunuz",
+          "Pilot pim kullanıyorsunuz veya yüksek strok hızıyla çalışıyorsunuz"
+        ],
+        "chooseBTitle": "Mekanik besleyici yeterli — eğer",
+        "chooseB": [
+          "Tek kalıpla uzun seriler üretiyorsunuz",
+          "Adım toleransı geniş ve yüzey kritik değil",
+          "Bütçe kısıtı ilk yatırımı belirliyor"
+        ],
+        "verdict": "Kalıp çeşidi arttıkça servo sürücünün ayar ve fire tasarrufu ilk yatırım farkını kapatır. Tek ürün, uzun seri üretiyorsanız mekanik besleyici hâlâ makul bir seçimdir."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Dilme hattı mı, boy kesme hattı mı?",
+        "metaTitle": "Rulo Dilme mi Boy Kesme mi? Hat Karşılaştırması",
+        "metaDesc": "Dilme hattı ile boy kesme hattı arasındaki fark: çıkan ürün, kesme yönü, ekipman ve kullanım alanları. Hangi hat sizin işiniz için doğru?",
+        "hero": "İki hat da rulo sacı işler ama farklı yönde keser: biri şerit rulo, diğeri düz levha üretir. Çıktınız hangisiyse hat da odur.",
+        "aName": "Rulo dilme hattı",
+        "bName": "Boy kesme hattı",
+        "rows": [
+          {
+            "label": "Kesme yönü",
+            "a": "Uzunlamasına — sac boyunca",
+            "b": "Enlemesine — sac genişliğince"
+          },
+          {
+            "label": "Çıkan ürün",
+            "a": "Dar şerit rulolar",
+            "b": "Düz, ölçülü levhalar"
+          },
+          {
+            "label": "Kesme ünitesi",
+            "a": "Dairesel bıçak grupları",
+            "b": "Giyotin veya uçan makas"
+          },
+          {
+            "label": "Hat sonu",
+            "a": "Sarıcı ve gergi sistemi",
+            "b": "İstifleme ünitesi"
+          },
+          {
+            "label": "Tipik müşteri",
+            "a": "Roll form, profil ve boru üreticileri",
+            "b": "Pres, lazer ve sac imalatçıları"
+          }
+        ],
+        "chooseATitle": "Dilme hattı seçin — eğer",
+        "chooseA": [
+          "Çıktınız rulo halinde şerit olacak",
+          "Şeritleri kendi roll form veya boru hattınızda kullanacaksınız",
+          "Geniş ana ruloyu sipariş ölçülerine bölmek istiyorsunuz"
+        ],
+        "chooseBTitle": "Boy kesme hattı seçin — eğer",
+        "chooseB": [
+          "Çıktınız belirli ölçüde düz levha olacak",
+          "Levhaları pres, lazer veya abkant besleyecek",
+          "Düzlük (flatness) kalitesi kritik"
+        ],
+        "verdict": "İkisi birbirinin alternatifi değil, farklı ürünler üretir. Hem şerit hem levha üretiyorsanız dilme ve boy kesmeyi tek hatta birleştiren kombine çözümleri konuşalım."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Hidrolik mi, mekanik rulo açıcı mı?",
+        "metaTitle": "Hidrolik mi Mekanik Rulo Açıcı mı? Karşılaştırma",
+        "metaDesc": "Hidrolik ve mekanik rulo açıcı farkları: kapasite, göbek genişletme, fren ve yükleme. Hangi kapasitede hangisi doğru seçim?",
+        "hero": "Fark tek kelimeyle kapasite değil; göbeğin nasıl sıkıldığı, rulonun nasıl frenlendiği ve şafta nasıl yüklendiği de değişiyor.",
+        "aName": "Hidrolik açıcı",
+        "bName": "Mekanik açıcı",
+        "rows": [
+          {
+            "label": "Kapasite aralığı",
+            "a": "6 – 20 ton",
+            "b": "500 – 4.000 kg"
+          },
+          {
+            "label": "Göbek genişletme",
+            "a": "Hidrolik — panelden kumanda",
+            "b": "Mekanik — volanla elle sıkma"
+          },
+          {
+            "label": "Frenleme",
+            "a": "Hidrolik fren, hat hızına göre kontrollü",
+            "b": "Fren balata sistemi"
+          },
+          {
+            "label": "Rulo yükleme",
+            "a": "Hidrolik yükleme arabasıyla hizalanır",
+            "b": "Forklift ile şafta takılır"
+          },
+          {
+            "label": "Operatör yükü",
+            "a": "Düşük — ayarlar panelden",
+            "b": "Yüksek — her ruloda elle sıkma"
+          }
+        ],
+        "chooseATitle": "Hidrolik seçin — eğer",
+        "chooseA": [
+          "Rulolarınız 5 tonun üzerinde",
+          "Gün içinde sık rulo değiştiriyorsunuz",
+          "Hat hızınız yüksek ve kontrollü frenleme gerekiyor"
+        ],
+        "chooseBTitle": "Mekanik yeterli — eğer",
+        "chooseB": [
+          "Rulolarınız 2,5 tonun altında ve dar",
+          "Rulo değişimi seyrek",
+          "Yatırımı olabildiğince düşük tutmanız gerekiyor"
+        ],
+        "verdict": "Ağır rulo ve sık değişim varsa hidrolik, operatör süresinden ve iş güvenliğinden kazandırdığı için kısa sürede kendini amorti eder. Dar şerit ve hafif rulolarda mekanik seri hâlâ en ekonomik çözümdür."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Hesaplama Araçları: Rulo Ağırlığı, Besleme ve Dilme Verimi",
     "metaDesc": "Ücretsiz mühendislik hesaplayıcıları: rulo ağırlığı ve uzunluğu, pres besleme kapasitesi, dilme fire oranı. Kayıt gerekmez.",

@@ -436,6 +436,163 @@
     "ctaTitle": "Richiedi referenze del tuo settore",
     "ctaText": "Condividiamo installazioni presso stabilimenti come il tuo e organizziamo visite."
   },
+  "compare": {
+    "metaTitle": "Confronti: scegliere l'impianto giusto",
+    "metaDesc": "Alimentazione servo o meccanica? Taglio longitudinale o a misura? Svolgitore idraulico o meccanico? Confrontate le differenze prima di investire.",
+    "eyebrow": "Guida alla scelta",
+    "title": "Confronti",
+    "desc": "Le domande che arrivano appena prima della decisione di investimento. Ogni confronto mette due opzioni a fronte con gli stessi criteri e indica quando conviene ciascuna.",
+    "tableTitle": "Confronto diretto",
+    "criterion": "Criterio",
+    "verdictTitle": "In sintesi",
+    "seeProduct": "Vai alla pagina prodotto",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Alimentatore servo o meccanico?",
+        "metaTitle": "Alimentatore servo vs meccanico: confronto",
+        "metaDesc": "Differenze tra alimentazione servo e alimentatori meccanici/pneumatici: precisione, cambio stampo, velocità e investimento.",
+        "hero": "Ci sono due modi per alimentare il nastro in una linea pressa. La differenza non è solo il prezzo: cambiano tolleranza del pezzo, tempo di cambio e flessibilità.",
+        "aName": "Alimentatore servo",
+        "bName": "Alimentatore meccanico / pneumatico",
+        "rows": [
+          {
+            "label": "Precisione del passo",
+            "a": "Anello chiuso con servomotore ed encoder; la tolleranza tiene in serie",
+            "b": "Limitata da camma meccanica o corsa pneumatica; il passo deriva con l'usura"
+          },
+          {
+            "label": "Cambio del passo",
+            "a": "Valore inserito dal pannello, questione di secondi",
+            "b": "Richiede regolazione meccanica o cambio camma"
+          },
+          {
+            "label": "Cambio stampo",
+            "a": "Memoria ricette fino a 250 stampi; nessuna ritaratura",
+            "b": "Ritaratura a ogni stampo"
+          },
+          {
+            "label": "Sincronismo con la pressa",
+            "a": "Pienamente sincrono via segnale camma, rilascio piloti di serie",
+            "b": "Limitato; più difficile ad alte cadenze"
+          },
+          {
+            "label": "Investimento ed esercizio",
+            "a": "Più alto all'acquisto, meno sfrido e fermi",
+            "b": "Più basso all'acquisto, più tempo di setup e sfrido"
+          }
+        ],
+        "chooseATitle": "Scegliete il servo se",
+        "chooseA": [
+          "La tolleranza del pezzo è stretta e deve tenere per tutta la serie",
+          "Cambiate più stampi nello stesso turno",
+          "Usate piloti o lavorate ad alta cadenza"
+        ],
+        "chooseBTitle": "Il meccanico basta se",
+        "chooseB": [
+          "Producete serie lunghe con un solo stampo",
+          "La tolleranza del passo è ampia e la superficie non è critica",
+          "Il budget determina l'investimento iniziale"
+        ],
+        "verdict": "Al crescere della varietà di stampi, il risparmio su setup e sfrido del servo colma la differenza iniziale. Con un solo pezzo in serie lunghe l'alimentatore meccanico resta una scelta ragionevole."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Linea di taglio longitudinale o a misura?",
+        "metaTitle": "Taglio longitudinale vs taglio a misura: confronto linee",
+        "metaDesc": "Differenza tra linea di taglio longitudinale e linea di taglio a misura: prodotto, direzione di taglio, attrezzature e applicazioni.",
+        "hero": "Entrambe lavorano coil ma tagliano in direzioni diverse: una produce nastri in coil, l'altra lamiere piane. Il vostro prodotto decide la linea.",
+        "aName": "Linea di taglio longitudinale",
+        "bName": "Linea di taglio a misura",
+        "rows": [
+          {
+            "label": "Direzione di taglio",
+            "a": "Longitudinale — lungo il nastro",
+            "b": "Trasversale — sulla larghezza"
+          },
+          {
+            "label": "Prodotto ottenuto",
+            "a": "Coil di nastro stretto",
+            "b": "Lamiere piane tagliate a misura"
+          },
+          {
+            "label": "Unità di taglio",
+            "a": "Gruppi di lame circolari",
+            "b": "Cesoia o taglio al volo"
+          },
+          {
+            "label": "Fine linea",
+            "a": "Avvolgitore e sistema di tiro",
+            "b": "Unità di impilaggio"
+          },
+          {
+            "label": "Cliente tipico",
+            "a": "Profilatori, produttori di profili e tubi",
+            "b": "Presse, taglio laser, carpenteria in lamiera"
+          }
+        ],
+        "chooseATitle": "Scegliete il taglio longitudinale se",
+        "chooseA": [
+          "Il vostro prodotto sarà nastro in forma di coil",
+          "Alimenterete i nastri nella vostra linea di profilatura o tubi",
+          "Volete dividere coil madre larghi nelle larghezze ordinate"
+        ],
+        "chooseBTitle": "Scegliete il taglio a misura se",
+        "chooseB": [
+          "Il vostro prodotto saranno lamiere piane di lunghezza definita",
+          "Le lamiere alimenteranno pressa, laser o pressopiegatrice",
+          "La planarità è critica per la qualità"
+        ],
+        "verdict": "Non sono alternative fra loro: producono cose diverse. Se vi servono sia nastri sia lamiere, parliamo di linee combinate che uniscono taglio longitudinale e a misura su un solo telaio."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Svolgitore idraulico o meccanico?",
+        "metaTitle": "Svolgitore idraulico vs meccanico: confronto",
+        "metaDesc": "Differenze tra svolgitore idraulico e meccanico: capacità, espansione mandrino, frenatura e caricamento. Quale conviene al vostro peso coil?",
+        "hero": "La differenza non è solo la capacità: cambiano anche come serra il mandrino, come si frena il coil e come lo si carica sull'albero.",
+        "aName": "Svolgitore idraulico",
+        "bName": "Svolgitore meccanico",
+        "rows": [
+          {
+            "label": "Campo di capacità",
+            "a": "6 – 20 tonnellate",
+            "b": "500 – 4.000 kg"
+          },
+          {
+            "label": "Espansione mandrino",
+            "a": "Idraulica — comandata dal pannello",
+            "b": "Meccanica — serraggio a volantino"
+          },
+          {
+            "label": "Frenatura",
+            "a": "Freno idraulico, regolato sulla velocità di linea",
+            "b": "Sistema a ceppi freno"
+          },
+          {
+            "label": "Caricamento coil",
+            "a": "Allineato con carrello di carico idraulico",
+            "b": "Montato sull'albero con muletto"
+          },
+          {
+            "label": "Impegno operatore",
+            "a": "Basso — regolazioni dal pannello",
+            "b": "Alto — serraggio manuale a ogni coil"
+          }
+        ],
+        "chooseATitle": "Scegliete l'idraulico se",
+        "chooseA": [
+          "I vostri coil superano le 5 tonnellate",
+          "Cambiate coil spesso durante il turno",
+          "La velocità di linea è alta e serve frenatura controllata"
+        ],
+        "chooseBTitle": "Il meccanico basta se",
+        "chooseB": [
+          "I vostri coil sono sotto le 2,5 tonnellate e stretti",
+          "I cambi coil sono rari",
+          "Dovete mantenere l'investimento al minimo"
+        ],
+        "verdict": "Con coil pesanti e cambi frequenti l'idraulico si ripaga rapidamente in tempo operatore e sicurezza. Per nastri stretti e coil leggeri la serie meccanica resta la soluzione più economica."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Calcolatori: peso coil, resa di alimentazione e taglio",
     "metaDesc": "Calcolatori tecnici gratuiti: peso e lunghezza coil, capacità di alimentazione presse, sfrido di taglio longitudinale. Senza registrazione.",

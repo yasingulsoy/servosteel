@@ -1,0 +1,122 @@
+---
+title: "Cómo calcular el peso y la longitud de una bobina"
+description: "Fórmulas de peso y longitud de bobina, ejemplo resuelto paso a paso, errores frecuentes y su efecto en la elección de línea."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["cálculo de bobina", "procesamiento de chapa", "selección de línea"]
+---
+
+Conocer el peso de una bobina y la longitud de fleje que contiene determina dos decisiones directas: **qué capacidad de desbobinadora necesita** y **cuántas horas rendirá una bobina**. Ninguna de las dos admite conjeturas. Por suerte ambas se derivan de un único hecho geométrico y pueden calcularse a mano.
+
+Si quiere el resultado de inmediato, use la calculadora de bobina en nuestra página de [calculadoras](/hesaplayicilar); a continuación explicamos el razonamiento.
+
+## Geometría de la bobina: todo se reduce a una corona circular
+
+Vista de lado, una bobina enrollada es una **corona circular**: la banda entre el diámetro exterior (OD) y el interior (ID). Su área es:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+El punto clave: al desenrollar la bobina, esa área **se conserva**. El acero ya no es un anillo sino un rectángulo largo, pero la sección es la misma. Un lado de ese rectángulo es el espesor (t) y el otro la longitud del fleje (L):
+
+```
+A = L × t   →   L = A / t
+```
+
+La longitud no es más que el área dividida por el espesor.
+
+## La fórmula del peso
+
+Para el peso, multiplique el área de la corona por el ancho de bobina (W) para obtener el volumen, y luego por la densidad (ρ):
+
+```
+Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000
+```
+
+OD, ID y W en milímetros; ρ en g/cm³. Esa división entre un millón es el factor de unidades que convierte la mezcla de mm³ y g/cm³ en kilogramos: es el detalle que más se olvida.
+
+### Densidades habituales
+
+| Material | ρ (g/cm³) |
+|---|---|
+| Acero | 7,85 |
+| Inoxidable | 7,90 |
+| Aluminio | 2,70 |
+| Cobre | 8,96 |
+
+Observe que el aluminio pesa aproximadamente **un tercio** que el acero: una bobina de geometría idéntica sale al 34 % del valor del acero. Elegir la capacidad de la desbobinadora sin mirar el material induce a error.
+
+## Ejemplo resuelto
+
+Supongamos esta bobina:
+
+- Diámetro exterior: **1.400 mm**
+- Diámetro interior (núcleo): **508 mm**
+- Ancho: **1.250 mm**
+- Espesor: **2 mm**
+- Material: acero (7,85 g/cm³)
+
+**1. Área de la corona**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1.960.000 − 258.064)
+A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+```
+
+**2. Peso**
+
+```
+1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+```
+
+Unas **13,1 toneladas**. Esta bobina exige una desbobinadora de 15 toneladas; la serie de 12 no basta.
+
+**3. Longitud de fleje**
+
+```
+L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+```
+
+## Efecto en la elección de línea
+
+Con la longitud sabe también **cuánto durará la bobina**. Piense en una línea de prensa con paso de 250 mm a 40 golpes por minuto:
+
+```
+Por minuto: 250 × 40 = 10.000 mm = 10 m
+Por hora:   10 × 60 = 600 m
+```
+
+Una bobina de 668 m dura unas **1,1 horas** en esa línea: unos 7 cambios de bobina por turno, y cada cambio es parada. Aparecen entonces dos caminos: bobinas más pesadas (desbobinadora mayor) o cambios más rápidos (carro de carga). Sin el cálculo, ni siquiera se puede plantear la discusión.
+
+## Tres errores frecuentes
+
+**Ignorar el núcleo.** Tratar la bobina como cilindro macizo en lugar de restar el diámetro interior infla mucho el peso. Un núcleo de 508 mm es cerca del 13 % de la sección en una bobina de 1.400 mm.
+
+**Fiarse del espesor nominal.** La tolerancia de chapa alcanza ±5 %. Como la longitud es **inversamente** proporcional al espesor, un material que mide 2,1 mm en vez de 2 mm da un 5 % menos: 636 m en lugar de 668 m.
+
+**Mezclar unidades.** Toda longitud de la fórmula debe ir en milímetros. Introducir el ancho en metros multiplica el resultado por mil; este fallo aparece con regularidad en la fase de oferta.
+
+## Cálculo inverso: del peso a la longitud
+
+Si el proveedor le da el peso pero no los diámetros, puede obtener la longitud directamente:
+
+```
+L (m) = Peso (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Para el acero, ρ = 7.850 kg/m³. Comprobémoslo con el ejemplo anterior:
+
+```
+13.116 / (1,25 × 0,002 × 7.850) ≈ 668 m
+```
+
+El mismo resultado: prueba de que el cálculo es coherente. Llegar al mismo número por dos vías es la forma más práctica de validar los datos de entrada.
+
+## Resumen
+
+El cálculo de bobina no es intuición, son dos líneas de geometría. El peso es área de corona × ancho × densidad; la longitud es área de corona ÷ espesor. Con esas dos cifras, la capacidad de desbobinadora, la frecuencia de cambio y la planificación de turnos pasan a ser discutibles.
+
+Pruébelo con sus propios valores en la [calculadora de bobina](/hesaplayicilar) y [escríbanos](/iletisim) si quiere hablar del dimensionado de línea.

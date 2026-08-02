@@ -1,0 +1,122 @@
+---
+title: "Rulo Ağırlığı ve Uzunluğu Nasıl Hesaplanır?"
+description: "Rulo ağırlığı ve şerit uzunluğu formülleri, adım adım örnek hesap, sık yapılan hatalar ve hesabın hat seçimine etkisi."
+date: "2026-08-02"
+author: "Servosteel Mühendislik"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["rulo hesabı", "sac işleme", "hat seçimi"]
+---
+
+Rulo ağırlığını ve içinden çıkacak şerit uzunluğunu doğru bilmek, iki kararı doğrudan etkiler: **hangi kapasitede açıcı alacağınızı** ve **bir rulonun kaç saat üretim yapacağını**. İkisi de tahminle yürütülemez. Neyse ki her ikisi de tek bir geometrik gerçeğe dayanır ve elle hesaplanabilir.
+
+Hesabı hemen yapmak isterseniz [hesaplama araçları](/hesaplayicilar) sayfasındaki rulo hesaplayıcısını kullanabilirsiniz; aşağıda ise arkasındaki mantığı açıyoruz.
+
+## Rulonun geometrisi: iş halka kesitinde biter
+
+Sarılmış bir rulo, yandan bakıldığında bir **halkadır**: dış çapı (OD) ile iç çapı (ID) arasındaki bant. Bu halkanın alanı:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+Kritik nokta şu: rulo açıldığında bu alan **korunur**. Sac artık halka değil uzun bir dikdörtgendir, ama kesit alanı aynıdır. Dikdörtgenin bir kenarı sac kalınlığı (t), diğeri şerit uzunluğu (L) olduğuna göre:
+
+```
+A = L × t   →   L = A / t
+```
+
+Yani uzunluk, alanın kalınlığa bölünmesinden başka bir şey değildir.
+
+## Ağırlık formülü
+
+Ağırlık için halka alanını rulo genişliğiyle (W) çarpıp hacmi buluruz, sonra yoğunlukla (ρ) çarparız:
+
+```
+Ağırlık (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000
+```
+
+OD, ID ve W milimetre, ρ ise g/cm³ cinsindendir. Sondaki bir milyonluk bölme, mm³ ve g/cm³ karışımını kilograma çeviren birim katsayısıdır — en sık atlanan ayrıntı budur.
+
+### Yaygın yoğunluklar
+
+| Malzeme | ρ (g/cm³) |
+|---|---|
+| Çelik | 7,85 |
+| Paslanmaz | 7,90 |
+| Alüminyum | 2,70 |
+| Bakır | 8,96 |
+
+Alüminyumun çeliğin yaklaşık **üçte biri** ağırlığında olduğuna dikkat edin: aynı geometrideki bir alüminyum rulo, çelik rulonun %34'ü kadar gelir. Açıcı kapasitesini malzemeye bakmadan seçmek bu yüzden yanıltıcıdır.
+
+## Adım adım örnek
+
+Diyelim ki elimizde şu rulo var:
+
+- Dış çap: **1.400 mm**
+- İç çap (göbek): **508 mm**
+- Genişlik: **1.250 mm**
+- Kalınlık: **2 mm**
+- Malzeme: çelik (7,85 g/cm³)
+
+**1. Halka alanı**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1.960.000 − 258.064)
+A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+```
+
+**2. Ağırlık**
+
+```
+1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+```
+
+Yani yaklaşık **13,1 ton**. Bu rulo için 15 tonluk bir açıcı gerekir; 12 tonluk seri yetmez.
+
+**3. Şerit uzunluğu**
+
+```
+L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+```
+
+## Hesabın hat seçimine etkisi
+
+Uzunluğu bildiğinizde, rulonun **ne kadar süre yeteceğini** de bilirsiniz. 250 mm adımla dakikada 40 strok atan bir pres hattı düşünün:
+
+```
+Dakikada: 250 × 40 = 10.000 mm = 10 m
+Saatte:   10 × 60 = 600 m
+```
+
+668 metrelik rulo bu hatta **yaklaşık 1,1 saat** yeter. Vardiya başına 7 rulo değişimi demektir bu — ve her değişim duruş demektir. Bu noktada iki seçenek belirir: daha ağır rulo (daha büyük açıcı) ya da daha hızlı rulo değişimi (yükleme arabası). Hesap yapılmadan bu tartışma yapılamaz.
+
+## Sık yapılan üç hata
+
+**Göbeği ihmal etmek.** İç çapı hesaba katmayıp dolu silindir varsaymak, ağırlığı ciddi biçimde şişirir. 508 mm göbek, 1.400 mm dış çaplı bir ruloda kesitin yaklaşık %13'üdür.
+
+**Nominal kalınlığa güvenmek.** Sac toleransı ±%5'e ulaşabilir. Uzunluk kalınlığa **ters** orantılı olduğundan, 2 mm yerine gerçekte 2,1 mm gelen bir sacda uzunluk %5 kısalır — 668 m yerine 636 m.
+
+**Birim karıştırmak.** Formüldeki her uzunluk milimetre olmalıdır. Genişliği metre girmek sonucu bin katına çıkarır; bu hata teklif aşamasında sık görülür.
+
+## Ters yönde hesap: ağırlıktan uzunluğa
+
+Tedarikçiden gelen rulonun ağırlığı biliniyor ama çapları bilinmiyorsa, uzunluğu doğrudan bulabilirsiniz:
+
+```
+L (m) = Ağırlık (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Çelik için ρ = 7.850 kg/m³. Yukarıdaki örnekle sınayalım:
+
+```
+13.116 / (1,25 × 0,002 × 7.850) ≈ 668 m
+```
+
+Aynı sonuç — hesabın tutarlı olduğunun kanıtı. İki yoldan da aynı sayıya varmak, girdilerinizi doğrulamanın en pratik yoludur.
+
+## Özet
+
+Rulo hesabı sezgi işi değil, iki satır geometridir. Ağırlık halka alanı × genişlik × yoğunluk, uzunluk ise halka alanı ÷ kalınlıktır. Bu iki sayı elinizdeyken açıcı kapasitesi, rulo değişim sıklığı ve vardiya planlaması tartışılabilir hale gelir.
+
+Kendi değerlerinizle denemek için [rulo hesaplayıcısını](/hesaplayicilar) kullanın; hat boyutlandırması konuşmak isterseniz [bize yazın](/iletisim).

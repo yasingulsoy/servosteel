@@ -1,0 +1,122 @@
+---
+title: "Jak obliczyć masę i długość kręgu?"
+description: "Wzory na masę i długość kręgu, przykład krok po kroku, częste błędy i wpływ wyniku na dobór linii."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["obliczenia kręgu", "obróbka blach", "dobór linii"]
+---
+
+Znajomość masy kręgu i długości zawartej w nim taśmy wpływa bezpośrednio na dwie decyzje: **jakiej pojemności odwijak jest potrzebny** oraz **ile godzin wystarczy jeden krąg**. Żadnej z nich nie da się oszacować na oko. Na szczęście obie wynikają z jednego faktu geometrycznego i można je policzyć ręcznie.
+
+Jeśli chcesz wynik od razu, użyj kalkulatora kręgu na stronie [kalkulatory](/hesaplayicilar); poniżej wyjaśniamy logikę, która za nim stoi.
+
+## Geometria kręgu: wszystko sprowadza się do pierścienia
+
+Widziany z boku nawinięty krąg to **pierścień**: pas między średnicą zewnętrzną (OD) a wewnętrzną (ID). Jego pole wynosi:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+Kluczowy punkt: po rozwinięciu kręgu pole to **zostaje zachowane**. Stal nie jest już pierścieniem, lecz długim prostokątem — przekrój pozostaje ten sam. Jednym bokiem prostokąta jest grubość blachy (t), drugim długość taśmy (L):
+
+```
+A = L × t   →   L = A / t
+```
+
+Długość to nic innego niż pole podzielone przez grubość.
+
+## Wzór na masę
+
+Aby uzyskać masę, pomnóż pole pierścienia przez szerokość kręgu (W), otrzymując objętość, a następnie przez gęstość (ρ):
+
+```
+Masa (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000
+```
+
+OD, ID i W w milimetrach, ρ w g/cm³. Dzielenie przez milion to współczynnik jednostek przeliczający mieszankę mm³ i g/cm³ na kilogramy — to szczegół pomijany najczęściej.
+
+### Typowe gęstości
+
+| Materiał | ρ (g/cm³) |
+|---|---|
+| Stal | 7,85 |
+| Nierdzewna | 7,90 |
+| Aluminium | 2,70 |
+| Miedź | 8,96 |
+
+Zwróć uwagę, że aluminium waży około **jednej trzeciej** stali: krąg o identycznej geometrii wychodzi na 34 % wartości dla stali. Dobór pojemności odwijaka bez uwzględnienia materiału jest zatem mylący.
+
+## Przykład krok po kroku
+
+Załóżmy taki krąg:
+
+- Średnica zewnętrzna: **1400 mm**
+- Średnica wewnętrzna (rdzeń): **508 mm**
+- Szerokość: **1250 mm**
+- Grubość: **2 mm**
+- Materiał: stal (7,85 g/cm³)
+
+**1. Pole pierścienia**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1 960 000 − 258 064)
+A = π/4 × 1 701 936 ≈ 1 336 663 mm²
+```
+
+**2. Masa**
+
+```
+1 336 663 × 1250 × 7,85 / 1 000 000 ≈ 13 116 kg
+```
+
+Około **13,1 tony**. Ten krąg wymaga odwijaka 15-tonowego; seria 12-tonowa nie wystarczy.
+
+**3. Długość taśmy**
+
+```
+L = 1 336 663 / 2 = 668 331 mm ≈ 668 m
+```
+
+## Wpływ na dobór linii
+
+Znając długość, wiesz też, **na jak długo starczy krąg**. Weź linię prasy o skoku 250 mm przy 40 suwach na minutę:
+
+```
+Na minutę: 250 × 40 = 10 000 mm = 10 m
+Na godzinę: 10 × 60 = 600 m
+```
+
+Krąg 668 m starcza na tej linii na około **1,1 godziny**: mniej więcej 7 zmian kręgu na zmianę roboczą, a każda zmiana to przestój. Pojawiają się wtedy dwie drogi: cięższe kręgi (większy odwijak) albo szybsza wymiana (wózek załadowczy). Bez obliczenia tej dyskusji nie da się nawet zacząć.
+
+## Trzy częste błędy
+
+**Pominięcie rdzenia.** Traktowanie kręgu jak pełnego walca zamiast odjęcia średnicy wewnętrznej mocno zawyża masę. Rdzeń 508 mm to około 13 % przekroju przy kręgu 1400 mm.
+
+**Zaufanie grubości nominalnej.** Tolerancja blachy sięga ±5 %. Ponieważ długość jest **odwrotnie** proporcjonalna do grubości, materiał mierzący 2,1 mm zamiast 2 mm daje 5 % mniej: 636 m zamiast 668 m.
+
+**Mieszanie jednostek.** Każda długość we wzorze musi być w milimetrach. Wpisanie szerokości w metrach zwiększa wynik tysiąckrotnie; ten błąd regularnie pojawia się na etapie ofertowania.
+
+## Obliczenie odwrotne: z masy na długość
+
+Jeśli dostawca podaje masę kręgu, ale nie średnice, długość wyznaczysz bezpośrednio:
+
+```
+L (m) = Masa (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Dla stali ρ = 7850 kg/m³. Sprawdźmy na powyższym przykładzie:
+
+```
+13 116 / (1,25 × 0,002 × 7850) ≈ 668 m
+```
+
+Ten sam wynik — dowód, że obliczenie jest spójne. Dojście do tej samej liczby dwiema drogami to najbardziej praktyczny sposób weryfikacji danych wejściowych.
+
+## Podsumowanie
+
+Obliczenie kręgu to nie intuicja, tylko dwie linijki geometrii. Masa to pole pierścienia × szerokość × gęstość; długość to pole pierścienia ÷ grubość. Mając te dwie liczby, można rozmawiać o pojemności odwijaka, częstotliwości wymiany i planowaniu zmian.
+
+Sprawdź własne wartości w [kalkulatorze kręgu](/hesaplayicilar), a jeśli chcesz porozmawiać o doborze linii — [napisz do nas](/iletisim).

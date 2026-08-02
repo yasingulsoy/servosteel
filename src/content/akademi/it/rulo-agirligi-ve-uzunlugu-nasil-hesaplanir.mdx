@@ -1,0 +1,122 @@
+---
+title: "Come calcolare peso e lunghezza di un coil"
+description: "Formule di peso e lunghezza del coil, esempio svolto passo passo, errori frequenti e impatto sulla scelta della linea."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["calcolo coil", "lavorazione lamiera", "scelta linea"]
+---
+
+Conoscere il peso di un coil e la lunghezza di nastro che contiene determina due decisioni dirette: **quale capacità di svolgitore serve** e **quante ore rende un coil**. Nessuna delle due si può stimare a occhio. Per fortuna entrambe derivano da un unico fatto geometrico e si calcolano a mano.
+
+Se volete subito il risultato, usate il calcolatore coil nella pagina [calcolatori](/hesaplayicilar); qui sotto spieghiamo il ragionamento.
+
+## Geometria del coil: tutto si riduce a una corona circolare
+
+Visto di lato, un coil avvolto è una **corona circolare**: la fascia tra diametro esterno (OD) e interno (ID). La sua area è:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+Il punto chiave: svolgendo il coil quell'area **si conserva**. L'acciaio non è più un anello ma un lungo rettangolo, eppure la sezione è la stessa. Un lato del rettangolo è lo spessore (t), l'altro la lunghezza del nastro (L):
+
+```
+A = L × t   →   L = A / t
+```
+
+La lunghezza non è altro che l'area divisa per lo spessore.
+
+## La formula del peso
+
+Per il peso, moltiplicate l'area della corona per la larghezza del coil (W) ottenendo il volume, poi per la densità (ρ):
+
+```
+Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000
+```
+
+OD, ID e W in millimetri, ρ in g/cm³. La divisione per un milione è il fattore che converte il misto di mm³ e g/cm³ in chilogrammi: è il dettaglio più spesso dimenticato.
+
+### Densità comuni
+
+| Materiale | ρ (g/cm³) |
+|---|---|
+| Acciaio | 7,85 |
+| Inox | 7,90 |
+| Alluminio | 2,70 |
+| Rame | 8,96 |
+
+Notate che l'alluminio pesa circa **un terzo** dell'acciaio: un coil di geometria identica risulta al 34 % del valore in acciaio. Scegliere la capacità dello svolgitore senza guardare il materiale è quindi fuorviante.
+
+## Esempio svolto
+
+Supponiamo questo coil:
+
+- Diametro esterno: **1.400 mm**
+- Diametro interno (anima): **508 mm**
+- Larghezza: **1.250 mm**
+- Spessore: **2 mm**
+- Materiale: acciaio (7,85 g/cm³)
+
+**1. Area della corona**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1.960.000 − 258.064)
+A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+```
+
+**2. Peso**
+
+```
+1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+```
+
+Circa **13,1 tonnellate**. Questo coil richiede uno svolgitore da 15 tonnellate; la serie da 12 non basta.
+
+**3. Lunghezza del nastro**
+
+```
+L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+```
+
+## Impatto sulla scelta della linea
+
+Nota la lunghezza, sapete anche **quanto dura il coil**. Prendete una linea pressa con passo 250 mm a 40 colpi al minuto:
+
+```
+Al minuto: 250 × 40 = 10.000 mm = 10 m
+All'ora:   10 × 60 = 600 m
+```
+
+Un coil da 668 m dura circa **1,1 ore** su quella linea: circa 7 cambi coil per turno, e ogni cambio è fermo macchina. A quel punto emergono due strade: coil più pesanti (svolgitore più grande) o cambi più rapidi (carrello di carico). Senza il calcolo la discussione non può nemmeno iniziare.
+
+## Tre errori frequenti
+
+**Ignorare l'anima.** Trattare il coil come cilindro pieno invece di sottrarre il diametro interno gonfia molto il peso. Un'anima da 508 mm è circa il 13 % della sezione su un coil da 1.400 mm.
+
+**Fidarsi dello spessore nominale.** La tolleranza della lamiera arriva a ±5 %. Poiché la lunghezza è **inversamente** proporzionale allo spessore, un materiale che misura 2,1 mm invece di 2 mm rende il 5 % in meno: 636 m invece di 668 m.
+
+**Mescolare le unità.** Ogni lunghezza nella formula deve essere in millimetri. Inserire la larghezza in metri moltiplica il risultato per mille; l'errore ricorre spesso in fase di offerta.
+
+## Calcolo inverso: dal peso alla lunghezza
+
+Se il fornitore indica il peso ma non i diametri, la lunghezza si ricava direttamente:
+
+```
+L (m) = Peso (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Per l'acciaio ρ = 7.850 kg/m³. Verifichiamo con l'esempio sopra:
+
+```
+13.116 / (1,25 × 0,002 × 7.850) ≈ 668 m
+```
+
+Stesso risultato: prova che il calcolo è coerente. Arrivare allo stesso numero per due vie è il modo più pratico per validare i dati inseriti.
+
+## In sintesi
+
+Il calcolo del coil non è intuito, sono due righe di geometria. Il peso è area della corona × larghezza × densità; la lunghezza è area della corona ÷ spessore. Con questi due numeri, capacità dello svolgitore, frequenza di cambio e pianificazione dei turni diventano discutibili.
+
+Provate con i vostri valori nel [calcolatore coil](/hesaplayicilar) e [scriveteci](/iletisim) se volete parlare del dimensionamento della linea.

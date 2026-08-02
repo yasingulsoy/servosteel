@@ -1,0 +1,122 @@
+---
+title: "Coilgewicht und Bandlänge berechnen"
+description: "Formeln für Coilgewicht und Bandlänge, ein Rechenbeispiel Schritt für Schritt, typische Fehler und der Einfluss auf die Anlagenauswahl."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/rulo-acicilar.jpg"
+tags: ["Coilberechnung", "Bandverarbeitung", "Anlagenauswahl"]
+---
+
+Das Gewicht eines Coils und die darin enthaltene Bandlänge zu kennen, bestimmt zwei Entscheidungen unmittelbar: **welche Haspelkapazität Sie brauchen** und **wie viele Stunden ein Coil läuft**. Beides lässt sich nicht schätzen. Zum Glück folgt beides aus einer einzigen geometrischen Tatsache und ist von Hand rechenbar.
+
+Wenn Sie das Ergebnis sofort brauchen, nutzen Sie den Coilrechner auf unserer Seite [Rechner](/hesaplayicilar); nachfolgend erklären wir die Logik dahinter.
+
+## Coilgeometrie: alles läuft auf einen Kreisring hinaus
+
+Von der Seite betrachtet ist ein gewickeltes Coil ein **Kreisring**: das Band zwischen Außendurchmesser (OD) und Innendurchmesser (ID). Seine Fläche beträgt:
+
+```
+A = π/4 × (OD² − ID²)
+```
+
+Entscheidend ist: Beim Abwickeln bleibt diese Fläche **erhalten**. Der Stahl ist kein Ring mehr, sondern ein langes Rechteck — der Querschnitt ist derselbe. Eine Seite dieses Rechtecks ist die Blechdicke (t), die andere die Bandlänge (L):
+
+```
+A = L × t   →   L = A / t
+```
+
+Die Länge ist nichts anderes als Fläche geteilt durch Dicke.
+
+## Die Gewichtsformel
+
+Für das Gewicht multiplizieren Sie die Ringfläche mit der Coilbreite (W) zum Volumen und dann mit der Dichte (ρ):
+
+```
+Gewicht (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000
+```
+
+OD, ID und W in Millimetern, ρ in g/cm³. Die Division durch eine Million ist der Umrechnungsfaktor, der die Mischung aus mm³ und g/cm³ in Kilogramm überführt — das am häufigsten übersehene Detail.
+
+### Gängige Dichten
+
+| Werkstoff | ρ (g/cm³) |
+|---|---|
+| Stahl | 7,85 |
+| Edelstahl | 7,90 |
+| Aluminium | 2,70 |
+| Kupfer | 8,96 |
+
+Beachten Sie: Aluminium wiegt etwa **ein Drittel** von Stahl. Ein Coil gleicher Geometrie kommt auf 34 % des Stahlwerts. Die Haspelkapazität ohne Blick auf den Werkstoff zu wählen, führt daher in die Irre.
+
+## Rechenbeispiel
+
+Angenommen, wir haben folgendes Coil:
+
+- Außendurchmesser: **1.400 mm**
+- Innendurchmesser (Kern): **508 mm**
+- Breite: **1.250 mm**
+- Dicke: **2 mm**
+- Werkstoff: Stahl (7,85 g/cm³)
+
+**1. Ringfläche**
+
+```
+A = π/4 × (1400² − 508²)
+A = π/4 × (1.960.000 − 258.064)
+A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+```
+
+**2. Gewicht**
+
+```
+1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+```
+
+Rund **13,1 Tonnen**. Dieses Coil verlangt eine 15-Tonnen-Haspel; die 12-Tonnen-Baureihe reicht nicht.
+
+**3. Bandlänge**
+
+```
+L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+```
+
+## Einfluss auf die Anlagenauswahl
+
+Mit der Länge wissen Sie auch, **wie lange das Coil reicht**. Nehmen wir eine Pressenlinie mit 250 mm Vorschub bei 40 Hüben pro Minute:
+
+```
+Pro Minute: 250 × 40 = 10.000 mm = 10 m
+Pro Stunde: 10 × 60 = 600 m
+```
+
+Ein 668-m-Coil hält auf dieser Linie etwa **1,1 Stunden**. Das sind rund 7 Coilwechsel je Schicht — und jeder Wechsel ist Stillstand. Nun zeigen sich zwei Wege: schwerere Coils (größere Haspel) oder schnellere Wechsel (Ladewagen). Ohne Rechnung lässt sich diese Diskussion gar nicht führen.
+
+## Drei typische Fehler
+
+**Den Kern vergessen.** Das Coil als Vollzylinder zu behandeln, statt den Innendurchmesser abzuziehen, treibt das Gewicht stark nach oben. Ein 508-mm-Kern macht bei 1.400 mm Außendurchmesser rund 13 % des Querschnitts aus.
+
+**Der Nenndicke vertrauen.** Blechtoleranzen erreichen ±5 %. Da die Länge **umgekehrt** proportional zur Dicke ist, liefert Material mit tatsächlich 2,1 mm statt 2 mm 5 % weniger Länge — 636 m statt 668 m.
+
+**Einheiten mischen.** Jede Länge in der Formel muss in Millimetern stehen. Die Breite in Metern einzugeben, vertausendfacht das Ergebnis; dieser Fehler taucht in der Angebotsphase regelmäßig auf.
+
+## Rückwärts gerechnet: vom Gewicht zur Länge
+
+Wenn der Lieferant das Coilgewicht nennt, aber nicht die Durchmesser, ermitteln Sie die Länge direkt:
+
+```
+L (m) = Gewicht (kg) / (W (m) × t (m) × ρ (kg/m³))
+```
+
+Für Stahl gilt ρ = 7.850 kg/m³. Prüfen wir es am Beispiel oben:
+
+```
+13.116 / (1,25 × 0,002 × 7.850) ≈ 668 m
+```
+
+Dasselbe Ergebnis — der Beweis, dass die Rechnung konsistent ist. Auf zwei Wegen zur selben Zahl zu kommen, ist die praktischste Art, die Eingaben zu prüfen.
+
+## Zusammenfassung
+
+Coilberechnung ist keine Intuition, sondern zwei Zeilen Geometrie. Gewicht ist Ringfläche × Breite × Dichte, Länge ist Ringfläche ÷ Dicke. Mit diesen beiden Zahlen werden Haspelkapazität, Wechselhäufigkeit und Schichtplanung diskutierbar.
+
+Probieren Sie es mit Ihren eigenen Werten im [Coilrechner](/hesaplayicilar), und [schreiben Sie uns](/iletisim), wenn Sie über die Anlagenauslegung sprechen möchten.

@@ -436,6 +436,163 @@
     "ctaTitle": "Poproś o referencje ze swojej branży",
     "ctaText": "Udostępnimy instalacje w zakładach podobnych do Twojego i zorganizujemy wizyty."
   },
+  "compare": {
+    "metaTitle": "Porównania: wybierz właściwe urządzenie",
+    "metaDesc": "Podawanie serwo czy mechaniczne? Cięcie wzdłużne czy na wymiar? Odwijak hydrauliczny czy mechaniczny? Porównaj różnice przed inwestycją.",
+    "eyebrow": "Przewodnik wyboru",
+    "title": "Porównania",
+    "desc": "Pytania zadawane tuż przed decyzją inwestycyjną. Każde porównanie zestawia dwie opcje według tych samych kryteriów i wskazuje, kiedy która jest właściwa.",
+    "tableTitle": "Porównanie obok siebie",
+    "criterion": "Kryterium",
+    "verdictTitle": "W skrócie",
+    "seeProduct": "Przejdź do strony produktu",
+    "items": {
+      "servo-vs-mekanik-besleme": {
+        "name": "Podajnik serwo czy mechaniczny?",
+        "metaTitle": "Podajnik serwo vs mechaniczny: porównanie",
+        "metaDesc": "Różnice między podawaniem serwo a podajnikami mechanicznymi/pneumatycznymi: dokładność, zmiana tłocznika, prędkość i inwestycja.",
+        "hero": "Są dwa sposoby podawania taśmy do linii prasy. Różnica to nie tylko cena: zmieniają się tolerancja detalu, czas przezbrojenia i elastyczność linii.",
+        "aName": "Podajnik serwo",
+        "bName": "Podajnik mechaniczny / pneumatyczny",
+        "rows": [
+          {
+            "label": "Dokładność skoku",
+            "a": "Pętla zamknięta z serwonapędem i enkoderem; tolerancja utrzymuje się w serii",
+            "b": "Ograniczona krzywką lub skokiem pneumatycznym; skok dryfuje wraz ze zużyciem"
+          },
+          {
+            "label": "Zmiana skoku",
+            "a": "Wartość wpisywana na panelu, kwestia sekund",
+            "b": "Wymaga regulacji mechanicznej lub wymiany krzywki"
+          },
+          {
+            "label": "Zmiana tłocznika",
+            "a": "Pamięć receptur do 250 tłoczników; bez ponownej regulacji",
+            "b": "Ponowna regulacja przy każdym tłoczniku"
+          },
+          {
+            "label": "Synchronizacja z prasą",
+            "a": "Pełna synchronizacja sygnałem krzywki, luzowanie pilotów w standardzie",
+            "b": "Ograniczona; trudniejsza przy wysokiej liczbie suwów"
+          },
+          {
+            "label": "Inwestycja i eksploatacja",
+            "a": "Wyższa na starcie, mniej odpadu i przestojów",
+            "b": "Niższa na starcie, więcej czasu nastaw i odpadu"
+          }
+        ],
+        "chooseATitle": "Wybierz serwo, jeśli",
+        "chooseA": [
+          "Tolerancja detalu jest wąska i musi utrzymać się przez całą serię",
+          "Zmieniasz kilka tłoczników w ciągu zmiany",
+          "Używasz pilotów lub pracujesz z wysoką liczbą suwów"
+        ],
+        "chooseBTitle": "Podajnik mechaniczny wystarczy, jeśli",
+        "chooseB": [
+          "Produkujesz długie serie jednym tłocznikiem",
+          "Tolerancja skoku jest szeroka, a powierzchnia niekrytyczna",
+          "Budżet decyduje o inwestycji początkowej"
+        ],
+        "verdict": "Wraz ze wzrostem liczby tłoczników oszczędność na nastawach i odpadzie po stronie serwo pokrywa różnicę w cenie. Przy jednym detalu w długich seriach podajnik mechaniczny nadal ma sens."
+      },
+      "dilme-vs-boy-kesme": {
+        "name": "Linia wzdłużnego cięcia czy cięcia na wymiar?",
+        "metaTitle": "Cięcie wzdłużne vs cięcie na wymiar: porównanie linii",
+        "metaDesc": "Różnica między linią wzdłużnego cięcia a linią cięcia na wymiar: produkt, kierunek cięcia, wyposażenie i zastosowania.",
+        "hero": "Obie linie przetwarzają kręgi, ale tną w różnych kierunkach: jedna daje taśmy w kręgu, druga płaskie arkusze. O wyborze decyduje twój produkt.",
+        "aName": "Linia wzdłużnego cięcia",
+        "bName": "Linia cięcia na wymiar",
+        "rows": [
+          {
+            "label": "Kierunek cięcia",
+            "a": "Wzdłużny — wzdłuż taśmy",
+            "b": "Poprzeczny — w poprzek szerokości"
+          },
+          {
+            "label": "Produkt",
+            "a": "Kręgi wąskiej taśmy",
+            "b": "Płaskie arkusze cięte na wymiar"
+          },
+          {
+            "label": "Zespół tnący",
+            "a": "Zestawy noży krążkowych",
+            "b": "Nożyce lub cięcie w locie"
+          },
+          {
+            "label": "Koniec linii",
+            "a": "Nawijak i układ naciągu",
+            "b": "Układ sztaplowania"
+          },
+          {
+            "label": "Typowy klient",
+            "a": "Producenci profili, kształtowników i rur",
+            "b": "Tłocznie, cięcie laserowe, obróbka blach"
+          }
+        ],
+        "chooseATitle": "Wybierz cięcie wzdłużne, jeśli",
+        "chooseA": [
+          "Twoim produktem będzie taśma w kręgu",
+          "Taśmy trafią do własnej linii profilowania lub rur",
+          "Chcesz dzielić szerokie kręgi matki na szerokości z zamówienia"
+        ],
+        "chooseBTitle": "Wybierz cięcie na wymiar, jeśli",
+        "chooseB": [
+          "Twoim produktem będą płaskie arkusze o zadanej długości",
+          "Arkusze zasilą prasę, laser lub krawędziarkę",
+          "Płaskość jest krytyczna dla jakości"
+        ],
+        "verdict": "To nie są alternatywy — wytwarzają różne produkty. Jeśli potrzebujesz i taśmy, i arkuszy, porozmawiajmy o liniach łączących cięcie wzdłużne i na wymiar na jednej ramie."
+      },
+      "hidrolik-vs-mekanik-acici": {
+        "name": "Odwijak hydrauliczny czy mechaniczny?",
+        "metaTitle": "Odwijak hydrauliczny vs mechaniczny: porównanie",
+        "metaDesc": "Różnice między odwijakiem hydraulicznym a mechanicznym: udźwig, rozprężanie trzpienia, hamowanie i załadunek. Który pasuje do twoich kręgów?",
+        "hero": "Różnica to nie tylko udźwig: zmienia się też sposób zaciskania trzpienia, hamowania kręgu i zakładania go na wał.",
+        "aName": "Odwijak hydrauliczny",
+        "bName": "Odwijak mechaniczny",
+        "rows": [
+          {
+            "label": "Zakres udźwigu",
+            "a": "6 – 20 ton",
+            "b": "500 – 4 000 kg"
+          },
+          {
+            "label": "Rozprężanie trzpienia",
+            "a": "Hydrauliczne — sterowane z panelu",
+            "b": "Mechaniczne — ręczne pokrętłem"
+          },
+          {
+            "label": "Hamowanie",
+            "a": "Hamulec hydrauliczny, regulowany do prędkości linii",
+            "b": "Układ hamulca szczękowego"
+          },
+          {
+            "label": "Załadunek kręgu",
+            "a": "Pozycjonowany wózkiem hydraulicznym",
+            "b": "Zakładany na wał wózkiem widłowym"
+          },
+          {
+            "label": "Obciążenie operatora",
+            "a": "Niskie — nastawy z panelu",
+            "b": "Wysokie — ręczny zacisk przy każdym kręgu"
+          }
+        ],
+        "chooseATitle": "Wybierz hydrauliczny, jeśli",
+        "chooseA": [
+          "Twoje kręgi ważą powyżej 5 ton",
+          "Często zmieniasz kręgi w trakcie zmiany",
+          "Prędkość linii jest wysoka i potrzebne jest sterowane hamowanie"
+        ],
+        "chooseBTitle": "Mechaniczny wystarczy, jeśli",
+        "chooseB": [
+          "Twoje kręgi ważą poniżej 2,5 tony i są wąskie",
+          "Zmiany kręgów są rzadkie",
+          "Musisz utrzymać inwestycję na możliwie niskim poziomie"
+        ],
+        "verdict": "Przy ciężkich kręgach i częstych zmianach hydraulika szybko się zwraca dzięki czasowi operatora i bezpieczeństwu. Przy wąskiej taśmie i lekkich kręgach seria mechaniczna pozostaje najbardziej ekonomiczna."
+      }
+    }
+  },
   "calc": {
     "metaTitle": "Kalkulatory: masa kręgu, wydajność podawania, uzysk cięcia",
     "metaDesc": "Bezpłatne kalkulatory inżynierskie: masa i długość kręgu, wydajność podawania do prasy, odpad przy cięciu wzdłużnym. Bez rejestracji.",
