@@ -1,0 +1,101 @@
+---
+title: "Jak wybrać podajnik serwo? Praktyczny przewodnik"
+description: "Jak ocenić dokładność skoku, prędkość podawania, nacisk rolek, potrzebę prostowania i synchronizację z prasą przy wyborze podajnika serwo."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["podajnik serwo", "podawanie do prasy", "wybór linii"]
+---
+
+Podajnik serwo nadaje rytm linii prasy: dostarcza taśmę do tłocznika o właściwej długości, we właściwym momencie i powtarzalnie. Przy złym doborze problem nie pojawia się na podajniku, lecz **na detalu**: dryfujący skok, utracona tolerancja, rosnący odpad.
+
+Ten przewodnik przechodzi przez parametry do ustalenia przed zapytaniem ofertowym. Jeśli wciąż rozważasz podajnik mechaniczny, zacznij od [porównania serwo vs mechaniczny](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. Co naprawdę decyduje o dokładności skoku?
+
+Sama liczba z katalogu mówi niewiele; w praktyce wynika ze współdziałania trzech czynników.
+
+**Serwonapęd i przekładnia.** Pętla zamknięta stale koryguje pozycję na podstawie sprzężenia z enkodera. W układzie otwartym silnik „sądzi", że się przemieścił, choć w rzeczywistości mógł się poślizgnąć.
+
+**Nacisk i przyczepność rolek.** Taśma nie może ślizgać się między rolkami. Za mały nacisk — skok wychodzi za krótki; za duży — znakuje powierzchnię i zgniata cienki materiał. W podajnikach Servosteel rolki podające mają **Ø85 mm**; większa średnica zwiększa powierzchnię styku i ogranicza poślizg.
+
+**Bezwładność taśmy.** Ciężka i szeroka taśma obciąża napęd przy rozpędzaniu i hamowaniu. Ten sam podajnik może nie utrzymać przy 4 mm dokładności, jaką pokazuje przy 0,5 mm — dlatego zawsze pytaj, **przy jakiej grubości i szerokości** zmierzono podaną wartość.
+
+## 2. Prędkość podawania: nie myl średniej ze szczytową
+
+To najczęstszy błąd przy wyborze i prowadzi wprost do zakupu niewłaściwej maszyny.
+
+Podawana w katalogu **swobodna prędkość podawania** (35 m/min w serii standardowej Servosteel) to prędkość pracy ciągłej. Ale na linii prasy podajnik nigdy nie pracuje ciągle: zatrzymuje się przy każdym suwie, prasa schodzi, potem znów przyspiesza.
+
+Średni posuw jest prosty:
+
+```
+Prędkość średnia (m/min) = skok (mm) × suwy/min ÷ 1000
+```
+
+Dla skoku 250 mm i 40 suwów/min daje to **10 m/min**. Brzmi skromnie — ale podajnik musi dostarczyć te 250 mm w krótkim oknie, gdy prasa nie jest zamknięta. Wymagana wtedy **chwilowa prędkość szczytowa** jest kilkakrotnie wyższa od średniej.
+
+Doboru dokonuje się według prędkości szczytowej. Podajnik wybrany według średniej wraca z zakładu z uwagą „nie nadąża".
+
+Wydajność i zużycie swojej linii policzysz w [kalkulatorze podawania](/hesaplayicilar).
+
+## 3. Czy zakres materiału jest właściwy?
+
+Standardowe podajniki serwo Servosteel pracują z grubościami **0,4–4,0 mm** i szerokościami taśmy **do 1600 mm**. Liczą się oba końce zakresu:
+
+- **Dolny koniec:** przy bardzo cienkim materiale nacisk bez precyzyjnej regulacji zgniata i faluje powierzchnię.
+- **Górny koniec:** gruby materiał wymaga większej siły trzymania; nacisk rolek i moment napędu muszą to pokryć.
+
+Stal nierdzewna i wysokowytrzymała wymagają większej siły niż blacha miękka tej samej grubości. Przekaż listę materiałów z wyprzedzeniem.
+
+## 4. Czy potrzebne jest prostowanie?
+
+Taśma schodząca z kręgu niesie pamięć krzywizny (coil set). Jeśli ta krzywizna uniemożliwia czyste wejście w tłocznik, są dwie drogi:
+
+**Osobna prostownica + podajnik** — sensowne przy rozbudowie istniejącej linii lub dużym zapotrzebowaniu na prostowanie.
+
+**[Podajnik serwo z prostownicą](/makineler/dogrultmali-servo-suruculer)** — obie funkcje w jednym korpusie. Linia się skraca, jest jeden panel operatora, a problem synchronizacji dwóch maszyn znika. Liczba rolek zależy od materiału: cienka blacha o wrażliwej powierzchni wymaga więcej (11–13), gruba mniej (7–9).
+
+Jeśli miejsca jest mało, a kręgi sięgają 10 ton, [linia kompaktowa](/makineler/kompakt-hatlar) łącząca odwijak, prostownicę i podajnik na jednej platformie rozwiązuje układ i uruchomienie za jednym razem.
+
+## 5. Synchronizacja z prasą i piloty
+
+Podajnik musi rozmawiać z prasą. Sygnał krzywki jest połączony z podajnikiem, a podawanie taktowane względem martwego punktu.
+
+**Luzowanie pilotów (release)** to funkcja krytyczna: piloty w tłoczniku ściągają taśmę na dokładną pozycję w ostatnim milimetrze. Aby to się udało, podajnik musi w tym momencie **puścić** uchwyt. Bez luzowania piloty nie pociągną taśmy — albo pęknie pilot, albo zdryfuje tolerancja detalu.
+
+Jeśli pracujesz na tłocznikach postępowych, ta funkcja nie jest opcjonalna. Temat omówiliśmy osobno w artykule [tłoczniki postępowe i podajnik serwo](/akademi/progresif-kalip-servo-besleyici-secimi).
+
+## 6. Pamięć tłoczników: tu leży realny zysk
+
+Jeśli produkujesz długie serie jednym tłocznikiem, pamięć niewiele zmienia. Jeśli zmieniasz tłocznik w trakcie zmiany, obraz się odwraca.
+
+Podajniki Servosteel przechowują receptury dla **do 250 tłoczników**: skok, prędkość, rampa i nacisk zapisują się pod nazwą tłocznika. Przy zmianie operator wybiera z listy i nastawy są gotowe.
+
+Ma to dwa skutki: przezbrojenie spada z minut do sekund, a **zależność od konkretnego operatora znika**. To drugie zwykle znaczy więcej — jakość nie spada w dniu, gdy doświadczony ustawiacz ma wolne.
+
+## 7. Seria mini czy standardowa?
+
+Seria mini oszczędza miejsce i koszt przy wąskiej taśmie i małych prasach. **Dokładność skoku jest identyczna jak w serii standardowej** — „mini" nie znaczy „mniej dokładny".
+
+Jej granice wyznaczają szerokość taśmy i masa kręgu. Jeśli dziś pracujesz wąsko, ale niedługo możesz się poszerzyć, seria standardowa jest bezpieczniejszym wyborem: powiększenie podajnika oznacza zakup nowej maszyny.
+
+## Pięć liczb potrzebnych do wyboru
+
+Z tymi pięcioma dobór zamyka się w jednej turze:
+
+| Parametr | Do czego służy |
+|---|---|
+| Grubość i gatunek blachy | Siła trzymania i nastawa nacisku |
+| Szerokość taśmy | Długość rolek i dobór korpusu |
+| Skok (min–maks) | Obliczenie prędkości szczytowej |
+| Suwy prasy na minutę | Obliczenie prędkości szczytowej |
+| Masa kręgu | Udźwig odwijaka i układ linii |
+
+Jeśli nie znasz masy kręgu, poda ją [kalkulator kręgu](/hesaplayicilar); metodę opisaliśmy w artykule [jak obliczyć masę i długość kręgu](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+## Podsumowanie
+
+Podajnika serwo nie wybiera się po jednej liczbie z katalogu. Decydują trzy rzeczy: czy **prędkość szczytowa pokrywa twoją linię**, czy **nacisk da się dostroić do twojego materiału** i czy **synchronizacja z prasą — łącznie z luzowaniem pilotów — jest w pełni zrealizowana**.
+
+Szczegóły produktu znajdziesz na stronie [podajniki serwo](/makineler/servo-suruculer), a [zapytanie ofertowe](/teklif-al) złóż z powyższymi pięcioma liczbami.

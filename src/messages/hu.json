@@ -58,7 +58,6 @@
     "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
     "cta1": "Ajánlatkérés a Projektjéhez",
     "cta2": "Sorok Megtekintése",
-    "measure": "±0,1 mm",
     "stats": [
       { "value": "10+", "label": "Év tapasztalat" },
       { "value": "48+", "label": "Exportország" },
@@ -1298,7 +1297,7 @@
             ["Anyagszélesség", "40 – 1.300 mm"],
             ["Anyagvastagság", "0,5 – 4,0 mm"],
             ["Szabad sebesség", "40 m/min"],
-            ["Előtolási pontosság", "± 0,1 mm"],
+            ["Előtolási pontosság", "−0,1 mm"],
             ["Tekercstömeg", "2.500 – 10.000 kg"],
             ["Tekercs belső / külső átmérő", "450 – 560 / 1.300 – 1.600 mm"],
             ["Előtoló hengerek", "2 + 2"],

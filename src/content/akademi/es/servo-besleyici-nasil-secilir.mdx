@@ -1,0 +1,101 @@
+---
+title: "Cómo elegir un alimentador servo: guía práctica"
+description: "Cómo evaluar precisión de paso, velocidad de avance, presión de rodillos, necesidad de enderezado y sincronización con la prensa."
+date: "2026-08-02"
+author: "Ingeniería Servosteel"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["alimentador servo", "alimentación de prensa", "selección de línea"]
+---
+
+El alimentador servo marca el ritmo de la línea de prensa: entrega el fleje al troquel con la longitud correcta, en el momento correcto y de forma repetible. Cuando se elige mal, el problema no aparece en el alimentador sino **en la pieza**: paso que se desvía, tolerancia perdida, chatarra al alza.
+
+Esta guía recorre los parámetros a cerrar antes de pedir oferta. Si aún valora un alimentador mecánico, empiece por la [comparativa servo vs mecánico](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. ¿Qué determina realmente la precisión de paso?
+
+La cifra del catálogo por sí sola dice poco; en planta surge de la combinación de tres factores.
+
+**Servomotor y reductor.** El lazo cerrado corrige la posición de forma continua con la realimentación del encóder. En un sistema de lazo abierto el motor «cree» haberse movido cuando en realidad puede haber patinado.
+
+**Presión y agarre de rodillos.** El fleje no debe patinar entre los rodillos. Con poca presión el paso se queda corto; con demasiada se marca la superficie y se aplasta el material fino. En los alimentadores Servosteel los rodillos de arrastre son de **Ø85 mm**; el mayor diámetro aumenta la superficie de contacto y reduce el deslizamiento.
+
+**Inercia del fleje.** El fleje pesado y ancho carga el accionamiento en aceleración y frenado. El mismo alimentador puede no mantener con 4 mm la precisión que muestra con 0,5 mm — por eso conviene preguntar siempre **a qué espesor y ancho** se midió la cifra.
+
+## 2. Velocidad de avance: no confunda media con pico
+
+Es el error más común en la selección y lleva directamente a comprar la máquina equivocada.
+
+La **velocidad libre de avance** que figura en catálogo (35 m/min en la serie estándar Servosteel) es la velocidad en marcha ininterrumpida. Pero en una línea de prensa el alimentador nunca corre sin interrupción: se detiene en cada golpe, la prensa baja, y luego vuelve a acelerar.
+
+El avance medio es simple:
+
+```
+Velocidad media (m/min) = paso (mm) × golpes/min ÷ 1000
+```
+
+Con paso de 250 mm y 40 golpes/min son **10 m/min**. Suena modesto — pero el alimentador debe entregar esos 250 mm dentro de la breve ventana en que la prensa no está cerrada. La **velocidad punta instantánea** que debe alcanzar es varias veces la media.
+
+La selección se hace por la velocidad punta. Un alimentador elegido por la media vuelve de planta con un «no da abasto».
+
+Puede calcular la salida y el consumo de su línea con la [calculadora de alimentación](/hesaplayicilar).
+
+## 3. ¿Es correcto el rango de material?
+
+Los alimentadores servo estándar de Servosteel trabajan con espesores de **0,4–4,0 mm** y anchos de fleje **hasta 1600 mm**. Ambos extremos importan:
+
+- **Extremo inferior:** en material muy fino, una presión que no se ajusta con finura aplasta y ondula la superficie.
+- **Extremo superior:** el material grueso exige más fuerza de sujeción; presión de rodillos y par de accionamiento deben cubrirla.
+
+El inoxidable y los aceros de alta resistencia piden más fuerza que la chapa dulce del mismo espesor. Comparta su lista de materiales desde el principio.
+
+## 4. ¿Necesita enderezado?
+
+El fleje que sale de la bobina arrastra memoria de curvatura (coil set). Si esa curvatura impide entrar limpiamente al troquel, hay dos caminos:
+
+**Enderezadora separada + alimentador** — razonable si amplía una línea existente o la exigencia de enderezado es alta.
+
+**[Alimentador servo con enderezadora](/makineler/dogrultmali-servo-suruculer)** — ambas funciones en un bastidor. La línea se acorta, hay un solo panel de operador y desaparece el problema de sincronización entre dos máquinas. El número de rodillos sigue al material: chapa fina y de superficie delicada pide más (11–13), la gruesa menos (7–9).
+
+Si el espacio es escaso y las bobinas llegan a 10 toneladas, una [línea compacta](/makineler/kompakt-hatlar) que reúne desbobinadora, enderezadora y alimentador en una plataforma resuelve implantación y puesta en marcha de una vez.
+
+## 5. Sincronización con la prensa y pilotos
+
+El alimentador debe hablar con la prensa. La señal de leva se cablea al alimentador y el avance se sincroniza con el punto muerto.
+
+**La liberación de pilotos (release)** es una función crítica: los pilotos del troquel tiran del fleje a su posición exacta en el último milímetro. Para que eso ocurra, el alimentador debe **soltar** el agarre en ese instante. Sin liberación los pilotos no pueden tirar del fleje: o se rompe un piloto o se desvía la tolerancia de la pieza.
+
+Si trabaja con troqueles progresivos, esta función no es opcional. Tratamos el tema aparte en [troqueles progresivos y alimentador servo](/akademi/progresif-kalip-servo-besleyici-secimi).
+
+## 6. Memoria de troqueles: aquí está la ganancia real
+
+Si produce series largas con un solo troquel, la memoria apenas importa. Si cambia de troquel dentro del turno, el cuadro se invierte.
+
+Los alimentadores Servosteel guardan recetas para **hasta 250 troqueles**: paso, velocidad, rampa y presión quedan almacenados con el nombre del troquel. En el cambio, el operario elige de la lista y el ajuste está hecho.
+
+Esto tiene dos efectos: el cambio baja de minutos a segundos, y **desaparece la dependencia de un operario concreto**. Lo segundo suele valer más: la calidad no cae el día que el operario experimentado está de vacaciones.
+
+## 7. ¿Serie mini o estándar?
+
+La serie mini ahorra espacio y coste en fleje estrecho y prensas pequeñas. **La precisión de paso es idéntica a la estándar** — «mini» no significa «menos preciso».
+
+Sus límites los marcan el ancho de fleje y el peso de bobina. Si hoy trabaja estrecho pero puede ensanchar pronto, la serie estándar es la opción más segura: ampliar un alimentador significa comprar una máquina nueva.
+
+## Las cinco cifras necesarias para elegir
+
+Con estas cinco, el dimensionado correcto se cierra en una vuelta:
+
+| Parámetro | Para qué sirve |
+|---|---|
+| Espesor y calidad de chapa | Fuerza de sujeción y ajuste de presión |
+| Ancho de fleje | Longitud de rodillo y elección de bastidor |
+| Paso (mín–máx) | Cálculo de velocidad punta |
+| Golpes de prensa por minuto | Cálculo de velocidad punta |
+| Peso de bobina | Capacidad de desbobinadora y disposición |
+
+Si no conoce el peso de bobina, la [calculadora de bobina](/hesaplayicilar) se lo da; explicamos el método en [cómo calcular el peso y la longitud de una bobina](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+## Conclusión
+
+Un alimentador servo no se elige por una sola cifra de catálogo. Tres cosas deciden: si la **velocidad punta cubre su línea**, si la **presión puede ajustarse a su material** y si la **sincronización con la prensa —liberación de pilotos incluida— está completamente resuelta**.
+
+Para el detalle de producto vea la página de [alimentadores servo](/makineler/servo-suruculer) y [solicite oferta](/teklif-al) con las cinco cifras anteriores.

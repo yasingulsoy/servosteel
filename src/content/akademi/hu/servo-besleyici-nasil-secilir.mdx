@@ -1,0 +1,101 @@
+---
+title: "Hogyan válasszunk szervoadagolót? Gyakorlati útmutató"
+description: "Hogyan értékelje a lépéspontosságot, adagolási sebességet, görgőnyomást, egyengetési igényt és a présszinkront a kiválasztásnál."
+date: "2026-08-02"
+author: "Servosteel Mérnökség"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["szervoadagoló", "présadagolás", "sorválasztás"]
+---
+
+A szervoadagoló adja a préssor ütemét: a szalagot megfelelő hosszban, megfelelő pillanatban és ismételhetően juttatja a szerszámba. Ha rosszul választják meg, a hiba nem az adagolón, hanem **az alkatrészen** jelentkezik: elcsúszó lépés, elveszett tűrés, növekvő hulladék.
+
+Ez az útmutató sorra veszi az ajánlatkérés előtt tisztázandó paramétereket. Ha még mérlegel mechanikus adagolót, kezdje a [szervo vs mechanikus összehasonlítással](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. Mi határozza meg valójában a lépéspontosságot?
+
+A katalógusadat önmagában keveset mond; a gyakorlatban három tényező együtteséből áll össze.
+
+**Szervomotor és hajtómű.** A zárt hurok az jeladó visszajelzésével folyamatosan korrigálja a pozíciót. Nyílt hurkú rendszerben a motor „azt hiszi", hogy elmozdult, valójában viszont megcsúszhatott.
+
+**Görgőnyomás és fogás.** A szalag nem csúszhat meg a görgők között. Kevés nyomásnál a lépés rövidre sikerül; soknál nyomot hagy a felületen és összenyomja a vékony anyagot. A Servosteel adagolóknál az adagológörgők **Ø85 mm** átmérőjűek; a nagyobb átmérő növeli az érintkezési felületet és csökkenti a csúszást.
+
+**A szalag tehetetlensége.** A nehéz, széles szalag gyorsításkor és lassításkor terheli a hajtást. Ugyanaz az adagoló 4 mm-en nem feltétlenül tartja azt a pontosságot, amit 0,5 mm-en mutat — ezért mindig kérdezze meg, **milyen vastagságon és szélességen** mérték az értéket.
+
+## 2. Adagolási sebesség: ne keverje az átlagot a csúccsal
+
+Ez a kiválasztás leggyakoribb hibája, és egyenesen rossz gép megvásárlásához vezet.
+
+A katalógusban szereplő **szabad adagolási sebesség** (a Servosteel standard szériánál 35 m/perc) a megszakítás nélküli futás sebessége. A préssoron azonban az adagoló sosem fut megszakítás nélkül: minden ütésnél megáll, a prés leszáll, majd újra gyorsít.
+
+Az átlagos előtolás egyszerű:
+
+```
+Átlagsebesség (m/perc) = lépés (mm) × ütés/perc ÷ 1000
+```
+
+250 mm lépésnél és percenként 40 ütésnél ez **10 m/perc**. Szerénynek hangzik — de az adagolónak ezt a 250 mm-t abban a rövid ablakban kell megtennie, amikor a prés nincs zárva. Az ekkor szükséges **pillanatnyi csúcssebesség** az átlag többszöröse.
+
+A választás a csúcs alapján történik. Az átlag alapján kiválasztott adagoló „nem bírja" felkiáltással tér vissza a helyszínről.
+
+Sorának kimenetét és fogyását az [adagolási kalkulátorral](/hesaplayicilar) számíthatja ki.
+
+## 3. Megfelelő az anyagtartomány?
+
+A Servosteel standard szervoadagolói **0,4–4,0 mm** vastagsággal és **1600 mm-ig** terjedő szalagszélességgel dolgoznak. A tartomány mindkét vége számít:
+
+- **Alsó vég:** nagyon vékony anyagnál a finoman nem állítható nyomás összenyomja és hullámosítja a felületet.
+- **Felső vég:** a vastag anyag nagyobb tartóerőt igényel; a görgőnyomásnak és a hajtónyomatéknak fedeznie kell.
+
+A rozsdamentes és a nagy szilárdságú acél több erőt kíván az azonos vastagságú lágy lemeznél. Az anyaglistát ossza meg előre.
+
+## 4. Kell egyengetés?
+
+A tekercsből érkező szalag görbületi memóriát (coil set) hordoz. Ha ez a görbület akadályozza a szerszámba való tiszta belépést, két út van:
+
+**Külön egyengető + adagoló** — akkor ésszerű, ha meglévő sort bővít, vagy nagy az egyengetési igény.
+
+**[Egyengetős szervoadagoló](/makineler/dogrultmali-servo-suruculer)** — mindkét funkció egy vázban. A sor rövidül, egyetlen kezelőpanel van, és megszűnik a két gép közti szinkronprobléma. A görgőszám az anyagot követi: a vékony, felületérzékeny lemez többet (11–13), a vastag kevesebbet (7–9) kíván.
+
+Ha kevés a hely és a tekercs 10 tonnáig terjed, a lecsévélőt, egyengetőt és adagolót egy platformon egyesítő [kompakt sor](/makineler/kompakt-hatlar) egy lépésben megoldja az elrendezést és az üzembe helyezést.
+
+## 5. Présszinkron és vezetőcsapok
+
+Az adagolónak beszélnie kell a préssel. A prés bütyökjele az adagolóra kerül, és az adagolás a holtponthoz igazodik.
+
+**A vezetőcsap-oldás (release)** kritikus funkció: a szerszám vezetőcsapjai az utolsó milliméterben húzzák pontos helyzetbe a szalagot. Ehhez az adagolónak abban a pillanatban **el kell engednie** a fogást. Oldás nélkül a csapok nem tudják húzni a szalagot — vagy csap törik, vagy elcsúszik az alkatrésztűrés.
+
+Ha lépegető szerszámmal dolgozik, ez a funkció nem opcionális. A témát külön tárgyaltuk a [lépegető szerszám és szervoadagoló](/akademi/progresif-kalip-servo-besleyici-secimi) cikkben.
+
+## 6. Szerszámmemória: itt van az igazi nyereség
+
+Ha egyetlen szerszámmal gyárt hosszú sorozatot, a memória alig számít. Ha műszakon belül szerszámot cserél, a kép megfordul.
+
+A Servosteel adagolói **250 szerszámig** tárolnak receptet: lépéshossz, sebesség, rámpa és nyomás a szerszám nevén mentődik. Cserénél a kezelő kiválaszt a listából, és a beállítás kész.
+
+Ennek két hatása van: a csere percekről másodpercekre csökken, és **megszűnik az egy adott kezelőtől való függés**. A második rendszerint többet ér — nem esik vissza a minőség azon a napon, amikor a tapasztalt beállító szabadságon van.
+
+## 7. Mini vagy standard széria?
+
+A mini széria keskeny szalagnál és kis préseknél helyet és költséget takarít meg. **A lépéspontosság megegyezik a standard szériáéval** — a „mini" nem jelent „kevésbé pontosat".
+
+Határait a szalagszélesség és a tekercssúly szabja meg. Ha ma keskenyen dolgozik, de hamarosan szélesíthet, a standard széria a biztonságosabb választás: az adagoló megnövelése új gép vásárlását jelenti.
+
+## Az öt szám a kiválasztáshoz
+
+Ezzel az öt adattal a méretezés egy körben lezárul:
+
+| Paraméter | Miért kell |
+|---|---|
+| Lemezvastagság és minőség | Tartóerő és nyomásbeállítás |
+| Szalagszélesség | Görgőhossz és váz kiválasztása |
+| Lépéshossz (min–max) | Csúcssebesség számítása |
+| Présütés percenként | Csúcssebesség számítása |
+| Tekercssúly | Lecsévélő kapacitása és sorelrendezés |
+
+Ha nem ismeri a tekercssúlyt, a [tekercskalkulátor](/hesaplayicilar) megadja; a módszert a [tekercssúly és szalaghossz számítása](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) cikkben írtuk le.
+
+## Összegzés
+
+A szervoadagolót nem egyetlen katalógusszám alapján választják. Három dolog dönt: fedi-e a **csúcssebesség a sorát**, hangolható-e a **nyomás az anyagához**, és teljesen megvalósult-e a **présszinkron — a vezetőcsap-oldással együtt**.
+
+A termékrészletekért nézze meg a [szervoadagolók](/makineler/servo-suruculer) oldalt, és [kérjen ajánlatot](/teklif-al) a fenti öt számmal.

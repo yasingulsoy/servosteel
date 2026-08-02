@@ -58,7 +58,6 @@
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
     "cta2": "Ver las Líneas",
-    "measure": "±0,1 mm",
     "stats": [
       { "value": "10+", "label": "Años de experiencia" },
       { "value": "48+", "label": "Países de exportación" },
@@ -1298,7 +1297,7 @@
             ["Ancho de material", "40 – 1.300 mm"],
             ["Espesor de material", "0,5 – 4,0 mm"],
             ["Velocidad libre", "40 m/min"],
-            ["Precisión de avance", "± 0,1 mm"],
+            ["Precisión de avance", "−0,1 mm"],
             ["Peso de bobina", "2.500 – 10.000 kg"],
             ["Diámetro int. / ext. de bobina", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rodillos de avance", "2 + 2"],

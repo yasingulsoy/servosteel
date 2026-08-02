@@ -1,69 +1,94 @@
 ---
 title: "Come scegliere l'alimentatore servo per uno stampo progressivo"
-description: "6 criteri per scegliere l'alimentatore servo di uno stampo progressivo: precisione del passo, lunghezza, spessore e memoria ricette."
+description: "6 criteri per scegliere l'alimentatore servo di uno stampo progressivo: precisione del passo, errore accumulato, rilascio piloti e memoria."
 date: "2026-07-30"
 author: "Ingegneria Servosteel"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["stampo progressivo", "alimentatore servo", "alimentazione presse"]
 ---
 
-In uno stampo progressivo il pezzo non si completa in una sola stazione: a ogni colpo di pressa il nastro avanza di una stazione e viene punzonato, tagliato e formato in sequenza. Per questo la resa dello stampo è spesso determinata non dallo stampo stesso, ma **dall'alimentatore che fa avanzare il nastro.** Se il passo devia di qualche centesimo di millimetro, il punzone esce dal centro, compaiono bave e, nel caso peggiore, lo stampo si danneggia.
+In uno stampo progressivo il pezzo non si completa in una sola stazione: il nastro avanza di una stazione a ogni colpo di pressa e viene punzonato, tranciato e piegato in sequenza. Per questo ciò che determina le prestazioni dello stampo spesso non è lo stampo stesso, ma **l'alimentatore che fa avanzare il nastro.** Se il passo deriva di qualche centesimo di millimetro, il punzone esce dal centro, compare la bava e nel caso peggiore lo stampo si danneggia.
 
-I 6 criteri seguenti riassumono ciò che conviene chiarire nella scelta di un alimentatore per il vostro stampo progressivo.
+I 6 criteri seguenti riassumono cosa chiarire nella scelta dell'alimentatore per il vostro stampo progressivo. La scelta generale è trattata in una [guida a parte](/akademi/servo-besleyici-nasil-secilir); qui ci concentriamo su ciò che è specifico del progressivo.
 
-## 1. Precisione del passo — il numero critico
+## 1. Precisione del passo — il numero più critico
 
-Uno stampo progressivo non perdona l'errore accumulato: una piccola deviazione ripetuta a ogni stazione diventa uno scostamento complessivo all'ultima. Il primo dato da guardare è quindi la **precisione di avanzamento.**
+Nel progressivo l'errore accumulato non perdona: una piccola deviazione ripetuta a ogni stazione diventa uno scostamento totale all'ultima. Per questo il primo valore da guardare è la **precisione di alimentazione.**
 
-Negli alimentatori servo Servosteel la precisione di avanzamento è di **± 0,1 mm**. Valutate questo valore insieme al numero di stazioni quando calcolate il budget di tolleranza.
+Un singolo dato di precisione a catalogo dice poco da solo: va chiesto **a quale spessore e larghezza è stato misurato**; lo stesso alimentatore può non mantenere a 4 mm ciò che mostra a 0,5 mm. In Servosteel il valore è documentato per le [linee compatte](/makineler/kompakt-hatlar); per l'alimentatore singolo definiamo insieme la precisione obiettivo, a partire dal budget di tolleranza dello stampo e dal numero di stazioni.
+
+Vanno distinti due tipi di errore, perché le conseguenze sono del tutto diverse:
+
+**Errore casuale.** Devia in più e in meno a ogni colpo e media a zero. I fori sul nastro si spostano un po' avanti e un po' indietro; statisticamente non si accumula, ma singoli pezzi possono uscire di tolleranza.
+
+**Errore sistematico.** Devia sempre nella stessa direzione — se ad esempio la pressione dei rulli è insufficiente, il nastro resta corto di 0,05 mm a ogni passo. Su uno stampo a dieci stazioni sono 0,5 mm di scostamento totale, abbastanza da **bloccare lo stampo**.
+
+Il pericoloso è il secondo, e la sua origine di solito non è l'alimentatore ma la sua regolazione: pressione bassa, superficie rulli usurata o nastro oleoso. I piloti assorbono parte di questa deriva, ma **la loro capacità è limitata**: se l'errore sistematico supera il gioco del pilota, il pilota si rompe.
 
 ## 2. Lunghezza del passo e numero di stazioni
 
-La distanza tra le stazioni (passo) è il tratto che l'alimentatore deve percorrere a ogni colpo. Un passo lungo unito a un'elevata cadenza richiede all'alimentatore maggiore velocità e accelerazioni più decise.
+Il passo tra stazioni è la distanza che l'alimentatore deve percorrere a ogni colpo. Passo lungo più cadenza elevata richiede all'alimentatore maggiore velocità e accelerazione più dura.
 
-In fase di richiesta fornite questi tre dati insieme: **lunghezza del passo, numero di stazioni e colpi al minuto della pressa.** L'alimentatore viene dimensionato su questa terna.
+La trappola è guardare la velocità media. Un passo di 60 mm a 60 colpi/min fa in media appena 3,6 m/min — sembra lentissimo. Ma l'alimentatore deve consegnare quei 60 mm nella finestra in cui la pressa è aperta, e quella finestra è una frazione di secondo. La **velocità di picco istantanea** richiesta è molte volte la media.
 
-## 3. Spessore e larghezza del nastro
+Fornite questi tre insieme in fase di offerta: **lunghezza del passo, numero di stazioni e colpi pressa al minuto.** Su questa terna si dimensiona l'alimentatore.
 
-Un materiale più spesso richiede maggiore forza di presa, uno più largo rulli più lunghi. Gli alimentatori servo Servosteel lavorano spessori **0,4 – 4,0 mm** e larghezze **fino a 1.600 mm**, con rulli di avanzamento 2 × Ø85 mm.
+## 3. Spessore e larghezza della lamiera
 
-La velocità di avanzamento libero è **35 m/min**: verificate che sia compatibile con la cadenza della vostra pressa.
+La lamiera spessa richiede maggiore forza di tenuta, quella larga rulli più lunghi. Gli alimentatori servo Servosteel lavorano spessori **0,4 – 4,0 mm** e larghezze **fino a 1.600 mm**; i rulli di traino sono 2 × Ø85 mm.
 
-## 4. Sincronizzazione con la pressa e rilascio dei pilotini
+La velocità libera di alimentazione è **35 m/min** — va calcolato se è compatibile con la cadenza della vostra pressa.
 
-Un alimentatore non può lavorare indipendentemente dalla pressa. Deve funzionare in **piena sincronia** con il segnale della camma e rilasciare il nastro nel momento in cui i pilotini dello stampo lo agganciano. Senza questa funzione i pilotini forzano il nastro e le posizioni dei fori si spostano.
+Nel progressivo la scelta della larghezza dipende anche dal **layout del nastro**. Conta il disegno del pezzo, ma conta anche come i pezzi sono disposti sul nastro: un layout nidificato riduce sensibilmente lo sfrido, ma richiede nastro più largo e stampo più complesso. Questa decisione precede la scelta dell'alimentatore, perché la larghezza del nastro determina il telaio.
 
-Negli alimentatori Servosteel il rilascio dei pilotini è di serie.
+## 4. Sincronismo con la pressa e piloti
 
-## 5. Non trascurate la raddrizzatura
+L'alimentatore non può lavorare indipendentemente dalla pressa. Deve funzionare in **pieno sincronismo** con il segnale camma e rilasciare la presa nell'istante in cui i piloti dello stampo agganciano il nastro (rilascio piloti). Senza questa funzione i piloti forzano il nastro e le posizioni dei fori derivano.
 
-La memoria di curvatura del coil (coil-set) genera problemi diretti in uno stampo progressivo: se il nastro non entra piano, l'allineamento delle stazioni salta. Se le tolleranze sono strette, valutate l'alimentatore insieme a un raddrizzatore.
+La sequenza è: l'alimentatore esegue il passo e si ferma; la pressa inizia a scendere; i piloti entrano nei fori guida e tirano il nastro nella posizione esatta nell'ultimo decimo di millimetro; **proprio in quel momento** l'alimentatore apre la pressione. Rilascio troppo anticipato e il nastro resta libero; troppo tardivo e pilota e alimentatore lavorano l'uno contro l'altro.
 
-Anziché acquistare una macchina separata, si può scegliere un [alimentatore servo con raddrizzatore](/makineler/dogrultmali-servo-suruculer): raddrizzatura e avanzamento in un unico corpo, configurabile allo spessore con opzioni a 7/9/11/13 rulli.
+Per questo il rilascio piloti non è una semplice questione di "c'è o non c'è" — deve essere **regolabile**. Su stampi diversi i piloti entrano ad angoli di pressa diversi.
 
-## 6. Memoria ricette — la realtà delle officine con più stampi
+Negli alimentatori Servosteel il rilascio piloti è di serie.
 
-In officina raramente lavora un solo stampo. Reinserire passo, velocità e rampa a ogni cambio costa tempo e favorisce errori.
+## 5. Non trascurate la necessità di raddrizzatura
 
-Gli alimentatori Servosteel memorizzano **250 ricette**: al cambio stampo l'operatore richiama la ricetta invece di ripetere la messa a punto.
+La memoria di curvatura (coil set) del nastro proveniente dal coil crea problemi diretti nel progressivo: se il nastro non entra piano nello stampo, si perde l'allineamento tra stazioni. Se le esigenze sono strette, pensate l'alimentatore insieme alla raddrizzatrice.
+
+Nel progressivo la raddrizzatura pesa più che nei lavori a stazione singola. Il motivo: il nastro è guidato per un lungo tratto dentro lo stampo e deve mantenere la posizione a ogni stazione. Il nastro curvo si solleva nello stampo, sfrega contro l'estrattore e si disallinea man mano che avanza. Una curvatura che passerebbe inosservata su una stazione singola provoca scarto su uno stampo a dieci stazioni.
+
+Invece di acquistare una macchina separata si può scegliere un [alimentatore servo con raddrizzatrice](/makineler/dogrultmali-servo-suruculer): raddrizzatura e alimentazione in un telaio, configurato allo spessore con opzioni da 7/9/11/13 rulli.
+
+## 6. Memoria ricette — la realtà delle officine con molti stampi
+
+Un'officina raramente lavora con un solo stampo. Reinserire passo, velocità e rampa a ogni cambio è perdita di tempo e fonte di errore.
+
+Gli alimentatori Servosteel memorizzano **250 ricette**; al cambio stampo l'operatore richiama la ricetta e non ripete alcuna regolazione.
+
+Il guadagno vero non è il tempo ma la **ripetibilità**. Regolato a mano, lo stesso stampo può essere impostato con due valori diversi in due turni; le quote variano per turno e la causa resta introvabile per mesi. La ricetta elimina del tutto questa variabile.
 
 ## Valori di riferimento
 
 | Caratteristica | Valore |
 |---|---|
-| Precisione di avanzamento | ± 0,1 mm |
 | Spessore materiale | 0,4 – 4,0 mm |
-| Larghezza nastro | ≤ 1.600 mm |
-| Velocità di avanzamento libero | 35 m/min |
-| Rulli di avanzamento | 2 × Ø85 mm |
+| Larghezza lamiera | ≤ 1.600 mm |
+| Velocità libera di alimentazione | 35 m/min |
+| Rulli di traino | 2 × Ø85 mm |
 | Memoria stampi | 250 ricette |
 
-## Perché conta prendere stampo e alimentatore dallo stesso costruttore
+Il peso del vostro coil e le ore che copre si ricavano dalla pagina [calcolatori](/hesaplayicilar); il metodo è spiegato in [come calcolare peso e lunghezza di un coil](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
 
-Uno stampo progressivo e il suo alimentatore sono due parti interdipendenti: tolleranza di passo, tempistica di rilascio dei pilotini e sviluppo del nastro tornano solo se progettati insieme. Quando provengono da fornitori diversi, la responsabilità si sfuma: lo stampista indica l'alimentatore e il costruttore dell'alimentatore indica lo stampo.
+## Perché conta comprare stampo e alimentatore dalla stessa fonte
+
+Stampo progressivo e alimentatore sono due parti interdipendenti: tolleranza del passo, tempistica del rilascio e layout del nastro combaciano solo se progettati insieme. Acquistati da fornitori diversi, il confine di responsabilità si sfuma: lo stampista indica l'alimentatore, il costruttore dell'alimentatore indica lo stampo.
+
+La discussione più frequente nella pratica: la tolleranza del pezzo non torna. Lo stampista dice "l'alimentatore perde passo", il costruttore dice "il gioco pilota dello stampo è eccessivo". Ognuno mostra la propria misura e ognuno ha ragione nel proprio quadro. Si risolve solo mettendo entrambi allo stesso tavolo — o acquistando fin dall'inizio dallo stesso team.
 
 Servosteel produce sia lo [stampo progressivo](/makineler/kalip-ve-merdane) sia l'[alimentatore servo](/makineler/servo-suruculer) nel proprio stabilimento; entrambi sono progettati dallo stesso team.
 
 ## Conclusione
 
-Preparate il disegno del pezzo, il passo dello stampo e la cadenza della pressa: da questi tre dati si dimensiona l'alimentatore corretto. [Richiedete un'offerta](/teklif-al) e vi risponderemo in base allo spessore e alle misure del nastro.
+Tre cose decidono la scelta dell'alimentatore su uno stampo progressivo: che l'**errore sistematico resti sotto il gioco dei piloti**, che la **velocità di picco copra la finestra della pressa** e che il **rilascio piloti sia regolabile**.
+
+Preparate disegno del pezzo, passo dello stampo e cadenza della pressa — su questi tre dati si dimensiona l'alimentatore giusto. [Richiedete un'offerta](/teklif-al) e vi risponderemo in base a spessore e misure del nastro.

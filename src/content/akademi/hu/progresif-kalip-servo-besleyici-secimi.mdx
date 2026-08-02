@@ -1,69 +1,94 @@
 ---
 title: "Hogyan válasszunk szervoadagolót követő szerszámhoz?"
-description: "6 szempont szervoadagoló választásához követő szerszámhoz: lépéspontosság, lépésköz, anyagvastagság és receptmemória."
+description: "6 szempont szervoadagoló választásához követő szerszámhoz: lépéspontosság, hibafelhalmozódás, vezetőcsap-oldás és receptmemória."
 date: "2026-07-30"
 author: "Servosteel Mérnökség"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["követő szerszám", "szervoadagoló", "présadagolás"]
 ---
 
-Követő szerszámban az alkatrész nem egyetlen állomáson készül el: minden préslöketnél a szalag egy állomással előrébb lép, és sorra lyukasztják, vágják és alakítják. Ezért a szerszám teljesítményét gyakran nem maga a szerszám dönti el, hanem **az adagoló, amely a szalagot mozgatja.** Ha a lépésköz néhány század milliméterrel elcsúszik, a bélyeg kifut a középből, sorja jelenik meg, rosszabb esetben a szerszám károsodik.
+Követő szerszámban az alkatrész nem egy állomáson készül el: a szalag minden présütéssel egy állomást lép előre, és sorban lyukasztják, vágják, hajlítják. Ezért a szerszám teljesítményét gyakran nem maga a szerszám határozza meg, hanem **a szalagot továbbító adagoló.** Ha a lépés néhány század milliméterrel elcsúszik, a bélyeg kifut a középből, sorja jelenik meg, rosszabb esetben a szerszám károsodik.
 
-Az alábbi 6 szempont összefoglalja, mit érdemes tisztázni a követő szerszámhoz való adagoló kiválasztásakor.
+Az alábbi 6 szempont összefoglalja, mit kell tisztázni a követő szerszámhoz való adagoló választásakor. Az általános kiválasztást [külön útmutatóban](/akademi/servo-besleyici-nasil-secilir) tárgyaltuk; itt kifejezetten a követő szerszámra jellemző pontokra összpontosítunk.
 
-## 1. Lépéspontosság — a kritikus szám
+## 1. Lépéspontosság — a legkritikusabb szám
 
-A követő szerszám nem bocsátja meg a halmozódó hibát: az állomásonként ismétlődő kis eltérés az utolsónál összesített elcsúszássá válik. Az első megnézendő érték tehát az **adagolási pontosság.**
+Követő szerszámban a felhalmozódó hiba nem bocsát meg: az állomásonként ismétlődő kis eltérés az utolsónál összesített elcsúszássá válik. Ezért az első megnézendő érték az **adagolási pontosság.**
 
-A Servosteel szervoadagolóknál az adagolási pontosság **± 0,1 mm**. A tűrésbüdzsé számításakor ezt az értéket az állomások számával együtt mérlegelje.
+Egyetlen katalógusbeli pontossági érték önmagában keveset mond — kérdezze meg, **milyen vastagságon és szélességen mérték**; ugyanaz az adagoló 4 mm-en nem feltétlenül tartja, amit 0,5 mm-en mutat. A Servosteelnél az érték a [kompakt sorokra](/makineler/kompakt-hatlar) van dokumentálva; önálló adagolónál a cél pontosságot közösen határozzuk meg a szerszám tűrésköltségvetése és állomásszáma alapján.
+
+Két hibafajtát kell szétválasztani, mert következményeik teljesen eltérők:
+
+**Véletlen hiba.** Ütésenként pluszba és mínuszba tér el, átlaga nulla. A szalag furatai kicsit előre-hátra csúsznak; statisztikailag nem halmozódik, de egyes darabok kieshetnek a tűrésből.
+
+**Rendszeres hiba.** Minden ütésnél ugyanabba az irányba tér el — ha például a görgőnyomás elégtelen, a szalag lépésenként 0,05 mm-rel elmarad. Egy tízállomásos szerszámnál ez 0,5 mm összesített elcsúszás, ami már a **szerszám beszorulásáig** ér.
+
+A második a veszélyes, és forrása többnyire nem az adagoló, hanem a beállítása: alacsony nyomás, kopott görgőfelület vagy olajos szalag. A vezetőcsapok ennek egy részét felfogják, de **amit felfoghatnak, annak határa van** — ha a rendszeres hiba meghaladja a csapjátékot, a csap eltörik.
 
 ## 2. Lépésköz és állomásszám
 
-Az állomások közötti távolság (lépésköz) az az út, amelyet az adagolónak minden löketnél meg kell tennie. A hosszú lépésköz és a magas löketszám együtt nagyobb sebességet és keményebb gyorsítást igényel az adagolótól.
+A szerszám állomásosztása az a távolság, amelyet az adagolónak minden ütésnél meg kell tennie. A hosszú lépésköz és a magas ütemszám együtt nagyobb sebességet és keményebb gyorsítást kíván az adagolótól.
 
-Az ajánlatkéréskor adja meg ezt a hármat együtt: **lépésköz, állomásszám és a prés percenkénti löketszáma.** Az adagoló méretezése erre a hármasra épül.
+A csapda az átlagsebességre nézni. A 60 mm-es lépés percenként 60 ütésnél mindössze 3,6 m/perc átlagot ad — nagyon lassúnak hangzik. De az adagolónak ezt a 60 mm-t abban az ablakban kell megtennie, amikor a prés nyitva van, és ez az ablak a másodperc töredéke. A szükséges **pillanatnyi csúcssebesség** az átlag sokszorosa.
 
-## 3. Anyagvastagság és szalagszélesség
+Az ajánlatkéréskor adja meg ezt a hármat együtt: **lépésköz, állomásszám és présütés percenként.** Az adagolót ez a hármas méretezi.
 
-A vastagabb anyag nagyobb szorítóerőt, a szélesebb hosszabb hengereket igényel. A Servosteel szervoadagolók **0,4 – 4,0 mm** vastagsággal és **1.600 mm-ig** terjedő szélességgel dolgoznak, az előtoló hengerek 2 × Ø85 mm-esek.
+## 3. Lemezvastagság és -szélesség
 
-A szabad előtolási sebesség **35 m/min** — ellenőrizze, hogy illeszkedik-e a prés ütemhez.
+A vastag lemez nagyobb tartóerőt, a széles hosszabb görgőt igényel. A Servosteel szervoadagolói **0,4 – 4,0 mm** vastagsággal és **1 600 mm-ig** terjedő szélességgel dolgoznak; az adagológörgők 2 × Ø85 mm-esek.
 
-## 4. Présszinkron és pilotoldás
+A szabad adagolási sebesség **35 m/perc** — hogy ez összhangban van-e a présütemével, ki kell számolni.
 
-Az adagoló nem működhet a préstől függetlenül. **Teljes szinkronban** kell futnia a prés bütyökjelével, és el kell engednie a szalagot abban a pillanatban, amikor a szerszám keresőcsapjai megfogják. E funkció nélkül a keresőcsapok a szalag ellen dolgoznak, és a furatpozíciók elcsúsznak.
+Követő szerszámnál a szélesség megválasztása a **szalagelrendezéstől** is függ. Nemcsak az alkatrészrajz számít, hanem az is, hogyan sorakoznak a darabok a szalagon: az egymásba illesztett (nested) elrendezés jelentősen csökkenti a hulladékot, viszont szélesebb szalagot és bonyolultabb szerszámot kíván. Ez a döntés megelőzi az adagoló kiválasztását, mert a szalagszélesség határozza meg a vázat.
 
-A Servosteel adagolóknál a pilotoldás alapfelszereltség.
+## 4. Présszinkron és vezetőcsapok
 
-## 5. Ne hagyja ki az egyengetés kérdését
+Az adagoló nem működhet a préstől függetlenül. **Teljes szinkronban** kell futnia a bütyökjellel, és abban a pillanatban el kell engednie a fogást, amikor a szerszám vezetőcsapjai elkapják a szalagot (vezetőcsap-oldás). E funkció nélkül a csapok erőltetik a szalagot, és a furathelyzetek elcsúsznak.
 
-A tekercs görbületi memóriája (coil-set) közvetlenül okoz gondot a követő szerszámban: ha a szalag nem síkban lép be, az állomások illeszkedése felborul. Szoros tűrésnél az adagolót egyengetővel együtt gondolja végig.
+Az időzítés így működik: az adagoló megteszi a lépést és megáll; a prés süllyedni kezd; a vezetőcsapok belépnek a vezetőfuratokba és az utolsó tized milliméterben pontos helyzetbe húzzák a szalagot; **pontosan ekkor** nyitja az adagoló a nyomást. Túl korai oldásnál a szalag szabaddá válik; túl későinél a csap és az adagoló egymás ellen dolgozik.
 
-Külön gép vásárlása helyett választható [egyengetős szervoadagoló](/makineler/dogrultmali-servo-suruculer) — az egyengetés és az adagolás egy házban egyesül, a vastagsághoz 7/9/11/13 hengeres kivitellel konfigurálva.
+Ezért a vezetőcsap-oldás nem pusztán „van/nincs" kérdés — **állíthatónak** kell lennie. Különböző szerszámoknál a csapok eltérő présszögnél lépnek be.
 
-## 6. Receptmemória — a többszerszámos üzemek valósága
+A Servosteel adagolóinál a vezetőcsap-oldás alapkivitel.
 
-Egy üzemben ritkán fut egyetlen szerszám. A lépésköz, sebesség és rámpa újbóli beírása minden szerszámcserénél időbe kerül és hibaforrás.
+## 5. Ne hagyja figyelmen kívül az egyengetési igényt
 
-A Servosteel adagolók **250 receptet** tárolnak; szerszámcserénél a kezelő előhívja a receptet a beállítás megismétlése helyett.
+A tekercsből érkező szalag görbületi memóriája (coil set) követő szerszámban közvetlenül okoz gondot: ha a szalag nem síkban lép a szerszámba, felborul az állomások illesztése. Ha szoros az elvárás, az adagolót az egyengetővel együtt gondolja végig.
+
+Követő szerszámnál az egyengetés súlyosabban esik latba, mint egyállomásos munkánál. Az ok: a szalagot a szerszámon belül hosszú szakaszon vezetik, és minden állomáson tartania kell a helyzetét. A görbült szalag megemelkedik a szerszámban, súrolja a lehúzót, és haladtában egyre inkább kifut az illesztésből. Az a görbület, amely egyállomásos munkán észrevétlen maradna, tízállomásos szerszámnál selejtet okoz.
+
+Külön gép vásárlása helyett választható [egyengetős szervoadagoló](/makineler/dogrultmali-servo-suruculer) — az egyengetés és az adagolás egy vázban, 7/9/11/13 görgős változatokkal a lemezvastagsághoz igazítva.
+
+## 6. Receptmemória — a soktszerszámos műhelyek valósága
+
+Egy műhelyben ritkán van egyetlen szerszám. Minden cserénél újra beírni a lépéshosszt, sebességet és rámpát időveszteség és hibaforrás egyszerre.
+
+A Servosteel adagolói **250 receptet** tárolnak; szerszámcserénél a kezelő előhívja a receptet, és nincs újrabeállítás.
+
+Az igazi nyereség nem az idő, hanem az **ismételhetőség**. Kézzel állítva ugyanaz a szerszám két műszakban két különböző értékkel indulhat; az alkatrészméret műszakonként ingadozik, és az ok hónapokig rejtve marad. A recept ezt a változót teljesen kiiktatja.
 
 ## Referenciaértékek
 
 | Jellemző | Érték |
 |---|---|
-| Adagolási pontosság | ± 0,1 mm |
 | Anyagvastagság | 0,4 – 4,0 mm |
-| Szalagszélesség | ≤ 1.600 mm |
-| Szabad előtolási sebesség | 35 m/min |
-| Előtoló hengerek | 2 × Ø85 mm |
+| Lemezszélesség | ≤ 1 600 mm |
+| Szabad adagolási sebesség | 35 m/perc |
+| Adagológörgők | 2 × Ø85 mm |
 | Szerszámmemória | 250 recept |
 
-## Miért számít, hogy a szerszám és az adagoló egy helyről jöjjön
+Tekercssúlyát és azt, hány órát bír egy tekercs, a [kalkulátorok](/hesaplayicilar) oldalon számíthatja ki; a módszert a [tekercssúly és szalaghossz számítása](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) cikkben írtuk le.
 
-A követő szerszám és az adagolója két egymásra utalt elem: a lépésköztűrés, a pilotoldás időzítése és a szalagkiosztás csak akkor áll össze, ha együtt tervezik őket. Ha különböző beszállítóktól érkeznek, a felelősség elmosódik — a szerszámkészítő az adagolóra mutat, az adagoló gyártója a szerszámra.
+## Miért számít, hogy a szerszám és az adagoló egy helyről jön
+
+A követő szerszám és az adagoló két egymásra utalt elem: a lépéstűrés, az oldás időzítése és a szalagelrendezés csak akkor áll össze, ha együtt tervezik őket. Külön beszállítóktól vásárolva elmosódik a felelősségi határ — a szerszámkészítő az adagolóra mutat, az adagoló gyártója a szerszámra.
+
+A gyakorlatban leggyakoribb vita így hangzik: nem jön ki az alkatrésztűrés. A szerszámkészítő szerint „az adagoló lépést veszít", az adagoló gyártója szerint „a szerszám csapjátéka túl nagy". Mindkettő a saját mérését mutatja, és mindkettőnek igaza van a maga keretében. Csak úgy oldható meg, ha mindkét felet egy asztalhoz ültetik — vagy ha eleve ugyanattól a csapattól vásárolnak.
 
 A Servosteel a [követő présszerszámot](/makineler/kalip-ve-merdane) és a [szervoadagolót](/makineler/servo-suruculer) is saját üzemében gyártja; mindkettőt ugyanaz a csapat tervezi.
 
 ## Összegzés
 
-Készítse elő az alkatrészrajzot, a szerszám lépésközét és a prés löketszámát — ebből a három adatból méretezhető a megfelelő adagoló. [Kérjen ajánlatot](/teklif-al), és az anyagvastagsága és szalagméretei alapján térünk vissza.
+Három dolog dönti el az adagoló kiválasztását követő szerszámhoz: hogy a **rendszeres hiba a vezetőcsap-játék alatt maradjon**, hogy a **csúcssebesség lefedje a prés ablakát**, és hogy a **vezetőcsap-oldás állítható** legyen.
+
+Készítse elő az alkatrészrajzot, a szerszám lépésközét és a présütemet — a megfelelő adagoló ebből a háromból méretezhető. [Kérjen ajánlatot](/teklif-al), és a lemezvastagság meg a szalagméretek alapján válaszolunk.

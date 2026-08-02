@@ -58,7 +58,6 @@
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
     "cta2": "Explore the Lines",
-    "measure": "±0.1 mm",
     "stats": [
       { "value": "10+", "label": "Years of experience" },
       { "value": "48+", "label": "Export countries" },
@@ -1298,7 +1297,7 @@
             ["Material width", "40 – 1,300 mm"],
             ["Material thickness", "0.5 – 4.0 mm"],
             ["Free speed", "40 m/min"],
-            ["Feed accuracy", "± 0.1 mm"],
+            ["Feed accuracy", "−0.1 mm"],
             ["Coil weight", "2,500 – 10,000 kg"],
             ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
             ["Feed rolls", "2 + 2"],

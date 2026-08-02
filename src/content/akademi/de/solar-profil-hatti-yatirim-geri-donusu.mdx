@@ -63,6 +63,36 @@ Ihr Gewinn ist die Differenz zwischen der Marge Ihres Lieferanten und Ihren eige
 ### 4. Jährliche Betriebskosten
 Bediener und Instandhaltung, Energie, Verbrauchsmaterial, Rollenpflege und Nachschliff, Ersatzteile sowie Positionen außerhalb der Abschreibung.
 
+## Rechenbeispiel: Zahlen einsetzen
+
+Die folgenden Werte sind **beispielhaft** — verwenden Sie dasselbe Gerüst mit Ihren eigenen Zahlen. Es geht nicht um das Ergebnis, sondern darum zu sehen, **welche Variable das Ergebnis wie stark bewegt.**
+
+**Annahmen:**
+
+| Variable | Beispielwert |
+|---|---|
+| Liniengeschwindigkeit | 15 m/min |
+| Metergewicht (C-Profil) | 4 kg/m |
+| Schichten | 2 × 8 Stunden, 250 Tage |
+| Auslastung | 60 % |
+
+**Jahresproduktion:**
+
+```
+Betriebsminuten = 2 × 8 × 60 × 250 = 240.000 min
+Jahrestonnage = 15 × 240.000 × 0,60 × 4 ÷ 1000 = 8.640 t
+```
+
+Beachten Sie die Wirkung der Auslastung: Bei 75 % statt 60 % wären es 10.800 Tonnen — **dieselbe Anlage, dieselben Schichten, 25 % mehr Ausbringung.** Diesen Unterschied erzeugt allein die Rüstzeit. Dass sich eine Schnellwechsel-Kassette hier bezahlt macht, ist leicht zu erkennen.
+
+**Amortisation:** Beträgt Ihre Wertschöpfung je Tonne X und die jährlichen Betriebskosten Y:
+
+```
+Amortisation = Gesamtinvestition ÷ (8.640 × X − Y)
+```
+
+Hören Sie bei dieser Zahl nicht auf, sondern rechnen Sie eine **Sensitivität**: Wie viele Jahre werden es, wenn die Wertschöpfung um 20 % sinkt? Rechnet es sich bei 45 % Auslastung noch? Eine Entscheidung ist tragfähig, wenn sie den **schlechten** Fall übersteht, nicht den besten.
+
 ## Was die Zahlen am stärksten bewegt
 
 | Größe | Wirkung |
@@ -75,6 +105,12 @@ Bediener und Instandhaltung, Energie, Verbrauchsmaterial, Rollenpflege und Nachs
 
 Der letzte Punkt wirkt nebensächlich, ist es aber nicht: Sind die Rollen nicht sauber gehärtet, ruinieren Maßabweichung und früher Ersatz die Rechnung im Stillen. Servosteel-Rollen werden aus **4140 Legierungsstahl** gefertigt und auf **58–60 HRC** gehärtet.
 
+## Zwei Kosten, die übersehen werden
+
+**Verschnittquote des Coils.** Die in die Rechnung eingehenden "Coilkosten" beziehen sich auf die eingekaufte Tonnage, nicht auf die produzierte. Teilt sich die Muttercoilbreite nicht sauber durch Ihre Profilabwicklung, geht die Differenz bei jedem Coil verloren. Sie können die [Verschnittquote berechnen](/hesaplayicilar) und ihre Größenordnung sehen, sobald Sie sie auf die Jahrestonnage hochrechnen.
+
+**Stillstand beim Coilwechsel.** Ist Ihre Haspelkapazität gering, steht die Linie häufiger — und das geht direkt in die Auslastung ein. Wie lange ein Coil reicht, ermitteln Sie im [Rechner](/hesaplayicilar); die Methode erklären wir in [Coilgewicht und Bandlänge berechnen](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir). Eine hydraulische Haspel mit Ladewagen senkt diese Position unmittelbar — siehe den Vergleich [hydraulisch vs. mechanisch](/karsilastirma/hidrolik-vs-mekanik-acici).
+
 ## Checkliste vor der Entscheidung
 
 - [ ] Ist die Pipeline der nächsten 3 Jahre **in MW** definiert?
@@ -84,6 +120,7 @@ Der letzte Punkt wirkt nebensächlich, ist es aber nicht: Sind die Rollen nicht 
 - [ ] Ist die Bandversorgung gesichert (Preis und Kontinuität)?
 - [ ] Sind Bedien- und Instandhaltungspersonal eingeplant?
 - [ ] Enthält das Angebot Rollensatz, Inbetriebnahme und Schulung?
+- [ ] Trägt die Rechnung auch, wenn die Wertschöpfung um 20 % sinkt?
 
 ## Wo anfangen?
 

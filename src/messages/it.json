@@ -58,7 +58,6 @@
     "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
     "cta1": "Preventivo per il tuo Progetto",
     "cta2": "Esplora le Linee",
-    "measure": "±0,1 mm",
     "stats": [
       { "value": "10+", "label": "Anni di esperienza" },
       { "value": "48+", "label": "Paesi di export" },
@@ -1298,7 +1297,7 @@
             ["Larghezza materiale", "40 – 1.300 mm"],
             ["Spessore materiale", "0,5 – 4,0 mm"],
             ["Velocità libera", "40 m/min"],
-            ["Precisione di avanzamento", "± 0,1 mm"],
+            ["Precisione di avanzamento", "−0,1 mm"],
             ["Peso coil", "2.500 – 10.000 kg"],
             ["Diametro interno / esterno coil", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rulli di avanzamento", "2 + 2"],

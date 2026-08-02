@@ -1,0 +1,101 @@
+---
+title: "Come scegliere un alimentatore servo: guida pratica"
+description: "Come valutare precisione del passo, velocità di avanzamento, pressione dei rulli, necessità di raddrizzatura e sincronismo con la pressa."
+date: "2026-08-02"
+author: "Ingegneria Servosteel"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["alimentatore servo", "alimentazione presse", "scelta della linea"]
+---
+
+L'alimentatore servo detta il ritmo della linea pressa: porta il nastro allo stampo nella lunghezza giusta, al momento giusto e in modo ripetibile. Se è scelto male, il problema non compare sull'alimentatore ma **sul pezzo**: passo che deriva, tolleranza persa, scarto in aumento.
+
+Questa guida percorre i parametri da chiarire prima di chiedere un'offerta. Se state ancora valutando un alimentatore meccanico, partite dal [confronto servo vs meccanico](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. Cosa determina davvero la precisione del passo?
+
+Il dato di catalogo da solo dice poco; sul campo nasce dalla combinazione di tre fattori.
+
+**Servomotore e riduttore.** L'anello chiuso corregge la posizione di continuo tramite il feedback dell'encoder. In un sistema ad anello aperto il motore "crede" di essersi mosso, mentre in realtà può aver slittato.
+
+**Pressione e presa dei rulli.** Il nastro non deve slittare tra i rulli. Con poca pressione il passo resta corto; con troppa si marca la superficie e si schiaccia il materiale sottile. Negli alimentatori Servosteel i rulli di traino hanno **Ø85 mm**; il diametro maggiore aumenta l'area di contatto e riduce lo slittamento.
+
+**Inerzia del nastro.** Nastro pesante e largo carica l'azionamento in accelerazione e frenata. Lo stesso alimentatore può non mantenere a 4 mm la precisione che mostra a 0,5 mm — per questo va sempre chiesto **a quale spessore e larghezza** è stato misurato il valore.
+
+## 2. Velocità di avanzamento: non confondete media e picco
+
+È l'errore più comune nella scelta e porta direttamente ad acquistare la macchina sbagliata.
+
+La **velocità libera di avanzamento** indicata a catalogo (35 m/min sulla serie standard Servosteel) è la velocità in marcia continua. Ma su una linea pressa l'alimentatore non corre mai continuo: si ferma a ogni colpo, la pressa scende, poi riaccelera.
+
+L'avanzamento medio è semplice:
+
+```
+Velocità media (m/min) = passo (mm) × colpi/min ÷ 1000
+```
+
+Con passo 250 mm e 40 colpi/min fanno **10 m/min**. Sembra modesto — ma l'alimentatore deve consegnare quei 250 mm nella breve finestra in cui la pressa non è chiusa. La **velocità di picco istantanea** richiesta in quella finestra è più volte la media.
+
+La scelta si fa sul picco. Un alimentatore scelto sulla media torna dal campo con un "non ce la fa".
+
+Potete calcolare resa e consumo della vostra linea con il [calcolatore di alimentazione](/hesaplayicilar).
+
+## 3. Il campo materiali è corretto?
+
+Gli alimentatori servo standard Servosteel lavorano spessori **0,4–4,0 mm** e larghezze nastro **fino a 1600 mm**. Contano entrambi gli estremi:
+
+- **Estremo inferiore:** su materiale molto sottile, una pressione non regolabile con finezza schiaccia e ondula la superficie.
+- **Estremo superiore:** il materiale spesso richiede più forza di tenuta; pressione dei rulli e coppia motrice devono coprirla.
+
+Inox e acciai alto-resistenziali richiedono più forza della lamiera dolce di pari spessore. Condividete in anticipo la lista materiali.
+
+## 4. Serve la raddrizzatura?
+
+Il nastro che esce dal coil porta con sé la memoria di curvatura (coil set). Se quella curvatura impedisce l'ingresso pulito nello stampo, ci sono due strade:
+
+**Raddrizzatrice separata + alimentatore** — sensato se ampliate una linea esistente o l'esigenza di raddrizzatura è forte.
+
+**[Alimentatore servo con raddrizzatrice](/makineler/dogrultmali-servo-suruculer)** — entrambe le funzioni in un telaio. La linea si accorcia, c'è un solo pannello operatore e sparisce il problema di sincronismo tra due macchine. Il numero di rulli segue il materiale: lamiera sottile e delicata ne chiede di più (11–13), quella spessa meno (7–9).
+
+Se lo spazio è poco e i coil arrivano a 10 tonnellate, una [linea compatta](/makineler/kompakt-hatlar) che riunisce svolgitore, raddrizzatrice e alimentatore su una piattaforma risolve layout e messa in servizio in un colpo solo.
+
+## 5. Sincronismo con la pressa e piloti
+
+L'alimentatore deve dialogare con la pressa. Il segnale camma viene cablato all'alimentatore e l'avanzamento è temporizzato sul punto morto.
+
+**Il rilascio dei piloti (release)** è una funzione critica: i piloti dello stampo tirano il nastro nella posizione esatta nell'ultimo millimetro. Perché ciò accada, l'alimentatore deve **rilasciare** la presa in quell'istante. Senza rilascio i piloti non possono tirare il nastro: o si rompe un pilota o la tolleranza del pezzo deriva.
+
+Se lavorate con stampi progressivi questa funzione non è opzionale. Abbiamo trattato il tema a parte in [stampi progressivi e alimentatore servo](/akademi/progresif-kalip-servo-besleyici-secimi).
+
+## 6. Memoria stampi: qui sta il guadagno vero
+
+Se producete serie lunghe con un solo stampo, la memoria conta poco. Se cambiate stampo nel turno, il quadro si ribalta.
+
+Gli alimentatori Servosteel memorizzano ricette per **fino a 250 stampi**: passo, velocità, rampa e pressione sono salvati con il nome dello stampo. Al cambio l'operatore sceglie dalla lista e la messa a punto è fatta.
+
+Due effetti: il cambio scende da minuti a secondi, e **sparisce la dipendenza da uno specifico operatore**. Il secondo di solito vale di più: la qualità non cala il giorno in cui l'attrezzista esperto è in ferie.
+
+## 7. Serie mini o standard?
+
+La serie mini fa risparmiare spazio e costo su nastri stretti e presse piccole. **La precisione del passo è identica alla serie standard** — "mini" non significa "meno preciso".
+
+I limiti li fissano larghezza del nastro e peso del coil. Se oggi lavorate stretto ma potreste allargare a breve, la serie standard è la scelta più sicura: ingrandire un alimentatore significa comprare una macchina nuova.
+
+## I cinque numeri necessari per la scelta
+
+Con questi cinque il dimensionamento si chiude in un giro:
+
+| Parametro | A cosa serve |
+|---|---|
+| Spessore e qualità lamiera | Forza di tenuta e regolazione pressione |
+| Larghezza nastro | Lunghezza rulli e scelta del telaio |
+| Passo (min–max) | Calcolo della velocità di picco |
+| Colpi pressa al minuto | Calcolo della velocità di picco |
+| Peso coil | Capacità svolgitore e layout di linea |
+
+Se non conoscete il peso del coil, ve lo dà il [calcolatore coil](/hesaplayicilar); il metodo è spiegato in [come calcolare peso e lunghezza di un coil](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+## Conclusione
+
+Un alimentatore servo non si sceglie da un solo numero di catalogo. Decidono tre cose: se la **velocità di picco copre la vostra linea**, se la **pressione è regolabile sul vostro materiale** e se il **sincronismo con la pressa — rilascio piloti incluso — è pienamente realizzato**.
+
+Per il dettaglio prodotto vedete la pagina [alimentatori servo](/makineler/servo-suruculer) e [richiedete un'offerta](/teklif-al) con i cinque numeri sopra.

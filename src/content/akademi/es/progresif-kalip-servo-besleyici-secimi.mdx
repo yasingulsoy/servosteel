@@ -1,69 +1,94 @@
 ---
 title: "Cómo elegir el alimentador servo para un troquel progresivo"
-description: "6 criterios para elegir el alimentador servo de un troquel progresivo: precisión de paso, longitud, espesor y memoria de recetas."
+description: "6 criterios para elegir el alimentador servo de un troquel progresivo: precisión de paso, error acumulado, liberación de pilotos y memoria."
 date: "2026-07-30"
 author: "Ingeniería Servosteel"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["troquel progresivo", "alimentador servo", "alimentación de prensas"]
 ---
 
-En un troquel progresivo la pieza no se termina en una sola estación: con cada golpe de prensa la banda avanza una estación y se punzona, corta y conforma en secuencia. Por eso el rendimiento del troquel lo decide muchas veces no el troquel en sí, sino **el alimentador que hace avanzar la banda.** Si el paso se desvía unas centésimas de milímetro, el punzón se descentra, aparecen rebabas y, en el peor caso, el troquel se daña.
+En un troquel progresivo la pieza no se termina en una estación: el fleje avanza una estación con cada golpe de prensa y se punzona, corta y dobla en secuencia. Por eso lo que determina el rendimiento del troquel no suele ser el troquel mismo, sino **el alimentador que hace avanzar el fleje.** Si el paso se desvía unas centésimas de milímetro, el punzón sale del centro, aparece rebaba y, en el peor caso, el troquel se daña.
 
-Los 6 criterios siguientes resumen lo que conviene aclarar al elegir un alimentador para su troquel progresivo.
+Los 6 criterios siguientes resumen lo que hay que cerrar al elegir alimentador para su troquel progresivo. La elección general la tratamos en [una guía aparte](/akademi/servo-besleyici-nasil-secilir); aquí nos centramos en lo específico del progresivo.
 
-## 1. Precisión de paso — la cifra crítica
+## 1. Precisión de paso — la cifra más crítica
 
-Un troquel progresivo no perdona el error acumulado: una pequeña desviación repetida en cada estación se convierte en un desplazamiento total en la última. Por eso el primer dato a mirar es la **precisión de avance.**
+En un troquel progresivo el error acumulado no perdona: una desviación pequeña repetida en cada estación se convierte en un desplazamiento total en la última. Por eso el primer valor a mirar es la **precisión de alimentación.**
 
-En los alimentadores servo de Servosteel la precisión de avance es de **± 0,1 mm**. Valore esta cifra junto con el número de estaciones al calcular el presupuesto de tolerancias.
+Una sola cifra de precisión en un catálogo dice poco por sí misma: hay que preguntar **a qué espesor y ancho se midió**; el mismo alimentador puede no mantener con 4 mm lo que muestra con 0,5 mm. En Servosteel la cifra de precisión está documentada para las [líneas compactas](/makineler/kompakt-hatlar); para un alimentador independiente fijamos la precisión objetivo junto con usted, a partir del presupuesto de tolerancia del troquel y del número de estaciones.
+
+Hay que separar dos tipos de error, porque sus consecuencias son totalmente distintas:
+
+**Error aleatorio.** Se desvía en más y en menos en cada golpe y promedia cero. Los agujeros del fleje se desplazan algo adelante y atrás; estadísticamente no se acumula, pero piezas concretas pueden salirse de tolerancia.
+
+**Error sistemático.** Se desvía siempre en el mismo sentido — por ejemplo, si la presión de rodillos es insuficiente el fleje se queda 0,05 mm corto en cada paso. En un troquel de diez estaciones eso son 0,5 mm de desplazamiento total, suficiente para **bloquear el troquel**.
+
+El peligroso es el segundo, y su origen no suele ser el alimentador sino su ajuste: presión baja, superficie de rodillo desgastada o fleje aceitoso. Los pilotos absorben parte de esa deriva, pero **lo que pueden absorber tiene un límite**: si el error sistemático supera el juego del piloto, el piloto se rompe.
 
 ## 2. Longitud de paso y número de estaciones
 
-La separación entre estaciones (paso) es la distancia que el alimentador debe avanzar en cada golpe. Un paso largo combinado con una alta cadencia exige más velocidad y una aceleración más dura.
+El paso entre estaciones es la distancia que el alimentador debe avanzar en cada golpe. Paso largo más cadencia alta exige del alimentador más velocidad y aceleración más dura.
 
-En la fase de consulta, facilite estos tres datos juntos: **longitud de paso, número de estaciones y golpes por minuto de la prensa.** El alimentador se dimensiona con ese trío.
+La trampa está en mirar la velocidad media. Un paso de 60 mm a 60 golpes/min promedia solo 3,6 m/min — suena lentísimo. Pero el alimentador debe entregar esos 60 mm dentro de la ventana en que la prensa está abierta, y esa ventana es una fracción de segundo. La **velocidad punta instantánea** necesaria es varias veces la media.
 
-## 3. Espesor y ancho de la banda
+Facilite estos tres juntos al pedir oferta: **longitud de paso, número de estaciones y golpes de prensa por minuto.** El alimentador se dimensiona con ese trío.
 
-Un material más grueso exige mayor fuerza de agarre; uno más ancho, rodillos más largos. Los alimentadores servo de Servosteel trabajan con espesores de **0,4 – 4,0 mm** y anchos **hasta 1.600 mm**, con rodillos de avance 2 × Ø85 mm.
+## 3. Espesor y ancho de chapa
 
-La velocidad de avance libre es de **35 m/min**: compruebe que encaja con la cadencia de su prensa.
+La chapa gruesa exige más fuerza de sujeción; la ancha, rodillos más largos. Los alimentadores servo de Servosteel trabajan con **0,4 – 4,0 mm** de espesor y anchos **hasta 1.600 mm**; los rodillos de arrastre son 2 × Ø85 mm.
 
-## 4. Sincronización con la prensa y liberación de pilotos
+La velocidad libre de alimentación es de **35 m/min** — hay que calcular si encaja con su cadencia de prensa.
 
-Un alimentador no puede trabajar al margen de la prensa. Debe funcionar en **sincronía total** con la señal de leva y liberar la banda en el momento en que los pilotos del troquel la enganchan. Sin esta función los pilotos fuerzan la banda y las posiciones de los agujeros se desplazan.
+En el troquel progresivo la elección de ancho depende además del **trazado del fleje**. Importa el plano de la pieza, pero también cómo se disponen las piezas sobre el fleje: un trazado anidado reduce mucho la merma, pero exige fleje más ancho y troquel más complejo. Esta decisión debe tomarse antes de elegir alimentador, porque el ancho de fleje determina el bastidor.
+
+## 4. Sincronización con la prensa y pilotos
+
+El alimentador no puede trabajar al margen de la prensa. Debe funcionar en **sincronía total** con la señal de leva y soltar el agarre en el instante en que los pilotos del troquel atrapan el fleje (liberación de pilotos). Sin esa función los pilotos fuerzan el fleje y las posiciones de agujero se desvían.
+
+La secuencia es: el alimentador entrega el paso y se detiene; la prensa empieza a bajar; los pilotos entran en los agujeros guía y tiran del fleje a su posición exacta en la última décima de milímetro; **justo en ese momento** el alimentador abre la presión. Si libera pronto, el fleje queda suelto; si tarde, piloto y alimentador trabajan uno contra otro.
+
+Por eso la liberación de pilotos no es una simple pregunta de «sí o no» — debe ser **ajustable**. En troqueles distintos los pilotos entran con ángulos de prensa distintos.
 
 En los alimentadores Servosteel la liberación de pilotos es estándar.
 
-## 5. No pase por alto el enderezado
+## 5. No pase por alto la necesidad de enderezado
 
-La memoria de curvatura de la bobina (coil-set) causa problemas directos en un troquel progresivo: si la banda no entra plana, la alineación de estaciones se pierde. Si sus tolerancias son estrictas, plantee el alimentador junto con una enderezadora.
+La memoria de curvatura (coil set) del fleje que viene de la bobina crea problemas directos en el progresivo: si el fleje no entra plano, se pierde la alineación entre estaciones. Si sus exigencias son estrictas, piense el alimentador junto con la enderezadora.
 
-En lugar de comprar una máquina aparte, puede optarse por un [alimentador servo con enderezadora](/makineler/dogrultmali-servo-suruculer): enderezado y avance en un solo cuerpo, configurable al espesor con opciones de 7/9/11/13 rodillos.
+El enderezado pesa más en el progresivo que en trabajos de una estación. La razón: el fleje se guía a lo largo de una distancia considerable dentro del troquel y debe mantener su posición en cada estación. El fleje curvado se levanta dentro del troquel, roza el extractor y se desalinea a medida que avanza. Una curvatura que pasaría inadvertida en una sola estación provoca rechazo en un troquel de diez.
 
-## 6. Memoria de recetas — la realidad de los talleres con varios troqueles
+En lugar de comprar una máquina aparte, puede optarse por un [alimentador servo con enderezadora](/makineler/dogrultmali-servo-suruculer): enderezado y alimentación en un bastidor, configurado al espesor con opciones de 7/9/11/13 rodillos.
 
-En un taller rara vez trabaja un único troquel. Reintroducir paso, velocidad y rampa en cada cambio cuesta tiempo y provoca errores.
+## 6. Memoria de recetas — la realidad de talleres con muchos troqueles
 
-Los alimentadores Servosteel almacenan **250 recetas**: al cambiar de troquel el operario recupera la receta en lugar de repetir el ajuste.
+Un taller rara vez trabaja con un solo troquel. Reintroducir paso, velocidad y rampa en cada cambio es pérdida de tiempo y fuente de error.
+
+Los alimentadores Servosteel guardan **250 recetas**; al cambiar de troquel el operario recupera la receta y no repite ajustes.
+
+La ganancia real no es el tiempo sino la **repetibilidad**. Ajustado a mano, un mismo troquel puede quedar con dos valores distintos en dos turnos; las cotas varían por turno y la causa no se encuentra en meses. La receta elimina esa variable por completo.
 
 ## Valores de referencia
 
 | Característica | Valor |
 |---|---|
-| Precisión de avance | ± 0,1 mm |
 | Espesor de material | 0,4 – 4,0 mm |
-| Ancho de banda | ≤ 1.600 mm |
-| Velocidad de avance libre | 35 m/min |
-| Rodillos de avance | 2 × Ø85 mm |
-| Memoria de moldes | 250 recetas |
+| Ancho de chapa | ≤ 1.600 mm |
+| Velocidad libre de alimentación | 35 m/min |
+| Rodillos de arrastre | 2 × Ø85 mm |
+| Memoria de troqueles | 250 recetas |
 
-## Por qué importa que troquel y alimentador vengan del mismo fabricante
+Puede obtener el peso de su bobina y las horas que rendirá desde la página de [calculadoras](/hesaplayicilar); el método lo explicamos en [cómo calcular el peso y la longitud de una bobina](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
 
-Un troquel progresivo y su alimentador son dos piezas interdependientes: la tolerancia de paso, el momento de liberación de pilotos y el despiece de la banda solo encajan si se diseñan juntos. Cuando proceden de proveedores distintos, la responsabilidad se difumina: el troquelista señala al alimentador y el fabricante del alimentador señala al troquel.
+## Por qué importa comprar troquel y alimentador en el mismo sitio
 
-Servosteel fabrica tanto el [troquel progresivo](/makineler/kalip-ve-merdane) como el [alimentador servo](/makineler/servo-suruculer) en sus propias instalaciones; ambos los proyecta el mismo equipo.
+Troquel progresivo y alimentador son dos piezas interdependientes: la tolerancia de paso, el momento de liberación y el trazado del fleje solo encajan si se diseñan juntos. Comprados a proveedores distintos, el límite de responsabilidad se difumina: el troquelista señala al alimentador y el fabricante del alimentador señala al troquel.
+
+La discusión más habitual en la práctica: la tolerancia de la pieza no sale. El troquelista dice «el alimentador pierde paso», el fabricante del alimentador dice «el juego de piloto del troquel es excesivo». Cada uno muestra su medición y cada uno tiene razón dentro de su marco. Solo se resuelve sentando a ambos en la misma mesa — o comprando de origen al mismo equipo.
+
+Servosteel fabrica tanto el [troquel progresivo](/makineler/kalip-ve-merdane) como el [alimentador servo](/makineler/servo-suruculer) en sus instalaciones; ambos los proyecta el mismo equipo.
 
 ## Conclusión
 
-Prepare el plano de la pieza, el paso del troquel y la cadencia de su prensa: con esos tres datos se dimensiona el alimentador correcto. [Solicite un presupuesto](/teklif-al) y le responderemos según su espesor y las medidas de banda.
+Tres cosas deciden la elección del alimentador en un troquel progresivo: que el **error sistemático quede por debajo del juego de piloto**, que la **velocidad punta cubra la ventana de la prensa** y que la **liberación de pilotos sea ajustable**.
+
+Prepare el plano de la pieza, el paso del troquel y la cadencia de prensa — con esos tres datos se dimensiona el alimentador correcto. [Solicite oferta](/teklif-al) para su proyecto y le responderemos según su espesor y medidas de fleje.

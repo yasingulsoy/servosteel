@@ -63,6 +63,36 @@ Ciò che guadagnate è la differenza tra il margine del vostro fornitore e il vo
 ### 4. Costo operativo annuo
 Operatori e manutenzione, energia, materiali di consumo, manutenzione e rettifica dei rulli, ricambi e voci fuori ammortamento.
 
+## Esempio svolto: mettiamo i numeri
+
+I valori seguenti sono **indicativi** — usate lo stesso schema con le vostre cifre. Il punto non è il risultato, ma vedere **quale variabile sposta il risultato e di quanto.**
+
+**Ipotesi:**
+
+| Variabile | Valore d'esempio |
+|---|---|
+| Velocità di linea | 15 m/min |
+| Peso al metro (profilo C) | 4 kg/m |
+| Turni | 2 × 8 ore, 250 giorni |
+| Saturazione | 60 % |
+
+**Produzione annua:**
+
+```
+Minuti operativi = 2 × 8 × 60 × 250 = 240.000 min
+Tonnellate/anno = 15 × 240.000 × 0,60 × 4 ÷ 1000 = 8.640 t
+```
+
+Notate l'effetto della saturazione: al 75 % invece che al 60 % sarebbero 10.800 tonnellate — **stessa linea, stessi turni, 25 % di produzione in più.** L'unica cosa che crea quel divario è il tempo di cambio. Non è difficile capire come un sistema a cassetto a cambio rapido si ripaghi qui.
+
+**Payback:** se il valore aggiunto per tonnellata è X e il costo operativo annuo è Y:
+
+```
+Payback = Investimento totale ÷ (8.640 × X − Y)
+```
+
+Invece di fermarvi a quel numero, fate un'**analisi di sensibilità**: se il valore aggiunto cala del 20 %, a quanti anni sale il payback? Con saturazione al 45 % ha ancora senso? Una decisione è solida quando regge lo scenario **peggiore**, non il migliore.
+
 ## Cosa muove di più i numeri?
 
 | Variabile | Effetto |
@@ -75,6 +105,12 @@ Operatori e manutenzione, energia, materiali di consumo, manutenzione e rettific
 
 L'ultimo punto sembra minore ma non lo è: se i rulli non sono temprati correttamente, deriva dimensionale e sostituzione anticipata rovinano il calcolo in silenzio. I rulli Servosteel sono realizzati in **acciaio legato 4140** e temprati a **58–60 HRC**.
 
+## Due costi che sfuggono
+
+**Percentuale di sfrido del coil.** Il "costo coil" che entra nel calcolo si basa sul tonnellaggio acquistato, non su quello prodotto. Se la larghezza del coil madre non divide esattamente lo sviluppo del vostro profilo, la differenza si perde su ogni coil. Potete [calcolare la percentuale di sfrido](/hesaplayicilar) con le vostre misure e vederne l'entità una volta convertita in tonnellaggio annuo.
+
+**Fermo per cambio coil.** Se la capacità dello svolgitore è bassa la linea si ferma più spesso, e questo entra direttamente nella saturazione. Quante ore copre un coil si ricava dal [calcolatore](/hesaplayicilar); il metodo è spiegato in [come calcolare peso e lunghezza di un coil](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir). Uno svolgitore idraulico con carrello di carico riduce direttamente questa voce — vedete il confronto [idraulico vs meccanico](/karsilastirma/hidrolik-vs-mekanik-acici).
+
 ## Checklist prima di decidere
 
 - [ ] Il portafoglio dei prossimi 3 anni è definito **in MW**?
@@ -84,6 +120,7 @@ L'ultimo punto sembra minore ma non lo è: se i rulli non sono temprati corretta
 - [ ] La fornitura di coil è garantita (prezzo e continuità)?
 - [ ] Sono pianificati operatori e personale di manutenzione?
 - [ ] L'offerta include set di rulli, messa in servizio e formazione?
+- [ ] Il calcolo regge anche se il valore aggiunto cala del 20 %?
 
 ## Da dove partire
 

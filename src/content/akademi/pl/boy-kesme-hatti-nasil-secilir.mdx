@@ -1,0 +1,95 @@
+---
+title: "Jak wybrać linię cięcia na wymiar? 6 decydujących kryteriów"
+description: "Jak ocenić płaskość, zespół cięcia, tolerancję długości, sztaplowanie i udźwig odwijaka przy wyborze linii cięcia na wymiar."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/boy-kesme-hatlari.jpg"
+tags: ["cięcie na wymiar", "obróbka blach", "wybór linii"]
+---
+
+Linia cięcia na wymiar zamienia krąg w płaskie arkusze o zadanym rozmiarze. Od linii wzdłużnego cięcia różni ją kierunek: cięcie wzdłużne tnie **wzdłuż** taśmy, cięcie na wymiar **w poprzek** i daje arkusze. Jeśli wahasz się między nimi, zobacz [porównanie cięcia wzdłużnego i na wymiar](/karsilastirma/dilme-vs-boy-kesme).
+
+Na tej linii klient kupuje w istocie **płaskość** arkusza. Trafić w długość jest łatwo; wyprodukować płaski arkusz — tam leży inżynieria. Poniższe 6 kryteriów stawia to w centrum.
+
+## 1. Jak ostre są Twoje wymagania płaskości?
+
+Taśma schodząca z kręgu niesie trzy rodzaje wad kształtu, każdą z innej przyczyny:
+
+- **Coil set** — krzywizna wzdłużna pozostawiona przez nawijanie. Najczęstsza.
+- **Crossbow** — krzywizna poprzeczna; arkusz wygina się w górę lub w dół na szerokości.
+- **Fala krawędziowa** — bierze się z tego, że krawędzie są dłuższe niż środek; pochodzi z walcowania i jest najtrudniejsza do usunięcia.
+
+Coil set usuwa prosta prostownica. Fala krawędziowa i wady wynikające z naprężeń własnych wymagają **precyzyjnej prostownicy kasetowej**, która reguluje nacisk rolek strefowo i dzięki temu wydłuża różne obszary arkusza w różnym stopniu.
+
+Jeśli arkusze trafiają na laser lub krawędziarkę CNC, podaj tolerancję płaskości **liczbowo**. „Ma być płaski" na etapie oferty nie znaczy nic, a później rodzi spory.
+
+## 2. Zespół cięcia: nożyce czy nożyce latające?
+
+**Nożyce z zatrzymaniem.** Taśma staje, nóż schodzi, taśma rusza dalej. Krawędź cięcia jest czysta, a tolerancja wysoka. Ceną jest prędkość: przy każdym cięciu linia się zatrzymuje.
+
+**Nożyce latające.** Nożyce jadą razem z taśmą podczas cięcia, linia nie staje. Dają wysoką wydajność, ale mechanizm jest bardziej złożony, a inwestycja większa.
+
+Kryterium jest proste: przy **krótkich arkuszach w dużych ilościach** czas postoju się sumuje i nożyce latające się zwracają. Przy **długich arkuszach w małych ilościach** nożyce z zatrzymaniem są wystarczające i ekonomiczne.
+
+## 3. Jak utrzymywana jest tolerancja długości?
+
+Długość arkusza wyznacza skok wykonany przez podajnik. Są dwa podejścia:
+
+**Koło pomiarowe z enkoderem** — koło toczące się po blasze zlicza odległość. Istnieje ryzyko poślizgu, ale rozwiązanie jest proste i tanie.
+
+**Podawanie serwo** — [podajnik serwo](/makineler/servo-suruculer) przesuwa taśmę odmierzonymi skokami; powtarzalność jest wysoka, a dzięki pamięci receptur zmiana długości trwa sekundy.
+
+Przy pracy z wąską tolerancją właściwa jest konfiguracja z podawaniem serwo. Dobór podajnika omawiamy szczegółowo w artykule [jak wybrać podajnik serwo](/akademi/servo-besleyici-nasil-secilir).
+
+## 4. Sztaplowanie: najbardziej pomijana część linii
+
+Choćby linia była bardzo szybka, jeśli arkusze nie dają się porządnie sztaplować, produkcja korkuje się właśnie tam, a dwóch operatorów zostaje przywiązanych do sztaplera.
+
+Co sprawdzić:
+
+- **Wysokość i masa stosu** — czy pasuje do palet, które udźwignie Twój wózek?
+- **Ochrona powierzchni** — przy materiale podatnym na zarysowania (nierdzewna, powlekana) potrzebne bywają przekładki lub folia PVC.
+- **Wyrównanie krawędzi** — źle wyrównany stos kosztuje czas na kolejnej maszynie.
+
+Jeśli przetwarzasz blachę lakierowaną i nierdzewną, można wbudować **aplikator folii PVC**, który nakłada folię ochronną przed cięciem.
+
+## 5. Udźwig odwijaka wyznacza sufit linii
+
+Wydajność linii cięcia na wymiar zwykle ogranicza nie zespół cięcia, lecz **odwijak**. Jeśli odwijak przyjmuje kręgi 5-tonowe, to niezależnie od szybkości reszty zatrzymujesz się co 5 ton na wymianę kręgu.
+
+Masę kręgu policzysz ze średnicy zewnętrznej, średnicy rdzenia i szerokości — [kalkulator kręgu](/hesaplayicilar) robi to natychmiast, a metodę opisaliśmy w artykule [jak obliczyć masę i długość kręgu](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+Przy ciężkich kręgach i częstych wymianach para **odwijak hydrauliczny + wózek załadowczy** oszczędza sporo czasu operatora. Który typ pasuje do Ciebie, pokaże [porównanie hydraulicznego i mechanicznego](/karsilastirma/hidrolik-vs-mekanik-acici).
+
+## 6. Elementy linii: ustal, co jest w zakresie
+
+Standardowa linia cięcia na wymiar zawiera następujące zespoły:
+
+| Zespół | Funkcja |
+|---|---|
+| Odwijak | Nosi krąg i rozwija go w sposób kontrolowany |
+| Wózek załadowczy | Pozycjonuje i osadza krąg na wale |
+| Prostownica | Usuwa coil set i wady kształtu |
+| Podajnik | Wyznacza długość arkusza odmierzonym skokiem |
+| Nożyce | Tną w poprzek |
+| Układ sztaplowania | Układa arkusze równo w stos |
+| Aplikator PVC | Nakłada folię ochronną (opcjonalnie) |
+
+Trzymaj tę listę przy sobie podczas porównywania ofert. Różnica cen między dwiema propozycjami często kryje się nie w jakości, lecz w **zakresie** — może brakować wózka załadowczego albo układu sztaplowania.
+
+Po stronie sterowania linie Servosteel opierają się na napędach **Schneider Lexium i Altivar**; linią zarządza się z jednego panelu, a dostęp do części korzysta z popularnej marki.
+
+## Co przygotować przed wyborem
+
+Miej te cztery dane przy zapytaniu ofertowym:
+
+1. **Masa i szerokość kręgu** — wyznacza udźwig odwijaka
+2. **Zakres grubości i gatunek** — wyznacza prostownicę i zespół cięcia
+3. **Zakres długości arkusza i wolumen** — odpowiada na pytanie nożyce czy nożyce latające
+4. **Tolerancja płaskości (liczbowo)** — wyznacza typ prostownicy
+
+## Podsumowanie
+
+W linii cięcia na wymiar zespół cięcia decyduje o cenie, ale prostownica decyduje o **zadowoleniu**. Gdy budżet jest napięty, oszczędność po stronie cięcia zawsze boli mniej niż po stronie prostowania — nierównego arkusza nie da się naprawić po fakcie.
+
+Przejrzyj naszą stronę [linie cięcia na wymiar](/boy-kesme-hatlari) i [zapytaj o ofertę](/teklif-al), podając powyższe cztery punkty.

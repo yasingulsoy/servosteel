@@ -63,6 +63,36 @@ Lo que gana es la diferencia entre el margen de su proveedor y su propio coste d
 ### 4. Coste operativo anual
 Operarios y personal de mantenimiento, energía, consumibles, mantenimiento y rectificado de rodillos, repuestos y partidas ajenas a la amortización.
 
+## Ejemplo resuelto: poner cifras
+
+Los valores siguientes son **ilustrativos** — use el mismo esqueleto con sus propias cifras. Lo importante no es el resultado, sino ver **qué variable mueve el resultado y cuánto.**
+
+**Supuestos:**
+
+| Variable | Valor de ejemplo |
+|---|---|
+| Velocidad de línea | 15 m/min |
+| Peso por metro (perfil C) | 4 kg/m |
+| Turnos | 2 × 8 horas, 250 días |
+| Ocupación | 60 % |
+
+**Producción anual:**
+
+```
+Minutos operativos = 2 × 8 × 60 × 250 = 240.000 min
+Toneladas/año = 15 × 240.000 × 0,60 × 4 ÷ 1000 = 8.640 t
+```
+
+Observe el efecto de la ocupación: con 75 % en lugar de 60 % serían 10.800 toneladas — **la misma línea, los mismos turnos, un 25 % más de producción.** Lo único que crea esa brecha es el tiempo de cambio. No es difícil ver cómo un sistema de casete de cambio rápido se amortiza aquí.
+
+**Retorno:** si su valor añadido por tonelada es X y el coste operativo anual es Y:
+
+```
+Retorno = Inversión total ÷ (8.640 × X − Y)
+```
+
+En lugar de detenerse en esa cifra, haga un **análisis de sensibilidad**: si el valor añadido cae un 20 %, ¿a cuántos años sube el retorno? Con una ocupación del 45 %, ¿sigue teniendo sentido? Una decisión es sólida cuando aguanta el **peor** escenario, no el mejor.
+
 ## ¿Qué mueve más los números?
 
 | Variable | Efecto |
@@ -75,6 +105,12 @@ Operarios y personal de mantenimiento, energía, consumibles, mantenimiento y re
 
 Este último punto parece menor y no lo es: si los rodillos no están bien templados, la deriva dimensional y la reposición temprana estropean el cálculo en silencio. Los rodillos Servosteel se fabrican en **acero aleado 4140** y se templan a **58–60 HRC**.
 
+## Dos costes que se pasan por alto
+
+**Tasa de merma de bobina.** El «coste de bobina» que entra en el cálculo se basa en el tonelaje que compra, no en el que produce. Si el ancho de la bobina madre no divide limpiamente el desarrollo de su perfil, la diferencia se pierde en cada bobina. Puede [calcular la tasa de merma](/hesaplayicilar) con sus medidas y ver su magnitud al convertirla a tonelaje anual.
+
+**Parada por cambio de bobina.** Si la capacidad de su desbobinadora es baja, la línea se detiene más a menudo, y eso va directo a la ocupación. Puede calcular cuántas horas rinde una bobina en la [calculadora](/hesaplayicilar); el método se explica en [cómo calcular el peso y la longitud de una bobina](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir). Una desbobinadora hidráulica con carro de carga reduce esta partida directamente — vea la comparativa [hidráulica vs mecánica](/karsilastirma/hidrolik-vs-mekanik-acici).
+
 ## Lista de comprobación antes de decidir
 
 - [ ] ¿Está definida la cartera de los próximos 3 años **en MW**?
@@ -84,6 +120,7 @@ Este último punto parece menor y no lo es: si los rodillos no están bien templ
 - [ ] ¿Está asegurado su suministro de bobina (precio y continuidad)?
 - [ ] ¿Están previstos los operarios y el personal de mantenimiento?
 - [ ] ¿La oferta incluye juego de rodillos, puesta en marcha y formación?
+- [ ] ¿El cálculo se sostiene si el valor añadido cae un 20 %?
 
 ## Por dónde empezar
 

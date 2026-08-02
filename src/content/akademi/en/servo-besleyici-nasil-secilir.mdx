@@ -1,0 +1,101 @@
+---
+title: "How to Choose a Servo Feeder: A Practical Guide"
+description: "How to assess pitch accuracy, feeding speed, roller pressure, straightening need and press synchronization when selecting a servo feeder."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["servo feeder", "press feeding", "line selection"]
+---
+
+The servo feeder sets the rhythm of a press line: it delivers strip to the die at the right length, at the right moment, repeatably. When it is chosen wrongly, the problem does not show up in the feeder — it shows up **in the part**: drifting pitch, lost tolerance, rising scrap.
+
+This guide walks through the parameters to settle before requesting a quote. If you are still weighing a mechanical feeder, start with the [servo vs mechanical comparison](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. What actually determines pitch accuracy?
+
+The accuracy figure in a catalogue means little on its own; in the field it emerges from three things combined.
+
+**Servo motor and gearbox.** Closed-loop control corrects position continuously using encoder feedback. In an open-loop system the motor "thinks" it has moved, while in reality it may have slipped.
+
+**Roller pressure and grip.** The strip must not slip between the rollers. Too little pressure and the pitch falls short; too much and it marks the surface and crushes thin material. On Servosteel feeders the feed rollers are **Ø85 mm**; the larger diameter increases the contact area and reduces slip.
+
+**Strip inertia.** Heavy, wide strip loads the drive during acceleration and deceleration. The same feeder may not hold on 4 mm material the accuracy it shows on 0.5 mm — which is why you should always ask **at what thickness and width** the accuracy figure was measured.
+
+## 2. Feeding speed: do not confuse average with peak
+
+This is the most common mistake in selection, and it leads directly to buying the wrong machine.
+
+The **free feeding speed** quoted in catalogues (35 m/min on the Servosteel standard series) is the speed at which the feeder runs uninterrupted. But on a press line it never runs uninterrupted: it stops at every stroke, the press comes down, then it accelerates again.
+
+Average advance is simple:
+
+```
+Average speed (m/min) = pitch (mm) × strokes/min ÷ 1000
+```
+
+For a 250 mm pitch at 40 strokes/min that is **10 m/min**. It sounds modest — but the feeder must deliver those 250 mm inside the short window when the press is not closed. The **instantaneous peak speed** it must reach in that window is several times the average.
+
+Selection is made on peak speed. A feeder chosen from the average comes back from site as "it cannot keep up".
+
+You can work out your own line's output and consumption with the [feed calculator](/hesaplayicilar).
+
+## 3. Is the material range right?
+
+Servosteel standard servo feeders handle **0.4–4.0 mm** thickness and strip widths **up to 1600 mm**. Both ends of that range matter:
+
+- **Lower end:** on very thin material, pressure that is not finely adjustable crushes and ripples the surface.
+- **Upper end:** thick material needs more holding force; roller pressure and drive torque must cover it.
+
+Stainless and high-strength steel demand more force than mild steel of the same thickness. Share your material list up front.
+
+## 4. Do you need straightening?
+
+Strip coming off a coil carries curvature memory (coil set). If that curvature stops the material entering the die cleanly, there are two routes:
+
+**Separate straightener + feeder** — sensible if you are adding to an existing line or the straightening demand is heavy.
+
+**[Straightener servo feeder](/makineler/dogrultmali-servo-suruculer)** — both operations in one frame. The line gets shorter, there is a single control panel, and the synchronization problem between two machines disappears. Roller count follows the material: thin, surface-critical sheet needs more (11–13), thick material fewer (7–9).
+
+If floor space is tight and coils go up to 10 tonnes, a [compact line](/makineler/kompakt-hatlar) that puts decoiler, straightener and feeder on one platform solves layout and commissioning in a single step.
+
+## 5. Press synchronization and pilot pins
+
+The feeder must talk to the press. The press cam signal is wired to the feeder, and feeding is timed against the press dead centre.
+
+**Pilot pin release** is a critical function: pilot pins in the die pull the strip into its exact position in the last millimetre. For that to happen, the feeder must **release** its grip at that moment. Without release the pins cannot pull the strip — either a pin breaks or part tolerance drifts.
+
+If you run progressive dies, this function is not optional. We covered the subject separately in [progressive dies and servo feeders](/akademi/progresif-kalip-servo-besleyici-secimi).
+
+## 6. Die memory: this is where the real gain is
+
+If you run long series with a single die, memory hardly matters. If you change dies during a shift, the picture reverses.
+
+Servosteel feeders store recipes for **up to 250 dies**: pitch, speed, ramp and pressure values are saved under the die name. At changeover the operator picks from the list and setup is done.
+
+That has two effects: changeover drops from minutes to seconds, and **dependence on a specific operator disappears**. The second is usually worth more — production quality does not fall on the day your experienced operator is away.
+
+## 7. Mini series or standard series?
+
+The mini series saves floor space and cost on narrow strip and small presses. **Pitch accuracy is identical to the standard series** — "mini" does not mean "less accurate".
+
+Its limits are set by strip width and coil weight. If you run narrow strip today but may widen in the near future, the standard series is the safer choice: scaling up a feeder means buying a new machine.
+
+## The five numbers you need for selection
+
+Supply these five and correct sizing takes one round:
+
+| Parameter | Why it is needed |
+|---|---|
+| Sheet thickness and grade | Holding force and pressure setting |
+| Strip width | Roller length and frame selection |
+| Pitch (min–max) | Peak speed calculation |
+| Press strokes per minute | Peak speed calculation |
+| Coil weight | Decoiler capacity and line layout |
+
+If you do not know the coil weight, the [coil calculator](/hesaplayicilar) will give it to you; we explain the method in [how to calculate coil weight and length](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+## Conclusion
+
+A servo feeder is not selected from a single catalogue figure. Three things decide it: whether **peak speed covers your line**, whether **pressure can be tuned to your material**, and whether **synchronization with the press — including pilot release — is fully implemented**.
+
+For product detail see the [servo feeders](/makineler/servo-suruculer) page, and [request a quote](/teklif-al) with the five numbers above — our engineering team will size it to your line.

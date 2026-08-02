@@ -1,0 +1,101 @@
+---
+title: "Servovorschub richtig auswählen: praktischer Leitfaden"
+description: "Wie Sie Schrittgenauigkeit, Vorschubgeschwindigkeit, Rollenanpressung, Richtbedarf und Pressensynchronisation bei der Auswahl bewerten."
+date: "2026-08-02"
+author: "Servosteel Engineering"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["Servovorschub", "Pressenzuführung", "Anlagenauswahl"]
+---
+
+Der Servovorschub gibt der Pressenlinie den Takt: Er führt das Band in der richtigen Länge, zum richtigen Zeitpunkt und wiederholgenau ins Werkzeug. Ist er falsch gewählt, zeigt sich das Problem nicht am Vorschub, sondern **am Teil**: driftender Schritt, verlorene Toleranz, steigender Ausschuss.
+
+Dieser Leitfaden geht die Parameter durch, die vor der Anfrage zu klären sind. Wenn Sie noch einen mechanischen Vorschub erwägen, beginnen Sie beim [Vergleich Servo vs. mechanisch](/karsilastirma/servo-vs-mekanik-besleme).
+
+## 1. Was bestimmt die Schrittgenauigkeit wirklich?
+
+Die Katalogangabe allein sagt wenig; in der Praxis entsteht sie aus dem Zusammenspiel dreier Dinge.
+
+**Servomotor und Getriebe.** Die geschlossene Regelung korrigiert die Position laufend über die Encoder-Rückmeldung. In einem offenen System "glaubt" der Motor, er sei gefahren — tatsächlich kann er gerutscht sein.
+
+**Rollenanpressung und Griff.** Das Band darf zwischen den Rollen nicht rutschen. Zu wenig Druck und der Schritt fällt zu kurz aus; zu viel und die Oberfläche wird markiert, dünnes Material gequetscht. Bei Servosteel-Vorschüben haben die Vorschubrollen **Ø85 mm**; der größere Durchmesser vergrößert die Kontaktfläche und verringert den Schlupf.
+
+**Bandträgheit.** Schweres, breites Band belastet den Antrieb beim Beschleunigen und Bremsen. Derselbe Vorschub hält bei 4 mm womöglich nicht die Genauigkeit, die er bei 0,5 mm zeigt — fragen Sie deshalb immer, **bei welcher Dicke und Breite** der Wert gemessen wurde.
+
+## 2. Vorschubgeschwindigkeit: mittlere und Spitzengeschwindigkeit nicht verwechseln
+
+Das ist der häufigste Auswahlfehler und führt direkt zur falschen Maschine.
+
+Die im Katalog genannte **freie Vorschubgeschwindigkeit** (bei der Servosteel-Standardserie 35 m/min) ist die Geschwindigkeit im ununterbrochenen Lauf. Auf einer Pressenlinie läuft der Vorschub aber nie ununterbrochen: Er hält bei jedem Hub, die Presse geht nieder, dann beschleunigt er erneut.
+
+Der mittlere Vorschub ist einfach:
+
+```
+Mittlere Geschwindigkeit (m/min) = Schritt (mm) × Hübe/min ÷ 1000
+```
+
+Bei 250 mm Schritt und 40 Hüben/min sind das **10 m/min**. Das klingt bescheiden — doch der Vorschub muss diese 250 mm im kurzen Fenster liefern, in dem die Presse nicht geschlossen ist. Die dort erforderliche **momentane Spitzengeschwindigkeit** liegt um ein Vielfaches über dem Mittelwert.
+
+Ausgewählt wird nach der Spitze. Ein nach dem Mittelwert gewählter Vorschub kommt als "schafft es nicht" von der Baustelle zurück.
+
+Leistung und Verbrauch Ihrer Linie ermitteln Sie mit dem [Vorschubrechner](/hesaplayicilar).
+
+## 3. Stimmt der Werkstoffbereich?
+
+Servosteel Standard-Servovorschübe arbeiten mit **0,4–4,0 mm** Dicke und Bandbreiten **bis 1600 mm**. Beide Enden des Bereichs sind wichtig:
+
+- **Unteres Ende:** Bei sehr dünnem Material zerdrückt und wellt eine nicht fein einstellbare Anpressung die Oberfläche.
+- **Oberes Ende:** Dickes Material braucht mehr Haltekraft; Rollenanpressung und Antriebsmoment müssen das abdecken.
+
+Edelstahl und hochfester Stahl verlangen mehr Kraft als weicher Stahl gleicher Dicke. Teilen Sie Ihre Werkstoffliste vorab.
+
+## 4. Brauchen Sie Richten?
+
+Vom Coil kommendes Band trägt eine Krümmungserinnerung (Coil-Set). Verhindert diese Krümmung den sauberen Einlauf ins Werkzeug, gibt es zwei Wege:
+
+**Separater Richtapparat + Vorschub** — sinnvoll bei Erweiterung einer bestehenden Linie oder hohem Richtbedarf.
+
+**[Richt-Servovorschub](/makineler/dogrultmali-servo-suruculer)** — beide Funktionen in einem Rahmen. Die Linie wird kürzer, es gibt ein Bedienpanel, und das Synchronisationsproblem zweier Maschinen entfällt. Die Rollenzahl richtet sich nach dem Material: dünnes, oberflächenkritisches Blech braucht mehr (11–13), dickes weniger (7–9).
+
+Ist der Platz knapp und wiegen die Coils bis 10 Tonnen, löst eine [Kompaktanlage](/makineler/kompakt-hatlar) mit Haspel, Richtapparat und Vorschub auf einer Plattform Aufstellung und Inbetriebnahme in einem Schritt.
+
+## 5. Pressensynchronisation und Pilotstifte
+
+Der Vorschub muss mit der Presse kommunizieren. Das Nockensignal der Presse wird auf den Vorschub geführt, und die Zuführung wird auf den Totpunkt getaktet.
+
+**Die Pilotfreigabe (Release)** ist eine kritische Funktion: Die Pilotstifte im Werkzeug ziehen das Band im letzten Millimeter in seine exakte Position. Dafür muss der Vorschub in diesem Moment **loslassen**. Ohne Freigabe können die Stifte das Band nicht ziehen — entweder bricht ein Stift oder die Teiletoleranz driftet.
+
+Arbeiten Sie mit Folgeverbundwerkzeugen, ist diese Funktion nicht optional. Wir haben das Thema in [Folgeverbundwerkzeuge und Servovorschub](/akademi/progresif-kalip-servo-besleyici-secimi) gesondert behandelt.
+
+## 6. Werkzeugspeicher: hier liegt der eigentliche Gewinn
+
+Fahren Sie lange Serien mit einem Werkzeug, spielt der Speicher kaum eine Rolle. Wechseln Sie innerhalb einer Schicht, kehrt sich das Bild um.
+
+Servosteel-Vorschübe speichern Rezepte für **bis zu 250 Werkzeuge**: Schrittlänge, Geschwindigkeit, Rampe und Anpressung werden unter dem Werkzeugnamen abgelegt. Beim Wechsel wählt der Bediener aus der Liste, das Einrichten ist erledigt.
+
+Das hat zwei Effekte: Die Rüstzeit sinkt von Minuten auf Sekunden, und **die Abhängigkeit von einem bestimmten Bediener entfällt**. Zweiteres wiegt meist schwerer — die Qualität bricht nicht ein, wenn der erfahrene Einrichter im Urlaub ist.
+
+## 7. Mini-Serie oder Standardserie?
+
+Die Mini-Serie spart bei schmalem Band und kleinen Pressen Platz und Kosten. **Die Schrittgenauigkeit ist identisch mit der Standardserie** — "Mini" heißt nicht "weniger genau".
+
+Ihre Grenzen setzen Bandbreite und Coilgewicht. Fahren Sie heute schmal, könnten aber bald breiter werden, ist die Standardserie die sicherere Wahl: Einen Vorschub zu vergrößern bedeutet, eine neue Maschine zu kaufen.
+
+## Die fünf Zahlen für die Auswahl
+
+Mit diesen fünf Angaben ist die Auslegung in einer Runde erledigt:
+
+| Parameter | Wozu nötig |
+|---|---|
+| Blechdicke und Werkstoff | Haltekraft und Anpressung |
+| Bandbreite | Rollenlänge und Baugrößenwahl |
+| Schrittlänge (min–max) | Berechnung der Spitzengeschwindigkeit |
+| Pressenhübe pro Minute | Berechnung der Spitzengeschwindigkeit |
+| Coilgewicht | Haspelkapazität und Linienlayout |
+
+Kennen Sie das Coilgewicht nicht, liefert es der [Coilrechner](/hesaplayicilar); die Methode erklären wir in [Coilgewicht und Bandlänge berechnen](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+## Fazit
+
+Ein Servovorschub wird nicht anhand einer einzelnen Katalogzahl gewählt. Drei Dinge entscheiden: ob die **Spitzengeschwindigkeit Ihre Linie abdeckt**, ob sich die **Anpressung auf Ihren Werkstoff abstimmen lässt** und ob die **Synchronisation mit der Presse — inklusive Pilotfreigabe — vollständig umgesetzt ist**.
+
+Produktdetails finden Sie auf der Seite [Servovorschübe](/makineler/servo-suruculer); [fordern Sie ein Angebot an](/teklif-al) mit den fünf Zahlen oben — unser Engineering legt die Maschine auf Ihre Linie aus.

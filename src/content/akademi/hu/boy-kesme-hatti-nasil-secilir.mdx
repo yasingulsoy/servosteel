@@ -1,0 +1,95 @@
+---
+title: "Hogyan válasszunk daraboló sort? 6 meghatározó szempont"
+description: "Hogyan értékelje a síkfekvést, vágóegységet, hossztűrést, rakatolást és a lecsévélő kapacitását a daraboló sor kiválasztásánál."
+date: "2026-08-02"
+author: "Servosteel Mérnökség"
+cover: "/gorseller/boy-kesme-hatlari.jpg"
+tags: ["darabolás", "lemezfeldolgozás", "sorválasztás"]
+---
+
+A daraboló sor a tekercset adott méretű sík táblákká alakítja. A hasítósortól az irány különbözteti meg: a hasítás **hosszirányban** vág, a darabolás **keresztirányban**, és táblát ad. Ha bizonytalan a kettő között, nézze meg a [hasítás vs darabolás összehasonlítást](/karsilastirma/dilme-vs-boy-kesme).
+
+Ezen a soron a vevő valójában a tábla **síkfekvését** vásárolja. A hosszt eltalálni könnyű; sík táblát gyártani — ott van a mérnöki munka. Az alábbi 6 szempont ezt állítja középpontba.
+
+## 1. Mennyire szoros a síkfekvési elvárás?
+
+A tekercsből érkező szalag háromféle alakhibát hordoz, mindegyiket más ok szüli:
+
+- **Coil set** — a felcsévélésből maradt hosszirányú görbület. A leggyakoribb.
+- **Crossbow** — keresztirányú görbület; a tábla a szélessége mentén felfelé vagy lefelé domborodik.
+- **Szélhullám** — abból ered, hogy a szélek hosszabbak a középvonalnál; hengerlésből származik, és a legnehezebben javítható.
+
+A coil setet egy egyszerű egyengető eltünteti. A szélhullám és a belső feszültségből eredő hibák viszont **kazettás precíziós egyengetőt** kívánnak, amely zónánként állítja a görgőnyomást, és így a tábla különböző területeit eltérő mértékben nyújtja.
+
+Ha a táblák lézerre vagy CNC élhajlítóra mennek, adja meg a síkfekvési tűrést **számmal**. A „legyen sík" az ajánlati szakaszban semmit nem jelent, később viszont vitát szül.
+
+## 2. Vágóegység: olló vagy repülő olló?
+
+**Megállásos olló.** A szalag megáll, a kés leszáll, a szalag továbbindul. A vágott él tiszta, a tűrés magas. Az ára a sebesség: minden vágásnál áll a sor.
+
+**Repülő olló.** Az olló vágás közben együtt halad a szalaggal, a sor nem áll meg. Nagy kibocsátást ad, de a mechanizmus bonyolultabb és a beruházás nagyobb.
+
+A döntési pont egyszerű: **rövid tábla nagy darabszámban** esetén az állásidő összeadódik, és a repülő olló megtérül. **Hosszú tábla kis darabszámban** esetén a megállásos olló elegendő és gazdaságos.
+
+## 3. Hogyan tartható a hossztűrés?
+
+A tábla hosszát az adagoló által megtett lépés adja. Két megközelítés létezik:
+
+**Jeladós mérőkerék** — a lemezen futó kerék számolja a távolságot. Van csúszásveszély, de egyszerű és olcsó.
+
+**Szervoadagolás** — a [szervoadagoló](/makineler/servo-suruculer) mért lépésekkel tolja a szalagot; az ismételhetőség magas, és a receptmemóriával a hosszváltás másodpercek kérdése.
+
+Szűk tűrésű munkánál a szervoadagolós kialakítás a helyes választás. Az adagoló kiválasztását részletesen a [hogyan válasszunk szervoadagolót](/akademi/servo-besleyici-nasil-secilir) cikkben tárgyaljuk.
+
+## 4. Rakatolás: a sor legelhanyagoltabb része
+
+Bármilyen gyors is a sor, ha a táblák nem rakatolhatók rendesen, a termelés éppen ott akad el, és két kezelő a rakatolóhoz kötődik.
+
+Amit ellenőrizni kell:
+
+- **Rakatmagasság és -súly** — illeszkedik a targoncával mozgatható raklapokhoz?
+- **Felületvédelem** — karcérzékeny anyagnál (rozsdamentes, előfestett) közbetét vagy PVC fólia lehet szükséges.
+- **Élillesztés** — a rosszul illesztett rakat a következő gépnél időt visz el.
+
+Ha festett és rozsdamentes lemezt dolgoz fel, **PVC fóliázó egység** építhető a sorba, amely a védőfóliát a vágás előtt viszi fel.
+
+## 5. A lecsévélő kapacitása szabja meg a sor plafonját
+
+A daraboló sor teljesítményét rendszerint nem a vágóegység korlátozza, hanem a **lecsévélő**. Ha a lecsévélő 5 tonnás tekercset vesz, akkor bármilyen gyors is a többi rész, minden 5 tonnánál megáll a tekercscsere.
+
+A tekercssúly a külső átmérőből, magátmérőből és szélességből számítható — a [tekercskalkulátor](/hesaplayicilar) ezt azonnal megteszi, a módszert a [tekercssúly és szalaghossz számítása](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) cikkben írtuk le.
+
+Nehéz tekercs és gyakori csere esetén a **hidraulikus lecsévélő + betöltőkocsi** páros komoly kezelői időt spórol. Hogy melyik típus való Önnek, a [hidraulikus vs mechanikus összehasonlításból](/karsilastirma/hidrolik-vs-mekanik-acici) derül ki.
+
+## 6. A sor elemei: tisztázza, mi tartozik bele
+
+Egy szabványos daraboló sor a következő egységeket tartalmazza:
+
+| Egység | Feladata |
+|---|---|
+| Lecsévélő | Hordozza a tekercset és szabályozottan letekeri |
+| Betöltőkocsi | Beigazítja és a tengelyre ülteti a tekercset |
+| Egyengető | Megszünteti a coil setet és az alakhibákat |
+| Adagoló | Mért lépéssel meghatározza a tábla hosszát |
+| Olló | Keresztirányban vág |
+| Rakatoló egység | Szögben rakatolja a táblákat |
+| PVC fóliázó | Védőfóliát visz fel (opcionális) |
+
+Ezt a listát tartsa maga mellett az ajánlatok összevetésekor. A két ajánlat közti árkülönbség gyakran nem a minőségben, hanem a **tartalomban** rejlik — hiányozhat a betöltőkocsi vagy a rakatoló egység.
+
+Vezérlési oldalon a Servosteel sorok **Schneider Lexium és Altivar** hajtásokra épülnek; a sor egyetlen panelről kezelhető, az alkatrészellátás pedig élvezi az elterjedt márka előnyét.
+
+## Mit készítsen elő a választás előtt
+
+Ez a négy adat legyen kéznél az ajánlatkéréskor:
+
+1. **Tekercssúly és -szélesség** — meghatározza a lecsévélő kapacitását
+2. **Vastagsági tartomány és anyagminőség** — meghatározza az egyengetőt és a vágóegységet
+3. **Táblahossz-tartomány és darabszám** — megválaszolja az olló vagy repülő olló kérdést
+4. **Síkfekvési tűrés (számmal)** — meghatározza az egyengető típusát
+
+## Összegzés
+
+A daraboló soron a vágóegység szabja meg az árat, az egyengető viszont az **elégedettséget**. Ha szűk a keret, a vágási oldalon egyszerűsíteni mindig kevésbé fáj, mint az egyengetésen — a nem sík táblát utólag nem lehet kiegyenesíteni.
+
+Tekintse meg [daraboló sorok](/boy-kesme-hatlari) oldalunkat, és [kérjen ajánlatot](/teklif-al) a fenti négy ponttal.

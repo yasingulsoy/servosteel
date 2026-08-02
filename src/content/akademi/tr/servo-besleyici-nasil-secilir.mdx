@@ -1,0 +1,101 @@
+---
+title: "Servo Besleyici Nasıl Seçilir? Pratik Rehber"
+description: "Servo besleyici seçiminde adım hassasiyeti, besleme hızı, silindir baskısı, doğrultma ihtiyacı ve pres senkronizasyonu nasıl değerlendirilir."
+date: "2026-08-02"
+author: "Servosteel Mühendislik"
+cover: "/gorseller/servo-suruculer.jpg"
+tags: ["servo besleyici", "pres besleme", "hat seçimi"]
+---
+
+Servo besleyici, pres hattının ritmini belirleyen makinedir: sacı doğru uzunlukta, doğru anda ve tekrarlanabilir biçimde presin ağzına verir. Yanlış seçildiğinde sorun kendini besleyicide değil **parçada** gösterir — kayan adım, bozulan tolerans, artan hurda.
+
+Bu rehber, teklif almadan önce netleştirmeniz gereken parametreleri sırasıyla ele alıyor. Servo yerine mekanik besleyici düşünüyorsanız önce [servo mu mekanik mi karşılaştırmasına](/karsilastirma/servo-vs-mekanik-besleme) bakmanızı öneririz.
+
+## 1. Adım hassasiyetini ne belirler?
+
+Katalogdaki hassasiyet değeri tek başına anlamlı değildir; sahada üç şeyin bileşkesi olarak ortaya çıkar.
+
+**Servo motor ve redüktör.** Kapalı çevrim kontrol, enkoderden gelen geri besleme ile konumu sürekli düzeltir. Açık çevrim bir sistemde motor "gitti sanır", gerçekte kaymış olabilir.
+
+**Silindir baskısı ve kavrama.** Sac silindirler arasında kaymamalıdır. Baskı yetersizse adım kısa kalır; fazlaysa yüzeyde iz bırakır ve ince sacı ezer. Servosteel besleyicilerinde besleme silindirleri **Ø85 mm** çapındadır; büyük çap, temas yüzeyini artırarak kaymayı azaltır.
+
+**Şerit ataleti.** Ağır ve geniş şerit, hızlanma-yavaşlama sırasında sürücüyü zorlar. Aynı besleyici 0,5 mm sacda gösterdiği hassasiyeti 4 mm sacda gösteremeyebilir — bu yüzden hassasiyet değeri **hangi kalınlık ve genişlikte** ölçüldüğü sorulmalıdır.
+
+## 2. Besleme hızı: ortalama ile tepe hızı karıştırmayın
+
+Bu, seçimde en sık yapılan hatadır ve doğrudan yanlış makine almaya götürür.
+
+Katalogda geçen **serbest besleme hızı** (Servosteel standart seride 35 m/dk) sürücünün kesintisiz koştuğu hızdır. Ama pres hattında sürücü kesintisiz koşmaz: her strokta durur, pres iner, sonra tekrar hızlanır.
+
+Ortalama ilerleme basittir:
+
+```
+Ortalama hız (m/dk) = adım (mm) × strok/dk ÷ 1000
+```
+
+250 mm adım ve 40 strok/dk için bu **10 m/dk** eder. Kulağa mütevazı gelir — ama sürücü bu 250 mm'yi presin kapalı olmadığı kısa pencerede atmak zorundadır. O pencerede ulaşması gereken **anlık tepe hız** ortalamanın birkaç katıdır.
+
+Seçim tepe hıza göre yapılır. Ortalamaya bakarak seçilen besleyici, sahada "yetişemiyor" diye geri döner.
+
+Kendi hattınızın çıktısını ve tüketimini [besleme hesaplayıcısıyla](/hesaplayicilar) çıkarabilirsiniz.
+
+## 3. Malzeme aralığı doğru mu?
+
+Servosteel standart servo sürücüler **0,4–4,0 mm** kalınlık ve **1600 mm'ye kadar** şerit genişliğinde çalışır. Aralığın iki ucu da önemlidir:
+
+- **Alt uç:** çok ince sacda baskı hassas ayarlanmazsa yüzey ezilir, dalgalanır.
+- **Üst uç:** kalın sacda gereken tutma kuvveti artar; silindir baskısı ve tahrik momenti buna yetmelidir.
+
+Paslanmaz ve yüksek mukavemetli çelik, aynı kalınlıktaki yumuşak sacdan daha fazla kuvvet ister. Malzeme listenizi baştan paylaşın.
+
+## 4. Doğrultma gerekiyor mu?
+
+Rulodan gelen sacda kıvrım hafızası (coil-set) vardır. Bu kıvrım kalıba düzgün girmeyi engelliyorsa iki seçenek çıkar:
+
+**Ayrı doğrultucu + besleyici** — mevcut hattınıza ekleme yapıyorsanız veya doğrultma ihtiyacı ağırsa mantıklıdır.
+
+**[Doğrultmalı servo sürücü](/makineler/dogrultmali-servo-suruculer)** — iki işlem tek gövdede birleşir. Hat boyu kısalır, tek kontrol paneli olur, senkron sorunu ortadan kalkar. Silindir sayısı malzemeye göre seçilir: ince ve yüzeyi hassas saclar daha çok (11–13), kalın saclar daha az (7–9) silindir ister.
+
+Alan darsa ve rulo 10 tona kadarsa, açıcı–doğrultucu–sürücü üçlüsünü tek platformda toplayan [kompakt hatlar](/makineler/kompakt-hatlar) yerleşim ve devreye alma yükünü tek seferde çözer.
+
+## 5. Pres senkronizasyonu ve pilot pim
+
+Besleyicinin presle konuşması şart. Pres kam sinyali sürücüye bağlanır; besleme, presin ölü noktasına göre zamanlanır.
+
+**Pilot pim bırakma (release)** kritik bir fonksiyondur: kalıptaki pilot pimler sacı son milimetrede kendi konumuna çeker. Bunun olabilmesi için besleyicinin o anda baskıyı **bırakması** gerekir. Bırakma yoksa pimler sacı çekemez, ya pim kırılır ya parça toleransı kayar.
+
+Progresif kalıpla çalışıyorsanız bu fonksiyon opsiyonel değildir. Konuyu [progresif kalıp ve servo besleyici](/akademi/progresif-kalip-servo-besleyici-secimi) yazısında ayrıca ele aldık.
+
+## 6. Kalıp hafızası: asıl kazanç burada
+
+Tek kalıpla uzun seri üretiyorsanız hafıza önemsizdir. Ama gün içinde kalıp değiştiriyorsanız, tablo tersine döner.
+
+Servosteel besleyicilerinde **250 kalıba kadar** reçete saklanır: adım boyu, hız, rampa ve baskı değerleri kalıp adıyla kaydedilir. Kalıp değişiminde operatör listeden seçer, ayar biter.
+
+Bunun iki etkisi var: değişim süresi dakikalardan saniyelere iner, ve **operatöre bağımlılık kalkar**. İkincisi genellikle daha değerlidir — deneyimli operatörün izinli olduğu gün üretim kalitesi düşmez.
+
+## 7. Mini seri mi, standart seri mi?
+
+Mini seri, dar şerit ve küçük preslerde yerden ve maliyetten kazandırır. **Adım hassasiyeti standart seriyle aynıdır** — mini olması "daha az hassas" demek değildir.
+
+Sınırları şerit genişliği ve rulo ağırlığı belirler. Bugün dar şerit çalışıp yakın gelecekte genişleme ihtimaliniz varsa, standart seri daha güvenli seçimdir; besleyiciyi büyütmek yeni makine almak demektir.
+
+## Seçim için elinizde olması gereken beş sayı
+
+Teklif isterken şu beşini verirseniz doğru boyutlandırma tek turda biter:
+
+| Parametre | Neden gerekli |
+|---|---|
+| Sac kalınlığı ve cinsi | Tutma kuvveti ve baskı ayarı |
+| Şerit genişliği | Silindir boyu ve gövde seçimi |
+| Adım boyu (min–maks) | Tepe hız hesabı |
+| Pres strok/dakika | Tepe hız hesabı |
+| Rulo ağırlığı | Açıcı kapasitesi ve hat yerleşimi |
+
+Rulo ağırlığını bilmiyorsanız [rulo hesaplayıcısıyla](/hesaplayicilar) çıkarabilirsiniz; yöntemi [rulo ağırlığı ve uzunluğu hesabı](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) yazısında anlattık.
+
+## Sonuç
+
+Servo besleyici seçimi tek bir katalog değerine bakarak yapılmaz. Belirleyici olan üç şey var: **tepe hızın hattınıza yetmesi**, **baskının malzemenize doğru ayarlanabilmesi** ve **presle senkronun (pilot pim dahil) tam kurulması**.
+
+Ürün detayları için [servo sürücüler](/makineler/servo-suruculer) sayfasına bakabilir, yukarıdaki beş sayıyla [teklif alabilirsiniz](/teklif-al) — mühendislik ekibimiz hattınıza göre boyutlandırıp dönsün.

@@ -1,6 +1,6 @@
 ---
 title: "Solar Profil Üretim Hattı: Yatırım Geri Dönüşü Nasıl Hesaplanır?"
-description: "Solar profil hattı ne zaman mantıklı? Yatırım eşiği, yıllık kapasite, ton başına katma değer ve geri ödeme hesabı — adım adım."
+description: "Solar profil hattı ne zaman mantıklı? Yatırım eşiği, yıllık kapasite, ton başına katma değer ve geri ödeme hesabı — örnekli anlatım."
 date: "2026-07-30"
 author: "Servosteel Mühendislik"
 cover: "/gorseller/solar-profil.jpg"
@@ -63,6 +63,36 @@ Yani kazandığınız şey, profil tedarikçisinin marjı ile kendi dönüşüm 
 ### 4. Yıllık işletme gideri
 Operatör ve bakım personeli, enerji, sarf, merdane bakımı/yenileme, yedek parça ve amortisman dışı kalemler.
 
+## Örnek hesap: sayıları yerine koyalım
+
+Aşağıdaki değerler **örnektir** — kendi rakamlarınızı koyarak aynı iskeleti kullanın. Amaç sonucu değil, **hangi değişkenin sonucu nasıl oynattığını** görmek.
+
+**Varsayımlar:**
+
+| Değişken | Örnek değer |
+|---|---|
+| Hat hızı | 15 m/dk |
+| Metre ağırlığı (C profil) | 4 kg/m |
+| Vardiya | 2 × 8 saat, 250 gün |
+| Doluluk oranı | %60 |
+
+**Yıllık üretim:**
+
+```
+Çalışma dakikası = 2 × 8 × 60 × 250 = 240.000 dk
+Yıllık ton = 15 × 240.000 × 0,60 × 4 ÷ 1000 = 8.640 ton
+```
+
+Doluluk oranının etkisine dikkat edin: %60 yerine %75 çalışabilseniz üretim 10.800 tona çıkardı — **aynı hat, aynı vardiya, %25 daha fazla çıktı.** Bu farkı yaratan tek şey profil değişim süresidir. Hızlı kaset değişimi düzeneğinin kendini burada amorti ettiğini görmek zor değil.
+
+**Geri ödeme:** ton başına katma değeriniz X, yıllık işletme gideriniz Y ise:
+
+```
+Geri ödeme = Toplam yatırım ÷ (8.640 × X − Y)
+```
+
+Bu noktada hesabı bitirmek yerine **duyarlılık analizi** yapın: katma değer %20 düşerse geri ödeme kaç yıla çıkıyor? Doluluk %45'e inerse hâlâ mantıklı mı? Karar, en iyi senaryoda değil **kötü senaryoda hâlâ ayakta duruyorsa** sağlamdır.
+
 ## Rakamları en çok neler oynatır?
 
 | Değişken | Etkisi |
@@ -75,6 +105,12 @@ Operatör ve bakım personeli, enerji, sarf, merdane bakımı/yenileme, yedek pa
 
 Son madde önemsiz görünür ama değildir: merdaneler sertleştirilmemişse ölçü kayması ve erken yenileme, hesabı sessizce bozar. Servosteel merdaneleri **4140 alaşımlı çelikten** üretilir ve **58–60 HRC** sertliğe getirilir.
 
+## Gözden kaçan iki maliyet
+
+**Rulo sac fire oranı.** Hesaba giren "rulo sac maliyeti" satın aldığınız tonaj üzerindendir, ürettiğiniz üzerinden değil. Ana rulo genişliği profil açınımınıza tam bölünmüyorsa aradaki fark her rulodan kesilir. Kendi ölçülerinizle [fire oranını hesaplayabilir](/hesaplayicilar), yıllık tonaja çevirdiğinizde büyüklüğünü görebilirsiniz.
+
+**Rulo değişim duruşu.** Açıcı kapasiteniz düşükse hat daha sık durur ve bu doğrudan doluluk oranına yazılır. Rulonuzun kaç saat yeteceğini [hesaplayıcıdan](/hesaplayicilar) çıkarabilirsiniz; yöntemi [rulo ağırlığı ve uzunluğu hesabı](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) yazısında anlattık. Hidrolik açıcı ve yükleme arabası bu kalemi doğrudan azaltır — [hidrolik mi mekanik mi](/karsilastirma/hidrolik-vs-mekanik-acici) karşılaştırmasına bakabilirsiniz.
+
 ## Karar öncesi kontrol listesi
 
 - [ ] Önümüzdeki 3 yılın **MW cinsinden** proje hattı belli mi?
@@ -84,6 +120,7 @@ Son madde önemsiz görünür ama değildir: merdaneler sertleştirilmemişse ö
 - [ ] Rulo sac tedarikiniz güvence altında mı (fiyat ve süreklilik)?
 - [ ] Operatör ve bakım kadrosu planlandı mı?
 - [ ] Teklifte merdane seti, devreye alma ve eğitim dahil mi?
+- [ ] Katma değer %20 düşse hesap hâlâ tutuyor mu?
 
 ## Nereden başlanır?
 
@@ -95,4 +132,4 @@ Projenize özel kapasite ve yerleşim çalışması için [teklif alın](/teklif
 
 ---
 
-*Not: Bu yazıdaki pazar büyüklüğü ve eşik değerleri kamuya açık sektör kaynaklarına dayanan genel referanslardır; yatırım kararı kendi maliyet ve tedarik verilerinizle doğrulanmalıdır.*
+*Not: Bu yazıdaki pazar büyüklüğü ve eşik değerleri kamuya açık sektör kaynaklarına dayanan genel referanslardır; örnek hesaptaki hız, ağırlık ve doluluk değerleri gösterim amaçlıdır. Yatırım kararı kendi maliyet ve tedarik verilerinizle doğrulanmalıdır.*

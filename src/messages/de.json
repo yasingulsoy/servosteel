@@ -58,7 +58,6 @@
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
     "cta2": "Anlagen entdecken",
-    "measure": "±0,1 mm",
     "stats": [
       { "value": "10+", "label": "Jahre Erfahrung" },
       { "value": "48+", "label": "Exportländer" },
@@ -1298,7 +1297,7 @@
             ["Materialbreite", "40 – 1.300 mm"],
             ["Materialstärke", "0,5 – 4,0 mm"],
             ["Freie Geschwindigkeit", "40 m/min"],
-            ["Vorschubgenauigkeit", "± 0,1 mm"],
+            ["Vorschubgenauigkeit", "−0,1 mm"],
             ["Bundgewicht", "2.500 – 10.000 kg"],
             ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
             ["Vorschubwalzen", "2 + 2"],

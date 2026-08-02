@@ -63,6 +63,36 @@ Amit nyernek, az a beszállító árrése és a saját átalakítási költség�
 ### 4. Éves üzemeltetési költség
 Kezelők és karbantartók, energia, fogyóanyagok, görgőkarbantartás és -utánköszörülés, pótalkatrészek, valamint az amortizáción kívüli tételek.
 
+## Kidolgozott példa: tegyük be a számokat
+
+Az alábbi értékek **szemléltető jellegűek** — használja ugyanezt a vázat a saját számaival. Nem az eredmény a lényeg, hanem az, hogy lássa, **melyik változó mennyire mozgatja az eredményt.**
+
+**Feltevések:**
+
+| Változó | Példaérték |
+|---|---|
+| Sorsebesség | 15 m/perc |
+| Métersúly (C profil) | 4 kg/m |
+| Műszakok | 2 × 8 óra, 250 nap |
+| Kihasználtság | 60 % |
+
+**Éves termelés:**
+
+```
+Üzemi percek = 2 × 8 × 60 × 250 = 240 000 perc
+Éves tonna = 15 × 240 000 × 0,60 × 4 ÷ 1000 = 8 640 t
+```
+
+Figyelje a kihasználtság hatását: 60 % helyett 75 %-kal 10 800 tonna jönne ki — **ugyanaz a sor, ugyanazok a műszakok, 25 %-kal több kibocsátás.** Ezt a különbséget kizárólag az átállási idő okozza. Nem nehéz belátni, hogy a gyorscserés kazetta itt megtérül.
+
+**Megtérülés:** ha a tonnánkénti hozzáadott érték X, az éves üzemeltetési költség Y:
+
+```
+Megtérülés = Teljes beruházás ÷ (8 640 × X − Y)
+```
+
+Ne álljon meg ennél a számnál, hanem végezzen **érzékenységvizsgálatot**: ha a hozzáadott érték 20 %-kal esik, hány évre nő a megtérülés? 45 %-os kihasználtságnál is van értelme? A döntés akkor szilárd, ha a **rossz** forgatókönyvet is kiállja, nem a legjobbat.
+
 ## Mi mozgatja leginkább a számokat?
 
 | Változó | Hatás |
@@ -75,6 +105,12 @@ Kezelők és karbantartók, energia, fogyóanyagok, görgőkarbantartás és -ut
 
 Az utolsó pont jelentéktelennek tűnik, pedig nem az: ha a görgők nincsenek megfelelően edzve, a méretelcsúszás és a korai csere csendben tönkreteszi a számítást. A Servosteel görgői **4140 ötvözött acélból** készülnek és **58–60 HRC** keménységre edzettek.
 
+## Két költség, ami elsikkad
+
+**Tekercs hulladékarány.** A számításba kerülő „tekercsköltség" a megvásárolt tonnára vonatkozik, nem a legyártottra. Ha az anyatekercs szélessége nem osztható tisztán a profil kiterítési szélességére, a különbség minden tekercsnél elvész. Saját méreteivel [kiszámíthatja a hulladékarányt](/hesaplayicilar), és éves tonnára átszámítva láthatja a nagyságrendjét.
+
+**Tekercscsere-állásidő.** Ha a lecsévélő kapacitása alacsony, a sor gyakrabban áll, és ez közvetlenül a kihasználtságba íródik. Azt, hogy egy tekercs hány órát bír, a [kalkulátorból](/hesaplayicilar) tudhatja meg; a módszert a [tekercssúly és szalaghossz számítása](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) cikkben írtuk le. A hidraulikus lecsévélő betöltőkocsival közvetlenül csökkenti ezt a tételt — lásd a [hidraulikus vs mechanikus](/karsilastirma/hidrolik-vs-mekanik-acici) összehasonlítást.
+
 ## Ellenőrzőlista a döntés előtt
 
 - [ ] Meghatározott-e a következő 3 év portfóliója **MW-ban**?
@@ -84,6 +120,7 @@ Az utolsó pont jelentéktelennek tűnik, pedig nem az: ha a görgők nincsenek 
 - [ ] Biztosított-e a tekercsellátás (ár és folyamatosság)?
 - [ ] Tervezve van-e a kezelői és karbantartói létszám?
 - [ ] Tartalmazza-e az ajánlat a görgőkészletet, az üzembe helyezést és a betanítást?
+- [ ] Kijön-e a számítás akkor is, ha a hozzáadott érték 20 %-kal esik?
 
 ## Hol kezdjük?
 

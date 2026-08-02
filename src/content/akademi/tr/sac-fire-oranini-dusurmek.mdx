@@ -1,0 +1,116 @@
+---
+title: "Sac Fire Oranını Düşürmenin 6 Yolu"
+description: "Dilme ve pres hatlarında fire nereden doğar, nasıl ölçülür ve hangi müdahalelerle düşer — örnek hesaplarla pratik rehber."
+date: "2026-08-03"
+author: "Servosteel Mühendislik"
+cover: "/gorseller/dilme-hatlari.jpg"
+tags: ["fire oranı", "sac işleme", "verimlilik"]
+---
+
+Sac işleyen bir tesiste en büyük gider kalemi makine değil **malzemedir**. Ve malzemenin bir kısmı hiçbir zaman ürüne dönüşmez: kenar traşı, artan şerit, kalıp arası boşluk, hat başı ve sonu. Bu kayıp genellikle "normal" sayılır ve ölçülmez.
+
+Oysa yıllık tonaja çevrildiğinde fire, çoğu tesiste **hattın kendisinden daha büyük** bir kalemdir. Bu yazı firenin nereden doğduğunu ve hangi müdahalelerin gerçekten işe yaradığını ele alıyor.
+
+## Önce ölçün: fire oranınızı bilmiyorsanız düşüremezsiniz
+
+Basit tanım:
+
+```
+Fire oranı (%) = (Satın alınan ton − Ürüne dönüşen ton) ÷ Satın alınan ton × 100
+```
+
+Çoğu tesis bu sayıyı bilmez çünkü hurda satışı ayrı bir hesapta izlenir ve "geliri" fireyi psikolojik olarak telafi eder. Ama hurda, sacı aldığınız fiyatın çok altına satılır — aradaki fark net kayıptır.
+
+Ölçmeye başlamak için tek bir ay yeterlidir: giren rulo tonajı, çıkan ürün tonajı, satılan hurda tonajı. Üçü toplandığında tablo ortaya çıkar.
+
+## 1. Şerit genişliğini rulo genişliğine göre seçin
+
+Dilme hattında firenin en büyük ve en kolay düzeltilen kaynağı budur. Ana rulo genişliği şerit genişliğine tam bölünmüyorsa, artan kısım her rulodan kesilir.
+
+**Örnek:** 1.250 mm rulodan 120 mm şerit kesiyorsunuz, kenar traşı toplam 10 mm.
+
+```
+Kullanılabilir : 1.250 − 10 = 1.240 mm
+Sığan şerit    : 1.240 ÷ 120 = 10,33 → 10 adet
+Kullanılan     : 10 × 120 = 1.200 mm
+Artan          : 1.240 − 1.200 = 40 mm
+Toplam fire    : 10 + 40 = 50 mm → %4,0
+```
+
+Şimdi şerit genişliğini **124 mm**'ye çıkaralım:
+
+```
+Sığan şerit : 1.240 ÷ 124 = 10,0 → 10 adet
+Kullanılan  : 1.240 mm
+Toplam fire : 10 mm → %0,8
+```
+
+Aynı rulo, aynı şerit sayısı, **fire beşte bire indi.** Tek değişen şerit genişliğinin rulo genişliğine oturtulması.
+
+Bu her zaman mümkün değildir — müşteri ölçüsü sabitse şerit genişliği pazarlık konusu olmaz. Ama **rulo genişliği** çoğu zaman pazarlık konusudur. Tedarikçinizden 1.250 yerine 1.240 mm istemek, aynı sonucu ters yönden verir.
+
+Kendi ölçülerinizi [dilme verimi hesaplayıcısında](/hesaplayicilar) deneyin; birkaç kombinasyon çevirdiğinizde hangi genişliğin oturduğunu görürsünüz.
+
+## 2. Kenar traşını gerçekten gerektiği kadar yapın
+
+Kenar traşı zorunludur: rulo kenarı hadde kaynaklı çatlak ve düzensizlik taşır. Ama traş miktarı çoğu tesiste **alışkanlıkla** belirlenir, ölçümle değil.
+
+10 mm yerine 6 mm traş, 1.250 mm rulodan yılda binlerce metrekare kazandırır. Doğru miktar malzemeye ve tedarikçiye göre değişir — kenar kalitesi iyi bir tedarikçide daha az traş yeter.
+
+Pratik yöntem: birkaç rulodan azaltılmış traşla numune alın, kenar kalitesini kontrol edin, kabul edilebilir en düşük değeri standart yapın.
+
+## 3. Progresif kalıpta şerit yerleşimini optimize edin
+
+Pres tarafında firenin kaynağı farklıdır: parçalar arası boşluk ve şerit kenarındaki artık.
+
+**İç içe geçmiş (nested) yerleşim** burada en güçlü araçtır. Parçalar düz sıra yerine kaydırılarak veya döndürülerek dizildiğinde aynı şeritten daha çok parça çıkar. Bedeli daha karmaşık bir kalıptır — ama kalıp bir kez ödenir, fire her vuruşta ödenir.
+
+Karar basit bir karşılaştırmadır: yerleşim değişikliğinin kalıba ekleyeceği maliyet ile, yıllık tonajda kazanılacak malzeme. Yüksek adetli işlerde nested yerleşim neredeyse her zaman kazanır.
+
+Konuyu [progresif kalıp ve servo besleyici](/akademi/progresif-kalip-servo-besleyici-secimi) yazısında da ele aldık.
+
+## 4. Hat başı ve sonu kayıplarını azaltın
+
+Her rulo değişiminde hattın başı ve sonu fire verir: yeni rulo hatta sürülürken, eski rulonun kuyruğu boşalırken. Bu kayıp **rulo başınadır** — yani rulo ne kadar küçükse, toplam kayıp o kadar büyür.
+
+Sayısal örnek: her rulo değişiminde 8 metre kayıp varsa,
+
+- **3 tonluk rulo** (yaklaşık 150 m) → kayıp %5,3
+- **10 tonluk rulo** (yaklaşık 500 m) → kayıp %1,6
+
+Aynı hat, aynı operatör, **üç kattan fazla fark.** Ağır rulo kullanmak yalnızca duruş süresini değil, doğrudan fireyi de düşürür.
+
+Rulonuzun kaç metre olduğunu [rulo hesaplayıcısından](/hesaplayicilar) çıkarabilirsiniz; yöntemi [rulo ağırlığı ve uzunluğu hesabı](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) yazısında anlattık.
+
+Kaynak yapma (welder) ünitesi olan hatlarda bu kayıp neredeyse sıfırlanır: yeni rulonun başı eskinin kuyruğuna kaynatılır, hat hiç boşalmaz.
+
+## 5. Kalınlık toleransını hesaba katın
+
+Sac tedarikçinizden gelen malzeme nominal kalınlıkta değildir; ±%5'e varan tolerans normaldir. Ton üzerinden satın alıp **metre** üzerinden ürettiğiniz için bu doğrudan cebinizi etkiler.
+
+2 mm sipariş edip 2,1 mm gelen sacda, aynı tonajdan **%5 daha az metre** çıkar. Ürün adediniz ton başına düşer, birim maliyetiniz yükselir — ve bu genellikle "fire" olarak bile kaydedilmez, sadece verim düşüklüğü olarak görünür.
+
+Gelen malzemeyi periyodik ölçün. Tolerans sürekli artı yönde sapıyorsa, tedarikçiyle konuşulacak somut bir veriniz var demektir.
+
+## 6. Doğru kesme parametreleriyle ikinci kalite üretmeyin
+
+Fire yalnızca kesilip atılan malzeme değildir. Çapaklı kenar, ezik yüzey veya tolerans dışı parça da firedir — üstelik üzerine işçilik ve enerji harcanmış firedir.
+
+Dilme tarafında bunun kaynağı genellikle **bıçak boşluğudur**: sac kalınlığına göre ayarlanmamış boşluk çapak yapar. Pres tarafında ise besleme adımının kayması, kalıp ve zımba merkezini bozar.
+
+Bu iki ayar doğru yapıldığında ikinci kalite üretimi belirgin biçimde azalır — ve bu, yukarıdaki beş maddenin hepsinden daha ucuz bir müdahaledir, çünkü yalnızca ayar gerektirir.
+
+## Özet: nereden başlanır?
+
+| Müdahale | Zorluk | Etki |
+|---|---|---|
+| Şerit/rulo genişliği eşleştirme | Düşük | Çok yüksek |
+| Kenar traşını ölçümle belirleme | Düşük | Orta |
+| Bıçak boşluğu ve besleme ayarı | Düşük | Orta |
+| Kalınlık toleransı takibi | Orta | Orta |
+| Ağır rulo + yükleme arabası | Orta | Yüksek |
+| Nested şerit yerleşimi | Yüksek | Yüksek |
+
+İlk üçü **yatırım gerektirmez** — sadece ölçüm ve ayar ister. Fire oranınızı bir ay ölçüp bu üçünü uygularsanız, çoğu tesis ilk çeyrekte fark eder.
+
+Kendi ölçülerinizle denemek için [hesaplama araçlarına](/hesaplayicilar) bakabilir, hat boyutlandırması konuşmak isterseniz [bize yazabilirsiniz](/iletisim).

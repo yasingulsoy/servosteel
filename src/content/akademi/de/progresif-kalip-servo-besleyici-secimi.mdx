@@ -1,69 +1,94 @@
 ---
 title: "Den richtigen Servovorschub für ein Folgeverbundwerkzeug wählen"
-description: "6 Kriterien für die Wahl des Servovorschubs am Folgeverbundwerkzeug: Schrittgenauigkeit, Schrittmaß, Materialstärke, Rezeptspeicher."
+description: "6 Kriterien für die Wahl des Servovorschubs am Folgeverbundwerkzeug: Schrittgenauigkeit, Fehlerakkumulation, Pilotfreigabe, Richten, Rezeptspeicher."
 date: "2026-07-30"
 author: "Servosteel Engineering"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["Folgeverbundwerkzeug", "Servovorschub", "Pressenzuführung"]
 ---
 
-Im Folgeverbundwerkzeug entsteht das Teil nicht an einer einzigen Station: Mit jedem Pressenhub rückt der Streifen um eine Station weiter und wird nacheinander gelocht, geschnitten und umgeformt. Deshalb entscheidet über die Leistung des Werkzeugs oft nicht das Werkzeug selbst, sondern **der Vorschub, der den Streifen bewegt.** Weicht das Schrittmaß um wenige Hundertstel Millimeter ab, läuft der Stempel aus der Mitte, es entsteht Grat — im schlimmsten Fall nimmt das Werkzeug Schaden.
+Im Folgeverbundwerkzeug entsteht das Teil nicht an einer Station: Das Band rückt mit jedem Pressenhub um eine Station vor und wird nacheinander gelocht, geschnitten und gebogen. Deshalb bestimmt die Leistung des Werkzeugs oft nicht das Werkzeug selbst, sondern **der Vorschub, der das Band bewegt.** Driftet der Schritt um wenige Hundertstel Millimeter, läuft der Stempel aus der Mitte, es entsteht Grat und im schlimmsten Fall wird das Werkzeug beschädigt.
 
-Die folgenden 6 Kriterien fassen zusammen, was Sie bei der Auswahl eines Vorschubs für Ihr Folgeverbundwerkzeug klären sollten.
+Die folgenden 6 Kriterien fassen zusammen, was bei der Vorschubwahl für Ihr Folgeverbundwerkzeug zu klären ist. Die allgemeine Auswahl behandeln wir in einem [eigenen Leitfaden](/akademi/servo-besleyici-nasil-secilir); hier geht es um das, was für Folgeverbundwerkzeuge spezifisch ist.
 
-## 1. Schrittgenauigkeit — die entscheidende Zahl
+## 1. Schrittgenauigkeit — die kritischste Zahl
 
-Ein Folgeverbundwerkzeug verzeiht keine kumulierten Fehler: Eine kleine Abweichung, die sich an jeder Station wiederholt, wird an der letzten zur Gesamtverschiebung. Der erste Wert, auf den Sie schauen sollten, ist daher die **Vorschubgenauigkeit.**
+Im Folgeverbund verzeiht akkumulierter Fehler nichts: Eine an jeder Station wiederholte kleine Abweichung wird an der letzten zur Gesamtverschiebung. Deshalb ist der erste Wert die **Vorschubgenauigkeit.**
 
-Bei Servosteel-Servovorschüben liegt die Vorschubgenauigkeit bei **± 0,1 mm**. Bewerten Sie diesen Wert zusammen mit der Stationsanzahl, wenn Sie Ihr Toleranzbudget aufstellen.
+Eine einzelne Katalogzahl zur Genauigkeit sagt für sich genommen wenig — fragen Sie nach, **bei welcher Dicke und Breite sie gemessen wurde**; derselbe Vorschub hält bei 4 mm womöglich nicht, was er bei 0,5 mm zeigt. Bei Servosteel ist der Wert für [Kompaktanlagen](/makineler/kompakt-hatlar) dokumentiert; beim Einzelvorschub legen wir die Zielgenauigkeit gemeinsam anhand des Toleranzbudgets und der Stationszahl Ihres Werkzeugs fest.
 
-## 2. Schrittmaß und Stationsanzahl
+Zwei Fehlerarten sind zu unterscheiden, denn ihre Folgen sind völlig verschieden:
 
-Der Stationsabstand (Schrittmaß) ist die Strecke, die der Vorschub bei jedem Hub zurücklegen muss. Ein großes Schrittmaß bei hoher Hubzahl verlangt vom Vorschub höhere Geschwindigkeit und härtere Beschleunigung.
+**Zufälliger Fehler.** Er weicht bei jedem Hub nach plus und minus ab und mittelt sich zu null. Die Löcher im Band verschieben sich mal nach vorn, mal nach hinten; statistisch akkumuliert er nicht, einzelne Teile können dennoch aus der Toleranz fallen.
 
-Geben Sie bei der Anfrage diese drei Angaben gemeinsam an: **Schrittmaß, Stationsanzahl und Hübe pro Minute.** Danach wird der Vorschub ausgelegt.
+**Systematischer Fehler.** Er weicht bei jedem Hub in dieselbe Richtung ab — ist etwa die Rollenanpressung zu gering, bleibt das Band bei jedem Schritt 0,05 mm zurück. Bei einem Zehn-Stationen-Werkzeug sind das 0,5 mm Gesamtverschiebung, und das reicht, um **das Werkzeug zu blockieren**.
+
+Der zweite ist der gefährliche, und seine Ursache liegt meist nicht im Vorschub, sondern in seiner Einstellung: zu wenig Druck, verschlissene Rollenoberfläche oder öliges Band. Pilotstifte fangen einen Teil dieser Drift auf, aber **ihre Aufnahmefähigkeit ist begrenzt** — übersteigt der systematische Fehler das Pilotspiel, bricht ein Stift.
+
+## 2. Schrittmaß und Stationszahl
+
+Die Stationsteilung ist die Strecke, die der Vorschub bei jedem Hub zurücklegen muss. Langes Schrittmaß plus hohe Hubzahl verlangt vom Vorschub höhere Geschwindigkeit und härtere Beschleunigung.
+
+Die Falle ist der Blick auf die mittlere Geschwindigkeit. 60 mm Schritt bei 60 Hüben/min ergeben im Mittel nur 3,6 m/min — das klingt sehr langsam. Doch der Vorschub muss diese 60 mm in dem Fenster liefern, in dem die Presse offen ist, und das ist ein Bruchteil einer Sekunde. Die erforderliche **momentane Spitzengeschwindigkeit** liegt um ein Vielfaches darüber.
+
+Geben Sie bei der Anfrage diese drei zusammen an: **Schrittmaß, Stationszahl und Pressenhübe pro Minute.** Danach wird der Vorschub ausgelegt.
 
 ## 3. Materialstärke und Bandbreite
 
-Dickeres Material erfordert höhere Klemmkraft, breiteres Material längere Walzen. Servosteel-Servovorschübe verarbeiten **0,4 – 4,0 mm** Stärke und Breiten **bis 1.600 mm**, mit Vorschubwalzen 2 × Ø85 mm.
+Dickes Material braucht höhere Haltekraft, breites längere Rollen. Servosteel-Servovorschübe arbeiten mit **0,4 – 4,0 mm** Dicke und Breiten **bis 1.600 mm**; die Vorschubrollen sind 2 × Ø85 mm.
 
-Die freie Vorschubgeschwindigkeit beträgt **35 m/min** — prüfen Sie, ob sie zu Ihrer Hubzahl passt.
+Die freie Vorschubgeschwindigkeit beträgt **35 m/min** — ob das zu Ihrer Hubzahl passt, muss gerechnet werden.
 
-## 4. Pressensynchronisation und Pilotfreigabe
+Im Folgeverbund hängt die Breitenwahl zusätzlich vom **Bandlayout** ab. Nicht nur die Teilezeichnung zählt, sondern auch die Anordnung der Teile auf dem Band: eine verschachtelte (nested) Anordnung senkt den Verschnitt deutlich, verlangt aber breiteres Band und ein komplexeres Werkzeug. Diese Entscheidung fällt vor der Vorschubwahl, denn die Bandbreite bestimmt die Baugröße.
 
-Ein Vorschub kann nicht unabhängig von der Presse arbeiten. Er muss **vollständig synchron** zum Pressen-Nockensignal laufen und den Streifen freigeben, sobald die Suchstifte des Werkzeugs greifen (Pilotfreigabe). Ohne diese Funktion arbeiten die Suchstifte gegen den Streifen, und die Lochpositionen verschieben sich.
+## 4. Pressensynchronisation und Pilotstifte
 
-Bei Servosteel-Vorschüben ist die Pilotfreigabe Standard.
+Der Vorschub kann nicht unabhängig von der Presse arbeiten. Er muss **voll synchron** zum Nockensignal laufen und in dem Moment loslassen, in dem die Pilotstifte des Werkzeugs das Band fassen (Pilotfreigabe). Ohne diese Funktion zwingen die Stifte das Band, und die Lochpositionen verschieben sich.
 
-## 5. Die Richtfrage nicht überspringen
+Der Ablauf: Der Vorschub setzt den Schritt und hält; die Presse fährt nieder; die Pilotstifte treten in die Führungslöcher und ziehen das Band im letzten Zehntelmillimeter exakt in Position; **genau dann** öffnet der Vorschub die Anpressung. Zu frühe Freigabe lässt das Band frei; zu späte lässt Stift und Vorschub gegeneinander arbeiten.
 
-Die Krümmungsmemory (Coil-Set) des vom Bund kommenden Streifens verursacht im Folgeverbundwerkzeug unmittelbar Probleme: Läuft der Streifen nicht plan ins Werkzeug, stimmt die Stationsausrichtung nicht mehr. Bei engen Toleranzen sollten Sie den Vorschub gemeinsam mit einer Richteinheit betrachten.
+Deshalb ist die Pilotfreigabe keine reine Ja/Nein-Frage — sie muss **einstellbar** sein. Bei verschiedenen Werkzeugen treten die Stifte bei unterschiedlichen Pressenwinkeln ein.
 
-Statt eine separate Maschine zu kaufen, kann ein [Richt-Servovorschub](/makineler/dogrultmali-servo-suruculer) gewählt werden — Richten und Vorschub in einem Gehäuse, je nach Materialstärke mit 7/9/11/13 Walzen konfiguriert.
+Bei Servosteel-Vorschüben ist die Pilotfreigabe serienmäßig.
 
-## 6. Rezeptspeicher — Alltag in Werkzeugbetrieben
+## 5. Den Richtbedarf nicht übersehen
 
-In einem Betrieb läuft selten nur ein Werkzeug. Schrittmaß, Geschwindigkeit und Rampenwerte bei jedem Werkzeugwechsel neu einzugeben kostet Zeit und ist fehleranfällig.
+Der Coil-Set des vom Bund kommenden Bandes macht im Folgeverbund unmittelbar Probleme: Läuft das Band nicht eben ein, geht die Stationsflucht verloren. Bei hohen Anforderungen sollten Sie Vorschub und Richtapparat zusammen denken.
 
-Servosteel-Vorschübe speichern **250 Rezepte**; beim Werkzeugwechsel ruft der Bediener das Rezept ab, statt die Einstellung zu wiederholen.
+Im Folgeverbund wiegt das Richten schwerer als bei Einzelstationsarbeit. Der Grund: Das Band wird im Werkzeug über eine lange Strecke geführt und muss an jeder Station seine Lage halten. Gekrümmtes Band hebt im Werkzeug ab, schleift am Abstreifer und läuft mit jedem Schritt weiter aus der Flucht. Eine Krümmung, die bei einer Einzelstation unbemerkt bliebe, führt im Zehn-Stationen-Werkzeug zum Ausschuss.
+
+Statt einer separaten Maschine kann ein [Richt-Servovorschub](/makineler/dogrultmali-servo-suruculer) gewählt werden — Richten und Vorschub in einem Rahmen, mit 7/9/11/13 Rollen je nach Blechdicke konfiguriert.
+
+## 6. Rezeptspeicher — die Realität von Werkstätten mit vielen Werkzeugen
+
+In einer Werkstatt läuft selten nur ein Werkzeug. Bei jedem Wechsel Schrittmaß, Geschwindigkeit und Rampe neu einzugeben, kostet Zeit und erzeugt Fehler.
+
+Servosteel-Vorschübe speichern **250 Rezepte**; beim Werkzeugwechsel ruft der Bediener das Rezept auf, es wird nichts neu eingerichtet.
+
+Der eigentliche Gewinn ist nicht Zeit, sondern **Wiederholbarkeit**. Von Hand eingestellt, kann dasselbe Werkzeug in zwei Schichten mit zwei verschiedenen Werten laufen; die Teilemaße schwanken dann je Schicht, und die Ursache bleibt monatelang unentdeckt. Ein Rezept beseitigt diese Variable vollständig.
 
 ## Referenzwerte
 
 | Merkmal | Wert |
 |---|---|
-| Vorschubgenauigkeit | ± 0,1 mm |
 | Materialstärke | 0,4 – 4,0 mm |
 | Bandbreite | ≤ 1.600 mm |
 | Freie Vorschubgeschwindigkeit | 35 m/min |
-| Vorschubwalzen | 2 × Ø85 mm |
+| Vorschubrollen | 2 × Ø85 mm |
 | Werkzeugspeicher | 250 Rezepte |
+
+Ihr Coilgewicht und die Laufzeit eines Coils ermitteln Sie auf der Seite [Rechner](/hesaplayicilar); die Methode erklären wir in [Coilgewicht und Bandlänge berechnen](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
 
 ## Warum Werkzeug und Vorschub aus einer Hand zählen
 
-Ein Folgeverbundwerkzeug und sein Vorschub sind zwei voneinander abhängige Teile: Schrittmaßtoleranz, Timing der Pilotfreigabe und Streifenlayout passen nur, wenn sie gemeinsam konstruiert werden. Kommen sie von verschiedenen Lieferanten, verwischt die Verantwortung — der Werkzeugbauer zeigt auf den Vorschub, der Vorschubhersteller auf das Werkzeug.
+Folgeverbundwerkzeug und Vorschub sind zwei voneinander abhängige Teile: Schritttoleranz, Freigabezeitpunkt und Bandlayout passen nur zusammen, wenn sie gemeinsam ausgelegt werden. Von verschiedenen Lieferanten bezogen, verschwimmt die Verantwortungsgrenze — der Werkzeugbauer zeigt auf den Vorschub, der Vorschubhersteller auf das Werkzeug.
 
-Servosteel fertigt sowohl das [Folgeverbundwerkzeug](/makineler/kalip-ve-merdane) als auch den [Servovorschub](/makineler/servo-suruculer) im eigenen Werk; beide werden vom selben Team konstruiert.
+Der häufigste Streit in der Praxis: Die Teiletoleranz stimmt nicht. Der Werkzeugbauer sagt "der Vorschub verliert Schritt", der Vorschubhersteller sagt "das Pilotspiel des Werkzeugs ist zu groß". Beide zeigen ihre eigene Messung, und beide haben in ihrem Rahmen recht. Gelöst wird es nur, indem man beide an einen Tisch bringt — oder von vornherein aus einer Hand kauft.
+
+Servosteel fertigt sowohl das [Folgeverbundwerkzeug](/makineler/kalip-ve-merdane) als auch den [Servovorschub](/makineler/servo-suruculer) im eigenen Werk; beide werden vom selben Team projektiert.
 
 ## Fazit
 
-Halten Sie Ihre Teilezeichnung, das Schrittmaß des Werkzeugs und Ihre Hubzahl bereit — aus diesen drei Angaben wird der richtige Vorschub ausgelegt. [Fordern Sie ein Angebot an](/teklif-al), und wir melden uns anhand Ihrer Materialstärke und Streifenmaße.
+Drei Dinge entscheiden die Vorschubwahl am Folgeverbundwerkzeug: dass der **systematische Fehler unter dem Pilotspiel bleibt**, dass die **Spitzengeschwindigkeit das Pressenfenster abdeckt** und dass die **Pilotfreigabe einstellbar** ist.
+
+Halten Sie Teilezeichnung, Schrittmaß und Hubzahl bereit — daraus wird der richtige Vorschub ausgelegt. [Fordern Sie ein Angebot an](/teklif-al); wir melden uns anhand Ihrer Blechdicke und Bandmaße.

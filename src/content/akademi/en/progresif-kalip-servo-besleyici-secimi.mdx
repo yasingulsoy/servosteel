@@ -1,69 +1,94 @@
 ---
 title: "How to Choose the Right Servo Feeder for a Progressive Die"
-description: "6 criteria for choosing a servo feeder for a progressive die: pitch accuracy, pitch length, thickness, press sync and recipe memory."
+description: "6 criteria for choosing a servo feeder for a progressive die: pitch accuracy, error accumulation, pilot release timing, levelling and recipe memory."
 date: "2026-07-30"
 author: "Servosteel Engineering"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["progressive die", "servo feeder", "press feeding"]
 ---
 
-In a progressive die the part is not finished at a single station: with every press stroke the strip advances one station and is punched, cut and formed in sequence. That is why the performance of the die is often decided not by the die itself but by **the feeder that advances the strip.** If the pitch drifts by a few hundredths of a millimetre, the punch moves off centre, burrs appear and — in the worst case — the die is damaged.
+In a progressive die the part is not finished at one station: the strip advances one station with every press stroke and is punched, cut and formed in sequence. That is why what determines a die's performance is often not the die itself but **the feeder that advances the strip.** If the pitch drifts by a few hundredths of a millimetre, the punch moves off centre, burr appears and, in the worst case, the die is damaged.
 
-The 6 criteria below summarise what to clarify when selecting a feeder for your progressive die.
+The 6 criteria below summarise what to settle when choosing a feeder for your progressive die. General servo feeder selection is covered in [a separate guide](/akademi/servo-besleyici-nasil-secilir); here we focus on what is specific to progressive dies.
 
-## 1. Pitch accuracy — the critical number
+## 1. Pitch accuracy — the most critical figure
 
-A progressive die does not forgive accumulated error: a small deviation repeated at every station becomes a total shift at the last one. So the first figure to look at is **feed accuracy.**
+In a progressive die accumulated error is unforgiving: a small deviation repeated at every station becomes a total shift by the last one. This is why the first value to look at is **feeding accuracy.**
 
-On Servosteel servo feeders, feed accuracy is **± 0.1 mm**. When you calculate your die's tolerance budget, weigh this value together with the number of stations.
+A single accuracy figure in a catalogue means little on its own — you should ask **at what thickness and width it was measured**; the same feeder may not hold on 4 mm what it shows on 0.5 mm. At Servosteel the feeder accuracy figure is documented for [compact lines](/makineler/kompakt-hatlar); for a standalone feeder we set the target accuracy together with you, from your die's tolerance budget and station count.
 
-## 2. Pitch length and station count
+Two kinds of error must be separated here, because their consequences differ entirely:
 
-The die's station spacing (pitch) is the distance the feeder must advance on every stroke. A long pitch combined with a high stroke rate demands higher speed and harder acceleration from the feeder.
+**Random error.** It deviates plus and minus on each stroke and averages to zero. Holes on the strip shift slightly forward and back; statistically it does not accumulate, but individual parts can still fall out of tolerance.
 
-At the quotation stage, provide these three together: **pitch length, number of stations and press strokes per minute.** The feeder is sized against that trio.
+**Systematic error.** It deviates in the same direction on every stroke — for example, if roller pressure is insufficient the strip falls 0.05 mm short at every step. Across a ten-station die that means a total shift of 0.5 mm, which reaches the point of **jamming the die**.
+
+The second is the dangerous one, and its source is usually not the feeder but its setup: low pressure, worn roller surface or oily strip. Pilot pins absorb part of this drift, but **there is a limit to what pins can absorb** — once systematic error exceeds pilot clearance, a pin breaks.
+
+## 2. Pitch length and number of stations
+
+The die's station pitch is the distance the feeder must advance on every stroke. A long pitch combined with a high stroke rate demands higher speed and harder acceleration from the feeder.
+
+The trap here is looking at average speed. A 60 mm pitch at 60 strokes/min averages only 3.6 m/min — which sounds very slow. But the feeder must deliver those 60 mm inside the window when the press is open, and that window is a small fraction of a second. The **instantaneous peak speed** required is many times the average.
+
+Give these three together at quotation stage: **pitch length, number of stations and press strokes per minute.** The feeder is sized from that trio.
 
 ## 3. Sheet thickness and width
 
-Thicker sheet requires higher grip force; wider sheet requires longer rolls. Servosteel servo feeders handle **0.4 – 4.0 mm** thickness and widths **up to 1,600 mm**, with 2 × Ø85 mm feed rolls.
+Thick material needs higher holding force, wide material needs longer rollers. Servosteel servo feeders work with **0.4 – 4.0 mm** thickness and widths **up to 1,600 mm**; the feed rollers are 2 × Ø85 mm.
 
-Free feed speed is **35 m/min** — check that it matches your press rate.
+Free feeding speed is **35 m/min** — whether that suits your press rate has to be calculated.
 
-## 4. Press synchronisation and pilot release
+In a progressive die, width selection also depends on **strip layout**. The part drawing matters, but so does how the parts are arranged on the strip: a nested layout cuts scrap significantly, yet demands wider strip and a more complex die. This decision must come before feeder selection, because strip width determines the feeder frame.
 
-A feeder cannot work independently of the press. It must run in **full synchronisation** with the press cam signal and release the strip the moment the die's pilot pins engage it (pilot release). Without this function the pilots fight the strip and hole positions shift.
+## 4. Press synchronization and pilot pins
 
-On Servosteel feeders the pilot release function is standard.
+The feeder cannot work independently of the press. It must run in **full synchronization** with the press cam signal, and release its grip the moment the die's pilot pins catch the strip (pilot release). Without this function the pilot pins fight the strip and hole positions drift.
 
-## 5. Do not skip the straightening question
+The timing works like this: the feeder delivers the pitch and stops; the press starts to descend; the pilot pins enter the guide holes and pull the strip into its exact position in the last tenth of a millimetre; **at precisely that moment** the feeder opens its grip. Release too early and the strip is free to move; too late and pin and feeder work against each other.
 
-Coil-set memory in strip coming off the coil causes direct problems in a progressive die: if the strip does not enter the die flat, station alignment breaks down. If your tolerances are tight, consider the feeder together with a straightener.
+That is why pilot release is not merely a "yes/no" question — it must be **adjustable**. Different dies have the pins entering at different press angles.
 
-Instead of buying a separate machine, a [straightener servo feeder](/makineler/dogrultmali-servo-suruculer) can be chosen — straightening and feeding combine in one body, configured to sheet thickness with 7/9/11/13 roll options.
+On Servosteel feeders, pilot pin release is standard.
+
+## 5. Do not overlook the need for levelling
+
+Coil set — the curvature memory in strip coming off a coil — causes direct problems in a progressive die: if the strip does not enter the die flat, station alignment is lost. If your requirements are tight, consider the feeder together with a straightener.
+
+Levelling matters more in a progressive die than in single-station work. The reason: the strip is supported over a long distance inside the die and must hold its position at every station. Curved strip lifts inside the die, rubs against the stripper and wanders out of alignment as it advances. A curvature that would go unnoticed on a single-station job causes part rejection in a ten-station die.
+
+Rather than buying a separate machine, a [straightener servo feeder](/makineler/dogrultmali-servo-suruculer) can be chosen — straightening and feeding in one frame, configured to sheet thickness with 7/9/11/13 roller options.
 
 ## 6. Recipe memory — the reality of multi-die shops
 
-A shop rarely runs a single die. Re-entering pitch, speed and ramp values at every die change costs time and invites error.
+A shop rarely runs a single die. Re-entering pitch, speed and ramp values at every die change is both a waste of time and a source of error.
 
-Servosteel feeders store **250 recipes**; at a die change the operator recalls the recipe instead of repeating the setup.
+Servosteel feeders store **250 recipes**; at a die change the operator recalls the recipe and no setup is repeated.
+
+The real gain is not time but **repeatability**. Set by hand, the same die can be entered with two different values on two different shifts; part dimensions then vary by shift and the cause goes unfound for months. A recipe removes that variable entirely — the die runs with identical values every time it is called up.
 
 ## Reference values
 
-| Specification | Value |
+| Feature | Value |
 |---|---|
-| Feed accuracy | ± 0.1 mm |
 | Material thickness | 0.4 – 4.0 mm |
-| Strip width | ≤ 1,600 mm |
-| Free feed speed | 35 m/min |
-| Feed rolls | 2 × Ø85 mm |
-| Mold memory | 250 recipes |
+| Sheet width | ≤ 1,600 mm |
+| Free feeding speed | 35 m/min |
+| Feed rollers | 2 × Ø85 mm |
+| Die memory | 250 recipes |
 
-## Why sourcing die and feeder together matters
+You can work out your coil weight and how many hours one coil will run from the [calculators](/hesaplayicilar) page; we explain the method in [how to calculate coil weight and length](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
 
-A progressive die and its feeder are two interdependent parts: pitch tolerance, pilot release timing and strip layout only settle if they are designed together. When they come from different suppliers, responsibility blurs — the die maker points at the feeder and the feeder maker points at the die.
+## Why buying die and feeder from the same source matters
 
-Servosteel manufactures both the [progressive press die](/makineler/kalip-ve-merdane) and the [servo feeder](/makineler/servo-suruculer) in its own facility; the two are engineered by the same team.
+A progressive die and its feeder are two interdependent parts: pitch tolerance, pilot release timing and strip layout only come together when they are designed together. Bought from different suppliers, the boundary of responsibility blurs — the die maker points at the feeder, the feeder maker points at the die.
+
+The most common dispute in practice runs like this: part tolerance is out. The die maker says "the feeder is losing pitch", the feeder manufacturer says "the die's pilot clearance is too large". Both show their own measurement, and both are right within their own frame. The only resolution is putting both parties at the same table — or buying from the same team in the first place.
+
+Servosteel manufactures both the [progressive press die](/makineler/kalip-ve-merdane) and the [servo feeder](/makineler/servo-suruculer) in its own facility; both are engineered by the same team.
 
 ## Conclusion
 
-Prepare your part drawing, the die pitch and your press stroke rate — the right feeder is sized from those three inputs. [Request a quote](/teklif-al) for your project and we will come back based on your sheet thickness and strip dimensions.
+Three things decide feeder selection for a progressive die: **keeping systematic error below pilot pin clearance**, **peak speed covering the press window**, and **pilot release being adjustable**.
+
+Prepare your part drawing, die pitch and press stroke rate — the right feeder is sized from those three. [Request a quote](/teklif-al) for your project and we will come back based on your sheet thickness and strip dimensions.

@@ -63,6 +63,36 @@ What you gain is the difference between your supplier's margin and your own conv
 ### 4. Annual operating cost
 Operators and maintenance staff, energy, consumables, roll maintenance and regrinding, spare parts, and items outside depreciation.
 
+## Worked example: putting numbers in
+
+The values below are **illustrative** — use the same skeleton with your own figures. The point is not the result but seeing **which variable moves the result how much.**
+
+**Assumptions:**
+
+| Variable | Example value |
+|---|---|
+| Line speed | 15 m/min |
+| Weight per metre (C profile) | 4 kg/m |
+| Shifts | 2 × 8 hours, 250 days |
+| Utilisation | 60% |
+
+**Annual output:**
+
+```
+Operating minutes = 2 × 8 × 60 × 250 = 240,000 min
+Annual tonnes = 15 × 240,000 × 0.60 × 4 ÷ 1000 = 8,640 tonnes
+```
+
+Note the effect of utilisation: at 75% instead of 60% the output would be 10,800 tonnes — **the same line, the same shifts, 25% more output.** The only thing creating that gap is changeover time. It is not hard to see how a quick cassette-change arrangement pays for itself here.
+
+**Payback:** if your value added per tonne is X and annual operating cost is Y:
+
+```
+Payback = Total investment ÷ (8,640 × X − Y)
+```
+
+Rather than stopping at that number, run a **sensitivity check**: if value added drops 20%, how many years does payback become? At 45% utilisation, does it still make sense? A decision is sound when it survives the **bad** case, not the best one.
+
 ## What moves the numbers most?
 
 | Variable | Effect |
@@ -75,6 +105,12 @@ Operators and maintenance staff, energy, consumables, roll maintenance and regri
 
 That last item looks minor but is not: if rolls are not properly hardened, dimensional drift and early replacement quietly wreck the calculation. Servosteel rolls are produced from **4140 alloy steel** and hardened to **58–60 HRC**.
 
+## Two costs that get overlooked
+
+**Coil scrap rate.** The "coil cost" that enters the calculation is based on the tonnage you buy, not the tonnage you produce. If the master coil width does not divide cleanly into your profile blank width, the difference is lost on every coil. You can [calculate the scrap rate](/hesaplayicilar) with your own dimensions and see its scale once converted to annual tonnage.
+
+**Coil change downtime.** If your decoiler capacity is low the line stops more often, and that goes straight into the utilisation figure. You can work out how many hours one coil will run in the [calculator](/hesaplayicilar); the method is explained in [how to calculate coil weight and length](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir). A hydraulic decoiler with a loading car reduces this item directly — see the [hydraulic vs mechanical](/karsilastirma/hidrolik-vs-mekanik-acici) comparison.
+
 ## Checklist before deciding
 
 - [ ] Is the next 3 years' pipeline defined **in MW**?
@@ -84,6 +120,7 @@ That last item looks minor but is not: if rolls are not properly hardened, dimen
 - [ ] Is your coil supply secured (price and continuity)?
 - [ ] Are operator and maintenance staff planned?
 - [ ] Does the quotation include the roll set, commissioning and training?
+- [ ] Does the calculation still hold if value added falls 20%?
 
 ## Where to start
 
@@ -95,4 +132,4 @@ For a capacity and layout study specific to your project, [request a quote](/tek
 
 ---
 
-*Note: the market sizes and threshold figures in this article are general references based on publicly available industry sources; any investment decision should be verified against your own cost and supply data.*
+*Note: the market sizes and threshold figures in this article are general references based on publicly available industry sources; the speed, weight and utilisation values in the worked example are illustrative. Any investment decision should be verified against your own cost and supply data.*

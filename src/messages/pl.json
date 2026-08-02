@@ -58,7 +58,6 @@
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
     "cta2": "Zobacz Linie",
-    "measure": "±0,1 mm",
     "stats": [
       { "value": "10+", "label": "Lat doświadczenia" },
       { "value": "48+", "label": "Krajów eksportu" },
@@ -1298,7 +1297,7 @@
             ["Szerokość materiału", "40 – 1.300 mm"],
             ["Grubość materiału", "0,5 – 4,0 mm"],
             ["Prędkość swobodna", "40 m/min"],
-            ["Dokładność podawania", "± 0,1 mm"],
+            ["Dokładność podawania", "−0,1 mm"],
             ["Waga kręgu", "2.500 – 10.000 kg"],
             ["Średnica wewn. / zewn. kręgu", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rolki podające", "2 + 2"],

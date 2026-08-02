@@ -63,6 +63,36 @@ Zyskujecie różnicę między marżą dostawcy a własnym kosztem przetworzenia.
 ### 4. Roczny koszt operacyjny
 Operatorzy i utrzymanie ruchu, energia, materiały eksploatacyjne, konserwacja i szlifowanie rolek, części zamienne oraz pozycje poza amortyzacją.
 
+## Przykład liczbowy: wstawmy dane
+
+Poniższe wartości są **poglądowe** — użyj tego samego szkieletu z własnymi liczbami. Nie chodzi o wynik, lecz o to, by zobaczyć, **która zmienna i jak mocno porusza wynik.**
+
+**Założenia:**
+
+| Zmienna | Wartość przykładowa |
+|---|---|
+| Prędkość linii | 15 m/min |
+| Masa metra (profil C) | 4 kg/m |
+| Zmiany | 2 × 8 godzin, 250 dni |
+| Wykorzystanie | 60 % |
+
+**Produkcja roczna:**
+
+```
+Minuty pracy = 2 × 8 × 60 × 250 = 240 000 min
+Tony rocznie = 15 × 240 000 × 0,60 × 4 ÷ 1000 = 8640 t
+```
+
+Zwróć uwagę na wpływ wykorzystania: przy 75 % zamiast 60 % byłoby 10 800 ton — **ta sama linia, te same zmiany, 25 % więcej produkcji.** Tę różnicę tworzy wyłącznie czas przezbrojenia. Nietrudno dostrzec, że układ szybkiej wymiany kaset zwraca się właśnie tutaj.
+
+**Zwrot:** jeśli wartość dodana na tonę wynosi X, a roczny koszt operacyjny Y:
+
+```
+Zwrot = Inwestycja całkowita ÷ (8640 × X − Y)
+```
+
+Zamiast poprzestać na tej liczbie, wykonaj **analizę wrażliwości**: jeśli wartość dodana spadnie o 20 %, do ilu lat wydłuży się zwrot? Przy 45 % wykorzystania nadal ma to sens? Decyzja jest solidna, gdy wytrzymuje scenariusz **zły**, a nie najlepszy.
+
 ## Co najbardziej porusza liczby?
 
 | Zmienna | Wpływ |
@@ -75,6 +105,12 @@ Operatorzy i utrzymanie ruchu, energia, materiały eksploatacyjne, konserwacja i
 
 Ostatni punkt wydaje się drugorzędny, ale nie jest: jeśli rolki nie są właściwie hartowane, dryf wymiarowy i wcześniejsza wymiana po cichu psują cały rachunek. Rolki Servosteel wykonujemy ze **stali stopowej 4140** i hartujemy do **58–60 HRC**.
 
+## Dwa koszty, które umykają
+
+**Udział odpadu z kręgu.** „Koszt kręgu" wchodzący do rachunku dotyczy tonażu kupionego, nie wyprodukowanego. Jeśli szerokość kręgu matki nie dzieli się czysto przez rozwinięcie profilu, różnica przepada na każdym kręgu. Możesz [obliczyć udział odpadu](/hesaplayicilar) na własnych wymiarach i zobaczyć jego skalę po przeliczeniu na tonaż roczny.
+
+**Przestój przy wymianie kręgu.** Przy niskim udźwigu odwijaka linia staje częściej, a to wchodzi wprost do wykorzystania. Ile godzin wystarczy jeden krąg, sprawdzisz w [kalkulatorze](/hesaplayicilar); metodę opisaliśmy w artykule [jak obliczyć masę i długość kręgu](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir). Odwijak hydrauliczny z wózkiem załadowczym obniża tę pozycję bezpośrednio — zobacz porównanie [hydrauliczny vs mechaniczny](/karsilastirma/hidrolik-vs-mekanik-acici).
+
 ## Lista kontrolna przed decyzją
 
 - [ ] Czy portfel na najbliższe 3 lata jest określony **w MW**?
@@ -84,6 +120,7 @@ Ostatni punkt wydaje się drugorzędny, ale nie jest: jeśli rolki nie są wła�
 - [ ] Czy dostawy kręgów są zabezpieczone (cena i ciągłość)?
 - [ ] Czy zaplanowano obsługę i utrzymanie ruchu?
 - [ ] Czy oferta obejmuje zestaw rolek, rozruch i szkolenie?
+- [ ] Czy rachunek nadal się spina, gdy wartość dodana spadnie o 20 %?
 
 ## Od czego zacząć
 
