@@ -1,0 +1,116 @@
+---
+title: "Hat módszer a lemezhulladék csökkentésére"
+description: "Honnan ered a hulladék a hasító- és préssorokon, hogyan mérjük, és mely beavatkozások csökkentik valóban — kidolgozott példákkal."
+date: "2026-08-03"
+author: "Servosteel Mérnökség"
+cover: "/gorseller/dilme-hatlari.jpg"
+tags: ["hulladékarány", "lemezfeldolgozás", "hatékonyság"]
+---
+
+Egy lemezfeldolgozó üzemben a legnagyobb költségtétel nem a gép, hanem az **anyag**. És ennek az anyagnak egy része sosem válik termékké: élvágás, maradék szalag, az alkatrészek közti híd, a sor eleje és vége. Ezt a veszteséget általában „normálisnak" tekintik, és soha nem mérik.
+
+Éves tonnára átszámítva viszont a hulladék a legtöbb üzemben **nagyobb tétel, mint maga a sor**. Ez a cikk azt tárgyalja, honnan ered, és mely beavatkozások működnek valóban.
+
+## Először mérjen: amit nem ismer, azt nem tudja csökkenteni
+
+Az egyszerű meghatározás:
+
+```
+Hulladékarány (%) = (Vásárolt tonna − Termékként kiszállított tonna) ÷ Vásárolt tonna × 100
+```
+
+A legtöbb üzem nem ismeri ezt a számot, mert a hulladékértékesítés külön számlán fut, és az a „bevétel" lélektanilag ellensúlyozza a veszteséget. De a hulladék jóval a tekercsért fizetett ár alatt kel el — a különbözet nettó veszteség.
+
+Egy hónap elég a kezdéshez: bejövő tekercstonna, kimenő terméktonna, eladott hulladéktonna. A hármat összeadva kirajzolódik a kép.
+
+## 1. Igazítsa a szalagszélességet a tekercsszélességhez
+
+A hasítósoron ez a legnagyobb és legkönnyebben javítható hulladékforrás. Ha az anyatekercs szélessége nem osztható tisztán a szalagszélességgel, a maradék minden tekercsnél elvész.
+
+**Példa:** 1 250 mm-es tekercsből 120 mm-es szalagot vág, 10 mm összes élvágással.
+
+```
+Hasznos       : 1 250 − 10 = 1 240 mm
+Beférő szalag : 1 240 ÷ 120 = 10,33 → 10 db
+Felhasznált   : 10 × 120 = 1 200 mm
+Maradék       : 1 240 − 1 200 = 40 mm
+Összes hulladék : 10 + 40 = 50 mm → 4,0 %
+```
+
+Most emeljük a szalagot **124 mm**-re:
+
+```
+Beférő szalag : 1 240 ÷ 124 = 10,0 → 10 db
+Felhasznált   : 1 240 mm
+Összes hulladék : 10 mm → 0,8 %
+```
+
+Ugyanaz a tekercs, ugyanannyi szalag, és a **hulladék az ötödére esett.** Az egyetlen változás a szalagszélesség tekercsszélességhez illesztése.
+
+Ez nem mindig lehetséges — ha a vevői méret adott, a szalagszélesség nem alku tárgya. De a **tekercsszélesség** rendszerint az. Ha a beszállítótól 1 250 helyett 1 240 mm-t kér, ugyanezt éri el a másik irányból.
+
+Próbálja ki saját méreteit a [hasítási kihozatal kalkulátorában](/hesaplayicilar); néhány kombináció után látni fogja, melyik szélesség jön ki.
+
+## 2. Csak annyi élvágást végezzen, amennyi valóban kell
+
+Az élvágás kötelező: a tekercs éle hengerlésből eredő repedést és egyenetlenséget hordoz. De a mértékét a legtöbb üzemben **megszokásból** állapítják meg, nem mérésből.
+
+10 mm helyett 6 mm évente több ezer négyzetméternyi anyagot spórol egy 1 250 mm-es tekercsen. A helyes érték anyagtól és beszállítótól függ — jó élminőségnél kevesebb is elég.
+
+Gyakorlati módszer: néhány tekercsből vegyen mintát csökkentett élvágással, ellenőrizze az élminőséget, és a legalacsonyabb elfogadható értéket tegye szabvánnyá.
+
+## 3. Optimalizálja a szalagelrendezést követő szerszámban
+
+A prés oldalán a hulladék máshonnan ered: az alkatrészek közti hídból és a szalag szélén maradó részből.
+
+Az **egymásba illesztett (nested) elrendezés** itt a legerősebb eszköz. Ha az alkatrészek egyenes sor helyett eltolva vagy elforgatva sorakoznak, ugyanabból a szalagból több darab jön ki. Az ára bonyolultabb szerszám — de a szerszámot egyszer fizeti ki, a hulladékot minden ütésnél.
+
+A döntés egyszerű összevetés: az elrendezés miatti szerszám-többletköltség szemben az éves tonnán megtakarított anyaggal. Nagy darabszámnál a nested elrendezés szinte mindig nyer.
+
+Erről a [követő szerszám és szervoadagoló](/akademi/progresif-kalip-servo-besleyici-secimi) cikkben is írtunk.
+
+## 4. Csökkentse a sorindítási és -zárási veszteséget
+
+Minden tekercscsere mindkét végén hulladékot ad: amikor az új tekercset befűzik, és amikor a régi farka kifut. Ez a veszteség **tekercsenként** jelentkezik — minél kisebb a tekercs, annál nagyobb az aránya.
+
+Számpélda: ha minden tekercscsere 8 métert visz,
+
+- **3 tonnás tekercs** (kb. 150 m) → 5,3 % veszteség
+- **10 tonnás tekercs** (kb. 500 m) → 1,6 % veszteség
+
+Ugyanaz a sor, ugyanaz a kezelő, **több mint háromszoros különbség.** A nehezebb tekercs nemcsak az állásidőt, hanem közvetlenül a hulladékot is csökkenti.
+
+Tekercse hosszát a [tekercskalkulátorból](/hesaplayicilar) tudhatja meg; a módszert a [tekercssúly és szalaghossz számítása](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir) cikkben írtuk le.
+
+Hegesztőegységgel felszerelt sorokon ez a veszteség szinte nullázódik: az új tekercs fejét a régi farkához hegesztik, és a sor sosem ürül ki.
+
+## 5. Számoljon a vastagsági tűréssel
+
+A beszállítótól érkező anyag nem névleges vastagságú; a ±5 %-ig terjedő tűrés normális. Mivel **tonnára** vásárol és **méterre** gyárt, ez közvetlenül a pénztárcáját érinti.
+
+Ha 2 mm-t rendel és 2,1 mm érkezik, ugyanaz a tonna **5 %-kal kevesebb métert** ad. A tonnánkénti darabszám csökken, a fajlagos költség nő — és ezt gyakran nem is „hulladékként" könyvelik, csak gyenge kihozatalként jelentkezik.
+
+Mérje rendszeresen a bejövő anyagot. Ha a tűrés következetesen pozitív irányba tér el, konkrét adata van, amivel a beszállítóhoz fordulhat.
+
+## 6. Ne gyártson másodosztályt rossz vágási paraméterekkel
+
+A hulladék nem csak a levágott és eldobott anyag. A sorjás él, a benyomódott felület vagy a tűrésen kívüli darab is hulladék — méghozzá olyan, amelyre már munkaidőt és energiát fordítottak.
+
+Hasításnál a szokásos ok a **késhézag**: ha nincs a lemezvastagsághoz igazítva, sorját okoz. Présnél a lépés elcsúszása, amely kimozdítja a szerszámot és a bélyeget a középből.
+
+E két beállítás helyessége látványosan csökkenti a másodosztályú kibocsátást — és ez a lista legolcsóbb beavatkozása, mert csupán beállítást igényel.
+
+## Összegzés: hol kezdjük?
+
+| Beavatkozás | Nehézség | Hatás |
+|---|---|---|
+| Szalag- és tekercsszélesség illesztése | Alacsony | Nagyon magas |
+| Élvágás méréssel való meghatározása | Alacsony | Közepes |
+| Késhézag és adagolás beállítása | Alacsony | Közepes |
+| Vastagsági tűrés követése | Közepes | Közepes |
+| Nehezebb tekercs + betöltőkocsi | Közepes | Magas |
+| Nested szalagelrendezés | Magas | Magas |
+
+Az első három **nem igényel beruházást** — csak mérést és beállítást. Mérje egy hónapig a hulladékarányát, és alkalmazza ezt a hármat; a legtöbb üzem az első negyedévben észreveszi a különbséget.
+
+Próbálja ki saját méreteit a [kalkulátorokban](/hesaplayicilar), és [írjon nekünk](/iletisim), ha a sorméretezésről szeretne beszélni.

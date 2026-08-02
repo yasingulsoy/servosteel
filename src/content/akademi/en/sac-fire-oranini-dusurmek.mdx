@@ -1,0 +1,116 @@
+---
+title: "Six Ways to Cut Your Sheet Scrap Rate"
+description: "Where scrap comes from on slitting and press lines, how to measure it, and which interventions actually reduce it — with worked examples."
+date: "2026-08-03"
+author: "Servosteel Engineering"
+cover: "/gorseller/dilme-hatlari.jpg"
+tags: ["scrap rate", "sheet processing", "efficiency"]
+---
+
+In a plant that processes sheet metal, the largest cost item is not the machine but the **material**. And part of that material never becomes product: edge trim, leftover strip, the gap between blanks, line start and line end. This loss is usually treated as "normal" and never measured.
+
+Yet converted to annual tonnage, scrap is in most plants a **bigger line item than the machine itself**. This article covers where it comes from and which interventions genuinely work.
+
+## Measure first: you cannot reduce what you do not know
+
+The simple definition:
+
+```
+Scrap rate (%) = (Tonnes purchased − Tonnes shipped as product) ÷ Tonnes purchased × 100
+```
+
+Most plants do not know this number, because scrap sales are tracked in a separate account and the "revenue" psychologically offsets the loss. But scrap sells far below what you paid for the coil — the difference is a net loss.
+
+One month is enough to start: incoming coil tonnage, outgoing product tonnage, scrap tonnage sold. Add those three and the picture appears.
+
+## 1. Match strip width to coil width
+
+On a slitting line this is the largest and most easily corrected source of scrap. If the master coil width does not divide cleanly by the strip width, the remainder is lost on every single coil.
+
+**Example:** you cut 120 mm strips from a 1,250 mm coil, with 10 mm total edge trim.
+
+```
+Usable      : 1,250 − 10 = 1,240 mm
+Strips fit  : 1,240 ÷ 120 = 10.33 → 10
+Used        : 10 × 120 = 1,200 mm
+Remainder   : 1,240 − 1,200 = 40 mm
+Total scrap : 10 + 40 = 50 mm → 4.0%
+```
+
+Now widen the strip to **124 mm**:
+
+```
+Strips fit  : 1,240 ÷ 124 = 10.0 → 10
+Used        : 1,240 mm
+Total scrap : 10 mm → 0.8%
+```
+
+The same coil, the same number of strips, and **scrap has dropped to a fifth.** The only change is fitting strip width to coil width.
+
+This is not always possible — if the customer's dimension is fixed, strip width is not negotiable. But **coil width** usually is. Asking your supplier for 1,240 mm instead of 1,250 mm achieves the same result from the other direction.
+
+Try your own dimensions in the [slitting yield calculator](/hesaplayicilar); after a few combinations you will see which width fits.
+
+## 2. Trim only as much edge as you actually need
+
+Edge trim is mandatory: the coil edge carries cracks and irregularities from rolling. But in most plants the amount trimmed is set by **habit**, not by measurement.
+
+Trimming 6 mm instead of 10 mm saves thousands of square metres a year on a 1,250 mm coil. The right figure depends on the material and the supplier — with a supplier whose edge quality is good, less trim is enough.
+
+A practical method: take samples from a few coils with reduced trim, check the edge quality, and standardise on the lowest acceptable value.
+
+## 3. Optimise strip layout in progressive dies
+
+On the press side, scrap comes from somewhere else: the web between blanks and the remainder at the strip edge.
+
+**Nested layout** is the strongest tool here. When blanks are staggered or rotated instead of run in a straight row, more parts come out of the same strip. The price is a more complex die — but the die is paid for once, scrap is paid for on every stroke.
+
+The decision is a simple comparison: the extra die cost of the layout change versus the material saved across annual tonnage. On high-volume jobs, nesting almost always wins.
+
+We also cover this in [progressive dies and servo feeders](/akademi/progresif-kalip-servo-besleyici-secimi).
+
+## 4. Reduce start-of-line and end-of-line losses
+
+Every coil change produces scrap at both ends: while the new coil is threaded through the line, and as the old coil's tail runs out. This loss is **per coil** — so the smaller the coil, the larger the total.
+
+A numerical example: if each coil change loses 8 metres,
+
+- **3-tonne coil** (roughly 150 m) → 5.3% loss
+- **10-tonne coil** (roughly 500 m) → 1.6% loss
+
+The same line, the same operator, **more than a threefold difference.** Running heavier coils reduces not only downtime but scrap directly.
+
+You can find your coil length with the [coil calculator](/hesaplayicilar); the method is explained in [how to calculate coil weight and length](/akademi/rulo-agirligi-ve-uzunlugu-nasil-hesaplanir).
+
+On lines with a welder, this loss is nearly eliminated: the head of the new coil is welded to the tail of the old one and the line never empties.
+
+## 5. Account for thickness tolerance
+
+Material from your supplier is not at nominal thickness; a tolerance of up to ±5% is normal. Because you buy by the **tonne** and produce by the **metre**, this hits your pocket directly.
+
+If you order 2 mm and receive 2.1 mm, the same tonnage yields **5% fewer metres**. Your part count per tonne falls and your unit cost rises — and this is usually not even recorded as "scrap", it just shows up as poor yield.
+
+Measure incoming material periodically. If the tolerance is consistently on the plus side, you have concrete data to take to your supplier.
+
+## 6. Do not produce seconds through wrong cutting parameters
+
+Scrap is not only material that is cut off and thrown away. A burred edge, a crushed surface or an out-of-tolerance part is also scrap — and it is scrap with labour and energy already spent on it.
+
+On the slitting side the usual cause is **knife clearance**: clearance not matched to sheet thickness produces burr. On the press side it is pitch drift, which throws the die and punch off centre.
+
+Getting these two settings right visibly reduces second-quality output — and it is the cheapest intervention on this list, because it requires only adjustment.
+
+## Summary: where to start
+
+| Intervention | Difficulty | Impact |
+|---|---|---|
+| Matching strip and coil width | Low | Very high |
+| Setting edge trim by measurement | Low | Medium |
+| Knife clearance and feed setup | Low | Medium |
+| Tracking thickness tolerance | Medium | Medium |
+| Heavier coils + loading car | Medium | High |
+| Nested strip layout | High | High |
+
+The first three **require no investment** — only measurement and adjustment. Measure your scrap rate for one month, apply those three, and most plants notice the difference within the first quarter.
+
+Try your own dimensions in the [calculators](/hesaplayicilar), and [get in touch](/iletisim) if you would like to discuss line sizing.
