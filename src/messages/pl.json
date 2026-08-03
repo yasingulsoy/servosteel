@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Servosteel | Linie profilujące, wzdłużne i poprzeczne cięcie",
-    "description": "Linie profilujące (roll forming), linie cięcia wzdłużnego, linie cięcia poprzecznego i systemy podawania do pras na zamówienie. Eksport ze Stambułu do ponad 48 krajów."
+    "description": "Linie profilujące, cięcia wzdłużnego i poprzecznego oraz systemy podawania do pras na zamówienie. Eksport ze Stambułu do 48+ krajów."
   },
   "topbar": {
     "export": "Eksport do 48+ krajów",
@@ -58,6 +58,20 @@
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
     "cta2": "Zobacz Linie",
+    "bands": {
+      "slitting": {
+        "l1": "Z jednego kręgu",
+        "l2": "dziesiątki taśm"
+      },
+      "feeding": {
+        "l1": "Milimetrowa precyzja",
+        "l2": "przy każdym suwie"
+      },
+      "facility": {
+        "l1": "Od odwijaka po nawijak,",
+        "l2": "wszystko z własnej produkcji"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Lat doświadczenia" },
       { "value": "48+", "label": "Krajów eksportu" },
@@ -119,7 +133,7 @@
     "eyebrow": "Nasza specjalizacja",
     "title": "Linie Profilujące",
     "desc": "Z kręgu do gotowego profilu: kompletne linie produkcyjne dla 7 rodzin profili, projektowane pod Twój projekt — wszystko, od odwijaka po układarkę, nosi podpis Servosteel.",
-    "metaDesc": "Kompletne linie profilujące na zamówienie do koryt kablowych, profili solarnych, regałów, pomostów rusztowaniowych, barier drogowych i akustycznych oraz profili C/Sigma/Omega.",
+    "metaDesc": "Linie profilujące na zamówienie do koryt kablowych, profili solarnych, regałów, rusztowań, barier i profili C/Sigma/Omega.",
     "flow": ["Odwijak", "Prostownica", "Podajnik Serwo", "Stacje Wykrawania", "Profilarka", "Cięcie", "Układanie"],
     "customTitle": "Linia Profilu Specjalnego",
     "customText": "Produkujesz przekrój spoza listy? Od projektu narzędzi rolkowych po automatykę linia jest projektowana według Twojego rysunku profilu.",
@@ -249,7 +263,7 @@
   },
   "boykesme": {
     "metaTitle": "Linie Cięcia Poprzecznego",
-    "metaDesc": "Linie cięcia poprzecznego: precyzyjne cięcie z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i układanie sterowane z jednego PLC. Sterowanie Schneider.",
+    "metaDesc": "Linie cięcia poprzecznego: z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i sztaplowanie na jednym sterowniku Schneider.",
     "eyebrow": "Nasza specjalizacja",
     "title": "Linie Cięcia Poprzecznego",
     "desc": "Kompletne linie zmieniające krąg w arkusze dokładnie takiej długości, jakiej potrzebujesz: prostowanie, podawanie serwo, gilotyna i układanie — wszystko produkowane we własnym zakładzie i sterowane z jednego PLC.",
@@ -310,7 +324,7 @@
     "ctaText": "Podaj grubość blachy, masę kręgu i wymiary arkusza; wrócimy z układem linii i ofertą techniczną."
   },
   "about": {
-    "metaTitle": "O nas",
+    "metaTitle": "O nas: 10+ lat, maszyny w 48+ krajach",
     "metaDesc": "Servosteel: 10+ lat doświadczenia w systemach podawania do pras i liniach przetwarzania kręgów. Produkcja maszyn na zamówienie, ze Stambułu do 48+ krajów.",
     "eyebrow": "Servosteel",
     "title": "Inżynieria, która kształtuje stal",
@@ -394,7 +408,7 @@
     "ctaText": "Niezależnie od tego, czy potrzebujesz jednej maszyny, czy kompletnej linii — nasz zespół inżynierów jest gotów słuchać."
   },
   "refs": {
-    "metaTitle": "Referencje",
+    "metaTitle": "Referencje: nasze instalacje i branże",
     "metaDesc": "Linie Servosteel produkują w ponad 48 krajach Europy, Bliskiego Wschodu, Afryki i Dalekiego Wschodu. Nasze referencje według regionu i branży.",
     "eyebrow": "Dowody z terenu",
     "title": "W produkcji w 48+ krajach",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Kalkulatory: masa kręgu, wydajność podawania, uzysk cięcia",
+    "metaTitle": "Kalkulatory masy kręgu, podawania i uzysku cięcia",
     "metaDesc": "Bezpłatne kalkulatory inżynierskie: masa i długość kręgu, wydajność podawania do prasy, odpad przy cięciu wzdłużnym. Bez rejestracji.",
     "eyebrow": "Narzędzia inżynierskie",
     "title": "Kalkulatory",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Odwijaki",
+        "metaTitle": "Odwijaki: hydrauliczne 6-20 t, mechaniczne 500-4000 kg",
         "short": "Hydrauliczne 6-20 t i mechaniczne 500-2.500 kg.",
         "hero": "Pierwsze ogniwo każdej linii: odwijaki hydrauliczne i mechaniczne, które bezpiecznie utrzymują krąg i rozwijają go z kontrolowanym naprężeniem. Projektowane pod wydajność, szerokość blachy i poziom automatyzacji.",
         "meta": "Odwijaki hydrauliczne (6-20 t) i mechaniczne (500-2.500 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
@@ -1309,7 +1324,7 @@
         "name": "Narzędzia i Zestawy Rolek",
         "short": "Rolki profilujące i tłoczniki: projektowanie i produkcja oprzyrządowania do Twoich linii.",
         "hero": "O tym, co produkuje linia, decydują narzędzia, a nie maszyny. Servosteel projektuje i wykonuje we własnym zakresie zarówno rolki profilujące, jak i tłoczniki; narzędzie powstaje razem z samą linią.",
-        "meta": "Produkcja rolek profilujących i tłoczników postępowych: projekt według Twojego rysunku, rolki ze stali stopowej 4140 hartowane do 58-60 HRC. Linia i narzędzie od jednego producenta.",
+        "meta": "Rolki profilujące i tłoczniki postępowe według Twojego rysunku: stal 4140 hartowana do 58-60 HRC. Linia i narzędzie od jednego producenta.",
         "features": [
           {
             "title": "Projektowane razem z linią",

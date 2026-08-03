@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Servosteel | Roll Forming, Coil Slitting and Cut-to-Length Lines",
+    "title": "Roll Forming, Coil Slitting & Cut-to-Length Lines",
     "description": "Custom-designed roll forming lines, coil slitting lines, cut-to-length lines and press feeding systems. Exporting from Istanbul to 48+ countries."
   },
   "topbar": {
@@ -58,6 +58,20 @@
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
     "cta2": "Explore the Lines",
+    "bands": {
+      "slitting": {
+        "l1": "One coil in,",
+        "l2": "dozens of strips out"
+      },
+      "feeding": {
+        "l1": "Millimetre precision",
+        "l2": "on every stroke"
+      },
+      "facility": {
+        "l1": "Decoiler to recoiler,",
+        "l2": "all built in-house"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Years of experience" },
       { "value": "48+", "label": "Export countries" },
@@ -249,7 +263,7 @@
   },
   "boykesme": {
     "metaTitle": "Cut-to-Length Lines",
-    "metaDesc": "Cut-to-length lines: precision cutting from coil to sheet. Straightening, servo feeding, guillotine and stacking managed by a single PLC. Schneider control systems.",
+    "metaDesc": "Cut-to-length lines: coil to sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
     "eyebrow": "Our expertise",
     "title": "Cut-to-Length Lines",
     "desc": "Complete lines that turn coils into sheets at exactly the length you need: straightening, servo feeding, guillotine and stacking — all built in our facility and managed by a single PLC.",
@@ -310,7 +324,7 @@
     "ctaText": "Send us your sheet thickness, coil weight and sheet dimensions; we'll come back with a line layout and a technical offer."
   },
   "about": {
-    "metaTitle": "About Us",
+    "metaTitle": "About Us: 10+ Years, Machines Exported to 48+ Countries",
     "metaDesc": "Servosteel: 10+ years of experience in press feeding systems and coil processing lines. Custom machine manufacturing from Istanbul to 48+ countries.",
     "eyebrow": "Servosteel",
     "title": "Engineering that shapes steel",
@@ -394,7 +408,7 @@
     "ctaText": "Whether you need a single machine or a complete line — our engineering team is ready to listen."
   },
   "refs": {
-    "metaTitle": "References",
+    "metaTitle": "References: Our Installations and the Sectors We Serve",
     "metaDesc": "Servosteel lines are producing in more than 48 countries across Europe, the Middle East, Africa and the Far East. Our references by region and industry.",
     "eyebrow": "Proof from the field",
     "title": "In production in 48+ countries",
@@ -497,7 +511,7 @@
       "dilme-vs-boy-kesme": {
         "name": "Slitting line or cut-to-length line?",
         "metaTitle": "Coil Slitting vs Cut-to-Length: Line Comparison",
-        "metaDesc": "The difference between a slitting line and a cut-to-length line: output product, cutting direction, equipment and applications. Which line fits your business?",
+        "metaDesc": "Slitting vs cut-to-length: output product, cutting direction, equipment and applications — which line fits your business?",
         "hero": "Both lines process coil, but they cut in different directions: one produces strip coils, the other flat sheets. Your output decides the line.",
         "aName": "Coil slitting line",
         "bName": "Cut-to-length line",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Calculators: Coil Weight, Feed Output and Slitting Yield",
+    "metaTitle": "Coil Weight, Feed Output & Slitting Yield Calculators",
     "metaDesc": "Free engineering calculators: coil weight and length, press feed capacity, slitting scrap rate. No sign-up required.",
     "eyebrow": "Engineering tools",
     "title": "Calculators",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Decoilers",
+        "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
         "short": "Hydraulic 6-20 t and mechanical 500-2,500 kg decoiling solutions.",
         "hero": "The first link of every line: hydraulic and mechanical decoilers that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
         "meta": "Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers: custom solutions for press feeding and coil processing lines.",
@@ -1309,7 +1324,7 @@
         "name": "Tooling and Roll Sets",
         "short": "Roll forming tooling and press dies: die design and manufacture for your lines.",
         "hero": "What a line produces is decided by the tooling, not the machines. Servosteel designs and manufactures both its roll forming tooling and its press dies in-house; the tooling is engineered together with the line itself.",
-        "meta": "Roll forming tooling and progressive press die manufacturing: designed to your drawing, 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
+        "meta": "Roll forming tooling and progressive press dies to your drawing: 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
         "features": [
           {
             "title": "Engineered with the line",

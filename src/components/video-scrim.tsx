@@ -1,3 +1,6 @@
+/** Karartmanın koyu tarafı: metnin durduğu taraf */
+export type ScrimSide = "start" | "end";
+
 /**
  * Video karartma perdesi — TEK KAYNAK.
  *
@@ -6,16 +9,31 @@
  * Karartmayı değiştirmek istediğinde SADECE burayı değiştir.
  *
  * Üç katman:
- *  1) Yatay degrade — soldan sağa açılır (hero'da metnin durduğu taraf koyu).
+ *  1) Yatay degrade — koyu taraf `side` ile seçilir. Kart sağa alınırsa
+ *     karartma da sağa geçmelidir, aksi halde metin aydınlık zeminde kalır.
  *  2) Üst şerit      — navbar'ın şeffaf olduğu yerde logo/menü okunabilir kalsın.
  *  3) Alt degrade    — sayfanın koyu zeminine (shell) yumuşak geçiş.
+ *
+ * RTL: yatay degrade mantıksal yöne göre aynalanır — Arapçada "start" sağdır.
  */
-export function VideoScrim() {
+export function VideoScrim({ side = "start" }: { side?: ScrimSide }) {
+  /*
+   * Dar ekranda içerik bloğu bandın TAM genişliğini kaplar; sağa/sola
+   * hizalanamaz ve metin her hâlükârda mantıksal başlangıçtan akar.
+   * Bu yüzden perde de md altında daima başlangıç tarafını koyulaştırır —
+   * aksi halde metin aydınlık tarafta kalıyordu. Yön değişimi, hizalamanın
+   * gerçekten görünür olduğu md'den itibaren devreye girer.
+   */
+  const horizontal =
+    side === "start"
+      ? "bg-gradient-to-r rtl:bg-gradient-to-l"
+      : "bg-gradient-to-r rtl:bg-gradient-to-l md:bg-gradient-to-l md:rtl:bg-gradient-to-r";
+
   return (
     <>
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/20 to-transparent rtl:bg-gradient-to-l"
+        className={`absolute inset-0 from-black/45 via-black/20 to-transparent ${horizontal}`}
       />
       <div
         aria-hidden

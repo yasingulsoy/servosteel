@@ -9,7 +9,7 @@ import { StatsBand } from "@/components/stats-band";
 import { Marquee } from "@/components/marquee";
 import { SpecularButton } from "@/components/specular-button";
 import { VideoBand, VideoStack } from "@/components/video-band";
-import { VideoOverlayCard } from "@/components/video-overlay-card";
+import { VideoBandContent } from "@/components/video-band-content";
 import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
 import { SolutionIcon } from "@/components/solution-icon";
@@ -55,17 +55,9 @@ export default async function Home({ params }: Props) {
   const t = await getTranslations("home");
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
-  const tSlit = await getTranslations("dilme");
-  const tAbout = await getTranslations("about");
   const tCommon = await getTranslations("common");
 
   const process = t.raw("process") as { title: string; text: string }[];
-
-  /* Video panellerindeki etiketler — hepsi sayfada zaten çevrili olan
-     metinlerden geliyor, ayrıca çeviri gerektirmiyor. */
-  const titlesOf = (rows: { title: string }[]) => rows.slice(0, 3).map((r) => r.title);
-  const slittingChips = titlesOf(tSlit.raw("highlights") as { title: string }[]);
-  const feederChips = titlesOf(tMach.raw("servo-suruculer.features") as { title: string }[]);
 
   return (
     <>
@@ -90,10 +82,9 @@ export default async function Home({ params }: Props) {
             src: "/alt2.mp4",
             poster: "/alt2-poster.jpg",
             children: (
-              <VideoOverlayCard
-                eyebrow={t("videoEyebrow")}
-                title={tSlit("title")}
-                chips={slittingChips}
+              <VideoBandContent
+                l1={t("bands.slitting.l1")}
+                l2={t("bands.slitting.l2")}
                 href="/dilme-hatlari"
                 cta={tCommon("lineExamine")}
               />
@@ -103,10 +94,9 @@ export default async function Home({ params }: Props) {
             src: "/alt3.mp4",
             poster: "/alt3-poster.jpg",
             children: (
-              <VideoOverlayCard
-                eyebrow={t("machinesEyebrow")}
-                title={tMach("servo-suruculer.name")}
-                chips={feederChips}
+              <VideoBandContent
+                l1={t("bands.feeding.l1")}
+                l2={t("bands.feeding.l2")}
                 href="/makineler/servo-suruculer"
                 cta={tCommon("details")}
               />
@@ -170,9 +160,9 @@ export default async function Home({ params }: Props) {
       {/* Bu video ürün değil, tesisi gösteriyor (CNC atölyesi + montaj) —
           panel de ona göre üretim kabiliyetini anlatıyor. */}
       <VideoBand src="/alt.mp4" poster="/alt-poster.jpg">
-        <VideoOverlayCard
-          eyebrow={tAbout("facilityEyebrow")}
-          title={tAbout("facilityTitle")}
+        <VideoBandContent
+          l1={t("bands.facility.l1")}
+          l2={t("bands.facility.l2")}
           href="/hakkimizda"
           cta={tCommon("details")}
         />

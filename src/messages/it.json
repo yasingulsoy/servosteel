@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Servosteel | Linee di profilatura, taglio longitudinale e a misura",
-    "description": "Linee di profilatura (roll forming), taglio longitudinale di coil, taglio a misura e sistemi di alimentazione presse su misura. Esportiamo da Istanbul in oltre 48 paesi."
+    "title": "Linee di profilatura, taglio longitudinale e a misura",
+    "description": "Linee di profilatura, taglio longitudinale, taglio a misura e alimentazione presse su misura. Esportiamo da Istanbul in oltre 48 paesi."
   },
   "topbar": {
     "export": "Esportiamo in 48+ paesi",
@@ -58,6 +58,20 @@
     "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
     "cta1": "Preventivo per il tuo Progetto",
     "cta2": "Esplora le Linee",
+    "bands": {
+      "slitting": {
+        "l1": "Un coil,",
+        "l2": "decine di nastri"
+      },
+      "feeding": {
+        "l1": "Precisione millimetrica",
+        "l2": "a ogni colpo"
+      },
+      "facility": {
+        "l1": "Dallo svolgitore all'avvolgitore,",
+        "l2": "tutto prodotto da noi"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Anni di esperienza" },
       { "value": "48+", "label": "Paesi di export" },
@@ -310,7 +324,7 @@
     "ctaText": "Comunicaci spessore, peso del coil e dimensioni del foglio; torniamo con il layout e l'offerta tecnica."
   },
   "about": {
-    "metaTitle": "Chi Siamo",
+    "metaTitle": "Chi siamo: 10+ anni, macchine in 48+ paesi",
     "metaDesc": "Servosteel: oltre 10 anni di esperienza in sistemi di alimentazione presse e linee di lavorazione coil. Produzione su misura, da Istanbul in 48+ paesi.",
     "eyebrow": "Servosteel",
     "title": "Ingegneria che dà forma all'acciaio",
@@ -394,7 +408,7 @@
     "ctaText": "Che ti serva una singola macchina o una linea completa, il nostro team di ingegneria è pronto ad ascoltare."
   },
   "refs": {
-    "metaTitle": "Referenze",
+    "metaTitle": "Referenze: i nostri impianti e i settori serviti",
     "metaDesc": "Le linee Servosteel producono in oltre 48 paesi tra Europa, Medio Oriente, Africa ed Estremo Oriente. Le nostre referenze per regione e settore.",
     "eyebrow": "Prove dal campo",
     "title": "In produzione in 48+ paesi",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Calcolatori: peso coil, resa di alimentazione e taglio",
+    "metaTitle": "Calcolatori: peso coil, alimentazione e resa di taglio",
     "metaDesc": "Calcolatori tecnici gratuiti: peso e lunghezza coil, capacità di alimentazione presse, sfrido di taglio longitudinale. Senza registrazione.",
     "eyebrow": "Strumenti tecnici",
     "title": "Calcolatori",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Svolgitori",
+        "metaTitle": "Svolgitori: idraulici 6-20 t, meccanici 500-4.000 kg",
         "short": "Idraulici 6-20 t e meccanici 500-2.500 kg.",
         "hero": "Il primo anello di ogni linea: svolgitori idraulici e meccanici che sostengono il coil in sicurezza e lo svolgono a tensione controllata. Progettati su capacità, larghezza lamiera e livello di automazione.",
         "meta": "Svolgitori idraulici (6-20 t) e meccanici (500-2.500 kg): soluzioni su misura per alimentazione presse e linee coil.",
@@ -1309,7 +1324,7 @@
         "name": "Stampi e Set di Rulli",
         "short": "Rulli di profilatura e stampi per pressa: progettazione e produzione di utensili per le vostre linee.",
         "hero": "Ciò che una linea produce lo decidono gli stampi, non le macchine. Servosteel progetta e produce internamente sia i rulli di profilatura sia gli stampi per pressa; l'utensile viene progettato insieme alla linea stessa.",
-        "meta": "Produzione di rulli di profilatura e stampi progressivi: progettazione sul vostro disegno, rulli in acciaio legato 4140 temprati a 58-60 HRC. Linea e stampo dallo stesso costruttore.",
+        "meta": "Rulli di profilatura e stampi progressivi sul vostro disegno: acciaio 4140 temprato a 58-60 HRC. Linea e stampo dallo stesso costruttore.",
         "features": [
           {
             "title": "Progettati con la linea",

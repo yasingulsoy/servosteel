@@ -12,7 +12,7 @@ import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractToc, slugifyHeading, textOf } from "@/lib/toc";
-import { localePath } from "@/i18n/seo";
+import { localePath, pageTitle } from "@/i18n/seo";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title: post.title,
+    title: pageTitle(post.title),
     description: post.description,
     alternates: { canonical: localePath(locale as AppLocale, `/akademi/${slug}`), languages },
     openGraph: {

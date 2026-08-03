@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check, Cog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, localePath } from "@/i18n/seo";
+import { pageAlternates, localePath, pageTitle } from "@/i18n/seo";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -25,8 +25,11 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug } = await params;
   if (!isMachineSlug(slug)) return {};
   const t = await getTranslations({ locale, namespace: `products.machines.${slug}` });
+  /* metaTitle opsiyoneldir: `name` menüde ve kartlarda da kullanıldığı için
+     kısa kalmak zorunda; SERP'te ise açıklayıcı olması gerekir. Tanımlıysa
+     SEO başlığı ondan gelir, değilse ada düşer. */
   return {
-    title: t("name"),
+    title: pageTitle(t.has("metaTitle") ? t("metaTitle") : t("name")),
     description: t("meta"),
     alternates: pageAlternates(locale as AppLocale, `/makineler/${slug}`),
   };

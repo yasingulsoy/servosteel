@@ -2,7 +2,7 @@ import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ProfileIcon } from "@/components/profile-icon";
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "hub" });
   return {
-    title: t("title"),
+    title: pageTitle(t("title")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, "/roll-form-hatlari"),
   };

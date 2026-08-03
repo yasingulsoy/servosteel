@@ -1,5 +1,23 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import { routing, localeHreflang, type AppLocale } from "./routing";
+
+/** Google SERP'te başlık ~60 karakterde kesilir. */
+const MAX_TITLE = 60;
+const SUFFIX_LEN = ` | ${SITE_NAME}`.length;
+
+/**
+ * Sayfa başlığı: marka son eki ancak SIĞIYORSA eklenir.
+ *
+ * Layout'taki `template: "%s | Servosteel"` her başlığa 13 karakter bindiriyor;
+ * uzun çevirilerde (İtalyanca, Macarca) bu, başlığı SERP sınırının üstüne
+ * taşıyordu — ve kesilen kısım zaten markanın kendisi oluyordu. Sığmadığında
+ * `absolute` döndürerek şablon atlanır: marka görünmez ama başlığın anlamlı
+ * kısmı korunur. Tersi, hem markayı hem son kelimeleri kaybettiriyordu.
+ */
+export function pageTitle(title: string): string | { absolute: string } {
+  return title.length + SUFFIX_LEN > MAX_TITLE ? { absolute: title } : title;
+}
 
 /** Locale'e göre URL öneki: tr -> "", diğerleri -> "/en" vb. */
 function prefix(locale: AppLocale) {

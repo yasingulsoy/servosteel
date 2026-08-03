@@ -2,7 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Clock, Mail, MapPin, Phone, Printer } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { SpecularButton } from "@/components/specular-button";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
   return {
-    title: t("metaTitle"),
+    title: pageTitle(t("metaTitle")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, "/iletisim"),
   };

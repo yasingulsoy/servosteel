@@ -58,6 +58,20 @@
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
     "cta2": "Anlagen entdecken",
+    "bands": {
+      "slitting": {
+        "l1": "Ein Coil hinein,",
+        "l2": "Dutzende Streifen heraus"
+      },
+      "feeding": {
+        "l1": "Millimetergenau",
+        "l2": "bei jedem Hub"
+      },
+      "facility": {
+        "l1": "Haspel bis Wickler,",
+        "l2": "alles aus eigener Fertigung"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Jahre Erfahrung" },
       { "value": "48+", "label": "Exportländer" },
@@ -310,7 +324,7 @@
     "ctaText": "Nennen Sie Blechdicke, Coilgewicht und Tafelmaße; wir melden uns mit Layout und technischem Angebot."
   },
   "about": {
-    "metaTitle": "Über uns",
+    "metaTitle": "Über uns: 10+ Jahre, Maschinen in 48+ Länder",
     "metaDesc": "Servosteel: 10+ Jahre Erfahrung in Pressenzuführsystemen und Coil-Verarbeitungsanlagen. Kundenspezifischer Maschinenbau, aus Istanbul in 48+ Länder.",
     "eyebrow": "Servosteel",
     "title": "Engineering, das Stahl formt",
@@ -394,7 +408,7 @@
     "ctaText": "Ob Einzelmaschine oder Komplettanlage — unser Engineering-Team hört zu."
   },
   "refs": {
-    "metaTitle": "Referenzen",
+    "metaTitle": "Referenzen: unsere Anlagen und Einsatzbranchen",
     "metaDesc": "Servosteel-Anlagen produzieren in über 48 Ländern in Europa, Nahost, Afrika und Fernost. Unsere Referenzen nach Region und Branche.",
     "eyebrow": "Beweise aus der Praxis",
     "title": "In 48+ Ländern in Produktion",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Rechner: Coilgewicht, Vorschubleistung und Spaltausbeute",
+    "metaTitle": "Rechner für Coilgewicht, Vorschub und Spaltausbeute",
     "metaDesc": "Kostenlose Engineering-Rechner: Coilgewicht und -länge, Pressenvorschubleistung, Spaltverschnitt. Ohne Anmeldung.",
     "eyebrow": "Engineering-Werkzeuge",
     "title": "Rechner",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Abwickelhaspeln",
+        "metaTitle": "Abwickelhaspeln: hydraulisch 6-20 t, mechanisch 500-4.000 kg",
         "short": "Hydraulisch 6-20 t, mechanisch 500-2.500 kg.",
         "hero": "Das erste Glied jeder Anlage: hydraulische und mechanische Haspeln, die das Coil sicher tragen und mit kontrollierter Spannung abwickeln. Ausgelegt nach Kapazität, Blechbreite und Automatisierungsgrad.",
         "meta": "Hydraulische (6-20 t) und mechanische (500-2.500 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
@@ -1309,7 +1324,7 @@
         "name": "Werkzeuge und Rollensätze",
         "short": "Rollformwerkzeuge und Presswerkzeuge: Werkzeugkonstruktion und -fertigung für Ihre Anlagen.",
         "hero": "Was eine Anlage produziert, entscheiden die Werkzeuge, nicht die Maschinen. Servosteel konstruiert und fertigt sowohl Rollformwerkzeuge als auch Presswerkzeuge im eigenen Haus — das Werkzeug wird gemeinsam mit der Anlage projektiert.",
-        "meta": "Rollformwerkzeuge und Folgeverbundwerkzeuge: Konstruktion nach Ihrer Zeichnung, Rollen aus 4140 Legierungsstahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
+        "meta": "Rollform- und Folgeverbundwerkzeuge nach Ihrer Zeichnung: Rollen aus 4140 Stahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
         "features": [
           {
             "title": "Gemeinsam mit der Anlage konstruiert",

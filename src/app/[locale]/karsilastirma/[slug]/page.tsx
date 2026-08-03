@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
   if (!isCompareSlug(slug)) return {};
   const t = await getTranslations({ locale, namespace: `compare.items.${slug}` });
   return {
-    title: t("metaTitle"),
+    title: pageTitle(t("metaTitle")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, `/karsilastirma/${slug}`),
   };

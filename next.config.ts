@@ -69,6 +69,36 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" }],
   },
 
+  /**
+   * Güvenlik başlıkları. Next bunları kendiliğinden eklemez.
+   *
+   * Content-Security-Policy BİLEREK eklenmedi: sayfalarda JSON-LD ve tema
+   * başlangıç script'i satır içi çalışıyor, YouTube/Google Maps iframe'leri
+   * ve Google Fonts dışarıdan yükleniyor. Bunları kapsayan bir CSP
+   * 'unsafe-inline' gerektirir ve o hâliyle koruma değeri neredeyse sıfırdır;
+   * nonce'lu doğru çözüm ise statik üretimi bozar. Yanlış güvenlik hissi
+   * vermektense eklenmedi — ihtiyaç doğarsa nonce mimarisiyle kurulmalı.
+   */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          /* Sayfanın başka sitede iframe'e gömülmesini engeller (clickjacking) */
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          /* Tarayıcının içerik tipini tahmin etmesini kapatır */
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          /* Dış sitelere yalnızca origin sızar, tam URL değil */
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          /* Kullanılmayan güçlü API'ler kapalı */
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          /* HTTPS zorunlu — tarayıcı HTTP üzerinden gelirse yok sayar */
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+        ],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       /* --- Makineler --- */

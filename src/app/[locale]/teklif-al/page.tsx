@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Check } from "lucide-react";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { RfqForm } from "@/components/rfq-form";
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "quote" });
   return {
-    title: t("metaTitle"),
+    title: pageTitle(t("metaTitle")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, "/teklif-al"),
   };

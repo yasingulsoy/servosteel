@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Servosteel | Líneas de perfilado, corte longitudinal y corte a medida",
-    "description": "Líneas de perfilado (roll forming), corte longitudinal de bobinas, corte a medida y sistemas de alimentación de prensas a medida. Exportamos desde Estambul a más de 48 países."
+    "title": "Líneas de perfilado, corte longitudinal y a medida",
+    "description": "Líneas de perfilado, corte longitudinal, corte a medida y alimentación de prensas a medida. Exportamos desde Estambul a más de 48 países."
   },
   "topbar": {
     "export": "Exportamos a 48+ países",
@@ -58,6 +58,20 @@
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
     "cta2": "Ver las Líneas",
+    "bands": {
+      "slitting": {
+        "l1": "Una bobina,",
+        "l2": "decenas de flejes"
+      },
+      "feeding": {
+        "l1": "Precisión milimétrica",
+        "l2": "en cada golpe"
+      },
+      "facility": {
+        "l1": "De desbobinadora a bobinadora,",
+        "l2": "todo fabricado por nosotros"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Años de experiencia" },
       { "value": "48+", "label": "Países de exportación" },
@@ -119,7 +133,7 @@
     "eyebrow": "Nuestra especialidad",
     "title": "Líneas de Perfilado",
     "desc": "De la bobina al perfil terminado: líneas de producción completas para 7 familias de perfiles, diseñadas para su proyecto; todo, del desbobinador al apilador, lleva la firma Servosteel.",
-    "metaDesc": "Líneas completas de perfilado a medida para bandejas portacables, perfiles solares, estanterías, plataformas de andamio, barreras viales y acústicas y perfiles C/Sigma/Omega.",
+    "metaDesc": "Líneas de perfilado a medida para bandejas portacables, perfiles solares, estanterías, andamios, barreras y perfiles C/Sigma/Omega.",
     "flow": ["Desbobinador", "Enderezadora", "Alimentador Servo", "Estaciones de Punzonado", "Perfiladora", "Corte", "Apilado"],
     "customTitle": "Línea de Perfil Especial",
     "customText": "¿Va a producir una sección que no está en la lista? Del utillaje de rodillos a la automatización, la línea se proyecta según su plano de perfil.",
@@ -310,8 +324,8 @@
     "ctaText": "Indíquenos espesor, peso de bobina y dimensiones de chapa; volveremos con el layout y la oferta técnica."
   },
   "about": {
-    "metaTitle": "Nosotros",
-    "metaDesc": "Servosteel: más de 10 años de experiencia en sistemas de alimentación de prensas y líneas de procesado de bobinas. Fabricación a medida, de Estambul a 48+ países.",
+    "metaTitle": "Nosotros: 10+ años, maquinaria en 48+ países",
+    "metaDesc": "Más de 10 años en alimentación de prensas y procesado de bobinas. Fabricación a medida, de Estambul a más de 48 países.",
     "eyebrow": "Servosteel",
     "title": "Ingeniería que da forma al acero",
     "desc": "Servosteel es un fabricante turco de maquinaria especializado en sistemas de alimentación de prensas y líneas de procesado de bobinas. Desde hace más de una década diseñamos, fabricamos y entregamos cada máquina según la necesidad del cliente.",
@@ -394,7 +408,7 @@
     "ctaText": "Ya necesite una sola máquina o una línea completa, nuestro equipo de ingeniería está listo para escuchar."
   },
   "refs": {
-    "metaTitle": "Referencias",
+    "metaTitle": "Referencias: nuestras instalaciones y sectores",
     "metaDesc": "Las líneas Servosteel producen en más de 48 países de Europa, Oriente Medio, África y Extremo Oriente. Nuestras referencias por región e industria.",
     "eyebrow": "Pruebas del terreno",
     "title": "En producción en 48+ países",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Calculadoras: peso de bobina, alimentación y rendimiento de corte",
+    "metaTitle": "Calculadoras de bobina, alimentación y corte",
     "metaDesc": "Calculadoras de ingeniería gratuitas: peso y longitud de bobina, capacidad de alimentación, merma de corte longitudinal. Sin registro.",
     "eyebrow": "Herramientas de ingeniería",
     "title": "Calculadoras",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Desbobinadoras",
+        "metaTitle": "Desbobinadoras: hidráulicas 6-20 t, mecánicas 500-4.000 kg",
         "short": "Hidráulicas de 6-20 t y mecánicas de 500-2.500 kg.",
         "hero": "El primer eslabón de toda línea: desbobinadoras hidráulicas y mecánicas que sostienen la bobina con seguridad y la desenrollan con tensión controlada. Se proyectan según capacidad, ancho de chapa y nivel de automatización.",
         "meta": "Desbobinadoras hidráulicas (6-20 t) y mecánicas (500-2.500 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
@@ -1309,7 +1324,7 @@
         "name": "Troqueles y Juegos de Rodillos",
         "short": "Rodillos de perfilado y troqueles de prensa: diseño y fabricación de utillaje para sus líneas.",
         "hero": "Lo que produce una línea lo deciden los troqueles, no las máquinas. Servosteel diseña y fabrica internamente tanto sus rodillos de perfilado como sus troqueles de prensa; el utillaje se proyecta junto con la propia línea.",
-        "meta": "Fabricación de rodillos de perfilado y troqueles progresivos: diseño según su plano, rodillos de acero aleado 4140 templados a 58-60 HRC. Línea y troquel del mismo fabricante.",
+        "meta": "Rodillos de perfilado y troqueles progresivos según su plano: acero 4140 templado a 58-60 HRC. Línea y troquel del mismo fabricante.",
         "features": [
           {
             "title": "Proyectado con la línea",

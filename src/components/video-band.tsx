@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
-import { VideoScrim } from "@/components/video-scrim";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { VideoScrim, type ScrimSide } from "@/components/video-scrim";
 
 export type VideoBandItem = {
   /** public/ altındaki mp4 yolu, ör. "/alt3.mp4" */
@@ -10,6 +10,11 @@ export type VideoBandItem = {
   poster: string;
   /** Ekran okuyucular için kısa açıklama */
   label?: string;
+  /**
+   * İçeriğin durduğu taraf. Karartmanın koyu tarafı da buraya göre döner —
+   * kart aydınlık zeminde kalamaz. Verilmezse VideoStack sırayla değiştirir.
+   */
+  side?: ScrimSide;
   /** Videonun üzerine binecek içerik (cam panel vb.) */
   children?: ReactNode;
 };
@@ -28,8 +33,37 @@ export type VideoBandItem = {
  * alanına girince yüklenir ve oynar, çıkınca durur. Böylece sayfa açılışında
  * hiç video baytı inmez.
  */
-export function VideoBand({ src, poster, label, children }: VideoBandItem) {
+export function VideoBand({ src, poster, label, side = "start", children }: VideoBandItem) {
   const ref = useRef<HTMLVideoElement>(null);
+
+  /**
+   * Poster GEÇ bağlanır.
+   *
+   * `poster` niteliği HTML'de dururken tarayıcı onu preload="none" olsa bile
+   * sayfa açılışında indirir — sayfanın çok altındaki bantların posterleri de
+   * dahil. Dört poster ~600 KB ediyordu ve bunun ~470 KB'ı hiç görülmeyebilecek
+   * bantlara aitti. Bu yüzden poster ancak bant görünüme YAKLAŞINCA atanır.
+   *
+   * rootMargin 400px: kullanıcı banda varmadan poster inmiş olur, boş kare
+   * görünmez. O ana kadar zaten koyu bg-shell zemin duruyor.
+   */
+  const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPosterSrc(poster);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [poster]);
 
   useEffect(() => {
     const v = ref.current;
@@ -58,6 +92,8 @@ export function VideoBand({ src, poster, label, children }: VideoBandItem) {
   return (
     <section
       data-video-band
+      /* data-side: hem perdenin yönünü hem kartın hizasını (globals.css) sürer */
+      data-side={side}
       className="relative aspect-video w-full overflow-hidden bg-shell"
       aria-label={label}
     >
@@ -70,13 +106,13 @@ export function VideoBand({ src, poster, label, children }: VideoBandItem) {
         loop
         playsInline
         preload="none"
-        poster={poster}
+        poster={posterSrc}
       >
         <source src={src} type="video/mp4" />
       </video>
 
       {/* Karartma perdesi — hero ile ortak (bkz. video-scrim.tsx) */}
-      <VideoScrim />
+      <VideoScrim side={side} />
 
       {children && <div className="relative size-full">{children}</div>}
     </section>
@@ -86,14 +122,18 @@ export function VideoBand({ src, poster, label, children }: VideoBandItem) {
 /**
  * Birden çok video bandını ARALIKSIZ alt alta dizer.
  * Bantlar arasında hiçbir geçiş/boşluk yoktur — videolar gerçekten bitişiktir.
+ *
+ * İçerik tarafı sırayla değişir (sol, sağ, sol …) — üst üste aynı tarafta
+ * duran paneller monoton görünüyordu. Bir bant kendi `side` değerini
+ * verirse o kazanır.
  */
 export function VideoStack({ items }: { items: VideoBandItem[] }) {
   if (!items.length) return null;
 
   return (
     <div className="w-full">
-      {items.map((item) => (
-        <VideoBand key={item.src} {...item} />
+      {items.map((item, i) => (
+        <VideoBand key={item.src} {...item} side={item.side ?? (i % 2 === 0 ? "start" : "end")} />
       ))}
     </div>
   );

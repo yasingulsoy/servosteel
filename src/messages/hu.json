@@ -58,6 +58,20 @@
     "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
     "cta1": "Ajánlatkérés a Projektjéhez",
     "cta2": "Sorok Megtekintése",
+    "bands": {
+      "slitting": {
+        "l1": "Egy tekercsből",
+        "l2": "több tucat szalag"
+      },
+      "feeding": {
+        "l1": "Milliméteres pontosság",
+        "l2": "minden ütésnél"
+      },
+      "facility": {
+        "l1": "Lecsévélőtől felcsévélőig,",
+        "l2": "mind saját gyártás"
+      }
+    },
     "stats": [
       { "value": "10+", "label": "Év tapasztalat" },
       { "value": "48+", "label": "Exportország" },
@@ -119,7 +133,7 @@
     "eyebrow": "Szakterületünk",
     "title": "Profilozó Sorok",
     "desc": "Tekercstől a kész profilig: komplett gyártósorok 7 profilcsaládhoz, a projektjére tervezve — a lecsévélőtől a rakatolóig minden a Servosteel kézjegyét viseli.",
-    "metaDesc": "Egyedi, komplett görgős profilozó sorok kábeltálcákhoz, napelemes profilokhoz, polcokhoz, állványpallókhoz, szalagkorlátokhoz, zajvédő falakhoz és C/Sigma/Omega profilokhoz.",
+    "metaDesc": "Egyedi profilozó sorok kábeltálcához, napelemprofilhoz, polchoz, állványpallóhoz, korláthoz és C/Sigma/Omega profilokhoz.",
     "flow": ["Lecsévélő", "Egyengető", "Szervoadagoló", "Lyukasztó Állomások", "Profilozó Gép", "Vágás", "Rakatolás"],
     "customTitle": "Egyedi Profil Sor",
     "customText": "Itt nem szereplő keresztmetszetet gyártana? A görgőszerszámtól az automatizálásig a sort az Ön profilrajza alapján tervezzük.",
@@ -310,7 +324,7 @@
     "ctaText": "Adja meg a lemezvastagságot, tekercssúlyt és táblaméreteket; elrendezéssel és műszaki ajánlattal jelentkezünk."
   },
   "about": {
-    "metaTitle": "Rólunk",
+    "metaTitle": "Rólunk: 10+ év, gépexport 48+ országba",
     "metaDesc": "Servosteel: 10+ év tapasztalat présadagoló rendszerekben és tekercsfeldolgozó sorokban. Egyedi gépgyártás, Isztambulból 48+ országba.",
     "eyebrow": "Servosteel",
     "title": "Mérnöki munka, amely acélt formál",
@@ -394,7 +408,7 @@
     "ctaText": "Akár egyetlen gépre, akár komplett sorra van szüksége — mérnökcsapatunk készen áll a figyelemre."
   },
   "refs": {
-    "metaTitle": "Referenciák",
+    "metaTitle": "Referenciák: telepítéseink és iparágaink",
     "metaDesc": "A Servosteel sorai több mint 48 országban gyártanak Európában, a Közel-Keleten, Afrikában és a Távol-Keleten. Referenciáink régió és iparág szerint.",
     "eyebrow": "Bizonyíték a terepről",
     "title": "Gyártásban 48+ országban",
@@ -593,7 +607,7 @@
     }
   },
   "calc": {
-    "metaTitle": "Kalkulátorok: tekercssúly, adagolási teljesítmény, hasítási kihozatal",
+    "metaTitle": "Tekercssúly-, adagolás- és hasításkalkulátorok",
     "metaDesc": "Ingyenes mérnöki kalkulátorok: tekercssúly és -hossz, présadagolási kapacitás, hasítási hulladékarány. Regisztráció nélkül.",
     "eyebrow": "Mérnöki eszközök",
     "title": "Kalkulátorok",
@@ -1102,6 +1116,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Lecsévélők",
+        "metaTitle": "Lecsévélők: hidraulikus 6-20 t, mechanikus 500-4000 kg",
         "short": "Hidraulikus 6-20 t, mechanikus 500-2.500 kg.",
         "hero": "Minden sor első láncszeme: hidraulikus és mechanikus lecsévélők, amelyek biztonságosan tartják a tekercset és szabályozott feszültséggel csévélik le. Kapacitásra, lemezszélességre és automatizáltsági szintre tervezve.",
         "meta": "Hidraulikus (6-20 t) és mechanikus (500-2.500 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
@@ -1309,7 +1324,7 @@
         "name": "Szerszámok és Görgőkészletek",
         "short": "Profilozó görgők és présszerszámok: szerszámtervezés és -gyártás az Ön soraihoz.",
         "hero": "Azt, hogy egy sor mit gyárt, a szerszámok döntik el, nem a gépek. A Servosteel saját házon belül tervezi és gyártja mind a profilozó görgőket, mind a présszerszámokat; a szerszám magával a sorral együtt készül.",
-        "meta": "Profilozó görgők és követő (progresszív) présszerszámok gyártása: tervezés az Ön rajza alapján, 4140 ötvözött acél görgők 58-60 HRC keménységre edzve. Sor és szerszám egy gyártótól.",
+        "meta": "Profilozó görgők és követő présszerszámok az Ön rajza alapján: 4140 acél, 58-60 HRC keménységre edzve. Sor és szerszám egy gyártótól.",
         "features": [
           {
             "title": "A sorral együtt tervezve",

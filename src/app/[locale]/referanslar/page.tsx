@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Globe2 } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
-import { pageAlternates } from "@/i18n/seo";
+import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "refs" });
   return {
-    title: t("metaTitle"),
+    title: pageTitle(t("metaTitle")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, "/referanslar"),
   };
