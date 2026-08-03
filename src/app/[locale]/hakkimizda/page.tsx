@@ -153,28 +153,28 @@ export default async function HakkimizdaPage({ params }: Props) {
             </p>
           </Reveal>
 
+          {/* col-span'ler Reveal'ın KENDİSİNDE olmalı: grid'in doğrudan çocuğu
+              Reveal'ın render ettiği div'dir. İçteki bir div'e yazıldığında
+              sarmalayıcı varsayılan 1 sütun kalır ve iki blok da 5'te 1'e
+              sıkışır — bölüm bu yüzden dar iki şerit hâlinde görünüyordu. */}
           <div className="mt-8 grid gap-10 lg:grid-cols-5 lg:gap-14">
-            <Reveal>
-              <div className="lg:col-span-2">
-                <div className="rounded-2xl border-s-4 border-accent bg-card p-7 shadow-sm">
-                  <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
-                    {t("visionTitle")}
-                  </h2>
-                  <p className="mt-4 leading-relaxed text-muted">{t("visionText")}</p>
-                </div>
+            <Reveal className="lg:col-span-2">
+              <div className="rounded-2xl border-s-4 border-accent bg-card p-7 shadow-sm">
+                <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+                  {t("visionTitle")}
+                </h2>
+                <p className="mt-4 leading-relaxed text-muted">{t("visionText")}</p>
               </div>
             </Reveal>
 
-            <Reveal delay={120}>
-              <div className="lg:col-span-3">
-                <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
-                  {t("missionTitle")}
-                </h2>
-                <div className="mt-4 space-y-4 leading-relaxed text-muted">
-                  {missionText.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
+            <Reveal delay={120} className="lg:col-span-3">
+              <h2 className="font-display text-xl font-bold uppercase tracking-tight text-ink">
+                {t("missionTitle")}
+              </h2>
+              <div className="mt-4 space-y-4 leading-relaxed text-muted">
+                {missionText.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </Reveal>
           </div>

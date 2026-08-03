@@ -169,6 +169,12 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${montserrat.variable} ${cairo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* JS yoksa giriş animasyonları hiç tetiklenmez ve [data-reveal] içeriği
+            opacity:0'da kalır — yani sayfanın büyük kısmı görünmez olur.
+            Animasyonu iptal edip her şeyi son hâline sabitliyoruz. */}
+        <noscript>
+          <style>{`[data-reveal],[data-reveal-group]>*{opacity:1!important;translate:none!important;scale:1!important}`}</style>
+        </noscript>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script
           type="application/ld+json"
