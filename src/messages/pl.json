@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "Referencje: nasze instalacje i branże",
+    "clientsTitle": "Referencje z nazwy",
+    "clientsText": "Współprace, na których wskazanie mamy zgodę. Przy prośbie o referencje z Państwa branży wskazujemy dodatkowo instalacje w zakładach produkujących podobnie.",
+    "clientVideo": "Film z terenu",
+    "clients": {
+      "sarigozoglu": "Produkcja wytłoczek metalowych dla motoryzacji i AGD. Nasze systemy podawania pras pracują w ich zakładach.",
+      "mega-solar": "Projektowanie i produkcja konstrukcji stalowych dla farm fotowoltaicznych — obszar bezpośrednio pokrywający się z naszymi zastosowaniami profili solarnych."
+    },
     "metaDesc": "Linie Servosteel produkują w ponad 48 krajach Europy, Bliskiego Wschodu, Afryki i Dalekiego Wschodu. Nasze referencje według regionu i branży.",
     "eyebrow": "Dowody z terenu",
     "title": "W produkcji w 48+ krajach",

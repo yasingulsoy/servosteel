@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "References: Our Installations and the Sectors We Serve",
+    "clientsTitle": "Named references",
+    "clientsText": "Collaborations we have permission to share. If you ask for references from your own industry, we will separately point you to installations at plants producing like yours.",
+    "clientVideo": "Video from the field",
+    "clients": {
+      "sarigozoglu": "Press metal production for automotive and appliances. Our press feeding systems run at their plants.",
+      "mega-solar": "Steel structure design and production for solar power plants — a production area that maps directly onto our solar profile line applications."
+    },
     "metaDesc": "Servosteel lines are producing in more than 48 countries across Europe, the Middle East, Africa and the Far East. Our references by region and industry.",
     "eyebrow": "Proof from the field",
     "title": "In production in 48+ countries",

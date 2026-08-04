@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "Referenciák: telepítéseink és iparágaink",
+    "clientsTitle": "Névvel vállalt referenciák",
+    "clientsText": "Olyan együttműködések, amelyek megnevezésére engedélyünk van. Ha saját ágazatából kér referenciát, külön megmutatjuk az Önhöz hasonlóan gyártó üzemekben lévő telepítéseket.",
+    "clientVideo": "Videó a terepről",
+    "clients": {
+      "sarigozoglu": "Préselt fémalkatrész-gyártás az autóipar és a háztartási gépek számára. Présadagoló rendszereink az üzemeikben működnek.",
+      "mega-solar": "Acélszerkezet tervezése és gyártása naperőművekhez — olyan gyártási terület, amely közvetlenül illeszkedik napelemprofil-alkalmazásainkhoz."
+    },
     "metaDesc": "A Servosteel sorai több mint 48 országban gyártanak Európában, a Közel-Keleten, Afrikában és a Távol-Keleten. Referenciáink régió és iparág szerint.",
     "eyebrow": "Bizonyíték a terepről",
     "title": "Gyártásban 48+ országban",

@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "Referenze: i nostri impianti e i settori serviti",
+    "clientsTitle": "Referenze nominative",
+    "clientsText": "Collaborazioni per cui abbiamo l'autorizzazione a citare il nome. Se chiedete referenze del vostro settore, vi segnaliamo a parte installazioni in stabilimenti che producono come il vostro.",
+    "clientVideo": "Video dal campo",
+    "clients": {
+      "sarigozoglu": "Produzione di stampati per automotive ed elettrodomestici. I nostri sistemi di alimentazione presse lavorano nei loro stabilimenti.",
+      "mega-solar": "Progettazione e produzione di strutture in acciaio per impianti solari, un ambito che coincide direttamente con le nostre applicazioni per profili solari."
+    },
     "metaDesc": "Le linee Servosteel producono in oltre 48 paesi tra Europa, Medio Oriente, Africa ed Estremo Oriente. Le nostre referenze per regione e settore.",
     "eyebrow": "Prove dal campo",
     "title": "In produzione in 48+ paesi",

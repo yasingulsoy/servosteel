@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "Referenzen: unsere Anlagen und Einsatzbranchen",
+    "clientsTitle": "Namentliche Referenzen",
+    "clientsText": "Kooperationen, für die uns die Freigabe zur Nennung vorliegt. Auf Wunsch nennen wir Ihnen zusätzlich Installationen in Werken, die wie Ihres fertigen.",
+    "clientVideo": "Video aus dem Feld",
+    "clients": {
+      "sarigozoglu": "Pressteilfertigung für Automotive und Hausgeräte. Unsere Pressenzuführungen laufen in ihren Werken.",
+      "mega-solar": "Konstruktion und Fertigung von Stahltragwerken für Solarparks — ein Fertigungsfeld, das direkt zu unseren Solarprofil-Anwendungen passt."
+    },
     "metaDesc": "Servosteel-Anlagen produzieren in über 48 Ländern in Europa, Nahost, Afrika und Fernost. Unsere Referenzen nach Region und Branche.",
     "eyebrow": "Beweise aus der Praxis",
     "title": "In 48+ Ländern in Produktion",

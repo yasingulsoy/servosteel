@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Globe2 } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
@@ -5,6 +6,8 @@ import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { visibleReferences } from "@/lib/references";
+import { watchUrl } from "@/lib/videos";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -23,6 +26,8 @@ export default async function ReferanslarPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("refs");
+  /* Yayın kilidi kapalıyken boş döner — bölüm hiç basılmaz (lib/references.ts) */
+  const clients = visibleReferences();
 
   const regions = t.raw("regions") as { name: string; text: string }[];
   const sectors = t.raw("sectors") as string[];
@@ -50,6 +55,51 @@ export default async function ReferanslarPage({ params }: Props) {
             </Reveal>
           ))}
         </div>
+
+        {/* ADI GEÇEN REFERANSLAR — yayın kilidi lib/references.ts'te.
+            İzin gelmeden bu blok hiç basılmaz (visibleReferences boş döner). */}
+        {clients.length > 0 && (
+          <div className="mt-16">
+            <Reveal>
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
+                {t("clientsTitle")}
+              </h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-muted">{t("clientsText")}</p>
+            </Reveal>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {clients.map((c, i) => (
+                <Reveal key={c.key} delay={i * 90}>
+                  <div className="flex h-full flex-col rounded-2xl border border-line bg-card p-7">
+                    <div className="flex h-14 items-center">
+                      <Image
+                        src={c.logo}
+                        alt={c.name}
+                        width={c.width}
+                        height={c.height}
+                        className="max-h-12 w-auto max-w-[230px] object-contain"
+                      />
+                    </div>
+                    <p className="mt-5 text-sm font-semibold text-ink">{c.name}</p>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                      {t(`clients.${c.key}`)}
+                    </p>
+                    {c.video && (
+                      <a
+                        href={watchUrl(c.video)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent-ink"
+                      >
+                        {t("clientVideo")}
+                        <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={1.8} aria-hidden />
+                      </a>
+                    )}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
 
         <Reveal>
           <h2 className="font-display mt-16 text-2xl font-bold uppercase tracking-tight text-ink">

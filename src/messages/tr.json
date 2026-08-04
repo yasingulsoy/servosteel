@@ -409,6 +409,13 @@
   },
   "refs": {
     "metaTitle": "Referanslar: Kurulumlarımız ve Çalıştığımız Sektörler",
+    "clientsTitle": "Adı geçen referanslarımız",
+    "clientsText": "Paylaşım izni aldığımız iş birlikleri. Sektörünüzden referans istemeniz hâlinde, benzer üretim yapan tesislerdeki kurulumları ayrıca iletiyoruz.",
+    "clientVideo": "Sahadan video",
+    "clients": {
+      "sarigozoglu": "Otomotiv ve beyaz eşya için pres metal üretimi. Pres besleme sistemlerimiz tesislerinde çalışıyor.",
+      "mega-solar": "Güneş enerjisi santralleri için çelik konstrüksiyon tasarımı ve üretimi. Solar profil hattı uygulamalarıyla doğrudan örtüşen bir üretim alanı."
+    },
     "metaDesc": "Servosteel hatları Avrupa, Orta Doğu, Afrika ve Uzak Doğu'da 48'den fazla ülkede üretim yapıyor. Sektör ve bölge bazlı referanslarımız.",
     "eyebrow": "Sahadan kanıt",
     "title": "48+ ülkede üretimde",
