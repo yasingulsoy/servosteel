@@ -11,6 +11,13 @@ const withNextIntl = createNextIntlPlugin();
  * ÖNEMLİ: Eski site her ürün için İKİ URL tutuyordu — `/product/{slug}/` ve üst seviye
  * `/{slug}/` (ikincisi sitemap'te yoktu ama indekslenmiş ve 301 veriyordu). Bu yüzden
  * her ürün slug'ı için iki varyant da kaydedilir; aksi halde cutover'da 404 olurlardı.
+ *
+ * EĞİK ÇİZGİ: Eski URL'lerin tamamı `/` ile bitiyor, kaynaklar ise çizgisiz yazılı.
+ * Next önce çizgiyi kırpar (308), sonra buradaki kural çalışır (308) — yani her eski
+ * URL 2 adımda hedefe varır. Kaynağa `/` eklemek DENENDİ, hiçbir etkisi yok: kırpma
+ * custom redirect'lerden önce çalışıyor. Tek alternatif skipTrailingSlashRedirect,
+ * o da `/yol` ve `/yol/` adreslerinin ikisini birden 200 yapıp yinelenen içerik
+ * üretirdi — 2 adımlık zincirden kötü. Zincir bilerek bırakıldı.
  */
 const p = (source: string, destination: string) => ({ source, destination, permanent: true });
 
@@ -101,6 +108,46 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      /**
+       * --- Alan adı: www -> kök. HER ŞEYDEN ÖNCE. ---
+       *
+       * Bugün bu yönlendirmeyi eski WordPress hosting'i yapıyor (301, canonical
+       * non-www). Yeni sunucuya taşınınca o ayar GELMEZ ve iki alan adı da
+       * içerik sunmaya başlar. Ajans rapor ettiği sıralamaları
+       * www.servosteel.com.tr üzerinde ölçüyor; kural buraya alınmazsa cutover
+       * anında hem yinelenen içerik hem sıralama kaybı riski doğar.
+       *
+       * Platform (Vercel/Cloudflare) bunu zaten yapıyorsa kural hiç
+       * tetiklenmez — çift yönlendirme veya döngü oluşmaz, çünkü hedef mutlak
+       * URL ve www host'u bir daha görünmez.
+       */
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "www.servosteel.com.tr" }],
+        destination: "https://servosteel.com.tr/:path*",
+        permanent: true,
+      },
+
+      /* --- Eski Yoast sitemap'leri -> yeni sitemap ---
+         Google eski sitemap adreslerini aylarca istemeye devam eder; 404
+         yerine yenisine yönlendirmek yeniden taramayı hızlandırır. */
+      ...[
+        "/sitemap_index.xml",
+        "/wp-sitemap.xml",
+        "/post-sitemap.xml",
+        "/page-sitemap.xml",
+        "/product-sitemap.xml",
+        "/category-sitemap.xml",
+        "/product_cat-sitemap.xml",
+        "/author-sitemap.xml",
+      ].map((s) => p(s, "/sitemap.xml")),
+
+      /* --- WordPress artıkları (canlıda 200 dönüyorlar, yenide 404 olurlardı) --- */
+      p("/author/:slug", "/en"),
+      p("/feed", "/en"),
+      p("/comments/feed", "/en"),
+      p("/:path*/feed", "/en"),
+
       /* --- Makineler --- */
       ...many(DECOILERS, `${M}/rulo-acicilar`),
       p("/decoiler", `${M}/rulo-acicilar`),
