@@ -83,6 +83,7 @@ export const CONTENT_SLUGS = {
     "progresif-kalip-servo-besleyici-secimi": "servo-feeder-selection-for-progressive-dies",
     "solar-profil-hatti-yatirim-geri-donusu": "solar-profile-line-roi",
     "rulo-dilme-hatti-maliyeti": "coil-slitting-line-cost",
+    "rulo-hatti-nereden-alinmali": "where-to-buy-a-coil-processing-line",
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 
