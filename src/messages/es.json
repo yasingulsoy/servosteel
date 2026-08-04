@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Proyectos de autopista", "Ferrocarril y metro", "Ingeniería ambiental", "Infraestructura urbana"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Línea de chapa trapezoidal y panel de fachada",
+        "short": "Conformado, corte a medida y apilado para perfiles de cubierta y fachada.",
+        "hero": "Líneas para chapa trapezoidal, perfil de cubierta de junta alzada y panel de fachada. Dos cosas deciden esta familia: la planitud a lo ancho de una chapa amplia y hacer pasar una superficie pintada por el conformado sin dañarla.",
+        "meta": "Líneas de producción de chapa trapezoidal, cubierta de junta alzada y perfiles de fachada: conformado, corte a medida, apilado automático y embalaje.",
+        "features": [
+          {
+            "title": "Planitud en chapa ancha",
+            "text": "Los perfiles de fachada son anchos y finos, y un error de planitud se ve de inmediato en el montaje; la unidad de aplanado es prácticamente obligatoria en esta familia."
+          },
+          {
+            "title": "Conformado apto para superficie recubierta",
+            "text": "La chapa pintada y galvanizada conserva su recubrimiento cuando la sección se construye por etapas; el número de rodillos se elige en consecuencia."
+          },
+          {
+            "title": "Apilado y embalaje",
+            "text": "Los perfiles de fachada llegan a obra en paquetes, por lo que la línea termina con unidad de apilado y embalaje automáticos."
+          }
+        ],
+        "components": [
+          "Desbobinadora",
+          "Unidad de aplanado",
+          "Estaciones de perfilado",
+          "Corte a medida",
+          "Apilado automático",
+          "Embalaje"
+        ],
+        "sectors": [
+          "Fabricantes de cubierta y fachada",
+          "Construcción prefabricada",
+          "Edificación industrial",
+          "Elementos metálicos de construcción"
+        ],
+        "faq": [
+          {
+            "q": "¿El conformado daña el recubrimiento de la chapa pintada?",
+            "a": "No con el diseño de rodillos y la dureza superficial adecuados. Lo determinante es el número de estaciones: si la sección se construye por etapas y no de una vez, el material no se fuerza. Como el recubrimiento quedará a la intemperie en el producto acabado, esto es directamente una cuestión de vida útil; pedimos el tipo de recubrimiento en fase de oferta."
+          },
+          {
+            "q": "¿Cuánto tarda cambiar la sección del perfil?",
+            "a": "Cambiar la sección implica cambiar el juego de rodillos, y es un trabajo distinto de cambiar la longitud. La longitud de corte es servocontrolada y se llama desde la receta, cambia con la línea en marcha. Cuánto dura un cambio de sección depende de si el utillaje se monta sobre la línea o fuera de ella en un casete."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "Línea de Perfiles C+ / Sigma / Omega",
         "short": "Perfiles de acero ligero: varias secciones en una línea.",
@@ -1275,6 +1319,42 @@
             ["Control", "LCD táctil a color Schneider"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Apilador automático",
+        "short": "Apila el perfil que sale de la línea sin operario, a escuadra y contado.",
+        "hero": "El último eslabón de una línea de perfilado o de corte a medida: una unidad que recoge el perfil o la chapa cortada a velocidad de línea y la apila en orden de paquete. Apilar a mano es el paso que más limita la velocidad de línea y más eleva el riesgo de daño; el apilado automático elimina ese cuello de botella.",
+        "meta": "Unidad de apilado automático para líneas de perfilado y corte a medida: recogida a velocidad de línea, paquetes contados, operación sin operario.",
+        "features": [
+          {
+            "title": "No limita la velocidad de línea",
+            "text": "El apilado sigue el ritmo de salida de la línea, de modo que esta nunca tiene que frenar ni esperar al apilado."
+          },
+          {
+            "title": "Paquetes contados",
+            "text": "Las piezas por paquete vienen de la receta; el recuento no queda en manos del operario y el paquete sale listo para expedir."
+          },
+          {
+            "title": "Protección superficial",
+            "text": "El perfil se deposita en lugar de arrastrarse, lo que reduce el riesgo de rayado en piezas con cara vista."
+          }
+        ],
+        "sectors": [
+          "Fabricantes de perfilado",
+          "Centros de servicio del acero",
+          "Sistemas de estanterías",
+          "Fabricantes de cubierta y fachada"
+        ],
+        "faq": [
+          {
+            "q": "¿Se puede añadir a una línea que ya tengo?",
+            "a": "En la mayoría de casos sí, pero lo deciden dos cosas: la altura de descarga de la línea y si la unidad de corte puede dar una señal. El apilador necesita un disparo del corte para saber cuándo moverse; si el sistema de control no puede exponer esa señal, se monta una solución intermedia. La disposición también debe dejar espacio libre en el lado de recogida para carretilla o transpaleta."
+          },
+          {
+            "q": "¿El mismo apilador vale para secciones de perfil distintas?",
+            "a": "Mientras la familia de secciones sea similar, sí: el ajuste cambia con la receta. Pero perfiles con relaciones ancho-alto muy distintas (un carril estrecho frente a una chapa trapezoidal ancha) no funcionan bien con la misma disposición de sujeción. Indicarnos de antemano qué familias van a correr en la línea nos permite elegir la disposición correcta."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Líneas Compactas",

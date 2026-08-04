@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Projekty autostradowe", "Kolej i metro", "Inżynieria środowiska", "Infrastruktura miejska"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Linia blachy trapezowej i paneli elewacyjnych",
+        "short": "Kształtowanie, cięcie na długość i układanie profili dachowych i elewacyjnych.",
+        "hero": "Linie do blachy trapezowej, profilu dachowego na rąbek stojący i panelu elewacyjnego. Dwie rzeczy decydują o tej rodzinie: płaskość na szerokiej blasze oraz przeprowadzenie powierzchni lakierowanej przez kształtowanie bez uszkodzeń.",
+        "meta": "Linie produkcyjne blachy trapezowej, dachów na rąbek i profili elewacyjnych: kształtowanie, cięcie na długość, automatyczne układanie i pakowanie.",
+        "features": [
+          {
+            "title": "Płaskość na szerokiej blasze",
+            "text": "Profile elewacyjne są szerokie i cienkie, więc błąd płaskości widać od razu przy montażu; zespół prostujący jest w tej rodzinie praktycznie obowiązkowy."
+          },
+          {
+            "title": "Kształtowanie pod powłokę",
+            "text": "Blacha lakierowana i ocynkowana zachowuje powłokę, gdy przekrój powstaje stopniowo; liczbę rolek dobiera się odpowiednio."
+          },
+          {
+            "title": "Układanie i pakowanie",
+            "text": "Profile elewacyjne trafiają na budowę w paczkach, dlatego linia kończy się zespołem automatycznego układania i pakowania."
+          }
+        ],
+        "components": [
+          "Odwijak",
+          "Zespół prostujący",
+          "Stacje profilujące",
+          "Cięcie na długość",
+          "Automatyczne układanie",
+          "Pakowanie"
+        ],
+        "sectors": [
+          "Producenci pokryć i elewacji",
+          "Budownictwo prefabrykowane",
+          "Budownictwo przemysłowe",
+          "Metalowe elementy budowlane"
+        ],
+        "faq": [
+          {
+            "q": "Czy kształtowanie uszkadza powłokę blachy lakierowanej?",
+            "a": "Przy właściwej konstrukcji rolek i twardości powierzchni nie. Decyduje liczba stacji: gdy przekrój powstaje stopniowo, a nie w jednym kroku, materiał nie jest forsowany. Ponieważ powłoka na gotowym wyrobie będzie pracować na zewnątrz, to bezpośrednio kwestia trwałości — na etapie oferty prosimy o rodzaj powłoki."
+          },
+          {
+            "q": "Ile trwa zmiana przekroju profilu?",
+            "a": "Zmiana przekroju oznacza wymianę zestawu rolek i jest inną pracą niż zmiana długości. Długość cięcia jest sterowana serwo i wywoływana z receptury, zmienia się w ruchu. Czas zmiany przekroju zależy od tego, czy oprzyrządowanie składa się na linii, czy poza nią w kasecie."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "Linia Profili C+ / Sigma / Omega",
         "short": "Profile lekkiej konstrukcji stalowej: wiele przekrojów na jednej linii.",
@@ -1275,6 +1319,42 @@
             ["Sterowanie", "kolorowy dotykowy LCD Schneider"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Automatyczny układacz",
+        "short": "Układa profil schodzący z linii bez operatora, równo i z odliczeniem.",
+        "hero": "Ostatnie ogniwo linii profilującej lub cięcia poprzecznego: zespół, który odbiera pocięty profil lub blachę z prędkością linii i układa je w porządku paczki. Ręczne układanie to krok najbardziej ograniczający prędkość linii i najbardziej podnoszący ryzyko uszkodzenia; układanie automatyczne usuwa to wąskie gardło.",
+        "meta": "Zespół automatycznego układania do linii profilujących i cięcia poprzecznego: odbiór z prędkością linii, odliczone paczki, praca bez operatora.",
+        "features": [
+          {
+            "title": "Nie ogranicza prędkości linii",
+            "text": "Układanie podąża za tempem wyjścia linii; linia nie musi zwalniać ani czekać na stos."
+          },
+          {
+            "title": "Odliczone paczki",
+            "text": "Liczba sztuk w paczce pochodzi z receptury; liczenie nie spoczywa na operatorze, a paczka wychodzi gotowa do wysyłki."
+          },
+          {
+            "title": "Ochrona powierzchni",
+            "text": "Profil jest odkładany, a nie przeciągany, co zmniejsza ryzyko zarysowania przy elementach z licem widocznym."
+          }
+        ],
+        "sectors": [
+          "Producenci profili",
+          "Centra serwisowe stali",
+          "Systemy regałowe",
+          "Producenci pokryć i elewacji"
+        ],
+        "faq": [
+          {
+            "q": "Czy da się dołożyć do istniejącej linii?",
+            "a": "W większości przypadków tak, ale decydują dwie rzeczy: wysokość wyjścia linii oraz to, czy zespół cięcia potrafi wystawić sygnał. Układacz potrzebuje wyzwolenia od cięcia, by wiedzieć, kiedy się poruszyć; jeśli sterowanie nie potrafi tego sygnału udostępnić, budowane jest rozwiązanie pośrednie. Układ musi też zostawić wolną przestrzeń po stronie odbioru dla wózka widłowego lub paletowego."
+          },
+          {
+            "q": "Czy ten sam układacz obsłuży różne przekroje profili?",
+            "a": "Dopóki rodzina przekrojów jest zbliżona — tak, ustawienie zmienia się z recepturą. Profile o bardzo różnych proporcjach szerokości do wysokości (wąska szyna wobec szerokiej blachy trapezowej) nie pracują jednak dobrze na tym samym układzie chwytania. Podanie z góry, jakie rodziny profili pójdą na linii, pozwala nam dobrać właściwy układ."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Linie Kompaktowe",

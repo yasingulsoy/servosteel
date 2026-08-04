@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Autobahnprojekte", "Bahn und Metro", "Umwelttechnik", "Stadtinfrastruktur"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Trapezblech- und Fassadenpaneelanlage",
+        "short": "Umformen, Querteilen und Stapeln für Dach- und Fassadenprofile.",
+        "hero": "Anlagen für Trapezblech, Stehfalz-Dachprofil und Fassadenpaneel für Dach und Fassade. Zwei Dinge entscheiden diese Familie: Planheit über ein breites Blech und eine lackierte Oberfläche unbeschädigt durch die Umformung zu bringen.",
+        "meta": "Produktionsanlagen für Trapezblech, Stehfalzdach und Fassadenprofile: Umformen, Querteilen, automatisches Stapeln und Verpacken.",
+        "features": [
+          {
+            "title": "Planheit über breites Blech",
+            "text": "Fassadenprofile sind breit und dünn, ein Planheitsfehler zeigt sich sofort bei der Montage; eine Richteinheit ist in dieser Familie faktisch zwingend."
+          },
+          {
+            "title": "Umformen für beschichtete Oberflächen",
+            "text": "Lackiertes und verzinktes Blech behält seine Beschichtung, wenn der Querschnitt stufenweise aufgebaut wird; die Rollenzahl wird entsprechend gewählt."
+          },
+          {
+            "title": "Stapeln und Verpacken",
+            "text": "Fassadenprofile gehen als Paket auf die Baustelle, daher endet die Anlage mit automatischer Stapel- und Verpackungseinheit."
+          }
+        ],
+        "components": [
+          "Abwickelhaspel",
+          "Richteinheit",
+          "Rollformstationen",
+          "Querteilen",
+          "Automatisches Stapeln",
+          "Verpacken"
+        ],
+        "sectors": [
+          "Dach- und Fassadenhersteller",
+          "Fertigbau",
+          "Industriebau",
+          "Metallbauelemente"
+        ],
+        "faq": [
+          {
+            "q": "Nimmt die Beschichtung bei lackiertem Blech Schaden?",
+            "a": "Mit richtiger Rollenauslegung und Oberflächenhärte nicht. Entscheidend ist die Stationszahl: Wird der Querschnitt stufenweise statt in einem Zug aufgebaut, wird der Werkstoff nicht überfordert. Da die Beschichtung am fertigen Produkt im Freien steht, ist das unmittelbar eine Frage der Lebensdauer — wir fragen im Angebotsstadium nach der Beschichtungsart."
+          },
+          {
+            "q": "Wie lange dauert ein Wechsel des Profilquerschnitts?",
+            "a": "Ein Querschnittswechsel bedeutet einen Wechsel des Rollensatzes und ist eine andere Arbeit als ein Längenwechsel. Die Schnittlänge ist servogeregelt und wird aus dem Rezept abgerufen, sie ändert sich im Lauf. Wie lange ein Querschnittswechsel dauert, hängt davon ab, ob das Werkzeug auf der Anlage oder außerhalb in einer Kassette aufgebaut wird."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profilanlage",
         "short": "Leichtbau-Stahlprofile: mehrere Querschnitte auf einer Anlage.",
@@ -1275,6 +1319,42 @@
             ["Steuerung", "Schneider Farb-LCD-Touch"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Automatischer Stapler",
+        "short": "Stapelt das aus der Anlage laufende Profil unbeaufsichtigt, bündig und gezählt.",
+        "hero": "Das letzte Glied einer Profilier- oder Querteilanlage: eine Einheit, die das geschnittene Profil oder Blech in Liniengeschwindigkeit aufnimmt und in Paketordnung stapelt. Von Hand zu stapeln ist der Schritt, der die Liniengeschwindigkeit am stärksten begrenzt und das Beschädigungsrisiko am meisten erhöht; das automatische Stapeln beseitigt diesen Engpass.",
+        "meta": "Automatische Stapeleinheit für Profilier- und Querteilanlagen: Aufnahme in Liniengeschwindigkeit, gezählte Pakete, unbeaufsichtigter Betrieb.",
+        "features": [
+          {
+            "title": "Begrenzt die Liniengeschwindigkeit nicht",
+            "text": "Das Stapeln folgt dem Ausstoßtakt der Anlage; die Linie muss für den Stapel weder verlangsamen noch warten."
+          },
+          {
+            "title": "Gezählte Pakete",
+            "text": "Die Stückzahl je Paket kommt aus dem Rezept; das Zählen bleibt nicht am Bediener und das Paket geht versandfertig ab."
+          },
+          {
+            "title": "Oberflächenschutz",
+            "text": "Das Profil wird abgelegt statt geschoben, was bei Teilen mit Sichtfläche das Kratzerrisiko senkt."
+          }
+        ],
+        "sectors": [
+          "Profilierhersteller",
+          "Stahl-Service-Center",
+          "Regal- und Lagersysteme",
+          "Dach- und Fassadenhersteller"
+        ],
+        "faq": [
+          {
+            "q": "Lässt er sich an eine bestehende Anlage nachrüsten?",
+            "a": "Meist ja, aber zwei Dinge entscheiden: die Auslaufhöhe der Anlage und ob die Schneideinheit ein Signal ausgeben kann. Der Stapler braucht einen Trigger vom Schnitt, um zu wissen, wann er sich bewegt; kann die Steuerung dieses Signal nicht bereitstellen, wird eine Zwischenlösung gebaut. Das Layout muss außerdem auf der Entnahmeseite freie Fläche für Stapler oder Hubwagen lassen."
+          },
+          {
+            "q": "Verarbeitet derselbe Stapler unterschiedliche Profilquerschnitte?",
+            "a": "Solange die Querschnittsfamilie ähnlich ist, ja — die Einstellung wechselt über das Rezept. Profile mit sehr unterschiedlichem Breiten-Höhen-Verhältnis (eine schmale Schiene gegenüber einem breiten Trapezblech) laufen jedoch nicht gut auf derselben Halteanordnung. Wenn Sie uns vorab nennen, welche Profilfamilien auf der Anlage laufen sollen, wählen wir die richtige Anordnung."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Kompaktanlagen",

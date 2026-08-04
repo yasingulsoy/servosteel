@@ -56,6 +56,8 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("home");
   const tSec = await getTranslations("sectors");
+  const tDilme = await getTranslations("dilme");
+  const tAbout = await getTranslations("about");
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
   const tCommon = await getTranslations("common");
@@ -90,6 +92,7 @@ export default async function Home({ params }: Props) {
                 l2={t("bands.slitting.l2")}
                 href="/dilme-hatlari"
                 cta={tCommon("lineExamine")}
+                name={tDilme("title")}
               />
             ),
           },
@@ -102,6 +105,7 @@ export default async function Home({ params }: Props) {
                 l2={t("bands.feeding.l2")}
                 href="/makineler/servo-suruculer"
                 cta={tCommon("details")}
+                name={tMach("servo-suruculer.name")}
               />
             ),
           },
@@ -168,6 +172,7 @@ export default async function Home({ params }: Props) {
           l2={t("bands.facility.l2")}
           href="/hakkimizda"
           cta={tCommon("details")}
+          name={tAbout("facilityEyebrow")}
         />
       </VideoBand>
 

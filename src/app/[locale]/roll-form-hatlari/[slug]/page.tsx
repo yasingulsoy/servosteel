@@ -10,7 +10,7 @@ import { ProfileIcon } from "@/components/profile-icon";
 import { ProductShot } from "@/components/product-shot";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
-import { rollFormItems, isRollFormSlug, rollFormIcon } from "@/lib/catalog";
+import { rollFormItems, isRollFormSlug, rollFormIcon, hasPhoto } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -61,7 +61,9 @@ export default async function RollFormLinePage({ params }: Props) {
 
       <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
         <Reveal>
-          <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} priority />
+          {hasPhoto(slug) && (
+            <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} priority />
+          )}
         </Reveal>
       </div>
 

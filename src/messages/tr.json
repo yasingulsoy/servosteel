@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Otoyol projeleri", "Demiryolu ve metro", "Çevre mühendisliği", "Şehir içi altyapı"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Trapez Sac ve Cephe Paneli Hattı",
+        "short": "Çatı ve cephe kaplama profilleri için form verme, boy kesme ve istif.",
+        "hero": "Çatı ve cephe kaplamasında kullanılan trapez sac, kenet çatı profili ve cephe paneli üretimi için hatlar. Bu ailede belirleyici olan iki şey var: geniş sacda düzlem kalitesi ve boyanmış yüzeyin şekillendirme boyunca zarar görmemesi.",
+        "meta": "Trapez sac, kenet çatı ve cephe kaplama profili üretim hatları: form verme, boy kesme, otomatik istif ve paketleme.",
+        "features": [
+          {
+            "title": "Geniş sacda düzlem",
+            "text": "Kaplama profilleri geniş ve ince olduğu için düzlem hatası montajda hemen görünür; doğrultma ünitesi bu ailede pratikte zorunludur."
+          },
+          {
+            "title": "Kaplamalı yüzeye uygun şekillendirme",
+            "text": "Boyalı ve galvanizli sac, kesit kademeli oluşturulduğunda kaplamasını korur; merdane sayısı buna göre seçilir."
+          },
+          {
+            "title": "İstif ve paketleme",
+            "text": "Kaplama profilleri sahaya paket hâlinde gider; hat sonunda otomatik istif ve paketleme ünitesi bulunur."
+          }
+        ],
+        "components": [
+          "Rulo açıcı",
+          "Doğrultma ünitesi",
+          "Roll form istasyonları",
+          "Boy kesme",
+          "Otomatik istif",
+          "Paketleme"
+        ],
+        "sectors": [
+          "Çatı ve cephe üreticileri",
+          "Prefabrik yapı",
+          "Sanayi yapıları",
+          "Metal yapı elemanları"
+        ],
+        "faq": [
+          {
+            "q": "Boyalı sacda kaplama zarar görür mü?",
+            "a": "Doğru merdane tasarımı ve yüzey sertliğiyle görmez. Belirleyici olan istasyon sayısı: kesit tek adımda değil kademeli oluşturulursa malzeme zorlanmaz. Kaplama dışarıda duracak bir ürüne gideceği için bu doğrudan ömür meselesidir; teklif aşamasında sacın kaplama tipini paylaşmanızı isteriz."
+          },
+          {
+            "q": "Profil kesitini değiştirmek ne kadar sürüyor?",
+            "a": "Kesit değişimi merdane takımı değişimi demektir ve bu, boy değişiminden farklı bir iştir. Boy kesim servo kontrollüdür ve reçeteden çağrılır, hat çalışırken değişir. Kesit değişiminin süresi ise takımın hat üzerinde mi yoksa kaset hâlinde hat dışında mı hazırlandığına bağlıdır."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profil Hattı",
         "short": "Hafif çelik yapı profilleri: tek hatta birden çok kesit.",
@@ -1275,6 +1319,42 @@
             ["Kontrol", "Schneider renkli LCD dokunmatik"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Otomatik İstifleyici",
+        "short": "Hattan çıkan profili operatörsüz, düzgün ve sayılı biçimde istifler.",
+        "hero": "Roll form ve boy kesme hatlarının son halkası: kesilen profil ya da plakayı hat hızında toplayıp paket düzeninde istifleyen ünite. Elle istif, hat hızını sınırlayan ve hasar riskini en çok artıran adımdır; otomatik istif bu darboğazı ortadan kaldırır.",
+        "meta": "Roll form ve boy kesme hatları için otomatik istifleme ünitesi: hat hızında toplama, sayılı paket, operatörsüz çalışma.",
+        "features": [
+          {
+            "title": "Hat hızını sınırlamaz",
+            "text": "İstifleme, hattın çıkış temposuna göre çalışır; hat istif için yavaşlamak ya da beklemek zorunda kalmaz."
+          },
+          {
+            "title": "Sayılı paket",
+            "text": "Paket başına adet reçeteden gelir; sayım operatöre bırakılmaz, sevkiyat hazır çıkar."
+          },
+          {
+            "title": "Yüzey koruma",
+            "text": "Profil sürtünerek değil kontrollü bırakılarak yerleşir; görünür yüzeyli parçalarda çizik riski düşer."
+          }
+        ],
+        "sectors": [
+          "Roll form üreticileri",
+          "Çelik servis merkezleri",
+          "Raf ve depolama sistemleri",
+          "Çatı ve cephe üreticileri"
+        ],
+        "faq": [
+          {
+            "q": "Mevcut hattıma sonradan eklenebilir mi?",
+            "a": "Çoğu durumda evet, ama iki şeye bakmak gerekir: hattın çıkış yüksekliği ve kesim ünitesinin sinyal verip veremediği. İstifleyicinin ne zaman hareket edeceğini bilmesi için kesimden tetik alması gerekir; kontrol sistemi bu sinyali dışarı veremiyorsa ara bir çözüm kurulur. Yerleşimde de paketin alınacağı tarafta forklift veya transpalet için boş alan bırakılmalıdır."
+          },
+          {
+            "q": "Farklı profil kesitlerinde aynı istifleyici çalışır mı?",
+            "a": "Kesit ailesi benzer olduğu sürece evet; ayar reçeteyle değişir. Ancak çok farklı en/boy oranlarına sahip profiller (örneğin dar bir ray ile geniş bir trapez sac) aynı tutucu düzeniyle iyi çalışmaz. Hangi profil ailelerini aynı hatta işleyeceğinizi baştan paylaşmanız, doğru düzeni seçmemizi sağlar."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Kompakt Hatlar",

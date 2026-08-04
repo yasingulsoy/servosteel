@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Progetti autostradali", "Ferrovia e metro", "Ingegneria ambientale", "Infrastruttura urbana"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Linea per lamiera grecata e pannelli di facciata",
+        "short": "Profilatura, taglio a misura e impilaggio per profili di copertura e facciata.",
+        "hero": "Linee per lamiera grecata, profilo di copertura a doppia aggraffatura e pannello di facciata. Due cose decidono questa famiglia: la planarità su una lamiera larga e portare una superficie verniciata attraverso la profilatura senza danneggiarla.",
+        "meta": "Linee di produzione per lamiera grecata, coperture aggraffate e profili di facciata: profilatura, taglio a misura, impilaggio automatico e imballaggio.",
+        "features": [
+          {
+            "title": "Planarità su lamiera larga",
+            "text": "I profili di facciata sono larghi e sottili, e un errore di planarità si vede subito in montaggio; il gruppo spianatore è di fatto obbligatorio in questa famiglia."
+          },
+          {
+            "title": "Profilatura adatta alle superfici rivestite",
+            "text": "La lamiera verniciata e zincata conserva il rivestimento se la sezione si costruisce per gradi; il numero di rulli si sceglie di conseguenza."
+          },
+          {
+            "title": "Impilaggio e imballaggio",
+            "text": "I profili di facciata arrivano in cantiere in pacchi, perciò la linea termina con gruppo di impilaggio e imballaggio automatici."
+          }
+        ],
+        "components": [
+          "Svolgitore",
+          "Gruppo spianatore",
+          "Stazioni di profilatura",
+          "Taglio a misura",
+          "Impilaggio automatico",
+          "Imballaggio"
+        ],
+        "sectors": [
+          "Produttori di coperture e facciate",
+          "Edilizia prefabbricata",
+          "Edilizia industriale",
+          "Elementi metallici per l'edilizia"
+        ],
+        "faq": [
+          {
+            "q": "La profilatura danneggia il rivestimento della lamiera verniciata?",
+            "a": "Non con il giusto disegno dei rulli e la corretta durezza superficiale. Determinante è il numero di stazioni: costruendo la sezione per gradi anziché in un colpo solo, il materiale non viene forzato. Poiché il rivestimento resterà all'aperto sul prodotto finito, è direttamente una questione di durata: chiediamo il tipo di rivestimento in fase di offerta."
+          },
+          {
+            "q": "Quanto dura il cambio della sezione del profilo?",
+            "a": "Cambiare la sezione significa cambiare il set di rulli, ed è un lavoro diverso dal cambio di lunghezza. La lunghezza di taglio è servocontrollata e richiamata da ricetta, cambia con la linea in marcia. Quanto duri un cambio di sezione dipende dal fatto che l'attrezzatura sia composta sulla linea o fuori linea in un cassetto."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "Linea Profili C+ / Sigma / Omega",
         "short": "Profili in acciaio leggero: più sezioni su una linea.",
@@ -1275,6 +1319,42 @@
             ["Controllo", "LCD touch a colori Schneider"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Impilatore automatico",
+        "short": "Impila il profilo in uscita dalla linea senza operatore, in squadro e contato.",
+        "hero": "L'ultimo anello di una linea di profilatura o di taglio a misura: un'unità che raccoglie il profilo o la lamiera tagliata alla velocità di linea e li impila in ordine di pacco. Impilare a mano è il passaggio che più limita la velocità di linea e più aumenta il rischio di danno; l'impilaggio automatico elimina questo collo di bottiglia.",
+        "meta": "Unità di impilaggio automatico per linee di profilatura e taglio a misura: raccolta alla velocità di linea, pacchi contati, funzionamento senza operatore.",
+        "features": [
+          {
+            "title": "Non limita la velocità di linea",
+            "text": "L'impilaggio segue il ritmo di uscita della linea, che non deve mai rallentare o attendere il pacco."
+          },
+          {
+            "title": "Pacchi contati",
+            "text": "I pezzi per pacco arrivano dalla ricetta; il conteggio non resta all'operatore e il pacco esce pronto alla spedizione."
+          },
+          {
+            "title": "Protezione della superficie",
+            "text": "Il profilo viene depositato anziché trascinato, riducendo il rischio di rigature sui pezzi con faccia a vista."
+          }
+        ],
+        "sectors": [
+          "Costruttori di profilati",
+          "Centri servizi acciaio",
+          "Sistemi di scaffalature",
+          "Produttori di coperture e facciate"
+        ],
+        "faq": [
+          {
+            "q": "Si può aggiungere a una linea già in funzione?",
+            "a": "Nella maggior parte dei casi sì, ma decidono due cose: l'altezza di scarico della linea e se l'unità di taglio può fornire un segnale. L'impilatore ha bisogno di un consenso dal taglio per sapere quando muoversi; se il controllo non riesce a esporre quel segnale si realizza una soluzione intermedia. Il layout deve inoltre lasciare spazio libero sul lato di prelievo per carrello o transpallet."
+          },
+          {
+            "q": "Lo stesso impilatore gestisce sezioni di profilo diverse?",
+            "a": "Finché la famiglia di sezioni è simile, sì: la regolazione cambia da ricetta. Profili con rapporti larghezza-altezza molto diversi (una guida stretta rispetto a una lamiera trapezoidale larga) però non lavorano bene sulla stessa disposizione di presa. Dirci in anticipo quali famiglie gireranno sulla linea ci permette di scegliere la disposizione giusta."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Linee Compatte",

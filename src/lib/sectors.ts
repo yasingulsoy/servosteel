@@ -52,8 +52,8 @@ export const sectors: Sector[] = [
   {
     slug: "insaat",
     icon: "construction",
-    lines: ["iskele-kalas", "c-sigma-omega", "yol-bariyeri", "gurultu-bariyeri"],
-    machines: ["dogrultmali-servo-suruculer", "kompakt-hatlar"],
+    lines: ["iskele-kalas", "c-sigma-omega", "trapez-cephe-paneli", "yol-bariyeri", "gurultu-bariyeri"],
+    machines: ["dogrultmali-servo-suruculer", "otomatik-istifleyici"],
     videos: [
       "YIO_4p9c7sE", // Çelik kalas hattı
       "Et0LqSbb3lw", // İskele kalas hattı
@@ -71,7 +71,7 @@ export const sectors: Sector[] = [
     slug: "lojistik-depolama",
     icon: "logistics",
     lines: ["agir-raf"],
-    machines: ["servo-suruculer", "rulo-acicilar"],
+    machines: ["servo-suruculer", "otomatik-istifleyici"],
     videos: [
       "1VPa1ROQbhc", // Market raf roll forming hattı
       "SE8tTfxkKWI", // Raf imalatı

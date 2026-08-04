@@ -10,7 +10,7 @@ import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
-import { machineItems, isMachineSlug } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -67,7 +67,7 @@ export default async function MachinePage({ params }: Props) {
     "@id": `${SITE_URL}${localePath(locale as AppLocale, `/makineler/${slug}`)}#product`,
     name: t("name"),
     description: t("meta"),
-    image: `${SITE_URL}/gorseller/${slug}.jpg`,
+    ...(hasPhoto(slug) ? { image: `${SITE_URL}/gorseller/${slug}.jpg` } : {}),
     brand: { "@type": "Brand", name: SITE_NAME },
     manufacturer: { "@id": `${SITE_URL}/#organization` },
     ...(hasTable && tableRows.length
@@ -162,7 +162,9 @@ export default async function MachinePage({ params }: Props) {
 
           <aside className="space-y-6">
             <Reveal>
-              <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} ratio="4/3" fit="contain" sizes="(max-width: 1024px) 100vw, 400px" />
+              {hasPhoto(slug) && (
+                <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} ratio="4/3" fit="contain" sizes="(max-width: 1024px) 100vw, 400px" />
+              )}
             </Reveal>
             <Reveal delay={120}>
               <div className="rounded-2xl bg-shell p-7 text-white">

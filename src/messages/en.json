@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Highway projects", "Railways and metro", "Environmental engineering", "Urban infrastructure"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Trapezoidal Sheet and Facade Panel Line",
+        "short": "Forming, cut-to-length and stacking for roofing and cladding profiles.",
+        "hero": "Lines for trapezoidal sheet, standing-seam roofing profile and facade panel used in roofing and cladding. Two things decide this family: flatness across a wide sheet, and getting a painted surface through forming undamaged.",
+        "meta": "Production lines for trapezoidal sheet, standing-seam roofing and facade cladding profiles: forming, cut-to-length, automatic stacking and packing.",
+        "features": [
+          {
+            "title": "Flatness across a wide sheet",
+            "text": "Cladding profiles are wide and thin, so a flatness error shows immediately on installation; a levelling unit is effectively mandatory in this family."
+          },
+          {
+            "title": "Forming suited to a coated surface",
+            "text": "Painted and galvanised sheet keeps its coating when the section is built up in stages; roll station count is chosen accordingly."
+          },
+          {
+            "title": "Stacking and packing",
+            "text": "Cladding profiles go to site in packs, so the line ends with an automatic stacking and packing unit."
+          }
+        ],
+        "components": [
+          "Decoiler",
+          "Levelling unit",
+          "Roll forming stations",
+          "Cut to length",
+          "Automatic stacking",
+          "Packing"
+        ],
+        "sectors": [
+          "Roofing and facade producers",
+          "Prefabricated construction",
+          "Industrial buildings",
+          "Metal building components"
+        ],
+        "faq": [
+          {
+            "q": "Does forming damage the coating on painted sheet?",
+            "a": "Not with the right roll design and surface hardness. The station count is what decides it: build the section in stages rather than in one step and the material is not forced. Since the coating will sit outdoors on the finished product, this is directly a question of service life — we ask for the sheet's coating type at quotation stage."
+          },
+          {
+            "q": "How long does changing the profile section take?",
+            "a": "Changing the section means changing the roll tooling, which is a different job from changing the length. Cut length is servo controlled and called from the recipe, so it changes while the line runs. How long a section change takes depends on whether the tooling is built on the line or off it in a cassette."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profile Line",
         "short": "Light steel framing profiles: multiple sections on one line.",
@@ -1275,6 +1319,42 @@
             ["Control", "Schneider colour LCD touchscreen"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Automatic Stacker",
+        "short": "Stacks the profile leaving the line — unattended, square and counted.",
+        "hero": "The last link in a roll forming or cut-to-length line: a unit that collects the cut profile or sheet at line speed and stacks it in pack order. Manual stacking is the step that most limits line speed and most raises the risk of damage; automatic stacking removes that bottleneck.",
+        "meta": "Automatic stacking unit for roll forming and cut-to-length lines: collection at line speed, counted packs, unattended operation.",
+        "features": [
+          {
+            "title": "Does not cap line speed",
+            "text": "Stacking runs to the line's output tempo, so the line never has to slow down or wait for the stack."
+          },
+          {
+            "title": "Counted packs",
+            "text": "Pieces per pack come from the recipe; counting is not left to the operator and the pack leaves ready to ship."
+          },
+          {
+            "title": "Surface protection",
+            "text": "The profile is placed rather than dragged into position, which lowers the risk of scratching on parts with a visible face."
+          }
+        ],
+        "sectors": [
+          "Roll forming manufacturers",
+          "Steel service centres",
+          "Racking and storage systems",
+          "Roofing and facade producers"
+        ],
+        "faq": [
+          {
+            "q": "Can it be added to a line I already have?",
+            "a": "In most cases yes, but two things decide it: the line's discharge height, and whether the cutting unit can give a signal. The stacker needs a trigger from the cut to know when to move; if the control system cannot expose that signal, an intermediate solution is built. The layout also has to leave clear floor space on the pick-up side for a forklift or pallet truck."
+          },
+          {
+            "q": "Will the same stacker handle different profile sections?",
+            "a": "As long as the section family is similar, yes — the setting changes with the recipe. But profiles with very different width-to-height ratios (a narrow rail versus a wide trapezoidal sheet, say) do not work well on the same holding arrangement. Telling us up front which profile families will run on the line lets us pick the right arrangement."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Compact Lines",

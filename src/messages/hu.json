@@ -1078,6 +1078,50 @@
         ],
         "sectors": ["Autópálya-projektek", "Vasút és metró", "Környezetmérnökség", "Városi infrastruktúra"]
       },
+      "trapez-cephe-paneli": {
+        "name": "Trapézlemez- és homlokzatpanel-sor",
+        "short": "Alakítás, keresztvágás és rakatolás tető- és homlokzatprofilokhoz.",
+        "hero": "Sorok trapézlemezhez, állókorcos tetőprofilhoz és homlokzatpanelhez. Két dolog dönti el ezt a családot: a síkkifekvés széles lemezen, és hogy a festett felület sértetlenül jusson át az alakításon.",
+        "meta": "Gyártósorok trapézlemezhez, állókorcos tetőhöz és homlokzatprofilokhoz: alakítás, keresztvágás, automata rakatolás és csomagolás.",
+        "features": [
+          {
+            "title": "Síkkifekvés széles lemezen",
+            "text": "A homlokzatprofilok szélesek és vékonyak, így a síkhiba a szerelésnél azonnal látszik; az egyengető egység ebben a családban gyakorlatilag kötelező."
+          },
+          {
+            "title": "Bevonatos felülethez illő alakítás",
+            "text": "A festett és horganyzott lemez megőrzi bevonatát, ha a keresztmetszet fokozatosan épül fel; a görgőszámot ehhez választjuk."
+          },
+          {
+            "title": "Rakatolás és csomagolás",
+            "text": "A homlokzatprofilok csomagban jutnak a helyszínre, ezért a sor automata rakatoló és csomagoló egységgel zárul."
+          }
+        ],
+        "components": [
+          "Letekercselő",
+          "Egyengető egység",
+          "Profilhengerlő állomások",
+          "Keresztvágás",
+          "Automata rakatolás",
+          "Csomagolás"
+        ],
+        "sectors": [
+          "Tető- és homlokzatgyártók",
+          "Előregyártott építés",
+          "Ipari épületek",
+          "Fém épületszerkezeti elemek"
+        ],
+        "faq": [
+          {
+            "q": "Sérül a festett lemez bevonata alakításkor?",
+            "a": "Helyes görgőtervezés és felületi keménység mellett nem. Az állomásszám a meghatározó: ha a keresztmetszet fokozatosan, nem egy lépésben épül fel, az anyagot nem erőltetjük. Mivel a bevonat a kész terméken kültéren lesz, ez közvetlenül élettartam kérdése — az ajánlati szakaszban kérjük a lemez bevonattípusát."
+          },
+          {
+            "q": "Mennyi ideig tart a profilkeresztmetszet cseréje?",
+            "a": "A keresztmetszet cseréje a görgőkészlet cseréjét jelenti, és ez más munka, mint a hosszváltás. A vágáshossz szervovezérelt és receptből hívható, menet közben változik. A keresztmetszetcsere ideje attól függ, hogy a szerszámot a soron vagy soron kívül, kazettában állítják-e össze."
+          }
+        ]
+      },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profil Sor",
         "short": "Könnyűszerkezetes acélprofilok: több keresztmetszet egy soron.",
@@ -1275,6 +1319,42 @@
             ["Vezérlés", "Schneider színes LCD érintőképernyő"]
           ]
         }
+      },
+      "otomatik-istifleyici": {
+        "name": "Automata rakatoló",
+        "short": "A sorról érkező profilt kezelő nélkül, szögben és megszámlálva rakatolja.",
+        "hero": "A profilhengerlő vagy keresztvágó sor utolsó láncszeme: egység, amely a levágott profilt vagy lemezt sorsebességen fogadja és csomagrendbe rakatolja. A kézi rakatolás az a lépés, amely a legjobban korlátozza a sorsebességet és a legjobban növeli a sérülés kockázatát; az automata rakatolás ezt a szűk keresztmetszetet szünteti meg.",
+        "meta": "Automata rakatoló egység profilhengerlő és keresztvágó sorokhoz: fogadás sorsebességen, megszámlált csomagok, kezelő nélküli működés.",
+        "features": [
+          {
+            "title": "Nem szabja meg a sorsebességet",
+            "text": "A rakatolás a sor kiadási üteméhez igazodik; a sornak nem kell lassítania vagy várnia a rakatra."
+          },
+          {
+            "title": "Megszámlált csomagok",
+            "text": "A csomagonkénti darabszám a receptből jön; a számolás nem a kezelőn múlik, és a csomag szállításra készen hagyja el a sort."
+          },
+          {
+            "title": "Felületvédelem",
+            "text": "A profil nem húzódik, hanem lehelyezésre kerül, ami látszó felületű alkatrészeknél csökkenti a karcolódás kockázatát."
+          }
+        ],
+        "sectors": [
+          "Profilhengerlő gyártók",
+          "Acélszolgáltató központok",
+          "Polc- és tárolórendszerek",
+          "Tető- és homlokzatgyártók"
+        ],
+        "faq": [
+          {
+            "q": "Utólag felszerelhető meglévő sorra?",
+            "a": "A legtöbb esetben igen, de két dolgon múlik: a sor kiadási magasságán és azon, hogy a vágóegység tud-e jelet adni. A rakatolónak a vágásból kell jel, hogy tudja, mikor mozduljon; ha a vezérlés ezt a jelet nem tudja kiadni, köztes megoldás épül. Az elrendezésnek emellett szabad területet kell hagynia a felvételi oldalon targoncának vagy raklapemelőnek."
+          },
+          {
+            "q": "Ugyanaz a rakatoló kezel eltérő profilkeresztmetszeteket?",
+            "a": "Amíg a keresztmetszet-család hasonló, igen — a beállítás recepttel változik. A nagyon eltérő szélesség–magasság arányú profilok (egy keskeny sín és egy széles trapézlemez) viszont nem működnek jól ugyanazon tartóelrendezésen. Ha előre megmondja, mely profilcsaládok futnak a soron, a megfelelő elrendezést tudjuk kiválasztani."
+          }
+        ]
       },
       "kompakt-hatlar": {
         "name": "Kompakt Sorok",

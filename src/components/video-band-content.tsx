@@ -10,6 +10,16 @@ export type VideoBandContentProps = {
   href: string;
   /** Buton metni */
   cta: string;
+  /**
+   * Bandın anlattığı hattın/ürünün GERÇEK adı — butonun yanında görünür.
+   *
+   * Sloganlar şiirsel ("Tek rulodan onlarca şerit") ve içinde ürünün adı
+   * geçmiyor. Ad hiçbir yerde yazılı olmayınca hem okur hangi ürüne baktığını
+   * anlamıyor hem de bandın metni ürün adını hiç içermiyordu. Slogan görsel
+   * başlık (h2) olarak kalır, ad onun altında h3 olarak durur — başlık
+   * hiyerarşisi bozulmaz.
+   */
+  name?: string;
 };
 
 /**
@@ -25,7 +35,7 @@ export type VideoBandContentProps = {
  * Ölçek mobilde belirgin şekilde küçülür: 16:9 bant dar ekranda ~210 px
  * yüksekliğe iner, hero ölçüsündeki başlık oraya sığmaz.
  */
-export function VideoBandContent({ l1, l2, href, cta }: VideoBandContentProps) {
+export function VideoBandContent({ l1, l2, href, cta, name }: VideoBandContentProps) {
   return (
     <div className="pointer-events-none absolute inset-0 flex items-center">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
@@ -39,15 +49,24 @@ export function VideoBandContent({ l1, l2, href, cta }: VideoBandContentProps) {
             <span className="text-accent">{l2}</span>
           </h2>
 
-          <SpecularButton
-            href={href}
-            variant="gold"
-            size="md"
-            className="pointer-events-auto mt-3 sm:mt-6 lg:mt-8"
-          >
-            {cta}
-            <ArrowRight className="size-4" strokeWidth={2} aria-hidden />
-          </SpecularButton>
+          {/* Buton ile ürün adı yan yana; dar ekranda alt alta sarar.
+              Ad butonun YANINDA duruyor ama h3 olarak işaretli — görsel yerleşim
+              başlık anlamını bozmuyor. */}
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 sm:mt-6 lg:mt-8">
+            <SpecularButton href={href} variant="gold" size="md" className="pointer-events-auto">
+              {cta}
+              <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2} aria-hidden />
+            </SpecularButton>
+
+            {name && (
+              <h3
+                className="font-display text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base"
+                style={{ textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}
+              >
+                {name}
+              </h3>
+            )}
+          </div>
         </div>
       </div>
     </div>

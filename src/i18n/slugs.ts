@@ -59,6 +59,7 @@ export const CONTENT_SLUGS = {
     "servo-suruculer": "servo-feeders",
     "dogrultmali-servo-suruculer": "straightener-servo-feeders",
     "kompakt-hatlar": "compact-lines",
+    "otomatik-istifleyici": "automatic-stacker",
   },
   "roll-form-hatlari": {
     "kablo-kanali": "cable-tray",
@@ -68,6 +69,7 @@ export const CONTENT_SLUGS = {
     "yol-bariyeri": "guard-rail",
     "gurultu-bariyeri": "noise-barrier",
     "c-sigma-omega": "c-sigma-omega-profiles",
+    "trapez-cephe-paneli": "trapezoidal-and-facade-panel",
   },
   karsilastirma: {
     "dilme-vs-boy-kesme": "slitting-vs-cut-to-length",
