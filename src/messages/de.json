@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Maschinenvideos: unsere Anlagen im Einsatz",
+    "archiveTitle": "Der gesamte Kanal",
+    "archiveCount": "Insgesamt {count} Videos im Kanal",
     "metaDesc": "Servosteel-Anlagen im Einsatz: echte Praxisvideos von Längsteilanlagen, Querteilanlagen, Rollforming und Pressenzuführsystemen.",
     "eyebrow": "Aus der Praxis",
     "title": "Sehen Sie unsere Anlagen im Einsatz",

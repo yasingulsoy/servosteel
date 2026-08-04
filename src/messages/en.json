@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Machine Videos: Our Lines Running on Site",
+    "archiveTitle": "The rest of the channel",
+    "archiveCount": "{count} videos on the channel",
     "metaDesc": "Watch Servosteel lines in action: real field videos of slitting lines, cut-to-length, roll forming production and press feeding systems.",
     "eyebrow": "From the field",
     "title": "Watch our lines in action",

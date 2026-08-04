@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Makine Videoları: Hatlarımız Sahada Çalışırken",
+    "archiveTitle": "Kanalın tamamı",
+    "archiveCount": "Kanalda toplam {count} video",
     "metaDesc": "Servosteel hatlarını çalışırken izleyin: dilme hattı, boy kesme, roll form üretimi ve pres besleme sistemlerinden gerçek saha videoları.",
     "eyebrow": "Sahadan görüntüler",
     "title": "Hatlarımızı çalışırken izleyin",

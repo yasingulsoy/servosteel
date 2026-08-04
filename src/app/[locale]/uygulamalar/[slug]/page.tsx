@@ -11,7 +11,7 @@ import { VideoCard } from "@/components/video-card";
 import { VideoSchema } from "@/components/video-schema";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { sectors, getSector, isSectorSlug } from "@/lib/sectors";
-import { videoMeta } from "@/lib/videos";
+import { videoMeta, videoTitleResolver } from "@/lib/videos";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -51,7 +51,10 @@ export default async function SectorPage({ params }: Props) {
   /* Kanalda gerçekten var olan ve metadata'sı bilinen videolar.
      Tarihi olmayan video şemaya girmez — uydurma uploadDate şemayı geçersiz kılar. */
   const videos = sector.videos.map((id) => videoMeta(id)).filter((v) => v !== undefined);
-  const titleOf = (id: string) => (tv.has(`items.${id}`) ? tv(`items.${id}`) : t("name"));
+  /* Küratörlü 24 videonun çevrilmiş başlığı varsa o, yoksa gerçek YouTube başlığı. */
+  const titleOf = videoTitleResolver((id) =>
+    tv.has(`items.${id}`) ? tv(`items.${id}`) : undefined
+  );
 
   return (
     <>

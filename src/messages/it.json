@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Video macchine: le nostre linee in funzione",
+    "archiveTitle": "Il resto del canale",
+    "archiveCount": "{count} video sul canale",
     "metaDesc": "Guarda le linee Servosteel in funzione: video reali di linee di taglio, profilatura e sistemi di alimentazione presse.",
     "eyebrow": "Dal campo",
     "title": "Guarda le nostre linee in funzione",

@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Vídeos de máquinas: nuestras líneas en marcha",
+    "archiveTitle": "El resto del canal",
+    "archiveCount": "{count} vídeos en el canal",
     "metaDesc": "Vea las líneas Servosteel en funcionamiento: vídeos reales de líneas de corte, perfilado y sistemas de alimentación de prensas.",
     "eyebrow": "Desde el terreno",
     "title": "Vea nuestras líneas en funcionamiento",

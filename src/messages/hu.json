@@ -650,6 +650,8 @@
   },
   "videos": {
     "metaTitle": "Gépvideók: gépsoraink működés közben",
+    "archiveTitle": "A csatorna többi videója",
+    "archiveCount": "Összesen {count} videó a csatornán",
     "metaDesc": "Nézze meg a Servosteel sorait működés közben: valódi terepi videók hasító sorokról, profilozásról és présadagoló rendszerekről.",
     "eyebrow": "A terepről",
     "title": "Nézze meg sorainkat működés közben",

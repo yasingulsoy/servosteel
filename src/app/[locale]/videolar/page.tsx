@@ -8,7 +8,13 @@ import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { VideoCard } from "@/components/video-card";
 import { VideoSchema } from "@/components/video-schema";
-import { allVideos, videoGroups } from "@/lib/videos";
+import {
+  allVideos,
+  videoGroups,
+  uncuratedVideos,
+  videoTitleResolver,
+  CHANNEL_VIDEO_COUNT,
+} from "@/lib/videos";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -29,12 +35,20 @@ export default async function VideolarPage({ params }: Props) {
   const t = await getTranslations("videos");
   const tc = await getTranslations("common");
 
-  const titleOf = (id: string) => t(`items.${id}`);
+  /* Küratörlü 24'ün çevrilmiş başlığı varsa o, kalan 78 için gerçek YouTube
+     başlığı. Çeviri yolu bilerek seçilmedi: gerekçe lib/videos.ts videoTitle. */
+  const titleOf = videoTitleResolver((id) =>
+    t.has(`items.${id}`) ? t(`items.${id}`) : undefined
+  );
 
   return (
     <>
-      {/* Sayfadaki 24 videonun tamamı için VideoObject — gerçek tarih ve süreyle */}
-      <VideoSchema items={allVideos} titleOf={titleOf} description={t("metaDesc")} />
+      {/* Kanalın TAMAMI için VideoObject — gerçek tarih ve süreyle */}
+      <VideoSchema
+        items={[...allVideos, ...uncuratedVideos]}
+        titleOf={titleOf}
+        description={t("metaDesc")}
+      />
 
       <PageHero
         crumbs={[{ label: t("metaTitle"), href: "/videolar" }]}
@@ -81,6 +95,28 @@ export default async function VideolarPage({ params }: Props) {
             </Reveal>
           </div>
         ))}
+
+        {/* KANALIN GERİ KALANI — küratörlü gruplara girmeyen videolar.
+            Başlıkları YouTube'dan geldiği gibi; her biri yine VideoObject taşır. */}
+        {uncuratedVideos.length > 0 && (
+          <div className="mt-16">
+            <Reveal>
+              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
+                <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
+                  {t("archiveTitle")}
+                </h2>
+                <p className="text-sm text-muted">
+                  {t("archiveCount", { count: CHANNEL_VIDEO_COUNT })}
+                </p>
+              </div>
+            </Reveal>
+            <Reveal group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {uncuratedVideos.map((v) => (
+                <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
+              ))}
+            </Reveal>
+          </div>
+        )}
 
         <Reveal>
           <div className="mt-16 flex flex-col items-start justify-between gap-6 rounded-2xl bg-shell p-8 text-white lg:flex-row lg:items-center">
