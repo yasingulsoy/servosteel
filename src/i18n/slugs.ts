@@ -59,7 +59,6 @@ export const CONTENT_SLUGS = {
     "servo-suruculer": "servo-feeders",
     "dogrultmali-servo-suruculer": "straightener-servo-feeders",
     "kompakt-hatlar": "compact-lines",
-    "kalip-ve-merdane": "dies-and-rollers",
   },
   "roll-form-hatlari": {
     "kablo-kanali": "cable-tray",

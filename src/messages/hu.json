@@ -362,9 +362,9 @@
     "visionText": "Erős török márkává válni, amelyet a tekercsalakítási és -feldolgozási technológiákban világszerte preferálnak — egyedi mérnöki munkával, megbízható automatizálással és fenntartható gyártási megközelítéssel.",
     "missionTitle": "Küldetésünk",
     "missionText": [
-      "A ServoSTEEL-nél a görgős profilozás, keresztvágás, hasítás, présadagolás és automatikus rakatolás rendszereiben — valamint az ezekhez a sorokhoz szükséges szerszámok tervezésében és gyártásában — pontosan felmérjük ügyfeleink gyártási igényeit, és nagy pontosságú, hatékony, megbízható és hosszú élettartamú megoldásokat fejlesztünk.",
-      "Technológiai tudásunkat terepi tapasztalatunkkal ötvözve olyan komplett gyártósorokat és egyedi szerszámmegoldásokat kínálunk, amelyek növelik a gyártási kapacitást, biztosítják a minőség folyamatosságát, könnyen kezelhetők és karbantarthatók, valamint hozzájárulnak az üzemeltetési költségek csökkentéséhez.",
-      "A gép- és szerszámtervezéstől a gyártásig, az automatizálástól a telepítésig és az üzembe helyezésig minden szakaszban szorosan együttműködünk ügyfeleinkkel; értékesítés utáni támogatásunkkal, a folyamatos fejlesztés iránti elkötelezettségünkkel és az erőforrás-hatékonyságra fordított figyelmünkkel hosszú távú értéket teremtünk."
+      "A ServoSTEEL-nél a görgős profilozás, keresztvágás, hasítás, présadagolás és automatikus rakatolás rendszereiben pontosan felmérjük ügyfeleink gyártási igényeit, és nagy pontosságú, hatékony, megbízható és hosszú élettartamú megoldásokat fejlesztünk.",
+      "Technológiai tudásunkat terepi tapasztalatunkkal ötvözve olyan komplett gyártósorokat kínálunk, amelyek növelik a gyártási kapacitást, biztosítják a minőség folyamatosságát, könnyen kezelhetők és karbantarthatók, valamint hozzájárulnak az üzemeltetési költségek csökkentéséhez.",
+      "A géptervezéstől a gyártásig, az automatizálástól a telepítésig és az üzembe helyezésig minden szakaszban szorosan együttműködünk ügyfeleinkkel; értékesítés utáni támogatásunkkal, a folyamatos fejlesztés iránti elkötelezettségünkkel és az erőforrás-hatékonyságra fordított figyelmünkkel hosszú távú értéket teremtünk."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Tekercs belső / külső átmérő", "450 – 560 / 1.300 – 1.600 mm"],
             ["Előtoló hengerek", "2 + 2"],
             ["Egyengető hengerek", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Szerszámok és Görgőkészletek",
-        "short": "Profilozó görgők és présszerszámok: szerszámtervezés és -gyártás az Ön soraihoz.",
-        "hero": "Azt, hogy egy sor mit gyárt, a szerszámok döntik el, nem a gépek. A Servosteel saját házon belül tervezi és gyártja mind a profilozó görgőket, mind a présszerszámokat; a szerszám magával a sorral együtt készül.",
-        "meta": "Profilozó görgők és követő présszerszámok az Ön rajza alapján: 4140 acél, 58-60 HRC keménységre edzve. Sor és szerszám egy gyártótól.",
-        "features": [
-          {
-            "title": "A sorral együtt tervezve",
-            "text": "A szerszámok és görgők ugyanazon tető alatt készülnek, mint a gép — így sosem lép fel eltérés a sor és a szerszám között."
-          },
-          {
-            "title": "Edzett görgők",
-            "text": "A görgők 4140 ötvözött acélból készülnek és 58-60 HRC keménységre edzettek; a méretstabilitás sorozatgyártásban is megmarad."
-          },
-          {
-            "title": "Követő (progresszív) szerszámok",
-            "text": "Követő présszerszámok tervezése és gyártása lemezalkatrészekhez. A követő szerszám pontos lépésközadagolást igényel — mivel a szerszámot és az adagolósort is mi gyártjuk, a lépésköztűrés és a szerszámillesztés kezdettől adott."
-          },
-          {
-            "title": "Az Ön rajza alapján",
-            "text": "Nem katalógus-keresztmetszet: a görgőkészletet vagy a szerszámot az Ön által küldött rajz alapján tervezzük — egyedi keresztmetszetekkel együtt."
-          }
-        ],
-        "faq": [
-          {
-            "q": "Mi az a követő szerszám?",
-            "a": "Olyan présszerszám, amelyben az alkatrész nem egyetlen, hanem több egymást követő állomáson készül el. Minden préslöketnél a szalag egy állomással előrébb lép, és sorra lyukasztják, vágják, alakítják. Mivel a hiba állomásonként halmozódik, az adagoló lépéspontossága kritikus."
-          },
-          {
-            "q": "Milyen anyagból készülnek a görgők?",
-            "a": "A görgők 4140 ötvözött acélból készülnek és 58-60 HRC keménységre edzettek. Edzetlen görgőnél a méretelcsúszás és a korai csere csendben megemeli a sor üzemeltetési költségét."
-          },
-          {
-            "q": "Mit kérnek tőlem a szerszámtervezéshez?",
-            "a": "Elég a profil- vagy alkatrészrajz (DWG, DXF vagy PDF), az anyagvastagság és az anyagminőség. Semmi nem katalógusból származik: a tervezés az Ön által küldött rajz alapján készül, egyedi keresztmetszetekkel együtt."
-          },
-          {
-            "q": "Megvásárolhatom a szerszámot a sortól külön?",
-            "a": "Igen. De ha a szerszám és az adagolósor ugyanattól a gyártótól érkezik, a lépésköztűrés, a pilotoldás időzítése és a szalagkiosztás együtt készül; külön beszállítóknál ennek az illeszkedésnek a felelőssége elmosódik."
-          }
-        ],
-        "sectors": ["Profilozó sorok", "Présüzemek", "Autóipari beszállítók", "Kábeltálca", "Napelemes profilok", "Szalagkorlát"],
-        "table": {
-          "title": "Műszaki adatok",
-          "head": ["Jellemző", "Érték"],
-          "rows": [
-            ["Görgő anyaga", "4140 ötvözött acél"],
-            ["Görgő keménysége", "58 – 60 HRC"],
-            ["Terjedelem", "Profilozó görgők, présszerszámok, vágó- és lyukasztószerszámok"],
-            ["Présszerszám típusa", "Követő (progresszív)"],
-            ["Tervezési bemenet", "Profilrajz (DWG / DXF / PDF)"],
-            ["Mérnöki munka", "A sorral együtt, egy csapat"]
           ]
         }
       }

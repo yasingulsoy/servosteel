@@ -1328,61 +1328,6 @@
             ["Rolki prostujące", "5 × Ø85 mm"]
           ]
         }
-      },
-      "kalip-ve-merdane": {
-        "name": "Narzędzia i Zestawy Rolek",
-        "short": "Rolki profilujące i tłoczniki: projektowanie i produkcja oprzyrządowania do Twoich linii.",
-        "hero": "O tym, co produkuje linia, decydują narzędzia, a nie maszyny. Servosteel projektuje i wykonuje we własnym zakresie zarówno rolki profilujące, jak i tłoczniki; narzędzie powstaje razem z samą linią.",
-        "meta": "Rolki profilujące i tłoczniki postępowe według Twojego rysunku: stal 4140 hartowana do 58-60 HRC. Linia i narzędzie od jednego producenta.",
-        "features": [
-          {
-            "title": "Projektowane razem z linią",
-            "text": "Narzędzia i rolki powstają pod tym samym dachem co maszyna — nigdy nie ma niedopasowania między linią a oprzyrządowaniem."
-          },
-          {
-            "title": "Hartowane rolki",
-            "text": "Rolki wykonujemy ze stali stopowej 4140 i hartujemy do 58-60 HRC; stabilność wymiarowa zostaje zachowana w produkcji seryjnej."
-          },
-          {
-            "title": "Tłoczniki postępowe",
-            "text": "Projektowanie i produkcja tłoczników postępowych do detali z blachy. Tłocznik postępowy wymaga precyzyjnego posuwu skokowego — ponieważ wykonujemy zarówno tłocznik, jak i linię podawania, tolerancja skoku i dopasowanie tłocznika są ustalone od początku."
-          },
-          {
-            "title": "Według Twojego rysunku",
-            "text": "Nie przekrój z katalogu: zestaw rolek lub tłocznik projektujemy na podstawie przesłanego rysunku — łącznie z przekrojami nietypowymi."
-          }
-        ],
-        "faq": [
-          {
-            "q": "Czym jest tłocznik postępowy?",
-            "a": "To tłocznik, w którym detal powstaje nie na jednym, lecz na kilku kolejnych stanowiskach. Przy każdym skoku prasy taśma przesuwa się o jedno stanowisko i jest kolejno dziurkowana, cięta i kształtowana. Ponieważ błąd kumuluje się na każdym stanowisku, dokładność skoku podajnika jest krytyczna."
-          },
-          {
-            "q": "Z jakiego materiału są rolki?",
-            "a": "Rolki wykonujemy ze stali stopowej 4140 i hartujemy do 58-60 HRC. Przy rolkach niehartowanych dryf wymiarowy i wcześniejsza wymiana po cichu podnoszą koszt eksploatacji linii."
-          },
-          {
-            "q": "Czego potrzebujecie, aby zaprojektować oprzyrządowanie?",
-            "a": "Wystarczy rysunek profilu lub detalu (DWG, DXF lub PDF), grubość blachy i gatunek materiału. Nic nie pochodzi z katalogu: projekt powstaje na podstawie przesłanego rysunku, łącznie z przekrojami nietypowymi."
-          },
-          {
-            "q": "Czy mogę kupić tłocznik osobno, bez linii?",
-            "a": "Tak. Ale gdy tłocznik i linia podawania pochodzą od tego samego producenta, tolerancja skoku, moment zwolnienia trzpieni i rozkrój taśmy projektowane są razem; przy różnych dostawcach odpowiedzialność za to dopasowanie się rozmywa."
-          }
-        ],
-        "sectors": ["Linie profilujące", "Tłocznie", "Dostawcy motoryzacji", "Korytka kablowe", "Profile solarne", "Bariery drogowe"],
-        "table": {
-          "title": "Dane techniczne",
-          "head": ["Parametr", "Wartość"],
-          "rows": [
-            ["Materiał rolki", "Stal stopowa 4140"],
-            ["Twardość rolki", "58 – 60 HRC"],
-            ["Zakres", "Rolki profilujące, tłoczniki, narzędzia tnące i wykrawające"],
-            ["Typ tłocznika", "Postępowy"],
-            ["Dane wejściowe", "Rysunek profilu (DWG / DXF / PDF)"],
-            ["Projektowanie", "Razem z linią, jeden zespół"]
-          ]
-        }
       }
     }
   },

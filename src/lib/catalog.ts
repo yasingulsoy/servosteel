@@ -18,7 +18,6 @@ export const machineItems = [
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
   { slug: "kompakt-hatlar" },
-  { slug: "kalip-ve-merdane" },
 ] as const;
 
 export type RollFormSlug = (typeof rollFormItems)[number]["slug"];

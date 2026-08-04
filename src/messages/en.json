@@ -362,9 +362,9 @@
     "visionText": "To be a strong Turkish brand preferred worldwide in coil forming and processing technologies, through custom engineering, reliable automation and a sustainable production approach.",
     "missionTitle": "Our mission",
     "missionText": [
-      "At ServoSTEEL, in roll forming, cut-to-length, slitting, press feeding and automatic stacking systems — and in the design and manufacture of the dies these lines require — we analyse our customers' production needs accurately and develop high-precision, efficient, reliable and long-life solutions.",
-      "By combining our technological know-how with our field experience, we offer complete production lines and custom die solutions that increase production capacity, ensure consistent quality, are easy to operate and maintain, and help reduce operating costs.",
-      "From machine and die design through manufacturing, automation, installation and commissioning, we work in close cooperation with our customers at every stage; with our after-sales support, our commitment to continuous improvement and our attention to resource efficiency, we create long-term value."
+      "At ServoSTEEL, in roll forming, cut-to-length, slitting, press feeding and automatic stacking systems, we analyse our customers' production needs accurately and develop high-precision, efficient, reliable and long-life solutions.",
+      "By combining our technological know-how with our field experience, we offer complete production lines that increase production capacity, ensure consistent quality, are easy to operate and maintain, and help reduce operating costs.",
+      "From machine design through manufacturing, automation, installation and commissioning, we work in close cooperation with our customers at every stage; with our after-sales support, our commitment to continuous improvement and our attention to resource efficiency, we create long-term value."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
             ["Feed rolls", "2 + 2"],
             ["Straightening rolls", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Tooling and Roll Sets",
-        "short": "Roll forming tooling and press dies: die design and manufacture for your lines.",
-        "hero": "What a line produces is decided by the tooling, not the machines. Servosteel designs and manufactures both its roll forming tooling and its press dies in-house; the tooling is engineered together with the line itself.",
-        "meta": "Roll forming tooling and progressive press dies to your drawing: 4140 alloy steel rolls hardened to 58-60 HRC. Line and tooling from one manufacturer.",
-        "features": [
-          {
-            "title": "Engineered with the line",
-            "text": "Tooling and rolls are designed under the same roof as the machine, so there is never a mismatch between line and tooling."
-          },
-          {
-            "title": "Hardened rolls",
-            "text": "Rolls are produced from 4140 alloy steel and hardened to 58-60 HRC, holding dimensional stability in series production."
-          },
-          {
-            "title": "Progressive press dies",
-            "text": "Design and manufacture of progressive press dies for sheet metal parts. A progressive die demands precise pitch feeding — because we build both the die and the feeding line, pitch tolerance and die match are set from the start."
-          },
-          {
-            "title": "Built to your drawing",
-            "text": "Not a catalogue section: the roll set or die is designed from the drawing you send — custom sections included."
-          }
-        ],
-        "faq": [
-          {
-            "q": "What is a progressive die?",
-            "a": "It is a press die in which the part is completed across several stations in sequence rather than at one. With every press stroke the strip advances one station and is punched, cut and formed in turn. Because error accumulates at each station, the pitch accuracy of the feeder advancing the strip is critical."
-          },
-          {
-            "q": "What material are the rolls made from?",
-            "a": "Rolls are produced from 4140 alloy steel and hardened to 58-60 HRC. With unhardened rolls, dimensional drift and early replacement quietly raise the running cost of the line."
-          },
-          {
-            "q": "What do you need from me to design the tooling?",
-            "a": "The profile or part drawing (DWG, DXF or PDF), the sheet thickness and the material grade are enough. Nothing is taken from a catalogue: the design is built from the drawing you send, custom sections included."
-          },
-          {
-            "q": "Can I buy tooling separately from the line?",
-            "a": "Yes. But when the die and the feeding line come from the same manufacturer, pitch tolerance, pilot release timing and strip layout are designed together; with separate suppliers, responsibility for that fit becomes unclear."
-          }
-        ],
-        "sectors": ["Roll forming lines", "Stamping shops", "Automotive suppliers", "Cable tray", "Solar profiles", "Guardrail"],
-        "table": {
-          "title": "Technical specifications",
-          "head": ["Specification", "Value"],
-          "rows": [
-            ["Roll material", "4140 alloy steel"],
-            ["Roll hardness", "58 – 60 HRC"],
-            ["Scope", "Roll forming tooling, press dies, cutting and punching dies"],
-            ["Press die type", "Progressive"],
-            ["Design input", "Profile drawing (DWG / DXF / PDF)"],
-            ["Engineering", "Together with the line, one team"]
           ]
         }
       }

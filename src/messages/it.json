@@ -362,9 +362,9 @@
     "visionText": "Essere un solido marchio turco preferito a livello mondiale nelle tecnologie di profilatura e lavorazione del coil, grazie a un'ingegneria su misura, un'automazione affidabile e un approccio produttivo sostenibile.",
     "missionTitle": "La nostra missione",
     "missionText": [
-      "In ServoSTEEL, nella profilatura, nel taglio a misura, nel taglio longitudinale, nell'alimentazione presse e nei sistemi di impilaggio automatico — così come nella progettazione e produzione degli stampi richiesti da queste linee — analizziamo con precisione le esigenze produttive dei nostri clienti e sviluppiamo soluzioni di alta precisione, efficienti, affidabili e di lunga durata.",
-      "Unendo il nostro know-how tecnologico all'esperienza sul campo, offriamo linee di produzione complete e soluzioni di stampi personalizzate che aumentano la capacità produttiva, garantiscono continuità qualitativa, sono facili da usare e da manutenere e contribuiscono a ridurre i costi di esercizio.",
-      "Dalla progettazione di macchine e stampi alla produzione, dall'automazione all'installazione e messa in servizio, collaboriamo strettamente con i nostri clienti in ogni fase; con il nostro supporto post-vendita, il nostro impegno al miglioramento continuo e la nostra attenzione all'efficienza delle risorse, creiamo valore nel lungo periodo."
+      "In ServoSTEEL, nella profilatura, nel taglio a misura, nel taglio longitudinale, nell'alimentazione presse e nei sistemi di impilaggio automatico analizziamo con precisione le esigenze produttive dei nostri clienti e sviluppiamo soluzioni di alta precisione, efficienti, affidabili e di lunga durata.",
+      "Unendo il nostro know-how tecnologico all'esperienza sul campo, offriamo linee di produzione complete che aumentano la capacità produttiva, garantiscono continuità qualitativa, sono facili da usare e da manutenere e contribuiscono a ridurre i costi di esercizio.",
+      "Dalla progettazione di macchine alla produzione, dall'automazione all'installazione e messa in servizio, collaboriamo strettamente con i nostri clienti in ogni fase; con il nostro supporto post-vendita, il nostro impegno al miglioramento continuo e la nostra attenzione all'efficienza delle risorse, creiamo valore nel lungo periodo."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Diametro interno / esterno coil", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rulli di avanzamento", "2 + 2"],
             ["Rulli raddrizzatori", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Stampi e Set di Rulli",
-        "short": "Rulli di profilatura e stampi per pressa: progettazione e produzione di utensili per le vostre linee.",
-        "hero": "Ciò che una linea produce lo decidono gli stampi, non le macchine. Servosteel progetta e produce internamente sia i rulli di profilatura sia gli stampi per pressa; l'utensile viene progettato insieme alla linea stessa.",
-        "meta": "Rulli di profilatura e stampi progressivi sul vostro disegno: acciaio 4140 temprato a 58-60 HRC. Linea e stampo dallo stesso costruttore.",
-        "features": [
-          {
-            "title": "Progettati con la linea",
-            "text": "Stampi e rulli nascono sotto lo stesso tetto della macchina: nessun disallineamento tra linea e utensile."
-          },
-          {
-            "title": "Rulli temprati",
-            "text": "I rulli sono realizzati in acciaio legato 4140 e temprati a 58-60 HRC, mantenendo la stabilità dimensionale nella produzione di serie."
-          },
-          {
-            "title": "Stampi progressivi",
-            "text": "Progettazione e produzione di stampi progressivi per particolari in lamiera. Uno stampo progressivo richiede un avanzamento a passo preciso: poiché realizziamo sia lo stampo sia la linea di alimentazione, tolleranza di passo e accoppiamento dello stampo sono definiti fin dall'inizio."
-          },
-          {
-            "title": "Sul vostro disegno",
-            "text": "Non una sezione da catalogo: il set di rulli o lo stampo viene progettato sul disegno che ci inviate, sezioni speciali comprese."
-          }
-        ],
-        "faq": [
-          {
-            "q": "Che cos'è uno stampo progressivo?",
-            "a": "È uno stampo per pressa in cui il pezzo si completa in più stazioni successive anziché in una sola. A ogni colpo di pressa il nastro avanza di una stazione e viene punzonato, tagliato e formato in sequenza. Poiché l'errore si accumula a ogni stazione, la precisione del passo dell'alimentatore è determinante."
-          },
-          {
-            "q": "Di quale materiale sono fatti i rulli?",
-            "a": "I rulli sono realizzati in acciaio legato 4140 e temprati a 58-60 HRC. Con rulli non temprati, la deriva dimensionale e la sostituzione anticipata alzano silenziosamente il costo di esercizio della linea."
-          },
-          {
-            "q": "Cosa vi serve per progettare l'attrezzatura?",
-            "a": "Bastano il disegno del profilo o del pezzo (DWG, DXF o PDF), lo spessore della lamiera e il tipo di materiale. Nulla è preso da un catalogo: la progettazione parte dal disegno che ci inviate, sezioni speciali comprese."
-          },
-          {
-            "q": "Posso acquistare lo stampo separatamente dalla linea?",
-            "a": "Sì. Ma quando lo stampo e la linea di alimentazione provengono dallo stesso costruttore, tolleranza di passo, tempistica di rilascio dei pilotini e sviluppo del nastro vengono progettati insieme; con fornitori diversi la responsabilità di questo accoppiamento si sfuma."
-          }
-        ],
-        "sectors": ["Linee di profilatura", "Officine di stampaggio", "Fornitori automotive", "Passerelle portacavi", "Profili solari", "Guardrail"],
-        "table": {
-          "title": "Specifiche tecniche",
-          "head": ["Caratteristica", "Valore"],
-          "rows": [
-            ["Materiale del rullo", "Acciaio legato 4140"],
-            ["Durezza del rullo", "58 – 60 HRC"],
-            ["Ambito", "Rulli di profilatura, stampi per pressa, stampi di taglio e punzonatura"],
-            ["Tipo di stampo", "Progressivo"],
-            ["Input di progetto", "Disegno del profilo (DWG / DXF / PDF)"],
-            ["Progettazione", "Insieme alla linea, un unico team"]
           ]
         }
       }

@@ -153,6 +153,19 @@ const nextConfig: NextConfig = {
         "/author-sitemap.xml",
       ].map((s) => p(s, "/sitemap.xml")),
 
+      /**
+       * --- Kaldırılan ürün: kalıp ve merdane ---
+       *
+       * Firma bu ürünü portföyden çıkardı. Sayfa silindi ama indekslenmiş
+       * adresler bir süre daha istenmeye devam eder; 404 yerine makine
+       * listesine gönderiliyor. Dokuz dilin tamamı için tek kural yeterli
+       * değil — locale önekli varyantlar ayrıca yakalanır.
+       */
+      /* Türkçe kökten gelen istek Türkçe listeye gitmeli — `M` İngilizce hedef
+         olduğu için burada kullanılamaz, dil değiştirmiş olurduk. */
+      p("/makineler/kalip-ve-merdane", "/makineler"),
+      p("/:locale(en|de|es|it|hu|pl|ru|ar)/machines/dies-and-rollers", "/:locale/machines"),
+
       /* --- WordPress artıkları (canlıda 200 dönüyorlar, yenide 404 olurlardı) --- */
       p("/author/:slug", "/en"),
       p("/feed", "/en"),

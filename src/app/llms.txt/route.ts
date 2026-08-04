@@ -40,7 +40,6 @@ Servosteel designs and builds tailor-made steel coil processing lines in Sancakt
 - [Servo Feeders](${en("/makineler/servo-suruculer")}): Precision servo feeders for press lines, 0.4-4 mm thickness, up to 1,600 mm width.
 - [Straightener Servo Feeders](${en("/makineler/dogrultmali-servo-suruculer")}): Combined straightening and servo feeding in one body (7/9/11/13 straightening rolls).
 - [Compact Lines](${en("/makineler/kompakt-hatlar")}): Decoiler, straightener and servo feeder on a single platform for tight spaces — 40-1,300 mm material width, 0.5-4.0 mm thickness, 40 m/min free speed.
-- [Tooling and Roll Sets](${en("/makineler/kalip-ve-merdane")}): Roll forming tooling and progressive press dies, designed with the line — 4140 alloy steel rolls hardened to 58-60 HRC.
 
 ## Academy (technical guides)
 ${academy}

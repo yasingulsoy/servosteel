@@ -362,9 +362,9 @@
     "visionText": "Rulo sac şekillendirme ve işleme teknolojilerinde; özel mühendislik, güvenilir otomasyon ve sürdürülebilir üretim yaklaşımıyla dünya çapında tercih edilen güçlü bir Türk markası olmak.",
     "missionTitle": "Misyonumuz",
     "missionText": [
-      "ServoSTEEL olarak; roll form, boy kesme, dilme, pres besleme ve otomatik istifleme sistemleri ile bu hatlara yönelik kalıp tasarımı ve imalatında, müşterilerimizin üretim ihtiyaçlarını doğru analiz ederek yüksek hassasiyetli, verimli, güvenilir ve uzun ömürlü çözümler geliştiriyoruz.",
-      "Teknoloji birikimimizi saha tecrübemizle birleştirerek; üretim kapasitesini artıran, kalite sürekliliği sağlayan, kullanımı ve bakımı kolay, işletme maliyetlerinin azaltılmasına katkı sağlayan komple üretim hatları ve özel kalıp çözümleri sunuyoruz.",
-      "Makine ve kalıp tasarımından imalata, otomasyondan kurulum ve devreye almaya kadar tüm süreçlerde müşterilerimizle yakın iş birliği içinde çalışıyor; satış sonrası desteğimiz, sürekli iyileştirme anlayışımız ve kaynak verimliliğini gözeten yaklaşımımızla uzun vadeli değer yaratıyoruz."
+      "ServoSTEEL olarak; roll form, boy kesme, dilme, pres besleme ve otomatik istifleme sistemleri'nde, müşterilerimizin üretim ihtiyaçlarını doğru analiz ederek yüksek hassasiyetli, verimli, güvenilir ve uzun ömürlü çözümler geliştiriyoruz.",
+      "Teknoloji birikimimizi saha tecrübemizle birleştirerek; üretim kapasitesini artıran, kalite sürekliliği sağlayan, kullanımı ve bakımı kolay, işletme maliyetlerinin azaltılmasına katkı sağlayan komple üretim hatları sunuyoruz.",
+      "Makine tasarımından imalata, otomasyondan kurulum ve devreye almaya kadar tüm süreçlerde müşterilerimizle yakın iş birliği içinde çalışıyor; satış sonrası desteğimiz, sürekli iyileştirme anlayışımız ve kaynak verimliliğini gözeten yaklaşımımızla uzun vadeli değer yaratıyoruz."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Rulo iç / dış çapı", "450 – 560 / 1.300 – 1.600 mm"],
             ["Besleme silindiri", "2 + 2"],
             ["Doğrultma silindiri", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Kalıp ve Merdane",
-        "short": "Roll form merdaneleri ve pres kalıpları: hatlarınıza yönelik kalıp tasarımı ve imalatı.",
-        "hero": "Bir hattın ne ürettiğini makineler değil kalıplar belirler. Servosteel hem roll form merdanelerini hem pres kalıplarını kendi bünyesinde tasarlar ve üretir; kalıp, hattın kendisiyle birlikte projelendirilir.",
-        "meta": "Roll form merdanesi ve progresif pres kalıbı imalatı: çiziminize göre tasarım, 4140 alaşımlı çelik merdane, 58-60 HRC sertlik. Hat ve kalıp tek üreticiden.",
-        "features": [
-          {
-            "title": "Hatla birlikte tasarım",
-            "text": "Kalıp ve merdane, makineyi tasarlayan ekiple aynı çatı altında projelendirilir; hat ile takım arasında uyum sorunu çıkmaz."
-          },
-          {
-            "title": "Sertleştirilmiş merdane",
-            "text": "Merdaneler 4140 alaşımlı çelikten üretilir ve 58-60 HRC sertliğe getirilir; seri üretimde ölçü kararlılığı korunur."
-          },
-          {
-            "title": "Progresif pres kalıpları",
-            "text": "Sac parça için progresif (kademeli) pres kalıbı tasarımı ve imalatı. Progresif kalıp hassas adım beslemesi ister — kalıbı da besleme hattını da biz ürettiğimiz için adım toleransı ve kalıp uyumu baştan kurulur."
-          },
-          {
-            "title": "Çiziminize göre",
-            "text": "Katalog kesiti değil, gönderdiğiniz çizime göre merdane seti veya kalıp tasarlanır — özel kesitler dahil."
-          }
-        ],
-        "faq": [
-          {
-            "q": "Progresif kalıp nedir?",
-            "a": "Parçanın tek istasyonda değil, sırayla birden çok istasyonda tamamlandığı pres kalıbıdır. Sac her pres vuruşunda bir istasyon ilerler ve sırayla delinir, kesilir, bükülür. Hata her istasyonda biriktiği için sacı ilerleten besleyicinin adım hassasiyeti kritiktir."
-          },
-          {
-            "q": "Merdaneler ne malzemeden üretiliyor?",
-            "a": "Merdaneler 4140 alaşımlı çelikten üretilir ve 58-60 HRC sertliğe getirilir. Sertleştirilmemiş merdanede ölçü kayması ve erken yenileme, hattın işletme maliyetini sessizce yükseltir."
-          },
-          {
-            "q": "Kalıp tasarımı için sizden ne isteniyor?",
-            "a": "Profil veya parça çizimi (DWG, DXF ya da PDF), sac kalınlığı ve malzeme cinsi yeterlidir. Katalog kesiti değil, gönderdiğiniz çizime göre tasarım yapılır — özel kesitler dahil."
-          },
-          {
-            "q": "Kalıbı hattan ayrı alabilir miyim?",
-            "a": "Evet. Ancak kalıp ile besleme hattı aynı üreticiden geldiğinde adım toleransı, pilot pim bırakma zamanlaması ve şerit yerleşimi birlikte tasarlanır; farklı tedarikçilerde bu uyum sorumluluğu belirsizleşir."
-          }
-        ],
-        "sectors": ["Roll form hatları", "Pres atölyeleri", "Otomotiv yan sanayi", "Kablo kanalı", "Solar profil", "Yol bariyeri"],
-        "table": {
-          "title": "Teknik özellikler",
-          "head": ["Özellik", "Değer"],
-          "rows": [
-            ["Merdane malzemesi", "4140 alaşımlı çelik"],
-            ["Merdane sertliği", "58 – 60 HRC"],
-            ["Kapsam", "Roll form merdaneleri, pres kalıpları, kesme ve delme kalıpları"],
-            ["Pres kalıbı tipi", "Progresif (kademeli)"],
-            ["Tasarım girdisi", "Profil çizimi (DWG / DXF / PDF)"],
-            ["Projelendirme", "Hat ile birlikte, tek ekip"]
           ]
         }
       }

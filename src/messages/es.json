@@ -362,9 +362,9 @@
     "visionText": "Ser una sólida marca turca preferida en todo el mundo en tecnologías de conformado y procesado de bobina, mediante ingeniería a medida, automatización fiable y un enfoque de producción sostenible.",
     "missionTitle": "Nuestra misión",
     "missionText": [
-      "En ServoSTEEL, en perfilado, corte a medida, corte longitudinal, alimentación de prensas y sistemas de apilado automático —así como en el diseño y la fabricación de los troqueles que estas líneas requieren— analizamos con precisión las necesidades de producción de nuestros clientes y desarrollamos soluciones de alta precisión, eficientes, fiables y de larga vida útil.",
-      "Combinando nuestro conocimiento tecnológico con nuestra experiencia de campo, ofrecemos líneas de producción completas y soluciones de troqueles a medida que aumentan la capacidad productiva, garantizan la continuidad de la calidad, son fáciles de operar y mantener, y contribuyen a reducir los costes de explotación.",
-      "Desde el diseño de máquinas y troqueles hasta la fabricación, la automatización, la instalación y la puesta en marcha, trabajamos en estrecha colaboración con nuestros clientes en todas las etapas; con nuestro soporte posventa, nuestra mejora continua y nuestra atención a la eficiencia de los recursos, creamos valor a largo plazo."
+      "En ServoSTEEL, en perfilado, corte a medida, corte longitudinal, alimentación de prensas y sistemas de apilado automático analizamos con precisión las necesidades de producción de nuestros clientes y desarrollamos soluciones de alta precisión, eficientes, fiables y de larga vida útil.",
+      "Combinando nuestro conocimiento tecnológico con nuestra experiencia de campo, ofrecemos líneas de producción completas que aumentan la capacidad productiva, garantizan la continuidad de la calidad, son fáciles de operar y mantener, y contribuyen a reducir los costes de explotación.",
+      "Desde el diseño de máquinas hasta la fabricación, la automatización, la instalación y la puesta en marcha, trabajamos en estrecha colaboración con nuestros clientes en todas las etapas; con nuestro soporte posventa, nuestra mejora continua y nuestra atención a la eficiencia de los recursos, creamos valor a largo plazo."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Diámetro int. / ext. de bobina", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rodillos de avance", "2 + 2"],
             ["Rodillos enderezadores", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Troqueles y Juegos de Rodillos",
-        "short": "Rodillos de perfilado y troqueles de prensa: diseño y fabricación de utillaje para sus líneas.",
-        "hero": "Lo que produce una línea lo deciden los troqueles, no las máquinas. Servosteel diseña y fabrica internamente tanto sus rodillos de perfilado como sus troqueles de prensa; el utillaje se proyecta junto con la propia línea.",
-        "meta": "Rodillos de perfilado y troqueles progresivos según su plano: acero 4140 templado a 58-60 HRC. Línea y troquel del mismo fabricante.",
-        "features": [
-          {
-            "title": "Proyectado con la línea",
-            "text": "Troqueles y rodillos se diseñan bajo el mismo techo que la máquina; nunca hay desajuste entre línea y utillaje."
-          },
-          {
-            "title": "Rodillos templados",
-            "text": "Los rodillos se fabrican en acero aleado 4140 y se templan a 58-60 HRC, manteniendo la estabilidad dimensional en producción en serie."
-          },
-          {
-            "title": "Troqueles progresivos",
-            "text": "Diseño y fabricación de troqueles progresivos para piezas de chapa. Un troquel progresivo exige un avance de paso preciso: como fabricamos tanto el troquel como la línea de alimentación, la tolerancia de paso y el ajuste del troquel quedan definidos desde el inicio."
-          },
-          {
-            "title": "Según su plano",
-            "text": "No es una sección de catálogo: el juego de rodillos o el troquel se diseña a partir del plano que nos envíe, incluidas secciones especiales."
-          }
-        ],
-        "faq": [
-          {
-            "q": "¿Qué es un troquel progresivo?",
-            "a": "Es un troquel de prensa en el que la pieza se completa en varias estaciones sucesivas y no en una sola. Con cada golpe de prensa la banda avanza una estación y se punzona, corta y conforma por turnos. Como el error se acumula en cada estación, la precisión de paso del alimentador es crítica."
-          },
-          {
-            "q": "¿De qué material son los rodillos?",
-            "a": "Los rodillos se fabrican en acero aleado 4140 y se templan a 58-60 HRC. Con rodillos sin templar, la deriva dimensional y la reposición temprana elevan en silencio el coste de explotación de la línea."
-          },
-          {
-            "q": "¿Qué necesitan de mí para diseñar el utillaje?",
-            "a": "Basta con el plano del perfil o de la pieza (DWG, DXF o PDF), el espesor de chapa y el tipo de material. Nada se toma de un catálogo: el diseño se hace sobre el plano que nos envíe, incluidas secciones especiales."
-          },
-          {
-            "q": "¿Puedo comprar el utillaje por separado de la línea?",
-            "a": "Sí. Pero cuando el troquel y la línea de alimentación vienen del mismo fabricante, la tolerancia de paso, el momento de liberación de pilotos y el despiece de la banda se diseñan juntos; con proveedores distintos, la responsabilidad de ese ajuste se difumina."
-          }
-        ],
-        "sectors": ["Líneas de perfilado", "Talleres de estampación", "Proveedores de automoción", "Bandeja portacables", "Perfiles solares", "Bionda / guardarraíl"],
-        "table": {
-          "title": "Especificaciones técnicas",
-          "head": ["Característica", "Valor"],
-          "rows": [
-            ["Material del rodillo", "Acero aleado 4140"],
-            ["Dureza del rodillo", "58 – 60 HRC"],
-            ["Alcance", "Rodillos de perfilado, troqueles de prensa, troqueles de corte y punzonado"],
-            ["Tipo de troquel", "Progresivo"],
-            ["Entrada de diseño", "Plano del perfil (DWG / DXF / PDF)"],
-            ["Ingeniería", "Junto con la línea, un solo equipo"]
           ]
         }
       }

@@ -362,9 +362,9 @@
     "visionText": "Eine starke türkische Marke zu sein, die in den Technologien der Bandumformung und -verarbeitung weltweit bevorzugt wird — durch kundenspezifisches Engineering, zuverlässige Automatisierung und einen nachhaltigen Produktionsansatz.",
     "missionTitle": "Unsere Mission",
     "missionText": [
-      "Bei ServoSTEEL analysieren wir in den Bereichen Rollformen, Querteilen, Längsteilen, Pressenzuführung und automatische Stapelsysteme — sowie in der Konstruktion und Fertigung der dafür erforderlichen Werkzeuge — den Produktionsbedarf unserer Kunden genau und entwickeln hochpräzise, effiziente, zuverlässige und langlebige Lösungen.",
-      "Indem wir unser technologisches Know-how mit unserer Praxiserfahrung verbinden, bieten wir Komplettanlagen und individuelle Werkzeuglösungen, die die Produktionskapazität steigern, gleichbleibende Qualität sichern, einfach zu bedienen und zu warten sind und zur Senkung der Betriebskosten beitragen.",
-      "Von der Maschinen- und Werkzeugkonstruktion über die Fertigung, die Automatisierung bis zur Installation und Inbetriebnahme arbeiten wir in jeder Phase eng mit unseren Kunden zusammen; mit unserem After-Sales-Support, unserem Anspruch der kontinuierlichen Verbesserung und unserem Blick auf Ressourceneffizienz schaffen wir langfristigen Wert."
+      "Bei ServoSTEEL analysieren wir in den Bereichen Rollformen, Querteilen, Längsteilen, Pressenzuführung und automatische Stapelsysteme den Produktionsbedarf unserer Kunden genau und entwickeln hochpräzise, effiziente, zuverlässige und langlebige Lösungen.",
+      "Indem wir unser technologisches Know-how mit unserer Praxiserfahrung verbinden, bieten wir Komplettanlagen, die die Produktionskapazität steigern, gleichbleibende Qualität sichern, einfach zu bedienen und zu warten sind und zur Senkung der Betriebskosten beitragen.",
+      "Von der Maschinenkonstruktion über die Fertigung, die Automatisierung bis zur Installation und Inbetriebnahme arbeiten wir in jeder Phase eng mit unseren Kunden zusammen; mit unserem After-Sales-Support, unserem Anspruch der kontinuierlichen Verbesserung und unserem Blick auf Ressourceneffizienz schaffen wir langfristigen Wert."
     ],
     "values": [
       {
@@ -1326,61 +1326,6 @@
             ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
             ["Vorschubwalzen", "2 + 2"],
             ["Richtwalzen", "5 × Ø85 mm"]
-          ]
-        }
-      },
-      "kalip-ve-merdane": {
-        "name": "Werkzeuge und Rollensätze",
-        "short": "Rollformwerkzeuge und Presswerkzeuge: Werkzeugkonstruktion und -fertigung für Ihre Anlagen.",
-        "hero": "Was eine Anlage produziert, entscheiden die Werkzeuge, nicht die Maschinen. Servosteel konstruiert und fertigt sowohl Rollformwerkzeuge als auch Presswerkzeuge im eigenen Haus — das Werkzeug wird gemeinsam mit der Anlage projektiert.",
-        "meta": "Rollform- und Folgeverbundwerkzeuge nach Ihrer Zeichnung: Rollen aus 4140 Stahl, gehärtet auf 58-60 HRC. Anlage und Werkzeug aus einer Hand.",
-        "features": [
-          {
-            "title": "Gemeinsam mit der Anlage konstruiert",
-            "text": "Werkzeuge und Rollen entstehen unter demselben Dach wie die Maschine — Anlage und Werkzeug passen von Anfang an zusammen."
-          },
-          {
-            "title": "Gehärtete Rollen",
-            "text": "Die Rollen werden aus 4140 Legierungsstahl gefertigt und auf 58-60 HRC gehärtet; die Maßhaltigkeit bleibt in der Serie erhalten."
-          },
-          {
-            "title": "Folgeverbundwerkzeuge",
-            "text": "Konstruktion und Fertigung von Folgeverbundwerkzeugen für Blechteile. Ein Folgeverbundwerkzeug verlangt präzisen Vorschub — da Werkzeug und Zuführanlage von uns kommen, stimmen Schrittmaßtoleranz und Werkzeug von Anfang an."
-          },
-          {
-            "title": "Nach Ihrer Zeichnung",
-            "text": "Kein Katalogquerschnitt: Rollensatz oder Werkzeug werden nach der von Ihnen gesendeten Zeichnung konstruiert — auch Sonderquerschnitte."
-          }
-        ],
-        "faq": [
-          {
-            "q": "Was ist ein Folgeverbundwerkzeug?",
-            "a": "Ein Presswerkzeug, bei dem das Teil nicht an einer, sondern nacheinander an mehreren Stationen entsteht. Mit jedem Pressenhub rückt der Streifen eine Station weiter und wird gelocht, geschnitten und umgeformt. Da sich Fehler an jeder Station summieren, ist die Schrittgenauigkeit des Vorschubs entscheidend."
-          },
-          {
-            "q": "Aus welchem Werkstoff bestehen die Rollen?",
-            "a": "Die Rollen werden aus 4140 Legierungsstahl gefertigt und auf 58-60 HRC gehärtet. Bei ungehärteten Rollen erhöhen Maßabweichung und früher Ersatz die Betriebskosten der Anlage unbemerkt."
-          },
-          {
-            "q": "Was benötigen Sie für die Werkzeugkonstruktion?",
-            "a": "Die Profil- oder Teilezeichnung (DWG, DXF oder PDF), die Materialstärke und die Werkstoffgüte genügen. Nichts stammt aus dem Katalog: konstruiert wird nach Ihrer Zeichnung, auch Sonderquerschnitte."
-          },
-          {
-            "q": "Kann ich Werkzeuge getrennt von der Anlage kaufen?",
-            "a": "Ja. Kommen Werkzeug und Zuführanlage jedoch vom selben Hersteller, werden Schrittmaßtoleranz, Timing der Pilotfreigabe und Streifenlayout gemeinsam ausgelegt; bei getrennten Lieferanten wird die Verantwortung für diese Abstimmung unklar."
-          }
-        ],
-        "sectors": ["Rollformanlagen", "Stanzereien", "Automobilzulieferer", "Kabelkanäle", "Solarprofile", "Schutzplanken"],
-        "table": {
-          "title": "Technische Daten",
-          "head": ["Merkmal", "Wert"],
-          "rows": [
-            ["Rollenwerkstoff", "4140 Legierungsstahl"],
-            ["Rollenhärte", "58 – 60 HRC"],
-            ["Umfang", "Rollformwerkzeuge, Presswerkzeuge, Schneid- und Stanzwerkzeuge"],
-            ["Presswerkzeugtyp", "Folgeverbundwerkzeug"],
-            ["Konstruktionsgrundlage", "Profilzeichnung (DWG / DXF / PDF)"],
-            ["Projektierung", "Gemeinsam mit der Anlage, ein Team"]
           ]
         }
       }
