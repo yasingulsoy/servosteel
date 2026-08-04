@@ -1560,5 +1560,54 @@
           "ctaText": "Küldje el a lemezvastagságot és -szélességet, a löketszámot és az adagolási hosszt — a megfelelő sorozattal válaszolunk."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Fenntarthatóság: hulladék, energia és adatvezérelt gyártás",
+      "metaDesc": "A Servosteel fenntarthatósági megközelítése: hulladékcsökkentés a sor kihozatalán át, energiafelvétel szervohajtással, gyártási adatok és távtámogatás.",
+      "eyebrow": "Fenntarthatóság",
+      "title": "Nálunk a fenntarthatóság a gép munkája",
+      "desc": "Egy gépgyártó környezeti hatása nem a saját üzemében mutatkozik meg, hanem abban, amit az eladott sor a vevőnél harminc éven át tesz. Mi onnan olvassuk ki: el nem pazarolt lemez, fel nem vett áram, meg nem tett utak.",
+      "approachEyebrow": "Megközelítésünk",
+      "approachTitle": "Nem jelentéscím — négy mérhető tétel",
+      "approachText": "Ezen az oldalon nem talál kibocsátási számot, mert ellenőrizetlen számot leírni rosszabb, mint semmit sem leírni. Helyette azt a négy tételt vesszük sorra, amely minden műszakban különbséget jelent, és azt is, miért működnek. Három közülük az Ön költségkimutatásában is megjelenik: ebben a szakmában a fenntarthatóság és a hatékonyság egy irányba mutat.",
+      "pillars": [
+        {
+          "title": "Hulladék: a legnagyobb tétel",
+          "text": "Minden hulladékba kerülő tonna lemez egy olyan tonna, amelyet újra elő kell állítani — olvasztással, hengerléssel és szállítással együtt. A sor kihozatalának emelése ezért a legközvetlenebb környezeti beavatkozás. Ha az anyatekercs szélessége nem osztható pontosan a szalagszélességgel, a maradék hulladék lesz: 1.250 mm-es tekercsből 120 mm-es szalagok 10 mm élnyeséssel 4 %-ot adnak. A jobb szalagterv ezt lehúzza."
+        },
+        {
+          "title": "Energia: a szervo csak mozgás közben vesz fel",
+          "text": "A mechanikus adagolórendszerek folyamatosan forognak, amíg a sor jár. A szervohajtás adagolás közben vesz fel teljesítményt, várakozás közben nem. A különbség azzal arányos, mennyi telik a műszakból üresjáratban — szakaszos gyártásnál kifejezett, folyamatos járatásnál kisebb. Ezért a nyereséget az Ön műszakmintázatához mérve kell megbeszélni."
+        },
+        {
+          "title": "Adat: amit nem mérünk, nem javul",
+          "text": "A gyártási riportálás megmutatja, mennyit járt valóban a sor, hol állt meg és mennyit adott ki műszakonként. A hulladék és az állásidő csak akkor csökken, ha számolják. Soraikon az adatgyűjtés és a riportálás HMI-n keresztül fut — az alábbi videóban látható."
+        },
+        {
+          "title": "Élettartam és távtámogatás",
+          "text": "A hosszú élettartamú görgők és késkészletek azt jelentik, hogy kevesebb pótalkatrészt kell legyártani. A távdiagnosztika pedig kiveszi azoknak az eseteknek a nagy részét, amelyek különben kiszállást igényelnének: minden meg nem tett repülőút és közúti út valóban megtakarított kibocsátás."
+        }
+      ],
+      "calcNote": "Saját méreteivel a saját hulladékarányát a <calc>hasítási kihozatal-kalkulátorban</calc> láthatja. Hat konkrét módot a csökkentésére <article>külön írásban</article> gyűjtöttünk össze — éves tonnára mérve ez a tétel a legtöbb üzemben nagyobb, mint magának a sornak az ára.",
+      "proofTitle": "Digitalizáció: működő rendszer, nem állítás",
+      "proofText": "Az adatgyűjtést és a riportálást a soron telepített rendszerként tudjuk leírni, nem célként. Az alábbi videók a HMI-n keresztüli gyártási riportálást és egy működő tartóprofil-sort mutatnak.",
+      "goalsEyebrow": "2026 és azon túl",
+      "goalsTitle": "Hová húzzuk a fókuszt",
+      "goals": [
+        {
+          "title": "Nagyobb rész a K+F-nek",
+          "text": "Célunk növelni a kutatás-fejlesztésre fordított időt és költségvetést. Minden terepről visszaérkező probléma a következő sor tervezési bemenete lesz."
+        },
+        {
+          "title": "A digitalizáció szabvánnyá tétele",
+          "text": "Célunk az adatgyűjtést, a felügyeletet és a riportálást opcióból soraink alaptartozékává tenni."
+        },
+        {
+          "title": "A fenntarthatóság beépítése a munkába",
+          "text": "Célunk, hogy a fenntarthatóság a sortervezés természetes része legyen, ne külön jelentéscím."
+        }
+      ],
+      "ctaTitle": "Számoljuk ki együtt a sora kihozatalát",
+      "ctaText": "Jöjjön a tekercsméretekkel, a szalagtervvel és az éves tonnával — együtt állapítjuk meg a jelenlegi hulladékarányt és azt, hová vihető."
     }
 }

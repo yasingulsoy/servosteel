@@ -12,6 +12,7 @@ export function SiteFooter() {
   const tCalc = useTranslations("calc");
   const tCmp = useTranslations("compare");
   const tSec = useTranslations("sectors");
+  const tSus = useTranslations("sustain");
   const ak = getAkademiUi(useLocale());
 
   const productLinks = [
@@ -30,6 +31,7 @@ export function SiteFooter() {
     { label: tCalc("title"), href: "/hesaplayicilar" },
     { label: tCmp("title"), href: "/karsilastirma" },
     { label: t("refs"), href: "/referanslar" },
+    { label: tSus("title"), href: "/surdurulebilirlik" },
     { label: t("videos"), href: "/videolar" },
     { label: tn("contact"), href: "/iletisim" },
     { label: tn("quote"), href: "/teklif-al" },

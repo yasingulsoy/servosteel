@@ -40,6 +40,7 @@ export const ROUTE_SLUGS = {
   hesaplayicilar: "calculators",
   karsilastirma: "comparison",
   uygulamalar: "applications",
+  surdurulebilirlik: "sustainability",
 } as const;
 
 /**

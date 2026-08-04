@@ -1560,5 +1560,54 @@
           "ctaText": "Senden Sie Materialstärke und -breite, Hubzahl und Vorschublänge — wir melden uns mit der passenden Baureihe."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Nachhaltigkeit: Verschnitt, Energie und datengeführte Fertigung",
+      "metaDesc": "Der Nachhaltigkeitsansatz von Servosteel: Verschnitt über die Anlagenausbeute senken, Energiebedarf mit Servoantrieben, Produktionsdaten und Fernunterstützung.",
+      "eyebrow": "Nachhaltigkeit",
+      "title": "Nachhaltigkeit ist bei uns die Arbeit der Maschine",
+      "desc": "Die Umweltwirkung eines Maschinenbauers zeigt sich nicht im eigenen Werk, sondern darin, was die verkaufte Anlage beim Kunden über dreißig Jahre tut. Genau dort lesen wir sie ab: nicht vergeudetes Blech, nicht gezogener Strom, nicht gefahrene Wege.",
+      "approachEyebrow": "Unser Ansatz",
+      "approachTitle": "Keine Berichtsüberschrift — vier messbare Posten",
+      "approachText": "Sie finden auf dieser Seite keine CO₂-Zahl, denn eine ungeprüfte Zahl zu schreiben ist schlechter, als gar keine zu schreiben. Stattdessen benennen wir die vier Posten, die in jeder Schicht einen Unterschied machen, und warum sie wirken. Drei davon landen auch in Ihrer Kostenrechnung; in diesem Geschäft zeigen Nachhaltigkeit und Wirtschaftlichkeit in dieselbe Richtung.",
+      "pillars": [
+        {
+          "title": "Verschnitt: der größte Posten",
+          "text": "Jede Tonne Blech, die in den Schrott geht, ist eine Tonne, die erneut hergestellt werden muss — Schmelzen, Walzen und Transport eingeschlossen. Die Anlagenausbeute zu erhöhen ist deshalb der unmittelbarste Umwelteingriff überhaupt. Lässt sich die Breite des Mutter-Coils nicht exakt durch die Streifenbreite teilen, wird der Rest zu Verschnitt: 120-mm-Streifen aus einem 1.250-mm-Coil mit 10 mm Besäumung ergeben 4 %. Ein besserer Streifenplan senkt das."
+        },
+        {
+          "title": "Energie: der Servo zieht nur, während er sich bewegt",
+          "text": "Mechanische Zuführungen drehen durchgehend, solange die Anlage läuft. Ein Servoantrieb zieht Leistung beim Vorschub und nicht im Warten. Der Unterschied verhält sich proportional dazu, wie viel der Schicht im Stillstand vergeht — ausgeprägt bei getakteter Fertigung, geringer im Dauerlauf. Deshalb muss der Gewinn an Ihrem Schichtmuster besprochen werden."
+        },
+        {
+          "title": "Daten: was nicht gemessen wird, wird nicht besser",
+          "text": "Die Produktionsberichterstattung zeigt, wie lange die Anlage tatsächlich lief, wo sie stand und was sie je Schicht ausbrachte. Verschnitt und Stillstand sinken erst, wenn sie gezählt werden. Auf unseren Anlagen laufen Datenerfassung und Berichterstattung über das HMI — im Video unten zu sehen."
+        },
+        {
+          "title": "Lebensdauer und Fernunterstützung",
+          "text": "Langlebige Rollen und Messersätze bedeuten, dass weniger Ersatzteile gefertigt werden müssen. Ferndiagnose wiederum beseitigt einen großen Teil der Fälle, die sonst eine Anreise erfordern würden: Jeder nicht angetretene Flug und jede nicht gefahrene Strecke ist eine tatsächlich eingesparte Emission."
+        }
+      ],
+      "calcNote": "Ihre eigene Verschnittquote mit Ihren Maßen sehen Sie im <calc>Spaltausbeute-Rechner</calc>. Sechs konkrete Wege zur Verschnittsenkung haben wir in <article>einem eigenen Beitrag</article> zusammengetragen — über die Jahrestonnage gerechnet ist dieser Posten in den meisten Werken größer als der Preis der Anlage selbst.",
+      "proofTitle": "Digitalisierung: ein laufendes System, keine Behauptung",
+      "proofText": "Datenerfassung und Berichterstattung können wir als installiertes System beschreiben statt als Ziel. Die Videos unten zeigen die Produktionsberichterstattung über das HMI und eine laufende Anlage für Statikprofile.",
+      "goalsEyebrow": "2026 und danach",
+      "goalsTitle": "Wohin wir den Fokus ziehen",
+      "goals": [
+        {
+          "title": "Mehr Anteil für F&E",
+          "text": "Wir wollen Zeit und Budget für Forschung und Entwicklung erhöhen. Jedes Problem, das aus dem Feld zurückkommt, wird zur Konstruktionsvorgabe der nächsten Anlage."
+        },
+        {
+          "title": "Digitalisierung zum Standard machen",
+          "text": "Wir wollen Datenerfassung, Überwachung und Berichterstattung von einer Option zur Standardausstattung unserer Anlagen machen."
+        },
+        {
+          "title": "Nachhaltigkeit in die Arbeit holen",
+          "text": "Wir wollen Nachhaltigkeit zu einem natürlichen Teil der Anlagenauslegung machen statt zu einer eigenen Berichtsüberschrift."
+        }
+      ],
+      "ctaTitle": "Rechnen wir die Ausbeute Ihrer Anlage gemeinsam",
+      "ctaText": "Kommen Sie mit Coilmaßen, Streifenplan und Jahrestonnage — wir ermitteln gemeinsam Ihre heutige Verschnittquote und wohin sie sich bewegen lässt."
     }
 }

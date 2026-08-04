@@ -1560,5 +1560,54 @@
           "ctaText": "Sac kalınlığı, genişliği, pres strok sayısı ve besleme boyunu iletin; uygun seriyle dönelim."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Sürdürülebilirlik: Fire, Enerji ve Veri Odaklı Üretim",
+      "metaDesc": "Servosteel'in sürdürülebilirlik yaklaşımı: hat verimliliğiyle fire azaltma, servo tahrikle enerji tüketimi, üretim verisi ve uzaktan destek.",
+      "eyebrow": "Sürdürülebilirlik",
+      "title": "Sürdürülebilirlik bizde makinenin işi",
+      "desc": "Bir makine üreticisinin çevresel etkisi kendi fabrikasında değil, sattığı hattın müşteride otuz yıl boyunca ne yaptığında ortaya çıkar. Biz de sürdürülebilirliği oradan okuyoruz: harcanmayan sac, çekilmeyen elektrik, yapılmayan yolculuk.",
+      "approachEyebrow": "Yaklaşımımız",
+      "approachTitle": "Rapor başlığı değil, ölçülebilir dört kalem",
+      "approachText": "Bu sayfada karbon salımı rakamı bulamayacaksınız — çünkü doğrulanmamış bir sayı yazmak, hiçbir şey yazmamaktan kötüdür. Bunun yerine hattın çalıştığı her vardiyada fark yaratan dört kalemi ve bunların neden işe yaradığını anlatıyoruz. Üçü doğrudan sizin maliyet tablonuza da yansır; sürdürülebilirlik ile verimlilik bu işte aynı yöne bakar.",
+      "pillars": [
+        {
+          "title": "Fire: en büyük kalem",
+          "text": "Hurdaya giden her ton sac, bir kez daha üretilmesi gereken bir ton demektir — eritme, haddeleme, nakliye dahil. Hat verimini artırmak bu yüzden en doğrudan çevresel müdahaledir. Ana rulo genişliği şerit genişliğine tam bölünmediğinde artan kısım fireye gider; 1.250 mm ruloda 10 mm kenar kırpmayla 120 mm şerit keserken fire %4 eder. Doğru şerit planı bunu düşürür."
+        },
+        {
+          "title": "Enerji: servo yalnızca hareket ederken çeker",
+          "text": "Mekanik besleme sistemleri hat çalıştığı sürece sürekli döner. Servo tahrik ise yalnızca besleme anında güç çeker, bekleme anında çekmez. Fark, vardiya boyunca boşta geçen sürenin uzunluğuyla doğru orantılıdır — çok duraklamalı üretimde belirgindir, kesintisiz üretimde daha azdır. Bu yüzden kazancı vardiya deseninize bakarak konuşmak gerekir."
+        },
+        {
+          "title": "Veri: ölçülmeyen iyileştirilemez",
+          "text": "Üretim raporlama, hattın gerçekte ne kadar süre çalıştığını, nerede durduğunu ve vardiya başına ne çıkardığını gösterir. Fire ve duruş, ancak sayıldıkları zaman düşer. Hatlarımızda HMI üzerinden veri toplama ve raporlama çalışıyor — aşağıdaki videoda görebilirsiniz."
+        },
+        {
+          "title": "Ömür ve uzaktan destek",
+          "text": "Uzun ömürlü merdane ve bıçak takımı, daha az yedek parça üretimi demektir. Uzaktan tanı ise sahaya gelinmesi gereken durumların önemli kısmını ortadan kaldırıyor: yapılmayan her uçuş ve her araç yolculuğu, gerçekten tasarruf edilmiş bir emisyondur."
+        }
+      ],
+      "calcNote": "Kendi ölçülerinizle fire oranınızı <calc>dilme verimi hesaplayıcısında</calc> görebilirsiniz. Fireyi düşürmenin altı somut yolunu <article>ayrı bir yazıda</article> topladık — yıllık tonaj üzerinden bakıldığında bu kalem çoğu tesiste hattın kendi fiyatından büyüktür.",
+      "proofTitle": "Dijitalleşme: iddia değil, çalışan sistem",
+      "proofText": "Veri toplama ve raporlamayı bir hedef olarak değil, hatta kurulu bir sistem olarak anlatabiliyoruz. Aşağıdaki videolarda HMI üzerinden üretim raporlaması ve yapısal profil hattı çalışırken görünüyor.",
+      "goalsEyebrow": "2026 ve sonrası",
+      "goalsTitle": "Odağımızı nereye çekiyoruz",
+      "goals": [
+        {
+          "title": "Ar-Ge'ye daha fazla pay",
+          "text": "Ar-Ge'ye ayırdığımız zamanı ve bütçeyi artırmayı hedefliyoruz. Sahadan gelen her problem, bir sonraki hattın tasarım girdisi oluyor."
+        },
+        {
+          "title": "Dijitalleşmeyi standart yapmak",
+          "text": "Veri toplama, izleme ve raporlamayı seçenek olmaktan çıkarıp hatlarımızda standart hâle getirmeyi hedefliyoruz."
+        },
+        {
+          "title": "Sürdürülebilirliği işin içine almak",
+          "text": "Sürdürülebilirliği ayrı bir raporlama başlığı değil, hat tasarımının doğal bir parçası hâline getirmeyi hedefliyoruz."
+        }
+      ],
+      "ctaTitle": "Hattınızın verimini birlikte hesaplayalım",
+      "ctaText": "Rulo ölçüleriniz, şerit planınız ve yıllık tonajınızla gelin; mevcut fire oranınızı ve nereye çekilebileceğini birlikte çıkaralım."
     }
 }

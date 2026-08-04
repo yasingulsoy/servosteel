@@ -22,6 +22,7 @@ const paths = [
   { path: "/hesaplayicilar", priority: 0.7 },
   { path: "/karsilastirma", priority: 0.7 },
   { path: "/uygulamalar", priority: 0.8 },
+  { path: "/surdurulebilirlik", priority: 0.6 },
   ...compareItems.map((c) => ({ path: `/karsilastirma/${c.slug}`, priority: 0.7 })),
   ...sectors.map((s) => ({ path: `/uygulamalar/${s.slug}`, priority: 0.8 })),
   ...rollFormItems.map((p) => ({ path: `/roll-form-hatlari/${p.slug}`, priority: 0.8 })),

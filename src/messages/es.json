@@ -1560,5 +1560,54 @@
           "ctaText": "Envíe espesor y ancho de chapa, cadencia de prensa y longitud de avance, y le respondemos con la serie adecuada."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Sostenibilidad: merma, energía y producción guiada por datos",
+      "metaDesc": "El enfoque de sostenibilidad de Servosteel: reducir merma mediante el rendimiento de línea, consumo con accionamientos servo, datos de producción y soporte remoto.",
+      "eyebrow": "Sostenibilidad",
+      "title": "Para nosotros la sostenibilidad es lo que hace la máquina",
+      "desc": "El efecto ambiental de un fabricante de maquinaria no aparece en su propia planta, sino en lo que la línea vendida hace en casa del cliente durante treinta años. Ahí es donde lo leemos: chapa no desperdiciada, electricidad no consumida, viajes no realizados.",
+      "approachEyebrow": "Nuestro enfoque",
+      "approachTitle": "No es un epígrafe de informe: son cuatro partidas medibles",
+      "approachText": "En esta página no encontrará una cifra de emisiones, porque escribir un número no verificado es peor que no escribir ninguno. En su lugar exponemos las cuatro partidas que marcan diferencia en cada turno que la línea trabaja, y por qué funcionan. Tres de ellas aterrizan también en su hoja de costes; en este negocio sostenibilidad y eficiencia apuntan al mismo sitio.",
+      "pillars": [
+        {
+          "title": "Merma: la partida mayor",
+          "text": "Cada tonelada de chapa que va a chatarra es una tonelada que hay que volver a fabricar — fusión, laminación y transporte incluidos. Elevar el rendimiento de línea es, por tanto, la intervención ambiental más directa que existe. Cuando el ancho de la bobina madre no se divide exactamente por el ancho de fleje, el resto se convierte en merma: flejes de 120 mm de una bobina de 1.250 mm con 10 mm de refilado dan un 4 %. Un mejor plan de corte lo reduce."
+        },
+        {
+          "title": "Energía: el servo consume solo mientras se mueve",
+          "text": "Los sistemas de alimentación mecánicos giran de forma continua mientras la línea trabaja. Un accionamiento servo consume durante el avance y no en la espera. La diferencia es proporcional a cuánto del turno transcurre en vacío — acusada en producción intermitente, menor en marcha continua. Por eso la ganancia hay que discutirla contra su propio patrón de turnos."
+        },
+        {
+          "title": "Datos: lo que no se mide no mejora",
+          "text": "El reporte de producción muestra cuánto trabajó realmente la línea, dónde se detuvo y qué sacó por turno. La merma y las paradas solo bajan cuando se cuentan. En nuestras líneas la captura de datos y el reporte funcionan sobre el HMI — puede verlo en el vídeo de abajo."
+        },
+        {
+          "title": "Vida útil y soporte remoto",
+          "text": "Rodillos y juegos de cuchillas de larga vida significan que hay que fabricar menos repuestos. El diagnóstico remoto, por su parte, elimina buena parte de los casos que exigirían un desplazamiento: cada vuelo y cada viaje por carretera que no se hace es una emisión realmente ahorrada."
+        }
+      ],
+      "calcNote": "Puede ver su propia merma con sus medidas en la <calc>calculadora de rendimiento de corte</calc>. Hemos reunido seis vías concretas para reducirla en <article>un artículo aparte</article> — medida sobre el tonelaje anual, esta partida es mayor que el precio de la propia línea en la mayoría de plantas.",
+      "proofTitle": "Digitalización: un sistema en marcha, no una afirmación",
+      "proofText": "Podemos describir la captura de datos y el reporte como un sistema instalado en la línea, no como un objetivo. Los vídeos siguientes muestran el reporte de producción sobre el HMI y una línea de perfil estructural en marcha.",
+      "goalsEyebrow": "2026 y más allá",
+      "goalsTitle": "Hacia dónde llevamos el foco",
+      "goals": [
+        {
+          "title": "Más peso para I+D",
+          "text": "Nos proponemos aumentar el tiempo y el presupuesto dedicados a I+D. Cada problema que vuelve del campo se convierte en dato de diseño de la siguiente línea."
+        },
+        {
+          "title": "Hacer estándar la digitalización",
+          "text": "Nos proponemos pasar la captura de datos, la monitorización y el reporte de opción a equipamiento estándar en nuestras líneas."
+        },
+        {
+          "title": "Meter la sostenibilidad en el trabajo",
+          "text": "Nos proponemos que la sostenibilidad sea parte natural del diseño de línea y no un epígrafe de informe aparte."
+        }
+      ],
+      "ctaTitle": "Calculemos juntos el rendimiento de su línea",
+      "ctaText": "Venga con sus medidas de bobina, su plan de flejes y su tonelaje anual, y estableceremos su merma actual y hasta dónde puede llevarse."
     }
 }

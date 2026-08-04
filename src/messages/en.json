@@ -1560,5 +1560,54 @@
           "ctaText": "Send your sheet thickness and width, press stroke rate and feed length, and we will come back with the right series."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Sustainability: Scrap, Energy and Data-Led Production",
+      "metaDesc": "Servosteel's approach to sustainability: cutting scrap through line yield, energy draw with servo drives, production data and remote support.",
+      "eyebrow": "Sustainability",
+      "title": "For us, sustainability is what the machine does",
+      "desc": "A machine builder's environmental effect shows up not in its own factory but in what the line it sold does at a customer's plant over thirty years. That is where we read it: sheet not wasted, electricity not drawn, journeys not made.",
+      "approachEyebrow": "Our approach",
+      "approachTitle": "Not a reporting heading — four measurable items",
+      "approachText": "You will not find a carbon emission figure on this page, because writing an unverified number is worse than writing none. Instead we set out the four items that make a difference on every shift the line runs, and why they work. Three of them land in your cost sheet as well; in this business sustainability and efficiency point the same way.",
+      "pillars": [
+        {
+          "title": "Scrap: the largest item",
+          "text": "Every tonne of sheet that goes to scrap is a tonne that has to be made again — melting, rolling and transport included. Raising line yield is therefore the most direct environmental intervention there is. When the master coil width does not divide exactly by the strip width, the remainder becomes scrap: cutting 120 mm strips from a 1,250 mm coil with 10 mm edge trim comes to 4 %. A better strip plan brings that down."
+        },
+        {
+          "title": "Energy: a servo draws only while it moves",
+          "text": "Mechanical feeding systems turn continuously for as long as the line runs. A servo drive draws power while feeding and not while waiting. The difference is proportional to how much of the shift is spent idle — pronounced in stop-start production, smaller in continuous running. Which is why the gain has to be discussed against your own shift pattern."
+        },
+        {
+          "title": "Data: what is not measured is not improved",
+          "text": "Production reporting shows how long the line actually ran, where it stopped and what it produced per shift. Scrap and downtime only come down once they are counted. Data collection and reporting run over the HMI on our lines — you can see it in the video below."
+        },
+        {
+          "title": "Service life and remote support",
+          "text": "Long-lived rolls and knife sets mean fewer spare parts have to be manufactured. Remote diagnosis, meanwhile, removes a large share of the cases that would otherwise require a visit: every flight and every road trip not taken is an emission genuinely saved."
+        }
+      ],
+      "calcNote": "You can see your own scrap rate with your own dimensions in the <calc>slitting yield calculator</calc>. We have collected six concrete ways to bring scrap down in <article>a separate article</article> — measured across annual tonnage, this item is larger than the price of the line itself in most plants.",
+      "proofTitle": "Digitalisation: a working system, not a claim",
+      "proofText": "We can describe data collection and reporting as a system installed on the line rather than as a goal. The videos below show production reporting over the HMI and a structural profile line running.",
+      "goalsEyebrow": "2026 and beyond",
+      "goalsTitle": "Where we are pulling our focus",
+      "goals": [
+        {
+          "title": "A larger share for R&D",
+          "text": "We aim to increase the time and budget we put into R&D. Every problem that comes back from the field becomes a design input for the next line."
+        },
+        {
+          "title": "Making digitalisation standard",
+          "text": "We aim to move data collection, monitoring and reporting from an option to a standard feature on our lines."
+        },
+        {
+          "title": "Building sustainability into the work",
+          "text": "We aim to make sustainability a natural part of line design rather than a separate reporting heading."
+        }
+      ],
+      "ctaTitle": "Let us work out your line's yield together",
+      "ctaText": "Come with your coil dimensions, strip plan and annual tonnage, and we will establish your current scrap rate and where it could be taken."
     }
 }

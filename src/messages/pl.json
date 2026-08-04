@@ -1560,5 +1560,54 @@
           "ctaText": "Prosimy przesłać grubość i szerokość blachy, liczbę skoków i długość podawania — odpowiemy właściwą serią."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Zrównoważony rozwój: odpad, energia i produkcja oparta na danych",
+      "metaDesc": "Podejście Servosteel do zrównoważonego rozwoju: ograniczanie odpadu przez uzysk linii, pobór mocy z napędami serwo, dane produkcyjne i wsparcie zdalne.",
+      "eyebrow": "Zrównoważony rozwój",
+      "title": "U nas zrównoważony rozwój to praca maszyny",
+      "desc": "Wpływ producenta maszyn na środowisko widać nie w jego własnym zakładzie, lecz w tym, co sprzedana linia robi u klienta przez trzydzieści lat. Stamtąd go odczytujemy: niezmarnowana blacha, niepobrany prąd, nieodbyte podróże.",
+      "approachEyebrow": "Nasze podejście",
+      "approachTitle": "To nie nagłówek raportu — cztery mierzalne pozycje",
+      "approachText": "Na tej stronie nie znajdą Państwo liczby emisji, bo wpisanie niezweryfikowanej liczby jest gorsze niż niewpisanie żadnej. Zamiast tego omawiamy cztery pozycje, które robią różnicę na każdej zmianie pracy linii, i wyjaśniamy, dlaczego działają. Trzy z nich trafiają także do Państwa rachunku kosztów: w tej branży zrównoważony rozwój i efektywność patrzą w tę samą stronę.",
+      "pillars": [
+        {
+          "title": "Odpad: największa pozycja",
+          "text": "Każda tona blachy trafiająca na złom to tona, którą trzeba wytworzyć ponownie — wraz z wytopem, walcowaniem i transportem. Podniesienie uzysku linii jest więc najbardziej bezpośrednią interwencją środowiskową, jaka istnieje. Gdy szerokość kręgu macierzystego nie dzieli się dokładnie przez szerokość taśmy, reszta staje się odpadem: taśmy 120 mm z kręgu 1.250 mm przy 10 mm okrawania dają 4 %. Lepszy plan cięcia to obniża."
+        },
+        {
+          "title": "Energia: serwo pobiera tylko w ruchu",
+          "text": "Mechaniczne układy podawania obracają się nieprzerwanie, dopóki linia pracuje. Napęd serwo pobiera moc w trakcie podawania, a nie w oczekiwaniu. Różnica jest proporcjonalna do tego, ile zmiany upływa na postoju — wyraźna przy produkcji przerywanej, mniejsza przy ciągłej. Dlatego zysk trzeba omawiać na tle Państwa wzorca zmianowego."
+        },
+        {
+          "title": "Dane: czego się nie mierzy, tego się nie poprawia",
+          "text": "Raportowanie produkcji pokazuje, jak długo linia rzeczywiście pracowała, gdzie się zatrzymała i ile wydała na zmianę. Odpad i postoje spadają dopiero wtedy, gdy się je liczy. Na naszych liniach zbieranie danych i raportowanie działa przez HMI — widać to na filmie poniżej."
+        },
+        {
+          "title": "Trwałość i wsparcie zdalne",
+          "text": "Długowieczne rolki i zestawy noży oznaczają mniej części zamiennych do wyprodukowania. Diagnostyka zdalna z kolei eliminuje sporą część przypadków wymagających przyjazdu: każdy nieodbyty lot i każdy niewykonany przejazd to realnie zaoszczędzona emisja."
+        }
+      ],
+      "calcNote": "Własny wskaźnik odpadu z własnymi wymiarami zobaczą Państwo w <calc>kalkulatorze uzysku cięcia</calc>. Sześć konkretnych sposobów na jego obniżenie zebraliśmy w <article>osobnym artykule</article> — mierzona rocznym tonażem pozycja ta jest w większości zakładów większa niż cena samej linii.",
+      "proofTitle": "Cyfryzacja: działający system, nie deklaracja",
+      "proofText": "Zbieranie danych i raportowanie możemy opisać jako system zainstalowany na linii, a nie jako cel. Poniższe filmy pokazują raportowanie produkcji przez HMI oraz pracującą linię profili konstrukcyjnych.",
+      "goalsEyebrow": "2026 i dalej",
+      "goalsTitle": "Dokąd przesuwamy uwagę",
+      "goals": [
+        {
+          "title": "Większy udział B+R",
+          "text": "Zamierzamy zwiększyć czas i budżet przeznaczany na badania i rozwój. Każdy problem wracający z terenu staje się danymi projektowymi kolejnej linii."
+        },
+        {
+          "title": "Uczynić cyfryzację standardem",
+          "text": "Zamierzamy przenieść zbieranie danych, monitorowanie i raportowanie z opcji do standardowego wyposażenia naszych linii."
+        },
+        {
+          "title": "Wpisać zrównoważony rozwój w pracę",
+          "text": "Zamierzamy uczynić zrównoważony rozwój naturalną częścią projektowania linii, a nie osobnym nagłówkiem raportu."
+        }
+      ],
+      "ctaTitle": "Policzmy razem uzysk Państwa linii",
+      "ctaText": "Prosimy przyjść z wymiarami kręgów, planem taśm i rocznym tonażem — wspólnie ustalimy obecny wskaźnik odpadu i to, dokąd da się go doprowadzić."
     }
 }

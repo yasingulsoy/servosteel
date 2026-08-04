@@ -1560,5 +1560,54 @@
           "ctaText": "Inviate spessore e larghezza lamiera, numero di colpi e passo di avanzamento: vi rispondiamo con la serie adatta."
         }
       }
+    },
+    "sustain": {
+      "metaTitle": "Sostenibilità: sfrido, energia e produzione guidata dai dati",
+      "metaDesc": "L'approccio Servosteel alla sostenibilità: ridurre lo sfrido con la resa di linea, i consumi con gli azionamenti servo, i dati di produzione e l'assistenza remota.",
+      "eyebrow": "Sostenibilità",
+      "title": "Per noi la sostenibilità è il lavoro della macchina",
+      "desc": "L'effetto ambientale di un costruttore di macchine non si vede nel proprio stabilimento, ma in ciò che la linea venduta fa dal cliente per trent'anni. È lì che lo leggiamo: lamiera non sprecata, elettricità non assorbita, viaggi non fatti.",
+      "approachEyebrow": "Il nostro approccio",
+      "approachTitle": "Non un titolo di bilancio: quattro voci misurabili",
+      "approachText": "In questa pagina non troverete un dato di emissioni, perché scrivere un numero non verificato è peggio che non scriverne alcuno. Esponiamo invece le quattro voci che fanno differenza in ogni turno in cui la linea gira, e perché funzionano. Tre finiscono anche nel vostro conto economico: in questo mestiere sostenibilità ed efficienza guardano nella stessa direzione.",
+      "pillars": [
+        {
+          "title": "Sfrido: la voce più grande",
+          "text": "Ogni tonnellata di lamiera che va a rottame è una tonnellata da rifare — fusione, laminazione e trasporto compresi. Alzare la resa di linea è quindi l'intervento ambientale più diretto che esista. Quando la larghezza del coil madre non è divisibile esattamente per quella del nastro, il resto diventa sfrido: nastri da 120 mm da un coil di 1.250 mm con 10 mm di rifilo fanno il 4 %. Un piano di taglio migliore lo abbassa."
+        },
+        {
+          "title": "Energia: il servo assorbe solo mentre si muove",
+          "text": "I sistemi di alimentazione meccanici girano di continuo finché la linea lavora. L'azionamento servo assorbe durante l'avanzamento e non nell'attesa. La differenza è proporzionale a quanto del turno trascorre fermo — marcata nella produzione a strappi, minore nel funzionamento continuo. Per questo il guadagno va discusso sul vostro schema di turni."
+        },
+        {
+          "title": "Dati: ciò che non si misura non migliora",
+          "text": "La reportistica di produzione mostra quanto la linea ha realmente lavorato, dove si è fermata e quanto ha prodotto per turno. Sfrido e fermi calano solo quando vengono contati. Sulle nostre linee raccolta dati e reportistica girano tramite HMI — si vede nel video qui sotto."
+        },
+        {
+          "title": "Durata e assistenza remota",
+          "text": "Rulli e gruppi lame a lunga durata significano meno ricambi da produrre. La diagnosi remota, poi, elimina buona parte dei casi che altrimenti richiederebbero una trasferta: ogni volo e ogni viaggio non fatto è un'emissione realmente risparmiata."
+        }
+      ],
+      "calcNote": "Potete vedere il vostro sfrido con le vostre misure nel <calc>calcolatore di resa di taglio</calc>. Sei modi concreti per ridurlo li abbiamo raccolti in <article>un articolo dedicato</article> — misurata sul tonnellaggio annuo, questa voce è più grande del prezzo della linea stessa nella maggior parte degli stabilimenti.",
+      "proofTitle": "Digitalizzazione: un sistema che gira, non un'affermazione",
+      "proofText": "Possiamo descrivere raccolta dati e reportistica come un sistema installato sulla linea, non come un obiettivo. I video qui sotto mostrano la reportistica di produzione via HMI e una linea per profili strutturali in funzione.",
+      "goalsEyebrow": "2026 e oltre",
+      "goalsTitle": "Dove stiamo spostando il fuoco",
+      "goals": [
+        {
+          "title": "Più spazio alla R&S",
+          "text": "Puntiamo ad aumentare tempo e budget dedicati alla ricerca e sviluppo. Ogni problema che torna dal campo diventa un dato di progetto della linea successiva."
+        },
+        {
+          "title": "Rendere standard la digitalizzazione",
+          "text": "Puntiamo a portare raccolta dati, monitoraggio e reportistica da opzione a dotazione standard delle nostre linee."
+        },
+        {
+          "title": "Portare la sostenibilità dentro il lavoro",
+          "text": "Puntiamo a fare della sostenibilità una parte naturale della progettazione di linea, non un titolo di bilancio a parte."
+        }
+      ],
+      "ctaTitle": "Calcoliamo insieme la resa della vostra linea",
+      "ctaText": "Venite con le misure dei coil, il piano nastri e il tonnellaggio annuo: definiamo insieme il vostro sfrido attuale e dove può arrivare."
     }
 }
