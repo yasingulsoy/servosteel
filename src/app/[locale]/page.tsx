@@ -12,6 +12,8 @@ import { VideoBand, VideoStack } from "@/components/video-band";
 import { VideoBandContent } from "@/components/video-band-content";
 import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
+import { SectorIcon } from "@/components/sector-icon";
+import { sectors } from "@/lib/sectors";
 import { SolutionIcon } from "@/components/solution-icon";
 import { rollFormItems, machineItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
@@ -53,6 +55,7 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const tSec = await getTranslations("sectors");
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
   const tCommon = await getTranslations("common");
@@ -342,6 +345,56 @@ export default async function Home({ params }: Props) {
               <p className="px-4 py-3 text-sm font-medium text-zinc-400">{t("videoBadge")}</p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* UYGULAMA SEKTÖRLERİ — alıcı makineyi değil kendi sektörünü arıyor.
+          Ana sayfadan buraya köprü olmadan bölüm yalnızca menüden bulunuyordu. */}
+      <section className="border-t border-line bg-surface">
+        <div className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-ink">
+                  <span className="h-px w-8 bg-accent" aria-hidden />
+                  {tSec("eyebrow")}
+                </p>
+                <h2 className="font-display mt-4 max-w-2xl text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl">
+                  {tSec("title")}
+                </h2>
+              </div>
+              <Link
+                href="/uygulamalar"
+                className="group flex items-center gap-1.5 text-sm font-semibold text-accent-ink"
+              >
+                {tSec("explore")}
+                <ArrowRightIcon
+                  className="size-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180"
+                  strokeWidth={1.8}
+                  aria-hidden
+                />
+              </Link>
+            </div>
+          </Reveal>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {sectors.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 80}>
+                <Link
+                  href={`/uygulamalar/${s.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-line bg-card p-6 transition-colors hover:border-accent/50"
+                >
+                  <SectorIcon name={s.icon} className="size-8 text-accent" />
+                  <h3 className="font-display mt-4 text-base font-bold uppercase tracking-tight text-ink">
+                    {tSec(`items.${s.slug}.name`)}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {tSec(`items.${s.slug}.short`)}
+                  </p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

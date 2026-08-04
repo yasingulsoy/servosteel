@@ -11,6 +11,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { rollFormItems, machineItems } from "@/lib/catalog";
+import { sectors } from "@/lib/sectors";
 import { getAkademiUi } from "@/lib/akademi-ui";
 
 type MegaItem = { label: string; href: string; desc: string; icon?: string };
@@ -215,6 +216,7 @@ export function SiteHeader() {
   const tRoll = useTranslations("products.rollform");
   const tMach = useTranslations("products.machines");
   const tHub = useTranslations("hub");
+  const tSec = useTranslations("sectors");
   const ak = getAkademiUi(useLocale());
   const pathname = usePathname();
   const isActive = useIsActive();
@@ -295,6 +297,13 @@ export function SiteHeader() {
     href: `/makineler/${i.slug}`,
     desc: tMach(`${i.slug}.short`),
   }));
+  /* Uygulama sektörleri — alıcı makineyi değil kendi sektörünü arıyor,
+     o yüzden menüde ürünlerle aynı seviyede duruyor (bkz. lib/sectors.ts). */
+  const sectorMega: MegaItem[] = sectors.map((s) => ({
+    label: tSec(`items.${s.slug}.name`),
+    href: `/uygulamalar/${s.slug}`,
+    desc: tSec(`items.${s.slug}.short`),
+  }));
 
   return (
     <header
@@ -364,6 +373,16 @@ export function SiteHeader() {
             overHero={overHero}
             cols="grid-cols-1"
             width="w-[400px]"
+          />
+          <MegaMenu
+            label={tSec("title")}
+            hubHref="/uygulamalar"
+            items={sectorMega}
+            seeAll={t("seeAll")}
+            active={isActive("/uygulamalar")}
+            overHero={overHero}
+            cols="grid-cols-1"
+            width="w-[420px]"
           />
           <NavLink href="/hakkimizda" label={t("about")} active={isActive("/hakkimizda")} overHero={overHero} />
           <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} overHero={overHero} />
@@ -472,6 +491,21 @@ export function SiteHeader() {
               </summary>
               <ul className="mb-2 ms-3 border-s border-line ps-3">
                 {machineMega.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-ink hover:bg-surface-alt">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+            <details className="group/d">
+              <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt [&::-webkit-details-marker]:hidden">
+                {tSec("title")}
+                <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
+              </summary>
+              <ul className="mb-2 ms-3 border-s border-line ps-3">
+                {sectorMega.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} onClick={() => setMobileOpen(false)} className="block rounded-md px-3 py-2 text-sm text-ink hover:bg-surface-alt">
                       {item.label}

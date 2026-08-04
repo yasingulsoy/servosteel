@@ -10,6 +10,7 @@ import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { rollFormItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
+import { RelatedReading } from "@/components/related-reading";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -111,6 +112,9 @@ export default async function RollFormHatlariPage({ params }: Props) {
       </section>
 
       <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />
+
+      <RelatedReading path="/roll-form-hatlari" locale={locale} />
+
 
       <CtaBand title={t("ctaTitle")} />
     </>

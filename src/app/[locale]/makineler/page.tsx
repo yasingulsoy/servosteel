@@ -8,6 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { machineItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
+import { RelatedReading } from "@/components/related-reading";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -78,6 +79,9 @@ export default async function MakinelerPage({ params }: Props) {
           })}
         </div>
       </section>
+
+      <RelatedReading path="/makineler" locale={locale} />
+
 
       <CtaBand title={t("ctaTitle")} />
     </>

@@ -13,6 +13,7 @@ export type AkademiUi = {
   empty: string;
   published: string;
   toc: string;
+  relatedTitle: string;
 };
 
 const FALLBACK: AkademiUi = {
@@ -25,6 +26,7 @@ const FALLBACK: AkademiUi = {
   empty: "New articles coming soon.",
   published: "Published",
   toc: "Contents",
+  relatedTitle: "Related reading",
 };
 
 export const akademiUi: Record<string, AkademiUi> = {
@@ -39,6 +41,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Yakında yeni içerikler yayınlanacak.",
     published: "Yayınlandı",
     toc: "İçindekiler",
+    relatedTitle: "İlgili okuma",
   },
   en: {
     nav: "Academy",
@@ -51,6 +54,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "New articles coming soon.",
     published: "Published",
     toc: "Contents",
+    relatedTitle: "Related reading",
   },
   de: {
     nav: "Akademie",
@@ -63,6 +67,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Bald neue Inhalte.",
     published: "Veröffentlicht",
     toc: "Inhalt",
+    relatedTitle: "Passende Beiträge",
   },
   es: {
     nav: "Academia",
@@ -75,6 +80,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Pronto nuevos artículos.",
     published: "Publicado",
     toc: "Contenido",
+    relatedTitle: "Lectura relacionada",
   },
   it: {
     nav: "Accademia",
@@ -87,6 +93,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Presto nuovi contenuti.",
     published: "Pubblicato",
     toc: "Indice",
+    relatedTitle: "Letture correlate",
   },
   hu: {
     nav: "Akadémia",
@@ -99,6 +106,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Hamarosan új tartalmak.",
     published: "Közzétéve",
     toc: "Tartalom",
+    relatedTitle: "Kapcsolódó olvasnivaló",
   },
   pl: {
     nav: "Akademia",
@@ -111,6 +119,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Wkrótce nowe treści.",
     published: "Opublikowano",
     toc: "Spis treści",
+    relatedTitle: "Powiązane materiały",
   },
   ru: {
     nav: "Академия",
@@ -123,6 +132,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "Скоро новые материалы.",
     published: "Опубликовано",
     toc: "Содержание",
+    relatedTitle: "По теме",
   },
   ar: {
     nav: "الأكاديمية",
@@ -135,6 +145,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     empty: "محتوى جديد قريبًا.",
     published: "نُشر في",
     toc: "المحتويات",
+    relatedTitle: "قراءات ذات صلة",
   },
 };
 
