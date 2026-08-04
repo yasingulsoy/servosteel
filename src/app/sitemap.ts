@@ -5,6 +5,7 @@ import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 import { localePath } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
 import { compareItems } from "@/lib/compare";
+import { sectors } from "@/lib/sectors";
 
 const paths = [
   { path: "", priority: 1 },
@@ -20,7 +21,9 @@ const paths = [
   { path: "/akademi", priority: 0.6 },
   { path: "/hesaplayicilar", priority: 0.7 },
   { path: "/karsilastirma", priority: 0.7 },
+  { path: "/uygulamalar", priority: 0.8 },
   ...compareItems.map((c) => ({ path: `/karsilastirma/${c.slug}`, priority: 0.7 })),
+  ...sectors.map((s) => ({ path: `/uygulamalar/${s.slug}`, priority: 0.8 })),
   ...rollFormItems.map((p) => ({ path: `/roll-form-hatlari/${p.slug}`, priority: 0.8 })),
   ...machineItems.map((p) => ({ path: `/makineler/${p.slug}`, priority: 0.7 })),
 ];

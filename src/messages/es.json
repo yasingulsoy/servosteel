@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Aplicaciones: Energía, Construcción, Logística, Automoción",
+      "metaDesc": "Dónde trabajan las líneas y los sistemas de alimentación Servosteel: solar y distribución eléctrica, perfiles de construcción, estanterías, automoción y electrodomésticos.",
+      "eyebrow": "Aplicaciones",
+      "title": "Los sectores para los que fabricamos",
+      "desc": "Cada pieza que sale de una bobina tiene su propia geometría, tolerancia y ritmo de producción. Nuestras líneas no se dimensionan con una plantilla única, sino según el sector al que va la pieza. Abajo, las aplicaciones que funcionan en campo.",
+      "explore": "Ver",
+      "applicationsEyebrow": "Piezas producidas",
+      "relatedTitle": "Líneas y máquinas que sirven a este sector",
+      "proofEyebrow": "Desde el campo",
+      "proofTitle": "Imágenes de nuestras líneas trabajando en este sector",
+      "faqTitle": "Preguntas frecuentes",
+      "otherTitle": "Otras aplicaciones",
+      "ctaTitle": "Dimensionemos una línea para su sector",
+      "ctaText": "Envíe el plano de la pieza que produce, el espesor de chapa y su capacidad objetivo, y le respondemos con una disposición de línea.",
+      "items": {
+        "enerji": {
+          "name": "Energía",
+          "short": "Líneas y sistemas de alimentación para perfiles de montaje solar, canalización de cables, cuadros eléctricos y carril DIN.",
+          "metaTitle": "Líneas para el sector energético: perfil solar y bandeja",
+          "metaDesc": "Líneas de perfilado y sistemas de alimentación de prensa para perfiles de montaje solar, bandejas y escalerillas portacables, carril DIN y cuadros eléctricos.",
+          "desc": "La energía es la aplicación de mayor crecimiento en el procesamiento de bobina. Desde la estructura de una planta solar hasta el cuadro de distribución, una amplia familia de piezas pasa por la misma secuencia: desbobinado, aplanado, conformado, punzonado y corte.",
+          "applicationsTitle": "En qué trabajamos dentro del sector energético",
+          "applications": [
+            {
+              "title": "Perfil de montaje solar",
+              "text": "Líneas de perfilado completas para los perfiles en C y montantes de las estructuras de plantas solares."
+            },
+            {
+              "title": "Perfiles diagonales y de arriostrado",
+              "text": "Línea aparte para las diagonales del sistema de montaje; patrón de agujeros y longitud de corte se llaman desde la receta."
+            },
+            {
+              "title": "Bandeja portacables",
+              "text": "Líneas de bandeja perforada y lisa — la unidad de punzonado va dentro de la línea, sin paso de prensa aparte."
+            },
+            {
+              "title": "Escalerilla portacables",
+              "text": "Líneas de bandeja tipo escalera para cargas pesadas; largueros y travesaños en estaciones separadas."
+            },
+            {
+              "title": "Carril DIN y de bornes",
+              "text": "Líneas de perfilado de chapa fina para los carriles DIN del cuadro; la tolerancia de sección decide el montaje."
+            },
+            {
+              "title": "Fabricación de cuadros",
+              "text": "Nuestros sistemas de alimentación de prensa trabajan en plantas que producen chapa para cuadros eléctricos."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Qué diferencia una línea de perfil solar de una línea de perfil estándar?",
+              "a": "El patrón de agujeros. Las estructuras solares llevan grupos de agujeros a intervalos variables a lo largo del perfil, y deben mantenerse sincronizados con el conformado. La línea se construye para que la unidad de punzonado y la alimentación servo se posicionen juntas desde la receta; punzonar después es más lento y le cuesta la tolerancia."
+            },
+            {
+              "q": "¿El conformado daña el recubrimiento de la chapa galvanizada?",
+              "a": "Con el diseño de rodillos y la dureza superficial adecuados, el conformado no arranca el recubrimiento. Lo determinante es el número de estaciones: si la sección se construye por etapas y no de una vez, el material no se fuerza. En perfiles que quedarán a la intemperie, esto es directamente una cuestión de vida útil."
+            }
+          ],
+          "ctaTitle": "Dimensionemos una línea para su proyecto energético",
+          "ctaText": "Envíe la sección del perfil, el patrón de agujeros y su capacidad anual, y le respondemos con la disposición y una oferta técnica."
+        },
+        "insaat": {
+          "name": "Construcción",
+          "short": "Plataformas de andamio, perfiles estructurales, biondas y pantallas acústicas, falsos techos, fachada y componentes de ascensor.",
+          "metaTitle": "Líneas para construcción: andamio, bionda, perfil estructural",
+          "metaDesc": "Líneas de perfilado para plataformas de andamio, perfiles estructurales C/Sigma/Omega, biondas y pantallas acústicas, falsos techos y componentes de fachada.",
+          "desc": "La construcción es la aplicación más amplia del perfilado. Del elemento portante al perfil de techo, cada pieza soporta una carga estática y una expectativa de acabado distintas, y la línea se configura en consecuencia.",
+          "applicationsTitle": "En qué trabajamos dentro de la construcción",
+          "applications": [
+            {
+              "title": "Plataforma de andamio",
+              "text": "Líneas de plataforma de andamio de acero — el relieve antideslizante y el cierre de extremo se forman en línea."
+            },
+            {
+              "title": "Perfil estructural (C / Sigma / Omega)",
+              "text": "Líneas de serie pesada para los perfiles portantes de estructura metálica; sección y espesor según proyecto."
+            },
+            {
+              "title": "Bionda y pantalla acústica",
+              "text": "Configuraciones de línea distintas para perfiles de seguridad vial y paneles de barrera acústica."
+            },
+            {
+              "title": "Perfil de falso techo",
+              "text": "Perfiles portantes de chapa fina, donde se piden a la vez alta velocidad de línea y tolerancia estrecha."
+            },
+            {
+              "title": "Fijaciones de fachada",
+              "text": "Nuestros sistemas de alimentación trabajan en plantas que producen soportes y fijaciones de fachada."
+            },
+            {
+              "title": "Componentes de ascensor y persiana",
+              "text": "Nuestros sistemas de alimentación de prensa se usan en fabricantes de guías de puerta de ascensor, fijaciones y persianas de aluminio."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Hasta qué espesor se puede llegar en perfil estructural?",
+              "a": "No decide el espesor por sí solo, sino el espesor multiplicado por el límite elástico del material. Un acero de alta resistencia del mismo espesor exige una línea sensiblemente más pesada que la chapa dulce. Por eso pedimos la calidad del material junto con el rango de espesores en fase de oferta."
+            },
+            {
+              "q": "¿Hay que parar la línea al cambiar la longitud del perfil?",
+              "a": "No. La longitud de corte es servocontrolada y se llama desde la receta, así que puede cambiarse con la línea en marcha. Cambiar la sección es otra cosa: implica cambiar el juego de rodillos."
+            }
+          ],
+          "ctaTitle": "Construyamos una línea para su perfil de construcción",
+          "ctaText": "Envíe la sección del perfil, el espesor y la calidad del material, y le respondemos con la serie adecuada y una disposición."
+        },
+        "lojistik-depolama": {
+          "name": "Logística y almacenaje",
+          "short": "Líneas de perfilado para estanterías de carga pesada, estanterías de tienda y perfiles portantes de almacén.",
+          "metaTitle": "Líneas para estanterías: carga pesada y tienda",
+          "metaDesc": "Líneas de perfilado para estanterías de paletización, estanterías de tienda y perfiles portantes de almacén, con el patrón de agujeros formado en línea.",
+          "desc": "En estanterías el perfil es el propio elemento portante: la tolerancia de sección se traslada directamente a la capacidad de carga. El patrón de agujeros, a su vez, marca la velocidad de montaje. Ambos se resuelven en línea.",
+          "applicationsTitle": "En qué trabajamos en logística y almacenaje",
+          "applications": [
+            {
+              "title": "Perfil de estantería pesada",
+              "text": "Líneas de serie pesada para montantes y largueros de paletización, con el patrón de agujeros sincronizado al conformado."
+            },
+            {
+              "title": "Estantería de tienda",
+              "text": "Líneas de chapa fina para sistemas de retail — la calidad superficial importa porque la pieza queda a la vista."
+            },
+            {
+              "title": "Perfiles de canal portante",
+              "text": "Líneas de perfil en canal para sistemas de manutención y suspensión dentro del almacén."
+            }
+          ],
+          "faq": [
+            {
+              "q": "El patrón de agujeros varía a lo largo del perfil, ¿puede la línea con eso?",
+              "a": "Sí. La unidad de punzonado va sincronizada con la alimentación servo y el patrón se llama desde la receta. La cuestión crítica es si se punzona antes o después del conformado: antes, el agujero puede deformarse al construirse la sección; después, hace falta una precisión de posicionamiento aparte. Qué orden es el correcto depende de la sección del perfil."
+            },
+            {
+              "q": "¿Por qué importa tanto la planitud en un perfil de estantería?",
+              "a": "Un montante curvado no alinea con los demás elementos en el montaje y distorsiona el reparto de cargas. Por eso, en líneas de estantería, la unidad de aplanado no es opcional sino, en la práctica, obligatoria."
+            }
+          ],
+          "ctaTitle": "Dimensionemos una línea para su sistema de estanterías",
+          "ctaText": "Envíe la sección del perfil, el patrón de agujeros y su objetivo anual de producción, y le respondemos con una configuración de línea."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Automoción y electrodomésticos",
+          "short": "Sistemas de alimentación de prensa para gran serie — proveedores de automoción, electrodomésticos y equipos de calefacción.",
+          "metaTitle": "Alimentación de prensa para automoción y electrodomésticos",
+          "metaDesc": "Alimentadores servo y líneas compactas trabajando en proveedores de automoción, fabricación de electrodomésticos, radiadores de panel y equipos de calefacción.",
+          "desc": "En estos sectores el trabajo no está en el perfilado sino en la alimentación de prensa. Lo que decide la gran serie es la precisión de avance y la repetibilidad: la chapa debe estar en la misma posición en cada golpe.",
+          "applicationsTitle": "En qué trabajamos en estos sectores",
+          "applications": [
+            {
+              "title": "Proveedores de automoción",
+              "text": "Nuestros sistemas de alimentación trabajan en fabricantes de piezas de automoción de varios países, entre ellos Serbia e Italia."
+            },
+            {
+              "title": "Piezas de electrodomésticos",
+              "text": "Nuestras desbobinadoras, aplanadoras y líneas de alimentador servo se usan en plantas de chapa para electrodomésticos."
+            },
+            {
+              "title": "Radiadores de panel y rejillas",
+              "text": "Sistemas de alimentación para tapas superiores y piezas de rejilla en fabricación de equipos de calefacción."
+            },
+            {
+              "title": "Equipamiento de baño y cocina",
+              "text": "Nuestras líneas compactas de alimentación trabajan en fabricantes de accesorios y equipamiento."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Por qué es tan decisiva la precisión de avance en serie?",
+              "a": "La prensa debe encontrar la chapa en la misma posición en cada golpe. Si la posición se desplaza, la cota de la pieza se desplaza con ella y el troquel se carga de un solo lado, lo que aumenta a la vez la merma y el desgaste. En gran serie una desviación pequeña se convierte en un número grande al final del día."
+            },
+            {
+              "q": "¿Cabe una línea de alimentación completa en poco espacio?",
+              "a": "Sí: desbobinadora, aplanadora y alimentador servo pueden combinarse en una sola plataforma. Para eso existe la línea compacta: reduce el espacio que ocuparían tres máquinas colocadas por separado."
+            }
+          ],
+          "ctaTitle": "Elijamos el sistema de alimentación para su prensa",
+          "ctaText": "Envíe espesor y ancho de chapa, cadencia de prensa y longitud de avance, y le respondemos con la serie adecuada."
+        }
+      }
+    }
 }

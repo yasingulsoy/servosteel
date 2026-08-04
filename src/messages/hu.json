@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Alkalmazások: energia, építőipar, logisztika, autóipar",
+      "metaDesc": "Hol dolgoznak a Servosteel sorok és adagolórendszerek: napelem és villamos elosztás, építőipari profilok, polcrendszerek, autóipar és háztartási gépek.",
+      "eyebrow": "Alkalmazások",
+      "title": "Mely ágazatoknak gyártunk",
+      "desc": "Minden tekercsből készülő alkatrésznek saját geometriája, tűrése és gyártási üteme van. Soraink nem egyetlen sablon szerint, hanem az alkatrész célágazata szerint méretezettek. Alább a terepen működő alkalmazások.",
+      "explore": "Megnézem",
+      "applicationsEyebrow": "Gyártott alkatrészek",
+      "relatedTitle": "Az ágazatot kiszolgáló sorok és gépek",
+      "proofEyebrow": "A terepről",
+      "proofTitle": "Felvételek soraink működéséről ebben az ágazatban",
+      "faqTitle": "Gyakori kérdések",
+      "otherTitle": "További alkalmazások",
+      "ctaTitle": "Méretezzünk sort az Ön ágazatához",
+      "ctaText": "Küldje el a gyártott alkatrész rajzát, a lemezvastagságot és a célkapacitást — sorelrendezéssel válaszolunk.",
+      "items": {
+        "enerji": {
+          "name": "Energia",
+          "short": "Sorok és adagolórendszerek napelemes tartóprofilokhoz, kábeltálcákhoz, kapcsolószekrényekhez és DIN sínekhez.",
+          "metaTitle": "Energiaipari sorok: napelemprofil és kábeltálca",
+          "metaDesc": "Profilhengerlő sorok és présadagoló rendszerek napelemes tartóprofilokhoz, kábeltálcákhoz és -létrákhoz, DIN sínekhez, kapcsolószekrényekhez.",
+          "desc": "Az energia a tekercsfeldolgozás leggyorsabban növekvő alkalmazása. A napelempark szerkezetétől a villamos elosztószekrényig az alkatrészek széles családja ugyanazon az alapsoron megy át: letekercselés, egyengetés, alakítás, lyukasztás, vágás.",
+          "applicationsTitle": "Min dolgozunk az energiaágazatban",
+          "applications": [
+            {
+              "title": "Napelemes tartóprofil",
+              "text": "Teljes profilhengerlő sorok a napelemparki szerkezetek C- és oszlopprofiljaihoz."
+            },
+            {
+              "title": "Átlós és merevítő profilok",
+              "text": "Külön sor a tartórendszer átlós elemeihez; a lyukkép és a vágáshossz receptből hívható."
+            },
+            {
+              "title": "Kábeltálca",
+              "text": "Perforált és sima kábeltálca sorok — a lyukasztóegység a soron belül van, külön préslépés nem kell."
+            },
+            {
+              "title": "Kábellétra",
+              "text": "Létra típusú tálcasorok nagy terhelésű kábelvezetéshez; oldalprofilok és fokok külön állomásokon."
+            },
+            {
+              "title": "DIN és sorkapocssín",
+              "text": "Vékonylemezes sorok a kapcsolószekrény DIN sínjeihez; a keresztmetszeti tűrés dönti el a szerelhetőséget."
+            },
+            {
+              "title": "Kapcsolószekrény-gyártás",
+              "text": "Présadagoló rendszereink kapcsolószekrény-lemezalkatrészeket gyártó üzemekben működnek."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Miben más egy napelemprofil-sor, mint egy szabványos profilsor?",
+              "a": "A lyukkép. A napelemes szerkezetek változó osztású lyukcsoportokat hordoznak a profil hosszában, és ezeknek szinkronban kell maradniuk az alakítással. A sor úgy épül, hogy a lyukasztóegység és a szervoadagolás együtt, receptből pozicionáljon; az utólagos lyukasztás lassabb is, és elviszi a tűrést."
+            },
+            {
+              "q": "Sérül a horganyzott lemez bevonata alakításkor?",
+              "a": "Helyes görgőtervezés és felületi keménység mellett az alakítás nem hordja le a bevonatot. A meghatározó az állomások száma: ha a keresztmetszet fokozatosan, nem egy lépésben épül fel, az anyagot nem erőltetjük. Kültéri profiloknál ez közvetlenül élettartam kérdése."
+            }
+          ],
+          "ctaTitle": "Méretezzünk sort az energiaprojektjéhez",
+          "ctaText": "Küldje el a profil keresztmetszetét, a lyukképet és az éves kapacitást — elrendezéssel és műszaki ajánlattal válaszolunk."
+        },
+        "insaat": {
+          "name": "Építőipar",
+          "short": "Állványpallók, tartóprofilok, szalagkorlátok és zajvédő falak, álmennyezet, homlokzati és felvonóelemek.",
+          "metaTitle": "Építőipari sorok: állványpalló, korlát, tartóprofil",
+          "metaDesc": "Profilhengerlő sorok állványpallókhoz, C/Szigma/Omega tartóprofilokhoz, szalagkorlátokhoz és zajvédő falakhoz, álmennyezethez és homlokzati elemekhez.",
+          "desc": "Az építőipar a hengerelt profilok legszélesebb alkalmazása. A teherhordó elemtől a mennyezeti profilig minden alkatrész más statikai terhet és felületi elvárást hordoz — a sor ehhez igazodik.",
+          "applicationsTitle": "Min dolgozunk az építőiparban",
+          "applications": [
+            {
+              "title": "Állványpalló",
+              "text": "Acél állványpalló sorok — a csúszásgátló felületminta és a végzárás a soron belül készül."
+            },
+            {
+              "title": "Tartóprofil (C / Szigma / Omega)",
+              "text": "Nehéz sorozatú sorok acélszerkezetek teherhordó profiljaihoz; keresztmetszet és falvastagság projekt szerint."
+            },
+            {
+              "title": "Szalagkorlát és zajvédő fal",
+              "text": "Külön sorkonfigurációk közúti biztonsági profilokhoz és akusztikus panelekhez."
+            },
+            {
+              "title": "Álmennyezeti profil",
+              "text": "Vékonylemezes tartóprofilok, ahol a nagy sorsebesség és a szűk tűrés együtt elvárás."
+            },
+            {
+              "title": "Homlokzati rögzítőelemek",
+              "text": "Adagolórendszereink homlokzati tartó- és rögzítőelemeket gyártó üzemekben működnek."
+            },
+            {
+              "title": "Felvonó- és redőnyelemek",
+              "text": "Présadagoló rendszereinket felvonóajtó-sín, rögzítőelem és alumínium redőny gyártói használják."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Milyen vastagságig lehet elmenni tartóprofilnál?",
+              "a": "Nem a vastagság dönt önmagában, hanem a vastagság és az anyag folyáshatárának szorzata. Az azonos vastagságú nagyszilárdságú acél érezhetően nehezebb sort kíván, mint a lágyacél. Ezért kérjük az ajánlati szakaszban a vastagságtartomány mellé az anyagminőséget is."
+            },
+            {
+              "q": "Meg kell állítani a sort, ha változik a profilhossz?",
+              "a": "Nem. A vágáshossz szervovezérelt és receptből hívható, menet közben módosítható. A keresztmetszet módosítása más kérdés: az a görgőkészlet cseréjét jelenti."
+            }
+          ],
+          "ctaTitle": "Építsünk sort az építőipari profiljához",
+          "ctaText": "Küldje el a profil keresztmetszetét, a lemezvastagságot és az anyagminőséget — a megfelelő sorozattal és elrendezéssel válaszolunk."
+        },
+        "lojistik-depolama": {
+          "name": "Logisztika és tárolás",
+          "short": "Profilhengerlő sorok nehéz terhelésű polcrendszerekhez, üzleti polcokhoz és raktári tartóprofilokhoz.",
+          "metaTitle": "Polcrendszer-sorok: nehéz terhelésű és üzleti polc",
+          "metaDesc": "Profilhengerlő sorok raklapos állványokhoz, üzleti polcokhoz és raktári tartóprofilokhoz, a lyukképpel a soron belül kialakítva.",
+          "desc": "A polcrendszerekben maga a profil a teherhordó elem — a keresztmetszeti tűrés közvetlenül a teherbírásba megy át. A lyukkép pedig a szerelési sebességet adja. Mindkettő a soron belül megoldódik.",
+          "applicationsTitle": "Min dolgozunk a logisztikában és tárolásban",
+          "applications": [
+            {
+              "title": "Nehéz terhelésű polcprofil",
+              "text": "Nehéz sorozatú sorok raklapos állványok oszlopaihoz és gerendáihoz, az alakítással szinkronizált lyukképpel."
+            },
+            {
+              "title": "Üzleti polc",
+              "text": "Vékonylemezes sorok kiskereskedelmi polcrendszerekhez — a felületminőség számít, mert az alkatrész látszik."
+            },
+            {
+              "title": "Tartócsatorna-profilok",
+              "text": "Csatornaprofil-sorok raktáron belüli anyagmozgató és felfüggesztő rendszerekhez."
+            }
+          ],
+          "faq": [
+            {
+              "q": "A lyukkép változik a profil hosszában — bírja ezt a sor?",
+              "a": "Igen. A lyukasztóegység a szervoadagolással szinkronban fut, a mintát receptből hívjuk. A kritikus kérdés, hogy az alakítás előtt vagy után lyukasztunk: előtte a lyuk deformálódhat, amíg a keresztmetszet felépül; utána külön pozicionálási pontosság kell. Melyik sorrend helyes, az a profil keresztmetszetétől függ."
+            },
+            {
+              "q": "Miért olyan fontos a síkkifekvés a polcprofilnál?",
+              "a": "A görbe oszlop szereléskor nem áll egy vonalba a többi elemmel, és torzítja a teherelosztást. Ezért a polcsorokon az egyengető egység nem opció, hanem a gyakorlatban kötelező."
+            }
+          ],
+          "ctaTitle": "Méretezzünk sort a polcrendszeréhez",
+          "ctaText": "Küldje el a profil keresztmetszetét, a lyukképet és az éves gyártási célt — sorkonfigurációval válaszolunk."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Autóipar és háztartási gépek",
+          "short": "Présadagoló rendszerek nagy sorozathoz — autóipari beszállítás, háztartási gépek és fűtéstechnika.",
+          "metaTitle": "Présadagoló rendszerek autóiparhoz és háztartási gépekhez",
+          "metaDesc": "Szervoadagolók és kompakt adagolósorok autóipari beszállítóknál, háztartásigép-gyártásban, lapradiátor- és fűtéstechnikai gyártásban.",
+          "desc": "Ezekben az ágazatokban a munka nem a profilhengerlés, hanem a présadagolás. A nagy sorozatot az adagolási pontosság és az ismételhetőség dönti el: a lemeznek minden löketnél ugyanott kell lennie.",
+          "applicationsTitle": "Min dolgozunk ezekben az ágazatokban",
+          "applications": [
+            {
+              "title": "Autóipari beszállítás",
+              "text": "Adagolórendszereink több országban működnek autóipari alkatrészgyártóknál, köztük Szerbiában és Olaszországban."
+            },
+            {
+              "title": "Háztartásigép-alkatrészek",
+              "text": "Letekercselőink, egyengetőink és szervoadagolós soraink háztartásigép-lemezalkatrészeket gyártó üzemekben működnek."
+            },
+            {
+              "title": "Lapradiátor és rács",
+              "text": "Adagolórendszerek fedőlemez- és rácsalkatrészekhez a fűtéstechnikai gyártásban."
+            },
+            {
+              "title": "Fürdőszobai és konyhai berendezések",
+              "text": "Kompakt adagolósoraink kiegészítő- és berendezésgyártóknál működnek."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Miért ennyire meghatározó az adagolási pontosság a sorozatgyártásban?",
+              "a": "A présnek minden löketnél ugyanott kell megtalálnia a lemezt. Ha a pozíció elmozdul, vele mozdul az alkatrészméret, és a szerszám egyoldalúan terhelődik — ez egyszerre növeli a hulladékot és a szerszámkopást. Nagy sorozatban a kis eltérés a műszak végére nagy számmá válik."
+            },
+            {
+              "q": "Elfér egy teljes adagolósor szűk helyen?",
+              "a": "Igen — a letekercselő, az egyengető és a szervoadagoló egyetlen platformra vonható össze. Pontosan ezért van a kompakt sor: lecsökkenti azt a helyet, amit három külön elhelyezett gép foglalna."
+            }
+          ],
+          "ctaTitle": "Válasszunk adagolórendszert a préséhez",
+          "ctaText": "Küldje el a lemezvastagságot és -szélességet, a löketszámot és az adagolási hosszt — a megfelelő sorozattal válaszolunk."
+        }
+      }
+    }
 }

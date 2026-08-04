@@ -11,6 +11,7 @@ export function SiteFooter() {
   const tn = useTranslations("nav");
   const tCalc = useTranslations("calc");
   const tCmp = useTranslations("compare");
+  const tSec = useTranslations("sectors");
   const ak = getAkademiUi(useLocale());
 
   const productLinks = [
@@ -18,6 +19,9 @@ export function SiteFooter() {
     { label: t("slitting"), href: "/dilme-hatlari" },
     { label: tn("ctl"), href: "/boy-kesme-hatlari" },
     { label: tn("machines"), href: "/makineler" },
+    /* Sektör sayfaları ürün listesinde — arama niyeti ürüne değil uygulamaya
+       göre geldiği için (bkz. lib/sectors.ts) burada durmaları doğru. */
+    { label: tSec("title"), href: "/uygulamalar" },
   ];
 
   const companyLinks = [

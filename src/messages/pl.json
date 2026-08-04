@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Zastosowania: energetyka, budownictwo, logistyka, motoryzacja",
+      "metaDesc": "Gdzie pracują linie i systemy podawania Servosteel: fotowoltaika i dystrybucja elektryczna, profile budowlane, regały, motoryzacja i AGD.",
+      "eyebrow": "Zastosowania",
+      "title": "Dla jakich branż budujemy",
+      "desc": "Każdy detal powstający z kręgu ma własną geometrię, tolerancję i tempo produkcji. Nasze linie dobieramy nie według jednego szablonu, lecz według branży, do której trafia detal. Poniżej zastosowania pracujące w terenie.",
+      "explore": "Zobacz",
+      "applicationsEyebrow": "Wytwarzane detale",
+      "relatedTitle": "Linie i maszyny obsługujące tę branżę",
+      "proofEyebrow": "Z terenu",
+      "proofTitle": "Nagrania naszych linii pracujących w tej branży",
+      "faqTitle": "Najczęstsze pytania",
+      "otherTitle": "Pozostałe zastosowania",
+      "ctaTitle": "Dobierzmy linię dla Państwa branży",
+      "ctaText": "Prosimy przesłać rysunek wytwarzanego detalu, grubość blachy i docelową wydajność — odpowiemy układem linii.",
+      "items": {
+        "enerji": {
+          "name": "Energetyka",
+          "short": "Linie i systemy podawania do profili montażowych PV, koryt kablowych, rozdzielnic i szyn DIN.",
+          "metaTitle": "Linie dla energetyki: profil solarny i koryto kablowe",
+          "metaDesc": "Linie profilujące i systemy podawania pras do profili montażowych PV, koryt i drabinek kablowych, szyn DIN oraz rozdzielnic.",
+          "desc": "Energetyka to najszybciej rosnące zastosowanie przetwarzania kręgów. Od konstrukcji farmy fotowoltaicznej po rozdzielnicę elektryczną szeroka rodzina detali przechodzi tę samą sekwencję: rozwijanie, prostowanie, profilowanie, wykrawanie, cięcie.",
+          "applicationsTitle": "Nad czym pracujemy w energetyce",
+          "applications": [
+            {
+              "title": "Profil montażowy PV",
+              "text": "Kompletne linie profilujące do profili C i słupków konstrukcji farm fotowoltaicznych."
+            },
+            {
+              "title": "Profile skośne i stężające",
+              "text": "Osobna linia do elementów skośnych systemu montażowego; wzór otworów i długość cięcia z receptury."
+            },
+            {
+              "title": "Koryto kablowe",
+              "text": "Linie koryt perforowanych i gładkich — zespół wykrawający wewnątrz linii, bez osobnego etapu prasowania."
+            },
+            {
+              "title": "Drabinka kablowa",
+              "text": "Linie koryt drabinkowych do ciężkich tras kablowych; ceowniki i szczeble na osobnych stacjach."
+            },
+            {
+              "title": "Szyna DIN i zaciskowa",
+              "text": "Linie z blachy cienkiej do szyn DIN w rozdzielnicach; tolerancja przekroju decyduje o montażu."
+            },
+            {
+              "title": "Produkcja rozdzielnic",
+              "text": "Nasze systemy podawania pras pracują w zakładach wytwarzających elementy blaszane rozdzielnic."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Czym różni się linia do profilu solarnego od linii standardowej?",
+              "a": "Wzorem otworów. Konstrukcje PV mają grupy otworów o zmiennym rozstawie na długości profilu, które muszą pozostać zsynchronizowane z profilowaniem. Linię buduje się tak, by zespół wykrawający i podawanie serwo pozycjonowały się razem z receptury; wykrawanie po profilowaniu jest wolniejsze i kosztuje tolerancję."
+            },
+            {
+              "q": "Czy profilowanie uszkadza powłokę blachy ocynkowanej?",
+              "a": "Przy właściwej konstrukcji rolek i twardości powierzchni profilowanie nie zdziera powłoki. Decyduje liczba stacji: gdy przekrój powstaje stopniowo, a nie w jednym kroku, materiał nie jest forsowany. Przy profilach pracujących na zewnątrz to bezpośrednio kwestia trwałości."
+            }
+          ],
+          "ctaTitle": "Dobierzmy linię do Państwa projektu energetycznego",
+          "ctaText": "Prosimy przesłać przekrój profilu, wzór otworów i roczną wydajność — odpowiemy układem i ofertą techniczną."
+        },
+        "insaat": {
+          "name": "Budownictwo",
+          "short": "Pomosty rusztowaniowe, profile konstrukcyjne, bariery drogowe i ekrany akustyczne, sufity podwieszane, elewacja i elementy dźwigowe.",
+          "metaTitle": "Linie dla budownictwa: rusztowania, bariery, profile konstrukcyjne",
+          "metaDesc": "Linie profilujące do pomostów rusztowaniowych, profili konstrukcyjnych C/Sigma/Omega, barier drogowych i ekranów akustycznych, sufitów i elementów elewacji.",
+          "desc": "Budownictwo to najszersze zastosowanie profili walcowanych na zimno. Od elementu nośnego po profil sufitowy każdy detal niesie inne obciążenie statyczne i inne oczekiwania wobec powierzchni — a linia jest do tego konfigurowana.",
+          "applicationsTitle": "Nad czym pracujemy w budownictwie",
+          "applications": [
+            {
+              "title": "Pomost rusztowaniowy",
+              "text": "Linie stalowych pomostów rusztowaniowych — wzór antypoślizgowy i zamknięcie końca powstają w linii."
+            },
+            {
+              "title": "Profil konstrukcyjny (C / Sigma / Omega)",
+              "text": "Linie serii ciężkiej do profili nośnych konstrukcji stalowych; przekrój i grubość ścianki wg projektu."
+            },
+            {
+              "title": "Bariera drogowa i ekran akustyczny",
+              "text": "Odrębne konfiguracje linii do profili bezpieczeństwa ruchu i paneli akustycznych."
+            },
+            {
+              "title": "Profil sufitu podwieszanego",
+              "text": "Cienkościenne profile nośne, gdzie wymagana jest jednocześnie duża prędkość linii i wąska tolerancja."
+            },
+            {
+              "title": "Mocowania elewacyjne",
+              "text": "Nasze systemy podawania pracują w zakładach wytwarzających wsporniki i mocowania elewacyjne."
+            },
+            {
+              "title": "Elementy dźwigowe i rolet",
+              "text": "Nasze systemy podawania pras stosują producenci prowadnic drzwi dźwigowych, mocowań i rolet aluminiowych."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Do jakiej grubości można dojść przy profilu konstrukcyjnym?",
+              "a": "Nie decyduje sama grubość, lecz grubość pomnożona przez granicę plastyczności materiału. Stal wysokiej wytrzymałości o tej samej grubości wymaga wyraźnie cięższej linii niż blacha miękka. Dlatego na etapie oferty prosimy o gatunek materiału obok zakresu grubości."
+            },
+            {
+              "q": "Czy przy zmianie długości profilu trzeba zatrzymać linię?",
+              "a": "Nie. Długość cięcia jest sterowana serwo i wywoływana z receptury, można ją zmieniać w ruchu. Zmiana przekroju to co innego — oznacza wymianę zestawu rolek."
+            }
+          ],
+          "ctaTitle": "Zbudujmy linię do Państwa profilu budowlanego",
+          "ctaText": "Prosimy przesłać przekrój profilu, grubość i gatunek materiału — odpowiemy właściwą serią i układem linii."
+        },
+        "lojistik-depolama": {
+          "name": "Logistyka i magazynowanie",
+          "short": "Linie profilujące do regałów wysokiego składowania, regałów sklepowych i profili nośnych magazynu.",
+          "metaTitle": "Linie do regałów: wysokie składowanie i regały sklepowe",
+          "metaDesc": "Linie profilujące do regałów paletowych, regałów sklepowych i profili nośnych magazynu, ze wzorem otworów wykonywanym w linii.",
+          "desc": "W regałach profil sam jest elementem nośnym — tolerancja przekroju przechodzi wprost w nośność. Wzór otworów z kolei wyznacza tempo montażu. Oba rozwiązuje się w linii.",
+          "applicationsTitle": "Nad czym pracujemy w logistyce i magazynowaniu",
+          "applications": [
+            {
+              "title": "Profil regału wysokiego składowania",
+              "text": "Linie serii ciężkiej do słupów i belek regałów paletowych, ze wzorem otworów zsynchronizowanym z profilowaniem."
+            },
+            {
+              "title": "Regał sklepowy",
+              "text": "Linie cienkościenne do systemów sklepowych — jakość powierzchni ma znaczenie, bo detal pozostaje widoczny."
+            },
+            {
+              "title": "Profile ceowe nośne",
+              "text": "Linie profili ceowych do systemów transportu i podwieszania wewnątrz magazynu."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Wzór otworów zmienia się na długości profilu — czy linia to udźwignie?",
+              "a": "Tak. Zespół wykrawający pracuje zsynchronizowany z podawaniem serwo, a wzór wywoływany jest z receptury. Kluczowe pytanie brzmi, czy wykrawa się przed profilowaniem, czy po nim: przed — otwór może się zdeformować podczas budowania przekroju; po — potrzebna jest osobna dokładność pozycjonowania. Która kolejność jest właściwa, zależy od przekroju profilu."
+            },
+            {
+              "q": "Dlaczego płaskość jest tak istotna przy profilu regałowym?",
+              "a": "Wygięty słup nie licuje z pozostałymi elementami przy montażu i zaburza rozkład obciążeń. Dlatego na liniach regałowych zespół prostujący nie jest opcją, lecz w praktyce koniecznością."
+            }
+          ],
+          "ctaTitle": "Dobierzmy linię do Państwa systemu regałowego",
+          "ctaText": "Prosimy przesłać przekrój profilu, wzór otworów i roczny cel produkcyjny — odpowiemy konfiguracją linii."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Motoryzacja i AGD",
+          "short": "Systemy podawania pras do produkcji wielkoseryjnej — poddostawcy motoryzacji, AGD i technika grzewcza.",
+          "metaTitle": "Systemy podawania pras dla motoryzacji i AGD",
+          "metaDesc": "Podajniki serwo i kompaktowe linie podawania pracujące u poddostawców motoryzacji, w produkcji AGD, grzejników płytowych i techniki grzewczej.",
+          "desc": "W tych branżach praca leży nie w profilowaniu, lecz w podawaniu do prasy. O produkcji wielkoseryjnej decyduje dokładność podawania i powtarzalność: blacha musi być w tym samym położeniu przy każdym skoku.",
+          "applicationsTitle": "Nad czym pracujemy w tych branżach",
+          "applications": [
+            {
+              "title": "Poddostawcy motoryzacji",
+              "text": "Nasze systemy podawania pracują u producentów części samochodowych w kilku krajach, m.in. w Serbii i we Włoszech."
+            },
+            {
+              "title": "Części AGD",
+              "text": "Nasze odwijaki, prostowarki i linie z podajnikiem serwo pracują w zakładach blach do AGD."
+            },
+            {
+              "title": "Grzejniki płytowe i kratki",
+              "text": "Systemy podawania do pokryw górnych i elementów kratek w produkcji techniki grzewczej."
+            },
+            {
+              "title": "Wyposażenie łazienek i kuchni",
+              "text": "Nasze kompaktowe linie podawania pracują u producentów akcesoriów i wyposażenia."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Dlaczego dokładność podawania jest tak decydująca w serii?",
+              "a": "Prasa musi znaleźć blachę w tym samym położeniu przy każdym skoku. Gdy położenie zaczyna dryfować, dryfuje z nim wymiar detalu, a tłocznik obciąża się jednostronnie — rośnie i odpad, i zużycie narzędzia. W wielkiej serii mała odchyłka staje się dużą liczbą do końca zmiany."
+            },
+            {
+              "q": "Czy kompletna linia podawania zmieści się na małej powierzchni?",
+              "a": "Tak — odwijak, prostowarkę i podajnik serwo można połączyć na jednej platformie. Właśnie po to istnieje linia kompaktowa: zmniejsza miejsce, które zajęłyby trzy osobno ustawione maszyny."
+            }
+          ],
+          "ctaTitle": "Dobierzmy system podawania do Państwa prasy",
+          "ctaText": "Prosimy przesłać grubość i szerokość blachy, liczbę skoków i długość podawania — odpowiemy właściwą serią."
+        }
+      }
+    }
 }

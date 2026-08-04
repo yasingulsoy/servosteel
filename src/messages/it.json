@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Applicazioni: energia, edilizia, logistica, automotive",
+      "metaDesc": "Dove lavorano le linee e i sistemi di alimentazione Servosteel: solare e distribuzione elettrica, profili per edilizia, scaffalature, automotive ed elettrodomestici.",
+      "eyebrow": "Applicazioni",
+      "title": "I settori per cui costruiamo",
+      "desc": "Ogni pezzo che esce da un coil ha la propria geometria, tolleranza e cadenza produttiva. Le nostre linee non si dimensionano su un unico schema, ma sul settore a cui il pezzo è destinato. Qui sotto le applicazioni che lavorano in campo.",
+      "explore": "Vedi",
+      "applicationsEyebrow": "Pezzi prodotti",
+      "relatedTitle": "Linee e macchine per questo settore",
+      "proofEyebrow": "Dal campo",
+      "proofTitle": "Immagini delle nostre linee al lavoro in questo settore",
+      "faqTitle": "Domande frequenti",
+      "otherTitle": "Altre applicazioni",
+      "ctaTitle": "Dimensioniamo una linea per il vostro settore",
+      "ctaText": "Inviate il disegno del pezzo che producete, lo spessore e la capacità obiettivo: vi rispondiamo con un layout di linea.",
+      "items": {
+        "enerji": {
+          "name": "Energia",
+          "short": "Linee e sistemi di alimentazione per profili di montaggio solare, canalizzazione cavi, quadri elettrici e guide DIN.",
+          "metaTitle": "Linee per il settore energia: profilo solare e canalina",
+          "metaDesc": "Linee di profilatura e alimentazione presse per profili di montaggio solare, canaline e passerelle portacavi, guide DIN e quadri elettrici.",
+          "desc": "L'energia è l'applicazione in più rapida crescita nella lavorazione del coil. Dalla struttura di un impianto solare al quadro di distribuzione, un'ampia famiglia di pezzi attraversa la stessa sequenza: svolgimento, spianatura, profilatura, punzonatura, taglio.",
+          "applicationsTitle": "Su cosa lavoriamo nel settore energia",
+          "applications": [
+            {
+              "title": "Profilo di montaggio solare",
+              "text": "Linee di profilatura complete per i profili a C e i montanti delle strutture di impianti solari."
+            },
+            {
+              "title": "Profili diagonali e di controvento",
+              "text": "Linea dedicata per le diagonali del sistema di montaggio; foratura e lunghezza di taglio richiamate da ricetta."
+            },
+            {
+              "title": "Canalina portacavi",
+              "text": "Linee per canaline forate e lisce — l'unità di punzonatura è in linea, senza un passaggio di pressa separato."
+            },
+            {
+              "title": "Passerella portacavi",
+              "text": "Linee per passerelle a scala per carichi pesanti; correnti e pioli su stazioni separate."
+            },
+            {
+              "title": "Guida DIN e morsettiera",
+              "text": "Linee di profilatura in lamiera sottile per le guide DIN nei quadri; la tolleranza di sezione decide il montaggio."
+            },
+            {
+              "title": "Produzione di quadri",
+              "text": "I nostri sistemi di alimentazione presse lavorano in stabilimenti che producono lamierati per quadri elettrici."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Cosa distingue una linea per profili solari da una linea standard?",
+              "a": "La foratura. Le strutture solari portano gruppi di fori a passo variabile lungo il profilo, che devono restare sincronizzati con la profilatura. La linea è costruita perché unità di punzonatura e alimentazione servo si posizionino insieme da ricetta; forare dopo è più lento e vi costa la tolleranza."
+            },
+            {
+              "q": "La profilatura danneggia il rivestimento della lamiera zincata?",
+              "a": "Con il giusto disegno dei rulli e la corretta durezza superficiale, la profilatura non asporta il rivestimento. Determinante è il numero di stazioni: se la sezione si costruisce per gradi anziché in un colpo solo, il materiale non viene forzato. Per profili destinati all'esterno questo è direttamente una questione di durata."
+            }
+          ],
+          "ctaTitle": "Dimensioniamo una linea per il vostro progetto energia",
+          "ctaText": "Inviate sezione del profilo, schema di foratura e capacità annua: vi rispondiamo con layout e offerta tecnica."
+        },
+        "insaat": {
+          "name": "Edilizia",
+          "short": "Tavole da ponteggio, profili strutturali, guardrail e barriere acustiche, controsoffitti, facciata e componenti per ascensori.",
+          "metaTitle": "Linee per edilizia: ponteggi, guardrail, profili strutturali",
+          "metaDesc": "Linee di profilatura per tavole da ponteggio, profili strutturali C/Sigma/Omega, guardrail e barriere acustiche, controsoffitti e componenti di facciata.",
+          "desc": "L'edilizia è l'applicazione più ampia dei profilati. Dall'elemento portante al profilo di controsoffitto, ogni pezzo porta un carico statico e un'attesa di finitura diversi — e la linea si configura di conseguenza.",
+          "applicationsTitle": "Su cosa lavoriamo in edilizia",
+          "applications": [
+            {
+              "title": "Tavola da ponteggio",
+              "text": "Linee per tavole da ponteggio in acciaio — bugnatura antiscivolo e chiusura di testa formate in linea."
+            },
+            {
+              "title": "Profilo strutturale (C / Sigma / Omega)",
+              "text": "Linee di serie pesante per i profili portanti delle strutture in acciaio; sezione e spessore secondo progetto."
+            },
+            {
+              "title": "Guardrail e barriere acustiche",
+              "text": "Configurazioni di linea distinte per profili di sicurezza stradale e pannelli fonoassorbenti."
+            },
+            {
+              "title": "Profilo per controsoffitto",
+              "text": "Profili portanti in lamiera sottile, dove si chiedono insieme alta velocità di linea e tolleranza stretta."
+            },
+            {
+              "title": "Staffaggi di facciata",
+              "text": "I nostri sistemi di alimentazione lavorano in stabilimenti che producono staffe e fissaggi di facciata."
+            },
+            {
+              "title": "Componenti per ascensori e serrande",
+              "text": "I nostri sistemi di alimentazione presse sono usati da produttori di guide porta ascensore, fissaggi e serrande in alluminio."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Fino a che spessore si arriva sui profili strutturali?",
+              "a": "Non decide lo spessore da solo, ma lo spessore moltiplicato per il carico di snervamento del materiale. Un acciaio alto-resistenziale di pari spessore richiede una linea nettamente più pesante della lamiera dolce. Per questo in fase di offerta chiediamo la qualità del materiale insieme all'intervallo di spessori."
+            },
+            {
+              "q": "Bisogna fermare la linea quando cambia la lunghezza del profilo?",
+              "a": "No. La lunghezza di taglio è servocontrollata e richiamata da ricetta, quindi si cambia con la linea in marcia. Cambiare la sezione è un'altra cosa: comporta il cambio del set di rulli."
+            }
+          ],
+          "ctaTitle": "Costruiamo una linea per il vostro profilo da edilizia",
+          "ctaText": "Inviate sezione del profilo, spessore e qualità del materiale: vi rispondiamo con la serie adatta e un layout."
+        },
+        "lojistik-depolama": {
+          "name": "Logistica e stoccaggio",
+          "short": "Linee di profilatura per scaffalature pesanti, scaffalature per il retail e profili portanti da magazzino.",
+          "metaTitle": "Linee per scaffalature: carico pesante e retail",
+          "metaDesc": "Linee di profilatura per scaffalature portapallet, scaffalature retail e profili portanti da magazzino, con la foratura eseguita in linea.",
+          "desc": "Nelle scaffalature il profilo è l'elemento portante stesso: la tolleranza di sezione entra direttamente nella portata. La foratura, a sua volta, determina la velocità di montaggio. Entrambe si risolvono in linea.",
+          "applicationsTitle": "Su cosa lavoriamo in logistica e stoccaggio",
+          "applications": [
+            {
+              "title": "Profilo per scaffalature pesanti",
+              "text": "Linee di serie pesante per montanti e correnti portapallet, con foratura sincronizzata alla profilatura."
+            },
+            {
+              "title": "Scaffalatura retail",
+              "text": "Linee in lamiera sottile per sistemi retail — la qualità superficiale conta perché il pezzo resta a vista."
+            },
+            {
+              "title": "Profili a canale portante",
+              "text": "Linee per profili a canale usati in sistemi di movimentazione e sospensione interni al magazzino."
+            }
+          ],
+          "faq": [
+            {
+              "q": "La foratura varia lungo il profilo: la linea ci riesce?",
+              "a": "Sì. L'unità di punzonatura lavora sincronizzata con l'alimentazione servo e lo schema è richiamato da ricetta. La domanda critica è se si fora prima o dopo la profilatura: prima, il foro può deformarsi mentre la sezione si costruisce; dopo, serve una precisione di posizionamento a sé. Quale ordine sia corretto dipende dalla sezione del profilo."
+            },
+            {
+              "q": "Perché la planarità conta così tanto su un profilo da scaffalatura?",
+              "a": "Un montante storto non si allinea con gli altri elementi in montaggio e altera la distribuzione dei carichi. Per questo, sulle linee per scaffalature, il gruppo spianatore non è opzionale ma di fatto obbligatorio."
+            }
+          ],
+          "ctaTitle": "Dimensioniamo una linea per il vostro sistema di scaffalature",
+          "ctaText": "Inviate sezione del profilo, schema di foratura e obiettivo produttivo annuo: vi rispondiamo con una configurazione di linea."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Automotive ed elettrodomestici",
+          "short": "Sistemi di alimentazione presse per la grande serie — subfornitura automotive, elettrodomestici e apparecchi per riscaldamento.",
+          "metaTitle": "Alimentazione presse per automotive ed elettrodomestici",
+          "metaDesc": "Alimentatori servo e linee compatte al lavoro nella subfornitura automotive, nella produzione di elettrodomestici, radiatori a pannello e apparecchi per riscaldamento.",
+          "desc": "In questi settori il lavoro non è la profilatura ma l'alimentazione presse. A decidere la grande serie sono precisione di avanzamento e ripetibilità: la lamiera deve trovarsi nella stessa posizione a ogni colpo.",
+          "applicationsTitle": "Su cosa lavoriamo in questi settori",
+          "applications": [
+            {
+              "title": "Subfornitura automotive",
+              "text": "I nostri sistemi di alimentazione lavorano presso produttori di componenti auto in diversi Paesi, tra cui Serbia e Italia."
+            },
+            {
+              "title": "Componenti per elettrodomestici",
+              "text": "Svolgitori, spianatrici e linee con alimentatore servo in uso in stabilimenti di lamierati per elettrodomestici."
+            },
+            {
+              "title": "Radiatori a pannello e griglie",
+              "text": "Sistemi di alimentazione per coperchi superiori e griglie nella produzione di apparecchi per riscaldamento."
+            },
+            {
+              "title": "Arredo bagno e cucina",
+              "text": "Le nostre linee compatte di alimentazione lavorano presso produttori di accessori e attrezzature."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Perché la precisione di avanzamento è così decisiva in serie?",
+              "a": "La pressa deve trovare la lamiera nella stessa posizione a ogni colpo. Se la posizione si sposta, si sposta la quota del pezzo e lo stampo si carica da un lato solo: aumentano insieme scarto e usura dell'utensile. In grande serie una piccola deviazione diventa un numero grande a fine giornata."
+            },
+            {
+              "q": "Una linea di alimentazione completa entra in uno spazio ridotto?",
+              "a": "Sì: svolgitore, spianatrice e alimentatore servo possono stare su un'unica piattaforma. La linea compatta esiste proprio per questo: riduce lo spazio che occuperebbero tre macchine collocate separatamente."
+            }
+          ],
+          "ctaTitle": "Scegliamo il sistema di alimentazione per la vostra pressa",
+          "ctaText": "Inviate spessore e larghezza lamiera, numero di colpi e passo di avanzamento: vi rispondiamo con la serie adatta."
+        }
+      }
+    }
 }

@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Anwendungen: Energie, Bau, Logistik, Automotive",
+      "metaDesc": "Wo Servosteel-Anlagen und Zuführsysteme arbeiten: Solar und Elektroverteilung, Bauprofile, Regalsysteme, Automotive und Hausgeräte.",
+      "eyebrow": "Anwendungen",
+      "title": "Für welche Branchen wir bauen",
+      "desc": "Jedes Teil, das vom Coil kommt, hat seine eigene Geometrie, Toleranz und Produktionstaktung. Unsere Anlagen werden nicht nach einer Schablone ausgelegt, sondern nach der Branche, in die das Teil geht. Unten die Anwendungen, die im Feld laufen.",
+      "explore": "Ansehen",
+      "applicationsEyebrow": "Gefertigte Teile",
+      "relatedTitle": "Anlagen und Maschinen für diese Branche",
+      "proofEyebrow": "Aus dem Feld",
+      "proofTitle": "Aufnahmen unserer Anlagen in dieser Branche",
+      "faqTitle": "Häufige Fragen",
+      "otherTitle": "Weitere Anwendungen",
+      "ctaTitle": "Wir legen eine Anlage für Ihre Branche aus",
+      "ctaText": "Senden Sie die Zeichnung Ihres Teils, die Materialstärke und Ihre Zielkapazität — wir melden uns mit einem Anlagenlayout zurück.",
+      "items": {
+        "enerji": {
+          "name": "Energie",
+          "short": "Anlagen und Zuführsysteme für Solar-Montageprofile, Kabelträger, Schaltschränke und Hutschienen.",
+          "metaTitle": "Anlagen für die Energiebranche: Solarprofil und Kabelrinne",
+          "metaDesc": "Profilieranlagen und Pressenzuführungen für Solar-Montageprofile, Kabelrinnen, Kabelleitern, Hutschienen und Schaltschrankteile.",
+          "desc": "Energie ist die am schnellsten wachsende Anwendung der Coilverarbeitung. Von der Solarparkkonstruktion bis zum Verteilerschrank durchläuft eine breite Teilefamilie dieselbe Kernfolge: Abwickeln, Richten, Umformen, Stanzen, Schneiden.",
+          "applicationsTitle": "Woran wir in der Energiebranche arbeiten",
+          "applications": [
+            {
+              "title": "Solar-Montageprofil",
+              "text": "Komplette Profilieranlagen für die C- und Pfostenprofile von Solarparkkonstruktionen."
+            },
+            {
+              "title": "Diagonal- und Aussteifungsprofile",
+              "text": "Eigene Anlage für die Diagonalen des Montagesystems; Lochbild und Schnittlänge kommen aus dem Rezept."
+            },
+            {
+              "title": "Kabelrinne",
+              "text": "Anlagen für gelochte und ungelochte Kabelrinnen — die Stanzeinheit sitzt in der Linie, ein separater Pressschritt entfällt."
+            },
+            {
+              "title": "Kabelleiter",
+              "text": "Leiterförmige Trägersysteme für schwere Kabelführung; Holme und Sprossen an getrennten Stationen."
+            },
+            {
+              "title": "Hut- und Klemmenschiene",
+              "text": "Feinblech-Profilieranlagen für Hutschienen im Schaltschrank; die Querschnittstoleranz entscheidet über die Montage."
+            },
+            {
+              "title": "Schaltschrankfertigung",
+              "text": "Unsere Pressenzuführungen laufen in Werken, die Blechteile für Schaltschränke fertigen."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Was unterscheidet eine Solarprofilanlage von einer Standardprofilanlage?",
+              "a": "Das Lochbild. Solarkonstruktionen tragen Lochgruppen in wechselnden Abständen über die Profillänge, und die müssen synchron zur Umformung bleiben. Die Anlage wird so gebaut, dass Stanzeinheit und Servovorschub gemeinsam aus dem Rezept positionieren; nachträgliches Stanzen ist langsamer und kostet die Toleranz."
+            },
+            {
+              "q": "Nimmt die Beschichtung von verzinktem Blech beim Umformen Schaden?",
+              "a": "Bei richtiger Rollenauslegung und Oberflächenhärte trägt die Umformung die Beschichtung nicht ab. Entscheidend ist die Zahl der Rollenstationen: Wird der Querschnitt schrittweise statt in einem Zug aufgebaut, wird der Werkstoff nicht überfordert. Bei Profilen im Außenbereich ist das unmittelbar eine Frage der Lebensdauer."
+            }
+          ],
+          "ctaTitle": "Wir legen eine Anlage für Ihr Energieprojekt aus",
+          "ctaText": "Senden Sie Profilquerschnitt, Lochbild und Jahreskapazität — wir melden uns mit Layout und technischem Angebot."
+        },
+        "insaat": {
+          "name": "Bau",
+          "short": "Gerüstbohlen, Statikprofile, Schutzplanken und Lärmschutz, abgehängte Decken, Fassaden- und Aufzugkomponenten.",
+          "metaTitle": "Bauanlagen: Gerüstbohle, Schutzplanke, Statikprofil",
+          "metaDesc": "Profilieranlagen für Gerüstbohlen, C-/Sigma-/Omega-Statikprofile, Schutzplanken und Lärmschutzwände, Deckenprofile und Fassadenkomponenten.",
+          "desc": "Der Bau ist die breiteste Anwendung profilierter Erzeugnisse. Vom tragenden Element bis zum Deckenprofil trägt jedes Teil eine andere statische Last und Oberflächenerwartung — die Anlage wird entsprechend konfiguriert.",
+          "applicationsTitle": "Woran wir im Bau arbeiten",
+          "applications": [
+            {
+              "title": "Gerüstbohle",
+              "text": "Anlagen für Stahlgerüstbohlen — Rutschhemmung und Endabschluss entstehen in der Linie."
+            },
+            {
+              "title": "Statikprofil (C / Sigma / Omega)",
+              "text": "Schwere Baureihen für tragende Profile im Stahlbau; Querschnitt und Wandstärke nach Projekt."
+            },
+            {
+              "title": "Schutzplanke und Lärmschutz",
+              "text": "Getrennte Anlagenkonfigurationen für Straßenschutzprofile und akustische Wandelemente."
+            },
+            {
+              "title": "Deckenprofil",
+              "text": "Feinblech-Trägerprofile für abgehängte Decken, wo hohe Liniengeschwindigkeit und enge Toleranz zusammen gefordert sind."
+            },
+            {
+              "title": "Fassadenbefestigungen",
+              "text": "Unsere Zuführsysteme laufen in Werken, die Fassadenträger und Befestigungsteile fertigen."
+            },
+            {
+              "title": "Aufzug- und Rollladenteile",
+              "text": "Unsere Pressenzuführungen werden von Herstellern von Aufzugtürschienen, Befestigungen und Aluminium-Rollläden eingesetzt."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Bis zu welcher Stärke gehen Statikprofile?",
+              "a": "Nicht die Stärke allein entscheidet, sondern Stärke mal Streckgrenze des Werkstoffs. Hochfester Stahl derselben Stärke verlangt eine deutlich schwerere Anlage als Weichstahl. Deshalb fragen wir im Angebotsstadium neben dem Stärkenbereich auch die Werkstoffgüte ab."
+            },
+            {
+              "q": "Muss die Anlage stoppen, wenn sich die Profillänge ändert?",
+              "a": "Nein. Die Schnittlänge ist servogeregelt und wird aus dem Rezept abgerufen, sie lässt sich im Lauf ändern. Ein Querschnittswechsel ist etwas anderes — das bedeutet einen Wechsel des Rollensatzes."
+            }
+          ],
+          "ctaTitle": "Wir bauen eine Anlage für Ihr Bauprofil",
+          "ctaText": "Senden Sie Profilquerschnitt, Materialstärke und Werkstoffgüte — wir melden uns mit der passenden Baureihe und einem Layout."
+        },
+        "lojistik-depolama": {
+          "name": "Logistik und Lagerung",
+          "short": "Profilieranlagen für Schwerlastregale, Ladenregale und Lagerträgerprofile.",
+          "metaTitle": "Anlagen für Regalsysteme: Schwerlast- und Ladenregal",
+          "metaDesc": "Profilieranlagen für Schwerlast-Palettenregale, Ladenregale und Lagerträgerprofile, mit dem Lochbild in der Linie erzeugt.",
+          "desc": "Im Regalsystem ist das Profil selbst das tragende Element — die Querschnittstoleranz geht direkt in die Tragfähigkeit ein. Das Lochbild wiederum bestimmt die Montagegeschwindigkeit. Beides wird in der Linie gelöst.",
+          "applicationsTitle": "Woran wir in Logistik und Lagerung arbeiten",
+          "applications": [
+            {
+              "title": "Schwerlast-Regalprofil",
+              "text": "Schwere Baureihen für Ständer und Traversen von Palettenregalen, mit dem Lochbild synchron zur Umformung."
+            },
+            {
+              "title": "Ladenregal",
+              "text": "Feinblechanlagen für Ladenregalsysteme — die Oberflächengüte zählt, weil das Teil sichtbar bleibt."
+            },
+            {
+              "title": "Trägerkanalprofile",
+              "text": "Kanalprofilanlagen für innerbetriebliche Förder- und Aufhängesysteme."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Das Lochbild wechselt über die Profillänge — schafft die Anlage das?",
+              "a": "Ja. Die Stanzeinheit läuft synchron zum Servovorschub, das Bild kommt aus dem Rezept. Die entscheidende Frage ist, ob vor oder nach der Umformung gestanzt wird: vorher kann sich das Loch beim Aufbau des Querschnitts verziehen, nachher braucht es eine eigene Positioniergenauigkeit. Welche Reihenfolge richtig ist, hängt vom Profilquerschnitt ab."
+            },
+            {
+              "q": "Warum ist Planheit beim Regalprofil so wichtig?",
+              "a": "Ein krummer Ständer fluchtet bei der Montage nicht mit den anderen Elementen und verzerrt die Lastverteilung. Deshalb ist die Richteinheit bei Regalanlagen nicht optional, sondern praktisch zwingend."
+            }
+          ],
+          "ctaTitle": "Wir legen eine Anlage für Ihr Regalsystem aus",
+          "ctaText": "Senden Sie Profilquerschnitt, Lochbild und Jahresproduktionsziel — wir melden uns mit einer Anlagenkonfiguration."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Automotive und Hausgeräte",
+          "short": "Pressenzuführungen für die Großserie — Automobilzulieferung, Hausgeräte und Heiztechnik.",
+          "metaTitle": "Pressenzuführungen für Automotive und Hausgeräte",
+          "metaDesc": "Servovorschübe und Kompaktzuführungen im Einsatz bei Automobilzulieferern, in der Hausgerätefertigung sowie bei Plattenheizkörpern und Heiztechnik.",
+          "desc": "In diesen Branchen liegt die Arbeit nicht beim Profilieren, sondern bei der Pressenzuführung. Über die Großserie entscheiden Vorschubgenauigkeit und Wiederholbarkeit: Das Blech muss bei jedem Hub an derselben Stelle liegen.",
+          "applicationsTitle": "Woran wir in diesen Branchen arbeiten",
+          "applications": [
+            {
+              "title": "Automobilzulieferung",
+              "text": "Unsere Zuführsysteme laufen bei Automobilteileherstellern in mehreren Ländern, darunter Serbien und Italien."
+            },
+            {
+              "title": "Hausgeräteteile",
+              "text": "Unsere Abwickler, Richtmaschinen und Servovorschublinien werden in Werken für Hausgeräte-Blechteile eingesetzt."
+            },
+            {
+              "title": "Plattenheizkörper und Gitter",
+              "text": "Zuführsysteme für Deckbleche und Gitterteile in der Heiztechnikfertigung."
+            },
+            {
+              "title": "Bad- und Küchenausstattung",
+              "text": "Unsere Kompaktzuführungen laufen bei Zubehör- und Ausstattungsherstellern."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Warum ist die Vorschubgenauigkeit in der Serie so entscheidend?",
+              "a": "Die Presse muss das Blech bei jedem Hub an derselben Stelle finden. Wandert die Position, wandert das Teilemaß mit, und das Werkzeug wird einseitig belastet — das erhöht Ausschuss und Werkzeugverschleiß zugleich. In der Großserie wird aus einer kleinen Abweichung bis zum Schichtende eine große Zahl."
+            },
+            {
+              "q": "Passt eine komplette Zuführlinie auf kleine Grundfläche?",
+              "a": "Ja — Abwickler, Richtmaschine und Servovorschub lassen sich auf einer Plattform vereinen. Genau dafür gibt es die Kompaktlinie: Sie verkleinert den Platzbedarf, den drei getrennt aufgestellte Maschinen hätten."
+            }
+          ],
+          "ctaTitle": "Wir wählen die Zuführung für Ihre Presse",
+          "ctaText": "Senden Sie Materialstärke und -breite, Hubzahl und Vorschublänge — wir melden uns mit der passenden Baureihe."
+        }
+      }
+    }
 }
