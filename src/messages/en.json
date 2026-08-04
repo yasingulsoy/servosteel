@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Applications: Energy, Construction, Logistics, Automotive",
+      "metaDesc": "Where Servosteel lines and feeding systems work: solar and electrical distribution, construction profiles, racking systems, automotive and appliances.",
+      "eyebrow": "Applications",
+      "title": "The sectors we build for",
+      "desc": "Every part that comes off a coil has its own geometry, tolerance and production tempo. Our lines are not sized to a single template but to the sector the part is going to. Below are the applications running in the field.",
+      "explore": "Explore",
+      "applicationsEyebrow": "Parts produced",
+      "relatedTitle": "Lines and machines serving this sector",
+      "proofEyebrow": "From the field",
+      "proofTitle": "Footage of our lines running in this sector",
+      "faqTitle": "Frequently asked questions",
+      "otherTitle": "Other applications",
+      "ctaTitle": "Let us size a line for your sector",
+      "ctaText": "Send the drawing of the part you produce, the sheet thickness and your target capacity, and we will come back with a line layout.",
+      "items": {
+        "enerji": {
+          "name": "Energy",
+          "short": "Lines and feeding systems for solar mounting profiles, cable management, enclosures and DIN rail production.",
+          "metaTitle": "Energy Sector Lines: Solar Profile and Cable Tray",
+          "metaDesc": "Roll forming lines and press feeding systems for solar mounting profiles, cable trays, cable ladders, DIN rails and electrical enclosures.",
+          "desc": "Energy is the fastest-growing application for coil processing. From solar plant structures to electrical distribution enclosures, a wide family of parts goes through the same core sequence: decoiling, levelling, forming, punching, cutting.",
+          "applicationsTitle": "What we work on in the energy sector",
+          "applications": [
+            {
+              "title": "Solar mounting profile",
+              "text": "Complete roll forming lines for the C and post profiles used in solar plant structures."
+            },
+            {
+              "title": "Diagonal and bracing profiles",
+              "text": "A separate line for the diagonal members of the mounting system; hole pattern and cut length are called from the recipe."
+            },
+            {
+              "title": "Cable tray",
+              "text": "Perforated and plain cable tray lines — the punching unit sits inside the line, so no separate pressing step is needed."
+            },
+            {
+              "title": "Cable ladder",
+              "text": "Ladder-type tray lines for heavy-duty cable management; side rails and rungs on separate stations."
+            },
+            {
+              "title": "DIN and terminal rail",
+              "text": "Thin-gauge roll forming lines for the DIN rail profiles inside electrical enclosures; section tolerance decides assembly."
+            },
+            {
+              "title": "Electrical enclosures",
+              "text": "Our press feeding systems run at plants producing sheet metal parts for electrical enclosures."
+            }
+          ],
+          "faq": [
+            {
+              "q": "What separates a solar mounting profile line from a standard profile line?",
+              "a": "The hole pattern. Solar structures carry groups of holes at varying intervals along the profile, and those have to stay synchronised with forming. The line is built so the punching unit and the servo feed position together from the recipe; punching afterwards is both slower and costs you the tolerance."
+            },
+            {
+              "q": "Does forming damage the coating on galvanised sheet?",
+              "a": "With the right roll design and surface hardness, forming does not strip the coating. The number of roll stations is what matters: if the section is built up gradually rather than in one step, the material is not forced. For profiles that will sit outdoors, this is directly a question of service life."
+            }
+          ],
+          "ctaTitle": "Let us size a line for your energy project",
+          "ctaText": "Send your profile section, hole pattern and annual capacity, and we will come back with a layout and a technical quotation."
+        },
+        "insaat": {
+          "name": "Construction",
+          "short": "Scaffolding planks, structural profiles, guardrails and noise barriers, suspended ceilings, facade and lift components.",
+          "metaTitle": "Construction Lines: Scaffolding, Barriers, Structural Profiles",
+          "metaDesc": "Roll forming lines for scaffolding planks, C/Sigma/Omega structural profiles, guardrails and noise barriers, suspended ceiling and facade components.",
+          "desc": "Construction is the widest application for roll formed profiles. From load-bearing members to ceiling profiles, every part carries a different static load and surface expectation — and the line is configured accordingly.",
+          "applicationsTitle": "What we work on in construction",
+          "applications": [
+            {
+              "title": "Scaffolding plank",
+              "text": "Steel scaffolding plank lines — the anti-slip surface pattern and end closure are formed inside the line."
+            },
+            {
+              "title": "Structural profile (C / Sigma / Omega)",
+              "text": "Heavy-series lines for the load-bearing profiles of steel structures; section and wall thickness to the project."
+            },
+            {
+              "title": "Guardrails and noise barriers",
+              "text": "Separate line configurations for highway safety profiles and acoustic barrier panels."
+            },
+            {
+              "title": "Suspended ceiling profile",
+              "text": "Thin-gauge ceiling carrier profiles, where high line speed and tight tolerance are wanted together."
+            },
+            {
+              "title": "Facade fixing components",
+              "text": "Our feeding systems run at plants producing facade carrier and fixing components."
+            },
+            {
+              "title": "Lift and shutter components",
+              "text": "Our press feeding systems are used by manufacturers of lift door rails, fixings and aluminium roller shutters."
+            }
+          ],
+          "faq": [
+            {
+              "q": "How thick can you go on structural profiles?",
+              "a": "Thickness alone does not decide it — thickness multiplied by the material's yield strength does. High-strength steel at the same thickness demands a markedly heavier line than mild steel. That is why we ask for the material grade alongside the thickness range at quotation stage."
+            },
+            {
+              "q": "Does the line have to stop when profile length changes?",
+              "a": "No. Cut length is servo controlled and called from the recipe, so it can be changed while the line runs. Changing the section is a different matter — that means changing the roll tooling."
+            }
+          ],
+          "ctaTitle": "Let us build a line for your construction profile",
+          "ctaText": "Send the profile section, sheet thickness and material grade, and we will come back with the right series and a layout."
+        },
+        "lojistik-depolama": {
+          "name": "Logistics and storage",
+          "short": "Roll forming lines for heavy-duty racking, retail shelving and warehouse carrier profiles.",
+          "metaTitle": "Racking System Lines: Heavy-Duty and Retail Shelving",
+          "metaDesc": "Roll forming lines for heavy-duty pallet racking, retail shelving and warehouse carrier profiles, with the hole pattern formed inside the line.",
+          "desc": "In racking systems the profile is the load-bearing member itself — section tolerance goes straight into load capacity. The hole pattern, meanwhile, sets assembly speed. Both are solved inside the line.",
+          "applicationsTitle": "What we work on in logistics and storage",
+          "applications": [
+            {
+              "title": "Heavy-duty racking profile",
+              "text": "Heavy-series lines for pallet racking uprights and beams, with the hole pattern synchronised to forming."
+            },
+            {
+              "title": "Retail shelving",
+              "text": "Thin-gauge lines for retail shelving systems — surface quality matters because the part is visible."
+            },
+            {
+              "title": "Carrier channel profiles",
+              "text": "Channel profile lines used in in-warehouse handling and suspension systems."
+            }
+          ],
+          "faq": [
+            {
+              "q": "The hole pattern varies along the profile — can the line handle that?",
+              "a": "Yes. The punching unit runs synchronised with the servo feed and the pattern is called from the recipe. The critical question is whether holes are punched before or after forming: punch first and the hole can deform as the section is built; punch after and you need a separate positioning accuracy. Which order is right depends on the profile section."
+            },
+            {
+              "q": "Why does flatness matter so much on a racking profile?",
+              "a": "A bent upright will not align with the other members during assembly and it distorts the load distribution. That is why on racking lines a levelling unit is not optional but, in practice, mandatory."
+            }
+          ],
+          "ctaTitle": "Let us size a line for your racking system",
+          "ctaText": "Send your profile section, hole pattern and annual production target, and we will come back with a line configuration."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Automotive and appliances",
+          "short": "Press feeding systems for high-volume part production — automotive supply, appliances and heating equipment.",
+          "metaTitle": "Press Feeding Systems for Automotive and Appliances",
+          "metaDesc": "Servo feeders and compact feeding lines running in automotive supply, appliance manufacturing, panel radiator and heating equipment production.",
+          "desc": "In these sectors the work is not roll forming but press feeding. What decides high-volume production is feed accuracy and repeatability: the sheet has to be in the same position on every stroke.",
+          "applicationsTitle": "What we work on in these sectors",
+          "applications": [
+            {
+              "title": "Automotive supply industry",
+              "text": "Our feeding systems run at automotive part manufacturers in several countries, including Serbia and Italy."
+            },
+            {
+              "title": "Appliance parts",
+              "text": "Our decoilers, straighteners and servo feeder lines are used at plants producing appliance sheet metal parts."
+            },
+            {
+              "title": "Panel radiators and grilles",
+              "text": "Feeding systems for top cover and grille parts in heating equipment production."
+            },
+            {
+              "title": "Bathroom and kitchen equipment",
+              "text": "Our compact feeding lines run at accessory and equipment manufacturers."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Why is feed accuracy so decisive in series production?",
+              "a": "The press has to find the sheet in the same position on every stroke. If the position drifts, the part dimension drifts with it and the die is loaded on one side, which raises both scrap and tool wear. In high-volume production a small deviation turns into a large number by the end of the day."
+            },
+            {
+              "q": "Can a complete feeding line fit into a tight footprint?",
+              "a": "Yes — decoiler, straightener and servo feeder can be combined on a single platform. That is exactly what the compact line exists for: it shrinks the floor space that three separately placed machines would occupy."
+            }
+          ],
+          "ctaTitle": "Let us pick a feeding system for your press",
+          "ctaText": "Send your sheet thickness and width, press stroke rate and feed length, and we will come back with the right series."
+        }
+      }
+    }
 }

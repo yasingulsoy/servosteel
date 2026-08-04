@@ -1376,5 +1376,187 @@
         }
       }
     }
-  }
+  },
+    "sectors": {
+      "metaTitle": "Uygulama Alanları: Enerji, İnşaat, Lojistik, Otomotiv",
+      "metaDesc": "Servosteel hatları ve besleme sistemleri hangi sektörlerde çalışıyor: solar ve elektrik dağıtımı, inşaat profilleri, raf sistemleri, otomotiv ve beyaz eşya.",
+      "eyebrow": "Uygulama alanları",
+      "title": "Hangi sektörler için üretiyoruz",
+      "desc": "Rulo sacdan çıkan her parçanın kendi geometrisi, toleransı ve üretim temposu vardır. Hatlarımız tek bir şablona göre değil, parçanın gittiği sektöre göre boyutlandırılır. Aşağıda sahada çalışan uygulamaları topladık.",
+      "explore": "İncele",
+      "applicationsEyebrow": "Üretilen parçalar",
+      "relatedTitle": "Bu sektöre hizmet eden hatlar ve makineler",
+      "proofEyebrow": "Sahadan",
+      "proofTitle": "Bu sektörde çalışan hatlarımızdan görüntüler",
+      "faqTitle": "Sık sorulan sorular",
+      "otherTitle": "Diğer uygulama alanları",
+      "ctaTitle": "Sektörünüze özel hat boyutlandıralım",
+      "ctaText": "Ürettiğiniz parçanın çizimini, sac kalınlığını ve hedef kapasitesini iletin; hat yerleşimiyle dönelim.",
+      "items": {
+        "enerji": {
+          "name": "Enerji",
+          "short": "Güneş enerjisi montaj profilleri, kablo taşıma sistemleri, pano ve otomat ray üretimi için hatlar ve besleme sistemleri.",
+          "metaTitle": "Enerji Sektörü Hatları: Solar Profil ve Kablo Kanalı",
+          "metaDesc": "GES montaj profili, kablo kanalı, kanal merdiven, otomat ray ve pano üretimi için roll form hatları ile pres besleme sistemleri.",
+          "desc": "Enerji, rulo sac işlemenin en hızlı büyüyen uygulama alanı. Güneş santrali konstrüksiyonundan elektrik dağıtım panosuna kadar geniş bir parça ailesi, aynı temel süreçten geçiyor: açma, doğrultma, şekillendirme, delme, kesme.",
+          "applicationsTitle": "Enerji sektöründe çalıştığımız uygulamalar",
+          "applications": [
+            {
+              "title": "GES montaj profili",
+              "text": "Güneş santrali konstrüksiyonunda kullanılan C ve dikme profilleri için komple roll form hatları üretiyoruz."
+            },
+            {
+              "title": "Diagonal ve bağlantı profilleri",
+              "text": "Montaj sisteminin çapraz elemanları için ayrı hat; delik deseni ve kesim boyu reçeteden çağrılır."
+            },
+            {
+              "title": "Kablo kanalı",
+              "text": "Perfore ve düz kablo kanalı hatları — delme ünitesi hat içinde, ayrı bir presleme adımına gerek kalmaz."
+            },
+            {
+              "title": "Kanal merdiven",
+              "text": "Ağır yük kablo taşıma sistemleri için merdiven tipi kanal hattı; profil ve travers ayrı istasyonlarda."
+            },
+            {
+              "title": "Otomat ve klemens rayı",
+              "text": "Elektrik panosu içindeki DIN ray profilleri için ince sac roll form hattı; kesit toleransı montajı belirler."
+            },
+            {
+              "title": "Pano imalatı",
+              "text": "Elektrik panosu sac parçalarını üreten tesislerde pres besleme sistemlerimiz çalışıyor."
+            }
+          ],
+          "faq": [
+            {
+              "q": "GES montaj profili hattı ile standart profil hattı arasındaki fark ne?",
+              "a": "Delik deseni. Solar konstrüksiyonda profil boyunca değişken aralıklı delik grupları var ve bunlar şekillendirmeyle senkron çalışmalı. Hat, delme ünitesi ve servo besleme reçeteye göre birlikte konumlanacak biçimde kurulur; sonradan delinen profil hem yavaş hem toleransı kaybettirir."
+            },
+            {
+              "q": "Galvanizli sacda kaplama zarar görür mü?",
+              "a": "Merdane tasarımı ve yüzey sertliği doğru seçildiğinde şekillendirme kaplamayı sıyırmaz. Kritik olan merdane sayısı: kesit tek adımda değil kademeli olarak oluşturulursa malzeme akışı zorlanmaz. Dış ortamda duracak profillerde bu doğrudan ömür meselesidir."
+            }
+          ],
+          "ctaTitle": "Enerji projeniz için hat boyutlandıralım",
+          "ctaText": "Profil kesiti, delik deseni ve yıllık kapasitenizi iletin; hat yerleşimi ve teknik teklifle dönelim."
+        },
+        "insaat": {
+          "name": "İnşaat",
+          "short": "İskele kalası, yapısal profil, yol ve gürültü bariyeri, asma tavan, cephe ve asansör elemanları.",
+          "metaTitle": "İnşaat Sektörü Hatları: İskele, Bariyer, Yapısal Profil",
+          "metaDesc": "İskele kalası, C/Sigma/Omega yapısal profil, yol ve gürültü bariyeri, asma tavan ve cephe elemanları için roll form hatları.",
+          "desc": "İnşaat, roll form profillerinin en geniş uygulama alanı. Taşıyıcı elemandan tavan profiline kadar her parçanın farklı bir statik yükü ve yüzey beklentisi var; hat da buna göre kurgulanıyor.",
+          "applicationsTitle": "İnşaat sektöründe çalıştığımız uygulamalar",
+          "applications": [
+            {
+              "title": "İskele kalası",
+              "text": "Çelik iskele kalası hatları — kaymaz yüzey deseni ve uç kapama hat içinde oluşturulur."
+            },
+            {
+              "title": "Yapısal profil (C / Sigma / Omega)",
+              "text": "Çelik konstrüksiyonun taşıyıcı profilleri için ağır seri hatlar; kesit ve et kalınlığı projeye göre."
+            },
+            {
+              "title": "Yol ve gürültü bariyeri",
+              "text": "Karayolu güvenlik profilleri ve akustik bariyer panelleri için ayrı hat konfigürasyonları."
+            },
+            {
+              "title": "Asma tavan profili",
+              "text": "İnce sac tavan taşıyıcı profilleri; yüksek hat hızı ve düşük tolerans birlikte istenir."
+            },
+            {
+              "title": "Cephe bağlantı elemanları",
+              "text": "Dış cephe taşıyıcı ve bağlantı parçalarını üreten tesislerde besleme sistemlerimiz çalışıyor."
+            },
+            {
+              "title": "Asansör ve kepenk elemanları",
+              "text": "Asansör kapı rayı, bağlantı elemanı ve alüminyum kepenk üreticilerinde pres besleme sistemlerimiz kullanılıyor."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Yapısal profilde hangi kalınlığa kadar çıkılabiliyor?",
+              "a": "Belirleyici olan tek başına kalınlık değil, kalınlık ile malzemenin akma dayanımının çarpımı. Aynı kalınlıkta yüksek mukavemetli çelik, yumuşak sacdan belirgin şekilde daha ağır bir hat ister. Bu yüzden teklif aşamasında kalınlık aralığıyla birlikte malzeme kalitesini de paylaşmanızı istiyoruz."
+            },
+            {
+              "q": "Profil boyu değiştiğinde hattı durdurmak gerekiyor mu?",
+              "a": "Hayır. Kesim boyu servo kontrollüdür ve reçeteden çağrılır; hat çalışırken boy değiştirilebilir. Kesit değişimi ise merdane takımı değişimi demektir, o ayrı bir işlem."
+            }
+          ],
+          "ctaTitle": "İnşaat profiliniz için hat kuralım",
+          "ctaText": "Profil kesitini, sac kalınlığını ve malzeme kalitesini iletin; uygun seri ve hat yerleşimiyle dönelim."
+        },
+        "lojistik-depolama": {
+          "name": "Lojistik ve depolama",
+          "short": "Ağır yük raf sistemleri, market rafı ve depo taşıyıcı profilleri için roll form hatları.",
+          "metaTitle": "Raf Sistemleri Hatları: Ağır Raf ve Market Rafı",
+          "metaDesc": "Ağır yük palet rafı, market rafı ve depo taşıyıcı profilleri için roll form hatları; delik deseni hat içinde oluşturulur.",
+          "desc": "Raf sistemlerinde profil, taşıyıcı elemanın kendisidir — kesit toleransı doğrudan yük kapasitesine yansır. Delik deseni ise montaj hızını belirler; ikisi de hat içinde çözülür.",
+          "applicationsTitle": "Lojistik ve depolamada çalıştığımız uygulamalar",
+          "applications": [
+            {
+              "title": "Ağır yük raf profili",
+              "text": "Palet rafı dikme ve traversleri için ağır seri hatlar; delik deseni şekillendirmeyle senkron."
+            },
+            {
+              "title": "Market rafı",
+              "text": "Perakende raf sistemleri için ince sac hatları — yüzey kalitesi görünür parça olduğu için kritik."
+            },
+            {
+              "title": "Taşıyıcı kanal profilleri",
+              "text": "Depo içi taşıma ve askı sistemlerinde kullanılan kanal profil hatları."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Delik deseni profil boyunca değişiyor, hat bunu yapabilir mi?",
+              "a": "Evet, delme ünitesi servo besleme ile senkron çalışır ve desen reçeteden çağrılır. Kritik nokta deliğin şekillendirmeden önce mi sonra mı açıldığı: önce açılırsa kesit oluşurken delik deforme olabilir, sonra açılırsa ayrı bir konumlandırma hassasiyeti gerekir. Hangi sıranın doğru olduğu profilin kesitine bağlıdır."
+            },
+            {
+              "q": "Raf profilinde düzlem hatası neden önemli?",
+              "a": "Eğri dikme, montajda diğer elemanlarla hizalanmaz ve yük dağılımını bozar. Bu yüzden raf hatlarında doğrultma ünitesi opsiyonel değil, pratikte zorunludur."
+            }
+          ],
+          "ctaTitle": "Raf sisteminiz için hat boyutlandıralım",
+          "ctaText": "Profil kesiti, delik deseni ve yıllık üretim hedefinizi iletin; hat konfigürasyonuyla dönelim."
+        },
+        "otomotiv-beyaz-esya": {
+          "name": "Otomotiv ve beyaz eşya",
+          "short": "Seri parça üretiminde pres besleme sistemleri — otomotiv yan sanayi, beyaz eşya ve ısıtma ekipmanları.",
+          "metaTitle": "Otomotiv ve Beyaz Eşya İçin Pres Besleme Sistemleri",
+          "metaDesc": "Otomotiv yan sanayi, beyaz eşya, panel radyatör ve ısıtma ekipmanı üretiminde çalışan servo besleyici ve kompakt besleme hatları.",
+          "desc": "Bu sektörlerde iş roll form değil, pres besleme tarafında. Yüksek adetli seri üretimde belirleyici olan besleme hassasiyeti ve tekrarlanabilirlik: her vuruşta sacın aynı konumda olması gerekiyor.",
+          "applicationsTitle": "Bu sektörlerde çalıştığımız uygulamalar",
+          "applications": [
+            {
+              "title": "Otomotiv yan sanayi",
+              "text": "Sırbistan ve İtalya dahil çeşitli ülkelerdeki otomotiv parça üreticilerinde besleme sistemlerimiz çalışıyor."
+            },
+            {
+              "title": "Beyaz eşya parçaları",
+              "text": "Beyaz eşya sac parçalarını üreten tesislerde açıcı, doğrultucu ve servo besleyici hatlarımız kullanılıyor."
+            },
+            {
+              "title": "Panel radyatör ve petek ızgara",
+              "text": "Isıtma ekipmanı üretiminde üst kapak ve ızgara parçaları için besleme sistemleri."
+            },
+            {
+              "title": "Banyo ve mutfak ekipmanları",
+              "text": "Aksesuar ve ekipman üreticilerinde kompakt besleme hatlarımız çalışıyor."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Seri üretimde besleme hassasiyeti neden bu kadar belirleyici?",
+              "a": "Pres her vuruşta sacı aynı konumda bulmak zorunda. Konum kayarsa parça ölçüsü kayar ve kalıp tek taraflı yüklenir; bu hem fireyi hem kalıp aşınmasını artırır. Yüksek adetli üretimde küçük bir sapma, gün sonunda büyük bir sayıya dönüşür."
+            },
+            {
+              "q": "Dar alanda komple besleme hattı kurulabilir mi?",
+              "a": "Evet, açıcı, doğrultucu ve servo besleyici tek platform üzerinde birleştirilebiliyor. Kompakt hat tam da bunun için var: ayrı ayrı yerleştirilen üç makinenin kapladığı alanı belirgin biçimde küçültüyor."
+            }
+          ],
+          "ctaTitle": "Presiniz için besleme sistemi seçelim",
+          "ctaText": "Sac kalınlığı, genişliği, pres strok sayısı ve besleme boyunu iletin; uygun seriyle dönelim."
+        }
+      }
+    }
 }

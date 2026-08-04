@@ -39,6 +39,7 @@ export const ROUTE_SLUGS = {
   akademi: "academy",
   hesaplayicilar: "calculators",
   karsilastirma: "comparison",
+  uygulamalar: "applications",
 } as const;
 
 /**
@@ -72,6 +73,12 @@ export const CONTENT_SLUGS = {
     "dilme-vs-boy-kesme": "slitting-vs-cut-to-length",
     "hidrolik-vs-mekanik-acici": "hydraulic-vs-mechanical-decoiler",
     "servo-vs-mekanik-besleme": "servo-vs-mechanical-feeding",
+  },
+  uygulamalar: {
+    enerji: "energy",
+    insaat: "construction",
+    "lojistik-depolama": "logistics-and-storage",
+    "otomotiv-beyaz-esya": "automotive-and-appliances",
   },
   /* MDX dosya adları Türkçe kalır — içerik tek kaynak, yalnızca URL çevrilir */
   akademi: {
