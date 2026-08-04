@@ -1,12 +1,55 @@
 import { defineRouting } from "next-intl/routing";
+import { ROUTE_SLUGS, CONTENT_SLUGS, SLUG_BASE_LOCALE } from "./slugs";
+
+const LOCALES = ["tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"] as const;
+
+/** Bir yolu her locale'e dağıtır: varsayılan dil Türkçe'yi, diğerleri İngilizce'yi alır. */
+function forAllLocales(tr: string, en: string): Record<string, string> {
+  return Object.fromEntries(LOCALES.map((l) => [l, l === SLUG_BASE_LOCALE ? tr : en]));
+}
+
+/**
+ * Dile göre URL yolları. slugs.ts'ten ÜRETİLİR — elle yazılan ikinci bir liste
+ * tutulmadığı için ikisi ayrışamaz.
+ *
+ * Dinamik segmentler `[slug]` DESENİ olarak değil, SOMUT yol olarak yazılır
+ * (`/makineler/rulo-acicilar` -> `/machines/decoilers`). Sebebi: next-intl
+ * dinamik segmentin DEĞERİNİ çevirmez, olduğu gibi geçirir. Somut yol yazınca
+ * gelen `/en/machines/decoilers` isteği dahili `/makineler/rulo-acicilar`
+ * yoluna çevriliyor; böylece sayfalar, generateStaticParams ve MDX içindeki
+ * ~440 iç link Türkçe id ile çalışmaya devam ediyor — tek satır değişmeden.
+ *
+ * Tip bilerek geniş (Record<string, ...>) bırakıldı: `pathnames` harfi harfine
+ * tiplenirse next-intl'in `Link`'i yalnızca bilinen desenleri kabul eder ve
+ * `href={`/makineler/${m.slug}`}` gibi şablon dizeleri derlenmez.
+ */
+function buildPathnames(): Record<string, Record<string, string> | string> {
+  const map: Record<string, Record<string, string> | string> = { "/": "/" };
+
+  for (const [tr, en] of Object.entries(ROUTE_SLUGS)) {
+    map[`/${tr}`] = forAllLocales(`/${tr}`, `/${en}`);
+  }
+
+  for (const [parent, children] of Object.entries(CONTENT_SLUGS)) {
+    const enParent = ROUTE_SLUGS[parent as keyof typeof ROUTE_SLUGS];
+    for (const [trSlug, enSlug] of Object.entries(children as Record<string, string>)) {
+      map[`/${parent}/${trSlug}`] = forAllLocales(`/${parent}/${trSlug}`, `/${enParent}/${enSlug}`);
+    }
+  }
+
+  return map;
+}
 
 export const routing = defineRouting({
-  locales: ["tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"],
-  defaultLocale: "tr",
+  locales: LOCALES,
+  /* slugs.ts ile ortak — slug tabloları bu dilde yazılı */
+  defaultLocale: SLUG_BASE_LOCALE,
   /* tr kökte yaşar (/), diğer diller prefix alır (/en, /ru, /ar ...) */
   localePrefix: "as-needed",
   /* Otomatik dil algılama kapalı: / her zaman Türkçe açılır, dili kullanıcı seçer. */
   localeDetection: false,
+  /* Türkçe slug kökte, diğer sekiz dilde İngilizce slug (bkz. slugs.ts) */
+  pathnames: buildPathnames(),
 });
 
 export type AppLocale = (typeof routing.locales)[number];

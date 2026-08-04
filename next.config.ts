@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { localizeFullPath } from "./src/i18n/slugs";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -58,7 +59,17 @@ const ROLLFORM: Record<string, string> = {
   "c-and-sigma-and-omega-profiles-production-line": "c-sigma-omega",
 };
 
-const M = "/en/makineler";
+/**
+ * Dahili (Türkçe) yolu İngilizce hedefe çevirir: "/makineler/rulo-acicilar"
+ * -> "/en/machines/decoilers".
+ *
+ * Hedefler elle yazılmıyor; slug tablosundan (src/i18n/slugs.ts) türetiliyor.
+ * Aksi halde bir slug değiştiğinde 50 yönlendirmenin hedefi sessizce 404'e
+ * düşerdi — üstelik bunu ancak Search Console'da haftalar sonra görürdük.
+ */
+const en = (path: string) => `/en${localizeFullPath(path, "en")}`;
+
+const M = en("/makineler");
 
 const nextConfig: NextConfig = {
   /* React ViewTransition entegrasyonu — rota geçişlerinde içerik yumuşakça
@@ -149,39 +160,41 @@ const nextConfig: NextConfig = {
       p("/:path*/feed", "/en"),
 
       /* --- Makineler --- */
-      ...many(DECOILERS, `${M}/rulo-acicilar`),
-      p("/decoiler", `${M}/rulo-acicilar`),
-      p("/decoilers", `${M}/rulo-acicilar`),
-      p("/product-category/machines/decoilers", `${M}/rulo-acicilar`),
-      p("/product-category/machines/decoilers/hydraulic-decoilers", `${M}/rulo-acicilar`),
-      p("/product-category/machines/decoilers/mechanical-decoilers", `${M}/rulo-acicilar`),
+      ...many(DECOILERS, en("/makineler/rulo-acicilar")),
+      p("/decoiler", en("/makineler/rulo-acicilar")),
+      p("/decoilers", en("/makineler/rulo-acicilar")),
+      p("/product-category/machines/decoilers", en("/makineler/rulo-acicilar")),
+      p("/product-category/machines/decoilers/hydraulic-decoilers", en("/makineler/rulo-acicilar")),
+      p("/product-category/machines/decoilers/mechanical-decoilers", en("/makineler/rulo-acicilar")),
 
-      ...many(SERVO_FEEDERS, `${M}/servo-suruculer`),
-      p("/servo-feeder", `${M}/servo-suruculer`),
-      p("/feeding-machines", `${M}/servo-suruculer`),
-      p("/product-category/machines/feeding-machines", `${M}/servo-suruculer`),
+      ...many(SERVO_FEEDERS, en("/makineler/servo-suruculer")),
+      p("/servo-feeder", en("/makineler/servo-suruculer")),
+      p("/feeding-machines", en("/makineler/servo-suruculer")),
+      p("/product-category/machines/feeding-machines", en("/makineler/servo-suruculer")),
 
-      ...many(STRAIGHTENERS, `${M}/dogrultmali-servo-suruculer`),
-      ...many(["compact-lines"], `${M}/kompakt-hatlar`),
+      ...many(STRAIGHTENERS, en("/makineler/dogrultmali-servo-suruculer")),
+      ...many(["compact-lines"], en("/makineler/kompakt-hatlar")),
 
       /* --- Hatlar --- */
-      ...many(["coil-slitting-lines"], "/en/dilme-hatlari"),
-      p("/coil-slitting-line", "/en/dilme-hatlari"),
-      ...many(["cut-to-length-line"], "/en/boy-kesme-hatlari"),
+      ...many(["coil-slitting-lines"], en("/dilme-hatlari")),
+      p("/coil-slitting-line", en("/dilme-hatlari")),
+      ...many(["cut-to-length-line"], en("/boy-kesme-hatlari")),
 
-      ...many(["roll-forming-line"], "/en/roll-form-hatlari"),
-      p("/roll-forming-lines", "/en/roll-form-hatlari"),
-      p("/product-category/roll-forming-lines", "/en/roll-form-hatlari"),
-      p("/product-category/machines/lines", "/en/roll-form-hatlari"),
+      ...many(["roll-forming-line"], en("/roll-form-hatlari")),
+      p("/roll-forming-lines", en("/roll-form-hatlari")),
+      p("/product-category/roll-forming-lines", en("/roll-form-hatlari")),
+      p("/product-category/machines/lines", en("/roll-form-hatlari")),
 
       /* --- Roll-form alt hatları (birebir) --- */
       ...Object.entries(ROLLFORM).flatMap(([old, slug]) =>
-        both(old).map((s) => p(s, `/en/roll-form-hatlari/${slug}`))
+        both(old).map((s) => p(s, en(`/roll-form-hatlari/${slug}`)))
       ),
 
-      /* --- Bilgi sayfaları --- */
-      p("/about-us", "/en/hakkimizda"),
-      p("/contact-us", "/en/iletisim"),
+      /* --- Bilgi sayfaları ---
+         Eski slug'lar yeni İngilizce slug'larla AYNI ("/about-us" -> "/en/about-us").
+         Döngü olmaz: kaynak kök seviyede, hedef /en altında. */
+      p("/about-us", en("/hakkimizda")),
+      p("/contact-us", en("/iletisim")),
 
       /* --- Katalog / mağaza --- */
       p("/product-category/machines", `${M}`),

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_NAME } from "@/lib/site";
 import { routing, localeHreflang, type AppLocale } from "./routing";
+import { localizeFullPath } from "./slugs";
 
 /** Google SERP'te başlık ~60 karakterde kesilir. */
 const MAX_TITLE = 60;
@@ -24,9 +25,19 @@ function prefix(locale: AppLocale) {
   return locale === routing.defaultLocale ? "" : `/${locale}`;
 }
 
-/** Locale'li tam yol; kök için "/" döner */
+/**
+ * Locale'li tam yol; kök için "/" döner.
+ *
+ * Slug'lar da çevrilir: tr Türkçe kalır, diğer diller İngilizce slug alır
+ * (`/en/coil-slitting-lines`). Buradan geçen üç yer — canonical, hreflang ve
+ * sitemap — next-intl `Link`'inden geçmez, mutlak URL üretir; çeviriyi bu
+ * yüzden kendimiz uygulamak zorundayız. Aksi halde hreflang var olmayan
+ * adreslere işaret ederdi.
+ *
+ * `path` her zaman DAHİLİ (Türkçe) yoldur: "/dilme-hatlari", "/makineler/rulo-acicilar".
+ */
 export function localePath(locale: AppLocale, path: string) {
-  return `${prefix(locale)}${path}` || "/";
+  return `${prefix(locale)}${localizeFullPath(path, locale)}` || "/";
 }
 
 /**
