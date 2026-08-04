@@ -82,6 +82,7 @@ export const CONTENT_SLUGS = {
     "sac-fire-oranini-dusurmek": "reducing-sheet-metal-scrap-rate",
     "progresif-kalip-servo-besleyici-secimi": "servo-feeder-selection-for-progressive-dies",
     "solar-profil-hatti-yatirim-geri-donusu": "solar-profile-line-roi",
+    "rulo-dilme-hatti-maliyeti": "coil-slitting-line-cost",
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 
