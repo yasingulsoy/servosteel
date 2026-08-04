@@ -1427,7 +1427,83 @@
       "ctaTitle": "Dimensionemos una línea para su sector",
       "ctaText": "Envíe el plano de la pieza que produce, el espesor de chapa y su capacidad objetivo, y le respondemos con una disposición de línea.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Mobiliario metálico y equipamiento de tienda",
+        "short": "Líneas de precisión para perfiles de estante, mesa y armario, guías de cajón y elementos de expositor.",
+        "metaTitle": "Líneas de mobiliario metálico: estante, armario y expositor",
+        "metaDesc": "Líneas de perfilado de precisión para mobiliario metálico y equipamiento de tienda: perfiles de estante, mesa y armario, guías de cajón, elementos de expositor.",
+        "desc": "En este sector la pieza queda a la vista y normalmente se toca con la mano. Deciden dos cosas: la constancia dimensional en sección pequeña y que la superficie salga intacta del conformado. Como las secciones son pequeñas, el margen de tolerancia también lo es.",
+        "applicationsTitle": "En qué trabajamos en mobiliario metálico",
+        "applications": [
+          {
+            "title": "Perfiles de estantería",
+            "text": "Perfiles portantes de estanterías de tienda y almacén; el patrón de agujeros marca el ritmo de montaje y se hace en línea."
+          },
+          {
+            "title": "Perfiles de mesa y armario",
+            "text": "Perfiles de cuerpo y marco — piezas vistas, así que la calidad superficial cuenta tanto como la sección."
+          },
+          {
+            "title": "Guías de cajón",
+            "text": "Perfiles de sección pequeña con tolerancia estrecha; una desviación se nota directamente en el funcionamiento del cajón."
+          },
+          {
+            "title": "Elementos de expositor",
+            "text": "Perfiles portantes de sistemas de exposición y colgado en tienda."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Cómo se mantiene la tolerancia en secciones pequeñas?",
+            "a": "En sección pequeña el problema no es la fuerza sino la repetibilidad. El número de rodillos y la separación entre estaciones se eligen para que la sección se construya por etapas; el material fino forzado de una vez recupera elásticamente y la cota se desplaza a lo largo del turno. Aquí la unidad de aplanado tampoco es opcional."
+          },
+          {
+            "q": "¿Hay riesgo de rayado en chapa pintada o recubierta?",
+            "a": "Con la superficie de rodillo y la alimentación adecuadas, es casi nulo. En piezas vistas lo determinante es que el perfil avance transportado y no arrastrado por la línea; por la misma razón se prefiere el apilado automático a la salida."
+          }
+        ],
+        "ctaTitle": "Construyamos una línea para su perfil de mobiliario",
+        "ctaText": "Envíe la sección del perfil, el espesor y su exigencia de acabado, y le respondemos con la serie adecuada y una disposición."
+      },
+      "makine-ekipman": {
+        "name": "Maquinaria y equipo industrial",
+        "short": "Líneas a medida del proyecto para bastidor de máquina, paneles de protección, perfiles laterales de transportador y soportes de armario.",
+        "metaTitle": "Perfiles de maquinaria y equipo: bastidor, panel, transportador",
+        "metaDesc": "Líneas de perfilado y automatización a medida del proyecto para perfiles de bastidor de máquina, paneles de protección, laterales de transportador y soportes de armario.",
+        "desc": "En este sector no hay sección estándar; cada fabricante de maquinaria tiene su propio perfil. Lo decisivo es si la línea puede construirse en torno a una familia de perfiles y no a un único producto, y si sigue siendo reutilizable cuando cambia la sección.",
+        "applicationsTitle": "En qué trabajamos en maquinaria y equipo",
+        "applications": [
+          {
+            "title": "Perfiles de bastidor de máquina",
+            "text": "Perfiles portantes de estructura; sección y espesor se proyectan según la carga estática de la máquina."
+          },
+          {
+            "title": "Perfiles de panel de protección",
+            "text": "Perfiles de marco para resguardos de máquina y paneles de cerramiento."
+          },
+          {
+            "title": "Perfiles laterales de transportador",
+            "text": "Laterales portantes de sistemas de manutención; la tolerancia de longitud fija la longitud montada."
+          },
+          {
+            "title": "Soportes de armario",
+            "text": "Perfiles portantes de armarios eléctricos y envolventes — nuestros sistemas de alimentación de prensa también trabajan en plantas que producen estas piezas."
+          }
+        ],
+        "faq": [
+          {
+            "q": "¿Cuántos perfiles distintos admite una línea?",
+            "a": "Mientras la familia de secciones sea similar, no hay límite; medidas y patrón de agujeros cambian con la receta. El límite lo pone el utillaje de rodillos: otra familia de secciones significa otro utillaje. Indicarnos de antemano qué perfiles produce nos permite construir la línea en torno a la familia y no a un producto."
+          },
+          {
+            "q": "¿Tiene sentido el perfilado con series cortas y mucha variedad?",
+            "a": "Con muchas secciones y series cortas, el tiempo de cambio de utillaje pasa a ser decisivo, lo que hace primar el cambio rápido o los sistemas de casete. Si las series son realmente cortas, el plegado o el estampado pueden seguir siendo más económicos en algunos perfiles: eso hay que hablarlo producto a producto, no hay una respuesta única."
+          }
+        ],
+        "ctaTitle": "Revisemos juntos su familia de perfiles",
+        "ctaText": "Envíe las secciones que produce, el rango de espesores y las cantidades anuales, y determinaremos si la línea debe construirse en torno a un producto o a una familia."
+      },
+      "enerji": {
           "name": "Energía",
           "short": "Líneas y sistemas de alimentación para perfiles de montaje solar, canalización de cables, cuadros eléctricos y carril DIN.",
           "metaTitle": "Líneas para el sector energético: perfil solar y bandeja",

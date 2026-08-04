@@ -1427,7 +1427,83 @@
       "ctaTitle": "Dobierzmy linię dla Państwa branży",
       "ctaText": "Prosimy przesłać rysunek wytwarzanego detalu, grubość blachy i docelową wydajność — odpowiemy układem linii.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Meble metalowe i wyposażenie sklepów",
+        "short": "Linie precyzyjne do profili półek, stołów i szaf, prowadnic szuflad i elementów ekspozytorów.",
+        "metaTitle": "Linie mebli metalowych: półki, szafy i ekspozytory",
+        "metaDesc": "Precyzyjne linie profilujące do mebli metalowych i wyposażenia sklepów: profile półek, stołów i szaf, prowadnice szuflad, elementy ekspozytorów.",
+        "desc": "W tej branży element pozostaje widoczny i zwykle jest dotykany ręką. Decydują dwie rzeczy: stałość wymiarowa przy małym przekroju oraz to, by powierzchnia wyszła z kształtowania nienaruszona. Ponieważ przekroje są małe, mały jest też zapas tolerancji.",
+        "applicationsTitle": "Nad czym pracujemy w meblach metalowych",
+        "applications": [
+          {
+            "title": "Profile półek",
+            "text": "Profile nośne regałów sklepowych i magazynowych; wzór otworów wyznacza tempo montażu, więc powstaje w linii."
+          },
+          {
+            "title": "Profile stołów i szaf",
+            "text": "Profile korpusu i ramy — elementy widoczne, więc jakość powierzchni liczy się tak samo jak przekrój."
+          },
+          {
+            "title": "Prowadnice szuflad",
+            "text": "Profile o małym przekroju i wąskiej tolerancji; odchyłka od razu przekłada się na pracę szuflady."
+          },
+          {
+            "title": "Elementy ekspozytorów",
+            "text": "Profile nośne sklepowych systemów ekspozycji i zawieszania."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Jak utrzymać tolerancję przy małych przekrojach?",
+            "a": "Przy małym przekroju problemem nie jest siła, lecz powtarzalność. Liczbę rolek i rozstaw stacji dobiera się tak, aby przekrój powstawał stopniowo; cienki materiał wymuszony w jednym kroku odsprężynowuje, a wymiar dryfuje w ciągu zmiany. Zespół prostujący również nie jest tu opcją."
+          },
+          {
+            "q": "Czy istnieje ryzyko zarysowania blachy lakierowanej lub powlekanej?",
+            "a": "Przy właściwej powierzchni rolek i poprawnym podawaniu jest bliskie zeru. Przy elementach widocznych liczy się, by profil był niesiony, a nie wleczony wzdłuż linii; z tego samego powodu na wyjściu preferuje się automatyczne układanie."
+          }
+        ],
+        "ctaTitle": "Zbudujmy linię do Państwa profilu meblowego",
+        "ctaText": "Prosimy przesłać przekrój profilu, grubość blachy i oczekiwania wobec powierzchni — odpowiemy właściwą serią i układem linii."
+      },
+      "makine-ekipman": {
+        "name": "Maszyny i wyposażenie przemysłowe",
+        "short": "Linie pod projekt do ram maszyn, paneli osłonowych, profili bocznych przenośników i wsporników szaf.",
+        "metaTitle": "Profile maszyn i wyposażenia: rama, panel, przenośnik",
+        "metaDesc": "Linie profilujące i automatyka pod projekt do profili ram maszyn, paneli osłonowych, profili bocznych przenośników i wsporników szaf.",
+        "desc": "W tej branży nie ma przekroju standardowego; każdy producent maszyn ma własny profil. Decyduje to, czy linię da się zbudować wokół rodziny profili, a nie pojedynczego wyrobu — i czy pozostanie użyteczna po zmianie przekroju.",
+        "applicationsTitle": "Nad czym pracujemy w maszynach i wyposażeniu",
+        "applications": [
+          {
+            "title": "Profile ram maszyn",
+            "text": "Nośne profile korpusu; przekrój i grubość ścianki projektuje się pod obciążenie statyczne maszyny."
+          },
+          {
+            "title": "Profile paneli osłonowych",
+            "text": "Profile ramowe do osłon maszynowych i paneli zabudowy."
+          },
+          {
+            "title": "Profile boczne przenośników",
+            "text": "Boczne elementy nośne systemów transportu; tolerancja długości wyznacza długość zmontowanej linii."
+          },
+          {
+            "title": "Wsporniki szaf",
+            "text": "Profile nośne szaf elektrycznych i obudów — nasze systemy podawania pras pracują też w zakładach wytwarzających te elementy."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Ile różnych profili obsłuży jedna linia?",
+            "a": "Dopóki rodzina przekrojów jest zbliżona, nie ma granicy; wymiary i wzór otworów zmieniają się z recepturą. Granicę wyznacza oprzyrządowanie rolkowe: inna rodzina przekrojów to inne oprzyrządowanie. Podanie z góry, jakie profile Państwo produkują, pozwala nam zbudować linię wokół rodziny, a nie jednego wyrobu."
+          },
+          {
+            "q": "Czy profilowanie ma sens przy krótkich seriach i dużej różnorodności?",
+            "a": "Przy wielu przekrojach i małych partiach decydujący staje się czas przezbrojenia, co wysuwa na pierwszy plan szybką wymianę lub systemy kasetowe. Jeśli wolumeny są naprawdę niskie, przy części profili gięcie lub tłoczenie może pozostać bardziej ekonomiczne — trzeba to omówić wyrób po wyrobie, nie ma jednej odpowiedzi."
+          }
+        ],
+        "ctaTitle": "Przeanalizujmy razem Państwa rodzinę profili",
+        "ctaText": "Prosimy przesłać produkowane przekroje, zakres grubości i wielkości roczne — ustalimy, czy linię budować wokół jednego wyrobu, czy rodziny."
+      },
+      "enerji": {
           "name": "Energetyka",
           "short": "Linie i systemy podawania do profili montażowych PV, koryt kablowych, rozdzielnic i szyn DIN.",
           "metaTitle": "Linie dla energetyki: profil solarny i koryto kablowe",

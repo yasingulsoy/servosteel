@@ -1427,7 +1427,83 @@
       "ctaTitle": "Méretezzünk sort az Ön ágazatához",
       "ctaText": "Küldje el a gyártott alkatrész rajzát, a lemezvastagságot és a célkapacitást — sorelrendezéssel válaszolunk.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Fémbútor és üzletberendezés",
+        "short": "Precíziós sorok polc-, asztal- és szekrényprofilokhoz, fióksínekhez és bemutatóelemekhez.",
+        "metaTitle": "Fémbútorsorok: polc-, szekrény- és bemutatóprofilok",
+        "metaDesc": "Precíziós profilhengerlő sorok fémbútorhoz és üzletberendezéshez: polcprofilok, asztal- és szekrényprofilok, fióksínek, bemutatóelemek.",
+        "desc": "Ebben az ágazatban az alkatrész látható marad, és rendszerint kézzel érintik. Két dolog dönti el: a méretállandóság kis keresztmetszeten, és hogy a felület sértetlenül jöjjön ki az alakításból. Mivel a keresztmetszetek kicsik, a tűréstartalék is kicsi.",
+        "applicationsTitle": "Min dolgozunk a fémbútor területén",
+        "applications": [
+          {
+            "title": "Polcprofilok",
+            "text": "Üzleti és raktári polcok tartóprofiljai; a lyukkép szabja meg a szerelési sebességet, ezért a soron belül készül."
+          },
+          {
+            "title": "Asztal- és szekrényprofilok",
+            "text": "Korpusz- és keretprofilok — látszó alkatrészek, így a felületminőség annyit számít, mint a keresztmetszet."
+          },
+          {
+            "title": "Fióksínek",
+            "text": "Kis keresztmetszetű, szűk tűrésű profilok; az eltérés közvetlenül a fiók járásán érződik."
+          },
+          {
+            "title": "Bemutatóelemek",
+            "text": "Üzleti bemutató- és akasztórendszerek tartóprofiljai."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Hogyan tartható a tűrés kis keresztmetszeten?",
+            "a": "Kis keresztmetszeten nem az erő a gond, hanem az ismételhetőség. A görgőszámot és az állomásközt úgy választjuk, hogy a keresztmetszet fokozatosan épüljön fel; az egy lépésben erőltetett vékony anyag visszarugózik, és a méret a műszak során elmozdul. Az egyengető egység itt sem opció."
+          },
+          {
+            "q": "Fennáll a karcolódás veszélye festett vagy bevonatos lemeznél?",
+            "a": "Megfelelő görgőfelület és adagolás mellett szinte nem. Látszó felületű alkatrészeknél az számít, hogy a profil hordozva és ne súrlódva haladjon a soron; ugyanezért részesítjük előnyben a kimeneten az automata rakatolást."
+          }
+        ],
+        "ctaTitle": "Építsünk sort a bútorprofiljához",
+        "ctaText": "Küldje el a profil keresztmetszetét, a lemezvastagságot és a felületi elvárását — a megfelelő sorozattal és elrendezéssel válaszolunk."
+      },
+      "makine-ekipman": {
+        "name": "Gépek és ipari berendezések",
+        "short": "Projektre szabott sorok gépvázhoz, védőburkolathoz, szállítószalag-oldalprofilhoz és szekrénytartókhoz.",
+        "metaTitle": "Gép- és berendezésprofilok: váz, panel, szállítószalag",
+        "metaDesc": "Projektre szabott profilhengerlő sorok és automatizálás gépvázprofilokhoz, védőburkolat-profilokhoz, szállítószalag-oldalprofilokhoz és szekrénytartókhoz.",
+        "desc": "Ebben az ágazatban nincs szabványos keresztmetszet; minden gépgyártónak saját profilja van. Az dönt, hogy a sor egyetlen termék helyett profilcsalád köré építhető-e — és hogy keresztmetszetváltáskor újrahasználható marad-e.",
+        "applicationsTitle": "Min dolgozunk a gép- és berendezésgyártásban",
+        "applications": [
+          {
+            "title": "Gépvázprofilok",
+            "text": "Teherhordó vázprofilok; a keresztmetszetet és a falvastagságot a gép statikai terhelésére tervezzük."
+          },
+          {
+            "title": "Védőburkolat-profilok",
+            "text": "Keretprofilok gépvédelemhez és burkolópanelekhez."
+          },
+          {
+            "title": "Szállítószalag-oldalprofilok",
+            "text": "Anyagmozgató rendszerek oldaltartói; a hossztűrés szabja meg a szerelt sorhosszt."
+          },
+          {
+            "title": "Szekrénytartók",
+            "text": "Kapcsolószekrények és burkolatok tartóprofiljai — présadagoló rendszereink is működnek ezeket gyártó üzemekben."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Hány különböző profilt bír el egy sor?",
+            "a": "Amíg a keresztmetszet-család hasonló, nincs korlát; a méret és a lyukkép recepttel változik. A határt a görgőszerszám szabja: más keresztmetszet-család más szerszámot jelent. Ha előre megmondja, mely profilokat futtatja, a sort a család és nem egy termék köré építjük."
+          },
+          {
+            "q": "Van értelme a profilhengerlésnek kis szériánál, nagy változatosságnál?",
+            "a": "Sok keresztmetszet és kis darabszám mellett a szerszámcsere ideje válik döntővé, ami előtérbe hozza a gyorscserét vagy a kazettás rendszert. Ha a darabszám valóban alacsony, egyes profiloknál a hajlítás vagy présmunka gazdaságosabb maradhat — ezt termékenként kell megbeszélni, nincs egyetlen válasz."
+          }
+        ],
+        "ctaTitle": "Nézzük át együtt a profilcsaládját",
+        "ctaText": "Küldje el a futtatott profilkeresztmetszeteket, a vastagságtartományt és az éves darabszámokat — tisztázzuk, hogy a sor egy termék vagy egy család köré épüljön."
+      },
+      "enerji": {
           "name": "Energia",
           "short": "Sorok és adagolórendszerek napelemes tartóprofilokhoz, kábeltálcákhoz, kapcsolószekrényekhez és DIN sínekhez.",
           "metaTitle": "Energiaipari sorok: napelemprofil és kábeltálca",

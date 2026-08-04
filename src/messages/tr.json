@@ -1427,7 +1427,83 @@
       "ctaTitle": "Sektörünüze özel hat boyutlandıralım",
       "ctaText": "Ürettiğiniz parçanın çizimini, sac kalınlığını ve hedef kapasitesini iletin; hat yerleşimiyle dönelim.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Metal mobilya ve mağaza ekipmanları",
+        "short": "Raf, masa ve dolap profilleri, çekmece rayları ve teşhir standı elemanları için hassas hatlar.",
+        "metaTitle": "Metal Mobilya Hatları: Raf, Dolap ve Teşhir Profilleri",
+        "metaDesc": "Metal mobilya ve mağaza ekipmanları için hassas roll form hatları: raf profilleri, masa ve dolap profilleri, çekmece rayları, teşhir standı elemanları.",
+        "desc": "Bu sektörde parça görünür kalıyor ve çoğu zaman elle temas ediliyor. Belirleyici olan iki şey var: küçük kesitte ölçü tutarlılığı ve yüzeyin şekillendirmeden hasarsız çıkması. Kesitler küçük olduğu için tolerans payı da küçüktür.",
+        "applicationsTitle": "Metal mobilyada çalıştığımız uygulamalar",
+        "applications": [
+          {
+            "title": "Raf profilleri",
+            "text": "Mağaza ve depo rafı taşıyıcı profilleri; delik deseni montaj hızını belirlediği için hat içinde açılır."
+          },
+          {
+            "title": "Masa ve dolap profilleri",
+            "text": "Mobilya gövde ve çerçeve profilleri — görünür yüzeyli parçalar olduğu için yüzey kalitesi kesitle eşit önemde."
+          },
+          {
+            "title": "Çekmece rayları",
+            "text": "Küçük kesitli, dar toleranslı profiller; kesit sapması doğrudan çekmecenin çalışmasına yansır."
+          },
+          {
+            "title": "Teşhir standı elemanları",
+            "text": "Mağaza içi teşhir ve askı sistemlerinin taşıyıcı profilleri."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Küçük kesitli profillerde tolerans nasıl tutuluyor?",
+            "a": "Küçük kesitte sorun kuvvet değil, tekrarlanabilirlik. Merdane sayısı ve istasyon aralığı, kesitin kademeli oluşmasına izin verecek biçimde seçilir; tek adımda zorlanan ince malzeme geri yaylanır ve ölçü vardiya boyunca kayar. Doğrultma ünitesi de burada opsiyonel değildir."
+          },
+          {
+            "q": "Boyalı veya kaplamalı sacda çizik riski var mı?",
+            "a": "Merdane yüzeyi ve besleme düzeni doğru kurulduğunda yok denecek kadar azdır. Görünür yüzeyli parçalarda kritik olan, profilin hat boyunca sürtünerek değil taşınarak ilerlemesidir; çıkışta otomatik istif de aynı sebeple tercih edilir."
+          }
+        ],
+        "ctaTitle": "Mobilya profiliniz için hat kuralım",
+        "ctaText": "Profil kesitini, sac kalınlığını ve yüzey beklentinizi iletin; uygun seri ve hat yerleşimiyle dönelim."
+      },
+      "makine-ekipman": {
+        "name": "Makine ve endüstriyel ekipman",
+        "short": "Makine şasesi, koruyucu panel, konveyör yan profilleri ve kabin taşıyıcıları için projeye özel hatlar.",
+        "metaTitle": "Makine ve Ekipman Profilleri: Şase, Panel, Konveyör",
+        "metaDesc": "Makine şasesi profilleri, koruyucu panel profilleri, konveyör yan profilleri ve kabin taşıyıcıları için projeye özel roll form hatları ve otomasyon.",
+        "desc": "Bu sektörde standart bir kesit yok; her makine üreticisinin kendi profili var. Belirleyici olan hattın tek bir ürüne değil, bir profil ailesine göre kurulabilmesi — ve kesit değiştiğinde hattın yeniden kullanılabilmesi.",
+        "applicationsTitle": "Makine ve ekipman üretiminde çalıştığımız uygulamalar",
+        "applications": [
+          {
+            "title": "Makine şasesi profilleri",
+            "text": "Taşıyıcı gövde profilleri; kesit ve et kalınlığı makinenin statik yüküne göre projelendirilir."
+          },
+          {
+            "title": "Koruyucu panel profilleri",
+            "text": "Makine çevresi güvenlik ve kabin panellerinin çerçeve profilleri."
+          },
+          {
+            "title": "Konveyör yan profilleri",
+            "text": "Taşıma sistemlerinin yan taşıyıcıları; boy toleransı montaj hattı uzunluğunu belirler."
+          },
+          {
+            "title": "Kabin taşıyıcıları",
+            "text": "Elektrik kabini ve muhafaza taşıyıcı profilleri — pres besleme sistemlerimiz bu parçaları üreten tesislerde de çalışıyor."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Tek bir hatta kaç farklı profil işlenebilir?",
+            "a": "Kesit ailesi benzer olduğu sürece sınır yok; ölçü ve delik deseni reçeteyle değişir. Sınırı belirleyen şey merdane takımıdır: farklı bir kesit ailesi farklı takım demektir. Bu yüzden başta hangi profilleri işleyeceğinizi paylaşmanız, hattı tek ürüne değil aileye göre kurmamızı sağlar."
+          },
+          {
+            "q": "Düşük adetli, çok çeşitli üretimde roll form mantıklı mı?",
+            "a": "Kesit sayısı çok ve adet düşükse takım değişim süresi belirleyici olur; bu durumda hızlı takım değişimi ya da kaset sistemi yatırımı öne çıkar. Adet gerçekten düşükse bazı profillerde büküm/presleme daha ekonomik kalabilir — bunu ürün ürün konuşmak gerekir, tek bir cevabı yok."
+          }
+        ],
+        "ctaTitle": "Profil ailenizi birlikte değerlendirelim",
+        "ctaText": "İşlediğiniz profil kesitlerini, kalınlık aralığını ve yıllık adetleri iletin; hattın tek ürüne mi aileye mi göre kurulacağını netleştirelim."
+      },
+      "enerji": {
           "name": "Enerji",
           "short": "Güneş enerjisi montaj profilleri, kablo taşıma sistemleri, pano ve otomat ray üretimi için hatlar ve besleme sistemleri.",
           "metaTitle": "Enerji Sektörü Hatları: Solar Profil ve Kablo Kanalı",

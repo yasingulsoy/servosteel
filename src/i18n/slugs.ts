@@ -81,6 +81,8 @@ export const CONTENT_SLUGS = {
     insaat: "construction",
     "lojistik-depolama": "logistics-and-storage",
     "otomotiv-beyaz-esya": "automotive-and-appliances",
+    "metal-mobilya": "metal-furniture-and-retail",
+    "makine-ekipman": "machinery-and-equipment",
   },
   /* MDX dosya adları Türkçe kalır — içerik tek kaynak, yalnızca URL çevrilir */
   akademi: {

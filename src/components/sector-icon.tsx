@@ -1,4 +1,4 @@
-import { Zap, Building2, Warehouse, Car } from "lucide-react";
+import { Zap, Building2, Warehouse, Car, Armchair, Wrench } from "lucide-react";
 import type { Sector } from "@/lib/sectors";
 
 const MAP = {
@@ -6,6 +6,8 @@ const MAP = {
   construction: Building2,
   logistics: Warehouse,
   automotive: Car,
+  furniture: Armchair,
+  machinery: Wrench,
 } as const;
 
 /** Sektör kartlarının ikonu — anahtar lib/sectors.ts'ten gelir. */

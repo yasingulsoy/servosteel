@@ -1427,7 +1427,83 @@
       "ctaTitle": "Dimensioniamo una linea per il vostro settore",
       "ctaText": "Inviate il disegno del pezzo che producete, lo spessore e la capacità obiettivo: vi rispondiamo con un layout di linea.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Mobili metallici e arredo negozio",
+        "short": "Linee di precisione per profili di ripiano, tavolo e armadio, guide cassetto ed elementi espositivi.",
+        "metaTitle": "Linee per mobili metallici: ripiani, armadi ed espositori",
+        "metaDesc": "Linee di profilatura di precisione per mobili metallici e arredo negozio: profili di ripiano, tavolo e armadio, guide cassetto, elementi espositivi.",
+        "desc": "In questo settore il pezzo resta a vista e di solito viene toccato con la mano. Decidono due cose: la costanza dimensionale su sezione piccola e una superficie che esca intatta dalla profilatura. Poiché le sezioni sono piccole, anche il margine di tolleranza lo è.",
+        "applicationsTitle": "Su cosa lavoriamo nei mobili metallici",
+        "applications": [
+          {
+            "title": "Profili per ripiani",
+            "text": "Profili portanti per scaffalature di negozio e magazzino; la foratura detta la velocità di montaggio e si esegue in linea."
+          },
+          {
+            "title": "Profili per tavoli e armadi",
+            "text": "Profili di struttura e telaio — pezzi a vista, quindi la qualità superficiale conta quanto la sezione."
+          },
+          {
+            "title": "Guide per cassetti",
+            "text": "Profili di piccola sezione a tolleranza stretta; uno scostamento si sente direttamente nello scorrimento del cassetto."
+          },
+          {
+            "title": "Elementi espositivi",
+            "text": "Profili portanti per sistemi di esposizione e appensione in negozio."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Come si tiene la tolleranza su sezioni piccole?",
+            "a": "Sulla sezione piccola il problema non è la forza ma la ripetibilità. Numero di rulli e passo tra le stazioni si scelgono perché la sezione si costruisca per gradi; il materiale sottile forzato in un colpo ritorna elasticamente e la quota si sposta durante il turno. Anche qui il gruppo spianatore non è opzionale."
+          },
+          {
+            "q": "C'è rischio di rigature su lamiera verniciata o rivestita?",
+            "a": "Con la giusta superficie dei rulli e una corretta alimentazione è quasi nullo. Sui pezzi a vista conta che il profilo avanzi trasportato e non strisciato lungo la linea; per la stessa ragione all'uscita si preferisce l'impilaggio automatico."
+          }
+        ],
+        "ctaTitle": "Costruiamo una linea per il vostro profilo d'arredo",
+        "ctaText": "Inviate sezione del profilo, spessore e la vostra esigenza di finitura: vi rispondiamo con la serie adatta e un layout."
+      },
+      "makine-ekipman": {
+        "name": "Macchinari e attrezzature industriali",
+        "short": "Linee su progetto per telai macchina, pannelli di protezione, profili laterali per trasportatori e supporti quadro.",
+        "metaTitle": "Profili per macchinari e attrezzature: telaio, pannello, trasportatore",
+        "metaDesc": "Linee di profilatura e automazione su progetto per profili di telaio macchina, pannelli di protezione, laterali per trasportatori e supporti quadro.",
+        "desc": "In questo settore non esiste una sezione standard; ogni costruttore di macchine ha il proprio profilo. Ciò che decide è se la linea può essere costruita attorno a una famiglia di profili anziché a un singolo prodotto, e se resta riutilizzabile quando la sezione cambia.",
+        "applicationsTitle": "Su cosa lavoriamo in macchinari e attrezzature",
+        "applications": [
+          {
+            "title": "Profili di telaio macchina",
+            "text": "Profili portanti della struttura; sezione e spessore sono progettati sul carico statico della macchina."
+          },
+          {
+            "title": "Profili per pannelli di protezione",
+            "text": "Profili di telaio per ripari macchina e pannelli di chiusura."
+          },
+          {
+            "title": "Profili laterali per trasportatori",
+            "text": "Fianchi portanti dei sistemi di movimentazione; la tolleranza di lunghezza determina la lunghezza montata."
+          },
+          {
+            "title": "Supporti quadro",
+            "text": "Profili portanti per quadri elettrici e carter — i nostri sistemi di alimentazione presse lavorano anche negli stabilimenti che producono questi pezzi."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Quanti profili diversi gestisce una sola linea?",
+            "a": "Finché la famiglia di sezioni è simile non c'è limite; misure e foratura cambiano da ricetta. Il limite lo pone l'attrezzatura a rulli: una famiglia di sezioni diversa significa attrezzatura diversa. Dirci in anticipo quali profili producete ci consente di costruire la linea attorno alla famiglia e non a un prodotto."
+          },
+          {
+            "q": "Ha senso la profilatura con lotti piccoli e alta varietà?",
+            "a": "Con molte sezioni e lotti piccoli il tempo di cambio attrezzatura diventa decisivo, e passano in primo piano il cambio rapido o i sistemi a cassetto. Se i volumi sono davvero bassi, per alcuni profili piegatura o stampaggio possono restare più economici: va discusso prodotto per prodotto, non esiste una risposta unica."
+          }
+        ],
+        "ctaTitle": "Valutiamo insieme la vostra famiglia di profili",
+        "ctaText": "Inviate le sezioni che lavorate, l'intervallo di spessori e le quantità annue: definiamo se la linea va costruita attorno a un prodotto o a una famiglia."
+      },
+      "enerji": {
           "name": "Energia",
           "short": "Linee e sistemi di alimentazione per profili di montaggio solare, canalizzazione cavi, quadri elettrici e guide DIN.",
           "metaTitle": "Linee per il settore energia: profilo solare e canalina",

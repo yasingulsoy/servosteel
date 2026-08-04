@@ -1427,7 +1427,83 @@
       "ctaTitle": "Wir legen eine Anlage für Ihre Branche aus",
       "ctaText": "Senden Sie die Zeichnung Ihres Teils, die Materialstärke und Ihre Zielkapazität — wir melden uns mit einem Anlagenlayout zurück.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Metallmöbel und Ladenbau",
+        "short": "Präzisionsanlagen für Regal-, Tisch- und Schrankprofile, Schubladenschienen und Displayelemente.",
+        "metaTitle": "Metallmöbelanlagen: Regal-, Schrank- und Displayprofile",
+        "metaDesc": "Präzise Profilieranlagen für Metallmöbel und Ladenbau: Regalprofile, Tisch- und Schrankprofile, Schubladenschienen, Displayelemente.",
+        "desc": "In dieser Branche bleibt das Teil sichtbar und wird meist mit der Hand berührt. Zwei Dinge entscheiden: Maßhaltigkeit im kleinen Querschnitt und eine Oberfläche, die unbeschädigt durch die Umformung kommt. Weil die Querschnitte klein sind, ist auch die Toleranzreserve klein.",
+        "applicationsTitle": "Woran wir bei Metallmöbeln arbeiten",
+        "applications": [
+          {
+            "title": "Regalprofile",
+            "text": "Trägerprofile für Laden- und Lagerregale; das Lochbild bestimmt die Montagegeschwindigkeit und entsteht deshalb in der Linie."
+          },
+          {
+            "title": "Tisch- und Schrankprofile",
+            "text": "Korpus- und Rahmenprofile — Sichtteile, daher zählt die Oberflächengüte ebenso wie der Querschnitt."
+          },
+          {
+            "title": "Schubladenschienen",
+            "text": "Kleine Querschnitte mit enger Toleranz; eine Abweichung wirkt sich unmittelbar auf den Lauf der Schublade aus."
+          },
+          {
+            "title": "Displayelemente",
+            "text": "Trägerprofile für Präsentations- und Hängesysteme im Verkaufsraum."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Wie wird die Toleranz bei kleinen Querschnitten gehalten?",
+            "a": "Im kleinen Querschnitt ist nicht die Kraft das Problem, sondern die Wiederholgenauigkeit. Rollenzahl und Stationsabstand werden so gewählt, dass der Querschnitt stufenweise entsteht; in einem Zug überfordertes dünnes Material federt zurück und das Maß wandert über die Schicht. Auch hier ist die Richteinheit nicht optional."
+          },
+          {
+            "q": "Besteht bei lackiertem oder beschichtetem Blech Kratzgefahr?",
+            "a": "Bei richtiger Rollenoberfläche und Zuführung nahezu nicht. Bei Sichtteilen kommt es darauf an, dass das Profil getragen und nicht geschleift durch die Linie läuft; aus demselben Grund wird am Auslauf automatisches Stapeln bevorzugt."
+          }
+        ],
+        "ctaTitle": "Wir bauen eine Anlage für Ihr Möbelprofil",
+        "ctaText": "Senden Sie Profilquerschnitt, Materialstärke und Ihre Oberflächenanforderung — wir melden uns mit der passenden Baureihe und einem Layout."
+      },
+      "makine-ekipman": {
+        "name": "Maschinen- und Industrieausrüstung",
+        "short": "Projektspezifische Anlagen für Maschinenrahmen, Schutzverkleidungen, Förderer-Seitenprofile und Gehäuseträger.",
+        "metaTitle": "Maschinen- und Ausrüstungsprofile: Rahmen, Panel, Förderer",
+        "metaDesc": "Projektspezifische Profilieranlagen und Automatisierung für Maschinenrahmenprofile, Schutzverkleidungsprofile, Förderer-Seitenprofile und Gehäuseträger.",
+        "desc": "In dieser Branche gibt es keinen Standardquerschnitt; jeder Maschinenbauer hat sein eigenes Profil. Entscheidend ist, ob sich die Anlage um eine Profilfamilie statt um ein einzelnes Produkt herum bauen lässt — und ob sie beim Querschnittswechsel weiterverwendbar bleibt.",
+        "applicationsTitle": "Woran wir im Maschinenbau arbeiten",
+        "applications": [
+          {
+            "title": "Maschinenrahmenprofile",
+            "text": "Tragende Gestellprofile; Querschnitt und Wandstärke werden auf die statische Last der Maschine ausgelegt."
+          },
+          {
+            "title": "Schutzverkleidungsprofile",
+            "text": "Rahmenprofile für Maschinenschutz und Verkleidungspaneele."
+          },
+          {
+            "title": "Förderer-Seitenprofile",
+            "text": "Seitliche Träger für Fördersysteme; die Längentoleranz bestimmt die montierte Linienlänge."
+          },
+          {
+            "title": "Gehäuseträger",
+            "text": "Trägerprofile für Schaltschränke und Gehäuse — unsere Pressenzuführungen laufen auch in Werken, die diese Teile fertigen."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Wie viele verschiedene Profile schafft eine Anlage?",
+            "a": "Solange die Querschnittsfamilie ähnlich ist, gibt es keine Grenze; Maße und Lochbild wechseln über das Rezept. Die Grenze setzt das Rollenwerkzeug: eine andere Querschnittsfamilie bedeutet anderes Werkzeug. Wenn Sie vorab nennen, welche Profile Sie fahren, bauen wir die Anlage um die Familie statt um ein Produkt."
+          },
+          {
+            "q": "Lohnt Profilieren bei kleinen Losen und hoher Varianz?",
+            "a": "Bei vielen Querschnitten und kleinen Stückzahlen wird die Rüstzeit zum entscheidenden Faktor, was Schnellwechsel- oder Kassettensysteme in den Vordergrund rückt. Sind die Stückzahlen wirklich klein, kann Biegen oder Pressen bei manchen Profilen wirtschaftlicher bleiben — das muss Produkt für Produkt besprochen werden, eine pauschale Antwort gibt es nicht."
+          }
+        ],
+        "ctaTitle": "Prüfen wir Ihre Profilfamilie gemeinsam",
+        "ctaText": "Senden Sie die gefahrenen Profilquerschnitte, den Stärkenbereich und die Jahresmengen — wir klären, ob die Anlage um ein Produkt oder um eine Familie gebaut wird."
+      },
+      "enerji": {
           "name": "Energie",
           "short": "Anlagen und Zuführsysteme für Solar-Montageprofile, Kabelträger, Schaltschränke und Hutschienen.",
           "metaTitle": "Anlagen für die Energiebranche: Solarprofil und Kabelrinne",

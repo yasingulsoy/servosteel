@@ -1427,7 +1427,83 @@
       "ctaTitle": "Let us size a line for your sector",
       "ctaText": "Send the drawing of the part you produce, the sheet thickness and your target capacity, and we will come back with a line layout.",
       "items": {
-        "enerji": {
+        "metal-mobilya": {
+        "name": "Metal furniture and retail fittings",
+        "short": "Precision lines for shelf, table and cabinet profiles, drawer runners and display stand components.",
+        "metaTitle": "Metal Furniture Lines: Shelf, Cabinet and Display Profiles",
+        "metaDesc": "Precision roll forming lines for metal furniture and retail fittings: shelf profiles, table and cabinet profiles, drawer runners, display stand components.",
+        "desc": "In this sector the part stays visible and is usually touched by hand. Two things decide it: dimensional consistency on a small section, and getting the surface through forming undamaged. Because the sections are small, the tolerance margin is small too.",
+        "applicationsTitle": "What we work on in metal furniture",
+        "applications": [
+          {
+            "title": "Shelf profiles",
+            "text": "Carrier profiles for retail and warehouse shelving; the hole pattern sets assembly speed, so it is punched inside the line."
+          },
+          {
+            "title": "Table and cabinet profiles",
+            "text": "Furniture body and frame profiles — visible parts, so surface quality matters as much as the section."
+          },
+          {
+            "title": "Drawer runners",
+            "text": "Small-section profiles on tight tolerance; a section deviation shows up directly in how the drawer runs."
+          },
+          {
+            "title": "Display stand components",
+            "text": "Carrier profiles for in-store display and hanging systems."
+          }
+        ],
+        "faq": [
+          {
+            "q": "How is tolerance held on small sections?",
+            "a": "On a small section the problem is not force but repeatability. Roll count and station spacing are chosen so the section builds up in stages; thin material forced in one step springs back and the dimension drifts across the shift. A levelling unit is not optional here either."
+          },
+          {
+            "q": "Is there a risk of scratching painted or coated sheet?",
+            "a": "With the right roll surface and feeding arrangement, it is close to nil. On parts with a visible face, what matters is that the profile travels carried rather than dragged along the line; automatic stacking at the exit is preferred for the same reason."
+          }
+        ],
+        "ctaTitle": "Let us build a line for your furniture profile",
+        "ctaText": "Send the profile section, sheet thickness and your surface expectation, and we will come back with the right series and a layout."
+      },
+      "makine-ekipman": {
+        "name": "Machinery and industrial equipment",
+        "short": "Project-specific lines for machine frame, guarding panel, conveyor side profiles and enclosure carriers.",
+        "metaTitle": "Machinery and Equipment Profiles: Frame, Panel, Conveyor",
+        "metaDesc": "Project-specific roll forming lines and automation for machine frame profiles, guarding panel profiles, conveyor side profiles and enclosure carriers.",
+        "desc": "There is no standard section in this sector; every machine builder has its own profile. What decides it is whether the line can be built around a profile family rather than a single product — and whether it can be reused when the section changes.",
+        "applicationsTitle": "What we work on in machinery and equipment",
+        "applications": [
+          {
+            "title": "Machine frame profiles",
+            "text": "Load-bearing body profiles; section and wall thickness are engineered to the machine's static load."
+          },
+          {
+            "title": "Guarding panel profiles",
+            "text": "Frame profiles for machine guarding and enclosure panels."
+          },
+          {
+            "title": "Conveyor side profiles",
+            "text": "Side carriers for handling systems; length tolerance sets the assembled line length."
+          },
+          {
+            "title": "Enclosure carriers",
+            "text": "Carrier profiles for electrical enclosures and housings — our press feeding systems also run at plants producing these parts."
+          }
+        ],
+        "faq": [
+          {
+            "q": "How many different profiles can one line handle?",
+            "a": "As long as the section family is similar, there is no limit; dimensions and hole pattern change with the recipe. The roll tooling sets the boundary: a different section family means different tooling. Telling us up front which profiles you run lets us build the line around the family rather than one product."
+          },
+          {
+            "q": "Does roll forming make sense for low-volume, high-variety production?",
+            "a": "With many sections and low volumes, tooling changeover time becomes the deciding factor, which pushes quick-change or cassette systems to the front. If volumes really are low, bending or pressing can stay more economical for some profiles — that has to be discussed product by product, there is no single answer."
+          }
+        ],
+        "ctaTitle": "Let us review your profile family together",
+        "ctaText": "Send the profile sections you run, the thickness range and annual quantities, and we will establish whether the line should be built around one product or a family."
+      },
+      "enerji": {
           "name": "Energy",
           "short": "Lines and feeding systems for solar mounting profiles, cable management, enclosures and DIN rail production.",
           "metaTitle": "Energy Sector Lines: Solar Profile and Cable Tray",

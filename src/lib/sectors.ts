@@ -21,7 +21,7 @@
 export type Sector = {
   slug: string;
   /** lucide ikon anahtarı (components/sector-icon.tsx) */
-  icon: "energy" | "construction" | "logistics" | "automotive";
+  icon: "energy" | "construction" | "logistics" | "automotive" | "furniture" | "machinery";
   /** Bağlantılı roll-form hattı slug'ları */
   lines: string[];
   /** Bağlantılı makine slug'ları */
@@ -76,6 +76,33 @@ export const sectors: Sector[] = [
       "1VPa1ROQbhc", // Market raf roll forming hattı
       "SE8tTfxkKWI", // Raf imalatı
       "uYcMY45J4OA", // UNO chanel roll form hattı
+    ],
+  },
+  /**
+   * Aşağıdaki iki sektör firmanın kendi sektör/ürün/hat eşleme tablosundan
+   * geldi (sekötrler.xlsx) — tabloda vardı, sitede yoktu.
+   */
+  {
+    slug: "metal-mobilya",
+    icon: "furniture",
+    lines: ["agir-raf"],
+    machines: ["servo-suruculer", "kompakt-hatlar"],
+    videos: [
+      "1VPa1ROQbhc", // Market raf roll forming hattı
+      "oU_Fl1IewMU", // Banyo aksesuarları
+    ],
+  },
+  {
+    slug: "makine-ekipman",
+    icon: "machinery",
+    lines: ["c-sigma-omega"],
+    machines: ["dogrultmali-servo-suruculer", "kompakt-hatlar"],
+    /* Bu sektörde video seçkisi bilerek DAR: kanaldaki kayıtların çoğu
+       başka sektörlere ait ve zorlama eşleştirme yanlış beyan olur. */
+    videos: [
+      "s2qPGbfcyrE", // Havalandırma ekipmanları
+      "Q9s4biWoxI8", // Boru kelepçe imalatı
+      "7_H6v8L3fSs", // Zincir imalatı
     ],
   },
   {
