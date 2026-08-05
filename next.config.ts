@@ -139,6 +139,31 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      /**
+       * --- Alan adı: tr.* alt alan adı -> kök. ---
+       *
+       * cPanel zone'unda `tr.servosteel.com.tr` diye ikinci bir WordPress
+       * kurulumu çıktı: 52 URL, ana sitenin (50 URL) neredeyse birebir kopyası,
+       * ürün slug'ları aynı (`/product/hydraulic-decoilers/` vb.). Üstelik
+       * `robots: index, follow` ve canonical KENDİNE bakıyor — yani Google'a
+       * "asıl benim" diyor. İki kopya aynı dilde, aynı ürünlerle indekste
+       * yarışıyordu.
+       *
+       * Yol korunarak yönlendiriliyor: slug'lar aynı olduğu için ikinci adımda
+       * aşağıdaki WordPress -> yeni site kuralları devreye giriyor ve sayfa
+       * doğru yere iniyor. Varsa backlink'ler de kök alan adına akar.
+       *
+       * Yalnızca WEB yönlendiriliyor. `tr.` alt alan adının kendi mail
+       * kayıtları (ayrı DKIM anahtarı, ayrı SPF) DNS'te duruyor ve bu kural
+       * onlara dokunmaz.
+       */
+      ...["tr.servosteel.com.tr", "www.tr.servosteel.com.tr"].map((host) => ({
+        source: "/:path*",
+        has: [{ type: "host" as const, value: host }],
+        destination: "https://servosteel.com.tr/:path*",
+        permanent: true,
+      })),
+
       /* --- Eski Yoast sitemap'leri -> yeni sitemap ---
          Google eski sitemap adreslerini aylarca istemeye devam eder; 404
          yerine yenisine yönlendirmek yeniden taramayı hızlandırır. */
