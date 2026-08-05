@@ -18,7 +18,11 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "hub" });
   return {
-    title: pageTitle(t("title")),
+    /* metaTitle varsa <title> onu kullanır, H1 `title` olarak kalır. Ayrılar
+       çünkü doğru ürün adı ile aranan terim aynı değil: "roll form hattı"
+       ayda 20 kez aranıyor, "roll form makinesi" 320 kez. Sayfada doğru adı
+       yazmaya devam ediyoruz, arama sonucunda aranan terimle çıkıyoruz. */
+    title: pageTitle(t.has("metaTitle") ? t("metaTitle") : t("title")),
     description: t("metaDesc"),
     alternates: pageAlternates(locale as AppLocale, "/roll-form-hatlari"),
   };

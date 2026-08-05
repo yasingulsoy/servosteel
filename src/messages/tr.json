@@ -133,6 +133,7 @@
   "hub": {
     "eyebrow": "Uzmanlık alanımız",
     "title": "Roll Form Hatları",
+    "metaTitle": "Roll Form Makineleri ve Hatları",
     "desc": "Rulodan nihai profile: 7 profil ailesi için açıcıdan istifleyiciye kadar tamamı Servosteel imzalı, projeye özel tasarlanan komple üretim hatları.",
     "metaDesc": "Kablo kanalı, solar profil, raf, iskele kalası, yol ve gürültü bariyeri, C/Sigma/Omega profilleri için müşteriye özel komple roll form hatları.",
     "flow": ["Rulo Açıcı", "Doğrultma", "Servo Besleme", "Zımba İstasyonları", "Roll Form Makinesi", "Kesme", "İstifleme"],
@@ -164,7 +165,7 @@
   "machinesHub": {
     "eyebrow": "Pres besleme sistemleri",
     "title": "Makineler",
-    "metaTitle": "Makineler — Pres Besleme Sistemleri",
+    "metaTitle": "Pres Besleme Sistemleri ve Rulo Açıcılar",
     "metaDesc": "Rulo açıcılar, servo sürücüler, doğrultmalı servo sürücüler ve kompakt hatlar: pres besleme sistemlerinde müşteriye özel çözümler.",
     "desc": "Hattın her halkası için tek çatı: rulo açıcılar, servo sürücüler, doğrultmalı sürücüler ve kompakt hatlar — hepsi kendi tesisimizde, ihtiyacınıza göre boyutlandırılarak üretilir.",
     "ctaTitle": "Doğru makineyi birlikte seçelim"
@@ -195,7 +196,7 @@
     ]
   },
   "dilme": {
-    "metaTitle": "Rulo Dilme Hatları",
+    "metaTitle": "Rulo Dilme Hatları ve Sac Dilme Makineleri",
     "metaDesc": "1.500-15.000 kg kapasiteli rulo dilme hatları: geniş ruloları istenen ölçüde şeritlere diler. 0,5-5 mm kalınlık aralığı, Schneider kontrol sistemleri.",
     "eyebrow": "Uzmanlık alanımız",
     "title": "Rulo Dilme Hatları",
@@ -1087,6 +1088,7 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapez Sac ve Cephe Paneli Hattı",
+        "metaTitle": "Trapez Sac Makinesi ve Cephe Paneli Hattı",
         "short": "Çatı ve cephe kaplama profilleri için form verme, boy kesme ve istif.",
         "hero": "Çatı ve cephe kaplamasında kullanılan trapez sac, kenet çatı profili ve cephe paneli üretimi için hatlar. Bu ailede belirleyici olan iki şey var: geniş sacda düzlem kalitesi ve boyanmış yüzeyin şekillendirme boyunca zarar görmemesi.",
         "meta": "Trapez sac, kenet çatı ve cephe kaplama profili üretim hatları: form verme, boy kesme, otomatik istif ve paketleme.",

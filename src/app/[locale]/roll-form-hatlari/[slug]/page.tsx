@@ -26,7 +26,10 @@ export async function generateMetadata({ params }: Props) {
   if (!isRollFormSlug(slug)) return {};
   const t = await getTranslations({ locale, namespace: `products.rollform.${slug}` });
   return {
-    title: pageTitle(t("name")),
+    /* `name` nav'da, kartlarda, breadcrumb'da kullanılıyor — ona dokunulmuyor.
+       metaTitle yalnızca <title> için; aranan terim ürün adından farklı
+       olduğunda devreye giriyor (ör. "trapez sac makinesi" 690/ay). */
+    title: pageTitle(t.has("metaTitle") ? t("metaTitle") : t("name")),
     description: t("meta"),
     alternates: pageAlternates(locale as AppLocale, `/roll-form-hatlari/${slug}`),
   };
