@@ -196,7 +196,12 @@ function MegaMenu({
                 className="pointer-events-none absolute inset-0 opacity-15 [background:repeating-linear-gradient(125deg,transparent_0_18px,rgba(0,0,0,0.4)_18px_19px)]"
               />
               <div className="relative">
-                <h3 className="font-display text-lg font-extrabold uppercase leading-[1.1]">{featured.title}</h3>
+                {/* Bilerek <h3> DEĞİL. Header sayfa içeriğinden önce çizildiği
+                    için buradaki bir başlık, sayfanın H1'inden ÖNCE gelir ve
+                    başlık dizilimini bozar — ekran okuyucuyla başlıklar arasında
+                    gezen biri sayfaya menü içindeki bir tanıtım metniyle
+                    başlar. Bu bir belge bölümü değil, menü etiketi. */}
+                <p className="font-display text-lg font-extrabold uppercase leading-[1.1]">{featured.title}</p>
                 <p className="mt-2 line-clamp-3 text-sm font-medium text-zinc-950/80">{featured.text}</p>
               </div>
               <SpecularButton href={featured.href} variant="dark" size="md" className="relative mt-4 self-start">
