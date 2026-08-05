@@ -29,6 +29,8 @@ type Props = {
   external?: boolean;
   className?: string;
   ariaLabel?: string;
+  /** Yalnızca <button> hâlinde anlamlı; gönderim sürerken çift tıklamayı keser. */
+  disabled?: boolean;
 };
 
 /**
@@ -46,6 +48,7 @@ export function SpecularButton({
   external,
   className = "",
   ariaLabel,
+  disabled,
 }: Props) {
   const onMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
     const el = e.currentTarget;
@@ -54,7 +57,9 @@ export function SpecularButton({
     el.style.setProperty("--my", `${e.clientY - r.top}px`);
   }, []);
 
-  const cls = `group/spec relative isolate inline-flex select-none items-center justify-center overflow-hidden rounded-lg font-bold transition-transform duration-200 active:scale-[0.98] ${sizeCls[size]} ${variantCls[variant]} ${className}`;
+  const cls = `group/spec relative isolate inline-flex select-none items-center justify-center overflow-hidden rounded-lg font-bold transition-transform duration-200 active:scale-[0.98] ${sizeCls[size]} ${variantCls[variant]} ${
+    disabled ? "cursor-not-allowed opacity-60" : ""
+  } ${className}`;
   const sheenTint = variant === "gold" || variant === "light" ? "via-white/45" : "via-white/25";
 
   const inner = (
@@ -103,7 +108,7 @@ export function SpecularButton({
   }
 
   return (
-    <button type={type} onMouseMove={onMove} onClick={onClick} className={cls} aria-label={ariaLabel}>
+    <button type={type} onMouseMove={onMove} onClick={onClick} className={cls} aria-label={ariaLabel} disabled={disabled}>
       {inner}
     </button>
   );
