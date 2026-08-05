@@ -82,14 +82,14 @@ function NavLink({
       href={href}
       onClick={onClick}
       aria-current={active ? "page" : undefined}
-      className={`group/nl relative rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+      className={`group/nl relative whitespace-nowrap rounded-md px-2 py-2 text-xs font-medium transition-colors ${
         overHero ? "text-white/85 hover:text-white" : "text-ink hover:text-accent-ink"
       }`}
     >
       {label}
       <span
         aria-hidden
-        className={`pointer-events-none absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-accent transition-transform duration-300 ${
+        className={`pointer-events-none absolute inset-x-2 bottom-1 h-0.5 origin-left rounded-full bg-accent transition-transform duration-300 ${
           active ? "scale-x-100" : "scale-x-0 group-hover/nl:scale-x-100"
         }`}
       />
@@ -155,7 +155,7 @@ function MegaMenu({
       <Link
         href={hubHref}
         aria-current={active ? "page" : undefined}
-        className={`relative flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+        className={`relative flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2 text-xs font-medium transition-colors ${
           overHero ? "text-white/85 hover:text-white" : "text-ink hover:text-accent-ink"
         }`}
       >
@@ -163,7 +163,7 @@ function MegaMenu({
         <ChevronDown className="size-3.5 shrink-0 transition-transform duration-200 group-hover/mm:rotate-180" strokeWidth={1.8} aria-hidden />
         <span
           aria-hidden
-          className={`pointer-events-none absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-accent transition-transform duration-300 ${
+          className={`pointer-events-none absolute inset-x-2 bottom-1 h-0.5 origin-left rounded-full bg-accent transition-transform duration-300 ${
             active ? "scale-x-100" : "scale-x-0 group-hover/mm:scale-x-100"
           }`}
         />
@@ -316,7 +316,7 @@ export function SiteHeader() {
           : "border-b border-line bg-surface/95 shadow-sm shadow-black/5 backdrop-blur-md supports-[backdrop-filter]:bg-surface/90"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 px-4 2xl:gap-4">
         <Link href="/" aria-label={t("homeAria")} className="relative shrink-0">
           {/* Açık zeminde: orijinal logo (altın + koyu yazı) */}
           <Image
@@ -375,7 +375,10 @@ export function SiteHeader() {
             width="w-[400px]"
           />
           <MegaMenu
-            label={tSec("title")}
+            /* Menüde kısa etiket, hub sayfasında tam cümle: "Hangi sektörler
+               için üretiyoruz" bir sayfa başlığı, menü etiketi değil — tek
+               başına menü genişliğinin dörtte birini yiyordu (243px/1014px). */
+            label={t("sectors")}
             hubHref="/uygulamalar"
             items={sectorMega}
             seeAll={t("seeAll")}
@@ -389,24 +392,19 @@ export function SiteHeader() {
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} overHero={overHero} />
         </nav>
 
-        {/* Sağ araç kümesi */}
-        <div className="flex items-center gap-2">
-          {overHero ? (
-            <SocialIcons
-              variant="mono"
-              className="hidden gap-1 xl:flex"
-              linkClassName="size-8 rounded-md text-white/75 hover:bg-white/10 hover:text-white"
-              iconClassName="size-[18px]"
-            />
-          ) : (
-            <SocialIcons
-              variant="brand"
-              className="hidden gap-1 xl:flex"
-              linkClassName="size-8 rounded-md hover:bg-surface-alt"
-              iconClassName="size-[18px]"
-            />
-          )}
-          <span className={`mx-1 hidden h-5 w-px xl:block ${overHero ? "bg-white/20" : "bg-line"}`} aria-hidden />
+        {/*
+          Sağ araç kümesi.
+
+          Sosyal ikonlar BURADAN KALDIRILDI (footer'da ve mobil menünün altında
+          duruyorlar, işlev kaybı yok). Sebep ölçüm: header `max-w-7xl` ile
+          1280px'de sabit — altındaki içerik sütunuyla hizalı kalması gerektiği
+          için genişletilemiyor. Sekiz menü öğesi Rusça'da 12px'te 950px yer
+          kaplıyor; logo (127) + dil/tema (138) + boşluk ile toplam 1247px.
+          Dört ikon + ayraç 165px daha ister — hiçbir punto ayarıyla sığmıyordu
+          ve menüyü üç satıra kırıyordu. Menü çıkışa değil siteye götürür,
+          önceliği o alır.
+        */}
+        <div className="flex shrink-0 items-center gap-2">
           {/* Dil değiştirici HER boyutta görünür — mobilde tema düğmesinin
               yanında, daha dar iç boşlukla. */}
           <LanguageSwitcher
@@ -501,7 +499,7 @@ export function SiteHeader() {
             </details>
             <details className="group/d">
               <summary className="flex cursor-pointer list-none items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt [&::-webkit-details-marker]:hidden">
-                {tSec("title")}
+                {t("sectors")}
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
               </summary>
               <ul className="mb-2 ms-3 border-s border-line ps-3">

@@ -54,6 +54,15 @@ html {
 body {
   background: var(--surface);
   color: var(--ink);
+  /*
+   * Yatay taşmayı kes. Gerekli çünkü [data-reveal="left|right"] öğeleri
+   * animasyona girene kadar ±36px yanda duruyor; sayfanın sağ kenarındaki
+   * her biri belirene dek gerçek bir yatay kaydırma çubuğu yaratıyordu.
+   *
+   * `hidden` DEĞİL `clip`: `hidden` body'yi kaydırma kapsayıcısına çevirir ve
+   * header'daki `position: sticky` çalışmaz olur. `clip` kapsayıcı yaratmaz.
+   */
+  overflow-x: clip;
 }
 
 ::selection {
