@@ -133,6 +133,7 @@
   "hub": {
     "eyebrow": "Our expertise",
     "title": "Roll Forming Lines",
+    "metaTitle": "Roll Forming Machines & Lines: Custom Cold Roll Forming",
     "desc": "From coil to finished profile: complete production lines for 7 profile families, engineered to your project — everything from decoiler to stacker carries the Servosteel signature.",
     "metaDesc": "Custom complete roll forming lines for cable trays, solar profiles, racking, scaffolding planks, guardrails, noise barriers and C/Sigma/Omega profiles.",
     "flow": ["Decoiler", "Straightener", "Servo Feeder", "Punching Stations", "Roll Forming Machine", "Cutting", "Stacking"],
@@ -195,7 +196,7 @@
     ]
   },
   "dilme": {
-    "metaTitle": "Coil Slitting Lines",
+    "metaTitle": "Coil Slitting Lines: Steel Slitting Line Machines",
     "metaDesc": "Coil slitting lines with 1,500-15,000 kg capacity: slitting wide coils into strips to your widths. 0.5-5 mm thickness range, Schneider control systems.",
     "eyebrow": "Our expertise",
     "title": "Coil Slitting Lines",
@@ -1228,6 +1229,7 @@
       },
       "servo-suruculer": {
         "name": "Servo Feeders",
+        "metaTitle": "Servo Roll Feeders: NC Press Feeding for Coil",
         "short": "Precise step feeding into press lines; standard and mini series.",
         "hero": "Servo feeders advance the sheet into the die in millimetric steps; Schneider Lexium servo technology delivers high repeatability, press synchronisation and easy recipe management.",
         "meta": "Servo feeders: standard and mini series for press feeding lines, Schneider Lexium based precise sheet feeding.",
@@ -1279,6 +1281,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Straightener Servo Feeders",
+        "metaTitle": "Straightener Servo Feeders: Decoiler, Straightener, Feeder",
         "short": "Straightening and servo feeding in one body: saves space and investment.",
         "hero": "A compact solution combining straightening rolls that remove coil-set memory with servo feeding in a single body; it eliminates the separate straightener investment and its floor space.",
         "meta": "Straightener servo feeders: straightening + precise feeding in one machine. A compact solution for press lines with cabinet and mini options.",
@@ -1329,6 +1332,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Automatic Stacker",
+        "metaTitle": "Automatic Stacker Machine for Sheet Metal Lines",
         "short": "Stacks the profile leaving the line — unattended, square and counted.",
         "hero": "The last link in a roll forming or cut-to-length line: a unit that collects the cut profile or sheet at line speed and stacks it in pack order. Manual stacking is the step that most limits line speed and most raises the risk of damage; automatic stacking removes that bottleneck.",
         "meta": "Automatic stacking unit for roll forming and cut-to-length lines: collection at line speed, counted packs, unattended operation.",
@@ -1365,6 +1369,7 @@
       },
       "kompakt-hatlar": {
         "name": "Compact Lines",
+        "metaTitle": "Compact Lines: Decoiler, Straightener & Feeder in One",
         "short": "Decoiler + straightener + feeder on one platform: the tight-space solution.",
         "hero": "Compact lines combine decoiling, straightening and servo feeding on a single platform; designed for businesses that want full-featured press feeding in limited space.",
         "meta": "Compact press feeding lines: decoiler, straightener and servo feeder on one platform. A complete solution for tight spaces.",
