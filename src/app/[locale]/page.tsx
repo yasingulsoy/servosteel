@@ -300,23 +300,25 @@ export default async function Home({ params }: Props) {
             </h2>
           </Reveal>
 
-          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Reveal <ol> olarak basılıyor: sarmalayıcı bir div, <ol> ile <li>
+              arasına girip listeyi geçersiz kılıyordu — ekran okuyucu "4 öğeli
+              liste" diye duyuramıyordu. Grup modunda çocuklar zaten sırayla
+              beliriyor, per-item gecikmeye de gerek kalmıyor. */}
+          <Reveal as="ol" group className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((step, i) => (
-              <Reveal key={step.title} delay={i * 120}>
-                <li className="list-none">
-                  <div className="font-display text-5xl font-extrabold text-accent">
-                    {/* Numara, adım görünür olunca maskeden yükselir */}
-                    <span className="num-mask">
-                      <span className="num-rise">{String(i + 1).padStart(2, "0")}</span>
-                    </span>
-                  </div>
-                  <div className="grow-line mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
-                  <h3 className="font-display mt-4 text-lg font-bold uppercase tracking-tight">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.text}</p>
-                </li>
-              </Reveal>
+              <li key={step.title} className="list-none">
+                <div className="font-display text-5xl font-extrabold text-accent">
+                  {/* Numara, adım görünür olunca maskeden yükselir */}
+                  <span className="num-mask">
+                    <span className="num-rise">{String(i + 1).padStart(2, "0")}</span>
+                  </span>
+                </div>
+                <div className="grow-line mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
+                <h3 className="font-display mt-4 text-lg font-bold uppercase tracking-tight">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.text}</p>
+              </li>
             ))}
-          </ol>
+          </Reveal>
         </div>
       </section>
 

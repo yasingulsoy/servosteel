@@ -11,6 +11,10 @@ type Variant = "up" | "left" | "right" | "zoom";
  *           Yatay yönler RTL'de otomatik aynalanır (globals.css).
  * group   — true ise kapsayıcı değil ÇOCUKLAR animasyonlanır: tek observer,
  *           çocuklar 90ms arayla sırayla belirir (kart ızgaraları için).
+ * as      — basılacak etiket. Varsayılan `div` her yerde uymuyor: `<ol>` ile
+ *           `<li>` ARASINA giren bir div listeyi geçersiz kılıyor ve ekran
+ *           okuyucu "4 öğeli liste" diye duyuramıyor. Böyle yerlerde
+ *           `as="ol"` verilip animasyon liste öğesinin kendisine uygulanır.
  */
 export function Reveal({
   children,
@@ -18,14 +22,16 @@ export function Reveal({
   className = "",
   variant = "up",
   group = false,
+  as: Tag = "div",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
   variant?: Variant;
   group?: boolean;
+  as?: "div" | "ol" | "ul" | "section";
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -44,13 +50,13 @@ export function Reveal({
   }, []);
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={ref as React.Ref<never>}
       {...(group ? { "data-reveal-group": "" } : { "data-reveal": variant })}
       className={className}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

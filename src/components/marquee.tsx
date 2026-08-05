@@ -21,7 +21,12 @@ export function Marquee({ items }: { items: MarqueeItem[] }) {
           <Link
             href={item.href}
             tabIndex={hidden ? -1 : undefined}
-            className="font-display whitespace-nowrap px-6 py-4 text-2xl font-extrabold uppercase tracking-tight text-ink/20 transition-colors duration-300 hover:text-accent sm:px-9 sm:text-4xl"
+            /* text-ink/20 idi: açık temada 1,54:1 kontrast veriyordu, WCAG'in
+               büyük metin için istediği 3:1'in çok altında. Bunlar dekoratif
+               değil, ürün sayfalarına giden GERÇEK bağlantılar — okunabilir
+               olmaları gerekiyor. /50 en düşük geçen değer: açık 3,45:1,
+               koyu 5,01:1. */
+            className="font-display whitespace-nowrap px-6 py-4 text-2xl font-extrabold uppercase tracking-tight text-ink/50 transition-colors duration-300 hover:text-accent sm:px-9 sm:text-4xl"
           >
             {item.label}
           </Link>
