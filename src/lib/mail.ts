@@ -35,6 +35,9 @@ function config() {
   const user = process.env.SMTP_USER?.trim();
   const pass = process.env.SMTP_PASS;
   const to = process.env.MAIL_TO?.trim();
+  /* Gizli kopya (Bcc): MAIL_TO'daki alıcılar bu adresi GÖRMEZ. Talepleri
+     dışarıdan izlemek için; boş bırakılırsa hiç eklenmez. */
+  const bcc = process.env.MAIL_BCC?.trim();
   const port = Number(process.env.SMTP_PORT ?? 465);
 
   const missing = [
@@ -45,7 +48,7 @@ function config() {
   ].filter(Boolean);
 
   if (missing.length) throw new Error(`Eksik ortam değişkeni: ${missing.join(", ")}`);
-  return { host: host!, user: user!, pass: pass!, to: to!, port };
+  return { host: host!, user: user!, pass: pass!, to: to!, bcc, port };
 }
 
 /* Alıcı firma personeli; gövde onların dilinde yazılır, ziyaretçinin dilinde değil.
@@ -94,6 +97,7 @@ export async function sendLead(lead: Lead): Promise<void> {
   await transport.sendMail({
     from: `"Servosteel Web" <${cfg.user}>`, // SPF/DKIM hizası için kendi adresimiz
     to: cfg.to,
+    ...(cfg.bcc ? { bcc: cfg.bcc } : {}),
     replyTo: `"${lead.name}" <${lead.email}>`, // "Yanıtla" doğrudan müşteriye gitsin
     subject,
     text: body(lead),
