@@ -31,6 +31,20 @@ function hostOf(url: string): string {
  * yazılması TÜM siteyi sessizce noindex yapardı — bu sessiz felaket engellenir.
  */
 export const IS_PRODUCTION_SITE = hostOf(SITE_URL) === hostOf(PRODUCTION_URL);
+
+/**
+ * GA4 ölçüm kimliği. Ortam değişkeni DEĞİL, bilerek sabit.
+ *
+ * Bu değer gizli değil — her ziyaretçi sayfa kaynağında görüyor. Env'e konursa
+ * `NEXT_PUBLIC_*` değişkenleri derleme anında koda gömüldüğü için "build bu
+ * değeri aldı mı" belirsizliği doğar; cutover günü tam bunu yaşadık. Sabit
+ * olunca depoda ne varsa canlıda o çalışır.
+ *
+ * Yalnızca IS_PRODUCTION_SITE iken yüklenir (bkz. components/analytics.tsx):
+ * önizleme kopyaları gerçek veriyi kirletmesin.
+ */
+export const GA_MEASUREMENT_ID = "G-FFES4VQED3";
+
 export const SITE_NAME = "Servosteel";
 
 export const SITE_TITLE =

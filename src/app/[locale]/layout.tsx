@@ -8,6 +8,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ViewTransition } from "@/components/view-transition";
 import { PointerGlow } from "@/components/pointer-glow";
 import { PageAttention } from "@/components/page-attention";
+import { Analytics } from "@/components/analytics";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
 import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
@@ -194,6 +195,7 @@ export default async function LocaleLayout({
           <PointerGlow />
           <PageAttention />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
