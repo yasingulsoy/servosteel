@@ -289,3 +289,41 @@ export function watchUrl(id: string): string {
 export function embedUrl(id: string): string {
   return `https://www.youtube-nocookie.com/embed/${id}`;
 }
+
+/**
+ * Ürün sayfası -> video eşlemesi. BAŞLIK DOĞRULANARAK kuruldu: her kimlik,
+ * message dosyalarındaki küratörlü başlığı o ürünü açıkça anlatan videodur
+ * ("Kablo kanalı üretim hattı" -> kablo-kanali gibi).
+ *
+ * Neden var: rakip denetiminde (2026-08-07, 18 site) videoyu ürün sayfasına
+ * gömmek yaygın pratik çıktı; bizde video yalnızca /videolar'daydı. B2B
+ * alıcısının %70'i karar sürecinde video izliyor — video ürünün yanında
+ * durmalı, ayrı bir arşiv sayfasında değil.
+ *
+ * İskele, yol/gürültü bariyeri ve trapez BİLEREK yok: küratörlü 24 video
+ * içinde bu ürünleri net gösteren kayıt yok. Yanlış video göstermektense
+ * bölüm hiç basılmaz (RelatedVideos boş listede null döner).
+ */
+const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
+  "/dilme-hatlari": ["h7aPJ6rJc_U", "JOHZwMBLqKo"],
+  "/boy-kesme-hatlari": ["4QETxHS-CD4", "mwZx6X1mV0c"],
+  "/roll-form-hatlari": ["MaJswAJo8JQ", "3xmcJvv6LNc"],
+  "/roll-form-hatlari/kablo-kanali": ["MaJswAJo8JQ"],
+  "/roll-form-hatlari/solar-profil": ["3xmcJvv6LNc", "tm520w7WsBI"],
+  "/roll-form-hatlari/agir-raf": ["J-O8xfI2ovA"],
+  "/roll-form-hatlari/c-sigma-omega": ["qmWM1NgcACw", "5vVTpg3hltE"],
+  "/makineler/rulo-acicilar": ["AqcEyDbbWtA", "v9_1snhusMY"],
+  "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow"],
+  "/makineler/dogrultmali-servo-suruculer": ["P3zbB3c6NBY", "bc5nAkQXJTw"],
+  "/makineler/kompakt-hatlar": ["ONmiUo8vtvk", "7RcuUmfN7QE"],
+  "/makineler/otomatik-istifleyici": ["UCeR9epppK8"],
+};
+
+const VIDEO_BY_ID = new Map(allVideos.map((v) => [v.id, v]));
+
+/** Bir ürün yolunun doğrulanmış videoları; eşleme yoksa boş dizi. */
+export function videosForProduct(path: string): VideoItem[] {
+  return (PRODUCT_VIDEO_IDS[path] ?? [])
+    .map((id) => VIDEO_BY_ID.get(id))
+    .filter((v): v is VideoItem => Boolean(v));
+}

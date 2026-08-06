@@ -896,6 +896,10 @@
           {
             "q": "Which sheet materials does it handle?",
             "a": "Cold rolled, galvanized, aluminium and stainless steel. To protect the zinc coating, roller surfaces and pressure values are set according to the material."
+          },
+          {
+            "q": "What is a cable tray roll forming machine?",
+            "a": "It is the roll forming machine at the heart of a cable tray production line: strip enters from a decoiler, is straightened and servo-fed, holes and slots are punched in line, and successive roll stations bend the sheet step by step into the tray section before cut-off and stacking. Because the section forms gradually and at room temperature, galvanized and pre-painted sheet keeps its coating — which is why trays are almost always produced from coated coil. On this page the machine is described as part of the complete line, since that is how it is supplied: one manufacturer, one control system, from coil to stacked tray."
           }
         ],
         "sectors": ["Electrical infrastructure", "Data centres", "Industrial facilities", "Malls and building projects"]

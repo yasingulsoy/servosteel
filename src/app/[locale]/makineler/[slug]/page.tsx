@@ -10,6 +10,7 @@ import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
+import { RelatedVideos } from "@/components/related-videos";
 import { machineItems, isMachineSlug, hasPhoto } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
@@ -212,6 +213,8 @@ export default async function MachinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
+
+      <RelatedVideos path={`/makineler/${slug}`} />
 
       <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 

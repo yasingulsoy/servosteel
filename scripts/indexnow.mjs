@@ -82,7 +82,8 @@ for (let i = 0; i < urls.length; i += PARCA) {
   });
   /* 200 = alındı, 202 = alındı ama anahtar doğrulaması sürüyor. İkisi de iyi. */
   const ok = r.status === 200 || r.status === 202;
-  ok ? (basarili += dilim.length) : (basarisiz += dilim.length);
+  if (ok) basarili += dilim.length;
+  else basarisiz += dilim.length;
   console.log(
     `  ${i + 1}-${i + dilim.length}: HTTP ${r.status}` +
       (r.status === 202 ? "  (alındı, doğrulama sürüyor)" : ok ? "  (alındı)" : "  REDDEDİLDİ")

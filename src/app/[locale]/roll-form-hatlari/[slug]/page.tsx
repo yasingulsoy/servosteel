@@ -10,6 +10,7 @@ import { ProfileIcon } from "@/components/profile-icon";
 import { ProductShot } from "@/components/product-shot";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
+import { RelatedVideos } from "@/components/related-videos";
 import { rollFormItems, isRollFormSlug, rollFormIcon, hasPhoto } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
@@ -163,6 +164,8 @@ export default async function RollFormLinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
+
+      <RelatedVideos path={`/roll-form-hatlari/${slug}`} />
 
       <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 

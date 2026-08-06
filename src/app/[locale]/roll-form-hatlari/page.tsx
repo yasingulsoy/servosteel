@@ -8,6 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 import { ProfileIcon } from "@/components/profile-icon";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
+import { RelatedVideos } from "@/components/related-videos";
 import { rollFormItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
 import { RelatedReading } from "@/components/related-reading";
@@ -114,6 +115,8 @@ export default async function RollFormHatlariPage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      <RelatedVideos path="/roll-form-hatlari" />
 
       <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />
 
