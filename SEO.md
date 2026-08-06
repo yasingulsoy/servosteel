@@ -4,7 +4,7 @@
 plan, fuar planı, teknik denetim, eski site arşivi); tamamlanan işler ve eskiyen
 tahminler ayıklanıp bu dosyada birleştirildi.
 
-**Son güncelleme:** 2026-08-06
+**Son güncelleme:** 2026-08-07
 
 ---
 
@@ -161,72 +161,139 @@ Firmadan "yapıyor muyuz" cevabı bekliyor (bkz. bölüm 5).
 
 ---
 
-## 3. Rakipler
+## 3. Rakipler — dünya kütüğü
 
-### Türk rakipler — teklif masasında karşılaştıklarımız
+**Yöntem (2026-08-07):** 6 pazarda 12 ticari sorgu için canlı SERP çekildi
+(ABD/EN, DE, ES, IT, PL, TR — ham veri: oturum scratchpad `dunya-serp.json`),
+9 rakibin organik gücü Labs API ile ölçüldü, 20 rakip sitesinin ana sayfası
+müşteri-bulma özellikleri için tek tek denetlendi (`rakip-ozellik.json`).
+Rusya için Google verisi yok ve **Yandex SERP API planımızda kapalı** — RU
+rakip listesi çıkarılamadı, elimizde yalnızca Wordstat hacimleri var.
+
+### 3.1 Dijital güç — ölçüldü, tahmin değil
+
+Labs `ranked_keywords`: kaç kelimede sıralanıyor + tahmini aylık organik trafik.
+
+| domain | pazar | kelime | trafik/ay |
+|---|:---:|---:|---:|
+| us.cidanmachinery.com | US | 112 | **1.216** |
+| dallan.com | US | 104 | 273 |
+| lotosforming.com | US | 190 | 240 |
+| kingreal.org | US | 74 | 105 |
+| athader.com | US | 25 | 93 |
+| swforming.com (Sunway) | US | 136 | 71 |
+| agmline.com | TR | 6 | 60 |
+| **servosteel.com.tr** | TR | **3** | **~100 (marka)** |
+| coiltech.com.tr | TR | 3 | 1 |
+| toncelik.com | TR | 3 | 1 |
+
+İki çıkarım: **(1)** Türk rakiplerin tamamı dijitalde zayıf — ev sahasında
+kimse kaleyi tutmuyor. **(2)** Küresel kazananlar üretim deviyle değil içerik
+disipliniyle kazanıyor (Lotos 190 kelime, CIDAN 1.216 trafik).
+
+### 3.2 Türkiye
 
 | firma | site | not |
 |---|---|---|
-| **AGMLine / Sacform** | [agmline.com](https://agmline.com/) · [sacform.com](https://sacform.com/) | **Aynı firma, iki domain.** En yakın rakip: ürün örtüşmesi ~%100, aktif içerik pazarlaması (~10+ teknik yazı), Avrupa fuarlarına gidiyor. Zayıf: 2 dil, spec tablosu yok |
-| **Coiltech** | [coiltech.com.tr](https://coiltech.com.tr) | Pres beslemede en doğrudan rakip; "Avrupa'nın en büyüğü" konumlanması, ~70 ülke iddiası |
-| **EAE Machinery** | [eaemachinery.com](https://www.eaemachinery.com/) | 1996'dan beri; **TR/EN/RU** — Rusça'sı var, BDT avantajımızı kısmen dengeliyor. Zayıf: teklif formu bile yok |
-| **Etcoma** | [etcoma.com.tr](https://www.etcoma.com.tr/) | Farklı segment (rollform tasarım + kalıp). ⭐ **30+ müşteri logosu: Bosch, Renault, Tofaş, Faurecia** — bizdeki en büyük eksik |
-| Akdeniz San. Mak. | [akdenizsanayimakinalari.com](https://akdenizsanayimakinalari.com/) | Ürün listesi bizimle birebir; hero başlığı bile yok |
-| Hermak · Rollser · Tunaboylu · Rollform Machine | — | Türkçe aramada görünen diğerleri; Rollser'in blogu var ve üst sıralarda |
+| **AGMLine / Sacform** | agmline.com · sacform.com | Aynı firma, iki domain. En yakın rakip; aktif blog; TR'de 60 trafikle en güçlü yerli |
+| **Coiltech** | coiltech.com.tr | Pres beslemede en doğrudan rakip; "Avrupa'nın en büyüğü" iddiası; **ABD SERP'ine YouTube videosuyla giriyor** ama sitesi 3 kelime/1 trafik |
+| **Bosporas** | bosporas.com | ✅ doğrulandı: "pres besleme sistemleri"nde TR 1. sıra; katalog+bülten+fuar sayfası var |
+| EAE Machinery | eaemachinery.com | 1996'dan beri; TR/EN/RU; teklif formu yok |
+| Etcoma | etcoma.com.tr | Rollform tasarım+kalıp; 30+ müşteri logosu (Bosch, Renault, Tofaş, Faurecia) |
+| Akdeniz Sanayi Mak. | akdenizsanayimakinalari.com | Ürün listesi bizimle birebir; "rulo dilme hattı" TR 2. sıra |
+| Hermak | hermak.com.tr | Dilme/boy kesme/rollform; TR 4. sıra |
+| Rollser | rollser.com | Blog'u var, "rollform makinesi"nde üstte |
+| Tunaboylu | tunaboylumakine.com.tr | Rollform + pres besleme |
+| **Ton Çelik** | toncelik.com | Yeni tespit: "rulo dilme hattı" TR 7-8. sıra; WhatsApp+katalog var |
+| HKTM | hktm.com.tr | Kesme-dilme sistemleri; TR 5. sıra |
+| Köprü Metal | koprumetal.com | Dilme + boy kesme |
+| Ayba Makina | aybamakina.com | "sac dilme hattı" TR 1. sıra |
+| Haskar Metal | haskarmetal.com.tr | Rulo sac dilme imalatı |
+| Güngörmak | gungormak.com.tr | Trapez hattı; başlığında telefon yazacak kadar amatör ama 4. sırada |
+| Dönem Makina | donemmakina.com | Trapez üretim hattı |
+| YCS Makine | ycsmakine.com | "Roll form nedir" içeriğiyle sıralanıyor |
+| Teotech | teotechrollform.com | Rollform; eğitici içerik |
+| Rollx | rollformmakinalari.com | Rollform imalat |
+| Demetal | demetal.com | Rollform makineleri |
+| Çağdaş Makina | cagdasmakina.net | Kompakt sürücüler / pres besleme |
+| Mekanikel | mekanikel.com | Pres besleme TR 2. sıra |
+| ⚠️ doğrulanmadı | — | SEAS, Rolline, Rolltürk, Magafi (dizin olabilir), Supreme Engineering (SK) |
 
-**Dizin sitesi rakip gibi davranıyor:** [makinaturkiye.com](https://www.makinaturkiye.com/roll-form-makinalari-firmalari-sc-104981)
-Türkçe head kelimede 1 numara. Kayıt bedava.
+### 3.3 Çin — arama sonuçlarının asıl sahibi
 
-### Çin — arama sonuçlarındaki asıl rakip
+| firma | site | güç |
+|---|---|---|
+| **Lotos** (Wuxi) | lotosforming.com · lotosslitting.com | ABD'de 190 kelime; "cable tray roll forming machine" **1. sıra**; canlı chat + bülten + fuar |
+| **Kingreal** | kingreal.org | Eğitici yazısı "cut to length line" ticari sorgusunda **iki kez** ilk sayfada |
+| **Sunway** | swforming.com | "Ultimate Guide" formatının şampiyonu; 136 kelime |
+| **Beli** | belirollforming.com | ⭐ Özellik denetiminde 9/9 — WhatsApp, chat, katalog, referans, sertifika, video, bülten, fuar, çok dil. **Kopyalanacak şablon bu** |
+| SunRui | sz-sunrui.com | Pres besleme kümesini tek başına tutuyor (8 sonucun 5'i) |
+| Faith Machinery | faith-machinery.com | "2026 Ranking" listicle'ları |
+| Yingyee | yingyeemachinery.com | Kablo kanalı |
+| JSR Rollformer | jsrrollformer.com | "What is..." eğitici formatı, kablo kanalında 5. |
+| Metoform | metoform.com | Aynı format, 8. |
+| He-machine · Henli · Huagong (decoiler.cn) · Technic | he-machine.com vb. | "decoiler straightener feeder" ilk 5'i bunlar |
+| Tengdi | tengdimachine.com | ES ve ABD'de eğitici içerik |
+| Linbay · Alekvs · KI (roll-forming-line.com) | — | DE/PL SERP'lerine Almanca/Lehçe çeviri sayfalarla giriyorlar |
+| Raintech · XHH · Sihua · Superda · Patech · HOPEX⚠️ | — | Önceki turdan; Patech "Top 10" listicle'ı hâlâ üstte |
 
-Teklif masasında görülmezler ama SERP'i tutarlar: Kingreal, Lotos, Sunway, Faith
-Machinery, Yingyee, SunRui (pres beslemede 8 sonucun 5'i), Beli, Sihua, Patech,
-XHH, Raintech.
+### 3.4 Batı — premium ve bölgesel
 
-**Kazanma formülleri teknik değil, üç içerik taktiği:**
+| firma | ülke | not |
+|---|---|---|
+| **CIDAN Machinery** | SE/US | Yeni tespit; ABD'de 1.216 trafikle ölçülen en güçlü rakip; hem rollform hem CTL SERP'inde |
+| **Athader** | ES | Yeni tespit; ES dilme 1. + ABD CTL 5.; Bradbury grubu |
+| **GEORG** | DE | Yeni tespit; "längsteilanlage" DE 2. — Alman premium dilme |
+| Kohler | DE | Querteilanlage 2.; doğrultma/CTL |
+| b+s germany | DE | Dilme + boy kesme 3./3. |
+| G+K Umformtechnik · JÖRG · HPL Group | DE | CTL bölgesel oyuncuları |
+| BMS (rollformingmill.com) · Prima-Press | DE | Rollform; Prima "Hersteller" sorgusunda 2. |
+| Pasterkamp | NL | "rollformmaschine" DE 1. sıra |
+| Dallan | IT | IT profilatrice 2. + ABD 273 trafik |
+| Gasparini | IT | ✅ doğrulandı (gasparini-spa.com); IT 3.; chat+katalog+sertifika |
+| STAM | IT | ES ve PL SERP'lerinde de var — çok pazarlı |
+| Dalma Sistemi · OPM Stampi · BS Macchine · Remat | IT | İtalya yerel |
+| Fagor Arrasate | ES | ABD dilme 1. + DE 3. + ES 3. — üç pazarda birden |
+| Roll Former LLC · ASC Machine Tools · Stan Group | US | "manufacturer" sorgusunun ilk 3'ü |
+| Formtek · American Steel · Galaxie · Red Bud · Braner · Rowe · Delta Steel | US | Dilme/CTL bloku |
+| Bradbury · Samco · Dreistern · Schuler · Dimeco⚠️ | US/DE/FR | Önceki turdan |
+| BTC Maszyny · Polteknik · Świtała | PL | Polonya yerel üretici/entegratörler |
+| Jupiter Roll Forming · Press Room Automation | IN | Kablo kanalı 4. / pres besleme |
 
-1. **Kelime başına ayrı sayfa** — jenerik "roll form hatları" yerine 20+ hedefli URL
-2. **"Ultimate Guide" / "Top 10" uzun içerik** — hem head hem niş kelimeyi aynı anda yakalıyor
-3. **Eğitici içerik ticari kelimeyi kapıyor** — "What is the cut to length process?" yazısı "cut to length line manufacturer" aramasında çıkıyor
+### 3.5 Rakip OLMAYANLAR — kütüğe karışmasın
 
-Üçü de kopyalanabilir ve bizde altyapısı hazır.
+- **Fotovoltaik hat üreticileri** (Horad, JVG-Thoma): "solar panel production line" SERP'i bunların — paneli üreten makine, profili değil. 12. tuzağın sahipleri.
+- **PVC ekstruder** (Sharc, ACC): "kablo kanalı makinesi" TR SERP'i bunların. 14. tuzak.
+- **Çelik servis merkezleri** (Ulbrich, Mead Metals, Steel Warehouse, Böcker, BWS): makine satmıyorlar ama **içerik rakibi** — Ulbrich'in dilme rehberi ABD 2. sırada. Ayrıca DE'dekiler **müşteri adayı**: yeni dilme hattı aldıklarını haberleştiriyorlar.
+- **Medya** (thefabricator.com) ve **listicle siteleri** (vigert, believeindustry): link/PR hedefi.
+- **2. el pazaryerleri** — her pazarda ilk sayfada: Surplus Record (US), Maschinensucher + resale (DE), Exapro (TR/PL), Machineseeker (PL), Centro Macchine (IT), makinecim + sahibinden (TR). **Rakip değil KANAL**: Machineseeker/Maschinensucher yeni makine ilanı da kabul ediyor → kayıt aksiyonu §4'te.
 
-### Batı premium — fiyatta değil itibarda rakip
+### 3.6 SERP'ten okunan taktik gerçekler
 
-Dallan (IT), Fagor Arrasate (ES), Red Bud · Braner · Rowe · Delta Steel ·
-Formtek (US), Schuler · Dreistern (DE), Gasparini (IT).
+1. **Eğitici içerik ticari sorguda sıralanıyor** — Kingreal'in "What is the cut to length machine process?" yazısı "cut to length line" aramasında ilk sayfada iki kez; Ulbrich rehberi dilmede 2. Akademi'nin İngilizce'ye açılması gereken formatı bu.
+2. **Almanca pazarda "Hersteller/Top" listicle'ları** üstte (vigert Top 8, Prima "Hersteller von...") — DE için üretici-rehberi içerik boşluğu var.
+3. **PL dikkat:** "linia cięcia wzdłużnego" SERP'i metal ama PAA kutusu ahşap kesim soruları — terim çift anlamlı, PL içerikte "blachy/kręgów" niteleyicisi şart.
+4. **Kullanılmış-makine niyeti küresel** — TR trapez bulgusuyla aynı desen her pazarda: SERP'lerin tepesinde 2. el pazaryerleri var. "İkinci el mi yeni mi" içeriği (trapez SSS'inde yaptık) her dile taşınabilir kalıp.
 
-### Konumlandırma
+### 3.7 Müşteri-bulma özellik denetimi — 18 site, tek tek
 
-```
-   FİYAT
-   yüksek │  [Batı Premium]  ← itibar, ama pahalı
-          │        ★ SERVOSTEEL
-          │          Çin'den kaliteli, Batı'dan uygun + esnek + hızlı
-          │  [Türk rakipler] ← aynı bölge; farkı DİJİTAL + KANIT yaratır
-   düşük  │  [Çin] ← ucuz, kalite/servis algısı zayıf
-          └─────────────────────────────
-             düşük      KALİTE/GÜVEN      yüksek
-```
+Ana sayfa HTML'inden sinyal tarandı (JS ile geç yüklenen widget'lar
+görünmeyebilir; CIDAN ve Red Bud bot korumasından erişilemedi — dürüst boşluk).
 
-⚠️ Bu konumlandırma **varsayım.** Gerçek rakip ve fiyat konumu firmadan
-teyit edilmeli (bölüm 5).
+| özellik | kaçında var | bizde | boşluk |
+|---|:---:|:---:|---|
+| Referans/vaka bölümü | **15/18** | ❌ kilitli | **En büyük fark.** Logolar kodda hazır, izin bekliyor (§5) |
+| Video (sitede) | 15/18 | ✅ | ✅ **bugün kapatıldı:** 12 ürün sayfasına saha videosu gömüldü |
+| WhatsApp | 11/18 | ✅ | — |
+| PDF katalog/broşür | 9/18 | ❌ | Spec onayı gelince ürün sayfasından otomatik PDF üretilebilir |
+| Fuar/haber sayfası | 9/18 | ❌ | Fuar listesi firmadan bekleniyor (§5) |
+| E-bülten | 8/18 | ❌ | 130 günlük satış döngüsünde tek ucuz "sıcak tutma" aracı; altyapı kararı gerek |
+| Sertifika beyanı (ISO/CE) | 5/18 | ❌ | CE/ISO durumu firmadan bekleniyor (§5) — Batı premium'un tamamında var |
+| Canlı chat | 3/18 | ❌ | Düşük öncelik: WhatsApp aynı işi görüyor; sadece en agresif CN'lerde var |
+| Çok dilli hreflang | 8/18 | ✅ 9 dil | Üstünlük bizde |
 
-### Doğrulanmış üstünlüklerimiz
-
-| üstünlük | rakip durumu |
-|---|---|
-| **9 dil** | Rakipler 2–3 dil. **Arapça hiçbirinde yok**, ES/IT/HU/PL de yok |
-| **Gerçek spec tabloları** | İncelenen hiçbir Türk rakipte sayısal tablo yok — hepsi pazarlama metni |
-| **~109 saha videosu** | Sayı tek başına ayırt edici değil (EAE'de ~113 olabilir); fark **kullanımda** — her ürün sayfasına gömülü |
-| **llms.txt + AI botlarına açık robots** | Sektörde neredeyse yok — erken hareket avantajı |
-| **Teklif formu + WhatsApp** | EAE ve Etcoma'da teklif formu bile yok |
-
-### Kapatılması gereken açığımız
-
-**Müşteri logosu yok.** Etcoma Bosch/Renault/Tofaş/Faurecia gösteriyor. Bizde
-Sarıgözoğlu + Mega Solar kodda hazır ama **yayın kilidi kapalı** (izin bekliyor);
-SMT Enerji ve Astor'un logosu hiç yok.
+**Şablon rakip: Beli** (belirollforming.com) — dokuz özelliğin dokuzu da var.
+Bir sonraki özellik eklerken "Beli'de nasıl?" diye bakmak yeterli.
 
 ---
 
@@ -237,6 +304,8 @@ SMT Enerji ve Astor'un logosu hiç yok.
 - [ ] **`servosteel.wixsite.com` · `servosteel.blogspot.com` · `www.servosteel.com`** — kapat ya da 301'le
 - [ ] **Sektör dizinlerine kayıt** — bunlar zaten bizim kelimelerimizde sıralanıyor, otoriteleri hazır:
       makinaturkiye · Europages · IndustryStock · **DirectIndustry** ("cut-to-length cutting line" aramasında üst sırada)
+- [ ] **2. el pazaryerlerine YENİ makine ilanı** — dünya taraması gösterdi: Machineseeker/Maschinensucher,
+      Exapro ve Surplus Record her pazarda ilk sayfada ve yeni makine ilanı da kabul ediyorlar (§3.5)
 - [ ] **Google İşletme Profili** (Sancaktepe) — "servosteel" en çok tık alan kelimemiz, profil o aramanın sağ tarafını komple verir
 - [ ] **Bing Webmaster** kaydı — asıl kazanç Yandex tarafını hızlandırmak ve AI aramaların beslendiği indekse girmek
 - [ ] **Mevcut ajansın link inşasını durdur** — 2010'ların yöntemi, zarar veriyor
@@ -250,8 +319,10 @@ SMT Enerji ve Astor'un logosu hiç yok.
 
 ### Sürekli
 
-- [ ] **Akademi'yi ritme bağla** — 2 haftada 1 yazı. Çin'in kazandığı format: "nasıl seçilir" + "Ultimate Guide"
-- [ ] Her ürün sayfasına ilgili **çalışan hat videosu** — alıcının %70'i video izliyor
+- [ ] **Akademi'yi ritme bağla** — 2 haftada 1 yazı. Çin'in kazandığı format: "nasıl seçilir" + "Ultimate Guide".
+      Sıradaki: İngilizce eğitici yazı — Kingreal'in yazısı ticari sorguda sıralanıyor (§3.6)
+- [x] ~~Her ürün sayfasına ilgili çalışan hat videosu~~ — **yapıldı (2026-08-07):** 12 ürün yoluna
+      başlık-doğrulamalı eşlemeyle gömüldü; eşleşmesi olmayan 4 sayfada bilerek yok (§3.7)
 - [ ] YouTube başlıklarını hedef kelimeyle yaz, açıklamaya ürün sayfası linki
 
 ### Akademi
