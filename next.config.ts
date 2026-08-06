@@ -48,6 +48,52 @@ const DECOILERS = [
 const SERVO_FEEDERS = ["servo-feeders", "mini-servo-feeders"];
 const STRAIGHTENERS = ["straightener-servo-feeders", "mini-straightener-servo-feeders"];
 
+/**
+ * --- tr.servosteel.com.tr'nin TÜRKÇE slug'ları ---
+ *
+ * Aşağıdaki `tr.*` host kuralı yolu koruyarak köke yönlendiriyor ve oradaki
+ * "ikinci adımda WordPress kuralları yakalar" varsayımıyla yazılmıştı. O
+ * varsayım YANLIŞTI: `tr.` kopyası Türkçe slug kullanıyordu
+ * (`/product/hidrolik-rulo-acicilar`), ana site İngilizce
+ * (`/product/hydraulic-decoilers`). Hiçbir kural eşleşmediği için 301 -> 404
+ * zinciri oluşuyordu.
+ *
+ * Search Console'un 16 aylık penceresinde bu şekilde 404'e düşen 19 URL vardı;
+ * en büyüğü `/iletisime/` (50 gösterim, ortalama 4,5. sıra). Liste GSC'den
+ * geldiği için yalnızca gösterim ALMIŞ adresleri kapsar — kalanları en sondaki
+ * genel yakalayıcı topluyor.
+ *
+ * Hedefler Türkçe (önek yok, tr varsayılan dil): bu adreslere gelen kullanıcı
+ * Türkçe arama yapmış, İngilizce sayfaya atmak dil değiştirmek olurdu.
+ */
+const TR_DECOILERS = [
+  "hidrolik-rulo-acicilar",
+  "mekanik-rulo-acicilar",
+  ...[6, 8, 10, 12, 15, 20].map((t) => `${t}-ton-hidrolik-rulo-acici`),
+  ...[500, 750, 1500, 2500].map((k) => `${k}-kg-mekanik-rulo-acici`),
+];
+
+const TR_SERVO = ["kasali-servo-suruculer", "servo-suruculer", "mini-servo-suruculer"];
+const TR_STRAIGHTENERS = [
+  "kasali-dogrultmali-servo-suruculer",
+  "dogrultmali-servo-suruculer",
+  "mini-dogrultmali-servo-suruculer",
+];
+
+/* Türkçe roll-form slug'ı -> yeni site slug'ı.
+   `cable-tray-production-lineakablo-...`: WordPress'te iki başlık birleşmiş,
+   bozuk hâliyle indekslenmiş — GSC'de göründüğü için birebir korunuyor. */
+const TR_ROLLFORM: Record<string, string> = {
+  "solar-profil-uretim-hatti": "solar-profil",
+  "agir-raf-uretim-hatti": "agir-raf",
+  "iskele-kalas-uretim-hatti": "iskele-kalas",
+  "kablo-kanali-uretim-hatti": "kablo-kanali",
+  "cable-tray-production-lineakablo-kanali-uretim-hatti": "kablo-kanali",
+  "yol-bariyeri-uretim-hatti": "yol-bariyeri",
+  "gurultu-bariyeri-uretim-hatti": "gurultu-bariyeri",
+  "c-sigma-omega-profil-uretim-hatti": "c-sigma-omega",
+};
+
 /* Roll-form alt hatları: eski slug -> yeni slug (birebir eşleşir) */
 const ROLLFORM: Record<string, string> = {
   "cable-tray-production-line": "kablo-kanali",
@@ -233,6 +279,24 @@ const nextConfig: NextConfig = {
          Döngü olmaz: kaynak kök seviyede, hedef /en altında. */
       p("/about-us", en("/hakkimizda")),
       p("/contact-us", en("/iletisim")),
+      /* www.servosteel.com.tr/contact/ — 25 gösterim, ort. 4,7. sıra, 404'tü */
+      p("/contact", en("/iletisim")),
+
+      /* --- tr.* kopyasının Türkçe slug'ları (bkz. TR_* tabloları) --- */
+      ...many(TR_DECOILERS, "/makineler/rulo-acicilar"),
+      p("/rulo-acicilar", "/makineler/rulo-acicilar"),
+      ...many(TR_SERVO, "/makineler/servo-suruculer"),
+      ...many(TR_STRAIGHTENERS, "/makineler/dogrultmali-servo-suruculer"),
+      ...Object.entries(TR_ROLLFORM).flatMap(([eski, slug]) =>
+        both(eski).map((s) => p(s, `/roll-form-hatlari/${slug}`))
+      ),
+      /* Türkçe kategori ağacı */
+      p("/product-category/makineler", "/makineler"),
+      p("/product-category/makineler/:alt*", "/makineler"),
+      p("/urunler", "/makineler"),
+      /* En çok gösterim alan kırık adres: 50 gösterim, ort. 4,5. sıra */
+      p("/iletisime", "/iletisim"),
+      p("/hakkimizda-2", "/hakkimizda"),
 
       /* --- Katalog / mağaza --- */
       p("/product-category/machines", `${M}`),
@@ -249,6 +313,28 @@ const nextConfig: NextConfig = {
       p("/cart", "/en"),
       p("/checkout", "/en"),
       p("/my-account", "/en"),
+      /* Mağaza sayfalama: /shop/page/2, /3 ... (404'tü) */
+      p("/shop/page/:n*", `${M}`),
+
+      /**
+       * --- GENEL YAKALAYICI — HER ZAMAN EN SONDA ---
+       *
+       * Yukarıdaki kuralların hiçbiri tutmayan eski WordPress ürün adresleri
+       * buraya düşer. Gerekli çünkü kırık adres listesi Search Console'dan
+       * geliyor ve GSC yalnızca son 16 ayda GÖSTERİM ALMIŞ adresleri bilir;
+       * eski `tr.` kopyasında gösterim almamış ama backlink'i ya da indeks
+       * kaydı olan slug'lar bu listede yok. Onlar da 404 yerine makine
+       * listesine iner.
+       *
+       * Sırası kritik: Next yönlendirmeleri sırayla dener, ilk eşleşen kazanır.
+       * Bu kural yukarı taşınırsa üstündeki tüm özel ürün kuralları ölür.
+       *
+       * Hedef Türkçe: eşleşmeyen slug'ların kaynağı büyük olasılıkla `tr.`
+       * kopyasıdır — ana sitenin İngilizce ürünlerinin tamamı zaten yukarıda
+       * tek tek karşılanıyor (arşivdeki 18 ürünün hepsi).
+       */
+      p("/product/:slug", "/makineler"),
+      p("/product-category/:path*", "/makineler"),
     ];
   },
 };
