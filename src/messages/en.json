@@ -134,7 +134,7 @@
   "hub": {
     "eyebrow": "Our expertise",
     "title": "Roll Forming Lines",
-    "metaTitle": "Roll Forming Machines & Lines: Custom Cold Roll Forming",
+    "metaTitle": "Roll Forming Machine Manufacturer: Custom Lines",
     "desc": "From coil to finished profile: complete production lines for 7 profile families, engineered to your project — everything from decoiler to stacker carries the Servosteel signature.",
     "metaDesc": "Custom complete roll forming lines for cable trays, solar profiles, racking, scaffolding planks, guardrails, noise barriers and C/Sigma/Omega profiles.",
     "flow": ["Decoiler", "Straightener", "Servo Feeder", "Punching Stations", "Roll Forming Machine", "Cutting", "Stacking"],
@@ -285,7 +285,7 @@
     "ctaText": "Send us your coil weight, sheet thickness and strip widths; we'll define the right series and line layout together."
   },
   "boykesme": {
-    "metaTitle": "Cut-to-Length Lines",
+    "metaTitle": "Cut-to-Length Lines: Coil to Sheet Cutting Machine",
     "metaDesc": "Cut-to-length lines: coil to sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
     "eyebrow": "Our expertise",
     "title": "Cut-to-Length Lines",
@@ -857,6 +857,7 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Cable Tray Production Line",
+        "metaTitle": "Cable Tray Roll Forming Machine & Production Line",
         "short": "A complete line for perforated and solid cable trays, ladders and covers.",
         "hero": "A complete roll forming line producing cable trays — the backbone of electrical infrastructure — from coil to finished product: decoiler, straightener, servo feeder, punching stations, roll forming machine and cutting unit are managed by a single PLC.",
         "meta": "Cable tray production line: a complete custom roll forming solution for perforated/solid trays, ladders and cover profiles.",
@@ -944,6 +945,7 @@
       },
       "agir-raf": {
         "name": "Storage Rack Production Line",
+        "metaTitle": "Storage Rack Roll Forming Machine for Racking",
         "short": "A punching-station line for rack uprights and beam profiles.",
         "hero": "A line producing the load-bearing rack uprights and beams of logistics warehouses; multi-row mounting holes are punched in-line by servo punches, and dimensional stability is maintained even in thick sheet.",
         "meta": "Storage rack production line: a custom roll forming solution with punching stations for rack uprights and beam profiles.",
@@ -1031,6 +1033,7 @@
       },
       "yol-bariyeri": {
         "name": "Guardrail Production Line",
+        "metaTitle": "Guardrail Roll Forming Machine: Highway W-Beam",
         "short": "A heavy-duty roll forming line for W-beam guardrail profiles.",
         "hero": "A heavy-duty line producing W-beam (two-wave) and three-wave guardrail profiles — the standard of road safety; it forms the wave profile in thick galvanized sheet with standard-compliant precision.",
         "meta": "Guardrail production line: a heavy-duty roll forming solution for W-beam and three-wave highway barrier profiles.",
@@ -1161,6 +1164,7 @@
       },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profile Line",
+        "metaTitle": "C Purlin Roll Forming Machine: C, Sigma & Omega",
         "short": "Light steel framing profiles: multiple sections on one line.",
         "hero": "A flexible solution producing C, Sigma and Omega profiles — the load-bearers of light steel structures — on a single line; changeover between sections takes minutes thanks to adjustable roll groups and the recipe system.",
         "meta": "C, Sigma and Omega profile production line: an adjustable, multi-section roll forming solution for light steel framing profiles.",
