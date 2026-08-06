@@ -1179,8 +1179,8 @@
         "name": "Decoilers",
         "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
         "short": "Hydraulic 6-20 t and mechanical 500-2,500 kg decoiling solutions.",
-        "hero": "The first link of every line: hydraulic and mechanical decoilers that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
-        "meta": "Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers: custom solutions for press feeding and coil processing lines.",
+        "hero": "The first link of every line: hydraulic and mechanical decoiler machines that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
+        "meta": "Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers and uncoilers: custom solutions for press feeding and coil processing lines.",
         "features": [
           {
             "title": "Hydraulic mandrel expansion",
@@ -1212,6 +1212,22 @@
           {
             "q": "When is a loading car necessary?",
             "a": "Mounting heavy coils onto the shaft with a forklift is risky and slow; a hydraulic loading car aligns the coil and seats it on the mandrel in seconds. We recommend it as standard above 6 tons."
+          },
+          {
+            "q": "What is an uncoiler, and is it the same as a decoiler?",
+            "a": "They are the same machine. Uncoiler, decoiler and coil reel are used interchangeably — uncoiler is the more common term in North America, decoiler in Europe. Both describe the unit that holds the coil at the head of the line and pays the strip off under controlled tension. Everything on this page applies whichever word you searched for."
+          },
+          {
+            "q": "What is the working principle of a decoiler machine?",
+            "a": "The coil is seated on a mandrel that expands against its inner diameter, so it is gripped from the inside rather than clamped from the outside. As the line draws strip, the mandrel turns and a brake holds back-tension so the coil cannot overrun and loosen. On the hydraulic series both the expansion and the braking are powered; on the mechanical series the mandrel is tightened by handwheel and the shaft runs under speed control with a brake system."
+          },
+          {
+            "q": "Do you supply manual decoilers?",
+            "a": "The mechanical series is what is usually meant by a manual decoiler: the mandrel is tightened by handwheel rather than hydraulically, and coil tension is held by a brake with speed control. It covers coils from 500 to 2,500 kg. Above that the hydraulic series takes over, where mandrel expansion and braking are both powered and a loading car handles seating the coil."
+          },
+          {
+            "q": "Can decoiling, straightening and feeding be combined in one machine?",
+            "a": "Yes — that is what a compact line is: decoiler, straightener and servo feeder on a single platform, managed from one HMI, for shops without the floor space for a classic layout. Where coils are heavy or the line layout is already fixed, a separate decoiler feeding a straightener servo feeder is the better arrangement."
           }
         ],
         "table": {
