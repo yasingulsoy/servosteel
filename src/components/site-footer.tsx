@@ -122,6 +122,18 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} Servosteel. {t("rights")}</p>
+          {/* Grup markası. Kalıp işi Servosteel'in portföyünde değil, ayrı
+              alan adında devam ediyor; kalıp arayan ziyaretçi buradan gitsin.
+              Dış link olduğu için i18n <Link> değil <a>. `nofollow` YOK —
+              gerçek bir grup ilişkisi, gizlenecek bir şey değil. */}
+          <a
+            href="https://servomold.com.tr"
+            target="_blank"
+            rel="noopener"
+            className="transition-colors hover:text-white"
+          >
+            {t("groupBrand")}: ServoMold
+          </a>
           <p>{t("tagline")}</p>
         </div>
       </div>
