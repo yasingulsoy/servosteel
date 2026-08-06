@@ -69,7 +69,8 @@ export function HeroVideo() {
       {/* Arka plan videosu */}
       <video
         ref={ref}
-        className="absolute inset-0 size-full object-cover"
+        /* video-grade: renk düzeltmesi, dosyaya dokunmadan (bkz. globals.css) */
+        className="video-grade absolute inset-0 size-full object-cover"
         autoPlay
         muted
         loop

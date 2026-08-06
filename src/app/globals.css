@@ -446,6 +446,25 @@ body {
   }
 }
 
+/* Video renk düzeltmesi — TEK KAYNAK (hero + tüm bantlar).
+
+   Çekimler fabrika içi: ham kareler ölçüldüğünde metin bölgesinin ortalama
+   parlaklığı 0–1 ölçeğinde 0,05–0,12 çıkıyor. Yani videolar perdeden BAĞIMSIZ
+   olarak da koyu; perdeyi inceltmek tek başına yetmiyordu.
+
+   Bu yüzden dosyaya değil, oynatmaya müdahale ediyoruz: mp4'ler bit bazında
+   olduğu gibi duruyor, düzeltme tarayıcıda compositor'da yapılıyor. Beğenilmezse
+   tek satır silinince eski hâline döner — yeniden kodlama yok.
+
+   Değerler ölçümle seçildi. brightness'ı 1.08'in üstüne çıkarmak iki şeyi
+   birden bozuyor: metin kontrastı 3:1'in altına iniyor ve sacdaki parlamalar
+   kırpılmaya başlıyor (1.08'de kırpılan piksel %0,4; 1.14'te %1,9).
+   saturate payı bilerek yüksek: doygunluk parlaklığı artırmadığı için
+   kontrastı da kırpmayı da etkilemiyor, bedava canlılık. */
+.video-grade {
+  filter: brightness(1.08) contrast(1.02) saturate(1.12);
+}
+
 /* Video bandı görünüme girince cam panel aşağıdan süzülür; banttan çıkıp
    geri gelince yeniden oynar (sınıfı VideoBand'in observer'ı yönetir). */
 [data-video-band] .band-content {

@@ -56,7 +56,11 @@ export function VideoCard({
               priority={priority}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <span aria-hidden className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/10" />
+            {/* Küçük resim perdesi. Kontrast için gerekmiyordu: oynat düğmesi
+                dolu altın, süre rozetinin kendi bg-black/75 zemini var. Yani
+                %25 sırf dekoratif karartmaydı — 78 küçük resmi birden soluk
+                gösteriyordu. Ayrım için yeten en düşük değere indirildi. */}
+            <span aria-hidden className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
             <span
               aria-hidden
               className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-zinc-950 shadow-xl transition-transform duration-300 group-hover:scale-110"

@@ -100,8 +100,9 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
       <video
         ref={ref}
         /* Oran bantla aynı olduğu için object-cover kırpmaz; yuvarlama
-           farklarında kıl payı taşmayı emmesi için yine de cover. */
-        className="absolute inset-0 size-full object-cover"
+           farklarında kıl payı taşmayı emmesi için yine de cover.
+           video-grade: renk düzeltmesi, dosyaya dokunmadan (bkz. globals.css) */
+        className="video-grade absolute inset-0 size-full object-cover"
         muted
         loop
         playsInline
