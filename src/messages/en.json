@@ -158,6 +158,18 @@
       {
         "q": "Can I run more than one profile on the same line?",
         "a": "Yes, by changing the roll set. What matters here is changeover time: if you will run many section types, fast changeover directly affects utilisation, which in turn drives the line's payback."
+      },
+      {
+        "q": "What is the roll forming process, step by step?",
+        "a": "Coil is loaded onto a decoiler, straightened to take out coil-set memory, then fed into the line by servo feeder. Where the profile needs holes or slots, punching stations work in line. The strip then passes through the roll forming machine, where each station bends it a little further until the section is complete, and cutting and stacking finish the cycle. Because the shape is reached gradually across many stations rather than in one press stroke, no heat is involved — which is why it is called cold roll forming."
+      },
+      {
+        "q": "What is cold roll forming?",
+        "a": "Forming at room temperature. The strip is bent progressively by successive roll stations instead of being heated and pressed, so the surface finish and any coating survive the process — which matters for pre-painted and galvanised coil, the usual material for cable tray, solar and cladding profiles. Every line on this page is a cold roll forming line."
+      },
+      {
+        "q": "What are the disadvantages of roll forming?",
+        "a": "Two, and they are worth knowing before committing. A roll set is made for one section, so each new profile means new tooling — roll forming rewards volume and repetition rather than one-off work. And the cross-section stays constant along the length; a part that changes shape along its run needs a different process. Where those two conditions are met, little else matches it for output per hour."
       }
     ],
     "ctaTitle": "A roll forming line built around your profile"
