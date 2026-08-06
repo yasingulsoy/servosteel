@@ -270,6 +270,14 @@
       {
         "q": "How does commissioning work?",
         "a": "The line is fully assembled and tested at our own facility before shipment, so on site only installation and commissioning remain. That keeps installation time short. Operator training is given during commissioning."
+      },
+      {
+        "q": "What is the difference between cutting and slitting?",
+        "a": "Slitting cuts along the length of the coil and produces narrower coils. Cutting, in the cut-to-length sense, cuts across it and produces flat sheets. Slitting leaves you with coil to feed another process; cut-to-length leaves you with finished sheet."
+      },
+      {
+        "q": "What are the different types of slitting line?",
+        "a": "The cutting principle does not change from one line to the next — circular knives on an arbor, set to the strip widths you need. What separates lines is capacity: coil weight, strip thickness, and how many strips one pass yields. The frame, the drive and the way strips are held under tension on the recoiler scale with those. Choosing between them comes back to your heaviest coil and thickest material — see the capacity question above."
       }
     ],
     "ctaTitle": "Let's size your slitting line",
@@ -332,6 +340,14 @@
       {
         "q": "What determines the price?",
         "a": "Coil weight capacity, sheet thickness and width, cutting accuracy and the level of automation (loading car, automatic stacking, PVC film) are the drivers. That is why we quote per project rather than from a catalogue."
+      },
+      {
+        "q": "What is CTL in steel?",
+        "a": "CTL is shorthand for cut-to-length. A CTL line takes coil, straightens it and cuts it across into flat sheets at a set length. It is the opposite of a slitting line, which cuts along the coil and re-coils the narrower strips."
+      },
+      {
+        "q": "What is the difference between blanking and cut-to-length?",
+        "a": "A cut-to-length line produces rectangular sheet at a set length — every piece the same simple shape. Blanking cuts a profiled outline, a contour defined by a die rather than just a length. If the part is rectangular, a cut-to-length line does it faster and with far less tooling; if it has a contour, it belongs on a press."
       }
     ],
     "ctaTitle": "Let's engineer your cut-to-length line",
@@ -1292,6 +1308,14 @@
           {
             "q": "How is press synchronization set up?",
             "a": "The press cam signal is wired to the feeder; feeding is timed to the press dead center and a pilot-pin release is applied. Our team performs commissioning on site."
+          },
+          {
+            "q": "What is a servo feeder?",
+            "a": "A servo feeder is the machine that advances strip into the die between press strokes. A servo motor drives the feed rolls, so the length of each advance is a number in the control rather than something fixed by mechanical linkage — that is what makes it repeatable to the millimetre and changeable between jobs without retooling. The drive here is Schneider Lexium, running 2 × Ø85 mm feed rolls from a 7-inch touchscreen."
+          },
+          {
+            "q": "What are the three types of press feeder?",
+            "a": "Air, mechanical and servo. Air feeders are the simplest and suit short, light work. Mechanical feeders take their motion from the press itself, so feed length is set by the linkage and changing it means changing hardware. Servo feeders drive the rolls independently, which is why the pitch is set in the control instead of on the machine. The trade-off between the last two is worked through on the servo versus mechanical feeding comparison."
           }
         ],
         "table": {
@@ -1344,6 +1368,10 @@
           {
             "q": "How is the straightening pressure adjusted?",
             "a": "Pressure is set according to sheet thickness and stored in the recipe; the SCHNEIDER touchscreen keeps up to 250 die memories. It works up to 0.5–4 mm thickness and 1600 mm width."
+          },
+          {
+            "q": "Is this the same as a decoiler straightener feeder?",
+            "a": "Close, but not the same machine. A decoiler straightener feeder combines all three functions in one unit; this one combines the last two — straightening and feeding — in a single body and takes its strip from a separate decoiler. Where all three need to sit on one platform, that is a compact line."
           }
         ],
         "table": {
