@@ -70,6 +70,9 @@ if (KURU) {
 /* IndexNow tek istekte en fazla 10.000 URL kabul ediyor; yine de parçalıyoruz
    ki bir parça reddedilirse hepsi birden düşmesin. */
 const PARCA = 1000;
+let basarili = 0;
+let basarisiz = 0;
+
 for (let i = 0; i < urls.length; i += PARCA) {
   const dilim = urls.slice(i, i + PARCA);
   const r = await fetch("https://api.indexnow.org/indexnow", {
@@ -78,7 +81,26 @@ for (let i = 0; i < urls.length; i += PARCA) {
     body: JSON.stringify({ host: HOST, key, keyLocation: `${SITE}/${key}.txt`, urlList: dilim }),
   });
   /* 200 = alındı, 202 = alındı ama anahtar doğrulaması sürüyor. İkisi de iyi. */
-  console.log(`  ${i + 1}-${i + dilim.length}: HTTP ${r.status} ${r.status === 202 ? "(doğrulama sürüyor)" : ""}`);
-  if (r.status >= 400) console.log(`    ${(await r.text()).slice(0, 200)}`);
+  const ok = r.status === 200 || r.status === 202;
+  ok ? (basarili += dilim.length) : (basarisiz += dilim.length);
+  console.log(
+    `  ${i + 1}-${i + dilim.length}: HTTP ${r.status}` +
+      (r.status === 202 ? "  (alındı, doğrulama sürüyor)" : ok ? "  (alındı)" : "  REDDEDİLDİ")
+  );
+  if (!ok) console.log(`    ${(await r.text()).slice(0, 240)}`);
 }
-console.log("\nBitti. Bing ve Yandex'e iletildi (IndexNow'ı paylaşan diğer motorlara da).");
+
+/* Bu blok bilerek koşullu: script'in ilk hâli istek 403 dönmesine rağmen
+   "Bitti, iletildi" yazıyordu. Başarısızlığı başarı diye raporlayan bir araç
+   işe yaramaz — çıkış kodu da onu yansıtmalı ki otomasyonda fark edilsin. */
+if (basarisiz === 0) {
+  console.log(`\n${basarili} URL iletildi — Bing, Yandex ve IndexNow'ı paylaşan diğer motorlara.`);
+} else {
+  console.log(`\nGÖNDERİLEMEDİ: ${basarisiz} URL reddedildi${basarili ? `, ${basarili} iletildi` : ""}.`);
+  console.log(
+    "SiteVerificationNotCompleted ise: anahtar dosyası yeni yayınlanmıştır ve\n" +
+      "IndexNow onu henüz kendisi çekmemiştir. Doğrulama asenkron — birkaç saat\n" +
+      "sonra tekrar çalıştır, kod değişikliği gerekmiyor."
+  );
+  process.exit(1);
+}
