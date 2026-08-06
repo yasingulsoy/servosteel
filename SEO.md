@@ -102,9 +102,34 @@ Aşağıdaki 11 terim toplam ~52.000 arama taşıyor ve hepsi tuzak. Bir raporda
 | poprzecznica (PL) | 390 | anatomi terimi |
 | servo sürücü | 320 | sürücü elektroniği |
 | spianatrice (IT) | 210 | ahşap planya |
+| solar panel production line | 70 | fotovoltaik panel montaj hattı |
+| doğrultma makinesi | 50 | **tel** ve çubuk doğrultma |
+| kablo kanalı makinesi | 20 | **PVC ekstruder** (ve tıkanıklık açma) |
+
+Son üçü başlık çalışmasında yakalandı — üçü de en yüksek hacimli adaylardı ve
+SERP'e bakılmasa "kazanç" diye rapora girerlerdi.
 
 Bu liste aynı zamanda **hazır negatif kelime listesidir** — reklam verilecekse
 ilk gün eklenmeli.
+
+### Türkçe: hacim nerede, nerede değil
+
+Türkiye tıklarımızın %86'sını veriyor, o yüzden ayrıca ölçüldü.
+
+| terim | hacim | rekabet | not |
+|---|---:|---|---|
+| **rollform makinesi** | **590** | orta | bitişik yazım; sitede 7'ye 75 yanlış taraftaydı |
+| **trapez sac makinesi** | **480** | **düşük** | SERP zayıf: ilk 5'in üçü pazaryeri/dizin |
+| roll form makinesi | 320 | orta | ayrı yazım |
+| rulo açıcı / açıcılar | 140 | orta | **7. sıradayız** — 1. sayfaya en yakın olduğumuz kelime |
+| sac dilme hattı | 30 | orta | "rulo dilme hattı" yalnızca 10 |
+| pres besleme sistemleri | 20 | orta | SERP'i birebir rakip listemiz |
+| **boy kesme** (6 varyant) | **0** | — | tutarlı sıfır; Türkiye'de aramayla satılmıyor |
+
+⚠️ **Trapez'in 480'i tam olarak bizim değil.** İlgili aramalar ikinci el
+ağırlıklı: "2 el", "sahibinden", "ikinci el", "satılık", "Mini Trapez".
+Nitelikli kısmı belki %30-40'ı. Yine de en iyi Türkçe fırsatımız, çünkü SERP
+zayıf ve fiyat arayan da sonuçta alıcı.
 
 ### Rusya: Google'ın gizlediği pazar
 
@@ -229,20 +254,28 @@ SMT Enerji ve Astor'un logosu hiç yok.
 - [ ] Her ürün sayfasına ilgili **çalışan hat videosu** — alıcının %70'i video izliyor
 - [ ] YouTube başlıklarını hedef kelimeyle yaz, açıklamaya ürün sayfası linki
 
-### Yazılacak Akademi içerikleri
+### Akademi
 
-1. ✅ *Rulo Dilme Hattı Nasıl Seçilir? 7 Kritik Kriter* — yayında, 9 dil
-2. ✅ *Türk/Avrupa üretici mi, Uzakdoğu tedarikçisi mi* — yayında, 9 dil
-3. Roll Form Hattı Satın Alma Rehberi (bütçe, teslim, merdane ömrü)
-4. Boy Kesme Hattı Nasıl Seçilir? (giyotin vs uçan makas, düzlük)
-5. Dilme mi Boy Kesme mi? Hangi hat hangi işe
-6. Solar Profil Hattı: yatırım geri dönüş hesabı
-7. Kablo Kanalı Hattı: delikli/deliksiz, tava/kapak farkları
-8. Pres Besleme Boyutlandırma: sac kalınlığı → sürücü seçimi
-9. Rulo Açıcı Seçimi: hidrolik mi mekanik mi?
-10. CE uyumu ve hat güvenliği: ihracat için ne gerekir
-11. Devreye alma süreci: fabrika testinden sahaya
-12. Yedek parça ve uzaktan destek: duruş maliyetini düşürmek
+**Yayında (9 dil):** rulo dilme hattı nasıl seçilir · boy kesme hattı nasıl
+seçilir · servo besleyici nasıl seçilir · progresif kalıp & servo besleyici ·
+rulo dilme hattı maliyeti · rulo ağırlığı ve uzunluğu hesabı · sac fire oranını
+düşürmek · solar profil hattı yatırım geri dönüşü · rulo hattı nereden alınmalı
+
+**Yayında (yalnızca TR):** roll form nedir — `rollform nedir` 70/ay +
+`roll form nedir` 20 + `roll form makinesi nedir` 20 + `soğuk şekillendirme` 50,
+dördü de düşük rekabet. İngilizce'ye çevrilmedi çünkü oradaki karşılıkları
+10-30/ay ve rekabet yüksek.
+
+**Sıradakiler:**
+- Roll Form Hattı Satın Alma Rehberi (bütçe, teslim, merdane ömrü)
+- Kablo Kanalı Hattı: delikli/deliksiz, tava/kapak farkları
+- Rulo Açıcı Seçimi: hidrolik mi mekanik mi? *(sayfası 7. sırada, destek ister)*
+- CE uyumu ve hat güvenliği: ihracat için ne gerekir
+- Devreye alma süreci: fabrika testinden sahaya
+- Yedek parça ve uzaktan destek: duruş maliyetini düşürmek
+
+> Not: "Dilme mi boy kesme mi" ayrı yazı olarak gerekmiyor —
+> `/karsilastirma/dilme-vs-boy-kesme` sayfası zaten var.
 
 ### Reklam — mantıklı ama sırayla
 
