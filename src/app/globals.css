@@ -479,20 +479,24 @@ body {
      .on-video     büyük başlıklar   en kötü 3.89:1  (WCAG büyük metin: 3.0)
      .on-video-sm  14-16px metin     en kötü 4.71:1  (WCAG normal metin: 4.5)
 
-   Üç katman şart: dar olan harfin kenarını keskinleştirir, orta olan gövdeyi
-   ayırır, geniş olan parlak zeminlerde lekeyi bastırır. Tek katmanlı eski
-   gölge (0 2px 18px .55) parlak duvar önünde 2.39:1'e düşüyordu. */
+   Gölge HARFE YAPIŞIK. Önce 36px'lik geniş bir katman vardı; kontrastı daha
+   yükseğe çıkarıyordu ama yazının arkasında görünür bir kara bulut bırakıyordu.
+   Yarıçap harfin kendi kalınlığı mertebesinde tutuldu (en fazla 5-7px), yani
+   gölge harfin dışına taşmıyor. Bedeli ölçüldü ve kabul edildi:
+   büyük metin 4.89 -> 3.26:1 (sınır 3.0), 16px metin 4.98 -> 4.20:1.
+
+   Alfa'lar buna karşılık 1.0'a çekildi: dar yarıçapta koyuluğu yayacak yer
+   yok, kenarı ancak tam opak bir katman tutuyor. */
 .on-video {
   text-shadow:
-    0 0 4px rgba(0, 0, 0, 0.95),
-    0 2px 12px rgba(0, 0, 0, 0.85),
-    0 6px 36px rgba(0, 0, 0, 0.65);
+    0 0 4px rgba(0, 0, 0, 1),
+    0 1px 5px rgba(0, 0, 0, 0.95);
 }
 .on-video-sm {
   text-shadow:
-    0 0 3px rgba(0, 0, 0, 0.95),
-    0 1px 6px rgba(0, 0, 0, 0.85),
-    0 2px 14px rgba(0, 0, 0, 0.6);
+    0 0 3px rgba(0, 0, 0, 1),
+    0 1px 4px rgba(0, 0, 0, 0.95),
+    0 2px 7px rgba(0, 0, 0, 0.8);
 }
 
 /* Video bandı görünüme girince cam panel aşağıdan süzülür; banttan çıkıp
