@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { VideoScrim, type ScrimSide } from "@/components/video-scrim";
+
+/** İçeriğin durduğu taraf — mantıksal, RTL'de kendiliğinden aynalanır. */
+export type BandSide = "start" | "end";
 
 export type VideoBandItem = {
   /** public/ altındaki mp4 yolu, ör. "/alt3.mp4" */
@@ -10,11 +12,8 @@ export type VideoBandItem = {
   poster: string;
   /** Ekran okuyucular için kısa açıklama */
   label?: string;
-  /**
-   * İçeriğin durduğu taraf. Karartmanın koyu tarafı da buraya göre döner —
-   * kart aydınlık zeminde kalamaz. Verilmezse VideoStack sırayla değiştirir.
-   */
-  side?: ScrimSide;
+  /** İçeriğin durduğu taraf. Verilmezse VideoStack sırayla değiştirir. */
+  side?: BandSide;
   /** Videonun üzerine binecek içerik (cam panel vb.) */
   children?: ReactNode;
 };
@@ -26,8 +25,10 @@ export type VideoBandItem = {
  * ekran yüksekliği veriliyordu; 16:9 video daha basık olduğu için object-cover
  * üstten/alttan kesiyor, videoların başındaki logo jeneriği kırpılıyordu.
  *
- * Karartma: hero ile birebir aynı perde (VideoScrim). Seviye ayarı bilerek
- * bileşen dışına açılmadı — tek kaynak olsun, sayfadan sayfaya kaymasın.
+ * Karartma: YOK. Videonun üzerinde hiçbir perde yok; üstteki beyaz metnin
+ * okunabilirliğini kendi gölgesi taşıyor (globals.css .on-video). Perde harfin
+ * çevresini değil tüm kareyi koyultuyordu — ölçünce gölgenin daha iyi kontrast
+ * verdiği çıktı, o yüzden perde tamamen kaldırıldı.
  *
  * Performans: preload="none" + IntersectionObserver — video ancak görünüm
  * alanına girince yüklenir ve oynar, çıkınca durur. Böylece sayfa açılışında
@@ -111,9 +112,6 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
       >
         <source src={src} type="video/mp4" />
       </video>
-
-      {/* Karartma perdesi — hero ile ortak (bkz. video-scrim.tsx) */}
-      <VideoScrim side={side} />
 
       {children && <div className="relative size-full">{children}</div>}
     </section>

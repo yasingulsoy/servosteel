@@ -27,7 +27,8 @@ export type VideoBandContentProps = {
  *
  * Hero ile aynı dil: iki satırlık büyük display başlık (ikinci satır altın),
  * altında tek altın buton, dikeyde ortalanmış. Metin gölgesi de hero'yla
- * birebir aynı değerdedir.
+ * birebir aynı sınıftan gelir (globals.css .on-video / .on-video-sm) —
+ * videoda karartma perdesi olmadığı için okunabilirliği taşıyan tek şey o.
  *
  * Sağ/sol hizası BURADA belirlenmez — bandın data-side'ı sürer (globals.css),
  * böylece içeriğin tarafı ile karartmanın koyu tarafı ayrışamaz.
@@ -40,10 +41,7 @@ export function VideoBandContent({ l1, l2, href, cta, name }: VideoBandContentPr
     <div className="pointer-events-none absolute inset-0 flex items-center">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="band-content max-w-2xl">
-          <h2
-            className="font-display text-lg font-extrabold uppercase leading-[1.05] tracking-tight text-white sm:text-3xl lg:text-5xl xl:text-6xl"
-            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.55)" }}
-          >
+          <h2 className="on-video font-display text-lg font-extrabold uppercase leading-[1.05] tracking-tight text-white sm:text-3xl lg:text-5xl xl:text-6xl">
             {l1}
             <br />
             <span className="text-accent">{l2}</span>
@@ -59,10 +57,7 @@ export function VideoBandContent({ l1, l2, href, cta, name }: VideoBandContentPr
             </SpecularButton>
 
             {name && (
-              <h3
-                className="font-display text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base"
-                style={{ textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}
-              >
+              <h3 className="on-video-sm font-display text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base">
                 {name}
               </h3>
             )}

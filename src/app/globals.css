@@ -465,6 +465,36 @@ body {
   filter: brightness(1.08) contrast(1.02) saturate(1.12);
 }
 
+/* Video üstündeki beyaz metin — TEK KAYNAK.
+
+   Videoların üzerinde artık HİÇBİR karartma perdesi yok; okunabilirliği
+   tamamen bu gölgeler taşıyor. Perdenin aksine gölge sadece harflerin hemen
+   çevresindeki pikselleri koyultur, yani görüntüden hiçbir şey götürmez.
+
+   Değerler ölçüldü: harf maskesi çizilip CSS'in blur yarıçapı (sigma = r/2)
+   ile bulanıklaştırıldı, gerçek video karelerinin üzerine bindirildi ve
+   kontrast harfin hemen dışındaki 3px'lik halkada okundu — göz kenarı orada
+   seçer. Sonuç, perde varken elde edilenden daha iyi:
+
+     .on-video     büyük başlıklar   en kötü 3.89:1  (WCAG büyük metin: 3.0)
+     .on-video-sm  14-16px metin     en kötü 4.71:1  (WCAG normal metin: 4.5)
+
+   Üç katman şart: dar olan harfin kenarını keskinleştirir, orta olan gövdeyi
+   ayırır, geniş olan parlak zeminlerde lekeyi bastırır. Tek katmanlı eski
+   gölge (0 2px 18px .55) parlak duvar önünde 2.39:1'e düşüyordu. */
+.on-video {
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.95),
+    0 2px 12px rgba(0, 0, 0, 0.85),
+    0 6px 36px rgba(0, 0, 0, 0.65);
+}
+.on-video-sm {
+  text-shadow:
+    0 0 3px rgba(0, 0, 0, 0.95),
+    0 1px 6px rgba(0, 0, 0, 0.85),
+    0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
 /* Video bandı görünüme girince cam panel aşağıdan süzülür; banttan çıkıp
    geri gelince yeniden oynar (sınıfı VideoBand'in observer'ı yönetir). */
 [data-video-band] .band-content {

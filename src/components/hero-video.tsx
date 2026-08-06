@@ -4,7 +4,6 @@ import { Fragment, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
-import { VideoScrim } from "@/components/video-scrim";
 
 /**
  * Başlığı kelimelere böler; her kelime kendi maskesinin içinden yukarı
@@ -84,16 +83,11 @@ export function HeroVideo() {
         <source src="/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Karartma perdesi — tüm video bantlarıyla ortak (bkz. video-scrim.tsx) */}
-      <VideoScrim />
-
       {/* İçerik — kaydırdıkça geride kalıp erir (video değil, sadece metin) */}
       <div className="hero-scroll-fade relative mx-auto w-full max-w-7xl px-4 py-24 lg:py-0">
         <div className="max-w-2xl me-auto">
-          <h1
-            className="font-display text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
-            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.55)" }}
-          >
+          {/* on-video: perde kalktığı için okunabilirliği bu gölge taşıyor */}
+          <h1 className="on-video font-display text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
             <Words text={t("h1l1")} base={80} />
             <br />
             <span className="text-accent">
@@ -104,7 +98,14 @@ export function HeroVideo() {
             <SpecularButton href="/teklif-al" variant="gold" size="lg">
               {t("cta1")}
             </SpecularButton>
-            <SpecularButton href="/videolar" variant="ghost" size="lg" className="text-white">
+            {/* Ghost butonun kendi zemini yok, metni doğrudan videonun üstünde.
+                Perde kalkınca kenarlığın %30'u ışıklı karede kayboluyordu. */}
+            <SpecularButton
+              href="/videolar"
+              variant="ghost"
+              size="lg"
+              className="on-video-sm text-white border-white/60!"
+            >
               <Play className="size-4 fill-current" aria-hidden />
               {t("videoCta")}
             </SpecularButton>
@@ -112,10 +113,13 @@ export function HeroVideo() {
         </div>
       </div>
 
-      {/* Aşağı kaydır göstergesi */}
-      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block" aria-hidden>
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/30 p-1.5">
-          <span className="size-1.5 animate-bounce rounded-full bg-white/70" />
+      {/* Aşağı kaydır göstergesi — perde yokken kendi gölgesiyle ayrışır */}
+      <div
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] lg:block"
+        aria-hidden
+      >
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/70 p-1.5">
+          <span className="size-1.5 animate-bounce rounded-full bg-white" />
         </div>
       </div>
     </section>

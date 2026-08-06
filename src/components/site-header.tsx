@@ -83,7 +83,9 @@ function NavLink({
       onClick={onClick}
       aria-current={active ? "page" : undefined}
       className={`group/nl relative whitespace-nowrap rounded-md px-2 py-2 text-xs font-medium transition-colors ${
-        overHero ? "text-white/85 hover:text-white" : "text-ink hover:text-accent-ink"
+        overHero
+          ? "on-video-sm text-white hover:text-accent"
+          : "text-ink hover:text-accent-ink"
       }`}
     >
       {label}
@@ -156,7 +158,9 @@ function MegaMenu({
         href={hubHref}
         aria-current={active ? "page" : undefined}
         className={`relative flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2 text-xs font-medium transition-colors ${
-          overHero ? "text-white/85 hover:text-white" : "text-ink hover:text-accent-ink"
+          overHero
+            ? "on-video-sm text-white hover:text-accent"
+            : "text-ink hover:text-accent-ink"
         }`}
       >
         {label}
@@ -322,7 +326,20 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-2 px-4 2xl:gap-4">
-        <Link href="/" aria-label={t("homeAria")} className="relative shrink-0">
+        {/* Logo dar ekranda daha büyük (56 -> 64px): orada yatay menü gizli,
+            yer bol. İki sınır var, ikisi de ölçülerek konuldu:
+              - 360px ALTINDA 56'ya döner. Logo (145px) + sağdaki kontroller
+                (178px) 320px'lik ekrana zaten sığmıyor; büyütmek onu
+                kötüleştirirdi.
+              - xl'den itibaren 56'ya döner çünkü yatay menü orada açılıyor;
+                9 dilin en uzunu olan Rusça 1280px'e ancak sığıyor.
+            drop-shadow yalnızca hero üstünde: videoda perde kalktı, beyaz
+            yazılı logo ışıklı karede kendini ayırmak zorunda. */}
+        <Link
+          href="/"
+          aria-label={t("homeAria")}
+          className={`relative shrink-0 ${overHero ? "drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]" : ""}`}
+        >
           {/* Açık zeminde: orijinal logo (altın + koyu yazı) */}
           <Image
             src="/logo-full.png"
@@ -331,7 +348,7 @@ export function SiteHeader() {
             height={113}
             priority
             loading="eager"
-            className={`h-14 w-auto transition-opacity duration-300 ${
+            className={`h-14 w-auto transition-opacity duration-300 min-[360px]:h-16 xl:h-14 ${
               overHero ? "opacity-0" : "opacity-100 dark:opacity-0"
             }`}
           />
@@ -344,7 +361,7 @@ export function SiteHeader() {
             height={113}
             priority
             loading="eager"
-            className={`absolute inset-0 h-14 w-auto transition-opacity duration-300 ${
+            className={`absolute inset-0 h-14 w-auto transition-opacity duration-300 min-[360px]:h-16 xl:h-14 ${
               overHero ? "opacity-100" : "opacity-0 dark:opacity-100"
             }`}
           />
@@ -415,13 +432,15 @@ export function SiteHeader() {
           <LanguageSwitcher
             buttonClassName={`rounded-lg border px-2 py-1.5 text-sm transition-colors xl:px-3 xl:py-2 ${
               overHero
-                ? "border-white/25 text-white hover:bg-white/10"
+                ? "on-video-sm border-white/50 text-white hover:bg-white/10"
                 : "border-line text-ink hover:bg-surface-alt"
             }`}
           />
           <ThemeToggle
             className={`size-10 transition-colors ${
-              overHero ? "text-white hover:bg-white/10" : "text-ink hover:bg-surface-alt"
+              overHero
+                ? "text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] hover:bg-white/10"
+                : "text-ink hover:bg-surface-alt"
             }`}
           />
           <button
@@ -430,7 +449,9 @@ export function SiteHeader() {
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? t("menuClose") : t("menuOpen")}
             className={`flex size-10 items-center justify-center rounded-md transition-colors xl:hidden ${
-              overHero ? "text-white hover:bg-white/10" : "text-ink hover:bg-surface-alt"
+              overHero
+                ? "text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] hover:bg-white/10"
+                : "text-ink hover:bg-surface-alt"
             }`}
           >
             {/* İki ikon üst üste durur; açık/kapalı duruma göre dönerek yer değiştirir */}
