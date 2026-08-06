@@ -134,7 +134,7 @@
   "hub": {
     "eyebrow": "Uzmanlık alanımız",
     "title": "Roll Form Hatları",
-    "metaTitle": "Roll Form Makineleri ve Hatları",
+    "metaTitle": "Rollform Makineleri ve Roll Form Hatları",
     "desc": "Rulodan nihai profile: 7 profil ailesi için açıcıdan istifleyiciye kadar tamamı Servosteel imzalı, projeye özel tasarlanan komple üretim hatları.",
     "metaDesc": "Kablo kanalı, solar profil, raf, iskele kalası, yol ve gürültü bariyeri, C/Sigma/Omega profilleri için müşteriye özel komple roll form hatları.",
     "flow": ["Rulo Açıcı", "Doğrultma", "Servo Besleme", "Zımba İstasyonları", "Roll Form Makinesi", "Kesme", "İstifleme"],
@@ -1129,6 +1129,18 @@
           {
             "q": "Profil kesitini değiştirmek ne kadar sürüyor?",
             "a": "Kesit değişimi merdane takımı değişimi demektir ve bu, boy değişiminden farklı bir iştir. Boy kesim servo kontrollüdür ve reçeteden çağrılır, hat çalışırken değişir. Kesit değişiminin süresi ise takımın hat üzerinde mi yoksa kaset hâlinde hat dışında mı hazırlandığına bağlıdır."
+          },
+          {
+            "q": "Trapez sac makinesi fiyatını ne belirler?",
+            "a": "Tek bir liste fiyatı yok, çünkü hat müşterinin profiline göre kuruluyor. Maliyeti belirleyen beş şey var: çalışılacak en geniş ve en kalın sac, istenen hat hızı, kesitin kaç istasyonda oluşturulacağı, kesmenin hidrolik giyotinle mi uçan makasla mı yapılacağı, ve çıkışta otomatik istif–paketleme olup olmayacağı. Bunlardan ilk ikisi hattın gövdesini, son ikisi otomasyon seviyesini büyütür. Üreteceğiniz profilin çizimini ve yıllık hedef metrajınızı paylaşırsanız, gereken konfigürasyonu çıkarıp fiyatlandırırız."
+          },
+          {
+            "q": "İkinci el trapez makinesi mi almalıyım, yeni hat mı?",
+            "a": "İkinci el bazı durumlarda mantıklıdır: makinenin ürettiği profil sizin üreteceğinizle birebir aynıysa ve hemen üretime geçmeniz gerekiyorsa. Dikkat edilecek nokta şu: merdane takımı tek bir kesite göre üretilmiştir. Profil sizinkinden farklıysa yeni takım yaptırmak gerekir ve bu maliyet, hattın kendisine yaklaşacak seviyeye çıkabilir. İkinci konu kontrol tarafı — eski sürücü ve PLC'lerin yedek parçası zamanla bulunmaz hâle gelir, duruş maliyeti makinenin ilk fiyatındaki avantajı götürür. Karar verirken makinenin fiyatına değil, profil uyumu + takım + kontrol yenileme toplamına bakın."
+          },
+          {
+            "q": "Mini trapez makinesi ile tam üretim hattı arasındaki fark nedir?",
+            "a": "Mini makineler yalnızca form verme işini yapar; sac genelde elle beslenir ve kesme ayrı bir işlemdir. Tam hat ise rulodan başlar: açıcı ruloyu açar, doğrultucu düzler, profil oluşur, boyuna göre kesilir ve istif ünitesi paketlemeye hazır hâlde bırakır. Fark hızda değil sadece — tam hatta operatör başına çıkan metraj ve ölçü tekrarlanabilirliği çok daha yüksektir. Düşük metrajlı ve çeşitli işlerde mini makine yeterli olabilir; sürekli üretimde işçilik farkı hattı kısa sürede amorti eder."
           }
         ]
       },
@@ -1231,6 +1243,7 @@
       },
       "servo-suruculer": {
         "name": "Servo Sürücüler",
+        "metaTitle": "Servo Sürücüler: Pres Besleme Sistemleri",
         "short": "Pres hatlarına hassas adımlı sac besleme; standart ve mini seri.",
         "hero": "Kalıba giden sacın milimetrik adımlarla ilerlemesini sağlayan servo sürücüler; Schneider Lexium servo teknolojisiyle yüksek tekrarlılık, pres senkronu ve kolay reçete yönetimi sunar.",
         "meta": "Servo sürücüler (servo feeder): pres besleme hatları için standart ve mini seri, Schneider Lexium tabanlı hassas sac besleme.",
