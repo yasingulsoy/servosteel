@@ -134,6 +134,7 @@
   "hub": {
     "eyebrow": "Unsere Kompetenz",
     "title": "Rollformanlagen",
+    "metaTitle": "Rollformmaschinen und Profilieranlagen",
     "desc": "Vom Coil zum fertigen Profil: Komplettanlagen für 7 Profilfamilien, projektbezogen konstruiert — alles vom Abwickler bis zum Stapler trägt die Handschrift von Servosteel.",
     "metaDesc": "Kundenspezifische Rollform-Komplettanlagen für Kabelrinnen, Solarprofile, Regale, Gerüstböden, Leitplanken, Lärmschutzwände und C/Sigma/Omega-Profile.",
     "flow": ["Abwickler", "Richtmaschine", "Servovorschub", "Stanzstationen", "Rollformmaschine", "Schneiden", "Stapeln"],

@@ -134,6 +134,7 @@
   "hub": {
     "eyebrow": "Nuestra especialidad",
     "title": "Líneas de Perfilado",
+    "metaTitle": "Perfiladora de Chapa: Líneas de Perfilado",
     "desc": "De la bobina al perfil terminado: líneas de producción completas para 7 familias de perfiles, diseñadas para su proyecto; todo, del desbobinador al apilador, lleva la firma Servosteel.",
     "metaDesc": "Líneas de perfilado a medida para bandejas portacables, perfiles solares, estanterías, andamios, barreras y perfiles C/Sigma/Omega.",
     "flow": ["Desbobinador", "Enderezadora", "Alimentador Servo", "Estaciones de Punzonado", "Perfiladora", "Corte", "Apilado"],

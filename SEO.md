@@ -83,10 +83,10 @@ Kapatılıp yönlendirilirlerse o sıralar kendi alt sayfalarımıza kalır.
 
 ---
 
-## 2. Kelime gerçeği — ve 11 tuzak
+## 2. Kelime gerçeği — ve 16 tuzak
 
 **Kural:** Hacim gördüğün hiçbir terimi SERP'ine bakmadan rakam olarak sunma.
-Aşağıdaki 11 terim toplam ~52.000 arama taşıyor ve hepsi tuzak. Bir raporda
+Aşağıdaki 16 terim toplam ~53.000 arama taşıyor ve hepsi tuzak. Bir raporda
 "hedef kelime" diye görünselerdi kazanç sanılırlardı.
 
 | terim | hacim | gerçekte aranan |
@@ -105,9 +105,14 @@ Aşağıdaki 11 terim toplam ~52.000 arama taşıyor ve hepsi tuzak. Bir raporda
 | solar panel production line | 70 | fotovoltaik panel montaj hattı |
 | doğrultma makinesi | 50 | **tel** ve çubuk doğrultma |
 | kablo kanalı makinesi | 20 | **PVC ekstruder** (ve tıkanıklık açma) |
+| perfiladora (ES) | 210 | **kozmetik** — kaş/kontur ve saç kesme makinesi |
+| profiliermaschine (DE) | 210 | çatı/kenet paneli makinesi — portatif segment |
+| maszyna do profilowania blachy (PL) | 590 | **bulmaca** — krzyżówka siteleri |
+| walcowanie profili (PL) | 140 | profil **büküm hizmeti**, makine değil |
+| profilarka do blachy (PL) | 170 | çatıcı/portatif (Schlebach, Jouanel, WUKO) |
 
-Son üçü başlık çalışmasında yakalandı — üçü de en yüksek hacimli adaylardı ve
-SERP'e bakılmasa "kazanç" diye rapora girerlerdi.
+Son sekizi başlık çalışmasında yakalandı. Hepsi kendi dilindeki en yüksek
+hacimli adaylardı — SERP'e bakılmasa "kazanç" diye rapora girerlerdi.
 
 Bu liste aynı zamanda **hazır negatif kelime listesidir** — reklam verilecekse
 ilk gün eklenmeli.
@@ -130,6 +135,22 @@ Türkiye tıklarımızın %86'sını veriyor, o yüzden ayrıca ölçüldü.
 ağırlıklı: "2 el", "sahibinden", "ikinci el", "satılık", "Mini Trapez".
 Nitelikli kısmı belki %30-40'ı. Yine de en iyi Türkçe fırsatımız, çünkü SERP
 zayıf ve fiyat arayan da sonuçta alıcı.
+
+### Diğer diller: hub sayfalarının tamamı yanlış terimdeydi
+
+İngilizce ve Türkçe'de bulunan hata (aranan şey "hat" değil **makine**) dört
+dilde daha çıktı. Üçü düzeltildi, Lehçe'de kullanılabilir terim bulunamadı.
+
+| dil | eski (hacim) | yeni (hacim) | durum |
+|---|---|---|---|
+| DE | Rollformanlage (20) | **Rollformmaschine** (110) | ✅ değişti |
+| IT | Linea di profilatura (10) | **Profilatrice** (140) | ✅ değişti |
+| ES | Línea de perfilado (0) | **Perfiladora de chapa** (30) | ✅ değişti |
+| PL | Linia profilująca (0) | — | ❌ **temiz terim yok** |
+
+ES'de baş terim `perfiladora` 210/ay ama kozmetik; "de chapa" nitelemesi şart.
+PL'de dört aday da elendi (yukarıdaki tuzak tablosuna bakın) — Lehçe dilme ve
+boy kesme başlıkları doğru, yalnızca hub'a uygun terim yok.
 
 ### Rusya: Google'ın gizlediği pazar
 

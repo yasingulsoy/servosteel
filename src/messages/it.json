@@ -134,6 +134,7 @@
   "hub": {
     "eyebrow": "La nostra specializzazione",
     "title": "Linee di Profilatura",
+    "metaTitle": "Profilatrici per Lamiera e Linee di Profilatura",
     "desc": "Dal coil al profilo finito: linee di produzione complete per 7 famiglie di profili, progettate sul tuo progetto — tutto, dallo svolgitore all'impilatore, porta la firma Servosteel.",
     "metaDesc": "Linee complete di profilatura su misura per canaline, profili solari, scaffalature, tavole da ponteggio, barriere stradali e acustiche e profili C/Sigma/Omega.",
     "flow": ["Svolgitore", "Raddrizzatrice", "Alimentatore Servo", "Stazioni di Punzonatura", "Profilatrice", "Taglio", "Impilaggio"],
