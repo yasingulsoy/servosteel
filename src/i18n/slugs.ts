@@ -95,6 +95,7 @@ export const CONTENT_SLUGS = {
     "solar-profil-hatti-yatirim-geri-donusu": "solar-profile-line-roi",
     "rulo-dilme-hatti-maliyeti": "coil-slitting-line-cost",
     "rulo-hatti-nereden-alinmali": "where-to-buy-a-coil-processing-line",
+    "roll-form-nedir": "what-is-roll-forming",
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 

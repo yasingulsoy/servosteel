@@ -152,6 +152,28 @@ ES'de baş terim `perfiladora` 210/ay ama kozmetik; "de chapa" nitelemesi şart.
 PL'de dört aday da elendi (yukarıdaki tuzak tablosuna bakın) — Lehçe dilme ve
 boy kesme başlıkları doğru, yalnızca hub'a uygun terim yok.
 
+### Dil ≠ pazar: Arapça ve Macarca'da talep yok
+
+Rakip denetimi "18 rakibin hiçbirinde Arapça yok" diyordu ve bu, MENA'nın boş
+arazi olduğu sonucuna götürülmüştü. **Yarısı yanlış.** Rakip yok, ama talep de
+Arapça değil — MENA alıcısı **İngilizce arıyor**.
+
+| pazar | yerel dilde | İngilizce'de |
+|---|---:|---:|
+| Suudi Arabistan | ~40/ay | **100**/ay |
+| BAE | — | **130**/ay |
+| Mısır | — | **90**/ay |
+| Macaristan | ~0 | **60**/ay |
+
+Arapça'da en yüksek terim 10/ay (`ماكينة تشكيل المعادن`). Macarca'da tek yüksek
+rakam `hasítógép` 1.900 — o da zaten tuzak listesinde (odun yarma).
+
+**Sonuç:** AR ve HU sayfalarında değiştirilecek başlık yok, çünkü hedeflenecek
+hacim yok. O sayfalar ziyaretçi geldiğinde güven ve dönüşüm için değerli, arama
+trafiği için değil. **MENA stratejisi İngilizce sayfalardır** — ve İngilizce tam
+olarak 176 gösterim alıp sıfır tık aldığımız yer. İngilizce içeriğe yatırım,
+aynı anda MENA'ya da yatırım demek.
+
 ### Rusya: Google'ın gizlediği pazar
 
 DataForSEO (Kazakistan üzerinden) Rusça için 150/ay diyordu. Yandex Wordstat
@@ -353,10 +375,14 @@ seçilir · servo besleyici nasıl seçilir · progresif kalıp & servo besleyic
 rulo dilme hattı maliyeti · rulo ağırlığı ve uzunluğu hesabı · sac fire oranını
 düşürmek · solar profil hattı yatırım geri dönüşü · rulo hattı nereden alınmalı
 
-**Yayında (yalnızca TR):** roll form nedir — `rollform nedir` 70/ay +
-`roll form nedir` 20 + `roll form makinesi nedir` 20 + `soğuk şekillendirme` 50,
-dördü de düşük rekabet. İngilizce'ye çevrilmedi çünkü oradaki karşılıkları
-10-30/ay ve rekabet yüksek.
+**Yayında (TR + EN, ayrı yazılmış):** roll form nedir.
+TR kümesi: `rollform nedir` 70 + `roll form nedir` 20 + `roll form makinesi nedir`
+20 + `soğuk şekillendirme` 50.
+EN kümesi: `what is roll forming` 110 + `roll forming process` 60 +
+`cold roll forming` 50 + `roll forming vs stamping` 20 + `roll forming machine
+cost` 20 — hepsi düşük rekabet, toplam ~280/ay (ABD+İngiltere), üstüne MENA.
+İngilizce sürüm çeviri DEĞİL: presle karşılaştırma ve maliyet kalemleri Türkçe
+sürümde yok, çünkü o hacim yalnızca İngilizce'de var.
 
 **Sıradakiler:**
 - Roll Form Hattı Satın Alma Rehberi (bütçe, teslim, merdane ömrü)

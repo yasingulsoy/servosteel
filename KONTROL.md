@@ -101,8 +101,8 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 
 - [x] GA4 mülk numarası → **548769261 alındı, test edildi (2026-08-07)**
 - [ ] Yandex'e `https://servosteel.com.tr` host'u ekle (şu an `http://` kayıtlı; ayrı site sayılıyor)
-- [ ] Bing Webmaster kaydı (Yandex hızlanır + Copilot indeksi)
-- [ ] `servosteel.wixsite.com` · `servosteel.blogspot.com` · `www.servosteel.com` — kapat/301'le (markada 4./5./8. sıradalar)
+- [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
+- [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
 - [ ] Mevcut ajansın link inşasını durdur
 - [ ] Referans logoları izni (Sarıgözoğlu · Mega Solar · SMT Enerji · Astor) — kod hazır, `PUBLISH_REFERENCES=false`
 - [ ] cPanel `filtre1` hâlâ konusunda "spam" geçen maili siliyor
