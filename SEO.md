@@ -4,7 +4,7 @@
 plan, fuar planı, teknik denetim, eski site arşivi); tamamlanan işler ve eskiyen
 tahminler ayıklanıp bu dosyada birleştirildi.
 
-**Son güncelleme:** 2026-08-07
+**Son güncelleme:** 2026-08-08
 
 ---
 
@@ -54,18 +54,27 @@ içeren 28 günlük ortalama). Yani gerçekten sıralandığımız tek şey kend
 | 15,2 | 4 | automated roll forming line machine |
 | 12,5 | 2 | slitting line |
 
-### İndeksleme — asıl darboğaz
+### İndeksleme — darboğaz, ama açılıyor
 
-Sitemap sorunsuz (414 URL, 0 hata, gönderildi ve indirildi), robots.txt tamamen
-açık. Ama URL denetiminde 12 temsili sayfadan:
+Sitemap sorunsuz (416 URL, 0 hata), robots.txt tamamen açık. Teknik engel yok;
+Google kendi hızında geliyor ve **iki günde gözle görülür ilerledi**:
 
-- **3'ü indeksli** · 2'si "keşfedildi, indekslenmedi" · **7'si Google'da hiç yok**
+| URL denetimi (12 temsili sayfa) | 6 Ağu | 8 Ağu |
+|---|---:|---:|
+| indekslenmiş | 3 | **7** |
+| keşfedildi, indekslenmedi | 2 | **0** |
+| Google'ın haberi yok | 7 | 5 |
 
-Son 7 günde yeni sitenin **hiçbir** sayfası gösterim almadı; sıralamada duran her
-şey hâlâ eski WordPress adresi. Teknik engel yok — Google henüz gelmedi.
+6-7 Ağustos'ta taranıp indekslenenler: `/makineler`, `/makineler/rulo-acicilar`,
+`/en/coil-slitting-lines`, `/en/roll-forming-lines`.
 
-**Yapıldı:** IndexNow kuruldu, 414 URL Bing + Yandex'e iletildi (`npm run indexnow`).
-Google'da böyle bir kısayol yok, orada beklemek zorundayız.
+⚠️ **Ama trafik hâlâ eskiden akıyor.** Son 7 günde sitemap'teki 416 sayfadan
+yalnızca **2'si** gösterim aldı (ana sayfa 107, `/en/…/solar-panel-profile` 2);
+buna karşılık eski WordPress adresleri **51 sayfa, 360 gösterim, 20 tık**. Yani
+301'ler taşıyor — bozulmamaları kritik, `npm run kontrol` her deployda bakıyor.
+
+**Yapıldı:** IndexNow kuruldu; 416 URL Bing + Yandex'e iletildi
+(`npm run indexnow`). Google'da böyle bir kısayol yok, orada beklenecek.
 
 ### Marka adımızı kendimizle bölüyoruz
 
@@ -340,6 +349,100 @@ Bir sonraki özellik eklerken "Beli'de nasıl?" diye bakmak yeterli.
 
 ---
 
+### 3.8 Backlink gerçeği — sektörde link profili baştan aşağı sahte
+
+**Ölçüm (2026-08-08):** DataForSEO Backlinks API ile 10 rakibin özeti, dördünün
+atıf yapan domain listesi ve kendi ankor metinlerimiz çekildi.
+
+| domain | rank | backlink | atıf domain | spam |
+|---|---:|---:|---:|---:|
+| eaemachinery.com | **296** | 4.433 | 148 | 7 |
+| dallan.com (IT) | 274 | 1.532 | **211** | **5** |
+| coiltech.com.tr | 265 | 1.704 | 135 | 12 |
+| lotosforming.com (CN) | 204 | 1.184 | 148 | 12 |
+| **servosteel.com.tr** | **197** | 478 | **85** | 11 |
+| sacform.com | 186 | 570 | 52 | 11 |
+| agmline.com | 147 | 164 | 51 | 15 |
+| swforming.com (CN) | 130 | 202 | 59 | 15 |
+| **us.cidanmachinery.com** | 109 | 224 | **18** | **0** |
+| etcoma.com.tr | 84 | 26 | 15 | 27 |
+
+Rakamlara bakınca "fena değiliz" denebilir — 85 atıf yapan domain, rank 197.
+**Listeye bakınca öyle değil.**
+
+#### Bizim 85 domainimiz çöp
+
+İlk sıradakiler: `legendary11.com` · `bulletinafrica.com` · `promoteproject.com`
+· `jogajog.com.bd` · `thequikads.com` · `ogapatapata.com` · `paravecmoi.club` ·
+`topclassifieds.com` ("Submit free ads") · `classifieds4free.biz` ·
+`salesale.sale`. Ücretsiz ilan siteleri ve PBN ağı.
+
+Ankor metinleri bunu kesinleştiriyor — neredeyse tamamı **çıplak URL**:
+
+| ankor | link | domain |
+|---|---:|---:|
+| `https://www.servosteel.com.tr/` | 78 | 25 |
+| `https://www.servosteel.com.tr/product/cut-to-length-…` | 78 | 13 |
+| `servosteel.com.tr` | 50 | 44 |
+| *"turnkey steel processing line"* (tek tanımlayıcı ankor) | **7** | 6 |
+
+Gerçek editoryal link tanımlayıcı ankor kullanır. Çıplak URL bombardımanı,
+otomatik dizin/ilan gönderiminin imzasıdır. **Mevcut ajansın işi bu** — #17'nin
+kanıtı artık elimizde, tahmin değil.
+
+Not: bu linkler eski WordPress adreslerine bakıyor (`/product/…`, `/lines/`,
+`/decoilers/`). 301'ler doğru çalıştığı için ne varsa yeni sayfalara akıyor.
+
+#### Rakiplerinki de sahte — ama farklı şekilde
+
+**EAE Machinery (rank 296, sektörün en yükseği):** ilk 10 atıf domaininin
+**dokuzu kendi grup şirketleri** — `ceeind.com`, `eaeaydinlatma.com`,
+`ceeindustrial.com`, `eaelighting.com`, `eaeelectric.com`,
+`eaeelektroteknik.com`, `eaeitalia.it`, `eae.com.de`, `eaetechnology.com`.
+Dışarıdan tek gerçek link: **`maktekfuari.com`** — bir fuar sitesi.
+Yani 296'lık rank kendi ağından geliyor; kopyalanamaz (bizim grup şirketimiz yok).
+
+**AGMLine (rank 147):** tek anlamlı link `sacform.com` — kendi ikinci domaini.
+Gerisi URL kısaltıcı ve çöp.
+
+**Coiltech (rank 265) — SEKTÖRDEKİ TEK KOPYALANABİLİR DESEN:**
+
+| kaynak | rank | ne |
+|---|---:|---|
+| `vizyon.net.tr` | 256 | portal/ajans bağlantısı |
+| **`bvv.cz`** | **170** | **Brno Fuarları — katılımcı sayfası** |
+| **`pasterkamp.nl`** | **140** | Hollandalı roll form firması — partner/distribütör |
+| `olsons.se` | 124 | İsveç |
+| `moki.co.jp` | 9 | Japonya |
+| `cagdasmakina.net` | 47 | Türk sektör firması |
+
+**Coiltech'in gerçek avantajı: fuar katılımcı sayfaları + uluslararası
+partner/distribütör linkleri.** Satın alınmamış, üretilmemiş — iş yaparken
+doğal olarak oluşmuş linkler.
+
+#### CIDAN istisnası — link olmadan da kazanılıyor
+
+ABD'de ölçülen en yüksek organik trafik CIDAN'da (1.216/ay) ama **atıf yapan
+domain sayısı 18** — bizim beşte birimiz, ve spam skoru **0**. Yani o trafik
+linkten değil, içerik ve alaka düzeyinden geliyor.
+
+Bu, "önce link toplayalım" refleksine karşı en iyi kanıt: bu sektörde temiz ve
+alakalı içerik, kirli linkten daha çok iş görüyor.
+
+#### Çıkarım — link stratejimiz ne OLMALI
+
+1. **Ajansın link üretimini durdur** (#17). Yenisi eklenmesin; mevcutları
+   disavow etmek şimdilik gereksiz, Google bu tür linkleri zaten yok sayıyor.
+2. **Kopyalanacak tek desen fuar + partner.** Coiltech'in bvv.cz linki
+   katıldıkları fuardan; EAE'nin tek gerçek dış linki de maktekfuari.com.
+   → Filiz Hanım'a sorulan "hangi fuarlara katıldık" sorusu bu yüzden kritik:
+   **geçmiş fuarların katılımcı listeleri hâlâ canlı ve link veriyor.**
+3. **Uluslararası partner/distribütör** — Coiltech'in NL, SE, JP linkleri.
+   48 ülkeye ihracat yapan bir firmanın bu tür doğal linki olmaması bir eksik.
+4. **Dizinlerde link beklentisi düşük tut.** makinaturkiye profil sayfasında
+   firmanın kendi sitesine **tek link yok** (817 linkli bir sayfada, ölçüldü).
+   Oraya görünürlük ve doğrudan talep için girilir, otorite için değil.
+
 ## 4. Ne yapılacak — öncelik sırası
 
 ### Şimdi, engel yok
@@ -519,6 +622,112 @@ otomatik takip.
 
 Fuar katılımcı listeleri ayrıca **kalıcı backlink** verir — geçmiş fuarların
 listeleri de toplanmalı.
+
+---
+
+## 8. Yol haritası
+
+Ölçülen her şeyin tek sayfada özeti ve sıralaması. Tarih verilen yerler tahmin
+değil, mevcut ilerleme hızından türetildi.
+
+### Durum tespiti — tek paragraf
+
+Site tarafında yapılacak iş büyük ölçüde bitti: 416 sayfa, 9 dil, şema, SSS,
+ürün sayfalarında video, altı dilde ölçülmüş başlıklar. Denetlenen 18 rakibin
+**hiçbirinde sayısal spec tablosu ve 9 dil yok** — sayfa kalitesinde zaten
+öndeyiz. Eksik olan içerik değil; **zaman (indeksleme), otorite (link) ve
+mühendislikten gelecek sayılar.**
+
+### Kademe 0 — şimdi: taşınmayı tamamla (kendiliğinden ilerliyor)
+
+| gösterge | 6 Ağu | 8 Ağu |
+|---|---|---|
+| indekslenmiş örnek sayfa | 3/12 | **7/12** |
+| "keşfedildi, indekslenmedi" | 2 | **0** |
+| gösterim alan yeni sayfa | 0 | 2 |
+| tık / gösterim (28 gün) | 42 / 575 | 46 / 639 |
+
+Google iki günde 4 sayfa daha indeksledi. **Yapılacak bir şey yok, beklenecek.**
+Her deploy sonrası `npm run kontrol`, yeni URL varsa `npm run indexnow`.
+
+⚠️ Trafiğin çoğu hâlâ eski WordPress adreslerinden 301'lerle akıyor (51 sayfa,
+360 gösterim). Yönlendirmelerin bozulmaması kritik — regresyon script'i bunu
+her deployda kontrol ediyor.
+
+### Kademe 1 — 1-3 ay: Türkiye'de ilk sayfa
+
+**Neden burası:** Türk rakiplerin tamamı dijitalde boş. Coiltech ölçümde
+**3 kelime / ayda 1 ziyaret**, üstelik "Avrupa'nın en büyüğü" diyor. Ev
+sahasında kaleyi kimse tutmuyor ve tıklarımızın %86'sı zaten Türkiye'den.
+
+| hedef kelime | hacim | durum | ne gerek |
+|---|---:|---|---|
+| rulo açıcılar | 140 | **7. sırada** | sayfa hazır, spec tablosu dolu — en yakın kazanç |
+| trapez sac makinesi | 480 | başlık doğru | SSS eklendi; SERP zayıf (ilk 5'in üçü pazaryeri) |
+| rollform makinesi | 590 | başlık düzeltildi | hub içeriği derinleşmeli |
+| sac dilme hattı | 30 | — | dilme sayfası hazır |
+
+**Blokaj:** yok. Bu kademe zaten yürüyor.
+
+### Kademe 2 — 3-6 ay: gerçek link (fuar + partner)
+
+Backlink analizi (§3.8) sektörde tek kopyalanabilir deseni gösterdi:
+**fuar katılımcı sayfaları ve uluslararası partner linkleri.**
+
+1. **Ajansın link üretimini durdur** — bizim 85 domainimiz ilan sitesi spam'i,
+   ankorların neredeyse tamamı çıplak URL. Yenisi eklenmesin.
+2. **Geçmiş fuar katılımcı listeleri** — Coiltech'in en değerli linki
+   `bvv.cz` (Brno Fuarları), EAE'nin tek gerçek dış linki `maktekfuari.com`.
+   Katıldığımız fuarların sayfaları hâlâ canlı ve link veriyor.
+   → Filiz Hanım'a sorulan "hangi fuarlara katıldık" bu yüzden kritik.
+3. **Uluslararası partner / distribütör** — Coiltech'in NL, SE, JP linkleri
+   iş ilişkisinden doğmuş. 48 ülkeye ihracat yapan bir firmada bunun olmaması
+   bir eksik.
+4. **Dizinler** — makinaturkiye, Europages, DirectIndustry, IndustryStock.
+   ⚠️ makinaturkiye profil sayfasında firmaya **link yok** (ölçüldü); oraya
+   görünürlük ve doğrudan talep için girilir, otorite için değil.
+
+### Kademe 3 — 6-12 ay: İngilizce ticari kelimeler
+
+En zor kademe: orada Çinliler ve CIDAN gibi gerçek rakipler var. Şu an
+İngiltere + ABD'den **176 gösterim, sıfır tık** — 15.-28. sıradayız.
+
+**Ama CIDAN gösteriyor ki link şart değil:** ABD'de 1.216 trafik alıyorlar,
+atıf yapan domain sayısı **18** (bizim beşte birimiz), spam skoru 0. Oradaki
+başarı içerik ve alaka düzeyinden geliyor.
+
+Bizim yolumuz da o: eğitici içerik ticari kelimeyi kapıyor (Kingreal'in
+"What is…" yazısı ticari sorguda ilk sayfada iki kez). İlk parça yayında —
+`/en/academy/what-is-roll-forming`.
+
+**MENA bu kademeye dahil:** Arapça'da talep yok (en yüksek terim 10/ay), MENA
+İngilizce arıyor (Suudi 100, BAE 130, Mısır 90). İngilizce içerik = MENA
+stratejisi.
+
+### Kilit blokaj: 13 teknik tablo
+
+Kademe 1 ve 3'ün ikisini birden hızlandıracak tek şey. 17 ürün sayfasının
+13'ünde teknik özellik tablosu yok; alıcı makineyi **ölçüyle** arıyor ve
+rakiplerin hiçbirinde bu tablo yok — yani bizde *olabilir*.
+
+Filiz Hanım'a Word olarak gönderildi (`belgeler/`), mühendislik cevabı bekleniyor.
+
+### Sırayla ne yapılacak
+
+| # | iş | kimde | neden bu sırada |
+|---|---|---|---|
+| 1 | Form testi — `generate_lead` hiç tetiklenmedi | **sen** | Ölçüm kanıtlanmadan gerisi körlemesine. 2 dakika |
+| 2 | Mühendislik cevapları → 13 tablo | Filiz Hanım | En büyük tek kaldıraç |
+| 3 | Ajansın link üretimini durdur | Filiz Hanım | Her gün yeni çöp ekleniyor |
+| 4 | Fuar listesi → katılımcı sayfaları | Filiz Hanım | Sektörde çalışan tek link deseni |
+| 5 | Yandex `https://` host | **sen** | Rusya 3. pazar, hâlâ `http://` kayıtlı |
+| 6 | Referans logo izni | Filiz Hanım | 18 rakibin 15'inde var, bizde kilitli |
+| 7 | Türkçe hub içeriğini derinleştir | ben | Kademe 1'in kalan işi |
+| 8 | İngilizce eğitici içerik serisi | ben | Kademe 3'ün tek yolu |
+
+**Not:** 7 ve 8 bende ama listenin sonunda — çünkü sitenin sayfa kalitesi zaten
+rakiplerin önünde. Daha fazla içerik üretmek, üstteki altı madde çözülmeden
+marjinal fayda veriyor.
 
 ---
 
