@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "kontrol": "python scripts/canli-kontrol.py"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

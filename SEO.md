@@ -371,6 +371,10 @@ Rusya için **Yandex Direct**, Google değil.
 
 ## 5. Firmadan bekleyenler
 
+> Mühendis doğrulama listesi (canlı linklerle) ve periyodik kontrol komutları
+> ayrı bir çalışma dosyasında: **[KONTROL.md](KONTROL.md)** — Filiz Hanım'a
+> gidecek olan o dosyadır, burası stratejinin kaydı.
+
 Tam soru listesi: `filiz-hanima-sorular.md` (proje dışında, scratchpad'de).
 Özet:
 
