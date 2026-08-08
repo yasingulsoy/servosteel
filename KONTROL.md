@@ -89,6 +89,8 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 | roll forming machine manufacturer (US/UK) | — | ilk 2 sayfa (140/ay, LOW) |
 | cable tray roll forming machine (US) | — | ilk sayfa (40/ay, SERP'te CN) |
 | servosteel (marka) | 1. | korunacak + sitelink'ler bize kalacak |
+| sac ağırlık hesaplama (TR) | — | ilk sayfa (8.100/ay) — **link hedefi, talep değil** |
+| sheet metal weight calculator (US/UK) | — | ilk 2 sayfa (570/ay) — aynı gerekçe |
 
 ### B.4 Search Console özel raporlar
 
