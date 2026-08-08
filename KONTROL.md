@@ -3,7 +3,7 @@
 İki bölüm: **A)** Filiz Hanım'ın mühendislere doğrulatacağı teknik sayfalar
 (canlı linkleriyle) · **B)** bizim her seferinde koştuğumuz periyodik kontroller.
 
-**Güncelleme:** 2026-08-07 · SEO/strateji arka planı: [SEO.md](SEO.md)
+**Güncelleme:** 2026-08-08 · SEO/strateji arka planı: [SEO.md](SEO.md)
 
 > **Neden acil:** Search Console 6–7 Ağustos'ta üç makine sayfasının **Product
 > şemasını taradı** (straightener-servo-feeders, doğrultmalı-servo-sürücüler,
@@ -94,6 +94,14 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 
 - **Ürün snippet'leri raporu:** 3 örnek sayfa tarandı (6–7 Ağu) — hata/uyarı
   çıkarsa spec şemasında alan eksiği demektir, bana getir.
+- **Video raporu:** 8 Ağustos'ta iki uyarı vardı — `uploadDate`'te zaman dilimi
+  eksik + geçersiz datetime (7 öğe). Düzeltildi: 102 videonun gerçek yükleme
+  saati YouTube'dan çekilip tam ISO 8601'e (+03:00) çevrildi. Uyarıların
+  kapandığını birkaç hafta içinde bu raporda gör.
+- **Bing Site Scan — "Alt attribute is missing" YANLIŞ ALARM.** Tek `alt=""`
+  olan görsel header'daki koyu tema logo kopyası ve `aria-hidden` işaretli;
+  dekoratif görsele boş alt vermek doğru olandır. Doldurulursa ekran okuyucu
+  marka adını iki kez okur. Rapor tekrar çıkarsa yok say.
 - **Kapsam:** "keşfedildi, dizine eklenmedi" sayısı düşüyor mu (taban: 424
   sayfanın ~3'ü indeksli, 2026-08-06).
 
