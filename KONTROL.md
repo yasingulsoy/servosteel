@@ -121,6 +121,12 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 - [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
+- [ ] **Gizlilik / KVKK aydınlatma sayfası YOK** — iletişim ve teklif formları
+  ad, e-posta, telefon, firma topluyor; Clarity oturum kaydı da alıyor. KVKK
+  m.10 toplama anında bilgilendirme istiyor, AB dilleri (DE/ES/IT/PL/HU) için
+  GDPR m.13 aynı şeyi. Yazabilmem için firmadan 3 bilgi lazım: **resmi ünvan**
+  (veri sorumlusu olarak yazılacak), **VERBİS kaydı var mı**, **form
+  e-postaları ne kadar saklanıyor**. Gerisini 9 dile ben yazarım.
 - [ ] Mevcut ajansın link inşasını durdur
 - [ ] Referans logoları izni (Sarıgözoğlu · Mega Solar · SMT Enerji · Astor) — kod hazır, `PUBLISH_REFERENCES=false`
 - [ ] cPanel `filtre1` hâlâ konusunda "spam" geçen maili siliyor
