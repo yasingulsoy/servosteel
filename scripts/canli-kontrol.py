@@ -27,6 +27,8 @@ KONTROL = [
     ("/roll-form-hatlari/trapez-cephe-paneli", "trapez yeni SSS", lambda s, h: "fiyatını ne belirler" in h),
     ("/en/roll-forming-lines/cable-tray", "EN kablo SSS", lambda s, h: "What is a cable tray roll forming machine" in h),
     ("/sitemap.xml", "sitemap yeni yazi", lambda s, h: "roll-form-nedir" in h),
+    ("/", "GA4 yukleniyor", lambda s, h: "googletagmanager.com/gtag/js" in h),
+    ("/", "Clarity yukleniyor", lambda s, h: "clarity.ms/tag/" in h),
 ]
 
 hepsi = True

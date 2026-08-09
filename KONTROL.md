@@ -58,7 +58,8 @@ Sayılar gelene kadar bu sayfalara **hiçbir spec yazılmayacak** — eski jener
 ```bash
 python scripts/canli-kontrol.py
 ```
-12 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap.
+14 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap,
+GA4 ve Clarity script'lerinin yüklendiği.
 Hepsi OK ise ve **yeni URL** eklendiyse:
 ```bash
 npm run indexnow
@@ -73,6 +74,11 @@ python url-denetim.py
 python ga4.py --property 548769261 --days 7
 python ga4.py --property 548769261 --report top-pages --days 28
 ```
+
+**Microsoft Clarity: `xzdxkpw7qv`** — ısı haritası, kaydırma derinliği, ölü/öfke
+tıklaması ve oturum kaydı. GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı"
+der. Dönüşüm sıfırken sebebi ancak bu gösterir. GA4 ile aynı
+`IS_PRODUCTION_SITE` korumasına bağlı — önizleme kopyalarında hiç yüklenmez.
 
 **GA4 mülkü: `ServoSteel 548769261`** — erişim test edildi (2026-08-07),
 servis hesabı Görüntüleyici olarak veri çekiyor. `generate_lead` olayı form
@@ -110,7 +116,9 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
 - [x] GA4 mülk numarası → **548769261 alındı, test edildi (2026-08-07)**
-- [ ] Yandex'e `https://servosteel.com.tr` host'u ekle (şu an `http://` kayıtlı; ayrı site sayılıyor)
+- [x] Yandex `https://` host'u **eklendi ve DNS ile doğrulandı (2026-08-09)** — token `caf7df52b9c31e1a` iki host için de geçerli
+- [ ] Yandex **ana ayna** ayarı: `https://` seçilecek (ikisinde de boş). Host yüklenince yapılabilir
+- [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
 - [ ] Mevcut ajansın link inşasını durdur

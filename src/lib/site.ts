@@ -45,6 +45,18 @@ export const IS_PRODUCTION_SITE = hostOf(SITE_URL) === hostOf(PRODUCTION_URL);
  */
 export const GA_MEASUREMENT_ID = "G-FFES4VQED3";
 
+/**
+ * Microsoft Clarity proje kimliği — ısı haritası ve oturum kaydı.
+ *
+ * Neden eklendi: GA4 "kaç oturum" diyor ama "neden dönüşmüyor" demiyor.
+ * 14 günde ~70 oturumda tek `form_start`, sıfır tamamlanma var; Clarity
+ * kaydırma derinliği, ölü/öfke tıklaması ve oturum kaydıyla bunun sebebini
+ * gösterebilecek tek ücretsiz araç.
+ *
+ * GA_MEASUREMENT_ID ile aynı gerekçeyle sabit, env değil.
+ */
+export const CLARITY_PROJECT_ID = "xzdxkpw7qv";
+
 export const SITE_NAME = "Servosteel";
 
 export const SITE_TITLE =

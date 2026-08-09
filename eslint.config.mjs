@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    /* Belge üreticileri uygulamanın parçası değil: `node belgeler/*.js` ile
+       elle çalıştırılan CommonJS script'ler. Uygulamanın ESM/TS kuralları
+       burada geçerli değil — require() onlar için doğru olan. */
+    "belgeler/**",
   ]),
 ]);
 
