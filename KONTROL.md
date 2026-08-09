@@ -105,6 +105,12 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 | roll forming machine manufacturer (US/UK) | — | ilk 2 sayfa (140/ay, LOW) |
 | cable tray roll forming machine (US) | — | ilk sayfa (40/ay, SERP'te CN) |
 | servosteel (marka) | 1. | korunacak + sitelink'ler bize kalacak |
+| noise barrier production equipment | 5. (2026-08-09) | sayfa derinleştirildi, 1. sayfa üstü |
+| rack production | 5. (2026-08-09) | aynı |
+| sigma profiler · decoilers · steel coil uncoiler | 6. | aynı |
+| road barrier line · barrera bionda · cable production line | 9. | aynı |
+| roll forming line · slitting coil | 10. | aynı |
+| guardrail production · slitting line | 12. | aynı |
 | sac ağırlık hesaplama (TR) | — | ilk sayfa (8.100/ay) — **link hedefi, talep değil** |
 | sheet metal weight calculator (US/UK) | — | ilk 2 sayfa (570/ay) — aynı gerekçe |
 
@@ -131,6 +137,11 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 - [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
+- [ ] **6 ürün sayfasının kalan 7 dili** — üretim akışı + genişletilmiş SSS şu an
+  yalnızca TR ve EN'de. Sıralama İngilizce'de olduğu için önce o ikisi yazıldı;
+  DE/ES/IT/PL/HU/RU/AR'da bölüm hiç basılmıyor (opsiyonel, boş başlık çıkmıyor).
+  Sayfalar: yol-bariyeri · ağır-raf · gürültü-bariyeri · solar-profil ·
+  c-sigma-omega · kablo-kanalı
 - [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
   `xzdxkpw7qv` projesini aç → Settings → Data Export → Generate new API token →
   değeri `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
