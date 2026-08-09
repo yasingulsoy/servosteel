@@ -943,6 +943,32 @@
           "Kesme ünitesi",
           "İstifleme sistemi"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Raf profilleri genelde ön galvanizli rulodan üretilir; yani sac kaplaması üzerinde gelir. Bu, ilk metreden itibaren elleçlemeyi belirler: açıcı ve kılavuzlar yüzeyi sürtmeyecek şekilde ayarlanır, çünkü raf dikmesindeki her çizik, yıkanan bir depoda korozyonun başlangıç noktasıdır."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Rulo eğriliği delme işleminden sonra değil, öncesinde alınır. Kavisini koruyan sac zımbaya düzgün beslenmez ve oradaki her besleme hatası doğrudan delik konumu hatasına dönüşür — raf profilinin tolere edemediği tek şey de budur."
+          },
+          {
+            "title": "Çok sıralı delme",
+            "text": "Bağlantı delikleri, raf sisteminin kullandığı desende ve sac düzken açılır. Belirleyici olan delik ölçüsü değil, adım birikimidir: dikme boyunca bağlantı taşır, dolayısıyla küçük ama tekrar eden bir besleme hatası yüksek bir kolonda toplanır. Enkoder ölçümlü servo besleme her deliği bir öncekine değil, üretimin tamamına referanslar."
+          },
+          {
+            "title": "Delikli sacın form alması",
+            "text": "Zaten delinmiş bir sacı formlamak, dolu sacı formlamakla aynı iş değildir. Gövde her deliğin olduğu yerde zayıftır; bu yüzden istasyon dizisi, kesiti malzemeyi deliklerin üzerinden çekmeden yükseltecek biçimde kurulur — aksi hâlde delikler ovalleşir ve bağlantı elemanı artık dik oturmaz."
+          },
+          {
+            "title": "Delik desenine fazlı kesim",
+            "text": "Kesim yalnızca boya göre yapılmaz. Delik deseniyle sabit bir ilişki içinde düşmesi gerekir ki ilk ve son delik her dikmede raf tasarımının beklediği yerde olsun. Sadece boya kesen bir hat, ölçüsü doğru ama kullanılamayan profil üretir."
+          },
+          {
+            "title": "Çıkış ve istifleme",
+            "text": "Biten profiller toplanıp istiflenir. Dikmeler uzun ve göreli olarak incedir; bu yüzden çıkış tablasındaki destek aralığı önemlidir: istiflenmeden önce kendi ağırlığıyla sarkmasına izin verilen profil bu kavisin bir kısmını üzerinde tutar ve kavisli dikme kurulu çerçevede şakulünde durmaz."
+          }
+        ],
         "faq": [
           {
             "q": "Raf direği ve traversi aynı hatta üretilir mi?",
@@ -955,6 +981,26 @@
           {
             "q": "Hat hangi sac kalınlığında çalışır?",
             "a": "Ağır hizmet raf profilleri tipik olarak kalın sac ister; kesit ve kalınlık aralığı projeye göre boyutlandırılır. Kapasiteyi çiziminiz üzerinden birlikte belirliyoruz."
+          },
+          {
+            "q": "Raf sistemlerinde hangi standartlar geçerli ve hattan ne istiyorlar?",
+            "a": "Sabit palet raf sistemleri EN 15512'ye göre tasarlanır; EN 15620 üretim ve montaj toleranslarını, EN 15635 ise kurulu sistemin işletilmesi ve denetimini kapsar. Raf taşıyıcı bir yapıdır, dolayısıyla hattın garanti etmesi gereken şey ölçüseldir: kesit geometrisi ve delik konumu, tasarımın hesaplandığı tolerans içinde kalmalıdır. Tasarım hesabı ve CE sorumluluğu raf sistemi sahibine aittir — hattın görevi buna her gün tekrarlanabilir biçimde üretebilmektir."
+          },
+          {
+            "q": "Neden delik adımı hassasiyeti delik ölçüsünden daha önemli?",
+            "a": "Çünkü adım hatası birikir, delik ölçüsü birikmez. Ölçüsü biraz büyük bir delik yerel bir geçme sorunudur; sürekli olarak milimetrenin bir kısmı kadar uzun besleme ise her deliği dikme boyunca giderek daha fazla kaydırır ve yüksek bir kolonun tepesinde bağlantı elemanı artık girmez. Zımba istasyonunun mekanik dayama yerine enkoder ölçümlü servoyla beslenmesinin sebebi budur; tedarikçiler arasında karşılaştırmanız gereken değer de adım başına değil, profil boyunun tamamındaki adım toleransıdır."
+          },
+          {
+            "q": "Raf profilleri hangi malzemeden üretilir?",
+            "a": "Dikme ve traversler genellikle S350GD ile S390GD aralığındaki yapı çeliğinden, ön galvanizli olarak üretilir. Kalite birbirinin yerine geçmez: akma dayanımı yüksek malzeme daha fazla geri yaylanır, aynı bitmiş kesit için farklı merdane geometrisi ve daha fazla telafi ister. Delikli gövdenin form sırasındaki davranışını da değiştirir. Kaliteyi çizimle birlikte gönderin — takım ona göre tasarlanır."
+          },
+          {
+            "q": "Mevcut bir raf sisteminin delik desenini yakalayabiliyor musunuz?",
+            "a": "Evet. Zımba takımı desene göre imal edilir; bir numune profil ya da ölçülendirilmiş teknik resim bunu üretmek için yeterlidir. Erkenden konuşulmasında fayda olan bir nokta var: bağlantı delik desenleri çoğu zaman raf sistemi sahibinin fikrî mülkiyetidir ve bir kısmı korumalıdır. Neyi üretme hakkınız olduğuna karar vermek makine üreticisinin değil, alıcının işidir — biz belirttiğiniz desene göre takım yaparız."
+          },
+          {
+            "q": "Travers de dikmeyle aynı şekilde mi üretiliyor?",
+            "a": "Hayır ve yatırımı planlarken bu ikisini ayırmakta fayda var. Dikmeler açık ve delikli kesitlerdir; hattın tamamı delme hassasiyeti üzerine kurulur. Traversler ise genelde kapalı kutu kesitlerdir, çoğu zaman iki profilden formlanıp birleştirilir; yani hat büyük bir zımba grubu yerine farklı bir istasyon dizisi ve bir birleştirme aşaması taşır. Raf üreticilerinin çoğu, ikisinde birden ödün veren tek bir hat yerine iki ayrı hatta yönelir."
           }
         ],
         "sectors": ["Depo ve lojistik", "Raf sistemi üreticileri", "E-ticaret depoları", "Soğuk hava depoları"]
@@ -1118,6 +1164,32 @@
           "Kesme ünitesi",
           "İstifleme"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Gürültü bariyeri paneli yol kenarında görünen bir üründür ve hem alüminyum hem boyalı sac her elleçleme izini gösterir. Rulo, yüzü hiçbir yere sürtmeyecek şekilde yüklenir ve kılavuzlanır; rulo üzerinde koruyucu film varsa form boyunca üzerinde bırakılır, ancak panel istiflendikten sonra alınır."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Sac, perforasyon istasyonuna gelmeden düzeltilir. Mesele yalnızca bitmiş panelin düzgün olması değildir: rulo kavisini koruyan sac zımbanın altına düz oturmaz ve kavisli sacda açılan delikler kenarları düzensiz, çapağı genişlik boyunca değişken çıkar."
+          },
+          {
+            "title": "Yutucu yüzün perforasyonu",
+            "text": "Ön yüz, akustik projenin istediği desende ve sac düzken delinir. Akustik açıdan belirleyici olan, delik çapı ile açık alan oranının birlikteliğidir; ikisini de makine değil akustik mühendisi belirler — hattın işi o deseni panelden panele birebir tekrarlamaktır, çünkü değişen açık alan oranı yol boyunca yutuculuğu değişen bir bariyer demektir."
+          },
+          {
+            "title": "Büküm bölgelerinin dolu bırakılması",
+            "text": "Delikli alan, profilin daha sonra büküleceği her hattın öncesinde bitmek zorundadır. Delikli bölgeden form vermek malzemeyi deliklerin olduğu yerden yırtar ve paneli direğinde taşıyan kenarın rijitliğini tam olarak oradan alır. Bu yüzden zımba takımı ile form istasyonları birlikte fazlanır — desen sacın ortasına değil, bitmiş kesite göre konumlandırılır."
+          },
+          {
+            "title": "Malzemeye göre form verme",
+            "text": "Alüminyum ile çelik aynı şekilde çalışmaz. Alüminyum daha yumuşaktır ve merdaneye yapışma (galling) eğilimindedir; daha düşük baskı, farklı merdane yüzeyi ve yağlamaya dikkat ister. Çelik ise daha fazla baskı alır ve daha çok geri yaylanır. Hat bunları her sipariş değişiminde elle yeniden ayarlanmak yerine reçete olarak tutar."
+          },
+          {
+            "title": "Boy kesme ve istifleme",
+            "text": "Paneller bariyer yerleşiminin kullandığı modül boyunda kesilir; bu boyu projedeki direk aralığı belirler. Biten paneller yüzü korunarak istiflenir — yutucu panelde çizik alüminyumda yalnızca görsel bir kusur değildir, boyalı sacda korozyonun başladığı yerdir."
+          }
+        ],
         "faq": [
           {
             "q": "Delikli ön panel ile kaset arka panel aynı hatta mı üretiliyor?",
@@ -1130,6 +1202,26 @@
           {
             "q": "Alüminyum panel üretebilir misiniz?",
             "a": "Evet. Alüminyum daha düşük baskı ve farklı merdane yüzeyi gerektirir; hat malzemeye göre ayarlanır."
+          },
+          {
+            "q": "Gürültü bariyerlerinde hangi standartlar geçerli ve bunun hattı ilgilendiren kısmı ne?",
+            "a": "Karayolu gürültü azaltma ürünleri EN 14388 kapsamında piyasaya arz edilir; EN 1793 akustik performansı — ses yutumu ve hava doğuşlu ses yalıtımı — EN 1794 ise rüzgâr yükü, taş çarpması ve çarpışma durumunda güvenlik gibi akustik dışı tarafı kapsar. Bunların neredeyse tamamı sac üzerinde değil, bitmiş ürün üzerinde test edilir: delikli yüzü, yutucu dolgusu ve arka paneliyle kaset bir sistem olarak davranır. Hattın sorumluluğu, metal işçiliğini tasarıma uygun ve tutarlı üretmektir; böylece sahaya kurulan bariyer, test edilen bariyer olur."
+          },
+          {
+            "q": "Delik deseni akustik performansı gerçekten değiştirir mi?",
+            "a": "Evet ve panelde küçük bir üretim sapmasının duyulabilir sonuç verdiği az sayıdaki şeyden biridir. Yutuculuk, delik çapı ve açık alan oranının sacın arkasındaki yapıyla birlikte belirlediği bir değerdir. Açık alan oranı üretimler arasında değişirse bariyer, görünüşü aynı kalırken uzunluğu boyunca farklı yutar. Bu yüzden desen akustik projeden sabit bir şartname olarak gelir; hat onu yaklaşık olarak değil, birebir üretir."
+          },
+          {
+            "q": "Sac neden kenara kadar delinmiyor?",
+            "a": "Çünkü kenarlar panelin büküldüğü ve yük taşıdığı yerlerdir. Büküm hattına giren bir perforasyon, kesit form alırken deliklerin olduğu yerden yırtılır ve paneli direğinde tutması gereken kanat tam da gerektiği yerde zayıflar. Bu nedenle delikli alan bitmiş profile göre yerleştirilir; her bükümde ve uçlarda dolu malzeme bırakılır. Bir panel numuneden kopyalanırken en sık karışan noktalardan biridir — görünen delikli alan, sacın tamamından küçüktür."
+          },
+          {
+            "q": "Alüminyum ile çelik arasında hatta ne değişiyor?",
+            "a": "Alüminyum daha yumuşaktır, daha kolay iz alır ve merdane yüzeyine yapışma eğilimindedir; bu yüzden daha düşük baskı, farklı merdane yüzeyi ve yağlamaya daha fazla dikkat ister. Çelik daha yüksek baskı alır ve daha çok geri yaylanır; yani aynı bitmiş kesit için farklı merdane geometrisi gerekir. İkisi de tek hatta çalışabilir ama ayrı reçeteler olarak kurulur. Düzenli olarak ikisi arasında geçiş yapacaksanız bunu talep aşamasında söyleyin ki merdane grupları buna göre planlansın."
+          },
+          {
+            "q": "Hat kaset montajını ve yutucu dolguyu da yapıyor mu?",
+            "a": "Hayır. Roll form hattı delikli ön profili ve kapalı arka profili üretir. Taş yünü veya başka bir yutucu dolgunun yerleştirilmesi, kasetin kapatılması ve uç kapaklarının takılması kendi ekipmanı olan ayrı bir montaj işidir. İkisini birlikte planlamakta fayda var, çünkü kaset tasarımı profil geometrisini belirliyor — ama aynı makine değillerdir ve ayrı bütçelenmeleri gerekir."
           }
         ],
         "sectors": ["Otoyol projeleri", "Demiryolu ve metro", "Çevre mühendisliği", "Şehir içi altyapı"]

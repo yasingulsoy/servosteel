@@ -977,6 +977,32 @@
           "Cutting unit",
           "Stacking system"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "Racking is normally rolled from pre-galvanized coil, so the strip arrives with its coating already on it. That governs how the coil is handled from the first metre: the decoiler and the guides are set so the surface is not dragged, because every scratch on a rack upright is a corrosion start point in a warehouse that will be washed down."
+          },
+          {
+            "title": "Straightening",
+            "text": "Coil set is removed before punching rather than after. A strip that still holds curvature feeds unevenly through the punch, and any feed error there turns directly into a hole-position error — which is the one thing a rack profile cannot tolerate."
+          },
+          {
+            "title": "Multi-row punching",
+            "text": "The connector holes are punched flat, in the pattern the rack system uses. The controlling number is not hole size but pitch accumulation: an upright carries connectors along its whole length, so a small repeated feed error adds up over a tall column. Servo feeding with encoder measurement keeps each hole referenced to the run, not just to the hole before it."
+          },
+          {
+            "title": "Roll forming the perforated strip",
+            "text": "Forming a strip that is already perforated is not the same job as forming a solid one. The web is weaker at every hole, so the station sequence is laid out to bring the section up without pulling material across the openings — otherwise the holes deform into ovals and the connector no longer seats square."
+          },
+          {
+            "title": "Cut in phase with the hole pattern",
+            "text": "The cut is not simply to length. It has to land in a fixed relationship to the perforation, so that the first and last holes sit where the rack design expects them on every single upright. A line that cuts to length alone will produce profiles that are the right size and still unusable."
+          },
+          {
+            "title": "Run-out and stacking",
+            "text": "Finished profiles are collected and stacked. Uprights are long and relatively slender, so support spacing on the run-out matters: a profile allowed to sag under its own weight before it is stacked keeps some of that bow, and a bowed upright will not sit plumb in an assembled frame."
+          }
+        ],
         "faq": [
           {
             "q": "Can uprights and beams run on the same line?",
@@ -989,6 +1015,26 @@
           {
             "q": "What sheet thickness does the line handle?",
             "a": "Heavy duty rack profiles typically call for thick material; the section and thickness range are sized per project. We define capacity together from your drawing."
+          },
+          {
+            "q": "Which standards apply to racking, and what do they ask of the production line?",
+            "a": "Static pallet racking is designed to EN 15512, with EN 15620 covering manufacturing and installation tolerances and EN 15635 the operation and inspection of the installed system. Racking is a load-bearing structure, so what the line has to guarantee is dimensional: section geometry and hole position within the tolerance the design was calculated at. The design calculation and the CE responsibility belong to the rack system owner — the line has to be able to produce to it repeatably, day after day."
+          },
+          {
+            "q": "Why does hole pitch accuracy matter more than hole size?",
+            "a": "Because pitch error accumulates and hole size does not. A hole slightly oversize is a local fit issue; a feed that is consistently a fraction of a millimetre long puts every hole progressively further out along the upright, and by the top of a tall column the connector will not go in. This is why the punching station is fed by servo with encoder measurement rather than by a mechanical stop, and why the specification you should compare between suppliers is pitch tolerance over the full profile length, not per step."
+          },
+          {
+            "q": "Which material is used for rack profiles?",
+            "a": "Uprights and beams are usually rolled from structural steel in the S350GD to S390GD range, supplied pre-galvanized. The grade is not interchangeable: higher yield strength springs back more, so the same finished section needs different roller geometry and more compensation. It also changes how the perforated web behaves during forming. Send the grade with the drawing — the tooling is designed around it."
+          },
+          {
+            "q": "Can you match the hole pattern of an existing rack system?",
+            "a": "Yes. The punching tooling is made to the pattern, and a sample profile or a dimensioned drawing is enough to reproduce it. One thing worth raising early: connector patterns are often the intellectual property of the rack system owner and some are protected. Deciding what you are entitled to produce is the buyer's call, not the machine builder's — we tool to the pattern you specify."
+          },
+          {
+            "q": "Are beams produced the same way as uprights?",
+            "a": "No, and it is worth separating the two when you plan the investment. Uprights are open perforated sections and the whole line is built around punching accuracy. Beams are usually closed box sections, often formed from two profiles and joined, so the line carries a different station sequence and a joining stage instead of a large punching group. Most racking manufacturers end up with two lines rather than one that compromises on both."
           }
         ],
         "sectors": ["Warehousing and logistics", "Racking manufacturers", "E-commerce warehouses", "Cold storage"]
@@ -1153,6 +1199,32 @@
           "Cutting unit",
           "Stacking"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "Noise barrier panels are a visible product on a road, and both aluminium and coated steel show every handling mark. The coil is loaded and guided so the face never rubs, and where the coil carries a protective film it is kept on through forming and taken off only after the panel is stacked."
+          },
+          {
+            "title": "Straightening",
+            "text": "The strip is flattened before it reaches the perforation station. This is not only about the finished panel being straight: a strip that still holds coil curvature does not sit flat under the punch, and a perforation punched into a curved sheet comes out with uneven hole edges and a burr that varies across the width."
+          },
+          {
+            "title": "Perforation of the absorbing face",
+            "text": "The front sheet is perforated flat, to the pattern the acoustic design calls for. What matters acoustically is hole diameter together with open area ratio, and both are set by the acoustic engineer rather than by the machine — the line's job is to reproduce that pattern identically panel after panel, because a varying open area means a barrier whose absorption varies along the road."
+          },
+          {
+            "title": "Keeping the bend zones solid",
+            "text": "The perforated field has to stop short of every line the profile will later be bent on. Forming through a perforated zone tears the material at the holes and takes the stiffness out of exactly the edge that carries the panel in its post. So the perforation tool and the forming stations are phased together — the pattern is positioned relative to the finished section, not simply centred on the strip."
+          },
+          {
+            "title": "Roll forming to material",
+            "text": "Aluminium and steel do not run the same way. Aluminium is softer and picks up on the rollers, so it needs lower pressure, different roller surfaces and attention to lubrication; steel takes more pressure and springs back more. The line holds both as recipes rather than being re-set by hand each time the order changes."
+          },
+          {
+            "title": "Cut to length and stacking",
+            "text": "Panels are cut to the module length the barrier layout uses, which is set by the post spacing on the project. Finished panels are stacked with the face protected — a scratch on an absorbing panel is not just cosmetic on aluminium, it is where corrosion starts on coated steel."
+          }
+        ],
         "faq": [
           {
             "q": "Are the perforated front panel and cassette back panel made on one line?",
@@ -1165,6 +1237,26 @@
           {
             "q": "Can you produce aluminium panels?",
             "a": "Yes. Aluminium requires lower pressure and a different roller surface; the line is set up for the material."
+          },
+          {
+            "q": "Which standards govern noise barriers, and what part of them concerns the line?",
+            "a": "Road traffic noise reducing devices are placed on the market under EN 14388, with EN 1793 covering acoustic performance — sound absorption and airborne sound insulation — and EN 1794 the non-acoustic side such as wind load, stone impact and safety in the event of collision. Almost all of that is tested on the finished device, not on the sheet: the cassette with its perforated face, absorbing core and back panel behaves as a system. What the line is responsible for is producing the metalwork to the design consistently, so that the barrier installed is the one that was tested."
+          },
+          {
+            "q": "Does the perforation pattern really change acoustic performance?",
+            "a": "Yes, and it is one of the few things on the panel where a small production drift has an audible result. Absorption depends on hole diameter and open area ratio together with what sits behind the sheet. If open area varies between production runs, the barrier absorbs differently along its length while looking identical. This is why the pattern comes from the acoustic design as a fixed specification and the line reproduces it rather than approximating it."
+          },
+          {
+            "q": "Why can't the sheet be perforated all the way to the edge?",
+            "a": "Because the edges are where the panel is bent and where it carries load. A perforation running into a bend line tears at the holes as the section is formed, and the flange that should hold the panel in its post ends up weakened exactly where it matters. The perforated field is therefore laid out relative to the finished profile, with solid material left at every bend and at the ends. It is a common point of confusion when a panel is being copied from a sample — the visible perforated area is smaller than the sheet."
+          },
+          {
+            "q": "What changes on the line between aluminium and steel?",
+            "a": "Aluminium is softer, marks more easily and tends to pick up on roller surfaces, so it runs at lower pressure with different roller surfaces and more attention to lubrication. Steel takes higher pressure and springs back more, which means different roller geometry for the same finished section. Both can run on one line, but they are set up as separate recipes; if you expect to alternate between them regularly, say so at the enquiry stage so the roller sets are planned for it."
+          },
+          {
+            "q": "Does the line also assemble the cassette and fill the absorbing core?",
+            "a": "No. The roll forming line produces the perforated front profile and the closed back profile. Inserting the mineral wool or other absorbing core, closing the cassette and fitting the end caps is a separate assembly operation with its own equipment. It is worth planning the two together, because the cassette design determines the profile geometry — but they are not the same machine and should be budgeted separately."
           }
         ],
         "sectors": ["Highway projects", "Railways and metro", "Environmental engineering", "Urban infrastructure"]
