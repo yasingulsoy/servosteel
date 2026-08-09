@@ -856,6 +856,32 @@
           "Kesme ünitesi (hat sonu makas)",
           "Çıkış konveyörü ve istifleme"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Kablo kanalı genelde ön galvanizli rulodan üretilir ve bir kanal hattı aynı stoktan birden fazla genişlik çalışır. Bu da rulo değişimini ara sıra yaşanan bir olay değil, rutin bir iş hâline getirir; gerçek üretim miktarına form hızından çok açıcının ve yükleme düzeninin etki etmesinin sebebi budur."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Rulo eğriliği sac delinmeden alınır. Kanal uzun ve sığ bir profildir, form aldıktan sonra eğriliği açıkça gösterir; daha pratik olarak, kanal parçaları bir hat boyunca uç uca cıvatalanır, dolayısıyla düzgün olmayan bir parça o hattaki her eki zorlaştırır."
+          },
+          {
+            "title": "Perforasyon ve delme",
+            "text": "Havalandırma slotları ve uçlardaki ek delikleri sac düzken açılır. Delikli kanalın bir sebebi vardır — boşluklar demet hâlindeki kablonun ısısını dışarı verir ve kanalın su tahliyesini sağlar — yani desen süs değil, işlevsel bir şartnamedir. Zımba servo beslemelidir; böylece slot deseni ile uç delikleri bitmiş boya göre doğru ilişkide kalır."
+          },
+          {
+            "title": "Form verme",
+            "text": "Kanal kesiti istasyonlar boyunca oluşturulur. Kanal kalitesini belirleyen detay kenardır: her iki yanın üstündeki dönüş kanadı, ince ve sığ bir profili mesnetler arasını geçecek kadar rijit yapan şeydir ve montaj sırasında kabloların üzerinden sürüklendiği yer de orasıdır. Kesiti rijit tutan ama kablo yalıtımını zedeleyecek bir kenar bırakmayan bir radyusta formlanır."
+          },
+          {
+            "title": "Desene fazlı boy kesme",
+            "text": "Kesim yalnızca boy sayacına göre değil, perforasyona göre zamanlanır. Her kanalın iki ucunda da aynı miktarda dolu malzeme ve aynı ek deliği konumu olmak zorundadır; yoksa bir hat boyunca ekler üst üste gelmez. Sadece boy sayan bir hat, ölçüsü doğru çıkan ama birbirine tutarlı biçimde cıvatalanamayan kanallar üretir."
+          },
+          {
+            "title": "Çıkış konveyörü ve istifleme",
+            "text": "Biten kanallar konveyörle çıkar ve istiflenir. Kanal kendi içine geçtiği için istifleme, bir palete ne kadar ürün gireceğini ve dolayısıyla nakliye maliyetini belirleyen şeydir — birim değeri düşük, hacmi yüksek bir üründe bu, teslim fiyatının çoğu alıcının beklediğinden daha büyük bir kısmıdır."
+          }
+        ],
         "faq": [
           {
             "q": "Delikli ve deliksiz kanalı aynı hatta üretebilir miyim?",
@@ -868,6 +894,26 @@
           {
             "q": "Hangi sac türleriyle çalışır?",
             "a": "DKP, galvaniz, alüminyum ve paslanmaz sac işlenir. Galvaniz kaplamayı korumak için merdane yüzeyleri ve baskı değerleri malzemeye göre ayarlanır."
+          },
+          {
+            "q": "Kesim neden perforasyona fazlanmak zorunda?",
+            "a": "Çünkü kablo kanalı, cıvatalanmış parçalardan oluşan sürekli bir hat olarak monte edilir. Her parçanın iki ucunda da aynı dolu pay ve aynı ek deliği konumu olmalıdır ki ekler tesisat boyunca birebir tekrar etsin. Hat yalnızca boy sayıp keserse parçaların hepsi aynı ölçüde çıkar ama perforasyon uçlara göre kayar; bu da üst üste gelmeyen ekler olarak karşınıza gelir. Makasın zımbaya fazlanması bunu engelleyen şeydir ve hatları karşılaştırırken özellikle sorulması gereken bir maddedir."
+          },
+          {
+            "q": "Bir kanalın rijitliğini gerçekte ne belirliyor?",
+            "a": "Sac kalınlığından çok, her iki yanın üst kenarındaki dönüş kanadı. Aynı kalınlıkta düz bir profil çok daha fazla sehim yapar, çünkü eğilmeye karşı direncin neredeyse tamamı kesitin uç noktalarındaki malzemeden gelir. Perforasyon deseninin kenarlardan önce bitmesinin sebebi de budur — kanadı delmek, işi yapan malzemeyi oradan almak demektir. Kanalları yalnızca kalınlığa bakarak karşılaştırıyorsanız yanlış sayıyı karşılaştırıyorsunuz."
+          },
+          {
+            "q": "Kenar formu kabloları etkiler mi?",
+            "a": "Evet ve bu teorik değil, sahada yaşanan bir sorundur. Kablolar uzun hatlar boyunca elle çekilir; formdan ya da makastan keskin kalmış veya çapaklı bir kenar yalıtımı çizer. Dönüş kanadının bir radyusla formlanması kısmen rijitlik, kısmen de bunun içindir. Hangi tedarikçiden olursa olsun bir numune parçaya bakıp iç kenarda elinizi gezdirmekte fayda var — hat hakkında teknik föyden daha çok şey söyler."
+          },
+          {
+            "q": "Teslim maliyetinin ne kadarı nakliye?",
+            "a": "Çoğu alıcının varsaydığından fazlası; kanalın genelde kullanıldığı yere yakın üretilmesinin sebebi de bu. Hafif, hacimli ve birim değeri düşük bir üründür; konteyner ağırlık sınırına gelmeden çok önce dolar, yani navlun havaya ödenir. Kanal kendi içine geçtiği için ne kadar iyi istiflendiği doğrudan teslim maliyetini değiştirir. Daha önce satın alan bir taahhüt firmasının ilk roll form yatırımının çoğu zaman kanal hattı olmasının ticari sebebi de budur — tek başına nakliye tasarrufu işin gerekçesinin büyük bölümünü taşıyabiliyor."
+          },
+          {
+            "q": "Aynı hat merdiven tipi ve tel kafes kanal üretebilir mi?",
+            "a": "Hayır ve üçü sıklıkla birlikte teklif edildiği için bunu erkenden netleştirmekte fayda var. Roll form kanal, formlanmış sac profildir. Merdiven tipi kanal, aralarına basamak kaynaklanmış iki yan profilden oluşur; yani form hattı değil kaynak hattı ister. Tel kafes kanal ise kaynaklı telden üretilir, bambaşka bir süreçtir. Ürün gamınız bunlardan birden fazlasını kapsıyorsa bunlar ayrı yatırımlardır ve öyle planlanmalıdır."
           }
         ],
         "sectors": ["Elektrik altyapı", "Veri merkezleri", "Endüstriyel tesisler", "AVM ve bina projeleri"]
@@ -899,6 +945,32 @@
           "Uçan kesme (flying shear)",
           "Otomatik istifleme"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Solar konstrüksiyon profilleri neredeyse her zaman kaplamalı rulodan üretilir — sıcak daldırma galvaniz ya da Magnelis gibi bir çinko-alüminyum-magnezyum kaplama. Bu kaplama, santralin 25 yıllık ömrü boyunca tek korozyon korumasıdır; bu yüzden açıcıdan itibaren elleçleme yalnızca sacı ilerletmek için değil, yüzeyi çizmemek için kurulur."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Rulo eğriliği delme öncesinde alınır. Bir solar masa, birbirine cıvatalanan uzun ve ince elemanlardan oluşur; kavisli gelen bir aşık yalnızca kötü görünmez, montajcıyla her cıvatada boğuşur ve diziyi düzlemden çıkarır. Bu da sonradan modüllerin dengesiz yüklenmesi olarak karşınıza gelir."
+          },
+          {
+            "title": "Hat üstü delme",
+            "text": "Montaj delikleri ve slotları, kesit form almadan sac düzken açılır. Profilin kamyondan inip doğrudan konstrüksiyona girmesini, sahada matkap gerekmemesini sağlayan şey budur. Zımba servo beslemelidir; yani delik deseni, yerleşim her değiştiğinde yeniden ayarlanması gereken mekanik dayamalara değil, o projenin reçetesine göre çalışır."
+          },
+          {
+            "title": "Form verme",
+            "text": "Hat, C veya Omega kesiti istasyonlar boyunca kademeli olarak oluşturulur. Buradaki kısıt kaplamalı malzemedir: merdane yüzeyleri ve baskılar, en dar radyuslarda kaplamayı çatlatmayacak veya soymayacak şekilde ayarlanır. Çünkü kaplaması kırılmış bir büküm, sahada üzerine ne kadar boya sürülürse sürülsün düzgün kapanmayan bir korozyon noktasıdır."
+          },
+          {
+            "title": "Uçan kesme",
+            "text": "Profil hat durdurulmadan, hareket hâlinde kesilir. Solar işlerinde bu kulağa geldiğinden daha önemlidir — sipariş, birkaç farklı boyda binlerce parçadır ve her kesim için yavaşlayıp duran bir hat, vardiyanın büyük kısmını üretmeden geçirir."
+          },
+          {
+            "title": "Otomatik istifleme",
+            "text": "Biten profiller toplanır ve yüklemeye hazır paketler hâlinde istiflenir. Solar sahaları teslimatı program dâhilinde ve büyük partiler hâlinde alır; bu yüzden tutarlı paketleme ürünün parçasıdır: montaj sırasına uygun paketler, montajcıyı birbirine benzeyen profillerle dolu bir arazide ayrıştırma işinden kurtarır."
+          }
+        ],
         "faq": [
           {
             "q": "Aynı hatta hem C hem U profil üretebilir miyim?",
@@ -911,6 +983,26 @@
           {
             "q": "Sıcak daldırma galvaniz sac profil kalitesini bozar mı?",
             "a": "Merdane yüzeyi ve baskı kaplamaya göre ayarlandığında kaplama korunur. Merdanelerimiz 4140 çelikten üretilir ve 58-60 Rockwell sertliğe kadar sertleştirilir."
+          },
+          {
+            "q": "Kaplama neden profil tasarlanmadan önce seçiliyor?",
+            "a": "Çünkü hem korozyon ömrünü hem de kesitin nasıl form alabileceğini belirler. Sıcak daldırma galvanizli rulo ile Magnelis gibi çinko-alüminyum-magnezyum kaplamalar dar radyusta farklı davranır; ayrıca kaplama, çıplak çeliğin açığa çıktığı kesim uçlarında ve delik kenarlarında ne olacağını da belirler. Çinko-alüminyum-magnezyum kaplamaların tercih edilmesinin bir sebebi, kesim kenarlarında bir miktar kendini onarma davranışı göstermeleridir — binlerce kez delinip kesilen bir profilde bu önemlidir. Kaplamayı çizimle birlikte bildirin; merdane radyusları ona göre belirlenir."
+          },
+          {
+            "q": "Delikler form verdikten sonra açılamaz mı?",
+            "a": "Mümkün ama bu ürün için ters yöndür. Formu bitmiş kesiti delmek, kavisli ya da rijitleşmiş bir bölgeden delmek demektir; bu profili yerel olarak bozar ve ölçüsel kontrolü zor bir delik bırakır. Sac düzken delmek deseni hassas tutar ve işin tamamının hattan tek geçişte bitmesini sağlar. Solar profillerin zaten hat üstünde delinmesinin sebebi sahadaki matkap işini ortadan kaldırmaktır — sonradan delmek o maliyeti doğrudan geri getirir."
+          },
+          {
+            "q": "Montaj yerleşimi değişince hatta maliyeti ne olur?",
+            "a": "Değişen şey delik konumları veya boylarsa bu bir reçete değişikliğidir, takım işi girmez — zımba istasyonları ve boy reçeteleri tam bunun içindir, solar işlerinin bu tip hatta uymasının sebebi de budur. Değişen profil kesitinin kendisiyse bu bir merdane grubu meselesidir ve ayrı bir konuşmadır. Planlarken ikisini ayırmakta fayda var: yerleşim değişiklikleri rutindir, kesit değişikliği değildir."
+          },
+          {
+            "q": "Sıcak daldırma galvaniz sac form sırasında bir şey kaybeder mi?",
+            "a": "Radyuslar ve baskılar ona göreyse kaybetmez. Çinko kaplama altındaki çelikten daha gevrektir; bu yüzden hasar, gözle görünen soyulma olarak değil, en dar bükümlerin dış yüzünde ince çatlaklar olarak ortaya çıkar. Bu bir takım tasarımı sorusudur, sonradan ayarlanan bir şey değil, merdane grubu imal edilirken karara bağlanır. Kaplama şartnamesini profil çizimiyle birlikte göndermenin bir formalite olmamasının sebebi de budur."
+          },
+          {
+            "q": "Solar konstrüksiyonda genelde hangi kesitler kullanılıyor?",
+            "a": "Açıklığa ve rüzgâr bölgesine göre değişen derinliklerde hat, C ve Omega kesitleri işin büyük kısmını karşılar. Yapısal tasarım santral tasarımcısının sorumluluğundadır ve ülkeden ülkeye ciddi biçimde değişir — kesit ölçüsünü en çok kar ve rüzgâr yükü hareket ettirir. Biz çiziminizdeki kesite göre takım yaparız; proje bundan daha erken bir aşamadaysa, genelde önce yapısal tasarımı netleştirip hattı onun etrafında belirlemek, tersini yapmaktan daha verimli oluyor."
           }
         ],
         "sectors": ["GES / EPC firmaları", "Çatı GES uygulamaları", "Arazi tipi santraller", "Tarım GES (Agri-PV)"]
@@ -1310,6 +1402,32 @@
           "Uçan kesme",
           "İstifleme"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Yapısal kesitler genelde farklı kalınlıklarda ön galvanizli rulodan üretilir, çünkü aynı hat birbirinden farklı şartnamelere sahip aşık, dikme ve çerçeve elemanlarını karşılar. Açıcı, ortalama ruloya göre değil hattın göreceği en ağır ruloya göre boyutlandırılır — tipik siparişe göre seçilen bir açıcı, ağır bir iş geldiği ilk gün darboğaz olur."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Rulo eğriliği her şeyden önce alınır. Yapısal profillerde bitmiş elemanın boyunca düzgün olup olmayacağını belirleyen şey budur: C ve Sigma kesitleri asimetriktir, dolayısıyla sacda kalan kavis basit bir yay olarak kalmaz — form ile birleşip burulma (twist) olarak çıkar ki bunu sonradan düzeltmek düz bir eğriliği düzeltmekten çok daha zordur."
+          },
+          {
+            "title": "Yapısal desene göre delme",
+            "text": "Tesisat delikleri, cıvata delikleri ve gövde boşlukları, yapısal projenin tanımladığı desende ve sac düzken açılır. Konum burada bir cephe profilindekinden daha kritiktir: yük taşıyan bir elemanın gövdesindeki delik tasarlanmış bir detaydır ve yerini değiştirmek üretim kolaylığı değil, yapısal bir karardır."
+          },
+          {
+            "title": "Ayarlanabilir form verme",
+            "text": "Bu hattı tek profillik bir hattan ayıran şey budur. Merdane grupları, makineyi sökmeden kesit genişliği ve yüksekliğini değiştirecek şekilde ayarlanır; üç kesit ailesinin tek hattı paylaşmasını sağlayan da bu. Takasını bilmekte fayda var: ayarlanabilir hat bir aralığı kapsar, adanmış hat tek kesiti daha hızlı üretir. Hangisinin doğru olduğu, sipariş defterinizin gerçekte ne kadar çeşitli olduğuna bağlıdır."
+          },
+          {
+            "title": "Uçan kesme",
+            "text": "Kesim hareket hâlinde yapılır, hat her parça için durmaz. Yapısal işlerde siparişler genelde tek boyun tekrarı değil, karışık boylardan oluşan uzun listelerdir; bu yüzden durup kalkmaya harcanan süre bir vardiyada hızla birikir."
+          },
+          {
+            "title": "İstifleme",
+            "text": "Biten kesitler toplanıp istiflenir. Uzun yapısal elemanlar hat ile kamyon arasında kolay hasar alır ve aşıkta ezilmiş bir kanat görsel bir sorun değildir — cıvatalanacağı makasa düz oturmayacak bir eleman demektir."
+          }
+        ],
         "faq": [
           {
             "q": "Üç kesiti tek hatta üretmek mümkün mü?",
@@ -1322,6 +1440,26 @@
           {
             "q": "Merdaneler ne kadar ömürlü?",
             "a": "Merdaneler 4140 çelikten üretilir ve 58-60 Rockwell sertliğe kadar sertleştirilir; doğru baskı ayarıyla milyonlarca metre profil üretebilir."
+          },
+          {
+            "q": "Ayarlanabilir hattın gerçek sınırı nerede?",
+            "a": "Ayar, tek bir kesit ailesi ve tasarlandığı geometri içinde bir genişlik-yükseklik aralığını kapsar. Yapmadığı şey bir profil ailesini bir başkasına dönüştürmektir: C, Sigma ve Omega arasında geçiş merdane grubu meselesidir ve tasarlanan aralığın dışına çıkmak, makinede ne kadar ayar olursa olsun yeni takım demektir. Böyle bir hattı doğru şartnamelendirmenin yolu, henüz siparişini almadıklarınız dâhil üretmeyi beklediğiniz kesitlerin tam listesini vermek ve aralığı o listeye göre tasarlatmaktır."
+          },
+          {
+            "q": "Yapısal kesitlerde burulma neden eğrilikten daha önemli?",
+            "a": "Çünkü eğrilik montaj sırasında çoğu zaman çekilerek alınabilir, burulma alınamaz. C ve Sigma kesitleri en az bir eksene göre asimetriktir; bu yüzden sacda kalan artık gerilme basit bir kavis olarak değil, boy boyunca bir dönme olarak serbest kalır. Burulmuş bir aşık cıvatalanacağı yere düz oturmaz ve sahadaki çözüm genelde parçayı iade etmektir. Doğrultma aşamasının yapısal bir hatta çoğu alıcının beklediğinden daha fazla ağırlık taşımasının ve özellikle sorulmaya değer olmasının sebebi budur."
+          },
+          {
+            "q": "Delik desenleri yeni takım gerektirmeden değiştirilebilir mi?",
+            "a": "Delik konumu ve aralığı reçete değeridir; yani yeni bir yerleşim takım değişikliği değil, veri değişikliğidir. Delik biçimi ve ölçüsü ise takımdır — farklı bir çap ya da yuvarlak yerine slot, zımba ve dişi kalıp demektir. Hattı planlarken ürün gamınızda kullandığınız bütün delik biçimlerini en baştan listelemekte fayda var: sonradan biçim eklemek her seferinde bir satın alma, konum eklemek ise bedavadır."
+          },
+          {
+            "q": "Merdaneler ne kadar ömürlü?",
+            "a": "Çoğu kişinin beklediğinden uzun ve ömür, çalışma saatinden çok içinden ne geçtiğine bağlı. Kaplamasız çelik, aşındırıcı kaplamalar, kalın malzeme ve dar radyusların hepsi takımı, geniş radyuslu ince galvaniz sacdan daha hızlı yıpratır. Merdaneler sarf malzemesi değil bakım kalemidir — tolerans dışına çıktıklarında değiştirilmez, yeniden işlenir. Bir merdane grubunu erken bitiren asıl şey, ayarsız ya da aşırı baskıyla çalıştırılmasıdır; bu da metalurjiden çok kurulum disiplini meselesidir."
+          },
+          {
+            "q": "Tek ayarlanabilir hat mı, iki adanmış hat mı daha iyi?",
+            "a": "Karmaya bağlı ve varsaymak yerine hesabını yapmakta fayda var. Sipariş defteri çeşitliyse ve tek bir kesit baskın değilse ayarlanabilir hat kazanır — tek makine, tek kontrol sistemi ve tek yedek parça seti alırsınız; geçişler sık ama kısadır. İki kesit hacmin çoğunu oluşturuyorsa iki adanmış hat kazanır, çünkü her biri hiç geçiş yapmadan kendi optimumunda çalışır. Tek bir kesit üretiminizin kabaca yarısından fazlaysa, ona bir hat ayırmak genelde kendini amorti eder."
           }
         ],
         "sectors": ["Hafif çelik yapı", "GES konstrüksiyon", "Prefabrik yapılar", "Endüstriyel bina", "Aşık profilleri"]

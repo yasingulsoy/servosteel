@@ -885,6 +885,32 @@
           "Cutting unit (end-of-line shear)",
           "Exit conveyor and stacking"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "Cable tray is usually produced from pre-galvanized coil, and a tray line typically runs several widths from the same stock. That makes coil changing a routine event rather than an occasional one, which is why the decoiler and its loading arrangement have more effect on real output than the forming speed does."
+          },
+          {
+            "title": "Straightening",
+            "text": "Coil set is removed before the strip is punched. A tray is a long shallow channel and it shows curvature clearly once formed; more practically, tray sections are bolted end to end along a run, so a member that is not straight makes every coupler in the run harder to fit."
+          },
+          {
+            "title": "Perforation and punching",
+            "text": "Ventilation slots and the coupler holes at the ends are punched flat. Perforated tray exists for a reason — the openings let heat out of bundled cable and let the tray drain — so the pattern is a functional specification, not decoration. The punch is servo-fed so that the slot pattern and the end holes stay in the right relationship to the finished length."
+          },
+          {
+            "title": "Roll forming",
+            "text": "The channel is formed across the stations. The detail that decides tray quality is the edge: the return flange along the top of each side is what makes a thin shallow channel stiff enough to span between supports, and it is also what cables are dragged across during installation. It is formed to a radius that keeps the section rigid without leaving an edge that damages cable insulation."
+          },
+          {
+            "title": "Cut to length in phase with the pattern",
+            "text": "The cut is timed to the perforation, not just to the length counter. Every tray has to end with the same amount of solid material and the same coupler hole position at both ends, otherwise the joints along a run do not line up. A line that only counts length will make trays that measure correctly and still will not bolt together consistently."
+          },
+          {
+            "title": "Exit conveyor and stacking",
+            "text": "Finished trays run out on a conveyor and are stacked. Tray nests inside itself, so stacking is normally what determines how much goes on a pallet and therefore what shipping costs — which for a low-value high-volume product is a bigger part of the delivered price than most buyers expect."
+          }
+        ],
         "faq": [
           {
             "q": "Can I produce perforated and plain trays on the same line?",
@@ -901,6 +927,26 @@
           {
             "q": "What is a cable tray roll forming machine?",
             "a": "It is the roll forming machine at the heart of a cable tray production line: strip enters from a decoiler, is straightened and servo-fed, holes and slots are punched in line, and successive roll stations bend the sheet step by step into the tray section before cut-off and stacking. Because the section forms gradually and at room temperature, galvanized and pre-painted sheet keeps its coating — which is why trays are almost always produced from coated coil. On this page the machine is described as part of the complete line, since that is how it is supplied: one manufacturer, one control system, from coil to stacked tray."
+          },
+          {
+            "q": "Why does the cut have to be phased to the perforation?",
+            "a": "Because cable tray is installed as a continuous run of bolted sections. Every piece needs the same solid margin and the same coupler hole position at each end, so that the joints repeat identically down the length of the installation. If the line simply counts length and cuts, the pieces will all measure the same and the perforation will creep relative to the ends, which shows up as couplers that do not line up. Phasing the shear to the punch is what prevents that, and it is a specific thing to ask about when comparing lines."
+          },
+          {
+            "q": "What actually determines how stiff a tray is?",
+            "a": "The return flange along the top edge of each side, far more than the sheet thickness. A plain channel of the same thickness deflects a great deal more, because almost all the stiffness against bending comes from material at the extremes of the section. That is also why the perforation pattern stops short of the edges — perforating the flange takes out the material that is doing the work. If you are comparing trays on thickness alone you are comparing the wrong number."
+          },
+          {
+            "q": "Does the edge form affect the cables?",
+            "a": "Yes, and it is a real installation issue rather than a theoretical one. Cables are pulled along a tray by hand over long runs, and an edge that is left sharp or has a burr from the forming or the shear will score insulation. The return flange is formed to a radius partly for stiffness and partly for this. It is worth looking at a sample piece from any supplier and running a hand along the inside edge — it tells you more about the line than a datasheet does."
+          },
+          {
+            "q": "How much of the delivered cost is shipping?",
+            "a": "More than most buyers assume, which is why tray is usually made close to where it is used. It is a light, bulky, low-value product, so a container fills up long before it reaches its weight limit and the freight is being paid on air. Tray nests inside itself, so how well it stacks directly changes the landed cost. This is also the commercial reason a tray line is often the first roll forming investment for a contractor who was previously buying in — the transport saving alone can carry a large part of the case."
+          },
+          {
+            "q": "Can the same line make ladder tray and wire mesh tray?",
+            "a": "No, and it is worth being clear about it early because the three products are often quoted together. Roll formed tray is a formed sheet channel. Ladder tray is two side rails with rungs welded across, so it needs a welding line rather than a forming line. Wire mesh tray is welded wire, which is a different process again. If your product range covers more than one of these, they are separate investments and should be planned as such."
           }
         ],
         "sectors": ["Electrical infrastructure", "Data centres", "Industrial facilities", "Malls and building projects"]
@@ -932,6 +978,32 @@
           "Flying shear",
           "Automatic stacking"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "Solar mounting profiles are almost always rolled from a coated coil — hot-dip galvanized or a zinc-aluminium-magnesium coating such as Magnelis. The coating is the corrosion protection for the whole 25-year life of the plant, so handling from the decoiler onward is set up to avoid scoring the surface rather than simply to move the strip."
+          },
+          {
+            "title": "Straightening",
+            "text": "Coil set is taken out before punching. A solar table is an assembly of long slender members bolted to each other, and a purlin that arrives bowed does not just look wrong — it fights the installer at every bolt and puts the array out of plane, which shows up later as uneven module loading."
+          },
+          {
+            "title": "In-line punching",
+            "text": "Mounting holes and slots are punched flat, before the section is formed. This is what lets the profile go straight from the truck to the structure with no drilling on site. The punch is servo-fed, so the hole pattern follows the recipe for that project rather than being set by mechanical stops that have to be re-adjusted every time the layout changes."
+          },
+          {
+            "title": "Roll forming",
+            "text": "The hat, C or Omega section is built up across the stations. Coated material is the constraint here: the roller surfaces and pressures are set so the coating is not cracked or peeled at the tightest radii, because a bend that has broken the coating is a corrosion site that no amount of paint on site will fix properly."
+          },
+          {
+            "title": "Flying shear",
+            "text": "The profile is cut on the move rather than stopping the line. On a solar job that matters more than it sounds — the order is thousands of pieces in a handful of lengths, and a line that has to decelerate and stop for every cut spends a large part of the shift not producing."
+          },
+          {
+            "title": "Automatic stacking",
+            "text": "Finished profiles are collected and stacked in bundles ready for loading. Solar sites take delivery in large lots on a schedule, so consistent bundling is part of the product: bundles that match the erection sequence save the installer sorting a field full of similar-looking profiles."
+          }
+        ],
         "faq": [
           {
             "q": "Can I produce both C and U profiles on the same line?",
@@ -944,6 +1016,26 @@
           {
             "q": "Does hot-dip galvanized sheet suffer in forming?",
             "a": "With roller surface and pressure matched to the coating, it stays intact. Our rollers are made from 4140 steel and hardened to 58-60 Rockwell."
+          },
+          {
+            "q": "Why is the coating chosen before the profile is designed?",
+            "a": "Because it decides both the corrosion life and how the section can be formed. Hot-dip galvanized coil and zinc-aluminium-magnesium coatings such as Magnelis behave differently at a tight radius, and the coating also determines what happens at the cut ends and the punched holes, where bare steel is exposed. Zinc-aluminium-magnesium coatings are chosen partly because they give some self-healing at cut edges, which matters on a profile that is punched and sheared thousands of times. Tell us the coating with the drawing — the roller radii are set for it."
+          },
+          {
+            "q": "Can holes be punched after forming instead?",
+            "a": "It is possible but it is the wrong way round for this product. Punching a formed section means punching through a curved or stiffened area, which distorts the profile locally and leaves a hole that is harder to control dimensionally. Punching flat keeps the pattern accurate and lets the whole thing be done in one pass through the line. The reason solar profiles are punched in line at all is to remove site drilling — doing it afterwards puts that cost straight back."
+          },
+          {
+            "q": "What does a change in the mounting layout cost on the line?",
+            "a": "If it is a change in hole positions or lengths, it is a recipe change and no tooling is involved — that is what the punching stations and the length recipes are for, and it is why solar work suits this kind of line. If the profile section itself changes, that is a roller set question and a different conversation. Worth separating the two when you are planning: layout changes are routine, section changes are not."
+          },
+          {
+            "q": "Does hot-dip galvanized sheet lose anything during forming?",
+            "a": "Not if the radii and pressures are right for it. Zinc coating is more brittle than the steel underneath, so damage shows up as fine cracking on the outside of the tightest bends rather than as visible peeling. That is a tooling design question, decided when the roller set is made rather than adjusted afterwards. It is also why sending the coating specification with the profile drawing is not a formality."
+          },
+          {
+            "q": "Which sections are normally used for solar mounting structures?",
+            "a": "Hat, C and Omega sections cover most of it, in various depths depending on span and wind zone. The structural design is the plant designer's responsibility and it varies a great deal by country — snow and wind loading move the section size more than anything else. We tool to the section on your drawing; if the project is at an earlier stage than that, it is usually more productive to fix the structural design first and specify the line around it than the other way round."
           }
         ],
         "sectors": ["Solar / EPC companies", "Rooftop PV", "Utility-scale plants", "Agri-PV"]
@@ -1333,6 +1425,32 @@
           "Flying shear",
           "Stacking"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "Structural sections are usually rolled from pre-galvanized coil in a range of thicknesses, because the same line serves purlins, studs and framing members that are specified differently. The decoiler is sized for the heaviest coil the line will see rather than the average one — a decoiler chosen for the typical order becomes the bottleneck the first time a heavy job arrives."
+          },
+          {
+            "title": "Straightening",
+            "text": "Coil set comes out before anything else. On structural profiles this is what decides whether the finished member is straight along its length: C and Sigma sections are asymmetric, so any curvature left in the strip does not simply stay as a gentle bow — it combines with the forming and comes out as twist, which is far harder to correct afterwards than a simple bend."
+          },
+          {
+            "title": "Punching to the structural pattern",
+            "text": "Service holes, bolt holes and web openings are punched flat, in the pattern the structural design specifies. Position matters more than it does on a cladding profile: a hole in the web of a loaded member is a designed feature, and moving it is a structural decision rather than a production convenience."
+          },
+          {
+            "title": "Adjustable roll forming",
+            "text": "This is what separates this line from a single-profile one. The roll groups adjust so that section width and height change without stripping the machine down, which is how three families of section share one line. The trade-off is worth understanding: an adjustable line covers a range, a dedicated line runs one section faster. Which one is right depends on how varied your order book actually is."
+          },
+          {
+            "title": "Flying shear",
+            "text": "Cutting happens on the move, so the line does not stop for every piece. On structural work orders tend to be long lists of mixed lengths rather than one length repeated, so the time lost to stopping and restarting adds up quickly over a shift."
+          },
+          {
+            "title": "Stacking",
+            "text": "Finished sections are collected and stacked. Long structural members are easy to damage between the line and the truck, and a bent flange on a purlin is not a cosmetic problem — it is a member that will not sit flat against the rafter it bolts to."
+          }
+        ],
         "faq": [
           {
             "q": "Is it possible to run all three sections on one line?",
@@ -1345,6 +1463,26 @@
           {
             "q": "How long do the rollers last?",
             "a": "Rollers are made from 4140 steel and hardened to 58-60 Rockwell; with correct pressure settings they can produce millions of metres of profile."
+          },
+          {
+            "q": "Where is the real limit of an adjustable line?",
+            "a": "The adjustment covers a range of widths and heights within one section family and the geometry it was designed around. What it does not do is turn one profile family into another: moving between C, Sigma and Omega is a roller set matter, and moving outside the designed range means new tooling regardless of how much adjustment the machine has. The honest way to specify a line like this is to give the full list of sections you expect to produce, including the ones you do not have orders for yet, and let the range be designed around that list."
+          },
+          {
+            "q": "Why does twist matter more than bow on structural sections?",
+            "a": "Because a bow can often be pulled out during erection and a twist cannot. C and Sigma sections are asymmetric about at least one axis, so residual stress left in the strip does not release as a simple curve — it releases as a rotation along the length. A twisted purlin will not sit flat where it bolts, and the fix on site is usually to reject the piece. This is why the straightening stage carries more weight on a structural line than most buyers expect, and why it is worth asking about specifically."
+          },
+          {
+            "q": "Can hole patterns be changed without new tooling?",
+            "a": "Hole position and spacing are recipe values, so a new layout is a data change rather than a tooling change. Hole shape and size are tooling — a different diameter or a slot instead of a round hole means a punch and die. When you plan the line, it is worth listing every hole shape you use across your product range at the start, because adding shapes later is a purchase each time while adding positions is free."
+          },
+          {
+            "q": "How long do the roll tools last?",
+            "a": "Longer than most people expect, and it depends much more on what runs through them than on hours. Uncoated steel, abrasive coatings, thick material and tight radii all wear tooling faster than light galvanized sheet at generous radii. Rolls are a maintenance item rather than a consumable — they are re-machined rather than replaced when they eventually go out of tolerance. What actually kills a roll set early is running it misaligned or under too much pressure, which is a setup discipline question more than a metallurgy one."
+          },
+          {
+            "q": "Is one adjustable line better than two dedicated lines?",
+            "a": "It depends on the mix, and it is worth doing the arithmetic rather than assuming. An adjustable line wins when the order book is varied and no single section dominates — you buy one machine, one control system and one set of spares, and changeovers are frequent but short. Two dedicated lines win when two sections make up most of the volume, because each runs at its own optimum with no changeover at all. If one section is more than roughly half your output, dedicating a line to it usually pays."
           }
         ],
         "sectors": ["Light steel framing", "Solar structures", "Prefabricated buildings", "Industrial buildings", "Purlin profiles"]
