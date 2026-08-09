@@ -73,12 +73,22 @@ python gsc.py --property sc-domain:servosteel.com.tr --days 7 --dimensions page 
 python url-denetim.py
 python ga4.py --property 548769261 --days 7
 python ga4.py --property 548769261 --report top-pages --days 28
+python clarity.py --gun 3
+python clarity.py --gun 3 --kirilim Device
 ```
 
 **Microsoft Clarity: `xzdxkpw7qv`** — ısı haritası, kaydırma derinliği, ölü/öfke
 tıklaması ve oturum kaydı. GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı"
 der. Dönüşüm sıfırken sebebi ancak bu gösterir. GA4 ile aynı
 `IS_PRODUCTION_SITE` korumasına bağlı — önizleme kopyalarında hiç yüklenmez.
+Sitede çalıştığı doğrulandı (2026-08-09): `window.clarity` fonksiyon,
+`clarity.js 0.8.69` iniyor.
+
+**Clarity API token'ı PROJE BAZLIDIR.** Çağrıda proje kimliği gönderilmiyor —
+token hangi projede üretildiyse onun verisi geliyor. Elimizdeki token
+`dekoartizan` projesine aitti ve Servosteel sanılıyordu; `clarity.py` artık her
+çalışmada dönen host'ları yazdırıp beklenenle karşılaştırıyor, aynı karışıklık
+sessizce tekrarlanamaz. Günde proje başına **10 istek** sınırı var.
 
 **GA4 mülkü: `ServoSteel 548769261`** — erişim test edildi (2026-08-07),
 servis hesabı Görüntüleyici olarak veri çekiyor. `generate_lead` olayı form
@@ -121,6 +131,10 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 - [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
+- [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
+  `xzdxkpw7qv` projesini aç → Settings → Data Export → Generate new API token →
+  değeri `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
+  alanına yapıştır (sohbete yazma). Sonrası hazır: `python clarity.py`
 - [ ] **Gizlilik / KVKK aydınlatma sayfası YOK** — iletişim ve teklif formları
   ad, e-posta, telefon, firma topluyor; Clarity oturum kaydı da alıyor. KVKK
   m.10 toplama anında bilgilendirme istiyor, AB dilleri (DE/ES/IT/PL/HU) için
