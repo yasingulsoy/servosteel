@@ -14,22 +14,45 @@ import { pageAlternates } from "@/i18n/seo";
 import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
 import "../globals.css";
 
+/* FONTLAR — alt küme başına bir preload etiketi basılır (next/font/google).
+   Yani `subsets` içine yazılan her şey, o alt kümeyi hiç kullanmayan dillerde
+   de indirilir. Türkçe bir sayfada Kiril ve Arapça dosyaları inip hiç
+   kullanılmıyordu; tarayıcı konsolu bunu "preloaded but not used" diye
+   bildiriyordu. Çözüm: yalnızca dokuz dilin sekizinde geçerli olan latin
+   kümeleri preload edilir, diğerleri kendi dillerinde talep üzerine yüklenir. */
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext", "cyrillic"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
-  subsets: ["latin", "latin-ext", "cyrillic"],
+  subsets: ["latin", "latin-ext"],
   weight: ["600", "700", "800"],
 });
 
-/* Arapça için ayrı font — Inter/Montserrat Arapça glif içermez. RTL'de devreye girer. */
+/* Kiril: yalnızca /ru. preload kapalı — açık kalırsa Next diğer sekiz dilde de
+   etiketi basar. Rusça sayfada dosya yine iniyor, sadece bir tur geç. */
+const interCyrillic = Inter({
+  variable: "--font-inter",
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  preload: false,
+});
+
+const montserratCyrillic = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  weight: ["600", "700", "800"],
+  preload: false,
+});
+
+/* Arapça için ayrı font — Inter/Montserrat Arapça glif içermez. RTL'de devreye
+   girer, yani dokuz dilin birinde; preload aynı gerekçeyle kapalı. */
 const cairo = Cairo({
   variable: "--font-arabic",
   subsets: ["arabic", "latin"],
   weight: ["400", "600", "700", "800"],
+  preload: false,
 });
 
 export function generateStaticParams() {
@@ -162,12 +185,25 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
+  /* Aynı CSS değişkenini iki örnek tanımlıyor; sayfa başına yalnızca biri
+     uygulanır. Rusça Kiril gliflerini taşıyan sürümü alır, kalan sekiz dil
+     latin sürümünü. --font-arabic yalnızca RTL'de basılır. */
+  const rtl = isRtl(locale);
+  const kiril = locale === "ru";
+  const govde = kiril ? interCyrillic : inter;
+  const baslik = kiril ? montserratCyrillic : montserrat;
+  /* Arapça'da Cairo hem gövdeyi hem başlığı karşılıyor; Inter ve Montserrat
+     tek karakter bile basmıyor, o yüzden değişkenleri hiç uygulanmıyor. */
+  const fontlar = rtl
+    ? cairo.variable
+    : `${govde.variable} ${baslik.variable}`;
+
   return (
     <html
       lang={locale}
-      dir={isRtl(locale) ? "rtl" : "ltr"}
+      dir={rtl ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${inter.variable} ${montserrat.variable} ${cairo.variable} h-full antialiased`}
+      className={`${fontlar} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {/* JS yoksa giriş animasyonları hiç tetiklenmez ve [data-reveal] içeriği

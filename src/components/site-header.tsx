@@ -340,27 +340,31 @@ export function SiteHeader() {
           aria-label={t("homeAria")}
           className={`relative shrink-0 ${overHero ? "drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]" : ""}`}
         >
-          {/* Açık zeminde: orijinal logo (altın + koyu yazı) */}
+          {/* Açık zeminde: orijinal logo (altın + koyu yazı)
+
+              `priority` KALDIRILDI. Ürettiği <link rel=preload> `w=256` isterken
+              <img> `w=640` yüklüyordu — farklı URL olduğu için preload hiç
+              kullanılmıyor, logo iki kez iniyordu. Tarayıcı konsolu bunu
+              "preloaded but not used" diye bildiriyordu. `loading="eager"`
+              duruyor: görsel yine ilk turda, tek istekte iniyor. */}
           <Image
             src="/logo-full.png"
             alt="Servosteel"
             width={256}
             height={113}
-            priority
-            loading="eager"
             className={`h-14 w-auto transition-opacity duration-300 min-[360px]:h-16 xl:h-14 ${
               overHero ? "opacity-0" : "opacity-100 dark:opacity-0"
             }`}
           />
-          {/* Koyu zeminde (hero videosu / koyu tema): altın korunur, yazı beyaz */}
+          {/* Koyu zeminde (hero videosu / koyu tema): altın korunur, yazı beyaz.
+              Aynı gerekçeyle `priority` yok — üstelik bu kopya her sayfada
+              görünmüyor, hangisinin görüneceğini tema ve hero belirliyor. */}
           <Image
             src="/logo-full-light.png"
             alt=""
             aria-hidden
             width={256}
             height={113}
-            priority
-            loading="eager"
             className={`absolute inset-0 h-14 w-auto transition-opacity duration-300 min-[360px]:h-16 xl:h-14 ${
               overHero ? "opacity-100" : "opacity-0 dark:opacity-100"
             }`}
