@@ -137,11 +137,9 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
 - [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
-- [ ] **6 ürün sayfasının kalan 7 dili** — üretim akışı + genişletilmiş SSS şu an
-  yalnızca TR ve EN'de. Sıralama İngilizce'de olduğu için önce o ikisi yazıldı;
-  DE/ES/IT/PL/HU/RU/AR'da bölüm hiç basılmıyor (opsiyonel, boş başlık çıkmıyor).
-  Sayfalar: yol-bariyeri · ağır-raf · gürültü-bariyeri · solar-profil ·
-  c-sigma-omega · kablo-kanalı
+- [x] ~~6 ürün sayfasının kalan 7 dili~~ — **tamamlandı (2026-08-09)**: 54 sayfa/dil
+  kombinasyonunun tamamında 6 adımlı üretim akışı + 8 SSS (EN kablo kanalında 9).
+  Kelime aralığı dile göre 1.094–1.753.
 - [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
   `xzdxkpw7qv` projesini aç → Settings → Data Export → Generate new API token →
   değeri `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
