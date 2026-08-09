@@ -51,6 +51,12 @@ export default async function RollFormLinePage({ params }: Props) {
   const others = rollFormItems.filter((l) => l.slug !== slug).slice(0, 3);
   /* FAQ opsiyoneldir — tanımlı olmayan üründe bölüm hiç basılmaz. */
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
+  /* Üretim akışı da opsiyonel: içeriği yazılan ürün sayfasında çıkar, diğerinde
+     hiç basılmaz. Böylece dokuz dilin tamamı hazır olmadan tek ürün yayına
+     alınabiliyor — yarım çeviriyle boş başlık görünmüyor. */
+  const process = t.has("process")
+    ? (t.raw("process") as { title: string; text: string }[])
+    : [];
 
   return (
     <>
@@ -98,6 +104,32 @@ export default async function RollFormLinePage({ params }: Props) {
                 </div>
               </Reveal>
             </div>
+
+            {process.length > 0 && (
+              <Reveal>
+                <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">
+                  {td("process")}
+                </h2>
+                <ol className="mt-8 space-y-6">
+                  {process.map((adim, i) => (
+                    <li key={adim.title} className="flex gap-5">
+                      {/* Sıra numarası dekoratif: <ol> zaten sırayı taşıyor,
+                          ekran okuyucu iki kez saymasın diye aria-hidden. */}
+                      <span
+                        className="flex size-9 shrink-0 items-center justify-center rounded-full border border-line bg-surface-alt font-display text-sm font-bold text-accent-ink"
+                        aria-hidden
+                      >
+                        {i + 1}
+                      </span>
+                      <div className="pt-1">
+                        <h3 className="font-semibold text-ink">{adim.title}</h3>
+                        <p className="mt-1.5 text-sm leading-relaxed text-muted">{adim.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </Reveal>
+            )}
 
             <Reveal>
               <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">

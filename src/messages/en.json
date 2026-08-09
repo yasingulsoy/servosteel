@@ -189,6 +189,7 @@
     "componentsNote": "All components are manufactured at the Servosteel facility, and the complete line is tested in-house before shipment.",
     "sectors": "Applications",
     "usage": "Areas of use",
+    "process": "Production flow",
     "otherLines": "Other roll forming lines",
     "otherMachines": "Other machines",
     "lineQuote": "Get a Quote for This Line",
@@ -1063,6 +1064,32 @@
           "Hydraulic cutting",
           "Stacking"
         ],
+        "process": [
+          {
+            "title": "Coil loading and decoiling",
+            "text": "The coil is loaded onto a heavy-duty decoiler and gripped from the inside diameter by hydraulic expansion. Guardrail coils are wide and heavy, so a loading car and a pressure arm hold the outer wrap down — an unrestrained wrap on thick material can spring loose as the strip is drawn off."
+          },
+          {
+            "title": "Straightening",
+            "text": "The coil set — the curvature the strip keeps from being wound — is taken out before any forming happens. This matters more on guardrail than on light profiles: residual bow left in a flat strip becomes visible once the wave is formed, and a beam that is not straight will not sit true against the posts on site."
+          },
+          {
+            "title": "Punching while flat",
+            "text": "Bolt holes and post slots are punched before the strip reaches the forming stations. Punching a finished beam would distort the wave around the hole and leave the hole itself on a curved surface; punching flat keeps the hole pitch under servo control and the edges clean."
+          },
+          {
+            "title": "Progressive roll forming",
+            "text": "The wave is not formed in one pass. Each station takes a share of the total angle so the material work-hardens gradually instead of thinning or cracking at the crests. Thick galvanized sheet needs a longer station sequence than a thin roofing profile for exactly this reason — the sequence is what protects the section, not the pressure."
+          },
+          {
+            "title": "Cut to length",
+            "text": "Hydraulic cutting separates the beam in the formed section, with a die that matches the finished cross-section. A die that does not follow the wave pulls the section out of shape at the cut and leaves an edge that has to be reworked before galvanizing."
+          },
+          {
+            "title": "Run-out and stacking",
+            "text": "Finished beams leave the line onto a run-out table and are stacked ready for galvanizing or for shipment. Handling matters here too: a beam dragged across another one scratches the surface, which on pre-galvanized material means a coating repair."
+          }
+        ],
         "faq": [
           {
             "q": "Can I produce W-beam and thrie-beam on the same line?",
@@ -1075,6 +1102,26 @@
           {
             "q": "How are holes and mounting slots made?",
             "a": "A hydraulic press unit is integrated into the line; connection holes and slots are punched before the profile leaves the line."
+          },
+          {
+            "q": "Which standard applies to guardrail, and what does it require from the line?",
+            "a": "EN 1317 is the European standard for road restraint systems. It classifies barriers by containment level, impact severity and working width, and it tests the installed system as a whole — not the beam on its own. What that asks of the production line is repeatability: wave geometry, hole pitch and beam length have to stay within the tolerances of the approved drawing, so the system that was crash-tested is the same one coming off the line. The approval itself belongs to the barrier system owner; the line makes conformity producible, it does not carry the certificate."
+          },
+          {
+            "q": "Which steel grade is used for the beams?",
+            "a": "Guardrail beams are normally rolled from structural steel in the S235 to S355 range, and which one depends on the containment class the system was approved at. The grade is not just a purchasing detail: a higher yield strength springs back more, so the same wave needs different roller geometry and more compensation. Send the grade and thickness with the enquiry — the roll tooling is designed around them, not adjusted to them afterwards."
+          },
+          {
+            "q": "How does hot-dip galvanizing affect the line?",
+            "a": "There are two routes and they load the line differently. If the beam is galvanized after forming, which is the common route for highway work under EN ISO 1461, the line rolls bare steel and the zinc is applied at a galvanizing plant — the coating then covers the cut edges and the punched holes as well. If pre-galvanized coil is used, the coating is already on the strip, so roller surfaces and pressures are set to avoid scratching it, and the cut and punched edges stay uncoated. Which route applies is normally fixed by the project specification rather than by the machine."
+          },
+          {
+            "q": "How long does a changeover between profiles take?",
+            "a": "Moving between W-beam and thrie-beam means changing the roller set; the frame, drive and punching unit stay where they are. How long that takes depends on how the line was built for it — a standard arrangement makes it a planned job between production runs, while a cassette or quick-change design brings it down considerably. If you expect to alternate between the two sections regularly, say so at the enquiry stage: designing the frame for it costs far less than retrofitting it later."
+          },
+          {
+            "q": "Can guardrail posts be produced on the same line?",
+            "a": "No. Sigma and C-section posts are a different cross-section with a different station sequence and a different cutting arrangement, so they run on their own roll forming line. We build both, and when a project needs beams and posts together the two lines are quoted as a set — which is usually the more sensible way to buy them, because the post length and hole pattern have to match the beam they carry."
           }
         ],
         "sectors": ["Road contractors", "Highway projects", "Galvanizing plants", "Infrastructure exporters"]

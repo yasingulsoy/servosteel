@@ -177,6 +177,7 @@
     "componentsNote": "Tüm bileşenler Servosteel tesisinde üretilir ve hat, sevkiyat öncesi fabrikada komple test edilir.",
     "sectors": "Uygulama alanları",
     "usage": "Kullanım alanları",
+    "process": "Üretim akışı",
     "otherLines": "Diğer roll form hatları",
     "otherMachines": "Diğer makineler",
     "lineQuote": "Bu Hat İçin Teklif Al",
@@ -1028,6 +1029,32 @@
           "Hidrolik kesme",
           "İstifleme"
         ],
+        "process": [
+          {
+            "title": "Rulo yükleme ve açma",
+            "text": "Rulo ağır seri açıcıya yüklenir ve iç çapından hidrolik genleşmeyle kavranır. Bariyer ruloları geniş ve ağırdır; yükleme arabası ile baskı kolu dış sargıyı basılı tutar — kalın malzemede serbest bırakılan dış sargı, sac çekilirken boşalıp açılabilir."
+          },
+          {
+            "title": "Doğrultma",
+            "text": "Sacın sarılmaktan kalan eğriliği (coil set) form işlemine girmeden alınır. Bu, hafif profillere kıyasla bariyerde daha kritiktir: düz sacda kalan hafif kavis, dalga verildikten sonra büyüyerek görünür hâle gelir ve düzgün olmayan bir korkuluk sahada direklere tam oturmaz."
+          },
+          {
+            "title": "Sac düzken delme",
+            "text": "Bağlantı delikleri ve direk slotları, sac form istasyonlarına girmeden açılır. Formu bitmiş korkuluğu delmek dalgayı deliğin çevresinde bozar, deliğin kendisi de eğri bir yüzeye oturur; düz sacda delmek hem delik aralığını servo kontrolde tutar hem de kenarları temiz bırakır."
+          },
+          {
+            "title": "Kademeli form verme",
+            "text": "Dalga tek geçişte verilmez. Her istasyon toplam açının bir kısmını alır; böylece malzeme dalga tepelerinde incelmek veya çatlamak yerine kademeli olarak pekleşir. Kalın galvaniz sacın ince çatı profilinden daha uzun istasyon dizisi istemesinin sebebi tam olarak budur — kesiti koruyan şey baskı değil, dizinin uzunluğudur."
+          },
+          {
+            "title": "Boy kesme",
+            "text": "Hidrolik kesme, korkuluğu form verilmiş kesitten ayırır ve bıçak bitmiş kesitin biçimini takip eder. Dalgayı takip etmeyen bir bıçak kesim noktasında kesiti bozar ve galvanizden önce düzeltilmesi gereken bir kenar bırakır."
+          },
+          {
+            "title": "Çıkış ve istifleme",
+            "text": "Biten korkuluklar çıkış tablasına alınır ve galvaniz ya da sevkiyat için istiflenir. Buradaki elleçleme de önemlidir: bir korkuluğu diğerinin üzerinden sürüklemek yüzeyi çizer, ön galvanizli malzemede bu doğrudan kaplama tamiri demektir."
+          }
+        ],
         "faq": [
           {
             "q": "W ve thrie profilleri aynı hatta üretebilir miyim?",
@@ -1040,6 +1067,26 @@
           {
             "q": "Delik ve montaj slotları nasıl açılıyor?",
             "a": "Hidrolik pres ünitesi hatta entegre edilir; bağlantı delikleri ve slotlar profil hattan çıkmadan açılır."
+          },
+          {
+            "q": "Yol bariyerinde hangi standart geçerli ve bu hattan ne ister?",
+            "a": "EN 1317, yol güvenlik sistemleri için geçerli Avrupa standardıdır. Bariyerleri tutma seviyesi, çarpma şiddeti ve çalışma genişliğine göre sınıflandırır ve kurulmuş sistemin tamamını test eder — tek başına korkuluk profilini değil. Bunun üretim hattından istediği şey tekrarlanabilirliktir: dalga geometrisi, delik aralığı ve korkuluk boyu onaylı çizimin toleransları içinde kalmalıdır ki çarpma testinden geçen sistemle hattan çıkan sistem aynı olsun. Onayın kendisi bariyer sistemi sahibine aittir; hat uygunluğu üretilebilir kılar, sertifikayı taşımaz."
+          },
+          {
+            "q": "Korkuluk hangi çelik kalitesinden üretilir?",
+            "a": "Bariyer korkulukları genellikle S235 ile S355 aralığındaki yapı çeliğinden form verilir; hangisi olacağı sistemin onaylandığı tutma sınıfına bağlıdır. Kalite yalnızca bir satın alma detayı değildir: akma dayanımı yüksek malzeme daha fazla geri yaylanır, aynı dalga için farklı merdane geometrisi ve daha fazla telafi ister. Kalite ve kalınlığı talep aşamasında bildirin — merdane takımı bunlara göre tasarlanır, sonradan bunlara uydurulmaz."
+          },
+          {
+            "q": "Sıcak daldırma galvaniz hattı nasıl etkiliyor?",
+            "a": "İki yol var ve hattı farklı biçimde yüklüyorlar. Korkuluk form verildikten sonra galvanizlenecekse — EN ISO 1461 kapsamında karayolu işlerinde yaygın olan yol budur — hat çıplak sacı işler, çinko galvaniz tesisinde uygulanır ve kaplama kesim kenarlarını ve açılan delikleri de kapatır. Ön galvanizli rulo kullanılıyorsa kaplama sacın üzerinde hazırdır; bu durumda merdane yüzeyleri ve baskılar çizmeyecek şekilde ayarlanır, kesim ve delik kenarları ise kaplamasız kalır. Hangi yolun izleneceğini genelde makine değil, projenin şartnamesi belirler."
+          },
+          {
+            "q": "Profil değişimi ne kadar sürüyor?",
+            "a": "W-beam ile thrie-beam arasında geçiş merdane grubunun değişmesi demektir; şase, tahrik ve delme ünitesi yerinde kalır. Bunun ne kadar süreceği hattın buna göre kurulup kurulmadığına bağlıdır — standart düzende iki üretim arasına planlanan bir iştir, kaset veya hızlı değişim düzeneğinde süre belirgin biçimde düşer. İki kesiti düzenli olarak dönüşümlü üretmeyi düşünüyorsanız talep aşamasında söyleyin: şaseyi buna göre tasarlamak, sonradan revize etmekten çok daha ucuza gelir."
+          },
+          {
+            "q": "Bariyer direkleri de aynı hatta üretilebilir mi?",
+            "a": "Hayır. Sigma ve C kesitli direkler farklı bir kesittir; farklı istasyon dizisi ve farklı kesme düzeni ister, bu yüzden kendi roll form hatlarında üretilirler. İkisini de üretiyoruz ve bir proje korkuluk ile direği birlikte gerektirdiğinde iki hat takım hâlinde teklif edilir — genelde daha doğru satın alma biçimi de budur, çünkü direk boyu ve delik düzeni taşıyacağı korkulukla örtüşmek zorundadır."
           }
         ],
         "sectors": ["Karayolları müteahhitleri", "Otoyol projeleri", "Galvaniz kaplama tesisleri", "Altyapı ihracatçıları"]
