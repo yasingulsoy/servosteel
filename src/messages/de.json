@@ -943,6 +943,32 @@
           "Schneideeinheit",
           "Stapelsystem"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Regalprofile werden in der Regel aus vorverzinktem Band gerollt, das Band kommt also mit fertiger Beschichtung. Das bestimmt die Handhabung ab dem ersten Meter: Haspel und Führungen sind so eingestellt, dass die Oberfläche nicht schleift — jeder Kratzer auf einer Regalstütze ist ein Korrosionsstartpunkt in einem Lager, das gereinigt wird."
+          },
+          {
+            "title": "Richten",
+            "text": "Der Coil-Set wird vor dem Stanzen entfernt, nicht danach. Ein Band, das noch Krümmung hält, läuft ungleichmäßig in die Stanze, und jeder Vorschubfehler dort wird unmittelbar zum Lochpositionsfehler — das Einzige, was ein Regalprofil nicht verzeiht."
+          },
+          {
+            "title": "Mehrreihiges Stanzen",
+            "text": "Die Anschlusslöcher werden flach gestanzt, im Lochbild des Regalsystems. Maßgeblich ist nicht die Lochgröße, sondern die Summierung der Teilung: eine Stütze trägt Verbinder über ihre ganze Länge, ein kleiner wiederholter Vorschubfehler addiert sich über eine hohe Stütze auf. Servovorschub mit Encodermessung referenziert jedes Loch auf den Gesamtlauf, nicht nur auf das vorherige."
+          },
+          {
+            "title": "Umformen des gelochten Bandes",
+            "text": "Ein bereits gelochtes Band umzuformen ist nicht dasselbe wie ein volles. Der Steg ist an jedem Loch schwächer, deshalb ist die Stationenfolge so ausgelegt, dass der Querschnitt entsteht, ohne Material über die Öffnungen zu ziehen — sonst verformen sich die Löcher zu Ovalen und der Verbinder sitzt nicht mehr rechtwinklig."
+          },
+          {
+            "title": "Schnitt in Phase zum Lochbild",
+            "text": "Der Schnitt erfolgt nicht einfach auf Länge. Er muss in fester Beziehung zur Lochung liegen, damit erstes und letztes Loch bei jeder einzelnen Stütze dort sitzen, wo die Regalkonstruktion sie erwartet. Eine Anlage, die nur auf Länge schneidet, produziert maßhaltige und trotzdem unbrauchbare Profile."
+          },
+          {
+            "title": "Auslauf und Stapeln",
+            "text": "Die fertigen Profile werden gesammelt und gestapelt. Stützen sind lang und vergleichsweise schlank, deshalb zählt der Stützenabstand am Auslauf: ein Profil, das vor dem Stapeln unter Eigengewicht durchhängt, behält einen Teil dieser Krümmung, und eine krumme Stütze steht im montierten Rahmen nicht lotrecht."
+          }
+        ],
         "faq": [
           {
             "q": "Können Ständer und Traversen auf einer Anlage laufen?",
@@ -955,6 +981,26 @@
           {
             "q": "Welche Blechdicke verarbeitet die Anlage?",
             "a": "Schwerlastregalprofile erfordern typischerweise dickes Material; Querschnitt und Dickenbereich werden projektbezogen ausgelegt. Die Kapazität bestimmen wir gemeinsam anhand Ihrer Zeichnung."
+          },
+          {
+            "q": "Welche Normen gelten für Regalanlagen und was verlangen sie von der Fertigung?",
+            "a": "Ortsfeste Palettenregale werden nach EN 15512 bemessen; EN 15620 regelt Fertigungs- und Montagetoleranzen, EN 15635 Betrieb und Inspektion der eingebauten Anlage. Ein Regal ist ein tragendes Bauwerk, deshalb ist die Zusage der Linie eine maßliche: Querschnittsgeometrie und Lochposition innerhalb der Toleranz, mit der gerechnet wurde. Statik und CE-Verantwortung liegen beim Regalsystem-Inhaber — die Linie muss dazu passend produzieren können, Tag für Tag."
+          },
+          {
+            "q": "Warum zählt die Lochteilung mehr als die Lochgröße?",
+            "a": "Weil sich Teilungsfehler summieren und Lochgrößen nicht. Ein leicht zu großes Loch ist ein lokales Passungsproblem; ein Vorschub, der konstant Bruchteile eines Millimeters zu lang ist, verschiebt jedes weitere Loch entlang der Stütze, und oben an einer hohen Stütze geht der Verbinder nicht mehr hinein. Deshalb wird die Stanzstation servogeführt mit Encodermessung statt mit mechanischem Anschlag, und deshalb ist die Kennzahl für den Anbietervergleich die Teilungstoleranz über die gesamte Profillänge, nicht pro Schritt."
+          },
+          {
+            "q": "Welches Material wird für Regalprofile verwendet?",
+            "a": "Stützen und Traversen werden üblicherweise aus Baustahl im Bereich S350GD bis S390GD gerollt, vorverzinkt geliefert. Die Güte ist nicht austauschbar: höhere Streckgrenze federt stärker zurück, derselbe fertige Querschnitt braucht also andere Walzengeometrie und mehr Kompensation. Sie verändert außerdem, wie sich der gelochte Steg beim Umformen verhält. Schicken Sie die Güte mit der Zeichnung — das Werkzeug wird darauf ausgelegt."
+          },
+          {
+            "q": "Können Sie das Lochbild eines bestehenden Regalsystems treffen?",
+            "a": "Ja. Das Stanzwerkzeug wird auf das Lochbild gebaut, ein Musterprofil oder eine bemaßte Zeichnung genügt. Ein Punkt, den man früh ansprechen sollte: Verbinderlochbilder sind häufig geistiges Eigentum des Regalsystem-Inhabers und teils geschützt. Was Sie produzieren dürfen, entscheidet der Käufer, nicht der Maschinenbauer — wir bauen das Werkzeug auf das von Ihnen vorgegebene Bild."
+          },
+          {
+            "q": "Werden Traversen genauso gefertigt wie Stützen?",
+            "a": "Nein, und es lohnt sich, das bei der Investitionsplanung zu trennen. Stützen sind offene gelochte Profile, die ganze Linie ist um Stanzgenauigkeit herum gebaut. Traversen sind meist geschlossene Kastenprofile, oft aus zwei Profilen geformt und gefügt, die Linie trägt also eine andere Stationenfolge und eine Fügestufe statt einer großen Stanzgruppe. Die meisten Regalhersteller landen bei zwei Linien statt einer, die bei beidem Kompromisse macht."
           }
         ],
         "sectors": ["Lager und Logistik", "Regalhersteller", "E-Commerce-Lager", "Kühllager"]
@@ -1029,6 +1075,32 @@
           "Hydraulisches Schneiden",
           "Stapelung"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Das Coil wird auf die Schwerlast-Abwickelhaspel gelegt und über den Innendurchmesser hydraulisch gespannt. Leitplanken-Coils sind breit und schwer, deshalb halten Ladewagen und Andrückarm die äußere Windung nieder — bei dickem Material kann eine ungesicherte Windung beim Abziehen aufspringen."
+          },
+          {
+            "title": "Richten",
+            "text": "Der Coil-Set, also die vom Wickeln verbliebene Krümmung, wird vor jedem Umformen entfernt. Bei Leitplanken wiegt das schwerer als bei leichten Profilen: eine im flachen Band verbliebene Restkrümmung wird erst sichtbar, wenn die Welle geformt ist, und eine nicht gerade Schutzplanke sitzt vor Ort nicht sauber am Pfosten."
+          },
+          {
+            "title": "Stanzen im flachen Zustand",
+            "text": "Schraubenlöcher und Pfostenschlitze werden gestanzt, bevor das Band die Umformstationen erreicht. Das Stanzen einer fertigen Planke würde die Welle rund um das Loch verziehen und das Loch selbst auf eine gekrümmte Fläche legen; flach gestanzt bleibt die Lochteilung unter Servokontrolle und die Kanten sauber."
+          },
+          {
+            "title": "Stufenweises Rollformen",
+            "text": "Die Welle entsteht nicht in einem Durchgang. Jede Station übernimmt einen Anteil des Gesamtwinkels, damit der Werkstoff allmählich verfestigt statt an den Wellenbergen auszudünnen oder zu reißen. Genau deshalb braucht dickes verzinktes Blech eine längere Stationenfolge als ein dünnes Dachprofil — den Querschnitt schützt die Folge, nicht der Druck."
+          },
+          {
+            "title": "Ablängen",
+            "text": "Die hydraulische Schere trennt die Planke im umgeformten Querschnitt, mit einem Messer, das der fertigen Kontur folgt. Ein Messer, das der Welle nicht folgt, verzieht den Querschnitt an der Schnittstelle und hinterlässt eine Kante, die vor dem Verzinken nachgearbeitet werden muss."
+          },
+          {
+            "title": "Auslauf und Stapeln",
+            "text": "Die fertigen Planken laufen über den Auslauftisch und werden für Verzinkung oder Versand gestapelt. Auch hier zählt die Handhabung: eine über die andere gezogene Planke verkratzt die Oberfläche, was bei vorverzinktem Material eine Beschichtungsreparatur bedeutet."
+          }
+        ],
         "faq": [
           {
             "q": "Kann ich W- und Thrie-Profile auf einer Anlage fertigen?",
@@ -1041,6 +1113,26 @@
           {
             "q": "Wie werden Löcher und Montageschlitze erzeugt?",
             "a": "Eine hydraulische Presseneinheit ist integriert; Verbindungslöcher und Schlitze werden gestanzt, bevor das Profil die Linie verlässt."
+          },
+          {
+            "q": "Welche Norm gilt für Schutzplanken, und was verlangt sie von der Anlage?",
+            "a": "EN 1317 ist die europäische Norm für Fahrzeug-Rückhaltesysteme. Sie klassifiziert Schutzeinrichtungen nach Aufhaltestufe, Anprallheftigkeit und Wirkungsbereich und prüft das eingebaute System als Ganzes — nicht den Holm für sich. Von der Fertigungslinie verlangt das Wiederholgenauigkeit: Wellengeometrie, Lochteilung und Länge müssen innerhalb der Toleranzen der freigegebenen Zeichnung bleiben, damit das crashgeprüfte System und das produzierte System dasselbe sind. Die Zulassung gehört dem Systeminhaber; die Anlage macht Konformität herstellbar, sie trägt das Zertifikat nicht."
+          },
+          {
+            "q": "Welche Stahlgüte wird verwendet?",
+            "a": "Schutzplanken werden üblicherweise aus Baustahl im Bereich S235 bis S355 gerollt, je nachdem, für welche Aufhaltestufe das System zugelassen wurde. Die Güte ist keine reine Einkaufsfrage: höhere Streckgrenze federt stärker zurück, dieselbe Welle braucht also andere Walzengeometrie und mehr Kompensation. Geben Sie Güte und Dicke mit der Anfrage an — der Walzensatz wird darauf ausgelegt, nicht nachträglich daran angepasst."
+          },
+          {
+            "q": "Was bedeutet Feuerverzinkung für die Anlage?",
+            "a": "Es gibt zwei Wege und sie belasten die Anlage unterschiedlich. Wird nach dem Umformen verzinkt — im Straßenbau nach EN ISO 1461 der übliche Weg —, läuft blanker Stahl durch die Linie und das Zink kommt später in der Verzinkerei dazu; die Beschichtung deckt dann auch Schnittkanten und Löcher ab. Bei vorverzinktem Band ist die Beschichtung bereits auf dem Blech, deshalb werden Walzenoberflächen und Anpressdruck so eingestellt, dass sie nicht verkratzt; Schnitt- und Lochkanten bleiben unbeschichtet. Welcher Weg gilt, entscheidet in der Regel die Projektspezifikation, nicht die Maschine."
+          },
+          {
+            "q": "Wie lange dauert ein Profilwechsel?",
+            "a": "Der Wechsel zwischen W-Profil und Dreiwellenprofil bedeutet einen Walzensatzwechsel; Rahmen, Antrieb und Stanzeinheit bleiben. Wie lange das dauert, hängt davon ab, wie die Anlage dafür ausgelegt wurde — in Standardausführung ist es eine geplante Arbeit zwischen zwei Aufträgen, mit Kassetten- oder Schnellwechselsystem sinkt die Zeit deutlich. Wenn Sie regelmäßig zwischen beiden Querschnitten wechseln wollen, sagen Sie es bei der Anfrage: den Rahmen dafür auszulegen kostet weit weniger als ihn später umzubauen."
+          },
+          {
+            "q": "Können Schutzplankenpfosten auf derselben Anlage gefertigt werden?",
+            "a": "Nein. Sigma- und C-Pfosten sind ein anderer Querschnitt mit anderer Stationenfolge und anderer Trenneinrichtung, sie laufen auf einer eigenen Rollformanlage. Wir bauen beides, und wenn ein Projekt Holme und Pfosten zusammen braucht, werden die beiden Linien als Paket angeboten — meist ist das ohnehin der sinnvollere Weg, weil Pfostenlänge und Lochbild zum Holm passen müssen, den sie tragen."
           }
         ],
         "sectors": ["Straßenbauunternehmen", "Autobahnprojekte", "Feuerverzinkereien", "Infrastruktur-Exporteure"]
@@ -1072,6 +1164,32 @@
           "Schneideeinheit",
           "Stapelung"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Lärmschutzelemente sind ein sichtbares Produkt an der Straße, und sowohl Aluminium als auch beschichteter Stahl zeigen jede Handhabungsspur. Das Coil wird so aufgelegt und geführt, dass die Sichtseite nirgends schleift; trägt das Band eine Schutzfolie, bleibt sie durch das Umformen hindurch und wird erst nach dem Stapeln abgezogen."
+          },
+          {
+            "title": "Richten",
+            "text": "Das Band wird flach gerichtet, bevor es die Lochstation erreicht. Es geht dabei nicht nur um ein gerades Paneel: ein Band mit Restkrümmung liegt nicht plan unter dem Stempel, und eine in gekrümmtes Blech gestanzte Lochung bekommt ungleichmäßige Lochkanten und einen über die Breite wechselnden Grat."
+          },
+          {
+            "title": "Lochung der absorbierenden Sichtseite",
+            "text": "Das vordere Blech wird flach gelocht, nach dem Muster der akustischen Auslegung. Akustisch maßgeblich sind Lochdurchmesser und offener Flächenanteil gemeinsam, und beide legt der Akustikplaner fest, nicht die Maschine — Aufgabe der Anlage ist es, dieses Muster Paneel für Paneel identisch zu reproduzieren, denn ein schwankender offener Anteil ergibt eine Wand, deren Absorption entlang der Strecke schwankt."
+          },
+          {
+            "title": "Biegezonen bleiben ungelocht",
+            "text": "Das gelochte Feld muss vor jeder späteren Biegelinie enden. Umformen durch eine gelochte Zone reißt das Material an den Löchern und nimmt genau der Kante die Steifigkeit, die das Paneel im Pfosten trägt. Lochwerkzeug und Umformstationen werden deshalb aufeinander abgestimmt — das Muster wird relativ zum fertigen Querschnitt positioniert, nicht einfach auf dem Band zentriert."
+          },
+          {
+            "title": "Umformen nach Werkstoff",
+            "text": "Aluminium und Stahl laufen nicht gleich. Aluminium ist weicher und neigt zum Aufschmieren auf den Walzen, braucht also weniger Druck, andere Walzenoberflächen und Aufmerksamkeit bei der Schmierung; Stahl verträgt mehr Druck und federt stärker zurück. Die Anlage hält beides als Rezept vor, statt bei jedem Auftragswechsel von Hand neu eingestellt zu werden."
+          },
+          {
+            "title": "Ablängen und Stapeln",
+            "text": "Die Paneele werden auf die Modullänge der Wandkonfiguration geschnitten, die sich aus dem Pfostenabstand im Projekt ergibt. Gestapelt wird mit geschützter Sichtseite — ein Kratzer auf einem Absorberpaneel ist bei Aluminium nicht nur kosmetisch, bei beschichtetem Stahl ist er der Startpunkt der Korrosion."
+          }
+        ],
         "faq": [
           {
             "q": "Werden gelochte Front- und Kassettenrückwand auf einer Anlage gefertigt?",
@@ -1084,6 +1202,26 @@
           {
             "q": "Können Sie Aluminiumpaneele fertigen?",
             "a": "Ja. Aluminium erfordert geringere Anpressung und eine andere Rollenoberfläche; die Anlage wird auf das Material eingerichtet."
+          },
+          {
+            "q": "Welche Normen gelten für Lärmschutzwände und was davon betrifft die Anlage?",
+            "a": "Lärmschutzvorrichtungen an Straßen werden nach EN 14388 in Verkehr gebracht; EN 1793 deckt die akustische Leistung ab — Schallabsorption und Luftschalldämmung —, EN 1794 die nicht-akustische Seite wie Windlast, Steinschlag und Verhalten bei Anprall. Fast alles davon wird an der fertigen Vorrichtung geprüft, nicht am Blech: die Kassette mit gelochter Vorderseite, Absorberkern und Rückwand verhält sich als System. Die Anlage verantwortet, die Blechteile durchgängig nach Konstruktion herzustellen, damit die eingebaute Wand die geprüfte ist."
+          },
+          {
+            "q": "Verändert das Lochmuster die akustische Leistung wirklich?",
+            "a": "Ja, und es ist einer der wenigen Punkte am Paneel, bei denen eine kleine Fertigungsabweichung hörbar wird. Die Absorption hängt von Lochdurchmesser und offenem Flächenanteil zusammen mit dem ab, was hinter dem Blech sitzt. Schwankt der offene Anteil zwischen Produktionslosen, absorbiert die Wand über ihre Länge unterschiedlich, obwohl sie identisch aussieht. Deshalb kommt das Muster als feste Vorgabe aus der akustischen Auslegung und die Anlage reproduziert es, statt es anzunähern."
+          },
+          {
+            "q": "Warum kann das Blech nicht bis zum Rand gelocht werden?",
+            "a": "Weil das Paneel an den Rändern gebogen wird und dort Last trägt. Eine bis in die Biegelinie laufende Lochung reißt beim Umformen an den Löchern, und der Flansch, der das Paneel im Pfosten halten soll, wird genau dort geschwächt, wo es zählt. Das gelochte Feld wird deshalb relativ zum fertigen Profil angeordnet, mit vollem Material an jeder Biegung und an den Enden. Beim Nachbau nach Muster ist das ein häufiger Irrtum — die sichtbare Lochfläche ist kleiner als das Blech."
+          },
+          {
+            "q": "Was ändert sich an der Anlage zwischen Aluminium und Stahl?",
+            "a": "Aluminium ist weicher, nimmt leichter Spuren an und neigt zum Aufschmieren auf Walzenoberflächen, läuft also mit geringerem Druck, anderen Walzenoberflächen und mehr Augenmerk auf die Schmierung. Stahl verträgt höheren Druck und federt stärker zurück, was für denselben fertigen Querschnitt eine andere Walzengeometrie bedeutet. Beides kann auf einer Linie laufen, wird aber als getrennte Rezepte eingerichtet; wenn Sie regelmäßig wechseln wollen, sagen Sie es bei der Anfrage, damit die Walzensätze dafür geplant werden."
+          },
+          {
+            "q": "Montiert die Anlage auch die Kassette und füllt den Absorber ein?",
+            "a": "Nein. Die Rollformanlage stellt das gelochte Frontprofil und das geschlossene Rückprofil her. Das Einlegen der Mineralwolle oder eines anderen Absorbers, das Schließen der Kassette und das Setzen der Endkappen ist ein eigener Montagevorgang mit eigener Ausrüstung. Beides sollte man zusammen planen, weil die Kassettenkonstruktion die Profilgeometrie bestimmt — aber es ist nicht dieselbe Maschine und gehört getrennt budgetiert."
           }
         ],
         "sectors": ["Autobahnprojekte", "Bahn und Metro", "Umwelttechnik", "Stadtinfrastruktur"]

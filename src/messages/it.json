@@ -943,6 +943,32 @@
           "Unità di taglio",
           "Sistema di impilaggio"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "I profili per scaffalature si profilano di norma da nastro prezincato, quindi il materiale arriva con il rivestimento già applicato. Questo detta la movimentazione fin dal primo metro: svolgitore e guide sono regolati perché la superficie non strisci, dato che ogni graffio su un montante è un punto d'innesco della corrosione in un magazzino che viene lavato."
+          },
+          {
+            "title": "Spianatura",
+            "text": "La curvatura di bobina si toglie prima della punzonatura, non dopo. Un nastro che conserva curvatura entra in modo irregolare nella punzonatrice, e qualsiasi errore di avanzamento lì diventa direttamente un errore di posizione del foro — l'unica cosa che un profilo per scaffalature non tollera."
+          },
+          {
+            "title": "Punzonatura multifila",
+            "text": "I fori di collegamento si punzonano in piano, secondo il disegno del sistema di scaffalatura. A contare non è la dimensione del foro ma l'accumulo del passo: un montante porta connettori per tutta la sua lunghezza, perciò un piccolo errore di avanzamento ripetuto si somma lungo una colonna alta. L'avanzamento servo con misura a encoder riferisce ogni foro all'intera produzione, non solo al foro precedente."
+          },
+          {
+            "title": "Profilatura del nastro forato",
+            "text": "Formare un nastro già forato non è lo stesso lavoro che formarne uno pieno. L'anima è più debole in corrispondenza di ogni foro, quindi la sequenza delle stazioni è impostata per costruire la sezione senza trascinare materiale sopra le aperture: altrimenti i fori si deformano in ovali e il connettore non appoggia più in squadra."
+          },
+          {
+            "title": "Taglio in fase con la foratura",
+            "text": "Il taglio non è semplicemente a misura. Deve cadere in rapporto fisso con la foratura, così che il primo e l'ultimo foro stiano dove il progetto della scaffalatura li prevede su ogni singolo montante. Una linea che taglia solo a lunghezza produrrà profili di misura corretta e comunque inutilizzabili."
+          },
+          {
+            "title": "Uscita e impilamento",
+            "text": "I profili finiti vengono raccolti e impilati. I montanti sono lunghi e relativamente snelli, perciò l'interasse dei supporti in uscita conta: un profilo lasciato flettere sotto il proprio peso prima dell'impilamento conserva parte di quella freccia, e un montante inflesso non risulta a piombo nel telaio montato."
+          }
+        ],
         "faq": [
           {
             "q": "Montanti e traverse possono girare sulla stessa linea?",
@@ -955,6 +981,26 @@
           {
             "q": "Quale spessore lamiera gestisce la linea?",
             "a": "I profili per scaffalature pesanti richiedono in genere materiale spesso; sezione e range di spessore sono dimensionati per progetto dal vostro disegno."
+          },
+          {
+            "q": "Quali norme regolano le scaffalature e cosa chiedono alla produzione?",
+            "a": "Le scaffalature portapallet fisse si calcolano secondo la EN 15512; la EN 15620 copre le tolleranze di fabbricazione e montaggio e la EN 15635 l'esercizio e l'ispezione dell'impianto installato. Una scaffalatura è una struttura portante, perciò ciò che la linea garantisce è dimensionale: geometria della sezione e posizione dei fori entro la tolleranza con cui si è calcolato. Il calcolo e la responsabilità della marcatura CE sono del titolare del sistema; la linea deve poter produrre conformemente, giorno dopo giorno."
+          },
+          {
+            "q": "Perché il passo dei fori conta più della loro dimensione?",
+            "a": "Perché l'errore di passo si accumula e quello di dimensione no. Un foro leggermente maggiorato è un problema locale di accoppiamento; un avanzamento sistematicamente lungo di una frazione di millimetro sposta progressivamente ogni foro lungo il montante, e in cima a una colonna alta il connettore non entra più. Per questo la stazione di punzonatura è servoassistita con misura a encoder anziché con arresto meccanico, e per questo il dato da confrontare tra fornitori è la tolleranza di passo sull'intera lunghezza del profilo, non per singolo passo."
+          },
+          {
+            "q": "Quale materiale si usa per i profili di scaffalatura?",
+            "a": "Montanti e correnti si profilano di norma in acciaio strutturale nella gamma S350GD-S390GD, fornito prezincato. Il grado non è intercambiabile: un carico di snervamento più alto ritorna elasticamente di più, quindi la stessa sezione finita richiede geometria dei rulli diversa e più compensazione. Cambia anche il comportamento dell'anima forata durante la formatura. Inviate il grado insieme al disegno: l'utensile viene progettato su quello."
+          },
+          {
+            "q": "Riuscite a riprodurre la foratura di un sistema esistente?",
+            "a": "Sì. L'utensile di punzonatura viene realizzato sul disegno della foratura, e basta un profilo campione o un disegno quotato. Un punto da sollevare presto: i disegni di foratura dei connettori sono spesso proprietà intellettuale del titolare del sistema e alcuni sono tutelati. Decidere cosa siete autorizzati a produrre spetta all'acquirente, non al costruttore della macchina — noi realizziamo l'utensile sulla foratura che ci indicate."
+          },
+          {
+            "q": "I correnti si producono come i montanti?",
+            "a": "No, e conviene separarli quando si pianifica l'investimento. I montanti sono profili aperti forati e l'intera linea è costruita attorno alla precisione di punzonatura. I correnti sono di solito sezioni chiuse a scatola, spesso formate da due profili e poi unite, quindi la linea prevede una diversa sequenza di stazioni e una fase di giunzione al posto di un grande gruppo di punzonatura. La maggior parte dei produttori di scaffalature finisce con due linee anziché una che scende a compromessi su entrambe."
           }
         ],
         "sectors": ["Magazzino e logistica", "Produttori di scaffalature", "Magazzini e-commerce", "Celle frigorifere"]
@@ -1029,6 +1075,32 @@
           "Taglio idraulico",
           "Impilaggio"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "La bobina viene caricata sull'aspo svolgitore per carichi pesanti e bloccata sul diametro interno con espansione idraulica. Le bobine per guardrail sono larghe e pesanti, perciò il carrello di carico e il braccio pressore tengono giù la spira esterna: su materiale spesso una spira libera può aprirsi di scatto mentre il nastro viene tirato."
+          },
+          {
+            "title": "Spianatura",
+            "text": "La curvatura che il nastro conserva dall'avvolgimento viene eliminata prima di qualsiasi formatura. Sul guardrail conta più che sui profili leggeri: la freccia residua rimasta nel nastro piano diventa evidente una volta formata l'onda, e una barriera non rettilinea non appoggia correttamente sui pali in cantiere."
+          },
+          {
+            "title": "Punzonatura a piano",
+            "text": "I fori di collegamento e le asole per i pali vengono punzonati prima che il nastro raggiunga le stazioni di profilatura. Punzonare una barriera già formata deformerebbe l'onda attorno al foro e lascerebbe il foro stesso su una superficie curva; punzonare in piano mantiene il passo sotto controllo servo e i bordi puliti."
+          },
+          {
+            "title": "Profilatura progressiva",
+            "text": "L'onda non si forma in un solo passaggio. Ogni stazione assorbe una quota dell'angolo totale, così il materiale incrudisce gradualmente invece di assottigliarsi o fessurarsi sulle creste. Per questo la lamiera zincata spessa richiede una sequenza di stazioni più lunga di un profilo sottile da copertura: a proteggere la sezione è la sequenza, non la pressione."
+          },
+          {
+            "title": "Taglio a misura",
+            "text": "Il taglio idraulico separa la barriera nella sezione già formata, con una lama che segue il profilo finito. Una lama che non segue l'onda deforma la sezione al taglio e lascia un bordo da riprendere prima della zincatura."
+          },
+          {
+            "title": "Uscita e impilamento",
+            "text": "Le barriere finite escono sul tavolo di scarico e vengono impilate pronte per la zincatura o la spedizione. Anche qui la movimentazione conta: una barriera trascinata sopra un'altra riga la superficie, il che su materiale prezincato significa riparare il rivestimento."
+          }
+        ],
         "faq": [
           {
             "q": "Posso produrre profili W e thrie sulla stessa linea?",
@@ -1041,6 +1113,26 @@
           {
             "q": "Come si realizzano fori e asole di montaggio?",
             "a": "Un'unità pressa idraulica è integrata; fori di collegamento e asole sono punzonati prima che il profilo esca dalla linea."
+          },
+          {
+            "q": "Quale norma si applica al guardrail e cosa richiede alla linea?",
+            "a": "La EN 1317 è la norma europea per i sistemi di ritenuta stradale. Classifica le barriere per classe di contenimento, indice di severità dell'urto e larghezza operativa, e prova il sistema installato nel suo insieme, non la lama da sola. Alla linea di produzione questo chiede ripetibilità: geometria dell'onda, passo dei fori e lunghezza devono restare entro le tolleranze del disegno approvato, così che il sistema provato al crash test e quello prodotto siano lo stesso. L'omologazione appartiene al titolare del sistema; la linea rende la conformità producibile, non porta il certificato."
+          },
+          {
+            "q": "Quale grado di acciaio si utilizza?",
+            "a": "Le lame guardrail si profilano di norma in acciaio strutturale nella gamma S235-S355, a seconda della classe di contenimento con cui il sistema è stato omologato. Il grado non è un semplice dettaglio d'acquisto: un carico di snervamento più alto ritorna elasticamente di più, quindi la stessa onda richiede una geometria dei rulli diversa e più compensazione. Indicate grado e spessore già in fase di richiesta: l'utensile viene progettato su quei dati, non adattato dopo."
+          },
+          {
+            "q": "Come incide la zincatura a caldo sulla linea?",
+            "a": "Ci sono due strade e caricano la linea in modo diverso. Se la lama viene zincata dopo la formatura — la strada abituale nelle opere stradali secondo EN ISO 1461 — la linea lavora acciaio nudo e lo zinco arriva in zincheria; il rivestimento copre allora anche i bordi di taglio e i fori. Se si parte da nastro prezincato, il rivestimento è già sulla lamiera: superfici e pressioni dei rulli vengono impostate per non rigarlo, e i bordi tagliati e punzonati restano scoperti. Quale strada seguire lo stabilisce di regola il capitolato di progetto, non la macchina."
+          },
+          {
+            "q": "Quanto dura un cambio profilo?",
+            "a": "Passare dalla lama a due onde a quella a tre onde significa cambiare il set di rulli; telaio, azionamento e unità di punzonatura restano. Quanto tempo richieda dipende da come la linea è stata costruita per farlo: in configurazione standard è un lavoro pianificato tra due produzioni, con un sistema a cassetta o a cambio rapido il tempo scende sensibilmente. Se prevedete di alternare regolarmente le due sezioni ditelo in fase di richiesta: progettare il telaio per questo costa molto meno che modificarlo in seguito."
+          },
+          {
+            "q": "I pali possono essere prodotti sulla stessa linea?",
+            "a": "No. I pali a sezione sigma o C sono un profilo diverso, con sequenza di stazioni e sistema di taglio diversi, quindi vengono prodotti su una linea di profilatura dedicata. Costruiamo entrambe e, quando un progetto richiede lame e pali insieme, le due linee vengono quotate come insieme — che è di solito anche il modo più sensato di acquistarle, perché lunghezza e foratura del palo devono corrispondere alla lama che sostiene."
           }
         ],
         "sectors": ["Imprese stradali", "Progetti autostradali", "Impianti di zincatura", "Esportatori di infrastrutture"]
@@ -1072,6 +1164,32 @@
           "Unità di taglio",
           "Impilaggio"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "I pannelli fonoassorbenti sono un prodotto in vista lungo la strada, e sia l'alluminio sia l'acciaio preverniciato mostrano ogni segno di movimentazione. La bobina viene caricata e guidata in modo che la faccia a vista non strisci mai; se il nastro porta una pellicola protettiva, questa resta durante la formatura e si toglie solo dopo l'impilamento."
+          },
+          {
+            "title": "Spianatura",
+            "text": "Il nastro viene spianato prima di raggiungere la stazione di foratura. Non si tratta solo di ottenere un pannello dritto: un nastro che conserva la curvatura di bobina non appoggia in piano sotto il punzone, e una foratura eseguita su lamiera curva presenta bordi irregolari e una bava che varia in larghezza."
+          },
+          {
+            "title": "Foratura della faccia fonoassorbente",
+            "text": "La lamiera anteriore viene forata in piano, secondo lo schema richiesto dal progetto acustico. Dal punto di vista acustico contano insieme il diametro dei fori e la percentuale di area aperta, ed entrambi li stabilisce il progettista acustico, non la macchina: il compito della linea è riprodurre quello schema identico pannello dopo pannello, perché un'area aperta variabile dà una barriera la cui capacità di assorbimento varia lungo il tracciato."
+          },
+          {
+            "title": "Le zone di piega restano piene",
+            "text": "Il campo forato deve terminare prima di ogni linea di piega. Formare attraverso una zona forata strappa il materiale in corrispondenza dei fori e toglie rigidezza proprio al bordo che sostiene il pannello nel montante. Per questo utensile di foratura e stazioni di formatura vengono messi in fase tra loro: lo schema si posiziona rispetto alla sezione finita, non semplicemente centrato sul nastro."
+          },
+          {
+            "title": "Formatura in funzione del materiale",
+            "text": "Alluminio e acciaio non si comportano allo stesso modo. L'alluminio è più tenero e tende a incollarsi sui rulli, quindi lavora con pressione minore, superfici dei rulli diverse e più attenzione alla lubrificazione; l'acciaio sopporta pressioni maggiori e ritorna elasticamente di più. La linea li tiene come ricette anziché essere riregolata a mano ogni volta che cambia la commessa."
+          },
+          {
+            "title": "Taglio a misura e impilamento",
+            "text": "I pannelli si tagliano alla lunghezza di modulo prevista dalla configurazione della barriera, definita dall'interasse dei montanti di progetto. L'impilamento avviene con la faccia protetta: un graffio su un pannello fonoassorbente non è solo estetico sull'alluminio, e sull'acciaio preverniciato è il punto da cui parte la corrosione."
+          }
+        ],
         "faq": [
           {
             "q": "Pannello frontale forato e posteriore a cassetta si fanno su una linea?",
@@ -1084,6 +1202,26 @@
           {
             "q": "Potete produrre pannelli in alluminio?",
             "a": "Sì. L'alluminio richiede pressione inferiore e una diversa superficie dei rulli; la linea viene predisposta per il materiale."
+          },
+          {
+            "q": "Quali norme regolano le barriere antirumore e quale parte riguarda la linea?",
+            "a": "I dispositivi per la riduzione del rumore da traffico stradale sono immessi sul mercato secondo la EN 14388; la EN 1793 copre le prestazioni acustiche — assorbimento acustico e isolamento al rumore aereo — e la EN 1794 la parte non acustica, come carico da vento, impatto di pietrisco e sicurezza in caso di urto. Quasi tutto ciò si prova sul dispositivo finito, non sulla lamiera: il cassone con la faccia forata, il nucleo fonoassorbente e il pannello posteriore si comporta come sistema. La linea risponde di produrre la carpenteria conforme al progetto in modo costante, così che la barriera installata sia quella provata."
+          },
+          {
+            "q": "Lo schema di foratura cambia davvero le prestazioni acustiche?",
+            "a": "Sì, ed è uno dei pochi aspetti del pannello in cui una piccola deriva di produzione ha un esito udibile. L'assorbimento dipende dal diametro dei fori e dall'area aperta, insieme a ciò che sta dietro la lamiera. Se l'area aperta varia tra le produzioni, la barriera assorbe in modo diverso lungo la sua estensione pur avendo aspetto identico. Per questo lo schema arriva dal progetto acustico come specifica fissa e la linea lo riproduce anziché approssimarlo."
+          },
+          {
+            "q": "Perché la lamiera non si fora fino al bordo?",
+            "a": "Perché i bordi sono il punto in cui il pannello viene piegato e in cui porta carico. Una foratura che entra nella linea di piega si strappa in corrispondenza dei fori durante la formatura, e l'ala che dovrebbe trattenere il pannello nel montante risulta indebolita proprio dove serve. Il campo forato viene quindi disposto rispetto al profilo finito, lasciando materiale pieno a ogni piega e alle estremità. È un equivoco frequente quando si copia un pannello da un campione: l'area forata visibile è più piccola della lamiera."
+          },
+          {
+            "q": "Cosa cambia sulla linea tra alluminio e acciaio?",
+            "a": "L'alluminio è più tenero, si segna più facilmente e tende a incollarsi sulle superfici dei rulli, quindi lavora a pressione minore, con superfici diverse e maggiore attenzione alla lubrificazione. L'acciaio sopporta pressioni più alte e ritorna elasticamente di più, il che comporta una geometria dei rulli diversa per la stessa sezione finita. Entrambi possono girare su una linea, ma vengono impostati come ricette separate; se prevedete di alternarli con regolarità, ditelo in fase di richiesta perché i set di rulli siano pianificati di conseguenza."
+          },
+          {
+            "q": "La linea assembla anche il cassone e riempie il nucleo fonoassorbente?",
+            "a": "No. La linea di profilatura produce il profilo anteriore forato e il profilo posteriore chiuso. Inserire la lana minerale o altro materiale fonoassorbente, chiudere il cassone e montare le testate è un'operazione di assemblaggio separata, con attrezzature proprie. Conviene pianificare le due cose insieme, perché il progetto del cassone determina la geometria del profilo, ma non sono la stessa macchina e vanno preventivate separatamente."
           }
         ],
         "sectors": ["Progetti autostradali", "Ferrovia e metro", "Ingegneria ambientale", "Infrastruttura urbana"]

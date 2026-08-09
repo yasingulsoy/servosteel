@@ -942,6 +942,32 @@
           "Zespół cięcia",
           "System układania"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Profile regałowe wytwarza się zwykle z taśmy ocynkowanej wstępnie, więc materiał trafia na linię z gotową powłoką. To wyznacza sposób obchodzenia się z nim od pierwszego metra: odwijak i prowadnice ustawia się tak, by powierzchnia się nie ocierała, bo każda rysa na słupie regału jest punktem startu korozji w magazynie, który się myje."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Krzywiznę kręgu usuwa się przed wykrawaniem, nie po nim. Taśma, która wciąż zachowuje wygięcie, wchodzi w wykrojnik nierównomiernie, a każdy błąd posuwu w tym miejscu przekłada się wprost na błąd położenia otworu — czyli jedyną rzecz, której profil regałowy nie toleruje."
+          },
+          {
+            "title": "Wykrawanie wielorzędowe",
+            "text": "Otwory łączników wykrawa się na płasko, we wzorze stosowanym przez dany system regałowy. Decyduje nie wielkość otworu, lecz kumulacja podziałki: słup niesie łączniki na całej długości, więc niewielki powtarzalny błąd posuwu sumuje się na wysokiej kolumnie. Posuw serwo z pomiarem enkoderowym odnosi każdy otwór do całej produkcji, a nie tylko do otworu poprzedniego."
+          },
+          {
+            "title": "Profilowanie taśmy perforowanej",
+            "text": "Kształtowanie taśmy już perforowanej to nie to samo co kształtowanie pełnej. Środnik jest słabszy przy każdym otworze, więc sekwencję stacji układa się tak, by budować przekrój bez przeciągania materiału nad otworami — inaczej otwory owalizują się i łącznik przestaje osadzać się prostopadle."
+          },
+          {
+            "title": "Cięcie w fazie z wzorem otworów",
+            "text": "Cięcie nie jest po prostu na długość. Musi wypadać w stałej relacji do perforacji, żeby pierwszy i ostatni otwór znalazły się tam, gdzie konstrukcja regału ich oczekuje, na każdym słupie. Linia, która tylko odmierza długość, wyprodukuje profile o poprawnym wymiarze i mimo to bezużyteczne."
+          },
+          {
+            "title": "Wybieg i sztaplowanie",
+            "text": "Gotowe profile są zbierane i sztaplowane. Słupy są długie i stosunkowo smukłe, więc rozstaw podpór na wybiegu ma znaczenie: profil, któremu pozwoli się ugiąć pod własnym ciężarem przed ułożeniem, zachowa część tego ugięcia, a wygięty słup nie stanie pionowo w zmontowanej ramie."
+          }
+        ],
         "faq": [
           {
             "q": "Czy słupy i belki mogą iść na jednej linii?",
@@ -954,6 +980,26 @@
           {
             "q": "Jaką grubość blachy obsługuje linia?",
             "a": "Profile regałów ciężkich wymagają zwykle grubego materiału; przekrój i zakres grubości dobiera się projektowo na podstawie rysunku."
+          },
+          {
+            "q": "Jakie normy obowiązują dla regałów i czego wymagają od produkcji?",
+            "a": "Stałe regały paletowe projektuje się według EN 15512; EN 15620 obejmuje tolerancje wykonania i montażu, a EN 15635 eksploatację i przeglądy zabudowanej instalacji. Regał jest konstrukcją nośną, więc to, co gwarantuje linia, ma charakter wymiarowy: geometria przekroju i położenie otworów w granicach tolerancji, dla której prowadzono obliczenia. Obliczenia i odpowiedzialność za CE należą do właściciela systemu regałowego — linia musi umieć produkować zgodnie z tym, dzień po dniu."
+          },
+          {
+            "q": "Dlaczego podziałka otworów ma większe znaczenie niż ich wielkość?",
+            "a": "Bo błąd podziałki się kumuluje, a błąd wielkości nie. Nieco za duży otwór to lokalny problem pasowania; posuw stale dłuższy o ułamek milimetra przesuwa każdy kolejny otwór wzdłuż słupa, a na szczycie wysokiej kolumny łącznik już nie wchodzi. Dlatego stację wykrawania zasila się serwonapędem z pomiarem enkoderowym zamiast zderzaka mechanicznego, i dlatego wartością do porównania między dostawcami jest tolerancja podziałki na całej długości profilu, a nie na pojedynczy krok."
+          },
+          {
+            "q": "Z jakiego materiału wykonuje się profile regałowe?",
+            "a": "Słupy i trawersy profiluje się zwykle ze stali konstrukcyjnej z zakresu S350GD-S390GD, dostarczanej jako ocynkowana wstępnie. Gatunek nie jest wymienny: wyższa granica plastyczności oznacza większy powrót sprężysty, więc ten sam gotowy przekrój wymaga innej geometrii rolek i większej kompensacji. Zmienia też zachowanie perforowanego środnika podczas kształtowania. Gatunek przyślijcie razem z rysunkiem — oprzyrządowanie projektuje się pod niego."
+          },
+          {
+            "q": "Czy odwzorujecie wzór otworów istniejącego systemu regałowego?",
+            "a": "Tak. Oprzyrządowanie wykrawające wykonuje się pod dany wzór, a wystarczy profil wzorcowy albo rysunek z wymiarami. Warto poruszyć wcześnie jedną kwestię: wzory otworów łączników bywają własnością intelektualną właściciela systemu regałowego, a część z nich jest chroniona. Decyzja o tym, co wolno Państwu produkować, należy do kupującego, nie do producenta maszyny — my wykonujemy oprzyrządowanie pod wskazany wzór."
+          },
+          {
+            "q": "Czy trawersy produkuje się tak samo jak słupy?",
+            "a": "Nie i warto to rozdzielić przy planowaniu inwestycji. Słupy to profile otwarte, perforowane, a cała linia jest zbudowana wokół dokładności wykrawania. Trawersy to zwykle zamknięte przekroje skrzynkowe, często formowane z dwóch profili i łączone, więc linia ma inną sekwencję stacji i etap łączenia zamiast dużej grupy wykrawającej. Większość producentów regałów kończy z dwiema liniami zamiast jednej, która idzie na kompromis w obu przypadkach."
           }
         ],
         "sectors": ["Magazyny i logistyka", "Producenci regałów", "Magazyny e-commerce", "Chłodnie"]
@@ -1028,6 +1074,32 @@
           "Cięcie hydrauliczne",
           "Układanie"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Krąg trafia na odwijak o dużej nośności i jest chwytany od średnicy wewnętrznej rozprężaniem hydraulicznym. Kręgi na bariery drogowe są szerokie i ciężkie, dlatego wózek załadowczy i ramię dociskowe przytrzymują zewnętrzny zwój — przy grubym materiale niezabezpieczony zwój potrafi odskoczyć przy ciągnięciu taśmy."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Krzywiznę, którą taśma zachowuje po nawinięciu, usuwa się przed jakimkolwiek kształtowaniem. Przy barierach waży to więcej niż przy lekkich profilach: resztkowe wygięcie pozostawione w płaskiej taśmie uwidacznia się dopiero po uformowaniu fali, a nieprosta bariera nie przylega prawidłowo do słupków na budowie."
+          },
+          {
+            "title": "Wykrawanie na płasko",
+            "text": "Otwory montażowe i szczeliny słupkowe wykrawa się, zanim taśma dotrze do stacji kształtujących. Wykrawanie gotowej bariery zniekształciłoby falę wokół otworu, a sam otwór znalazłby się na powierzchni krzywoliniowej; wykrawanie na płasko utrzymuje podziałkę pod kontrolą serwo i pozostawia czyste krawędzie."
+          },
+          {
+            "title": "Profilowanie stopniowe",
+            "text": "Fala nie powstaje w jednym przejściu. Każda stacja przejmuje część całkowitego kąta, dzięki czemu materiał umacnia się stopniowo, zamiast cienieć lub pękać na grzbietach. Właśnie dlatego gruba blacha ocynkowana wymaga dłuższej sekwencji stacji niż cienki profil dachowy — przekrój chroni sekwencja, a nie nacisk."
+          },
+          {
+            "title": "Cięcie na długość",
+            "text": "Nożyce hydrauliczne oddzielają barierę w przekroju już uformowanym, nożem odwzorowującym gotowy profil. Nóż, który nie podąża za falą, zniekształca przekrój w miejscu cięcia i pozostawia krawędź wymagającą obróbki przed cynkowaniem."
+          },
+          {
+            "title": "Wybieg i sztaplowanie",
+            "text": "Gotowe bariery schodzą na stół wybiegowy i są sztaplowane do cynkowania lub wysyłki. Tu również liczy się obchodzenie się z wyrobem: bariera przeciągnięta po drugiej rysuje powierzchnię, co przy materiale ocynkowanym wstępnie oznacza naprawę powłoki."
+          }
+        ],
         "faq": [
           {
             "q": "Czy mogę produkować profile W i thrie na jednej linii?",
@@ -1040,6 +1112,26 @@
           {
             "q": "Jak wykonywane są otwory i szczeliny montażowe?",
             "a": "Zintegrowany jest zespół prasy hydraulicznej; otwory łączeniowe i szczeliny wykrawane są zanim profil opuści linię."
+          },
+          {
+            "q": "Jaka norma obowiązuje dla barier i czego wymaga od linii?",
+            "a": "EN 1317 to europejska norma dla drogowych systemów powstrzymujących pojazd. Klasyfikuje bariery według poziomu powstrzymywania, intensywności zderzenia i szerokości pracującej, a badaniu poddaje zabudowany system jako całość, nie samą prowadnicę. Od linii produkcyjnej wymaga to powtarzalności: geometria fali, podziałka otworów i długość muszą mieścić się w tolerancjach zatwierdzonego rysunku, żeby system przebadany zderzeniowo i system produkowany były tym samym. Aprobata należy do właściciela systemu; linia sprawia, że zgodność da się wyprodukować, ale certyfikatu nie nosi."
+          },
+          {
+            "q": "Jaki gatunek stali się stosuje?",
+            "a": "Prowadnice barier profiluje się zwykle ze stali konstrukcyjnej z zakresu S235-S355, zależnie od poziomu powstrzymywania, na jaki system uzyskał aprobatę. Gatunek to nie tylko kwestia zakupowa: wyższa granica plastyczności oznacza większy powrót sprężysty, więc ta sama fala wymaga innej geometrii rolek i większej kompensacji. Gatunek i grubość podajcie już w zapytaniu — oprzyrządowanie projektuje się pod nie, a nie dopasowuje później."
+          },
+          {
+            "q": "Jak cynkowanie ogniowe wpływa na linię?",
+            "a": "Są dwie drogi i obciążają linię inaczej. Jeśli prowadnica jest cynkowana po profilowaniu — droga typowa w drogownictwie, zgodnie z EN ISO 1461 — linia przerabia stal surową, a cynk nakłada cynkownia; powłoka pokrywa wtedy również krawędzie cięcia i wykrojone otwory. Przy taśmie ocynkowanej wstępnie powłoka jest już na blasze, więc powierzchnie i naciski rolek ustawia się tak, by jej nie zarysować, a krawędzie cięte i wykrawane pozostają niepokryte. To, która droga obowiązuje, wynika zwykle ze specyfikacji projektu, nie z maszyny."
+          },
+          {
+            "q": "Ile trwa przezbrojenie na inny profil?",
+            "a": "Przejście między prowadnicą dwufalową a trójfalową oznacza wymianę zestawu rolek; rama, napęd i moduł wykrawania zostają. Czas zależy od tego, jak linię pod to zbudowano — w wykonaniu standardowym to planowana praca między zleceniami, przy konstrukcji kasetowej lub szybkozmiennej czas wyraźnie spada. Jeśli spodziewacie się regularnego przechodzenia między obydwoma przekrojami, powiedzcie o tym na etapie zapytania: zaprojektowanie ramy pod to kosztuje znacznie mniej niż późniejsza przebudowa."
+          },
+          {
+            "q": "Czy słupki barier można produkować na tej samej linii?",
+            "a": "Nie. Słupki o przekroju sigma i C to inny profil, z inną sekwencją stacji i innym układem cięcia, więc powstają na własnej linii profilującej. Budujemy obie, a gdy projekt wymaga prowadnic i słupków razem, obie linie wyceniamy jako komplet — co zwykle jest też rozsądniejszym sposobem zakupu, bo długość i rozstaw otworów słupka muszą pasować do prowadnicy, którą niesie."
           }
         ],
         "sectors": ["Wykonawcy drogowi", "Projekty autostradowe", "Ocynkownie", "Eksporterzy infrastruktury"]
@@ -1071,6 +1163,32 @@
           "Zespół cięcia",
           "Układanie"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Panele akustyczne to wyrób widoczny przy drodze, a zarówno aluminium, jak i stal powlekana pokazują każdy ślad po manipulacji. Krąg zakłada się i prowadzi tak, by strona licowa nigdzie się nie ocierała; jeśli taśma ma folię ochronną, zostaje ona przez całe kształtowanie i zdejmuje się ją dopiero po ułożeniu panelu."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Taśmę prostuje się, zanim dotrze do stacji perforacji. Nie chodzi tylko o prosty panel: taśma zachowująca krzywiznę kręgu nie leży płasko pod stemplem, a perforacja wykonana w wygiętej blasze ma nierówne krawędzie otworów i zadzior zmienny na szerokości."
+          },
+          {
+            "title": "Perforacja lica pochłaniającego",
+            "text": "Blachę czołową perforuje się na płasko, wzorem wymaganym przez projekt akustyczny. Akustycznie decydują razem średnica otworu i procent powierzchni otwartej, a oba ustala projektant akustyk, nie maszyna — zadaniem linii jest odtwarzać ten wzór identycznie panel po panelu, bo zmienna powierzchnia otwarta daje ekran, którego pochłanianie zmienia się wzdłuż drogi."
+          },
+          {
+            "title": "Strefy gięcia pozostają pełne",
+            "text": "Pole perforowane musi kończyć się przed każdą przyszłą linią gięcia. Kształtowanie przez strefę perforowaną rozrywa materiał przy otworach i odbiera sztywność właśnie tej krawędzi, która trzyma panel w słupku. Dlatego oprzyrządowanie perforujące i stacje kształtujące ustawia się w fazie: wzór pozycjonuje się względem gotowego przekroju, a nie po prostu centruje na taśmie."
+          },
+          {
+            "title": "Kształtowanie pod materiał",
+            "text": "Aluminium i stal nie zachowują się tak samo. Aluminium jest miększe i skłonne do zalepiania rolek, więc pracuje przy niższym nacisku, z innymi powierzchniami rolek i większą dbałością o smarowanie; stal znosi wyższy nacisk i bardziej wraca sprężyście. Linia trzyma oba jako receptury, zamiast być przestawiana ręcznie przy każdej zmianie zlecenia."
+          },
+          {
+            "title": "Cięcie na długość i sztaplowanie",
+            "text": "Panele tnie się na długość modułu wynikającą z układu ekranu, którą wyznacza rozstaw słupków w projekcie. Sztapluje się je z chronionym licem: rysa na panelu pochłaniającym w aluminium nie jest wyłącznie kwestią estetyki, a w stali powlekanej to miejsce, w którym zaczyna się korozja."
+          }
+        ],
         "faq": [
           {
             "q": "Czy panel przedni perforowany i tylny kasetonowy powstają na jednej linii?",
@@ -1083,6 +1201,26 @@
           {
             "q": "Czy produkują Państwo panele aluminiowe?",
             "a": "Tak. Aluminium wymaga niższego nacisku i innej powierzchni rolek; linia jest przygotowywana pod materiał."
+          },
+          {
+            "q": "Jakie normy obowiązują dla ekranów akustycznych i co z nich dotyczy linii?",
+            "a": "Drogowe urządzenia ograniczające hałas wprowadza się do obrotu według EN 14388; EN 1793 obejmuje właściwości akustyczne — pochłanianie dźwięku i izolacyjność od dźwięków powietrznych — a EN 1794 stronę nieakustyczną, jak obciążenie wiatrem, uderzenie kamieniem i bezpieczeństwo przy zderzeniu. Niemal wszystko to bada się na gotowym urządzeniu, nie na blasze: kaseta z perforowanym licem, rdzeniem pochłaniającym i panelem tylnym zachowuje się jako system. Linia odpowiada za to, by wykonywać blacharkę zgodnie z projektem w sposób powtarzalny, tak aby zabudowany ekran był tym, który przebadano."
+          },
+          {
+            "q": "Czy wzór perforacji naprawdę zmienia właściwości akustyczne?",
+            "a": "Tak i jest to jedna z niewielu rzeczy w panelu, gdzie niewielki dryf produkcyjny daje słyszalny skutek. Pochłanianie zależy od średnicy otworów i powierzchni otwartej łącznie z tym, co znajduje się za blachą. Jeśli powierzchnia otwarta różni się między partiami, ekran pochłania inaczej na swojej długości, choć wygląda identycznie. Dlatego wzór przychodzi z projektu akustycznego jako stała specyfikacja, a linia go odtwarza, a nie przybliża."
+          },
+          {
+            "q": "Dlaczego blachy nie perforuje się do samej krawędzi?",
+            "a": "Bo krawędzie to miejsce, gdzie panel jest gięty i gdzie przenosi obciążenie. Perforacja wchodząca w linię gięcia rozrywa się przy otworach podczas kształtowania, a półka, która ma trzymać panel w słupku, zostaje osłabiona dokładnie tam, gdzie to istotne. Pole perforowane układa się więc względem gotowego profilu, zostawiając pełny materiał przy każdym gięciu i na końcach. To częste nieporozumienie przy kopiowaniu panelu z próbki — widoczna powierzchnia perforowana jest mniejsza niż blacha."
+          },
+          {
+            "q": "Co zmienia się na linii między aluminium a stalą?",
+            "a": "Aluminium jest miększe, łatwiej się znaczy i skłania do zalepiania powierzchni rolek, więc pracuje przy niższym nacisku, z innymi powierzchniami i większą dbałością o smarowanie. Stal znosi wyższe naciski i bardziej wraca sprężyście, co oznacza inną geometrię rolek dla tego samego gotowego przekroju. Oba mogą pracować na jednej linii, ale konfiguruje się je jako osobne receptury; jeśli spodziewacie się regularnego przechodzenia, powiedzcie o tym w zapytaniu, aby zestawy rolek zostały pod to zaplanowane."
+          },
+          {
+            "q": "Czy linia montuje też kasetę i wypełnia rdzeń pochłaniający?",
+            "a": "Nie. Linia profilująca wytwarza perforowany profil czołowy i zamknięty profil tylny. Włożenie wełny mineralnej lub innego materiału pochłaniającego, zamknięcie kasety i osadzenie zaślepek to osobna operacja montażowa z własnym wyposażeniem. Warto planować obie rzeczy razem, bo konstrukcja kasety wyznacza geometrię profilu — ale to nie ta sama maszyna i należy je budżetować oddzielnie."
           }
         ],
         "sectors": ["Projekty autostradowe", "Kolej i metro", "Inżynieria środowiska", "Infrastruktura miejska"]

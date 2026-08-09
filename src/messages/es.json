@@ -943,6 +943,32 @@
           "Unidad de corte",
           "Sistema de apilado"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "Los perfiles de estantería se perfilan normalmente a partir de bobina pregalvanizada, así que la banda llega con su recubrimiento puesto. Eso condiciona la manipulación desde el primer metro: desenrollador y guías se ajustan para que la superficie no roce, porque cada raya en un puntal es un punto de inicio de corrosión en un almacén que se lava."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La curvatura de bobina se elimina antes del punzonado, no después. Una banda que aún conserva comba entra de forma desigual en la punzonadora, y cualquier error de avance ahí se convierte directamente en error de posición de agujero, que es lo único que un perfil de estantería no tolera."
+          },
+          {
+            "title": "Punzonado multifila",
+            "text": "Los agujeros de conexión se punzonan en plano, con el patrón del sistema de estantería. Lo determinante no es el tamaño del agujero sino la acumulación del paso: un puntal lleva conectores en toda su longitud, de modo que un pequeño error de avance repetido se suma a lo largo de una columna alta. El avance servo con medición por encóder referencia cada agujero al conjunto de la tirada, no solo al agujero anterior."
+          },
+          {
+            "title": "Perfilado de la banda perforada",
+            "text": "Conformar una banda ya perforada no es el mismo trabajo que conformar una maciza. El alma es más débil en cada agujero, así que la secuencia de estaciones se dispone para levantar la sección sin arrastrar material sobre las aberturas; de lo contrario los agujeros se deforman en óvalos y el conector deja de asentar a escuadra."
+          },
+          {
+            "title": "Corte en fase con el patrón de agujeros",
+            "text": "El corte no es simplemente a medida. Tiene que caer en relación fija con la perforación, para que el primer y el último agujero queden donde el diseño del rack los espera en cada puntal. Una línea que solo corta a longitud producirá perfiles de medida correcta e igualmente inservibles."
+          },
+          {
+            "title": "Salida y apilado",
+            "text": "Los perfiles terminados se recogen y apilan. Los puntales son largos y relativamente esbeltos, así que la separación de apoyos en la mesa de salida importa: un perfil al que se deja flectar bajo su propio peso antes de apilarlo conserva parte de esa comba, y un puntal combado no queda a plomo en el bastidor montado."
+          }
+        ],
         "faq": [
           {
             "q": "¿Puentes y largueros pueden ir en la misma línea?",
@@ -955,6 +981,26 @@
           {
             "q": "¿Qué espesor de chapa admite la línea?",
             "a": "Los perfiles de estantería pesada suelen requerir material grueso; la sección y el rango de espesor se dimensionan por proyecto a partir de su plano."
+          },
+          {
+            "q": "¿Qué normas rigen las estanterías y qué exigen de la producción?",
+            "a": "Las estanterías fijas de paletización se calculan según EN 15512; la EN 15620 cubre las tolerancias de fabricación y montaje y la EN 15635 la explotación e inspección de la instalación. Una estantería es una estructura portante, así que lo que la línea garantiza es dimensional: geometría de la sección y posición de agujeros dentro de la tolerancia con la que se calculó. El cálculo y la responsabilidad del marcado CE son del titular del sistema; la línea tiene que poder producir conforme a él, día tras día."
+          },
+          {
+            "q": "¿Por qué importa más el paso de los agujeros que su tamaño?",
+            "a": "Porque el error de paso se acumula y el de tamaño no. Un agujero algo grande es un problema local de ajuste; un avance que sea sistemáticamente una fracción de milímetro largo desplaza progresivamente cada agujero a lo largo del puntal, y en lo alto de una columna el conector ya no entra. Por eso la estación de punzonado se alimenta con servo y medición por encóder en lugar de tope mecánico, y por eso la cifra que hay que comparar entre proveedores es la tolerancia de paso sobre la longitud completa del perfil, no por paso."
+          },
+          {
+            "q": "¿Qué material se usa en los perfiles de estantería?",
+            "a": "Puntales y largueros se perfilan habitualmente en acero estructural del rango S350GD a S390GD, suministrado pregalvanizado. La calidad no es intercambiable: un límite elástico más alto recupera más, así que la misma sección terminada necesita otra geometría de rodillos y mayor compensación. También cambia cómo se comporta el alma perforada durante el conformado. Envíe la calidad con el plano: el utillaje se diseña sobre ella."
+          },
+          {
+            "q": "¿Pueden reproducir el patrón de agujeros de un sistema existente?",
+            "a": "Sí. El utillaje de punzonado se fabrica según el patrón, y basta con un perfil de muestra o un plano acotado. Conviene plantear pronto una cuestión: los patrones de conexión suelen ser propiedad intelectual del titular del sistema de estantería y algunos están protegidos. Decidir qué está usted autorizado a producir corresponde al comprador, no al fabricante de la máquina — nosotros hacemos el utillaje según el patrón que nos indique."
+          },
+          {
+            "q": "¿Los largueros se fabrican igual que los puntales?",
+            "a": "No, y merece la pena separarlo al planificar la inversión. Los puntales son perfiles abiertos perforados y toda la línea se construye en torno a la precisión de punzonado. Los largueros suelen ser secciones cerradas en cajón, a menudo formadas a partir de dos perfiles y unidas, de modo que la línea lleva otra secuencia de estaciones y una etapa de unión en lugar de un gran grupo de punzonado. La mayoría de fabricantes de estanterías acaban con dos líneas en vez de una que transija en ambas cosas."
           }
         ],
         "sectors": ["Almacén y logística", "Fabricantes de estanterías", "Almacenes e-commerce", "Cámaras frigoríficas"]
@@ -1029,6 +1075,32 @@
           "Corte hidráulico",
           "Apilado"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "La bobina se carga en el desenrollador de servicio pesado y se sujeta por el diámetro interior mediante expansión hidráulica. Las bobinas de quitamiedos son anchas y pesadas, por lo que el carro de carga y el brazo de presión mantienen sujeta la espira exterior: en material grueso una espira libre puede saltar al tirar de la banda."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La curvatura que la banda conserva del bobinado se elimina antes de cualquier conformado. En quitamiedos esto pesa más que en perfiles ligeros: la comba residual que queda en la chapa plana se amplifica al formar la onda, y una barrera que no está recta no apoya bien contra los postes en obra."
+          },
+          {
+            "title": "Punzonado en plano",
+            "text": "Los agujeros de unión y las ranuras de poste se punzonan antes de que la banda llegue a las estaciones de conformado. Punzonar una viga ya formada deformaría la onda alrededor del agujero y dejaría el propio agujero sobre una superficie curva; punzonar en plano mantiene el paso bajo control servo y los bordes limpios."
+          },
+          {
+            "title": "Perfilado progresivo",
+            "text": "La onda no se forma en una sola pasada. Cada estación asume una parte del ángulo total para que el material endurezca por deformación de forma gradual en lugar de adelgazar o agrietarse en las crestas. Por eso la chapa galvanizada gruesa necesita una secuencia de estaciones más larga que un perfil fino de cubierta: lo que protege la sección es la secuencia, no la presión."
+          },
+          {
+            "title": "Corte a medida",
+            "text": "El corte hidráulico separa la viga en la sección ya conformada, con una cuchilla que sigue el perfil terminado. Una cuchilla que no sigue la onda deforma la sección en el corte y deja un borde que hay que repasar antes del galvanizado."
+          },
+          {
+            "title": "Salida y apilado",
+            "text": "Las vigas terminadas salen a la mesa de descarga y se apilan listas para galvanizar o expedir. La manipulación también cuenta aquí: arrastrar una viga sobre otra raya la superficie, lo que en material pregalvanizado significa reparar el recubrimiento."
+          }
+        ],
         "faq": [
           {
             "q": "¿Puedo producir perfiles W y thrie en la misma línea?",
@@ -1041,6 +1113,26 @@
           {
             "q": "¿Cómo se hacen agujeros y ranuras de montaje?",
             "a": "Una unidad de prensa hidráulica está integrada; los agujeros de unión y las ranuras se punzonan antes de que el perfil salga de la línea."
+          },
+          {
+            "q": "¿Qué norma se aplica a los quitamiedos y qué exige de la línea?",
+            "a": "La EN 1317 es la norma europea de sistemas de contención de vehículos. Clasifica las barreras por nivel de contención, severidad del impacto y anchura de trabajo, y ensaya el sistema instalado en conjunto, no la viga por separado. Lo que eso exige de la línea de producción es repetibilidad: geometría de onda, paso de agujeros y longitud deben mantenerse dentro de las tolerancias del plano aprobado, de modo que el sistema ensayado y el sistema producido sean el mismo. La homologación pertenece al titular del sistema; la línea hace que la conformidad sea producible, no lleva el certificado."
+          },
+          {
+            "q": "¿Qué calidad de acero se utiliza?",
+            "a": "Los quitamiedos se perfilan normalmente en acero estructural del rango S235 a S355, según el nivel de contención con el que se homologó el sistema. La calidad no es solo un detalle de compra: un límite elástico más alto recupera más, así que la misma onda necesita otra geometría de rodillos y mayor compensación. Envíe la calidad y el espesor con la consulta: el utillaje se diseña sobre ellos, no se ajusta después."
+          },
+          {
+            "q": "¿Cómo afecta el galvanizado en caliente a la línea?",
+            "a": "Hay dos vías y cargan la línea de forma distinta. Si la viga se galvaniza después de conformar —la vía habitual en carretera según EN ISO 1461—, la línea perfila acero desnudo y el zinc se aplica luego en la planta de galvanizado, cubriendo también los cantos de corte y los agujeros. Si se usa bobina pregalvanizada, el recubrimiento ya está sobre la chapa, así que las superficies y presiones de rodillo se ajustan para no rayarlo, y los cantos cortados y punzonados quedan sin recubrir. Qué vía se sigue lo fija normalmente la especificación del proyecto, no la máquina."
+          },
+          {
+            "q": "¿Cuánto dura un cambio de perfil?",
+            "a": "Pasar de perfil de doble onda a triple onda significa cambiar el juego de rodillos; bastidor, accionamiento y unidad de punzonado se quedan. Cuánto tarda depende de cómo se haya construido la línea para ello: en configuración estándar es un trabajo planificado entre producciones, y con un diseño de casete o cambio rápido el tiempo baja notablemente. Si prevé alternar entre ambas secciones con regularidad, dígalo en la consulta: diseñar el bastidor para eso cuesta mucho menos que modificarlo después."
+          },
+          {
+            "q": "¿Se pueden fabricar los postes en la misma línea?",
+            "a": "No. Los postes en sección sigma o C son otro perfil, con otra secuencia de estaciones y otro sistema de corte, así que se producen en su propia línea de perfilado. Fabricamos ambas, y cuando un proyecto necesita vigas y postes juntos las dos líneas se ofertan como conjunto — que suele ser además la forma más sensata de comprarlas, porque la longitud del poste y su patrón de agujeros tienen que casar con la viga que sostienen."
           }
         ],
         "sectors": ["Contratistas viales", "Proyectos de autopista", "Plantas de galvanizado", "Exportadores de infraestructura"]
@@ -1072,6 +1164,32 @@
           "Unidad de corte",
           "Apilado"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "Los paneles acústicos son un producto visible en la carretera, y tanto el aluminio como el acero prelacado muestran cualquier marca de manipulación. La bobina se carga y guía de modo que la cara vista no roce en ningún punto; si la bobina lleva film protector, se mantiene durante el conformado y se retira solo tras apilar el panel."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La banda se aplana antes de llegar a la estación de perforación. No se trata solo de que el panel salga recto: una banda que conserva curvatura de bobina no apoya plana bajo el punzón, y una perforación hecha sobre chapa curva sale con bordes desiguales y una rebaba que varía a lo ancho."
+          },
+          {
+            "title": "Perforación de la cara absorbente",
+            "text": "La chapa frontal se perfora en plano, con el patrón que exige el diseño acústico. Lo determinante acústicamente son el diámetro de agujero y el porcentaje de área abierta conjuntamente, y ambos los fija el ingeniero acústico, no la máquina: el trabajo de la línea es reproducir ese patrón idéntico panel tras panel, porque un área abierta variable produce una pantalla cuya absorción varía a lo largo de la vía."
+          },
+          {
+            "title": "Las zonas de plegado quedan sin perforar",
+            "text": "El campo perforado tiene que terminar antes de cada línea de plegado. Conformar a través de una zona perforada desgarra el material en los agujeros y quita rigidez justo al borde que sostiene el panel en su poste. Por eso el utillaje de perforación y las estaciones de conformado se coordinan: el patrón se posiciona respecto al perfil terminado, no simplemente centrado en la banda."
+          },
+          {
+            "title": "Conformado según material",
+            "text": "El aluminio y el acero no se comportan igual. El aluminio es más blando y tiende a adherirse a los rodillos, así que trabaja con menos presión, otras superficies de rodillo y más atención a la lubricación; el acero admite más presión y recupera más. La línea guarda ambos como recetas en lugar de reajustarse a mano cada vez que cambia el pedido."
+          },
+          {
+            "title": "Corte a medida y apilado",
+            "text": "Los paneles se cortan a la longitud de módulo que usa la disposición de la pantalla, definida por la separación de postes del proyecto. Se apilan con la cara protegida: una raya en un panel absorbente no es solo estética en aluminio, y en acero prelacado es el punto donde empieza la corrosión."
+          }
+        ],
         "faq": [
           {
             "q": "¿El panel frontal perforado y el trasero tipo casete se hacen en una línea?",
@@ -1084,6 +1202,26 @@
           {
             "q": "¿Pueden producir paneles de aluminio?",
             "a": "Sí. El aluminio requiere menor presión y una superficie de rodillo distinta; la línea se prepara según el material."
+          },
+          {
+            "q": "¿Qué normas rigen las pantallas acústicas y qué parte afecta a la línea?",
+            "a": "Los dispositivos reductores de ruido de tráfico se comercializan bajo EN 14388; la EN 1793 cubre el comportamiento acústico —absorción sonora y aislamiento al ruido aéreo— y la EN 1794 la parte no acústica, como carga de viento, impacto de piedras y seguridad ante colisión. Casi todo ello se ensaya sobre el dispositivo terminado, no sobre la chapa: la casete con su cara perforada, su núcleo absorbente y su panel trasero se comporta como un sistema. La línea responde de producir la chapistería conforme al diseño de forma constante, para que la pantalla instalada sea la ensayada."
+          },
+          {
+            "q": "¿El patrón de perforación cambia realmente el comportamiento acústico?",
+            "a": "Sí, y es uno de los pocos aspectos del panel donde una pequeña deriva de producción tiene un resultado audible. La absorción depende del diámetro de agujero y del área abierta junto con lo que hay detrás de la chapa. Si el área abierta varía entre series, la pantalla absorbe de forma distinta a lo largo de su recorrido aunque tenga el mismo aspecto. Por eso el patrón llega del diseño acústico como especificación fija y la línea lo reproduce en lugar de aproximarlo."
+          },
+          {
+            "q": "¿Por qué no se perfora la chapa hasta el borde?",
+            "a": "Porque los bordes son donde el panel se pliega y donde soporta carga. Una perforación que entra en la línea de plegado se desgarra en los agujeros al conformar, y el ala que debería sujetar el panel en su poste queda debilitada justo donde importa. El campo perforado se dispone por tanto respecto al perfil terminado, dejando material macizo en cada plegado y en los extremos. Es una confusión frecuente cuando se copia un panel a partir de una muestra: el área perforada visible es menor que la chapa."
+          },
+          {
+            "q": "¿Qué cambia en la línea entre aluminio y acero?",
+            "a": "El aluminio es más blando, se marca con más facilidad y tiende a adherirse a las superficies de los rodillos, así que trabaja a menor presión, con otras superficies y más atención a la lubricación. El acero admite mayor presión y recupera más, lo que implica otra geometría de rodillos para la misma sección terminada. Ambos pueden correr en una línea, pero se configuran como recetas separadas; si prevé alternar con regularidad, indíquelo en la consulta para planificar los juegos de rodillos."
+          },
+          {
+            "q": "¿La línea también monta la casete y rellena el núcleo absorbente?",
+            "a": "No. La línea de perfilado produce el perfil frontal perforado y el perfil trasero cerrado. Introducir la lana mineral u otro material absorbente, cerrar la casete y colocar las tapas es una operación de montaje aparte con su propio equipo. Conviene planificar ambas cosas juntas, porque el diseño de la casete determina la geometría del perfil, pero no son la misma máquina y deben presupuestarse por separado."
           }
         ],
         "sectors": ["Proyectos de autopista", "Ferrocarril y metro", "Ingeniería ambiental", "Infraestructura urbana"]

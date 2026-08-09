@@ -942,6 +942,32 @@
           "Vágóegység",
           "Rakatoló rendszer"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "Az állványprofilokat rendszerint előhorganyzott tekercsből alakítjuk, tehát a szalag kész bevonattal érkezik. Ez már az első métertől meghatározza a kezelést: a lecsévélőt és a vezetőket úgy állítjuk be, hogy a felület ne súrlódjon — az állványoszlopon minden karcolás korróziós kiindulópont egy olyan raktárban, amelyet mosnak."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A tekercsgörbületet a lyukasztás előtt vesszük ki, nem utána. A görbületét őrző szalag egyenetlenül fut a lyukasztóba, és ott minden előtolási hiba közvetlenül furathelyzet-hibává válik — ez pedig az egyetlen dolog, amit egy állványprofil nem visel el."
+          },
+          {
+            "title": "Többsoros lyukasztás",
+            "text": "A csatlakozófuratokat sík állapotban lyukasztjuk, az adott állványrendszer lyukképe szerint. Nem a furat mérete a döntő, hanem az osztás halmozódása: az oszlop a teljes hosszán csatlakozókat hordoz, így egy kicsi, de ismétlődő előtolási hiba egy magas oszlopon összeadódik. Az enkóderes méréssel dolgozó szervo előtolás minden furatot a teljes gyártáshoz viszonyít, nem csak az előzőhöz."
+          },
+          {
+            "title": "A lyukasztott szalag alakítása",
+            "text": "Egy már perforált szalag alakítása nem ugyanaz, mint egy tömöré. A gerinc minden furatnál gyengébb, ezért az állomássort úgy alakítjuk ki, hogy a szelvény anélkül épüljön fel, hogy anyagot húznánk át a nyílásokon — különben a furatok ovállá torzulnak, és a csatlakozó már nem ül merőlegesen."
+          },
+          {
+            "title": "A lyukképhez fázisolt vágás",
+            "text": "A vágás nem egyszerűen méretre történik. Rögzített viszonyban kell esnie a perforációhoz, hogy az első és az utolsó furat minden egyes oszlopon ott legyen, ahol az állványterv várja. Az a sor, amelyik csak hosszra vág, méretben helyes, mégis használhatatlan profilokat gyárt."
+          },
+          {
+            "title": "Kifutás és rakatolás",
+            "text": "A kész profilokat összegyűjtjük és rakatba helyezzük. Az oszlopok hosszúak és viszonylag karcsúak, ezért a kifutón a megtámasztás osztása számít: az a profil, amelyet rakatolás előtt hagynak saját súlya alatt behajolni, megőriz ebből valamennyit, és a meghajlott oszlop az összeszerelt keretben nem áll függőlegesen."
+          }
+        ],
         "faq": [
           {
             "q": "Az oszlop és a gerenda futhat egy soron?",
@@ -954,6 +980,26 @@
           {
             "q": "Milyen lemezvastagságot bír a sor?",
             "a": "A nehéz igénybevételű polcprofilok jellemzően vastag anyagot igényelnek; a szelvény és vastagságtartomány projektre méretezett, a rajz alapján."
+          },
+          {
+            "q": "Milyen szabványok vonatkoznak az állványokra, és mit kívánnak a gyártástól?",
+            "a": "A helyhez kötött raklapos állványokat az EN 15512 szerint méretezik; az EN 15620 a gyártási és szerelési tűréseket, az EN 15635 a beépített rendszer üzemeltetését és ellenőrzését fedi le. Az állvány teherhordó szerkezet, ezért amit a sor garantál, az méretbeli: szelvénygeometria és furathelyzet a méretezéskor használt tűrésen belül. A statikai számítás és a CE-felelősség az állványrendszer tulajdonosáé — a sornak ehhez illeszkedően, nap mint nap kell tudnia gyártani."
+          },
+          {
+            "q": "Miért fontosabb a furatosztás, mint a furat mérete?",
+            "a": "Mert az osztáshiba halmozódik, a méreté nem. A kissé nagyobb furat helyi illesztési kérdés; az az előtolás viszont, amely következetesen a milliméter töredékével hosszabb, minden további furatot egyre kijjebb tol az oszlop mentén, és egy magas oszlop tetején a csatlakozó már nem megy be. Ezért hajtja a lyukasztóállomást szervo enkóderes méréssel, nem mechanikus ütköző, és ezért az összehasonlítandó adat a teljes profilhosszra vonatkozó osztástűrés, nem a lépésenkénti."
+          },
+          {
+            "q": "Milyen anyagból készülnek az állványprofilok?",
+            "a": "Az oszlopokat és a gerendákat rendszerint S350GD-S390GD tartományba eső szerkezeti acélból alakítják, előhorganyzott kivitelben. A minőség nem cserélhető fel: a magasabb folyáshatár nagyobb visszarugózást jelent, tehát ugyanahhoz a kész szelvényhez más görgőgeometria és nagyobb kompenzáció kell. Azt is megváltoztatja, hogyan viselkedik a lyukasztott gerinc alakítás közben. A minőséget a rajzzal együtt küldje — a szerszám arra készül."
+          },
+          {
+            "q": "Le tudják követni egy meglévő állványrendszer lyukképét?",
+            "a": "Igen. A lyukasztószerszám az adott lyukképre készül, és elég hozzá egy mintaprofil vagy egy méretezett rajz. Egy dolgot érdemes korán felvetni: a csatlakozó-lyukképek gyakran az állványrendszer tulajdonosának szellemi tulajdonát képezik, egy részük védett. Hogy mit gyárthat, az a vevő döntése, nem a gépgyártóé — mi az Ön által megadott lyukképre készítjük a szerszámot."
+          },
+          {
+            "q": "A gerendák ugyanúgy készülnek, mint az oszlopok?",
+            "a": "Nem, és a beruházás tervezésekor érdemes a kettőt szétválasztani. Az oszlopok nyitott, lyukasztott szelvények, és az egész sor a lyukasztási pontosság köré épül. A gerendák általában zárt dobozszelvények, gyakran két profilból alakítva és összeépítve, így a sor más állomássort és egy összeépítési fázist hordoz egy nagy lyukasztócsoport helyett. A legtöbb állványgyártó két sornál köt ki egy helyett, amely mindkettőben kompromisszumot kötne."
           }
         ],
         "sectors": ["Raktár és logisztika", "Polcrendszer-gyártók", "E-kereskedelmi raktárak", "Hűtőraktárak"]
@@ -1028,6 +1074,32 @@
           "Hidraulikus vágás",
           "Rakatolás"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "A tekercs a nagy teherbírású lecsévélőre kerül, és belső átmérőjénél hidraulikus feszítés fogja meg. A szalagkorlát-tekercsek szélesek és nehezek, ezért a rakodókocsi és a leszorítókar tartja a külső menetet — vastag anyagnál a rögzítetlen külső menet a szalag lehúzásakor felpattanhat."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A tekercselésből visszamaradt görbületet minden alakítás előtt kivesszük. Szalagkorlátnál ez többet nyom a latban, mint könnyű profiloknál: a sík szalagban maradt maradó hajlás csak a hullám kialakítása után válik láthatóvá, és a nem egyenes korlát a helyszínen nem fekszik fel rendesen az oszlopra."
+          },
+          {
+            "title": "Lyukasztás sík állapotban",
+            "text": "A csavarfuratokat és az oszlophoronyokat azelőtt lyukasztjuk, hogy a szalag az alakító állomásokra érne. A kész korlát lyukasztása eltorzítaná a hullámot a furat körül, és maga a furat ívelt felületre kerülne; sík állapotban lyukasztva a furatosztás szervovezérlés alatt marad, a peremek tiszták."
+          },
+          {
+            "title": "Fokozatos görgős alakítás",
+            "text": "A hullám nem egy menetben készül el. Minden állomás a teljes szög egy részét veszi át, így az anyag fokozatosan keményedik ahelyett, hogy a hullámhegyeken elvékonyodna vagy megrepedne. Pontosan ezért igényel a vastag horganyzott lemez hosszabb állomássort, mint egy vékony tetőprofil — a szelvényt a sorrend védi, nem a nyomás."
+          },
+          {
+            "title": "Méretre vágás",
+            "text": "A hidraulikus vágás a már alakított szelvényben választja el a korlátot, a kész keresztmetszetet követő késsel. A hullámot nem követő kés a vágásnál eltorzítja a szelvényt, és olyan élt hagy, amit a horganyzás előtt utómunkálni kell."
+          },
+          {
+            "title": "Kifutás és rakatolás",
+            "text": "A kész korlátok a kifutóasztalra érkeznek, és horganyzásra vagy szállításra készen kerülnek rakatba. A mozgatás itt is számít: egy másikon áthúzott korlát megkarcolja a felületet, ami előhorganyzott anyagnál bevonatjavítást jelent."
+          }
+        ],
         "faq": [
           {
             "q": "W és thrie profil futhat egy soron?",
@@ -1040,6 +1112,26 @@
           {
             "q": "Hogyan készülnek a furatok és szerelőhornyok?",
             "a": "Hidraulikus présegység van beépítve; a kötőfuratok és hornyok a profil sorról való kilépése előtt készülnek."
+          },
+          {
+            "q": "Melyik szabvány vonatkozik a szalagkorlátra, és mit vár el a sortól?",
+            "a": "Az EN 1317 az európai szabvány az útvédelmi visszatartó rendszerekre. Visszatartási szint, ütközési súlyosság és munkaszélesség szerint osztályozza a korlátokat, és a beépített rendszert mint egészet vizsgálja, nem magát a szalagot. A gyártósortól ez ismételhetőséget kíván: a hullámgeometriának, a furatosztásnak és a hossznak a jóváhagyott rajz tűrésein belül kell maradnia, hogy a töréstesztelt és a legyártott rendszer ugyanaz legyen. A jóváhagyás a rendszer tulajdonosáé; a sor a megfelelőséget gyárthatóvá teszi, a tanúsítványt nem viseli."
+          },
+          {
+            "q": "Milyen acélminőségből készül?",
+            "a": "A szalagkorlátokat rendszerint S235 és S355 közötti szerkezeti acélból alakítják, attól függően, milyen visszatartási szintre kapott jóváhagyást a rendszer. A minőség nem pusztán beszerzési részlet: a magasabb folyáshatárú anyag jobban visszarugózik, így ugyanahhoz a hullámhoz más görgőgeometria és nagyobb kompenzáció kell. A minőséget és a vastagságot az ajánlatkéréssel együtt küldje — a szerszám ezekre készül, nem utólag igazodik hozzájuk."
+          },
+          {
+            "q": "Mit jelent a tűzihorganyzás a sor számára?",
+            "a": "Két út van, és eltérően terhelik a sort. Ha a szalag alakítás után kerül horganyzásra — az útépítésben az EN ISO 1461 szerinti szokásos út —, a sor csupasz acélt dolgoz fel, a cink a horganyzóban kerül rá, és a bevonat így a vágott éleket és a lyukakat is befedi. Előhorganyzott tekercs esetén a bevonat már a lemezen van, ezért a görgőfelületeket és a nyomást úgy állítjuk be, hogy ne karcolja meg; a vágott és lyukasztott élek bevonat nélkül maradnak. Hogy melyik út érvényes, azt rendszerint a projekt előírása dönti el, nem a gép."
+          },
+          {
+            "q": "Mennyi ideig tart a profilváltás?",
+            "a": "A két- és háromhullámú szelvény közötti váltás görgőkészlet-cserét jelent; a váz, a hajtás és a lyukasztóegység marad. Hogy ez mennyi időbe telik, attól függ, mennyire építették rá a sort — alapkivitelben két gyártás közé tervezett munka, kazettás vagy gyorscserés kialakításnál az idő érzékelhetően csökken. Ha rendszeresen váltana a két szelvény között, mondja el az ajánlatkéréskor: erre tervezni a vázat sokkal olcsóbb, mint utólag átalakítani."
+          },
+          {
+            "q": "Az oszlopok gyárthatók ugyanezen a soron?",
+            "a": "Nem. A szigma és C szelvényű oszlopok más keresztmetszetek, más állomássorral és más vágási elrendezéssel, ezért saját görgős alakítósoron készülnek. Mindkettőt gyártjuk, és ha egy projekthez szalag és oszlop együtt kell, a két sort együtt árazzuk — általában ez az ésszerűbb beszerzési mód is, mert az oszlop hosszának és lyukképének illeszkednie kell ahhoz a szalaghoz, amelyet tart."
           }
         ],
         "sectors": ["Útépítő vállalkozók", "Autópálya-projektek", "Horganyzó üzemek", "Infrastruktúra-exportőrök"]
@@ -1071,6 +1163,32 @@
           "Vágóegység",
           "Rakatolás"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "A zajvédő panel az út mellett látható termék, és mind az alumínium, mind a bevonatos acél megmutat minden mozgatási nyomot. A tekercset úgy rakjuk fel és vezetjük, hogy a látszó oldal sehol ne súrlódjon; ha a szalagon védőfólia van, az az alakításon át rajta marad, és csak a rakatolás után kerül le."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A szalagot a lyukasztóállomás előtt egyengetjük ki. Nem csupán az egyenes panel a cél: a tekercsgörbületét őrző szalag nem fekszik síkban a bélyeg alatt, és a görbült lemezbe ütött lyukasztás egyenetlen furatéleket és a szélesség mentén változó sorját ad."
+          },
+          {
+            "title": "Az elnyelő homlokfelület lyukasztása",
+            "text": "Az elülső lemezt sík állapotban lyukasztjuk, az akusztikai terv által előírt mintával. Akusztikailag a furatátmérő és a nyitott felületarány együtt a meghatározó, és mindkettőt az akusztikus tervező rögzíti, nem a gép — a sor dolga az, hogy ezt a mintát panelről panelre azonosan reprodukálja, mert az ingadozó nyitott felület olyan falat ad, amelynek elnyelése az út mentén változik."
+          },
+          {
+            "title": "A hajlítási zónák tömörek maradnak",
+            "text": "A lyukasztott mezőnek minden későbbi hajlítási vonal előtt véget kell érnie. A lyukasztott zónán át történő alakítás a furatoknál szakítja az anyagot, és épp attól az éltől veszi el a merevséget, amely a panelt az oszlopban tartja. Ezért a lyukasztószerszámot és az alakító állomásokat egymáshoz fázisoljuk: a mintát a kész szelvényhez viszonyítva helyezzük el, nem egyszerűen a szalag közepére."
+          },
+          {
+            "title": "Alakítás az anyaghoz igazítva",
+            "text": "Az alumínium és az acél nem fut egyformán. Az alumínium lágyabb és hajlamos rákenődni a görgőkre, ezért kisebb nyomással, más görgőfelülettel és a kenésre nagyobb figyelemmel dolgozik; az acél nagyobb nyomást bír és jobban visszarugózik. A sor mindkettőt receptként tartja, ahelyett hogy minden rendelésváltáskor kézzel állítanák át."
+          },
+          {
+            "title": "Méretre vágás és rakatolás",
+            "text": "A paneleket a fal kiosztása szerinti modulhosszra vágjuk, amelyet a projektben az oszlopok osztása határoz meg. A rakatolás védett látszó felülettel történik: az elnyelő panelen a karcolás alumíniumnál nem pusztán esztétikai kérdés, bevonatos acélnál pedig ott indul a korrózió."
+          }
+        ],
         "faq": [
           {
             "q": "A perforált elülső és a kazettás hátsó panel egy soron készül?",
@@ -1083,6 +1201,26 @@
           {
             "q": "Tudnak alumínium panelt gyártani?",
             "a": "Igen. Az alumínium kisebb nyomást és eltérő görgőfelületet igényel; a sort az anyaghoz állítjuk be."
+          },
+          {
+            "q": "Milyen szabványok vonatkoznak a zajvédő falakra, és mi érinti ebből a sort?",
+            "a": "A közúti zajcsökkentő eszközöket az EN 14388 szerint hozzák forgalomba; az EN 1793 az akusztikai teljesítményt — hangelnyelés és léghanggátlás — az EN 1794 pedig a nem akusztikai oldalt fedi le, mint szélteher, kőfelverődés és ütközés esetén a biztonság. Ennek szinte egészét a kész eszközön vizsgálják, nem a lemezen: a kazetta a lyukasztott homlokfelületével, elnyelő magjával és hátlapjával rendszerként viselkedik. A sor azért felel, hogy a lemezmunkát a tervnek megfelelően, egyenletesen gyártsa, hogy a beépített fal az legyen, amelyet bevizsgáltak."
+          },
+          {
+            "q": "Valóban megváltoztatja a lyukasztási minta az akusztikai teljesítményt?",
+            "a": "Igen, és ez a panel azon kevés jellemzőinek egyike, ahol egy kis gyártási elcsúszás hallható eredményt ad. Az elnyelés a furatátmérőtől és a nyitott felületaránytól függ, együtt azzal, ami a lemez mögött van. Ha a nyitott felület gyártásonként eltér, a fal a hossza mentén másképp nyel el, miközben ugyanúgy néz ki. Ezért érkezik a minta az akusztikai tervből rögzített előírásként, és a sor reprodukálja, nem közelíti."
+          },
+          {
+            "q": "Miért nem lyukasztható a lemez a széléig?",
+            "a": "Mert a szélek azok, ahol a panelt hajlítják és ahol terhet visel. A hajlítási vonalba futó lyukasztás alakításkor a furatoknál szakad, és az a perem, amelynek a panelt az oszlopban kellene tartania, épp ott gyengül meg, ahol számít. A lyukasztott mezőt ezért a kész profilhoz viszonyítva rendezzük el, minden hajlításnál és a végeken tömör anyagot hagyva. Mintadarabról másoláskor ez gyakori félreértés — a látható lyukasztott felület kisebb, mint a lemez."
+          },
+          {
+            "q": "Mi változik a soron alumínium és acél között?",
+            "a": "Az alumínium lágyabb, könnyebben jelöl és hajlamos rákenődni a görgőfelületekre, ezért kisebb nyomással, más felületekkel és a kenésre nagyobb figyelemmel fut. Az acél nagyobb nyomást bír és jobban visszarugózik, ami ugyanahhoz a kész szelvényhez más görgőgeometriát jelent. Mindkettő futhat egy soron, de külön receptként állítjuk be; ha rendszeres váltásra számít, mondja el az ajánlatkéréskor, hogy a görgőkészletek erre készüljenek."
+          },
+          {
+            "q": "A sor a kazettát is összeszereli és a magot is betölti?",
+            "a": "Nem. A görgős alakítósor a lyukasztott elülső profilt és a zárt hátsó profilt állítja elő. Az ásványgyapot vagy más elnyelő anyag behelyezése, a kazetta zárása és a végzáró elemek felszerelése külön szerelési művelet, saját berendezéssel. A kettőt érdemes együtt tervezni, mert a kazetta kialakítása határozza meg a profil geometriáját — de nem ugyanaz a gép, és külön kell költségvetni őket."
           }
         ],
         "sectors": ["Autópálya-projektek", "Vasút és metró", "Környezetmérnökség", "Városi infrastruktúra"]
