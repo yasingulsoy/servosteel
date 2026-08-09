@@ -855,6 +855,32 @@
           "Vágóegység (sorvégi olló)",
           "Kihordó szalag és rakatolás"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "A kábeltálcát rendszerint előhorganyzott tekercsből gyártják, és egy tálcasor jellemzően több szélességet futtat ugyanabból az alapanyagból. Ettől a tekercscsere rutinesemény lesz, nem alkalmi, és éppen ezért befolyásolja a lecsévélő és a felrakó rendszer a tényleges kibocsátást jobban, mint az alakítási sebesség."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A tekercsgörbületet a lyukasztás előtt vesszük ki. A tálca hosszú, sekély profil, amely alakítás után jól láthatóan mutatja a görbületet; gyakorlatiasabban pedig: a tálcaszakaszokat a nyomvonal mentén egymáshoz csavarozzák, így a nem egyenes elem a szakasz minden kötését megnehezíti."
+          },
+          {
+            "title": "Perforáció és lyukasztás",
+            "text": "A szellőzőréseket és a végeken lévő kötőfuratokat sík állapotban lyukasztjuk. A perforált tálca nem véletlenül létezik — a nyílások elvezetik a kötegelt kábelek hőjét és biztosítják a lefolyást —, tehát a minta funkcionális előírás, nem díszítés. A lyukasztás szervovezérelt, hogy a résminta és a végfuratok a kész hosszhoz képest a helyes viszonyban maradjanak."
+          },
+          {
+            "title": "Görgős alakítás",
+            "text": "A U-szelvény az állomásokon át áll össze. A tálca minőségét az él dönti el: az oldalak tetején futó visszahajtott perem teszi a vékony, sekély profilt elég merevvé ahhoz, hogy áthidalja a megtámasztások közti távolságot, és szerelés közben ugyanezen az élen húzzák át a kábeleket. Olyan sugárral alakítjuk, amely merevnek tartja a szelvényt anélkül, hogy a kábelszigetelést sértő élt hagyna."
+          },
+          {
+            "title": "A mintához fázisolt vágás",
+            "text": "A vágást a perforációhoz ütemezzük, nem pusztán a hosszszámlálóhoz. Minden tálcának mindkét végén ugyanakkora tömör peremmel és ugyanolyan kötőfurat-helyzettel kell végződnie, különben a nyomvonal menti illesztések nem esnek egy vonalba. Az a sor, amelyik csak hosszat számol, méretben helyes tálcákat gyárt, amelyek mégsem csavarozhatók össze következetesen."
+          },
+          {
+            "title": "Kihordószalag és rakatolás",
+            "text": "A kész tálcák szalagon hagyják el a sort, és rakatba kerülnek. A tálca egymásba illeszkedik, ezért a rakatolás dönti el, mennyi fér egy raklapra — és ezzel a szállítási költséget is, amely egy alacsony értékű, nagy térfogatú terméknél a leszállított ár nagyobb részét teszi ki, mint azt a legtöbb vevő feltételezi."
+          }
+        ],
         "faq": [
           {
             "q": "Perforált és sima tálcát ugyanazon a soron gyárthatok?",
@@ -867,6 +893,26 @@
           {
             "q": "Milyen lemezanyagokkal dolgozik?",
             "a": "Hidegen hengerelt, horganyzott, alumínium és rozsdamentes lemez. A cinkréteg védelmére a görgőfelület és a nyomás az anyaghoz igazodik."
+          },
+          {
+            "q": "Miért kell a vágásnak a perforációhoz fázisolva lennie?",
+            "a": "Mert a kábeltálcát összecsavarozott szakaszok folyamatos nyomvonalaként szerelik. Minden darabnak mindkét végén ugyanakkora tömör peremre és ugyanolyan kötőfurat-helyzetre van szüksége, hogy az illesztések a teljes szerelvényen azonosan ismétlődjenek. Ha a sor csak hosszat számol és vág, a darabok mind egyformán mérnek, de a perforáció elcsúszik a végekhez képest — ez látszik meg az egymáshoz nem illeszkedő kötőelemeken. Az olló és a lyukasztó fázisolása pontosan ezt előzi meg, és ez konkrét kérdés, amit sorok összehasonlításakor fel kell tenni."
+          },
+          {
+            "q": "Mi teszi valójában merevvé a tálcát?",
+            "a": "Az oldalak felső élén futó visszahajtott perem, sokkal inkább, mint a lemezvastagság. Egy azonos vastagságú, sima U-szelvény jóval nagyobbat hajlik, mert a hajlítási merevség szinte egésze a szelvény szélső anyagából származik. Ezért ér véget a lyukasztási minta is az élek előtt — a perem perforálása épp azt az anyagot veszi ki, amelyik dolgozik. Ha a tálcákat csak vastagság alapján hasonlítja össze, rossz számot hasonlít össze."
+          },
+          {
+            "q": "Hat-e az él kialakítása a kábelekre?",
+            "a": "Igen, és ez valós szerelési probléma, nem elméleti. A kábeleket hosszú szakaszokon kézzel húzzák végig a tálcán, és az élesen maradt vagy az alakításból, vágásból sorjás él megvágja a szigetelést. A visszahajtott peremet részben a merevség, részben emiatt alakítjuk sugárral. Érdemes bármelyik szállítótól mintadarabot megnézni és végigfuttatni a kezet a belső élen — többet mond a sorról, mint egy adatlap."
+          },
+          {
+            "q": "Mekkora a szállítás aránya a leszállított árban?",
+            "a": "Nagyobb, mint a legtöbben feltételezik, és ezért gyártják a tálcát rendszerint a felhasználás helyéhez közel. Könnyű, terjedelmes, alacsony értékű termék: a konténer jóval a súlyhatára előtt megtelik, azaz a fuvart levegőre fizetik. A tálca egymásba illeszkedik, így az, hogy mennyire jól rakatolható, közvetlenül változtatja meg a helyszínre szállított költséget. Ez az üzleti oka annak is, hogy a tálcasor gyakran az első görgős alakítási beruházása egy olyan kivitelezőnek, aki addig vásárolta a terméket — önmagában a szállítási megtakarítás az üzleti indoklás nagy részét elviszi."
+          },
+          {
+            "q": "Ugyanez a sor tud létratálcát és hálós tálcát is gyártani?",
+            "a": "Nem, és ezt érdemes korán tisztázni, mert a három terméket gyakran együtt kérik árazni. A görgősen alakított tálca formázott lemezszelvény. A létratálca két oldalgerinc, közéjük hegesztett fokokkal, tehát hegesztősort igényel, nem alakítósort. A hálós tálca hegesztett huzal, ami megint más folyamat. Ha a termékskálája egynél többet fed le ezekből, ezek külön beruházások, és így is kell őket tervezni."
           }
         ],
         "sectors": ["Elektromos infrastruktúra", "Adatközpontok", "Ipari létesítmények", "Plázák és épületprojektek"]
@@ -898,6 +944,32 @@
           "Repülő olló",
           "Automatikus rakatolás"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "A napelemes tartóprofilokat szinte mindig bevonatos tekercsből alakítjuk — tűzihorganyzottból vagy Magnelis-típusú cink-alumínium-magnézium bevonatúból. Ez a bevonat az erőmű 25 éves élettartamának teljes korrózióvédelme, ezért a lecsévélőtől kezdve a kezelést arra tervezzük, hogy a felület ne sérüljön, nem pusztán arra, hogy a szalag haladjon."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A tekercsgörbületet a lyukasztás előtt vesszük ki. A napelemasztal hosszú, karcsú, egymáshoz csavarozott elemek együttese; a görbén érkező szelemen nemcsak rosszul néz ki, hanem minden csavarnál küzd a szerelővel, és kihozza a mezőt a síkból — ami később a modulok egyenetlen terheléseként jelentkezik."
+          },
+          {
+            "title": "Soron belüli lyukasztás",
+            "text": "A szerelőfuratokat és hosszlyukakat sík állapotban lyukasztjuk, még a szelvény kialakítása előtt. Éppen ez teszi lehetővé, hogy a profil a kamionról közvetlenül a szerkezetbe kerüljön, helyszíni fúrás nélkül. A lyukasztás szervovezérelt, így a lyukkép az adott projekt receptjét követi, nem mechanikus ütközőket, amelyeket minden elrendezésváltozásnál újra kellene állítani."
+          },
+          {
+            "title": "Görgős alakítás",
+            "text": "A kalap-, C- vagy Omega-szelvény az állomásokon át épül fel. A korlátozó tényező itt a bevonatos anyag: a görgőfelületeket és a nyomásokat úgy választjuk meg, hogy a bevonat a legszűkebb sugaraknál se repedjen és ne pattogzon le — a törött bevonatú hajlítás olyan korróziós pont, amelyet a helyszínen felvitt festék nem old meg rendesen."
+          },
+          {
+            "title": "Repülő olló",
+            "text": "A profilt mozgás közben vágjuk, a sor megállítása nélkül. Napelemes munkánál ez többet nyom a latban, mint hangzik: a megrendelés néhány hosszban több ezer darab, és az a sor, amelynek minden vágáshoz lassítania és megállnia kell, a műszak nagy részét termelés nélkül tölti."
+          },
+          {
+            "title": "Automatikus rakatolás",
+            "text": "A kész profilokat összegyűjtjük és rakodásra kész kötegekbe rakjuk. A napelemparkok ütemterv szerint, nagy tételben veszik át az árut, ezért az egyenletes kötegelés a termék része: a szerelési sorrendet követő kötegek megkímélik a szerelőt attól, hogy egy hasonló profilokkal teli terepen válogasson."
+          }
+        ],
         "faq": [
           {
             "q": "C és U profilt is gyárthatok ugyanazon a soron?",
@@ -910,6 +982,26 @@
           {
             "q": "A tűzihorganyzott lemez károsodik alakításkor?",
             "a": "A bevonathoz illesztett görgőfelülettel és nyomással sértetlen marad. Görgőink 4140 acélból készülnek, 58-60 Rockwell keménységre edzve."
+          },
+          {
+            "q": "Miért a bevonatot választják ki a profil megtervezése előtt?",
+            "a": "Mert egyszerre dönti el a korróziós élettartamot és azt, hogyan alakítható a szelvény. A tűzihorganyzott tekercs és a Magnelis-féle cink-alumínium-magnézium bevonatok szűk sugárnál eltérően viselkednek, és a bevonat azt is meghatározza, mi történik a vágott éleken és a lyukasztott furatokban, ahol csupasz acél marad. A cink-alumínium-magnézium bevonatot részben azért választják, mert a vágott éleken bizonyos önjavító hatást mutat — ez sokat számít egy olyan profilnál, amelyet ezerszer lyukasztanak és vágnak. A bevonatot a rajzzal együtt adja meg, a görgősugarakat arra állítjuk be."
+          },
+          {
+            "q": "Lehet-e inkább alakítás után lyukasztani?",
+            "a": "Lehet, de ennél a terméknél ez fordított sorrend. A kész szelvény lyukasztása azt jelenti, hogy ívelt vagy megmerevített zónán megyünk át, ami helyileg torzítja a profilt, és méretileg nehezebben tartható furatot hagy. Sík állapotban lyukasztva a minta pontos marad, és az egész egy áthaladással elvégezhető. A napelemes profilokat épp azért lyukasztják a soron, hogy a helyszíni fúrás elmaradjon — utólag lyukasztani ezt a költséget közvetlenül visszahozza."
+          },
+          {
+            "q": "Mibe kerül a soron a szerelési kiosztás megváltozása?",
+            "a": "Ha furathelyzetek vagy hosszak változnak, az receptváltás, szerszám nem érintett — pontosan erre valók a lyukasztóállomások és a hosszreceptek, és ezért illik a napelemes munka az ilyen típusú sorhoz. Ha maga a profilszelvény változik, az görgőkészlet-kérdés és másik beszélgetés. A tervezésnél érdemes a kettőt szétválasztani: a kiosztásváltozás rutin, a szelvényváltozás nem."
+          },
+          {
+            "q": "Veszít-e valamit a tűzihorganyzott lemez az alakítás során?",
+            "a": "Nem, ha a sugarak és a nyomások hozzá vannak igazítva. A cinkbevonat ridegebb az alatta lévő acélnál, ezért a sérülés a legszűkebb hajlítások külső oldalán finom repedezésként jelentkezik, nem látható lepattogzásként. Ez szerszámtervezési kérdés, amely a görgőkészlet elkészítésekor dől el, és utólag nem állítható. Ezért sem formalitás a bevonat specifikációját a profilrajzzal együtt elküldeni."
+          },
+          {
+            "q": "Milyen szelvényeket használnak jellemzően napelemes tartószerkezetekhez?",
+            "a": "A kalap-, C- és Omega-szelvények lefedik a legtöbb esetet, különböző magasságokban a fesztáv és a szélzóna szerint. A tartószerkezeti tervezés az erőműtervező felelőssége, és országonként erősen eltér — a hó- és szélteher mozgatja a szelvényméretet a legjobban. A szerszámot az Ön rajzán szereplő szelvényre készítjük; ha a projekt ennél korábbi fázisban tart, rendszerint eredményesebb előbb a tartószerkezeti tervet rögzíteni és a sort köré specifikálni, mint fordítva."
           }
         ],
         "sectors": ["Napelem / EPC cégek", "Tetős napelem", "Szabadtéri erőművek", "Agro-PV"]
@@ -1296,6 +1388,32 @@
           "Repülő olló",
           "Rakatolás"
         ],
+        "process": [
+          {
+            "title": "Tekercs felrakása és lecsévélése",
+            "text": "A szerkezeti szelvényeket rendszerint különböző vastagságú előhorganyzott tekercsből alakítjuk, mert ugyanaz a sor eltérő előírású szelemeneket, oszlopokat és keretelemeket szolgál ki. A lecsévélőt a sor által látott legnehezebb tekercsre méretezzük, nem az átlagosra — a tipikus rendelés alapján választott lecsévélő az első nehéz munka napján szűk keresztmetszetté válik."
+          },
+          {
+            "title": "Egyengetés",
+            "text": "A tekercsgörbület mindennél előbb kijön. Szerkezeti szelvényeknél ez dönti el, hogy a kész elem a hossza mentén egyenes-e: a C és a szigma szelvény aszimmetrikus, így a szalagban maradt görbület nem marad szelíd hajlás — összeadódik az alakítással, és csavarodásként jön ki, amit utólag jóval nehezebb javítani, mint egy egyszerű elhajlást."
+          },
+          {
+            "title": "Lyukasztás a szerkezeti kiosztás szerint",
+            "text": "A gépészeti és csavarfuratokat, valamint a gerincáttöréseket sík állapotban lyukasztjuk, a szerkezeti terv által előírt kiosztás szerint. A helyzet itt többet számít, mint egy burkolati profilnál: egy terhelt elem gerincében a furat tervezett jellemző, elmozdítása szerkezeti döntés, nem gyártási kényelem."
+          },
+          {
+            "title": "Állítható görgős alakítás",
+            "text": "Ez különbözteti meg ezt a sort az egyprofilostól. A görgőcsoportok úgy állíthatók, hogy a szelvény szélessége és magassága a gép szétszerelése nélkül változzon — így oszt meg három szelvénycsalád egyetlen sort. A kompromisszumot érdemes ismerni: az állítható sor egy tartományt fed le, a dedikált sor egy szelvényt gyorsabban visz. Hogy melyik a helyes, attól függ, mennyire vegyes valójában a rendelésállomány."
+          },
+          {
+            "title": "Repülő olló",
+            "text": "A vágás mozgás közben történik, a sor egyetlen darabért sem áll meg. Szerkezeti munkánál a megrendelések inkább vegyes hosszak hosszú listái, mint egy ismételt hossz, ezért a megállásra és újraindulásra fordított idő egy műszak alatt gyorsan összeadódik."
+          },
+          {
+            "title": "Rakatolás",
+            "text": "A kész szelvényeket összegyűjtjük és rakatba helyezzük. A hosszú szerkezeti elemek a sor és a kamion között könnyen sérülnek, és egy szelemen behajlott öve nem esztétikai kérdés — olyan elem, amely nem fekszik fel síkban arra a szarufára, amelyhez csavarozzák."
+          }
+        ],
         "faq": [
           {
             "q": "Lehetséges mindhárom szelvényt egy soron gyártani?",
@@ -1308,6 +1426,26 @@
           {
             "q": "Meddig bírják a görgők?",
             "a": "A görgők 4140 acélból készülnek, 58-60 Rockwell keménységre edzve; helyes nyomásbeállítással több millió méter profilt gyárthatnak."
+          },
+          {
+            "q": "Hol van egy állítható sor valódi határa?",
+            "a": "Az állítás egy szelvénycsaládon és azon a geometrián belüli szélesség- és magasságtartományt fed le, amelyre tervezték. Amit nem tesz meg: nem alakít át egy profilcsaládot egy másikká. A C, a szigma és az Omega közötti váltás görgőkészlet kérdése, a tervezett tartományon kívülre lépni pedig új szerszámot jelent, akármennyi állítási lehetőség van a gépben. Egy ilyen sor tisztességes specifikálása úgy néz ki, hogy megadja a gyártani kívánt szelvények teljes listáját — beleértve azokat is, amelyekre még nincs rendelése —, és a tartományt erre a listára terveztetik."
+          },
+          {
+            "q": "Miért nyom többet a csavarodás, mint az elhajlás?",
+            "a": "Mert az elhajlás a szerelés során gyakran kihúzható, a csavarodás nem. A C és a szigma szelvény legalább egy tengelyre nézve aszimmetrikus, ezért a szalagban maradt maradó feszültség nem egyszerű görbeként, hanem a hossz menti elfordulásként szabadul fel. A megcsavarodott szelemen nem fekszik fel síkban ott, ahol csavarozzák, és a helyszíni megoldás rendszerint a darab visszautasítása. Ezért nyom többet az egyengetés egy szerkezeti soron, mint a legtöbb vevő várná, és ezért érdemes külön rákérdezni."
+          },
+          {
+            "q": "Változtathatók a lyukképek új szerszám nélkül?",
+            "a": "A furathelyzet és a furatosztás receptérték, tehát az új kiosztás adatváltozás, nem szerszámváltozás. A furat alakja és mérete viszont szerszám — más átmérő vagy kerek furat helyett hosszlyuk bélyeget és matricát jelent. A sor tervezésekor érdemes az összes, termékskáláján előforduló furatalakot már az elején felsorolni, mert alakot később hozzátenni minden alkalommal beszerzés, helyzetet hozzátenni viszont ingyen van."
+          },
+          {
+            "q": "Meddig bírják a görgők?",
+            "a": "Tovább, mint a legtöbben gondolják, és sokkal inkább attól függ, mi megy át rajtuk, mint az üzemóráktól. A bevonat nélküli acél, a koptató bevonatok, a vastag anyag és a szűk sugarak gyorsabban koptatják a szerszámot, mint a bőséges sugarakon futó könnyű horganyzott lemez. A görgő karbantartási tétel, nem fogyóeszköz — ha idővel tűrésen kívülre kerül, újramunkálják, nem cserélik. Ami valóban korán kivégez egy görgőkészletet, az a beállítatlan futtatás vagy a túl nagy nyomás, és ez inkább beállítási fegyelem, mint metallurgia kérdése."
+          },
+          {
+            "q": "Egy állítható sor jobb, mint két dedikált?",
+            "a": "A rendelésösszetételtől függ, és érdemes kiszámolni, nem feltételezni. Az állítható sor akkor nyer, ha a rendelésállomány vegyes, és egyetlen szelvény sem uralkodik — egy gépet, egy vezérlést és egy alkatrészkészletet vesz, az átállások gyakoriak, de rövidek. Két dedikált sor akkor nyer, ha két szelvény adja a volumen nagy részét, mert mindegyik a saját optimumán fut, átállás nélkül. Ha egy szelvény a kibocsátásának nagyjából felénél többet tesz ki, általában megtérül külön sort szentelni neki."
           }
         ],
         "sectors": ["Könnyűszerkezetes építés", "Napelemes szerkezet", "Előregyártott épületek", "Ipari csarnok", "Szelemenprofilok"]

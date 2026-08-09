@@ -856,6 +856,32 @@
           "Unità di taglio (cesoia finale)",
           "Nastro di uscita e impilaggio"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "Le passerelle portacavi si producono di norma da nastro prezincato, e una linea per passerelle lavora tipicamente più larghezze dallo stesso materiale. Il cambio bobina diventa così un fatto di routine e non occasionale, ed è per questo che lo svolgitore e il suo sistema di carico incidono sulla produzione reale più della velocità di formatura."
+          },
+          {
+            "title": "Spianatura",
+            "text": "La curvatura di bobina si toglie prima di punzonare il nastro. Una passerella è un canale lungo e poco profondo che mostra chiaramente la curvatura una volta formato; e sul piano pratico: i tratti di passerella si imbullonano uno di seguito all'altro lungo il percorso, quindi un elemento non rettilineo complica ogni giunzione della linea."
+          },
+          {
+            "title": "Foratura e punzonatura",
+            "text": "Le asole di ventilazione e i fori di giunzione alle estremità si punzonano in piano. La passerella forata esiste per un motivo — le aperture smaltiscono il calore dei cavi raggruppati e consentono il drenaggio —, quindi lo schema è una specifica funzionale e non decorativa. La punzonatura è servoassistita perché lo schema delle asole e i fori d'estremità mantengano il giusto rapporto con la lunghezza finita."
+          },
+          {
+            "title": "Profilatura",
+            "text": "Il canale si forma lungo le stazioni. Il dettaglio che decide la qualità della passerella è il bordo: il risvolto sulla sommità di ciascun fianco è ciò che rende un canale sottile e poco profondo abbastanza rigido da coprire la luce tra i supporti, ed è anche il bordo su cui i cavi vengono trascinati durante l'installazione. Viene formato con un raggio che mantiene rigida la sezione senza lasciare uno spigolo che danneggi l'isolante."
+          },
+          {
+            "title": "Taglio in fase con lo schema",
+            "text": "Il taglio è sincronizzato con la foratura, non solo con il contametri. Ogni passerella deve terminare con lo stesso margine pieno e la stessa posizione del foro di giunzione a entrambe le estremità, altrimenti i giunti lungo il percorso non si allineano. Una linea che conta solo la lunghezza produrrà passerelle di misura corretta che comunque non si imbullonano in modo coerente."
+          },
+          {
+            "title": "Nastro di uscita e impilamento",
+            "text": "Le passerelle finite escono su un nastro e vengono impilate. La passerella si incastra su se stessa, quindi l'impilamento determina quanto entra su un pallet e di conseguenza il costo di trasporto, che in un prodotto di basso valore e grande volume pesa sul prezzo reso più di quanto la maggior parte degli acquirenti immagini."
+          }
+        ],
         "faq": [
           {
             "q": "Posso produrre passerelle forate e lisce sulla stessa linea?",
@@ -868,6 +894,26 @@
           {
             "q": "Quali materiali lavora?",
             "a": "Lamiera laminata a freddo, zincata, alluminio e inox. Per proteggere lo strato di zinco, superfici dei rulli e pressioni sono regolate sul materiale."
+          },
+          {
+            "q": "Perché il taglio deve essere in fase con la foratura?",
+            "a": "Perché la passerella portacavi si installa come un percorso continuo di tratti imbullonati. Ogni pezzo deve avere lo stesso margine pieno e la stessa posizione del foro di giunzione a ciascuna estremità, così che i giunti si ripetano identici lungo tutta l'installazione. Se la linea si limita a contare la lunghezza e tagliare, i pezzi misureranno tutti uguale ma la foratura slitterà rispetto alle estremità, cosa che si manifesta come giunzioni non allineate. Mettere in fase la cesoia con il punzone è ciò che lo evita, ed è un punto preciso su cui chiedere quando si confrontano linee."
+          },
+          {
+            "q": "Cosa rende davvero rigida una passerella?",
+            "a": "Il risvolto sul bordo superiore di ciascun fianco, molto più dello spessore della lamiera. Un canale liscio di pari spessore si inflette assai di più, perché quasi tutta la rigidezza flessionale viene dal materiale posto agli estremi della sezione. È anche il motivo per cui lo schema di foratura si arresta prima dei bordi: forare il risvolto toglie proprio il materiale che sta lavorando. Se confrontate le passerelle solo sullo spessore, state confrontando il numero sbagliato."
+          },
+          {
+            "q": "La forma del bordo incide sui cavi?",
+            "a": "Sì, ed è un problema reale di installazione, non teorico. I cavi vengono tirati a mano lungo la passerella su tratte lunghe, e un bordo rimasto vivo o con bava da formatura o da taglio incide l'isolante. Il risvolto viene formato con un raggio in parte per rigidezza e in parte per questo. Vale la pena guardare un campione di qualsiasi fornitore e passare la mano lungo il bordo interno: dice più sulla linea di quanto faccia una scheda tecnica."
+          },
+          {
+            "q": "Quanto pesa il trasporto sul prezzo reso?",
+            "a": "Più di quanto la maggior parte supponga, ed è il motivo per cui la passerella si produce di solito vicino a dove viene usata. È un prodotto leggero, ingombrante e di basso valore: un container si riempie molto prima di raggiungere il limite di peso, quindi il nolo si paga sull'aria. La passerella si incastra su se stessa, perciò la qualità dell'impilamento cambia direttamente il costo a destino. È anche la ragione commerciale per cui una linea per passerelle è spesso il primo investimento in profilatura di un installatore che prima acquistava: il solo risparmio di trasporto regge buona parte del business case."
+          },
+          {
+            "q": "La stessa linea può produrre passerelle a scala e a filo?",
+            "a": "No, e conviene chiarirlo presto perché i tre prodotti vengono spesso quotati insieme. La passerella profilata è un canale di lamiera formata. La passerella a scala è composta da due correnti con pioli saldati, quindi richiede una linea di saldatura e non di profilatura. La passerella a filo è rete metallica saldata, un processo ancora diverso. Se la vostra gamma ne copre più di uno, sono investimenti separati e vanno pianificati come tali."
           }
         ],
         "sectors": ["Infrastruttura elettrica", "Data center", "Impianti industriali", "Centri commerciali ed edilizia"]
@@ -899,6 +945,32 @@
           "Cesoia volante",
           "Impilaggio automatico"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "I profili per strutture solari si profilano quasi sempre da nastro rivestito: zincato a caldo oppure con rivestimento zinco-alluminio-magnesio come Magnelis. Quel rivestimento è l'intera protezione dalla corrosione per i 25 anni di vita dell'impianto, perciò la movimentazione dallo svolgitore in poi è concepita per non intaccare la superficie, non solo per far avanzare il nastro."
+          },
+          {
+            "title": "Spianatura",
+            "text": "La curvatura di bobina si toglie prima della punzonatura. Un tavolo fotovoltaico è un insieme di elementi lunghi e snelli imbullonati tra loro; un arcareccio che arriva inflesso non è solo antiestetico: contrasta il montatore a ogni bullone e porta il campo fuori piano, cosa che si manifesta poi come carico non uniforme sui moduli."
+          },
+          {
+            "title": "Punzonatura in linea",
+            "text": "Fori e asole di montaggio si punzonano in piano, prima che la sezione sia formata. È questo che consente al profilo di passare dal camion alla struttura senza forature in cantiere. La punzonatura è servoassistita, quindi lo schema segue la ricetta del singolo progetto anziché arresti meccanici da riregolare a ogni cambio di layout."
+          },
+          {
+            "title": "Profilatura",
+            "text": "La sezione a cappello, C oppure Omega si costruisce lungo le stazioni. Il vincolo qui è il materiale rivestito: superfici e pressioni dei rulli si impostano perché il rivestimento non si fessuri né si stacchi sui raggi più stretti, dato che una piega con il rivestimento rotto è un punto di corrosione che nessuna verniciatura in cantiere risolve davvero."
+          },
+          {
+            "title": "Cesoia volante",
+            "text": "Il profilo viene tagliato in movimento, senza fermare la linea. In una commessa solare questo pesa più di quanto sembri: l'ordine è di migliaia di pezzi in poche lunghezze, e una linea che deve decelerare e fermarsi a ogni taglio passa gran parte del turno senza produrre."
+          },
+          {
+            "title": "Impilamento automatico",
+            "text": "I profili finiti vengono raccolti e impilati in pacchi pronti al carico. I cantieri solari ricevono lotti grandi secondo programma, perciò un confezionamento costante fa parte del prodotto: pacchi che seguono la sequenza di montaggio evitano al montatore di selezionare in un campo pieno di profili simili tra loro."
+          }
+        ],
         "faq": [
           {
             "q": "Posso produrre profili C e U sulla stessa linea?",
@@ -911,6 +983,26 @@
           {
             "q": "La zincatura a caldo si rovina durante la profilatura?",
             "a": "Con superficie rulli e pressione adeguate al rivestimento resta integra. I nostri rulli sono in acciaio 4140 temprato a 58-60 Rockwell."
+          },
+          {
+            "q": "Perché il rivestimento si sceglie prima di progettare il profilo?",
+            "a": "Perché determina insieme la durata alla corrosione e il modo in cui la sezione può essere formata. Il nastro zincato a caldo e i rivestimenti zinco-alluminio-magnesio come Magnelis si comportano diversamente su un raggio stretto, e il rivestimento decide inoltre cosa accade ai bordi tagliati e ai fori punzonati, dove l'acciaio resta nudo. Lo zinco-alluminio-magnesio si sceglie anche perché offre una certa auto-riparazione sui bordi di taglio, aspetto rilevante su un profilo punzonato e tranciato migliaia di volte. Indicate il rivestimento insieme al disegno: i raggi dei rulli vengono definiti su di esso."
+          },
+          {
+            "q": "I fori si possono punzonare dopo la formatura?",
+            "a": "È possibile, ma per questo prodotto è l'ordine sbagliato. Punzonare una sezione già formata significa attraversare una zona curva o irrigidita, il che deforma localmente il profilo e lascia un foro più difficile da controllare dimensionalmente. Punzonare in piano mantiene lo schema preciso e consente di fare tutto in un solo passaggio. Il motivo per cui i profili solari vengono punzonati in linea è eliminare la foratura in cantiere: farla dopo riporta quel costo per intero."
+          },
+          {
+            "q": "Quanto costa sulla linea una modifica del layout di montaggio?",
+            "a": "Se cambiano posizioni dei fori o lunghezze, è una modifica di ricetta e non tocca l'attrezzatura: le stazioni di punzonatura e le ricette di lunghezza servono a questo, ed è il motivo per cui il lavoro solare si adatta a una linea di questo tipo. Se cambia la sezione stessa del profilo, è una questione di set di rulli e un discorso diverso. Conviene separare le due cose in fase di pianificazione: le modifiche di layout sono ordinarie, quelle di sezione no."
+          },
+          {
+            "q": "La lamiera zincata a caldo perde qualcosa durante la formatura?",
+            "a": "No, se raggi e pressioni sono corretti. Il rivestimento di zinco è più fragile dell'acciaio sottostante, quindi il danno si manifesta come microfessurazione sull'esterno delle pieghe più strette e non come distacco visibile. È una questione di progettazione dell'utensile, decisa quando si realizza il set di rulli e non regolabile dopo. Anche per questo inviare la specifica del rivestimento con il disegno del profilo non è una formalità."
+          },
+          {
+            "q": "Quali sezioni si usano di norma per le strutture solari?",
+            "a": "Le sezioni a cappello, C e Omega coprono la maggior parte dei casi, con altezze diverse a seconda della luce e della zona di vento. Il calcolo strutturale è responsabilità del progettista dell'impianto e varia molto da paese a paese: i carichi di neve e vento spostano la dimensione della sezione più di qualunque altro fattore. Realizziamo l'utensile sulla sezione del vostro disegno; se il progetto è a uno stadio precedente, di solito è più produttivo fissare prima il calcolo strutturale e specificare la linea attorno a esso che il contrario."
           }
         ],
         "sectors": ["Solare / aziende EPC", "Fotovoltaico su tetto", "Impianti a terra", "Agri-PV"]
@@ -1297,6 +1389,32 @@
           "Cesoia volante",
           "Impilaggio"
         ],
+        "process": [
+          {
+            "title": "Carico e svolgimento della bobina",
+            "text": "I profili strutturali si profilano di norma da nastro prezincato in vari spessori, perché la stessa linea serve arcarecci, montanti ed elementi di telaio con specifiche diverse. Lo svolgitore viene dimensionato sulla bobina più pesante che la linea vedrà, non su quella media: uno svolgitore scelto sull'ordine tipico diventa il collo di bottiglia il primo giorno in cui arriva una commessa pesante."
+          },
+          {
+            "title": "Spianatura",
+            "text": "La curvatura di bobina esce prima di ogni altra cosa. Sui profili strutturali questo decide se l'elemento finito è rettilineo per tutta la lunghezza: le sezioni C e Sigma sono asimmetriche, quindi la curvatura rimasta nel nastro non resta una dolce inflessione, ma si combina con la formatura ed esce come svergolamento, assai più difficile da correggere in seguito di una semplice freccia."
+          },
+          {
+            "title": "Punzonatura secondo lo schema strutturale",
+            "text": "Fori impiantistici, fori per bulloni e aperture d'anima si punzonano in piano, secondo lo schema definito dal progetto strutturale. La posizione conta più che su un profilo di rivestimento: un foro nell'anima di un elemento caricato è una caratteristica progettata, e spostarlo è una decisione strutturale, non una comodità di produzione."
+          },
+          {
+            "title": "Profilatura regolabile",
+            "text": "È ciò che distingue questa linea da una monoprofilo. I gruppi di rulli si regolano così che larghezza e altezza della sezione cambino senza smontare la macchina, ed è così che tre famiglie di sezione condividono una linea. Vale la pena conoscere il compromesso: una linea regolabile copre una gamma, una linea dedicata produce un solo profilo più in fretta. Quale sia la scelta giusta dipende da quanto è realmente variegato il vostro portafoglio ordini."
+          },
+          {
+            "title": "Cesoia volante",
+            "text": "Il taglio avviene in movimento, quindi la linea non si ferma per ogni pezzo. Nel lavoro strutturale gli ordini tendono a essere lunghi elenchi di lunghezze miste più che una lunghezza ripetuta, perciò il tempo perso in arresti e ripartenze si accumula rapidamente in un turno."
+          },
+          {
+            "title": "Impilamento",
+            "text": "I profili finiti vengono raccolti e impilati. Gli elementi strutturali lunghi si danneggiano facilmente tra la linea e il camion, e un'ala piegata su un arcareccio non è un problema estetico: è un elemento che non appoggerà in piano sulla capriata a cui viene imbullonato."
+          }
+        ],
         "faq": [
           {
             "q": "È possibile realizzare le tre sezioni su una linea?",
@@ -1309,6 +1427,26 @@
           {
             "q": "Quanto durano i rulli?",
             "a": "I rulli sono in acciaio 4140 temprato a 58-60 Rockwell; con pressioni corrette possono produrre milioni di metri di profilo."
+          },
+          {
+            "q": "Dov'è il limite reale di una linea regolabile?",
+            "a": "La regolazione copre una gamma di larghezze e altezze all'interno di una famiglia di sezioni e della geometria per cui è stata progettata. Ciò che non fa è trasformare una famiglia di profilo in un'altra: passare tra C, Sigma e Omega è una questione di set di rulli, e uscire dalla gamma prevista significa nuovo utensile per quanto ampia sia la regolazione della macchina. Il modo onesto di specificare una linea così è fornire l'elenco completo delle sezioni che prevedete di produrre, comprese quelle per cui non avete ancora ordini, e far progettare la gamma attorno a quell'elenco."
+          },
+          {
+            "q": "Perché lo svergolamento pesa più della freccia sui profili strutturali?",
+            "a": "Perché una freccia spesso si recupera in fase di montaggio e uno svergolamento no. Le sezioni C e Sigma sono asimmetriche rispetto ad almeno un asse, quindi la tensione residua rimasta nel nastro non si rilascia come curva semplice ma come rotazione lungo la lunghezza. Un arcareccio svergolato non appoggia in piano dove viene imbullonato, e in cantiere la soluzione è di solito scartare il pezzo. Per questo la fase di spianatura pesa su una linea strutturale più di quanto la maggior parte degli acquirenti si aspetti, ed è un punto su cui vale la pena chiedere esplicitamente."
+          },
+          {
+            "q": "Gli schemi di foratura si possono cambiare senza nuovi utensili?",
+            "a": "Posizione e passo dei fori sono valori di ricetta, quindi un nuovo schema è una modifica di dati e non di utensile. Forma e dimensione del foro sono invece utensile: un diametro diverso o un'asola al posto di un foro tondo significano punzone e matrice. Quando pianificate la linea conviene elencare fin dall'inizio tutte le forme di foro presenti nella vostra gamma, perché aggiungere forme in seguito è un acquisto ogni volta, mentre aggiungere posizioni non costa nulla."
+          },
+          {
+            "q": "Quanto durano i rulli?",
+            "a": "Più di quanto la maggior parte si aspetti, e dipende molto più da cosa ci passa dentro che dalle ore. Acciaio non rivestito, rivestimenti abrasivi, materiale spesso e raggi stretti consumano l'utensile più in fretta della lamiera zincata leggera con raggi generosi. I rulli sono una voce di manutenzione, non un consumabile: quando col tempo escono di tolleranza vengono ripresi in macchina anziché sostituiti. Ciò che uccide davvero presto un set è farlo lavorare disallineato o con troppa pressione, che è più una questione di disciplina di attrezzaggio che di metallurgia."
+          },
+          {
+            "q": "Meglio una linea regolabile o due dedicate?",
+            "a": "Dipende dal mix, e conviene fare i conti invece di dare per scontato. La linea regolabile vince quando il portafoglio è variegato e nessuna sezione domina: si compra una macchina, un sistema di controllo e un set di ricambi, e i cambi sono frequenti ma brevi. Due linee dedicate vincono quando due sezioni fanno la maggior parte del volume, perché ciascuna lavora al proprio ottimo senza alcun cambio. Se una sezione supera all'incirca la metà della vostra produzione, dedicarle una linea di solito si ripaga."
           }
         ],
         "sectors": ["Acciaio leggero", "Struttura solare", "Edifici prefabbricati", "Capannoni industriali", "Arcarecci"]

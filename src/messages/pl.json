@@ -855,6 +855,32 @@
           "Zespół cięcia (nożyce końcowe)",
           "Przenośnik wyjściowy i układanie"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Korytka kablowe wytwarza się zwykle z taśmy ocynkowanej wstępnie, a linia do korytek pracuje zazwyczaj na kilku szerokościach z tego samego materiału. Zmiana kręgu staje się przez to czynnością rutynową, a nie sporadyczną, i dlatego odwijak oraz układ załadunku wpływają na rzeczywistą wydajność bardziej niż prędkość kształtowania."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Krzywiznę kręgu usuwa się przed wykrawaniem taśmy. Korytko to długi, płytki profil, który po uformowaniu wyraźnie pokazuje wygięcie; a bardziej praktycznie: odcinki korytka skręca się kolejno wzdłuż trasy, więc element, który nie jest prosty, utrudnia każde połączenie na tym odcinku."
+          },
+          {
+            "title": "Perforacja i wykrawanie",
+            "text": "Szczeliny wentylacyjne i otwory łączników na końcach wykrawa się na płasko. Korytko perforowane istnieje nie bez powodu — otwory odprowadzają ciepło z wiązek kabli i umożliwiają odpływ — więc wzór jest specyfikacją funkcjonalną, a nie ozdobą. Wykrojnik jest serwonapędzany, aby wzór szczelin i otwory końcowe zachowały właściwą relację do gotowej długości."
+          },
+          {
+            "title": "Profilowanie",
+            "text": "Ceownik powstaje na kolejnych stacjach. O jakości korytka decyduje krawędź: zawinięta półka u góry każdego boku sprawia, że cienki, płytki profil jest dostatecznie sztywny, by przenieść rozpiętość między podporami, i jest to zarazem krawędź, po której podczas montażu przeciąga się kable. Formuje się ją promieniem, który utrzymuje sztywność przekroju, nie zostawiając krawędzi uszkadzającej izolację."
+          },
+          {
+            "title": "Cięcie w fazie z wzorem",
+            "text": "Cięcie synchronizuje się z perforacją, nie tylko z licznikiem długości. Każde korytko musi kończyć się takim samym pełnym marginesem i takim samym położeniem otworu łącznika na obu końcach, inaczej styki wzdłuż trasy nie będą się pokrywać. Linia, która tylko liczy długość, wyprodukuje korytka o poprawnym wymiarze, których i tak nie da się skręcać w sposób powtarzalny."
+          },
+          {
+            "title": "Przenośnik wyjściowy i sztaplowanie",
+            "text": "Gotowe korytka wychodzą na przenośnik i są sztaplowane. Korytko wsuwa się jedno w drugie, więc sposób sztaplowania decyduje, ile zmieści się na palecie, a tym samym o koszcie transportu — który przy wyrobie o niskiej wartości i dużej objętości stanowi większą część ceny z dostawą, niż zakłada większość kupujących."
+          }
+        ],
         "faq": [
           {
             "q": "Czy mogę produkować koryta perforowane i gładkie na tej samej linii?",
@@ -867,6 +893,26 @@
           {
             "q": "Z jakimi materiałami pracuje?",
             "a": "Blacha walcowana na zimno, ocynkowana, aluminium i stal nierdzewna. Aby chronić powłokę cynkową, powierzchnie rolek i naciski dobiera się do materiału."
+          },
+          {
+            "q": "Dlaczego cięcie musi być w fazie z perforacją?",
+            "a": "Bo korytko kablowe montuje się jako ciągły ciąg skręcanych odcinków. Każdy kawałek potrzebuje takiego samego pełnego marginesu i takiego samego położenia otworu łącznika na obu końcach, żeby styki powtarzały się identycznie na całej instalacji. Jeśli linia tylko liczy długość i tnie, wszystkie sztuki będą miały ten sam wymiar, ale perforacja będzie się przesuwać względem końców, co objawia się łącznikami, które się nie pokrywają. Zsynchronizowanie nożyc z wykrojnikiem właśnie temu zapobiega i jest konkretną rzeczą, o którą warto pytać przy porównywaniu linii."
+          },
+          {
+            "q": "Co naprawdę decyduje o sztywności korytka?",
+            "a": "Zawinięta półka u górnej krawędzi każdego boku, znacznie bardziej niż grubość blachy. Gładki ceownik o tej samej grubości ugina się wyraźnie bardziej, bo prawie cała sztywność na zginanie pochodzi z materiału na skrajach przekroju. Dlatego też wzór perforacji kończy się przed krawędziami — perforowanie półki zabiera dokładnie ten materiał, który wykonuje pracę. Jeśli porównujecie korytka wyłącznie po grubości, porównujecie niewłaściwą liczbę."
+          },
+          {
+            "q": "Czy forma krawędzi wpływa na kable?",
+            "a": "Tak i jest to realny problem montażowy, nie teoretyczny. Kable ciągnie się ręcznie wzdłuż korytka na długich odcinkach, a krawędź pozostawiona ostrą albo z zadziorem po kształtowaniu czy cięciu rysuje izolację. Zawiniętą półkę formuje się promieniem częściowo dla sztywności, a częściowo właśnie dlatego. Warto obejrzeć próbkę u każdego dostawcy i przesunąć dłoń po wewnętrznej krawędzi — mówi to o linii więcej niż karta katalogowa."
+          },
+          {
+            "q": "Ile w cenie z dostawą stanowi transport?",
+            "a": "Więcej, niż zakłada większość, i dlatego korytka produkuje się zwykle blisko miejsca użycia. To wyrób lekki, obszerny i o niskiej wartości: kontener zapełnia się na długo przed osiągnięciem limitu masy, więc fracht płaci się za powietrze. Korytko wsuwa się jedno w drugie, więc to, jak dobrze się sztapluje, wprost zmienia koszt na miejscu. To także handlowy powód, dla którego linia do korytek bywa pierwszą inwestycją w profilowanie u wykonawcy, który wcześniej kupował gotowe — sama oszczędność na transporcie unosi znaczną część uzasadnienia."
+          },
+          {
+            "q": "Czy ta sama linia zrobi korytko drabinkowe i siatkowe?",
+            "a": "Nie i warto to wyjaśnić wcześnie, bo te trzy wyroby często wycenia się razem. Korytko profilowane to ukształtowany ceownik z blachy. Korytko drabinkowe to dwie ceowe belki z przyspawanymi szczeblami, więc potrzebuje linii spawalniczej, a nie profilującej. Korytko siatkowe to zgrzewany drut, czyli jeszcze inny proces. Jeśli Państwa asortyment obejmuje więcej niż jeden z nich, są to odrębne inwestycje i tak należy je planować."
           }
         ],
         "sectors": ["Infrastruktura elektryczna", "Centra danych", "Obiekty przemysłowe", "Galerie i projekty budowlane"]
@@ -898,6 +944,32 @@
           "Nożyce latające",
           "Automatyczne układanie"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Profile konstrukcji solarnych wytwarza się niemal zawsze z taśmy powlekanej — ocynkowanej ogniowo albo z powłoką cynkowo-aluminiowo-magnezową typu Magnelis. Ta powłoka stanowi całą ochronę antykorozyjną przez 25 lat życia elektrowni, dlatego obchodzenie się z materiałem od odwijaka jest pomyślane tak, by nie naruszyć powierzchni, a nie tylko po to, by przesunąć taśmę."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Krzywiznę kręgu usuwa się przed wykrawaniem. Stół solarny to zestaw długich, smukłych elementów skręconych ze sobą; płatew dostarczona wygięta nie tylko źle wygląda — walczy z monterem przy każdej śrubie i wyprowadza pole z płaszczyzny, co ujawnia się później jako nierównomierne obciążenie modułów."
+          },
+          {
+            "title": "Wykrawanie w linii",
+            "text": "Otwory i owale montażowe wykrawa się na płasko, zanim powstanie przekrój. To właśnie pozwala profilowi trafić z ciężarówki prosto w konstrukcję, bez wiercenia na budowie. Wykrojnik jest serwonapędzany, więc wzór otworów wynika z receptury danego projektu, a nie z mechanicznych zderzaków, które trzeba by przestawiać przy każdej zmianie układu."
+          },
+          {
+            "title": "Profilowanie",
+            "text": "Przekrój kapeluszowy, C lub Omega powstaje na kolejnych stacjach. Ograniczeniem jest tu materiał powlekany: powierzchnie i naciski rolek dobiera się tak, by powłoka nie pękała ani nie odpryskiwała na najciaśniejszych promieniach, bo gięcie z uszkodzoną powłoką to ognisko korozji, którego farba nałożona na budowie nie naprawi porządnie."
+          },
+          {
+            "title": "Nożyce latające",
+            "text": "Profil tnie się w ruchu, bez zatrzymywania linii. W projekcie solarnym waży to więcej, niż się wydaje: zamówienie to tysiące sztuk w kilku długościach, a linia, która musi zwalniać i zatrzymywać się przy każdym cięciu, spędza znaczną część zmiany nie produkując."
+          },
+          {
+            "title": "Sztaplowanie automatyczne",
+            "text": "Gotowe profile są zbierane i układane w pakiety gotowe do załadunku. Budowy solarne przyjmują duże partie według harmonogramu, więc konsekwentne pakowanie jest częścią wyrobu: pakiety zgodne z kolejnością montażu oszczędzają monterowi sortowania na polu pełnym podobnych profili."
+          }
+        ],
         "faq": [
           {
             "q": "Czy mogę produkować profile C i U na jednej linii?",
@@ -910,6 +982,26 @@
           {
             "q": "Czy cynkowanie ogniowe ucierpi podczas profilowania?",
             "a": "Przy powierzchni rolek i nacisku dobranych do powłoki pozostaje nienaruszone. Nasze rolki wykonano ze stali 4140, hartowanej do 58-60 Rockwella."
+          },
+          {
+            "q": "Dlaczego powłokę wybiera się przed zaprojektowaniem profilu?",
+            "a": "Bo decyduje jednocześnie o trwałości antykorozyjnej i o tym, jak można ukształtować przekrój. Taśma ocynkowana ogniowo i powłoki cynkowo-aluminiowo-magnezowe typu Magnelis zachowują się inaczej na ciasnym promieniu, a powłoka określa też, co dzieje się na krawędziach cięcia i w otworach, gdzie odsłania się goła stal. Powłoki cynkowo-aluminiowo-magnezowe wybiera się między innymi dlatego, że wykazują pewną zdolność samonaprawy na krawędziach cięcia, co ma znaczenie przy profilu wykrawanym i ciętym tysiące razy. Powłokę podajcie razem z rysunkiem — promienie rolek dobiera się pod nią."
+          },
+          {
+            "q": "Czy otwory można wykrawać po ukształtowaniu?",
+            "a": "Można, ale dla tego wyrobu to odwrotna kolejność. Wykrawanie w gotowym przekroju oznacza wykrawanie przez strefę zakrzywioną lub usztywnioną, co miejscowo deformuje profil i pozostawia otwór trudniejszy do utrzymania wymiarowo. Wykrawanie na płasko zachowuje dokładność wzoru i pozwala zrobić całość w jednym przejściu. Powodem, dla którego profile solarne w ogóle wykrawa się w linii, jest wyeliminowanie wiercenia na budowie — robienie tego później przywraca ten koszt w całości."
+          },
+          {
+            "q": "Ile kosztuje na linii zmiana układu montażowego?",
+            "a": "Jeśli zmieniają się położenia otworów lub długości, to zmiana receptury i oprzyrządowanie pozostaje nietknięte — po to właśnie są stacje wykrawania i receptury długości, i dlatego prace solarne pasują do linii tego typu. Jeśli zmienia się sam przekrój profilu, to kwestia zestawu rolek i zupełnie inna rozmowa. Przy planowaniu warto to rozdzielić: zmiany układu są rutyną, zmiany przekroju nie."
+          },
+          {
+            "q": "Czy blacha ocynkowana ogniowo coś traci podczas kształtowania?",
+            "a": "Nie, jeśli promienie i naciski są do niej dobrane. Powłoka cynkowa jest bardziej krucha niż stal pod nią, więc uszkodzenie objawia się jako drobne pęknięcia po zewnętrznej stronie najciaśniejszych gięć, a nie jako widoczne odpryskiwanie. To kwestia projektu oprzyrządowania, rozstrzygana przy wykonaniu zestawu rolek, a nie regulowana później. Także dlatego przesłanie specyfikacji powłoki wraz z rysunkiem profilu nie jest formalnością."
+          },
+          {
+            "q": "Jakie przekroje stosuje się zwykle w konstrukcjach solarnych?",
+            "a": "Przekroje kapeluszowe, C i Omega pokrywają większość zastosowań, w różnych wysokościach zależnie od rozpiętości i strefy wiatrowej. Obliczenia konstrukcyjne są odpowiedzialnością projektanta elektrowni i różnią się mocno między krajami — obciążenie śniegiem i wiatrem przesuwa wielkość przekroju bardziej niż cokolwiek innego. Oprzyrządowanie wykonujemy pod przekrój z Państwa rysunku; jeśli projekt jest na wcześniejszym etapie, zwykle bardziej owocne jest najpierw ustalić konstrukcję, a linię wyspecyfikować wokół niej niż odwrotnie."
           }
         ],
         "sectors": ["Solar / firmy EPC", "PV dachowe", "Elektrownie gruntowe", "Agro-PV"]
@@ -1296,6 +1388,32 @@
           "Nożyce latające",
           "Układanie"
         ],
+        "process": [
+          {
+            "title": "Załadunek i rozwijanie kręgu",
+            "text": "Profile konstrukcyjne wytwarza się zwykle z taśmy ocynkowanej wstępnie w różnych grubościach, bo ta sama linia obsługuje płatwie, słupki i elementy ram o odmiennych specyfikacjach. Odwijak dobiera się pod najcięższy krąg, jaki linia zobaczy, a nie pod przeciętny — odwijak wybrany według typowego zlecenia staje się wąskim gardłem pierwszego dnia, w którym trafi się ciężka robota."
+          },
+          {
+            "title": "Prostowanie",
+            "text": "Krzywizna kręgu schodzi przed wszystkim innym. Przy profilach konstrukcyjnych to decyduje, czy gotowy element jest prosty na całej długości: przekroje C i Sigma są niesymetryczne, więc krzywizna pozostała w taśmie nie zostaje łagodnym wygięciem — łączy się z kształtowaniem i wychodzi jako skręcenie, znacznie trudniejsze do poprawienia niż zwykłe ugięcie."
+          },
+          {
+            "title": "Wykrawanie według wzoru konstrukcyjnego",
+            "text": "Otwory instalacyjne, otwory na śruby i przepusty w środniku wykrawa się na płasko, we wzorze określonym przez projekt konstrukcyjny. Położenie ma tu większe znaczenie niż w profilu okładzinowym: otwór w środniku obciążonego elementu jest cechą zaprojektowaną, a jego przesunięcie to decyzja konstrukcyjna, nie wygoda produkcji."
+          },
+          {
+            "title": "Profilowanie regulowane",
+            "text": "To właśnie odróżnia tę linię od jednoprofilowej. Zespoły rolek regulują się tak, by szerokość i wysokość przekroju zmieniały się bez rozbierania maszyny — dzięki temu trzy rodziny przekrojów dzielą jedną linię. Warto rozumieć kompromis: linia regulowana pokrywa pewien zakres, linia dedykowana produkuje jeden przekrój szybciej. Która jest właściwa, zależy od tego, jak zróżnicowany jest naprawdę Państwa portfel zamówień."
+          },
+          {
+            "title": "Nożyce latające",
+            "text": "Cięcie odbywa się w ruchu, więc linia nie zatrzymuje się przy każdej sztuce. W robotach konstrukcyjnych zamówienia to raczej długie listy mieszanych długości niż jedna długość powtarzana, więc czas tracony na zatrzymania i rozruchy szybko sumuje się w ciągu zmiany."
+          },
+          {
+            "title": "Sztaplowanie",
+            "text": "Gotowe przekroje są zbierane i sztaplowane. Długie elementy konstrukcyjne łatwo uszkodzić między linią a ciężarówką, a wygięta półka płatwi to nie problem estetyczny — to element, który nie przylgnie płasko do krokwi, do której się go przykręca."
+          }
+        ],
         "faq": [
           {
             "q": "Czy da się wykonywać wszystkie trzy przekroje na jednej linii?",
@@ -1308,6 +1426,26 @@
           {
             "q": "Jak długo wytrzymują rolki?",
             "a": "Rolki wykonano ze stali 4140, hartowanej do 58-60 Rockwella; przy prawidłowych nastawach nacisku mogą wyprodukować miliony metrów profilu."
+          },
+          {
+            "q": "Gdzie leży rzeczywista granica linii regulowanej?",
+            "a": "Regulacja obejmuje zakres szerokości i wysokości w obrębie jednej rodziny przekrojów i geometrii, pod którą ją zaprojektowano. Czego nie robi, to zamiana jednej rodziny profili w inną: przejście między C, Sigma i Omega to sprawa zestawu rolek, a wyjście poza zaprojektowany zakres oznacza nowe oprzyrządowanie niezależnie od tego, ile regulacji ma maszyna. Uczciwy sposób specyfikowania takiej linii to podać pełną listę przekrojów, które zamierzacie produkować, łącznie z tymi, na które nie macie jeszcze zamówień, i pozwolić zaprojektować zakres wokół tej listy."
+          },
+          {
+            "q": "Dlaczego skręcenie waży więcej niż ugięcie w profilach konstrukcyjnych?",
+            "a": "Bo ugięcie często daje się wyciągnąć na montażu, a skręcenia nie. Przekroje C i Sigma są niesymetryczne względem co najmniej jednej osi, więc naprężenia własne pozostałe w taśmie nie uwalniają się jako prosta krzywizna, lecz jako obrót wzdłuż długości. Skręcona płatew nie przylgnie płasko tam, gdzie się ją skręca, a rozwiązaniem na budowie zwykle bywa odrzucenie sztuki. Dlatego etap prostowania waży na linii konstrukcyjnej więcej, niż większość kupujących się spodziewa, i dlatego warto o niego zapytać wprost."
+          },
+          {
+            "q": "Czy wzory otworów można zmieniać bez nowego oprzyrządowania?",
+            "a": "Położenie i rozstaw otworów to wartości receptury, więc nowy układ jest zmianą danych, a nie oprzyrządowania. Kształt i wielkość otworu to już oprzyrządowanie — inna średnica albo owal zamiast otworu okrągłego oznaczają stempel i matrycę. Planując linię, warto od początku wypisać wszystkie kształty otworów występujące w Państwa asortymencie, bo dokładanie kształtów później to za każdym razem zakup, a dokładanie położeń jest bezpłatne."
+          },
+          {
+            "q": "Jak długo wytrzymują rolki?",
+            "a": "Dłużej, niż większość się spodziewa, i zależy to znacznie bardziej od tego, co przez nie przechodzi, niż od godzin pracy. Stal niepowlekana, powłoki ścierne, materiał gruby i ciasne promienie zużywają oprzyrządowanie szybciej niż lekka blacha ocynkowana na hojnych promieniach. Rolki to pozycja remontowa, nie materiał eksploatacyjny — gdy w końcu wyjdą poza tolerancję, poddaje się je przeróbce, a nie wymianie. Tym, co naprawdę wcześnie zabija zestaw, jest praca z niewspółosiowością albo przy zbyt dużym nacisku, a to bardziej kwestia dyscypliny ustawiania niż metalurgii."
+          },
+          {
+            "q": "Czy jedna linia regulowana jest lepsza niż dwie dedykowane?",
+            "a": "To zależy od struktury zamówień i warto policzyć, zamiast zakładać. Linia regulowana wygrywa, gdy portfel jest zróżnicowany i żaden przekrój nie dominuje — kupuje się jedną maszynę, jeden układ sterowania i jeden komplet części zamiennych, a przezbrojenia są częste, ale krótkie. Dwie linie dedykowane wygrywają, gdy dwa przekroje stanowią większość wolumenu, bo każda pracuje w swoim optimum bez żadnego przezbrojenia. Jeśli jeden przekrój to ponad mniej więcej połowę produkcji, dedykowanie mu linii zwykle się zwraca."
           }
         ],
         "sectors": ["Lekka konstrukcja stalowa", "Konstrukcja solarna", "Budynki prefabrykowane", "Hale przemysłowe", "Płatwie"]

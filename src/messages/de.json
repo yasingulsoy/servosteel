@@ -856,6 +856,32 @@
           "Schneideeinheit (Endschere)",
           "Auslaufband und Stapelung"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Kabelrinnen werden meist aus vorverzinktem Band gefertigt, und eine Rinnenlinie fährt üblicherweise mehrere Breiten aus demselben Vormaterial. Der Coilwechsel ist damit Routine statt Ausnahme, weshalb Haspel und Aufgabeeinrichtung die tatsächliche Ausbringung stärker beeinflussen als die Umformgeschwindigkeit."
+          },
+          {
+            "title": "Richten",
+            "text": "Der Coil-Set wird entfernt, bevor das Band gestanzt wird. Eine Rinne ist ein langes flaches Profil und zeigt Krümmung nach dem Umformen deutlich; praktischer noch: Rinnenabschnitte werden entlang einer Trasse aneinandergeschraubt, ein nicht gerades Element erschwert also jeden Verbinder auf der Strecke."
+          },
+          {
+            "title": "Perforation und Stanzen",
+            "text": "Lüftungsschlitze und die Verbinderlöcher an den Enden werden flach gestanzt. Perforierte Rinnen gibt es aus gutem Grund — die Öffnungen führen die Wärme aus gebündelten Kabeln ab und lassen die Rinne abtrocknen —, das Muster ist also eine funktionale Vorgabe, keine Zier. Die Stanze ist servogeführt, damit Schlitzbild und Endlöcher im richtigen Verhältnis zur fertigen Länge bleiben."
+          },
+          {
+            "title": "Rollformen",
+            "text": "Das U-Profil entsteht über die Stationen. Über die Rinnenqualität entscheidet die Kante: der umgelegte Rand oben an beiden Seiten macht ein dünnes flaches Profil steif genug, um zwischen Auflagen zu spannen, und über genau diese Kante werden bei der Montage Kabel gezogen. Sie wird mit einem Radius geformt, der den Querschnitt steif hält, ohne eine Kante zu hinterlassen, die Kabelisolierung beschädigt."
+          },
+          {
+            "title": "Ablängen in Phase zum Muster",
+            "text": "Der Schnitt wird auf die Perforation getaktet, nicht nur auf den Längenzähler. Jede Rinne muss an beiden Enden mit demselben vollen Materialrand und derselben Verbinderlochlage enden, sonst fluchten die Stöße entlang einer Trasse nicht. Eine Anlage, die nur Länge zählt, macht Rinnen, die richtig messen und sich trotzdem nicht gleichmäßig verschrauben lassen."
+          },
+          {
+            "title": "Auslaufband und Stapeln",
+            "text": "Die fertigen Rinnen laufen über ein Förderband aus und werden gestapelt. Rinnen schachteln ineinander, deshalb bestimmt das Stapeln, wie viel auf eine Palette geht — und damit die Frachtkosten, die bei einem geringwertigen Massenprodukt einen größeren Teil des Lieferpreises ausmachen, als die meisten Käufer erwarten."
+          }
+        ],
         "faq": [
           {
             "q": "Kann ich gelochte und ungelochte Kanäle auf derselben Anlage fertigen?",
@@ -868,6 +894,26 @@
           {
             "q": "Welche Blechwerkstoffe werden verarbeitet?",
             "a": "Kaltgewalztes, verzinktes, Aluminium- und Edelstahlblech. Zum Schutz der Zinkschicht werden Rollenoberflächen und Anpressdrücke auf das Material abgestimmt."
+          },
+          {
+            "q": "Warum muss der Schnitt in Phase zur Perforation liegen?",
+            "a": "Weil Kabelrinnen als durchgehende Kette verschraubter Abschnitte montiert werden. Jedes Stück braucht denselben vollen Rand und dieselbe Verbinderlochlage an beiden Enden, damit sich die Stöße über die gesamte Installation identisch wiederholen. Zählt die Anlage nur Länge und schneidet, messen alle Teile gleich, aber die Perforation wandert relativ zu den Enden — sichtbar an Verbindern, die nicht fluchten. Die Schere zur Stanze zu takten verhindert genau das, und danach sollte man beim Anlagenvergleich gezielt fragen."
+          },
+          {
+            "q": "Was macht eine Rinne tatsächlich steif?",
+            "a": "Der umgelegte Rand an der Oberkante jeder Seite, weit mehr als die Blechdicke. Ein einfaches U-Profil gleicher Dicke federt erheblich stärker durch, weil fast die gesamte Biegesteifigkeit vom Material an den Rändern des Querschnitts kommt. Deshalb endet auch das Lochmuster vor den Rändern — den Flansch zu perforieren nimmt genau das Material heraus, das die Arbeit leistet. Wer Rinnen nur nach Dicke vergleicht, vergleicht die falsche Zahl."
+          },
+          {
+            "q": "Wirkt sich die Kantenform auf die Kabel aus?",
+            "a": "Ja, und das ist ein reales Montageproblem, kein theoretisches. Kabel werden über lange Strecken von Hand entlang der Rinne gezogen, und eine scharf gebliebene Kante oder ein Grat vom Umformen oder Schneiden ritzt die Isolierung. Der umgelegte Rand wird auch deshalb mit Radius geformt, nicht nur wegen der Steifigkeit. Es lohnt, bei jedem Anbieter ein Musterstück anzusehen und mit der Hand die Innenkante entlangzufahren — das sagt mehr über die Anlage als ein Datenblatt."
+          },
+          {
+            "q": "Welchen Anteil hat der Transport am Lieferpreis?",
+            "a": "Einen größeren als die meisten annehmen, weshalb Rinnen üblicherweise nahe am Einsatzort gefertigt werden. Es ist ein leichtes, sperriges, geringwertiges Produkt: Ein Container ist längst voll, bevor er sein Gewichtslimit erreicht, die Fracht wird also für Luft bezahlt. Rinnen schachteln ineinander, deshalb verändert die Stapelgüte direkt die Landed Costs. Das ist auch der kaufmännische Grund, warum eine Rinnenlinie oft die erste Rollform-Investition eines Verarbeiters ist, der bisher zugekauft hat — allein die Transportersparnis trägt einen großen Teil des Business Case."
+          },
+          {
+            "q": "Kann dieselbe Anlage Kabelleitern und Gitterrinnen herstellen?",
+            "a": "Nein, und das sollte man früh klarstellen, weil die drei Produkte oft gemeinsam angefragt werden. Die rollgeformte Rinne ist ein umgeformtes Blechprofil. Die Kabelleiter besteht aus zwei Holmen mit eingeschweißten Sprossen, braucht also eine Schweißlinie statt einer Umformlinie. Die Gitterrinne ist geschweißter Draht, wieder ein anderer Prozess. Deckt Ihr Programm mehr als eines davon ab, sind das getrennte Investitionen und sollten so geplant werden."
           }
         ],
         "sectors": ["Elektroinfrastruktur", "Rechenzentren", "Industrieanlagen", "Einkaufszentren und Bauprojekte"]
@@ -899,6 +945,32 @@
           "Fliegende Schere",
           "Automatische Stapelung"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Solar-Montageprofile werden fast immer aus beschichtetem Band gerollt — feuerverzinkt oder mit einer Zink-Aluminium-Magnesium-Beschichtung wie Magnelis. Diese Beschichtung ist der gesamte Korrosionsschutz über die 25-jährige Lebensdauer der Anlage, deshalb ist die Handhabung ab der Haspel darauf ausgelegt, die Oberfläche nicht zu verletzen, nicht bloß das Band zu bewegen."
+          },
+          {
+            "title": "Richten",
+            "text": "Der Coil-Set wird vor dem Stanzen entfernt. Ein Solartisch ist eine Konstruktion aus langen, schlanken, miteinander verschraubten Elementen; eine krumm angelieferte Pfette sieht nicht nur falsch aus, sie kämpft an jeder Schraube gegen den Monteur und bringt das Feld aus der Ebene — was sich später als ungleichmäßige Modulbelastung zeigt."
+          },
+          {
+            "title": "Stanzen in der Linie",
+            "text": "Montagelöcher und Langlöcher werden flach gestanzt, bevor der Querschnitt entsteht. Genau das lässt das Profil vom Lkw direkt in die Konstruktion gehen, ohne Bohren auf der Baustelle. Die Stanze ist servogeführt, das Lochbild folgt also dem Rezept des jeweiligen Projekts statt mechanischen Anschlägen, die bei jeder Layoutänderung neu justiert werden müssten."
+          },
+          {
+            "title": "Rollformen",
+            "text": "Das Hut-, C- oder Omega-Profil entsteht über die Stationen. Der begrenzende Faktor ist hier das beschichtete Material: Walzenoberflächen und Anpressdrücke werden so gewählt, dass die Beschichtung an den engsten Radien weder reißt noch abplatzt — eine Biegung mit gebrochener Beschichtung ist eine Korrosionsstelle, die sich vor Ort mit Farbe nicht sauber beheben lässt."
+          },
+          {
+            "title": "Fliegende Schere",
+            "text": "Das Profil wird in der Bewegung geschnitten, ohne die Linie anzuhalten. Bei Solarprojekten wiegt das schwerer als es klingt: Ein Auftrag umfasst Tausende Teile in wenigen Längen, und eine Anlage, die für jeden Schnitt abbremsen und stehenbleiben muss, verbringt einen großen Teil der Schicht ohne Produktion."
+          },
+          {
+            "title": "Automatisches Stapeln",
+            "text": "Die fertigen Profile werden gesammelt und in Bündeln zum Verladen gestapelt. Solarbaustellen nehmen große Lose nach Terminplan an, deshalb ist gleichmäßige Bündelung Teil des Produkts: Bündel, die der Montagereihenfolge entsprechen, ersparen dem Monteur das Sortieren auf einem Feld voller ähnlich aussehender Profile."
+          }
+        ],
         "faq": [
           {
             "q": "Kann ich C- und U-Profile auf derselben Anlage fertigen?",
@@ -911,6 +983,26 @@
           {
             "q": "Leidet feuerverzinktes Blech beim Umformen?",
             "a": "Mit auf die Beschichtung abgestimmter Rollenoberfläche und Anpressung bleibt sie intakt. Unsere Rollen bestehen aus 4140-Stahl und sind auf 58-60 Rockwell gehärtet."
+          },
+          {
+            "q": "Warum wird die Beschichtung vor der Profilkonstruktion festgelegt?",
+            "a": "Weil sie sowohl die Korrosionslebensdauer bestimmt als auch, wie der Querschnitt umgeformt werden kann. Feuerverzinktes Band und Zink-Aluminium-Magnesium-Beschichtungen wie Magnelis verhalten sich am engen Radius unterschiedlich, und die Beschichtung entscheidet außerdem, was an Schnittkanten und Stanzlöchern passiert, wo blanker Stahl freiliegt. Zink-Aluminium-Magnesium wird unter anderem gewählt, weil es an Schnittkanten eine gewisse Selbstheilung zeigt — relevant bei einem Profil, das tausendfach gestanzt und geschnitten wird. Nennen Sie die Beschichtung mit der Zeichnung, die Walzenradien werden darauf ausgelegt."
+          },
+          {
+            "q": "Kann stattdessen nach dem Umformen gestanzt werden?",
+            "a": "Möglich ist es, aber für dieses Produkt ist es die falsche Reihenfolge. Ein fertiges Profil zu stanzen heißt, durch eine gekrümmte oder versteifte Zone zu stanzen, was den Querschnitt lokal verzieht und ein maßlich schwerer beherrschbares Loch hinterlässt. Flach gestanzt bleibt das Muster genau und alles läuft in einem Durchgang. Der Grund, warum Solarprofile überhaupt in der Linie gestanzt werden, ist der Wegfall des Bohrens auf der Baustelle — später zu stanzen holt diese Kosten direkt zurück."
+          },
+          {
+            "q": "Was kostet eine Änderung des Montagerasters an der Anlage?",
+            "a": "Ändern sich Lochpositionen oder Längen, ist es eine Rezeptänderung ohne Werkzeugeingriff — genau dafür sind die Stanzstationen und die Längenrezepte da, und deshalb passt Solararbeit zu dieser Art Linie. Ändert sich der Querschnitt selbst, ist es eine Frage des Walzensatzes und ein anderes Gespräch. Bei der Planung lohnt es, beides zu trennen: Layoutänderungen sind Routine, Querschnittsänderungen nicht."
+          },
+          {
+            "q": "Leidet feuerverzinktes Blech beim Umformen?",
+            "a": "Nicht, wenn Radien und Drücke dazu passen. Die Zinkschicht ist spröder als der Stahl darunter, Schäden zeigen sich daher als feine Rissbildung an der Außenseite der engsten Biegungen, nicht als sichtbares Abplatzen. Das ist eine Frage der Werkzeugauslegung, entschieden beim Bau des Walzensatzes, nicht nachträglich einstellbar. Auch deshalb ist es keine Formalität, die Beschichtungsspezifikation mit der Profilzeichnung zu schicken."
+          },
+          {
+            "q": "Welche Querschnitte werden für Solartragwerke üblicherweise verwendet?",
+            "a": "Hut-, C- und Omega-Profile decken das meiste ab, in verschiedenen Höhen je nach Spannweite und Windzone. Die Tragwerksplanung liegt beim Anlagenplaner und unterscheidet sich stark nach Land — Schnee- und Windlast verändern die Profilgröße stärker als alles andere. Wir bauen das Werkzeug auf den Querschnitt Ihrer Zeichnung; steht das Projekt noch früher, ist es meist ergiebiger, zuerst die Tragwerksplanung festzuzurren und die Anlage darum herum zu spezifizieren als umgekehrt."
           }
         ],
         "sectors": ["Solar-/EPC-Unternehmen", "Dach-PV", "Freiflächenanlagen", "Agri-PV"]
@@ -1297,6 +1389,32 @@
           "Fliegende Schere",
           "Stapelung"
         ],
+        "process": [
+          {
+            "title": "Coil-Aufgabe und Abwickeln",
+            "text": "Bauprofile werden meist aus vorverzinktem Band in verschiedenen Dicken gerollt, weil dieselbe Linie Pfetten, Ständer und Rahmenteile mit unterschiedlichen Spezifikationen bedient. Die Haspel wird auf das schwerste Coil ausgelegt, das die Linie sehen wird, nicht auf das durchschnittliche — eine nach dem typischen Auftrag gewählte Haspel wird beim ersten schweren Auftrag zum Engpass."
+          },
+          {
+            "title": "Richten",
+            "text": "Der Coil-Set kommt vor allem anderen heraus. Bei Bauprofilen entscheidet das, ob das fertige Element über seine Länge gerade ist: C- und Sigma-Querschnitte sind unsymmetrisch, eine im Band verbliebene Krümmung bleibt also nicht einfach eine sanfte Biegung — sie verbindet sich mit dem Umformen und tritt als Verwindung aus, die nachträglich weit schwerer zu korrigieren ist als eine einfache Krümmung."
+          },
+          {
+            "title": "Stanzen nach Konstruktionsvorgabe",
+            "text": "Installations- und Schraubenlöcher sowie Stegausschnitte werden flach gestanzt, im Bild der Tragwerksplanung. Die Position zählt hier mehr als bei einem Verkleidungsprofil: ein Loch im Steg eines belasteten Elements ist ein geplantes Merkmal, es zu verschieben ist eine statische Entscheidung, keine Fertigungsbequemlichkeit."
+          },
+          {
+            "title": "Verstellbares Rollformen",
+            "text": "Das unterscheidet diese Linie von einer Einprofil-Linie. Die Walzengruppen verstellen sich, sodass Profilbreite und -höhe sich ändern lassen, ohne die Maschine zu zerlegen — so teilen sich drei Querschnittsfamilien eine Linie. Den Kompromiss sollte man kennen: eine verstellbare Linie deckt eine Bandbreite ab, eine dedizierte Linie fährt einen Querschnitt schneller. Was richtig ist, hängt davon ab, wie gemischt Ihr Auftragsbuch tatsächlich ist."
+          },
+          {
+            "title": "Fliegende Schere",
+            "text": "Geschnitten wird in der Bewegung, die Linie hält für kein Teil an. Bei Bauprofilen sind Aufträge eher lange Listen gemischter Längen als eine wiederholte Länge, deshalb summiert sich die Zeit für Anhalten und Anfahren über eine Schicht schnell auf."
+          },
+          {
+            "title": "Stapeln",
+            "text": "Die fertigen Profile werden gesammelt und gestapelt. Lange Bauelemente nehmen zwischen Linie und Lkw leicht Schaden, und ein verbogener Flansch an einer Pfette ist kein Schönheitsfehler — es ist ein Element, das am Sparren, an den es geschraubt wird, nicht plan anliegt."
+          }
+        ],
         "faq": [
           {
             "q": "Lassen sich alle drei Querschnitte auf einer Anlage fahren?",
@@ -1309,6 +1427,26 @@
           {
             "q": "Wie lange halten die Rollen?",
             "a": "Die Rollen bestehen aus 4140-Stahl und sind auf 58-60 Rockwell gehärtet; bei korrekter Anpressung fertigen sie Millionen Meter Profil."
+          },
+          {
+            "q": "Wo liegt die echte Grenze einer verstellbaren Linie?",
+            "a": "Die Verstellung deckt einen Bereich von Breiten und Höhen innerhalb einer Querschnittsfamilie und der Geometrie ab, für die sie ausgelegt wurde. Was sie nicht leistet, ist eine Profilfamilie in eine andere zu verwandeln: der Wechsel zwischen C, Sigma und Omega ist eine Walzensatzfrage, und außerhalb des ausgelegten Bereichs braucht es neue Werkzeuge, gleich wie viel Verstellung die Maschine hat. Der ehrliche Weg, so eine Linie zu spezifizieren, ist die vollständige Liste der Querschnitte anzugeben, die Sie produzieren wollen, einschließlich derer, für die Sie noch keine Aufträge haben, und den Bereich um diese Liste herum auszulegen."
+          },
+          {
+            "q": "Warum wiegt Verwindung schwerer als Krümmung?",
+            "a": "Weil sich eine Krümmung bei der Montage oft herausziehen lässt und eine Verwindung nicht. C- und Sigma-Querschnitte sind mindestens um eine Achse unsymmetrisch, deshalb entspannt sich die im Band verbliebene Eigenspannung nicht als einfache Kurve, sondern als Verdrehung über die Länge. Eine verwundene Pfette liegt an der Schraubstelle nicht plan auf, und die Abhilfe vor Ort heißt meist Teil aussortieren. Deshalb wiegt die Richtstufe auf einer Bauprofillinie schwerer als die meisten Käufer erwarten, und deshalb lohnt es, gezielt danach zu fragen."
+          },
+          {
+            "q": "Lassen sich Lochbilder ohne neue Werkzeuge ändern?",
+            "a": "Lochposition und -abstand sind Rezeptwerte, ein neues Bild ist also eine Datenänderung, keine Werkzeugänderung. Lochform und -größe sind Werkzeug — ein anderer Durchmesser oder ein Langloch statt eines Rundlochs bedeutet Stempel und Matrize. Bei der Anlagenplanung lohnt es, alle in Ihrem Programm vorkommenden Lochformen von Anfang an aufzulisten, denn Formen später hinzuzufügen ist jedes Mal eine Anschaffung, Positionen hinzuzufügen kostet nichts."
+          },
+          {
+            "q": "Wie lange halten die Walzen?",
+            "a": "Länger als die meisten erwarten, und es hängt weit mehr davon ab, was durchläuft, als von Betriebsstunden. Unbeschichteter Stahl, abrasive Beschichtungen, dickes Material und enge Radien verschleißen Werkzeuge schneller als leichtes verzinktes Blech bei großzügigen Radien. Walzen sind eine Instandhaltungsposition, kein Verbrauchsmaterial — sie werden nachgearbeitet, nicht ersetzt, wenn sie irgendwann aus der Toleranz laufen. Was einen Walzensatz wirklich früh tötet, ist der Betrieb mit Fluchtungsfehler oder zu hohem Druck, und das ist eher eine Frage der Einrichtdisziplin als der Metallurgie."
+          },
+          {
+            "q": "Ist eine verstellbare Linie besser als zwei dedizierte?",
+            "a": "Das hängt vom Mix ab, und es lohnt sich zu rechnen statt zu vermuten. Die verstellbare Linie gewinnt, wenn das Auftragsbuch gemischt ist und kein Querschnitt dominiert — Sie kaufen eine Maschine, eine Steuerung und einen Ersatzteilsatz, Umrüstungen sind häufig, aber kurz. Zwei dedizierte Linien gewinnen, wenn zwei Querschnitte den Großteil des Volumens ausmachen, weil jede in ihrem Optimum ohne jede Umrüstung fährt. Macht ein Querschnitt mehr als etwa die Hälfte Ihrer Ausbringung aus, zahlt sich eine eigene Linie dafür meist aus."
           }
         ],
         "sectors": ["Stahlleichtbau", "Solar-Unterkonstruktion", "Fertigbauten", "Industriebauten", "Pfettenprofile"]

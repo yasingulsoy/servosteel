@@ -856,6 +856,32 @@
           "Unidad de corte (cizalla final)",
           "Transportador de salida y apilado"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "La bandeja portacables se fabrica normalmente a partir de bobina pregalvanizada, y una línea de bandeja suele producir varias anchuras del mismo material. Eso convierte el cambio de bobina en un hecho rutinario y no ocasional, y por eso el desenrollador y su sistema de carga influyen más en la producción real que la velocidad de conformado."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La curvatura de bobina se elimina antes de punzonar la banda. Una bandeja es un canal largo y poco profundo que muestra la curvatura con claridad una vez conformada; y de forma más práctica: los tramos de bandeja se atornillan uno tras otro a lo largo del recorrido, así que un elemento que no está recto complica cada unión del trazado."
+          },
+          {
+            "title": "Perforación y punzonado",
+            "text": "Las ranuras de ventilación y los agujeros de unión de los extremos se punzonan en plano. La bandeja perforada existe por una razón: las aberturas evacuan el calor de los cables agrupados y permiten el drenaje, así que el patrón es una especificación funcional y no decorativa. El punzonado es servoasistido para que el patrón de ranuras y los agujeros de extremo mantengan la relación correcta con la longitud terminada."
+          },
+          {
+            "title": "Perfilado",
+            "text": "El canal se conforma a lo largo de las estaciones. El detalle que decide la calidad de la bandeja es el borde: el ala de retorno en la parte alta de cada lateral es lo que hace que un canal fino y poco profundo sea suficientemente rígido para salvar la distancia entre soportes, y es también el borde por el que se arrastran los cables durante la instalación. Se conforma con un radio que mantiene rígida la sección sin dejar un canto que dañe el aislamiento."
+          },
+          {
+            "title": "Corte en fase con el patrón",
+            "text": "El corte se sincroniza con la perforación, no solo con el contador de longitud. Cada bandeja debe terminar con el mismo margen macizo y la misma posición de agujero de unión en ambos extremos, o las juntas a lo largo del recorrido no coincidirán. Una línea que solo cuenta longitud hará bandejas de medida correcta que aun así no se atornillan de forma consistente."
+          },
+          {
+            "title": "Cinta de salida y apilado",
+            "text": "Las bandejas terminadas salen por una cinta y se apilan. La bandeja encaja dentro de sí misma, así que el apilado determina cuánta cabe en un palé y por tanto el coste de transporte, que en un producto de bajo valor y gran volumen pesa más en el precio entregado de lo que la mayoría de compradores supone."
+          }
+        ],
         "faq": [
           {
             "q": "¿Puedo producir bandejas perforadas y lisas en la misma línea?",
@@ -868,6 +894,26 @@
           {
             "q": "¿Con qué materiales trabaja?",
             "a": "Chapa laminada en frío, galvanizada, aluminio e inoxidable. Para proteger el recubrimiento de zinc, las superficies de rodillo y las presiones se ajustan al material."
+          },
+          {
+            "q": "¿Por qué el corte tiene que ir en fase con la perforación?",
+            "a": "Porque la bandeja portacables se instala como un recorrido continuo de tramos atornillados. Cada pieza necesita el mismo margen macizo y la misma posición de agujero de unión en cada extremo, para que las juntas se repitan igual a lo largo de toda la instalación. Si la línea solo cuenta longitud y corta, todas las piezas medirán lo mismo pero la perforación se irá desplazando respecto a los extremos, lo que se manifiesta como uniones que no coinciden. Sincronizar la cizalla con el punzón es lo que lo evita, y es algo concreto por lo que preguntar al comparar líneas."
+          },
+          {
+            "q": "¿Qué determina realmente la rigidez de una bandeja?",
+            "a": "El ala de retorno del borde superior de cada lateral, mucho más que el espesor de la chapa. Un canal liso del mismo espesor flecha bastante más, porque casi toda la rigidez a flexión procede del material situado en los extremos de la sección. Por eso también el patrón de perforación termina antes de los bordes: perforar el ala quita justo el material que está trabajando. Si compara bandejas solo por espesor, está comparando el número equivocado."
+          },
+          {
+            "q": "¿Afecta la forma del borde a los cables?",
+            "a": "Sí, y es un problema real de instalación, no teórico. Los cables se tiran a mano a lo largo de la bandeja en recorridos largos, y un borde que quede vivo o con rebaba del conformado o del corte raya el aislamiento. El ala de retorno se conforma con radio en parte por rigidez y en parte por esto. Merece la pena mirar una pieza de muestra de cualquier proveedor y pasar la mano por el canto interior: dice más sobre la línea que una ficha técnica."
+          },
+          {
+            "q": "¿Cuánto pesa el transporte en el precio entregado?",
+            "a": "Más de lo que la mayoría supone, y por eso la bandeja se fabrica normalmente cerca de donde se usa. Es un producto ligero, voluminoso y de bajo valor: un contenedor se llena mucho antes de alcanzar su límite de peso, así que el flete se paga por aire. La bandeja encaja dentro de sí misma, de modo que lo bien que apila cambia directamente el coste puesto en destino. Es también la razón comercial por la que una línea de bandeja suele ser la primera inversión en perfilado de un instalador que antes compraba: solo el ahorro en transporte sostiene buena parte del caso."
+          },
+          {
+            "q": "¿Puede la misma línea hacer bandeja de escalera y bandeja de rejilla?",
+            "a": "No, y conviene aclararlo pronto porque los tres productos se cotizan a menudo juntos. La bandeja perfilada es un canal de chapa conformada. La bandeja de escalera son dos largueros con travesaños soldados, así que necesita una línea de soldadura y no de conformado. La bandeja de rejilla es alambre soldado, otro proceso distinto. Si su gama cubre más de uno de ellos, son inversiones separadas y deben planificarse como tales."
           }
         ],
         "sectors": ["Infraestructura eléctrica", "Centros de datos", "Plantas industriales", "Centros comerciales y edificación"]
@@ -899,6 +945,32 @@
           "Cizalla volante",
           "Apilado automático"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "Los perfiles de estructura solar se perfilan casi siempre a partir de bobina recubierta: galvanizada en caliente o con recubrimiento de zinc-aluminio-magnesio como Magnelis. Ese recubrimiento es toda la protección frente a la corrosión durante los 25 años de vida de la planta, así que la manipulación desde el desenrollador está pensada para no dañar la superficie, no solo para mover la banda."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La curvatura de bobina se elimina antes del punzonado. Una mesa solar es un conjunto de elementos largos y esbeltos atornillados entre sí; una correa que llega combada no solo se ve mal: pelea con el instalador en cada tornillo y saca el campo de plano, lo que aparece después como carga desigual sobre los módulos."
+          },
+          {
+            "title": "Punzonado en línea",
+            "text": "Los agujeros y ranuras de montaje se punzonan en plano, antes de conformar la sección. Eso es lo que permite que el perfil pase del camión a la estructura sin taladrar en obra. El punzonado es servoasistido, de modo que el patrón sigue la receta de cada proyecto en lugar de topes mecánicos que habría que reajustar cada vez que cambia la disposición."
+          },
+          {
+            "title": "Perfilado",
+            "text": "La sección en sombrero, C u Omega se construye a lo largo de las estaciones. Aquí el condicionante es el material recubierto: las superficies y presiones de rodillo se ajustan para que el recubrimiento no se agriete ni se desprenda en los radios más cerrados, porque un pliegue con el recubrimiento roto es un punto de corrosión que ninguna pintura aplicada en obra resuelve del todo."
+          },
+          {
+            "title": "Cizalla volante",
+            "text": "El perfil se corta en movimiento, sin parar la línea. En un proyecto solar eso pesa más de lo que parece: el pedido son miles de piezas en unas pocas longitudes, y una línea que tiene que frenar y detenerse en cada corte pasa buena parte del turno sin producir."
+          },
+          {
+            "title": "Apilado automático",
+            "text": "Los perfiles terminados se recogen y apilan en paquetes listos para cargar. Las plantas solares reciben lotes grandes según calendario, así que un empaquetado consistente forma parte del producto: paquetes que siguen la secuencia de montaje ahorran al instalador clasificar en un campo lleno de perfiles parecidos."
+          }
+        ],
         "faq": [
           {
             "q": "¿Puedo producir perfiles C y U en la misma línea?",
@@ -911,6 +983,26 @@
           {
             "q": "¿El galvanizado en caliente sufre durante el conformado?",
             "a": "Con la superficie de rodillo y la presión adaptadas al recubrimiento, se mantiene intacto. Nuestros rodillos son de acero 4140 templado a 58-60 Rockwell."
+          },
+          {
+            "q": "¿Por qué se elige el recubrimiento antes de diseñar el perfil?",
+            "a": "Porque decide a la vez la vida frente a la corrosión y cómo puede conformarse la sección. La bobina galvanizada en caliente y los recubrimientos de zinc-aluminio-magnesio como Magnelis se comportan de forma distinta en un radio cerrado, y el recubrimiento determina además qué ocurre en los cantos cortados y los agujeros punzonados, donde queda acero desnudo. El zinc-aluminio-magnesio se elige en parte porque ofrece cierta autorreparación en los cantos, algo relevante en un perfil que se punzona y corta miles de veces. Indique el recubrimiento con el plano: los radios de rodillo se definen para él."
+          },
+          {
+            "q": "¿Se pueden punzonar los agujeros después de conformar?",
+            "a": "Es posible, pero para este producto es el orden equivocado. Punzonar una sección ya formada significa punzonar a través de una zona curva o rigidizada, lo que deforma localmente el perfil y deja un agujero más difícil de controlar dimensionalmente. Punzonar en plano mantiene el patrón preciso y permite hacerlo todo en una sola pasada. La razón por la que los perfiles solares se punzonan en línea es eliminar el taladrado en obra: hacerlo después devuelve ese coste íntegro."
+          },
+          {
+            "q": "¿Qué cuesta un cambio de disposición de montaje en la línea?",
+            "a": "Si es un cambio de posiciones de agujero o de longitudes, es un cambio de receta y no interviene utillaje: para eso están las estaciones de punzonado y las recetas de longitud, y por eso el trabajo solar encaja con este tipo de línea. Si cambia la propia sección del perfil, es una cuestión de juego de rodillos y otra conversación. Conviene separar ambas cosas al planificar: los cambios de disposición son rutina, los de sección no."
+          },
+          {
+            "q": "¿Pierde algo la chapa galvanizada en caliente al conformarse?",
+            "a": "No, si los radios y las presiones son los adecuados. El recubrimiento de zinc es más frágil que el acero de debajo, así que el daño aparece como microfisuración en el exterior de los pliegues más cerrados y no como desprendimiento visible. Es una cuestión de diseño de utillaje, que se decide al fabricar el juego de rodillos y no se ajusta después. También por eso enviar la especificación del recubrimiento con el plano del perfil no es un trámite."
+          },
+          {
+            "q": "¿Qué secciones se usan normalmente en estructuras solares?",
+            "a": "Las secciones en sombrero, C y Omega cubren la mayor parte, con distintos cantos según luz y zona de viento. El cálculo estructural es responsabilidad del proyectista de la planta y varía mucho de un país a otro: la carga de nieve y viento mueve el tamaño de sección más que cualquier otra cosa. Fabricamos el utillaje según la sección de su plano; si el proyecto está en una fase anterior, suele ser más productivo fijar primero el cálculo estructural y especificar la línea alrededor que hacerlo al revés."
           }
         ],
         "sectors": ["Solar / empresas EPC", "Fotovoltaica de cubierta", "Plantas en suelo", "Agri-PV"]
@@ -1297,6 +1389,32 @@
           "Cizalla volante",
           "Apilado"
         ],
+        "process": [
+          {
+            "title": "Carga y desenrollado de la bobina",
+            "text": "Los perfiles estructurales se perfilan normalmente a partir de bobina pregalvanizada en varios espesores, porque la misma línea atiende correas, montantes y elementos de pórtico con especificaciones distintas. El desenrollador se dimensiona para la bobina más pesada que verá la línea, no para la media: un desenrollador elegido según el pedido típico se convierte en cuello de botella el primer día que llega un trabajo pesado."
+          },
+          {
+            "title": "Enderezado",
+            "text": "La curvatura de bobina sale antes que nada. En perfiles estructurales eso decide si el elemento terminado queda recto en toda su longitud: las secciones C y Sigma son asimétricas, así que la curvatura que quede en la banda no permanece como una comba suave, sino que se combina con el conformado y sale como alabeo, mucho más difícil de corregir después que una simple flecha."
+          },
+          {
+            "title": "Punzonado según el patrón estructural",
+            "text": "Los agujeros de paso de instalaciones, los de tornillo y las aberturas de alma se punzonan en plano, con el patrón que especifica el cálculo estructural. La posición importa más que en un perfil de cerramiento: un agujero en el alma de un elemento cargado es una característica proyectada, y moverlo es una decisión estructural, no una comodidad de producción."
+          },
+          {
+            "title": "Perfilado ajustable",
+            "text": "Es lo que separa esta línea de una de perfil único. Los grupos de rodillos se ajustan para cambiar anchura y canto de la sección sin desmontar la máquina, y así tres familias de perfil comparten una línea. Conviene entender la contrapartida: una línea ajustable cubre un rango, una línea dedicada produce un perfil más rápido. Cuál es la correcta depende de lo variado que sea realmente su libro de pedidos."
+          },
+          {
+            "title": "Cizalla volante",
+            "text": "El corte se hace en movimiento, así que la línea no para por cada pieza. En trabajo estructural los pedidos suelen ser listas largas de longitudes mezcladas más que una longitud repetida, de modo que el tiempo perdido en parar y arrancar se acumula rápido a lo largo del turno."
+          },
+          {
+            "title": "Apilado",
+            "text": "Los perfiles terminados se recogen y apilan. Los elementos estructurales largos se dañan con facilidad entre la línea y el camión, y un ala doblada en una correa no es un problema estético: es un elemento que no apoyará plano contra la cercha a la que se atornilla."
+          }
+        ],
         "faq": [
           {
             "q": "¿Es posible fabricar las tres secciones en una línea?",
@@ -1309,6 +1427,26 @@
           {
             "q": "¿Cuánto duran los rodillos?",
             "a": "Los rodillos son de acero 4140 templado a 58-60 Rockwell; con la presión correcta pueden producir millones de metros de perfil."
+          },
+          {
+            "q": "¿Dónde está el límite real de una línea ajustable?",
+            "a": "El ajuste cubre un rango de anchuras y cantos dentro de una familia de sección y de la geometría para la que se diseñó. Lo que no hace es convertir una familia de perfil en otra: pasar entre C, Sigma y Omega es cuestión de juego de rodillos, y salirse del rango previsto exige utillaje nuevo por mucho ajuste que tenga la máquina. La forma honesta de especificar una línea así es dar la lista completa de secciones que espera producir, incluidas aquellas para las que aún no tiene pedidos, y dejar que el rango se diseñe alrededor de esa lista."
+          },
+          {
+            "q": "¿Por qué importa más el alabeo que la comba en perfiles estructurales?",
+            "a": "Porque una comba a menudo se corrige durante el montaje y un alabeo no. Las secciones C y Sigma son asimétricas respecto de al menos un eje, así que la tensión residual que queda en la banda no se libera como una curva simple, sino como una rotación a lo largo del elemento. Una correa alabeada no apoya plana donde se atornilla, y la solución en obra suele ser rechazar la pieza. Por eso la etapa de enderezado pesa más en una línea estructural de lo que la mayoría de compradores espera, y por eso merece la pena preguntar específicamente por ella."
+          },
+          {
+            "q": "¿Se pueden cambiar los patrones de agujeros sin utillaje nuevo?",
+            "a": "La posición y el espaciado de agujeros son valores de receta, así que un patrón nuevo es un cambio de datos y no de utillaje. La forma y el tamaño del agujero sí son utillaje: otro diámetro o una ranura en lugar de un agujero redondo significan punzón y matriz. Al planificar la línea conviene enumerar desde el principio todas las formas de agujero que usa en su gama, porque añadir formas después es una compra cada vez, mientras que añadir posiciones no cuesta nada."
+          },
+          {
+            "q": "¿Cuánto duran los rodillos?",
+            "a": "Más de lo que la mayoría espera, y depende mucho más de qué pasa por ellos que de las horas. Acero sin recubrir, recubrimientos abrasivos, material grueso y radios cerrados desgastan el utillaje más rápido que chapa galvanizada ligera con radios generosos. Los rodillos son una partida de mantenimiento, no un consumible: se rectifican en lugar de sustituirse cuando finalmente salen de tolerancia. Lo que de verdad mata pronto un juego es trabajarlo desalineado o con demasiada presión, que es más una cuestión de disciplina de puesta a punto que de metalurgia."
+          },
+          {
+            "q": "¿Es mejor una línea ajustable que dos dedicadas?",
+            "a": "Depende del mix, y conviene hacer la cuenta en vez de suponer. La línea ajustable gana cuando el libro de pedidos es variado y ninguna sección domina: se compra una máquina, un sistema de control y un juego de repuestos, y los cambios son frecuentes pero cortos. Dos líneas dedicadas ganan cuando dos secciones concentran la mayor parte del volumen, porque cada una trabaja en su óptimo sin ningún cambio. Si una sección supone más de la mitad aproximadamente de su producción, dedicarle una línea suele salir a cuenta."
           }
         ],
         "sectors": ["Acero ligero", "Estructura solar", "Construcción prefabricada", "Nave industrial", "Correas"]
