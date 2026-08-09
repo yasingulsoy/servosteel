@@ -352,6 +352,7 @@ export function SiteHeader() {
             alt="Servosteel"
             width={256}
             height={113}
+            fetchPriority="high"
             className={`h-14 w-auto transition-opacity duration-300 min-[360px]:h-16 xl:h-14 ${
               overHero ? "opacity-0" : "opacity-100 dark:opacity-0"
             }`}
