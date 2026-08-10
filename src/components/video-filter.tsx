@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export type FilterPill = { key: string; label: string };
 export type FilterSection = { key: string; node: ReactNode };
@@ -30,13 +30,25 @@ export function VideoFilter({
   allLabel: string;
 }) {
   const [aktif, setAktif] = useState<string | null>(null);
+  const tusKutusu = useRef<HTMLDivElement>(null);
 
   /* Hash'i mount'ta oku ve sonrasında dinle. Geri/ileri tuşu ve dışarıdan
      gelen /videolar#ctl bağlantısı da böyle çalışıyor. */
   useEffect(() => {
     const oku = () => {
       const h = window.location.hash.replace("#", "");
-      setAktif(pills.some((p) => p.key === h) ? h : null);
+      const bulundu = pills.some((p) => p.key === h);
+      setAktif(bulundu ? h : null);
+
+      /* Dışarıdan hash'li gelindiğinde tarayıcı kendi başına bir yere kaydırmış
+         olabilir; ardından filtre diğer bölümleri gizleyip sayfayı kısaltınca
+         ekranda boşluk kalıyordu. Bölümler gizlendikten SONRA tuşların olduğu
+         yere dönülüyor — kullanıcı hem seçili filtreyi hem sonucu görüyor. */
+      if (bulundu) {
+        requestAnimationFrame(() =>
+          tusKutusu.current?.scrollIntoView({ block: "start", behavior: "auto" })
+        );
+      }
     };
     oku();
     window.addEventListener("hashchange", oku);
@@ -51,8 +63,9 @@ export function VideoFilter({
     window.history.pushState(null, "", url);
   };
 
+  /* shrink-0 + whitespace-nowrap: tuş satır atlamıyor, uzun etiket bölünmüyor. */
   const tus = (secili: boolean) =>
-    `rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${
+    `shrink-0 whitespace-nowrap rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${
       secili
         ? "border-shell bg-shell text-white"
         : "border-line bg-card text-ink hover:border-accent/50 hover:text-accent-ink"
@@ -60,9 +73,23 @@ export function VideoFilter({
 
   return (
     <>
-      {/* Tuşlar bir grup; hangisinin seçili olduğunu aria-pressed taşıyor,
-          böylece ekran okuyucu da durumu duyuruyor. */}
-      <div className="flex flex-wrap gap-2.5" role="group" aria-label={allLabel}>
+      {/* TEK SIRA. Yedi etiketin en uzunu "Pres Besleme Sistemleri ve Kompakt
+          Hatlar" — hiçbir ekrana yan yana sığmıyor, sarınca da iki satırlık
+          dağınık bir blok oluyordu. Sarma yerine yatay kaydırma: sıra bozulmuyor,
+          dar ekranda parmakla kaydırılıyor.
+
+          -mx-4/px-4: satır kabın kenarına kadar taşıyor, böylece sağda kesilen
+          tuş "devamı var" sinyali veriyor. Kaydırma çubuğu gizli, kendi çizgisi
+          tasarımı bozuyordu.
+
+          aria-label + role=group: ekran okuyucu bunu tek bir filtre grubu olarak
+          duyuruyor, aria-pressed de hangisinin seçili olduğunu söylüyor. */}
+      <div
+        className="-mx-4 flex gap-2.5 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        role="group"
+        aria-label={allLabel}
+        ref={tusKutusu}
+      >
         <button type="button" onClick={() => sec(null)} aria-pressed={aktif === null} className={tus(aktif === null)}>
           {allLabel}
         </button>
@@ -88,7 +115,7 @@ export function VideoFilter({
             hidden={gizli}
             /* Filtre açıkken görünen tek bölüm en üstte durmalı; aksi hâlde
                üstündeki gizli bölümlerin boşluğu kalıyordu. */
-            className={gizli ? undefined : i > 0 && aktif === null ? "mt-16" : "mt-12"}
+            className={gizli ? undefined : i > 0 && aktif === null ? "mt-16" : "mt-9"}
           >
             {s.node}
           </div>

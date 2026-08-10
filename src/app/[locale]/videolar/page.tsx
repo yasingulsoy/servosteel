@@ -58,7 +58,7 @@ export default async function VideolarPage({ params }: Props) {
         description={t("desc")}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+      <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 lg:pb-20 lg:pt-10">
         <VideoFilter
           allLabel={tc("seeAll")}
           pills={videoGroups.map((g) => ({ key: g.key, label: t(`groups.${g.key}`) }))}
