@@ -335,6 +335,36 @@ const nextConfig: NextConfig = {
        */
       p("/product/:slug", "/makineler"),
       p("/product-category/:path*", "/makineler"),
+
+      /* ---- ESKİ WORDPRESS BÖLÜM KÖKLERİ ----
+       *
+       * Tarama istatistiklerinde isteklerin %13,2'si 404 dönüyor. Bu adresler
+       * eski sitenin bölüm kökleri; canlıda tek tek denendi ve hepsi 404
+       * veriyor. Hangi adreslerin gerçekten tarandığını GSC'nin 404 örnek
+       * listesi söyler, ama bunlar tipik WordPress yapısı ve karşılıkları belli
+       * — eşleşme olmazsa kural zaten hiç çalışmaz, yanlış tarafa gitme riski
+       * yok.
+       *
+       * `/wp-admin`, `/wp-includes`, `/xmlrpc.php`, `/wp-json` BİLEREK dışarıda:
+       * onlar WordPress iç dosyaları, artık yoklar ve 404 dönmeleri DOĞRU olan.
+       * Yönlendirmek, olmayan bir şeye "buradaydı" demek olurdu.
+       */
+      p("/blog", "/akademi"),
+      p("/blog/:path*", "/akademi"),
+      p("/haberler", "/akademi"),
+      p("/haberler/:path*", "/akademi"),
+      p("/products", "/makineler"),
+      p("/products/:path*", "/makineler"),
+      p("/services", "/makineler"),
+      p("/services/:path*", "/makineler"),
+      p("/hizmetler", "/makineler"),
+      p("/hizmetler/:path*", "/makineler"),
+      /* Etiket ve yıl arşivleri: eski blogun listeleme sayfaları, karşılığı
+         akademi. İçerik eşleşmesi yok, bölüm eşleşmesi var. */
+      p("/tag/:path*", "/akademi"),
+      p("/2023/:path*", "/akademi"),
+      p("/2024/:path*", "/akademi"),
+      p("/2025/:path*", "/akademi"),
     ];
   },
 };
