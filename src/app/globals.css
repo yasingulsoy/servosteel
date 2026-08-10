@@ -49,6 +49,21 @@
 
 html {
   scroll-behavior: smooth;
+  /*
+   * Yatay taşmayı BURADA da kes. Aşağıda body'ye `overflow-x: clip` verilmiş
+   * ama tek başına yetmiyordu: sayfa hâlâ 20px sağa kayabiliyordu (canlıda
+   * ölçüldü — scrollLeft 300 denendiğinde 20'de duruyordu).
+   *
+   * Sebep: body'nin overflow'u viewport'a yalnızca html `visible` iken
+   * devrolur; devredildiğinde body'nin kendisi `visible` gibi davranır, yani
+   * hiçbir yerde gerçek bir kırpma kalmaz. Kuralı html'e de yazınca kaydırma
+   * kapsayıcısı net oluyor ve taşma kesiliyor.
+   *
+   * `clip` seçimi body'dekiyle aynı gerekçeyle: `hidden` kaydırma kapsayıcısı
+   * yaratıp header'daki `position: sticky`'yi bozar. Ölçüldü — `clip` ile
+   * header yapışık kalmaya devam ediyor.
+   */
+  overflow-x: clip;
 }
 
 body {
