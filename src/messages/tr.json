@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Servosteel | Roll Form, Rulo Dilme ve Boy Kesme Hatları",
-    "description": "Roll form hatları, rulo dilme hatları, boy kesme hatları ve pres besleme sistemlerinde müşteriye özel tasarım ve üretim. İstanbul'dan 48+ ülkeye ihracat."
+    "title": "Servosteel | Roll Form, Rulo Sac Dilme ve Boy Kesme Hatları",
+    "description": "Roll form hatları, rulo sac dilme hatları, boy kesme hatları ve pres besleme sistemlerinde müşteriye özel tasarım ve üretim. İstanbul'dan 48+ ülkeye ihracat."
   },
   "topbar": {
     "export": "48+ ülkeye ihracat",
@@ -37,7 +37,7 @@
     "tagline": "Rulo sac işleme & roll form teknolojileri",
     "refs": "Referanslar",
     "videos": "Videolar",
-    "slitting": "Rulo Dilme Hatları"
+    "slitting": "Rulo Sac Dilme Hatları"
   },
   "common": {
     "home": "Ana Sayfa",
@@ -56,7 +56,7 @@
   "home": {
     "badge": "İstanbul'dan 48+ ülkeye ihracat",
     "h1l2": "roll form ve rulo sac işleme hatları",
-    "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
+    "sub": "Roll form, rulo sac dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
     "cta1": "Projeniz İçin Teklif Alın",
     "cta2": "Hatları İnceleyin",
     "stats": [
@@ -183,10 +183,10 @@
     ]
   },
   "dilme": {
-    "metaTitle": "Rulo Dilme Hatları ve Sac Dilme Makineleri",
-    "metaDesc": "1.500-15.000 kg kapasiteli rulo dilme hatları: geniş ruloları istenen ölçüde şeritlere diler. 0,5-5 mm kalınlık aralığı, Schneider kontrol sistemleri.",
+    "metaTitle": "Rulo Sac Dilme Hatları ve Sac Dilme Makineleri",
+    "metaDesc": "1.500-15.000 kg kapasiteli rulo sac dilme hatları: geniş ruloları istenen ölçüde şeritlere diler. 0,5-5 mm kalınlık aralığı, Schneider kontrol sistemleri.",
     "eyebrow": "Uzmanlık alanımız",
-    "title": "Rulo Dilme Hatları",
+    "title": "Rulo Sac Dilme Hatları",
     "desc": "Geniş ruloları istediğiniz ölçüde şeritlere dilen komple hatlar: açıcıdan sarıcıya kadar tüm ekipman Servosteel tesisinde üretilir, fabrikada test edilir, sahada anahtar teslim devreye alınır.",
     "highlights": [
       {
@@ -224,10 +224,10 @@
       "Sarma (recoiler) sistemi"
     ],
     "faqEyebrow": "Sık sorulanlar",
-    "faqTitle": "Rulo dilme hatları hakkında merak edilenler",
+    "faqTitle": "Rulo sac dilme hatları hakkında merak edilenler",
     "faq": [
       {
-        "q": "Rulo dilme hattı ne işe yarar?",
+        "q": "Rulo sac dilme hattı ne işe yarar?",
         "a": "Geniş bir çelik ruloyu, boyuna kesip istenen genişlikte daha dar şeritlere ayırır ve bu şeritleri tekrar rulo halinde sarar. Böylece tek bir ana rulodan, sipariş ölçülerinize uygun birden çok şerit elde edilir; fire ve stok maliyeti düşer."
       },
       {
@@ -239,7 +239,7 @@
         "a": "Fark, çıkan ürünün biçimindedir. Dilme hattı ruloyu boyuna keser ve çıktı yine rulodur — dar şeritler halinde. Boy kesme hattı ise ruloyu enine keser ve çıktı düz plakadır. Şerit üretiyorsanız dilme, sabit ölçüde levha üretiyorsanız boy kesme hattı gerekir. İkisi tek hatta birleştirilebilir."
       },
       {
-        "q": "Rulo dilme hattı fiyatı neye göre değişir?",
+        "q": "Rulo sac dilme hattı fiyatı neye göre değişir?",
         "a": "Fiyatı en çok belirleyen dört şey: rulo ağırlığı kapasitesi, sac kalınlığı aralığı, aynı anda kesilecek şerit sayısı ve otomasyon seviyesi (yükleme arabası, otomatik gönye, sarma gerginlik kontrolü). Bu yüzden katalog fiyatı yerine projeye özel teklif veriyoruz — rulo ağırlığı, kalınlık ve hedef şerit ölçülerinizi iletmeniz yeterli."
       },
       {
@@ -342,7 +342,7 @@
     ],
     "storyTitle": "Tek makineden komple hatta",
     "story": [
-      "Servosteel, bir grup genç mühendisin <b>maliyeti verimli ve kolay kontrol edilebilir</b> pres besleme sistemleri üretme kararıyla kuruldu. Yola rulo açıcılar, doğrultucular ve servo sürücülerle çıktık; sahada kazanılan tecrübe zamanla komple hat mühendisliğine dönüştü — bugün rulo dilme, boy kesme ve roll form hatlarını anahtar teslim kuruyoruz.",
+      "Servosteel, bir grup genç mühendisin <b>maliyeti verimli ve kolay kontrol edilebilir</b> pres besleme sistemleri üretme kararıyla kuruldu. Yola rulo açıcılar, doğrultucular ve servo sürücülerle çıktık; sahada kazanılan tecrübe zamanla komple hat mühendisliğine dönüştü — bugün rulo sac dilme, boy kesme ve roll form hatlarını anahtar teslim kuruyoruz.",
       "Bizi farklı kılan şey, hattın her halkasının <b>tek çatı altında</b> üretilmesi: mekanik tasarım, imalat, otomasyon yazılımı ve devreye alma aynı ekipte. Müşterilerimiz tek muhatapla çalışır; hat bileşenleri birbiriyle tam uyumlu gelir.",
       "İstanbul Sancaktepe'deki tesisimizden çıkan hatlar bugün <b>48'den fazla ülkede</b> — Avrupa, Orta Doğu, Afrika ve Uzak Doğu'da — üretim yapıyor."
     ],
@@ -506,10 +506,10 @@
       },
       "dilme-vs-boy-kesme": {
         "name": "Dilme hattı mı, boy kesme hattı mı?",
-        "metaTitle": "Rulo Dilme mi Boy Kesme mi? Hat Karşılaştırması",
+        "metaTitle": "Rulo Sac Dilme mi Boy Kesme mi? Hat Karşılaştırması",
         "metaDesc": "Dilme hattı ile boy kesme hattı arasındaki fark: çıkan ürün, kesme yönü, ekipman ve kullanım alanları. Hangi hat sizin işiniz için doğru?",
         "hero": "İki hat da rulo sacı işler ama farklı yönde keser: biri şerit rulo, diğeri düz levha üretir. Çıktınız hangisiyse hat da odur.",
-        "aName": "Rulo dilme hattı",
+        "aName": "Rulo sac dilme hattı",
         "bName": "Boy kesme hattı",
         "rows": [
           {
@@ -661,7 +661,7 @@
       "machines": "Makineler"
     },
     "items": {
-      "h7aPJ6rJc_U": "Rulo dilme hattı — açıcıdan sarıcıya komple hat",
+      "h7aPJ6rJc_U": "Rulo sac dilme hattı — açıcıdan sarıcıya komple hat",
       "GEYcBSPqutQ": "Dilme hattı — bıçak grubu ve gergin sarma",
       "hc_Znq2u8MI": "Dilme ve delik delme hattı bir arada",
       "JOHZwMBLqKo": "Dilme ile boy kesme tek hatta",
@@ -796,7 +796,7 @@
         "Roll Form Hattı — Gürültü Bariyeri",
         "Roll Form Hattı — C+/Sigma/Omega",
         "Roll Form Hattı — Özel Profil",
-        "Rulo Dilme Hattı",
+        "Rulo Sac Dilme Hattı",
         "Boy Kesme Hattı",
         "Rulo Açıcı",
         "Servo Sürücü",
