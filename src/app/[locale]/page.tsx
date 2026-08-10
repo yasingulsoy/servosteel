@@ -103,6 +103,20 @@ export default async function Home({ params }: Props) {
             ),
           },
           {
+            src: "/boy-kesme.mp4",
+            poster: "/boy-kesme-poster.jpg",
+            side: "start",
+            children: (
+              <VideoBandContent
+                name={tVideoGroups("ctl")}
+                href="/boy-kesme-hatlari"
+                cta={tCommon("lineExamine")}
+                videoGroup="ctl"
+                videoCta={t("videoCta")}
+              />
+            ),
+          },
+          {
             src: "/alt3.mp4",
             poster: "/alt3-poster.jpg",
             side: "start",
