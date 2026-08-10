@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "Da Istanbul in oltre 48 paesi",
-    "h1l1": "Operative in 48 paesi",
     "h1l2": "linee di profilatura",
     "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
     "cta1": "Preventivo per il tuo Progetto",
     "cta2": "Esplora le Linee",
-    "bands": {
-      "slitting": {
-        "l1": "Un coil,",
-        "l2": "decine di nastri"
-      },
-      "feeding": {
-        "l1": "Precisione millimetrica",
-        "l2": "a ogni colpo"
-      },
-      "facility": {
-        "l1": "Dallo svolgitore all'avvolgitore,",
-        "l2": "tutto prodotto da noi"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Anni di esperienza" },
       { "value": "48+", "label": "Paesi di export" },

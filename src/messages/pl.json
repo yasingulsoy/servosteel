@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "Ze Stambułu do ponad 48 krajów",
-    "h1l1": "Pracują w 48 krajach",
     "h1l2": "linie profilujące",
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
     "cta2": "Zobacz Linie",
-    "bands": {
-      "slitting": {
-        "l1": "Z jednego kręgu",
-        "l2": "dziesiątki taśm"
-      },
-      "feeding": {
-        "l1": "Milimetrowa precyzja",
-        "l2": "przy każdym suwie"
-      },
-      "facility": {
-        "l1": "Od odwijaka po nawijak,",
-        "l2": "wszystko z własnej produkcji"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Lat doświadczenia" },
       { "value": "48+", "label": "Krajów eksportu" },

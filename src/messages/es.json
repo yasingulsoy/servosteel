@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "De Estambul a más de 48 países",
-    "h1l1": "Operando en 48 países",
     "h1l2": "líneas de perfilado",
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
     "cta2": "Ver las Líneas",
-    "bands": {
-      "slitting": {
-        "l1": "Una bobina,",
-        "l2": "decenas de flejes"
-      },
-      "feeding": {
-        "l1": "Precisión milimétrica",
-        "l2": "en cada golpe"
-      },
-      "facility": {
-        "l1": "De desbobinadora a bobinadora,",
-        "l2": "todo fabricado por nosotros"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Años de experiencia" },
       { "value": "48+", "label": "Países de exportación" },

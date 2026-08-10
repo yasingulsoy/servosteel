@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "Export aus Istanbul in 48+ Länder",
-    "h1l1": "In 48 Ländern im Einsatz",
     "h1l2": "Rollformanlagen",
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
     "cta2": "Anlagen entdecken",
-    "bands": {
-      "slitting": {
-        "l1": "Ein Coil hinein,",
-        "l2": "Dutzende Streifen heraus"
-      },
-      "feeding": {
-        "l1": "Millimetergenau",
-        "l2": "bei jedem Hub"
-      },
-      "facility": {
-        "l1": "Haspel bis Wickler,",
-        "l2": "alles aus eigener Fertigung"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Jahre Erfahrung" },
       { "value": "48+", "label": "Exportländer" },

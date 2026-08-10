@@ -87,12 +87,11 @@ export function HeroVideo() {
       <div className="hero-scroll-fade relative mx-auto w-full max-w-7xl px-4 py-24 lg:py-0">
         <div className="max-w-2xl me-auto">
           {/* on-video: perde kalktığı için okunabilirliği bu gölge taşıyor */}
-          <h1 className="on-video font-display text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-            <Words text={t("h1l1")} base={80} />
-            <br />
-            <span className="text-accent">
-              <Words text={t("h1l2")} base={80 + t("h1l1").split(" ").length * 70 + 120} />
-            </span>
+          {/* Tek satır: hattın adı. Üstündeki "48 ülkede çalışan" gibi vurgu
+              cümlesi kaldırıldı — aynı iddia hemen altındaki sayı şeridinde
+              zaten duruyor, başlıkta ikinci kez söylenmesi hat adını küçültüyordu. */}
+          <h1 className="on-video font-display text-accent text-4xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+            <Words text={t("h1l2")} base={80} />
           </h1>
           <div className="animate-rise mt-9 flex flex-wrap gap-4 [animation-delay:520ms]">
             <SpecularButton href="/teklif-al" variant="gold" size="lg">

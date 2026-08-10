@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "Exporting from Istanbul to 48+ countries",
-    "h1l1": "Running in 48 countries",
     "h1l2": "roll forming lines",
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
     "cta2": "Explore the Lines",
-    "bands": {
-      "slitting": {
-        "l1": "One coil in,",
-        "l2": "dozens of strips out"
-      },
-      "feeding": {
-        "l1": "Millimetre precision",
-        "l2": "on every stroke"
-      },
-      "facility": {
-        "l1": "Decoiler to recoiler,",
-        "l2": "all built in-house"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Years of experience" },
       { "value": "48+", "label": "Export countries" },
@@ -89,11 +74,11 @@
         "desc": "Complete lines for 7 profile families, from cable trays to guardrails: every unit from decoiler to shear is made by Servosteel."
       },
       "slitting": {
-        "title": "Coil Slitting Lines",
+        "title": "Steel Coil Slitting Lines",
         "desc": "Light and heavy-duty lines that slit wide coils into strips to your exact widths: 1,500–15,000 kg capacity, 0.5–5 mm thickness range."
       },
       "ctl": {
-        "title": "Cut-to-Length Lines",
+        "title": "Steel Coil Cut-to-Length Lines",
         "desc": "Precision cutting from coil to sheet: straightening, servo feeding and guillotine controlled from a single PLC."
       }
     },

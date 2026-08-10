@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "İstanbul'dan 48+ ülkeye ihracat",
-    "h1l1": "48 ülkede çalışan",
     "h1l2": "roll form hatları",
     "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
     "cta1": "Projeniz İçin Teklif Alın",
     "cta2": "Hatları İnceleyin",
-    "bands": {
-      "slitting": {
-        "l1": "Tek rulodan",
-        "l2": "onlarca şerit"
-      },
-      "feeding": {
-        "l1": "Her vuruşta",
-        "l2": "milimetrik besleme"
-      },
-      "facility": {
-        "l1": "Açıcıdan sarıcıya",
-        "l2": "hepsi bizim tesisimizde"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Yıl tecrübe" },
       { "value": "48+", "label": "İhracat ülkesi" },
@@ -89,11 +74,11 @@
         "desc": "Kablo kanalından yol bariyerine 7 profil ailesi için komple hat: açıcıdan kesme ünitesine kadar tüm ekipman Servosteel üretimi."
       },
       "slitting": {
-        "title": "Rulo Dilme Hatları",
+        "title": "Rulo Sac Dilme Hatları",
         "desc": "Geniş ruloyu istenen ölçüde şeritlere dilen hafif ve ağır seri hatlar: 1.500–15.000 kg kapasite, 0,5–5 mm kalınlık aralığı."
       },
       "ctl": {
-        "title": "Boy Kesme Hatları",
+        "title": "Rulo Sac Boy Kesme Hatları",
         "desc": "Rulodan plakaya hassas kesim: doğrultma, servo besleme ve giyotin tek noktadan PLC ile kontrol edilen komple çözüm."
       }
     },

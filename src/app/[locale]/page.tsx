@@ -94,8 +94,6 @@ export default async function Home({ params }: Props) {
             side: "start",
             children: (
               <VideoBandContent
-                l1={t("bands.slitting.l1")}
-                l2={t("bands.slitting.l2")}
                 href="/dilme-hatlari"
                 cta={tCommon("lineExamine")}
                 name={tVideoGroups("slitting")}
@@ -110,8 +108,6 @@ export default async function Home({ params }: Props) {
             side: "start",
             children: (
               <VideoBandContent
-                l1={t("bands.feeding.l1")}
-                l2={t("bands.feeding.l2")}
                 href="/makineler/servo-suruculer"
                 cta={tCommon("details")}
                 /* Ürün adı ("Servo Sürücüler") değil hattın adı yazılıyor: bant
@@ -183,8 +179,6 @@ export default async function Home({ params }: Props) {
           panel de ona göre üretim kabiliyetini anlatıyor. */}
       <VideoBand src="/alt.mp4" poster="/alt-poster.jpg">
         <VideoBandContent
-          l1={t("bands.facility.l1")}
-          l2={t("bands.facility.l2")}
           href="/hakkimizda"
           cta={tCommon("details")}
           name={tAbout("facilityEyebrow")}

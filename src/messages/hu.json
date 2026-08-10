@@ -55,25 +55,10 @@
   },
   "home": {
     "badge": "Isztambulból 48+ országba",
-    "h1l1": "48 országban működnek",
     "h1l2": "profilozó sorok",
     "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
     "cta1": "Ajánlatkérés a Projektjéhez",
     "cta2": "Sorok Megtekintése",
-    "bands": {
-      "slitting": {
-        "l1": "Egy tekercsből",
-        "l2": "több tucat szalag"
-      },
-      "feeding": {
-        "l1": "Milliméteres pontosság",
-        "l2": "minden ütésnél"
-      },
-      "facility": {
-        "l1": "Lecsévélőtől felcsévélőig,",
-        "l2": "mind saját gyártás"
-      }
-    },
     "stats": [
       { "value": "10+", "label": "Év tapasztalat" },
       { "value": "48+", "label": "Exportország" },
