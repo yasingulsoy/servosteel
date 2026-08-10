@@ -162,8 +162,16 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
   Müşteri talebi varsa en azından kimden geldiği öğrenilir.
 - [ ] **Spam Filtreleri ayarı** — "Otomatik Olarak Spam'i Sil" kapalı olmalı,
   "Spam Kutusu" açık. Silinen mail geri gelmiyor, klasördeki geliyor.
-- [ ] **liza@ kutusunda eski mailler görünmüyor** — önce webmail'den bak: eski
-  mailler orada VARSA istemcinin senkronizasyon penceresi ("son X gün" yerine
-  "tümü"), YOKSA hesap bir cihazda POP3 olarak kurulmuş ve mailleri sunucudan
-  çekmiş demektir.
+- [x] ~~liza@ kutusundaki eski mailler~~ — **kapsam dışı bırakıldı (2026-08-10
+  kararı)**. Sunucuda yoklar: 267 gönderilmiş mail × 1,43 MB = 382 MB, kotanın
+  tamamını açıklıyor, yani çöp/arşiv de boş. Eski PC'de 6,2 MB'lık bir .pst
+  bulundu ama aktarılmadı. Hesap o bilgisayardan kaldırıldı, yeni kurulum IMAP —
+  yani bundan sonra gelen mail kaybolmuyor, kayıp geçmişle sınırlı.
+- [ ] **liza@ kotası 1 GB'da sınırlı** — cPanel "Kotalar 1 GB değerini aşamaz"
+  diyor, bu hosting paketi tavanı (WHM → paket → Max Mailbox Quota). Veridyen'den
+  yükseltme istenecek. Şu an 382 MB dolu; tamamı 24 Temmuz kampanyasının 267
+  gönderilmiş kopyası.
+- [ ] **Katalog siteye konacak** — 1,43 MB PDF'i 267 kişiye eklemek sunucuda 267
+  kopya demek, üstelik teslim oranını düşürüyor ve kaç kişinin açtığı ölçülemiyor.
+  Siteye konup mailde link verilirse üçü de çözülür.
 - [ ] 4 CalDAV/CardDAV SRV kaydı → `cpanel.servosteel.com.tr`
