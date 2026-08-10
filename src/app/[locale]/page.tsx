@@ -99,6 +99,8 @@ export default async function Home({ params }: Props) {
                 href="/dilme-hatlari"
                 cta={tCommon("lineExamine")}
                 name={tVideoGroups("slitting")}
+                videoGroup="slitting"
+                videoCta={t("videoCta")}
               />
             ),
           },
@@ -117,6 +119,8 @@ export default async function Home({ params }: Props) {
                    anlatıyor. Metin videos.groups'tan geliyor, yani videolar
                    sayfasındaki bölüm adıyla birebir aynı kalıyor. */
                 name={tVideoGroups("feeding")}
+                videoGroup="feeding"
+                videoCta={t("videoCta")}
               />
             ),
           },
@@ -184,6 +188,8 @@ export default async function Home({ params }: Props) {
           href="/hakkimizda"
           cta={tCommon("details")}
           name={tAbout("facilityEyebrow")}
+          videoGroup="machines"
+          videoCta={t("videoCta")}
         />
       </VideoBand>
 

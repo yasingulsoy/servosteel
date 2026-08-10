@@ -919,7 +919,7 @@
         "sectors": ["Elektroinfrastruktur", "Rechenzentren", "Industrieanlagen", "Einkaufszentren und Bauprojekte"]
       },
       "solar-profil": {
-        "name": "Solarprofil-Produktionsanlage",
+        "name": "Solar-C-Profil-Produktionslinie",
         "short": "Schnelles Rollforming für PV-Montageprofile.",
         "hero": "Eine Anlage, die Hut-, C- und Omega-Profile für die Unterkonstruktion von Solarkraftwerken direkt vom Coil fertigt; Stanzstationen setzen die Montagelöcher inline — die Profile kommen montagefertig auf die Baustelle.",
         "meta": "Solarmontageprofil-Anlage: komplette Hochgeschwindigkeits-Rollformanlage mit Stanzstationen für PV-Konstruktionsprofile.",

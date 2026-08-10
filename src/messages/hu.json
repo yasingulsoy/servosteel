@@ -918,7 +918,7 @@
         "sectors": ["Elektromos infrastruktúra", "Adatközpontok", "Ipari létesítmények", "Plázák és épületprojektek"]
       },
       "solar-profil": {
-        "name": "Napelemes Profil Gyártósor",
+        "name": "Napelem C-profil Gyártósor",
         "short": "Nagy sebességű profilozás fotovoltaikus tartóprofilokhoz.",
         "hero": "Sor, amely a napelemes erőművek tartószerkezetének hat-, C- és Omega-profiljait közvetlenül a tekercsből gyártja; a lyukasztó állomások a rögzítőlyukakat soron belül készítik, és a profilok szerelésre készen érkeznek a helyszínre.",
         "meta": "Napelemes tartóprofil gyártósor: komplett, nagy sebességű profilozó sor lyukasztó állomásokkal fotovoltaikus szerkezetekhez.",

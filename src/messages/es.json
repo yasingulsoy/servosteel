@@ -919,7 +919,7 @@
         "sectors": ["Infraestructura eléctrica", "Centros de datos", "Plantas industriales", "Centros comerciales y edificación"]
       },
       "solar-profil": {
-        "name": "Línea de Producción de Perfil Solar",
+        "name": "Línea de Producción de Perfil C Solar",
         "short": "Perfilado de alta velocidad para perfiles de montaje fotovoltaico.",
         "hero": "Una línea que produce perfiles hat, C y Omega para las estructuras de plantas solares directamente desde la bobina; el punzonado abre los agujeros de montaje en línea y los perfiles llegan a obra listos para instalar.",
         "meta": "Línea de perfiles de montaje solar: línea completa de perfilado de alta velocidad con punzonado para estructuras fotovoltaicas.",

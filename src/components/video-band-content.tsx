@@ -20,6 +20,17 @@ export type VideoBandContentProps = {
    * hiyerarşisi bozulmaz.
    */
   name?: string;
+  /**
+   * Videolar sayfasındaki bölümün anahtarı (videos.groups.<key>).
+   *
+   * Verilirse bandın altına ikinci bir tuş çıkar ve /videolar#<key> adresine
+   * gider — o sayfadaki filtre hash'i okuyup yalnızca ilgili bölümü gösterir.
+   * Yani "bu videoyu beğendim, benzerleri var mı" sorusu bandın kendisinden
+   * cevaplanıyor; ziyaretçi listeyi baştan taramak zorunda kalmıyor.
+   */
+  videoGroup?: string;
+  /** İkinci tuşun metni (home.videoCta — "Videoları İzleyin") */
+  videoCta?: string;
 };
 
 /**
@@ -36,7 +47,15 @@ export type VideoBandContentProps = {
  * Ölçek mobilde belirgin şekilde küçülür: 16:9 bant dar ekranda ~210 px
  * yüksekliğe iner, hero ölçüsündeki başlık oraya sığmaz.
  */
-export function VideoBandContent({ l1, l2, href, cta, name }: VideoBandContentProps) {
+export function VideoBandContent({
+  l1,
+  l2,
+  href,
+  cta,
+  name,
+  videoGroup,
+  videoCta,
+}: VideoBandContentProps) {
   return (
     <div className="pointer-events-none absolute inset-0 flex items-center">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
@@ -55,6 +74,19 @@ export function VideoBandContent({ l1, l2, href, cta, name }: VideoBandContentPr
               {cta}
               <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2} aria-hidden />
             </SpecularButton>
+
+            {videoGroup && videoCta && (
+              /* Altın tuş ürüne, bu tuş videoya gider. Cam görünümlü ikincil
+                 stil: iki tuş yan yana dururken hangisinin ana eylem olduğu
+                 belli kalsın diye altın olan tek başına vurgulu bırakıldı. */
+              <a
+                href={`/videolar#${videoGroup}`}
+                className="on-video-sm pointer-events-auto inline-flex items-center gap-1.5 rounded-full border border-white/60 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/15"
+              >
+                {videoCta}
+                <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2} aria-hidden />
+              </a>
+            )}
 
             {name && (
               <h3 className="on-video-sm font-display text-sm font-bold uppercase tracking-[0.14em] text-white sm:text-base">

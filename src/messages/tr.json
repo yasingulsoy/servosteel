@@ -919,7 +919,7 @@
         "sectors": ["Elektrik altyapı", "Veri merkezleri", "Endüstriyel tesisler", "AVM ve bina projeleri"]
       },
       "solar-profil": {
-        "name": "Solar Profil Üretim Hattı",
+        "name": "Solar C Profil Üretim Hattı",
         "short": "GES konstrüksiyon profilleri için yüksek hızlı roll form çözümü.",
         "hero": "Güneş enerjisi santrallerinin taşıyıcı konstrüksiyonunda kullanılan hat, C ve Omega profilleri rulodan doğrudan üreten hat; delme istasyonları montaj deliklerini hat üzerinde açar, profiller sahaya montaja hazır iner.",
         "meta": "Solar panel montaj profili üretim hattı: GES konstrüksiyon profilleri için delme istasyonlu, yüksek hızlı komple roll form hattı.",

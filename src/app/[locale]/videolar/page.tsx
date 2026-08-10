@@ -8,6 +8,7 @@ import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { VideoCard } from "@/components/video-card";
 import { VideoSchema } from "@/components/video-schema";
+import { VideoFilter } from "@/components/video-filter";
 import {
   allVideos,
   videoGroups,
@@ -58,43 +59,50 @@ export default async function VideolarPage({ params }: Props) {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
-        {videoGroups.map((group, gi) => (
-          <div key={group.key} className={gi > 0 ? "mt-16" : ""}>
-            <Reveal>
-              <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
-                <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
-                  {t(`groups.${group.key}`)}
-                </h2>
-                {group.href && (
-                  <Link
-                    href={group.href}
-                    className="group flex items-center gap-1.5 text-sm font-semibold text-accent-ink"
-                  >
-                    {tc("details")}
-                    <ArrowRight
-                      className="size-4 transition-transform group-hover:translate-x-0.5"
-                      strokeWidth={1.8}
-                      aria-hidden
-                    />
-                  </Link>
-                )}
-              </div>
-            </Reveal>
+        <VideoFilter
+          allLabel={tc("seeAll")}
+          pills={videoGroups.map((g) => ({ key: g.key, label: t(`groups.${g.key}`) }))}
+          sections={videoGroups.map((group, gi) => ({
+            key: group.key,
+            node: (
+              <>
+                <Reveal>
+                  <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
+                    <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
+                      {t(`groups.${group.key}`)}
+                    </h2>
+                    {group.href && (
+                      <Link
+                        href={group.href}
+                        className="group flex items-center gap-1.5 text-sm font-semibold text-accent-ink"
+                      >
+                        {tc("details")}
+                        <ArrowRight
+                          className="size-4 transition-transform group-hover:translate-x-0.5"
+                          strokeWidth={1.8}
+                          aria-hidden
+                        />
+                      </Link>
+                    )}
+                  </div>
+                </Reveal>
 
-            <Reveal group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {group.items.map((v, i) => (
-                <VideoCard
-                  key={v.id}
-                  id={v.id}
-                  title={titleOf(v.id)}
-                  sec={v.sec}
-                  /* İlk grubun ilk iki önizlemesi LCP adayı — öncelikli yüklenir */
-                  priority={gi === 0 && i < 2}
-                />
-              ))}
-            </Reveal>
-          </div>
-        ))}
+                <Reveal group className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {group.items.map((v, i) => (
+                    <VideoCard
+                      key={v.id}
+                      id={v.id}
+                      title={titleOf(v.id)}
+                      sec={v.sec}
+                      /* İlk grubun ilk iki önizlemesi LCP adayı — öncelikli yüklenir */
+                      priority={gi === 0 && i < 2}
+                    />
+                  ))}
+                </Reveal>
+              </>
+            ),
+          }))}
+        />
 
         {/* KANALIN GERİ KALANI — küratörlü gruplara girmeyen videolar.
             Başlıkları YouTube'dan geldiği gibi; her biri yine VideoObject taşır. */}
