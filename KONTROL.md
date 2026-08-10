@@ -126,8 +126,30 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
   olan görsel header'daki koyu tema logo kopyası ve `aria-hidden` işaretli;
   dekoratif görsele boş alt vermek doğru olandır. Doldurulursa ekran okuyucu
   marka adını iki kez okur. Rapor tekrar çıkarsa yok say.
-- **Kapsam:** "keşfedildi, dizine eklenmedi" sayısı düşüyor mu (taban: 424
-  sayfanın ~3'ü indeksli, 2026-08-06).
+- **Kapsam:** "keşfedildi, dizine eklenmedi" sayısı düşüyor mu.
+  - taban: 424 sayfanın ~3'ü indeksli (2026-08-06)
+  - **2026-08-10: 74 URL'lik katmanlı örnekte %41 indeksli (30/74).** Kalan 44'ün
+    20'si "keşfedildi, indekslenmedi", 24'ü "Google bilmiyor". Örneklenen her
+    sayfa 200 dönüyor, `noindex` yok, self-canonical, ana sayfadan linkli ve
+    sitemap'te — yani teknik kusur değil, Google'ın henüz sırası gelmemiş.
+    Ölçüm: `scratchpad/kapsama.py` (sabit tohum, tekrar çekilebilir).
+
+### B.4.1 Taşınma tabanı — GSC mülkü yalnızca 2026-07-28'den beri veri tutuyor
+
+Alan adı mülkü o tarihte doğrulandı; öncesi geri doldurulmuyor. Karşılaştırma
+noktası kaybolmasın diye buraya yazıldı (ölçüm 2026-08-10):
+
+| | 12 gün (28 Tem–8 Ağu) | son 6 gün |
+|---|---|---|
+| tık / gösterim | 67 / 905 | — |
+| ortalama pozisyon | 16,3 | — |
+| **yeni site URL'leri** | %19,5 gösterim payı | **%23,7** |
+| eski WordPress URL'leri | %57,5 | %51,1 |
+| `tr.` kopya alt alan adı | %23,0 | %25,1 |
+
+Yeni URL payı yükseliyor, eski WP payı düşüyor — 301'ler işliyor. `tr.`, `www.tr.`
+ve `www.` host'larının üçü de apex'e 301/308 veriyor (2026-08-10 teyit edildi);
+GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
