@@ -99,8 +99,11 @@ export function HeroVideo() {
             </SpecularButton>
             {/* Ghost butonun kendi zemini yok, metni doğrudan videonun üstünde.
                 Perde kalkınca kenarlığın %30'u ışıklı karede kayboluyordu. */}
+            {/* #rollform: bu bandın videosu roll form hattı, başlığı da öyle
+                diyor — tuşa basan da roll form videolarını görsün, tüm kanalı
+                değil. Aşağıdaki bantlarla aynı davranış (video-band-content). */}
             <SpecularButton
-              href="/videolar"
+              href="/videolar#rollform"
               variant="ghost"
               size="lg"
               className="on-video-sm text-white border-white/60!"
