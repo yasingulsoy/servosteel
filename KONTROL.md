@@ -152,5 +152,18 @@ yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
   e-postaları ne kadar saklanıyor**. Gerisini 9 dile ben yazarım.
 - [ ] Mevcut ajansın link inşasını durdur
 - [ ] Referans logoları izni (Sarıgözoğlu · Mega Solar · SMT Enerji · Astor) — kod hazır, `PUBLISH_REFERENCES=false`
-- [ ] cPanel `filtre1` hâlâ konusunda "spam" geçen maili siliyor
+- [x] ~~cPanel `filtre1`~~ — **silindi (2026-08-10)**, mail hemen geldi. Kural
+  `Konu içerir "spam" → Mesajı At` idi; alt dize eşleşmesi olduğu için konusunda
+  "spam" harfleri geçen her mail sessizce yok ediliyordu — klasöre düşmüyor,
+  gönderene hata dönmüyordu. Teslim raporunda `Teslim Alan: /dev/null`,
+  `Yönlendirici: central_filter` olarak görülüyordu.
+- [ ] **Filtre yüzünden kaybedilen mailleri çıkar** — cPanel → Takip Teslimatı,
+  sonucu "Filtrelenmiş" olanlar. Yalnızca 10 gün geriye kayıt var, o yüzden acele.
+  Müşteri talebi varsa en azından kimden geldiği öğrenilir.
+- [ ] **Spam Filtreleri ayarı** — "Otomatik Olarak Spam'i Sil" kapalı olmalı,
+  "Spam Kutusu" açık. Silinen mail geri gelmiyor, klasördeki geliyor.
+- [ ] **liza@ kutusunda eski mailler görünmüyor** — önce webmail'den bak: eski
+  mailler orada VARSA istemcinin senkronizasyon penceresi ("son X gün" yerine
+  "tümü"), YOKSA hesap bir cihazda POP3 olarak kurulmuş ve mailleri sunucudan
+  çekmiş demektir.
 - [ ] 4 CalDAV/CardDAV SRV kaydı → `cpanel.servosteel.com.tr`
