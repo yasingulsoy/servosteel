@@ -56,37 +56,54 @@ export default async function MachinePage({ params }: Props) {
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
 
   /**
-   * Product şeması — spec tablosundan otomatik üretilir.
-   * Amacı iki yönlü: (1) sayısal spec'leri makine tarafından okunabilir kılıp
-   * yapay zeka aramalarında doğru şekilde Servosteel'e atfedilmesini sağlamak,
-   * (2) `manufacturer` bağıyla "üretici mi tedarikçi mi" belirsizliğini kapatmak.
-   * Fiyat bilgisi bilinçli olarak YOK — bu makineler tekliflendirilerek satılır.
+   * Makine sayfası şeması.
+   *
+   * NEDEN `Product` DEĞİL: Google, Product tipini zengin sonuç üretmek için
+   * `offers`, `review` veya `aggregateRating`'den en az biriyle şart koşuyor ve
+   * üçü de bizde dürüst biçimde yok — bu hatlar projeye özel tekliflendirilerek
+   * satılıyor, listelenmiş fiyatı bulunmuyor; site üzerinde yorum ya da puanlama
+   * da toplanmıyor. Search Console beş makine sayfasını bu yüzden "geçersiz"
+   * işaretliyordu. Uydurma fiyat veya puan koymak hatayı kapatırdı ama ikisi de
+   * yanıltıcı yapılandırılmış veri olurdu.
+   *
+   * Şemanın iki asıl amacı tip değişmeden korunuyor:
+   *  1. Spec'ler `additionalProperty` olarak makine tarafından okunabilir kalıyor
+   *     — yapay zeka aramalarında değerlerin Servosteel'e atfedilmesi için.
+   *  2. `manufacturer` bağı "üretici mi tedarikçi mi" belirsizliğini kapatmaya
+   *     devam ediyor.
+   * Spec tablosu ayrıca sayfada gerçek bir <table> olarak duruyor; Google
+   * tabloları zaten okuyor, dolayısıyla veri iki kanaldan da erişilebilir.
    */
-  const productJsonLd = {
+  const machineJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${SITE_URL}${localePath(locale as AppLocale, `/makineler/${slug}`)}#product`,
+    "@type": "WebPage",
+    "@id": `${SITE_URL}${localePath(locale as AppLocale, `/makineler/${slug}`)}#webpage`,
     name: t("name"),
     description: t("meta"),
-    ...(hasPhoto(slug) ? { image: `${SITE_URL}/gorseller/${slug}.jpg` } : {}),
-    brand: { "@type": "Brand", name: SITE_NAME },
-    manufacturer: { "@id": `${SITE_URL}/#organization` },
-    ...(hasTable && tableRows.length
-      ? {
-          additionalProperty: tableRows.map((row) => ({
-            "@type": "PropertyValue",
-            name: row[0],
-            value: row.slice(1).filter(Boolean).join(" / "),
-          })),
-        }
-      : {}),
+    ...(hasPhoto(slug) ? { primaryImageOfPage: `${SITE_URL}/gorseller/${slug}.jpg` } : {}),
+    about: {
+      "@type": "Thing",
+      name: t("name"),
+      description: t("meta"),
+      brand: { "@type": "Brand", name: SITE_NAME },
+      manufacturer: { "@id": `${SITE_URL}/#organization` },
+      ...(hasTable && tableRows.length
+        ? {
+            additionalProperty: tableRows.map((row) => ({
+              "@type": "PropertyValue",
+              name: row[0],
+              value: row.slice(1).filter(Boolean).join(" / "),
+            })),
+          }
+        : {}),
+    },
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(machineJsonLd) }}
       />
       <PageHero
         crumbs={[
