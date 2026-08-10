@@ -57,6 +57,15 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
       ([entry]) => {
         if (entry.isIntersecting) {
           setPosterSrc(poster);
+          /* Video de BURADA tamponlanmaya başlar, oynatma anında değil.
+             Önceden `preload="none"` bırakılıyor ve indirme ancak bant %25
+             görününce play() ile tetikleniyordu; 14 MB'lık bir dosya ekranda
+             dururken inmeye başladığı için görünür şekilde donuyordu.
+             Poster'la aynı 400px'lik pencerede başlatınca video, sırası
+             geldiğinde tamponlanmış oluyor. Sayfa açılışında hâlâ hiçbir video
+             baytı inmiyor — değişen tek şey zamanlama. */
+          v.preload = "auto";
+          v.load();
           io.disconnect();
         }
       },
