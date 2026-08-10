@@ -45,8 +45,15 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
    * dahil. Dört poster ~600 KB ediyordu ve bunun ~470 KB'ı hiç görülmeyebilecek
    * bantlara aitti. Bu yüzden poster ancak bant görünüme YAKLAŞINCA atanır.
    *
-   * rootMargin 400px: kullanıcı banda varmadan poster inmiş olur, boş kare
-   * görünmez. O ana kadar zaten koyu bg-shell zemin duruyor.
+   * rootMargin 1400px (~1,5 ekran): poster VE videonun tamponlanması burada
+   * başlar. 400px'ti; normal kaydırma hızında bu yaklaşık bir saniye ediyor ve
+   * 14-18 MB'lık bir dosyanın oynayacak kadar dolmasına yetmiyordu — bant
+   * ekrana girdiğinde donuyordu. 1,5 ekranlık pay, kullanıcı banda varmadan
+   * birkaç saniyelik görüntünün hazır olmasını sağlıyor.
+   *
+   * Daha da büyütülmedi: her bant kendi dosyasını indirmeye başlıyor, pay
+   * arttıkça aynı anda inen dosya sayısı artar ve bant genişliği bölünür —
+   * donmayı çözmek yerine yayarsın.
    */
   const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
 
@@ -61,15 +68,15 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
              Önceden `preload="none"` bırakılıyor ve indirme ancak bant %25
              görününce play() ile tetikleniyordu; 14 MB'lık bir dosya ekranda
              dururken inmeye başladığı için görünür şekilde donuyordu.
-             Poster'la aynı 400px'lik pencerede başlatınca video, sırası
-             geldiğinde tamponlanmış oluyor. Sayfa açılışında hâlâ hiçbir video
-             baytı inmiyor — değişen tek şey zamanlama. */
+             Poster'la aynı pencerede başlatınca video, sırası geldiğinde
+             tamponlanmış oluyor. Sayfa açılışında hâlâ hiçbir video baytı
+             inmiyor — değişen tek şey zamanlama. */
           v.preload = "auto";
           v.load();
           io.disconnect();
         }
       },
-      { rootMargin: "400px" }
+      { rootMargin: "1400px" }
     );
     io.observe(v);
     return () => io.disconnect();
