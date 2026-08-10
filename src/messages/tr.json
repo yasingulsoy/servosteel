@@ -56,7 +56,7 @@
   "home": {
     "badge": "İstanbul'dan 48+ ülkeye ihracat",
     "h1l1": "48 ülkede çalışan",
-    "h1l2": "rulo işleme hatları",
+    "h1l2": "roll form hatları",
     "sub": "Roll form, rulo dilme ve boy kesme hatlarını projenize özel tasarlıyor, kendi tesisimizde üretiyor ve anahtar teslim devreye alıyoruz.",
     "cta1": "Projeniz İçin Teklif Alın",
     "cta2": "Hatları İnceleyin",
@@ -668,11 +668,11 @@
     "title": "Hatlarımızı çalışırken izleyin",
     "desc": "Broşür vaadi değil, çalışan hat: kurulumlardan, fabrika testlerinden ve müşteri sahalarından gerçek görüntüler.",
     "groups": {
-      "slitting": "Rulo Dilme Hatları",
-      "ctl": "Boy Kesme Hatları",
+      "slitting": "Rulo Sac Dilme Hatları",
+      "ctl": "Rulo Sac Boy Kesme Hatları",
       "rollform": "Roll Form Hatları",
-      "solar": "Solar Profil Hatları",
-      "feeding": "Pres Besleme Sistemleri",
+      "solar": "Solar C Profil Hatları",
+      "feeding": "Pres Besleme Sistemleri ve Kompakt Hatlar",
       "machines": "Makineler"
     },
     "items": {

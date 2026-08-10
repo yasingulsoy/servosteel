@@ -56,7 +56,7 @@
   "home": {
     "badge": "Da Istanbul in oltre 48 paesi",
     "h1l1": "Operative in 48 paesi",
-    "h1l2": "linee di lavorazione coil",
+    "h1l2": "linee di profilatura",
     "sub": "Progettiamo linee di profilatura, taglio longitudinale e a misura per il tuo progetto, le produciamo nel nostro stabilimento e le mettiamo in servizio chiavi in mano.",
     "cta1": "Preventivo per il tuo Progetto",
     "cta2": "Esplora le Linee",
@@ -671,8 +671,8 @@
       "slitting": "Linee di Taglio Longitudinale",
       "ctl": "Linee di Taglio a Misura",
       "rollform": "Linee di Profilatura",
-      "solar": "Linee per Profili Solari",
-      "feeding": "Sistemi di Alimentazione Presse",
+      "solar": "Linee per Profili C Solari",
+      "feeding": "Sistemi di Alimentazione e Linee Compatte",
       "machines": "Macchine"
     },
     "items": {

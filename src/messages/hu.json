@@ -56,7 +56,7 @@
   "home": {
     "badge": "Isztambulból 48+ országba",
     "h1l1": "48 országban működnek",
-    "h1l2": "tekercsfeldolgozó sorok",
+    "h1l2": "profilozó sorok",
     "sub": "A projektjéhez tervezünk profilozó, hasító és keresztvágó sorokat, saját üzemünkben gyártjuk és kulcsrakészen helyezzük üzembe.",
     "cta1": "Ajánlatkérés a Projektjéhez",
     "cta2": "Sorok Megtekintése",
@@ -670,8 +670,8 @@
       "slitting": "Hasítósorok",
       "ctl": "Daraboló Sorok",
       "rollform": "Profilhengerlő Sorok",
-      "solar": "Napelemprofil Sorok",
-      "feeding": "Présadagoló Rendszerek",
+      "solar": "Napelem C-profil Sorok",
+      "feeding": "Présadagolók és Kompakt Sorok",
       "machines": "Gépek"
     },
     "items": {

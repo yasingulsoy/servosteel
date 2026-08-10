@@ -56,7 +56,7 @@
   "home": {
     "badge": "Ze Stambułu do ponad 48 krajów",
     "h1l1": "Pracują w 48 krajach",
-    "h1l2": "linie do przetwarzania kręgów",
+    "h1l2": "linie profilujące",
     "sub": "Projektujemy linie profilujące, cięcia wzdłużnego i poprzecznego do Twojego projektu, produkujemy je we własnym zakładzie i uruchamiamy pod klucz.",
     "cta1": "Oferta dla Twojego Projektu",
     "cta2": "Zobacz Linie",
@@ -670,8 +670,8 @@
       "slitting": "Linie Wzdłużnego Cięcia",
       "ctl": "Linie Cięcia na Wymiar",
       "rollform": "Linie Profilowania",
-      "solar": "Linie Profili Solarnych",
-      "feeding": "Systemy Podawania do Pras",
+      "solar": "Linie Profili C Solarnych",
+      "feeding": "Systemy Podawania i Linie Kompaktowe",
       "machines": "Maszyny"
     },
     "items": {

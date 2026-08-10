@@ -56,7 +56,7 @@
   "home": {
     "badge": "Exporting from Istanbul to 48+ countries",
     "h1l1": "Running in 48 countries",
-    "h1l2": "coil processing lines",
+    "h1l2": "roll forming lines",
     "sub": "We design roll forming, coil slitting and cut-to-length lines for your project, build them in our own facility and commission them turnkey.",
     "cta1": "Get a Quote for Your Project",
     "cta2": "Explore the Lines",
@@ -696,11 +696,11 @@
     "title": "Watch our lines in action",
     "desc": "Not brochure promises — running lines: real footage from installations, factory tests and customer sites.",
     "groups": {
-      "slitting": "Coil Slitting Lines",
-      "ctl": "Cut-to-Length Lines",
+      "slitting": "Steel Coil Slitting Lines",
+      "ctl": "Steel Coil Cut-to-Length Lines",
       "rollform": "Roll Forming Lines",
-      "solar": "Solar Profile Lines",
-      "feeding": "Press Feeding Systems",
+      "solar": "Solar C-Profile Lines",
+      "feeding": "Press Feeding Systems & Compact Lines",
       "machines": "Machines"
     },
     "items": {

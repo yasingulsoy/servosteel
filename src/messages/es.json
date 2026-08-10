@@ -56,7 +56,7 @@
   "home": {
     "badge": "De Estambul a más de 48 países",
     "h1l1": "Operando en 48 países",
-    "h1l2": "líneas de procesamiento de bobina",
+    "h1l2": "líneas de perfilado",
     "sub": "Diseñamos líneas de perfilado, corte longitudinal y corte a medida para su proyecto, las fabricamos en nuestra propia planta y las entregamos llave en mano.",
     "cta1": "Presupuesto para su Proyecto",
     "cta2": "Ver las Líneas",
@@ -671,8 +671,8 @@
       "slitting": "Líneas de Corte Longitudinal",
       "ctl": "Líneas de Corte a Medida",
       "rollform": "Líneas de Perfilado",
-      "solar": "Líneas de Perfil Solar",
-      "feeding": "Sistemas de Alimentación para Prensas",
+      "solar": "Líneas de Perfil C Solar",
+      "feeding": "Sistemas de Alimentación y Líneas Compactas",
       "machines": "Máquinas"
     },
     "items": {

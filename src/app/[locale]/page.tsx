@@ -56,11 +56,13 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations("home");
   const tSec = await getTranslations("sectors");
-  const tDilme = await getTranslations("dilme");
   const tAbout = await getTranslations("about");
   const tRoll = await getTranslations("products.rollform");
   const tMach = await getTranslations("products.machines");
   const tCommon = await getTranslations("common");
+  /* Bant etiketleri video bölüm adlarından besleniyor — ana sayfadaki bant ile
+     videolar sayfasındaki bölüm aynı adı taşısın, iki yerde ayrışmasın. */
+  const tVideoGroups = await getTranslations("videos.groups");
 
   const process = t.raw("process") as { title: string; text: string }[];
 
@@ -86,26 +88,35 @@ export default async function Home({ params }: Props) {
           {
             src: "/alt2.mp4",
             poster: "/alt2-poster.jpg",
+            /* Tüm bantlarda içerik AYNI tarafta. VideoStack varsayılanı sırayla
+               sağ-sol değiştiriyordu; sayfa boyunca yazılar zikzak çiziyordu.
+               Hero da solda başladığı için hepsi "start" hizasında tutuluyor. */
+            side: "start",
             children: (
               <VideoBandContent
                 l1={t("bands.slitting.l1")}
                 l2={t("bands.slitting.l2")}
                 href="/dilme-hatlari"
                 cta={tCommon("lineExamine")}
-                name={tDilme("title")}
+                name={tVideoGroups("slitting")}
               />
             ),
           },
           {
             src: "/alt3.mp4",
             poster: "/alt3-poster.jpg",
+            side: "start",
             children: (
               <VideoBandContent
                 l1={t("bands.feeding.l1")}
                 l2={t("bands.feeding.l2")}
                 href="/makineler/servo-suruculer"
                 cta={tCommon("details")}
-                name={tMach("servo-suruculer.name")}
+                /* Ürün adı ("Servo Sürücüler") değil hattın adı yazılıyor: bant
+                   tek bir makineyi değil pres besleme + kompakt hat ailesini
+                   anlatıyor. Metin videos.groups'tan geliyor, yani videolar
+                   sayfasındaki bölüm adıyla birebir aynı kalıyor. */
+                name={tVideoGroups("feeding")}
               />
             ),
           },

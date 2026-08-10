@@ -56,7 +56,7 @@
   "home": {
     "badge": "Export aus Istanbul in 48+ Länder",
     "h1l1": "In 48 Ländern im Einsatz",
-    "h1l2": "Anlagen zur Bandverarbeitung",
+    "h1l2": "Rollformanlagen",
     "sub": "Wir konstruieren Rollform-, Längsteil- und Querteilanlagen für Ihr Projekt, fertigen sie im eigenen Werk und nehmen sie schlüsselfertig in Betrieb.",
     "cta1": "Angebot für Ihr Projekt",
     "cta2": "Anlagen entdecken",
@@ -671,8 +671,8 @@
       "slitting": "Längsteilanlagen",
       "ctl": "Querteilanlagen",
       "rollform": "Rollformanlagen",
-      "solar": "Solarprofil-Anlagen",
-      "feeding": "Pressenvorschubsysteme",
+      "solar": "Solar-C-Profil-Anlagen",
+      "feeding": "Pressenzuführungen und Kompaktanlagen",
       "machines": "Maschinen"
     },
     "items": {
