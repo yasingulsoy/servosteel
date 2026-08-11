@@ -169,6 +169,8 @@
     "ctaTitle": "Let's choose the right machine together"
   },
   "detail": {
+    "variantsTitle": "Types",
+    "variantsCta": "View models",
     "features": "Key features",
     "components": "Line components",
     "componentsNote": "All components are manufactured at the Servosteel facility, and the complete line is tested in-house before shipment.",
@@ -840,6 +842,273 @@
     "back": "Back to homepage"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Hydraulic Decoilers",
+          "metaTitle": "Hydraulic Decoiler — 6,000-20,000 kg",
+          "meta": "Hydraulic decoilers from 6,000 to 20,000 kg: strip width up to 1,600 mm, hydraulic mandrel expansion, laser sensor loop control.",
+          "short": "For heavy coils and wide strip; hydraulic mandrel, motor driven.",
+          "hero": "Our hydraulic decoilers carry coils from 6,000 kg to 20,000 kg and run strip widths up to 1,600 mm. Mandrel expansion is hydraulic; a pneumatic hold-down arm and laser sensor loop control come as standard.",
+          "table": {
+            "title": "Capacity and width",
+            "head": [
+              "Coil weight",
+              "Material width"
+            ],
+            "rows": [
+              [
+                "6,000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1,000 mm"
+              ],
+              [
+                "8,000 kg",
+                "80 – 800 / 80 – 1,000 / 80 – 1,200 mm"
+              ],
+              [
+                "10,000 kg",
+                "80 – 1,000 / 80 – 1,200 / 80 – 1,300 mm"
+              ],
+              [
+                "12,000 kg",
+                "80 – 800 / 80 – 1,300 mm"
+              ],
+              [
+                "15,000 kg",
+                "80 – 1,500 mm"
+              ],
+              [
+                "20,000 kg",
+                "80 – 1,600 mm"
+              ]
+            ]
+          },
+          "tableNote": "All models: coil outer diameter 1,600 mm, inner diameter 450–560 mm (640 mm with adapter). Hydraulic mandrel expansion and hold-down arm are standard. Brake-instead-of-motor configurations are available."
+        },
+        "mekanik": {
+          "name": "Mechanical Decoilers",
+          "metaTitle": "Mechanical Decoiler — 500-2,500 kg",
+          "meta": "Mechanical decoilers from 500 to 2,500 kg: 30-500 mm strip width, mandrel hub clamping, speed control and brake lining system.",
+          "short": "Economical choice for light and medium coils; mechanical mandrel.",
+          "hero": "Our mechanical decoilers carry coils from 500 kg to 2,500 kg. The hub is clamped by mandrel; speed control and a brake lining system are standard, and the unit can unwind in both directions.",
+          "table": {
+            "title": "Capacity, width and inner diameter",
+            "head": [
+              "Coil weight",
+              "Material width",
+              "Coil inner diameter"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1,500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2,500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Mini Servo Feeders",
+          "metaTitle": "Mini Servo Feeder — 10-600 mm",
+          "meta": "Mini servo feeders for 10-600 mm strip width: 0.2-2 mm thickness, 100 m/min free feed speed (250 optional), 7\" touchscreen.",
+          "short": "High speed on small and medium presses; the most efficient feeder for narrow strip.",
+          "hero": "Our mini servo feeders handle strip widths from 10 mm to 600 mm and reach a free feed speed of 100 m/min — 250 m/min as an option. Trigger and reductor driven feeding and pneumatic piloting come as standard.",
+          "table": {
+            "title": "Models and width",
+            "head": [
+              "Model",
+              "Material width"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "All models: material thickness 0.2 – 2 mm, feeder roll diameter Ø80, 2 feed rolls, sensor press control. A 7\" touch display and 250-unit mold memory are standard; roller coating is optional."
+        },
+        "kasali": {
+          "name": "Cased Servo Feeders",
+          "metaTitle": "Cased Servo Feeder — 40-1,600 mm",
+          "meta": "Cased servo feeders for 40-1,600 mm strip width: 0.4-3 mm thickness (4 mm optional), reductor driven feeding, 250-unit mold memory.",
+          "short": "Closed-body, reductor driven feeder for wide strip and heavy work.",
+          "hero": "Our cased servo feeders handle strip widths from 40 mm to 1,600 mm. A reductor driven feed system and pneumatic piloting are standard; mould protection and lubrication can be added as options.",
+          "table": {
+            "title": "Models and width",
+            "head": [
+              "Model",
+              "Material width"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1,000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1,200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1,300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1,600 mm"
+              ]
+            ]
+          },
+          "tableNote": "All models: material thickness 0.4 – 3 mm (4 mm optional), free feed speed 35 m/min, feeder roll diameter Ø85, 2 feed rolls, sensor press control. A 7\" touch display and 250-unit mold memory are standard."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Mini Straightener Servo Feeders",
+          "metaTitle": "Mini Straightener Servo Feeder — 15-400 mm",
+          "meta": "Mini straightener servo feeders for 15-400 mm strip width: 0.5-2 mm thickness (3 mm optional), straightening and feeding in one unit.",
+          "short": "Combines straightening and feeding in a single body for narrow strip.",
+          "hero": "Our mini straightener servo feeders handle strip widths from 15 mm to 400 mm and combine straightening with feeding in one unit. A gear driven top and bottom roll group and pneumatic piloting are standard.",
+          "table": {
+            "title": "Models and width",
+            "head": [
+              "Model",
+              "Material width"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "All models: material thickness 0.5 – 2 mm (3 mm optional), free feed speed 35 m/min, feeder roll diameter Ø80, 2 feed rolls. A 7\" touch display and 250-unit mold memory are standard."
+        },
+        "kasali": {
+          "name": "Cased Straightener Servo Feeders",
+          "metaTitle": "Cased Straightener Servo Feeder — 30-1,600 mm",
+          "meta": "Cased straightener servo feeders for 30-1,600 mm strip width: 0.5-4 mm thickness, 9-roller layout, Schneider colour LCD touchscreen.",
+          "short": "Brings straightening, feeding and traction together for wide strip.",
+          "hero": "Our cased straightener servo feeders handle strip widths from 30 mm to 1,600 mm. Straightener mandrels can be adjusted one by one; inlet-outlet guides and a drive mandrel piloting system are standard.",
+          "table": {
+            "title": "Models and width",
+            "head": [
+              "Model",
+              "Material width"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1,000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1,200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1,300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1,600 mm"
+              ]
+            ]
+          },
+          "tableNote": "All models: material thickness 0.5 – 4 mm, free feed speed 35 m/min, roll diameter Ø85. The 9-roller layout has 2 feed + 5 straightener + 2 traction rolls; 7, 11 and 13-roller layouts are also produced. Schneider colour LCD touch display and 250-unit mold memory are standard."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Cable Tray Production Line",
@@ -1534,8 +1803,8 @@
           "head": ["Specification", "Mechanical", "Hydraulic"],
           "rows": [
             ["Models", "500 · 750 · 1,500 · 2,500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Coil width", "30 – 500 mm", "80 – 1,000 mm"],
-            ["Coil inner diameter", "300 mm", "450 – 560 mm"],
+            ["Coil width", "30 – 500 mm", "80 – 1,600 mm"],
+            ["Coil inner diameter", "300 – 550 mm", "450 – 560 mm"],
             ["Coil outer diameter (max.)", "1,600 mm", "1,600 mm"],
             ["Mandrel expansion", "Mechanical", "Hydraulic"],
             ["Control", "Speed control + brake system", "Schneider PLC"]
@@ -1593,10 +1862,10 @@
           "title": "Technical specifications",
           "head": ["Specification", "Value"],
           "rows": [
-            ["Material thickness", "0.4 – 4.0 mm"],
+            ["Material thickness", "0.2 – 4.0 mm"],
             ["Strip width", "≤ 1,600 mm"],
-            ["Free feed speed", "35 m/min"],
-            ["Feed rolls", "2 × Ø85 mm"],
+            ["Free feed speed", "35 / 100 / 250 m/min"],
+            ["Feed rolls", "2 × Ø80 – Ø85 mm"],
             ["Display", "7\" touchscreen HMI"],
             ["Mold memory", "250 recipes"]
           ]
@@ -1738,13 +2007,13 @@
           "head": ["Specification", "Value"],
           "rows": [
             ["Material width", "40 – 1,300 mm"],
-            ["Material thickness", "0.5 – 4.0 mm"],
-            ["Free speed", "40 m/min"],
-            ["Feed accuracy", "−0.1 mm"],
+            ["Material thickness", "1 – 6 mm"],
+            ["Free speed", "25 m/min"],
+            ["Feed accuracy", "±0.1 mm"],
             ["Coil weight", "2,500 – 10,000 kg"],
             ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
             ["Feed rolls", "2 + 2"],
-            ["Straightening rolls", "5 × Ø85 mm"]
+            ["Straightening rolls", "7 × Ø110 mm"]
           ]
         }
       }

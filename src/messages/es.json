@@ -157,6 +157,8 @@
     "ctaTitle": "Elijamos juntos la máquina adecuada"
   },
   "detail": {
+    "variantsTitle": "Tipos",
+    "variantsCta": "Ver modelos",
     "features": "Características destacadas",
     "components": "Componentes de la línea",
     "componentsNote": "Todos los componentes se fabrican en la planta de Servosteel; la línea completa se prueba en fábrica antes del envío.",
@@ -812,6 +814,273 @@
     "back": "Volver al inicio"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Desbobinadoras Hidráulicas",
+          "metaTitle": "Desbobinadora Hidráulica — 6.000-20.000 kg",
+          "meta": "Desbobinadoras hidráulicas de 6.000 a 20.000 kg: ancho de banda hasta 1.600 mm, expansión hidráulica del mandril, control de lazo por sensor láser.",
+          "short": "Para bobinas pesadas y banda ancha; mandril hidráulico y motorizado.",
+          "hero": "Nuestras desbobinadoras hidráulicas soportan bobinas de 6.000 kg a 20.000 kg y trabajan anchos de banda de hasta 1.600 mm. La expansión del mandril es hidráulica; el brazo prensor neumático y el control de lazo por sensor láser son de serie.",
+          "table": {
+            "title": "Capacidad y ancho",
+            "head": [
+              "Peso de bobina",
+              "Ancho de material"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Todos los modelos: diámetro exterior de bobina 1.600 mm, interior 450–560 mm (640 mm con adaptador). Expansión hidráulica del mandril y brazo prensor de serie. Hay configuraciones con freno en lugar de motor."
+        },
+        "mekanik": {
+          "name": "Desbobinadoras Mecánicas",
+          "metaTitle": "Desbobinadora Mecánica — 500-2.500 kg",
+          "meta": "Desbobinadoras mecánicas de 500 a 2.500 kg: ancho de banda 30-500 mm, sujeción del núcleo por mandril, control de velocidad y sistema de freno.",
+          "short": "Solución económica para bobinas ligeras y medias; mandril mecánico.",
+          "hero": "Nuestras desbobinadoras mecánicas soportan bobinas de 500 kg a 2.500 kg. El núcleo se sujeta mediante mandril; el control de velocidad y el sistema de freno son de serie y el desbobinado puede hacerse en ambos sentidos.",
+          "table": {
+            "title": "Capacidad, ancho y diámetro interior",
+            "head": [
+              "Peso de bobina",
+              "Ancho de material",
+              "Diámetro interior"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Sufijos de modelo: A motorizado (brazo prensor opcional) · LA motorizado, diámetro exterior 1.600 mm y brazo prensor de serie · F con freno, brazo prensor de serie. En los modelos A y F el diámetro exterior es de 1.300 mm."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Alimentadores Servo Mini",
+          "metaTitle": "Alimentador Servo Mini — 10-600 mm",
+          "meta": "Alimentadores servo mini para ancho de banda 10-600 mm: espesor 0,2-2 mm, velocidad libre de 100 m/min (250 opcional), pantalla táctil de 7\".",
+          "short": "Alta velocidad en prensas pequeñas y medianas; el más eficiente en banda estrecha.",
+          "hero": "Nuestros alimentadores servo mini trabajan anchos de banda de 10 mm a 600 mm y alcanzan una velocidad libre de 100 m/min — 250 m/min opcional. El accionamiento por correa dentada y reductor y el pilotaje neumático son de serie.",
+          "table": {
+            "title": "Modelos y ancho",
+            "head": [
+              "Modelo",
+              "Ancho de material"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Todos los modelos: espesor de material 0,2 – 2 mm, diámetro de rodillo Ø80, 2 rodillos de alimentación, control de prensa por sensor. Pantalla táctil de 7\" y memoria de 250 matrices de serie; recubrimiento de rodillos opcional."
+        },
+        "kasali": {
+          "name": "Alimentadores Servo Encapsulados",
+          "metaTitle": "Alimentador Servo Encapsulado — 40-1.600 mm",
+          "meta": "Alimentadores servo encapsulados para ancho 40-1.600 mm: espesor 0,4-3 mm (4 mm opcional), accionamiento por reductor, memoria de 250 matrices.",
+          "short": "Cuerpo cerrado y accionamiento por reductor para banda ancha y trabajo pesado.",
+          "hero": "Nuestros alimentadores servo encapsulados trabajan anchos de banda de 40 mm a 1.600 mm. El sistema de accionamiento por reductor y el pilotaje neumático son de serie; la protección y lubricación de matriz son opcionales.",
+          "table": {
+            "title": "Modelos y ancho",
+            "head": [
+              "Modelo",
+              "Ancho de material"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Todos los modelos: espesor de material 0,4 – 3 mm (4 mm opcional), velocidad libre 35 m/min, diámetro de rodillo Ø85, 2 rodillos de alimentación, control de prensa por sensor. Pantalla táctil de 7\" y memoria de 250 matrices de serie."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Alimentadores Servo Mini con Enderezador",
+          "metaTitle": "Alimentador Servo Mini con Enderezador — 15-400 mm",
+          "meta": "Alimentadores servo mini con enderezador para ancho 15-400 mm: espesor 0,5-2 mm (3 mm opcional), enderezado y avance en una unidad.",
+          "short": "Combina enderezado y avance en un solo cuerpo para banda estrecha.",
+          "hero": "Nuestros alimentadores servo mini con enderezador trabajan anchos de 15 mm a 400 mm y reúnen enderezado y avance en una sola unidad. El grupo de rodillos superior e inferior con accionamiento por engranajes y el pilotaje neumático son de serie.",
+          "table": {
+            "title": "Modelos y ancho",
+            "head": [
+              "Modelo",
+              "Ancho de material"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Todos los modelos: espesor de material 0,5 – 2 mm (3 mm opcional), velocidad libre 35 m/min, diámetro de rodillo Ø80, 2 rodillos de alimentación. Pantalla táctil de 7\" y memoria de 250 matrices de serie."
+        },
+        "kasali": {
+          "name": "Alimentadores Servo Encapsulados con Enderezador",
+          "metaTitle": "Alimentador Servo Encapsulado con Enderezador — 30-1.600 mm",
+          "meta": "Alimentadores servo encapsulados con enderezador para ancho 30-1.600 mm: espesor 0,5-4 mm, disposición de 9 rodillos, pantalla táctil LCD color Schneider.",
+          "short": "Reúne enderezado, avance y tracción para banda ancha.",
+          "hero": "Nuestros alimentadores servo encapsulados con enderezador trabajan anchos de 30 mm a 1.600 mm. Los rodillos enderezadores se ajustan uno a uno; las guías de entrada y salida y el sistema de pilotaje del mandril motriz son de serie.",
+          "table": {
+            "title": "Modelos y ancho",
+            "head": [
+              "Modelo",
+              "Ancho de material"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Todos los modelos: espesor de material 0,5 – 4 mm, velocidad libre 35 m/min, diámetro de rodillo Ø85. La disposición de 9 rodillos incluye 2 de alimentación + 5 enderezadores + 2 de tracción; también se fabrican disposiciones de 7, 11 y 13 rodillos. Pantalla táctil LCD color Schneider y memoria de 250 matrices de serie."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Línea de Producción de Bandejas Portacables",
@@ -1482,8 +1751,8 @@
           "head": ["Característica", "Mecánico", "Hidráulico"],
           "rows": [
             ["Modelos", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Ancho de bobina", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Diámetro interior de bobina", "300 mm", "450 – 560 mm"],
+            ["Ancho de bobina", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Diámetro interior de bobina", "300 – 550 mm", "450 – 560 mm"],
             ["Diámetro exterior (máx.)", "1.600 mm", "1.600 mm"],
             ["Expansión del mandril", "Mecánico", "Hidráulico"],
             ["Control", "Control de velocidad + freno", "Schneider PLC"]
@@ -1532,10 +1801,10 @@
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Valor"],
           "rows": [
-            ["Espesor de material", "0,4 – 4,0 mm"],
+            ["Espesor de material", "0,2 – 4,0 mm"],
             ["Ancho de fleje", "≤ 1.600 mm"],
-            ["Velocidad de avance libre", "35 m/min"],
-            ["Rodillos de avance", "2 × Ø85 mm"],
+            ["Velocidad de avance libre", "35 / 100 / 250 m/min"],
+            ["Rodillos de avance", "2 × Ø80 – Ø85 mm"],
             ["Pantalla", "HMI táctil de 7\""],
             ["Memoria de moldes", "250 recetas"]
           ]
@@ -1670,13 +1939,13 @@
           "head": ["Característica", "Valor"],
           "rows": [
             ["Ancho de material", "40 – 1.300 mm"],
-            ["Espesor de material", "0,5 – 4,0 mm"],
-            ["Velocidad libre", "40 m/min"],
-            ["Precisión de avance", "−0,1 mm"],
+            ["Espesor de material", "1 – 6 mm"],
+            ["Velocidad libre", "25 m/min"],
+            ["Precisión de avance", "±0,1 mm"],
             ["Peso de bobina", "2.500 – 10.000 kg"],
             ["Diámetro int. / ext. de bobina", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rodillos de avance", "2 + 2"],
-            ["Rodillos enderezadores", "5 × Ø85 mm"]
+            ["Rodillos enderezadores", "7 × Ø110 mm"]
           ]
         }
       }

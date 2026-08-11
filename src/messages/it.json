@@ -157,6 +157,8 @@
     "ctaTitle": "Scegliamo insieme la macchina giusta"
   },
   "detail": {
+    "variantsTitle": "Tipi",
+    "variantsCta": "Vedi i modelli",
     "features": "Caratteristiche principali",
     "components": "Componenti della linea",
     "componentsNote": "Tutti i componenti sono prodotti nello stabilimento Servosteel; la linea completa è collaudata in fabbrica prima della spedizione.",
@@ -812,6 +814,273 @@
     "back": "Torna alla home"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Aspi Idraulici",
+          "metaTitle": "Aspo Idraulico — 6.000-20.000 kg",
+          "meta": "Aspi idraulici da 6.000 a 20.000 kg: larghezza nastro fino a 1.600 mm, espansione idraulica del mandrino, controllo anello con sensore laser.",
+          "short": "Per coil pesanti e nastro largo; mandrino idraulico, motorizzato.",
+          "hero": "I nostri aspi idraulici sostengono coil da 6.000 kg a 20.000 kg e lavorano larghezze fino a 1.600 mm. L'espansione del mandrino è idraulica; braccio pressore pneumatico e controllo anello con sensore laser sono di serie.",
+          "table": {
+            "title": "Capacità e larghezza",
+            "head": [
+              "Peso coil",
+              "Larghezza materiale"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tutti i modelli: diametro esterno coil 1.600 mm, interno 450–560 mm (640 mm con adattatore). Espansione idraulica del mandrino e braccio pressore di serie. Sono disponibili configurazioni con freno anziché motore."
+        },
+        "mekanik": {
+          "name": "Aspi Meccanici",
+          "metaTitle": "Aspo Meccanico — 500-2.500 kg",
+          "meta": "Aspi meccanici da 500 a 2.500 kg: larghezza nastro 30-500 mm, bloccaggio del nucleo con mandrino, controllo velocità e sistema frenante.",
+          "short": "Soluzione economica per coil leggeri e medi; mandrino meccanico.",
+          "hero": "I nostri aspi meccanici sostengono coil da 500 kg a 2.500 kg. Il nucleo viene bloccato dal mandrino; controllo velocità e sistema frenante sono di serie e lo svolgimento può avvenire in entrambi i sensi.",
+          "table": {
+            "title": "Capacità, larghezza e diametro interno",
+            "head": [
+              "Peso coil",
+              "Larghezza materiale",
+              "Diametro interno"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Alimentatori Servo Mini",
+          "metaTitle": "Alimentatore Servo Mini — 10-600 mm",
+          "meta": "Alimentatori servo mini per larghezza nastro 10-600 mm: spessore 0,2-2 mm, velocità libera 100 m/min (250 opzionale), display touch da 7\".",
+          "short": "Alta velocità su presse piccole e medie; il più efficiente su nastro stretto.",
+          "hero": "I nostri alimentatori servo mini lavorano larghezze da 10 mm a 600 mm e raggiungono una velocità libera di 100 m/min — 250 m/min in opzione. Trasmissione a cinghia dentata e riduttore e pilotaggio pneumatico sono di serie.",
+          "table": {
+            "title": "Modelli e larghezza",
+            "head": [
+              "Modello",
+              "Larghezza materiale"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tutti i modelli: spessore materiale 0,2 – 2 mm, diametro rullo Ø80, 2 rulli di alimentazione, controllo pressa tramite sensore. Display touch da 7\" e memoria per 250 stampi di serie; rivestimento rulli opzionale."
+        },
+        "kasali": {
+          "name": "Alimentatori Servo Carenati",
+          "metaTitle": "Alimentatore Servo Carenato — 40-1.600 mm",
+          "meta": "Alimentatori servo carenati per larghezza 40-1.600 mm: spessore 0,4-3 mm (4 mm opzionale), trasmissione a riduttore, memoria per 250 stampi.",
+          "short": "Corpo chiuso e trasmissione a riduttore per nastro largo e lavoro pesante.",
+          "hero": "I nostri alimentatori servo carenati lavorano larghezze da 40 mm a 1.600 mm. Il sistema di trasmissione a riduttore e il pilotaggio pneumatico sono di serie; protezione e lubrificazione stampo sono opzionali.",
+          "table": {
+            "title": "Modelli e larghezza",
+            "head": [
+              "Modello",
+              "Larghezza materiale"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tutti i modelli: spessore materiale 0,4 – 3 mm (4 mm opzionale), velocità libera 35 m/min, diametro rullo Ø85, 2 rulli di alimentazione, controllo pressa tramite sensore. Display touch da 7\" e memoria per 250 stampi di serie."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Alimentatori Servo Mini con Raddrizzatore",
+          "metaTitle": "Alimentatore Servo Mini con Raddrizzatore — 15-400 mm",
+          "meta": "Alimentatori servo mini con raddrizzatore per larghezza 15-400 mm: spessore 0,5-2 mm (3 mm opzionale), raddrizzatura e avanzamento in un'unica unità.",
+          "short": "Unisce raddrizzatura e avanzamento in un solo corpo per nastro stretto.",
+          "hero": "I nostri alimentatori servo mini con raddrizzatore lavorano larghezze da 15 mm a 400 mm e uniscono raddrizzatura e avanzamento in un'unica unità. Gruppo rulli superiore e inferiore a ingranaggi e pilotaggio pneumatico sono di serie.",
+          "table": {
+            "title": "Modelli e larghezza",
+            "head": [
+              "Modello",
+              "Larghezza materiale"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tutti i modelli: spessore materiale 0,5 – 2 mm (3 mm opzionale), velocità libera 35 m/min, diametro rullo Ø80, 2 rulli di alimentazione. Display touch da 7\" e memoria per 250 stampi di serie."
+        },
+        "kasali": {
+          "name": "Alimentatori Servo Carenati con Raddrizzatore",
+          "metaTitle": "Alimentatore Servo Carenato con Raddrizzatore — 30-1.600 mm",
+          "meta": "Alimentatori servo carenati con raddrizzatore per larghezza 30-1.600 mm: spessore 0,5-4 mm, configurazione a 9 rulli, display touch LCD a colori Schneider.",
+          "short": "Riunisce raddrizzatura, avanzamento e traino per nastro largo.",
+          "hero": "I nostri alimentatori servo carenati con raddrizzatore lavorano larghezze da 30 mm a 1.600 mm. I rulli raddrizzatori sono regolabili uno a uno; guide di entrata e uscita e sistema di pilotaggio del mandrino motore sono di serie.",
+          "table": {
+            "title": "Modelli e larghezza",
+            "head": [
+              "Modello",
+              "Larghezza materiale"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tutti i modelli: spessore materiale 0,5 – 4 mm, velocità libera 35 m/min, diametro rullo Ø85. La configurazione a 9 rulli comprende 2 di avanzamento + 5 raddrizzatori + 2 di traino; si producono anche configurazioni a 7, 11 e 13 rulli. Display touch LCD a colori Schneider e memoria per 250 stampi di serie."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Linea di Produzione Canaline",
@@ -1482,8 +1751,8 @@
           "head": ["Caratteristica", "Meccanico", "Idraulico"],
           "rows": [
             ["Modelli", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Larghezza coil", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Diametro interno coil", "300 mm", "450 – 560 mm"],
+            ["Larghezza coil", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Diametro interno coil", "300 – 550 mm", "450 – 560 mm"],
             ["Diametro esterno (max.)", "1.600 mm", "1.600 mm"],
             ["Espansione mandrino", "Meccanico", "Idraulico"],
             ["Controllo", "Controllo velocità + freno", "Schneider PLC"]
@@ -1532,10 +1801,10 @@
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Valore"],
           "rows": [
-            ["Spessore materiale", "0,4 – 4,0 mm"],
+            ["Spessore materiale", "0,2 – 4,0 mm"],
             ["Larghezza nastro", "≤ 1.600 mm"],
-            ["Velocità di avanzamento libera", "35 m/min"],
-            ["Rulli di avanzamento", "2 × Ø85 mm"],
+            ["Velocità di avanzamento libera", "35 / 100 / 250 m/min"],
+            ["Rulli di avanzamento", "2 × Ø80 – Ø85 mm"],
             ["Display", "HMI touch da 7\""],
             ["Memoria stampi", "250 ricette"]
           ]
@@ -1670,13 +1939,13 @@
           "head": ["Caratteristica", "Valore"],
           "rows": [
             ["Larghezza materiale", "40 – 1.300 mm"],
-            ["Spessore materiale", "0,5 – 4,0 mm"],
-            ["Velocità libera", "40 m/min"],
-            ["Precisione di avanzamento", "−0,1 mm"],
+            ["Spessore materiale", "1 – 6 mm"],
+            ["Velocità libera", "25 m/min"],
+            ["Precisione di avanzamento", "±0,1 mm"],
             ["Peso coil", "2.500 – 10.000 kg"],
             ["Diametro interno / esterno coil", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rulli di avanzamento", "2 + 2"],
-            ["Rulli raddrizzatori", "5 × Ø85 mm"]
+            ["Rulli raddrizzatori", "7 × Ø110 mm"]
           ]
         }
       }

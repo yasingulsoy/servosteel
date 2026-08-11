@@ -23,6 +23,37 @@ export const machineItems = [
   { slug: "otomatik-istifleyici", noPhoto: true },
 ] as const;
 
+/**
+ * Makine varyantları — bir makine sayfasının altındaki alt sayfalar.
+ * `/makineler/rulo-acicilar/hidrolik`
+ *
+ * Üst sayfa hub olarak KALIR: "rulo açıcılar" kelimesinde 7. sırada ve
+ * içeriği duruyor. Varyantlar onun yerine geçmiyor, altına derinlik ekliyor —
+ * katalogdaki model listeleri özet tabloya sığmıyordu.
+ *
+ * Slug'ların URL çevirisi src/i18n/slugs.ts VARIANT_SLUGS'ta; iki liste
+ * ayrışırsa routing.ts açılışta hata fırlatır.
+ */
+export const machineVariants = [
+  { parent: "rulo-acicilar", slug: "hidrolik" },
+  { parent: "rulo-acicilar", slug: "mekanik" },
+  { parent: "servo-suruculer", slug: "mini" },
+  { parent: "servo-suruculer", slug: "kasali" },
+  { parent: "dogrultmali-servo-suruculer", slug: "mini" },
+  { parent: "dogrultmali-servo-suruculer", slug: "kasali" },
+] as const;
+
+export type MachineVariant = (typeof machineVariants)[number];
+
+export function isMachineVariant(parent: string, slug: string): boolean {
+  return machineVariants.some((v) => v.parent === parent && v.slug === slug);
+}
+
+/** Bir makinenin varyantları (yoksa boş dizi). */
+export function variantsOf(parent: string) {
+  return machineVariants.filter((v) => v.parent === parent);
+}
+
 export type RollFormSlug = (typeof rollFormItems)[number]["slug"];
 export type MachineSlug = (typeof machineItems)[number]["slug"];
 

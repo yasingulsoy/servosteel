@@ -157,6 +157,8 @@
     "ctaTitle": "Wählen wir gemeinsam die richtige Maschine"
   },
   "detail": {
+    "variantsTitle": "Typen",
+    "variantsCta": "Modelle ansehen",
     "features": "Wichtigste Merkmale",
     "components": "Anlagenkomponenten",
     "componentsNote": "Alle Komponenten werden im Servosteel-Werk gefertigt; die komplette Anlage wird vor Versand im Haus getestet.",
@@ -812,6 +814,273 @@
     "back": "Zur Startseite"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Hydraulische Haspeln",
+          "metaTitle": "Hydraulische Haspel — 6.000-20.000 kg",
+          "meta": "Hydraulische Haspeln von 6.000 bis 20.000 kg: Bandbreite bis 1.600 mm, hydraulische Dornaufweitung, Schlaufenregelung mit Lasersensor.",
+          "short": "Für schwere Bunde und breites Band; hydraulischer Dorn, motorisch.",
+          "hero": "Unsere hydraulischen Haspeln tragen Bunde von 6.000 kg bis 20.000 kg und verarbeiten Bandbreiten bis 1.600 mm. Die Dornaufweitung erfolgt hydraulisch; pneumatischer Niederhalter und Schlaufenregelung mit Lasersensor sind serienmäßig.",
+          "table": {
+            "title": "Kapazität und Breite",
+            "head": [
+              "Bundgewicht",
+              "Materialbreite"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Alle Modelle: Bund-Außendurchmesser 1.600 mm, Innendurchmesser 450–560 mm (mit Adapter 640 mm). Hydraulische Dornaufweitung und Niederhalter serienmäßig. Ausführungen mit Bremse statt Motor sind verfügbar."
+        },
+        "mekanik": {
+          "name": "Mechanische Haspeln",
+          "metaTitle": "Mechanische Haspel — 500-2.500 kg",
+          "meta": "Mechanische Haspeln von 500 bis 2.500 kg: 30-500 mm Bandbreite, Dornklemmung, Drehzahlregelung und Bremsbelagsystem.",
+          "short": "Wirtschaftlich für leichte und mittlere Bunde; mechanischer Dorn.",
+          "hero": "Unsere mechanischen Haspeln tragen Bunde von 500 kg bis 2.500 kg. Der Bundkern wird über den Dorn geklemmt; Drehzahlregelung und Bremsbelagsystem sind serienmäßig, das Abwickeln ist in beide Richtungen möglich.",
+          "table": {
+            "title": "Kapazität, Breite und Innendurchmesser",
+            "head": [
+              "Bundgewicht",
+              "Materialbreite",
+              "Bund-Innendurchmesser"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Bund-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Bund-Außendurchmesser 1.300 mm."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Mini-Servovorschübe",
+          "metaTitle": "Mini-Servovorschub — 10-600 mm",
+          "meta": "Mini-Servovorschübe für 10-600 mm Bandbreite: 0,2-2 mm Dicke, 100 m/min freie Vorschubgeschwindigkeit (250 optional), 7\"-Touchdisplay.",
+          "short": "Hohe Geschwindigkeit an kleinen und mittleren Pressen; ideal für schmales Band.",
+          "hero": "Unsere Mini-Servovorschübe verarbeiten Bandbreiten von 10 mm bis 600 mm und erreichen 100 m/min freie Vorschubgeschwindigkeit — optional 250 m/min. Zahnriemen- und Getriebeantrieb sowie pneumatische Pilotierung sind serienmäßig.",
+          "table": {
+            "title": "Modelle und Breite",
+            "head": [
+              "Modell",
+              "Materialbreite"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Alle Modelle: Materialdicke 0,2 – 2 mm, Vorschubwalzendurchmesser Ø80, 2 Vorschubwalzen, Pressensteuerung über Sensor. 7\"-Touchdisplay und Speicher für 250 Werkzeuge serienmäßig; Walzenbeschichtung optional."
+        },
+        "kasali": {
+          "name": "Servovorschübe im Gehäuse",
+          "metaTitle": "Servovorschub im Gehäuse — 40-1.600 mm",
+          "meta": "Servovorschübe im Gehäuse für 40-1.600 mm Bandbreite: 0,4-3 mm Dicke (4 mm optional), Getriebeantrieb, Speicher für 250 Werkzeuge.",
+          "short": "Geschlossene Bauform mit Getriebeantrieb für breites Band und schwere Arbeit.",
+          "hero": "Unsere Servovorschübe im Gehäuse verarbeiten Bandbreiten von 40 mm bis 1.600 mm. Getriebeantrieb und pneumatische Pilotierung sind serienmäßig; Werkzeugschutz und Schmierung sind optional erhältlich.",
+          "table": {
+            "title": "Modelle und Breite",
+            "head": [
+              "Modell",
+              "Materialbreite"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Alle Modelle: Materialdicke 0,4 – 3 mm (4 mm optional), freie Vorschubgeschwindigkeit 35 m/min, Vorschubwalzendurchmesser Ø85, 2 Vorschubwalzen, Pressensteuerung über Sensor. 7\"-Touchdisplay und Speicher für 250 Werkzeuge serienmäßig."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Mini-Richt-Servovorschübe",
+          "metaTitle": "Mini-Richt-Servovorschub — 15-400 mm",
+          "meta": "Mini-Richt-Servovorschübe für 15-400 mm Bandbreite: 0,5-2 mm Dicke (3 mm optional), Richten und Vorschub in einer Einheit.",
+          "short": "Vereint Richten und Vorschub in einem Gehäuse für schmales Band.",
+          "hero": "Unsere Mini-Richt-Servovorschübe verarbeiten Bandbreiten von 15 mm bis 400 mm und vereinen Richten und Vorschub in einer Einheit. Zahnradgetriebene obere und untere Walzengruppe sowie pneumatische Pilotierung sind serienmäßig.",
+          "table": {
+            "title": "Modelle und Breite",
+            "head": [
+              "Modell",
+              "Materialbreite"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Alle Modelle: Materialdicke 0,5 – 2 mm (3 mm optional), freie Vorschubgeschwindigkeit 35 m/min, Vorschubwalzendurchmesser Ø80, 2 Vorschubwalzen. 7\"-Touchdisplay und Speicher für 250 Werkzeuge serienmäßig."
+        },
+        "kasali": {
+          "name": "Richt-Servovorschübe im Gehäuse",
+          "metaTitle": "Richt-Servovorschub im Gehäuse — 30-1.600 mm",
+          "meta": "Richt-Servovorschübe im Gehäuse für 30-1.600 mm Bandbreite: 0,5-4 mm Dicke, 9-Walzen-Anordnung, Schneider Farb-LCD-Touchdisplay.",
+          "short": "Führt Richten, Vorschub und Zug für breites Band zusammen.",
+          "hero": "Unsere Richt-Servovorschübe im Gehäuse verarbeiten Bandbreiten von 30 mm bis 1.600 mm. Die Richtwalzen sind einzeln einstellbar; Ein- und Auslaufführungen sowie Antriebsdorn-Pilotierung sind serienmäßig.",
+          "table": {
+            "title": "Modelle und Breite",
+            "head": [
+              "Modell",
+              "Materialbreite"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Alle Modelle: Materialdicke 0,5 – 4 mm, freie Vorschubgeschwindigkeit 35 m/min, Walzendurchmesser Ø85. Die 9-Walzen-Anordnung umfasst 2 Vorschub-, 5 Richt- und 2 Zugwalzen; Ausführungen mit 7, 11 und 13 Walzen werden ebenfalls gefertigt. Schneider Farb-LCD-Touchdisplay und Speicher für 250 Werkzeuge serienmäßig."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Kabelrinnen-Produktionsanlage",
@@ -1482,8 +1751,8 @@
           "head": ["Merkmal", "Mechanisch", "Hydraulisch"],
           "rows": [
             ["Modelle", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Bundbreite", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Bund-Innendurchmesser", "300 mm", "450 – 560 mm"],
+            ["Bundbreite", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Bund-Innendurchmesser", "300 – 550 mm", "450 – 560 mm"],
             ["Bund-Außendurchmesser (max.)", "1.600 mm", "1.600 mm"],
             ["Dornaufweitung", "Mechanisch", "Hydraulisch"],
             ["Steuerung", "Drehzahlregelung + Bremse", "Schneider PLC"]
@@ -1532,10 +1801,10 @@
           "title": "Technische Daten",
           "head": ["Merkmal", "Wert"],
           "rows": [
-            ["Materialstärke", "0,4 – 4,0 mm"],
+            ["Materialstärke", "0,2 – 4,0 mm"],
             ["Bandbreite", "≤ 1.600 mm"],
-            ["Freie Vorschubgeschwindigkeit", "35 m/min"],
-            ["Vorschubwalzen", "2 × Ø85 mm"],
+            ["Freie Vorschubgeschwindigkeit", "35 / 100 / 250 m/min"],
+            ["Vorschubwalzen", "2 × Ø80 – Ø85 mm"],
             ["Display", "7\" Touch-HMI"],
             ["Werkzeugspeicher", "250 Rezepte"]
           ]
@@ -1670,13 +1939,13 @@
           "head": ["Merkmal", "Wert"],
           "rows": [
             ["Materialbreite", "40 – 1.300 mm"],
-            ["Materialstärke", "0,5 – 4,0 mm"],
-            ["Freie Geschwindigkeit", "40 m/min"],
-            ["Vorschubgenauigkeit", "−0,1 mm"],
+            ["Materialstärke", "1 – 6 mm"],
+            ["Freie Geschwindigkeit", "25 m/min"],
+            ["Vorschubgenauigkeit", "±0,1 mm"],
             ["Bundgewicht", "2.500 – 10.000 kg"],
             ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
             ["Vorschubwalzen", "2 + 2"],
-            ["Richtwalzen", "5 × Ø85 mm"]
+            ["Richtwalzen", "7 × Ø110 mm"]
           ]
         }
       }

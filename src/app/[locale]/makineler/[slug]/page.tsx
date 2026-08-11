@@ -11,7 +11,7 @@ import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineItems, isMachineSlug, hasPhoto } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -44,6 +44,7 @@ export default async function MachinePage({ params }: Props) {
   const t = await getTranslations(`products.machines.${slug}`);
   const td = await getTranslations("detail");
   const tm = await getTranslations("products.machines");
+  const tv = await getTranslations("products.variants");
 
   const features = t.raw("features") as { title: string; text: string }[];
   const sectors = t.raw("sectors") as string[];
@@ -52,6 +53,10 @@ export default async function MachinePage({ params }: Props) {
   const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
   const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
   const others = machineItems.filter((m) => m.slug !== slug);
+  /* Varyantlar (varsa) — model kırılımının yaşadığı alt sayfalar. Buradan link
+     verilmezse Google onları yalnızca sitemap'ten görür; iç link olmadan
+     keşfedilen sayfa "keşfedildi, indekslenmedi"de takılıp kalıyor. */
+  const varyantlar = variantsOf(slug);
   /* FAQ opsiyoneldir — yalnızca mesaj dosyasında tanımlı makinelerde görünür. */
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
 
@@ -160,6 +165,34 @@ export default async function MachinePage({ params }: Props) {
                       ))}
                     </tbody>
                   </table>
+                </div>
+              </Reveal>
+            )}
+
+            {varyantlar.length > 0 && (
+              <Reveal>
+                <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">
+                  {td("variantsTitle")}
+                </h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {varyantlar.map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/makineler/${slug}/${v.slug}`}
+                      className="group rounded-2xl border border-line bg-card p-6 transition-all hover:border-accent/50"
+                    >
+                      <h3 className="font-semibold text-ink">
+                        {tv(`${slug}.${v.slug}.name`)}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {tv(`${slug}.${v.slug}.short`)}
+                      </p>
+                      <span className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                        {td("variantsCta")}
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden />
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </Reveal>
             )}

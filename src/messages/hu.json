@@ -156,6 +156,8 @@
     "ctaTitle": "Válasszuk ki együtt a megfelelő gépet"
   },
   "detail": {
+    "variantsTitle": "Típusok",
+    "variantsCta": "Modellek megtekintése",
     "features": "Fő jellemzők",
     "components": "Sor részegységei",
     "componentsNote": "Minden részegység a Servosteel üzemében készül; a teljes sort szállítás előtt gyárilag teszteljük.",
@@ -811,6 +813,273 @@
     "back": "Vissza a kezdőlapra"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Hidraulikus Letekercselők",
+          "metaTitle": "Hidraulikus Letekercselő — 6.000-20.000 kg",
+          "meta": "Hidraulikus letekercselők 6.000-20.000 kg között: szalagszélesség 1.600 mm-ig, hidraulikus tüskefeszítés, lézerszenzoros hurokvezérlés.",
+          "short": "Nehéz tekercsekhez és széles szalaghoz; hidraulikus tüske, motoros.",
+          "hero": "Hidraulikus letekercselőink 6.000 kg-tól 20.000 kg-ig bírnak tekercset, és 1.600 mm-ig terjedő szalagszélességgel dolgoznak. A tüskefeszítés hidraulikus; a pneumatikus leszorítókar és a lézerszenzoros hurokvezérlés alapfelszereltség.",
+          "table": {
+            "title": "Kapacitás és szélesség",
+            "head": [
+              "Tekercs tömege",
+              "Anyagszélesség"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Minden modell: tekercs külső átmérő 1.600 mm, belső 450–560 mm (adapterrel 640 mm). A hidraulikus tüskefeszítés és a leszorítókar alapfelszereltség. Motor helyett fékes kivitel is rendelhető."
+        },
+        "mekanik": {
+          "name": "Mechanikus Letekercselők",
+          "metaTitle": "Mechanikus Letekercselő — 500-2.500 kg",
+          "meta": "Mechanikus letekercselők 500-2.500 kg között: 30-500 mm szalagszélesség, tüskés magszorítás, fordulatszám-szabályozás és fékbetétes rendszer.",
+          "short": "Gazdaságos megoldás könnyű és közepes tekercsekhez; mechanikus tüske.",
+          "hero": "Mechanikus letekercselőink 500 kg-tól 2.500 kg-ig bírnak tekercset. A magot tüske szorítja; a fordulatszám-szabályozás és a fékbetétes rendszer alapfelszereltség, a letekercselés mindkét irányban lehetséges.",
+          "table": {
+            "title": "Kapacitás, szélesség és belső átmérő",
+            "head": [
+              "Tekercs tömege",
+              "Anyagszélesség",
+              "Belső átmérő"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Mini Szervo Adagolók",
+          "metaTitle": "Mini Szervo Adagoló — 10-600 mm",
+          "meta": "Mini szervo adagolók 10-600 mm szalagszélességhez: 0,2-2 mm vastagság, 100 m/perc szabad adagolási sebesség (250 opcionális), 7\"-os érintőkijelző.",
+          "short": "Nagy sebesség kis és közepes présekhez; keskeny szalagon a leghatékonyabb.",
+          "hero": "Mini szervo adagolóink 10 mm-től 600 mm-ig terjedő szalagszélességgel dolgoznak, és 100 m/perc szabad adagolási sebességet érnek el — opcionálisan 250 m/perc. A fogasszíjas és hajtóműves adagolás, valamint a pneumatikus vezérlés alapfelszereltség.",
+          "table": {
+            "title": "Modellek és szélesség",
+            "head": [
+              "Modell",
+              "Anyagszélesség"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Minden modell: anyagvastagság 0,2 – 2 mm, adagolóhenger átmérő Ø80, 2 adagolóhenger, présvezérlés érzékelővel. A 7\"-os érintőkijelző és a 250 szerszámos memória alapfelszereltség; a hengerbevonat opcionális."
+        },
+        "kasali": {
+          "name": "Zárt Házas Szervo Adagolók",
+          "metaTitle": "Zárt Házas Szervo Adagoló — 40-1.600 mm",
+          "meta": "Zárt házas szervo adagolók 40-1.600 mm szalagszélességhez: 0,4-3 mm vastagság (4 mm opcionális), hajtóműves adagolás, 250 szerszámos memória.",
+          "short": "Zárt kialakítás és hajtóműves adagolás széles szalaghoz, nehéz munkához.",
+          "hero": "Zárt házas szervo adagolóink 40 mm-től 1.600 mm-ig terjedő szalagszélességgel dolgoznak. A hajtóműves adagolórendszer és a pneumatikus vezérlés alapfelszereltség; a szerszámvédelem és kenés opcionálisan rendelhető.",
+          "table": {
+            "title": "Modellek és szélesség",
+            "head": [
+              "Modell",
+              "Anyagszélesség"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Minden modell: anyagvastagság 0,4 – 3 mm (4 mm opcionális), szabad adagolási sebesség 35 m/perc, adagolóhenger átmérő Ø85, 2 adagolóhenger, présvezérlés érzékelővel. A 7\"-os érintőkijelző és a 250 szerszámos memória alapfelszereltség."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Mini Egyengetős Szervo Adagolók",
+          "metaTitle": "Mini Egyengetős Szervo Adagoló — 15-400 mm",
+          "meta": "Mini egyengetős szervo adagolók 15-400 mm szalagszélességhez: 0,5-2 mm vastagság (3 mm opcionális), egyengetés és adagolás egy egységben.",
+          "short": "Egyesíti az egyengetést és az adagolást egy házban, keskeny szalaghoz.",
+          "hero": "Mini egyengetős szervo adagolóink 15 mm-től 400 mm-ig terjedő szalagszélességgel dolgoznak, és egy egységben egyesítik az egyengetést az adagolással. A fogaskerekes felső és alsó hengercsoport, valamint a pneumatikus vezérlés alapfelszereltség.",
+          "table": {
+            "title": "Modellek és szélesség",
+            "head": [
+              "Modell",
+              "Anyagszélesség"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Minden modell: anyagvastagság 0,5 – 2 mm (3 mm opcionális), szabad adagolási sebesség 35 m/perc, adagolóhenger átmérő Ø80, 2 adagolóhenger. A 7\"-os érintőkijelző és a 250 szerszámos memória alapfelszereltség."
+        },
+        "kasali": {
+          "name": "Zárt Házas Egyengetős Szervo Adagolók",
+          "metaTitle": "Zárt Házas Egyengetős Szervo Adagoló — 30-1.600 mm",
+          "meta": "Zárt házas egyengetős szervo adagolók 30-1.600 mm szalagszélességhez: 0,5-4 mm vastagság, 9 hengeres elrendezés, Schneider színes LCD érintőkijelző.",
+          "short": "Egyesíti az egyengetést, adagolást és húzást széles szalaghoz.",
+          "hero": "Zárt házas egyengetős szervo adagolóink 30 mm-től 1.600 mm-ig terjedő szalagszélességgel dolgoznak. Az egyengető hengerek egyenként állíthatók; a be- és kimeneti vezetők, valamint a hajtótüske-vezérlő rendszer alapfelszereltség.",
+          "table": {
+            "title": "Modellek és szélesség",
+            "head": [
+              "Modell",
+              "Anyagszélesség"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Minden modell: anyagvastagság 0,5 – 4 mm, szabad adagolási sebesség 35 m/perc, hengerátmérő Ø85. A 9 hengeres elrendezés 2 adagoló + 5 egyengető + 2 húzóhengert tartalmaz; 7, 11 és 13 hengeres elrendezés is készül. A Schneider színes LCD érintőkijelző és a 250 szerszámos memória alapfelszereltség."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Kábeltálca Gyártósor",
@@ -1481,8 +1750,8 @@
           "head": ["Jellemző", "Mechanikus", "Hidraulikus"],
           "rows": [
             ["Modellek", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Tekercsszélesség", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Tekercs belső átmérő", "300 mm", "450 – 560 mm"],
+            ["Tekercsszélesség", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Tekercs belső átmérő", "300 – 550 mm", "450 – 560 mm"],
             ["Tekercs külső átmérő (max.)", "1.600 mm", "1.600 mm"],
             ["Tüsketágítás", "Mechanikus", "Hidraulikus"],
             ["Vezérlés", "Fordulatszám-szabályzás + fék", "Schneider PLC"]
@@ -1531,10 +1800,10 @@
           "title": "Műszaki adatok",
           "head": ["Jellemző", "Érték"],
           "rows": [
-            ["Anyagvastagság", "0,4 – 4,0 mm"],
+            ["Anyagvastagság", "0,2 – 4,0 mm"],
             ["Szalagszélesség", "≤ 1.600 mm"],
-            ["Szabad előtolási sebesség", "35 m/min"],
-            ["Előtoló hengerek", "2 × Ø85 mm"],
+            ["Szabad előtolási sebesség", "35 / 100 / 250 m/min"],
+            ["Előtoló hengerek", "2 × Ø80 – Ø85 mm"],
             ["Kijelző", "7\"-os érintőképernyős HMI"],
             ["Szerszámmemória", "250 recept"]
           ]
@@ -1669,13 +1938,13 @@
           "head": ["Jellemző", "Érték"],
           "rows": [
             ["Anyagszélesség", "40 – 1.300 mm"],
-            ["Anyagvastagság", "0,5 – 4,0 mm"],
-            ["Szabad sebesség", "40 m/min"],
-            ["Előtolási pontosság", "−0,1 mm"],
+            ["Anyagvastagság", "1 – 6 mm"],
+            ["Szabad sebesség", "25 m/min"],
+            ["Előtolási pontosság", "±0,1 mm"],
             ["Tekercstömeg", "2.500 – 10.000 kg"],
             ["Tekercs belső / külső átmérő", "450 – 560 / 1.300 – 1.600 mm"],
             ["Előtoló hengerek", "2 + 2"],
-            ["Egyengető hengerek", "5 × Ø85 mm"]
+            ["Egyengető hengerek", "7 × Ø110 mm"]
           ]
         }
       }

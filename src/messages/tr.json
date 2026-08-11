@@ -157,6 +157,8 @@
     "ctaTitle": "Doğru makineyi birlikte seçelim"
   },
   "detail": {
+    "variantsTitle": "Tipler",
+    "variantsCta": "Modelleri incele",
     "features": "Öne çıkan özellikler",
     "components": "Hat bileşenleri",
     "componentsNote": "Tüm bileşenler Servosteel tesisinde üretilir ve hat, sevkiyat öncesi fabrikada komple test edilir.",
@@ -812,6 +814,273 @@
     "back": "Ana sayfaya dön"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Hidrolik Rulo Açıcılar",
+          "metaTitle": "Hidrolik Rulo Açıcı — 6.000-20.000 kg",
+          "meta": "6.000-20.000 kg kapasiteli hidrolik rulo açıcılar: 1.600 mm'ye kadar sac genişliği, hidrolik mandren sıkma, lazer sensörlü loop kontrol.",
+          "short": "Ağır rulolar ve geniş sac için; hidrolik mandren ve motorlu tahrik.",
+          "hero": "Hidrolik rulo açıcılarımız 6.000 kg'dan 20.000 kg'a kadar rulo taşır ve 1.600 mm'ye kadar sac genişliğinde çalışır. Mandren sıkma hidroliktir; pnömatik üst baskı kolu ve lazer sensörlü loop kontrol standart gelir.",
+          "table": {
+            "title": "Kapasite ve genişlik",
+            "head": [
+              "Rulo ağırlığı",
+              "Malzeme genişliği"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tüm modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 640 mm). Mandren sıkma hidrolik, üst baskı kolu standart. Motor yerine fren istenen konfigürasyonlar mevcuttur."
+        },
+        "mekanik": {
+          "name": "Mekanik Rulo Açıcılar",
+          "metaTitle": "Mekanik Rulo Açıcı — 500-2.500 kg",
+          "meta": "500-2.500 kg kapasiteli mekanik rulo açıcılar: 30-500 mm sac genişliği, mandrenle göbek sıkma, hız kontrol ve fren balata sistemi.",
+          "short": "Hafif ve orta rulolar için ekonomik çözüm; mekanik mandren.",
+          "hero": "Mekanik rulo açıcılarımız 500 kg'dan 2.500 kg'a kadar rulo taşır. Göbek sıkma mandrenle yapılır; hız kontrol ayarı ve fren balata sistemi standarttır, hat iki yöne açılabilir.",
+          "table": {
+            "title": "Kapasite, genişlik ve iç çap",
+            "head": [
+              "Rulo ağırlığı",
+              "Malzeme genişliği",
+              "Rulo iç çapı"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Mini Servo Sürücüler",
+          "metaTitle": "Mini Servo Sürücü — 10-600 mm",
+          "meta": "10-600 mm sac genişliğinde mini servo sürücüler: 0,2-2 mm kalınlık, 100 m/dk serbest sürme hızı (opsiyonel 250), 7\" dokunmatik ekran.",
+          "short": "Küçük ve orta preslerde yüksek hız; dar sacta en verimli sürücü.",
+          "hero": "Mini servo sürücülerimiz 10 mm'den 600 mm'ye kadar sac genişliğinde çalışır ve 100 m/dk serbest sürme hızına ulaşır — opsiyonel olarak 250 m/dk. Triger ve redüktör tahrikli sürme, pnömatik pilotlama standart gelir.",
+          "table": {
+            "title": "Modeller ve genişlik",
+            "head": [
+              "Model",
+              "Malzeme genişliği"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tüm modellerde malzeme kalınlığı 0,2 – 2 mm, sürücü merdane çapı Ø80, 2 sürme merdanesi, sensörle pres kontrolü. 7\" dokunmatik ekran ve 250 adet kalıp hafızası standart; merdane kaplama opsiyonel."
+        },
+        "kasali": {
+          "name": "Kasalı Servo Sürücüler",
+          "metaTitle": "Kasalı Servo Sürücü — 40-1.600 mm",
+          "meta": "40-1.600 mm sac genişliğinde kasalı servo sürücüler: 0,4-3 mm kalınlık (opsiyonel 4 mm), redüktör tahrikli sürme, 250 kalıp hafızası.",
+          "short": "Geniş sac ve ağır iş için kapalı gövdeli, redüktör tahrikli sürücü.",
+          "hero": "Kasalı servo sürücülerimiz 40 mm'den 1.600 mm'ye kadar sac genişliğinde çalışır. Redüktör tahrikli sürme sistemi ve pnömatik pilotlama standarttır; kalıp koruma ve yağlama opsiyonel olarak eklenir.",
+          "table": {
+            "title": "Modeller ve genişlik",
+            "head": [
+              "Model",
+              "Malzeme genişliği"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tüm modellerde malzeme kalınlığı 0,4 – 3 mm (opsiyonel 4 mm), serbest sürme hızı 35 m/dk, sürücü merdane çapı Ø85, 2 sürme merdanesi, sensörle pres kontrolü. 7\" dokunmatik ekran ve 250 adet kalıp hafızası standart."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Mini Doğrultmalı Servo Sürücüler",
+          "metaTitle": "Mini Doğrultmalı Servo Sürücü — 15-400 mm",
+          "meta": "15-400 mm sac genişliğinde mini doğrultmalı servo sürücüler: 0,5-2 mm kalınlık (opsiyonel 3 mm), doğrultma ve sürme tek ünitede.",
+          "short": "Dar sacta doğrultma ve sürmeyi tek gövdede birleştirir.",
+          "hero": "Mini doğrultmalı servo sürücülerimiz 15 mm'den 400 mm'ye kadar sac genişliğinde çalışır ve doğrultma ile sürmeyi tek ünitede toplar. Dişli tahrikli üst/alt merdane grubu ve pnömatik pilotlama standarttır.",
+          "table": {
+            "title": "Modeller ve genişlik",
+            "head": [
+              "Model",
+              "Malzeme genişliği"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tüm modellerde malzeme kalınlığı 0,5 – 2 mm (opsiyonel 3 mm), serbest sürme hızı 35 m/dk, sürücü merdane çapı Ø80, 2 sürme merdanesi. 7\" dokunmatik ekran ve 250 adet kalıp hafızası standart."
+        },
+        "kasali": {
+          "name": "Kasalı Doğrultmalı Servo Sürücüler",
+          "metaTitle": "Kasalı Doğrultmalı Servo Sürücü — 30-1.600 mm",
+          "meta": "30-1.600 mm sac genişliğinde kasalı doğrultmalı servo sürücüler: 0,5-4 mm kalınlık, 9 merdaneli düzen, Schneider renkli LCD dokunmatik.",
+          "short": "Geniş sacta doğrultma, sürme ve çekmeyi tek hatta toplar.",
+          "hero": "Kasalı doğrultmalı servo sürücülerimiz 30 mm'den 1.600 mm'ye kadar sac genişliğinde çalışır. Doğrultma merdaneleri tek tek ayarlanabilir; giriş-çıkış kılavuzları ve sürücü merdane pilotlama sistemi standarttır.",
+          "table": {
+            "title": "Modeller ve genişlik",
+            "head": [
+              "Model",
+              "Malzeme genişliği"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Tüm modellerde malzeme kalınlığı 0,5 – 4 mm, serbest sürme hızı 35 m/dk, merdane çapı Ø85. 9 merdaneli düzende 2 sürme + 5 doğrultma + 2 çekme merdanesi bulunur; 7, 11 ve 13 merdaneli düzenler de üretilir. Schneider renkli LCD dokunmatik ekran ve 250 adet kalıp hafızası standart."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Kablo Kanalı Üretim Hattı",
@@ -1495,8 +1764,8 @@
           "head": ["Özellik", "Mekanik", "Hidrolik"],
           "rows": [
             ["Modeller", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 ton"],
-            ["Rulo genişliği", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Rulo iç çapı", "300 mm", "450 – 560 mm"],
+            ["Rulo genişliği", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Rulo iç çapı", "300 – 550 mm", "450 – 560 mm"],
             ["Rulo dış çapı (maks.)", "1.600 mm", "1.600 mm"],
             ["Mandren genişletme", "Mekanik", "Hidrolik"],
             ["Kontrol", "Hız kontrol + fren sistemi", "Schneider PLC"]
@@ -1546,10 +1815,10 @@
           "title": "Teknik özellikler",
           "head": ["Özellik", "Değer"],
           "rows": [
-            ["Malzeme kalınlığı", "0,4 – 4,0 mm"],
+            ["Malzeme kalınlığı", "0,2 – 4,0 mm"],
             ["Sac genişliği", "≤ 1.600 mm"],
-            ["Serbest besleme hızı", "35 m/dk"],
-            ["Besleme silindiri", "2 × Ø85 mm"],
+            ["Serbest besleme hızı", "35 / 100 / 250 m/dk"],
+            ["Besleme silindiri", "2 × Ø80 – Ø85 mm"],
             ["Ekran", "7\" dokunmatik HMI"],
             ["Kalıp hafızası", "250 reçete"]
           ]
@@ -1684,13 +1953,13 @@
           "head": ["Özellik", "Değer"],
           "rows": [
             ["Malzeme genişliği", "40 – 1.300 mm"],
-            ["Malzeme kalınlığı", "0,5 – 4,0 mm"],
-            ["Serbest hız", "40 m/dk"],
-            ["Besleme hassasiyeti", "−0,1 mm"],
+            ["Malzeme kalınlığı", "1 – 6 mm"],
+            ["Serbest hız", "25 m/dk"],
+            ["Besleme hassasiyeti", "±0,1 mm"],
             ["Rulo ağırlığı", "2.500 – 10.000 kg"],
             ["Rulo iç / dış çapı", "450 – 560 / 1.300 – 1.600 mm"],
             ["Besleme silindiri", "2 + 2"],
-            ["Doğrultma silindiri", "5 × Ø85 mm"]
+            ["Doğrultma silindiri", "7 × Ø110 mm"]
           ]
         }
       }

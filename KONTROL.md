@@ -17,6 +17,90 @@
 Kural: mühendis yalnızca **Türkçe sayfadaki sayıyı** işaretlesin ("doğru" /
 "doğrusu şu"). Dokuz dile yaymayı biz yaparız — tek tek dosya düzeltmesin.
 
+> **İki çelişki kapandı (2026-08-10, kaynak: katalog).**
+>
+> 1. **"4.000 kg mı 2.500 kg mı"** — çelişki değilmiş. **2.500 kg** mekanik
+>    açıcının (SRV-MA) üst sınırı, **4.000 kg** dilme hattının 1. grup rulo
+>    taşıma kapasitesi. Farklı makineler, ikisi de doğru. (s.8, s.33)
+> 2. **"±0,1 mm"** — kaynağı bulundu: kompakt hatların (SRV-KH) **sürme
+>    hassasiyeti ~0,1 mm**. Yalnızca kompakt hatlar için geçerli, başka ürüne
+>    genellenmemeli. (s.25)
+>
+> Katalogda **iki hata** var, firmaya bildirilecek: s.16'da İngilizce satır
+> "600 mm" diyor (doğrusu 1600, 600 mini sürücülerden kopyalanmış); s.25'te
+> iki farklı sütun aynı model kodunu (SRV-KH806) taşıyor.
+
+> **A.1 tabloları katalogla hizalandı (2026-08-10).** Canlıdaki 9 değer
+> katalogla çelişiyordu; 9 dilde birden düzeltildi. Çoğu makineyi olduğundan
+> KÜÇÜK gösteriyordu — en kötüsü hidrolik açıcının rulo genişliğiydi:
+> **80–1.000 mm** yazıyordu, doğrusu **80–1.600 mm**. 1.400 mm rulo işleyecek
+> bir alıcı sayfayı okuyup eleniyordu.
+>
+> | sayfa | satır | eski | yeni |
+> |---|---|---|---|
+> | rulo-acicilar | rulo genişliği (hidrolik) | 80–1.000 mm | **80–1.600 mm** |
+> | rulo-acicilar | rulo iç çapı (mekanik) | 300 mm | **300–550 mm** |
+> | servo-suruculer | malzeme kalınlığı | 0,4–4,0 mm | **0,2–4,0 mm** |
+> | servo-suruculer | serbest besleme hızı | 35 m/dk | **35 / 100 / 250 m/dk** |
+> | servo-suruculer | besleme silindiri | 2 × Ø85 | **2 × Ø80–Ø85** |
+> | kompakt-hatlar | malzeme kalınlığı | 0,5–4,0 mm | **1–6 mm** |
+> | kompakt-hatlar | serbest hız | 40 m/dk | **25 m/dk** |
+> | kompakt-hatlar | besleme hassasiyeti | −0,1 mm | **±0,1 mm** |
+> | kompakt-hatlar | doğrultma silindiri | 5 × Ø85 | **7 × Ø110** |
+>
+> Kural: kapasitede katalogdaki GENİŞ değer alındı, **hızda DÜŞÜK değer**.
+> Kapasiteyi eksik yazmak müşteri kaçırır; hızı fazla yazmak taahhüt yaratır.
+>
+> **Dokunulmayan ikisi:**
+> - `rulo dış çapı (maks.) 1.600` — doğru. LA modelleri 1.600'e çıkıyor, satırda
+>   "(maks.)" yazdığı için geçerli. İlk taramada yanlış işaretlemiştim.
+> - `dogrultmali-servo-suruculer` tablosunun tamamı — katalogda **kasalı**
+>   doğrultmalı serinin tablosu henüz okunmadı (s.19-24). Yalnızca mini seriyi
+>   (SRV-MDS) görüp sayfanın tamamını değiştirmek yanlış olurdu.
+>
+> **Firmaya sorulacak:** kompakt hatta kalınlık gerçekten 1-6 mm mi (site 0,5-4
+> diyordu), hız 25 mi 40 mı? İkisi birbirini kapsamıyor, biri yanlış.
+
+### A.0 Makine varyant sayfaları (2026-08-10, yeni)
+
+**6 varyant × 9 dil = 54 URL.** Sitemap 416 → **470**, build 426 → **480 sayfa**.
+Üst sayfalara **dokunulmadı** — `/makineler/rulo-acicilar` "rulo açıcılar"da
+7. sırada ve hub olarak kalıyor; her üst sayfaya çocuklarına giden kart eklendi.
+
+| yol | katalog serisi | model |
+|---|---|---|
+| rulo-acicilar/hidrolik | SRV-HA | 6.000–20.000 kg |
+| rulo-acicilar/mekanik | SRV-MA | 500–2.500 kg |
+| servo-suruculer/mini | SRV-SS | 6 model, 10–600 mm |
+| servo-suruculer/kasali | SRV-KS | 9 model, 40–1.600 mm |
+| dogrultmali-servo-suruculer/mini | SRV-MDS | 4 model, 15–400 mm |
+| dogrultmali-servo-suruculer/kasali | SRV-DSS | 9 model, 30–1.600 mm |
+
+**Model kodları: sürücülerde YAZILDI, açıcılarda YAZILMADI.** Sürücü kodları
+tek tek kontrol edildi, tekrar eden yok. Açıcılarda `SRV-HA6000-PUB` kodu iki
+farklı satırda farklı genişliklerle geçiyor (`SRV-KH806`'da da aynı sorun);
+orada kapasite kırılımı verildi, kodlar firma teyit edince eklenir.
+
+**Yazılmayan iki veri:** SRV-MDS'in "doğrultma merdanesi 5–60 adet" hücresi
+(60 merdane fiziksel olarak makul değil, katalogda dizgi/okuma hatası olmalı) ·
+SRV-DSS'in seri adı (sayfa başlığı `SRV-DDS`, satırlardaki kodlar `SRV-DSS`;
+satırlardaki yazıldı).
+
+**Katalog sitedeki doğrultmalı tablosunu doğruladı:** ≤1.600 mm ve 0,5–4 mm
+doğru, "7/9/11/13 doğrultma silindiri" de doğru — s.20 bunun "9 merdane"
+konfigürasyonu. Değiştirmemek doğru karardı.
+
+Yapı: slug tablosu `slugs.ts` → `VARIANT_SLUGS`, yol üretimi `routing.ts` →
+`buildPathnames`, sayfa listesi `catalog.ts` → `machineVariants`. Üçü ayrışırsa
+routing.ts açılışta hata fırlatır. Varyant üst ürününe bağlı —
+`/makineler/kompakt-hatlar/hidrolik` 404 döner.
+
+**Yakalanan hata:** ilk yazımda `metaTitle` değerlerine "| Servosteel" konmuştu,
+oysa marka son ekini layout şablonu ekliyor — başlıklar "… | Servosteel |
+Servosteel" çıkıyordu. 54 başlıktan temizlendi. İngilizce başlıklarda
+görünmüyordu çünkü 60 karakteri aşıp şablonu atlıyorlardı; hata oradaydı ama
+gizliydi.
+
 ### A.1 Spec tablosu YAYINDA olan sayfalar — sayılar teyit edilecek
 
 | # | sayfa | doğrulanacak değerler | bilinen sorun |
@@ -48,6 +132,17 @@ makas) · toplam motor gücü (kW) · PLC markası · çalışılan malzeme.
 
 Sayılar gelene kadar bu sayfalara **hiçbir spec yazılmayacak** — eski jenerik
 "2×11 kW" değeri bilerek taşınmadı (tek hattın değeriydi, sekize yayılamaz).
+
+**Katalog (2026-08-10) 8 değerden ikisini kapattı:** PLC markası **Schneider**
+(tüm hatlarda), kesme tipi roll form hatlarında **uçar makas** / boy kesmede
+**giyotin**. Kalan altı değer (kalınlık, genişlik, hat hızı, istasyon sayısı,
+motor gücü, malzeme) hâlâ mühendislikten bekleniyor. Katalogda 8 hattın yalnızca
+üçü var: kablo kanalı, market rafı, solar panel. Ayrıntı ve makine tabloları:
+`belgeler/KATALOG-VERILERI.md`.
+
+**Otomatik istifleyici fotoğrafı:** katalog s.29'un sağ alt fotoğrafında makaslı
+istifleme masası var — kırpılıp kullanılabilir, firmadan yeni fotoğraf beklemeye
+gerek kalmayabilir.
 
 ---
 

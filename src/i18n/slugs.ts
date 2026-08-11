@@ -99,14 +99,53 @@ export const CONTENT_SLUGS = {
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 
+/**
+ * ÜÇÜNCÜ seviye — bir ürün sayfasının varyantları.
+ * `/makineler/rulo-acicilar/hidrolik` -> `/machines/decoilers/hydraulic`
+ *
+ * Anahtar, iki segmentlik ÜST yoldur (Türkçe). Böylece aynı varyant adı farklı
+ * ürünlerin altında tekrar edebilir; yol üretilirken hangi ürünün altında
+ * olduğu belli olur.
+ *
+ * Neden ayrı tablo: CONTENT_SLUGS'taki her anahtar bir ROUTE_SLUGS girdisine
+ * karşılık geliyor ve buildPathnames onu öyle çözüyor. Üçüncü seviyeyi oraya
+ * karıştırmak o çözümü bozardı.
+ */
+export const VARIANT_SLUGS = {
+  "makineler/rulo-acicilar": {
+    hidrolik: "hydraulic",
+    mekanik: "mechanical",
+  },
+  /* `mini` ve `kasali` iki ürünün altında birden geçiyor; ikisinde de aynı
+     İngilizce karşılığa bağlı olduğu için düzleştirmede çakışma olmuyor. */
+  "makineler/servo-suruculer": {
+    mini: "mini",
+    kasali: "cased",
+  },
+  "makineler/dogrultmali-servo-suruculer": {
+    mini: "mini",
+    kasali: "cased",
+  },
+} as const;
+
 /** Gruplu içerik tablosunu düzleştirir. */
 const FLAT_CONTENT: Record<string, string> = Object.assign(
   {},
   ...Object.values(CONTENT_SLUGS)
 );
 
-/** Rota + içerik birleşimi; tam yol çevirisi için. */
-const ALL_SLUGS: Record<string, string> = { ...ROUTE_SLUGS, ...FLAT_CONTENT };
+/** Varyant tablosunu düzleştirir — localizeFullPath segment segment çevirir. */
+const FLAT_VARIANTS: Record<string, string> = Object.assign(
+  {},
+  ...Object.values(VARIANT_SLUGS)
+);
+
+/** Rota + içerik + varyant birleşimi; tam yol çevirisi için. */
+const ALL_SLUGS: Record<string, string> = {
+  ...ROUTE_SLUGS,
+  ...FLAT_CONTENT,
+  ...FLAT_VARIANTS,
+};
 
 /**
  * Aynı İngilizce slug'a iki Türkçe slug bağlanırsa yollar çakışır ve yanlış

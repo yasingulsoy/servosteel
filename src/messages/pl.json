@@ -156,6 +156,8 @@
     "ctaTitle": "Dobierzmy razem właściwą maszynę"
   },
   "detail": {
+    "variantsTitle": "Typy",
+    "variantsCta": "Zobacz modele",
     "features": "Najważniejsze cechy",
     "components": "Elementy linii",
     "componentsNote": "Wszystkie elementy powstają w zakładzie Servosteel; kompletna linia jest testowana fabrycznie przed wysyłką.",
@@ -811,6 +813,273 @@
     "back": "Powrót na stronę główną"
   },
   "products": {
+    "variants": {
+      "rulo-acicilar": {
+        "hidrolik": {
+          "name": "Odwijaki Hydrauliczne",
+          "metaTitle": "Odwijak Hydrauliczny — 6.000-20.000 kg",
+          "meta": "Odwijaki hydrauliczne od 6.000 do 20.000 kg: szerokość taśmy do 1.600 mm, hydrauliczne rozprężanie trzpienia, kontrola pętli z czujnikiem laserowym.",
+          "short": "Do ciężkich kręgów i szerokiej taśmy; trzpień hydrauliczny, napęd silnikowy.",
+          "hero": "Nasze odwijaki hydrauliczne przenoszą kręgi od 6.000 kg do 20.000 kg i pracują z taśmą o szerokości do 1.600 mm. Rozprężanie trzpienia jest hydrauliczne; pneumatyczne ramię dociskowe i kontrola pętli z czujnikiem laserowym są w standardzie.",
+          "table": {
+            "title": "Nośność i szerokość",
+            "head": [
+              "Masa kręgu",
+              "Szerokość materiału"
+            ],
+            "rows": [
+              [
+                "6.000 kg",
+                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+              ],
+              [
+                "8.000 kg",
+                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+              ],
+              [
+                "10.000 kg",
+                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+              ],
+              [
+                "12.000 kg",
+                "80 – 800 / 80 – 1.300 mm"
+              ],
+              [
+                "15.000 kg",
+                "80 – 1.500 mm"
+              ],
+              [
+                "20.000 kg",
+                "80 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Wszystkie modele: średnica zewnętrzna kręgu 1.600 mm, wewnętrzna 450–560 mm (z adapterem 640 mm). Hydrauliczne rozprężanie trzpienia i ramię dociskowe w standardzie. Dostępne są wersje z hamulcem zamiast silnika."
+        },
+        "mekanik": {
+          "name": "Odwijaki Mechaniczne",
+          "metaTitle": "Odwijak Mechaniczny — 500-2.500 kg",
+          "meta": "Odwijaki mechaniczne od 500 do 2.500 kg: szerokość taśmy 30-500 mm, mocowanie rdzenia trzpieniem, regulacja prędkości i układ hamulcowy.",
+          "short": "Ekonomiczne rozwiązanie do lekkich i średnich kręgów; trzpień mechaniczny.",
+          "hero": "Nasze odwijaki mechaniczne przenoszą kręgi od 500 kg do 2.500 kg. Rdzeń mocowany jest trzpieniem; regulacja prędkości i układ hamulcowy są w standardzie, a odwijanie możliwe jest w obu kierunkach.",
+          "table": {
+            "title": "Nośność, szerokość i średnica wewnętrzna",
+            "head": [
+              "Masa kręgu",
+              "Szerokość materiału",
+              "Średnica wewnętrzna"
+            ],
+            "rows": [
+              [
+                "500 kg",
+                "30 – 300 mm",
+                "300 – 550 mm"
+              ],
+              [
+                "750 kg",
+                "30 – 300 mm",
+                "350 – 550 mm"
+              ],
+              [
+                "1.500 kg",
+                "30 – 400 mm",
+                "400 – 550 mm"
+              ],
+              [
+                "2.500 kg",
+                "30 – 500 mm",
+                "450 – 550 mm"
+              ]
+            ]
+          },
+          "tableNote": "Sufiksy modeli: A napęd silnikowy (ramię dociskowe opcjonalne) · LA napęd silnikowy, średnica zewnętrzna 1.600 mm i ramię dociskowe w standardzie · F z hamulcem, ramię dociskowe w standardzie. W modelach A i F średnica zewnętrzna wynosi 1.300 mm."
+        }
+      },
+      "servo-suruculer": {
+        "mini": {
+          "name": "Mini Podajniki Serwo",
+          "metaTitle": "Mini Podajnik Serwo — 10-600 mm",
+          "meta": "Mini podajniki serwo do szerokości taśmy 10-600 mm: grubość 0,2-2 mm, prędkość swobodna 100 m/min (250 opcjonalnie), ekran dotykowy 7\".",
+          "short": "Wysoka prędkość na małych i średnich prasach; najwydajniejszy przy wąskiej taśmie.",
+          "hero": "Nasze mini podajniki serwo pracują z taśmą o szerokości od 10 mm do 600 mm i osiągają prędkość swobodną 100 m/min — opcjonalnie 250 m/min. Napęd pasem zębatym i przekładnią oraz pilotowanie pneumatyczne są w standardzie.",
+          "table": {
+            "title": "Modele i szerokość",
+            "head": [
+              "Model",
+              "Szerokość materiału"
+            ],
+            "rows": [
+              [
+                "SRV-SS102",
+                "10 – 100 mm"
+              ],
+              [
+                "SRV-SS202",
+                "20 – 200 mm"
+              ],
+              [
+                "SRV-SS302",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-SS402",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-SS502",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-SS602",
+                "60 – 600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Wszystkie modele: grubość materiału 0,2 – 2 mm, średnica rolki Ø80, 2 rolki podające, kontrola prasy czujnikiem. Ekran dotykowy 7\" i pamięć 250 narzędzi w standardzie; powlekanie rolek opcjonalnie."
+        },
+        "kasali": {
+          "name": "Podajniki Serwo w Obudowie",
+          "metaTitle": "Podajnik Serwo w Obudowie — 40-1.600 mm",
+          "meta": "Podajniki serwo w obudowie do szerokości 40-1.600 mm: grubość 0,4-3 mm (4 mm opcjonalnie), napęd przekładniowy, pamięć 250 narzędzi.",
+          "short": "Zamknięta konstrukcja i napęd przekładniowy do szerokiej taśmy i ciężkiej pracy.",
+          "hero": "Nasze podajniki serwo w obudowie pracują z taśmą o szerokości od 40 mm do 1.600 mm. Napęd przekładniowy i pilotowanie pneumatyczne są w standardzie; ochrona i smarowanie narzędzia są opcjonalne.",
+          "table": {
+            "title": "Modele i szerokość",
+            "head": [
+              "Model",
+              "Szerokość materiału"
+            ],
+            "rows": [
+              [
+                "SRV-KS303",
+                "40 – 300 mm"
+              ],
+              [
+                "SRV-KS403",
+                "50 – 400 mm"
+              ],
+              [
+                "SRV-KS503",
+                "60 – 500 mm"
+              ],
+              [
+                "SRV-KS603",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-KS803",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-KS1003",
+                "110 – 1.000 mm"
+              ],
+              [
+                "SRV-KS1203",
+                "250 – 1.200 mm"
+              ],
+              [
+                "SRV-KS1303",
+                "250 – 1.300 mm"
+              ],
+              [
+                "SRV-KS1603",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Wszystkie modele: grubość materiału 0,4 – 3 mm (4 mm opcjonalnie), prędkość swobodna 35 m/min, średnica rolki Ø85, 2 rolki podające, kontrola prasy czujnikiem. Ekran dotykowy 7\" i pamięć 250 narzędzi w standardzie."
+        }
+      },
+      "dogrultmali-servo-suruculer": {
+        "mini": {
+          "name": "Mini Podajniki Serwo z Prostownicą",
+          "metaTitle": "Mini Podajnik Serwo z Prostownicą — 15-400 mm",
+          "meta": "Mini podajniki serwo z prostownicą do szerokości 15-400 mm: grubość 0,5-2 mm (3 mm opcjonalnie), prostowanie i podawanie w jednej jednostce.",
+          "short": "Łączy prostowanie i podawanie w jednym korpusie dla wąskiej taśmy.",
+          "hero": "Nasze mini podajniki serwo z prostownicą pracują z taśmą o szerokości od 15 mm do 400 mm i łączą prostowanie z podawaniem w jednej jednostce. Zębaty zespół rolek górnych i dolnych oraz pilotowanie pneumatyczne są w standardzie.",
+          "table": {
+            "title": "Modele i szerokość",
+            "head": [
+              "Model",
+              "Szerokość materiału"
+            ],
+            "rows": [
+              [
+                "SRV-MDS102",
+                "15 – 100 mm"
+              ],
+              [
+                "SRV-MDS202",
+                "30 – 200 mm"
+              ],
+              [
+                "SRV-MDS302",
+                "50 – 300 mm"
+              ],
+              [
+                "SRV-MDS402",
+                "80 – 400 mm"
+              ]
+            ]
+          },
+          "tableNote": "Wszystkie modele: grubość materiału 0,5 – 2 mm (3 mm opcjonalnie), prędkość swobodna 35 m/min, średnica rolki Ø80, 2 rolki podające. Ekran dotykowy 7\" i pamięć 250 narzędzi w standardzie."
+        },
+        "kasali": {
+          "name": "Podajniki Serwo z Prostownicą w Obudowie",
+          "metaTitle": "Podajnik Serwo z Prostownicą w Obudowie — 30-1.600 mm",
+          "meta": "Podajniki serwo z prostownicą w obudowie do szerokości 30-1.600 mm: grubość 0,5-4 mm, układ 9 rolek, kolorowy ekran dotykowy LCD Schneider.",
+          "short": "Łączy prostowanie, podawanie i ciągnienie dla szerokiej taśmy.",
+          "hero": "Nasze podajniki serwo z prostownicą w obudowie pracują z taśmą o szerokości od 30 mm do 1.600 mm. Rolki prostujące regulowane są pojedynczo; prowadnice wlotowe i wylotowe oraz system pilotowania trzpienia napędowego są w standardzie.",
+          "table": {
+            "title": "Modele i szerokość",
+            "head": [
+              "Model",
+              "Szerokość materiału"
+            ],
+            "rows": [
+              [
+                "SRV-DSS304",
+                "30 – 300 mm"
+              ],
+              [
+                "SRV-DSS404",
+                "40 – 400 mm"
+              ],
+              [
+                "SRV-DSS504",
+                "50 – 500 mm"
+              ],
+              [
+                "SRV-DSS604",
+                "60 – 600 mm"
+              ],
+              [
+                "SRV-DSS804",
+                "70 – 800 mm"
+              ],
+              [
+                "SRV-DSS1004",
+                "100 – 1.000 mm"
+              ],
+              [
+                "SRV-DSS1204",
+                "200 – 1.200 mm"
+              ],
+              [
+                "SRV-DSS1304",
+                "300 – 1.300 mm"
+              ],
+              [
+                "SRV-DSS1604",
+                "400 – 1.600 mm"
+              ]
+            ]
+          },
+          "tableNote": "Wszystkie modele: grubość materiału 0,5 – 4 mm, prędkość swobodna 35 m/min, średnica rolki Ø85. Układ 9 rolek obejmuje 2 podające + 5 prostujących + 2 ciągnące; produkowane są też układy 7, 11 i 13-rolkowe. Kolorowy ekran dotykowy LCD Schneider i pamięć 250 narzędzi w standardzie."
+        }
+      }
+    },
     "rollform": {
       "kablo-kanali": {
         "name": "Linia Produkcji Koryt Kablowych",
@@ -1481,8 +1750,8 @@
           "head": ["Parametr", "Mechaniczne", "Hydrauliczne"],
           "rows": [
             ["Modele", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Szerokość kręgu", "30 – 500 mm", "80 – 1.000 mm"],
-            ["Średnica wewnętrzna kręgu", "300 mm", "450 – 560 mm"],
+            ["Szerokość kręgu", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Średnica wewnętrzna kręgu", "300 – 550 mm", "450 – 560 mm"],
             ["Średnica zewnętrzna (maks.)", "1.600 mm", "1.600 mm"],
             ["Rozprężanie trzpienia", "Mechaniczne", "Hydrauliczne"],
             ["Sterowanie", "Regulacja prędkości + hamulec", "Schneider PLC"]
@@ -1531,10 +1800,10 @@
           "title": "Dane techniczne",
           "head": ["Parametr", "Wartość"],
           "rows": [
-            ["Grubość materiału", "0,4 – 4,0 mm"],
+            ["Grubość materiału", "0,2 – 4,0 mm"],
             ["Szerokość taśmy", "≤ 1.600 mm"],
-            ["Prędkość podawania swobodnego", "35 m/min"],
-            ["Rolki podające", "2 × Ø85 mm"],
+            ["Prędkość podawania swobodnego", "35 / 100 / 250 m/min"],
+            ["Rolki podające", "2 × Ø80 – Ø85 mm"],
             ["Wyświetlacz", "dotykowy HMI 7\""],
             ["Pamięć narzędzi", "250 receptur"]
           ]
@@ -1669,13 +1938,13 @@
           "head": ["Parametr", "Wartość"],
           "rows": [
             ["Szerokość materiału", "40 – 1.300 mm"],
-            ["Grubość materiału", "0,5 – 4,0 mm"],
-            ["Prędkość swobodna", "40 m/min"],
-            ["Dokładność podawania", "−0,1 mm"],
+            ["Grubość materiału", "1 – 6 mm"],
+            ["Prędkość swobodna", "25 m/min"],
+            ["Dokładność podawania", "±0,1 mm"],
             ["Waga kręgu", "2.500 – 10.000 kg"],
             ["Średnica wewn. / zewn. kręgu", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rolki podające", "2 + 2"],
-            ["Rolki prostujące", "5 × Ø85 mm"]
+            ["Rolki prostujące", "7 × Ø110 mm"]
           ]
         }
       }

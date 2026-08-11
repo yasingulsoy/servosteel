@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
-import { rollFormItems, machineItems } from "@/lib/catalog";
+import { rollFormItems, machineItems, machineVariants } from "@/lib/catalog";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 import { localePath } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
@@ -27,6 +27,8 @@ const paths = [
   ...sectors.map((s) => ({ path: `/uygulamalar/${s.slug}`, priority: 0.8 })),
   ...rollFormItems.map((p) => ({ path: `/roll-form-hatlari/${p.slug}`, priority: 0.8 })),
   ...machineItems.map((p) => ({ path: `/makineler/${p.slug}`, priority: 0.7 })),
+  /* Varyantlar üst sayfadan bir kademe düşük: hub asıl giriş noktası kalsın. */
+  ...machineVariants.map((v) => ({ path: `/makineler/${v.parent}/${v.slug}`, priority: 0.6 })),
 ];
 
 /** Bir yazının yayın tarihi (slug -> ISO tarih). Aynı slug tüm dillerde aynı tarihi taşır. */

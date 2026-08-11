@@ -1,5 +1,5 @@
 import { defineRouting } from "next-intl/routing";
-import { ROUTE_SLUGS, CONTENT_SLUGS, SLUG_BASE_LOCALE } from "./slugs";
+import { ROUTE_SLUGS, CONTENT_SLUGS, VARIANT_SLUGS, SLUG_BASE_LOCALE } from "./slugs";
 
 const LOCALES = ["tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"] as const;
 
@@ -34,6 +34,23 @@ function buildPathnames(): Record<string, Record<string, string> | string> {
     const enParent = ROUTE_SLUGS[parent as keyof typeof ROUTE_SLUGS];
     for (const [trSlug, enSlug] of Object.entries(children as Record<string, string>)) {
       map[`/${parent}/${trSlug}`] = forAllLocales(`/${parent}/${trSlug}`, `/${enParent}/${enSlug}`);
+    }
+  }
+
+  /* Üçüncü seviye: /makineler/rulo-acicilar/hidrolik
+     Üst yolun İngilizcesi yukarıda zaten üretildi; onu yeniden hesaplamak yerine
+     haritadan okuyoruz — iki yerde ayrı hesaplanırsa ayrışabilirler. */
+  for (const [trParent, children] of Object.entries(VARIANT_SLUGS)) {
+    const ust = map[`/${trParent}`];
+    if (typeof ust !== "object") {
+      throw new Error(`routing.ts: "${trParent}" üst yolu pathnames'te yok — VARIANT_SLUGS anahtarı yanlış`);
+    }
+    const enParent = ust.en;
+    for (const [trSlug, enSlug] of Object.entries(children as Record<string, string>)) {
+      map[`/${trParent}/${trSlug}`] = forAllLocales(
+        `/${trParent}/${trSlug}`,
+        `${enParent}/${enSlug}`
+      );
     }
   }
 
