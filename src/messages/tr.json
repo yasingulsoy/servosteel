@@ -890,10 +890,20 @@
                 "2.500 kg",
                 "30 – 500 mm",
                 "450 – 550 mm"
+              ],
+              [
+                "3.000 kg",
+                "80 – 800 mm",
+                "450 – 560 mm"
+              ],
+              [
+                "4.000 kg",
+                "100 – 1.200 mm",
+                "450 – 560 mm"
               ]
             ]
           },
-          "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir."
+          "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir. 3.000 ve 4.000 kg modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 630 mm) ve mandren sıkma mekaniktir. 3.000–4.000 kg konik mandrenli açıcılar 5 mm'ye kadar sac kalınlığında çalışır."
         }
       },
       "servo-suruculer": {
@@ -1763,8 +1773,8 @@
           "title": "Teknik özellikler",
           "head": ["Özellik", "Mekanik", "Hidrolik"],
           "rows": [
-            ["Modeller", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 ton"],
-            ["Rulo genişliği", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Modeller", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 ton"],
+            ["Rulo genişliği", "30 – 1.200 mm", "80 – 1.600 mm"],
             ["Rulo iç çapı", "300 – 550 mm", "450 – 560 mm"],
             ["Rulo dış çapı (maks.)", "1.600 mm", "1.600 mm"],
             ["Mandren genişletme", "Mekanik", "Hidrolik"],
@@ -1867,7 +1877,7 @@
           "head": ["Özellik", "Değer"],
           "rows": [
             ["Sac genişliği", "≤ 1.600 mm"],
-            ["Malzeme kalınlığı", "0,5 – 4,0 mm"],
+            ["Malzeme kalınlığı", "0,4 – 6,0 mm"],
             ["Doğrultma silindiri", "7 / 9 / 11 / 13"],
             ["Kalıp hafızası", "250 reçete"],
             ["Kontrol", "Schneider renkli LCD dokunmatik"]
@@ -1953,13 +1963,13 @@
           "head": ["Özellik", "Değer"],
           "rows": [
             ["Malzeme genişliği", "40 – 1.300 mm"],
-            ["Malzeme kalınlığı", "1 – 6 mm"],
-            ["Serbest hız", "25 m/dk"],
+            ["Malzeme kalınlığı", "0,5 – 6 mm"],
+            ["Serbest hız", "25 / 35 / 40 m/dk"],
             ["Besleme hassasiyeti", "±0,1 mm"],
             ["Rulo ağırlığı", "2.500 – 10.000 kg"],
             ["Rulo iç / dış çapı", "450 – 560 / 1.300 – 1.600 mm"],
             ["Besleme silindiri", "2 + 2"],
-            ["Doğrultma silindiri", "7 × Ø110 mm"]
+            ["Doğrultma silindiri", "5 × Ø85 / 7 × Ø110 mm"]
           ]
         }
       }

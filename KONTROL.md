@@ -17,18 +17,32 @@
 Kural: mühendis yalnızca **Türkçe sayfadaki sayıyı** işaretlesin ("doğru" /
 "doğrusu şu"). Dokuz dile yaymayı biz yaparız — tek tek dosya düzeltmesin.
 
-> **İki çelişki kapandı (2026-08-10, kaynak: katalog).**
+> **DERS: her ürün ailesinin katalogda BİRDEN FAZLA tablosu var.**
 >
-> 1. **"4.000 kg mı 2.500 kg mı"** — çelişki değilmiş. **2.500 kg** mekanik
->    açıcının (SRV-MA) üst sınırı, **4.000 kg** dilme hattının 1. grup rulo
->    taşıma kapasitesi. Farklı makineler, ikisi de doğru. (s.8, s.33)
-> 2. **"±0,1 mm"** — kaynağı bulundu: kompakt hatların (SRV-KH) **sürme
->    hassasiyeti ~0,1 mm**. Yalnızca kompakt hatlar için geçerli, başka ürüne
->    genellenmemeli. (s.25)
+> 2026-08-10 sabahı katalogdan yalnızca bazı tabloları okuyup canlıya değer
+> yazdım; öğleden sonra kalan sayfalar okununca hepsinin **fazla dar** olduğu
+> çıktı. Bir ürüne dair sayı yazmadan önce **o ürünün TÜM sayfaları** okunmuş
+> olmalı.
 >
-> Katalogda **iki hata** var, firmaya bildirilecek: s.16'da İngilizce satır
-> "600 mm" diyor (doğrusu 1600, 600 mini sürücülerden kopyalanmış); s.25'te
-> iki farklı sütun aynı model kodunu (SRV-KH806) taşıyor.
+> | ürün | katalogdaki tablolar |
+> |---|---|
+> | mekanik açıcı | s.8 SRV-MA 500–2.500 kg · s.9 konik mandren 3.000–4.000 kg · s.10 SRV-MA3000/4000 3.000–4.000 kg, 1.200 mm'ye kadar |
+> | kompakt hat | s.23 SRV-KH…**3** 0,5–3 mm / 35 m/dk / 5 merdane / Ø85 · s.25 SRV-KH…**6** 1–6 mm / 25 m/dk / 7 merdane / Ø110 |
+> | doğrultmalı sürücü | s.19 DSS 7 merdane 0,4–3 mm · s.20 DSS 9 merdane 0,5–4 mm · metin: 7/9/11/13 merdane, **0,4–6 mm** |
+>
+> **Sabah "çelişki" sanılan iki şey çelişki değilmiş, ayrı serilermiş:**
+> - "4.000 mı 2.500 mi" → mekanik açıcı gerçekten **4.000 kg**'a çıkıyor (s.10).
+>   İlk yorumum ("4.000 dilme hattının kapasitesi") yanlıştı.
+> - "kompakt kalınlık 0,5–4 mü 1–6 mı" → **iki ayrı seri**; özet tablo ikisini
+>   birden kapsamalı (0,5–6 mm).
+>
+> **"±0,1 mm"** doğrulandı: kompakt hatların sürme hassasiyeti, yalnızca o ürün
+> için geçerli (s.23 ve s.25, ikisinde de ~0,1).
+>
+> Katalogda **iki hata**, firmaya bildirilecek: s.16'da İngilizce satır "600 mm"
+> diyor (doğrusu 1600, mini sürücülerden kopyalanmış); s.25 ve s.23'te iki farklı
+> sütun aynı model kodunu taşıyor (KH806 / KH803) — her iki tabloda tekrarladığı
+> için dizgi hatası değil, açıcı tipine göre ayrılan bir konfigürasyon olabilir.
 
 > **A.1 tabloları katalogla hizalandı (2026-08-10).** Canlıdaki 9 değer
 > katalogla çelişiyordu; 9 dilde birden düzeltildi. Çoğu makineyi olduğundan

@@ -890,10 +890,20 @@
                 "2.500 kg",
                 "30 – 500 mm",
                 "450 – 550 mm"
+              ],
+              [
+                "3.000 kg",
+                "80 – 800 mm",
+                "450 – 560 mm"
+              ],
+              [
+                "4.000 kg",
+                "100 – 1.200 mm",
+                "450 – 560 mm"
               ]
             ]
           },
-          "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm."
+          "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm. Nei modelli da 3.000 e 4.000 kg il diametro esterno coil è 1.600 mm, l'interno 450–560 mm (630 mm con adattatore) e l'espansione del mandrino è meccanica. Gli aspi a mandrino conico da 3.000–4.000 kg lavorano spessori fino a 5 mm."
         }
       },
       "servo-suruculer": {
@@ -1750,8 +1760,8 @@
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Meccanico", "Idraulico"],
           "rows": [
-            ["Modelli", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Larghezza coil", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Modelli", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Larghezza coil", "30 – 1.200 mm", "80 – 1.600 mm"],
             ["Diametro interno coil", "300 – 550 mm", "450 – 560 mm"],
             ["Diametro esterno (max.)", "1.600 mm", "1.600 mm"],
             ["Espansione mandrino", "Meccanico", "Idraulico"],
@@ -1853,7 +1863,7 @@
           "head": ["Caratteristica", "Valore"],
           "rows": [
             ["Larghezza nastro", "≤ 1.600 mm"],
-            ["Spessore materiale", "0,5 – 4,0 mm"],
+            ["Spessore materiale", "0,4 – 6,0 mm"],
             ["Rulli raddrizzatori", "7 / 9 / 11 / 13"],
             ["Memoria stampi", "250 ricette"],
             ["Controllo", "LCD touch a colori Schneider"]
@@ -1939,13 +1949,13 @@
           "head": ["Caratteristica", "Valore"],
           "rows": [
             ["Larghezza materiale", "40 – 1.300 mm"],
-            ["Spessore materiale", "1 – 6 mm"],
-            ["Velocità libera", "25 m/min"],
+            ["Spessore materiale", "0,5 – 6 mm"],
+            ["Velocità libera", "25 / 35 / 40 m/min"],
             ["Precisione di avanzamento", "±0,1 mm"],
             ["Peso coil", "2.500 – 10.000 kg"],
             ["Diametro interno / esterno coil", "450 – 560 / 1.300 – 1.600 mm"],
             ["Rulli di avanzamento", "2 + 2"],
-            ["Rulli raddrizzatori", "7 × Ø110 mm"]
+            ["Rulli raddrizzatori", "5 × Ø85 / 7 × Ø110 mm"]
           ]
         }
       }

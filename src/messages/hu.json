@@ -889,10 +889,20 @@
                 "2.500 kg",
                 "30 – 500 mm",
                 "450 – 550 mm"
+              ],
+              [
+                "3.000 kg",
+                "80 – 800 mm",
+                "450 – 560 mm"
+              ],
+              [
+                "4.000 kg",
+                "100 – 1.200 mm",
+                "450 – 560 mm"
               ]
             ]
           },
-          "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm."
+          "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm. A 3.000 és 4.000 kg-os modelleknél a tekercs külső átmérője 1.600 mm, belső átmérője 450–560 mm (adapterrel 630 mm), a tüskefeszítés mechanikus. A 3.000–4.000 kg-os kúpos tüskéjű letekercselők 5 mm-ig terjedő lemezvastagsággal dolgoznak."
         }
       },
       "servo-suruculer": {
@@ -1749,8 +1759,8 @@
           "title": "Műszaki adatok",
           "head": ["Jellemző", "Mechanikus", "Hidraulikus"],
           "rows": [
-            ["Modellek", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Tekercsszélesség", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Modellek", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Tekercsszélesség", "30 – 1.200 mm", "80 – 1.600 mm"],
             ["Tekercs belső átmérő", "300 – 550 mm", "450 – 560 mm"],
             ["Tekercs külső átmérő (max.)", "1.600 mm", "1.600 mm"],
             ["Tüsketágítás", "Mechanikus", "Hidraulikus"],
@@ -1852,7 +1862,7 @@
           "head": ["Jellemző", "Érték"],
           "rows": [
             ["Szalagszélesség", "≤ 1.600 mm"],
-            ["Anyagvastagság", "0,5 – 4,0 mm"],
+            ["Anyagvastagság", "0,4 – 6,0 mm"],
             ["Egyengető hengerek", "7 / 9 / 11 / 13"],
             ["Szerszámmemória", "250 recept"],
             ["Vezérlés", "Schneider színes LCD érintőképernyő"]
@@ -1938,13 +1948,13 @@
           "head": ["Jellemző", "Érték"],
           "rows": [
             ["Anyagszélesség", "40 – 1.300 mm"],
-            ["Anyagvastagság", "1 – 6 mm"],
-            ["Szabad sebesség", "25 m/min"],
+            ["Anyagvastagság", "0,5 – 6 mm"],
+            ["Szabad sebesség", "25 / 35 / 40 m/min"],
             ["Előtolási pontosság", "±0,1 mm"],
             ["Tekercstömeg", "2.500 – 10.000 kg"],
             ["Tekercs belső / külső átmérő", "450 – 560 / 1.300 – 1.600 mm"],
             ["Előtoló hengerek", "2 + 2"],
-            ["Egyengető hengerek", "7 × Ø110 mm"]
+            ["Egyengető hengerek", "5 × Ø85 / 7 × Ø110 mm"]
           ]
         }
       }

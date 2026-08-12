@@ -890,10 +890,20 @@
                 "2.500 kg",
                 "30 – 500 mm",
                 "450 – 550 mm"
+              ],
+              [
+                "3.000 kg",
+                "80 – 800 mm",
+                "450 – 560 mm"
+              ],
+              [
+                "4.000 kg",
+                "100 – 1.200 mm",
+                "450 – 560 mm"
               ]
             ]
           },
-          "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Bund-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Bund-Außendurchmesser 1.300 mm."
+          "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Bund-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Bund-Außendurchmesser 1.300 mm. Bei den Modellen 3.000 und 4.000 kg beträgt der Bund-Außendurchmesser 1.600 mm, der Innendurchmesser 450–560 mm (mit Adapter 630 mm), die Dornaufweitung ist mechanisch. Haspeln mit Konusdorn von 3.000–4.000 kg verarbeiten Blechdicken bis 5 mm."
         }
       },
       "servo-suruculer": {
@@ -1750,8 +1760,8 @@
           "title": "Technische Daten",
           "head": ["Merkmal", "Mechanisch", "Hydraulisch"],
           "rows": [
-            ["Modelle", "500 · 750 · 1.500 · 2.500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Bundbreite", "30 – 500 mm", "80 – 1.600 mm"],
+            ["Modelle", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Bundbreite", "30 – 1.200 mm", "80 – 1.600 mm"],
             ["Bund-Innendurchmesser", "300 – 550 mm", "450 – 560 mm"],
             ["Bund-Außendurchmesser (max.)", "1.600 mm", "1.600 mm"],
             ["Dornaufweitung", "Mechanisch", "Hydraulisch"],
@@ -1853,7 +1863,7 @@
           "head": ["Merkmal", "Wert"],
           "rows": [
             ["Bandbreite", "≤ 1.600 mm"],
-            ["Materialstärke", "0,5 – 4,0 mm"],
+            ["Materialstärke", "0,4 – 6,0 mm"],
             ["Richtwalzen", "7 / 9 / 11 / 13"],
             ["Werkzeugspeicher", "250 Rezepte"],
             ["Steuerung", "Schneider Farb-LCD-Touch"]
@@ -1939,13 +1949,13 @@
           "head": ["Merkmal", "Wert"],
           "rows": [
             ["Materialbreite", "40 – 1.300 mm"],
-            ["Materialstärke", "1 – 6 mm"],
-            ["Freie Geschwindigkeit", "25 m/min"],
+            ["Materialstärke", "0,5 – 6 mm"],
+            ["Freie Geschwindigkeit", "25 / 35 / 40 m/min"],
             ["Vorschubgenauigkeit", "±0,1 mm"],
             ["Bundgewicht", "2.500 – 10.000 kg"],
             ["Bund Innen-/Außendurchmesser", "450 – 560 / 1.300 – 1.600 mm"],
             ["Vorschubwalzen", "2 + 2"],
-            ["Richtwalzen", "7 × Ø110 mm"]
+            ["Richtwalzen", "5 × Ø85 / 7 × Ø110 mm"]
           ]
         }
       }

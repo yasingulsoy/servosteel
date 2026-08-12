@@ -918,10 +918,20 @@
                 "2,500 kg",
                 "30 – 500 mm",
                 "450 – 550 mm"
+              ],
+              [
+                "3,000 kg",
+                "80 – 800 mm",
+                "450 – 560 mm"
+              ],
+              [
+                "4,000 kg",
+                "100 – 1,200 mm",
+                "450 – 560 mm"
               ]
             ]
           },
-          "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models."
+          "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models. On the 3,000 and 4,000 kg models the coil outer diameter is 1,600 mm, inner diameter 450–560 mm (630 mm with adapter) and mandrel expansion is mechanical. Conical plunger decoilers of 3,000–4,000 kg run sheet thickness up to 5 mm."
         }
       },
       "servo-suruculer": {
@@ -1802,8 +1812,8 @@
           "title": "Technical specifications",
           "head": ["Specification", "Mechanical", "Hydraulic"],
           "rows": [
-            ["Models", "500 · 750 · 1,500 · 2,500 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Coil width", "30 – 500 mm", "80 – 1,600 mm"],
+            ["Models", "500 · 750 · 1,500 · 2,500 · 3,000 · 4,000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
+            ["Coil width", "30 – 1,200 mm", "80 – 1,600 mm"],
             ["Coil inner diameter", "300 – 550 mm", "450 – 560 mm"],
             ["Coil outer diameter (max.)", "1,600 mm", "1,600 mm"],
             ["Mandrel expansion", "Mechanical", "Hydraulic"],
@@ -1919,7 +1929,7 @@
           "head": ["Specification", "Value"],
           "rows": [
             ["Strip width", "≤ 1,600 mm"],
-            ["Material thickness", "0.5 – 4.0 mm"],
+            ["Material thickness", "0.4 – 6.0 mm"],
             ["Straightening rolls", "7 / 9 / 11 / 13"],
             ["Mold memory", "250 recipes"],
             ["Control", "Schneider colour LCD touchscreen"]
@@ -2007,13 +2017,13 @@
           "head": ["Specification", "Value"],
           "rows": [
             ["Material width", "40 – 1,300 mm"],
-            ["Material thickness", "1 – 6 mm"],
-            ["Free speed", "25 m/min"],
+            ["Material thickness", "0.5 – 6 mm"],
+            ["Free speed", "25 / 35 / 40 m/min"],
             ["Feed accuracy", "±0.1 mm"],
             ["Coil weight", "2,500 – 10,000 kg"],
             ["Coil inner / outer dia.", "450 – 560 / 1,300 – 1,600 mm"],
             ["Feed rolls", "2 + 2"],
-            ["Straightening rolls", "7 × Ø110 mm"]
+            ["Straightening rolls", "5 × Ø85 / 7 × Ø110 mm"]
           ]
         }
       }
