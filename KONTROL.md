@@ -262,6 +262,28 @@ GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
+**Katalog baştan sona okundu (2026-08-12) — firmaya sorulacaklar:**
+
+- [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina
+  Kalıp **ve Sanayi** Ltd. Şti.", s.6 "Steel Makina Kalıp **San. ve Tic.**
+  Ltd. Şti." Ticaret sicilindeki tam hâli lazım — **KVKK/gizlilik sayfası
+  buna bağlı**, aylardır bu yüzden yazılamıyordu.
+- [ ] **SRV-BDH birleşik hattı** (boy kesme + dilme tek hatta, s.31) hâlâ
+  satılıyor mu? Satılıyorsa sitede sayfası yok.
+- [ ] **"Market Raf" mı "Ağır Raf" mı** — katalog s.36 "Market Raf Üretim
+  Hattı" diyor, sitede "Ağır Raf Üretim Hattı" var. Aynı ürün mü?
+- [ ] **SRV-BH 1500 mm / 6 mm** — sahadaki makinenin etiketi (s.30) 6 mm
+  diyor, katalog kalınlık kademeleri 1–5 mm'de bitiyor.
+- [ ] **Kompakt hat model kodları** — `KH803` / `KH804` / `KH806` her tabloda
+  ikişer kez, farklı rulo ağırlığı ve mandren tipiyle geçiyor. Aynı kod iki
+  açıcı seçeneğini mi kapsıyor? Teyit gelmeden model kodları siteye yazılmadı.
+- [ ] **Katalogdaki 6 hata** — TR/EN uyuşmazlıkları (3 yerde), giriş metni ile
+  tablo çelişkisi (3 yerde), seri adı tutarsızlığı (KSS/KS, DDS/DSS). Katalog
+  yurtdışına gittiği için İngilizce hatalar öncelikli.
+  Ayrıntı: `belgeler/KATALOG-VERILERI.md`
+- [ ] **ASTOR referansı** — katalog s.30'daki kurulum fotoğrafı Astor'un
+  tesisinde çekilmiş (vinçlerden belli). Logo izni istenirken bu kullanılabilir.
+
 - [x] GA4 mülk numarası → **548769261 alındı, test edildi (2026-08-07)**
 - [x] Yandex `https://` host'u **eklendi ve DNS ile doğrulandı (2026-08-09)** — token `caf7df52b9c31e1a` iki host için de geçerli
 - [ ] Yandex **ana ayna** ayarı: `https://` seçilecek (ikisinde de boş). Host yüklenince yapılabilir

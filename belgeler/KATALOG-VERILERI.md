@@ -4,12 +4,17 @@ Kaynak: `belgeler/SERVOSTEEL-KATALOG.pdf`, 40 sayfa. Spec tabloları vektör
 çizim olarak duruyor — metin dışa çevrilmiş, kopyalanamıyor, o yüzden sayfalar
 görüntüye çevrilip gözle okundu.
 
-**Okunan sayfalar: 8, 12, 14, 16, 18, 25, 29, 33, 35, 37.**
+**40 sayfanın tamamı okundu (2026-08-12).**
 
-Okunmayanlar: 7, 9, 10, 11, 13, 15, 17, 19-24, 26-28, 30-32, 34, 36. Bunların
-çoğu aynı serinin fotoğraf sayfası. Çizim yoğunluğu yüksek olup **hâlâ
-okunmamış** olanlar: **19, 20, 22, 23, 24, 28, 32** — burada başka tablolar
-olabilir.
+Tablo taşıyan sayfalar: 8, 10, 12, 14, 16, 18, 19, 20, 21, 22, 23, 24, 25.
+Sayısal metin taşıyanlar: 9, 11, 13, 15, 17, 28, 32, 33. Gerisi fotoğraf,
+teknik çizim ya da kurumsal sayfa.
+
+> **EN ÖNEMLİ DERS: her ürün ailesinin BİRDEN FAZLA tablosu var.**
+> Bir ürüne dair sayı yazmadan önce o ürünün **tüm** sayfaları okunmuş olmalı.
+> Bunu ihlal ettiğim için 2026-08-10'da canlıya altı fazla dar değer yazıldı.
+> Çizim yoğunluğu tablo göstergesi DEĞİL (s.7 fotoğraf 513 yol, s.8 tablo 482);
+> PyMuPDF'in `find_tables()` ve özel dedektör denemeleri de ayırt edemedi.
 
 ---
 
@@ -160,7 +165,76 @@ aslında çelişki değilmiş: **2.500 kg** mekanik açıcının (SRV-MA) üst s
 **4.000 kg** ise dilme hattının 1. grup rulo taşıma kapasitesi. Farklı
 makineler, ikisi de doğru.
 
-## Katalogda bulunan iki hata — firmaya bildirilecek
+## 3e. Doğrultmalı servo sürücüler — SRV-DSS, dört merdane düzeni
+
+Katalog metni: *"7, 9, 11 ve 13 merdane olmak üzere 4 ana grupta üretilmekte,
+0,4 mm ile 6 mm aralığında."* Dördü de 9'ar model, genişlik 30–1.600 mm.
+
+| merdane | sayfa | kalınlık | hız | merdane çapı | düzen |
+|---|---|---|---|---|---|
+| 7 | s.19 | 0,4 – 3 mm | 35 m/dk | Ø85 | 2 sürme + 5 doğrultma |
+| 9 | s.20 | 0,5 – 4 mm | 35 m/dk | Ø85 | 2 + 5 + 2 çekici |
+| 11 | s.21 | 0,4 – 5 mm | 35 m/dk | Ø85 | 2 + 5 + 2 + 2 bel kırma |
+| 13 | s.22 | 0,4 – 6 mm | **25 m/dk** | **Ø110** | 2 + 7 + 2 + 2 |
+
+11 ve 13 merdaneli düzenler **bel kırma merdanesiyle standart** üretiliyor.
+
+## 3f. Kompakt hatlar — SRV-KH, ÜÇ seri
+
+Model kodunun son rakamı **maksimum kalınlığı** kodluyor.
+
+| seri | sayfa | kalınlık | hız | doğrultma | çap | kalıp yük. ayarı |
+|---|---|---|---|---|---|---|
+| KH…**3** | s.23 | 0,5 – 3 mm | 35 m/dk | 5 | Ø85 | opsiyonel |
+| KH…**4** | s.24 | 0,5 – 4 mm | **40 m/dk** | 5 | Ø85 | **otomatik** |
+| KH…**6** | s.25 | 1 – 6 mm | 25 m/dk | 7 (+2 bel kırma) | Ø110 | opsiyonel |
+
+Üçünde de: genişlik 40–1.300 mm, rulo 2.500–10.000 kg, sürme hassasiyeti ~0,1 mm,
+sürme merdanesi 2+2, iç çap 450–560, dış çap 1.300/1.600.
+
+## 5b. Boy kesme hatları — SRV-BH sayıları (s.28)
+
+- **Rulo taşıma:** 4.000 / 6.000 / 8.000 / 10.000 / **15.000 kg**
+- **Sac kalınlığı:** 0,5–1 / 0,5–2 / 0,8–3 / **1–5 mm**
+- Schneider PLC + Schneider dokunmatik panel
+
+s.30'daki sahadaki makinenin kendi etiketi: **SRV-BH 1500 mm / 6 mm**. Katalog
+kalınlık kademeleri 1–5 mm'de bitiyor; 6 mm etiketi bununla örtüşmüyor,
+firmaya sorulacak. Aynı fotoğrafta **ASTOR** vinçleri görünüyor — referans
+logosu izni beklediğimiz firmalardan biri, kurulum onlarda.
+
+## 7. Birleşik hat — SRV-BDH (s.31)
+
+**Boy kesme ve dilme hattı tek hatta.** Katalogda yalnızca teknik çizim var,
+sayı yok. **Sitede bu ürünün sayfası YOK** — `/dilme-hatlari` ve
+`/boy-kesme-hatlari` ayrı duruyor. Ürün gerçekten satılıyorsa sayfa açılmalı.
+
+## 8. Elektronik sistem (s.6)
+
+- **Schneider LEXIUM** servo sürücü · **Schneider ALTIVAR** hız kontrol
+- Schneider PLC + Magelis dokunmatik operatör paneli
+- Otomasyonun tamamı Schneider: sürücü, ekran, PLC, motor, sarf, yazılım
+- Yazılım: **250 kalıp hafızası · 30 farklı sürme boyu · 10 harici çıkış ekleme
+  · 1 pres + 1 pilotlama çıkışı · 7" renkli dokunmatik**
+
+"30 farklı sürme boyu" ve "10 harici çıkış" sitede hiç geçmiyor; sürücü
+sayfalarına eklenebilecek somut ayırt edici özellikler.
+
+## 9. Roll form hatları — pres tipi ürüne göre değişiyor
+
+| hat | sayfa | presleme ünitesi |
+|---|---|---|
+| kablo kanalı | s.34-35 | **H tipi** eksantrik pres |
+| market rafı | s.36 | **hidrolik punch sistemi** |
+| solar panel profili | s.37 | **C tipi** eksantrik pres |
+
+Üçünde de Schneider PLC ve uçar makas. Katalogda roll form hatlarının
+**sayısal tablosu yok** — 8 hattın 6 değeri hâlâ mühendislikten bekleniyor.
+
+**Adlandırma sorusu:** katalogda "Market Raf Üretim Hattı" geçiyor, sitede
+"Ağır Raf Üretim Hattı" var. Aynı ürün mü, farklı mı — firmaya sorulacak.
+
+## Katalogda bulunan hatalar — firmaya bildirilecek
 
 **1. s.16, kasalı servo sürücüler (SRV-KS).** Türkçe "1600 mm ye kadar rulo sac
 genişlik kapasitesi" diyor, hemen yanındaki İngilizce "Steel roll width capacity
@@ -168,11 +242,33 @@ up to **600 mm**". Tablo 1600'ü doğruluyor. Kaynağı belli: 600 mm mini
 sürücülerin (SRV-SS, s.14) sınırı — o sayfadan kopyalanıp burada kalmış.
 Katalog yurtdışına gittiği için bu satır yanlış bilgi veriyor.
 
-**2. s.25, kompakt hatlar (SRV-KH).** İki ayrı sütunun model adı da
-**SRV-KH806** yazıyor ama rulo ağırlıkları farklı (4.000 kg ve 6.000 kg) ve
-mandren tipleri de farklı (konik / hidrolik). İkisinden biri yanlış
-adlandırılmış — muhtemelen ikincisi KH1006 ya da başka bir kod olmalı.
-Doğrusu firmadan sorulmadan siteye yazılmamalı.
+**2. Kompakt hat tablolarında model kodu tekrarı.** s.23'te `SRV-KH803`,
+s.24'te `SRV-KH804`, s.25'te `SRV-KH806` **ikişer kez** geçiyor; her seferinde
+rulo ağırlığı (4.000/6.000 kg) ve mandren tipi (konik/hidrolik) farklı.
+Üç tabloda birden tekrarladığı için dizgi hatası olmayabilir — aynı model
+kodunun iki açıcı seçeneğiyle sunulması da mümkün. Firmadan teyit alınmadan
+model kodları siteye yazılmadı.
+
+**3. Tüzel kişilik adı iki farklı yazılmış.**
+s.3: *"STEEL Makina Kalıp **ve Sanayi** Ltd. Şti."*
+s.6: *"Steel Makina Kalıp **San. ve Tic.** Ltd. Şti."*
+İkisi aynı şirket olamaz. **KVKK/gizlilik sayfası için doğru unvan şart** —
+ticaret sicilindeki tam hâli sorulacak.
+
+**4. TR/EN metinleri üç yerde çelişiyor:**
+- s.15 kasalı sürücü: TR "0,4–3 mm", EN "0.4 mm - 4 mm"
+- s.17 mini doğrultmalı: TR "0,5 ile 2 mm", EN "0.2 mm - 2mm"
+- s.16 kasalı sürücü: TR "1600 mm ye kadar", EN "up to 600 mm"
+
+**5. Giriş metni ile tablo çelişiyor:**
+- s.13 mini sürücü metni "100–600 mm", s.14 tablosu **10–600 mm**
+- s.15 kasalı metni "300–1600 mm", s.16 tablosu **40–1.600 mm**
+- s.17 mini doğrultmalı metni "100–400 mm", s.18 tablosu **15–400 mm**
+
+Her üçünde de tablo daha geniş; sitede tablo değerleri kullanıldı.
+
+**6. Seri adı tutarsızlığı:** s.15 başlığı `SRV-KSS`, s.16 tablosu `SRV-KS`.
+s.20 başlığı `SRV-DDS`, satırlardaki kodlar `SRV-DSS`.
 
 ## Hâlâ eksik olan — A.3 için
 
