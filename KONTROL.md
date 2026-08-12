@@ -262,6 +262,16 @@ GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
+- [ ] **WhatsApp numarası teyit edilecek — artık ACİL.** `wa.me/902164153005`
+  firmanın **sabit hattı**. WhatsApp Business sabit hattı sesli aramayla
+  doğrulayabiliyor ama bu hesabın açık olduğu hiç teyit edilmedi. 2026-08-12'de
+  **her sayfaya sabit tuş eklendi**; çalışmıyorsa kaybedilen ziyaretçi sayısı
+  da o oranda artar. Gerekçe: 28 günde WhatsApp'a **6**, forma **2** tıklama.
+  Numara tek yerde: `src/lib/site.ts` → `WHATSAPP_NUMBER`.
+- [ ] **WhatsApp'tan gelen talepler ölçülemiyor.** Tıklamayı görüyoruz,
+  konuşmayı göremiyoruz. Satıştan sor: son üç haftada WhatsApp'tan kaç ciddi
+  talep geldi? Gerçek dönüşüm oranımız bilinen 1'den yüksek olabilir.
+
 **Katalog baştan sona okundu (2026-08-12) — firmaya sorulacaklar:**
 
 - [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina

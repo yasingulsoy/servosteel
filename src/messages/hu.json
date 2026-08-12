@@ -40,6 +40,8 @@
     "slitting": "Hasító Sorok"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Jó napot, a weboldalukról írok.",
     "home": "Kezdőlap",
     "breadcrumbAria": "Morzsamenü",
     "details": "Részletek",

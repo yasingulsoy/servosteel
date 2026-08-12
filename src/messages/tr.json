@@ -40,6 +40,8 @@
     "slitting": "Rulo Sac Dilme Hatları"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Merhaba, web sitenizden yazıyorum.",
     "home": "Ana Sayfa",
     "breadcrumbAria": "Sayfa yolu",
     "details": "Detayları Gör",

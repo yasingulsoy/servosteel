@@ -7,6 +7,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { SpecularButton } from "@/components/specular-button";
 import { LeadSent, HoneyPot } from "@/components/lead-sent";
 import { useLeadSubmit } from "@/components/use-lead-submit";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const inputClass =
   "w-full rounded-lg border border-line bg-card px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/25";
@@ -101,7 +102,7 @@ export function RfqForm() {
           {status === "sending" ? t("sending") : t("submit")}
         </SpecularButton>
         <SpecularButton
-          href={`https://wa.me/902164153005?text=${waText}`}
+          href={`${WHATSAPP_URL}?text=${waText}`}
           external
           variant="ghost"
           size="lg"

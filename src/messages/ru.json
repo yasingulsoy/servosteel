@@ -40,6 +40,8 @@
     "slitting": "Линии продольной резки"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Здравствуйте, пишу вам с вашего сайта.",
     "home": "Главная",
     "breadcrumbAria": "Навигационная цепочка",
     "details": "Подробнее",

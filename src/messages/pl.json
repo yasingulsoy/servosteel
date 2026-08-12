@@ -40,6 +40,8 @@
     "slitting": "Linie Cięcia Wzdłużnego"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Dzień dobry, piszę z Państwa strony internetowej.",
     "home": "Strona główna",
     "breadcrumbAria": "Ścieżka nawigacji",
     "details": "Zobacz Szczegóły",

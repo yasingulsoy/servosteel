@@ -40,6 +40,8 @@
     "slitting": "Längsteilanlagen"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Hallo, ich schreibe Ihnen über Ihre Website.",
     "home": "Startseite",
     "breadcrumbAria": "Brotkrumennavigation",
     "details": "Details ansehen",

@@ -40,6 +40,8 @@
     "slitting": "Coil Slitting Lines"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Hello, I am writing from your website.",
     "home": "Home",
     "breadcrumbAria": "Breadcrumb",
     "details": "View Details",

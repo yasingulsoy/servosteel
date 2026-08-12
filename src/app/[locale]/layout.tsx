@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { ViewTransition } from "@/components/view-transition";
 import { PointerGlow } from "@/components/pointer-glow";
 import { PageAttention } from "@/components/page-attention";
@@ -227,6 +228,10 @@ export default async function LocaleLayout({
             </ViewTransition>
           </main>
           <SiteFooter />
+          {/* WhatsApp formdan üç kat çok tıklanıyor (28 günde 6'ya 2) ama
+              bağlantı yalnızca iletişim sayfasında ve formların altındaydı.
+              Sabit tuş her sayfada duruyor. */}
+          <WhatsAppFloat />
           {/* Görünmez yardımcılar: kart ışığı + sekme/video dikkat yönetimi */}
           <PointerGlow />
           <PageAttention />

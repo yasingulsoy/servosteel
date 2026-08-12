@@ -40,6 +40,8 @@
     "slitting": "Líneas de Corte Longitudinal"
   },
   "common": {
+    "waFloat": "WhatsApp",
+    "waFloatPrefill": "Hola, le escribo desde su sitio web.",
     "home": "Inicio",
     "breadcrumbAria": "Ruta de navegación",
     "details": "Ver Detalles",
