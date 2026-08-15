@@ -280,15 +280,22 @@ GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
-- [ ] **WhatsApp numarası teyit edilecek — artık ACİL.** `wa.me/902164153005`
-  firmanın **sabit hattı**. WhatsApp Business sabit hattı sesli aramayla
-  doğrulayabiliyor ama bu hesabın açık olduğu hiç teyit edilmedi. 2026-08-12'de
-  **her sayfaya sabit tuş eklendi**; çalışmıyorsa kaybedilen ziyaretçi sayısı
-  da o oranda artar. Gerekçe: 28 günde WhatsApp'a **6**, forma **2** tıklama.
-  Numara tek yerde: `src/lib/site.ts` → `WHATSAPP_NUMBER`.
+- [ ] **WhatsApp numarası DEĞİŞTİRİLECEK — karar verildi (2026-08-15).**
+  Şu anki `wa.me/902164153005` firmanın **sabit hattı** ve o hesabın açık olduğu
+  hiç teyit edilmedi. Yasin yeni numarayı verecek; geldiğinde tek yer değişiyor:
+  `src/lib/site.ts` → `WHATSAPP_NUMBER`. Sabit tuş, iletişim sayfası, formların
+  altı ve footer hepsi oradan besleniyor, başka dosyaya dokunmaya gerek yok.
+  **Aciliyeti:** 30 günde WhatsApp'a **10 tıklama** (forma 3), yani şu numara
+  ölüyse on kişi boşluğa bastı. Sabit tuş 2026-08-13 00:51'de canlıya çıktı ve
+  iki günde 1 tıklama aldı (ön-doldurulmuş linkten ayırt ediliyor).
 - [ ] **WhatsApp'tan gelen talepler ölçülemiyor.** Tıklamayı görüyoruz,
   konuşmayı göremiyoruz. Satıştan sor: son üç haftada WhatsApp'tan kaç ciddi
-  talep geldi? Gerçek dönüşüm oranımız bilinen 1'den yüksek olabilir.
+  talep geldi? Gerçek dönüşüm oranımız bilinen 2'den yüksek olabilir.
+
+**Dönüşümler (GA4, 30 gün — 2026-08-15):** 05 Ağu `/teklif-al` form açıldı ama
+gönderilmedi · **10 Ağu `/iletisim` gönderildi** · **14 Ağu `/teklif-al`
+gönderildi**. 3 açılış → 2 gönderim = **%67 tamamlama**; form darboğaz değil,
+forma gelen kişi sayısı az (289 oturumun 3'ü).
 
 **Katalog baştan sona okundu (2026-08-12) — firmaya sorulacaklar:**
 
@@ -315,7 +322,28 @@ GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 - [x] GA4 mülk numarası → **548769261 alındı, test edildi (2026-08-07)**
 - [x] Yandex `https://` host'u **eklendi ve DNS ile doğrulandı (2026-08-09)** — token `caf7df52b9c31e1a` iki host için de geçerli
 - [ ] Yandex **ana ayna** ayarı: `https://` seçilecek (ikisinde de boş). Host yüklenince yapılabilir
-- [ ] Yandex'e **sitemap ekle** (`NO_SITEMAPS` sorunu duruyor) — `https://servosteel.com.tr/sitemap.xml`, https host'una
+- [x] Yandex'e **sitemap eklendi (2026-08-09 01:36)** — `sitemap_id`
+  `576e251a-2723-3974-aa16-d57a9328ccb9`. Yandex 6 gündür işlemedi (okuma
+  tarihi ve URL sayısı boş), `NO_SITEMAPS` uyarısı bu yüzden hâlâ duruyor.
+  Yeniden ekleme 409 veriyor; beklemekten başka yapılacak yok.
+  **API tuzağı:** `/sitemaps/` yalnızca Yandex'in *kendi bulduklarını* döner
+  (0 gösteriyor), elle eklenenler `/user-added-sitemaps/` altında. `/user-sitemaps/`
+  diye bir yol yok, 404 veriyor.
+- [x] **150 URL yeniden tarama kuyruğuna alındı (2026-08-15)** — günlük kota 150
+  ve hiç kullanılmamıştı. Sıra: 52 Rusça sayfa (Yandex'i Rus pazarı için kurduk),
+  3 ana sayfa, 95 ticari sayfa. Hepsi kabul edildi, kota sıfırlandı.
+  Kota her gün yenileniyor; sitemap'teki kalan 320 URL yarın gönderilebilir.
+  Betik: scratchpad `yandex-recrawl.py` (`--kuru` ile önce liste görülür).
+- [ ] **Yandex bölge ataması (`NO_REGIONS`)** — panelden yapılıyor, API'de
+  `regions/` yolu 404. Yandex'te bölge sıralamayı Google'dakinden çok daha
+  ağır etkiliyor.
+
+**Yandex durumu (2026-08-15):** SQI **10** · indeksteki sayfa **361** (sitemap 470)
+· 28 günde ~25 gösterim, **0 tık** · gelen sorguların hepsi İngilizce/Arapça uzun
+kuyruk, **tek Rusça ticari sorgu yok**. Mülk 2023-10-31'den beri kayıtlı; eski
+sitede 2024-03'te 90 sayfada kalmış, sonra 2,5 yıl hiç ölçüm yok. Yeni siteyle
+**90 → 361** sıçradı. Yani indeksleme çalışıyor, eksik olan otorite — SQI gecikmeli
+bir metrik. Karşılaştırma: Google 7 günde 1.441 gösterim, Yandex 28 günde 25.
 - [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
 - [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
 - [x] ~~6 ürün sayfasının kalan 7 dili~~ — **tamamlandı (2026-08-09)**: 54 sayfa/dil
