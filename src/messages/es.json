@@ -1117,10 +1117,12 @@
           "Desbobinador (hidráulico o mecánico)",
           "Unidad enderezadora",
           "Alimentador servo",
-          "Estaciones de punzonado",
+          "Prensa excéntrica tipo H con matriz de punzonado y corte",
           "Perfiladora",
-          "Unidad de corte (cizalla final)",
+          "Cizalla volante",
           "Transportador de salida y apilado"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {
@@ -1206,10 +1208,12 @@
         "components": [
           "Desbobinador",
           "Enderezadora + alimentador servo",
-          "Estaciones de punzonado servo",
+          "Prensa excéntrica tipo C con matriz de punzonado y corte",
           "Perfiladora",
           "Cizalla volante",
           "Apilado automático"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {
@@ -1300,6 +1304,8 @@
           "Perfiladora",
           "Unidad de corte",
           "Sistema de apilado"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {
@@ -1389,6 +1395,8 @@
           "Perfiladora",
           "Unidad de corte",
           "Estación de extremos (opcional)"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "faq": [
           {
@@ -1432,6 +1440,8 @@
           "Perfiladora de servicio pesado",
           "Corte hidráulico",
           "Apilado"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {
@@ -1521,6 +1531,8 @@
           "Perfiladora",
           "Unidad de corte",
           "Apilado"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {
@@ -1610,6 +1622,8 @@
           "Corte a medida",
           "Apilado automático",
           "Embalaje"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "sectors": [
           "Fabricantes de cubierta y fachada",
@@ -1654,6 +1668,8 @@
           "Perfiladora regulable",
           "Cizalla volante",
           "Apilado"
+        ,
+          "PLC Schneider y panel de operador táctil"
         ],
         "process": [
           {

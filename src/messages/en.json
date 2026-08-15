@@ -1146,10 +1146,12 @@
           "Decoiler (hydraulic or mechanical)",
           "Straightening unit",
           "Servo feeder",
-          "Punching stations",
+          "H-type eccentric press with punching and cutting die",
           "Roll forming machine",
-          "Cutting unit (end-of-line shear)",
+          "Flying shear",
           "Exit conveyor and stacking"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {
@@ -1239,10 +1241,12 @@
         "components": [
           "Decoiler",
           "Straightener + servo feeder",
-          "Servo punching stations",
+          "C-type eccentric press with punching and cutting die",
           "Roll forming machine",
           "Flying shear",
           "Automatic stacking"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {
@@ -1334,6 +1338,8 @@
           "Roll forming machine",
           "Cutting unit",
           "Stacking system"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {
@@ -1423,6 +1429,8 @@
           "Roll forming machine",
           "Cutting unit",
           "End-processing station (optional)"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "faq": [
           {
@@ -1467,6 +1475,8 @@
           "Heavy-duty roll forming machine",
           "Hydraulic cutting",
           "Stacking"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {
@@ -1556,6 +1566,8 @@
           "Roll forming machine",
           "Cutting unit",
           "Stacking"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {
@@ -1645,6 +1657,8 @@
           "Cut to length",
           "Automatic stacking",
           "Packing"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "sectors": [
           "Roofing and facade producers",
@@ -1690,6 +1704,8 @@
           "Adjustable roll forming machine",
           "Flying shear",
           "Stacking"
+        ,
+          "Schneider PLC and touchscreen operator panel"
         ],
         "process": [
           {

@@ -1116,10 +1116,12 @@
           "Odwijak (hydrauliczny lub mechaniczny)",
           "Zespół prostujący",
           "Podajnik serwo",
-          "Stacje wykrawania",
+          "Prasa mimośrodowa typu H z tłocznikiem wykrawająco-tnącym",
           "Profilarka",
-          "Zespół cięcia (nożyce końcowe)",
+          "Nożyce latające",
           "Przenośnik wyjściowy i układanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {
@@ -1205,10 +1207,12 @@
         "components": [
           "Odwijak",
           "Prostownica + podajnik serwo",
-          "Stacje wykrawania serwo",
+          "Prasa mimośrodowa typu C z tłocznikiem wykrawająco-tnącym",
           "Profilarka",
           "Nożyce latające",
           "Automatyczne układanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {
@@ -1299,6 +1303,8 @@
           "Profilarka",
           "Zespół cięcia",
           "System układania"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {
@@ -1388,6 +1394,8 @@
           "Profilarka",
           "Zespół cięcia",
           "Stacja obróbki końców (opcja)"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "faq": [
           {
@@ -1431,6 +1439,8 @@
           "Profilarka dużej wydajności",
           "Cięcie hydrauliczne",
           "Układanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {
@@ -1520,6 +1530,8 @@
           "Profilarka",
           "Zespół cięcia",
           "Układanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {
@@ -1609,6 +1621,8 @@
           "Cięcie na długość",
           "Automatyczne układanie",
           "Pakowanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "sectors": [
           "Producenci pokryć i elewacji",
@@ -1653,6 +1667,8 @@
           "Regulowana profilarka",
           "Nożyce latające",
           "Układanie"
+        ,
+          "Sterownik PLC Schneider i dotykowy panel operatorski"
         ],
         "process": [
           {

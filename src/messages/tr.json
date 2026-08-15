@@ -1117,10 +1117,12 @@
           "Rulo açıcı (hidrolik veya mekanik)",
           "Doğrultma ünitesi",
           "Servo besleme",
-          "Zımba/delme istasyonları",
+          "H tipi eksantrik pres, delme ve kesme kalıbı",
           "Roll form makinesi",
-          "Kesme ünitesi (hat sonu makas)",
+          "Uçan kesme (flying shear)",
           "Çıkış konveyörü ve istifleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {
@@ -1206,10 +1208,12 @@
         "components": [
           "Rulo açıcı",
           "Doğrultma + servo besleme",
-          "Servo zımba istasyonları",
+          "C tipi eksantrik pres, delme ve kesme kalıbı",
           "Roll form makinesi",
           "Uçan kesme (flying shear)",
           "Otomatik istifleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {
@@ -1300,6 +1304,8 @@
           "Roll form makinesi",
           "Kesme ünitesi",
           "İstifleme sistemi"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {
@@ -1389,6 +1395,8 @@
           "Roll form makinesi",
           "Kesme ünitesi",
           "Uç işleme istasyonu (opsiyonel)"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "faq": [
           {
@@ -1432,6 +1440,8 @@
           "Ağır hizmet roll form makinesi",
           "Hidrolik kesme",
           "İstifleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {
@@ -1521,6 +1531,8 @@
           "Roll form makinesi",
           "Kesme ünitesi",
           "İstifleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {
@@ -1611,6 +1623,8 @@
           "Boy kesme",
           "Otomatik istif",
           "Paketleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "sectors": [
           "Çatı ve cephe üreticileri",
@@ -1667,6 +1681,8 @@
           "Ayarlanabilir roll form makinesi",
           "Uçan kesme",
           "İstifleme"
+        ,
+          "Schneider PLC ve dokunmatik operatör paneli"
         ],
         "process": [
           {

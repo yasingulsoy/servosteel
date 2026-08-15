@@ -1116,10 +1116,12 @@
           "Lecsévélő (hidraulikus vagy mechanikus)",
           "Egyengető egység",
           "Szervoadagoló",
-          "Lyukasztó állomások",
+          "H típusú excenterprés lyukasztó- és vágószerszámmal",
           "Profilozó gép",
-          "Vágóegység (sorvégi olló)",
+          "Repülő olló",
           "Kihordó szalag és rakatolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {
@@ -1205,10 +1207,12 @@
         "components": [
           "Lecsévélő",
           "Egyengető + szervoadagoló",
-          "Szervo lyukasztó állomások",
+          "C típusú excenterprés lyukasztó- és vágószerszámmal",
           "Profilozó gép",
           "Repülő olló",
           "Automatikus rakatolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {
@@ -1299,6 +1303,8 @@
           "Profilozó gép",
           "Vágóegység",
           "Rakatoló rendszer"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {
@@ -1388,6 +1394,8 @@
           "Profilozó gép",
           "Vágóegység",
           "Végmegmunkáló állomás (opcionális)"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "faq": [
           {
@@ -1431,6 +1439,8 @@
           "Nehéz üzemű profilozó gép",
           "Hidraulikus vágás",
           "Rakatolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {
@@ -1520,6 +1530,8 @@
           "Profilozó gép",
           "Vágóegység",
           "Rakatolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {
@@ -1609,6 +1621,8 @@
           "Keresztvágás",
           "Automata rakatolás",
           "Csomagolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "sectors": [
           "Tető- és homlokzatgyártók",
@@ -1653,6 +1667,8 @@
           "Állítható profilozó gép",
           "Repülő olló",
           "Rakatolás"
+        ,
+          "Schneider PLC és érintőképernyős kezelőpanel"
         ],
         "process": [
           {

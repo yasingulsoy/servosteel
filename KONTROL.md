@@ -154,6 +154,24 @@ motor gücü, malzeme) hâlâ mühendislikten bekleniyor. Katalogda 8 hattın ya
 üçü var: kablo kanalı, market rafı, solar panel. Ayrıntı ve makine tabloları:
 `belgeler/KATALOG-VERILERI.md`.
 
+**2026-08-15'te işlendi (9 dil, `products.rollform.*.components`):**
+
+- Sekiz hattın hepsine **Schneider PLC + dokunmatik operatör paneli** — katalog
+  s.6 otomasyonun tamamının Schneider olduğunu söylüyor (Lexium servo, Altivar
+  hız kontrol, PLC, panel, yazılım), yani hat ayrımı yapmadan geçerli.
+- **Kablo kanalı → H tipi eksantrik pres** (s.34-35), **solar profil → C tipi
+  eksantrik pres** (s.37), ikisinde de delme ve kesme kalıbıyla.
+- Kablo kanalında kesme **"hat sonu makas" → "uçan kesme"** olarak düzeltildi;
+  katalog s.35 bu hatta uçar makas yazıyor. Yanlış bilgi düzeltmesiydi.
+
+Katalogdaki **hidrolik punch sistemi** market rafına ait (s.36); sitedeki
+"ağır raf" sayfasıyla aynı ürün olduğu **teyit edilmediği için işlenmedi**.
+Kullanılmayan diğer katalog bilgileri: yükleme arabası, açıcının spesifik olarak
+hidrolik oluşu — ikisi de yalnızca o iki hat için belgeli.
+
+Hâlâ yazılmayan: kalınlık · genişlik · hat hızı · istasyon sayısı · motor gücü ·
+malzeme. Bunlar hattı kuran mühendiste; sekiz satırlık bir tabloyla kapanır.
+
 **Otomatik istifleyici fotoğrafı:** katalog s.29'un sağ alt fotoğrafında makaslı
 istifleme masası var — kırpılıp kullanılabilir, firmadan yeni fotoğraf beklemeye
 gerek kalmayabilir.

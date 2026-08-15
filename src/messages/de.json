@@ -1117,10 +1117,12 @@
           "Abwickelhaspel (hydraulisch oder mechanisch)",
           "Richtmaschine",
           "Servovorschub",
-          "Stanzstationen",
+          "Exzenterpresse Typ H mit Stanz- und Schneidwerkzeug",
           "Rollformmaschine",
-          "Schneideeinheit (Endschere)",
+          "Fliegende Schere",
           "Auslaufband und Stapelung"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {
@@ -1206,10 +1208,12 @@
         "components": [
           "Abwickelhaspel",
           "Richtmaschine + Servovorschub",
-          "Servo-Stanzstationen",
+          "Exzenterpresse Typ C mit Stanz- und Schneidwerkzeug",
           "Rollformmaschine",
           "Fliegende Schere",
           "Automatische Stapelung"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {
@@ -1300,6 +1304,8 @@
           "Rollformmaschine",
           "Schneideeinheit",
           "Stapelsystem"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {
@@ -1389,6 +1395,8 @@
           "Rollformmaschine",
           "Schneideeinheit",
           "Endenbearbeitung (optional)"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "faq": [
           {
@@ -1432,6 +1440,8 @@
           "Schwere Rollformmaschine",
           "Hydraulisches Schneiden",
           "Stapelung"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {
@@ -1521,6 +1531,8 @@
           "Rollformmaschine",
           "Schneideeinheit",
           "Stapelung"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {
@@ -1610,6 +1622,8 @@
           "Querteilen",
           "Automatisches Stapeln",
           "Verpacken"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "sectors": [
           "Dach- und Fassadenhersteller",
@@ -1654,6 +1668,8 @@
           "Verstellbare Rollformmaschine",
           "Fliegende Schere",
           "Stapelung"
+        ,
+          "Schneider SPS und Touch-Bedienpanel"
         ],
         "process": [
           {

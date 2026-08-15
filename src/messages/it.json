@@ -1117,10 +1117,12 @@
           "Svolgitore (idraulico o meccanico)",
           "Unità raddrizzatrice",
           "Alimentatore servo",
-          "Stazioni di punzonatura",
+          "Pressa eccentrica tipo H con stampo di punzonatura e taglio",
           "Profilatrice",
-          "Unità di taglio (cesoia finale)",
+          "Cesoia volante",
           "Nastro di uscita e impilaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
@@ -1206,10 +1208,12 @@
         "components": [
           "Svolgitore",
           "Raddrizzatrice + alimentatore servo",
-          "Stazioni di punzonatura servo",
+          "Pressa eccentrica tipo C con stampo di punzonatura e taglio",
           "Profilatrice",
           "Cesoia volante",
           "Impilaggio automatico"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
@@ -1300,6 +1304,8 @@
           "Profilatrice",
           "Unità di taglio",
           "Sistema di impilaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
@@ -1389,6 +1395,8 @@
           "Profilatrice",
           "Unità di taglio",
           "Stazione estremità (opzionale)"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "faq": [
           {
@@ -1432,6 +1440,8 @@
           "Profilatrice heavy-duty",
           "Taglio idraulico",
           "Impilaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
@@ -1521,6 +1531,8 @@
           "Profilatrice",
           "Unità di taglio",
           "Impilaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
@@ -1610,6 +1622,8 @@
           "Taglio a misura",
           "Impilaggio automatico",
           "Imballaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "sectors": [
           "Produttori di coperture e facciate",
@@ -1654,6 +1668,8 @@
           "Profilatrice regolabile",
           "Cesoia volante",
           "Impilaggio"
+        ,
+          "PLC Schneider e pannello operatore touch"
         ],
         "process": [
           {
