@@ -332,8 +332,18 @@ forma gelen kişi sayısı az (289 oturumun 3'ü).
 - [x] **150 URL yeniden tarama kuyruğuna alındı (2026-08-15)** — günlük kota 150
   ve hiç kullanılmamıştı. Sıra: 52 Rusça sayfa (Yandex'i Rus pazarı için kurduk),
   3 ana sayfa, 95 ticari sayfa. Hepsi kabul edildi, kota sıfırlandı.
-  Kota her gün yenileniyor; sitemap'teki kalan 320 URL yarın gönderilebilir.
-  Betik: scratchpad `yandex-recrawl.py` (`--kuru` ile önce liste görülür).
+  Kota her gün yenileniyor; kalan **320 URL** için zamanlanmış görev kuruldu.
+- [x] **Windows Görev Zamanlayıcı: `Servosteel-Yandex-Recrawl`** (2026-08-15
+  kuruldu, ilk çalışma 16 Ağustos 09:00, elle tetiklenip doğrulandı — çıkış 0).
+  Her gün 09:00'da `~/.config/claude-seo/yandex-recrawl.py` çalışır, günlük
+  150'lik kotayı harcar, `yandex-recrawl.log`'a yazar.
+  **Kendi kendine biter:** görevin bitiş tarihi 2026-08-22 ve süresi dolunca
+  otomatik siliniyor; betik de sitemap'teki her URL gidince "yapılacak yok" deyip
+  çıkıyor. 320 URL üç günde tükenir (150+150+20).
+  Erken silmek istersen:
+  `Unregister-ScheduledTask -TaskName Servosteel-Yandex-Recrawl -Confirm:0`
+  Gönderilenler `yandex-recrawl-durum.json`'da tutuluyor, o yüzden aynı URL iki
+  kez gitmiyor; `--sifirla` ile baştan başlatılır, `--kuru` ile önce liste görülür.
 - [ ] **Yandex bölge ataması (`NO_REGIONS`)** — panelden yapılıyor, API'de
   `regions/` yolu 404. Yandex'te bölge sıralamayı Google'dakinden çok daha
   ağır etkiliyor.
