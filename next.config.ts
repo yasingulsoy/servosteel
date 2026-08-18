@@ -29,6 +29,29 @@ const both = (slug: string) => [`/product/${slug}`, `/${slug}`];
 const many = (slugs: string[], destination: string) =>
   slugs.flatMap(both).map((s) => p(s, destination));
 
+/**
+ * `tr.` kopyasından gelen İNGİLİZCE slug'lar için Türkçe hedef.
+ *
+ * Genel `tr.* -> kök` kuralı yolu koruyor; kökte de aynı slug İngilizce
+ * kurallara takılıp `/en/...` sayfasına gidiyordu. Yani Türkçe arama yapıp
+ * Türkçe alt alan adındaki sonuca tıklayan kişi İngilizce sayfaya düşüyordu.
+ * GSC'de görülen örnek: `tr.servosteel.com.tr/product/2500-kg-mechanical-decoiler/`
+ * "rulo açıcı" sorgusunda çıkıyor ve `/en/machines/decoilers`'a gidiyordu.
+ *
+ * Bu kurallar genel tr. host kuralından ÖNCE gelmeli; Next ilk eşleşeni uygular.
+ */
+const TR_HOSTS = ["tr.servosteel.com.tr", "www.tr.servosteel.com.tr"];
+
+const trOnly = (slugs: string[], destination: string) =>
+  TR_HOSTS.flatMap((host) =>
+    slugs.flatMap(both).map((s) => ({
+      source: s,
+      has: [{ type: "host" as const, value: host }],
+      destination,
+      permanent: true,
+    }))
+  );
+
 /* Rulo açıcılar (tüm ton/kg varyantları tek sayfada toplanır) */
 const DECOILERS = [
   "hydraulic-decoilers",
@@ -203,6 +226,17 @@ const nextConfig: NextConfig = {
        * kayıtları (ayrı DKIM anahtarı, ayrı SPF) DNS'te duruyor ve bu kural
        * onlara dokunmaz.
        */
+      /* Türkçe host + İngilizce slug -> TÜRKÇE sayfa. Aşağıdaki genel
+         kuraldan önce gelmek zorunda; sonra gelse yol korunarak köke gider
+         ve orada İngilizce kurallara takılırdı. */
+      ...trOnly(DECOILERS, "/makineler/rulo-acicilar"),
+      ...trOnly(SERVO_FEEDERS, "/makineler/servo-suruculer"),
+      ...trOnly(STRAIGHTENERS, "/makineler/dogrultmali-servo-suruculer"),
+      ...trOnly(["compact-lines"], "/makineler/kompakt-hatlar"),
+      ...trOnly(["coil-slitting-lines"], "/dilme-hatlari"),
+      ...trOnly(["cut-to-length-line"], "/boy-kesme-hatlari"),
+      ...trOnly(["roll-forming-line"], "/roll-form-hatlari"),
+
       ...["tr.servosteel.com.tr", "www.tr.servosteel.com.tr"].map((host) => ({
         source: "/:path*",
         has: [{ type: "host" as const, value: host }],

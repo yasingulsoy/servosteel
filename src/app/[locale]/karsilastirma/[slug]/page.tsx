@@ -127,10 +127,22 @@ export default async function ComparePage({ params }: Props) {
               {tc("verdictTitle")}
             </h2>
             <p className="mt-3 max-w-3xl leading-relaxed text-zinc-300">{t("verdict")}</p>
-            <SpecularButton href={item.href} variant="gold" size="md" className="mt-6">
-              {tc("seeProduct")}
-              <ArrowRight className="size-4" strokeWidth={2} aria-hidden />
-            </SpecularButton>
+            {/* Karşılaştırılan iki tarafa da ayrı bağlantı. Bağlantı metni
+                ürünün kendi adı (aName/bName) — yani hedeflenen kelimenin
+                birebir kendisi. Tek "ürün sayfasına git" düğmesi varken
+                varyant sayfaları bu sayfadan hiç iç link almıyordu. */}
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <SpecularButton href={item.hrefA} variant="gold" size="md">
+                {t("aName")}
+                <ArrowRight className="size-4 ms-2" strokeWidth={2} aria-hidden />
+              </SpecularButton>
+              {item.hrefB ? (
+                <SpecularButton href={item.hrefB} variant="ghost" size="md">
+                  {t("bName")}
+                  <ArrowRight className="size-4 ms-2" strokeWidth={2} aria-hidden />
+                </SpecularButton>
+              ) : null}
+            </div>
           </div>
         </Reveal>
 
