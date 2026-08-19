@@ -165,8 +165,8 @@
   "machinesHub": {
     "eyebrow": "Press feeding systems",
     "title": "Machines",
-    "metaTitle": "Machines — Press Feeding Systems",
-    "metaDesc": "Decoilers, servo feeders, straightener servo feeders and compact lines: custom-built press feeding solutions.",
+    "metaTitle": "Press Feeders, Coil Feeders & Decoilers",
+    "metaDesc": "Press feeders for coil lines: servo feeders, straightener feeders, decoilers and compact lines, custom-built to your press.",
     "desc": "One roof for every link in the line: decoilers, servo feeders, straightener feeders and compact lines — all built in our facility and sized to your needs.",
     "ctaTitle": "Let's choose the right machine together"
   },
@@ -1841,10 +1841,10 @@
       },
       "servo-suruculer": {
         "name": "Servo Feeders",
-        "metaTitle": "Servo Roll Feeders: NC Press Feeding for Coil",
+        "metaTitle": "Servo Roll Feeders: NC Press Feeder for Coil",
         "short": "Precise step feeding into press lines; standard and mini series.",
         "hero": "Servo feeders advance the sheet into the die in millimetric steps; Schneider Lexium servo technology delivers high repeatability, press synchronisation and easy recipe management.",
-        "meta": "Servo feeders: standard and mini series for press feeding lines, Schneider Lexium based precise sheet feeding.",
+        "meta": "Servo press feeders: standard and mini series roll feeders for coil lines, Schneider Lexium based precise sheet feeding.",
         "features": [
           {
             "title": "Millimetric step precision",
