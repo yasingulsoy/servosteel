@@ -121,6 +121,7 @@
   "hub": {
     "eyebrow": "Nasza specjalizacja",
     "title": "Linie Profilujące",
+    "metaTitle": "Linie profilujące na zimno — producent",
     "desc": "Z kręgu do gotowego profilu: kompletne linie produkcyjne dla 7 rodzin profili, projektowane pod Twój projekt — wszystko, od odwijaka po układarkę, nosi podpis Servosteel.",
     "metaDesc": "Linie profilujące na zamówienie do koryt kablowych, profili solarnych, regałów, rusztowań, barier i profili C/Sigma/Omega.",
     "flow": ["Odwijak", "Prostownica", "Podajnik Serwo", "Stacje Wykrawania", "Profilarka", "Cięcie", "Układanie"],
@@ -1788,6 +1789,7 @@
       },
       "servo-suruculer": {
         "name": "Podajniki Serwo",
+        "metaTitle": "Podajniki serwo do pras — NC, mini i standard",
         "short": "Precyzyjne podawanie krokowe do pras; seria standardowa i mini.",
         "hero": "Podajniki serwo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
         "meta": "Podajniki serwo: seria standardowa i mini do linii prasowych, precyzyjne podawanie oparte na Schneider Lexium.",
@@ -1839,6 +1841,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Podajniki Serwo z Prostownicą",
+        "metaTitle": "Podajniki serwo z prostownicą i odwijakiem",
         "short": "Prostowanie i podawanie w jednym korpusie: oszczędność miejsca i inwestycji.",
         "hero": "Kompaktowe rozwiązanie łączące w jednym korpusie rolki prostujące usuwające pamięć kręgu z podawaniem serwo; eliminuje osobną prostownicę i jej powierzchnię.",
         "meta": "Podajniki serwo z prostownicą: prostowanie + precyzyjne podawanie w jednej maszynie. Wersja szafowa i mini.",
@@ -1889,6 +1892,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Automatyczny układacz",
+        "metaTitle": "Automatyczny układacz blach do linii cięcia",
         "short": "Układa profil schodzący z linii bez operatora, równo i z odliczeniem.",
         "hero": "Ostatnie ogniwo linii profilującej lub cięcia poprzecznego: zespół, który odbiera pocięty profil lub blachę z prędkością linii i układa je w porządku paczki. Ręczne układanie to krok najbardziej ograniczający prędkość linii i najbardziej podnoszący ryzyko uszkodzenia; układanie automatyczne usuwa to wąskie gardło.",
         "meta": "Zespół automatycznego układania do linii profilujących i cięcia poprzecznego: odbiór z prędkością linii, odliczone paczki, praca bez operatora.",
@@ -1925,6 +1929,7 @@
       },
       "kompakt-hatlar": {
         "name": "Linie Kompaktowe",
+        "metaTitle": "Linie kompaktowe: odwijak, prostownica, podajnik",
         "short": "Odwijak + prostownica + podajnik na jednej platformie.",
         "hero": "Linie kompaktowe łączą odwijanie, prostowanie i podawanie serwo na jednej platformie; przeznaczone dla zakładów, które chcą pełne podawanie do pras na ograniczonej powierzchni.",
         "meta": "Kompaktowe linie podawania do pras: odwijak, prostownica i podajnik serwo na jednej platformie.",
