@@ -1789,6 +1789,7 @@
       },
       "servo-suruculer": {
         "name": "Alimentatori Servo",
+        "metaTitle": "Alimentatori servo per presse: standard e mini",
         "short": "Alimentazione a passo di precisione alle presse; serie standard e mini.",
         "hero": "Gli alimentatori servo avanzano la lamiera nello stampo a passi millimetrici; la tecnologia servo Schneider Lexium offre alta ripetibilità, sincronizzazione con la pressa e gestione facile delle ricette.",
         "meta": "Alimentatori servo: serie standard e mini per linee di pressa, alimentazione di precisione su base Schneider Lexium.",
@@ -1840,6 +1841,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Alimentatori Servo con Raddrizzatrice",
+        "metaTitle": "Alimentatori servo con raddrizzatrice integrata",
         "short": "Raddrizzatura e alimentazione in un solo corpo: spazio e investimento ridotti.",
         "hero": "Una soluzione compatta che unisce in un solo corpo i rulli raddrizzatori che eliminano la memoria del coil e l'alimentazione servo; elimina la raddrizzatrice separata e il suo ingombro.",
         "meta": "Alimentatori servo con raddrizzatrice: raddrizzatura + alimentazione di precisione in una macchina. Versioni cassettata e mini.",
@@ -1890,6 +1892,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Impilatore automatico",
+        "metaTitle": "Impilatore automatico di lamiera per profilatura",
         "short": "Impila il profilo in uscita dalla linea senza operatore, in squadro e contato.",
         "hero": "L'ultimo anello di una linea di profilatura o di taglio a misura: un'unità che raccoglie il profilo o la lamiera tagliata alla velocità di linea e li impila in ordine di pacco. Impilare a mano è il passaggio che più limita la velocità di linea e più aumenta il rischio di danno; l'impilaggio automatico elimina questo collo di bottiglia.",
         "meta": "Unità di impilaggio automatico per linee di profilatura e taglio a misura: raccolta alla velocità di linea, pacchi contati, funzionamento senza operatore.",
@@ -1926,6 +1929,7 @@
       },
       "kompakt-hatlar": {
         "name": "Linee Compatte",
+        "metaTitle": "Linee compatte: svolgitore e alimentatore servo",
         "short": "Svolgitore + raddrizzatrice + alimentatore su una piattaforma.",
         "hero": "Le linee compatte riuniscono svolgimento, raddrizzatura e alimentazione servo su un'unica piattaforma; pensate per le aziende che vogliono un'alimentazione presse completa in spazi ridotti.",
         "meta": "Linee compatte di alimentazione presse: svolgitore, raddrizzatrice e alimentatore servo su una piattaforma.",

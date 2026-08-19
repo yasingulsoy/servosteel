@@ -1854,6 +1854,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Doğrultmalı Servo Sürücüler",
+        "metaTitle": "Doğrultmalı Servo Sürücü: Sac Doğrultma, Besleme",
         "short": "Doğrultma ve servo besleme tek gövdede: yerden ve yatırımdan tasarruf.",
         "hero": "Rulodaki kıvrım hafızasını alan doğrultma merdaneleri ile servo beslemeyi tek gövdede birleştiren kompakt çözüm; ayrı doğrultucu yatırımını ve yer ihtiyacını ortadan kaldırır.",
         "meta": "Doğrultmalı servo sürücüler: doğrultma + hassas besleme tek makinede. Kasalı ve mini seçenekleriyle pres hatları için kompakt çözüm.",
@@ -1904,6 +1905,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Otomatik İstifleyici",
+        "metaTitle": "Otomatik İstifleyici: Hat Sonu Levha İstifleme",
         "short": "Hattan çıkan profili operatörsüz, düzgün ve sayılı biçimde istifler.",
         "hero": "Roll form ve boy kesme hatlarının son halkası: kesilen profil ya da plakayı hat hızında toplayıp paket düzeninde istifleyen ünite. Elle istif, hat hızını sınırlayan ve hasar riskini en çok artıran adımdır; otomatik istif bu darboğazı ortadan kaldırır.",
         "meta": "Roll form ve boy kesme hatları için otomatik istifleme ünitesi: hat hızında toplama, sayılı paket, operatörsüz çalışma.",
@@ -1940,6 +1942,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompakt Hatlar",
+        "metaTitle": "Kompakt Pres Besleme Hattı: Üçü Tek Şasede",
         "short": "Açıcı + doğrultucu + sürücü tek platformda: dar alan çözümü.",
         "hero": "Rulo açma, doğrultma ve servo beslemeyi tek platformda toplayan kompakt hatlar; sınırlı alanda tam fonksiyonlu pres besleme kurmak isteyen işletmeler için tasarlanır.",
         "meta": "Kompakt pres besleme hatları: rulo açıcı, doğrultucu ve servo sürücü tek platformda. Dar alanlar için komple çözüm.",

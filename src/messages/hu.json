@@ -121,6 +121,7 @@
   "hub": {
     "eyebrow": "Szakterületünk",
     "title": "Profilozó Sorok",
+    "metaTitle": "Profilozó sorok: egyedi profilgyártó sorok",
     "desc": "Tekercstől a kész profilig: komplett gyártósorok 7 profilcsaládhoz, a projektjére tervezve — a lecsévélőtől a rakatolóig minden a Servosteel kézjegyét viseli.",
     "metaDesc": "Egyedi profilozó sorok kábeltálcához, napelemprofilhoz, polchoz, állványpallóhoz, korláthoz és C/Sigma/Omega profilokhoz.",
     "flow": ["Lecsévélő", "Egyengető", "Szervoadagoló", "Lyukasztó Állomások", "Profilozó Gép", "Vágás", "Rakatolás"],
@@ -1788,6 +1789,7 @@
       },
       "servo-suruculer": {
         "name": "Szervoadagolók",
+        "metaTitle": "Szervoadagolók présorokhoz: standard és mini",
         "short": "Pontos léptető lemezadagolás présorokba; standard és mini széria.",
         "hero": "A szervoadagolók milliméteres léptékben juttatják a lemezt a szerszámba; a Schneider Lexium szervotechnológia nagy ismételhetőséget, présszinkront és egyszerű receptkezelést kínál.",
         "meta": "Szervoadagolók: standard és mini széria présorokhoz, Schneider Lexium alapú pontos lemezadagolás.",
@@ -1839,6 +1841,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Egyengetős Szervoadagolók",
+        "metaTitle": "Egyengetős szervoadagoló: egyengetés és adagolás",
         "short": "Egyengetés és szervoadagolás egy testben: hely és beruházás megtakarítása.",
         "hero": "Kompakt megoldás, amely a tekercs hajlási memóriáját megszüntető egyengető görgőket és a szervoadagolást egy testben egyesíti; kiváltja a külön egyengetőt és annak helyigényét.",
         "meta": "Egyengetős szervoadagolók: egyengetés + pontos adagolás egy gépben. Szekrényes és mini kivitel.",
@@ -1889,6 +1892,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Automata rakatoló",
+        "metaTitle": "Automata lemezrakatoló profilozó sorokhoz",
         "short": "A sorról érkező profilt kezelő nélkül, szögben és megszámlálva rakatolja.",
         "hero": "A profilhengerlő vagy keresztvágó sor utolsó láncszeme: egység, amely a levágott profilt vagy lemezt sorsebességen fogadja és csomagrendbe rakatolja. A kézi rakatolás az a lépés, amely a legjobban korlátozza a sorsebességet és a legjobban növeli a sérülés kockázatát; az automata rakatolás ezt a szűk keresztmetszetet szünteti meg.",
         "meta": "Automata rakatoló egység profilhengerlő és keresztvágó sorokhoz: fogadás sorsebességen, megszámlált csomagok, kezelő nélküli működés.",
@@ -1925,6 +1929,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompakt Sorok",
+        "metaTitle": "Kompakt présadagoló sor: lecsévélő és egyengető",
         "short": "Lecsévélő + egyengető + adagoló egy platformon.",
         "hero": "A kompakt sorok a lecsévélést, egyengetést és szervoadagolást egyetlen platformon egyesítik; olyan üzemeknek, amelyek korlátozott helyen teljes értékű présadagolást szeretnének.",
         "meta": "Kompakt présadagoló sorok: lecsévélő, egyengető és szervoadagoló egy platformon.",

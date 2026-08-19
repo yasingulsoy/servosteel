@@ -1789,6 +1789,7 @@
       },
       "servo-suruculer": {
         "name": "Alimentadores Servo",
+        "metaTitle": "Alimentadores servo para prensas: estándar, mini",
         "short": "Alimentación por pasos de precisión a prensas; series estándar y mini.",
         "hero": "Los alimentadores servo avanzan la chapa hacia el troquel en pasos milimétricos; la tecnología servo Schneider Lexium ofrece alta repetibilidad, sincronización con la prensa y gestión sencilla de recetas.",
         "meta": "Alimentadores servo: series estándar y mini para líneas de prensa, alimentación de precisión basada en Schneider Lexium.",
@@ -1840,6 +1841,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Alimentadores Servo con Enderezadora",
+        "metaTitle": "Alimentadores servo con enderezadora integrada",
         "short": "Enderezado y alimentación en un cuerpo: ahorro de espacio e inversión.",
         "hero": "Una solución compacta que une en un solo cuerpo los rodillos enderezadores que eliminan la memoria de la bobina y la alimentación servo; elimina la enderezadora aparte y su espacio.",
         "meta": "Alimentadores servo con enderezadora: enderezado + alimentación de precisión en una máquina. Versiones de casete y mini.",
@@ -1890,6 +1892,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Apilador automático",
+        "metaTitle": "Apilador automático de chapa para perfilado",
         "short": "Apila el perfil que sale de la línea sin operario, a escuadra y contado.",
         "hero": "El último eslabón de una línea de perfilado o de corte a medida: una unidad que recoge el perfil o la chapa cortada a velocidad de línea y la apila en orden de paquete. Apilar a mano es el paso que más limita la velocidad de línea y más eleva el riesgo de daño; el apilado automático elimina ese cuello de botella.",
         "meta": "Unidad de apilado automático para líneas de perfilado y corte a medida: recogida a velocidad de línea, paquetes contados, operación sin operario.",
@@ -1926,6 +1929,7 @@
       },
       "kompakt-hatlar": {
         "name": "Líneas Compactas",
+        "metaTitle": "Líneas compactas: desbobinadora y alimentador",
         "short": "Desbobinador + enderezadora + alimentador en una plataforma.",
         "hero": "Las líneas compactas reúnen desbobinado, enderezado y alimentación servo en una sola plataforma; pensadas para empresas que quieren alimentación de prensa completa en un espacio limitado.",
         "meta": "Líneas compactas de alimentación de prensas: desbobinadora, enderezadora y alimentador servo en una plataforma.",

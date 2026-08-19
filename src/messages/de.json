@@ -1789,6 +1789,7 @@
       },
       "servo-suruculer": {
         "name": "Servovorschübe",
+        "metaTitle": "Servovorschübe für Pressen: Standard und Mini",
         "short": "Präziser Schrittvorschub in Pressenlinien; Standard- und Mini-Serie.",
         "hero": "Servovorschübe führen das Blech in millimetergenauen Schritten ins Werkzeug; Schneider-Lexium-Servotechnik liefert hohe Wiederholgenauigkeit, Pressensynchronisation und einfache Rezeptverwaltung.",
         "meta": "Servovorschübe: Standard- und Mini-Serie für Pressenzuführlinien, präziser Blechvorschub auf Schneider-Lexium-Basis.",
@@ -1840,6 +1841,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Richt-Servovorschübe",
+        "metaTitle": "Richt-Servovorschübe: Richten und Vorschub",
         "short": "Richten und Servovorschub in einem Körper: spart Platz und Investition.",
         "hero": "Eine kompakte Lösung, die Richtrollen zur Beseitigung der Coil-Krümmung mit dem Servovorschub in einem Körper vereint; die separate Richtmaschine und ihre Stellfläche entfallen.",
         "meta": "Richt-Servovorschübe: Richten + präziser Vorschub in einer Maschine. Kompakte Lösung mit Kassetten- und Mini-Ausführung.",
@@ -1890,6 +1892,7 @@
       },
       "otomatik-istifleyici": {
         "name": "Automatischer Stapler",
+        "metaTitle": "Automatischer Blechstapler für Profilieranlagen",
         "short": "Stapelt das aus der Anlage laufende Profil unbeaufsichtigt, bündig und gezählt.",
         "hero": "Das letzte Glied einer Profilier- oder Querteilanlage: eine Einheit, die das geschnittene Profil oder Blech in Liniengeschwindigkeit aufnimmt und in Paketordnung stapelt. Von Hand zu stapeln ist der Schritt, der die Liniengeschwindigkeit am stärksten begrenzt und das Beschädigungsrisiko am meisten erhöht; das automatische Stapeln beseitigt diesen Engpass.",
         "meta": "Automatische Stapeleinheit für Profilier- und Querteilanlagen: Aufnahme in Liniengeschwindigkeit, gezählte Pakete, unbeaufsichtigter Betrieb.",
@@ -1926,6 +1929,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompaktanlagen",
+        "metaTitle": "Kompaktanlagen: Haspel, Richtmaschine, Vorschub",
         "short": "Haspel + Richtmaschine + Vorschub auf einer Plattform.",
         "hero": "Kompaktanlagen vereinen Abwickeln, Richten und Servovorschub auf einer Plattform; entwickelt für Betriebe, die volle Pressenzuführung auf begrenzter Fläche brauchen.",
         "meta": "Kompakte Pressenzuführanlagen: Haspel, Richtmaschine und Servovorschub auf einer Plattform. Die Komplettlösung für enge Flächen.",
