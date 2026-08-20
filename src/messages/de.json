@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Kabelrinnen-Produktionsanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "0,6 – 3,0 mm"],
+            ["Blechbreite", "50 – 600 mm"],
+            ["Liniengeschwindigkeit", "8 – 20 m/min"],
+            ["Rollformstationen", "18 – 24"],
+            ["Gesamtmotorleistung", "7,5 – 30 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Komplettanlage für gelochte und ungelochte Kabelrinnen, -wannen und Deckel.",
         "hero": "Eine komplette Rollformanlage, die Kabelrinnen — das Rückgrat der Elektroinfrastruktur — vom Coil zum fertigen Produkt fertigt: Abwickler, Richtmaschine, Servovorschub, Stanzstationen, Rollformmaschine und Schneideeinheit laufen über eine zentrale SPS.",
         "meta": "Kabelrinnen-Produktionsanlage: kundenspezifische Rollform-Komplettlösung für gelochte/ungelochte Rinnen, Wannen und Deckelprofile.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Solar-C-Profil-Produktionslinie",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "1,0 – 3,0 mm"],
+            ["Blechbreite", "150 – 400 mm"],
+            ["Liniengeschwindigkeit", "10 – 60 m/min"],
+            ["Rollformstationen", "12 – 22"],
+            ["Gesamtmotorleistung", "15 – 25 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Schnelles Rollforming für PV-Montageprofile.",
         "hero": "Eine Anlage, die Hut-, C- und Omega-Profile für die Unterkonstruktion von Solarkraftwerken direkt vom Coil fertigt; Stanzstationen setzen die Montagelöcher inline — die Profile kommen montagefertig auf die Baustelle.",
         "meta": "Solarmontageprofil-Anlage: komplette Hochgeschwindigkeits-Rollformanlage mit Stanzstationen für PV-Konstruktionsprofile.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Schwerlastregal-Produktionsanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "1,5 – 5,0 mm"],
+            ["Blechbreite", "100 – 400 mm"],
+            ["Liniengeschwindigkeit", "5 – 20 m/min"],
+            ["Rollformstationen", "18 – 30"],
+            ["Gesamtmotorleistung", "15 – 37 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Anlage mit Stanzstationen für Regalstützen und Traversen.",
         "hero": "Eine Anlage für die tragenden Regalstützen (Uprights) und Traversen von Logistiklagern; mehrreihige Montagelöcher entstehen inline an Servostanzen, die Maßhaltigkeit bleibt auch bei dickem Blech erhalten.",
         "meta": "Schwerlastregal-Anlage: kundenspezifisches Rollforming mit Stanzstationen für Regalstützen und Traversenprofile.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "Gerüstboden-Produktionsanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "1,2 – 2,0 mm"],
+            ["Blechbreite", "240 – 520 mm"],
+            ["Liniengeschwindigkeit", "4 – 20 m/min"],
+            ["Rollformstationen", "15 – 26"],
+            ["Gesamtmotorleistung", "11 – 22 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Fertigung rutschfester Gerüstbeläge und Bohlenprofile.",
         "hero": "Eine Anlage für die begehbaren Stahlböden von Baugerüsten; rutschhemmende Prägungen und Drainagelöcher entstehen inline, eine Pressstation für Hakenenden lässt sich integrieren.",
         "meta": "Gerüstboden-Anlage: komplettes Rollforming für rutschfeste Stahlbeläge und Bohlenprofile.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Leitplanken-Produktionsanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "2,5 – 4,0 mm"],
+            ["Blechbreite", "480 – 750 mm"],
+            ["Liniengeschwindigkeit", "3 – 18 m/min"],
+            ["Rollformstationen", "16 – 22"],
+            ["Gesamtmotorleistung", "30 – 45 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Schweres Rollforming für W-Profil-Schutzplanken.",
         "hero": "Eine Schwerlastanlage für W-Profil- (Zweiwellen) und Dreiwellen-Schutzplanken — den Standard der Verkehrssicherheit; sie formt die Welle in dickem verzinktem Blech mit normgerechter Präzision.",
         "meta": "Leitplanken-Anlage: schweres Rollforming für W-Profil- und Dreiwellen-Schutzplanken.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Lärmschutzwand-Produktionsanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "0,3 – 1,5 mm"],
+            ["Blechbreite", "300 – 800 mm"],
+            ["Liniengeschwindigkeit", "12 – 25 m/min"],
+            ["Rollformstationen", "16 – 20"],
+            ["Gesamtmotorleistung", "7,5 – 30 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Rollforming für Kassetten- und Paneelprofile von Lärmschutzwänden.",
         "hero": "Eine Anlage für die Aluminium-/Stahlkassetten von Lärmschutzwänden an Autobahnen und Bahnstrecken; gelochte Frontplatten (Absorber) und geschlossene Rückplatten entstehen auf derselben Plattform.",
         "meta": "Lärmschutzwand-Anlage: Rollforming für gelochte und geschlossene Kassetten- und Paneelprofile.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapezblech- und Fassadenpaneelanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "0,3 – 1,5 mm"],
+            ["Blechbreite", "≤ 1.300 mm"],
+            ["Liniengeschwindigkeit", "15 – 60 m/min"],
+            ["Rollformstationen", "16 – 20"],
+            ["Gesamtmotorleistung", "11 – 22 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Umformen, Querteilen und Stapeln für Dach- und Fassadenprofile.",
         "hero": "Anlagen für Trapezblech, Stehfalz-Dachprofil und Fassadenpaneel für Dach und Fassade. Zwei Dinge entscheiden diese Familie: Planheit über ein breites Blech und eine lackierte Oberfläche unbeschädigt durch die Umformung zu bringen.",
         "meta": "Produktionsanlagen für Trapezblech, Stehfalzdach und Fassadenprofile: Umformen, Querteilen, automatisches Stapeln und Verpacken.",
@@ -1644,6 +1728,18 @@
       },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profilanlage",
+        "table": {
+          "title": "Technische Daten",
+          "head": ["Merkmal", "Bereich"],
+          "rows": [
+            ["Blechdicke", "1,5 – 4,0 mm"],
+            ["Blechbreite", "100 – 400 mm"],
+            ["Liniengeschwindigkeit", "10 – 36 m/min"],
+            ["Rollformstationen", "16 – 24"],
+            ["Gesamtmotorleistung", "11 – 30 kW"]
+          ],
+          "note": "Die Bereiche gelten für die Baureihe; jede Anlage wird nach Profilquerschnitt, Werkstoff und Kapazität ausgelegt."
+        },
         "short": "Leichtbau-Stahlprofile: mehrere Querschnitte auf einer Anlage.",
         "hero": "Eine flexible Lösung, die C-, Sigma- und Omega-Profile — die Träger des Stahlleichtbaus — auf einer Anlage fertigt; der Wechsel zwischen Querschnitten dauert dank verstellbarer Rollengruppen und Rezeptsystem nur Minuten.",
         "meta": "C-, Sigma- und Omega-Profilanlage: verstellbares Mehrquerschnitt-Rollforming für den Stahlleichtbau.",

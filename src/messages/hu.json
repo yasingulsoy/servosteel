@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Kábeltálca Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "0,6 – 3,0 mm"],
+            ["Lemezszélesség", "50 – 600 mm"],
+            ["Sorsebesség", "8 – 20 m/perc"],
+            ["Profilozó állomások", "18 – 24"],
+            ["Össz motorteljesítmény", "7,5 – 30 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Komplett sor perforált és zárt kábeltálcákhoz, tálcákhoz és fedelekhez.",
         "hero": "Komplett görgős profilozó sor, amely a kábeltálcákat — az elektromos infrastruktúra gerincét — a tekercstől a kész termékig gyártja: lecsévélő, egyengető, szervoadagolás, lyukasztó állomások, profilozó gép és vágóegység egyetlen PLC-ről vezérelve.",
         "meta": "Kábeltálca gyártósor: egyedi, komplett görgős profilozó megoldás perforált/zárt tálcákhoz, tálcákhoz és fedélprofilokhoz.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Napelem C-profil Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "1,0 – 3,0 mm"],
+            ["Lemezszélesség", "150 – 400 mm"],
+            ["Sorsebesség", "10 – 60 m/perc"],
+            ["Profilozó állomások", "12 – 22"],
+            ["Össz motorteljesítmény", "15 – 25 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Nagy sebességű profilozás fotovoltaikus tartóprofilokhoz.",
         "hero": "Sor, amely a napelemes erőművek tartószerkezetének hat-, C- és Omega-profiljait közvetlenül a tekercsből gyártja; a lyukasztó állomások a rögzítőlyukakat soron belül készítik, és a profilok szerelésre készen érkeznek a helyszínre.",
         "meta": "Napelemes tartóprofil gyártósor: komplett, nagy sebességű profilozó sor lyukasztó állomásokkal fotovoltaikus szerkezetekhez.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Nehéz Polc Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "1,5 – 5,0 mm"],
+            ["Lemezszélesség", "100 – 400 mm"],
+            ["Sorsebesség", "5 – 20 m/perc"],
+            ["Profilozó állomások", "18 – 30"],
+            ["Össz motorteljesítmény", "15 – 37 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Lyukasztó állomásos sor polcállványokhoz és tartókhoz.",
         "hero": "Sor, amely a logisztikai raktárak teherhordó polcállványait (upright) és tartóit gyártja; a többsoros rögzítőlyukakat soron belül, szervolyukasztókkal készíti, és a mérethűség vastag lemezen is megmarad.",
         "meta": "Nehéz polc gyártósor: egyedi profilozó megoldás lyukasztó állomásokkal polcállványokhoz és tartóprofilokhoz.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "Állványpalló Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "1,2 – 2,0 mm"],
+            ["Lemezszélesség", "240 – 520 mm"],
+            ["Sorsebesség", "4 – 20 m/perc"],
+            ["Profilozó állomások", "15 – 26"],
+            ["Össz motorteljesítmény", "11 – 22 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Csúszásmentes állványpallók és pallóprofilok gyártása.",
         "hero": "Sor, amely az építőállványok acél járópallóit gyártja; a csúszásmentes felületi dombornyomás és a vízelvezető lyukak soron belül alakulnak ki, a kampós véghajlításhoz préssel integrálható.",
         "meta": "Állványpalló gyártósor: komplett profilozás csúszásmentes acélpallókhoz és pallóprofilokhoz.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Szalagkorlát Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "2,5 – 4,0 mm"],
+            ["Lemezszélesség", "480 – 750 mm"],
+            ["Sorsebesség", "3 – 18 m/perc"],
+            ["Profilozó állomások", "16 – 22"],
+            ["Össz motorteljesítmény", "30 – 45 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Nehéz üzemű profilozás W-szelvényű szalagkorlátokhoz.",
         "hero": "Nehéz üzemű sor, amely a közúti biztonság szabványát, a W-szelvényű (kéthullámú) és háromhullámú szalagkorlátokat gyártja; a hullámformát vastag horganyzott lemezen, szabvány szerinti pontossággal alakítja.",
         "meta": "Szalagkorlát gyártósor: nehéz üzemű profilozás W-szelvényű és háromhullámú korlátokhoz.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Zajvédő Fal Gyártósor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "0,3 – 1,5 mm"],
+            ["Lemezszélesség", "300 – 800 mm"],
+            ["Sorsebesség", "12 – 25 m/perc"],
+            ["Profilozó állomások", "16 – 20"],
+            ["Össz motorteljesítmény", "7,5 – 30 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Profilozás zajvédő kazetta- és panelprofilokhoz.",
         "hero": "Sor, amely az autópályák és vasutak menti zajvédő falak alumínium/acél kazettaprofiljait gyártja; a perforált előlap (elnyelő) és a zárt hátlap ugyanazon a platformon készíthető.",
         "meta": "Zajvédő fal gyártósor: profilozás perforált és zárt kazetta- és panelprofilokhoz.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapézlemez- és homlokzatpanel-sor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "0,3 – 1,5 mm"],
+            ["Lemezszélesség", "≤ 1.300 mm"],
+            ["Sorsebesség", "15 – 60 m/perc"],
+            ["Profilozó állomások", "16 – 20"],
+            ["Össz motorteljesítmény", "11 – 22 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Alakítás, keresztvágás és rakatolás tető- és homlokzatprofilokhoz.",
         "hero": "Sorok trapézlemezhez, állókorcos tetőprofilhoz és homlokzatpanelhez. Két dolog dönti el ezt a családot: a síkkifekvés széles lemezen, és hogy a festett felület sértetlenül jusson át az alakításon.",
         "meta": "Gyártósorok trapézlemezhez, állókorcos tetőhöz és homlokzatprofilokhoz: alakítás, keresztvágás, automata rakatolás és csomagolás.",
@@ -1644,6 +1728,18 @@
       },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profil Sor",
+        "table": {
+          "title": "Műszaki adatok",
+          "head": ["Jellemző", "Tartomány"],
+          "rows": [
+            ["Lemezvastagság", "1,5 – 4,0 mm"],
+            ["Lemezszélesség", "100 – 400 mm"],
+            ["Sorsebesség", "10 – 36 m/perc"],
+            ["Profilozó állomások", "16 – 24"],
+            ["Össz motorteljesítmény", "11 – 30 kW"]
+          ],
+          "note": "A tartományok a sorozatra vonatkoznak; minden sort a profil keresztmetszete, az anyag és a kapacitás szerint méretezünk."
+        },
         "short": "Könnyűszerkezetes acélprofilok: több keresztmetszet egy soron.",
         "hero": "Rugalmas megoldás, amely a könnyűszerkezetes építés tartóit, a C-, Sigma- és Omega-profilokat egyetlen soron gyártja; a keresztmetszetek közötti váltás percek alatt megy a állítható görgőcsoportok és a receptrendszer révén.",
         "meta": "C, Sigma és Omega profil gyártósor: állítható, több keresztmetszetű profilozás könnyűszerkezetes építéshez.",

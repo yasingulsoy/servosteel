@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Linia Produkcji Koryt Kablowych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "0,6 – 3,0 mm"],
+            ["Szerokość blachy", "50 – 600 mm"],
+            ["Prędkość linii", "8 – 20 m/min"],
+            ["Stacje profilujące", "18 – 24"],
+            ["Łączna moc silników", "7,5 – 30 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Kompletna linia do koryt perforowanych i pełnych, tras i pokryw.",
         "hero": "Kompletna linia profilująca produkująca koryta kablowe — kręgosłup infrastruktury elektrycznej — z kręgu do gotowego produktu: odwijak, prostownica, podawanie serwo, stacje wykrawania, profilarka i zespół cięcia sterowane z jednego PLC.",
         "meta": "Linia koryt kablowych: kompletne rozwiązanie profilujące na zamówienie do koryt perforowanych/pełnych, tras i pokryw.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Linia Produkcji Profili C Solarnych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "1,0 – 3,0 mm"],
+            ["Szerokość blachy", "150 – 400 mm"],
+            ["Prędkość linii", "10 – 60 m/min"],
+            ["Stacje profilujące", "12 – 22"],
+            ["Łączna moc silników", "15 – 25 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Szybkie profilowanie profili montażowych PV.",
         "hero": "Linia produkująca profile hat, C i Omega do konstrukcji nośnych elektrowni słonecznych bezpośrednio z kręgu; stacje wykrawania wykonują otwory montażowe w linii, a profile trafiają na budowę gotowe do montażu.",
         "meta": "Linia profili montażowych solarnych: kompletna, szybka linia profilująca ze stacjami wykrawania do konstrukcji PV.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Linia Produkcji Regałów Ciężkich",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "1,5 – 5,0 mm"],
+            ["Szerokość blachy", "100 – 400 mm"],
+            ["Prędkość linii", "5 – 20 m/min"],
+            ["Stacje profilujące", "18 – 30"],
+            ["Łączna moc silników", "15 – 37 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Linia ze stacjami wykrawania do słupów i belek regałowych.",
         "hero": "Linia produkująca nośne słupy (uprights) i belki regałów magazynów logistycznych; wielorzędowe otwory montażowe są wykrawane w linii serwowykrawakami, a stabilność wymiarowa jest utrzymana nawet na grubej blasze.",
         "meta": "Linia regałów ciężkich: profilowanie na zamówienie ze stacjami wykrawania do słupów i belek regałowych.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "Linia Produkcji Pomostów Rusztowaniowych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "1,2 – 2,0 mm"],
+            ["Szerokość blachy", "240 – 520 mm"],
+            ["Prędkość linii", "4 – 20 m/min"],
+            ["Stacje profilujące", "15 – 26"],
+            ["Łączna moc silników", "11 – 22 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Produkcja antypoślizgowych pomostów i pomostów rusztowaniowych.",
         "hero": "Linia produkująca stalowe pomosty komunikacyjne rusztowań budowlanych; antypoślizgowe przetłoczenia powierzchni i otwory odwadniające powstają w linii, a do zaginania haków końcowych można zintegrować stację prasy.",
         "meta": "Linia pomostów rusztowaniowych: kompletne profilowanie antypoślizgowych stalowych pomostów.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Linia Produkcji Barier Drogowych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "2,5 – 4,0 mm"],
+            ["Szerokość blachy", "480 – 750 mm"],
+            ["Prędkość linii", "3 – 18 m/min"],
+            ["Stacje profilujące", "16 – 22"],
+            ["Łączna moc silników", "30 – 45 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Ciężkie profilowanie barier typu W (W-beam).",
         "hero": "Linia dużej wydajności produkująca bariery W-beam (dwufalowe) i trójfalowe — standard bezpieczeństwa drogowego; kształtuje falę na grubej blasze ocynkowanej z dokładnością zgodną z normą.",
         "meta": "Linia barier drogowych: ciężkie profilowanie barier W-beam i trójfalowych.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Linia Produkcji Ekranów Akustycznych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "0,3 – 1,5 mm"],
+            ["Szerokość blachy", "300 – 800 mm"],
+            ["Prędkość linii", "12 – 25 m/min"],
+            ["Stacje profilujące", "16 – 20"],
+            ["Łączna moc silników", "7,5 – 30 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Profilowanie kaset i paneli ekranów akustycznych.",
         "hero": "Linia produkująca aluminiowe/stalowe profile kasetowe ekranów akustycznych wzdłuż autostrad i kolei; perforowany panel przedni (absorber) i pełny panel tylny mogą powstawać na tej samej platformie.",
         "meta": "Linia ekranów akustycznych: profilowanie perforowanych i pełnych profili kasetowych i panelowych.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Linia blachy trapezowej i paneli elewacyjnych",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "0,3 – 1,5 mm"],
+            ["Szerokość blachy", "≤ 1.300 mm"],
+            ["Prędkość linii", "15 – 60 m/min"],
+            ["Stacje profilujące", "16 – 20"],
+            ["Łączna moc silników", "11 – 22 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Kształtowanie, cięcie na długość i układanie profili dachowych i elewacyjnych.",
         "hero": "Linie do blachy trapezowej, profilu dachowego na rąbek stojący i panelu elewacyjnego. Dwie rzeczy decydują o tej rodzinie: płaskość na szerokiej blasze oraz przeprowadzenie powierzchni lakierowanej przez kształtowanie bez uszkodzeń.",
         "meta": "Linie produkcyjne blachy trapezowej, dachów na rąbek i profili elewacyjnych: kształtowanie, cięcie na długość, automatyczne układanie i pakowanie.",
@@ -1644,6 +1728,18 @@
       },
       "c-sigma-omega": {
         "name": "Linia Profili C+ / Sigma / Omega",
+        "table": {
+          "title": "Dane techniczne",
+          "head": ["Parametr", "Zakres"],
+          "rows": [
+            ["Grubość blachy", "1,5 – 4,0 mm"],
+            ["Szerokość blachy", "100 – 400 mm"],
+            ["Prędkość linii", "10 – 36 m/min"],
+            ["Stacje profilujące", "16 – 24"],
+            ["Łączna moc silników", "11 – 30 kW"]
+          ],
+          "note": "Zakresy dotyczą serii; każda linia jest dobierana pod przekrój profilu, materiał i wydajność."
+        },
         "short": "Profile lekkiej konstrukcji stalowej: wiele przekrojów na jednej linii.",
         "hero": "Elastyczne rozwiązanie produkujące profile C, Sigma i Omega — nośne elementy lekkich konstrukcji stalowych — na jednej linii; zmiana przekroju zajmuje minuty dzięki regulowanym grupom rolek i systemowi receptur.",
         "meta": "Linia profili C, Sigma i Omega: regulowane, wieloprzekrojowe profilowanie do lekkich konstrukcji stalowych.",

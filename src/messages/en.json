@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Coil Processing Lines: Slitting, Cut-to-Length, Roll Forming",
-    "description": "Coil processing line manufacturer: custom slitting, cut-to-length and roll forming lines plus press feeding systems, from Istanbul to 48+ countries."
+    "description": "Coil processing line manufacturer: custom slitting, cut-to-length and roll forming lines plus servo press feeders, from Istanbul to 48+ countries."
   },
   "topbar": {
     "export": "Exporting to 48+ countries",
@@ -1124,6 +1124,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Cable Tray Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "0,6 – 3,0 mm"],
+            ["Sheet width", "50 – 600 mm"],
+            ["Line speed", "8 – 20 m/min"],
+            ["Roll forming stations", "18 – 24"],
+            ["Total motor power", "7,5 – 30 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "metaTitle": "Cable Tray Roll Forming Machine & Production Line",
         "short": "A complete line for perforated and solid cable trays, ladders and covers.",
         "hero": "A complete roll forming line producing cable trays — the backbone of electrical infrastructure — from coil to finished product: decoiler, straightener, servo feeder, punching stations, roll forming machine and cutting unit are managed by a single PLC.",
@@ -1221,6 +1233,18 @@
       },
       "solar-profil": {
         "name": "Solar C-Profile Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "1,0 – 3,0 mm"],
+            ["Sheet width", "150 – 400 mm"],
+            ["Line speed", "10 – 60 m/min"],
+            ["Roll forming stations", "12 – 22"],
+            ["Total motor power", "15 – 25 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "short": "A high-speed roll forming solution for PV mounting profiles.",
         "hero": "A line producing hat, C and Omega profiles for solar power plant mounting structures directly from coil; punching stations open the mounting holes in-line, so profiles arrive on site ready to install.",
         "meta": "Solar mounting profile production line: a complete, high-speed roll forming line with punching stations for PV structure profiles.",
@@ -1312,6 +1336,18 @@
       },
       "agir-raf": {
         "name": "Storage Rack Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "1,5 – 5,0 mm"],
+            ["Sheet width", "100 – 400 mm"],
+            ["Line speed", "5 – 20 m/min"],
+            ["Roll forming stations", "18 – 30"],
+            ["Total motor power", "15 – 37 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "metaTitle": "Storage Rack Roll Forming Machine for Racking",
         "short": "A punching-station line for rack uprights and beam profiles.",
         "hero": "A line producing the load-bearing rack uprights and beams of logistics warehouses; multi-row mounting holes are punched in-line by servo punches, and dimensional stability is maintained even in thick sheet.",
@@ -1405,6 +1441,18 @@
       },
       "iskele-kalas": {
         "name": "Scaffolding Plank Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "1,2 – 2,0 mm"],
+            ["Sheet width", "240 – 520 mm"],
+            ["Line speed", "4 – 20 m/min"],
+            ["Roll forming stations", "15 – 26"],
+            ["Total motor power", "11 – 22 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "short": "Production of anti-slip scaffolding platforms and plank profiles.",
         "hero": "A line producing the steel walking platforms of construction scaffolding; anti-slip surface embossing and drainage holes are formed in-line, and a press station for hook-end forming can be integrated.",
         "meta": "Scaffolding plank production line: a complete roll forming line for anti-slip steel platform and plank profiles.",
@@ -1450,6 +1498,18 @@
       },
       "yol-bariyeri": {
         "name": "Guardrail Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "2,5 – 4,0 mm"],
+            ["Sheet width", "480 – 750 mm"],
+            ["Line speed", "3 – 18 m/min"],
+            ["Roll forming stations", "16 – 22"],
+            ["Total motor power", "30 – 45 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "metaTitle": "Guardrail Roll Forming Machine: Highway W-Beam",
         "short": "A heavy-duty roll forming line for W-beam guardrail profiles.",
         "hero": "A heavy-duty line producing W-beam (two-wave) and three-wave guardrail profiles — the standard of road safety; it forms the wave profile in thick galvanized sheet with standard-compliant precision.",
@@ -1542,6 +1602,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Noise Barrier Production Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "0,3 – 1,5 mm"],
+            ["Sheet width", "300 – 800 mm"],
+            ["Line speed", "12 – 25 m/min"],
+            ["Roll forming stations", "16 – 20"],
+            ["Total motor power", "7,5 – 30 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "short": "A roll forming line for sound barrier cassette and panel profiles.",
         "hero": "A line producing the aluminium/steel cassette profiles of noise barriers along highways and railways; perforated front (absorber) and closed back panels can be produced on the same line platform.",
         "meta": "Noise barrier production line: a roll forming solution producing perforated and solid sound barrier cassette and panel profiles.",
@@ -1633,6 +1705,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapezoidal Sheet and Facade Panel Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "0,3 – 1,5 mm"],
+            ["Sheet width", "≤ 1.300 mm"],
+            ["Line speed", "15 – 60 m/min"],
+            ["Roll forming stations", "16 – 20"],
+            ["Total motor power", "11 – 22 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "short": "Forming, cut-to-length and stacking for roofing and cladding profiles.",
         "hero": "Lines for trapezoidal sheet, standing-seam roofing profile and facade panel used in roofing and cladding. Two things decide this family: flatness across a wide sheet, and getting a painted surface through forming undamaged.",
         "meta": "Production lines for trapezoidal sheet, standing-seam roofing and facade cladding profiles: forming, cut-to-length, automatic stacking and packing.",
@@ -1679,6 +1763,18 @@
       },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profile Line",
+        "table": {
+          "title": "Technical specifications",
+          "head": ["Specification", "Range"],
+          "rows": [
+            ["Sheet thickness", "1,5 – 4,0 mm"],
+            ["Sheet width", "100 – 400 mm"],
+            ["Line speed", "10 – 36 m/min"],
+            ["Roll forming stations", "16 – 24"],
+            ["Total motor power", "11 – 30 kW"]
+          ],
+          "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
+        },
         "metaTitle": "C Purlin Roll Forming Machine: C, Sigma & Omega",
         "short": "Light steel framing profiles: multiple sections on one line.",
         "hero": "A flexible solution producing C, Sigma and Omega profiles — the load-bearers of light steel structures — on a single line; changeover between sections takes minutes thanks to adjustable roll groups and the recipe system.",

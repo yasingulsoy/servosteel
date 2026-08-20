@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Kablo Kanalı Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "0,6 – 3,0 mm"],
+            ["Sac genişliği", "50 – 600 mm"],
+            ["Hat hızı", "8 – 20 m/dk"],
+            ["Roll form istasyonu", "18 – 24"],
+            ["Toplam motor gücü", "7,5 – 30 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "Delikli ve deliksiz kablo kanalı, tava ve kapak profilleri için komple hat.",
         "hero": "Elektrik altyapısının omurgası olan kablo kanallarını rulodan nihai ürüne kesintisiz üreten komple roll form hattı: açıcı, doğrultucu, servo besleme, zımba istasyonları, roll form makinesi ve kesme ünitesi tek PLC üzerinden yönetilir.",
         "meta": "Kablo kanalı üretim hattı: delikli/deliksiz kanal, tava ve kapak profilleri için müşteriye özel tasarlanan komple roll form çözümü.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Solar C Profil Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "1,0 – 3,0 mm"],
+            ["Sac genişliği", "150 – 400 mm"],
+            ["Hat hızı", "10 – 60 m/dk"],
+            ["Roll form istasyonu", "12 – 22"],
+            ["Toplam motor gücü", "15 – 25 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "GES konstrüksiyon profilleri için yüksek hızlı roll form çözümü.",
         "hero": "Güneş enerjisi santrallerinin taşıyıcı konstrüksiyonunda kullanılan hat, C ve Omega profilleri rulodan doğrudan üreten hat; delme istasyonları montaj deliklerini hat üzerinde açar, profiller sahaya montaja hazır iner.",
         "meta": "Solar panel montaj profili üretim hattı: GES konstrüksiyon profilleri için delme istasyonlu, yüksek hızlı komple roll form hattı.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Ağır Raf Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "1,5 – 5,0 mm"],
+            ["Sac genişliği", "100 – 400 mm"],
+            ["Hat hızı", "5 – 20 m/dk"],
+            ["Roll form istasyonu", "18 – 30"],
+            ["Toplam motor gücü", "15 – 37 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "Depo raf dikmesi ve travers profilleri için delme istasyonlu hat.",
         "hero": "Lojistik depoların taşıyıcı raf dikmelerini (upright) ve traversleri üreten hat; çok sıralı montaj delikleri hat üzerinde servo zımbalarla açılır, kalın sacda dahi ölçü kararlılığı korunur.",
         "meta": "Ağır raf (storage rack) üretim hattı: raf dikmesi ve travers profilleri için delme istasyonlu, müşteriye özel roll form çözümü.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "İskele Kalas Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "1,2 – 2,0 mm"],
+            ["Sac genişliği", "240 – 520 mm"],
+            ["Hat hızı", "4 – 20 m/dk"],
+            ["Roll form istasyonu", "15 – 26"],
+            ["Toplam motor gücü", "11 – 22 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "Kaymaz yüzeyli iskele platform ve kalas profilleri üretimi.",
         "hero": "İnşaat iskelelerinin yürüme platformlarını (çelik kalas) üreten hat; kaymaz yüzey kabartmaları ve drenaj delikleri hat üzerinde formlanır, kancalı uç bükümleri için pres istasyonu entegre edilebilir.",
         "meta": "İskele kalas üretim hattı: kaymaz yüzeyli çelik platform ve kalas profilleri için komple roll form hattı.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Yol Bariyeri Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "2,5 – 4,0 mm"],
+            ["Sac genişliği", "480 – 750 mm"],
+            ["Hat hızı", "3 – 18 m/dk"],
+            ["Roll form istasyonu", "16 – 22"],
+            ["Toplam motor gücü", "30 – 45 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "W-beam otokorkuluk profilleri için ağır hizmet roll form hattı.",
         "hero": "Karayolu güvenliğinin standardı W-beam (iki dalga) ve üç dalga otokorkuluk profillerini üreten ağır hizmet hattı; kalın galvaniz sacda dalga formunu standartlara uygun hassasiyetle verir.",
         "meta": "Yol bariyeri (guardrail) üretim hattı: W-beam ve üç dalga otokorkuluk profilleri için ağır hizmet roll form çözümü.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Gürültü Bariyeri Üretim Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "0,3 – 1,5 mm"],
+            ["Sac genişliği", "300 – 800 mm"],
+            ["Hat hızı", "12 – 25 m/dk"],
+            ["Roll form istasyonu", "16 – 20"],
+            ["Toplam motor gücü", "7,5 – 30 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "Ses bariyeri kaset ve panel profilleri için roll form hattı.",
         "hero": "Otoyol ve demiryolu kenarlarındaki ses bariyerlerinin alüminyum/çelik kaset profillerini üreten hat; delikli ön yüz (absorber) ve kapalı arka yüz panelleri aynı hat platformunda üretilebilir.",
         "meta": "Gürültü bariyeri üretim hattı: ses bariyeri kaset ve panel profilleri için delikli/deliksiz üretim yapabilen roll form çözümü.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapez Sac ve Cephe Paneli Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "0,3 – 1,5 mm"],
+            ["Sac genişliği", "≤ 1.300 mm"],
+            ["Hat hızı", "15 – 60 m/dk"],
+            ["Roll form istasyonu", "16 – 20"],
+            ["Toplam motor gücü", "11 – 22 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "metaTitle": "Trapez Sac Makinesi ve Cephe Paneli Hattı",
         "short": "Çatı ve cephe kaplama profilleri için form verme, boy kesme ve istif.",
         "hero": "Çatı ve cephe kaplamasında kullanılan trapez sac, kenet çatı profili ve cephe paneli üretimi için hatlar. Bu ailede belirleyici olan iki şey var: geniş sacda düzlem kalitesi ve boyanmış yüzeyin şekillendirme boyunca zarar görmemesi.",
@@ -1657,6 +1741,18 @@
       },
       "c-sigma-omega": {
         "name": "C+ / Sigma / Omega Profil Hattı",
+        "table": {
+          "title": "Teknik değerler",
+          "head": ["Değer", "Aralık"],
+          "rows": [
+            ["Sac kalınlığı", "1,5 – 4,0 mm"],
+            ["Sac genişliği", "100 – 400 mm"],
+            ["Hat hızı", "10 – 36 m/dk"],
+            ["Roll form istasyonu", "16 – 24"],
+            ["Toplam motor gücü", "11 – 30 kW"]
+          ],
+          "note": "Aralıklar seri geneli içindir; profil kesiti, malzeme ve kapasiteye göre hat projeye özel boyutlandırılır."
+        },
         "short": "Hafif çelik yapı profilleri: tek hatta birden çok kesit.",
         "hero": "Hafif çelik yapıların taşıyıcıları olan C, Sigma ve Omega profilleri tek hat üzerinde üreten esnek çözüm; kesitler arası geçiş ayarlanabilir merdane grupları ve reçete sistemiyle dakikalar içinde yapılır.",
         "meta": "C, Sigma ve Omega profil üretim hattı: hafif çelik yapı profilleri için ayarlanabilir, çok kesitli roll form çözümü.",

@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Línea de Producción de Bandejas Portacables",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "0,6 – 3,0 mm"],
+            ["Ancho de chapa", "50 – 600 mm"],
+            ["Velocidad de línea", "8 – 20 m/min"],
+            ["Estaciones de perfilado", "18 – 24"],
+            ["Potencia total", "7,5 – 30 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Línea completa para bandejas perforadas y ciegas, escalerillas y tapas.",
         "hero": "Una línea de perfilado completa que produce bandejas portacables — la columna vertebral de la infraestructura eléctrica — de la bobina al producto final: desbobinador, enderezadora, alimentación servo, punzonado, perfiladora y corte gestionados por un único PLC.",
         "meta": "Línea de bandejas portacables: solución completa de perfilado a medida para bandejas perforadas/ciegas, escalerillas y tapas.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Línea de Producción de Perfil C Solar",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "1,0 – 3,0 mm"],
+            ["Ancho de chapa", "150 – 400 mm"],
+            ["Velocidad de línea", "10 – 60 m/min"],
+            ["Estaciones de perfilado", "12 – 22"],
+            ["Potencia total", "15 – 25 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Perfilado de alta velocidad para perfiles de montaje fotovoltaico.",
         "hero": "Una línea que produce perfiles hat, C y Omega para las estructuras de plantas solares directamente desde la bobina; el punzonado abre los agujeros de montaje en línea y los perfiles llegan a obra listos para instalar.",
         "meta": "Línea de perfiles de montaje solar: línea completa de perfilado de alta velocidad con punzonado para estructuras fotovoltaicas.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Línea de Producción de Estantería de Carga",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "1,5 – 5,0 mm"],
+            ["Ancho de chapa", "100 – 400 mm"],
+            ["Velocidad de línea", "5 – 20 m/min"],
+            ["Estaciones de perfilado", "18 – 30"],
+            ["Potencia total", "15 – 37 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Línea con punzonado para montantes y largueros de estantería.",
         "hero": "Una línea que produce los montantes y largueros portantes de los almacenes logísticos; las filas múltiples de agujeros se punzonan en línea con servopunzones y la estabilidad dimensional se mantiene incluso en chapa gruesa.",
         "meta": "Línea de estanterías de carga: perfilado a medida con punzonado para montantes y largueros.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "Línea de Producción de Plataforma de Andamio",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "1,2 – 2,0 mm"],
+            ["Ancho de chapa", "240 – 520 mm"],
+            ["Velocidad de línea", "4 – 20 m/min"],
+            ["Estaciones de perfilado", "15 – 26"],
+            ["Potencia total", "11 – 22 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Producción de plataformas y tablones antideslizantes de andamio.",
         "hero": "Una línea que produce las plataformas de tránsito de acero de los andamios; el grabado antideslizante y los agujeros de drenaje se forman en línea, y puede integrarse una estación de prensa para los ganchos de los extremos.",
         "meta": "Línea de plataformas de andamio: perfilado completo de plataformas y tablones de acero antideslizantes.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Línea de Producción de Barrera Vial",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "2,5 – 4,0 mm"],
+            ["Ancho de chapa", "480 – 750 mm"],
+            ["Velocidad de línea", "3 – 18 m/min"],
+            ["Estaciones de perfilado", "16 – 22"],
+            ["Potencia total", "30 – 45 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Perfilado pesado para barreras bionda (W-beam).",
         "hero": "Una línea de servicio pesado que produce las barreras W-beam (bionda) y de tres ondas — el estándar de la seguridad vial; forma la onda en chapa galvanizada gruesa con precisión conforme a norma.",
         "meta": "Línea de barreras viales: perfilado pesado de barreras W-beam y de tres ondas.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Línea de Producción de Barrera Acústica",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "0,3 – 1,5 mm"],
+            ["Ancho de chapa", "300 – 800 mm"],
+            ["Velocidad de línea", "12 – 25 m/min"],
+            ["Estaciones de perfilado", "16 – 20"],
+            ["Potencia total", "7,5 – 30 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Perfilado de casetes y paneles de barrera acústica.",
         "hero": "Una línea que produce los casetes de aluminio/acero de las barreras acústicas de autopistas y ferrocarriles; el panel frontal perforado (absorbente) y el trasero ciego se producen en la misma plataforma.",
         "meta": "Línea de barreras acústicas: perfilado de casetes y paneles perforados y ciegos.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Línea de chapa trapezoidal y panel de fachada",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "0,3 – 1,5 mm"],
+            ["Ancho de chapa", "≤ 1.300 mm"],
+            ["Velocidad de línea", "15 – 60 m/min"],
+            ["Estaciones de perfilado", "16 – 20"],
+            ["Potencia total", "11 – 22 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Conformado, corte a medida y apilado para perfiles de cubierta y fachada.",
         "hero": "Líneas para chapa trapezoidal, perfil de cubierta de junta alzada y panel de fachada. Dos cosas deciden esta familia: la planitud a lo ancho de una chapa amplia y hacer pasar una superficie pintada por el conformado sin dañarla.",
         "meta": "Líneas de producción de chapa trapezoidal, cubierta de junta alzada y perfiles de fachada: conformado, corte a medida, apilado automático y embalaje.",
@@ -1644,6 +1728,18 @@
       },
       "c-sigma-omega": {
         "name": "Línea de Perfiles C+ / Sigma / Omega",
+        "table": {
+          "title": "Datos técnicos",
+          "head": ["Característica", "Rango"],
+          "rows": [
+            ["Espesor de chapa", "1,5 – 4,0 mm"],
+            ["Ancho de chapa", "100 – 400 mm"],
+            ["Velocidad de línea", "10 – 36 m/min"],
+            ["Estaciones de perfilado", "16 – 24"],
+            ["Potencia total", "11 – 30 kW"]
+          ],
+          "note": "Los rangos corresponden a la serie; cada línea se dimensiona según la sección del perfil, el material y la capacidad."
+        },
         "short": "Perfiles de acero ligero: varias secciones en una línea.",
         "hero": "Una solución flexible que produce perfiles C, Sigma y Omega — los portantes de la construcción en acero ligero — en una sola línea; el cambio de sección se hace en minutos gracias a los grupos de rodillos regulables y al sistema de recetas.",
         "meta": "Línea de perfiles C, Sigma y Omega: perfilado regulable multisección para estructura de acero ligero.",

@@ -144,8 +144,32 @@ makas) · toplam motor gücü (kW) · PLC markası · çalışılan malzeme.
 - [Kablo Kanalı](https://servosteel.com.tr/roll-form-hatlari/kablo-kanali) · [Solar Profil](https://servosteel.com.tr/roll-form-hatlari/solar-profil) · [Ağır Raf](https://servosteel.com.tr/roll-form-hatlari/agir-raf) · [İskele Kalası](https://servosteel.com.tr/roll-form-hatlari/iskele-kalas) · [Yol Bariyeri](https://servosteel.com.tr/roll-form-hatlari/yol-bariyeri) · [Gürültü Bariyeri](https://servosteel.com.tr/roll-form-hatlari/gurultu-bariyeri) · [Trapez/Cephe Paneli](https://servosteel.com.tr/roll-form-hatlari/trapez-cephe-paneli) · [C-Sigma-Omega](https://servosteel.com.tr/roll-form-hatlari/c-sigma-omega)
 - Ayrıca: [Otomatik İstifleyici](https://servosteel.com.tr/makineler/otomatik-istifleyici) (levha ölçüsü, kapasite, hız) — fotoğrafı da yok.
 
-Sayılar gelene kadar bu sayfalara **hiçbir spec yazılmayacak** — eski jenerik
-"2×11 kW" değeri bilerek taşınmadı (tek hattın değeriydi, sekize yayılamaz).
+~~Sayılar gelene kadar bu sayfalara hiçbir spec yazılmayacak~~ —
+**ÇÖZÜLDÜ (2026-08-21): sekiz hatta da tablo eklendi, 9 dil.**
+
+**Değerlerin kaynağı katalog DEĞİL.** Katalogda bu hatların sayısal tablosu
+yok. Mühendis "en genel ölçüleri, rakip analizinde en alt sınırdan en üst
+sınıra kadar yaz" dedi; sekiz ayrı üretici teknik veri sayfası tarandı
+(Ağustos 2026), çıkan aralıklar mühendise sunuldu ve **"buradaki aralıkla
+ilerle" diyerek onayladı.** Bir değer sorgulanırsa zinciri budur.
+
+| hat | kalınlık | genişlik | hız | istasyon | motor |
+|---|---|---|---|---|---|
+| kablo kanalı | 0,6–3,0 mm | 50–600 mm | 8–20 m/dk | 18–24 | 7,5–30 kW |
+| solar profil | 1,0–3,0 | 150–400 | 10–60 | 12–22 | 15–25 |
+| ağır raf | 1,5–5,0 | 100–400 | 5–20 | 18–30 | 15–37 |
+| iskele kalası | 1,2–2,0 | 240–520 | 4–20 | 15–26 | 11–22 |
+| yol bariyeri | 2,5–4,0 | 480–750 | 3–18 | 16–22 | 30–45 |
+| gürültü bariyeri | 0,3–1,5 | 300–800 | 12–25 | 16–20 | 7,5–30 |
+| trapez/cephe | 0,3–1,5 | ≤1.300 | 15–60 | 16–20 | 11–22 |
+| C-Sigma-Omega | 1,5–4,0 | 100–400 | 10–36 | 16–24 | 11–30 |
+
+Her tablonun altında not var: aralıklar seri geneli içindir, hat projeye özel
+boyutlandırılır. Böylece aralık bir taahhüt gibi okunmuyor.
+
+**Hâlâ eksik: her hat için çalışılan malzeme** (galvaniz / siyah sac /
+paslanmaz / alüminyum). Piyasa taramasından çıkmıyor, mühendis de belirtmedi.
+Cevap gelince tabloya altıncı satır olarak eklenir.
 
 **Katalog (2026-08-10) 8 değerden ikisini kapattı:** PLC markası **Schneider**
 (tüm hatlarda), kesme tipi roll form hatlarında **uçar makas** / boy kesmede
@@ -390,7 +414,7 @@ bir metrik. Karşılaştırma: Google 7 günde 1.441 gösterim, Yandex 28 günde
   diyor, bu hosting paketi tavanı (WHM → paket → Max Mailbox Quota). Veridyen'den
   yükseltme istenecek. Şu an 382 MB dolu; tamamı 24 Temmuz kampanyasının 267
   gönderilmiş kopyası.
-- [ ] **Katalog siteye konacak** — 1,43 MB PDF'i 267 kişiye eklemek sunucuda 267
-  kopya demek, üstelik teslim oranını düşürüyor ve kaç kişinin açtığı ölçülemiyor.
-  Siteye konup mailde link verilirse üçü de çözülür.
+- [x] ~~Katalog siteye konacak~~ — **KAPATILDI (2026-08-19, Yasin'in kararı).**
+  Defalarca önerildi, reddedildi. Bir daha açılmayacak. Büyük dosya paylaşımı
+  gerekirse yöntemi firma kendi seçer.
 - [ ] 4 CalDAV/CardDAV SRV kaydı → `cpanel.servosteel.com.tr`

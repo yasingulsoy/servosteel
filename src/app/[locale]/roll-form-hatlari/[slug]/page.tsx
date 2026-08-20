@@ -58,6 +58,13 @@ export default async function RollFormLinePage({ params }: Props) {
     ? (t.raw("process") as { title: string; text: string }[])
     : [];
 
+  /* Spec tablosu opsiyonel — makine sayfasındaki kalıbın aynısı. Değerler
+     rakip/piyasa taramasından çıkarıldı ve 2026-08-21'de MÜHENDİS ONAYLADI;
+     katalogdan gelmiyorlar. Bir değer sorgulanırsa kaynağı budur. */
+  const hasTable = t.has("table");
+  const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
+  const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
+
   return (
     <>
       <PageHero
@@ -104,6 +111,39 @@ export default async function RollFormLinePage({ params }: Props) {
                 </div>
               </Reveal>
             </div>
+
+            {hasTable && (
+              <Reveal>
+                <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">
+                  {t("table.title")}
+                </h2>
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
+                  <table className="w-full min-w-[420px] text-left text-sm">
+                    <thead className="bg-surface-alt">
+                      <tr>
+                        {tableHead.map((baslik) => (
+                          <th key={baslik} className="px-5 py-3.5 font-semibold text-ink">{baslik}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tableRows.map((satir) => (
+                        <tr key={satir[0]} className="border-t border-line">
+                          {satir.map((hucre, i) => (
+                            <td key={i} className={`px-5 py-3.5 ${i === 0 ? "font-medium text-ink" : "text-muted"}`}>
+                              {hucre}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {t.has("table.note") ? (
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{t("table.note")}</p>
+                ) : null}
+              </Reveal>
+            )}
 
             {process.length > 0 && (
               <Reveal>

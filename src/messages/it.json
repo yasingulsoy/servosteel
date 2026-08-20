@@ -1096,6 +1096,18 @@
     "rollform": {
       "kablo-kanali": {
         "name": "Linea di Produzione Canaline",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "0,6 – 3,0 mm"],
+            ["Larghezza lamiera", "50 – 600 mm"],
+            ["Velocità linea", "8 – 20 m/min"],
+            ["Stazioni di profilatura", "18 – 24"],
+            ["Potenza totale", "7,5 – 30 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Linea completa per canaline forate e cieche, passerelle e coperchi.",
         "hero": "Una linea di profilatura completa che produce canaline — la spina dorsale dell'infrastruttura elettrica — dal coil al prodotto finito: svolgitore, raddrizzatrice, alimentazione servo, punzonatura, profilatrice e taglio gestiti da un unico PLC.",
         "meta": "Linea canaline: soluzione completa di profilatura su misura per canaline forate/cieche, passerelle e coperchi.",
@@ -1188,6 +1200,18 @@
       },
       "solar-profil": {
         "name": "Linea di Produzione Profili C Solari",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "1,0 – 3,0 mm"],
+            ["Larghezza lamiera", "150 – 400 mm"],
+            ["Velocità linea", "10 – 60 m/min"],
+            ["Stazioni di profilatura", "12 – 22"],
+            ["Potenza totale", "15 – 25 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Profilatura ad alta velocità per profili di montaggio fotovoltaico.",
         "hero": "Una linea che produce profili hat, C e Omega per le strutture degli impianti solari direttamente dal coil; la punzonatura apre i fori di montaggio in linea e i profili arrivano in cantiere pronti al montaggio.",
         "meta": "Linea profili di montaggio solare: linea completa di profilatura ad alta velocità con punzonatura per strutture fotovoltaiche.",
@@ -1279,6 +1303,18 @@
       },
       "agir-raf": {
         "name": "Linea di Produzione Scaffalature Pesanti",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "1,5 – 5,0 mm"],
+            ["Larghezza lamiera", "100 – 400 mm"],
+            ["Velocità linea", "5 – 20 m/min"],
+            ["Stazioni di profilatura", "18 – 30"],
+            ["Potenza totale", "15 – 37 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Linea con punzonatura per montanti e correnti di scaffalature.",
         "hero": "Una linea che produce i montanti portanti e i correnti dei magazzini logistici; le file multiple di fori sono punzonate in linea con servopunzoni e la stabilità dimensionale è mantenuta anche su lamiera spessa.",
         "meta": "Linea scaffalature pesanti: profilatura su misura con punzonatura per montanti e correnti.",
@@ -1371,6 +1407,18 @@
       },
       "iskele-kalas": {
         "name": "Linea di Produzione Tavole da Ponteggio",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "1,2 – 2,0 mm"],
+            ["Larghezza lamiera", "240 – 520 mm"],
+            ["Velocità linea", "4 – 20 m/min"],
+            ["Stazioni di profilatura", "15 – 26"],
+            ["Potenza totale", "11 – 22 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Produzione di piani e tavole da ponteggio antiscivolo.",
         "hero": "Una linea che produce i piani di camminamento in acciaio dei ponteggi da cantiere; le bugne antiscivolo e i fori di drenaggio sono formati in linea, e si può integrare una stazione di pressa per i ganci d'estremità.",
         "meta": "Linea tavole da ponteggio: profilatura completa di piani e tavole in acciaio antiscivolo.",
@@ -1416,6 +1464,18 @@
       },
       "yol-bariyeri": {
         "name": "Linea di Produzione Barriere Stradali",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "2,5 – 4,0 mm"],
+            ["Larghezza lamiera", "480 – 750 mm"],
+            ["Velocità linea", "3 – 18 m/min"],
+            ["Stazioni di profilatura", "16 – 22"],
+            ["Potenza totale", "30 – 45 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Profilatura pesante per guardrail a onda (W-beam).",
         "hero": "Una linea heavy-duty che produce guardrail W-beam (doppia onda) e a tre onde — lo standard della sicurezza stradale; forma l'onda su lamiera zincata spessa con precisione a norma.",
         "meta": "Linea barriere stradali: profilatura pesante di guardrail W-beam e a tre onde.",
@@ -1507,6 +1567,18 @@
       },
       "gurultu-bariyeri": {
         "name": "Linea di Produzione Barriere Acustiche",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "0,3 – 1,5 mm"],
+            ["Larghezza lamiera", "300 – 800 mm"],
+            ["Velocità linea", "12 – 25 m/min"],
+            ["Stazioni di profilatura", "16 – 20"],
+            ["Potenza totale", "7,5 – 30 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Profilatura di cassette e pannelli per barriere acustiche.",
         "hero": "Una linea che produce le cassette in alluminio/acciaio delle barriere acustiche lungo autostrade e ferrovie; il pannello frontale forato (assorbente) e quello posteriore cieco si producono sulla stessa piattaforma.",
         "meta": "Linea barriere acustiche: profilatura di cassette e pannelli forati e ciechi.",
@@ -1598,6 +1670,18 @@
       },
       "trapez-cephe-paneli": {
         "name": "Linea per lamiera grecata e pannelli di facciata",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "0,3 – 1,5 mm"],
+            ["Larghezza lamiera", "≤ 1.300 mm"],
+            ["Velocità linea", "15 – 60 m/min"],
+            ["Stazioni di profilatura", "16 – 20"],
+            ["Potenza totale", "11 – 22 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Profilatura, taglio a misura e impilaggio per profili di copertura e facciata.",
         "hero": "Linee per lamiera grecata, profilo di copertura a doppia aggraffatura e pannello di facciata. Due cose decidono questa famiglia: la planarità su una lamiera larga e portare una superficie verniciata attraverso la profilatura senza danneggiarla.",
         "meta": "Linee di produzione per lamiera grecata, coperture aggraffate e profili di facciata: profilatura, taglio a misura, impilaggio automatico e imballaggio.",
@@ -1644,6 +1728,18 @@
       },
       "c-sigma-omega": {
         "name": "Linea Profili C+ / Sigma / Omega",
+        "table": {
+          "title": "Dati tecnici",
+          "head": ["Caratteristica", "Intervallo"],
+          "rows": [
+            ["Spessore lamiera", "1,5 – 4,0 mm"],
+            ["Larghezza lamiera", "100 – 400 mm"],
+            ["Velocità linea", "10 – 36 m/min"],
+            ["Stazioni di profilatura", "16 – 24"],
+            ["Potenza totale", "11 – 30 kW"]
+          ],
+          "note": "Gli intervalli valgono per la serie; ogni linea è dimensionata in base alla sezione del profilo, al materiale e alla capacità."
+        },
         "short": "Profili in acciaio leggero: più sezioni su una linea.",
         "hero": "Una soluzione flessibile che produce profili C, Sigma e Omega — i portanti delle strutture in acciaio leggero — su un'unica linea; il cambio sezione avviene in pochi minuti grazie ai gruppi di rulli regolabili e al sistema di ricette.",
         "meta": "Linea profili C, Sigma e Omega: profilatura regolabile multi-sezione per strutture in acciaio leggero.",
