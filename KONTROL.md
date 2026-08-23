@@ -302,6 +302,49 @@ Yeni URL payı yükseliyor, eski WP payı düşüyor — 301'ler işliyor. `tr.`
 ve `www.` host'larının üçü de apex'e 301/308 veriyor (2026-08-10 teyit edildi);
 GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
 
+### B.4.2 GSC Kapsam raporu — tam analiz (2026-08-24)
+
+**762 sayfa biliniyor: 357 dizine eklendi, 405 eklenmedi.** İndeksleme eğrisi
+16 günde **78 → 357** (4,5 kat). 18 Ağustos'ta tek seferde +61 sıçradı ve
+"eklenmedi" 444'ten 405'e düştü.
+
+| sayfa | sebep | durum |
+|---|---|---|
+| 165 | Yönlendirmeli sayfa | ✅ eski URL'ler doğru sınıflanmış |
+| 144 | Keşfedildi, eklenmedi | ⏳ tarama bütçesi — otorite ve zaman işi |
+| 42 | Tarandı, eklenmedi | ⏳ aynı |
+| 28 | Bulunamadı (404) | ✅ **incelendi ve kapatıldı** |
+| 15 | noindex ile hariç | ✅ **bizden değil** |
+| 10 | Kopya, farklı canonical | ✅ hepsi düzgün yönleniyor |
+
+**404'lerin gerçeği:** 28'in çoğu WordPress altyapısı (`wp-admin`,
+`wp-content`, `wp-includes`, eklenti dosyaları). **Bunların 404 vermesi
+DOĞRU** — yönlendirilmemeli, zamanla listeden düşerler. Gerçek boşluk
+dörttü: `/hatlar`, `/suruculer`, `/video`, `/Katalog.pdf` — hepsi
+`536064c`'te kapatıldı.
+
+**Raporun söylemediği asıl bulgu:** URL'ler test edilince üç ürün adresinin
+genel `/product/:slug -> /makineler` yakalayıcısına düşüp **yanlış sayfaya**
+indiği görüldü. Yol bariyeri hattı arayan ziyaretçi makine listesine
+iniyordu. GSC bunu hata saymıyor çünkü teknik olarak 200 dönüyor. Test
+edilmeseydi bulunamazdı.
+
+**noindex'li 15 sayfa bizden gelmiyor:** canlıdaki 12 sayfa tek tek
+kontrol edildi, hepsi `index, follow`. robots.txt'te engelleme yok. Kodda
+noindex yalnızca `IS_PRODUCTION_SITE` yanlışken basılıyor. O 15 kayıt eski
+WooCommerce sayfalarından kalmış olmalı (`/cart/`, `/checkout/`,
+`/my-account/`, etiket sayfaları — WooCommerce onlara otomatik noindex koyar).
+
+**Kopya/canonical 10 sayfa:** hepsi test edildi, onu da düzgün yönleniyor.
+Google'ın taramaları mart–temmuz arası, yani cutover tamamlanmadan önce.
+Yeniden tarandıkça temizlenecek.
+
+**TEHLİKE — bu dosyada bir kez yaşandı:** `next.config.ts`'teki `both()`
+yardımcısı hem `/product/x` hem `/x` üretir. `/roll-form-hatlari` gibi
+**canlı bir sayfa** için kullanılırsa `/x -> /x` sonsuz döngü yaratır ve
+sayfa erişilemez olur. **Build tertemiz geçer**, yalnızca zincir izlenerek
+fark edilir. Canlı yol için `both()` KULLANILMAZ.
+
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
 - [ ] **WhatsApp numarası DEĞİŞTİRİLECEK — karar verildi (2026-08-15).**
