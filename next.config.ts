@@ -89,6 +89,8 @@ const TR_ROLLFORM: Record<string, string> = {
   "kablo-kanali-uretim-hatti": "kablo-kanali",
   "cable-tray-production-lineakablo-kanali-uretim-hatti": "kablo-kanali",
   "yol-bariyeri-uretim-hatti": "yol-bariyeri",
+  /* GSC 404 raporunda cikti: eski sitede "bariyer" (i'siz) yazimi da var */
+  "yol-bariyer-uretim-hatti": "yol-bariyeri",
   "gurultu-bariyeri-uretim-hatti": "gurultu-bariyeri",
   "c-sigma-omega-profil-uretim-hatti": "c-sigma-omega",
 };
@@ -344,6 +346,25 @@ const nextConfig: NextConfig = {
        * kopyasıdır — ana sitenin İngilizce ürünlerinin tamamı zaten yukarıda
        * tek tek karşılanıyor (arşivdeki 18 ürünün hepsi).
        */
+      /* --- GSC "Bulunamadi (404)" raporundan (2026-08-24) ---
+         Asagidakilerin hicbir kurali yoktu ya da genel yakalayiciya dusup
+         `/makineler`e gidiyordu. Uc tanesi urun sayfasi arayan ziyaretciyi
+         hub'a atiyordu: boy kesme hatti arayan makine listesine iniyordu. */
+      /* DIKKAT: burada `both()` KULLANILMAZ. both() hem `/product/x` hem `/x`
+         uretir; `/roll-form-hatlari` CANLI bir sayfa oldugu icin `/x -> /x`
+         kurali sonsuz yonlendirme dongusu yaratir (2026-08-24'te yasandi,
+         build temiz gecti ama sayfa acilmaz oldu). Yalnizca /product/ onekli
+         hali yazilir. */
+      p("/product/roll-form-hatlari", "/roll-form-hatlari"),
+      p("/product/boy-kesme-hatlari", "/boy-kesme-hatlari"),
+      p("/product/dilme-hatlari", "/dilme-hatlari"),
+      p("/hatlar", "/roll-form-hatlari"),
+      p("/suruculer", "/makineler/servo-suruculer"),
+      p("/video", "/videolar"),
+      /* Eski katalog dosyasi. Katalog siteye konmayacagi icin (2026-08-19
+         karari) makine listesine gonderiliyor — spec tablolari orada. */
+      p("/Katalog.pdf", "/makineler"),
+
       p("/product/:slug", "/makineler"),
       p("/product-category/:path*", "/makineler"),
 
