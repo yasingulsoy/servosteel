@@ -6,7 +6,7 @@ import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
-import { CONTACT, WHATSAPP_URL } from "@/lib/site";
+import { CONTACT } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -29,7 +29,6 @@ export default async function IletisimPage({ params }: Props) {
   const channels = [
     { icon: Phone, title: t("phoneTitle"), value: CONTACT.phoneDisplay, href: CONTACT.phoneHref, note: t("phoneNote") },
     { icon: Mail, title: t("emailTitle"), value: CONTACT.email, href: `mailto:${CONTACT.email}`, note: t("emailNote") },
-    { icon: FaWhatsapp, title: t("waTitle"), value: t("waValue"), href: WHATSAPP_URL, note: t("waNote") },
   ];
 
   return (

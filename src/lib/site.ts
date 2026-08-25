@@ -77,18 +77,6 @@ export const CONTACT = {
   addressCountry: "TR",
 };
 
-/**
- * WhatsApp bağlantısı — dört yerde birden kullanılıyor (iletişim kartı, iki
- * formun altındaki alternatif kanal, sabit tuş), o yüzden numara tek yerde.
- *
- * DİKKAT: bu numara firmanın **sabit hattı**. WhatsApp Business sabit hattı
- * sesli aramayla doğrulayabiliyor, ama bu hesabın gerçekten açık olduğu
- * müşteriye teyit ettirilmedi. Sabit tuş eklendiği için artık her sayfada
- * görünüyor — çalışmıyorsa kaybedilen ziyaretçi sayısı da artar.
- * Teyit alınana kadar KONTROL.md'de bekleyen madde olarak duruyor.
- */
-export const WHATSAPP_NUMBER = "902164153005";
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export const SOCIAL_URLS = [
   "https://www.instagram.com/servosteel_turkey/",

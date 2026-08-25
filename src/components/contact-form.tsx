@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Send } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
+import { Send, Phone } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
 import { LeadSent, HoneyPot } from "@/components/lead-sent";
 import { useLeadSubmit } from "@/components/use-lead-submit";
-import { WHATSAPP_URL } from "@/lib/site";
+import { CONTACT } from "@/lib/site";
 
 const inputClass =
   "w-full rounded-lg border border-line bg-card px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/25";
@@ -24,7 +23,6 @@ export function ContactForm() {
   const [subject, setSubject] = useState("");
   const { status, submit } = useLeadSubmit("contact");
 
-  const waText = encodeURIComponent(t("waPrefill", { subject: subject || "-" }));
 
   if (status === "sent") return <LeadSent text={t("sent")} />;
 
@@ -77,14 +75,13 @@ export function ContactForm() {
           {status === "sending" ? t("sending") : t("submit")}
         </SpecularButton>
         <SpecularButton
-          href={`${WHATSAPP_URL}?text=${waText}`}
-          external
+          href={CONTACT.phoneHref}
           variant="ghost"
           size="lg"
           className="text-ink"
         >
-          <FaWhatsapp className="size-4" aria-hidden />
-          {t("wa")}
+          <Phone className="size-4" strokeWidth={2} aria-hidden />
+          {t("callUs")}
         </SpecularButton>
       </div>
 

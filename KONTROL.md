@@ -347,17 +347,21 @@ fark edilir. Canlı yol için `both()` KULLANILMAZ.
 
 ### B.5 Bekleyenler (kapanınca buradan silinecek)
 
-- [ ] **WhatsApp numarası DEĞİŞTİRİLECEK — karar verildi (2026-08-15).**
-  Şu anki `wa.me/902164153005` firmanın **sabit hattı** ve o hesabın açık olduğu
-  hiç teyit edilmedi. Yasin yeni numarayı verecek; geldiğinde tek yer değişiyor:
-  `src/lib/site.ts` → `WHATSAPP_NUMBER`. Sabit tuş, iletişim sayfası, formların
-  altı ve footer hepsi oradan besleniyor, başka dosyaya dokunmaya gerek yok.
-  **Aciliyeti:** 30 günde WhatsApp'a **10 tıklama** (forma 3), yani şu numara
-  ölüyse on kişi boşluğa bastı. Sabit tuş 2026-08-13 00:51'de canlıya çıktı ve
-  iki günde 1 tıklama aldı (ön-doldurulmuş linkten ayırt ediliyor).
-- [ ] **WhatsApp'tan gelen talepler ölçülemiyor.** Tıklamayı görüyoruz,
-  konuşmayı göremiyoruz. Satıştan sor: son üç haftada WhatsApp'tan kaç ciddi
-  talep geldi? Gerçek dönüşüm oranımız bilinen 2'den yüksek olabilir.
+- [x] ~~WhatsApp numarası değiştirilecek~~ — **KALDIRILDI (2026-08-25).**
+  Numara firmanın sabit hattıydı ve o hatta WhatsApp Business hesabı hiç
+  açılmadı. Üç hafta beklendi, açılmayacağına karar verildi.
+  **Ölçüm:** 30 günde **20 tıklama**, hepsi karşılıksız. Son tıklama
+  İngilizce ön-doldurulmuş mesajlaydı — yani yabancı bir alıcı da denedi.
+  Çalışmayan tuş, hiç tuş olmamasından kötü: ziyaretçi en düşük eşikli
+  kanalı seçiyor, karşılık bulamıyor ve ikinci deneme yapmıyor.
+  **Yerine telefon + e-posta kondu** (`ContactFloat`, her sayfada).
+  Telefon vurgulu ve altta — WhatsApp'ın forma yedi kat tıklanmasının sebebi
+  WhatsApp değil **anında temas** isteğiydi; telefon onu doğrudan karşılıyor.
+  Kaldırılan yerler: sabit tuş · iletişim kartı · sosyal ikon sırası ·
+  iki formun yedek kanalı · `site.ts` sabitleri · 9 dilde çeviri anahtarları.
+- [ ] **Telefon/e-posta tuşunun etkisi ölçülecek** — WhatsApp 30 günde 20
+  tıklama alıyordu. Yeni tuşlar bunun ne kadarını karşılıyor? İlk ölçüm
+  2026-09-01 civarı anlamlı olur.
 
 **Dönüşümler (GA4, 30 gün — 2026-08-15):** 05 Ağu `/teklif-al` form açıldı ama
 gönderilmedi · **10 Ağu `/iletisim` gönderildi** · **14 Ağu `/teklif-al`

@@ -1,9 +1,7 @@
 import type { IconType } from "react-icons";
-import { FaInstagram, FaLinkedinIn, FaWhatsapp, FaYoutube } from "react-icons/fa6";
-import { WHATSAPP_URL } from "@/lib/site";
+import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 
 const socials: { label: string; href: string; Icon: IconType; color: string }[] = [
-  { label: "WhatsApp", href: WHATSAPP_URL, Icon: FaWhatsapp, color: "#25D366" },
   { label: "Instagram", href: "https://www.instagram.com/servosteel_turkey/", Icon: FaInstagram, color: "#E4405F" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/servosteel.tr/", Icon: FaLinkedinIn, color: "#0A66C2" },
   { label: "YouTube", href: "https://www.youtube.com/@ServoSteel.ServoMold", Icon: FaYoutube, color: "#FF0000" },

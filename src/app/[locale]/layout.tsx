@@ -5,7 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { ContactFloat } from "@/components/contact-float";
 import { ViewTransition } from "@/components/view-transition";
 import { PointerGlow } from "@/components/pointer-glow";
 import { PageAttention } from "@/components/page-attention";
@@ -228,10 +228,10 @@ export default async function LocaleLayout({
             </ViewTransition>
           </main>
           <SiteFooter />
-          {/* WhatsApp formdan üç kat çok tıklanıyor (28 günde 6'ya 2) ama
-              bağlantı yalnızca iletişim sayfasında ve formların altındaydı.
-              Sabit tuş her sayfada duruyor. */}
-          <WhatsAppFloat />
+          {/* Her sayfada telefon + e-posta. WhatsApp tuşu 2026-08-24'te
+              kaldırıldı: 30 günde 20 tıklama aldı ve numarada WhatsApp
+              hesabı hiç açılmadığı için hepsi karşılıksız kaldı. */}
+          <ContactFloat />
           {/* Görünmez yardımcılar: kart ışığı + sekme/video dikkat yönetimi */}
           <PointerGlow />
           <PageAttention />
