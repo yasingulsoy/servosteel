@@ -31,6 +31,29 @@ export function Analytics() {
         {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}
       </Script>
 
+      {/* tel: ve mailto: tıklamaları — GA4 bunları KENDİ BAŞINA saymıyor.
+          Gelişmiş ölçümün outbound_click'i yalnızca dış bağlantılarda
+          çalışıyor; `tel:`/`mailto:` dış link sayılmıyor. WhatsApp tuşu
+          `https://wa.me/...` olduğu için sayılıyordu, telefon/e-postaya
+          geçince ölçüm kör kaldı.
+
+          Olay adı `click`, parametre `link_url` — mevcut raporlar bu ikisini
+          sorguluyor, GA4 arayüzünde özel boyut tanımlamaya gerek kalmıyor.
+          Yakalama aşamasında dinleniyor ki sayfa terk edilmeden önce gitsin. */}
+      <Script id="ga4-contact-clicks" strategy="afterInteractive">
+        {`document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');
+  if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'';
+  gtag('event','click',{
+    link_url:h,
+    link_text:(a.innerText||a.getAttribute('aria-label')||'').trim().slice(0,100),
+    contact_type:h.indexOf('tel:')===0?'phone':'email',
+    transport_type:'beacon'
+  });
+},true);`}
+      </Script>
+
       {/* Clarity'nin kendi yükleyicisi: script etiketini kendisi oluşturup
           DOM'a sokuyor. next/script'in `src`'siyle değiştirilmedi çünkü
           Clarity kuyruk fonksiyonunu (`clarity.q`) etiketten ÖNCE tanımlamak
