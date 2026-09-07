@@ -206,6 +206,17 @@ arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.
   alıyordu ve hepsi karşılıksızdı. Yeni tuşlar bunun ne kadarını karşılıyor?
   Zamanlanmış görev **12 Eylül 10:00**'da ölçüyor.
 
+**Deploy — ACİL**
+- [ ] **Canlı site 30 Ağustos'taki derlemede takılı.** Ölçüldü (2026-09-07 14:42):
+  üretimdeki son commit `3387353`. Sonrasındaki her şey push edilmiş ama
+  yayına çıkmamış — istifleyici fotoğrafı ve 4 SSS (`64bd5d9`, **4 saat önce
+  push edildi**), bugünkü iç link ve şema çalışması (`71e8d41`'e kadar).
+  Repoda deploy yapılandırması yok, Dokploy panelinde. Otomatik deploy kapalı
+  ya da webhook düşmüş olmalı — panelden elle tetiklenip webhook kontrol
+  edilecek.
+  Doğrulama: `curl -s https://servosteel.com.tr/makineler/otomatik-istifleyici | grep istifleyici.*jpg`
+  fotoğraf gelince deploy geçmiş demektir.
+
 **Mail / hosting**
 - [ ] **Otomatik yedek yok** — Veridyen'den istenecek
 - [ ] **SpamAssassin eşiği** — skor 15 olan mail bile kabul ediliyor
