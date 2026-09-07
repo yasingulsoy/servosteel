@@ -308,6 +308,18 @@ gönderilen kopya Sent Items'a yazılır (`0x8004060C`). Ayrı bir tuzak: "Sunuc
 Zaman Aşımları" varsayılanı **1 dakika**; ofis ADSL'inde 7 MB'lık ek bunu aşar,
 bağlantı düşer ve kuyrukta öksüz kayıt kalır. Üç hesapta da 10 dakikaya çekildi.
 
+**E.17 · İç link sayarken ÜRETİLEN HTML'e bak, MDX'e değil.** Yalnızca akademi
+MDX'lerini tarayınca yedi roll form sayfası "yetim" göründü; oysa footer ve menü
+onları 52 sayfanın 51'inden linkliyor. Gerçekten aç kalan altı varyant sayfasıydı
+(2-3 link) ve MDX taramasında hepsi aynı kefeye giriyordu. Ölçüm:
+`.next/server/app/tr` altındaki HTML'lerden `href="/..."` toplanır.
+
+**E.18 · Hacimli hesaplama kelimelerini AI Overview yiyor.** `rulo ağırlık
+hesaplama` SERP'inde AI Overview + "diğer sorular" var; ilk altı sonuç metal
+tedarikçisi, biz 7'deyiz. 28 günde iki sayfamız toplam 52 gösterim aldı,
+**sıfır tık**. Başlık düzeltmesiyle çözülmez — bu kelimede hedef tık değil,
+AI Overview'ün alıntıladığı kaynak olmaktır.
+
 ---
 
 ## Kapanmış işler
