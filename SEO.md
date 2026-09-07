@@ -4,93 +4,72 @@
 plan, fuar planı, teknik denetim, eski site arşivi); tamamlanan işler ve eskiyen
 tahminler ayıklanıp bu dosyada birleştirildi.
 
-**Son güncelleme:** 2026-08-08
+**Son güncelleme:** 2026-09-07
+
+**Ne nerede:** burası ölçümün ve stratejinin kaydı. Açık iş listesi
+(mühendisten bekleyen sayılar, firmadan bekleyen bilgiler, panel işleri,
+tuzaklar) ayrı dosyada: **[KONTROL.md](KONTROL.md)**
 
 ---
 
 ## 1. Nerede duruyoruz — ölçüm, tahmin değil
 
-Site 2026 Ağustos başında WordPress'ten Next.js'e taşındı. Google'ın taşınmayı
-sindirmesi haftalar sürer; aşağıdaki tablo o sürecin **başlangıç noktasıdır**,
-başarısızlık değil.
+Site 2026 Ağustos başında WordPress'ten Next.js'e taşındı. Aşağıdaki tablo
+taşınmanın **sonrasıdır**; karşılaştırma noktası 8 Ağustos ölçümü.
 
-### Search Console, son 28 gün
+### Search Console, son 28 gün (10 Ağu – 7 Eyl)
 
-```
-42 tık · 575 gösterim · ortalama sıra 16,2
-```
+| | 8 Ağustos | 7 Eylül |
+|---|---:|---:|
+| tık | 42 | **230** |
+| gösterim | 575 | **7.482** |
+| sıralanan kelime | 14 | **350** |
 
 | ülke | tık | gösterim | ort. sıra |
 |---|---:|---:|---:|
-| Türkiye | 36 | 239 | 10,1 |
-| İngiltere | **0** | 101 | 15,3 |
-| ABD | **0** | 75 | 28,8 |
-| Hindistan | 0 | 36 | 18,3 |
+| Türkiye | 185 | 3.690 | 8,1 |
+| Hindistan | 9 | 178 | 13,6 |
+| İtalya | 4 | 307 | 11,2 |
+| Almanya | 4 | 294 | 16,1 |
+| İngiltere | 3 | 290 | 18,4 |
+| Polonya | 3 | 276 | 20,4 |
 
-Tıkların %86'sı Türkiye'den ve neredeyse tamamı **marka araması**. İngiltere ve
-ABD'den 176 gösterim geliyor ama tık sıfır — 15.–29. sıradayız, yani 2.–3. sayfa.
+Ağustos başında tıkların %86'sı Türkiye'den ve neredeyse tamamı markaydı.
+Bugün Türkiye hâlâ %80 ama **marka dışı kelimeler ilk kez tık getiriyor** ve
+Avrupa'dan (IT/DE/GB/PL) 1.167 gösterim var.
 
-### İlk sayfada gerçekte ne var
+### Asıl tablo: nerede takılıyoruz
 
-GSC 14 kelime için "ilk sayfa" diyor ama **12'sinin gösterimi 1**. Bir kişinin
-bir kez aradığı terimde çıkmak sıralama değil, gürültü. Rapora yazılmaz.
+| sıra aralığı | kelime | gösterim | tık |
+|---|---:|---:|---:|
+| 1–3 | 33 | 110 | 17 |
+| 4–10 | 97 | 823 | 84 |
+| **11–20** | **69** | **492** | **3** |
+| **21–50** | **102** | **955** | **1** |
 
-| kelime | sıra | gösterim |
+**171 kelime 11–50 arasında duruyor — 1.447 gösterim, 4 tık.** Sayfa kalitesi
+onları oraya kadar taşıdı, ilk sayfaya taşıyamıyor. Aradaki fark **otorite**.
+Bu satır, bu belgedeki tek en önemli veri: yapılacak iş içerik üretmek değil,
+o 171 kelimeyi 10 sıra yukarı çıkarmak.
+
+### İndeksleme — artık darboğaz değil
+
+| | 6 Ağu | 24 Ağu |
 |---|---:|---:|
-| **servosteel** | 4,7 | **78** |
-| servostal | 10,5 | 2 |
-| diğer 12 terim | 1–9 | **hepsi 1** |
+| dizine eklenmiş | 3 örnek sayfa | **357** |
+| bilinen toplam | 424 | 762 |
 
-Canlı SERP kontrolünde markada **1. sıradayız** (GSC'nin 4,7'si geçiş dönemini de
-içeren 28 günlük ortalama). Yani gerçekten sıralandığımız tek şey kendi adımız.
-
-### Vuruş mesafesi — 2. sayfa
-
-| sıra | gösterim | kelime |
-|---:|---:|---|
-| 13,2 | 53 | servo steel *(marka varyantı)* |
-| 15,8 | 8 | solar panel production line |
-| 16,7 | 6 | automated roll forming production line |
-| 15,2 | 4 | automated roll forming line machine |
-| 12,5 | 2 | slitting line |
-
-### İndeksleme — darboğaz, ama açılıyor
-
-Sitemap sorunsuz (416 URL, 0 hata), robots.txt tamamen açık. Teknik engel yok;
-Google kendi hızında geliyor ve **iki günde gözle görülür ilerledi**:
-
-| URL denetimi (12 temsili sayfa) | 6 Ağu | 8 Ağu |
-|---|---:|---:|
-| indekslenmiş | 3 | **7** |
-| keşfedildi, indekslenmedi | 2 | **0** |
-| Google'ın haberi yok | 7 | 5 |
-
-6-7 Ağustos'ta taranıp indekslenenler: `/makineler`, `/makineler/rulo-acicilar`,
-`/en/coil-slitting-lines`, `/en/roll-forming-lines`.
-
-⚠️ **Ama trafik hâlâ eskiden akıyor.** Son 7 günde sitemap'teki 416 sayfadan
-yalnızca **2'si** gösterim aldı (ana sayfa 107, `/en/…/solar-panel-profile` 2);
-buna karşılık eski WordPress adresleri **51 sayfa, 360 gösterim, 20 tık**. Yani
-301'ler taşıyor — bozulmamaları kritik, `npm run kontrol` her deployda bakıyor.
-
-**Yapıldı:** IndexNow kuruldu; 416 URL Bing + Yandex'e iletildi
-(`npm run indexnow`). Google'da böyle bir kısayol yok, orada beklenecek.
+16 günde **78 → 357**. Kalan 405'in 186'sı zaten olması gerektiği gibi
+(yönlendirme, doğru 404, bize ait olmayan noindex — KONTROL.md §E.7).
+Geri kalanı tarama bütçesi, o da otoriteye bağlı.
 
 ### Marka adımızı kendimizle bölüyoruz
 
-"servosteel" aramasında 1. sırayız ama altımızdaki sıralar **kendi terk edilmiş
-mülklerimiz**:
+"servosteel" aramasında 1. sırayız ama altımızdaki sıralar kendi terk edilmiş
+mülklerimiz. `servosteel.wixsite.com` kapandı (7 Eylül teyit, 404 veriyor);
+**`servosteel.blogspot.com` ve `www.servosteel.com` hâlâ ayakta.** Kapatılıp
+yönlendirilirlerse o sıralar kendi alt sayfalarımıza kalır.
 
-| sıra | site | durum |
-|---:|---|---|
-| 4 | `servosteel.wixsite.com` | ayakta, içinde rulo/pres geçiyor |
-| 5 | `www.servosteel.com` | ayrı alan adı, ayakta |
-| 8 | `servosteel.blogspot.com` | ayakta |
-
-`tr.servosteel.com.tr` ile aynı problemdi, o 301'lendi. Bu üçü hâlâ duruyor.
-Kapatılıp yönlendirilirlerse o sıralar kendi alt sayfalarımıza kalır.
-
----
 
 ## 2. Kelime gerçeği — ve 16 tuzak
 
@@ -443,32 +422,41 @@ alakalı içerik, kirli linkten daha çok iş görüyor.
    firmanın kendi sitesine **tek link yok** (817 linkli bir sayfada, ölçüldü).
    Oraya görünürlük ve doğrudan talep için girilir, otorite için değil.
 
+---
+
 ## 4. Ne yapılacak — öncelik sırası
+
+> Kimde olduğu ve tek tek maddeleri **[KONTROL.md](KONTROL.md)**'de. Burası
+> yalnızca sıralamanın gerekçesi.
 
 ### Şimdi, engel yok
 
-- [ ] **`servosteel.wixsite.com` · `servosteel.blogspot.com` · `www.servosteel.com`** — kapat ya da 301'le
-- [ ] **Sektör dizinlerine kayıt** — bunlar zaten bizim kelimelerimizde sıralanıyor, otoriteleri hazır:
-      makinaturkiye · Europages · IndustryStock · **DirectIndustry** ("cut-to-length cutting line" aramasında üst sırada)
-- [ ] **2. el pazaryerlerine YENİ makine ilanı** — dünya taraması gösterdi: Machineseeker/Maschinensucher,
-      Exapro ve Surplus Record her pazarda ilk sayfada ve yeni makine ilanı da kabul ediyorlar (§3.5)
-- [ ] **Google İşletme Profili** (Sancaktepe) — "servosteel" en çok tık alan kelimemiz, profil o aramanın sağ tarafını komple verir
-- [ ] **Bing Webmaster** kaydı — asıl kazanç Yandex tarafını hızlandırmak ve AI aramaların beslendiği indekse girmek
-- [ ] **Mevcut ajansın link inşasını durdur** — 2010'ların yöntemi, zarar veriyor
+- [ ] **`servosteel.blogspot.com` · `www.servosteel.com`** — kapat ya da 301'le.
+      (`wixsite` kendiliğinden kapandı.)
+- [ ] **Sektör dizinlerine kayıt** — bunlar zaten bizim kelimelerimizde
+      sıralanıyor, otoriteleri hazır: makinaturkiye · Europages · IndustryStock ·
+      **DirectIndustry** ("cut-to-length cutting line" aramasında üst sırada).
+      ⚠️ Beklenti otorite değil **görünürlük**: makinaturkiye profil sayfasında
+      firmanın kendi sitesine tek link yok (817 linkli sayfada, ölçüldü).
+- [ ] **2. el pazaryerlerine YENİ makine ilanı** — Machineseeker/Maschinensucher,
+      Exapro ve Surplus Record her pazarda ilk sayfada ve yeni makine ilanı da
+      kabul ediyorlar (§3.5)
+- [ ] **Google İşletme Profili** (Sancaktepe) — "servosteel" en çok tık alan
+      kelimemiz (28 günde 67 tık); profil o aramanın sağ tarafını komple verir
 
 ### Firmadan cevap gelince
 
-- [ ] **13 ürün sayfasına teknik tablo** — en çok trafiği bu açar (bkz. bölüm 5.3)
+- [ ] **Boy kesme ve otomatik istifleyici tablosu** — tablosu kalan son iki sayfa
+- [ ] **Roll form tablolarına malzeme satırı** (galvaniz/siyah/paslanmaz)
 - [ ] Ticari şartlar yazısı, 9 dil — rakiplerin **hiçbirinin** yayınlamadığı bilgi
-- [ ] Hacmi olan 4 yeni ürün sayfası
+- [ ] KVKK / gizlilik sayfası — tüzel kişilik unvanına bağlı
 - [ ] Referans logolarını yayına aç
 
 ### Sürekli
 
-- [ ] **Akademi'yi ritme bağla** — 2 haftada 1 yazı. Çin'in kazandığı format: "nasıl seçilir" + "Ultimate Guide".
-      Sıradaki: İngilizce eğitici yazı — Kingreal'in yazısı ticari sorguda sıralanıyor (§3.6)
-- [x] ~~Her ürün sayfasına ilgili çalışan hat videosu~~ — **yapıldı (2026-08-07):** 12 ürün yoluna
-      başlık-doğrulamalı eşlemeyle gömüldü; eşleşmesi olmayan 4 sayfada bilerek yok (§3.7)
+- [ ] **Akademi'yi ritme bağla** — 2 haftada 1 yazı. Çin'in kazandığı format:
+      "nasıl seçilir" + "Ultimate Guide". Sıradaki: İngilizce eğitici yazı —
+      Kingreal'in yazısı ticari sorguda sıralanıyor (§3.6)
 - [ ] YouTube başlıklarını hedef kelimeyle yaz, açıklamaya ürün sayfası linki
 
 ### Akademi
@@ -503,10 +491,11 @@ sürümde yok, çünkü o hacim yalnızca İngilizce'de var.
 SEO'nun ticari kelimelerde sonuç vermesi aylar alır; reklam yarın talep getirir.
 Tek satış milyonları bulduğu için küçük bütçe bile geri döner.
 
-**Ön koşullar:** GA4 mülk numarası (ölçüm yoksa körlemesine harcama) ·
-negatif kelime listesi (bölüm 2) · **sadece spec tablosu dolu 4 sayfaya** reklam
-(rulo açıcılar, servo sürücüler, doğrultmalı servo sürücüler, kompakt hatlar) —
-spec göremeyen ziyaretçide tıklama boşa gider.
+**Ön koşullar:** ~~GA4 mülkü~~ kuruldu (`548769261`, `generate_lead` çalışıyor) ·
+negatif kelime listesi (bölüm 2) · **sadece spec tablosu dolu sayfalara** reklam —
+spec göremeyen ziyaretçide tıklama boşa gider. Bugün bu 19 sayfa: 4 makine,
+6 varyant, 8 roll form hattı, dilme hatları. Reklam verilmeyecek iki sayfa: boy kesme
+ve otomatik istifleyici (§5.3).
 
 Rusya için **Yandex Direct**, Google değil.
 
@@ -544,18 +533,22 @@ ama cevabını bulamadığı şey; 9 dilde bir içerik açar.
 | **ISO 27001** | Eski site iddia ediyordu, yeni sitede yok. Geçerliyse eklenebilir |
 | **Servo besleyici ±0,1 mm** | Akademi yazısı bu değeri veriyor ama tablo yalnızca kompakt hatta gösteriyor. Servo sürücü için de geçerli mi? |
 
-### 5.3 13 ürün sayfasında teknik tablo yok
+### 5.3 Tablosu kalan iki sayfa
 
 Alıcı makineyi ürün adıyla değil **ölçüyle** arıyor. Çinli rakiplerin hepsi tam
 tablo yayınlıyor.
 
+**Ağustos başında 13 sayfada tablo yoktu; bugün 2.** Sekiz roll form hattına
+2026-08-21'de mühendis onaylı aralıklar, altı makine varyantına katalog değerleri
+girildi.
+
 | tablosu VAR | tablosu YOK |
 |---|---|
-| rulo açıcılar · servo sürücüler · doğrultmalı servo sürücüler · kompakt hatlar | **8 roll-form hattının tamamı** · otomatik istifleyici · dilme · boy kesme · hub |
+| rulo açıcılar (+2 varyant) · servo sürücüler (+2) · doğrultmalı servo sürücüler (+2) · kompakt hatlar · dilme hatları · **8 roll form hattının tamamı** | **boy kesme hatları** · **otomatik istifleyici** |
 
-Her roll-form hattı için gereken 8 değer: kalınlık · genişlik · hat hızı ·
-istasyon sayısı · kesme tipi (hidrolik giyotin / uçan makas) · motor gücü ·
-PLC markası · çalışılan malzeme (galvaniz/PPGI/paslanmaz/alüminyum).
+Bu ikisinde katalogda da sayısal veri yok — uydurulmadı, mühendisten bekleniyor.
+İkisi de sıralanan kelime hedefliyor: `boy kesme hattı` 6,8. sırada,
+`automatic stacker` 390/ay ile makine grubunun en büyüğü.
 
 ### 5.4 Strateji
 
@@ -565,8 +558,11 @@ teslim edilen makine sayısı · ServoMold'un durumu.
 
 ### 5.5 Görsel ve izin
 
-Otomatik istifleyici ve trapez/cephe paneli sayfalarında **hiç fotoğraf yok**
-(arşivdeki 175 görselin hepsi tarandı) · 4 referans firmanın logosu ve izni.
+Fotoğrafı olmayan tek sayfa kaldı: **trapez/cephe paneli** (arşivdeki 175
+görselin hepsi tarandı, katalogda da kullanılabilir kare yok). Otomatik
+istifleyicininki 2026-09-05'te katalog s.29'daki gömülü görselden kırpıldı.
+
+4 referans firmanın logosu ve izni hâlâ bekliyor.
 
 ---
 
@@ -632,37 +628,27 @@ değil, mevcut ilerleme hızından türetildi.
 
 ### Durum tespiti — tek paragraf
 
-Site tarafında yapılacak iş büyük ölçüde bitti: 416 sayfa, 9 dil, şema, SSS,
+Site tarafında yapılacak iş büyük ölçüde bitti: 470 sayfa, 9 dil, şema, SSS,
 ürün sayfalarında video, altı dilde ölçülmüş başlıklar. Denetlenen 18 rakibin
 **hiçbirinde sayısal spec tablosu ve 9 dil yok** — sayfa kalitesinde zaten
 öndeyiz. Eksik olan içerik değil; **zaman (indeksleme), otorite (link) ve
 mühendislikten gelecek sayılar.**
 
-### Kademe 0 — şimdi: taşınmayı tamamla (kendiliğinden ilerliyor)
+### Kademe 0 — taşınma · **BİTTİ**
 
-| gösterge | 6 Ağu | 8 Ağu |
-|---|---|---|
-| indekslenmiş örnek sayfa | 3/12 | **7/12** |
-| "keşfedildi, indekslenmedi" | 2 | **0** |
-| gösterim alan yeni sayfa | 0 | 2 |
-| tık / gösterim (28 gün) | 42 / 575 | 46 / 639 |
-
-Google iki günde 4 sayfa daha indeksledi. **Yapılacak bir şey yok, beklenecek.**
-Her deploy sonrası `npm run kontrol`, yeni URL varsa `npm run indexnow`.
-
-⚠️ Trafiğin çoğu hâlâ eski WordPress adreslerinden 301'lerle akıyor (51 sayfa,
-360 gösterim). Yönlendirmelerin bozulmaması kritik — regresyon script'i bunu
-her deployda kontrol ediyor.
+301'ler çalışıyor, indeksleme 78 → 357'ye çıktı, trafik artık yeni adreslerden
+akıyor. Her deploy sonrası `npm run kontrol`, yeni URL varsa `npm run indexnow`.
 
 ### Kademe 1 — 1-3 ay: Türkiye'de ilk sayfa
 
 **Neden burası:** Türk rakiplerin tamamı dijitalde boş. Coiltech ölçümde
 **3 kelime / ayda 1 ziyaret**, üstelik "Avrupa'nın en büyüğü" diyor. Ev
-sahasında kaleyi kimse tutmuyor ve tıklarımızın %86'sı zaten Türkiye'den.
+sahasında kaleyi kimse tutmuyor ve tıklarımızın %80'i zaten Türkiye'den
+(28 günde 185 tık, ortalama sıra 8,1).
 
 | hedef kelime | hacim | durum | ne gerek |
 |---|---:|---|---|
-| rulo açıcılar | 140 | **7. sırada** | sayfa hazır, spec tablosu dolu — en yakın kazanç |
+| rulo açıcı | 140 | **12,1** — 90 gösterim, 2 tık | sayfa hazır, spec dolu; ilk sayfaya en yakın |
 | trapez sac makinesi | 480 | başlık doğru | SSS eklendi; SERP zayıf (ilk 5'in üçü pazaryeri) |
 | rollform makinesi | 590 | başlık düzeltildi | hub içeriği derinleşmeli |
 | sac dilme hattı | 30 | — | dilme sayfası hazır |
@@ -689,8 +675,11 @@ Backlink analizi (§3.8) sektörde tek kopyalanabilir deseni gösterdi:
 
 ### Kademe 3 — 6-12 ay: İngilizce ticari kelimeler
 
-En zor kademe: orada Çinliler ve CIDAN gibi gerçek rakipler var. Şu an
-İngiltere + ABD'den **176 gösterim, sıfır tık** — 15.-28. sıradayız.
+En zor kademe: orada Çinliler ve CIDAN gibi gerçek rakipler var. Ama en büyük
+boşluk da burada — **ABD'den 28 günde 930 gösterim geliyor, karşılığı 2 tık**
+(ortalama sıra 23,4). İngiltere 290 gösterim / 3 tık (18,4). Ağustos başında bu
+iki pazarda toplam 176 gösterim ve sıfır tık vardı; gösterim beş katına çıktı,
+tık hâlâ yok. Sebebi tek: 2.-3. sayfadayız.
 
 **Ama CIDAN gösteriyor ki link şart değil:** ABD'de 1.216 trafik alıyorlar,
 atıf yapan domain sayısı **18** (bizim beşte birimiz), spam skoru 0. Oradaki
@@ -704,30 +693,33 @@ Bizim yolumuz da o: eğitici içerik ticari kelimeyi kapıyor (Kingreal'in
 İngilizce arıyor (Suudi 100, BAE 130, Mısır 90). İngilizce içerik = MENA
 stratejisi.
 
-### Kilit blokaj: 13 teknik tablo
+### Kilit blokaj — artık tablo değil, otorite
 
-Kademe 1 ve 3'ün ikisini birden hızlandıracak tek şey. 17 ürün sayfasının
-13'ünde teknik özellik tablosu yok; alıcı makineyi **ölçüyle** arıyor ve
-rakiplerin hiçbirinde bu tablo yok — yani bizde *olabilir*.
-
-Filiz Hanım'a Word olarak gönderildi (`belgeler/`), mühendislik cevabı bekleniyor.
+Ağustos'ta buraya "13 teknik tablo" yazıyordu. O blokaj çözüldü: 13'ten 2'ye
+indi (§5.3). Yerine geçen blokaj ölçümle sabit — **171 kelime 11–50 arasında,
+1.447 gösterim karşılığı 4 tık** (§1). Sayfa kalitesi bu kelimeleri ilk sayfanın
+eşiğine getirdi; eşiği atlatan şey link.
 
 ### Sırayla ne yapılacak
 
 | # | iş | kimde | neden bu sırada |
 |---|---|---|---|
-| 1 | Form testi — `generate_lead` hiç tetiklenmedi | **sen** | Ölçüm kanıtlanmadan gerisi körlemesine. 2 dakika |
-| 2 | Mühendislik cevapları → 13 tablo | Filiz Hanım | En büyük tek kaldıraç |
-| 3 | Ajansın link üretimini durdur | Filiz Hanım | Her gün yeni çöp ekleniyor |
-| 4 | Fuar listesi → katılımcı sayfaları | Filiz Hanım | Sektörde çalışan tek link deseni |
-| 5 | Yandex `https://` host | **sen** | Rusya 3. pazar, hâlâ `http://` kayıtlı |
+| 1 | Ajansın link üretimini durdur | Filiz Hanım | Her gün yeni çöp ekleniyor; §3.8 |
+| 2 | Fuar listesi → katılımcı sayfaları | Filiz Hanım | Sektörde çalışan tek link deseni |
+| 3 | Uluslararası partner/distribütör linkleri | Filiz Hanım | 48 ülkeye ihracat, tek doğal link yok |
+| 4 | Tüzel kişilik unvanı → KVKK sayfası | Filiz Hanım | Form kişisel veri topluyor, aydınlatma yok |
+| 5 | Boy kesme + istifleyici tablosu | mühendislik | Tablosu kalan son iki sayfa |
 | 6 | Referans logo izni | Filiz Hanım | 18 rakibin 15'inde var, bizde kilitli |
-| 7 | Türkçe hub içeriğini derinleştir | ben | Kademe 1'in kalan işi |
-| 8 | İngilizce eğitici içerik serisi | ben | Kademe 3'ün tek yolu |
+| 7 | Blogspot / www.servosteel.com kapat | **sen** | Marka sıralarımızı kendimiz bölüyoruz |
+| 8 | Yandex bölge + ana ayna | **sen** | Rusya 3. pazar, panel işi |
+| 9 | Türkçe hub içeriğini derinleştir | ben | Kademe 1'in kalan işi |
+| 10 | İngilizce eğitici içerik serisi | ben | Kademe 3'ün tek yolu |
 
-**Not:** 7 ve 8 bende ama listenin sonunda — çünkü sitenin sayfa kalitesi zaten
-rakiplerin önünde. Daha fazla içerik üretmek, üstteki altı madde çözülmeden
-marjinal fayda veriyor.
+**Not:** 9 ve 10 bende ama listenin sonunda — çünkü sitenin sayfa kalitesi zaten
+rakiplerin önünde. Daha fazla içerik üretmek, üstteki maddeler çözülmeden
+marjinal fayda veriyor. Ölçüm bunu söylüyor: 11–50 arasındaki 171 kelime
+içeriksizlikten değil, otoritesizlikten orada.
+
 
 ---
 
@@ -790,26 +782,27 @@ giyotin, istifleme, PVC yapıştırma · Schneider Lexium/Altivar · *sayısal s
 
 ## EK B — Teknik denetimden kalanlar
 
-Demo aşamasında yapılan denetimde 1 kritik + 3 yüksek + 5 orta sorun bulundu;
-kritik ve yüksek olanların tamamı düzeltildi ve site canlıya çıktı. Kalanlar:
+Demo aşamasındaki denetimde 1 kritik + 3 yüksek + 5 orta sorun bulundu; kritik
+ve yüksek olanların tamamı düzeltildi. Aşağıdakiler 2026-09-07'de tek tek
+doğrulandı — hâlâ açık olanlar.
 
 **Orta**
 - `alt.mp4` 17,9 MB. Yükleme stratejisi zaten doğru (lazy + `preload="none"`).
   Yeniden kodlama denendi, kazanç çıkmadı — boyutun sebebi **49 saniyelik süre**.
-  Gerçek kaldıraç süreyi kısaltmak; bu bir içerik kararı.
+  Gerçek kaldıraç süreyi kısaltmak; bu bir içerik kararı, teknik değil.
+- Ölü bağımlılıklar `package.json`'da duruyor: `@phosphor-icons/react`,
+  `@radix-ui/react-dialog` (7 Eylül teyit)
 - 53 KB kullanılmayan JS + gereksiz `Array.prototype.at` polyfill (13,7 KB)
-- Ölü bağımlılıklar: `@phosphor-icons/react`, `@radix-ui/react-dialog`
 
 **Düşük**
+- `logo-full.png` → SVG (%54 kazanç) — hâlâ png (7 Eylül teyit)
 - Kısa başlıklar: `/iletisim` 21, `/videolar` 21, `/teklif-al` 22 karakter
-- `logo-full.png` → SVG (%54 kazanç)
 - Video dosyalarında `Cache-Control` 4 saat → parmak izli adla 1 yıl olabilir
 - Üçüncü taraf otorite sinyali yok (`sameAs` tamamen kendi hesaplarımız) —
   Wikidata + sektör dizinleri
 
-**Altyapı işleri (SEO dışı)**
-- 4 CalDAV/CardDAV SRV kaydı hâlâ köke bakıyor (artık Dokploy, 2079/2080 portu
-  yok) → `cpanel.servosteel.com.tr`'ye çevrilmeli
-- cPanel'de `filtre1` duruyor: konusunda "spam" geçen mail sessizce siliniyor
-- `info@` adresine gelen mailler SMTP seviyesinde reddediliyor (10 günde 433
-  kayıt) — muhtemelen müşteri talebi kaybediliyor
+**Kapandı**
+- ~~cPanel `filtre1`~~ — silindi (2026-08-10), mail hemen geldi. Dersi
+  KONTROL.md §E.12'de.
+- ~~4 CalDAV/CardDAV SRV kaydı~~ — iş kapanmadı ama SEO işi değil,
+  KONTROL.md §D'ye taşındı. `info@` SMTP reddi de oraya taşındı.

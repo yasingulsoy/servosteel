@@ -1,10 +1,12 @@
 
 # Belgeler
 
-`Servosteel-Filiz-Hanim.docx` — Filiz Hanım'a giden doğrulama ve soru belgesi.
-Kaynağı yanındaki `.docx.js` dosyası; içerik değişince onu düzenleyip
-`node belgeler/Servosteel-Filiz-Hanim.docx.js` ile yeniden üretilir (docx npm paketi gerekir).
-İçerik kaynakları: KONTROL.md bölüm A + oturum soru listesi.
+`Servosteel-Acik-Sorular.docx` — **güncel olan bu.** Mühendisliğe giden açık
+soru listesi; A bölümünde onay/düzeltme sütunu var. Kaynağı KONTROL.md §A ve §B.
+
+`Servosteel-Filiz-Hanim.docx` — ilk sürüm (2026-08-07), arşiv. Kaynağı yanındaki
+`.docx.js`; `node belgeler/Servosteel-Filiz-Hanim.docx.js` ile yeniden üretilir
+(docx npm paketi gerekir).
 
 `SERVOSTEEL-KATALOG.pdf` — 40 sayfalık ürün kataloğu, A4 yatay. **35,1 MB.**
 

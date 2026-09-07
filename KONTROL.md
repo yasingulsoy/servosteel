@@ -1,235 +1,133 @@
 # Servosteel — Kontrol Defteri
 
-İki bölüm: **A)** Filiz Hanım'ın mühendislere doğrulatacağı teknik sayfalar
-(canlı linkleriyle) · **B)** bizim her seferinde koştuğumuz periyodik kontroller.
+**Yalnızca açık işler.** Kapanan madde buradan silinir; kalıcı olması gereken
+bilgi §E'ye taşınır. Strateji ve ölçüm arka planı: [SEO.md](SEO.md)
 
-**Güncelleme:** 2026-08-08 · SEO/strateji arka planı: [SEO.md](SEO.md)
+**Güncelleme:** 2026-09-07
 
-> **Neden acil:** Search Console 6–7 Ağustos'ta üç makine sayfasının **Product
-> şemasını taradı** (straightener-servo-feeders, doğrultmalı-servo-sürücüler,
-> servo-sürücüler). Yani Google spec tablolarımızı okumaya başladı — yanlış bir
-> sayı artık sadece sitede değil, arama sonucunda da görünebilir.
+| bölüm | kimde |
+|---|---|
+| §A Sayı doğrulama | mühendislik (Filiz Hanım üzerinden) |
+| §B Firma bilgisi | Filiz Hanım |
+| §C Periyodik kontroller | ben, her yayında / haftalık |
+| §D Panel işleri | Yasin |
+| §E Dersler ve tuzaklar | **silinmez** |
 
 ---
 
-## A. Mühendis doğrulama listesi
+## A. Mühendisten bekleyen sayılar
 
 Kural: mühendis yalnızca **Türkçe sayfadaki sayıyı** işaretlesin ("doğru" /
 "doğrusu şu"). Dokuz dile yaymayı biz yaparız — tek tek dosya düzeltmesin.
 
-> **DERS: her ürün ailesinin katalogda BİRDEN FAZLA tablosu var.**
->
-> 2026-08-10 sabahı katalogdan yalnızca bazı tabloları okuyup canlıya değer
-> yazdım; öğleden sonra kalan sayfalar okununca hepsinin **fazla dar** olduğu
-> çıktı. Bir ürüne dair sayı yazmadan önce **o ürünün TÜM sayfaları** okunmuş
-> olmalı.
->
-> | ürün | katalogdaki tablolar |
-> |---|---|
-> | mekanik açıcı | s.8 SRV-MA 500–2.500 kg · s.9 konik mandren 3.000–4.000 kg · s.10 SRV-MA3000/4000 3.000–4.000 kg, 1.200 mm'ye kadar |
-> | kompakt hat | s.23 SRV-KH…**3** 0,5–3 mm / 35 m/dk / 5 merdane / Ø85 · s.25 SRV-KH…**6** 1–6 mm / 25 m/dk / 7 merdane / Ø110 |
-> | doğrultmalı sürücü | s.19 DSS 7 merdane 0,4–3 mm · s.20 DSS 9 merdane 0,5–4 mm · metin: 7/9/11/13 merdane, **0,4–6 mm** |
->
-> **Sabah "çelişki" sanılan iki şey çelişki değilmiş, ayrı serilermiş:**
-> - "4.000 mı 2.500 mi" → mekanik açıcı gerçekten **4.000 kg**'a çıkıyor (s.10).
->   İlk yorumum ("4.000 dilme hattının kapasitesi") yanlıştı.
-> - "kompakt kalınlık 0,5–4 mü 1–6 mı" → **iki ayrı seri**; özet tablo ikisini
->   birden kapsamalı (0,5–6 mm).
->
-> **"±0,1 mm"** doğrulandı: kompakt hatların sürme hassasiyeti, yalnızca o ürün
-> için geçerli (s.23 ve s.25, ikisinde de ~0,1).
->
-> Katalogda **iki hata**, firmaya bildirilecek: s.16'da İngilizce satır "600 mm"
-> diyor (doğrusu 1600, mini sürücülerden kopyalanmış); s.25 ve s.23'te iki farklı
-> sütun aynı model kodunu taşıyor (KH806 / KH803) — her iki tabloda tekrarladığı
-> için dizgi hatası değil, açıcı tipine göre ayrılan bir konfigürasyon olabilir.
+### A.1 Canlıdaki tablolar — teyit bekliyor
 
-> **A.1 tabloları katalogla hizalandı (2026-08-10).** Canlıdaki 9 değer
-> katalogla çelişiyordu; 9 dilde birden düzeltildi. Çoğu makineyi olduğundan
-> KÜÇÜK gösteriyordu — en kötüsü hidrolik açıcının rulo genişliğiydi:
-> **80–1.000 mm** yazıyordu, doğrusu **80–1.600 mm**. 1.400 mm rulo işleyecek
-> bir alıcı sayfayı okuyup eleniyordu.
->
-> | sayfa | satır | eski | yeni |
-> |---|---|---|---|
-> | rulo-acicilar | rulo genişliği (hidrolik) | 80–1.000 mm | **80–1.600 mm** |
-> | rulo-acicilar | rulo iç çapı (mekanik) | 300 mm | **300–550 mm** |
-> | servo-suruculer | malzeme kalınlığı | 0,4–4,0 mm | **0,2–4,0 mm** |
-> | servo-suruculer | serbest besleme hızı | 35 m/dk | **35 / 100 / 250 m/dk** |
-> | servo-suruculer | besleme silindiri | 2 × Ø85 | **2 × Ø80–Ø85** |
-> | kompakt-hatlar | malzeme kalınlığı | 0,5–4,0 mm | **1–6 mm** |
-> | kompakt-hatlar | serbest hız | 40 m/dk | **25 m/dk** |
-> | kompakt-hatlar | besleme hassasiyeti | −0,1 mm | **±0,1 mm** |
-> | kompakt-hatlar | doğrultma silindiri | 5 × Ø85 | **7 × Ø110** |
->
-> Kural: kapasitede katalogdaki GENİŞ değer alındı, **hızda DÜŞÜK değer**.
-> Kapasiteyi eksik yazmak müşteri kaçırır; hızı fazla yazmak taahhüt yaratır.
->
-> **Dokunulmayan ikisi:**
-> - `rulo dış çapı (maks.) 1.600` — doğru. LA modelleri 1.600'e çıkıyor, satırda
->   "(maks.)" yazdığı için geçerli. İlk taramada yanlış işaretlemiştim.
-> - `dogrultmali-servo-suruculer` tablosunun tamamı — katalogda **kasalı**
->   doğrultmalı serinin tablosu henüz okunmadı (s.19-24). Yalnızca mini seriyi
->   (SRV-MDS) görüp sayfanın tamamını değiştirmek yanlış olurdu.
->
-> **Firmaya sorulacak:** kompakt hatta kalınlık gerçekten 1-6 mm mi (site 0,5-4
-> diyordu), hız 25 mi 40 mı? İkisi birbirini kapsamıyor, biri yanlış.
+Aşağıdakiler **şu an sitede yayında** ve katalogla hizalı (2026-08-10'da 9 değer
+düzeltildi). Mühendis onaylarsa bu satırlar kapanır.
 
-### A.0 Makine varyant sayfaları (2026-08-10, yeni)
-
-**6 varyant × 9 dil = 54 URL.** Sitemap 416 → **470**, build 426 → **480 sayfa**.
-Üst sayfalara **dokunulmadı** — `/makineler/rulo-acicilar` "rulo açıcılar"da
-7. sırada ve hub olarak kalıyor; her üst sayfaya çocuklarına giden kart eklendi.
-
-| yol | katalog serisi | model |
+| sayfa | canlı değerler | açık soru |
 |---|---|---|
-| rulo-acicilar/hidrolik | SRV-HA | 6.000–20.000 kg |
-| rulo-acicilar/mekanik | SRV-MA | 500–2.500 kg |
-| servo-suruculer/mini | SRV-SS | 6 model, 10–600 mm |
-| servo-suruculer/kasali | SRV-KS | 9 model, 40–1.600 mm |
-| dogrultmali-servo-suruculer/mini | SRV-MDS | 4 model, 15–400 mm |
-| dogrultmali-servo-suruculer/kasali | SRV-DSS | 9 model, 30–1.600 mm |
+| [Rulo Açıcılar](https://servosteel.com.tr/makineler/rulo-acicilar) | Mekanik 500–4.000 kg / 30–1.200 mm / iç çap 300–550 · Hidrolik 6–20 ton / 80–1.600 mm / iç çap 450–560 · dış çap maks. 1.600 | — |
+| [Servo Sürücüler](https://servosteel.com.tr/makineler/servo-suruculer) | 0,2–4,0 mm · ≤1.600 mm · 35/100/250 m/dk · 2×Ø80–85 · 7" HMI · 250 reçete | **±0,1 mm hassasiyet servo sürücüde de geçerli mi?** Şu an yalnızca kompakt hatta yazılı |
+| [Doğrultmalı Servo Sürücüler](https://servosteel.com.tr/makineler/dogrultmali-servo-suruculer) | ≤1.600 mm · 0,4–6,0 mm · 7/9/11/13 silindir · 250 reçete · Schneider LCD | — |
+| [Kompakt Hatlar](https://servosteel.com.tr/makineler/kompakt-hatlar) | 40–1.300 mm · 0,5–6 mm · 25/35/40 m/dk · ±0,1 mm · rulo 2.500–10.000 kg · 2+2 besleme · 5×Ø85 / 7×Ø110 | Katalogda **iki ayrı seri** var (KH…3 ve KH…6); tek tabloda birleştirildi. Doğru okuma mı? |
+| [Rulo Dilme Hatları](https://servosteel.com.tr/dilme-hatlari) | hafif 1.500–4.000 kg / ağır 6.000–15.000 kg · kalınlık 0,5–1 / 0,5–2 / 0,8–3 / 1–5 mm | **15.000 kg üst kademe hâlâ üretiliyor mu?** |
+| [Boy Kesme Hatları](https://servosteel.com.tr/boy-kesme-hatlari) | 7 bileşen: açıcı, yükleme arabası, doğrultma, servo besleme, giyotin, istifleme, PVC folyo | PVC folyo ünitesi **standart mı, opsiyon mu?** |
 
-**Model kodları: sürücülerde YAZILDI, açıcılarda YAZILMADI.** Sürücü kodları
-tek tek kontrol edildi, tekrar eden yok. Açıcılarda `SRV-HA6000-PUB` kodu iki
-farklı satırda farklı genişliklerle geçiyor (`SRV-KH806`'da da aynı sorun);
-orada kapasite kırılımı verildi, kodlar firma teyit edince eklenir.
+### A.2 Spec dışı teknik iddialar — metin içinde geçiyor
 
-**Yazılmayan iki veri:** SRV-MDS'in "doğrultma merdanesi 5–60 adet" hücresi
-(60 merdane fiziksel olarak makul değil, katalogda dizgi/okuma hatası olmalı) ·
-SRV-DSS'in seri adı (sayfa başlığı `SRV-DDS`, satırlardaki kodlar `SRV-DSS`;
-satırlardaki yazıldı).
+| iddia | geçtiği yer |
+|---|---|
+| **Merdane: 4140 çelik, 58–60 HRC** | [Kablo Kanalı](https://servosteel.com.tr/roll-form-hatlari/kablo-kanali) · [C-Sigma-Omega](https://servosteel.com.tr/roll-form-hatlari/c-sigma-omega) · [Solar Profil](https://servosteel.com.tr/roll-form-hatlari/solar-profil) · [Solar yatırım yazısı](https://servosteel.com.tr/akademi/solar-profil-hatti-yatirim-geri-donusu) |
+| **"27+ uzman kadro"** | [Hakkımızda](https://servosteel.com.tr/hakkimizda) — eski site "20+ saha personeli" diyordu |
+| **Çalışma saati 08:30–18:00** | [İletişim](https://servosteel.com.tr/iletisim) — eski site 08:00–18:00 |
+| 48+ ülke · %99 zamanında teslim · %99 QC | [Hakkımızda](https://servosteel.com.tr/hakkimizda) + ana sayfa şeridi — pazarlama sayıları, teyit yeterli |
 
-**Katalog sitedeki doğrultmalı tablosunu doğruladı:** ≤1.600 mm ve 0,5–4 mm
-doğru, "7/9/11/13 doğrultma silindiri" de doğru — s.20 bunun "9 merdane"
-konfigürasyonu. Değiştirmemek doğru karardı.
+### A.3 Hâlâ eksik olan iki veri
 
-Yapı: slug tablosu `slugs.ts` → `VARIANT_SLUGS`, yol üretimi `routing.ts` →
-`buildPathnames`, sayfa listesi `catalog.ts` → `machineVariants`. Üçü ayrışırsa
-routing.ts açılışta hata fırlatır. Varyant üst ürününe bağlı —
-`/makineler/kompakt-hatlar/hidrolik` 404 döner.
+**1 · Roll form hatlarında çalışılan malzeme.** Sekiz hattın tablosu 2026-08-21'de
+eklendi (kalınlık, genişlik, hız, istasyon, motor) ama **malzeme satırı yok** —
+galvaniz / siyah sac / paslanmaz / alüminyum. Piyasa taramasından çıkmıyor,
+mühendis de belirtmedi. Cevap gelince tabloya altıncı satır olarak eklenir.
 
-**Yakalanan hata:** ilk yazımda `metaTitle` değerlerine "| Servosteel" konmuştu,
-oysa marka son ekini layout şablonu ekliyor — başlıklar "… | Servosteel |
-Servosteel" çıkıyordu. 54 başlıktan temizlendi. İngilizce başlıklarda
-görünmüyordu çünkü 60 karakteri aşıp şablonu atlıyorlardı; hata oradaydı ama
-gizliydi.
+> **Bu tablonun kaynağı katalog DEĞİL.** Katalogda bu hatların sayısal tablosu
+> yok. Mühendis "en genel ölçüleri, rakip analizinde en alt sınırdan en üst
+> sınıra kadar yaz" dedi; sekiz üretici teknik veri sayfası tarandı, çıkan
+> aralıklar sunuldu ve **"buradaki aralıkla ilerle" diyerek onayladı
+> (2026-08-21).** Bir değer sorgulanırsa zincir budur.
+>
+> | hat | kalınlık | genişlik | hız | istasyon | motor |
+> |---|---|---|---|---|---|
+> | kablo kanalı | 0,6–3,0 mm | 50–600 mm | 8–20 m/dk | 18–24 | 7,5–30 kW |
+> | solar profil | 1,0–3,0 | 150–400 | 10–60 | 12–22 | 15–25 |
+> | ağır raf | 1,5–5,0 | 100–400 | 5–20 | 18–30 | 15–37 |
+> | iskele kalası | 1,2–2,0 | 240–520 | 4–20 | 15–26 | 11–22 |
+> | yol bariyeri | 2,5–4,0 | 480–750 | 3–18 | 16–22 | 30–45 |
+> | gürültü bariyeri | 0,3–1,5 | 300–800 | 12–25 | 16–20 | 7,5–30 |
+> | trapez/cephe | 0,3–1,5 | ≤1.300 | 15–60 | 16–20 | 11–22 |
+> | C-Sigma-Omega | 1,5–4,0 | 100–400 | 10–36 | 16–24 | 11–30 |
 
-### A.1 Spec tablosu YAYINDA olan sayfalar — sayılar teyit edilecek
+**2 · Otomatik istifleyici tablosu.** Sayfaya 2026-09-05'te fotoğraf ve iki SSS
+daha eklendi ama **tablo yok** — katalogda bu ürün için sayısal veri yok ve
+uydurulmadı. Gereken dört değer: levha/profil ölçü aralığı · paket yüksekliği ·
+istif kapasitesi · hat hızı uyumu.
 
-| # | sayfa | doğrulanacak değerler | bilinen sorun |
-|---|---|---|---|
-| 1 | [Rulo Açıcılar](https://servosteel.com.tr/makineler/rulo-acicilar) | Mekanik 500/750/1.500/2.500 kg · Hidrolik 6–20 ton · genişlikler 30–500 / 80–1.000 mm · iç çap 300 / 450–560 mm · dış çap 1.600 mm | ⚠️ **ÇELİŞKİ:** `<title>` "500–4.000 kg" diyor, tablo 2.500'de bitiyor. Eski site de kendi içinde tutarsızdı. **Üst kapasite hangisi?** |
-| 2 | [Servo Sürücüler](https://servosteel.com.tr/makineler/servo-suruculer) | 0,4–4,0 mm · ≤1.600 mm · 35 m/dk · 2×Ø85 mm · 7" HMI · 250 reçete | ⚠️ **±0,1 mm hassasiyet servo sürücü için de geçerli mi?** Şu an yalnızca kompakt hatta yazılı |
-| 3 | [Doğrultmalı Servo Sürücüler](https://servosteel.com.tr/makineler/dogrultmali-servo-suruculer) | ≤1.600 mm · 0,5–4,0 mm · doğrultma silindiri 7/9/11/13 · 250 reçete · Schneider LCD | — |
-| 4 | [Kompakt Hatlar](https://servosteel.com.tr/makineler/kompakt-hatlar) | 40–1.300 mm · 0,5–4,0 mm · 40 m/dk · **−0,1 mm** · rulo 2.500–10.000 kg · iç 450–560 / dış 1.300–1.600 mm · 2+2 besleme · 5×Ø85 doğrultma | — |
-| 5 | [Rulo Dilme Hatları](https://servosteel.com.tr/dilme-hatlari) | Kapasite kademeleri: hafif 1.500–4.000 kg / ağır 6.000–15.000 kg · kalınlık kademeleri 0,5–1 / 0,5–2 / 0,8–3 / 1–5 mm · 8 bileşen | **15.000 kg üst kademe hâlâ üretiliyor mu?** |
-| 6 | [Boy Kesme Hatları](https://servosteel.com.tr/boy-kesme-hatlari) | 7 bileşen: açıcı, yükleme arabası, doğrultma, servo besleme, giyotin, istifleme, **PVC folyo uygulama** | PVC folyo ünitesi standart mı, opsiyon mu? |
-
-### A.2 Spec DIŞI teknik iddialar — metin içinde geçiyor
-
-| # | iddia | geçtiği sayfalar |
-|---|---|---|
-| 7 | **Merdane: 4140 çelik, 58–60 HRC** | [Kablo Kanalı](https://servosteel.com.tr/roll-form-hatlari/kablo-kanali) (özellik kutusu) · [C-Sigma-Omega](https://servosteel.com.tr/roll-form-hatlari/c-sigma-omega) (SSS) · [Solar Profil](https://servosteel.com.tr/roll-form-hatlari/solar-profil) (SSS) · [Solar yatırım yazısı](https://servosteel.com.tr/akademi/solar-profil-hatti-yatirim-geri-donusu) |
-| 8 | **"27+ uzman kadro"** | [Hakkımızda](https://servosteel.com.tr/hakkimizda) — eski sitede "20+ saha personeli" yazıyordu; güncel sayı? |
-| 9 | **Çalışma saati 08:30–18:00** | [İletişim](https://servosteel.com.tr/iletisim) — eski sitede 08:00–18:00'di; hangisi doğru? |
-| 10 | 48+ ülke · %99 zamanında teslim · %99 QC | [Hakkımızda](https://servosteel.com.tr/hakkimizda) + ana sayfa şeridi — pazarlama sayıları, teyit yeterli |
-
-### A.3 Tablosu OLMAYAN sayfalar — mühendislikten SAYI BEKLİYOR
-
-Bu 8 hattın her biri için 8 değer lazım (Filiz Hanım listesindeki 3.1 sorusu):
-kalınlık · genişlik · hat hızı · istasyon sayısı · kesme tipi (giyotin/uçan
-makas) · toplam motor gücü (kW) · PLC markası · çalışılan malzeme.
-
-- [Kablo Kanalı](https://servosteel.com.tr/roll-form-hatlari/kablo-kanali) · [Solar Profil](https://servosteel.com.tr/roll-form-hatlari/solar-profil) · [Ağır Raf](https://servosteel.com.tr/roll-form-hatlari/agir-raf) · [İskele Kalası](https://servosteel.com.tr/roll-form-hatlari/iskele-kalas) · [Yol Bariyeri](https://servosteel.com.tr/roll-form-hatlari/yol-bariyeri) · [Gürültü Bariyeri](https://servosteel.com.tr/roll-form-hatlari/gurultu-bariyeri) · [Trapez/Cephe Paneli](https://servosteel.com.tr/roll-form-hatlari/trapez-cephe-paneli) · [C-Sigma-Omega](https://servosteel.com.tr/roll-form-hatlari/c-sigma-omega)
-- Ayrıca: [Otomatik İstifleyici](https://servosteel.com.tr/makineler/otomatik-istifleyici) (levha ölçüsü, kapasite, hız) — fotoğrafı da yok.
-
-~~Sayılar gelene kadar bu sayfalara hiçbir spec yazılmayacak~~ —
-**ÇÖZÜLDÜ (2026-08-21): sekiz hatta da tablo eklendi, 9 dil.**
-
-**Değerlerin kaynağı katalog DEĞİL.** Katalogda bu hatların sayısal tablosu
-yok. Mühendis "en genel ölçüleri, rakip analizinde en alt sınırdan en üst
-sınıra kadar yaz" dedi; sekiz ayrı üretici teknik veri sayfası tarandı
-(Ağustos 2026), çıkan aralıklar mühendise sunuldu ve **"buradaki aralıkla
-ilerle" diyerek onayladı.** Bir değer sorgulanırsa zinciri budur.
-
-| hat | kalınlık | genişlik | hız | istasyon | motor |
-|---|---|---|---|---|---|
-| kablo kanalı | 0,6–3,0 mm | 50–600 mm | 8–20 m/dk | 18–24 | 7,5–30 kW |
-| solar profil | 1,0–3,0 | 150–400 | 10–60 | 12–22 | 15–25 |
-| ağır raf | 1,5–5,0 | 100–400 | 5–20 | 18–30 | 15–37 |
-| iskele kalası | 1,2–2,0 | 240–520 | 4–20 | 15–26 | 11–22 |
-| yol bariyeri | 2,5–4,0 | 480–750 | 3–18 | 16–22 | 30–45 |
-| gürültü bariyeri | 0,3–1,5 | 300–800 | 12–25 | 16–20 | 7,5–30 |
-| trapez/cephe | 0,3–1,5 | ≤1.300 | 15–60 | 16–20 | 11–22 |
-| C-Sigma-Omega | 1,5–4,0 | 100–400 | 10–36 | 16–24 | 11–30 |
-
-Her tablonun altında not var: aralıklar seri geneli içindir, hat projeye özel
-boyutlandırılır. Böylece aralık bir taahhüt gibi okunmuyor.
-
-**Hâlâ eksik: her hat için çalışılan malzeme** (galvaniz / siyah sac /
-paslanmaz / alüminyum). Piyasa taramasından çıkmıyor, mühendis de belirtmedi.
-Cevap gelince tabloya altıncı satır olarak eklenir.
-
-**Katalog (2026-08-10) 8 değerden ikisini kapattı:** PLC markası **Schneider**
-(tüm hatlarda), kesme tipi roll form hatlarında **uçar makas** / boy kesmede
-**giyotin**. Kalan altı değer (kalınlık, genişlik, hat hızı, istasyon sayısı,
-motor gücü, malzeme) hâlâ mühendislikten bekleniyor. Katalogda 8 hattın yalnızca
-üçü var: kablo kanalı, market rafı, solar panel. Ayrıntı ve makine tabloları:
-`belgeler/KATALOG-VERILERI.md`.
-
-**2026-08-15'te işlendi (9 dil, `products.rollform.*.components`):**
-
-- Sekiz hattın hepsine **Schneider PLC + dokunmatik operatör paneli** — katalog
-  s.6 otomasyonun tamamının Schneider olduğunu söylüyor (Lexium servo, Altivar
-  hız kontrol, PLC, panel, yazılım), yani hat ayrımı yapmadan geçerli.
-- **Kablo kanalı → H tipi eksantrik pres** (s.34-35), **solar profil → C tipi
-  eksantrik pres** (s.37), ikisinde de delme ve kesme kalıbıyla.
-- Kablo kanalında kesme **"hat sonu makas" → "uçan kesme"** olarak düzeltildi;
-  katalog s.35 bu hatta uçar makas yazıyor. Yanlış bilgi düzeltmesiydi.
-
-Katalogdaki **hidrolik punch sistemi** market rafına ait (s.36); sitedeki
-"ağır raf" sayfasıyla aynı ürün olduğu **teyit edilmediği için işlenmedi**.
-Kullanılmayan diğer katalog bilgileri: yükleme arabası, açıcının spesifik olarak
-hidrolik oluşu — ikisi de yalnızca o iki hat için belgeli.
-
-Hâlâ yazılmayan: kalınlık · genişlik · hat hızı · istasyon sayısı · motor gücü ·
-malzeme. Bunlar hattı kuran mühendiste; sekiz satırlık bir tabloyla kapanır.
-
-**Otomatik istifleyici güçlendirildi (2026-09-05).** Sayfa makine sayfaları
-içinde en zayıfıydı: fotoğraf yok, SSS 2 (diğerlerinde 4), tablo yok, en kısa
-metin. Hedeflediği kelime ise en büyüklerinden — `automatic stacker` **390/ay**
-(ABD, CPC $13,84).
-
-- **Fotoğraf eklendi:** katalog s.29'daki gömülü görselden (4032×3024) makaslı
-  istifleme masası kırpıldı → `public/gorseller/otomatik-istifleyici.jpg`,
-  1200×1200 (diğer makine sayfalarıyla aynı format), 245 KB.
-  `catalog.ts`'teki `noPhoto: true` kaldırıldı.
-- **SSS 2 → 4**, dokuz dilde. Yeni sorular: paket dolduğunda hat duruyor mu ·
-  levha ve profil aynı istifleyiciyle toplanabilir mi. İkisi de sayısal iddia
-  içermiyor.
-
-**TABLO EKLENMEDİ** — katalogda bu ürün için sayısal veri yok, uydurulmadı.
-Mühendisten istenecek: levha/profil ölçü aralığı, paket yüksekliği, istif
-kapasitesi, hat hızı uyumu.
+Hedeflediği kelime makine grubunun en büyüğü: `automatic stacker` **390/ay**
+(ABD, CPC $13,84) — tablo bu sayfada en çok işe yarayacak yer.
 
 ---
 
-## B. Periyodik kontroller — her seferinde
+## B. Firmadan bekleyen bilgiler
 
-### B.1 Deploy sonrası (her yayında)
+- [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina
+  Kalıp **ve Sanayi** Ltd. Şti.", s.6 "Steel Makina Kalıp **San. ve Tic.**
+  Ltd. Şti." Ticaret sicilindeki tam hâli lazım.
+  **KVKK/gizlilik sayfası buna bağlı** — aylardır bu yüzden yazılamıyor.
+  Yanında iki bilgi daha: **VERBİS kaydı var mı**, **form e-postaları ne kadar
+  saklanıyor**. Üçü gelince 9 dile ben yazarım.
+- [ ] **Mevcut ajansın link inşasını durdur** — 2010'ların yöntemi, zarar
+  veriyor. Kanıtı §E.9'da.
+- [ ] **Hangi fuarlara katıldık** (geçmiş yıllar dahil) — katılımcı listeleri
+  hâlâ canlı ve link veriyor; sektörde çalışan tek link deseni bu (SEO.md §3.8).
+- [ ] **Referans logoları izni** (Sarıgözoğlu · Mega Solar · SMT Enerji · Astor)
+  — kod hazır, `PUBLISH_REFERENCES=false` ile kilitli.
+  Katalog s.30'daki kurulum fotoğrafı Astor'un tesisinde çekilmiş (vinçlerden
+  belli); izin istenirken bu kullanılabilir.
+- [ ] **Katalogdaki 6 hata** — TR/EN uyuşmazlıkları (3 yerde), giriş metni ile
+  tablo çelişkisi (3 yerde), seri adı tutarsızlığı (KSS/KS, DDS/DSS). Katalog
+  yurtdışına gittiği için İngilizce hatalar öncelikli.
+  Ayrıntı: `belgeler/KATALOG-VERILERI.md`
+- [ ] **SRV-BDH birleşik hattı** (boy kesme + dilme tek hatta, s.31) hâlâ
+  satılıyor mu? Satılıyorsa sitede sayfası yok.
+- [ ] **"Market Raf" mı "Ağır Raf" mı** — katalog s.36 "Market Raf Üretim
+  Hattı" diyor, sitede "Ağır Raf Üretim Hattı" var. Aynı ürün mü?
+  (Katalogdaki hidrolik punch sistemi market rafına ait; aynı ürün olduğu teyit
+  edilmediği için siteye işlenmedi.)
+- [ ] **SRV-BH 1500 mm / 6 mm** — sahadaki makinenin etiketi (s.30) 6 mm diyor,
+  katalog kalınlık kademeleri 1–5 mm'de bitiyor.
+- [ ] **Kompakt hat model kodları** — `KH803` / `KH804` / `KH806` her tabloda
+  ikişer kez, farklı rulo ağırlığı ve mandren tipiyle geçiyor. Aynı kod iki
+  açıcı seçeneğini mi kapsıyor? Teyit gelmeden model kodları siteye yazılmadı.
+  Aynı sorun açıcılarda: `SRV-HA6000-PUB` iki satırda farklı genişlikle.
+
+---
+
+## C. Periyodik kontroller
+
+### C.1 Her yayından sonra
 
 ```bash
 python scripts/canli-kontrol.py
 ```
-14 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap,
-GA4 ve Clarity script'lerinin yüklendiği.
-Hepsi OK ise ve **yeni URL** eklendiyse:
+14 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap, GA4
+ve Clarity script'leri. Hepsi OK ise ve **yeni URL** eklendiyse:
 ```bash
 npm run indexnow
 ```
 
-### B.2 Haftalık ölçüm (komutlar `~/.config/claude-seo` içinden)
+### C.2 Haftalık ölçüm
+
+Komutlar `~/.config/claude-seo` içinden çalışır.
 
 ```bash
 python gsc.py --property sc-domain:servosteel.com.tr --days 7 --dimensions query --limit 30
@@ -241,240 +139,186 @@ python clarity.py --gun 3
 python clarity.py --gun 3 --kirilim Device
 ```
 
-**Microsoft Clarity: `xzdxkpw7qv`** — ısı haritası, kaydırma derinliği, ölü/öfke
-tıklaması ve oturum kaydı. GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı"
-der. Dönüşüm sıfırken sebebi ancak bu gösterir. GA4 ile aynı
-`IS_PRODUCTION_SITE` korumasına bağlı — önizleme kopyalarında hiç yüklenmez.
-Sitede çalıştığı doğrulandı (2026-08-09): `window.clarity` fonksiyon,
-`clarity.js 0.8.69` iniyor.
-
-**Clarity API token'ı PROJE BAZLIDIR.** Çağrıda proje kimliği gönderilmiyor —
-token hangi projede üretildiyse onun verisi geliyor. Elimizdeki token
-`dekoartizan` projesine aitti ve Servosteel sanılıyordu; `clarity.py` artık her
-çalışmada dönen host'ları yazdırıp beklenenle karşılaştırıyor, aynı karışıklık
-sessizce tekrarlanamaz. Günde proje başına **10 istek** sınırı var.
-
-**GA4 mülkü: `ServoSteel 548769261`** — erişim test edildi (2026-08-07),
-servis hesabı Görüntüleyici olarak veri çekiyor. `generate_lead` olayı form
-gönderimlerinde tetikleniyor; dönüşüm olarak işaretlenmesi GA4 arayüzünden
-yapılmalı (Yönetici → Etkinlikler → generate_lead → anahtar etkinlik).
-
-### B.3 İzlenen kelimeler (GSC'de gözle)
-
-| kelime | taban (2026-08-07) | hedef |
+| araç | kimlik | not |
 |---|---|---|
-| rulo açıcılar | 7. sıra | ilk sayfa üstü |
-| trapez sac makinesi | — | ilk sayfa (480/ay, SERP zayıf) |
-| rollform makinesi | — | ilk sayfa (590/ay) |
-| roll forming machine manufacturer (US/UK) | — | ilk 2 sayfa (140/ay, LOW) |
-| cable tray roll forming machine (US) | — | ilk sayfa (40/ay, SERP'te CN) |
-| servosteel (marka) | 1. | korunacak + sitelink'ler bize kalacak |
-| noise barrier production equipment | 5. (2026-08-09) | sayfa derinleştirildi, 1. sayfa üstü |
-| rack production | 5. (2026-08-09) | aynı |
-| sigma profiler · decoilers · steel coil uncoiler | 6. | aynı |
-| road barrier line · barrera bionda · cable production line | 9. | aynı |
-| roll forming line · slitting coil | 10. | aynı |
-| guardrail production · slitting line | 12. | aynı |
-| sac ağırlık hesaplama (TR) | — | ilk sayfa (8.100/ay) — **link hedefi, talep değil** |
-| sheet metal weight calculator (US/UK) | — | ilk 2 sayfa (570/ay) — aynı gerekçe |
+| GA4 | `548769261` | `generate_lead` form gönderiminde tetikleniyor |
+| Clarity | `xzdxkpw7qv` | günde proje başına 10 istek sınırı |
+| GSC | `sc-domain:servosteel.com.tr` | `--property` vermek **şart** |
 
-### B.4 Search Console özel raporlar
+GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı" der. Dönüşüm sıfırken sebebi
+ancak Clarity gösterir. İkisi de `IS_PRODUCTION_SITE` korumasına bağlı —
+önizleme kopyalarında hiç yüklenmez.
 
-- **Ürün snippet'leri raporu:** 3 örnek sayfa tarandı (6–7 Ağu) — hata/uyarı
-  çıkarsa spec şemasında alan eksiği demektir, bana getir.
-- **Video raporu:** 8 Ağustos'ta iki uyarı vardı — `uploadDate`'te zaman dilimi
-  eksik + geçersiz datetime (7 öğe). Düzeltildi: 102 videonun gerçek yükleme
-  saati YouTube'dan çekilip tam ISO 8601'e (+03:00) çevrildi. Uyarıların
-  kapandığını birkaç hafta içinde bu raporda gör.
-- **Bing Site Scan — "Alt attribute is missing" YANLIŞ ALARM.** Tek `alt=""`
-  olan görsel header'daki koyu tema logo kopyası ve `aria-hidden` işaretli;
-  dekoratif görsele boş alt vermek doğru olandır. Doldurulursa ekran okuyucu
-  marka adını iki kez okur. Rapor tekrar çıkarsa yok say.
-- **Kapsam:** "keşfedildi, dizine eklenmedi" sayısı düşüyor mu.
-  - taban: 424 sayfanın ~3'ü indeksli (2026-08-06)
-  - **2026-08-10: 74 URL'lik katmanlı örnekte %41 indeksli (30/74).** Kalan 44'ün
-    20'si "keşfedildi, indekslenmedi", 24'ü "Google bilmiyor". Örneklenen her
-    sayfa 200 dönüyor, `noindex` yok, self-canonical, ana sayfadan linkli ve
-    sitemap'te — yani teknik kusur değil, Google'ın henüz sırası gelmemiş.
-    Ölçüm: `scratchpad/kapsama.py` (sabit tohum, tekrar çekilebilir).
+### C.3 İzlenen kelimeler
 
-### B.4.1 Taşınma tabanı — GSC mülkü yalnızca 2026-07-28'den beri veri tutuyor
+| kelime | hacim | durum |
+|---|---:|---|
+| rulo açıcı | 140 | 12,1 — sayfa hazır, spec dolu; en yakın kazanç |
+| trapez sac makinesi | 480 | SERP zayıf (ilk 5'in üçü pazaryeri) |
+| rollform makinesi | 590 | hub içeriği derinleşmeli |
+| automatic stacker (US) | 390 | ~20 — tablo gelince sıçrar |
+| slitting line | 70 | 8,1 — ilk sayfaya en yakın İngilizce kelime |
+| coil line | 210 | — |
+| servosteel (marka) | — | 1. sırada, korunacak |
+| sac ağırlık hesaplama (TR) | 8.100 | **link hedefi, talep değil** |
+| sheet metal weight calculator | 570 | aynı gerekçe |
 
-Alan adı mülkü o tarihte doğrulandı; öncesi geri doldurulmuyor. Karşılaştırma
-noktası kaybolmasın diye buraya yazıldı (ölçüm 2026-08-10):
+⚠️ **Hacme bakıp hedef seçme.** Üç büyük kelime SERP'te tuzak çıktı:
+`iskele kalası` (210) kalas satın alanlar · `progresif kalıp` (210) kalıpçı
+arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.md §2.
 
-| | 12 gün (28 Tem–8 Ağu) | son 6 gün |
-|---|---|---|
-| tık / gösterim | 67 / 905 | — |
-| ortalama pozisyon | 16,3 | — |
-| **yeni site URL'leri** | %19,5 gösterim payı | **%23,7** |
-| eski WordPress URL'leri | %57,5 | %51,1 |
-| `tr.` kopya alt alan adı | %23,0 | %25,1 |
+### C.4 Search Console özel raporları
 
-Yeni URL payı yükseliyor, eski WP payı düşüyor — 301'ler işliyor. `tr.`, `www.tr.`
-ve `www.` host'larının üçü de apex'e 301/308 veriyor (2026-08-10 teyit edildi);
-GSC'de hâlâ görünmeleri Google'ın yönlendirmeyi henüz işlememesinden.
+- **Ürün snippet'leri:** hata/uyarı çıkarsa spec şemasında alan eksiği demektir.
+- **Video raporu:** 8 Ağustos'taki iki uyarı (`uploadDate` zaman dilimi + geçersiz
+  datetime) düzeltildi — 102 videonun gerçek saati YouTube'dan çekilip ISO 8601
+  (+03:00) yapıldı. **Uyarıların kapandığını bu raporda gör.**
+- **Kapsam:** "keşfedildi, dizine eklenmedi" düşüyor mu. 2026-08-24 itibarıyla
+  762 sayfanın 357'si indeksli; kalan 405'in **186'sı zaten doğru** (yönlendirme,
+  404, noindex — §E.7). Gerçek bekleyen ~186 sayfa ve bu tarama bütçesi işi:
+  çözümü otorite.
 
-### B.4.2 GSC Kapsam raporu — tam analiz (2026-08-24)
+---
 
-**762 sayfa biliniyor: 357 dizine eklendi, 405 eklenmedi.** İndeksleme eğrisi
-16 günde **78 → 357** (4,5 kat). 18 Ağustos'ta tek seferde +61 sıçradı ve
-"eklenmedi" 444'ten 405'e düştü.
+## D. Panel işleri — Yasin'de
 
-| sayfa | sebep | durum |
-|---|---|---|
-| 165 | Yönlendirmeli sayfa | ✅ eski URL'ler doğru sınıflanmış |
-| 144 | Keşfedildi, eklenmedi | ⏳ tarama bütçesi — otorite ve zaman işi |
-| 42 | Tarandı, eklenmedi | ⏳ aynı |
-| 28 | Bulunamadı (404) | ✅ **incelendi ve kapatıldı** |
-| 15 | noindex ile hariç | ✅ **bizden değil** |
-| 10 | Kopya, farklı canonical | ✅ hepsi düzgün yönleniyor |
+**Yandex**
+- [ ] **Ana ayna** ayarı: `https://` seçilecek (ikisinde de boş)
+- [ ] **Bölge ataması** (`NO_REGIONS`) — panelden yapılıyor, API'de `regions/`
+  yolu 404. Yandex'te bölge, sıralamayı Google'dakinden çok daha ağır etkiliyor.
 
-**404'lerin gerçeği:** 28'in çoğu WordPress altyapısı (`wp-admin`,
-`wp-content`, `wp-includes`, eklenti dosyaları). **Bunların 404 vermesi
-DOĞRU** — yönlendirilmemeli, zamanla listeden düşerler. Gerçek boşluk
-dörttü: `/hatlar`, `/suruculer`, `/video`, `/Katalog.pdf` — hepsi
-`536064c`'te kapatıldı.
-
-**Raporun söylemediği asıl bulgu:** URL'ler test edilince üç ürün adresinin
-genel `/product/:slug -> /makineler` yakalayıcısına düşüp **yanlış sayfaya**
-indiği görüldü. Yol bariyeri hattı arayan ziyaretçi makine listesine
-iniyordu. GSC bunu hata saymıyor çünkü teknik olarak 200 dönüyor. Test
-edilmeseydi bulunamazdı.
-
-**noindex'li 15 sayfa bizden gelmiyor:** canlıdaki 12 sayfa tek tek
-kontrol edildi, hepsi `index, follow`. robots.txt'te engelleme yok. Kodda
-noindex yalnızca `IS_PRODUCTION_SITE` yanlışken basılıyor. O 15 kayıt eski
-WooCommerce sayfalarından kalmış olmalı (`/cart/`, `/checkout/`,
-`/my-account/`, etiket sayfaları — WooCommerce onlara otomatik noindex koyar).
-
-**Kopya/canonical 10 sayfa:** hepsi test edildi, onu da düzgün yönleniyor.
-Google'ın taramaları mart–temmuz arası, yani cutover tamamlanmadan önce.
-Yeniden tarandıkça temizlenecek.
-
-**TEHLİKE — bu dosyada bir kez yaşandı:** `next.config.ts`'teki `both()`
-yardımcısı hem `/product/x` hem `/x` üretir. `/roll-form-hatlari` gibi
-**canlı bir sayfa** için kullanılırsa `/x -> /x` sonsuz döngü yaratır ve
-sayfa erişilemez olur. **Build tertemiz geçer**, yalnızca zincir izlenerek
-fark edilir. Canlı yol için `both()` KULLANILMAZ.
-
-### B.5 Bekleyenler (kapanınca buradan silinecek)
-
-- [x] ~~WhatsApp numarası değiştirilecek~~ — **KALDIRILDI (2026-08-25).**
-  Numara firmanın sabit hattıydı ve o hatta WhatsApp Business hesabı hiç
-  açılmadı. Üç hafta beklendi, açılmayacağına karar verildi.
-  **Ölçüm:** 30 günde **20 tıklama**, hepsi karşılıksız. Son tıklama
-  İngilizce ön-doldurulmuş mesajlaydı — yani yabancı bir alıcı da denedi.
-  Çalışmayan tuş, hiç tuş olmamasından kötü: ziyaretçi en düşük eşikli
-  kanalı seçiyor, karşılık bulamıyor ve ikinci deneme yapmıyor.
-  **Yerine telefon + e-posta kondu** (`ContactFloat`, her sayfada).
-  Telefon vurgulu ve altta — WhatsApp'ın forma yedi kat tıklanmasının sebebi
-  WhatsApp değil **anında temas** isteğiydi; telefon onu doğrudan karşılıyor.
-  Kaldırılan yerler: sabit tuş · iletişim kartı · sosyal ikon sırası ·
-  iki formun yedek kanalı · `site.ts` sabitleri · 9 dilde çeviri anahtarları.
-- [ ] **Telefon/e-posta tuşunun etkisi ölçülecek** — WhatsApp 30 günde 20
-  tıklama alıyordu. Yeni tuşlar bunun ne kadarını karşılıyor? İlk ölçüm
-  2026-09-01 civarı anlamlı olur.
-
-**Dönüşümler (GA4, 30 gün — 2026-08-15):** 05 Ağu `/teklif-al` form açıldı ama
-gönderilmedi · **10 Ağu `/iletisim` gönderildi** · **14 Ağu `/teklif-al`
-gönderildi**. 3 açılış → 2 gönderim = **%67 tamamlama**; form darboğaz değil,
-forma gelen kişi sayısı az (289 oturumun 3'ü).
-
-**Katalog baştan sona okundu (2026-08-12) — firmaya sorulacaklar:**
-
-- [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina
-  Kalıp **ve Sanayi** Ltd. Şti.", s.6 "Steel Makina Kalıp **San. ve Tic.**
-  Ltd. Şti." Ticaret sicilindeki tam hâli lazım — **KVKK/gizlilik sayfası
-  buna bağlı**, aylardır bu yüzden yazılamıyordu.
-- [ ] **SRV-BDH birleşik hattı** (boy kesme + dilme tek hatta, s.31) hâlâ
-  satılıyor mu? Satılıyorsa sitede sayfası yok.
-- [ ] **"Market Raf" mı "Ağır Raf" mı** — katalog s.36 "Market Raf Üretim
-  Hattı" diyor, sitede "Ağır Raf Üretim Hattı" var. Aynı ürün mü?
-- [ ] **SRV-BH 1500 mm / 6 mm** — sahadaki makinenin etiketi (s.30) 6 mm
-  diyor, katalog kalınlık kademeleri 1–5 mm'de bitiyor.
-- [ ] **Kompakt hat model kodları** — `KH803` / `KH804` / `KH806` her tabloda
-  ikişer kez, farklı rulo ağırlığı ve mandren tipiyle geçiyor. Aynı kod iki
-  açıcı seçeneğini mi kapsıyor? Teyit gelmeden model kodları siteye yazılmadı.
-- [ ] **Katalogdaki 6 hata** — TR/EN uyuşmazlıkları (3 yerde), giriş metni ile
-  tablo çelişkisi (3 yerde), seri adı tutarsızlığı (KSS/KS, DDS/DSS). Katalog
-  yurtdışına gittiği için İngilizce hatalar öncelikli.
-  Ayrıntı: `belgeler/KATALOG-VERILERI.md`
-- [ ] **ASTOR referansı** — katalog s.30'daki kurulum fotoğrafı Astor'un
-  tesisinde çekilmiş (vinçlerden belli). Logo izni istenirken bu kullanılabilir.
-
-- [x] GA4 mülk numarası → **548769261 alındı, test edildi (2026-08-07)**
-- [x] Yandex `https://` host'u **eklendi ve DNS ile doğrulandı (2026-08-09)** — token `caf7df52b9c31e1a` iki host için de geçerli
-- [ ] Yandex **ana ayna** ayarı: `https://` seçilecek (ikisinde de boş). Host yüklenince yapılabilir
-- [x] Yandex'e **sitemap eklendi (2026-08-09 01:36)** — `sitemap_id`
-  `576e251a-2723-3974-aa16-d57a9328ccb9`. Yandex 6 gündür işlemedi (okuma
-  tarihi ve URL sayısı boş), `NO_SITEMAPS` uyarısı bu yüzden hâlâ duruyor.
-  Yeniden ekleme 409 veriyor; beklemekten başka yapılacak yok.
-  **API tuzağı:** `/sitemaps/` yalnızca Yandex'in *kendi bulduklarını* döner
-  (0 gösteriyor), elle eklenenler `/user-added-sitemaps/` altında. `/user-sitemaps/`
-  diye bir yol yok, 404 veriyor.
-- [x] **150 URL yeniden tarama kuyruğuna alındı (2026-08-15)** — günlük kota 150
-  ve hiç kullanılmamıştı. Sıra: 52 Rusça sayfa (Yandex'i Rus pazarı için kurduk),
-  3 ana sayfa, 95 ticari sayfa. Hepsi kabul edildi, kota sıfırlandı.
-  Kota her gün yenileniyor; kalan **320 URL** için zamanlanmış görev kuruldu.
-- [x] **Windows Görev Zamanlayıcı: `Servosteel-Yandex-Recrawl`** (2026-08-15
-  kuruldu, ilk çalışma 16 Ağustos 09:00, elle tetiklenip doğrulandı — çıkış 0).
-  Her gün 09:00'da `~/.config/claude-seo/yandex-recrawl.py` çalışır, günlük
-  150'lik kotayı harcar, `yandex-recrawl.log`'a yazar.
-  **Kendi kendine biter:** görevin bitiş tarihi 2026-08-22 ve süresi dolunca
-  otomatik siliniyor; betik de sitemap'teki her URL gidince "yapılacak yok" deyip
-  çıkıyor. 320 URL üç günde tükenir (150+150+20).
-  Erken silmek istersen:
-  `Unregister-ScheduledTask -TaskName Servosteel-Yandex-Recrawl -Confirm:0`
-  Gönderilenler `yandex-recrawl-durum.json`'da tutuluyor, o yüzden aynı URL iki
-  kez gitmiyor; `--sifirla` ile baştan başlatılır, `--kuru` ile önce liste görülür.
-- [ ] **Yandex bölge ataması (`NO_REGIONS`)** — panelden yapılıyor, API'de
-  `regions/` yolu 404. Yandex'te bölge sıralamayı Google'dakinden çok daha
-  ağır etkiliyor.
-
-**Yandex durumu (2026-08-15):** SQI **10** · indeksteki sayfa **361** (sitemap 470)
-· 28 günde ~25 gösterim, **0 tık** · gelen sorguların hepsi İngilizce/Arapça uzun
-kuyruk, **tek Rusça ticari sorgu yok**. Mülk 2023-10-31'den beri kayıtlı; eski
-sitede 2024-03'te 90 sayfada kalmış, sonra 2,5 yıl hiç ölçüm yok. Yeni siteyle
-**90 → 361** sıçradı. Yani indeksleme çalışıyor, eksik olan otorite — SQI gecikmeli
-bir metrik. Karşılaştırma: Google 7 günde 1.441 gösterim, Yandex 28 günde 25.
-- [x] Bing Webmaster kaydı — **yapıldı (2026-08-07)**
-- [x] ~~Terk edilmiş mülkler (wixsite/blogspot/.com)~~ — **kapsam dışı bırakıldı (2026-08-07 kararı)**
-- [x] ~~6 ürün sayfasının kalan 7 dili~~ — **tamamlandı (2026-08-09)**: 54 sayfa/dil
-  kombinasyonunun tamamında 6 adımlı üretim akışı + 8 SSS (EN kablo kanalında 9).
-  Kelime aralığı dile göre 1.094–1.753.
+**Ölçüm**
 - [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
-  `xzdxkpw7qv` projesini aç → Settings → Data Export → Generate new API token →
-  değeri `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
-  alanına yapıştır (sohbete yazma). Sonrası hazır: `python clarity.py`
-- [ ] **Gizlilik / KVKK aydınlatma sayfası YOK** — iletişim ve teklif formları
-  ad, e-posta, telefon, firma topluyor; Clarity oturum kaydı da alıyor. KVKK
-  m.10 toplama anında bilgilendirme istiyor, AB dilleri (DE/ES/IT/PL/HU) için
-  GDPR m.13 aynı şeyi. Yazabilmem için firmadan 3 bilgi lazım: **resmi ünvan**
-  (veri sorumlusu olarak yazılacak), **VERBİS kaydı var mı**, **form
-  e-postaları ne kadar saklanıyor**. Gerisini 9 dile ben yazarım.
-- [ ] Mevcut ajansın link inşasını durdur
-- [ ] Referans logoları izni (Sarıgözoğlu · Mega Solar · SMT Enerji · Astor) — kod hazır, `PUBLISH_REFERENCES=false`
-- [x] ~~cPanel `filtre1`~~ — **silindi (2026-08-10)**, mail hemen geldi. Kural
-  `Konu içerir "spam" → Mesajı At` idi; alt dize eşleşmesi olduğu için konusunda
-  "spam" harfleri geçen her mail sessizce yok ediliyordu — klasöre düşmüyor,
-  gönderene hata dönmüyordu. Teslim raporunda `Teslim Alan: /dev/null`,
-  `Yönlendirici: central_filter` olarak görülüyordu.
-- [ ] **Filtre yüzünden kaybedilen mailleri çıkar** — cPanel → Takip Teslimatı,
-  sonucu "Filtrelenmiş" olanlar. Yalnızca 10 gün geriye kayıt var, o yüzden acele.
-  Müşteri talebi varsa en azından kimden geldiği öğrenilir.
-- [ ] **Spam Filtreleri ayarı** — "Otomatik Olarak Spam'i Sil" kapalı olmalı,
-  "Spam Kutusu" açık. Silinen mail geri gelmiyor, klasördeki geliyor.
-- [x] ~~liza@ kutusundaki eski mailler~~ — **kapsam dışı bırakıldı (2026-08-10
-  kararı)**. Sunucuda yoklar: 267 gönderilmiş mail × 1,43 MB = 382 MB, kotanın
-  tamamını açıklıyor, yani çöp/arşiv de boş. Eski PC'de 6,2 MB'lık bir .pst
-  bulundu ama aktarılmadı. Hesap o bilgisayardan kaldırıldı, yeni kurulum IMAP —
-  yani bundan sonra gelen mail kaybolmuyor, kayıp geçmişle sınırlı.
-- [ ] **liza@ kotası 1 GB'da sınırlı** — cPanel "Kotalar 1 GB değerini aşamaz"
-  diyor, bu hosting paketi tavanı (WHM → paket → Max Mailbox Quota). Veridyen'den
-  yükseltme istenecek. Şu an 382 MB dolu; tamamı 24 Temmuz kampanyasının 267
-  gönderilmiş kopyası.
-- [x] ~~Katalog siteye konacak~~ — **KAPATILDI (2026-08-19, Yasin'in kararı).**
-  Defalarca önerildi, reddedildi. Bir daha açılmayacak. Büyük dosya paylaşımı
-  gerekirse yöntemi firma kendi seçer.
-- [ ] 4 CalDAV/CardDAV SRV kaydı → `cpanel.servosteel.com.tr`
+  `xzdxkpw7qv` → Settings → Data Export → Generate new API token → değeri
+  `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
+  alanına yapıştır (**sohbete yazma**).
+- [ ] **Telefon/e-posta tuşunun etkisi ölçülecek** — WhatsApp 30 günde 20 tıklama
+  alıyordu ve hepsi karşılıksızdı. Yeni tuşlar bunun ne kadarını karşılıyor?
+  Zamanlanmış görev **12 Eylül 10:00**'da ölçüyor.
+
+**Mail / hosting**
+- [ ] **Otomatik yedek yok** — Veridyen'den istenecek
+- [ ] **SpamAssassin eşiği** — skor 15 olan mail bile kabul ediliyor
+- [ ] **Spam Filtreleri ayarı** — "Otomatik Olarak Spam'i Sil" **kapalı**,
+  "Spam Kutusu" **açık** olmalı. Silinen mail geri gelmiyor, klasördeki geliyor.
+- [ ] **liza@ kotası 1 GB'da sınırlı** — hosting paketi tavanı (WHM → paket →
+  Max Mailbox Quota). Veridyen'den yükseltme istenecek.
+- [ ] **Veridyen'in ücretsiz +50.000 inode teklifi** — kabul edilecek mi
+- [ ] **`info@` adresine gelen mailler SMTP seviyesinde reddediliyor mu?**
+  Denetimde 10 günde 433 red kaydı görülmüştü; filtre silindikten sonra durumu
+  bir daha ölçülmedi. Müşteri talebi kaybediliyor olabilir — cPanel → Takip
+  Teslimatı'nda `info@` için sonucu "Reddedildi" olanlara bakılacak.
+- [ ] **4 CalDAV/CardDAV SRV kaydı** hâlâ köke bakıyor (artık Dokploy, 2079/2080
+  portu yok) → `cpanel.servosteel.com.tr`'ye çevrilmeli
+
+**Terk edilmiş mülkler** — "servosteel" aramasında kendi sıralarımızı bölüyorlar
+- [x] `servosteel.wixsite.com` — **404 veriyor, kapanmış** (2026-09-07 teyit)
+- [ ] `servosteel.blogspot.com` — 200, ayakta
+- [ ] `www.servosteel.com` — 200, ayrı alan adı, ayakta
+
+---
+
+## E. Dersler ve tuzaklar — silinmez
+
+Hepsi bir kez pahalıya mal oldu. Yeni bir iş bu dosyaya girmeden önce buraya
+bakılır.
+
+**E.1 · `both()` sonsuz döngü yaratır.** `next.config.ts`'teki `both()` hem
+`/product/x` hem `/x` üretir. `/roll-form-hatlari` gibi **canlı bir sayfa** için
+kullanılırsa `/x -> /x` döngüsü çıkar ve sayfa erişilemez olur. **Build tertemiz
+geçer** — yalnızca `curl -sIL` ile zincir izlenerek fark edilir. 2026-08-24'te üç
+ürün hub'ı 50 hop arkasında kaldı. Canlı yol için `both()` KULLANILMAZ.
+
+**E.2 · Locale önekini `Link` kendi ekler.** MDX içeriğinde iç yol yazılır
+(`/makineler`), `/en/machines` değil — yoksa `/en/en/machines` çıkar ve 404 verir.
+
+**E.3 · Locale JSON'a `JSON.parse` → `stringify` yapılmaz.** Metin cerrahisiyle
+düzenlenir; aksi hâlde dosyanın tamamı yeniden biçimlenir ve diff okunmaz olur.
+
+**E.4 · Katalogda her ürün ailesinin BİRDEN FAZLA tablosu var.** Bir ürüne dair
+sayı yazmadan önce **o ürünün tüm sayfaları** okunmuş olmalı. 2026-08-10'da
+yarısı okunup yazılan 9 değerin hepsi fazla darmış; en kötüsü hidrolik açıcının
+rulo genişliğiydi — **80–1.000 mm** yazıyordu, doğrusu **80–1.600 mm**.
+1.400 mm rulo işleyecek alıcı sayfayı okuyup eleniyordu.
+> mekanik açıcı: s.8 SRV-MA 500–2.500 kg · s.9 konik mandren 3.000–4.000 · s.10 SRV-MA3000/4000
+> kompakt hat: s.23 KH…**3** 0,5–3 mm/35 m/dk · s.25 KH…**6** 1–6 mm/25 m/dk
+> doğrultmalı: s.19 7 merdane 0,4–3 · s.20 9 merdane 0,5–4 · metin 0,4–6 mm
+
+**E.5 · Kapasitede GENİŞ değer, hızda DÜŞÜK değer.** Kapasiteyi eksik yazmak
+müşteri kaçırır; hızı fazla yazmak taahhüt yaratır.
+
+**E.6 · Marka son ekini layout şablonu ekler.** `metaTitle` içine "| Servosteel"
+yazılırsa başlık "… | Servosteel | Servosteel" çıkar. 54 varyant başlığında
+yaşandı ve İngilizce'de **görünmüyordu** — başlıklar 60 karakteri aşıp şablonu
+atlıyordu. Hata oradaydı ama gizliydi.
+
+**E.7 · GSC kapsam raporunun üç yanlış alarmı** (2026-08-24'te tek tek incelendi,
+tekrar açılmasın):
+- **28 "bulunamadı"** — çoğu WordPress altyapısı (`wp-admin`, `wp-content`,
+  eklenti dosyaları). **404 vermeleri DOĞRU**, yönlendirilmemeli.
+- **15 "noindex ile hariç"** — bizden değil. Canlıdaki 12 sayfa tek tek
+  kontrol edildi, hepsi `index, follow`. Eski WooCommerce sayfalarından kalma
+  (`/cart/`, `/checkout/`, etiket sayfaları — WooCommerce onlara otomatik
+  noindex koyar).
+- **10 "kopya, farklı canonical"** — hepsi düzgün yönleniyor; taramalar
+  cutover'dan önceki dönemden.
+
+**E.8 · Bing "Alt attribute is missing" yanlış alarm.** Tek `alt=""` olan görsel
+header'daki koyu tema logo kopyası ve `aria-hidden` işaretli. Dekoratif görsele
+boş alt vermek doğru olandır — doldurulursa ekran okuyucu marka adını iki kez
+okur. Rapor tekrar çıkarsa yok say.
+
+**E.9 · Bizim 85 atıf domainimiz çöp.** `legendary11.com`, `topclassifieds.com`,
+`classifieds4free.biz` türü ücretsiz ilan siteleri ve PBN ağı. Ankorların
+neredeyse tamamı **çıplak URL** (78+78+50 link) — otomatik dizin gönderiminin
+imzası. Tek tanımlayıcı ankor 7 link. Mevcut ajansın işi; kanıt bu.
+
+**E.10 · Yandex API yol tuzağı.** `/sitemaps/` yalnızca Yandex'in *kendi
+bulduklarını* döner (0 gösterir). Elle eklenen sitemap `/user-added-sitemaps/`
+altındadır. `/user-sitemaps/` diye bir yol **yok**, 404 verir.
+
+**E.11 · Clarity API token'ı PROJE BAZLIDIR.** Çağrıda proje kimliği
+gönderilmiyor — token hangi projede üretildiyse onun verisi geliyor. Elimizdeki
+token `dekoartizan` projesine aitti ve Servosteel sanılıyordu. `clarity.py` artık
+her çalışmada dönen host'ları yazdırıp beklenenle karşılaştırıyor.
+
+**E.12 · cPanel filtresi alt dize eşleşmesi yapar.** Silinen `filtre1` kuralı
+"Konu içerir spam → Mesajı At" idi; konusunda "spam" harfleri geçen her mail
+sessizce yok ediliyordu — klasöre düşmüyor, gönderene hata dönmüyordu. Teslim
+raporunda `Teslim Alan: /dev/null`, `Yönlendirici: central_filter` görünüyordu.
+Ayrıca filtre regex alanında sondaki tırnak kırpılır — `\x22` kullan; sınırsız
+`[^"]*` ise base64 gövdede felaket geri izlemeye yol açar — `[^"]{1,120}` yaz.
+
+**E.13 · `has: host` kuralı `tr.servosteel.com.tr` için çalışamaz.** O host
+cPanel'e çözülüyor, cPanel köke 301 atıyor — Next o host'u hiç görmüyor.
+Yerelde Host başlığı göndererek test etmek yanıltıcıdır.
+
+**E.14 · Çalışmayan tuş, hiç tuş olmamasından kötüdür.** WhatsApp tuşu 30 günde
+20 tıklama aldı, hepsi karşılıksız kaldı — numara firmanın sabit hattıydı ve o
+hatta WhatsApp Business hesabı hiç açılmadı. Ziyaretçi en düşük eşikli kanalı
+seçer, karşılık bulamaz ve ikinci deneme yapmaz.
+
+**E.15 · GA4 gelişmiş ölçüm `tel:` ve `mailto:` saymaz.** `outbound_click`
+yalnızca dış bağlantılar için tetiklenir; `wa.me` sayılıyordu ama telefon ve
+e-posta hiç sayılmadı. `analytics.tsx` içindeki elle dinleyici bunu kapatıyor.
+
+**E.16 · Outlook'ta iki sessiz eşik.** PST `WarnLargeFileSize` (47,5 GB) sınırına
+gelince okumaya izin verir, yazmaya vermez — ve **göndermeyi de bloklar**, çünkü
+gönderilen kopya Sent Items'a yazılır (`0x8004060C`). Ayrı bir tuzak: "Sunucu
+Zaman Aşımları" varsayılanı **1 dakika**; ofis ADSL'inde 7 MB'lık ek bunu aşar,
+bağlantı düşer ve kuyrukta öksüz kayıt kalır. Üç hesapta da 10 dakikaya çekildi.
+
+---
+
+## Kapanmış işler
+
+Ayrıntısı git geçmişinde. Burada yalnızca "bu bir daha açılmayacak" kaydı:
+
+- **Katalog siteye konmayacak** (2026-08-19, Yasin'in kararı). Defalarca
+  önerildi, reddedildi. **Bir daha açılmayacak.**
+- **Gelen form taleplerine cevap yazmak bizim işimiz değil** — `generate_lead`
+  yalnızca metrik olarak raporlanır, aksiyon çağrısı olarak değil.
+- **liza@ kutusundaki eski mailler** — sunucuda yoklar, kayıp geçmişle sınırlı.
+  Hesap IMAP'a alındı, bundan sonra gelen mail kaybolmuyor.
+- **Filtre yüzünden kaybedilen mailleri çıkarma** — cPanel yalnızca 10 gün
+  geriye kayıt tutuyor, pencere doldu (filtre 2026-08-10'da silinmişti).

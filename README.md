@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Servosteel
 
-## Getting Started
+servosteel.com.tr — rulo işleme ve roll form makineleri üreticisinin kurumsal
+sitesi. **Canlıda**; her değişiklik gerçek trafiği etkiler.
 
-First, run the development server:
+Next.js 16 · React 19 · next-intl 4 · Tailwind 4 · MDX içerik
+
+## Komutlar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev        # geliştirme sunucusu
+npm run build      # üretim derlemesi
+npm run lint       # eslint
+npm run kontrol    # yayın sonrası 14 canlı kontrol
+npm run indexnow   # yeni URL'leri Bing + Yandex'e bildir
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Yayından sonra sırayla: `npm run kontrol`, yeni URL eklendiyse `npm run indexnow`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dokuz dil
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`tr en de es it hu pl ru ar` — varsayılan **tr**, Arapça RTL.
 
-## Learn More
+Yollar dile göre çevrilir (`/makineler/rulo-acicilar` → `/en/machines/decoilers`).
+Çeviri tablosu `src/i18n/slugs.ts`'ten **üretilir**; elle tutulan ikinci bir liste
+yok, o yüzden ayrışamazlar. Ayrıntı ve gerekçeler `src/i18n/routing.ts` başındaki
+açıklamada.
 
-To learn more about Next.js, take a look at the following resources:
+| yer | ne |
+|---|---|
+| `src/messages/*.json` | 9 dilin tüm metni |
+| `src/i18n/slugs.ts` | slug tablosu — yol üretiminin tek kaynağı |
+| `src/content/akademi/<dil>/*.mdx` | blog yazıları |
+| `src/lib/catalog.ts` | ürün listesi ve sayfa üretimi |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Bilmeden dokunulmayacak üç şey
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Locale JSON'a `JSON.parse` → `stringify` yapılmaz.** Metin cerrahisiyle
+   düzenlenir; aksi hâlde dosyanın tamamı yeniden biçimlenir ve diff okunmaz olur.
+2. **`next-intl`'in `Link`'i dil önekini kendi ekler.** MDX içinde iç yol yazılır
+   (`/makineler`), `/en/machines` değil — yoksa `/en/en/machines` çıkar, 404 verir.
+3. **`next.config.ts`'teki `both()` canlı bir yol için kullanılmaz.** Hem
+   `/product/x` hem `/x` üretir; `/x → /x` sonsuz döngü olur ve **build tertemiz
+   geçer**. Bir kez yaşandı, üç ürün sayfası erişilemez oldu.
 
-## Deploy on Vercel
+Bu üçünün ve diğer tuzakların tam listesi: [KONTROL.md](KONTROL.md) §E.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Belgeler
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| dosya | ne |
+|---|---|
+| [AGENTS.md](AGENTS.md) | bu Next.js sürümü eğitim verisinden farklı — kod yazmadan önce oku |
+| [SEO.md](SEO.md) | ölçüm, rakip analizi, kelime verisi, yol haritası |
+| [KONTROL.md](KONTROL.md) | açık işler + tuzaklar. Kapanan madde oradan silinir |
+| [belgeler/](belgeler/) | katalog PDF'i, katalogdan çıkarılan veriler, firmaya giden belgeler |
