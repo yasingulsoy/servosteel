@@ -2015,6 +2015,14 @@
           {
             "q": "¿El mismo apilador vale para secciones de perfil distintas?",
             "a": "Mientras la familia de secciones sea similar, sí: el ajuste cambia con la receta. Pero perfiles con relaciones ancho-alto muy distintas (un carril estrecho frente a una chapa trapezoidal ancha) no funcionan bien con la misma disposición de sujeción. Indicarnos de antemano qué familias van a correr en la línea nos permite elegir la disposición correcta."
+          },
+          {
+            "q": "¿La línea debe detenerse cuando se completa un paquete?",
+            "a": "No. Cuando la apiladora termina un paquete, la mesa baja y vuelve a su posición vacía mientras la línea sigue funcionando. El tiempo necesario para retirar el paquete se planifica según la velocidad de línea, de modo que no hay pausa entre paquetes."
+          },
+          {
+            "q": "¿La misma apiladora sirve para chapas y perfiles?",
+            "a": "El principio de recogida es el mismo, pero las pinzas y los topes se diseñan según la sección que se apila. Si desea que una sola unidad recoja chapa plana de la línea de corte a medida y perfil de la línea de perfilado, indíquelo desde el principio: la mesa y los topes se diseñan para ello."
           }
         ]
       },

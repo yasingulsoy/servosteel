@@ -2015,6 +2015,14 @@
           {
             "q": "Lo stesso impilatore gestisce sezioni di profilo diverse?",
             "a": "Finché la famiglia di sezioni è simile, sì: la regolazione cambia da ricetta. Profili con rapporti larghezza-altezza molto diversi (una guida stretta rispetto a una lamiera trapezoidale larga) però non lavorano bene sulla stessa disposizione di presa. Dirci in anticipo quali famiglie gireranno sulla linea ci permette di scegliere la disposizione giusta."
+          },
+          {
+            "q": "La linea deve fermarsi quando un pacco è completo?",
+            "a": "No. Quando l'impilatore completa un pacco, il tavolo scende e torna in posizione vuota mentre la linea continua a lavorare. Il tempo necessario per prelevare il pacco viene pianificato in base alla velocità della linea, così non si crea alcuna pausa fra un pacco e l'altro."
+          },
+          {
+            "q": "Lo stesso impilatore può raccogliere lamiere e profili?",
+            "a": "Il principio di raccolta è identico, ma pinze e battute vengono progettate sulla sezione da impilare. Se volete che una sola unità raccolga la lamiera piana dalla linea di taglio a misura e il profilo dalla linea di profilatura, indicatelo fin dall'inizio: tavolo e battute vengono progettati di conseguenza."
           }
         ]
       },

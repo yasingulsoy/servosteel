@@ -2079,6 +2079,14 @@
           {
             "q": "Will the same stacker handle different profile sections?",
             "a": "As long as the section family is similar, yes — the setting changes with the recipe. But profiles with very different width-to-height ratios (a narrow rail versus a wide trapezoidal sheet, say) do not work well on the same holding arrangement. Telling us up front which profile families will run on the line lets us pick the right arrangement."
+          },
+          {
+            "q": "Does the line have to stop when a pack is complete?",
+            "a": "No. When the stacker finishes a pack the table lowers and returns to its empty position while the line keeps running. The time needed to remove the pack is planned against line speed, so there is no pause between packs."
+          },
+          {
+            "q": "Can the same stacker handle both sheets and profiles?",
+            "a": "The collecting principle is the same, but the grippers and stops are laid out around the section being stacked. If you want one unit to take flat sheet off a cut-to-length line and profile off a roll forming line, say so at the outset — the table and stops are designed for it."
           }
         ]
       },

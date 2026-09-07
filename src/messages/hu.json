@@ -2015,6 +2015,14 @@
           {
             "q": "Ugyanaz a rakatoló kezel eltérő profilkeresztmetszeteket?",
             "a": "Amíg a keresztmetszet-család hasonló, igen — a beállítás recepttel változik. A nagyon eltérő szélesség–magasság arányú profilok (egy keskeny sín és egy széles trapézlemez) viszont nem működnek jól ugyanazon tartóelrendezésen. Ha előre megmondja, mely profilcsaládok futnak a soron, a megfelelő elrendezést tudjuk kiválasztani."
+          },
+          {
+            "q": "Le kell állnia a sornak, ha egy csomag elkészült?",
+            "a": "Nem. Amikor a rakatoló befejezi a csomagot, az asztal leereszkedik és üres állásba tér vissza, miközben a sor tovább dolgozik. A csomag elszállításához szükséges időt a sorsebességhez tervezzük, így két csomag között nincs állásidő."
+          },
+          {
+            "q": "Ugyanaz a rakatoló kezeli a lemezt és a profilt is?",
+            "a": "A gyűjtés elve azonos, de a fogók és ütközők az adott keresztmetszethez készülnek. Ha egy egységgel szeretné fogadni a keresztvágó sor sík lemezét és a profilozó sor profilját is, jelezze az elején — az asztalt és az ütközőket ehhez tervezzük."
           }
         ]
       },

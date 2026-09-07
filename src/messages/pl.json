@@ -2015,6 +2015,14 @@
           {
             "q": "Czy ten sam układacz obsłuży różne przekroje profili?",
             "a": "Dopóki rodzina przekrojów jest zbliżona — tak, ustawienie zmienia się z recepturą. Profile o bardzo różnych proporcjach szerokości do wysokości (wąska szyna wobec szerokiej blachy trapezowej) nie pracują jednak dobrze na tym samym układzie chwytania. Podanie z góry, jakie rodziny profili pójdą na linii, pozwala nam dobrać właściwy układ."
+          },
+          {
+            "q": "Czy linia musi się zatrzymać, gdy pakiet jest gotowy?",
+            "a": "Nie. Po ukończeniu pakietu stół opuszcza się i wraca do pozycji pustej, a linia pracuje dalej. Czas potrzebny na odbiór pakietu planuje się względem prędkości linii, więc między pakietami nie ma przestoju."
+          },
+          {
+            "q": "Czy ten sam układacz obsłuży blachy i profile?",
+            "a": "Zasada odbioru jest ta sama, ale chwytaki i zderzaki projektuje się pod konkretny przekrój. Jeśli jedna jednostka ma odbierać płaską blachę z linii cięcia poprzecznego i profil z linii profilującej, prosimy powiedzieć o tym od razu — stół i zderzaki zostaną tak zaprojektowane."
           }
         ]
       },

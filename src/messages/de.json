@@ -2015,6 +2015,14 @@
           {
             "q": "Verarbeitet derselbe Stapler unterschiedliche Profilquerschnitte?",
             "a": "Solange die Querschnittsfamilie ähnlich ist, ja — die Einstellung wechselt über das Rezept. Profile mit sehr unterschiedlichem Breiten-Höhen-Verhältnis (eine schmale Schiene gegenüber einem breiten Trapezblech) laufen jedoch nicht gut auf derselben Halteanordnung. Wenn Sie uns vorab nennen, welche Profilfamilien auf der Anlage laufen sollen, wählen wir die richtige Anordnung."
+          },
+          {
+            "q": "Muss die Anlage anhalten, wenn ein Paket fertig ist?",
+            "a": "Nein. Sobald der Stapler ein Paket abgeschlossen hat, fährt der Tisch nach unten und kehrt in die Leerposition zurück, während die Anlage weiterläuft. Die Zeit zum Abtransport des Pakets wird auf die Liniengeschwindigkeit abgestimmt, sodass zwischen zwei Paketen keine Pause entsteht."
+          },
+          {
+            "q": "Kann derselbe Stapler Bleche und Profile aufnehmen?",
+            "a": "Das Aufnahmeprinzip ist gleich, doch Greifer und Anschläge werden auf den jeweiligen Querschnitt ausgelegt. Wenn eine Einheit sowohl Tafeln von der Querteilanlage als auch Profile von der Rollformanlage stapeln soll, sagen Sie es von Anfang an — Tisch und Anschläge werden entsprechend konstruiert."
           }
         ]
       },

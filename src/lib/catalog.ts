@@ -20,7 +20,7 @@ export const machineItems = [
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
   { slug: "kompakt-hatlar" },
-  { slug: "otomatik-istifleyici", noPhoto: true },
+  { slug: "otomatik-istifleyici" },
 ] as const;
 
 /**

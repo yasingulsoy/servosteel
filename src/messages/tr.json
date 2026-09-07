@@ -2028,6 +2028,14 @@
           {
             "q": "Farklı profil kesitlerinde aynı istifleyici çalışır mı?",
             "a": "Kesit ailesi benzer olduğu sürece evet; ayar reçeteyle değişir. Ancak çok farklı en/boy oranlarına sahip profiller (örneğin dar bir ray ile geniş bir trapez sac) aynı tutucu düzeniyle iyi çalışmaz. Hangi profil ailelerini aynı hatta işleyeceğinizi baştan paylaşmanız, doğru düzeni seçmemizi sağlar."
+          },
+          {
+            "q": "Paket dolduğunda hat durmak zorunda mı?",
+            "a": "Hayır. İstifleyici paketi tamamladığında masa aşağı iner ve boş konuma geçer; hat bu sırada çalışmaya devam eder. Paketin alınması için gereken süre hat hızına göre planlanır, iki paket arasında duraklama olmaz."
+          },
+          {
+            "q": "Levha ve profil aynı istifleyiciyle toplanabilir mi?",
+            "a": "Toplama prensibi ikisinde de aynı, ama tutucu ve dayama düzeni parçanın kesitine göre kurgulanır. Hem boy kesme çıkışındaki düz levhayı hem roll form çıkışındaki profili aynı ünitede toplamak istiyorsanız bunu baştan belirtin; masa ve dayamalar buna göre tasarlanır."
           }
         ]
       },

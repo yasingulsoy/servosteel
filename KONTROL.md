@@ -196,9 +196,22 @@ hidrolik oluşu — ikisi de yalnızca o iki hat için belgeli.
 Hâlâ yazılmayan: kalınlık · genişlik · hat hızı · istasyon sayısı · motor gücü ·
 malzeme. Bunlar hattı kuran mühendiste; sekiz satırlık bir tabloyla kapanır.
 
-**Otomatik istifleyici fotoğrafı:** katalog s.29'un sağ alt fotoğrafında makaslı
-istifleme masası var — kırpılıp kullanılabilir, firmadan yeni fotoğraf beklemeye
-gerek kalmayabilir.
+**Otomatik istifleyici güçlendirildi (2026-09-05).** Sayfa makine sayfaları
+içinde en zayıfıydı: fotoğraf yok, SSS 2 (diğerlerinde 4), tablo yok, en kısa
+metin. Hedeflediği kelime ise en büyüklerinden — `automatic stacker` **390/ay**
+(ABD, CPC $13,84).
+
+- **Fotoğraf eklendi:** katalog s.29'daki gömülü görselden (4032×3024) makaslı
+  istifleme masası kırpıldı → `public/gorseller/otomatik-istifleyici.jpg`,
+  1200×1200 (diğer makine sayfalarıyla aynı format), 245 KB.
+  `catalog.ts`'teki `noPhoto: true` kaldırıldı.
+- **SSS 2 → 4**, dokuz dilde. Yeni sorular: paket dolduğunda hat duruyor mu ·
+  levha ve profil aynı istifleyiciyle toplanabilir mi. İkisi de sayısal iddia
+  içermiyor.
+
+**TABLO EKLENMEDİ** — katalogda bu ürün için sayısal veri yok, uydurulmadı.
+Mühendisten istenecek: levha/profil ölçü aralığı, paket yüksekliği, istif
+kapasitesi, hat hızı uyumu.
 
 ---
 
