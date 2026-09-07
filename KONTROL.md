@@ -85,6 +85,16 @@ Hedeflediği kelime makine grubunun en büyüğü: `automatic stacker` **390/ay*
   **KVKK/gizlilik sayfası buna bağlı** — aylardır bu yüzden yazılamıyor.
   Yanında iki bilgi daha: **VERBİS kaydı var mı**, **form e-postaları ne kadar
   saklanıyor**. Üçü gelince 9 dile ben yazarım.
+
+  > **İPUCU (2026-09-07, GSC).** `servosteel makina sanayi ve diş ticaret
+  > anonim...` sorgusu 28 günde **27 gösterim / 15 tık** getiriyor ve o sorguda
+  > **1. sıradayız**. Yani birileri bu unvanı biliyor ve arıyor. Katalogdaki
+  > "Steel Makina Kalıp **Ltd. Şti.**" ile çelişiyor: biri **A.Ş.**, diğeri
+  > **Ltd. Şti.** İki ayrı tüzel kişilik olabilir.
+  > **Arama sorgusu tescil kaydı değildir** — siteye yazılmadı. Filiz Hanım'a
+  > sorulacak somut soru artık şu: *"Servosteel Makina Sanayi ve Dış Ticaret
+  > A.Ş. ile Steel Makina Kalıp Ltd. Şti. aynı firma mı, hangisi veri
+  > sorumlusu olarak yazılacak?"*
 - [ ] **Mevcut ajansın link inşasını durdur** — 2010'ların yöntemi, zarar
   veriyor. Kanıtı §E.9'da.
 - [ ] **Hangi fuarlara katıldık** (geçmiş yıllar dahil) — katılımcı listeleri

@@ -136,6 +136,9 @@ const orgJsonLd = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
+  /* Olculmus varyant: "servo steel" (ayri yazim) 28 gunde 30 gosterim, 3,1.
+     Varlik eslesmesi icin yazilir — uydurma degil, GSC'den okundu. */
+  alternateName: ["Servo Steel", "ServoSteel"],
   url: SITE_URL,
   /* "Üretici mi, tedarikçi mi?" belirsizliğini şema düzeyinde de kapatır. */
   description:
