@@ -202,20 +202,30 @@ arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.
   `xzdxkpw7qv` → Settings → Data Export → Generate new API token → değeri
   `~/.config/claude-seo/clarity.json` içinde `projects.servosteel.api_token`
   alanına yapıştır (**sohbete yazma**).
-- [ ] **Telefon/e-posta tuşunun etkisi ölçülecek** — WhatsApp 30 günde 20 tıklama
-  alıyordu ve hepsi karşılıksızdı. Yeni tuşlar bunun ne kadarını karşılıyor?
-  Zamanlanmış görev **12 Eylül 10:00**'da ölçüyor.
+- [x] ~~Telefon/e-posta tuşunun etkisi ölçülecek~~ — **ölçüldü (2026-09-10),
+  değişimden 16 gün sonra.**
 
-**Deploy — ACİL**
-- [ ] **Canlı site 30 Ağustos'taki derlemede takılı.** Ölçüldü (2026-09-07 14:42):
-  üretimdeki son commit `3387353`. Sonrasındaki her şey push edilmiş ama
-  yayına çıkmamış — istifleyici fotoğrafı ve 4 SSS (`64bd5d9`, **4 saat önce
-  push edildi**), bugünkü iç link ve şema çalışması (`71e8d41`'e kadar).
-  Repoda deploy yapılandırması yok, Dokploy panelinde. Otomatik deploy kapalı
-  ya da webhook düşmüş olmalı — panelden elle tetiklenip webhook kontrol
-  edilecek.
-  Doğrulama: `curl -s https://servosteel.com.tr/makineler/otomatik-istifleyici | grep istifleyici.*jpg`
-  fotoğraf gelince deploy geçmiş demektir.
+  | | WhatsApp | telefon + e-posta |
+  |---|---:|---:|
+  | tıklama | 20 / 30 gün | **7 / 16 gün** |
+  | oturum başına | %4,10 | **%1,57** |
+  | karşılık | **0** | telefon çalıyor, kutu çalışıyor |
+
+  Dökümü: telefon 6, e-posta 1. **Oturum başına daha az tıklanıyor** — ama eski
+  tuş çalışmıyordu, o 20 tıklama hiçbir yere varmıyordu. Az ve ulaşan, çok ve
+  kaybolandan iyidir. Aynı 16 günde **5 form gönderimi** geldi (28 günde 7);
+  önceki toplam sayı 8'di, yani asıl hızlanma formda.
+
+  Ölçüm betiği: `scratchpad/tus-olcum.py <gün>` — GA4 `click` olayını `linkUrl`
+  kırılımıyla okur. **Dikkat:** GA4'ün kendi gelişmiş ölçümü de `click` basar,
+  o yüzden dönen listede `wa.me`, LinkedIn, Instagram da çıkar; yalnızca `tel:`
+  ve `mailto:` ile başlayanlar bizim dinleyicimizden gelir.
+
+**Deploy**
+- [x] ~~Canlı site 30 Ağustos'ta takılıydı~~ — **çözüldü (2026-09-10).** Bekleyen
+  altı commit yayına çıktı; istifleyici fotoğrafı, dokuz dildeki iç linkler ve
+  `alternateName` canlıda doğrulandı. Dört saat gecikmişti; **otomatik deploy'un
+  neden geciktiği hâlâ bilinmiyor**, tekrarlarsa Dokploy webhook'una bakılacak.
 
 **Mail / hosting**
 - [ ] **Otomatik yedek yok** — Veridyen'den istenecek
