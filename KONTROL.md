@@ -197,6 +197,51 @@ arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.
 - [ ] **Bölge ataması** (`NO_REGIONS`) — panelden yapılıyor, API'de `regions/`
   yolu 404. Yandex'te bölge, sıralamayı Google'dakinden çok daha ağır etkiliyor.
 
+**Google İşletme Profili — EN YÜKSEK GETİRİLİ AÇIK İŞ**
+
+Ölçüldü (2026-09-12). **Yapay zeka asistanlarından gelen ziyaretçi, sitedeki
+tüm kanallardan 8,5 kat iyi dönüşüyor** (75 oturum → 3 talep = %4,00; organik
+arama 430 oturum → 2 talep = %0,47). Kaynağın tamamı `chatgpt.com`.
+
+ChatGPT bizi **sitemizden değil, Google İşletme Profili'nden** buluyor —
+"Türkiye'de rulo dilme hattı üreticisi" sorusunda anıldığımız kayıt bu
+listeleme. Profilin durumu:
+
+| alan | durum |
+|---|---|
+| başlık · adres · telefon · 30 fotoğraf · 4,6 (10 yorum) | ✅ var |
+| **web sitesi** | ❌ **YOK** |
+| **çalışma saatleri** | ❌ **YOK** — ChatGPT bu yüzden "Closed" diyor |
+| **açıklama** | ❌ YOK |
+| ek kategori | ❌ YOK (tek kategori: "Makine İmalatı") |
+
+- [ ] **Profile site adresini ekle.** En kritik eksik: ChatGPT ve Haritalar
+  üzerinden bizi bulan herkes çıkmaz sokağa giriyor, siteye gelemiyor.
+- [ ] **Çalışma saatlerini gir.** Şu an "Kapalı" görünüyoruz. (Site 08:30–18:00
+  diyor, eski site 08:00–18:00'di — §A.2'deki açık soru burada da karşımıza
+  çıkıyor, önce o netleşmeli.)
+- [ ] **Açıklama yaz** — ne ürettiğimiz, 48+ ülke, anahtar teslim.
+- [ ] **Ek kategoriler ekle** — tek kategori "Makine İmalatı" fazla genel.
+- [ ] **Posta kodunu doğrula** — profilde `34030` yazıyor, Sancaktepe için
+  şüpheli görünüyor. Doğrusu teyit edilmeden siteye/şemaya yazılmadı.
+
+**ChatGPT testi (2026-09-12, DataForSEO AI Optimization API):**
+
+| soru | anıldık mı |
+|---|---|
+| "Türkiye'de rulo dilme hattı üreticisi arıyorum" | ✅ |
+| "coil slitting line supplier, Turkish manufacturers" | ✅ (İşletme Profili kaydı) |
+| "leading roll forming machine manufacturers in Turkey" | ❌ |
+| "best cable tray roll forming machine manufacturers" | ❌ |
+| **"how to calculate steel coil weight and strip length"** | ❌ |
+| **"how to choose a servo feeder for a progressive die"** | ❌ |
+
+Son ikisi can alıcı: **tam bu konularda 9 dilde yazımız var ve alıntılanmıyoruz.**
+Tedarikçi sorularında görünüyoruz, teknik sorularda yokuz. ChatGPT arama
+tarafında Bing indeksini kullanıyor; 2026-09-12'de 470 URL IndexNow ile
+yeniden gönderildi. **3 hafta sonra aynı testler tekrarlanacak** — değişmezse
+sebep indeksleme değil otorite demektir.
+
 **Ölçüm**
 - [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
   `xzdxkpw7qv` → Settings → Data Export → Generate new API token → değeri
