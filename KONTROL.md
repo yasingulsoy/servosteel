@@ -351,6 +351,23 @@ tedarikçisi, biz 7'deyiz. 28 günde iki sayfamız toplam 52 gösterim aldı,
 **sıfır tık**. Başlık düzeltmesiyle çözülmez — bu kelimede hedef tık değil,
 AI Overview'ün alıntıladığı kaynak olmaktır.
 
+**E.19 · Tek bir robot günü haftalık analizi bozabilir.** 2026-08-29'da bir
+tarayıcı robotu siteyi gezdi: **76 sahte "doğrudan" oturum**, hepsi masaüstü
+Windows, ortalama süre **11 sn** (normal gün 60–80 sn), 28'i `?_rsc=` prefetch
+adresine indi — `_rsc` 60 günde yalnızca o gün görüldü. Site günde ~24 oturum
+alıyor; bir robot günü ortalamayı ikiye katlıyor.
+
+**Bu yüzden yanlış teşhis kondu:** 2026-09-12'de "trafik %39 düştü" denildi.
+Gerçekte toplam trafik **sabit** — 14 günlük dilimlerde 24,8 / 24,2 / 22,4 /
+24,8. Düşüş sanılan şey, bot gününün şişirdiği tabanla kıyaslamaktı.
+
+Kural: **günlük değil, 14 günlük ortalamaya bak** ve aykırı günü ayrıca
+işaretle. Robot günü teşhisi: ortalama süre <15 sn + tek günde çok şehir +
+`_rsc` gibi iç parametreye inen oturumlar.
+
+`analytics.tsx` artık `_rsc`'yi `page_location`'dan siliyor (yalnızca onu —
+tüm sorgu dizesi silinirse `utm_*` atfı körelir).
+
 ---
 
 ## Kapanmış işler

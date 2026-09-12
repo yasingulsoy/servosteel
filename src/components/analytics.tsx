@@ -27,8 +27,17 @@ export function Analytics() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
+      {/* `_rsc` adres çubuğundan temizlenir — Next.js'in prefetch parametresi.
+          29 Ağustos 2026'da bir tarayıcı robotu prefetch adreslerini de gezdi;
+          GA4 bunları ayrı iniş sayfası saydı ve tek günde 76 sahte "doğrudan"
+          oturum üretti. O gün bir haftalık analizi bozdu — ortalamayı iki
+          katına çıkarıp olmayan bir trafik düşüşü gösterdi.
+
+          YALNIZCA `_rsc` siliniyor. Tüm sorgu dizesini atmak `utm_*`
+          etiketlerini de siler ve kampanya atfını kör eder — GA4 kaynağı
+          page_location'dan okuyor. */}
       <Script id="ga4-init" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());var _l=location.href;try{var _u=new URL(_l);if(_u.searchParams.has('_rsc')){_u.searchParams.delete('_rsc');_l=_u.href}}catch(e){}gtag('config','${GA_MEASUREMENT_ID}',{page_location:_l});`}
       </Script>
 
       {/* tel: ve mailto: tıklamaları — GA4 bunları KENDİ BAŞINA saymıyor.
