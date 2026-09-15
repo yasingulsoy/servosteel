@@ -38,6 +38,42 @@ Ağustos başında tıkların %86'sı Türkiye'den ve neredeyse tamamı markayd�
 Bugün Türkiye hâlâ %80 ama **marka dışı kelimeler ilk kez tık getiriyor** ve
 Avrupa'dan (IT/DE/GB/PL) 1.167 gösterim var.
 
+### Talep nereden geliyor — Türkiye değil
+
+Ölçüm 2026-09-15, 60 gün, **bot ağırlıklı Direct hariç** (Clarity 57 oturumun
+20'sini bot sayıyor; Singapur/(not set) kaynaklı 5 saniyelik oturumlar).
+
+| | oturum | talep | dönüşüm |
+|---|---:|---:|---:|
+| Türkiye | 402 | 1 | **%0,25** |
+| yurt dışı | 164 | 6 | **%3,66** |
+
+**Yurt dışından gelen ziyaretçi 15 kat iyi dönüşüyor.** Etiyopya 2 oturum
+2 talep, Litvanya 2/1, Hollanda 2/1 — bu insanlar tedarikçi aramaya geliyor.
+Türkiye'den gelen 402 kişi ise 1 talep bıraktı; onlar araştırmacı, öğrenci,
+rakip ve telefonla arayan karışımı.
+
+**Sonuç ters bir tabloya çıkıyor:** en iyi sıralandığımız pazar (Türkiye, 8,1)
+en kötü dönüşen; en iyi dönüşen pazarlarda (ABD 23,4 · İngiltere 18,4) 2.-3.
+sayfadayız. Emek İngilizce ve ihracat dillerine gitmeli, Türkçeye değil.
+
+Buna bağlı bir düzeltme yapıldı: `x-default` artık **İngilizce** sayfaya
+bakıyor (eskiden Türkçe). Dokuz dilimizle eşleşmeyen kullanıcı — Fransız,
+Hollandalı, Japon, İskandinav — okuyamadığı Türkçe sayfaya iniyordu.
+
+### Huni: form değil, forma VARMAK sorun
+
+| adım | 90 gün |
+|---|---:|
+| gerçek oturum (bot hariç) | 565 |
+| iletişim sayfasına varan (organik) | ~28 |
+| form açan | 10 |
+| **gönderen** | **9** |
+
+Forma varan **10 kişiden 9'u gönderiyor.** Form darboğaz değil; darboğaz
+ürün sayfasından iletişime geçiş. Ürün sayfalarında kaydırma **%53–58**'de
+duruyor, sayfa sonundaki CTA bandını yarısı hiç görmüyor.
+
 ### Asıl tablo: nerede takılıyoruz
 
 | sıra aralığı | kelime | gösterim | tık |

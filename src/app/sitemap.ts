@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { rollFormItems, machineItems, machineVariants } from "@/lib/catalog";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
-import { localePath } from "@/i18n/seo";
+import { localePath, X_DEFAULT_LOCALE } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
 import { compareItems } from "@/lib/compare";
 import { sectors } from "@/lib/sectors";
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const l of routing.locales) {
       languages[localeHreflang[l]] = `${SITE_URL}${localePath(l, path)}`;
     }
-    languages["x-default"] = `${SITE_URL}${localePath(routing.defaultLocale, path)}`;
+    languages["x-default"] = `${SITE_URL}${localePath(X_DEFAULT_LOCALE, path)}`;
 
     return routing.locales.map((l) => ({
       url: `${SITE_URL}${localePath(l, path)}`,
@@ -78,9 +78,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const l of postLocales) {
       languages[localeHreflang[l]] = `${SITE_URL}${localePath(l, `/akademi/${slug}`)}`;
     }
-    const xDefault = postLocales.includes(routing.defaultLocale)
-      ? routing.defaultLocale
-      : postLocales[0];
+    const xDefault = postLocales.includes(X_DEFAULT_LOCALE)
+      ? X_DEFAULT_LOCALE
+      : postLocales.includes(routing.defaultLocale)
+        ? routing.defaultLocale
+        : postLocales[0];
     if (xDefault) {
       languages["x-default"] = `${SITE_URL}${localePath(xDefault, `/akademi/${slug}`)}`;
     }

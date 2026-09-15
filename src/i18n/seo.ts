@@ -41,6 +41,25 @@ export function localePath(locale: AppLocale, path: string) {
 }
 
 /**
+ * `x-default` hangi dile bakar.
+ *
+ * Varsayılan dil Türkçe ama x-default **İngilizce**. İkisi farklı sorulara
+ * cevap veriyor: varsayılan dil "kök adreste ne yayınlanıyor", x-default ise
+ * "dili hiçbir sürümümüzle eşleşmeyen kullanıcıya ne gösterilsin".
+ *
+ * Dokuz dilimiz var; eşleşmeyen kullanıcı Fransız, Hollandalı, Japon,
+ * İskandinav, Portekizli demek — yani ihracat pazarı. Ölçüm (2026-09-15,
+ * 60 gün, bot ağırlıklı Direct hariç): yurt dışından gelen **164 oturum 6
+ * talep** getirdi (%3,66), Türkiye'den gelen **402 oturum 1** (%0,25).
+ * O kullanıcıyı Türkçe sayfaya indirmek, en iyi dönüşen kitleyi okuyamadığı
+ * bir sayfaya göndermek oluyor.
+ *
+ * Bu, dil eşleşmesini EZMİYOR: Almanca arayan yine `/de` sayfasını alır.
+ * Yalnızca hiçbir hreflang tutmadığında devreye giriyor.
+ */
+export const X_DEFAULT_LOCALE: AppLocale = "en";
+
+/**
  * Sayfa başına canonical + hreflang alternates üretir.
  * path: locale'siz yol ("" veya "/dilme-hatlari" gibi)
  */
@@ -52,7 +71,7 @@ export function pageAlternates(
   for (const l of routing.locales) {
     languages[localeHreflang[l]] = localePath(l, path);
   }
-  languages["x-default"] = localePath(routing.defaultLocale, path);
+  languages["x-default"] = localePath(X_DEFAULT_LOCALE, path);
 
   return {
     canonical: localePath(locale, path),
