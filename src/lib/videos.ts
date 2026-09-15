@@ -73,6 +73,7 @@ export const videoGroups: VideoGroup[] = [
     key: "rollform",
     href: "/roll-form-hatlari",
     items: [
+      { id: "kQbK5kXquaY", date: "2026-09-09T07:58:46+03:00", sec: 118 },
       { id: "qmWM1NgcACw", date: "2026-04-03T09:56:53+03:00", sec: 166 },
       { id: "NR25bt36uQg", date: "2026-02-11T13:08:05+03:00", sec: 224 },
       { id: "UCeR9epppK8", date: "2025-11-17T06:19:34+03:00", sec: 137 },
@@ -97,6 +98,7 @@ export const videoGroups: VideoGroup[] = [
     key: "solar",
     href: "/roll-form-hatlari/solar-profil",
     items: [
+      { id: "kQbK5kXquaY", date: "2026-09-09T07:58:46+03:00", sec: 118 },
       { id: "3xmcJvv6LNc", date: "2021-06-12T07:00:22+03:00", sec: 176 },
       { id: "5vVTpg3hltE", date: "2024-11-06T17:44:27+03:00", sec: 147 },
       { id: "tm520w7WsBI", date: "2023-12-04T16:49:44+03:00", sec: 129 },
@@ -170,6 +172,7 @@ export const allVideos = videoGroups.flatMap((g) => g.items);
  */
 /** Kanaldaki TÜM videoların gerçek metadata'sı (yt-dlp, 102 kayıt). */
 const CATALOG: CatalogItem[] = [
+  { id: "kQbK5kXquaY", date: "2026-09-09T07:58:46+03:00", sec: 118, title: "ServoSteel - United Kingdom - Roll Forming Line Automatic Stacker for Solar C Profile Production" },
   { id: "h7aPJ6rJc_U", date: "2026-07-13T11:26:11+03:00", sec: 182, title: "Rulo Sac Dilme Hattı / Coil Slitting Line / Линия продольной резки рулонного металла" },
   { id: "qmWM1NgcACw", date: "2026-04-03T09:56:53+03:00", sec: 166, title: "Structural Steel Profiles Roll Forming Line Machine 350mmx5mm U-C Yapı Çelik Ges Profil üretim hattı" },
   { id: "NR25bt36uQg", date: "2026-02-11T13:08:05+03:00", sec: 224, title: "Roll Forming Line Machine HMI & Production Reporting Software U - C Profile" },
@@ -375,7 +378,7 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow"],
   "/makineler/dogrultmali-servo-suruculer": ["P3zbB3c6NBY", "bc5nAkQXJTw"],
   "/makineler/kompakt-hatlar": ["ONmiUo8vtvk", "7RcuUmfN7QE"],
-  "/makineler/otomatik-istifleyici": ["UCeR9epppK8"],
+  "/makineler/otomatik-istifleyici": ["UCeR9epppK8", "kQbK5kXquaY"],
 };
 
 const VIDEO_BY_ID = new Map(allVideos.map((v) => [v.id, v]));
