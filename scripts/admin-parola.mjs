@@ -8,6 +8,9 @@
  *
  * Aynı parola için her çalıştırmada FARKLI karma çıkar — tuz rastgeledir.
  * Bu normaldir, ikisi de doğrular.
+ *
+ * Ayıraç `:` — `$` DEĞİL. Next'in env yükleyicisi dotenv-expand kullanıyor ve
+ * değerdeki `$abc` değişken sanılıp siliniyor.
  */
 import { randomBytes, scrypt } from "node:crypto";
 
@@ -28,7 +31,7 @@ scrypt(parola, tuz, 64, (e, k) => {
   const oturumGizli = randomBytes(48).toString("base64url");
   console.log("\n.env.local içine ekleyin:\n");
   console.log(`ADMIN_USER=yasin`);
-  console.log(`ADMIN_PASSWORD_HASH=scrypt$${tuz.toString("hex")}$${k.toString("hex")}`);
+  console.log(`ADMIN_PASSWORD_HASH=scrypt:${tuz.toString("hex")}:${k.toString("hex")}`);
   console.log(`ADMIN_SESSION_SECRET=${oturumGizli}`);
   console.log("\nKullanıcı adını istediğinizle değiştirin. Parolayı hiçbir yere yazmayın.\n");
 });

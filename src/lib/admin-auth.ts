@@ -10,7 +10,7 @@ import { cookies } from "next/headers";
  *
  * ÜÇ ORTAM DEĞİŞKENİ (hepsi `.env.local`'da, git'e ASLA girmez):
  *   ADMIN_USER            kullanıcı adı
- *   ADMIN_PASSWORD_HASH   `scrypt$<tuz>$<karma>` — üretmek için:
+ *   ADMIN_PASSWORD_HASH   `scrypt:<tuz>:<karma>` — üretmek için:
  *                         `node scripts/admin-parola.mjs "parolanız"`
  *   ADMIN_SESSION_SECRET  çerez imzası için rastgele uzun dize
  *
@@ -43,15 +43,23 @@ function scryptAsync(parola: string, tuz: Buffer): Promise<Buffer> {
   );
 }
 
-/** `scrypt$<tuz hex>$<karma hex>` üretir. Betikten çağrılır. */
+/**
+ * `scrypt:<tuz hex>:<karma hex>` üretir. Betikten çağrılır.
+ *
+ * **AYIRAÇ `:` — `$` DEĞİL.** `@next/env` dotenv-expand kullanıyor: değerin
+ * içindeki `$abc` bir değişken referansı sanılıp boş dizeyle değiştiriliyor.
+ * `$` ayıraçlı karma `.env.local`'a yazıldığında uygulamaya budanmış geliyor
+ * ve giriş sessizce "parola hatalı" diyor. 2026-09-15'te yaşandı; dosyadaki
+ * değer doğruydu, uygulamanın gördüğü değer değildi.
+ */
 export async function parolaKarmala(parola: string): Promise<string> {
   const tuz = randomBytes(16);
   const k = await scryptAsync(parola, tuz);
-  return `scrypt$${tuz.toString("hex")}$${k.toString("hex")}`;
+  return `scrypt:${tuz.toString("hex")}:${k.toString("hex")}`;
 }
 
 async function parolaDogru(parola: string, kayit: string): Promise<boolean> {
-  const [tur, tuzHex, karmaHex] = kayit.split("$");
+  const [tur, tuzHex, karmaHex] = kayit.split(":");
   if (tur !== "scrypt" || !tuzHex || !karmaHex) return false;
   const beklenen = Buffer.from(karmaHex, "hex");
   const gelen = await scryptAsync(parola, Buffer.from(tuzHex, "hex"));
