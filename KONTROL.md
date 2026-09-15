@@ -272,6 +272,16 @@ sebep indeksleme değil otorite demektir.
   `alternateName` canlıda doğrulandı. Dört saat gecikmişti; **otomatik deploy'un
   neden geciktiği hâlâ bilinmiyor**, tekrarlarsa Dokploy webhook'una bakılacak.
 
+**Veritabanı / panel**
+- [ ] **Postgres'in dış portu (25632) internete açık ve TLS YOK.** Ölçüldü
+  (2026-09-15): dışarıdan bağlanılıyor, sunucu "does not support SSL" diyor —
+  yani parola ve tüm veri açık metin olarak geçiyor. Canlı uygulama zaten iç
+  ağdan bağlanıyor (`servosteel-servosteeldb-uqmygk:5432`), dış porta ihtiyacı
+  yok. **Geçmiş talepler girildikten sonra dış port kapatılacak.**
+- [ ] **Panel parolası üretilecek** — `node scripts/admin-parola.mjs "parola"`,
+  çıkan üç satır hem `.env.local`'a hem Dokploy Environment'a. Parola sohbete
+  yazılmaz; bir kez yazıldığı için o parola artık kullanılmayacak.
+
 **Mail / hosting**
 - [ ] **Otomatik yedek yok** — Veridyen'den istenecek
 - [ ] **SpamAssassin eşiği** — skor 15 olan mail bile kabul ediliyor
