@@ -146,6 +146,10 @@
       {
         "q": "Aynı hatta birden fazla profil üretebilir miyim?",
         "a": "Evet, merdane seti değiştirilerek. Burada belirleyici olan değişim süresidir: çok çeşit üretecekseniz hızlı değişim özelliği doluluk oranını doğrudan etkiler, bu da hattın geri dönüşünü belirler."
+      },
+      {
+        "q": "Roll form makinesi ile roll form hattı aynı şey mi?",
+        "a": "Roll form makinesi, şeridi nihai kesitine büken merdane istasyonlarının bulunduğu gövdedir. Roll form hattı ise o makinenin etrafındaki her şeyi kapsar: açıcı, doğrultucu, servo besleme, zımba istasyonları, kesme ünitesi ve çıkış masası. Elinizde hattın geri kalanı varsa yalnızca şekillendirme grubunu da alabilirsiniz; ancak çıkan profilin ölçü toleransı büyük ölçüde onu besleyen üniteye bağlıdır — aksini belirtmediğiniz sürece komple hat üzerinden fiyat veriyoruz."
       }
     ],
     "ctaTitle": "Profilinize özel roll form hattı"

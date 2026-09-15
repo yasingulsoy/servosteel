@@ -146,6 +146,10 @@
       {
         "q": "Czy mogę produkować kilka profili na jednej linii?",
         "a": "Tak, wymieniając zestaw rolek. Kluczowy jest tu czas przezbrojenia: przy wielu przekrojach szybkie przezbrojenie wprost wpływa na wykorzystanie mocy, a więc na zwrot z linii."
+      },
+      {
+        "q": "Czy profilarka to to samo co linia profilująca?",
+        "a": "Profilarka to sama maszyna formująca: zestaw stacji rolkowych, które gną taśmę do docelowego przekroju. Linia profilująca obejmuje tę maszynę i wszystko wokół niej: odwijak, prostownicę, podajnik serwo, stacje wykrawania, zespół cięcia i stół odbiorczy. Można kupić samą profilarkę, jeśli reszta linii już istnieje, ale osiągana tolerancja zależy w dużej mierze od tego, co ją zasila — dlatego domyślnie wyceniamy kompletną linię."
       }
     ],
     "ctaTitle": "Linia profilująca zbudowana wokół Twojego profilu"

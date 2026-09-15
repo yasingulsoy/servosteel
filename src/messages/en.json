@@ -158,6 +158,10 @@
       {
         "q": "What are the disadvantages of roll forming?",
         "a": "Two, and they are worth knowing before committing. A roll set is made for one section, so each new profile means new tooling — roll forming rewards volume and repetition rather than one-off work. And the cross-section stays constant along the length; a part that changes shape along its run needs a different process. Where those two conditions are met, little else matches it for output per hour."
+      },
+      {
+        "q": "Is a roll former the same as a roll forming line?",
+        "a": "A roll former — also written rollformer — is the forming machine itself: the bank of roll stations that bends the strip into its final section. A roll forming line is that machine plus everything around it: decoiler, straightener, servo feeder, punching stations, cut-off and run-out table. You can buy the roll former on its own if the rest of the line already exists, but the tolerance you get depends heavily on what feeds it, which is why we quote complete roll forming machinery unless you tell us otherwise."
       }
     ],
     "ctaTitle": "A roll forming line built around your profile"
@@ -1228,6 +1232,7 @@
       },
       "solar-profil": {
         "name": "Solar C-Profile Production Line",
+        "metaTitle": "Solar Mounting Profile Roll Forming Machine",
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
@@ -1436,6 +1441,7 @@
       },
       "iskele-kalas": {
         "name": "Scaffolding Plank Production Line",
+        "metaTitle": "Scaffolding Plank Roll Forming Machine & Line",
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
@@ -1597,6 +1603,7 @@
       },
       "gurultu-bariyeri": {
         "name": "Noise Barrier Production Line",
+        "metaTitle": "Noise Barrier Roll Forming Machine & Line",
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
@@ -1700,6 +1707,7 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapezoidal Sheet and Facade Panel Line",
+        "metaTitle": "Trapezoidal Sheet Roll Forming Machine",
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Range"],

@@ -146,6 +146,10 @@
       {
         "q": "¿Puedo producir varios perfiles en la misma línea?",
         "a": "Sí, cambiando el juego de rodillos. Lo determinante aquí es el tiempo de cambio: si va a producir muchas secciones, el cambio rápido afecta directamente a la ocupación y, con ella, al retorno de la línea."
+      },
+      {
+        "q": "¿Una perfiladora es lo mismo que una línea de perfilado?",
+        "a": "La perfiladora es la máquina de conformado en sí: el conjunto de estaciones de rodillos que dobla el fleje hasta su sección final. La línea de perfilado es esa máquina más todo lo que la rodea: desenrollador, enderezadora, alimentador servo, estaciones de punzonado, unidad de corte y mesa de salida. Puede adquirir solo la perfiladora si ya dispone del resto de la línea, pero la tolerancia obtenida depende en gran medida de lo que la alimenta; por eso cotizamos la línea completa salvo que indique lo contrario."
       }
     ],
     "ctaTitle": "Una línea de perfilado en torno a su perfil"

@@ -146,6 +146,10 @@
       {
         "q": "Kann ich mehrere Profile auf derselben Anlage fahren?",
         "a": "Ja, durch Wechsel des Rollensatzes. Entscheidend ist dabei die Rüstzeit: Bei vielen Querschnittstypen wirkt sich schnelles Rüsten unmittelbar auf die Auslastung aus — und damit auf die Amortisation der Anlage."
+      },
+      {
+        "q": "Ist eine Rollformmaschine dasselbe wie eine Rollformanlage?",
+        "a": "Die Rollformmaschine ist das Umformgerüst selbst: die Reihe von Rollstationen, die das Band in sein endgültiges Profil biegt. Die Rollformanlage umfasst diese Maschine und alles darum herum — Haspel, Richtapparat, Servovorschub, Stanzstationen, Trennvorrichtung und Auslauftisch. Sie können das Umformgerüst einzeln kaufen, wenn der Rest der Linie vorhanden ist; die erreichbare Toleranz hängt jedoch stark von der Zuführung ab. Deshalb kalkulieren wir die komplette Anlage, sofern Sie nichts anderes wünschen."
       }
     ],
     "ctaTitle": "Eine Rollformanlage rund um Ihr Profil"

@@ -146,6 +146,10 @@
       {
         "q": "Gyárthatok több profilt ugyanazon a soron?",
         "a": "Igen, a görgőkészlet cseréjével. Itt az átállási idő a döntő: sokféle szelvény esetén a gyors átállás közvetlenül befolyásolja a kihasználtságot, ez pedig a sor megtérülését."
+      },
+      {
+        "q": "A profilozógép ugyanaz, mint a profilozósor?",
+        "a": "A profilozógép maga az alakító egység: a görgős állomások sora, amely a szalagot a végleges keresztmetszetbe hajlítja. A profilozósor ezt a gépet és a köré épülő mindent jelenti: letekercselő, egyengető, szervo adagoló, lyukasztó állomások, vágóegyhez és kifutóasztal. A profilozógép önmagában is megvásárolható, ha a sor többi eleme már megvan, de az elérhető tűrés nagyban függ attól, mi táplálja — ezért eltérő kérés hiányában a teljes sorra adunk ajánlatot."
       }
     ],
     "ctaTitle": "Profilozó sor az Ön profiljára szabva"
