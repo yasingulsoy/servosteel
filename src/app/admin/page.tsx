@@ -73,11 +73,19 @@ export default async function AdminSayfasi({
             {gercek} gerçek · {toplam} kayıt · {kullanici}
           </p>
         </div>
-        <form action={cikisEylemi}>
-          <button className="rounded-lg border border-line px-3 py-2 text-sm font-medium active:bg-surface-alt sm:hover:bg-surface-alt">
-            Çıkış
-          </button>
-        </form>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/admin/kullanicilar"
+            className="rounded-lg border border-line px-3 py-2 text-sm font-medium active:bg-surface-alt sm:hover:bg-surface-alt"
+          >
+            Kullanıcılar
+          </Link>
+          <form action={cikisEylemi}>
+            <button className="rounded-lg border border-line px-3 py-2 text-sm font-medium active:bg-surface-alt sm:hover:bg-surface-alt">
+              Çıkış
+            </button>
+          </form>
+        </div>
       </header>
 
       {hata ? (

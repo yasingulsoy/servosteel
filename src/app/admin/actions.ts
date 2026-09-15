@@ -2,7 +2,13 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { girisYap, cikisYap, oturum } from "@/lib/admin-auth";
+import {
+  girisYap,
+  cikisYap,
+  oturum,
+  yoneticiKur,
+  yoneticiSil,
+} from "@/lib/admin-auth";
 import {
   DURUMLAR,
   durumDegistir,
@@ -105,4 +111,38 @@ export async function silEylemi(form: FormData) {
   await talepSil(id);
   revalidatePath("/admin");
   redirect("/admin");
+}
+
+/* ------------------------------------------------------- kullanıcılar */
+
+/**
+ * Kullanıcı ekler ya da var olanın parolasını değiştirir.
+ *
+ * Parola en az 8 karakter. Panel canlı sitede duruyor ve kullanıcı adı
+ * tahmin edilebilir; tek koruma parolanın kendisi.
+ */
+export async function kullaniciEkleEylemi(_onceki: string | null, form: FormData) {
+  await yetki();
+  const kullanici = metin(form.get("kullanici"), 60).toLowerCase();
+  const parola = metin(form.get("parola"), 200);
+
+  if (!/^[a-z0-9._-]{3,60}$/.test(kullanici)) {
+    return "Kullanıcı adı 3-60 karakter olmalı; harf, rakam, nokta, tire, alt çizgi.";
+  }
+  if (parola.length < 8) return "Parola en az 8 karakter olmalı.";
+
+  await yoneticiKur(kullanici, parola);
+  revalidatePath("/admin/kullanicilar");
+  return null;
+}
+
+export async function kullaniciSilEylemi(_onceki: string | null, form: FormData) {
+  const ben = await yetki();
+  const kullanici = metin(form.get("kullanici"), 60);
+  /* Kendini silmek oturumu geçersiz kılmaz ama bir sonraki girişte
+     kilitlenirsin — baştan engelliyoruz. */
+  if (kullanici === ben) return "Kendi hesabınızı silemezsiniz.";
+  const hata = await yoneticiSil(kullanici);
+  revalidatePath("/admin/kullanicilar");
+  return hata;
 }

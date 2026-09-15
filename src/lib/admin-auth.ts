@@ -121,6 +121,27 @@ export async function yoneticiKur(kullanici: string, parola: string) {
   );
 }
 
+/** Panel kullanıcılarını listeler (karma DÖNMEZ). */
+export async function yoneticiler() {
+  await kimlikSemasiKur();
+  return (
+    (await sorgu<{ id: number; kullanici: string; olusturuldu: string }>(
+      `SELECT id, kullanici, olusturuldu FROM yoneticiler ORDER BY id`
+    )) ?? []
+  );
+}
+
+/**
+ * Kullanıcı siler. SON kullanıcıyı silmez — silseydi panele giriş yolu
+ * kalmaz, açmak için sunucuya erişip betik çalıştırmak gerekirdi.
+ */
+export async function yoneticiSil(kullanici: string): Promise<string | null> {
+  const liste = await yoneticiler();
+  if (liste.length <= 1) return "Son kullanıcı silinemez — panele giriş yolu kalmaz.";
+  await sorgu(`DELETE FROM yoneticiler WHERE kullanici = $1`, [kullanici]);
+  return null;
+}
+
 function imzala(veri: string, gizli: string): string {
   return createHmac("sha256", gizli).update(veri).digest("hex");
 }
