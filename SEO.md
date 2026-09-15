@@ -38,6 +38,52 @@ Ağustos başında tıkların %86'sı Türkiye'den ve neredeyse tamamı markayd�
 Bugün Türkiye hâlâ %80 ama **marka dışı kelimeler ilk kez tık getiriyor** ve
 Avrupa'dan (IT/DE/GB/PL) 1.167 gösterim var.
 
+### Dokuz dilin sekizi çalışmıyor — ölçüm
+
+2026-09-15, 28 gün, sayfa+kelime kırılımı.
+
+| dil | gösterim | tık | CTR | ort. sıra | ilk 10 payı |
+|---|---:|---:|---:|---:|---:|
+| **tr** | 1.648 | **75** | %4,6 | **7,7** | %87 |
+| **en** | 1.110 | **8** | %0,7 | **24,6** | %23 |
+| pl | 191 | 0 | — | 27,4 | %11 |
+| it | 132 | 0 | — | 12,0 | %49 |
+| de | 93 | 0 | — | 19,9 | %26 |
+| es · hu · ru | 42 | 0 | — | 21–46 | — |
+
+**Türkçe ile İngilizce arasındaki fark içerik değil, SIRA.** İngilizce sayfalar
+Türkçe'den *daha derin* — rulo açıcı 3.832'ye 1.968 karakter, 8 SSS'ye 4.
+Türkçe 7,7'de olduğu için gösterimini tıka çeviriyor; İngilizce 24,6'da olduğu
+için çeviremiyor. Sebep bilinen: Türk rakipler dijitalde boş (§3.2), İngilizcede
+ise gerçek link profili olan Çinli ve Batılı üreticilerle yarışıyoruz.
+
+**Sitemap'teki 470 sayfanın yalnızca %28'i hiç gösterim alıyor:**
+
+| tr | en | pl | it | de | hu | ru | es | ar |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| %102 | %55 | %27 | %23 | %23 | %10 | %8 | %6 | **%0** |
+
+**52 Arapça sayfanın hiçbiri 28 günde bir kez bile arama sonucunda
+gösterilmedi.** İspanyolca 3/52, Rusça 4/52, Macarca 5/52. Bu, §2'deki
+"Arapça'da talep yok, MENA İngilizce arıyor" bulgusunun sayısal karşılığı.
+
+Bunlar teknik bir zarar vermiyor (470 sayfa Google için küçük bir site), ama
+dokuz dili güncel tutmaya harcanan emek İngilizceye gitse, dönüşen pazarda
+işe yarardı.
+
+### Tuzak kelime: `profilarka` (PL)
+
+2026-09-15'te ölçüldü: 90/ay, düşük rekabet, cazip görünüyor. SERP'te ise çatı
+ustalarının taşınabilir büküm makineleri (Schlebach, Jouanel, WUKO), ilan
+siteleri, bir optik profilometre ve **2024 yapımı bir TV dizisi** var. Sanayi
+hattı arayan yok. Lehçe sanayi karşılıklarının (`linie profilujące`,
+`maszyna profilująca`) ise hiç hacmi yok — Polonya bu ürünü kendi dilinde
+aramıyor.
+
+Buna karşılık İtalyanca `profilatrice` (140/ay, düşük rekabet) **gerçek**:
+SERP'te İtalyan makine üreticileri ve 4. sırada Dallan var. Sayfamızın başlığı
+zaten `Profilatrici` diyor ama 28 günde tek gösterim almadık.
+
 ### Talep nereden geliyor — Türkiye değil
 
 Ölçüm 2026-09-15, 60 gün, **bot ağırlıklı Direct hariç** (Clarity 57 oturumun
