@@ -126,14 +126,19 @@ export function TalepListesi({ liste }: { liste: Talep[] }) {
           </thead>
           <tbody>
             {liste.map((t) => (
-              <tr key={t.id} className="border-t border-line hover:bg-surface-alt">
+              /* `relative` + aşağıdaki `after:absolute inset-0`: satırın
+                 TAMAMI tıklanabilir oluyor ama sayfada hâlâ TEK bağlantı
+                 var. Satırı `onClick`'li bir div yapmak da işe yarardı,
+                 ama klavyeyle gezilemez, orta tuşla yeni sekmede açılamaz
+                 ve ekran okuyucu bağlantı olduğunu anlamaz. */
+              <tr key={t.id} className="relative border-t border-line hover:bg-surface-alt">
                 <td className="whitespace-nowrap px-4 py-3 text-muted">
                   <span title={kisaTarih(t.olusturuldu)}>{goreli(t.olusturuldu)}</span>
                 </td>
                 <td className="px-4 py-3">
                   <Link
                     href={`/admin/talep/${t.id}`}
-                    className="font-medium underline-offset-4 hover:underline"
+                    className="font-medium underline-offset-4 after:absolute after:inset-0 after:content-[''] hover:underline"
                   >
                     {t.ad || t.eposta || `#${t.id}`}
                   </Link>
