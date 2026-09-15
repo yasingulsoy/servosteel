@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendLead, type Lead } from "@/lib/mail";
+import { talepEkle } from "@/lib/leads-db";
 
 /**
  * Form taleplerini alır ve e-posta olarak gönderir.
@@ -71,6 +72,27 @@ export async function POST(req: Request) {
 
   try {
     await sendLead(lead);
+
+    /* Veritabanına kayıt E-POSTADAN SONRA ve `await` edilmeden değil, ama
+       hatası yutularak yapılıyor (`talepEkle` içeride try/catch'li).
+       Sıra bilinçli: **e-posta aslıdır, veritabanı kopyadır.** Postgres
+       düşerse talep yine de firmaya ulaşır. Tersini yapsaydık bir gün
+       veritabanı yüzünden iş kaybederdik. */
+    await talepEkle({
+      tur: lead.kind,
+      dil: lead.locale,
+      ad: lead.name ?? "",
+      eposta: lead.email ?? "",
+      firma: lead.company ?? "",
+      telefon: lead.phone ?? "",
+      ulke: lead.location ?? "",
+      mesaj: [lead.subject, lead.product, lead.specs, lead.message]
+        .filter(Boolean)
+        .join("\n\n"),
+      sayfa: req.headers.get("referer") ?? "",
+      kaynak: "form",
+    });
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     /* Sunucu günlüğüne yaz, ziyaretçiye ayrıntı verme. Bu satır önemli:

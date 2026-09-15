@@ -60,6 +60,18 @@ export function Analytics() {
     contact_type:h.indexOf('tel:')===0?'phone':'email',
     transport_type:'beacon'
   });
+  /* Kendi veritabanımıza da yaz — panelde talebin yanında görünsün.
+     sendBeacon: sayfa terk edilirken bile gider, tıklamayı geciktirmez.
+     GA4 kaydı duruyor, ikisi birbirini doğruluyor. Kişisel veri yok. */
+  try{
+    if(navigator.sendBeacon){
+      navigator.sendBeacon('/api/olay',new Blob([JSON.stringify({
+        tur:h.indexOf('tel:')===0?'telefon':'eposta',
+        yol:location.pathname,
+        dil:document.documentElement.lang||''
+      })],{type:'application/json'}));
+    }
+  }catch(e){}
 },true);`}
       </Script>
 

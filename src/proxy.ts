@@ -10,6 +10,10 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  /* api, _next ve uzantılı dosyalar (sitemap.xml, icon.png...) hariç her yol */
-  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
+  /* api, admin, _next ve uzantılı dosyalar hariç her yol.
+
+     `admin` DIŞARIDA: panel çok dilli değil, `[locale]` ağacının dışında
+     yaşıyor. Buradan geçseydi next-intl `/admin`'i `/tr/admin`'e yönlendirir,
+     o yol da bulunamazdı. */
+  matcher: "/((?!api|admin|_next|_vercel|.*\\..*).*)",
 };

@@ -39,6 +39,8 @@ export function GET() {
 
 User-agent: *
 Allow: /
+# Yönetim paneli — indekslenmesi için sebep yok (sayfalarda ayrıca noindex var)
+Disallow: /admin
 
 # --- Yapay zeka arama & asistanları (GEO görünürlüğü) ---
 ${aiRules}
