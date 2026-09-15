@@ -6,6 +6,7 @@ import { pageAlternates, localePath, pageTitle } from "@/i18n/seo";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { InlineQuote } from "@/components/inline-quote";
 import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
@@ -168,6 +169,10 @@ export default async function MachinePage({ params }: Props) {
                 </div>
               </Reveal>
             )}
+
+            {/* Teklif çağrısı tablonun hemen altında — sayfa sonundaki
+                CtaBand'i ziyaretçilerin yarısı görmüyor (kaydırma %53-58). */}
+            {hasTable && <InlineQuote />}
 
             {varyantlar.length > 0 && (
               <Reveal>

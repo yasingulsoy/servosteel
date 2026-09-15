@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
+import { InlineQuote } from "@/components/inline-quote";
 import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { ProductShot } from "@/components/product-shot";
@@ -144,6 +145,9 @@ export default async function RollFormLinePage({ params }: Props) {
                 ) : null}
               </Reveal>
             )}
+
+            {/* Teklif çağrısı tablonun hemen altında — bkz. inline-quote.tsx */}
+            {hasTable && <InlineQuote />}
 
             {process.length > 0 && (
               <Reveal>
