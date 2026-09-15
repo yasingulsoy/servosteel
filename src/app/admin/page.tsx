@@ -29,6 +29,7 @@ const DURUM_RENK: Record<string, string> = {
   teklif_gonderildi: "bg-amber-500/15 text-amber-700",
   kazanildi: "bg-emerald-500/15 text-emerald-700",
   kaybedildi: "bg-zinc-500/15 text-zinc-600",
+  spam: "bg-red-500/15 text-red-700",
 };
 
 export default async function AdminSayfasi({
@@ -72,13 +73,16 @@ export default async function AdminSayfasi({
   const adet = Object.fromEntries(sayilar.map((s) => [s.durum, Number(s.adet)]));
   const olay = Object.fromEntries(olaylar.map((o) => [o.tur, Number(o.adet)]));
   const toplam = sayilar.reduce((a, s) => a + Number(s.adet), 0);
+  /* Spam gerçek talep değil — kartlardaki sayıdan düşülüyor ki dönüşüm
+     rakamı şişmesin. Süzgeçte kendi sekmesiyle görünmeye devam ediyor. */
+  const gercek = toplam - (Number(adet["spam"] ?? 0));
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-10">
       <header className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-display text-2xl font-bold uppercase tracking-tight">Talepler</h1>
-          <p className="mt-1 text-sm text-muted">{toplam} kayıt · {kullanici}</p>
+          <p className="mt-1 text-sm text-muted">{gercek} gerçek · {toplam} kayıt · {kullanici}</p>
         </div>
         <form action={cikisEylemi}>
           <button className="rounded-lg border border-line px-3 py-2 text-sm font-medium hover:bg-surface-alt">
@@ -103,7 +107,7 @@ export default async function AdminSayfasi({
           { etiket: "Telefon tuşu", deger: olay["telefon"] ?? 0, alt: "son 30 gün" },
           { etiket: "E-posta tuşu", deger: olay["eposta"] ?? 0, alt: "son 30 gün" },
           { etiket: "Yeni talep", deger: adet["yeni"] ?? 0, alt: "işlem bekleyen" },
-          { etiket: "Toplam talep", deger: toplam, alt: "tüm zamanlar" },
+          { etiket: "Gerçek talep", deger: gercek, alt: "spam hariç" },
         ].map((k) => (
           <div key={k.etiket} className="rounded-xl border border-line bg-card p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-muted">

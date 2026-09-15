@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendLead, type Lead } from "@/lib/mail";
 import { talepEkle } from "@/lib/leads-db";
+import { spamPuani } from "@/lib/spam";
 
 /**
  * Form taleplerini alır ve e-posta olarak gönderir.
@@ -68,6 +69,17 @@ export async function POST(req: Request) {
 
   if (!lead.name || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(lead.email)) {
     return NextResponse.json({ ok: false, error: "gecersiz" }, { status: 400 });
+  }
+
+  /* Spam süzgeci — mail de veritabanı da görmeden eler.
+     Gönderene "başarılı" deniyor: engellendiğini bilen gönderen metni
+     değiştirip tekrar dener. Sayaç sunucu günlüğünde kalıyor. */
+  const s = spamPuani({ mesaj: lead.message, konu: lead.subject, eposta: lead.email });
+  if (s.spam) {
+    console.warn(
+      `[talep] spam elendi (puan ${s.puan}): ${s.sebepler.join(", ")} — ${lead.email}`
+    );
+    return NextResponse.json({ ok: true });
   }
 
   try {

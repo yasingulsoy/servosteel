@@ -20,6 +20,10 @@ export const DURUMLAR = [
   "teklif_gonderildi",
   "kazanildi",
   "kaybedildi",
+  /* Spam ayrı bir durum, silinen bir kayıt değil: form ne kadar spam alıyor
+     bilmek gerekiyor. İstatistikte gerçek talepten AYRI tutuluyor — 9 talep
+     diye raporlanan sayının içinde satıcı listesi pazarlayan mailler vardı. */
+  "spam",
 ] as const;
 
 export type Durum = (typeof DURUMLAR)[number];
@@ -31,6 +35,7 @@ export const DURUM_ETIKET: Record<Durum, string> = {
   teklif_gonderildi: "Teklif gönderildi",
   kazanildi: "Kazanıldı",
   kaybedildi: "Kaybedildi",
+  spam: "Spam",
 };
 
 export type Talep = {
