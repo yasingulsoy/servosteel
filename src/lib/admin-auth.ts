@@ -1,41 +1,34 @@
 import { createHmac, randomBytes, scrypt, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
+import { sorgu } from "@/lib/db";
 
 /**
- * Yönetim paneli girişi — tek kullanıcı, parola karması, imzalı çerez.
+ * Yönetim paneli girişi — kullanıcılar VERİTABANINDA, imzalı çerezle oturum.
  *
- * Harici kimlik kütüphanesi YOK. Tek bir kullanıcının panele girmesi için
- * NextAuth kurmak, bağımlılığı ve saldırı yüzeyini asıl işten büyük yapar.
- * Node'un kendi `crypto`su scrypt ve HMAC'i zaten veriyor.
+ * **Neden env değil de veritabanı:** ilk sürümde kullanıcı adı ve parola
+ * karması ortam değişkenindeydi. Sonuç: yeni kullanıcı açmak ya da parola
+ * değiştirmek Dokploy panelinden env düzenleyip yeniden dağıtım yapmayı
+ * gerektiriyordu. Veritabanı zaten bağlı ve çalışıyor; kullanıcıyı oraya
+ * koymak işi tek SQL satırına indiriyor.
  *
- * ÜÇ ORTAM DEĞİŞKENİ (hepsi `.env.local`'da, git'e ASLA girmez):
- *   ADMIN_USER            kullanıcı adı
- *   ADMIN_PASSWORD_HASH   `scrypt:<tuz>:<karma>` — üretmek için:
- *                         `node scripts/admin-parola.mjs "parolanız"`
- *   ADMIN_SESSION_SECRET  çerez imzası için rastgele uzun dize
+ * Ortam değişkeni yolu GERİYE DÖNÜK olarak duruyor: `ADMIN_USER` +
+ * `ADMIN_PASSWORD_HASH` tanımlıysa o da kabul edilir. Veritabanı erişilemez
+ * olduğunda panele girebilmek için bir arka kapı değil — bilinçli bir yedek.
  *
- * **Üçünden biri eksikse panel tamamen kapalıdır.** Varsayılan parola
- * KOYMUYORUM: yanlışlıkla canlıya çıkan bir varsayılan, kapının açık
- * bırakılmasından farksızdır.
+ * Oturum imzası için gereken gizli anahtar `ayarlar` tablosunda tutulur ve
+ * ilk ihtiyaçta kendiliğinden üretilir. `ADMIN_SESSION_SECRET` tanımlıysa o
+ * tercih edilir.
  *
- * Parola düz metin olarak hiçbir yerde durmaz; sohbete de yazılmaz.
+ * Karma biçimi `scrypt:<tuz>:<karma>` — ayıraç `:`, `$` DEĞİL. `@next/env`
+ * dotenv-expand kullanıyor ve değerdeki `$abc` değişken sanılıp siliniyor;
+ * `$` ayıraçlı karma env üzerinden gelince budanmış oluyor.
  */
 
 const CEREZ = "sv_admin";
 const SURE_SN = 60 * 60 * 12; // 12 saat
 
-function ayar() {
-  const kullanici = process.env.ADMIN_USER?.trim();
-  const karma = process.env.ADMIN_PASSWORD_HASH?.trim();
-  const gizli = process.env.ADMIN_SESSION_SECRET?.trim();
-  if (!kullanici || !karma || !gizli || gizli.length < 24) return null;
-  return { kullanici, karma, gizli };
-}
-
-/** Panel yapılandırılmış mı? Değilse giriş sayfası bunu söyler. */
-export function panelAcik(): boolean {
-  return ayar() !== null;
-}
+/* Gizli anahtar her istekte veritabanından okunmasın. */
+let gizliOnbellek: string | null = null;
 
 function scryptAsync(parola: string, tuz: Buffer): Promise<Buffer> {
   return new Promise((coz, red) =>
@@ -43,15 +36,6 @@ function scryptAsync(parola: string, tuz: Buffer): Promise<Buffer> {
   );
 }
 
-/**
- * `scrypt:<tuz hex>:<karma hex>` üretir. Betikten çağrılır.
- *
- * **AYIRAÇ `:` — `$` DEĞİL.** `@next/env` dotenv-expand kullanıyor: değerin
- * içindeki `$abc` bir değişken referansı sanılıp boş dizeyle değiştiriliyor.
- * `$` ayıraçlı karma `.env.local`'a yazıldığında uygulamaya budanmış geliyor
- * ve giriş sessizce "parola hatalı" diyor. 2026-09-15'te yaşandı; dosyadaki
- * değer doğruydu, uygulamanın gördüğü değer değildi.
- */
 export async function parolaKarmala(parola: string): Promise<string> {
   const tuz = randomBytes(16);
   const k = await scryptAsync(parola, tuz);
@@ -63,9 +47,78 @@ async function parolaDogru(parola: string, kayit: string): Promise<boolean> {
   if (tur !== "scrypt" || !tuzHex || !karmaHex) return false;
   const beklenen = Buffer.from(karmaHex, "hex");
   const gelen = await scryptAsync(parola, Buffer.from(tuzHex, "hex"));
-  /* Uzunluk farklıysa timingSafeEqual fırlatır; önce onu eşitliyoruz. */
   if (beklenen.length !== gelen.length) return false;
   return timingSafeEqual(beklenen, gelen);
+}
+
+/** Tabloları kurar. `semaKur` ile aynı mantık, kimlik tarafı için. */
+export async function kimlikSemasiKur(): Promise<boolean> {
+  const r = await sorgu(`
+    CREATE TABLE IF NOT EXISTS yoneticiler (
+      id          SERIAL PRIMARY KEY,
+      kullanici   TEXT NOT NULL UNIQUE,
+      karma       TEXT NOT NULL,
+      olusturuldu TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    CREATE TABLE IF NOT EXISTS ayarlar (
+      anahtar TEXT PRIMARY KEY,
+      deger   TEXT NOT NULL
+    );
+  `);
+  return r !== null;
+}
+
+/** Oturum imzası anahtarı: env > veritabanı > yeni üret. */
+async function gizliAnahtar(): Promise<string | null> {
+  const envden = process.env.ADMIN_SESSION_SECRET?.trim();
+  if (envden && envden.length >= 24) return envden;
+  if (gizliOnbellek) return gizliOnbellek;
+
+  await kimlikSemasiKur();
+  const v = await sorgu<{ deger: string }>(
+    `SELECT deger FROM ayarlar WHERE anahtar = 'oturum_gizli'`
+  );
+  if (v === null) return null; // veritabanı yok
+  if (v[0]?.deger) {
+    gizliOnbellek = v[0].deger;
+    return gizliOnbellek;
+  }
+
+  const yeni = randomBytes(48).toString("base64url");
+  await sorgu(
+    `INSERT INTO ayarlar (anahtar, deger) VALUES ('oturum_gizli', $1)
+     ON CONFLICT (anahtar) DO NOTHING`,
+    [yeni]
+  );
+  /* Yarış durumunda başkası yazmış olabilir — geri okuyup onu kullan. */
+  const son = await sorgu<{ deger: string }>(
+    `SELECT deger FROM ayarlar WHERE anahtar = 'oturum_gizli'`
+  );
+  gizliOnbellek = son?.[0]?.deger ?? yeni;
+  return gizliOnbellek;
+}
+
+/** En az bir yönetici var mı (veritabanında ya da env'de)? */
+export async function panelAcik(): Promise<boolean> {
+  if (process.env.ADMIN_USER?.trim() && process.env.ADMIN_PASSWORD_HASH?.trim()) {
+    return true;
+  }
+  await kimlikSemasiKur();
+  const r = await sorgu<{ adet: string }>(
+    `SELECT count(*)::text AS adet FROM yoneticiler`
+  );
+  return Number(r?.[0]?.adet ?? 0) > 0;
+}
+
+/** Kullanıcı ekler ya da parolasını değiştirir. Betikten çağrılır. */
+export async function yoneticiKur(kullanici: string, parola: string) {
+  await kimlikSemasiKur();
+  const karma = await parolaKarmala(parola);
+  await sorgu(
+    `INSERT INTO yoneticiler (kullanici, karma) VALUES ($1, $2)
+     ON CONFLICT (kullanici) DO UPDATE SET karma = EXCLUDED.karma`,
+    [kullanici, karma]
+  );
 }
 
 function imzala(veri: string, gizli: string): string {
@@ -73,27 +126,39 @@ function imzala(veri: string, gizli: string): string {
 }
 
 /**
- * Kullanıcı adı + parola doğruysa oturum çerezi kurar.
- * Dönen `false`, kullanıcı adının mı parolanın mı yanlış olduğunu SÖYLEMEZ —
- * ikisini ayırmak, geçerli kullanıcı adını tahmin etmeyi kolaylaştırır.
+ * Doğruysa oturum çerezi kurar.
+ *
+ * Kullanıcı bulunamasa bile sahte bir karmayla scrypt çalıştırılıyor:
+ * erken çıkmak, cevap süresinden "bu kullanıcı var mı" bilgisini sızdırır.
  */
+const SAHTE_KARMA =
+  "scrypt:" + "0".repeat(32) + ":" + "0".repeat(128);
+
 export async function girisYap(kullanici: string, parola: string): Promise<boolean> {
-  const a = ayar();
-  if (!a) return false;
+  let karma: string | null = null;
 
-  const kullaniciTamam =
-    Buffer.byteLength(kullanici) === Buffer.byteLength(a.kullanici) &&
-    timingSafeEqual(Buffer.from(kullanici), Buffer.from(a.kullanici));
+  const envKullanici = process.env.ADMIN_USER?.trim();
+  const envKarma = process.env.ADMIN_PASSWORD_HASH?.trim();
+  if (envKullanici && envKarma && envKullanici === kullanici) {
+    karma = envKarma;
+  } else {
+    const r = await sorgu<{ karma: string }>(
+      `SELECT karma FROM yoneticiler WHERE kullanici = $1`,
+      [kullanici]
+    );
+    karma = r?.[0]?.karma ?? null;
+  }
 
-  /* Kullanıcı adı yanlış olsa da parola karması hesaplanıyor: erken çıkmak,
-     cevap süresinden kullanıcı adının doğruluğunu sızdırır. */
-  const parolaTamam = await parolaDogru(parola, a.karma);
-  if (!kullaniciTamam || !parolaTamam) return false;
+  const tamam = await parolaDogru(parola, karma ?? SAHTE_KARMA);
+  if (!karma || !tamam) return false;
+
+  const gizli = await gizliAnahtar();
+  if (!gizli) return false;
 
   const bitis = Math.floor(Date.now() / 1000) + SURE_SN;
-  const govde = `${a.kullanici}.${bitis}`;
+  const govde = `${kullanici}.${bitis}`;
   const cerez = await cookies();
-  cerez.set(CEREZ, `${govde}.${imzala(govde, a.gizli)}`, {
+  cerez.set(CEREZ, `${govde}.${imzala(govde, gizli)}`, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
@@ -104,23 +169,23 @@ export async function girisYap(kullanici: string, parola: string): Promise<boole
 }
 
 export async function cikisYap() {
-  const cerez = await cookies();
-  cerez.delete(CEREZ);
+  (await cookies()).delete(CEREZ);
 }
 
 /** Geçerli oturumdaki kullanıcı adı, yoksa `null`. */
 export async function oturum(): Promise<string | null> {
-  const a = ayar();
-  if (!a) return null;
   const ham = (await cookies()).get(CEREZ)?.value;
   if (!ham) return null;
+
+  const gizli = await gizliAnahtar();
+  if (!gizli) return null;
 
   const son = ham.lastIndexOf(".");
   if (son < 0) return null;
   const govde = ham.slice(0, son);
   const imza = ham.slice(son + 1);
 
-  const beklenen = imzala(govde, a.gizli);
+  const beklenen = imzala(govde, gizli);
   if (
     imza.length !== beklenen.length ||
     !timingSafeEqual(Buffer.from(imza), Buffer.from(beklenen))
@@ -130,5 +195,5 @@ export async function oturum(): Promise<string | null> {
 
   const [kullanici, bitisStr] = govde.split(".");
   if (Number(bitisStr) < Math.floor(Date.now() / 1000)) return null;
-  return kullanici === a.kullanici ? kullanici : null;
+  return kullanici || null;
 }

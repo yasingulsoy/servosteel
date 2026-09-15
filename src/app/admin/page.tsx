@@ -70,6 +70,7 @@ export default async function AdminSayfasi({
   }
 
   const adet = Object.fromEntries(sayilar.map((s) => [s.durum, Number(s.adet)]));
+  const olay = Object.fromEntries(olaylar.map((o) => [o.tur, Number(o.adet)]));
   const toplam = sayilar.reduce((a, s) => a + Number(s.adet), 0);
 
   return (
@@ -92,24 +93,29 @@ export default async function AdminSayfasi({
         </p>
       ) : null}
 
-      {/* Tuş tıklamaları — GA4'ten bağımsız, kendi kaydımız */}
-      {olaylar.length > 0 ? (
-        <section className="mt-8 rounded-xl border border-line bg-card p-4">
-          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">
-            Son 30 gün · iletişim tuşu
-          </h2>
-          <div className="mt-2 flex flex-wrap gap-5">
-            {olaylar.map((o) => (
-              <span key={o.tur} className="text-sm">
-                <strong className="text-lg font-bold">{o.adet}</strong>{" "}
-                <span className="text-muted">
-                  {o.tur === "telefon" ? "telefon" : o.tur === "eposta" ? "e-posta" : o.tur}
-                </span>
-              </span>
-            ))}
+      {/* Tuş tıklamaları ve talep özeti.
+          İkisi de SIFIRKEN DE gösteriliyor: "e-posta tuşu hiç tıklanmadı"
+          bilgisi, satırın hiç görünmemesinden çok daha işe yarar — ilkinde
+          ölçüm çalışıyor ve cevap sıfır, ikincisinde ölçümün çalışıp
+          çalışmadığı bile belli değil. */}
+      <section className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {[
+          { etiket: "Telefon tuşu", deger: olay["telefon"] ?? 0, alt: "son 30 gün" },
+          { etiket: "E-posta tuşu", deger: olay["eposta"] ?? 0, alt: "son 30 gün" },
+          { etiket: "Yeni talep", deger: adet["yeni"] ?? 0, alt: "işlem bekleyen" },
+          { etiket: "Toplam talep", deger: toplam, alt: "tüm zamanlar" },
+        ].map((k) => (
+          <div key={k.etiket} className="rounded-xl border border-line bg-card p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+              {k.etiket}
+            </p>
+            <p className="mt-1 font-display text-3xl font-extrabold leading-none">
+              {k.deger}
+            </p>
+            <p className="mt-1 text-xs text-muted">{k.alt}</p>
           </div>
-        </section>
-      ) : null}
+        ))}
+      </section>
 
       {/* Durum süzgeci */}
       <nav className="mt-8 flex flex-wrap gap-2">
