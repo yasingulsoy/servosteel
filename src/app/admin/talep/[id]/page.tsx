@@ -5,6 +5,7 @@ import { oturum } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, notlar, talep } from "@/lib/leads-db";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { durumEylemi, notEylemi, silEylemi } from "../../actions";
+import { Kabuk } from "../../kabuk";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +14,8 @@ export default async function TalepSayfasi({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  if (!(await oturum())) redirect("/admin/giris");
+  const ben = await oturum();
+  if (!ben) redirect("/admin/giris");
 
   const { id } = await params;
   const no = Number(id);
@@ -42,6 +44,7 @@ export default async function TalepSayfasi({
     ) : null;
 
   return (
+    <Kabuk aktif="talepler" kullanici={ben}>
     <main className="mx-auto max-w-3xl px-4 py-6 sm:px-6 sm:py-10">
       <Link
         href="/admin"
@@ -167,5 +170,6 @@ export default async function TalepSayfasi({
         </button>
       </form>
     </main>
+    </Kabuk>
   );
 }

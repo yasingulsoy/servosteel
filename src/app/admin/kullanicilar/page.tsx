@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { oturum, yoneticiler } from "@/lib/admin-auth";
 import { tamTarih } from "@/lib/zaman";
 import { KullaniciFormu, SilTusu } from "./formlar";
+import { Kabuk } from "../kabuk";
 
 export const dynamic = "force-dynamic";
 
@@ -14,16 +13,10 @@ export default async function KullanicilarSayfasi() {
   const liste = await yoneticiler();
 
   return (
+    <Kabuk aktif="kullanicilar" kullanici={ben}>
     <main className="mx-auto max-w-2xl px-4 py-6 sm:px-6 sm:py-10">
-      <Link
-        href="/admin"
-        className="inline-flex items-center gap-1.5 text-sm text-muted underline-offset-4 hover:underline"
-      >
-        <ArrowLeft className="size-4" aria-hidden />
-        Talepler
-      </Link>
 
-      <h1 className="font-display mt-4 text-xl font-bold uppercase tracking-tight sm:text-2xl">
+      <h1 className="font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">
         Kullanıcılar
       </h1>
       <p className="mt-1 text-sm text-muted">
@@ -70,5 +63,6 @@ export default async function KullanicilarSayfasi() {
         silinemez; silinseydi panele giriş yolu kalmazdı.
       </p>
     </main>
+    </Kabuk>
   );
 }

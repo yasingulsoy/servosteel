@@ -8,6 +8,7 @@ import {
   oturum,
   yoneticiKur,
   yoneticiSil,
+  parolaDegistir,
 } from "@/lib/admin-auth";
 import {
   DURUMLAR,
@@ -145,4 +146,14 @@ export async function kullaniciSilEylemi(_onceki: string | null, form: FormData)
   const hata = await yoneticiSil(kullanici);
   revalidatePath("/admin/kullanicilar");
   return hata;
+}
+
+/** Giriş yapmış kullanıcının kendi parolasını değiştirmesi. */
+export async function parolamiDegistirEylemi(_onceki: string | null, form: FormData) {
+  const ben = await yetki();
+  const mevcut = metin(form.get("mevcut"), 200);
+  const yeni = metin(form.get("yeni"), 200);
+  if (!mevcut || !yeni) return "İki alan da dolu olmalı.";
+  const hata = await parolaDegistir(ben, mevcut, yeni);
+  return hata ?? "Parolanız değişti.";
 }

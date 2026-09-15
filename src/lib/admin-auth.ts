@@ -142,6 +142,32 @@ export async function yoneticiSil(kullanici: string): Promise<string | null> {
   return null;
 }
 
+/**
+ * Kullanıcının KENDİ parolasını değiştirmesi.
+ *
+ * Mevcut parola SORULUYOR. Sormasaydık, çalınmış bir oturum çerezi olan
+ * biri parolayı değiştirip asıl sahibi dışarıda bırakabilirdi; çerez 12
+ * saat geçerli ve panel internete açık.
+ */
+export async function parolaDegistir(
+  kullanici: string,
+  mevcut: string,
+  yeni: string
+): Promise<string | null> {
+  const r = await sorgu<{ karma: string }>(
+    `SELECT karma FROM yoneticiler WHERE kullanici = $1`,
+    [kullanici]
+  );
+  const karma = r?.[0]?.karma;
+  if (!karma) return "Hesap bulunamadı. Ortam değişkeniyle giriş yaptıysanız parola oradan değişir.";
+  if (!(await parolaDogru(mevcut, karma))) return "Mevcut parola hatalı.";
+  if (yeni.length < 8) return "Yeni parola en az 8 karakter olmalı.";
+  if (yeni === mevcut) return "Yeni parola eskisiyle aynı.";
+  await sorgu(`UPDATE yoneticiler SET karma = $1 WHERE kullanici = $2`,
+    [await parolaKarmala(yeni), kullanici]);
+  return null;
+}
+
 function imzala(veri: string, gizli: string): string {
   return createHmac("sha256", gizli).update(veri).digest("hex");
 }

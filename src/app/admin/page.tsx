@@ -11,9 +11,9 @@ import {
   talepler,
   type Talep,
 } from "@/lib/leads-db";
-import { cikisEylemi } from "./actions";
 import { TalepEkleKutusu } from "./talep-ekle";
 import { TalepListesi } from "./talep-listesi";
+import { Kabuk } from "./kabuk";
 
 export const dynamic = "force-dynamic";
 
@@ -63,29 +63,15 @@ export default async function AdminSayfasi({
   const gercek = toplam - Number(adet["spam"] ?? 0);
 
   return (
+    <Kabuk aktif="talepler" kullanici={kullanici}>
     <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
-      <header className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h1 className="font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">
-            Talepler
-          </h1>
-          <p className="mt-0.5 text-sm text-muted">
-            {gercek} gerçek · {toplam} kayıt · {kullanici}
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Link
-            href="/admin/kullanicilar"
-            className="rounded-lg border border-line px-3 py-2 text-sm font-medium active:bg-surface-alt sm:hover:bg-surface-alt"
-          >
-            Kullanıcılar
-          </Link>
-          <form action={cikisEylemi}>
-            <button className="rounded-lg border border-line px-3 py-2 text-sm font-medium active:bg-surface-alt sm:hover:bg-surface-alt">
-              Çıkış
-            </button>
-          </form>
-        </div>
+      <header>
+        <h1 className="font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">
+          Talepler
+        </h1>
+        <p className="mt-0.5 text-sm text-muted">
+          {gercek} gerçek · {toplam} kayıt
+        </p>
       </header>
 
       {hata ? (
@@ -174,5 +160,6 @@ export default async function AdminSayfasi({
 
       <TalepEkleKutusu />
     </main>
+    </Kabuk>
   );
 }
