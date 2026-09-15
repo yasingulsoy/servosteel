@@ -423,6 +423,26 @@ işaretle. Robot günü teşhisi: ortalama süre <15 sn + tek günde çok şehir
 `analytics.tsx` artık `_rsc`'yi `page_location`'dan siliyor (yalnızca onu —
 tüm sorgu dizesi silinirse `utm_*` atfı körelir).
 
+**E.20 · Editoryal iç linki olmayan sayfa indekslenmiyor.** İki kez doğrulandı.
+
+| sayfa | editoryal link | sonuç |
+|---|---:|---|
+| `rulo-agirligi-ve-uzunlugu-nasil-hesaplanir` | 63 | indeksli, 7,2. sırada |
+| `servo-besleyici-nasil-secilir` | 18 | indeksli |
+| **`roll-form-nedir`** | **0** | **"Discovered — not indexed"** |
+| `otomatik-istifleyici` (2026-09-05) | 0 → 11 | fotoğraf+SSS ile birlikte düzeltildi |
+
+Şablon linkleri (footer, menü) bu boşluğu KAPATMIYOR — istifleyici 51 şablon
+linki alırken editoryal sıfırdı ve görünmüyordu. Google, metnin içinden gelen
+linke başka türlü davranıyor.
+
+**Kontrol yöntemi:** `grep -ro "(/akademi/<slug>)" src/content/ | wc -l`
+Sıfırsa sayfa yetimdir. GSC URL denetimi doğrular:
+`indeks durumu = "Discovered - currently not indexed"`.
+
+**Yeni sayfa açarken iç link de açılır** — sayfa canlıya çıkıp Google'ın onu
+bulmasını beklemek, boş bir sayfayı yayınlamakla aynı şey.
+
 ---
 
 ## Kapanmış işler
