@@ -100,8 +100,21 @@ export function SpecularButton({
         </a>
       );
     }
+    /* `#` içeren adres next-intl'e düz metin verilirse YERELLEŞTİRİLMİYOR:
+       "/videolar#rollform" pathnames tablosunda bulunamıyor, İngilizce ana
+       sayfada "/en/videolar" üretiliyordu — "/en/videos" değil. Link 307 ile
+       yönleniyordu ve Google sekiz dilin ana sayfasında yönlenen adres
+       görüyordu (GSC "Yönlendirmeli sayfa"da /ru/videolar, 2026-09-16).
+       Hash ayrı verilince yol tablodan çevriliyor. */
+    const [yol, hash] = href.split("#");
     return (
-      <Link href={href} onMouseMove={onMove} onClick={onClick} className={cls} aria-label={ariaLabel}>
+      <Link
+        href={hash ? { pathname: yol, hash } : href}
+        onMouseMove={onMove}
+        onClick={onClick}
+        className={cls}
+        aria-label={ariaLabel}
+      >
         {inner}
       </Link>
     );

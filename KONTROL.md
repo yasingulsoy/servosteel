@@ -443,12 +443,32 @@ Sıfırsa sayfa yetimdir. GSC URL denetimi doğrular:
 **Yeni sayfa açarken iç link de açılır** — sayfa canlıya çıkıp Google'ın onu
 bulmasını beklemek, boş bir sayfayı yayınlamakla aynı şey.
 
+**E.21 · `#` içeren link next-intl'de YERELLEŞMİYOR.** `href="/videolar#rollform"`
+pathnames tablosunda bulunamıyor: İngilizce sayfada `/en/videos#rollform` değil
+`/en/videolar#rollform` üretiliyor (307 yönlenir). Düz `<a href="/videolar#x">`
+ise dil önekini hiç almıyor ve yabancı ziyaretçiyi **Türkçe** sayfaya atıyor.
+2026-09-16'da canlıda ölçüldü: sekiz dilin ana sayfasında beş video tuşu bu
+hâldeydi, Google `/ru/videolar`'ı "Yönlendirmeli sayfa"da gösteriyordu.
+Build temiz geçiyor, sayfa açılıyor — hata yalnızca HTML'deki href'e bakınca
+görünüyor.
+
+**Doğrusu:** `href={{ pathname: "/videolar", hash: "rollform" }}`.
+**Kontrol:** `grep -ohE 'href="/(videolar|teklif-al|iletisim|makineler)[^"]*"' .next/server/app/en.html`
+— İngilizce HTML'de öneksiz Türkçe yol çıkıyorsa link kaçıyor.
+
 ---
 
 ## Kapanmış işler
 
 Ayrıntısı git geçmişinde. Burada yalnızca "bu bir daha açılmayacak" kaydı:
 
+- **GSC "Yönlendirmeli sayfa" (208 URL) incelendi** (2026-09-16). Hepsi eski
+  WordPress / www / http / `tr.` adresi; 208'inin hiçbiri 404'te bitmiyor,
+  sitemap'teki hiçbir adres yönlenmiyor. Bu kategori **normal**, GSC'de
+  "düzeltmeyi doğrula" gerekmez — Google zamanla düşürür. Aynı incelemede
+  ~30 eski ürün adresi hub yerine varyant sayfasına bağlandı ve E.21 bulundu.
+  www + eğik çizgili 50 adres 3 adımda varıyor; bilerek bırakıldı (bkz.
+  `next.config.ts` başındaki not).
 - **Katalog siteye konmayacak** (2026-08-19, Yasin'in kararı). Defalarca
   önerildi, reddedildi. **Bir daha açılmayacak.**
 - **Gelen form taleplerine cevap yazmak bizim işimiz değil** — `generate_lead`

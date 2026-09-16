@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { SpecularButton } from "@/components/specular-button";
 
 export type VideoBandContentProps = {
@@ -64,13 +65,19 @@ export function VideoBandContent({
               /* Altın tuş ürüne, bu tuş videoya gider. İkincil stil: iki tuş yan
                  yana dururken hangisinin ana eylem olduğu belli kalsın diye
                  altın olan tek başına vurgulu bırakıldı. */
-              <a
-                href={`/videolar#${videoGroup}`}
+              /* Düz <a> ile dil öneki EKLENMİYORDU: İngilizce, Almanca, Arapça
+                 ana sayfadaki bu dört tuş Türkçe /videolar sayfasına gidiyordu
+                 (canlıda ölçüldü, 2026-09-16) — talep bırakan yabancı ziyaretçi
+                 dilini kaybediyordu. next-intl Link hem öneki hem yerel yolu
+                 (/en/videos) veriyor; hash ayrı alan olarak geçiyor. Filtre
+                 hash'i mount'ta okuduğu için istemci içi geçişte de çalışır. */
+              <Link
+                href={{ pathname: "/videolar", hash: videoGroup }}
                 className="on-video-sm pointer-events-auto inline-flex items-center gap-1.5 rounded-full border border-white/60 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:border-white hover:bg-white/15"
               >
                 {videoCta}
                 <ArrowRight className="size-4 rtl:rotate-180" strokeWidth={2} aria-hidden />
-              </a>
+              </Link>
             )}
           </div>
         </div>

@@ -28,20 +28,23 @@ const both = (slug: string) => [`/product/${slug}`, `/${slug}`];
 /* slug listesi -> tek hedef */
 const many = (slugs: string[], destination: string) =>
   slugs.flatMap(both).map((s) => p(s, destination));
-/* Rulo açıcılar (tüm ton/kg varyantları tek sayfada toplanır) */
-const DECOILERS = [
+/**
+ * Rulo açıcılar — hidrolik ve mekanik AYRI.
+ *
+ * 2026-09-16'ya kadar tüm ton/kg varyantları hub'a (/en/machines/decoilers)
+ * gidiyordu; hidrolik ve mekanik varyant sayfaları bu harita yazıldığında
+ * yoktu. GSC "Yönlendirmeli sayfa" dökümünde 10 ton hidrolik açıcı arayan
+ * hâlâ hub'a iniyordu, oysa `/en/10-ton-hydraulic-decoiler` aynı gün varyant
+ * sayfasına bağlanmıştı — aynı ürünün iki eski adresi iki farklı yere
+ * gidiyordu. Artık hepsi var olan en özel sayfaya.
+ */
+const HIDROLIK = [
   "hydraulic-decoilers",
+  ...[6, 8, 10, 12, 15, 20].map((t) => `${t}-ton-hydraulic-decoiler`),
+];
+const MEKANIK = [
   "mechanical-decoilers",
-  "6-ton-hydraulic-decoiler",
-  "8-ton-hydraulic-decoiler",
-  "10-ton-hydraulic-decoiler",
-  "12-ton-hydraulic-decoiler",
-  "15-ton-hydraulic-decoiler",
-  "20-ton-hydraulic-decoiler",
-  "500-kg-mechanical-decoiler",
-  "750-kg-mechanical-decoiler",
-  "1500-kg-mechanical-decoiler",
-  "2500-kg-mechanical-decoiler",
+  ...[500, 750, 1500, 2500].map((k) => `${k}-kg-mechanical-decoiler`),
 ];
 
 /**
@@ -50,12 +53,8 @@ const DECOILERS = [
  * varyantına gider.
  */
 const EN_ONEKLI: [string, string][] = [
-  ...[6, 8, 10, 12, 15, 20].map((t): [string, string] =>
-    [`${t}-ton-hydraulic-decoiler`, "/makineler/rulo-acicilar/hidrolik"]),
-  ["hydraulic-decoilers", "/makineler/rulo-acicilar/hidrolik"],
-  ...[500, 750, 1500, 2500].map((k): [string, string] =>
-    [`${k}-kg-mechanical-decoiler`, "/makineler/rulo-acicilar/mekanik"]),
-  ["mechanical-decoilers", "/makineler/rulo-acicilar/mekanik"],
+  ...HIDROLIK.map((s): [string, string] => [s, "/makineler/rulo-acicilar/hidrolik"]),
+  ...MEKANIK.map((s): [string, string] => [s, "/makineler/rulo-acicilar/mekanik"]),
   ["servo-feeders", "/makineler/servo-suruculer"],
   ["mini-servo-feeders", "/makineler/servo-suruculer/mini"],
   ["straightener-servo-feeders", "/makineler/dogrultmali-servo-suruculer"],
@@ -66,8 +65,6 @@ const EN_ONEKLI: [string, string][] = [
   ["roll-forming-line", "/roll-form-hatlari"],
 ];
 
-const SERVO_FEEDERS = ["servo-feeders", "mini-servo-feeders"];
-const STRAIGHTENERS = ["straightener-servo-feeders", "mini-straightener-servo-feeders"];
 
 /**
  * --- tr.servosteel.com.tr'nin TÜRKÇE slug'ları ---
@@ -87,19 +84,18 @@ const STRAIGHTENERS = ["straightener-servo-feeders", "mini-straightener-servo-fe
  * Hedefler Türkçe (önek yok, tr varsayılan dil): bu adreslere gelen kullanıcı
  * Türkçe arama yapmış, İngilizce sayfaya atmak dil değiştirmek olurdu.
  */
-const TR_DECOILERS = [
+const TR_HIDROLIK = [
   "hidrolik-rulo-acicilar",
-  "mekanik-rulo-acicilar",
   ...[6, 8, 10, 12, 15, 20].map((t) => `${t}-ton-hidrolik-rulo-acici`),
+];
+const TR_MEKANIK = [
+  "mekanik-rulo-acicilar",
   ...[500, 750, 1500, 2500].map((k) => `${k}-kg-mekanik-rulo-acici`),
 ];
 
-const TR_SERVO = ["kasali-servo-suruculer", "servo-suruculer", "mini-servo-suruculer"];
-const TR_STRAIGHTENERS = [
-  "kasali-dogrultmali-servo-suruculer",
-  "dogrultmali-servo-suruculer",
-  "mini-dogrultmali-servo-suruculer",
-];
+/* Mini seriler ayrı: mini servo sürücü arayan mini varyant sayfasına iner. */
+const TR_SERVO = ["kasali-servo-suruculer", "servo-suruculer"];
+const TR_STRAIGHTENERS = ["kasali-dogrultmali-servo-suruculer", "dogrultmali-servo-suruculer"];
 
 /* Türkçe roll-form slug'ı -> yeni site slug'ı.
    `cable-tray-production-lineakablo-...`: WordPress'te iki başlık birleşmiş,
@@ -279,19 +275,22 @@ const nextConfig: NextConfig = {
       p("/:path*/feed", "/en"),
 
       /* --- Makineler --- */
-      ...many(DECOILERS, en("/makineler/rulo-acicilar")),
+      ...many(HIDROLIK, en("/makineler/rulo-acicilar/hidrolik")),
+      ...many(MEKANIK, en("/makineler/rulo-acicilar/mekanik")),
       p("/decoiler", en("/makineler/rulo-acicilar")),
       p("/decoilers", en("/makineler/rulo-acicilar")),
       p("/product-category/machines/decoilers", en("/makineler/rulo-acicilar")),
-      p("/product-category/machines/decoilers/hydraulic-decoilers", en("/makineler/rulo-acicilar")),
-      p("/product-category/machines/decoilers/mechanical-decoilers", en("/makineler/rulo-acicilar")),
+      p("/product-category/machines/decoilers/hydraulic-decoilers", en("/makineler/rulo-acicilar/hidrolik")),
+      p("/product-category/machines/decoilers/mechanical-decoilers", en("/makineler/rulo-acicilar/mekanik")),
 
-      ...many(SERVO_FEEDERS, en("/makineler/servo-suruculer")),
+      ...many(["servo-feeders"], en("/makineler/servo-suruculer")),
+      ...many(["mini-servo-feeders"], en("/makineler/servo-suruculer/mini")),
       p("/servo-feeder", en("/makineler/servo-suruculer")),
       p("/feeding-machines", en("/makineler/servo-suruculer")),
       p("/product-category/machines/feeding-machines", en("/makineler/servo-suruculer")),
 
-      ...many(STRAIGHTENERS, en("/makineler/dogrultmali-servo-suruculer")),
+      ...many(["straightener-servo-feeders"], en("/makineler/dogrultmali-servo-suruculer")),
+      ...many(["mini-straightener-servo-feeders"], en("/makineler/dogrultmali-servo-suruculer/mini")),
       ...many(["compact-lines"], en("/makineler/kompakt-hatlar")),
 
       /* --- Eski sitenin /en/{slug} adresleri ---
@@ -339,10 +338,17 @@ const nextConfig: NextConfig = {
       p("/contact", en("/iletisim")),
 
       /* --- tr.* kopyasının Türkçe slug'ları (bkz. TR_* tabloları) --- */
-      ...many(TR_DECOILERS, "/makineler/rulo-acicilar"),
+      ...many(TR_HIDROLIK, "/makineler/rulo-acicilar/hidrolik"),
+      ...many(TR_MEKANIK, "/makineler/rulo-acicilar/mekanik"),
       p("/rulo-acicilar", "/makineler/rulo-acicilar"),
       ...many(TR_SERVO, "/makineler/servo-suruculer"),
+      ...many(["mini-servo-suruculer"], "/makineler/servo-suruculer/mini"),
       ...many(TR_STRAIGHTENERS, "/makineler/dogrultmali-servo-suruculer"),
+      ...many(["mini-dogrultmali-servo-suruculer"], "/makineler/dogrultmali-servo-suruculer/mini"),
+      /* GSC "Yönlendirmeli sayfa" (2026-09-16): rulo dilme hattı arayan genel
+         yakalayıcıya düşüp MAKİNE LİSTESİNE iniyordu. `/rulo-dilme-hatlari`
+         canlı bir yol değil (canlısı /dilme-hatlari), both() döngü yapmaz. */
+      ...many(["rulo-dilme-hatlari"], "/dilme-hatlari"),
       ...Object.entries(TR_ROLLFORM).flatMap(([eski, slug]) =>
         both(eski).map((s) => p(s, `/roll-form-hatlari/${slug}`))
       ),
@@ -357,6 +363,9 @@ const nextConfig: NextConfig = {
       /* --- Katalog / mağaza --- */
       p("/product-category/machines", `${M}`),
       p("/shop", `${M}`),
+      /* İngilizce kategori sayfalaması genel yakalayıcıya düşüp TÜRKÇE
+         listeye gidiyordu (/product-category/machines/page/1 -> /makineler). */
+      p("/product-category/machines/page/:n*", `${M}`),
 
       /* --- Genel kategoriler ve WP çöpü --- */
       p("/lines", "/en"),
