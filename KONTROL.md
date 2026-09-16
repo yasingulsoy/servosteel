@@ -242,6 +242,39 @@ tarafında Bing indeksini kullanıyor; 2026-09-12'de 470 URL IndexNow ile
 yeniden gönderildi. **3 hafta sonra aynı testler tekrarlanacak** — değişmezse
 sebep indeksleme değil otorite demektir.
 
+**Genişletilmiş test (2026-09-16, 14 alıcı sorusu, 4 dil, $0,35):**
+betik `ai-gorunurluk.py` (scratchpad), ham cevaplar JSON olarak saklandı.
+
+- **14 sorunun 2'sinde anıldık** (EN dilme tedarikçisi, EN Türk servo
+  besleyici üreticisi) — **ikisi de İşletme Profili kaydından**
+  ("4,6 · 10 yorum"), siteden DEĞİL. **Site 14 cevabın hiçbirinde kaynak
+  gösterilmedi.**
+- Ürün sorularında (kablo kanalı, solar, iskele, bariyer, raf, açıcı)
+  kaynakların neredeyse tamamı Çinli üretici siteleri + alibaba /
+  made-in-china / tradeindia. Türkçe soruda Türk rakipler (boncukmakine,
+  mechform, adaygrup; dilmede demetal, etabal, bsnmetal). Arapça soru boş döndü.
+- ChatGPT'nin arka planda yaptığı aramalar sorunun neredeyse aynısı
+  ("... manufacturers Turkey"). **Google ABD'de bu 10 İngilizce aramanın
+  9'unda ilk 30'da yokuz** (boy kesmede /en 22.). Türkçe "rulo sac dilme hattı
+  üreten firmalar"da /dilme-hatlari **6.**
+- O aramalarda üstte kim var: ürün aramalarında **lotosforming.com** ve
+  **YouTube** (10 aramanın 6'sında ilk 5'te), "Turkey" aramalarında
+  **dizinler**: europages, ensun.io, Turkish Exporter (`te.com.tr` — "metal coil
+  processing machines turkey" sayfası servo besleyicide 3.), machinematcher.
+- "Turkey" ekli kelimelerin Google hacmi çok küçük (`roll forming machine
+  turkey` 20/ay, `machine manufacturers in turkey` 30/ay, gerisi ölçülemez).
+  İngilizce başlık/açıklamada "Turkey" hiç geçmiyor ama llms.txt ve
+  Hakkımızda gövdesi "Turkish manufacturer" diyor — **başlık değiştirmek
+  bu tabloyu çevirmez, sıra sorunu otorite sorunu.** Bilerek değiştirilmedi.
+
+**Buradan çıkan iş (sırası önemli):** (1) YouTube başlık/açıklamaları
+İngilizce ürün aramalarına göre — kanal hazır, OAuth bekliyor; (2) dizin
+kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
+(3) İşletme Profili bugün ChatGPT'nin bizi andığı TEK kaynak (Yasin
+"işletmeyi boşver" dedi, yalnızca kayıt).
+
+**Bing sıraları ölçülemedi** — bkz. E.22.
+
 **Ölçüm**
 - [ ] **Clarity API token'ı Servosteel projesinden üretilecek** — Clarity'de
   `xzdxkpw7qv` → Settings → Data Export → Generate new API token → değeri
@@ -455,6 +488,13 @@ görünüyor.
 **Doğrusu:** `href={{ pathname: "/videolar", hash: "rollform" }}`.
 **Kontrol:** `grep -ohE 'href="/(videolar|teklif-al|iletisim|makineler)[^"]*"' .next/server/app/en.html`
 — İngilizce HTML'de öneksiz Türkçe yol çıkıyorsa link kaçıyor.
+
+**E.22 · DataForSEO'nun Bing SERP'i uzun sorgularda ÇÖP döndürüyor.**
+2026-09-16'da "rulo sac dilme hattı üreten firmalar" için ilk 5: bing quiz
+siteleri; "scaffolding plank roll forming machine manufacturer" için NFL,
+"best cable tray roll forming machine manufacturers" için bestbuy ve
+merriam-webster. Aynı aramalar Google'da mantıklı sonuç verdi. **Bing sırası
+bu uçtan raporlanmaz**; ilk 5'e bakmadan "Bing'de yokuz" demek yanlış olurdu.
 
 ---
 
