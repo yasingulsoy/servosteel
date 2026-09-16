@@ -44,6 +44,28 @@ const DECOILERS = [
   "2500-kg-mechanical-decoiler",
 ];
 
+/**
+ * Eski `/en/{slug}` adreslerinin hedefleri — bkz. redirects() içindeki açıklama.
+ * Ton/kg varyantları hidrolik/mekanik varyant sayfasına, mini seriler mini
+ * varyantına gider.
+ */
+const EN_ONEKLI: [string, string][] = [
+  ...[6, 8, 10, 12, 15, 20].map((t): [string, string] =>
+    [`${t}-ton-hydraulic-decoiler`, "/makineler/rulo-acicilar/hidrolik"]),
+  ["hydraulic-decoilers", "/makineler/rulo-acicilar/hidrolik"],
+  ...[500, 750, 1500, 2500].map((k): [string, string] =>
+    [`${k}-kg-mechanical-decoiler`, "/makineler/rulo-acicilar/mekanik"]),
+  ["mechanical-decoilers", "/makineler/rulo-acicilar/mekanik"],
+  ["servo-feeders", "/makineler/servo-suruculer"],
+  ["mini-servo-feeders", "/makineler/servo-suruculer/mini"],
+  ["straightener-servo-feeders", "/makineler/dogrultmali-servo-suruculer"],
+  ["mini-straightener-servo-feeders", "/makineler/dogrultmali-servo-suruculer/mini"],
+  ["compact-lines", "/makineler/kompakt-hatlar"],
+  ["compact-line", "/makineler/kompakt-hatlar"],
+  ["cut-to-length-line", "/boy-kesme-hatlari"],
+  ["roll-forming-line", "/roll-form-hatlari"],
+];
+
 const SERVO_FEEDERS = ["servo-feeders", "mini-servo-feeders"];
 const STRAIGHTENERS = ["straightener-servo-feeders", "mini-straightener-servo-feeders"];
 
@@ -271,6 +293,27 @@ const nextConfig: NextConfig = {
 
       ...many(STRAIGHTENERS, en("/makineler/dogrultmali-servo-suruculer")),
       ...many(["compact-lines"], en("/makineler/kompakt-hatlar")),
+
+      /* --- Eski sitenin /en/{slug} adresleri ---
+         Eski WordPress her ürünü `/product/{slug}` ve `/{slug}` yanında bir
+         de `/en/{slug}` altında tutuyordu. Yukarıdaki `many()` ilk ikisini
+         yakalıyor, bu üçüncüsünü YAKALAMIYORDU.
+
+         2026-09-16'da GSC kapsam raporunda üç tanesi göründü; haritadaki her
+         İngilizce slug'ın /en/ önekli hali canlıda tek tek denendi:
+         **21 adresin 20'si 404 veriyordu.** Tüm ton/kg açıcı varyantları,
+         servo sürücüler, kompakt hat, boy kesme ve roll form. Google bunları
+         biliyordu (son tarama Mart 2026, taşınmadan önce); taşıdıkları değer
+         çöpe gidiyordu.
+
+         Hedef, var olan en ÖZEL sayfa: 750 kg mekanik açıcı arayan mekanik
+         açıcı varyantına iner, hub'a değil. Varyant sayfaları bu harita
+         yazıldığında yoktu.
+
+         DÖNGÜ KONTROLÜ: kaynakların hiçbiri canlı bir İngilizce yol değil
+         (canlılar /en/machines/... altında). `both()` KULLANILMADI — o
+         `/{slug}` de üretir ve bu bloğun işi değil. */
+      ...EN_ONEKLI.map(([slug, hedef]) => p(`/en/${slug}`, en(hedef))),
 
       /* --- Hatlar --- */
       ...many(["coil-slitting-lines"], en("/dilme-hatlari")),
