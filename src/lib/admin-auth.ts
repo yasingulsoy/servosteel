@@ -60,6 +60,10 @@ export async function kimlikSemasiKur(): Promise<boolean> {
       karma       TEXT NOT NULL,
       olusturuldu TIMESTAMPTZ NOT NULL DEFAULT now()
     );
+    /* Rol: 'admin' kullanici acar, siler, baskasinin parolasini degistirir.
+       'kullanici' yalnizca talepleri isler ve KENDI parolasini degistirir.
+       Varsayilan 'kullanici' -- yeni hesap yetkisiz dogar, yetki bilincli verilir. */
+    ALTER TABLE yoneticiler ADD COLUMN IF NOT EXISTS rol TEXT NOT NULL DEFAULT 'kullanici';
     CREATE TABLE IF NOT EXISTS ayarlar (
       anahtar TEXT PRIMARY KEY,
       deger   TEXT NOT NULL
@@ -110,23 +114,59 @@ export async function panelAcik(): Promise<boolean> {
   return Number(r?.[0]?.adet ?? 0) > 0;
 }
 
-/** Kullanıcı ekler ya da parolasını değiştirir. Betikten çağrılır. */
-export async function yoneticiKur(kullanici: string, parola: string) {
+/**
+ * YENİ kullanıcı ekler; ad alınmışsa dokunmaz ve `false` döner.
+ *
+ * Eskiden var olanın parolasını sessizce değiştiriyordu. Ad yanlış
+ * yazıldığında yeni hesap açılıyor, doğru yazıldığında başkasının parolası
+ * uyarısız eziliyordu. Parola değiştirmek artık ayrı iş: `parolaAta`.
+ */
+export async function yoneticiEkle(kullanici: string, parola: string): Promise<boolean> {
   await kimlikSemasiKur();
-  const karma = await parolaKarmala(parola);
-  await sorgu(
+  const r = await sorgu<{ id: number }>(
     `INSERT INTO yoneticiler (kullanici, karma) VALUES ($1, $2)
-     ON CONFLICT (kullanici) DO UPDATE SET karma = EXCLUDED.karma`,
-    [kullanici, karma]
+     ON CONFLICT (kullanici) DO NOTHING RETURNING id`,
+    [kullanici, await parolaKarmala(parola)]
   );
+  return (r?.length ?? 0) > 0;
+}
+
+/**
+ * Var olan kullanıcıya yeni parola verir — mevcut parola SORULMADAN.
+ * Bu yüzden yalnızca yönetici eyleminden çağrılır; kişinin kendi parolası
+ * `parolaDegistir` ile değişir.
+ */
+export async function parolaAta(kullanici: string, parola: string): Promise<boolean> {
+  const r = await sorgu<{ id: number }>(
+    `UPDATE yoneticiler SET karma = $1 WHERE kullanici = $2 RETURNING id`,
+    [await parolaKarmala(parola), kullanici]
+  );
+  return (r?.length ?? 0) > 0;
+}
+
+/**
+ * Kullanıcının rolü. Env yoluyla giren kullanıcı (ADMIN_USER) admin sayılır —
+ * o yol veritabanına erişilemediğinde panele girmek için var, kısıtlanması
+ * anlamsız olurdu.
+ */
+export async function rolu(kullanici: string): Promise<"admin" | "kullanici" | null> {
+  if (process.env.ADMIN_USER?.trim() && process.env.ADMIN_USER.trim() === kullanici) {
+    return "admin";
+  }
+  await kimlikSemasiKur();
+  const r = await sorgu<{ rol: string }>(
+    `SELECT rol FROM yoneticiler WHERE kullanici = $1`, [kullanici]
+  );
+  const rol = r?.[0]?.rol;
+  return rol === "admin" ? "admin" : rol ? "kullanici" : null;
 }
 
 /** Panel kullanıcılarını listeler (karma DÖNMEZ). */
 export async function yoneticiler() {
   await kimlikSemasiKur();
   return (
-    (await sorgu<{ id: number; kullanici: string; olusturuldu: string }>(
-      `SELECT id, kullanici, olusturuldu FROM yoneticiler ORDER BY id`
+    (await sorgu<{ id: number; kullanici: string; olusturuldu: string; rol: string }>(
+      `SELECT id, kullanici, olusturuldu, rol FROM yoneticiler ORDER BY id`
     )) ?? []
   );
 }
@@ -148,6 +188,10 @@ export async function yoneticiSil(kullanici: string): Promise<string | null> {
  * Mevcut parola SORULUYOR. Sormasaydık, çalınmış bir oturum çerezi olan
  * biri parolayı değiştirip asıl sahibi dışarıda bırakabilirdi; çerez 12
  * saat geçerli ve panel internete açık.
+ *
+ * Parola değişince eski çerezler geçersizleşir (bkz. `oturum`) — bu
+ * cihazdaki oturum düşmesin diye çerez yeni parmak iziyle yeniden kuruluyor.
+ * Bu yüzden yalnızca sunucu eyleminden çağrılabilir.
  */
 export async function parolaDegistir(
   kullanici: string,
@@ -163,13 +207,59 @@ export async function parolaDegistir(
   if (!(await parolaDogru(mevcut, karma))) return "Mevcut parola hatalı.";
   if (yeni.length < 8) return "Yeni parola en az 8 karakter olmalı.";
   if (yeni === mevcut) return "Yeni parola eskisiyle aynı.";
-  await sorgu(`UPDATE yoneticiler SET karma = $1 WHERE kullanici = $2`,
-    [await parolaKarmala(yeni), kullanici]);
+  const yeniKarma = await parolaKarmala(yeni);
+  await sorgu(`UPDATE yoneticiler SET karma = $1 WHERE kullanici = $2`, [yeniKarma, kullanici]);
+  await cerezKur(kullanici, yeniKarma);
   return null;
 }
 
 function imzala(veri: string, gizli: string): string {
   return createHmac("sha256", gizli).update(veri).digest("hex");
+}
+
+function esit(a: string, b: string): boolean {
+  return a.length === b.length && timingSafeEqual(Buffer.from(a), Buffer.from(b));
+}
+
+/** Kullanıcının kayıtlı parola karması; env kullanıcısıysa env'deki. */
+async function kayitliKarma(kullanici: string): Promise<string | null> {
+  const envKullanici = process.env.ADMIN_USER?.trim();
+  const envKarma = process.env.ADMIN_PASSWORD_HASH?.trim();
+  if (envKullanici && envKarma && envKullanici === kullanici) return envKarma;
+  const r = await sorgu<{ karma: string }>(
+    `SELECT karma FROM yoneticiler WHERE kullanici = $1`,
+    [kullanici]
+  );
+  return r?.[0]?.karma ?? null;
+}
+
+/**
+ * Çereze konan parola parmak izi. Parola değişince ya da kullanıcı
+ * silinince eski çerezin geçmemesi bunun sayesinde.
+ *
+ * Olmasaydı çerez yalnızca "kullanıcı adı + bitiş" taşırdı: yöneticinin
+ * sildiği ya da parolasını değiştirdiği kişi, elindeki oturumla 12 saat
+ * daha talepleri görmeye devam ederdi. Karmanın kendisi değil HMAC'i
+ * konuyor — çerezden karma hakkında hiçbir şey okunamaz.
+ */
+function parmakIzi(karma: string, gizli: string): string {
+  return imzala(`parola:${karma}`, gizli).slice(0, 16);
+}
+
+async function cerezKur(kullanici: string, karma: string): Promise<boolean> {
+  const gizli = await gizliAnahtar();
+  if (!gizli) return false;
+
+  const bitis = Math.floor(Date.now() / 1000) + SURE_SN;
+  const govde = `${kullanici}.${bitis}.${parmakIzi(karma, gizli)}`;
+  (await cookies()).set(CEREZ, `${govde}.${imzala(govde, gizli)}`, {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge: SURE_SN,
+  });
+  return true;
 }
 
 /**
@@ -182,44 +272,23 @@ const SAHTE_KARMA =
   "scrypt:" + "0".repeat(32) + ":" + "0".repeat(128);
 
 export async function girisYap(kullanici: string, parola: string): Promise<boolean> {
-  let karma: string | null = null;
-
-  const envKullanici = process.env.ADMIN_USER?.trim();
-  const envKarma = process.env.ADMIN_PASSWORD_HASH?.trim();
-  if (envKullanici && envKarma && envKullanici === kullanici) {
-    karma = envKarma;
-  } else {
-    const r = await sorgu<{ karma: string }>(
-      `SELECT karma FROM yoneticiler WHERE kullanici = $1`,
-      [kullanici]
-    );
-    karma = r?.[0]?.karma ?? null;
-  }
-
+  const karma = await kayitliKarma(kullanici);
   const tamam = await parolaDogru(parola, karma ?? SAHTE_KARMA);
   if (!karma || !tamam) return false;
-
-  const gizli = await gizliAnahtar();
-  if (!gizli) return false;
-
-  const bitis = Math.floor(Date.now() / 1000) + SURE_SN;
-  const govde = `${kullanici}.${bitis}`;
-  const cerez = await cookies();
-  cerez.set(CEREZ, `${govde}.${imzala(govde, gizli)}`, {
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    maxAge: SURE_SN,
-  });
-  return true;
+  return cerezKur(kullanici, karma);
 }
 
 export async function cikisYap() {
   (await cookies()).delete(CEREZ);
 }
 
-/** Geçerli oturumdaki kullanıcı adı, yoksa `null`. */
+/**
+ * Geçerli oturumdaki kullanıcı adı, yoksa `null`.
+ *
+ * Çerez: `kullanici.bitis.parmakizi.imza`. SAĞDAN ayrıştırılıyor, çünkü
+ * kullanıcı adında nokta olabilir. Önceki sürüm soldan bölüyordu:
+ * "ali.veli" adlı kullanıcının oturumu "ali" olarak okunurdu.
+ */
 export async function oturum(): Promise<string | null> {
   const ham = (await cookies()).get(CEREZ)?.value;
   if (!ham) return null;
@@ -227,20 +296,19 @@ export async function oturum(): Promise<string | null> {
   const gizli = await gizliAnahtar();
   if (!gizli) return null;
 
-  const son = ham.lastIndexOf(".");
-  if (son < 0) return null;
-  const govde = ham.slice(0, son);
-  const imza = ham.slice(son + 1);
+  const parca = ham.split(".");
+  if (parca.length < 4) return null;
+  const imza = parca.pop()!;
+  if (!esit(imza, imzala(parca.join("."), gizli))) return null;
 
-  const beklenen = imzala(govde, gizli);
-  if (
-    imza.length !== beklenen.length ||
-    !timingSafeEqual(Buffer.from(imza), Buffer.from(beklenen))
-  ) {
+  const parmak = parca.pop()!;
+  const bitis = Number(parca.pop());
+  const kullanici = parca.join(".");
+  if (!kullanici || !Number.isFinite(bitis) || bitis < Math.floor(Date.now() / 1000)) {
     return null;
   }
 
-  const [kullanici, bitisStr] = govde.split(".");
-  if (Number(bitisStr) < Math.floor(Date.now() / 1000)) return null;
-  return kullanici || null;
+  const karma = await kayitliKarma(kullanici);
+  if (!karma || !esit(parmak, parmakIzi(karma, gizli))) return null;
+  return kullanici;
 }

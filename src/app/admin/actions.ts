@@ -6,9 +6,11 @@ import {
   girisYap,
   cikisYap,
   oturum,
-  yoneticiKur,
+  yoneticiEkle,
+  parolaAta,
   yoneticiSil,
   parolaDegistir,
+  rolu,
 } from "@/lib/admin-auth";
 import {
   DURUMLAR,
@@ -31,6 +33,20 @@ import {
 async function yetki(): Promise<string> {
   const k = await oturum();
   if (!k) throw new Error("yetkisiz");
+  return k;
+}
+
+/**
+ * Yalnızca ADMIN rolü geçer. Kullanıcı açmak, silmek ve başkasının parolasını
+ * değiştirmek buradan geçer.
+ *
+ * Kontrol SUNUCUDA, çünkü arayüzdeki "Kullanıcılar" menüsünü gizlemek
+ * güvenlik değil: sunucu eylemi doğrudan POST ile çağrılabiliyor. Menüyü
+ * görmeyen bir kullanıcı eylemi yine de tetikleyebilirdi.
+ */
+async function adminYetkisi(): Promise<string> {
+  const k = await yetki();
+  if ((await rolu(k)) !== "admin") throw new Error("bu işlem yalnızca yönetici için");
   return k;
 }
 
@@ -116,29 +132,69 @@ export async function silEylemi(form: FormData) {
 
 /* ------------------------------------------------------- kullanıcılar */
 
+/** Form eylemlerinin sonucu: tamam mı, ekranda ne yazacak. */
+export type EylemSonucu = { tamam: boolean; mesaj: string } | null;
+
 /**
- * Kullanıcı ekler ya da var olanın parolasını değiştirir.
+ * Yeni kullanıcı ekler. Ad alınmışsa EZMEZ — parola değiştirmek listedeki
+ * ayrı tuşun işi.
  *
  * Parola en az 8 karakter. Panel canlı sitede duruyor ve kullanıcı adı
  * tahmin edilebilir; tek koruma parolanın kendisi.
  */
-export async function kullaniciEkleEylemi(_onceki: string | null, form: FormData) {
-  await yetki();
+export async function kullaniciEkleEylemi(
+  _onceki: EylemSonucu,
+  form: FormData
+): Promise<EylemSonucu> {
+  await adminYetkisi();
   const kullanici = metin(form.get("kullanici"), 60).toLowerCase();
   const parola = metin(form.get("parola"), 200);
 
   if (!/^[a-z0-9._-]{3,60}$/.test(kullanici)) {
-    return "Kullanıcı adı 3-60 karakter olmalı; harf, rakam, nokta, tire, alt çizgi.";
+    return {
+      tamam: false,
+      mesaj: "Kullanıcı adı 3-60 karakter olmalı; harf, rakam, nokta, tire, alt çizgi.",
+    };
   }
-  if (parola.length < 8) return "Parola en az 8 karakter olmalı.";
+  if (parola.length < 8) return { tamam: false, mesaj: "Parola en az 8 karakter olmalı." };
 
-  await yoneticiKur(kullanici, parola);
+  if (!(await yoneticiEkle(kullanici, parola))) {
+    return {
+      tamam: false,
+      mesaj: `"${kullanici}" zaten var. Parolasını listeden değiştirebilirsiniz.`,
+    };
+  }
   revalidatePath("/admin/kullanicilar");
-  return null;
+  return { tamam: true, mesaj: `"${kullanici}" eklendi.` };
+}
+
+/**
+ * Yönetici, başka bir kullanıcıya yeni parola verir.
+ *
+ * Kendine UYGULANMAZ: kendi parolası Profil'den, mevcut parola sorularak
+ * değişir. Buradan izin verseydik, açık kalmış bir yönetici oturumunu ele
+ * geçiren biri parolayı değiştirip asıl sahibi dışarıda bırakabilirdi.
+ */
+export async function parolaVerEylemi(
+  _onceki: EylemSonucu,
+  form: FormData
+): Promise<EylemSonucu> {
+  const ben = await adminYetkisi();
+  const kullanici = metin(form.get("kullanici"), 60);
+  const parola = metin(form.get("parola"), 200);
+
+  if (kullanici === ben) {
+    return { tamam: false, mesaj: "Kendi parolanızı Profil sayfasından değiştirin." };
+  }
+  if (parola.length < 8) return { tamam: false, mesaj: "Parola en az 8 karakter olmalı." };
+  if (!(await parolaAta(kullanici, parola))) {
+    return { tamam: false, mesaj: "Kullanıcı bulunamadı." };
+  }
+  return { tamam: true, mesaj: "Parola değişti. Kişi girdikten sonra Profil'den kendi parolasını belirleyebilir." };
 }
 
 export async function kullaniciSilEylemi(_onceki: string | null, form: FormData) {
-  const ben = await yetki();
+  const ben = await adminYetkisi();
   const kullanici = metin(form.get("kullanici"), 60);
   /* Kendini silmek oturumu geçersiz kılmaz ama bir sonraki girişte
      kilitlenirsin — baştan engelliyoruz. */

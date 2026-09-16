@@ -9,6 +9,7 @@ import {
   olaySayilari,
   semaKur,
   talepler,
+  type Durum,
   type Talep,
 } from "@/lib/leads-db";
 import { TalepEkleKutusu } from "./talep-ekle";
@@ -63,8 +64,12 @@ export default async function AdminSayfasi({
   const gercek = toplam - Number(adet["spam"] ?? 0);
 
   return (
-    <Kabuk aktif="talepler" kullanici={kullanici}>
-    <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-10">
+    <Kabuk
+      aktif="talepler"
+      durum={sp.durum && DURUMLAR.includes(sp.durum as Durum) ? sp.durum : "tumu"}
+      kullanici={kullanici}
+    >
+    <main>
       <header>
         <h1 className="font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">
           Talepler
