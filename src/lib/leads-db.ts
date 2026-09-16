@@ -100,8 +100,14 @@ export async function semaKur(): Promise<boolean> {
       tur          TEXT NOT NULL,
       yol          TEXT NOT NULL DEFAULT '',
       dil          TEXT NOT NULL DEFAULT '',
-      ulke         TEXT NOT NULL DEFAULT ''
+      ulke         TEXT NOT NULL DEFAULT '',
+      /* 'beacon' = siteden canli geldi · 'ga4' = GA4'ten aktarildi.
+         Beacon 2026-09-15'te yayina girdi; oncesindeki tiklamalar yalnizca
+         GA4'te vardi ve panelde 1/1 gorunuyordu. O tarihten ONCESI GA4'ten
+         aktarildi, SONRASI beacon'dan geliyor — sinir tek, cift sayim yok. */
+      kaynak       TEXT NOT NULL DEFAULT 'beacon'
     );
+    ALTER TABLE olaylar ADD COLUMN IF NOT EXISTS kaynak TEXT NOT NULL DEFAULT 'beacon';
     CREATE INDEX IF NOT EXISTS olaylar_olusturuldu_idx ON olaylar (olusturuldu DESC);
     CREATE INDEX IF NOT EXISTS olaylar_tur_idx ON olaylar (tur);
   `);
