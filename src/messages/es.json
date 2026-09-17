@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Desbobinadoras Mecánicas",
-          "metaTitle": "Desbobinadora Mecánica — 500-2.500 kg",
-          "meta": "Desbobinadoras mecánicas de 500 a 2.500 kg: ancho de banda 30-500 mm, sujeción del núcleo por mandril, control de velocidad y sistema de freno.",
+          "metaTitle": "Desbobinadora Mecánica — 500-4.000 kg",
+          "meta": "Desbobinadoras mecánicas de 500 a 4.000 kg: ancho de banda 30-1.200 mm, sujeción del núcleo por mandril, control de velocidad y sistema de freno.",
           "short": "Solución económica para bobinas ligeras y medias; mandril mecánico.",
-          "hero": "Nuestras desbobinadoras mecánicas soportan bobinas de 500 kg a 2.500 kg. El núcleo se sujeta mediante mandril; el control de velocidad y el sistema de freno son de serie y el desbobinado puede hacerse en ambos sentidos.",
+          "hero": "Nuestras desbobinadoras mecánicas soportan bobinas de 500 kg a 4.000 kg. El núcleo se sujeta mediante mandril; el control de velocidad y el sistema de freno son de serie y el desbobinado puede hacerse en ambos sentidos.",
           "table": {
             "title": "Capacidad, ancho y diámetro interior",
             "head": [
@@ -1834,9 +1834,9 @@
       "rulo-acicilar": {
         "name": "Desbobinadoras",
         "metaTitle": "Desbobinadoras: hidráulicas 6-20 t, mecánicas 500-4.000 kg",
-        "short": "Hidráulicas de 6-20 t y mecánicas de 500-2.500 kg.",
+        "short": "Hidráulicas de 6-20 t y mecánicas de 500-4.000 kg.",
         "hero": "El primer eslabón de toda línea: desbobinadoras hidráulicas y mecánicas que sostienen la bobina con seguridad y la desenrollan con tensión controlada. Se proyectan según capacidad, ancho de chapa y nivel de automatización.",
-        "meta": "Desbobinadoras hidráulicas (6-20 t) y mecánicas (500-2.500 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
+        "meta": "Desbobinadoras hidráulicas (6-20 t) y mecánicas (500-4.000 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
         "features": [
           {
             "title": "Expansión hidráulica del mandril",
@@ -1855,7 +1855,7 @@
         "faq": [
           {
             "q": "¿Cuál es la diferencia entre desbobinadoras hidráulicas y mecánicas?",
-            "a": "La serie mecánica maneja bobinas de 500–2500 kg con mandril apretado por volante; la hidráulica llega a 6–20 toneladas con expansión de mandril y freno hidráulicos. Con bobinas pesadas y líneas rápidas, la hidráulica es la opción segura."
+            "a": "La serie mecánica maneja bobinas de 500–2500 kg con mandril apretado por volante, y los modelos de 3000 y 4000 kg con mandril cónico; la hidráulica llega a 6–20 toneladas con expansión de mandril y freno hidráulicos. Con bobinas pesadas y líneas rápidas, la hidráulica es la opción segura."
           },
           {
             "q": "¿Qué capacidad debo elegir?",
@@ -2372,7 +2372,7 @@
           "text": "Rodillos y juegos de cuchillas de larga vida significan que hay que fabricar menos repuestos. El diagnóstico remoto, por su parte, elimina buena parte de los casos que exigirían un desplazamiento: cada vuelo y cada viaje por carretera que no se hace es una emisión realmente ahorrada."
         }
       ],
-      "calcNote": "Puede ver su propia merma con sus medidas en la <calc>calculadora de rendimiento de corte</calc>. Hemos reunido seis vías concretas para reducirla en <article>un artículo aparte</article> — medida sobre el tonelaje anual, esta partida es mayor que el precio de la propia línea en la mayoría de plantas.",
+      "calcNote": "Puede ver su propia merma con sus medidas en la <calc>calculadora de rendimiento de corte</calc>. Hemos reunido seis vías concretas para reducirla en <article>un artículo aparte</article> — la línea se paga una vez; la merma, cada año.",
       "proofTitle": "Digitalización: un sistema en marcha, no una afirmación",
       "proofText": "Podemos describir la captura de datos y el reporte como un sistema instalado en la línea, no como un objetivo. Los vídeos siguientes muestran el reporte de producción sobre el HMI y una línea de perfil estructural en marcha.",
       "goalsEyebrow": "2026 y más allá",

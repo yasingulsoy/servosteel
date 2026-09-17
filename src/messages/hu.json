@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Mechanikus Letekercselők",
-          "metaTitle": "Mechanikus Letekercselő — 500-2.500 kg",
-          "meta": "Mechanikus letekercselők 500-2.500 kg között: 30-500 mm szalagszélesség, tüskés magszorítás, fordulatszám-szabályozás és fékbetétes rendszer.",
+          "metaTitle": "Mechanikus Letekercselő — 500-4.000 kg",
+          "meta": "Mechanikus letekercselők 500-4.000 kg között: 30-1.200 mm szalagszélesség, tüskés magszorítás, fordulatszám-szabályozás és fékbetétes rendszer.",
           "short": "Gazdaságos megoldás könnyű és közepes tekercsekhez; mechanikus tüske.",
-          "hero": "Mechanikus letekercselőink 500 kg-tól 2.500 kg-ig bírnak tekercset. A magot tüske szorítja; a fordulatszám-szabályozás és a fékbetétes rendszer alapfelszereltség, a letekercselés mindkét irányban lehetséges.",
+          "hero": "Mechanikus letekercselőink 500 kg-tól 4.000 kg-ig bírnak tekercset. A magot tüske szorítja; a fordulatszám-szabályozás és a fékbetétes rendszer alapfelszereltség, a letekercselés mindkét irányban lehetséges.",
           "table": {
             "title": "Kapacitás, szélesség és belső átmérő",
             "head": [
@@ -1834,9 +1834,9 @@
       "rulo-acicilar": {
         "name": "Lecsévélők",
         "metaTitle": "Lecsévélők: hidraulikus 6-20 t, mechanikus 500-4000 kg",
-        "short": "Hidraulikus 6-20 t, mechanikus 500-2.500 kg.",
+        "short": "Hidraulikus 6-20 t, mechanikus 500-4.000 kg.",
         "hero": "Minden sor első láncszeme: hidraulikus és mechanikus lecsévélők, amelyek biztonságosan tartják a tekercset és szabályozott feszültséggel csévélik le. Kapacitásra, lemezszélességre és automatizáltsági szintre tervezve.",
-        "meta": "Hidraulikus (6-20 t) és mechanikus (500-2.500 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
+        "meta": "Hidraulikus (6-20 t) és mechanikus (500-4.000 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
         "features": [
           {
             "title": "Hidraulikus tüskefeszítés",
@@ -1855,7 +1855,7 @@
         "faq": [
           {
             "q": "Mi a különbség a hidraulikus és a mechanikus lecsévélő között?",
-            "a": "A mechanikus széria 500–2500 kg-os tekercseket hordoz kézikerékkel feszített tüskén; a hidraulikus 6–20 tonnáig terjed, hidraulikus tüsketágítással és fékkel. Nehéz tekercsnél és gyors soron a hidraulikus a biztonságos választás."
+            "a": "A mechanikus széria 500–2500 kg-os tekercseket hordoz kézikerékkel feszített tüskén, a 3000 és 4000 kg-os modellek kúpos tüskén; a hidraulikus 6–20 tonnáig terjed, hidraulikus tüsketágítással és fékkel. Nehéz tekercsnél és gyors soron a hidraulikus a biztonságos választás."
           },
           {
             "q": "Mekkora kapacitást válasszak?",
@@ -2372,7 +2372,7 @@
           "text": "A hosszú élettartamú görgők és késkészletek azt jelentik, hogy kevesebb pótalkatrészt kell legyártani. A távdiagnosztika pedig kiveszi azoknak az eseteknek a nagy részét, amelyek különben kiszállást igényelnének: minden meg nem tett repülőút és közúti út valóban megtakarított kibocsátás."
         }
       ],
-      "calcNote": "Saját méreteivel a saját hulladékarányát a <calc>hasítási kihozatal-kalkulátorban</calc> láthatja. Hat konkrét módot a csökkentésére <article>külön írásban</article> gyűjtöttünk össze — éves tonnára mérve ez a tétel a legtöbb üzemben nagyobb, mint magának a sornak az ára.",
+      "calcNote": "Saját méreteivel a saját hulladékarányát a <calc>hasítási kihozatal-kalkulátorban</calc> láthatja. Hat konkrét módot a csökkentésére <article>külön írásban</article> gyűjtöttünk össze — a sort egyszer fizetik ki, a hulladékot minden évben.",
       "proofTitle": "Digitalizáció: működő rendszer, nem állítás",
       "proofText": "Az adatgyűjtést és a riportálást a soron telepített rendszerként tudjuk leírni, nem célként. Az alábbi videók a HMI-n keresztüli gyártási riportálást és egy működő tartóprofil-sort mutatnak.",
       "goalsEyebrow": "2026 és azon túl",

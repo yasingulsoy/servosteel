@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["tekercsszámítás", "lemezfeldolgozás", "sorválasztás"]
+updated: "2026-09-17"
+summary: "A tekercssúly a gyűrűterület, a szélesség és a sűrűség szorzata: Súly (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000, ahol az OD, ID és W milliméterben, a ρ g/cm³-ben értendő. A szalaghossz a gyűrűterület osztva a lemezvastagsággal. Egy 1 400 mm külső és 508 mm belső átmérőjű, 1 250 mm széles, 2 mm vastag acéltekercs például nagyjából 13,1 tonna, és kb. 668 m szalagot tartalmaz."
+faq:
+  - q: "Miért osztunk egymillióval a tekercssúly képletében?"
+    a: "Mert az OD, ID és W milliméterben, a ρ g/cm³-ben szerepel, és ez a mértékegység-tényező alakítja a mm³ és g/cm³ keverékét kilogrammá. Ezt hagyják ki a legtöbbször, a mértékegységek keverése pedig, például a szélesség méterben való megadása, ezerszer kisebb eredményt ad."
+  - q: "Mennyi egy azonos méretű alumíniumtekercs súlya?"
+    a: "Az alumínium sűrűsége 2,70 g/cm³, az acélé 7,85, így azonos geometriájú tekercs az acél érték 34 %-át adja, nagyjából a harmadát. A lecsévélő kapacitását ezért félrevezető az anyag figyelembevétele nélkül választani."
+  - q: "Hogyan kapom meg a szalaghosszt, ha csak a tekercs súlyát ismerem?"
+    a: "Az L (m) = Súly (kg) / (W (m) × t (m) × ρ (kg/m³)) képlettel; acélra ρ = 7 850 kg/m³. A kidolgozott példa 13 116 kg-os, 1,25 m széles és 2 mm vastag tekercsénél az eredmény ugyanúgy kb. 668 m."
+  - q: "Melyek a leggyakoribb hibák a tekercsszámításban?"
+    a: "A mag figyelmen kívül hagyása, a névleges vastagságban való bizalom és a mértékegységek keverése. Egy 508 mm-es mag 1 400 mm-es tekercsen a keresztmetszet mintegy 13 %-a. A lemeztűrés elérheti a ±5 %-ot, így a 2 mm helyett valójában 2,1 mm-es anyag 5 %-kal rövidebb: 668 m helyett 636 m."
 ---
 
 A tekercs súlyának és a benne lévő szalag hosszának ismerete két döntést befolyásol közvetlenül: **milyen kapacitású lecsévélő kell**, és **hány órát bír egy tekercs**. Egyiket sem lehet találgatni. Szerencsére mindkettő egyetlen geometriai tényből következik, és kézzel kiszámítható.
@@ -63,13 +74,13 @@ Tegyük fel, hogy ez a tekercsünk:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1 960 000 − 258 064)
-A = π/4 × 1 701 936 ≈ 1 336 663 mm²
+A = π/4 × 1 701 936 ≈ 1 336 697 mm²
 ```
 
 **2. Súly**
 
 ```
-1 336 663 × 1 250 × 7,85 / 1 000 000 ≈ 13 116 kg
+1 336 697 × 1 250 × 7,85 / 1 000 000 ≈ 13 116 kg
 ```
 
 Nagyjából **13,1 tonna**. Ehhez a tekercshez 15 tonnás lecsévélő kell; a 12 tonnás széria nem elég.
@@ -77,7 +88,7 @@ Nagyjából **13,1 tonna**. Ehhez a tekercshez 15 tonnás lecsévélő kell; a 1
 **3. Szalaghossz**
 
 ```
-L = 1 336 663 / 2 = 668 331 mm ≈ 668 m
+L = 1 336 697 / 2 ≈ 668 349 mm ≈ 668 m
 ```
 
 ## Hatás a sorválasztásra
@@ -97,7 +108,7 @@ Egy 668 m-es tekercs ezen a soron kb. **1,1 órát** bír: műszakonként minteg
 
 **A névleges vastagságban bízni.** A lemeztűrés elérheti a ±5 %-ot. Mivel a hossz **fordítottan** arányos a vastagsággal, a 2 mm helyett valójában 2,1 mm-es anyag 5 %-kal rövidebb: 668 m helyett 636 m.
 
-**Mértékegységet keverni.** A képletben minden hossz milliméterben szerepeljen. A szélességet méterben megadni ezerszeresére növeli az eredményt; ez a hiba az ajánlati szakaszban rendszeresen felbukkan.
+**Mértékegységet keverni.** A képletben minden hossz milliméterben szerepeljen. A szélesség méterben való megadása ezerszer kisebb eredményt ad; ez a hiba az ajánlati szakaszban rendszeresen felbukkan.
 
 ## Visszafelé: súlyból hosszra
 

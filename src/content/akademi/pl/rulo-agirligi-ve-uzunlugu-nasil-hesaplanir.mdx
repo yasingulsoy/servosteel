@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["obliczenia kręgu", "obróbka blach", "dobór linii"]
+updated: "2026-09-17"
+summary: "Masa kręgu to pole pierścienia × szerokość × gęstość: Masa (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000, przy OD, ID i W w milimetrach oraz ρ w g/cm³. Długość taśmy to pole pierścienia podzielone przez grubość blachy. Przykładowo stalowy krąg o średnicy zewnętrznej 1400 mm, średnicy rdzenia 508 mm, szerokości 1250 mm i grubości 2 mm waży około 13,1 tony i zawiera około 668 m taśmy."
+faq:
+  - q: "Dlaczego we wzorze na masę kręgu dzieli się przez 1 000 000?"
+    a: "To współczynnik jednostek: przy OD, ID i W w milimetrach oraz ρ w g/cm³ przelicza mieszankę mm³ i g/cm³ na kilogramy. To szczegół pomijany najczęściej, a każda długość we wzorze musi być w milimetrach; wpisanie szerokości w metrach zaniża wynik tysiąckrotnie."
+  - q: "Ile waży krąg aluminiowy o tej samej geometrii?"
+    a: "Gęstość aluminium to 2,70 g/cm³ wobec 7,85 g/cm³ dla stali, więc krąg o identycznej geometrii wychodzi na 34 % wartości dla stali, czyli około jednej trzeciej. Dobór pojemności odwijaka bez uwzględnienia materiału jest zatem mylący."
+  - q: "Jak obliczyć długość taśmy, znając tylko masę kręgu?"
+    a: "Służy do tego wzór L (m) = Masa (kg) / (W (m) × t (m) × ρ (kg/m³)), gdzie dla stali ρ = 7850 kg/m³. Dla kręgu 13 116 kg o szerokości 1,25 m i grubości 2 mm wynik to znów około 668 m, co potwierdza spójność obliczenia."
+  - q: "Jakie błędy w obliczeniach kręgu zdarzają się najczęściej?"
+    a: "Pominięcie rdzenia, zaufanie grubości nominalnej i mieszanie jednostek. Rdzeń 508 mm to około 13 % przekroju kręgu 1400 mm, a przy tolerancji blachy sięgającej ±5 % materiał mierzący 2,1 mm zamiast 2 mm daje 5 % mniej taśmy: 636 m zamiast 668 m."
 ---
 
 Znajomość masy kręgu i długości zawartej w nim taśmy wpływa bezpośrednio na dwie decyzje: **jakiej pojemności odwijak jest potrzebny** oraz **ile godzin wystarczy jeden krąg**. Żadnej z nich nie da się oszacować na oko. Na szczęście obie wynikają z jednego faktu geometrycznego i można je policzyć ręcznie.
@@ -63,13 +74,13 @@ Załóżmy taki krąg:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1 960 000 − 258 064)
-A = π/4 × 1 701 936 ≈ 1 336 663 mm²
+A = π/4 × 1 701 936 ≈ 1 336 697 mm²
 ```
 
 **2. Masa**
 
 ```
-1 336 663 × 1250 × 7,85 / 1 000 000 ≈ 13 116 kg
+1 336 697 × 1250 × 7,85 / 1 000 000 ≈ 13 116 kg
 ```
 
 Około **13,1 tony**. Ten krąg wymaga odwijaka 15-tonowego; seria 12-tonowa nie wystarczy.
@@ -77,7 +88,7 @@ Około **13,1 tony**. Ten krąg wymaga odwijaka 15-tonowego; seria 12-tonowa nie
 **3. Długość taśmy**
 
 ```
-L = 1 336 663 / 2 = 668 331 mm ≈ 668 m
+L = 1 336 697 / 2 ≈ 668 349 mm ≈ 668 m
 ```
 
 ## Wpływ na dobór linii
@@ -97,7 +108,7 @@ Krąg 668 m starcza na tej linii na około **1,1 godziny**: mniej więcej 7 zmia
 
 **Zaufanie grubości nominalnej.** Tolerancja blachy sięga ±5 %. Ponieważ długość jest **odwrotnie** proporcjonalna do grubości, materiał mierzący 2,1 mm zamiast 2 mm daje 5 % mniej: 636 m zamiast 668 m.
 
-**Mieszanie jednostek.** Każda długość we wzorze musi być w milimetrach. Wpisanie szerokości w metrach zwiększa wynik tysiąckrotnie; ten błąd regularnie pojawia się na etapie ofertowania.
+**Mieszanie jednostek.** Każda długość we wzorze musi być w milimetrach. Wpisanie szerokości w metrach zmniejsza wynik tysiąckrotnie; ten błąd regularnie pojawia się na etapie ofertowania.
 
 ## Obliczenie odwrotne: z masy na długość
 

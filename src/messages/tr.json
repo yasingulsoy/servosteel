@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Mekanik Rulo Açıcılar",
-          "metaTitle": "Mekanik Rulo Açıcı — 500-2.500 kg",
-          "meta": "500-2.500 kg kapasiteli mekanik rulo açıcılar: 30-500 mm sac genişliği, mandrenle göbek sıkma, hız kontrol ve fren balata sistemi.",
+          "metaTitle": "Mekanik Rulo Açıcı — 500-4.000 kg",
+          "meta": "500-4.000 kg kapasiteli mekanik rulo açıcılar: 30-1.200 mm sac genişliği, mandrenle göbek sıkma, hız kontrol ve fren balata sistemi.",
           "short": "Hafif ve orta rulolar için ekonomik çözüm; mekanik mandren.",
-          "hero": "Mekanik rulo açıcılarımız 500 kg'dan 2.500 kg'a kadar rulo taşır. Göbek sıkma mandrenle yapılır; hız kontrol ayarı ve fren balata sistemi standarttır, hat iki yöne açılabilir.",
+          "hero": "Mekanik rulo açıcılarımız 500 kg'dan 4.000 kg'a kadar rulo taşır. Göbek sıkma mandrenle yapılır; hız kontrol ayarı ve fren balata sistemi standarttır, hat iki yöne açılabilir.",
           "table": {
             "title": "Kapasite, genişlik ve iç çap",
             "head": [
@@ -1847,9 +1847,9 @@
       "rulo-acicilar": {
         "name": "Rulo Açıcılar",
         "metaTitle": "Rulo Açıcılar: Hidrolik 6-20 Ton, Mekanik 500-4.000 kg",
-        "short": "Hidrolik 6-20 ton, mekanik 500-2.500 kg rulo açma çözümleri.",
+        "short": "Hidrolik 6-20 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
         "hero": "Her hattın ilk halkası: ruloyu güvenle taşıyan, gerginliği kontrol ederek açan hidrolik ve mekanik açıcılar. Kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
-        "meta": "Hidrolik (6-20 ton) ve mekanik (500-2.500 kg) rulo açıcılar: pres besleme ve sac işleme hatları için müşteriye özel çözümler.",
+        "meta": "Hidrolik (6-20 ton) ve mekanik (500-4.000 kg) rulo açıcılar: pres besleme ve sac işleme hatları için müşteriye özel çözümler.",
         "features": [
           {
             "title": "Hidrolik mandren genişletme",
@@ -1868,7 +1868,7 @@
         "faq": [
           {
             "q": "Hidrolik ve mekanik rulo açıcı arasındaki fark nedir?",
-            "a": "Mekanik seri 500–2500 kg ruloları volanla sıkılan göbekle taşır; hidrolik seri 6–20 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo ve yüksek hat hızında güvenli seçim hidroliktir."
+            "a": "Mekanik seri 500–2500 kg ruloları volanla sıkılan göbekle taşır, 3000 ve 4000 kg modeller konik mandrenlidir; hidrolik seri 6–20 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo ve yüksek hat hızında güvenli seçim hidroliktir."
           },
           {
             "q": "Kaç ton kapasiteli açıcı seçmeliyim?",
@@ -2385,7 +2385,7 @@
           "text": "Uzun ömürlü merdane ve bıçak takımı, daha az yedek parça üretimi demektir. Uzaktan tanı ise sahaya gelinmesi gereken durumların önemli kısmını ortadan kaldırıyor: yapılmayan her uçuş ve her araç yolculuğu, gerçekten tasarruf edilmiş bir emisyondur."
         }
       ],
-      "calcNote": "Kendi ölçülerinizle fire oranınızı <calc>dilme verimi hesaplayıcısında</calc> görebilirsiniz. Fireyi düşürmenin altı somut yolunu <article>ayrı bir yazıda</article> topladık — yıllık tonaj üzerinden bakıldığında bu kalem çoğu tesiste hattın kendi fiyatından büyüktür.",
+      "calcNote": "Kendi ölçülerinizle fire oranınızı <calc>dilme verimi hesaplayıcısında</calc> görebilirsiniz. Fireyi düşürmenin altı somut yolunu <article>ayrı bir yazıda</article> topladık — hat bir kez ödenir, fire ise her yıl.",
       "proofTitle": "Dijitalleşme: iddia değil, çalışan sistem",
       "proofText": "Veri toplama ve raporlamayı bir hedef olarak değil, hatta kurulu bir sistem olarak anlatabiliyoruz. Aşağıdaki videolarda HMI üzerinden üretim raporlaması ve yapısal profil hattı çalışırken görünüyor.",
       "goalsEyebrow": "2026 ve sonrası",

@@ -5,6 +5,17 @@ date: "2026-07-30"
 author: "Servosteel Mühendislik"
 cover: "/gorseller/kalip-ve-merdane.jpg"
 tags: ["progresif kalıp", "servo besleyici", "pres besleme"]
+updated: "2026-09-17"
+summary: "Progresif kalıp için servo besleyici seçerken üç şey belirleyicidir: sistematik adım hatasının pilot pim boşluğunun altında kalması, besleyicinin tepe hızının presin açık penceresine yetmesi ve pilot bırakmanın ayarlanabilir olması. Doğru boyutlandırma için parça çizimi, kalıp adım boyu, istasyon sayısı ve presin dakikadaki strok sayısı gerekir."
+faq:
+  - q: "Progresif kalıpta en tehlikeli besleme hatası hangisidir?"
+    a: "Her vuruşta aynı yönde tekrarlanan sistematik hatadır. Sac her adımda 0,05 mm geride kalırsa on istasyonlu kalıpta toplam kayma 0,5 mm olur; pilot pimlerin toplayabileceği miktar aşılırsa pim kırılır."
+  - q: "60 mm adım ve 60 strok/dk yavaş bir besleme midir?"
+    a: "Ortalama hız yalnızca 3,6 m/dk'dır, ama besleyici bu adımı presin açık olduğu saniyenin küçük bir bölümünde atmak zorundadır. Seçim ortalamaya göre değil, ortalamanın kat kat üzerindeki anlık tepe hıza göre yapılır."
+  - q: "Pilot bırakma neden ayarlanabilir olmalı?"
+    a: "Pilot pimler şeridi son konumuna çektiği anda besleyici baskıyı açmalıdır; erken bırakmada şerit kayabilir, geç bırakmada pim ile besleyici birbirine karşı çalışır. Farklı kalıplarda pim girişi farklı açılarda olduğu için zamanlama ayarlanabilmelidir."
+  - q: "Servosteel servo sürücüler hangi sac aralığında çalışır?"
+    a: "0,4–4,0 mm kalınlık ve 1.600 mm'ye kadar genişlikte çalışır. Serbest besleme hızı 35 m/dk, besleme silindirleri 2 × Ø85 mm'dir; 250 reçete saklanır ve pilot pim bırakma standarttır."
 ---
 
 Progresif kalıpta parça tek istasyonda bitmez: sac, her pres vuruşunda bir istasyon ilerler ve sırayla delinir, kesilir, bükülür. Bu yüzden kalıbın performansını belirleyen şey çoğu zaman kalıbın kendisi değil, **sacı ilerleten besleyicidir.** Adım birkaç yüzde milimetre kayarsa zımba merkezden çıkar, çapak başlar, en kötü ihtimalle kalıp zarar görür.

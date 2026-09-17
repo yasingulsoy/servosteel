@@ -496,6 +496,21 @@ siteleri; "scaffolding plank roll forming machine manufacturer" için NFL,
 merriam-webster. Aynı aramalar Google'da mantıklı sonuç verdi. **Bing sırası
 bu uçtan raporlanmaz**; ilk 5'e bakmadan "Bing'de yokuz" demek yanlış olurdu.
 
+**E.23 · Yazıdaki hata dokuz dilde birden yanlıştır.** 2026-09-17'de Akademi
+yazılarına kısa cevap ve SSS eklenirken her dili kendi metninden okuyan
+ajanlar şunları buldu: rulo ağırlığı yazısı "genişliği metre girmek sonucu bin
+kat büyütür" diyordu (küçültür); fire yazısı "1.250 yerine 1.240 mm rulo
+istemek aynı sonucu verir" diyordu (1.210 mm verir, 1.240'ta fire %3,2);
+π/4 × 1.701.936 = 1.336.697 iken 1.336.663 yazıyordu; dört yerde de kaynağı
+olmayan "çoğu tesiste fire hattın fiyatından büyüktür / fark ilk çeyrekte
+görülür" genellemesi vardı. Hepsi dokuz dilde aynıydı; çeviri hatayı birebir
+taşımıştı. **Kural:** yazıdaki her örnek hesap yeniden yapılır. "Çoğu tesiste"
+diye başlayan cümle ya hesapla gösterilir ya çıkarılır, çünkü asistanlar bu
+cümleleri Servosteel'in iddiası olarak alıntılıyor.
+**Araç:** `python scripts/akademi-sss-ekle.py <dil> <girdi.json> --kuru`.
+Gövdeye dokunmaz. Özet ve SSS'deki her sayının yazıda geçtiğini, özetin 25–90
+kelime, soruların 3–5 ve cevapların en fazla 70 kelime olduğunu denetler.
+
 ---
 
 ## Kapanmış işler

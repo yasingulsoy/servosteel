@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowLeft } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
@@ -107,8 +107,20 @@ export default async function AkademiPostPage({ params }: Props) {
   if (!post) notFound();
 
   const ui = getAkademiUi(locale);
+  const tCommon = await getTranslations({ locale, namespace: "common" });
   const df = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" });
   const toc = extractToc(post.content);
+  const url = `${SITE_URL}${localePath(locale as AppLocale, `/akademi/${slug}`)}`;
+
+  /* SSS bölümü içindekilere de girsin. Çapa, başlık metninden aynı slug
+     fonksiyonuyla üretilir; yazıda aynı adlı başlık varsa çakışmasın diye
+     sonuna ek alır. */
+  let faqId = "";
+  if (post.faq.length) {
+    const base = slugifyHeading(ui.faqTitle) || "faq";
+    faqId = toc.some((t) => t.id === base) ? `${base}-${toc.length}` : base;
+    toc.push({ level: 2, text: ui.faqTitle, id: faqId });
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -116,7 +128,8 @@ export default async function AkademiPostPage({ params }: Props) {
     headline: post.title,
     description: post.description,
     datePublished: post.date || undefined,
-    dateModified: post.date || undefined,
+    dateModified: post.updated || post.date || undefined,
+    abstract: post.summary,
     inLanguage: locale,
     author: { "@type": "Organization", name: post.author },
     publisher: {
@@ -125,12 +138,40 @@ export default async function AkademiPostPage({ params }: Props) {
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-full.png` },
     },
     image: post.cover ? `${SITE_URL}${post.cover}` : undefined,
-    mainEntityOfPage: `${SITE_URL}${localePath(locale as AppLocale, `/akademi/${slug}`)}`,
+    mainEntityOfPage: url,
+  };
+
+  /* SSS şeması yalnızca soru-cevap SAYFADA GÖRÜNÜYORSA basılır — aşağıdaki
+     bölüm aynı diziden çiziliyor, şema ile görünen metin ayrışamaz. */
+  const faqJsonLd = post.faq.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
+  const crumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: tCommon("home"), item: `${SITE_URL}${localePath(locale as AppLocale, "")}` },
+      { "@type": "ListItem", position: 2, name: ui.nav, item: `${SITE_URL}${localePath(locale as AppLocale, "/akademi")}` },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
   };
 
   return (
     <article className="pb-4">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbJsonLd) }} />
+      {faqJsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      )}
 
       <div className="mx-auto max-w-3xl px-4 pt-10 lg:pt-14">
         <Link href="/akademi" className="group inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
@@ -144,11 +185,32 @@ export default async function AkademiPostPage({ params }: Props) {
           <span>{post.author}</span>
           <span aria-hidden>·</span>
           {post.date && <time dateTime={post.date}>{df.format(new Date(post.date))}</time>}
+          {post.updated && post.updated !== post.date && (
+            <>
+              <span aria-hidden>·</span>
+              <span>
+                {ui.updated} <time dateTime={post.updated}>{df.format(new Date(post.updated))}</time>
+              </span>
+            </>
+          )}
           <span aria-hidden>·</span>
           <span>
             {post.readingMinutes} {ui.minRead}
           </span>
         </div>
+
+        {/* Kısa cevap. <aside> DEĞİL: okuma modu ve içerik ayıklayıcılar
+            aside'ı yan içerik sayıp atıyor — bu kutunun tek amacı ise
+            ayıklanıp alıntılanmak. Etiket metnin içinde, stil düşse de
+            "Kısa cevap: ..." diye okunur. */}
+        {post.summary && (
+          <div className="mt-7 rounded-2xl border border-accent/40 bg-accent/10 px-5 py-4 sm:px-6 sm:py-5">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-accent-ink">
+              {ui.shortAnswer}
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-ink sm:text-[17px]">{post.summary}</p>
+          </div>
+        )}
       </div>
 
       {post.cover && (
@@ -182,6 +244,20 @@ export default async function AkademiPostPage({ params }: Props) {
             components={makeMdxComponents()}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
           />
+
+          {post.faq.length > 0 && (
+            <section aria-labelledby={faqId}>
+              <h2 id={faqId} className="scroll-mt-28">
+                {ui.faqTitle}
+              </h2>
+              {post.faq.map((f) => (
+                <div key={f.q}>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
+              ))}
+            </section>
+          )}
         </div>
       </div>
 

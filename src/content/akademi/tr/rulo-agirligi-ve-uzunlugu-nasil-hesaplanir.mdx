@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Mühendislik"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["rulo hesabı", "sac işleme", "hat seçimi"]
+updated: "2026-09-17"
+summary: "Rulo ağırlığı halka alanı × genişlik × yoğunlukla bulunur: Ağırlık (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000; çaplar ve genişlik mm, yoğunluk g/cm³ cinsindendir. Şerit uzunluğu ise halka alanının sac kalınlığına bölünmesidir. Örneğin 1.400 mm dış çap, 508 mm göbek, 1.250 mm genişlik ve 2 mm kalınlıktaki çelik rulo yaklaşık 13,1 ton ve 668 metredir."
+faq:
+  - q: "Rulo ağırlığı formülündeki 1.000.000 neden var?"
+    a: "Çaplar ve genişlik milimetre, yoğunluk g/cm³ girildiği için sonuç bu birim katsayısıyla kilograma çevrilir. Bu bölme en sık atlanan ayrıntıdır; genişliği metre girmek ise sonucu bin kat küçük çıkarır."
+  - q: "Aynı ölçüdeki alüminyum rulo ne kadar gelir?"
+    a: "Alüminyumun yoğunluğu 2,70 g/cm³, çeliğinki 7,85 g/cm³'tür; aynı geometrideki alüminyum rulo çelik rulonun yaklaşık %34'ü kadar gelir. Açıcı kapasitesini malzemeye bakmadan seçmek bu yüzden yanıltıcıdır."
+  - q: "Ağırlık biliniyor ama çaplar bilinmiyorsa uzunluk nasıl bulunur?"
+    a: "L (m) = Ağırlık (kg) / (W (m) × t (m) × ρ (kg/m³)) formülü kullanılır; çelik için ρ = 7.850 kg/m³ alınır. 13.116 kg, 1,25 m genişlik ve 2 mm kalınlıkta sonuç yine yaklaşık 668 m çıkar."
+  - q: "Rulo hesabında en sık yapılan hatalar nelerdir?"
+    a: "Göbeği ihmal edip dolu silindir varsaymak, nominal kalınlığa güvenmek ve birim karıştırmak. Sac toleransı ±%5'e ulaşabilir; 2 mm yerine 2,1 mm gelen sacda uzunluk %5 kısalır."
 ---
 
 Rulo ağırlığını ve içinden çıkacak şerit uzunluğunu doğru bilmek, iki kararı doğrudan etkiler: **hangi kapasitede açıcı alacağınızı** ve **bir rulonun kaç saat üretim yapacağını**. İkisi de tahminle yürütülemez. Neyse ki her ikisi de tek bir geometrik gerçeğe dayanır ve elle hesaplanabilir.
@@ -63,13 +74,13 @@ Diyelim ki elimizde şu rulo var:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1.960.000 − 258.064)
-A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 ```
 
 **2. Ağırlık**
 
 ```
-1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
 Yani yaklaşık **13,1 ton**. Bu rulo için 15 tonluk bir açıcı gerekir; 12 tonluk seri yetmez.
@@ -77,7 +88,7 @@ Yani yaklaşık **13,1 ton**. Bu rulo için 15 tonluk bir açıcı gerekir; 12 t
 **3. Şerit uzunluğu**
 
 ```
-L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+L = 1.336.697 / 2 ≈ 668.349 mm ≈ 668 m
 ```
 
 ## Hesabın hat seçimine etkisi
@@ -97,7 +108,7 @@ Saatte:   10 × 60 = 600 m
 
 **Nominal kalınlığa güvenmek.** Sac toleransı ±%5'e ulaşabilir. Uzunluk kalınlığa **ters** orantılı olduğundan, 2 mm yerine gerçekte 2,1 mm gelen bir sacda uzunluk %5 kısalır — 668 m yerine 636 m.
 
-**Birim karıştırmak.** Formüldeki her uzunluk milimetre olmalıdır. Genişliği metre girmek sonucu bin katına çıkarır; bu hata teklif aşamasında sık görülür.
+**Birim karıştırmak.** Formüldeki her uzunluk milimetre olmalıdır. Genişliği metre girmek sonucu bin kat küçük çıkarır; bu hata teklif aşamasında sık görülür.
 
 ## Ters yönde hesap: ağırlıktan uzunluğa
 

@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["cálculo de bobina", "procesamiento de chapa", "selección de línea"]
+updated: "2026-09-17"
+summary: "El peso de una bobina es área de corona × ancho × densidad: Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, con OD, ID y W en milímetros y ρ en g/cm³. La longitud es el área de corona dividida por el espesor. Por ejemplo, una bobina de acero de 1.400 mm de diámetro exterior, núcleo de 508 mm, 1.250 mm de ancho y 2 mm de espesor pesa unas 13,1 toneladas y contiene unos 668 m de fleje."
+faq:
+  - q: "¿Por qué la fórmula del peso divide entre 1.000.000?"
+    a: "Con OD, ID y W en milímetros y ρ en g/cm³, esa división es el factor de unidades que convierte la mezcla de mm³ y g/cm³ en kilogramos, y es el detalle que más se olvida. Toda longitud de la fórmula debe ir en milímetros: introducir el ancho en metros falsea el resultado en un factor de mil."
+  - q: "¿Cuánto pesa una bobina de aluminio del mismo tamaño?"
+    a: "El aluminio tiene una densidad de 2,70 g/cm³ frente a 7,85 del acero, así que una bobina de geometría idéntica sale al 34 % del valor del acero, aproximadamente un tercio. Elegir la capacidad de la desbobinadora sin mirar el material induce a error."
+  - q: "¿Cómo obtengo la longitud del fleje si solo conozco el peso de la bobina?"
+    a: "Use L (m) = Peso (kg) / (W (m) × t (m) × ρ (kg/m³)), con ρ = 7.850 kg/m³ para el acero. Para 13.116 kg, 1,25 m de ancho y 2 mm de espesor, el resultado vuelve a ser unos 668 m."
+  - q: "¿Cuáles son los errores más frecuentes al calcular una bobina?"
+    a: "Ignorar el núcleo, fiarse del espesor nominal y mezclar unidades. La tolerancia de chapa alcanza ±5 %, y como la longitud es inversamente proporcional al espesor, un material que mide 2,1 mm en vez de 2 mm da un 5 % menos: 636 m en lugar de 668 m."
 ---
 
 Conocer el peso de una bobina y la longitud de fleje que contiene determina dos decisiones directas: **qué capacidad de desbobinadora necesita** y **cuántas horas rendirá una bobina**. Ninguna de las dos admite conjeturas. Por suerte ambas se derivan de un único hecho geométrico y pueden calcularse a mano.
@@ -63,13 +74,13 @@ Supongamos esta bobina:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1.960.000 − 258.064)
-A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 ```
 
 **2. Peso**
 
 ```
-1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
 Unas **13,1 toneladas**. Esta bobina exige una desbobinadora de 15 toneladas; la serie de 12 no basta.
@@ -77,7 +88,7 @@ Unas **13,1 toneladas**. Esta bobina exige una desbobinadora de 15 toneladas; la
 **3. Longitud de fleje**
 
 ```
-L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+L = 1.336.697 / 2 ≈ 668.349 mm ≈ 668 m
 ```
 
 ## Efecto en la elección de línea
@@ -97,7 +108,7 @@ Una bobina de 668 m dura unas **1,1 horas** en esa línea: unos 7 cambios de bob
 
 **Fiarse del espesor nominal.** La tolerancia de chapa alcanza ±5 %. Como la longitud es **inversamente** proporcional al espesor, un material que mide 2,1 mm en vez de 2 mm da un 5 % menos: 636 m en lugar de 668 m.
 
-**Mezclar unidades.** Toda longitud de la fórmula debe ir en milímetros. Introducir el ancho en metros multiplica el resultado por mil; este fallo aparece con regularidad en la fase de oferta.
+**Mezclar unidades.** Toda longitud de la fórmula debe ir en milímetros. Introducir el ancho en metros hace que el resultado sea mil veces menor; este fallo aparece con regularidad en la fase de oferta.
 
 ## Cálculo inverso: del peso a la longitud
 

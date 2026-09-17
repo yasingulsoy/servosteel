@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["Coilberechnung", "Bandverarbeitung", "Anlagenauswahl"]
+updated: "2026-09-17"
+summary: "Das Coilgewicht ist Ringfläche × Breite × Dichte: Gewicht (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, mit OD, ID und W in Millimetern und ρ in g/cm³. Die Bandlänge ist die Ringfläche geteilt durch die Blechdicke. Ein Stahlcoil mit 1.400 mm Außendurchmesser, 508 mm Kern, 1.250 mm Breite und 2 mm Dicke wiegt rund 13,1 Tonnen und enthält etwa 668 m Band."
+faq:
+  - q: "Warum wird in der Gewichtsformel durch 1.000.000 geteilt?"
+    a: "Weil OD, ID und W in Millimetern und ρ in g/cm³ eingesetzt werden: Die Division durch eine Million überführt diese Mischung aus mm³ und g/cm³ in Kilogramm. Sie ist das am häufigsten übersehene Detail; wer die Breite in Metern statt in Millimetern eingibt, verfälscht das Ergebnis um den Faktor tausend."
+  - q: "Wie viel wiegt ein Aluminiumcoil gleicher Geometrie?"
+    a: "Aluminium hat eine Dichte von 2,70 g/cm³, Stahl von 7,85 g/cm³. Ein Coil gleicher Geometrie kommt deshalb auf 34 % des Stahlwerts, also etwa ein Drittel. Die Haspelkapazität ohne Blick auf den Werkstoff zu wählen, führt in die Irre."
+  - q: "Wie ermittle ich die Bandlänge, wenn nur das Coilgewicht bekannt ist?"
+    a: "Mit der Formel L (m) = Gewicht (kg) / (W (m) × t (m) × ρ (kg/m³)), wobei für Stahl ρ = 7.850 kg/m³ gilt. Aus 13.116 kg bei 1,25 m Breite und 2 mm Dicke ergeben sich wieder rund 668 m, dasselbe Ergebnis wie über die Durchmesser."
+  - q: "Welche Fehler passieren bei der Coilberechnung am häufigsten?"
+    a: "Den Kern vergessen, der Nenndicke vertrauen und Einheiten mischen. Wer den Kern nicht abzieht, treibt das Gewicht stark nach oben. Blechtoleranzen erreichen ±5 %; Material mit tatsächlich 2,1 mm statt 2 mm liefert 5 % weniger Länge, also 636 m statt 668 m."
 ---
 
 Das Gewicht eines Coils und die darin enthaltene Bandlänge zu kennen, bestimmt zwei Entscheidungen unmittelbar: **welche Haspelkapazität Sie brauchen** und **wie viele Stunden ein Coil läuft**. Beides lässt sich nicht schätzen. Zum Glück folgt beides aus einer einzigen geometrischen Tatsache und ist von Hand rechenbar.
@@ -63,13 +74,13 @@ Angenommen, wir haben folgendes Coil:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1.960.000 − 258.064)
-A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 ```
 
 **2. Gewicht**
 
 ```
-1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
 Rund **13,1 Tonnen**. Dieses Coil verlangt eine 15-Tonnen-Haspel; die 12-Tonnen-Baureihe reicht nicht.
@@ -77,7 +88,7 @@ Rund **13,1 Tonnen**. Dieses Coil verlangt eine 15-Tonnen-Haspel; die 12-Tonnen-
 **3. Bandlänge**
 
 ```
-L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+L = 1.336.697 / 2 ≈ 668.349 mm ≈ 668 m
 ```
 
 ## Einfluss auf die Anlagenauswahl
@@ -97,7 +108,7 @@ Ein 668-m-Coil hält auf dieser Linie etwa **1,1 Stunden**. Das sind rund 7 Coil
 
 **Der Nenndicke vertrauen.** Blechtoleranzen erreichen ±5 %. Da die Länge **umgekehrt** proportional zur Dicke ist, liefert Material mit tatsächlich 2,1 mm statt 2 mm 5 % weniger Länge — 636 m statt 668 m.
 
-**Einheiten mischen.** Jede Länge in der Formel muss in Millimetern stehen. Die Breite in Metern einzugeben, vertausendfacht das Ergebnis; dieser Fehler taucht in der Angebotsphase regelmäßig auf.
+**Einheiten mischen.** Jede Länge in der Formel muss in Millimetern stehen. Wer die Breite in Metern eingibt, erhält ein tausendfach zu kleines Ergebnis; dieser Fehler taucht in der Angebotsphase regelmäßig auf.
 
 ## Rückwärts gerechnet: vom Gewicht zur Länge
 

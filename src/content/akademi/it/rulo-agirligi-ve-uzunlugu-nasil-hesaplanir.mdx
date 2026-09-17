@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["calcolo coil", "lavorazione lamiera", "scelta linea"]
+updated: "2026-09-17"
+summary: "Il peso del coil è dato da area della corona × larghezza × densità: Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, con diametri e larghezza in mm e densità in g/cm³. La lunghezza del nastro è l'area della corona divisa per lo spessore. Ad esempio, un coil in acciaio con diametro esterno 1.400 mm, anima da 508 mm, larghezza 1.250 mm e spessore 2 mm pesa circa 13,1 tonnellate e contiene circa 668 m di nastro."
+faq:
+  - q: "Perché la formula del peso del coil divide per 1.000.000?"
+    a: "Con OD, ID e W in millimetri e ρ in g/cm³, la divisione per un milione è il fattore che converte il risultato in chilogrammi, ed è il dettaglio più spesso dimenticato. Ogni lunghezza deve essere in millimetri: inserire la larghezza in metri falsa il risultato di un fattore mille."
+  - q: "Quanto pesa un coil in alluminio delle stesse dimensioni?"
+    a: "L'alluminio ha una densità di 2,70 g/cm³ contro 7,85 dell'acciaio, quindi un coil di geometria identica risulta al 34 % del valore in acciaio, circa un terzo. Per questo scegliere la capacità dello svolgitore senza guardare il materiale è fuorviante."
+  - q: "Come si ricava la lunghezza del nastro se si conosce solo il peso del coil?"
+    a: "Con L (m) = Peso (kg) / (W (m) × t (m) × ρ (kg/m³)), dove per l'acciaio ρ = 7.850 kg/m³. Con 13.116 kg, larghezza 1,25 m e spessore 2 mm il risultato è di nuovo circa 668 m, a riprova che il calcolo è coerente."
+  - q: "Quali sono gli errori più frequenti nel calcolo del coil?"
+    a: "Ignorare l'anima, fidarsi dello spessore nominale e mescolare le unità. La tolleranza della lamiera arriva a ±5 % e la lunghezza è inversamente proporzionale allo spessore: un materiale che misura 2,1 mm invece di 2 mm rende il 5 % in meno, 636 m invece di 668 m."
 ---
 
 Conoscere il peso di un coil e la lunghezza di nastro che contiene determina due decisioni dirette: **quale capacità di svolgitore serve** e **quante ore rende un coil**. Nessuna delle due si può stimare a occhio. Per fortuna entrambe derivano da un unico fatto geometrico e si calcolano a mano.
@@ -63,13 +74,13 @@ Supponiamo questo coil:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1.960.000 − 258.064)
-A = π/4 × 1.701.936 ≈ 1.336.663 mm²
+A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 ```
 
 **2. Peso**
 
 ```
-1.336.663 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
+1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
 Circa **13,1 tonnellate**. Questo coil richiede uno svolgitore da 15 tonnellate; la serie da 12 non basta.
@@ -77,7 +88,7 @@ Circa **13,1 tonnellate**. Questo coil richiede uno svolgitore da 15 tonnellate;
 **3. Lunghezza del nastro**
 
 ```
-L = 1.336.663 / 2 = 668.331 mm ≈ 668 m
+L = 1.336.697 / 2 ≈ 668.349 mm ≈ 668 m
 ```
 
 ## Impatto sulla scelta della linea
@@ -97,7 +108,7 @@ Un coil da 668 m dura circa **1,1 ore** su quella linea: circa 7 cambi coil per 
 
 **Fidarsi dello spessore nominale.** La tolleranza della lamiera arriva a ±5 %. Poiché la lunghezza è **inversamente** proporzionale allo spessore, un materiale che misura 2,1 mm invece di 2 mm rende il 5 % in meno: 636 m invece di 668 m.
 
-**Mescolare le unità.** Ogni lunghezza nella formula deve essere in millimetri. Inserire la larghezza in metri moltiplica il risultato per mille; l'errore ricorre spesso in fase di offerta.
+**Mescolare le unità.** Ogni lunghezza nella formula deve essere in millimetri. Inserire la larghezza in metri rende il risultato mille volte più piccolo; l'errore ricorre spesso in fase di offerta.
 
 ## Calcolo inverso: dal peso alla lunghezza
 

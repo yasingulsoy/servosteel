@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Odwijaki Mechaniczne",
-          "metaTitle": "Odwijak Mechaniczny — 500-2.500 kg",
-          "meta": "Odwijaki mechaniczne od 500 do 2.500 kg: szerokość taśmy 30-500 mm, mocowanie rdzenia trzpieniem, regulacja prędkości i układ hamulcowy.",
+          "metaTitle": "Odwijak Mechaniczny — 500-4.000 kg",
+          "meta": "Odwijaki mechaniczne od 500 do 4.000 kg: szerokość taśmy 30-1.200 mm, mocowanie rdzenia trzpieniem, regulacja prędkości i układ hamulcowy.",
           "short": "Ekonomiczne rozwiązanie do lekkich i średnich kręgów; trzpień mechaniczny.",
-          "hero": "Nasze odwijaki mechaniczne przenoszą kręgi od 500 kg do 2.500 kg. Rdzeń mocowany jest trzpieniem; regulacja prędkości i układ hamulcowy są w standardzie, a odwijanie możliwe jest w obu kierunkach.",
+          "hero": "Nasze odwijaki mechaniczne przenoszą kręgi od 500 kg do 4.000 kg. Rdzeń mocowany jest trzpieniem; regulacja prędkości i układ hamulcowy są w standardzie, a odwijanie możliwe jest w obu kierunkach.",
           "table": {
             "title": "Nośność, szerokość i średnica wewnętrzna",
             "head": [
@@ -1834,9 +1834,9 @@
       "rulo-acicilar": {
         "name": "Odwijaki",
         "metaTitle": "Odwijaki: hydrauliczne 6-20 t, mechaniczne 500-4000 kg",
-        "short": "Hydrauliczne 6-20 t i mechaniczne 500-2.500 kg.",
+        "short": "Hydrauliczne 6-20 t i mechaniczne 500-4.000 kg.",
         "hero": "Pierwsze ogniwo każdej linii: odwijaki hydrauliczne i mechaniczne, które bezpiecznie utrzymują krąg i rozwijają go z kontrolowanym naprężeniem. Projektowane pod wydajność, szerokość blachy i poziom automatyzacji.",
-        "meta": "Odwijaki hydrauliczne (6-20 t) i mechaniczne (500-2.500 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
+        "meta": "Odwijaki hydrauliczne (6-20 t) i mechaniczne (500-4.000 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
         "features": [
           {
             "title": "Hydrauliczne rozpieranie trzpienia",
@@ -1855,7 +1855,7 @@
         "faq": [
           {
             "q": "Czym różnią się odwijaki hydrauliczne od mechanicznych?",
-            "a": "Seria mechaniczna obsługuje kręgi 500–2500 kg na trzpieniu rozprężanym pokrętłem; hydrauliczna sięga 6–20 ton z hydraulicznym rozprężaniem trzpienia i hamulcem. Przy ciężkich kręgach i szybkich liniach bezpiecznym wyborem jest hydraulika."
+            "a": "Seria mechaniczna obsługuje kręgi 500–2500 kg na trzpieniu rozprężanym pokrętłem, a modele 3000 i 4000 kg na trzpieniu stożkowym; hydrauliczna sięga 6–20 ton z hydraulicznym rozprężaniem trzpienia i hamulcem. Przy ciężkich kręgach i szybkich liniach bezpiecznym wyborem jest hydraulika."
           },
           {
             "q": "Jaki udźwig wybrać?",
@@ -2372,7 +2372,7 @@
           "text": "Długowieczne rolki i zestawy noży oznaczają mniej części zamiennych do wyprodukowania. Diagnostyka zdalna z kolei eliminuje sporą część przypadków wymagających przyjazdu: każdy nieodbyty lot i każdy niewykonany przejazd to realnie zaoszczędzona emisja."
         }
       ],
-      "calcNote": "Własny wskaźnik odpadu z własnymi wymiarami zobaczą Państwo w <calc>kalkulatorze uzysku cięcia</calc>. Sześć konkretnych sposobów na jego obniżenie zebraliśmy w <article>osobnym artykule</article> — mierzona rocznym tonażem pozycja ta jest w większości zakładów większa niż cena samej linii.",
+      "calcNote": "Własny wskaźnik odpadu z własnymi wymiarami zobaczą Państwo w <calc>kalkulatorze uzysku cięcia</calc>. Sześć konkretnych sposobów na jego obniżenie zebraliśmy w <article>osobnym artykule</article> — za linię płaci się raz, za odpad co roku.",
       "proofTitle": "Cyfryzacja: działający system, nie deklaracja",
       "proofText": "Zbieranie danych i raportowanie możemy opisać jako system zainstalowany na linii, a nie jako cel. Poniższe filmy pokazują raportowanie produkcji przez HMI oraz pracującą linię profili konstrukcyjnych.",
       "goalsEyebrow": "2026 i dalej",

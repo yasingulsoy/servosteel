@@ -5,6 +5,17 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["coil calculation", "sheet processing", "line selection"]
+updated: "2026-09-17"
+summary: "Coil weight is annulus area × width × density: Weight (kg) = π/4 × (OD² − ID²) × W × ρ / 1,000,000, with diameters and width in mm and density in g/cm³. Strip length is the annulus area divided by sheet thickness. For example, a steel coil with 1,400 mm OD, 508 mm core, 1,250 mm width and 2 mm thickness weighs about 13.1 tonnes and holds about 668 m of strip."
+faq:
+  - q: "Why does the coil weight formula divide by 1,000,000?"
+    a: "With diameters and width in millimetres and density in g/cm³, that unit factor converts the result into kilograms. It is the detail most often skipped; entering the width in metres instead makes the result a thousand times too small."
+  - q: "How much does an aluminium coil of the same size weigh?"
+    a: "Aluminium's density is 2.70 g/cm³ against 7.85 for steel, so a coil with identical geometry comes out at about 34% of the steel figure. Choosing decoiler capacity without looking at the material is therefore misleading."
+  - q: "How do I get strip length if I only know the coil weight?"
+    a: "Use L (m) = Weight (kg) / (W (m) × t (m) × ρ (kg/m³)), with ρ = 7,850 kg/m³ for steel. For 13,116 kg, 1.25 m width and 2 mm thickness, the result is again about 668 m."
+  - q: "What are the most common coil calculation mistakes?"
+    a: "Ignoring the core, trusting the nominal thickness and mixing units. Thickness tolerance can reach ±5%; material measuring 2.1 mm instead of 2 mm yields 5% less length."
 ---
 
 Knowing the weight of a coil and the length of strip inside it drives two decisions directly: **what decoiler capacity you need** and **how many hours one coil will run**. Neither can be handled by guesswork. Fortunately both follow from a single geometric fact and can be worked out by hand.
@@ -63,13 +74,13 @@ Suppose we have this coil:
 ```
 A = π/4 × (1400² − 508²)
 A = π/4 × (1,960,000 − 258,064)
-A = π/4 × 1,701,936 ≈ 1,336,663 mm²
+A = π/4 × 1,701,936 ≈ 1,336,697 mm²
 ```
 
 **2. Weight**
 
 ```
-1,336,663 × 1,250 × 7.85 / 1,000,000 ≈ 13,116 kg
+1,336,697 × 1,250 × 7.85 / 1,000,000 ≈ 13,116 kg
 ```
 
 About **13.1 tonnes**. This coil calls for a 15-tonne decoiler; the 12-tonne series will not do.
@@ -77,7 +88,7 @@ About **13.1 tonnes**. This coil calls for a 15-tonne decoiler; the 12-tonne ser
 **3. Strip length**
 
 ```
-L = 1,336,663 / 2 = 668,331 mm ≈ 668 m
+L = 1,336,697 / 2 ≈ 668,349 mm ≈ 668 m
 ```
 
 ## How the result drives line selection
@@ -97,7 +108,7 @@ A 668 m coil lasts roughly **1.1 hours** on that line. That means about 7 coil c
 
 **Trusting the nominal thickness.** Sheet tolerance can reach ±5%. Because length is **inversely** proportional to thickness, material that measures 2.1 mm instead of 2 mm yields 5% less length — 636 m instead of 668 m.
 
-**Mixing units.** Every length in the formula must be in millimetres. Entering the width in metres inflates the result a thousandfold; this mistake shows up regularly at the quotation stage.
+**Mixing units.** Every length in the formula must be in millimetres. Entering the width in metres makes the result a thousand times too small; this mistake shows up regularly at the quotation stage.
 
 ## Working backwards: from weight to length
 

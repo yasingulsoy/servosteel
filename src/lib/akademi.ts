@@ -22,6 +22,17 @@ export type PostMeta = {
   cover?: string;
   tags: string[];
   readingMinutes: number;
+  /**
+   * Kısa cevap — yazının sorusuna 2-3 cümlelik doğrudan cevap. Yazının üstünde
+   * kutu olarak basılır, Article şemasına `abstract` olarak girer, llms.txt'te
+   * açıklamanın yerini alır. Yapay zekâ asistanları cevabı çoğu zaman ilk net
+   * paragraftan alıntılıyor; anlatı biçimli girişler alıntılanmıyordu.
+   */
+  summary?: string;
+  /** Son içerik güncellemesi (YYYY-MM-DD). Şemada `dateModified`. */
+  updated?: string;
+  /** Sık sorulan sorular — yazının sonunda basılır ve FAQPage şemasına girer. */
+  faq: { q: string; a: string }[];
 };
 
 export type Post = PostMeta & { content: string };
@@ -33,6 +44,20 @@ function readingMinutes(text: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
+/* YAML tırnaksız tarihi Date nesnesine çevirir; her iki biçim de kabul edilir. */
+function isoDate(v: unknown): string | undefined {
+  if (v instanceof Date) return v.toISOString().slice(0, 10);
+  return v ? String(v) : undefined;
+}
+
+function toFaq(v: unknown): { q: string; a: string }[] {
+  if (!Array.isArray(v)) return [];
+  return v
+    .filter((x): x is { q: unknown; a: unknown } => !!x && typeof x === "object" && "q" in x && "a" in x)
+    .map((x) => ({ q: String(x.q).trim(), a: String(x.a).trim() }))
+    .filter((x) => x.q && x.a);
+}
+
 function toMeta(locale: string, slug: string, raw: string): { meta: PostMeta; content: string } {
   const { data, content } = matter(raw);
   return {
@@ -42,11 +67,14 @@ function toMeta(locale: string, slug: string, raw: string): { meta: PostMeta; co
       locale: locale as AppLocale,
       title: String(data.title ?? slug),
       description: String(data.description ?? ""),
-      date: String(data.date ?? ""),
+      date: isoDate(data.date) ?? "",
       author: String(data.author ?? "Servosteel"),
       cover: data.cover ? String(data.cover) : undefined,
       tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
       readingMinutes: readingMinutes(content),
+      summary: data.summary ? String(data.summary).trim() : undefined,
+      updated: isoDate(data.updated),
+      faq: toFaq(data.faq),
     },
   };
 }

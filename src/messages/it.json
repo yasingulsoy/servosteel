@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Aspi Meccanici",
-          "metaTitle": "Aspo Meccanico — 500-2.500 kg",
-          "meta": "Aspi meccanici da 500 a 2.500 kg: larghezza nastro 30-500 mm, bloccaggio del nucleo con mandrino, controllo velocità e sistema frenante.",
+          "metaTitle": "Aspo Meccanico — 500-4.000 kg",
+          "meta": "Aspi meccanici da 500 a 4.000 kg: larghezza nastro 30-1.200 mm, bloccaggio del nucleo con mandrino, controllo velocità e sistema frenante.",
           "short": "Soluzione economica per coil leggeri e medi; mandrino meccanico.",
-          "hero": "I nostri aspi meccanici sostengono coil da 500 kg a 2.500 kg. Il nucleo viene bloccato dal mandrino; controllo velocità e sistema frenante sono di serie e lo svolgimento può avvenire in entrambi i sensi.",
+          "hero": "I nostri aspi meccanici sostengono coil da 500 kg a 4.000 kg. Il nucleo viene bloccato dal mandrino; controllo velocità e sistema frenante sono di serie e lo svolgimento può avvenire in entrambi i sensi.",
           "table": {
             "title": "Capacità, larghezza e diametro interno",
             "head": [
@@ -1834,9 +1834,9 @@
       "rulo-acicilar": {
         "name": "Svolgitori",
         "metaTitle": "Svolgitori: idraulici 6-20 t, meccanici 500-4.000 kg",
-        "short": "Idraulici 6-20 t e meccanici 500-2.500 kg.",
+        "short": "Idraulici 6-20 t e meccanici 500-4.000 kg.",
         "hero": "Il primo anello di ogni linea: svolgitori idraulici e meccanici che sostengono il coil in sicurezza e lo svolgono a tensione controllata. Progettati su capacità, larghezza lamiera e livello di automazione.",
-        "meta": "Svolgitori idraulici (6-20 t) e meccanici (500-2.500 kg): soluzioni su misura per alimentazione presse e linee coil.",
+        "meta": "Svolgitori idraulici (6-20 t) e meccanici (500-4.000 kg): soluzioni su misura per alimentazione presse e linee coil.",
         "features": [
           {
             "title": "Espansione idraulica del mandrino",
@@ -1855,7 +1855,7 @@
         "faq": [
           {
             "q": "Che differenza c'è tra svolgitori idraulici e meccanici?",
-            "a": "La serie meccanica gestisce coil da 500–2500 kg con mandrino serrato a volantino; quella idraulica arriva a 6–20 tonnellate con espansione del mandrino e freno idraulici. Con coil pesanti e linee veloci, l'idraulico è la scelta sicura."
+            "a": "La serie meccanica gestisce coil da 500–2500 kg con mandrino serrato a volantino, e i modelli da 3000 e 4000 kg con mandrino conico; quella idraulica arriva a 6–20 tonnellate con espansione del mandrino e freno idraulici. Con coil pesanti e linee veloci, l'idraulico è la scelta sicura."
           },
           {
             "q": "Quale capacità dovrei scegliere?",
@@ -2372,7 +2372,7 @@
           "text": "Rulli e gruppi lame a lunga durata significano meno ricambi da produrre. La diagnosi remota, poi, elimina buona parte dei casi che altrimenti richiederebbero una trasferta: ogni volo e ogni viaggio non fatto è un'emissione realmente risparmiata."
         }
       ],
-      "calcNote": "Potete vedere il vostro sfrido con le vostre misure nel <calc>calcolatore di resa di taglio</calc>. Sei modi concreti per ridurlo li abbiamo raccolti in <article>un articolo dedicato</article> — misurata sul tonnellaggio annuo, questa voce è più grande del prezzo della linea stessa nella maggior parte degli stabilimenti.",
+      "calcNote": "Potete vedere il vostro sfrido con le vostre misure nel <calc>calcolatore di resa di taglio</calc>. Sei modi concreti per ridurlo li abbiamo raccolti in <article>un articolo dedicato</article> — la linea si paga una volta, lo sfrido ogni anno.",
       "proofTitle": "Digitalizzazione: un sistema che gira, non un'affermazione",
       "proofText": "Possiamo descrivere raccolta dati e reportistica come un sistema installato sulla linea, non come un obiettivo. I video qui sotto mostrano la reportistica di produzione via HMI e una linea per profili strutturali in funzione.",
       "goalsEyebrow": "2026 e oltre",

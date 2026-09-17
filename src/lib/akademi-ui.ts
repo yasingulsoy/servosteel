@@ -14,6 +14,9 @@ export type AkademiUi = {
   published: string;
   toc: string;
   relatedTitle: string;
+  shortAnswer: string;
+  faqTitle: string;
+  updated: string;
 };
 
 const FALLBACK: AkademiUi = {
@@ -27,6 +30,9 @@ const FALLBACK: AkademiUi = {
   published: "Published",
   toc: "Contents",
   relatedTitle: "Related reading",
+  shortAnswer: "Short answer",
+  faqTitle: "Frequently asked questions",
+  updated: "Updated",
 };
 
 export const akademiUi: Record<string, AkademiUi> = {
@@ -42,6 +48,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Yayınlandı",
     toc: "İçindekiler",
     relatedTitle: "İlgili okuma",
+    shortAnswer: "Kısa cevap",
+    faqTitle: "Sık sorulan sorular",
+    updated: "Güncellendi",
   },
   en: {
     nav: "Academy",
@@ -55,6 +64,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Published",
     toc: "Contents",
     relatedTitle: "Related reading",
+    shortAnswer: "Short answer",
+    faqTitle: "Frequently asked questions",
+    updated: "Updated",
   },
   de: {
     nav: "Akademie",
@@ -68,6 +80,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Veröffentlicht",
     toc: "Inhalt",
     relatedTitle: "Passende Beiträge",
+    shortAnswer: "Kurz gesagt",
+    faqTitle: "Häufige Fragen",
+    updated: "Aktualisiert",
   },
   es: {
     nav: "Academia",
@@ -81,6 +96,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Publicado",
     toc: "Contenido",
     relatedTitle: "Lectura relacionada",
+    shortAnswer: "Respuesta breve",
+    faqTitle: "Preguntas frecuentes",
+    updated: "Actualizado",
   },
   it: {
     nav: "Accademia",
@@ -94,6 +112,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Pubblicato",
     toc: "Indice",
     relatedTitle: "Letture correlate",
+    shortAnswer: "In breve",
+    faqTitle: "Domande frequenti",
+    updated: "Aggiornato",
   },
   hu: {
     nav: "Akadémia",
@@ -107,6 +128,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Közzétéve",
     toc: "Tartalom",
     relatedTitle: "Kapcsolódó olvasnivaló",
+    shortAnswer: "Röviden",
+    faqTitle: "Gyakori kérdések",
+    updated: "Frissítve",
   },
   pl: {
     nav: "Akademia",
@@ -120,6 +144,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Opublikowano",
     toc: "Spis treści",
     relatedTitle: "Powiązane materiały",
+    shortAnswer: "Krótka odpowiedź",
+    faqTitle: "Najczęstsze pytania",
+    updated: "Zaktualizowano",
   },
   ru: {
     nav: "Академия",
@@ -133,6 +160,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "Опубликовано",
     toc: "Содержание",
     relatedTitle: "По теме",
+    shortAnswer: "Коротко",
+    faqTitle: "Частые вопросы",
+    updated: "Обновлено",
   },
   ar: {
     nav: "الأكاديمية",
@@ -146,6 +176,9 @@ export const akademiUi: Record<string, AkademiUi> = {
     published: "نُشر في",
     toc: "المحتويات",
     relatedTitle: "قراءات ذات صلة",
+    shortAnswer: "الإجابة المختصرة",
+    faqTitle: "الأسئلة الشائعة",
+    updated: "آخر تحديث",
   },
 };
 

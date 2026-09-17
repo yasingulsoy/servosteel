@@ -889,10 +889,10 @@
         },
         "mekanik": {
           "name": "Mechanical Decoilers",
-          "metaTitle": "Mechanical Decoiler — 500-2,500 kg",
-          "meta": "Mechanical decoilers from 500 to 2,500 kg: 30-500 mm strip width, mandrel hub clamping, speed control and brake lining system.",
+          "metaTitle": "Mechanical Decoiler — 500-4,000 kg",
+          "meta": "Mechanical decoilers from 500 to 4,000 kg: 30-1,200 mm strip width, mandrel hub clamping, speed control and brake lining system.",
           "short": "Economical choice for light and medium coils; mechanical mandrel.",
-          "hero": "Our mechanical decoilers carry coils from 500 kg to 2,500 kg. The hub is clamped by mandrel; speed control and a brake lining system are standard, and the unit can unwind in both directions.",
+          "hero": "Our mechanical decoilers carry coils from 500 kg to 4,000 kg. The hub is clamped by mandrel; speed control and a brake lining system are standard, and the unit can unwind in both directions.",
           "table": {
             "title": "Capacity, width and inner diameter",
             "head": [
@@ -1128,11 +1128,11 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "0,6 – 3,0 mm"],
+            ["Sheet thickness", "0.6 – 3.0 mm"],
             ["Sheet width", "50 – 600 mm"],
             ["Line speed", "8 – 20 m/min"],
             ["Roll forming stations", "18 – 24"],
-            ["Total motor power", "7,5 – 30 kW"]
+            ["Total motor power", "7.5 – 30 kW"]
           ],
           "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
         },
@@ -1238,7 +1238,7 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "1,0 – 3,0 mm"],
+            ["Sheet thickness", "1.0 – 3.0 mm"],
             ["Sheet width", "150 – 400 mm"],
             ["Line speed", "10 – 60 m/min"],
             ["Roll forming stations", "12 – 22"],
@@ -1341,7 +1341,7 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "1,5 – 5,0 mm"],
+            ["Sheet thickness", "1.5 – 5.0 mm"],
             ["Sheet width", "100 – 400 mm"],
             ["Line speed", "5 – 20 m/min"],
             ["Roll forming stations", "18 – 30"],
@@ -1447,7 +1447,7 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "1,2 – 2,0 mm"],
+            ["Sheet thickness", "1.2 – 2.0 mm"],
             ["Sheet width", "240 – 520 mm"],
             ["Line speed", "4 – 20 m/min"],
             ["Roll forming stations", "15 – 26"],
@@ -1504,7 +1504,7 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "2,5 – 4,0 mm"],
+            ["Sheet thickness", "2.5 – 4.0 mm"],
             ["Sheet width", "480 – 750 mm"],
             ["Line speed", "3 – 18 m/min"],
             ["Roll forming stations", "16 – 22"],
@@ -1609,11 +1609,11 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "0,3 – 1,5 mm"],
+            ["Sheet thickness", "0.3 – 1.5 mm"],
             ["Sheet width", "300 – 800 mm"],
             ["Line speed", "12 – 25 m/min"],
             ["Roll forming stations", "16 – 20"],
-            ["Total motor power", "7,5 – 30 kW"]
+            ["Total motor power", "7.5 – 30 kW"]
           ],
           "note": "Ranges cover the series; each line is sized to your project according to profile section, material and capacity."
         },
@@ -1713,8 +1713,8 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "0,3 – 1,5 mm"],
-            ["Sheet width", "≤ 1.300 mm"],
+            ["Sheet thickness", "0.3 – 1.5 mm"],
+            ["Sheet width", "≤ 1,300 mm"],
             ["Line speed", "15 – 60 m/min"],
             ["Roll forming stations", "16 – 20"],
             ["Total motor power", "11 – 22 kW"]
@@ -1771,7 +1771,7 @@
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
           "rows": [
-            ["Sheet thickness", "1,5 – 4,0 mm"],
+            ["Sheet thickness", "1.5 – 4.0 mm"],
             ["Sheet width", "100 – 400 mm"],
             ["Line speed", "10 – 36 m/min"],
             ["Roll forming stations", "16 – 24"],
@@ -1874,9 +1874,9 @@
       "rulo-acicilar": {
         "name": "Decoilers",
         "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
-        "short": "Hydraulic 6-20 t and mechanical 500-2,500 kg decoiling solutions.",
+        "short": "Hydraulic 6-20 t and mechanical 500-4,000 kg decoiling solutions.",
         "hero": "The first link of every line: hydraulic and mechanical decoiler machines that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
-        "meta": "Hydraulic (6-20 t) and mechanical (500-2,500 kg) decoilers and uncoilers: custom solutions for press feeding and coil processing lines.",
+        "meta": "Hydraulic (6-20 t) and mechanical (500-4,000 kg) decoilers and uncoilers: custom solutions for press feeding and coil processing lines.",
         "features": [
           {
             "title": "Hydraulic mandrel expansion",
@@ -1895,7 +1895,7 @@
         "faq": [
           {
             "q": "What is the difference between hydraulic and mechanical decoilers?",
-            "a": "The mechanical series carries 500–2500 kg coils on a handwheel-tightened mandrel; the hydraulic series reaches 6–20 tons with hydraulic mandrel expansion and braking. For heavy coils and high line speeds, hydraulic is the safe choice."
+            "a": "The mechanical series carries 500–2500 kg coils on a handwheel-tightened mandrel, with a conical mandrel on the 3000 and 4000 kg models; the hydraulic series reaches 6–20 tons with hydraulic mandrel expansion and braking. For heavy coils and high line speeds, hydraulic is the safe choice."
           },
           {
             "q": "What capacity should I choose?",
@@ -2440,7 +2440,7 @@
           "text": "Long-lived rolls and knife sets mean fewer spare parts have to be manufactured. Remote diagnosis, meanwhile, removes a large share of the cases that would otherwise require a visit: every flight and every road trip not taken is an emission genuinely saved."
         }
       ],
-      "calcNote": "You can see your own scrap rate with your own dimensions in the <calc>slitting yield calculator</calc>. We have collected six concrete ways to bring scrap down in <article>a separate article</article> — measured across annual tonnage, this item is larger than the price of the line itself in most plants.",
+      "calcNote": "You can see your own scrap rate with your own dimensions in the <calc>slitting yield calculator</calc>. We have collected six concrete ways to bring scrap down in <article>a separate article</article> — the line is paid for once, scrap every year.",
       "proofTitle": "Digitalisation: a working system, not a claim",
       "proofText": "We can describe data collection and reporting as a system installed on the line rather than as a goal. The videos below show production reporting over the HMI and a structural profile line running.",
       "goalsEyebrow": "2026 and beyond",

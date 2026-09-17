@@ -861,10 +861,10 @@
         },
         "mekanik": {
           "name": "Mechanische Haspeln",
-          "metaTitle": "Mechanische Haspel — 500-2.500 kg",
-          "meta": "Mechanische Haspeln von 500 bis 2.500 kg: 30-500 mm Bandbreite, Dornklemmung, Drehzahlregelung und Bremsbelagsystem.",
+          "metaTitle": "Mechanische Haspel — 500-4.000 kg",
+          "meta": "Mechanische Haspeln von 500 bis 4.000 kg: 30-1.200 mm Bandbreite, Dornklemmung, Drehzahlregelung und Bremsbelagsystem.",
           "short": "Wirtschaftlich für leichte und mittlere Bunde; mechanischer Dorn.",
-          "hero": "Unsere mechanischen Haspeln tragen Bunde von 500 kg bis 2.500 kg. Der Bundkern wird über den Dorn geklemmt; Drehzahlregelung und Bremsbelagsystem sind serienmäßig, das Abwickeln ist in beide Richtungen möglich.",
+          "hero": "Unsere mechanischen Haspeln tragen Bunde von 500 kg bis 4.000 kg. Der Bundkern wird über den Dorn geklemmt; Drehzahlregelung und Bremsbelagsystem sind serienmäßig, das Abwickeln ist in beide Richtungen möglich.",
           "table": {
             "title": "Kapazität, Breite und Innendurchmesser",
             "head": [
@@ -1834,9 +1834,9 @@
       "rulo-acicilar": {
         "name": "Abwickelhaspeln",
         "metaTitle": "Abwickelhaspeln: hydraulisch 6-20 t, mechanisch 500-4.000 kg",
-        "short": "Hydraulisch 6-20 t, mechanisch 500-2.500 kg.",
+        "short": "Hydraulisch 6-20 t, mechanisch 500-4.000 kg.",
         "hero": "Das erste Glied jeder Anlage: hydraulische und mechanische Haspeln, die das Coil sicher tragen und mit kontrollierter Spannung abwickeln. Ausgelegt nach Kapazität, Blechbreite und Automatisierungsgrad.",
-        "meta": "Hydraulische (6-20 t) und mechanische (500-2.500 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
+        "meta": "Hydraulische (6-20 t) und mechanische (500-4.000 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
         "features": [
           {
             "title": "Hydraulische Dornspreizung",
@@ -1855,7 +1855,7 @@
         "faq": [
           {
             "q": "Was unterscheidet hydraulische von mechanischen Abwickelhaspeln?",
-            "a": "Die mechanische Serie trägt Coils von 500–2500 kg auf einem per Handrad gespannten Dorn; die hydraulische Serie reicht bis 6–20 Tonnen mit hydraulischer Dornspreizung und Bremse. Bei schweren Coils und hohen Liniengeschwindigkeiten ist Hydraulik die sichere Wahl."
+            "a": "Die mechanische Serie trägt Coils von 500–2500 kg auf einem per Handrad gespannten Dorn, die Modelle mit 3000 und 4000 kg auf einem Konusdorn; die hydraulische Serie reicht bis 6–20 Tonnen mit hydraulischer Dornspreizung und Bremse. Bei schweren Coils und hohen Liniengeschwindigkeiten ist Hydraulik die sichere Wahl."
           },
           {
             "q": "Welche Kapazität sollte ich wählen?",
@@ -2372,7 +2372,7 @@
           "text": "Langlebige Rollen und Messersätze bedeuten, dass weniger Ersatzteile gefertigt werden müssen. Ferndiagnose wiederum beseitigt einen großen Teil der Fälle, die sonst eine Anreise erfordern würden: Jeder nicht angetretene Flug und jede nicht gefahrene Strecke ist eine tatsächlich eingesparte Emission."
         }
       ],
-      "calcNote": "Ihre eigene Verschnittquote mit Ihren Maßen sehen Sie im <calc>Spaltausbeute-Rechner</calc>. Sechs konkrete Wege zur Verschnittsenkung haben wir in <article>einem eigenen Beitrag</article> zusammengetragen — über die Jahrestonnage gerechnet ist dieser Posten in den meisten Werken größer als der Preis der Anlage selbst.",
+      "calcNote": "Ihre eigene Verschnittquote mit Ihren Maßen sehen Sie im <calc>Spaltausbeute-Rechner</calc>. Sechs konkrete Wege zur Verschnittsenkung haben wir in <article>einem eigenen Beitrag</article> zusammengetragen — die Anlage bezahlt man einmal, den Verschnitt jedes Jahr.",
       "proofTitle": "Digitalisierung: ein laufendes System, keine Behauptung",
       "proofText": "Datenerfassung und Berichterstattung können wir als installiertes System beschreiben statt als Ziel. Die Videos unten zeigen die Produktionsberichterstattung über das HMI und eine laufende Anlage für Statikprofile.",
       "goalsEyebrow": "2026 und danach",
