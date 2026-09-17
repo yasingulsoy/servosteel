@@ -34,7 +34,6 @@ import { CONTACT, YOUTUBE_URL } from "@/lib/site";
  */
 export function ContactFloat() {
   const t = useTranslations("common");
-  const tFooter = useTranslations("footer");
 
   return (
     /* z-40: header (z-50) altında kalsın ki mobil menü açıkken üstüne
@@ -44,11 +43,11 @@ export function ContactFloat() {
         href={YOUTUBE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={tFooter("youtube")}
+        aria-label={t("floatYoutube")}
         className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
       >
         <FaYoutube className="size-5 shrink-0 text-[#FF0000]" aria-hidden />
-        <span className="hidden text-sm font-semibold sm:inline">YouTube</span>
+        <span className="hidden text-sm font-semibold sm:inline">{t("floatYoutube")}</span>
       </a>
 
       <a
