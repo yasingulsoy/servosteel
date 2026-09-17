@@ -14,13 +14,17 @@ import {
 } from "@/lib/admin-auth";
 import {
   DURUMLAR,
+  DURUM_ETIKET,
   durumDegistir,
   notEkle,
+  talep,
   talepEkle,
   talepSil,
   semaKur,
   type Durum,
+  type Talep,
 } from "@/lib/leads-db";
+import { kayitEkle } from "@/lib/panel-kayit";
 
 /**
  * Panelin sunucu eylemleri.
@@ -53,6 +57,23 @@ async function adminYetkisi(): Promise<string> {
 const metin = (v: FormDataEntryValue | null, max = 500) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";
 
+/**
+ * Kayıtta talebi tanıtan kısa ad — talep silinse bile kayıt okunabilir kalsın.
+ * DIŞA AÇIK DEĞİL: "use server" dosyasında export edilen her fonksiyon POST
+ * ile çağrılabilen bir eyleme dönüşür.
+ */
+function talepOzeti(t: Pick<Talep, "id" | "ad" | "firma" | "eposta">) {
+  return [t.ad, t.firma].filter(Boolean).join(" · ") || t.eposta || `Talep #${t.id}`;
+}
+
+/**
+ * Açık panel sekmesinin dakikalık nabzı: oturumun son etkinliğini günceller
+ * (`oturum` bunu kendisi yapıyor). Oturum düşmüşse sessizce hiçbir şey yapmaz.
+ */
+export async function nabizEylemi() {
+  await oturum();
+}
+
 export async function girisEylemi(_onceki: string | null, form: FormData) {
   const kullanici = metin(form.get("kullanici"), 80);
   const parola = metin(form.get("parola"), 200);
@@ -74,11 +95,21 @@ export async function cikisEylemi() {
 }
 
 export async function durumEylemi(form: FormData) {
-  await yetki();
+  const ben = await yetki();
   const id = Number(form.get("id"));
   const durum = metin(form.get("durum"), 40) as Durum;
   if (!Number.isInteger(id) || !DURUMLAR.includes(durum)) return;
+  const once = await talep(id);
+  const eskiDurum = once?.durum;
   await durumDegistir(id, durum);
+  if (once && eskiDurum !== durum) {
+    await kayitEkle(
+      ben,
+      "durum",
+      `talep:${id}`,
+      `${talepOzeti(once)} — ${DURUM_ETIKET[eskiDurum as Durum] ?? eskiDurum} → ${DURUM_ETIKET[durum]}`
+    );
+  }
   revalidatePath("/admin");
   revalidatePath(`/admin/talep/${id}`);
 }
@@ -89,6 +120,13 @@ export async function notEylemi(form: FormData) {
   const govde = metin(form.get("govde"), 4000);
   if (!Number.isInteger(id) || !govde) return;
   await notEkle(id, govde, kullanici);
+  const t = await talep(id);
+  await kayitEkle(
+    kullanici,
+    "not",
+    `talep:${id}`,
+    `${t ? talepOzeti(t) : `Talep #${id}`} — ${govde.replace(/\s+/g, " ").slice(0, 160)}`
+  );
   revalidatePath(`/admin/talep/${id}`);
 }
 
@@ -101,12 +139,12 @@ export async function notEylemi(form: FormData) {
  * "bu form mu doldurdu, biz mi girdik" karışmasın.
  */
 export async function talepEkleEylemi(form: FormData) {
-  await yetki();
+  const ben = await yetki();
   const ad = metin(form.get("ad"), 120);
   const eposta = metin(form.get("eposta"), 160);
   if (!ad && !eposta) return;
 
-  await talepEkle({
+  const yeniId = await talepEkle({
     tur: metin(form.get("tur"), 20) || "contact",
     dil: metin(form.get("dil"), 8) || "tr",
     ad,
@@ -118,14 +156,31 @@ export async function talepEkleEylemi(form: FormData) {
     sayfa: metin(form.get("sayfa"), 300),
     kaynak: "elle",
   });
+  if (yeniId !== null) {
+    await kayitEkle(
+      ben,
+      "talep_ekle",
+      `talep:${yeniId}`,
+      talepOzeti({ id: yeniId, ad, firma: metin(form.get("firma"), 160), eposta })
+    );
+  }
   revalidatePath("/admin");
 }
 
 export async function silEylemi(form: FormData) {
-  await yetki();
+  const ben = await yetki();
   const id = Number(form.get("id"));
   if (!Number.isInteger(id)) return;
+  /* Özet silmeden ÖNCE alınıyor: kayıtta "neyi sildi" sorusunun cevabı,
+     talep gittikten sonra yalnızca burada kalıyor. */
+  const once = await talep(id);
   await talepSil(id);
+  await kayitEkle(
+    ben,
+    "talep_sil",
+    `talep:${id}`,
+    once ? `${talepOzeti(once)}${once.eposta ? ` · ${once.eposta}` : ""}` : ""
+  );
   revalidatePath("/admin");
   redirect("/admin");
 }
@@ -146,7 +201,7 @@ export async function kullaniciEkleEylemi(
   _onceki: EylemSonucu,
   form: FormData
 ): Promise<EylemSonucu> {
-  await adminYetkisi();
+  const ben = await adminYetkisi();
   const kullanici = metin(form.get("kullanici"), 60).toLowerCase();
   const parola = metin(form.get("parola"), 200);
 
@@ -164,6 +219,7 @@ export async function kullaniciEkleEylemi(
       mesaj: `"${kullanici}" zaten var. Parolasını listeden değiştirebilirsiniz.`,
     };
   }
+  await kayitEkle(ben, "kullanici_ekle", kullanici);
   revalidatePath("/admin/kullanicilar");
   return { tamam: true, mesaj: `"${kullanici}" eklendi.` };
 }
@@ -190,6 +246,7 @@ export async function parolaVerEylemi(
   if (!(await parolaAta(kullanici, parola))) {
     return { tamam: false, mesaj: "Kullanıcı bulunamadı." };
   }
+  await kayitEkle(ben, "parola_ver", kullanici);
   return { tamam: true, mesaj: "Parola değişti. Kişi girdikten sonra Profil'den kendi parolasını belirleyebilir." };
 }
 
@@ -200,6 +257,7 @@ export async function kullaniciSilEylemi(_onceki: string | null, form: FormData)
      kilitlenirsin — baştan engelliyoruz. */
   if (kullanici === ben) return "Kendi hesabınızı silemezsiniz.";
   const hata = await yoneticiSil(kullanici);
+  if (!hata) await kayitEkle(ben, "kullanici_sil", kullanici);
   revalidatePath("/admin/kullanicilar");
   return hata;
 }
@@ -211,5 +269,6 @@ export async function parolamiDegistirEylemi(_onceki: string | null, form: FormD
   const yeni = metin(form.get("yeni"), 200);
   if (!mevcut || !yeni) return "İki alan da dolu olmalı.";
   const hata = await parolaDegistir(ben, mevcut, yeni);
+  if (!hata) await kayitEkle(ben, "parola_degistir");
   return hata ?? "Parolanız değişti.";
 }

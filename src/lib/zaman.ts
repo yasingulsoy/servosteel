@@ -23,8 +23,14 @@ export function goreli(iso: string): string {
   return tamTarih(iso);
 }
 
-export function tamTarih(iso: string): string {
+/* Saat dilimi AÇIKÇA İstanbul. Verilmezse sunucunun saat dilimi kullanılır;
+   konteyner UTC'de çalışıyorsa panelde her saat 3 saat geri görünür, aynı
+   tarih sunucuda ve tarayıcıda farklı yazılıp hidrasyon uyuşmazlığı doğar. */
+const TZ = "Europe/Istanbul";
+
+export function tamTarih(iso: string | Date): string {
   return new Date(iso).toLocaleString("tr-TR", {
+    timeZone: TZ,
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
@@ -33,10 +39,21 @@ export function tamTarih(iso: string): string {
   });
 }
 
-export function kisaTarih(iso: string): string {
+export function kisaTarih(iso: string | Date): string {
   return new Date(iso).toLocaleDateString("tr-TR", {
+    timeZone: TZ,
     day: "2-digit",
     month: "2-digit",
     year: "2-digit",
   });
+}
+
+/** Süre: "1 dk'dan az", "14 dk", "2 sa 5 dk". */
+export function sureYaz(saniye: number): string {
+  if (!Number.isFinite(saniye) || saniye < 60) return "1 dk'dan az";
+  const dk = Math.round(saniye / 60);
+  if (dk < 60) return `${dk} dk`;
+  const sa = Math.floor(dk / 60);
+  const kalan = dk % 60;
+  return kalan ? `${sa} sa ${kalan} dk` : `${sa} sa`;
 }

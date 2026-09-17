@@ -1,6 +1,13 @@
 import { createHmac, randomBytes, scrypt, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { sorgu } from "@/lib/db";
+import {
+  kayitEkle,
+  oturumAnahtariniTasi,
+  oturumBaslat,
+  oturumBitir,
+  oturumDokun,
+} from "@/lib/panel-kayit";
 
 /**
  * Yönetim paneli girişi — kullanıcılar VERİTABANINDA, imzalı çerezle oturum.
@@ -208,8 +215,14 @@ export async function parolaDegistir(
   if (yeni.length < 8) return "Yeni parola en az 8 karakter olmalı.";
   if (yeni === mevcut) return "Yeni parola eskisiyle aynı.";
   const yeniKarma = await parolaKarmala(yeni);
+  const eski = await cerezOku();
   await sorgu(`UPDATE yoneticiler SET karma = $1 WHERE kullanici = $2`, [yeniKarma, kullanici]);
-  await cerezKur(kullanici, yeniKarma);
+  const yeniBitis = await cerezKur(kullanici, yeniKarma);
+  /* Yeni çerez yeni bir bitiş taşıyor; kayıtta ayrı bir oturum gibi
+     görünmesin diye aynı oturum satırı yeni anahtara taşınıyor. */
+  if (eski?.kullanici === kullanici && yeniBitis) {
+    await oturumAnahtariniTasi(kullanici, eski.bitis, yeniBitis);
+  }
   return null;
 }
 
@@ -246,9 +259,10 @@ function parmakIzi(karma: string, gizli: string): string {
   return imzala(`parola:${karma}`, gizli).slice(0, 16);
 }
 
-async function cerezKur(kullanici: string, karma: string): Promise<boolean> {
+/** Çerezi kurar; kurduysa bitiş zamanını (oturumun kayıttaki anahtarı) döndürür. */
+async function cerezKur(kullanici: string, karma: string): Promise<number | null> {
   const gizli = await gizliAnahtar();
-  if (!gizli) return false;
+  if (!gizli) return null;
 
   const bitis = Math.floor(Date.now() / 1000) + SURE_SN;
   const govde = `${kullanici}.${bitis}.${parmakIzi(karma, gizli)}`;
@@ -259,7 +273,7 @@ async function cerezKur(kullanici: string, karma: string): Promise<boolean> {
     path: "/",
     maxAge: SURE_SN,
   });
-  return true;
+  return bitis;
 }
 
 /**
@@ -274,22 +288,35 @@ const SAHTE_KARMA =
 export async function girisYap(kullanici: string, parola: string): Promise<boolean> {
   const karma = await kayitliKarma(kullanici);
   const tamam = await parolaDogru(parola, karma ?? SAHTE_KARMA);
-  if (!karma || !tamam) return false;
-  return cerezKur(kullanici, karma);
+  if (!karma || !tamam) {
+    /* Olmayan kullanıcı adıyla gelen denemeler de yazılıyor — parola
+       tahmin eden birinin izi en çok orada — ama AD YAZILMADAN. Parolasını
+       yanlışlıkla kullanıcı adı kutusuna yazan birinin parolası kayıtta düz
+       metin dururdu. Parantez kullanıcı adında geçemediği için gerçek bir
+       hesapla karışmaz. */
+    await kayitEkle(karma ? kullanici : "(bilinmeyen)", "giris_hatali", "", karma ? "" : "Olmayan kullanıcı adıyla");
+    return false;
+  }
+  const bitis = await cerezKur(kullanici, karma);
+  if (bitis === null) return false;
+  await oturumBaslat(kullanici, bitis);
+  return true;
 }
 
 export async function cikisYap() {
+  const c = await cerezOku();
+  if (c) await oturumBitir(c.kullanici, c.bitis);
   (await cookies()).delete(CEREZ);
 }
 
 /**
- * Geçerli oturumdaki kullanıcı adı, yoksa `null`.
+ * Çerezi okur ve imzasını, süresini doğrular — parola parmak izine BAKMAZ.
  *
  * Çerez: `kullanici.bitis.parmakizi.imza`. SAĞDAN ayrıştırılıyor, çünkü
  * kullanıcı adında nokta olabilir. Önceki sürüm soldan bölüyordu:
  * "ali.veli" adlı kullanıcının oturumu "ali" olarak okunurdu.
  */
-export async function oturum(): Promise<string | null> {
+async function cerezOku(): Promise<{ kullanici: string; bitis: number; parmak: string } | null> {
   const ham = (await cookies()).get(CEREZ)?.value;
   if (!ham) return null;
 
@@ -307,8 +334,24 @@ export async function oturum(): Promise<string | null> {
   if (!kullanici || !Number.isFinite(bitis) || bitis < Math.floor(Date.now() / 1000)) {
     return null;
   }
+  return { kullanici, bitis, parmak };
+}
 
-  const karma = await kayitliKarma(kullanici);
-  if (!karma || !esit(parmak, parmakIzi(karma, gizli))) return null;
-  return kullanici;
+/**
+ * Geçerli oturumdaki kullanıcı adı, yoksa `null`.
+ *
+ * Geçerliyse oturumun son etkinliği de güncellenir (bkz. `panel-kayit`) —
+ * panel sayfaları ve sunucu eylemleri buradan geçtiği için kayıt ayrıca
+ * bir yere eklenmeyi unutulamaz.
+ */
+export async function oturum(): Promise<string | null> {
+  const c = await cerezOku();
+  if (!c) return null;
+
+  const gizli = await gizliAnahtar();
+  const karma = await kayitliKarma(c.kullanici);
+  if (!gizli || !karma || !esit(c.parmak, parmakIzi(karma, gizli))) return null;
+
+  await oturumDokun(c.kullanici, c.bitis);
+  return c.kullanici;
 }

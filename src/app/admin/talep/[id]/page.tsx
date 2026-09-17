@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { ArrowLeft, Phone, Mail } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, notlar, talep } from "@/lib/leads-db";
+import { talepAcildi } from "@/lib/panel-kayit";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { durumEylemi, notEylemi, silEylemi } from "../../actions";
 import { Kabuk } from "../../kabuk";
@@ -24,6 +25,7 @@ export default async function TalepSayfasi({
   const t = await talep(no);
   if (!t) notFound();
   const n = await notlar(no);
+  await talepAcildi(ben, no, [t.ad, t.firma].filter(Boolean).join(" · ") || t.eposta || `Talep #${no}`);
 
   const tel = t.telefon.replace(/\s/g, "");
 

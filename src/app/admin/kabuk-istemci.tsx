@@ -7,6 +7,7 @@ import {
   ChevronDown,
   Ellipsis,
   ExternalLink,
+  History,
   Inbox,
   LogOut,
   Menu,
@@ -16,7 +17,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { cikisEylemi } from "./actions";
+import { cikisEylemi, nabizEylemi } from "./actions";
 import { MENU_CEREZ } from "./menu-tercihi";
 
 /**
@@ -28,11 +29,15 @@ import { MENU_CEREZ } from "./menu-tercihi";
  *  - Üst çubuktaki tuş menüyü açık tutar; tercih çerezde saklanır.
  *  - Mobilde üst çubuktaki tuşla soldan çekmece açılır.
  *
- * "Kullanıcılar" yalnızca yöneticiye görünür — ama bu SADECE görünüm; asıl
- * kilit sunucu eylemlerinde ve sayfanın kendisinde.
+ * "Kullanıcılar" ve "Kayıtlar" yalnızca yöneticiye görünür — ama bu SADECE
+ * görünüm; asıl kilit sunucu eylemlerinde ve sayfanın kendisinde.
  */
 
-export type PanelBolum = "talepler" | "kullanicilar" | "profil";
+export type PanelBolum = "talepler" | "kullanicilar" | "kayitlar" | "profil";
+
+/* Nabız: panelde geçen süre kayda doğru yazılsın diye (bkz. lib/panel-kayit). */
+const NABIZ_MS = 60_000;
+const HAREKETSIZ_MS = 5 * 60_000;
 
 type DurumSatiri = { anahtar: string; etiket: string; adet: number | null };
 
@@ -100,6 +105,28 @@ export function PanelKabugu({
     window.addEventListener("keydown", tus);
     return () => window.removeEventListener("keydown", tus);
   }, [mobilAcik]);
+
+  /* Dakikalık nabız — oturumun son etkinliğini günceller. Talep okurken
+     sayfa değişmediği için sunucu kişinin hâlâ orada olduğunu bilemiyordu.
+     Yalnızca sekme GÖRÜNÜRKEN ve son 5 dakikada fare/klavye/dokunma varken
+     atar: arka planda unutulan ya da başından kalkılan panel süre yazmaz. */
+  useEffect(() => {
+    let sonHareket = Date.now();
+    const hareket = () => {
+      sonHareket = Date.now();
+    };
+    const olaylar = ["pointerdown", "pointermove", "keydown", "scroll", "touchstart"];
+    olaylar.forEach((o) => window.addEventListener(o, hareket, { passive: true }));
+    const nabiz = setInterval(() => {
+      if (document.visibilityState !== "visible") return;
+      if (Date.now() - sonHareket > HAREKETSIZ_MS) return;
+      nabizEylemi().catch(() => {});
+    }, NABIZ_MS);
+    return () => {
+      clearInterval(nabiz);
+      olaylar.forEach((o) => window.removeEventListener(o, hareket));
+    };
+  }, []);
 
   function sabitDegistir() {
     const yeni = !sabit;
@@ -293,6 +320,20 @@ export function PanelKabugu({
                     </Link>
                   </li>
                 ) : null}
+
+                {admin ? (
+                  <li>
+                    <Link
+                      href="/admin/kayitlar"
+                      onClick={kapatMobil}
+                      aria-current={aktif === "kayitlar" ? "page" : undefined}
+                      className={oge(aktif === "kayitlar")}
+                    >
+                      <History className={ikon(aktif === "kayitlar")} aria-hidden />
+                      <span className={`whitespace-nowrap ${yazi}`}>Kayıtlar</span>
+                    </Link>
+                  </li>
+                ) : null}
               </ul>
             </div>
 
@@ -462,6 +503,14 @@ function KullaniciMenusu({ kullanici, admin }: { kullanici: string; admin: boole
                 <Link href="/admin/kullanicilar" onClick={() => setAcik(false)} className={satir}>
                   <Users className="size-4 text-muted" aria-hidden />
                   Kullanıcılar
+                </Link>
+              </li>
+            ) : null}
+            {admin ? (
+              <li>
+                <Link href="/admin/kayitlar" onClick={() => setAcik(false)} className={satir}>
+                  <History className="size-4 text-muted" aria-hidden />
+                  Kayıtlar
                 </Link>
               </li>
             ) : null}
