@@ -40,6 +40,8 @@ const many = (slugs: string[], destination: string) =>
  */
 const HIDROLIK = [
   "hydraulic-decoilers",
+  // Tekil hâli: GSC 404 listesinde, 2026-09-10'da www üzerinden taranmış.
+  "hydraulic-decoiler",
   ...[6, 8, 10, 12, 15, 20].map((t) => `${t}-ton-hydraulic-decoiler`),
 ];
 const MEKANIK = [
