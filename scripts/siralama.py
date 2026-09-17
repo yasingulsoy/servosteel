@@ -30,6 +30,7 @@ import io
 import json
 import math
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -48,6 +49,8 @@ API = "https://api.dataforseo.com/v3/"
 # Yalnızca --kuru tahmini için; gerçek maliyet API yanıtındaki "cost" alanından okunur.
 # Ücret 10 sonuçluk sayfa başınadır (2026-09-17 ölçümü: derinlik 50 = 5 sayfa ücreti).
 SAYFA_UCRETI = {"standart": 0.0006, "canli": 0.002}
+# YouTube kanalımızın adı video kutusundaki öğelerde "YouTube · ServoSteel Coil Processing ..." diye geçiyor
+KANAL = re.compile(r"servo\s*-?\s*steel", re.I)
 AYLAR = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül",
          "Ekim", "Kasım", "Aralık"]
 
@@ -107,6 +110,10 @@ def coz(t, alan):
         "organik": len(organik),
         "ilk5": [[o.get("domain"), (o.get("title") or "")[:90]] for o in organik[:5]],
         "ozellik": sorted({o.get("type") for o in ogeler} - {"organic"}),
+        # Site çıkmasa da kanalımızın videosu Google'ın video kutusunda çıkabiliyor
+        "video": any(KANAL.search("%s %s" % (v.get("source") or "", v.get("title") or ""))
+                     for o in ogeler if o.get("type") in ("video", "short_videos")
+                     for v in (o.get("items") or [])),
         "kontrol": s.get("check_url"),
     }
     if diger:
@@ -127,6 +134,7 @@ def birlestir(x, ana, ek):
     temel = ek if ana.get("hata") and not ek.get("hata") else ana
     x.update(temel)
     x["konumlar"] = ["hata" if r.get("hata") else r.get("sira") for r in (ana, ek)]
+    x["video"] = bool(ana.get("video") or ek.get("video"))
     if ana.get("hata") or ek.get("hata"):
         return
     if ek.get("sira") and (not ana.get("sira") or ek["sira"] < ana["sira"]):
@@ -379,7 +387,7 @@ def tablo_satiri(x, o, der, alan, donem, liste, on=()):
     return "| %s |" % " | ".join(list(on) + [
         x["kelime"], x["grup"], str(x.get("hacim") or "—"), s,
         sira_yazi(o, der) if o else "—", degisim(x, o)[0],
-        sayfa_yolu(x.get("url")), birinci(x, alan), gsc_yazi(x.get("gsc"), donem)])
+        sayfa_yolu(x.get("url")), "▶" if x.get("video") else "", birinci(x, alan), gsc_yazi(x.get("gsc"), donem)])
 
 
 def hacme_gore(x):
@@ -402,8 +410,8 @@ def rapor(kayit, onceki, liste):
                   "konum. Sıra sütunuyla aynı şey değildir. \"son\" yazıyorsa o tarihten beri hiç "
                   "gösterim yok." % (kisa_tarih(donem[0]), kisa_tarih(donem[1]))]
     L += ["", "## Özet", "",
-          "| pazar | kelime | 1–3 | 4–10 | 11–20 | 21–%d | bulunamadı | yükselen | düşen |" % der,
-          "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
+          "| pazar | kelime | 1–3 | 4–10 | 11–20 | 21–%d | bulunamadı | video kutusunda | yükselen | düşen |" % der,
+          "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     bantlar = [(1, 3), (4, 10), (11, 20), (21, der)]
 
     def ozet_satiri(ad, grup):
@@ -413,8 +421,9 @@ def rapor(kayit, onceki, liste):
         farklar = [degisim(x, once.get((x["pazar"], x["kelime"])))[1] for x in grup]
         yuk = sum(1 for f in farklar if f and f > 0) if onceki else "—"
         dus = sum(1 for f in farklar if f and f < 0) if onceki else "—"
-        return "| %s | %d | %s | %d | %s | %s |" % (
-            ad, len(grup), " | ".join(str(n) for n in say), yok, yuk, dus)
+        video = sum(1 for x in olculen if x.get("video"))
+        return "| %s | %d | %s | %d | %d | %s | %s |" % (
+            ad, len(grup), " | ".join(str(n) for n in say), yok, video, yuk, dus)
 
     for pk, p in liste["pazarlar"].items():
         grup = [x for x in xs if x["pazar"] == pk]
@@ -450,24 +459,25 @@ def rapor(kayit, onceki, liste):
     else:
         L.append("Bu aralıkta kelime yok.")
 
-    baslik = "| kelime | grup | hacim/ay | sıra | önceki | değişim | sıralanan sayfa | 1. sırada | GSC 28 gün |"
+    baslik = "| kelime | grup | hacim/ay | sıra | önceki | değişim | sıralanan sayfa | video | 1. sırada | GSC 28 gün |"
     for pk, p in liste["pazarlar"].items():
         grup = [x for x in xs if x["pazar"] == pk]
         if not grup:
             continue
-        L += ["", "## %s" % p["ad"], "", baslik, "|---|---|---:|---:|---:|---|---|---|---|"]
+        L += ["", "## %s" % p["ad"], "", baslik, "|---|---|---:|---:|---:|---|---|:-:|---|---|"]
         for x in sorted(grup, key=hacme_gore):
             L.append(tablo_satiri(x, once.get((x["pazar"], x["kelime"])), der, alan, donem, liste))
     if diger:
         L += ["", "## Marka ve hesaplayıcılar — talep değil", "",
               "Marka aramasında ilk sıra korunmalı. Hesaplayıcılar teklif getirmez; link ve otorite "
-              "için izleniyor.", "", "| pazar " + baslik, "|---|---|---|---:|---:|---:|---|---|---|---|"]
+              "için izleniyor.", "", "| pazar " + baslik, "|---|---|---|---:|---:|---:|---|---|:-:|---|---|"]
         for x in sorted(diger, key=hacme_gore):
             L.append(tablo_satiri(x, once.get((x["pazar"], x["kelime"])), der, alan, donem, liste,
                                   on=[liste["pazarlar"][x["pazar"]]["ad"]]))
     L += ["", "---", "",
           "**Sıra:** Google masaüstü sonucunda organik sonuçlar içindeki yerimiz; reklam, harita ve video "
-          "kutusu sayılmaz. **yok (ilk N):** Google o aramada N sonuç verdi, aralarında yokuz. Kendi "
+          "kutusu sayılmaz. **▶ / video kutusunda:** Google'ın video kutusunda YouTube kanalımızdan bir video var "
+          "(site sonuçlarda olmasa bile). **yok (ilk N):** Google o aramada N sonuç verdi, aralarında yokuz. Kendi "
           "tarayıcında kişiselleştirme yüzünden birkaç sıra farklı görebilirsin; her satırın doğrulama "
           "bağlantısı kayıt dosyasında (`kontrol`). **Türkiye iki yerden ölçülür**, ülke geneli ve İstanbul "
           "(TR organik ziyaretin ~%60'ı): sıra ikisinin iyisidir, farklıysa parantezde ikisi de yazar. Tek "
@@ -489,9 +499,10 @@ def konsol(kayit, onceki, liste):
         print("\n## %s" % ad)
         for x in sorted(grup, key=hacme_gore):
             o = once.get((x["pazar"], x["kelime"]))
-            print("  %12s %-6s %-3s %-38s %5s/ay  %-36s 1.: %s%s" % (
+            print("  %12s %-6s %-3s %-38s %5s/ay %s %-36s 1.: %s%s" % (
                 sira_yazi(x, der), degisim(x, o)[0], x["pazar"], x["kelime"][:38], x.get("hacim") or "—",
-                sayfa_yolu(x.get("url"))[:36], birinci(x, liste["alan"]).replace("*", ""), konum_yazi(x, liste)))
+                "▶" if x.get("video") else " ", sayfa_yolu(x.get("url"))[:36],
+                birinci(x, liste["alan"]).replace("*", ""), konum_yazi(x, liste)))
 
 
 def main():

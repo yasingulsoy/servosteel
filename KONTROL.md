@@ -192,6 +192,9 @@ almak yerine kuruldu (2026-09-17).
   değildir. **"son 5 Eyl"** yazıyorsa o günden beri gösterim yok, sıra düşmüş
   olabilir. 3-5 Eylül'de birkaç İngilizce/Lehçe kelimede (automatic stacking
   machine, linie podające) her gün gelen gösterim birden kesildi.
+- **video sütunu (▶):** Google'ın video kutusunda YouTube kanalımızdan bir video
+  var mı. Site çıkmasa da video çıkabiliyor; YouTube başlık çalışmasının etkisi
+  buradan izlenir (SEO.md §4).
 - **Rusça:** DataForSEO'da Google Rusya konumu yok, Kazakistan üzerinden.
 - **Macarca ve Arapça kelime yok.** Aranan tek aday terimlerin SERP'i başka
   makine çıktı (§2), sitenin kendi başlık terimleri ise 1. sırada ama hiç
@@ -217,6 +220,26 @@ arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.
 ---
 
 ## D. Panel işleri — Yasin'de
+
+**Search Console — dizine ekleme istekleri (günde ~10 kota, 2026-09-17'de doldu)**
+
+Türkçe Akademi yazılarının tamamı 17 Eylül'de düzeltildi (049c1df: yanlış
+hesap örnekleri, özet, SSS) ama Google en son 8-27 Ağustos'ta taradı — hâlâ
+eski, hatalı hâlini görüyor. Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
+18 Eylül'de sırayla (ilk ikisi sıralanan yazılar):
+
+- [ ] `/akademi/boy-kesme-hatti-nasil-secilir` — "boy kesme hattı"nda 3.
+- [ ] `/akademi/rulo-dilme-hatti-maliyeti` — "dilme hattı"nda 7. (İstanbul)
+- [ ] `/akademi/rulo-dilme-hatti-nasil-secilir`
+- [ ] `/akademi/sac-fire-oranini-dusurmek`
+- [ ] `/akademi/progresif-kalip-servo-besleyici-secimi`
+- [ ] `/akademi/servo-besleyici-nasil-secilir`
+- [ ] `/akademi/solar-profil-hatti-yatirim-geri-donusu`
+- [ ] `/akademi/rulo-hatti-nereden-alinmali`
+
+17 Eylül'de istenenler Google tarafından aynı gün tarandı ama "Tarandı - şu
+anda dizine eklenmedi" durumunda: TR/EN roll form nedir, TR mini ve kasalı
+servo sürücü, EN cased servo feeder. TR otomatik istifleyici **dizine girdi**.
 
 **Yandex**
 - [ ] **Ana ayna** ayarı: `https://` seçilecek (ikisinde de boş)

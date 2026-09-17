@@ -4,7 +4,7 @@
 plan, fuar planı, teknik denetim, eski site arşivi); tamamlanan işler ve eskiyen
 tahminler ayıklanıp bu dosyada birleştirildi.
 
-**Son güncelleme:** 2026-09-07
+**Son güncelleme:** 2026-09-17
 
 **Ne nerede:** burası ölçümün ve stratejinin kaydı. Açık iş listesi
 (mühendisten bekleyen sayılar, firmadan bekleyen bilgiler, panel işleri,
@@ -70,6 +70,28 @@ gösterilmedi.** İspanyolca 3/52, Rusça 4/52, Macarca 5/52. Bu, §2'deki
 Bunlar teknik bir zarar vermiyor (470 sayfa Google için küçük bir site), ama
 dokuz dili güncel tutmaya harcanan emek İngilizceye gitse, dönüşen pazarda
 işe yarardı.
+
+### 4-5 Eylül: İtalyanca, Almanca, Lehçe gösterimler düştü
+
+2026-09-17'de fark edildi. Günlük ortalama gösterim (GSC, dile göre sayfa):
+
+| dil | 20 Ağu – 2 Eyl | 6 – 16 Eyl |
+|---|---:|---:|
+| it | 16,3 | **2,4** |
+| de | 9,2 | **2,4** |
+| pl | 13,2 | **5,7** |
+| en | 116,1 | 101,9 |
+| tr | 210,8 | 198,3 |
+
+- **O günlerde deploy yok** — canlı site 30 Ağustos sürümündeydi; sebep Google
+  tarafında.
+- Düşüşten önceki IT/DE/PL gösterimlerinin %55'i 21-50. sıradaydı, %83'ü
+  masaüstündendi; **iki dönemde de tık sıfır** — talebe etkisi olmadı.
+- Ama gerçek sıra kaybı da var: `taglio longitudinale` ~7 → ilk 46'da yok,
+  `hydraulische haspel` ~6 → ilk 46'da yok (17 Eylül sıralama ölçümü).
+  İlgili sayfalar hâlâ dizinde (URL denetimi).
+- Sıralama takibiyle izleniyor; geri gelmezse çeviri sayfalarının kalitesine
+  bakılacak.
 
 ### Tuzak kelime: `profilarka` (PL)
 
@@ -558,7 +580,13 @@ alakalı içerik, kirli linkten daha çok iş görüyor.
 - [ ] **Akademi'yi ritme bağla** — 2 haftada 1 yazı. Çin'in kazandığı format:
       "nasıl seçilir" + "Ultimate Guide". Sıradaki: İngilizce eğitici yazı —
       Kingreal'in yazısı ticari sorguda sıralanıyor (§3.6)
-- [ ] YouTube başlıklarını hedef kelimeyle yaz, açıklamaya ürün sayfası linki
+- [ ] YouTube başlıklarını hedef kelimeyle yaz, açıklamaya ürün sayfası linki.
+      **Ölçüldü (17 Eylül):** sitenin çıkmadığı ve ayda 90+ aranan 21 kelimenin
+      **16'sında Google video kutusu gösteriyor, hiçbirinde videomuz yok**
+      (rollform makinesi, trapez sac makinesi, sac dilme makinesi, ABD'de roll
+      forming machine, decoiler, cut to length line…). Videolarımız 7 Türkçe
+      aramada kutuda (rulo açıcı, rollform hattı, boy kesme hattı…). Engel: kanal
+      yazma yetkisi — `python ~/.config/claude-seo/youtube-yetki.py` (Yasin)
 
 ### Akademi
 
@@ -747,14 +775,21 @@ akıyor. Her deploy sonrası `npm run kontrol`, yeni URL varsa `npm run indexnow
 sahasında kaleyi kimse tutmuyor ve tıklarımızın %80'i zaten Türkiye'den
 (28 günde 185 tık, ortalama sıra 8,1).
 
-| hedef kelime | hacim | durum | ne gerek |
-|---|---:|---|---|
-| rulo açıcı | 140 | **12,1** — 90 gösterim, 2 tık | sayfa hazır, spec dolu; ilk sayfaya en yakın |
-| trapez sac makinesi | 480 | başlık doğru | SSS eklendi; SERP zayıf (ilk 5'in üçü pazaryeri) |
-| rollform makinesi | 590 | başlık düzeltildi | hub içeriği derinleşmeli |
-| sac dilme hattı | 30 | — | dilme sayfası hazır |
+Sıralar 17 Eylül ölçümü (Google masaüstü, ülke geneli ve İstanbul'un iyisi;
+tam liste `seo/siralama/RAPOR.md`, komut KONTROL.md §C.3).
 
-**Blokaj:** yok. Bu kademe zaten yürüyor.
+| hedef kelime | hacim | 17 Eylül | ilk sırada ne var |
+|---|---:|---|---|
+| rollform makinesi | 590 | **ilk 43'te yok** | makinaturkiye.com (ilan); video kutusu var, videomuz yok |
+| trapez sac makinesi | 480 | **ilk 46'da yok** | ilk 5'in dördü ilan: sahibinden, makinecim, makinaturkiye, Facebook |
+| roll form makinesi | 320 | **ilk 44'te yok** | "roll form nedir" yazımız 17 Eylül'de tarandı, henüz dizinde değil |
+| rulo açıcı | 140 | **5** | Ağustos tablosunda GSC ortalaması 12,1'di |
+| sac dilme makinesi | 110 | **ilk 44'te yok** | makinecim.com (ilan) |
+| sac dilme hattı | 30 | **20** | aybamakina.com |
+
+**Durum:** küçük ve orta kelimelerde yürüyor — 15 Türkçe talep kelimesinin 7'si
+ilk 10'da. **En çok aranan dört kelimede (ayda 1.600 arama) hiç yokuz** ve
+oralarda ilk sıraları ilan siteleri tutuyor.
 
 ### Kademe 2 — 3-6 ay: gerçek link (fuar + partner)
 
