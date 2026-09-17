@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { oynamayaHazir, siradanCik, yuklemeIste } from "@/lib/video-sirasi";
 
 /** İçeriğin durduğu taraf — mantıksal, RTL'de kendiliğinden aynalanır. */
 export type BandSide = "start" | "end";
@@ -12,11 +13,16 @@ export type VideoBandItem = {
   poster: string;
   /** Ekran okuyucular için kısa açıklama */
   label?: string;
-  /** İçeriğin durduğu taraf. Verilmezse VideoStack sırayla değiştirir. */
+  /** İçeriğin durduğu taraf. */
   side?: BandSide;
   /** Videonun üzerine binecek içerik (cam panel vb.) */
   children?: ReactNode;
 };
+
+/* Veri hiç inmiyorsa (iOS bazen play() çağrılmadan önden indirmez) bu süre
+   sonra oynatma yine de başlatılır; iniyor ama yavaşsa ikinci süre sonra. */
+const INMIYOR_MS = 4_000;
+const YAVAS_MS = 10_000;
 
 /**
  * Tam genişlik, tam kare video bandı.
@@ -26,85 +32,87 @@ export type VideoBandItem = {
  * üstten/alttan kesiyor, videoların başındaki logo jeneriği kırpılıyordu.
  *
  * Karartma: YOK. Videonun üzerinde hiçbir perde yok; üstteki beyaz metnin
- * okunabilirliğini kendi gölgesi taşıyor (globals.css .on-video). Perde harfin
- * çevresini değil tüm kareyi koyultuyordu — ölçünce gölgenin daha iyi kontrast
- * verdiği çıktı, o yüzden perde tamamen kaldırıldı.
+ * okunabilirliğini kendi gölgesi taşıyor (globals.css .on-video).
  *
- * Performans: preload="none" + IntersectionObserver — video ancak görünüm
- * alanına girince yüklenir ve oynar, çıkınca durur. Böylece sayfa açılışında
- * hiç video baytı inmez.
+ * YÜKLEME SIRAYLA (bkz. lib/video-sirasi). Bant görünüme 1,5 ekran kala
+ * sıraya girer; aynı anda tek video iner. Ekrana giren bant sırayı beklemez.
+ * Video, tarayıcı "takılmadan oynar" diyene (canplaythrough) kadar OYNAMAZ —
+ * o ana kadar poster durur. Önceden oynatma, veri gelir gelmez başlıyordu;
+ * yavaş bağlantıda ziyaretçi takılan videoyu izliyordu.
+ *
+ * Poster GEÇ bağlanır: `poster` niteliği HTML'de dururken tarayıcı onu
+ * preload="none" olsa bile açılışta indirir — sayfanın çok altındaki bantların
+ * posterleri de dahil. Bu yüzden poster ancak bant sıraya girerken atanır.
  */
 export function VideoBand({ src, poster, label, side = "start", children }: VideoBandItem) {
   const ref = useRef<HTMLVideoElement>(null);
-
-  /**
-   * Poster GEÇ bağlanır.
-   *
-   * `poster` niteliği HTML'de dururken tarayıcı onu preload="none" olsa bile
-   * sayfa açılışında indirir — sayfanın çok altındaki bantların posterleri de
-   * dahil. Dört poster ~600 KB ediyordu ve bunun ~470 KB'ı hiç görülmeyebilecek
-   * bantlara aitti. Bu yüzden poster ancak bant görünüme YAKLAŞINCA atanır.
-   *
-   * rootMargin 1400px (~1,5 ekran): poster VE videonun tamponlanması burada
-   * başlar. 400px'ti; normal kaydırma hızında bu yaklaşık bir saniye ediyor ve
-   * 14-18 MB'lık bir dosyanın oynayacak kadar dolmasına yetmiyordu — bant
-   * ekrana girdiğinde donuyordu. 1,5 ekranlık pay, kullanıcı banda varmadan
-   * birkaç saniyelik görüntünün hazır olmasını sağlıyor.
-   *
-   * Daha da büyütülmedi: her bant kendi dosyasını indirmeye başlıyor, pay
-   * arttıkça aynı anda inen dosya sayısı artar ve bant genişliği bölünür —
-   * donmayı çözmek yerine yayarsın.
-   */
   const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setPosterSrc(poster);
-          /* Video de BURADA tamponlanmaya başlar, oynatma anında değil.
-             Önceden `preload="none"` bırakılıyor ve indirme ancak bant %25
-             görününce play() ile tetikleniyordu; 14 MB'lık bir dosya ekranda
-             dururken inmeye başladığı için görünür şekilde donuyordu.
-             Poster'la aynı pencerede başlatınca video, sırası geldiğinde
-             tamponlanmış oluyor. Sayfa açılışında hâlâ hiçbir video baytı
-             inmiyor — değişen tek şey zamanlama. */
-          v.preload = "auto";
-          v.load();
-          io.disconnect();
-        }
-      },
-      { rootMargin: "1400px" }
-    );
-    io.observe(v);
-    return () => io.disconnect();
-  }, [poster]);
-
-  useEffect(() => {
-    const v = ref.current;
-    if (!v) return;
     v.muted = true;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        /* band-inview: cam panelin giriş animasyonunu tetikler; banttan
-           çıkıp geri gelince panel yeniden süzülerek girer. */
-        const band = v.closest("[data-video-band]");
-        if (entry.isIntersecting) {
-          band?.classList.add("band-inview");
-          const p = v.play();
-          if (p && typeof p.catch === "function") p.catch(() => {});
-        } else {
+    const band = v.closest("[data-video-band]");
+    let gorunur = false;
+    const yedekler: ReturnType<typeof setTimeout>[] = [];
+    const yedekleriSil = () => yedekler.splice(0).forEach(clearTimeout);
+
+    const oynat = () => {
+      if (!gorunur || !v.paused) return;
+      const p = v.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+    v.addEventListener("canplaythrough", oynat);
+
+    /* 1,5 ekran kala: poster ve sıraya giriş. */
+    const yaklas = new IntersectionObserver(
+      ([e]) => {
+        if (!e.isIntersecting) return;
+        setPosterSrc(poster);
+        yuklemeIste(v);
+        yaklas.disconnect();
+      },
+      { rootMargin: "0px 0px 150% 0px" }
+    );
+
+    /* Ekranda: oynat ya da hazır olmasını bekle; ekrandan çıkınca durdur.
+       band-inview cam panelin giriş animasyonunu tetikler. */
+    const gor = new IntersectionObserver(
+      ([e]) => {
+        gorunur = e.isIntersecting;
+        yedekleriSil();
+        if (!gorunur) {
           band?.classList.remove("band-inview");
           v.pause();
+          return;
         }
+        band?.classList.add("band-inview");
+        setPosterSrc(poster);
+        yuklemeIste(v, true);
+        if (oynamayaHazir(v)) {
+          oynat();
+          return;
+        }
+        yedekler.push(
+          setTimeout(() => {
+            if (v.readyState <= HTMLMediaElement.HAVE_METADATA) oynat();
+          }, INMIYOR_MS),
+          setTimeout(oynat, YAVAS_MS)
+        );
       },
       { threshold: 0.25 }
     );
-    io.observe(v);
-    return () => io.disconnect();
-  }, []);
+
+    yaklas.observe(v);
+    gor.observe(v);
+    return () => {
+      yaklas.disconnect();
+      gor.disconnect();
+      yedekleriSil();
+      v.removeEventListener("canplaythrough", oynat);
+      siradanCik(v);
+    };
+  }, [poster]);
 
   return (
     <section
@@ -131,25 +139,5 @@ export function VideoBand({ src, poster, label, side = "start", children }: Vide
 
       {children && <div className="relative size-full">{children}</div>}
     </section>
-  );
-}
-
-/**
- * Birden çok video bandını ARALIKSIZ alt alta dizer.
- * Bantlar arasında hiçbir geçiş/boşluk yoktur — videolar gerçekten bitişiktir.
- *
- * İçerik tarafı sırayla değişir (sol, sağ, sol …) — üst üste aynı tarafta
- * duran paneller monoton görünüyordu. Bir bant kendi `side` değerini
- * verirse o kazanır.
- */
-export function VideoStack({ items }: { items: VideoBandItem[] }) {
-  if (!items.length) return null;
-
-  return (
-    <div className="w-full">
-      {items.map((item, i) => (
-        <VideoBand key={item.src} {...item} side={item.side ?? (i % 2 === 0 ? "start" : "end")} />
-      ))}
-    </div>
   );
 }

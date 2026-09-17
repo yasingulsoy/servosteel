@@ -71,6 +71,12 @@
     "solutionsEyebrow": "Szakterületünk",
     "solutionsTitle": "Három fő sor, egyetlen kézjegy",
     "solutionsText": "Minden berendezés a lecsévélőtől a rakatolóig saját üzemünkben készül — egy partner, tökéletesen összehangolt sor.",
+    "quickEyebrow": "Gyors ajánlatkérés",
+    "quickTitle": "Milyen sort keres?",
+    "quickText": "Válassza ki a sort, és adja meg elérhetőségét. Ha a méretek még nem véglegesek, hagyja üresen azt a mezőt; kérése közvetlenül mérnöki csapatunkhoz jut el.",
+    "quickStep1": "1. Mit szeretne gyártani?",
+    "quickStep2": "2. Hogyan érjük el Önt?",
+    "quickOptional": "nem kötelező",
     "solutions": {
       "rollform": {
         "title": "Profilozó Sorok",

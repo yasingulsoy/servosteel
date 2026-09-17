@@ -71,6 +71,12 @@
     "solutionsEyebrow": "Unsere Kompetenz",
     "solutionsTitle": "Drei Kernanlagen, eine Handschrift",
     "solutionsText": "Jede Komponente vom Abwickler bis zum Stapler entsteht im eigenen Werk — ein Ansprechpartner, eine perfekt abgestimmte Anlage.",
+    "quickEyebrow": "Schnellanfrage",
+    "quickTitle": "Welche Anlage suchen Sie?",
+    "quickText": "Wählen Sie die Anlage und hinterlassen Sie Ihre Kontaktdaten. Stehen die Maße noch nicht fest, lassen Sie das Feld einfach leer; Ihre Anfrage geht direkt an unser Technikteam.",
+    "quickStep1": "1. Was möchten Sie produzieren?",
+    "quickStep2": "2. Wie erreichen wir Sie?",
+    "quickOptional": "optional",
     "solutions": {
       "rollform": {
         "title": "Rollformanlagen",

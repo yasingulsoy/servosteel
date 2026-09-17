@@ -71,6 +71,12 @@
     "solutionsEyebrow": "La nostra specializzazione",
     "solutionsTitle": "Tre linee principali, un'unica firma",
     "solutionsText": "Ogni componente, dallo svolgitore all'impilatore, è prodotto nel nostro stabilimento: un solo interlocutore, una linea perfettamente integrata.",
+    "quickEyebrow": "Preventivo rapido",
+    "quickTitle": "Quale linea stai cercando?",
+    "quickText": "Scegli la linea e lascia i tuoi contatti. Se le misure non sono ancora definite, lascia vuoto quel campo; la richiesta arriva direttamente al nostro ufficio tecnico.",
+    "quickStep1": "1. Cosa vuoi produrre?",
+    "quickStep2": "2. Come possiamo contattarti?",
+    "quickOptional": "facoltativo",
     "solutions": {
       "rollform": {
         "title": "Linee di Profilatura",

@@ -71,6 +71,12 @@
     "solutionsEyebrow": "Nuestra especialidad",
     "solutionsTitle": "Tres líneas principales, una sola firma",
     "solutionsText": "Cada equipo, del desbobinador al apilador, se fabrica en nuestra planta: un solo interlocutor, una línea totalmente compatible.",
+    "quickEyebrow": "Presupuesto rápido",
+    "quickTitle": "¿Qué línea busca?",
+    "quickText": "Elija la línea y deje sus datos de contacto. Si sus medidas aún no están definidas, deje ese campo en blanco; su solicitud llega directamente a nuestro equipo de ingeniería.",
+    "quickStep1": "1. ¿Qué quiere producir?",
+    "quickStep2": "2. ¿Cómo le contactamos?",
+    "quickOptional": "opcional",
     "solutions": {
       "rollform": {
         "title": "Líneas de Perfilado",

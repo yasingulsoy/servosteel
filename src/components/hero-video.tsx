@@ -4,6 +4,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Play } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
+import { oynamayaHazir, siradanCik, yuklemeIste } from "@/lib/video-sirasi";
 
 /**
  * Başlığı kelimelere böler; her kelime kendi maskesinin içinden yukarı
@@ -40,24 +41,45 @@ export function HeroVideo() {
     if (!v) return;
     // React bazı tarayıcılarda muted attribute'unu güvenilir set etmez; autoplay için garanti
     v.muted = true;
-    const p = v.play();
-    if (p && typeof p.catch === "function") p.catch(() => {});
+    let gorunur = true;
+
+    const oynat = () => {
+      if (!gorunur || !v.paused) return;
+      const p = v.play();
+      if (p && typeof p.catch === "function") p.catch(() => {});
+    };
+
+    /* Sıranın ilki hero ve beklemez (bkz. lib/video-sirasi). Önceden play()
+       hemen çağrılıyordu: video veri geldikçe oynuyor, yavaş bağlantıda ilk
+       saniyeler takılıyordu. Artık tarayıcı "takılmadan oynar" diyene kadar
+       poster duruyor. Veri hiç inmiyorsa (iOS önden indirmeyebilir) 4 sn,
+       yavaş iniyorsa 10 sn sonra yine de başlar. */
+    v.addEventListener("canplaythrough", oynat);
+    yuklemeIste(v, true);
+    const yedekler = [
+      setTimeout(() => {
+        if (v.readyState <= HTMLMediaElement.HAVE_METADATA) oynat();
+      }, 4_000),
+      setTimeout(oynat, 10_000),
+    ];
 
     /* Alt videolara geçince hero durur, dönünce kaldığı yerden sürer —
        görünmeyen video boşa çözümleme yapmaz (bantlarla aynı davranış). */
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          const pp = v.play();
-          if (pp && typeof pp.catch === "function") pp.catch(() => {});
-        } else {
-          v.pause();
-        }
+        gorunur = entry.isIntersecting;
+        if (!gorunur) v.pause();
+        else if (oynamayaHazir(v)) oynat();
       },
       { threshold: 0.2 }
     );
     io.observe(v);
-    return () => io.disconnect();
+    return () => {
+      io.disconnect();
+      yedekler.forEach(clearTimeout);
+      v.removeEventListener("canplaythrough", oynat);
+      siradanCik(v);
+    };
   }, []);
 
   return (

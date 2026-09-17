@@ -8,7 +8,8 @@ import { CtaBand } from "@/components/cta-band";
 import { StatsBand } from "@/components/stats-band";
 import { Marquee } from "@/components/marquee";
 import { SpecularButton } from "@/components/specular-button";
-import { VideoBand, VideoStack } from "@/components/video-band";
+import { VideoBand } from "@/components/video-band";
+import { QuickQuote } from "@/components/quick-quote";
 import { VideoBandContent } from "@/components/video-band-content";
 import { HeroVideo } from "@/components/hero-video";
 import { ProfileIcon } from "@/components/profile-icon";
@@ -68,6 +69,7 @@ export default async function Home({ params }: Props) {
      videolar sayfasındaki bölüm aynı adı taşısın, iki yerde ayrışmasın. */
   const tVideoGroups = await getTranslations("videos.groups");
   const tVideoItems = await getTranslations("videos.items");
+  const tQuoteForm = await getTranslations("quote.form");
 
   const process = t.raw("process") as { title: string; text: string }[];
 
@@ -81,66 +83,6 @@ export default async function Home({ params }: Props) {
 
       {/* HERO — tam ekran arka plan videosu */}
       <HeroVideo />
-
-      {/*
-        Hero'nun hemen altındaki video yığını — aralıksız, hero yüksekliğinde.
-        Sayfadaki sıra: 1) hero  2) alt2  3) alt3 (pres besleme).
-        Bantlar dekoratiftir; anlattıkları her şey sayfadaki metinlerde zaten
-        yazılı olduğu için ekran okuyucuya ayrıca etiket verilmiyor.
-      */}
-      <VideoStack
-        items={[
-          {
-            src: "/alt2.mp4",
-            poster: "/alt2-poster.jpg",
-            /* Tüm bantlarda içerik AYNI tarafta. VideoStack varsayılanı sırayla
-               sağ-sol değiştiriyordu; sayfa boyunca yazılar zikzak çiziyordu.
-               Hero da solda başladığı için hepsi "start" hizasında tutuluyor. */
-            side: "start",
-            children: (
-              <VideoBandContent
-                href="/dilme-hatlari"
-                cta={tCommon("lineExamine")}
-                name={tVideoGroups("slitting")}
-                videoGroup="slitting"
-                videoCta={t("videoCta")}
-              />
-            ),
-          },
-          {
-            src: "/boy-kesme.mp4",
-            poster: "/boy-kesme-poster.jpg",
-            side: "start",
-            children: (
-              <VideoBandContent
-                name={tVideoGroups("ctl")}
-                href="/boy-kesme-hatlari"
-                cta={tCommon("lineExamine")}
-                videoGroup="ctl"
-                videoCta={t("videoCta")}
-              />
-            ),
-          },
-          {
-            src: "/alt3.mp4",
-            poster: "/alt3-poster.jpg",
-            side: "start",
-            children: (
-              <VideoBandContent
-                href="/makineler/servo-suruculer"
-                cta={tCommon("details")}
-                /* Ürün adı ("Servo Sürücüler") değil hattın adı yazılıyor: bant
-                   tek bir makineyi değil pres besleme + kompakt hat ailesini
-                   anlatıyor. Metin videos.groups'tan geliyor, yani videolar
-                   sayfasındaki bölüm adıyla birebir aynı kalıyor. */
-                name={tVideoGroups("feeding")}
-                videoGroup="feeding"
-                videoCta={t("videoCta")}
-              />
-            ),
-          },
-        ]}
-      />
 
       {/* İSTATİSTİK ŞERİDİ — eski sitedeki kredibilite figürleri (10+ yıl,
           48+ ülke, %99). Sayılar görünüm alanına girince 0'dan sayar. */}
@@ -194,14 +136,30 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
-      {/* Bu video ürün değil, tesisi gösteriyor (CNC atölyesi + montaj) —
-          panel de ona göre üretim kabiliyetini anlatıyor. */}
-      <VideoBand src="/alt.mp4" poster="/alt-poster.jpg">
+      {/* HIZLI TEKLİF — teklif formunu açan 10 kişiden 9'u gönderiyor;
+          darboğaz forma varmak. Form sayfanın ilk üçte birinde (bkz.
+          components/quick-quote.tsx). Seçenekler mevcut çevirilerden. */}
+      <QuickQuote
+        hatlar={[
+          t("solutions.rollform.title"),
+          t("solutions.slitting.title"),
+          t("solutions.ctl.title"),
+          tVideoGroups("feeding"),
+          (tQuoteForm.raw("options") as string[]).at(-1) ?? "",
+        ]}
+      />
+
+      {/* VİDEO BANTLARI açılışta üst üste DEĞİL, açık bölümlerin arasında
+          (2026-09-17). Hero + 3 bant alt alta masaüstünde 3,7 ekran kesintisiz
+          koyu video ediyordu; ziyaretçiler "site karanlık" diyordu ve açılışta
+          birden çok video aynı anda iniyordu. Her bant, anlattığı hattın
+          bölümüne yakın duruyor. İçerik hepsinde başta (start) hizalı. */}
+      <VideoBand src="/alt2.mp4" poster="/alt2-poster.jpg">
         <VideoBandContent
-          href="/hakkimizda"
-          cta={tCommon("details")}
-          name={tAbout("facilityEyebrow")}
-          videoGroup="machines"
+          href="/dilme-hatlari"
+          cta={tCommon("lineExamine")}
+          name={tVideoGroups("slitting")}
+          videoGroup="slitting"
           videoCta={t("videoCta")}
         />
       </VideoBand>
@@ -271,6 +229,16 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
+      <VideoBand src="/boy-kesme.mp4" poster="/boy-kesme-poster.jpg">
+        <VideoBandContent
+          name={tVideoGroups("ctl")}
+          href="/boy-kesme-hatlari"
+          cta={tCommon("lineExamine")}
+          videoGroup="ctl"
+          videoCta={t("videoCta")}
+        />
+      </VideoBand>
+
       {/* MAKİNELER */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
         <Reveal>
@@ -319,6 +287,20 @@ export default async function Home({ params }: Props) {
         </div>
       </section>
 
+      <VideoBand src="/alt3.mp4" poster="/alt3-poster.jpg">
+        <VideoBandContent
+          href="/makineler/servo-suruculer"
+          cta={tCommon("details")}
+          /* Ürün adı ("Servo Sürücüler") değil hattın adı yazılıyor: bant
+             tek bir makineyi değil pres besleme + kompakt hat ailesini
+             anlatıyor. Metin videos.groups'tan geliyor, yani videolar
+             sayfasındaki bölüm adıyla birebir aynı kalıyor. */
+          name={tVideoGroups("feeding")}
+          videoGroup="feeding"
+          videoCta={t("videoCta")}
+        />
+      </VideoBand>
+
       {/* AKAN ÜRÜN ŞERİDİ — dev hayalet tipografi, ürün sayfalarına bağlanır.
           Adlar zaten 9 dilde çevrili (products.rollform.*), yeni metin yok. */}
       <Marquee
@@ -327,38 +309,6 @@ export default async function Home({ params }: Props) {
           href: `/roll-form-hatlari/${line.slug}`,
         }))}
       />
-
-      {/* SÜREÇ */}
-      <section className="grain relative bg-shell text-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
-          <Reveal>
-            <SectionEyebrow>{t("processEyebrow")}</SectionEyebrow>
-            <h2 className="font-display mt-4 max-w-2xl text-3xl font-bold uppercase tracking-tight sm:text-4xl">
-              {t("processTitle")}
-            </h2>
-          </Reveal>
-
-          {/* Reveal <ol> olarak basılıyor: sarmalayıcı bir div, <ol> ile <li>
-              arasına girip listeyi geçersiz kılıyordu — ekran okuyucu "4 öğeli
-              liste" diye duyuramıyordu. Grup modunda çocuklar zaten sırayla
-              beliriyor, per-item gecikmeye de gerek kalmıyor. */}
-          <Reveal as="ol" group className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {process.map((step, i) => (
-              <li key={step.title} className="list-none">
-                <div className="font-display text-5xl font-extrabold text-accent">
-                  {/* Numara, adım görünür olunca maskeden yükselir */}
-                  <span className="num-mask">
-                    <span className="num-rise">{String(i + 1).padStart(2, "0")}</span>
-                  </span>
-                </div>
-                <div className="grow-line mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
-                <h3 className="font-display mt-4 text-lg font-bold uppercase tracking-tight">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.text}</p>
-              </li>
-            ))}
-          </Reveal>
-        </div>
-      </section>
 
       {/* VİDEO */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
@@ -402,6 +352,38 @@ export default async function Home({ params }: Props) {
               </a>
               <p className="px-4 py-3 text-sm font-medium text-zinc-400">{t("videoBadge")}</p>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SÜREÇ */}
+      <section className="grain relative bg-shell text-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 lg:py-24">
+          <Reveal>
+            <SectionEyebrow>{t("processEyebrow")}</SectionEyebrow>
+            <h2 className="font-display mt-4 max-w-2xl text-3xl font-bold uppercase tracking-tight sm:text-4xl">
+              {t("processTitle")}
+            </h2>
+          </Reveal>
+
+          {/* Reveal <ol> olarak basılıyor: sarmalayıcı bir div, <ol> ile <li>
+              arasına girip listeyi geçersiz kılıyordu — ekran okuyucu "4 öğeli
+              liste" diye duyuramıyordu. Grup modunda çocuklar zaten sırayla
+              beliriyor, per-item gecikmeye de gerek kalmıyor. */}
+          <Reveal as="ol" group className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {process.map((step, i) => (
+              <li key={step.title} className="list-none">
+                <div className="font-display text-5xl font-extrabold text-accent">
+                  {/* Numara, adım görünür olunca maskeden yükselir */}
+                  <span className="num-mask">
+                    <span className="num-rise">{String(i + 1).padStart(2, "0")}</span>
+                  </span>
+                </div>
+                <div className="grow-line mt-3 h-px w-full bg-gradient-to-r from-accent/60 to-transparent" aria-hidden />
+                <h3 className="font-display mt-4 text-lg font-bold uppercase tracking-tight">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{step.text}</p>
+              </li>
+            ))}
           </Reveal>
         </div>
       </section>
@@ -455,6 +437,18 @@ export default async function Home({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Bu video ürün değil, tesisi gösteriyor (CNC atölyesi + montaj) —
+          panel de ona göre üretim kabiliyetini anlatıyor. */}
+      <VideoBand src="/alt.mp4" poster="/alt-poster.jpg">
+        <VideoBandContent
+          href="/hakkimizda"
+          cta={tCommon("details")}
+          name={tAbout("facilityEyebrow")}
+          videoGroup="machines"
+          videoCta={t("videoCta")}
+        />
+      </VideoBand>
 
       <CtaBand />
     </>

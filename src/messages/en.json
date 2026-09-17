@@ -71,6 +71,12 @@
     "solutionsEyebrow": "Our expertise",
     "solutionsTitle": "Three core lines, one signature",
     "solutionsText": "Every piece of equipment, from decoiler to stacker, is built in our own facility — one partner, one fully matched line.",
+    "quickEyebrow": "Quick quote",
+    "quickTitle": "Which line are you looking for?",
+    "quickText": "Pick the line and leave your contact details. If your dimensions are not settled yet, leave that field blank; your request goes straight to our engineering team.",
+    "quickStep1": "1. What do you want to produce?",
+    "quickStep2": "2. How can we reach you?",
+    "quickOptional": "optional",
     "solutions": {
       "rollform": {
         "title": "Roll Forming Lines",

@@ -71,6 +71,12 @@
     "solutionsEyebrow": "Uzmanlık alanlarımız",
     "solutionsTitle": "Üç ana hat, tek imza",
     "solutionsText": "Açıcıdan istifleyiciye kadar her ekipman kendi tesisimizde üretilir — tek muhatap, tam uyumlu hat.",
+    "quickEyebrow": "Hızlı teklif",
+    "quickTitle": "Hangi hattı arıyorsunuz?",
+    "quickText": "Hattı seçin, iletişim bilgilerinizi bırakın. Ölçüleriniz henüz net değilse o alanı boş bırakabilirsiniz; talebiniz doğrudan mühendislik ekibimize ulaşır.",
+    "quickStep1": "1. Ne üretmek istiyorsunuz?",
+    "quickStep2": "2. Size nasıl ulaşalım?",
+    "quickOptional": "isteğe bağlı",
     "solutions": {
       "rollform": {
         "title": "Roll Form Hatları",
