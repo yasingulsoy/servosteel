@@ -187,6 +187,25 @@ hacimli adaylardı — SERP'e bakılmasa "kazanç" diye rapora girerlerdi.
 Bu liste aynı zamanda **hazır negatif kelime listesidir** — reklam verilecekse
 ilk gün eklenmeli.
 
+**Sıralama takibi kurulurken yakalananlar (2026-09-17).** Takip listesine aday
+olarak girdiler; ilk ölçümde ilk 5 sonucun başlıklarına bakılınca çıkarıldılar.
+
+| terim | pazar | hacim | gerçekte aranan |
+|---|---|---:|---|
+| automatic stacker | ABD / İngiltere | 390 / 30 | **depo ve palet istifleyicisi** (Yale robotik, palet istifleyici, istif vinci) |
+| desbobinadora | İspanya | 210 | **kablo, film ve yerden ısıtma borusu** makarası (Amazon) |
+| Spaltanlage | Almanya | 140 | **boyacıların atık su arıtma tesisi** (fırça ve rulo yıkama) |
+| decoiler | İngiltere | 70 | **yerden ısıtma borusu** açıcısı; ABD'de ise gerçekten sac rulo açıcı |
+| odwijak | Polonya | 30 | **kablo ve tel makarası** (Allegro, "do kabli") |
+| ماكينة درفلة | Suudi Arabistan | 10 | sac **bükme / plaka silindirleme**, roll form değil |
+| görgős profilozó | Macaristan | — | çatı ustasının **el tipi** kenet aleti (Schlebach) |
+
+`odwijak`, `rozwijak` (140/ay, 2026-08-19'da bakıldı: kablo ve boru açıcıları)
+yerine doğru terim sanılmıştı; o da kablo çıktı. **Lehçe'de temiz bir açıcı
+terimi yok.** İtalyanca
+`taglio longitudinale` (210) listede kaldı ama karışık: ilk beşin ikisi rulo dilme
+hattı üreticisi, diğerleri ahşap testere ve genel anlam.
+
 ### Türkçe: hacim nerede, nerede değil
 
 Türkiye tıklarımızın %86'sını veriyor, o yüzden ayrıca ölçüldü.

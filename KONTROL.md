@@ -159,19 +159,45 @@ GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı" der. Dönüşüm sıfırken
 ancak Clarity gösterir. İkisi de `IS_PRODUCTION_SITE` korumasına bağlı —
 önizleme kopyalarında hiç yüklenmez.
 
-### C.3 İzlenen kelimeler
+### C.3 İzlenen kelimeler — sıralama takibi
 
-| kelime | hacim | durum |
-|---|---:|---|
-| rulo açıcı | 140 | 12,1 — sayfa hazır, spec dolu; en yakın kazanç |
-| trapez sac makinesi | 480 | SERP zayıf (ilk 5'in üçü pazaryeri) |
-| rollform makinesi | 590 | hub içeriği derinleşmeli |
-| automatic stacker (US) | 390 | ~20 — tablo gelince sıçrar |
-| slitting line | 70 | 8,1 — ilk sayfaya en yakın İngilizce kelime |
-| coil line | 210 | — |
-| servosteel (marka) | — | 1. sırada, korunacak |
-| sac ağırlık hesaplama (TR) | 8.100 | **link hedefi, talep değil** |
-| sheet metal weight calculator | 570 | aynı gerekçe |
+```bash
+python scripts/siralama.py
+```
+
+"Durumumuz ne?" sorusunun cevabı bu komut. 72 talep kelimesi + 5 marka ve
+hesaplayıcı kelimesi (ayrı tabloda), 10 pazar, 7 dil. Semrush Position Tracking
+almak yerine kuruldu (2026-09-17).
+
+| dosya | içerik |
+|---|---|
+| `seo/izlenen-kelimeler.json` | kelime, pazar, ürün grubu, aylık hacim |
+| `seo/siralama/YYYY-AA-GG.json` | her ölçümün ham kaydı: sıra, sıralanan sayfa, ilk 5 rakip, doğrulama bağlantısı |
+| [seo/siralama/RAPOR.md](seo/siralama/RAPOR.md) | son ölçüm, bir öncekiyle karşılaştırmalı |
+
+- **Yöntem:** DataForSEO SERP API; Google **masaüstü** (marka dışı gösterimlerin
+  %78'i masaüstünden), ilk 50 **organik** sonuç.
+- **Türkiye iki yerden ölçülür: ülke geneli ve İstanbul** (TR organik ziyaretin
+  ~%60'ı, GA4 60 gün). Sıra ikisinin iyisidir, farklıysa raporda ikisi de yazar.
+  Tek konum yetmedi: `dilme hattı` ülke 30 / İstanbul 7, `rulo sac açıcı` ülke
+  7 / İstanbul yok — GSC ikisinde de iyi olanı doğruladı (8,7 ve 8,4). Türkçe
+  kelimelerde 20-45 arası sıra dakikalar içinde bile oynuyor.
+- **Google her aramada 50 sonuç vermiyor:** ABD `roll forming machine`'de 13-20.
+  Raporda "yok (ilk 13)" = o kadarına bakıldı, aralarında yokuz.
+- **Ücret 10 sonuçluk sayfa başına.** Standart kuyruk görev başına 0,003 $,
+  `--canli` 0,01 $; tam ölçüm 95 görev ≈ 0,29 $ (Türkiye iki kez). Kuyrukta
+  görevlerin çoğu 1-2 dakikada biter ama biri 25+ dakika sürebiliyor; betik 10
+  dakika bekleyip kalanı canlı uçtan tamamlar. Bakiye raporun başında yazar.
+- Rapordaki **GSC sütunu** 28 günlük ortalama konumdur, anlık sırayla aynı şey
+  değildir. **"son 5 Eyl"** yazıyorsa o günden beri gösterim yok, sıra düşmüş
+  olabilir. 3-5 Eylül'de birkaç İngilizce/Lehçe kelimede (automatic stacking
+  machine, linie podające) her gün gelen gösterim birden kesildi.
+- **Rusça:** DataForSEO'da Google Rusya konumu yok, Kazakistan üzerinden.
+- **Macarca ve Arapça kelime yok.** Aranan tek aday terimlerin SERP'i başka
+  makine çıktı (§2), sitenin kendi başlık terimleri ise 1. sırada ama hiç
+  aranmıyor — takip etmek yanıltırdı. MENA İngilizce ölçülüyor (SA, AE).
+- `--pazar tr` o pazarı yeniden ölçüp bugünün kaydına işler; listeye kelime
+  eklenince `--eksik` yalnızca yenileri ölçer.
 
 ⚠️ **Hacme bakıp hedef seçme.** Üç büyük kelime SERP'te tuzak çıktı:
 `iskele kalası` (210) kalas satın alanlar · `progresif kalıp` (210) kalıpçı

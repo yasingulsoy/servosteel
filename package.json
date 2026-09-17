@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint",
     "indexnow": "node scripts/indexnow.mjs",
-    "kontrol": "python scripts/canli-kontrol.py"
+    "kontrol": "python scripts/canli-kontrol.py",
+    "siralama": "python scripts/siralama.py"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
