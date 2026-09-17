@@ -16,6 +16,7 @@ import {
   videoTitleResolver,
   CHANNEL_VIDEO_COUNT,
 } from "@/lib/videos";
+import { YOUTUBE_URL } from "@/lib/site";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -135,7 +136,7 @@ export default async function VideolarPage({ params }: Props) {
               <p className="mt-2 max-w-2xl text-zinc-400">{t("bannerText")}</p>
             </div>
             <SpecularButton
-              href="https://www.youtube.com/@ServoSteel.ServoMold"
+              href={YOUTUBE_URL}
               external
               variant="gold"
               size="lg"

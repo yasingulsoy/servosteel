@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ArrowRight as ArrowRightIcon } from "lucide-react";
+import { ArrowRight as ArrowRightIcon, Play } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { pageAlternates } from "@/i18n/seo";
 import { Reveal } from "@/components/reveal";
@@ -16,7 +16,11 @@ import { SectorIcon } from "@/components/sector-icon";
 import { sectors } from "@/lib/sectors";
 import { SolutionIcon } from "@/components/solution-icon";
 import { rollFormItems, machineItems } from "@/lib/catalog";
+import { thumbUrl, watchUrl } from "@/lib/videos";
 import type { AppLocale } from "@/i18n/routing";
+
+/** "Hatlarımızı çalışırken izleyin" bölümündeki video: pres besleme sistemleri tanıtımı. */
+const HOME_VIDEO = "2tgCtC8n_1E";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -63,6 +67,7 @@ export default async function Home({ params }: Props) {
   /* Bant etiketleri video bölüm adlarından besleniyor — ana sayfadaki bant ile
      videolar sayfasındaki bölüm aynı adı taşısın, iki yerde ayrışmasın. */
   const tVideoGroups = await getTranslations("videos.groups");
+  const tVideoItems = await getTranslations("videos.items");
 
   const process = t.raw("process") as { title: string; text: string }[];
 
@@ -363,17 +368,30 @@ export default async function Home({ params }: Props) {
           </Reveal>
           <Reveal variant="right" delay={150}>
             <div className="overflow-hidden rounded-2xl border border-line bg-shell shadow-xl shadow-black/10">
-              <div className="aspect-video">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/2tgCtC8n_1E"
-                  title={t("videoAria")}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="size-full"
+              {/* Oynatıcı değil, YouTube bağlantısı (2026-09-17, Yasin'in isteği):
+                  video kanalda izlensin, izlenme ve abone orada birikiyor. Kutu
+                  aynı 16:9; sayfaya YouTube iframe'i ve betiği girmiyor. */}
+              <a
+                href={watchUrl(HOME_VIDEO)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${tVideoItems(HOME_VIDEO)} (YouTube)`}
+                className="group relative block aspect-video overflow-hidden"
+              >
+                <Image
+                  src={thumbUrl(HOME_VIDEO, "maxresdefault")}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-              </div>
+                <span
+                  aria-hidden
+                  className="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-accent text-zinc-950 shadow-xl transition-transform duration-300 group-hover:scale-110"
+                >
+                  <Play className="size-7 translate-x-0.5 fill-current" />
+                </span>
+              </a>
               <p className="px-4 py-3 text-sm font-medium text-zinc-400">{t("videoBadge")}</p>
             </div>
           </Reveal>

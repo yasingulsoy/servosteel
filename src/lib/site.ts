@@ -78,9 +78,12 @@ export const CONTACT = {
 };
 
 
+/** YouTube kanalı — yüzen tuş, sosyal ikonlar, videolar sayfası ve şema aynı adresi kullanır. */
+export const YOUTUBE_URL = "https://www.youtube.com/@ServoSteel.ServoMold";
+
 export const SOCIAL_URLS = [
   "https://www.instagram.com/servosteel_turkey/",
   "https://www.linkedin.com/company/servosteel.tr/",
-  "https://www.youtube.com/@ServoSteel.ServoMold",
+  YOUTUBE_URL,
   "https://x.com/servosteel_tr",
 ];

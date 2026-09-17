@@ -2,10 +2,18 @@
 
 import { useTranslations } from "next-intl";
 import { Phone, Mail } from "lucide-react";
-import { CONTACT } from "@/lib/site";
+import { FaYoutube } from "react-icons/fa6";
+import { CONTACT, YOUTUBE_URL } from "@/lib/site";
 
 /**
- * Her sayfada duran iletişim tuşları: telefon + e-posta.
+ * Her sayfada duran tuşlar: YouTube + e-posta + telefon.
+ *
+ * YOUTUBE EN ÜSTTE (2026-09-17, Yasin'in isteği). Kanalda 100'ü aşkın saha
+ * videosu var ve alıcının "bu firma gerçekten üretiyor mu" sorusuna en hızlı
+ * cevap orası. İletişim tuşu değil, güven tuşu — bu yüzden vurgusuz (e-postayla
+ * aynı koyu zemin) ve en üstte: telefonun altın vurgusuyla yarışmasın.
+ * Yeni sekmede açılır ki ziyaretçi siteyi kaybetmesin. GA4 dış bağlantı
+ * ölçümü bu tıklamayı kendiliğinden sayıyor.
  *
  * ÖNCESİ WHATSAPP'TI, KALDIRILDI (2026-08-24). Sebep ölçüm: 30 günde
  * **20 tıklama** geldi ve hiçbiri karşılık bulmadı — bağlantıdaki numara
@@ -26,11 +34,23 @@ import { CONTACT } from "@/lib/site";
  */
 export function ContactFloat() {
   const t = useTranslations("common");
+  const tFooter = useTranslations("footer");
 
   return (
     /* z-40: header (z-50) altında kalsın ki mobil menü açıkken üstüne
        binmesin. print:hidden — çıktıda anlamsız. */
     <div className="fixed bottom-5 end-5 z-40 flex flex-col items-end gap-2.5 print:hidden">
+      <a
+        href={YOUTUBE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={tFooter("youtube")}
+        className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
+      >
+        <FaYoutube className="size-5 shrink-0 text-[#FF0000]" aria-hidden />
+        <span className="hidden text-sm font-semibold sm:inline">YouTube</span>
+      </a>
+
       <a
         href={`mailto:${CONTACT.email}`}
         aria-label={t("floatMail")}

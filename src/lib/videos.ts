@@ -339,9 +339,13 @@ export function humanDuration(sec: number): string {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
-/** YouTube önizleme görseli — hqdefault her videoda garanti mevcuttur */
-export function thumbUrl(id: string): string {
-  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+/**
+ * YouTube önizleme görseli — hqdefault (480 px) her videoda garanti mevcuttur.
+ * maxresdefault (1280 px) yalnızca HD yüklenmiş videolarda var; büyük gösterilen
+ * tek videoda, varlığı kontrol edilerek kullanılır.
+ */
+export function thumbUrl(id: string, size: "hqdefault" | "maxresdefault" = "hqdefault"): string {
+  return `https://i.ytimg.com/vi/${id}/${size}.jpg`;
 }
 
 export function watchUrl(id: string): string {
