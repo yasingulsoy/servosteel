@@ -73,9 +73,7 @@
     "solutionsText": "Açıcıdan istifleyiciye kadar her ekipman kendi tesisimizde üretilir — tek muhatap, tam uyumlu hat.",
     "quickEyebrow": "Hızlı teklif",
     "quickTitle": "Hangi hattı arıyorsunuz?",
-    "quickText": "Hattı seçin, iletişim bilgilerinizi bırakın. Ölçüleriniz henüz net değilse o alanı boş bırakabilirsiniz; talebiniz doğrudan mühendislik ekibimize ulaşır.",
-    "quickStep1": "1. Ne üretmek istiyorsunuz?",
-    "quickStep2": "2. Size nasıl ulaşalım?",
+    "quickText": "Adınızı, iletişim bilgilerinizi ve aradığınız hattı kısaca yazın; talebiniz doğrudan mühendislik ekibimize ulaşır.",
     "quickOptional": "isteğe bağlı",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Sac kalınlığı / rulo kapasitesi / profil ölçüsü",
       "specsPh": "Örn: 0,5-2 mm sac, 10 ton rulo, 41x41 solar profil",
       "message": "Mesajınız",
-      "messagePh": "Projenizi kısaca anlatın; profil çiziminiz varsa e-postaya ek olarak gönderebilirsiniz.",
+      "messagePh": "Projenizi ve aradığınız hattı kısaca anlatın.",
       "submit": "Teklif Talebini Gönder",
       "callUs": "Bizi Arayın",
       "note": "Talebiniz doğrudan mühendislik ekibimize ulaşır. Bilgileriniz yalnızca size dönüş yapmak için kullanılır.",

@@ -73,9 +73,7 @@
     "solutionsText": "Minden berendezés a lecsévélőtől a rakatolóig saját üzemünkben készül — egy partner, tökéletesen összehangolt sor.",
     "quickEyebrow": "Gyors ajánlatkérés",
     "quickTitle": "Milyen sort keres?",
-    "quickText": "Válassza ki a sort, és adja meg elérhetőségét. Ha a méretek még nem véglegesek, hagyja üresen azt a mezőt; kérése közvetlenül mérnöki csapatunkhoz jut el.",
-    "quickStep1": "1. Mit szeretne gyártani?",
-    "quickStep2": "2. Hogyan érjük el Önt?",
+    "quickText": "Adja meg nevét és elérhetőségét, és írja le röviden, milyen sort keres; kérése közvetlenül mérnöki csapatunkhoz jut el.",
     "quickOptional": "nem kötelező",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Lemezvastagság / tekercssúly / profilméret",
       "specsPh": "Pl.: 0,5-2 mm lemez, 10 t tekercs, 41x41 napelemes profil",
       "message": "Üzenete",
-      "messagePh": "Írja le röviden a projektet; ha van profilrajza, csatolhatja az e-mailhez.",
+      "messagePh": "Írja le röviden a projektet és a keresett sort.",
       "submit": "Kérés Elküldése",
       "callUs": "Hívjon minket",
       "note": "Kérése közvetlenül mérnöki csapatunkhoz jut el. Adatait kizárólag a válaszadáshoz használjuk.",

@@ -73,9 +73,7 @@
     "solutionsText": "Cada equipo, del desbobinador al apilador, se fabrica en nuestra planta: un solo interlocutor, una línea totalmente compatible.",
     "quickEyebrow": "Presupuesto rápido",
     "quickTitle": "¿Qué línea busca?",
-    "quickText": "Elija la línea y deje sus datos de contacto. Si sus medidas aún no están definidas, deje ese campo en blanco; su solicitud llega directamente a nuestro equipo de ingeniería.",
-    "quickStep1": "1. ¿Qué quiere producir?",
-    "quickStep2": "2. ¿Cómo le contactamos?",
+    "quickText": "Deje su nombre y datos de contacto e indíquenos brevemente qué línea busca; su solicitud llega directamente a nuestro equipo de ingeniería.",
     "quickOptional": "opcional",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Espesor de chapa / peso de bobina / medida de perfil",
       "specsPh": "Ej.: chapa 0,5-2 mm, bobina 10 t, perfil solar 41x41",
       "message": "Su mensaje",
-      "messagePh": "Describa brevemente su proyecto; si tiene plano de perfil, adjúntelo al correo.",
+      "messagePh": "Describa brevemente su proyecto y la línea que busca.",
       "submit": "Enviar Solicitud",
       "callUs": "Llámenos",
       "note": "Su solicitud llega directamente a nuestro equipo de ingeniería. Sus datos se usan solo para responderle.",

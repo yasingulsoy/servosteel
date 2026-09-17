@@ -73,9 +73,7 @@
     "solutionsText": "Ogni componente, dallo svolgitore all'impilatore, è prodotto nel nostro stabilimento: un solo interlocutore, una linea perfettamente integrata.",
     "quickEyebrow": "Preventivo rapido",
     "quickTitle": "Quale linea stai cercando?",
-    "quickText": "Scegli la linea e lascia i tuoi contatti. Se le misure non sono ancora definite, lascia vuoto quel campo; la richiesta arriva direttamente al nostro ufficio tecnico.",
-    "quickStep1": "1. Cosa vuoi produrre?",
-    "quickStep2": "2. Come possiamo contattarti?",
+    "quickText": "Lascia nome e contatti e scrivi in breve quale linea cerchi; la richiesta arriva direttamente al nostro ufficio tecnico.",
     "quickOptional": "facoltativo",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Spessore lamiera / peso coil / misura profilo",
       "specsPh": "Es.: lamiera 0,5-2 mm, coil 10 t, profilo solare 41x41",
       "message": "Il tuo messaggio",
-      "messagePh": "Descrivi brevemente il progetto; se hai un disegno di profilo, allegalo alla e-mail.",
+      "messagePh": "Descrivi brevemente il progetto e la linea che cerchi.",
       "submit": "Invia Richiesta",
       "callUs": "Chiamaci",
       "note": "La vostra richiesta arriva direttamente al nostro ufficio tecnico. I dati sono usati solo per ricontattarvi.",

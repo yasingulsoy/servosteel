@@ -73,9 +73,7 @@
     "solutionsText": "Every piece of equipment, from decoiler to stacker, is built in our own facility — one partner, one fully matched line.",
     "quickEyebrow": "Quick quote",
     "quickTitle": "Which line are you looking for?",
-    "quickText": "Pick the line and leave your contact details. If your dimensions are not settled yet, leave that field blank; your request goes straight to our engineering team.",
-    "quickStep1": "1. What do you want to produce?",
-    "quickStep2": "2. How can we reach you?",
+    "quickText": "Leave your name and contact details and tell us briefly which line you need; your request goes straight to our engineering team.",
     "quickOptional": "optional",
     "solutions": {
       "rollform": {
@@ -807,7 +805,7 @@
       "specs": "Sheet thickness / coil capacity / profile size",
       "specsPh": "e.g. 0.5-2 mm sheet, 10 t coil, 41x41 solar profile",
       "message": "Your message",
-      "messagePh": "Briefly describe your project; if you have a profile drawing, you can attach it to the e-mail.",
+      "messagePh": "Briefly describe your project and the line you need.",
       "submit": "Send Quote Request",
       "callUs": "Call Us",
       "note": "Your request goes straight to our engineering team. Your details are used only to get back to you.",

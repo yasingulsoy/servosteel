@@ -73,9 +73,7 @@
     "solutionsText": "Każde urządzenie, od odwijaka po układarkę, powstaje we własnym zakładzie — jeden partner, w pełni zgrana linia.",
     "quickEyebrow": "Szybka wycena",
     "quickTitle": "Jakiej linii szukasz?",
-    "quickText": "Wybierz linię i zostaw dane kontaktowe. Jeśli wymiary nie są jeszcze ustalone, zostaw to pole puste; zapytanie trafi bezpośrednio do naszego działu technicznego.",
-    "quickStep1": "1. Co chcesz produkować?",
-    "quickStep2": "2. Jak możemy się z Tobą skontaktować?",
+    "quickText": "Zostaw imię i dane kontaktowe i napisz krótko, jakiej linii szukasz; zapytanie trafi bezpośrednio do naszego działu technicznego.",
     "quickOptional": "opcjonalnie",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Grubość blachy / masa kręgu / wymiar profilu",
       "specsPh": "Np.: blacha 0,5-2 mm, krąg 10 t, profil solarny 41x41",
       "message": "Twoja wiadomość",
-      "messagePh": "Opisz krótko projekt; jeśli masz rysunek profilu, dołącz go do e-maila.",
+      "messagePh": "Opisz krótko projekt i linię, której szukasz.",
       "submit": "Wyślij Zapytanie",
       "callUs": "Zadzwoń do nas",
       "note": "Twoje zapytanie trafia bezpośrednio do naszego działu technicznego. Dane wykorzystujemy wyłącznie do odpowiedzi.",

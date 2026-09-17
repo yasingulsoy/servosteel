@@ -73,9 +73,7 @@
     "solutionsText": "Jede Komponente vom Abwickler bis zum Stapler entsteht im eigenen Werk — ein Ansprechpartner, eine perfekt abgestimmte Anlage.",
     "quickEyebrow": "Schnellanfrage",
     "quickTitle": "Welche Anlage suchen Sie?",
-    "quickText": "Wählen Sie die Anlage und hinterlassen Sie Ihre Kontaktdaten. Stehen die Maße noch nicht fest, lassen Sie das Feld einfach leer; Ihre Anfrage geht direkt an unser Technikteam.",
-    "quickStep1": "1. Was möchten Sie produzieren?",
-    "quickStep2": "2. Wie erreichen wir Sie?",
+    "quickText": "Hinterlassen Sie Namen und Kontaktdaten und beschreiben Sie kurz, welche Anlage Sie suchen; Ihre Anfrage geht direkt an unser Technikteam.",
     "quickOptional": "optional",
     "solutions": {
       "rollform": {
@@ -779,7 +777,7 @@
       "specs": "Blechdicke / Coilgewicht / Profilmaß",
       "specsPh": "z. B. 0,5-2 mm Blech, 10-t-Coil, Solarprofil 41x41",
       "message": "Ihre Nachricht",
-      "messagePh": "Beschreiben Sie kurz Ihr Projekt; eine Profilzeichnung können Sie der E-Mail anhängen.",
+      "messagePh": "Beschreiben Sie kurz Ihr Projekt und die gesuchte Anlage.",
       "submit": "Anfrage senden",
       "callUs": "Rufen Sie uns an",
       "note": "Ihre Anfrage geht direkt an unser Technikteam. Ihre Daten werden nur für die Rückmeldung verwendet.",

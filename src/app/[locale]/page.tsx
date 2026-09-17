@@ -69,7 +69,6 @@ export default async function Home({ params }: Props) {
      videolar sayfasındaki bölüm aynı adı taşısın, iki yerde ayrışmasın. */
   const tVideoGroups = await getTranslations("videos.groups");
   const tVideoItems = await getTranslations("videos.items");
-  const tQuoteForm = await getTranslations("quote.form");
 
   const process = t.raw("process") as { title: string; text: string }[];
 
@@ -138,15 +137,10 @@ export default async function Home({ params }: Props) {
 
       {/* HIZLI TEKLİF — teklif formunu açan 10 kişiden 9'u gönderiyor;
           darboğaz forma varmak. Form sayfanın ilk üçte birinde (bkz.
-          components/quick-quote.tsx). Seçenekler mevcut çevirilerden. */}
+          components/quick-quote.tsx). */}
       <QuickQuote
-        hatlar={[
-          t("solutions.rollform.title"),
-          t("solutions.slitting.title"),
-          t("solutions.ctl.title"),
-          tVideoGroups("feeding"),
-          (tQuoteForm.raw("options") as string[]).at(-1) ?? "",
-        ]}
+        /* Yıl ve ülke — istatistik şeridindeki ilk ikisi, sitede zaten yayında. */
+        guvence={(t.raw("stats") as { value: string; label: string }[]).slice(0, 2)}
       />
 
       {/* VİDEO BANTLARI açılışta üst üste DEĞİL, açık bölümlerin arasında
