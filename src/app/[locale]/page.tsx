@@ -15,7 +15,7 @@ import { ProfileIcon } from "@/components/profile-icon";
 import { SectorIcon } from "@/components/sector-icon";
 import { sectors } from "@/lib/sectors";
 import { SolutionIcon } from "@/components/solution-icon";
-import { rollFormItems, machineItems } from "@/lib/catalog";
+import { rollFormItems, machineItems, hasPhoto } from "@/lib/catalog";
 import { thumbUrl, watchUrl } from "@/lib/videos";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -231,13 +231,21 @@ export default async function Home({ params }: Props) {
                   className="group block h-full overflow-hidden rounded-xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10"
                 >
                   <div className="img-shine relative aspect-[4/3] w-full overflow-hidden bg-surface-alt">
-                    <Image
-                      src={`/gorseller/${line.slug}.jpg`}
-                      alt={tRoll(`${line.slug}.name`)}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    {hasPhoto(line.slug) ? (
+                      <Image
+                        src={`/gorseller/${line.slug}.jpg`}
+                        alt={tRoll(`${line.slug}.name`)}
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      /* Fotoğrafı henüz gelmemiş hat (catalog: noPhoto). Kırık resim
+                         yerine aynı kutuda hattın profil ikonu; kart boyu değişmez. */
+                      <div className="flex size-full items-center justify-center">
+                        <ProfileIcon k={line.icon} className="size-16 text-accent/60" />
+                      </div>
+                    )}
                   </div>
                   <div className="flex items-center gap-2.5 p-4">
                     <ProfileIcon k={line.icon} className="size-7 shrink-0 text-accent" />

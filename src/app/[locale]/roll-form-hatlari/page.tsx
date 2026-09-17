@@ -9,7 +9,7 @@ import { ProfileIcon } from "@/components/profile-icon";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { rollFormItems } from "@/lib/catalog";
+import { rollFormItems, hasPhoto } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
 import { RelatedReading } from "@/components/related-reading";
 
@@ -76,13 +76,21 @@ export default async function RollFormHatlariPage({ params }: Props) {
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/10"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-alt">
-                  <Image
-                    src={`/gorseller/${line.slug}.jpg`}
-                    alt={tRoll(`${line.slug}.name`)}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {hasPhoto(line.slug) ? (
+                    <Image
+                      src={`/gorseller/${line.slug}.jpg`}
+                      alt={tRoll(`${line.slug}.name`)}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    /* Fotoğrafı henüz gelmemiş hat (catalog: noPhoto): kırık resim
+                       yerine hattın profil ikonu, kutu ölçüsü aynı. */
+                    <div className="flex size-full items-center justify-center">
+                      <ProfileIcon k={line.icon} className="size-20 text-accent/60" />
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-7">
                   <div className="flex items-center gap-2.5">
