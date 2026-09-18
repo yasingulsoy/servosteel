@@ -79,6 +79,42 @@ Hedeflediği kelime makine grubunun en büyüğü: `automatic stacker` **390/ay*
 
 ## B. Firmadan bekleyen bilgiler
 
+### B.0 Dizin ve pazaryeri kayıtları — talep için en kısa yol (2026-09-18)
+
+Ölçüm: alıcının aradığı "fiyat", "üretici", "manufacturer turkey" sorgularını
+ilan ve dizin siteleri tutuyor (SEO.md §6); 90 günün 9 talebinin 8'i yurt
+dışından, o yüzden **yurt dışı önce**. Hesabı firma açar (ben açamam); her
+kayıt için hazır metin: [seo/ilan-metinleri.md](seo/ilan-metinleri.md).
+
+**Yurt dışı**
+- [ ] **Europages** — ücretsiz kayıt ("List my company"), TR sayfası da var.
+  ChatGPT'nin "Turkey manufacturer" sorularında kaynak gösterdiği site.
+- [ ] **ensun.io** — "Top 100 Roll Forming Machinery Suppliers in Turkey"
+  listesi Google ABD'de 8. sırada; profil talep etme sayfasına bakılacak
+  (robotu engelliyor, elle).
+- [ ] **machinematcher.com** ("Roll Forming Machines in Turkey", 4.) ve
+  **factorneed.com** (7.) — kayıt koşulları elle bakılacak.
+- [ ] **Turkish Exporter** (te.com.tr / turkishexporter.com.tr) — "rulo dilme
+  hattı üreticileri"nde 9., "metal coil processing machines turkey" sayfası var.
+- [ ] **Machineseeker** — "roll forming machine suppliers" (İngiltere) 3.,
+  ücretli plan; **DirectIndustry**, **Kompass**, **IndustryStock** — koşullar
+  elle bakılacak (403).
+- [ ] **Made-in-China / Alibaba** — ürün kutularında 106 / 73 kez; ücretli.
+  Çinli rakiplerin parayı harcadığı yer; karar firmanın.
+
+**Türkiye**
+- [ ] **makinaturkiye.com** — ücretsiz üyelik; "rulo açıcı fiyatları" 1.,
+  "roll form makinesi fiyatları" 2., tahmini 110.000 ziyaret/ay, 4 rakibe link.
+- [ ] **makinecim.com** — ücretsiz ilan; fiyat aramalarında 1.–2.
+- [ ] **sanayiden.com**, **makinaalsat.com** — ücretsiz ilan.
+
+**Ajans:** bize hâlâ çöp link ekleniyor (bestonlinecasinomexico.online
+10 Eyl, 3rrend.com 4 Eyl, manufacturers.network 3 Eyl). Durdurulmalı.
+
+**YouTube:** 102 videonun başlık önerisi hazır —
+[seo/youtube-basliklar.md](seo/youtube-basliklar.md). YouTube Studio'dan elle
+ya da yetki verilince betikle.
+
 - [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina
   Kalıp **ve Sanayi** Ltd. Şti.", s.6 "Steel Makina Kalıp **San. ve Tic.**
   Ltd. Şti." Ticaret sicilindeki tam hâli lazım.

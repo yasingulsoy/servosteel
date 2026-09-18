@@ -1929,6 +1929,10 @@
           {
             "q": "Can decoiling, straightening and feeding be combined in one machine?",
             "a": "Yes — that is what a compact line is: decoiler, straightener and servo feeder on a single platform, managed from one HMI, for shops without the floor space for a classic layout. Where coils are heavy or the line layout is already fixed, a separate decoiler feeding a straightener servo feeder is the better arrangement."
+          },
+          {
+            "q": "What determines decoiler prices?",
+            "a": "There is no list price; a decoiler is sized to the coil it will carry. Four things set the price: coil weight (a 500 kg mechanical decoiler and a 20 t hydraulic decoiler are different classes of machine), coil width and inner diameter, whether the mandrel expands mechanically or hydraulically, and the automation level: loading car, brake, bidirectional operation. Send us your coil weight, width and the press or line speed, and we will quote to that capacity."
           }
         ],
         "table": {

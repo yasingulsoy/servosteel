@@ -1886,6 +1886,10 @@
           {
             "q": "Yükleme arabası ne zaman gerekli olur?",
             "a": "Ağır rulolarda forkliftle şafta rulo takmak riskli ve yavaştır; hidrolik yükleme arabası ruloyu hizalar ve göbeğe saniyeler içinde oturtur. 6 ton üzeri hatlarda standart öneririz."
+          },
+          {
+            "q": "Rulo açıcı fiyatları neye göre değişir?",
+            "a": "Liste fiyatı yok; açıcı, taşıyacağı ruloya göre projelendirilir. Fiyatı dört şey belirler: rulo ağırlığı (500 kg'lık mekanik açıcı ile 20 tonluk hidrolik açıcı ayrı sınıftır), rulo genişliği ve iç çapı, mandrenin mekanik mi hidrolik mi genişlediği ve otomasyon seviyesi: yükleme arabası, fren, çift yönlü çalışma. Rulo ağırlığınızı, genişliğini ve pres ya da hat hızınızı yazın; teklifi o kapasiteye göre hazırlayalım."
           }
         ],
         "table": {

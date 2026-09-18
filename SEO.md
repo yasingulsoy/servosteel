@@ -717,6 +717,47 @@ istifleyicininki 2026-09-05'te katalog s.29'daki gömülü görselden kırpıld�
 
 Görünmediğimiz her arama, haberimiz olmadan kaybedilen bir ihale.
 
+### Alım niyetli aramalarda kim var — ölçüm, 2026-09-18
+
+Türk alıcı **fiyat** ve **ikinci el** diye arıyor; o aramaları ilan siteleri
+tutuyor, üreticiler değil. İlk 12 organik sonuç (Google Türkiye, masaüstü):
+
+| arama | 1. | 2. | 3. | biz |
+|---|---|---|---|---|
+| rulo açıcı fiyatları (30/ay) | makinaturkiye | makinecim | imtmachinery | **yok** ("rulo açıcı"da 3.) |
+| roll form makinesi fiyatları | makinecim | makinaturkiye | facebook | yok |
+| sac dilme makinesi fiyatları | makinecim | makinaturkiye | makinaalsat | yok |
+| ikinci el roll form makinesi | sahibinden | facebook | makinecim | yok |
+| rulo sac işleme makineleri | makinaturkiye | haksanmakina | sahibinden | yok |
+| rulo dilme hattı üreticileri | haskarmetal | agmline | toncelik | **6.** (turkishexporter 9.) |
+
+Aynı ilan sitelerine rakipler de bağlı: makinaturkiye.com 4 rakibe link
+veriyor, bize vermiyor. **Kayıt koşulları doğrulandı (site metinlerinden):**
+makinaturkiye "ücretsiz üye olun", makinecim "ücretsiz ilan ver", sanayiden
+"ücretsiz ilan ver", makinaalsat "ücretsiz ilan ver", Europages "start now for
+free / list my company". Alibaba ve Made-in-China ücretli; Machineseeker
+"pricing & plans"; DirectIndustry, Kompass, IndustryStock ve ensun robotu
+engelledi (403/429), koşulları elle bakılacak.
+
+İngilizce "…manufacturer turkey" aramalarında da liste siteleri var: ensun.io
+"Top 100 Roll Forming Machinery Suppliers in Turkey", machinematcher.com
+"Roll Forming Machines in Turkey", factorneed.com; ayrıca swforming.com'un
+"Best Roll Forming Machine Manufacturer in Turkey – 2025 Guide" yazısı 2.
+sırada — Türk rakiplerden ycsrollform, rollformmachine.com.tr, magafi,
+rollinemuhendislik, savanymachine ilk 12'de. Biz yokuz.
+
+**Video kutuları:** Türkçe büyük kelimelerde kutuyu Rollser (2020), Mekanikel
+(2017), AGMline (2023), Dönem Makina (2013) tutuyor — hepsinde aranan kelime
+başlığın başında. ABD'de Lotosforming ve Kingreal'in "What is / How to choose"
+videoları. Öneri listesi: [seo/youtube-basliklar.md](seo/youtube-basliklar.md).
+
+**Rakiplerin Labs verisi boş:** DataForSEO Türk B2B siteleri için 2–11 kelime
+gösteriyor (bize 3); kelime boşluğu analizi bu kaynakla yapılamıyor. Backlink
+verisi ise sektörün tamamının **aynı spam ağını** paylaştığını gösterdi
+(fashionclothingnews.com, quotesblom.com, uncledspizza.com… 7 rakip + biz).
+Bize eklenen çöp devam ediyor: bestonlinecasinomexico.online (10 Eyl),
+3rrend.com (4 Eyl), manufacturers.network (3 Eyl) — ajans hâlâ üretiyor.
+
 ### Portallar — başkasının hazır otoritesine binmek
 
 | portal | not |
