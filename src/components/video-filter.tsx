@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 
 export type FilterPill = { key: string; label: string };
 export type FilterSection = { key: string; node: ReactNode };
@@ -23,11 +23,15 @@ export function VideoFilter({
   pills,
   sections,
   allLabel,
+  araya,
 }: {
   pills: FilterPill[];
   sections: FilterSection[];
   /** "Tümü" tuşunun metni */
   allLabel: string;
+  /** İlk GÖRÜNEN bölümün hemen altına giren düğüm (teklif formu). Filtre
+      seçiliyken de o bölümün altında kalır, sayfanın dibine düşmez. */
+  araya?: ReactNode;
 }) {
   const [aktif, setAktif] = useState<string | null>(null);
   const tusKutusu = useRef<HTMLDivElement>(null);
@@ -108,17 +112,20 @@ export function VideoFilter({
 
       {sections.map((s, i) => {
         const gizli = aktif !== null && aktif !== s.key;
+        const ilkGorunen = sections.findIndex((x) => aktif === null || aktif === x.key) === i;
         return (
-          <div
-            key={s.key}
-            id={s.key}
-            hidden={gizli}
-            /* Filtre açıkken görünen tek bölüm en üstte durmalı; aksi hâlde
-               üstündeki gizli bölümlerin boşluğu kalıyordu. */
-            className={gizli ? undefined : i > 0 && aktif === null ? "mt-16" : "mt-9"}
-          >
-            {s.node}
-          </div>
+          <Fragment key={s.key}>
+            <div
+              id={s.key}
+              hidden={gizli}
+              /* Filtre açıkken görünen tek bölüm en üstte durmalı; aksi hâlde
+                 üstündeki gizli bölümlerin boşluğu kalıyordu. */
+              className={gizli ? undefined : i > 0 && aktif === null ? "mt-16" : "mt-9"}
+            >
+              {s.node}
+            </div>
+            {ilkGorunen && araya}
+          </Fragment>
         );
       })}
     </>

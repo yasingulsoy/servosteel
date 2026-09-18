@@ -4,6 +4,7 @@ import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { InlineQuote } from "@/components/inline-quote";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
@@ -80,6 +81,9 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
                 ))}
               </div>
             </Reveal>
+
+            {/* Teklif formu açıklamanın hemen altında — bkz. inline-quote.tsx */}
+            <InlineQuote name={t("title")} />
           </div>
 
           <aside>

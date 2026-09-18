@@ -6,6 +6,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
 import { Reveal } from "@/components/reveal";
+import { InlineQuote } from "@/components/inline-quote";
 import { VideoCard } from "@/components/video-card";
 import { VideoSchema } from "@/components/video-schema";
 import { VideoFilter } from "@/components/video-filter";
@@ -60,7 +61,12 @@ export default async function VideolarPage({ params }: Props) {
       />
 
       <section className="mx-auto max-w-7xl px-4 pb-16 pt-8 lg:pb-20 lg:pt-10">
+        {/* Teklif formu ilk video grubunun hemen altında. Video kartları YouTube'a
+            açılıyor; /en/videos organik girişte üçüncü sayfa (60 günde 34 oturum)
+            ve buradan talep bırakmanın tek yolu önceden sayfa sonundaki banttı.
+            Gruplardan sonraya konunca form sayfanın %71'ine düşüyordu. */}
         <VideoFilter
+          araya={<InlineQuote />}
           allLabel={tc("seeAll")}
           pills={videoGroups.map((g) => ({ key: g.key, label: t(`groups.${g.key}`) }))}
           sections={videoGroups.map((group, gi) => ({

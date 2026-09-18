@@ -6,6 +6,7 @@ import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { QuickQuote } from "@/components/quick-quote";
 import { machineItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
 import { RelatedReading } from "@/components/related-reading";
@@ -28,6 +29,7 @@ export default async function MakinelerPage({ params }: Props) {
   const t = await getTranslations("machinesHub");
   const tm = await getTranslations("products.machines");
   const tc = await getTranslations("common");
+  const guvence = ((await getTranslations("home")).raw("stats") as { value: string; label: string }[]).slice(0, 2);
 
   return (
     <>
@@ -79,6 +81,9 @@ export default async function MakinelerPage({ params }: Props) {
           })}
         </div>
       </section>
+
+      {/* Teklif formu makine ızgarasının hemen altında — bkz. quick-quote.tsx */}
+      <QuickQuote guvence={guvence} />
 
       <RelatedReading path="/makineler" locale={locale} />
 

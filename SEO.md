@@ -142,6 +142,14 @@ Forma varan **10 kişiden 9'u gönderiyor.** Form darboğaz değil; darboğaz
 ürün sayfasından iletişime geçiş. Ürün sayfalarında kaydırma **%53–58**'de
 duruyor, sayfa sonundaki CTA bandını yarısı hiç görmüyor.
 
+**Karşılık (2026-09-18):** 90 günün 9 talebinin 9'u iletişim ve teklif
+sayfalarından geldi — form yalnızca oralardaydı. Artık dört alanlı form
+ziyaretçinin olduğu yerde: ürün ve hat sayfalarında tablonun altında (sayfanın
+%23–38'i), roll form / makine listelerinde ızgaranın altında, video sayfasında
+ilk grubun altında (%8), Akademi yazılarının sonunda. Ürün sayfasından gelen
+talebin konusu "Teklif talebi — {ürün}". **Ölçüm 2 hafta sonra:** GA4
+`generate_lead` sayfa kırılımı (`page_path`), panelde talebin `sayfa` alanı.
+
 ### Asıl tablo: nerede takılıyoruz
 
 | sıra aralığı | kelime | gösterim | tık |

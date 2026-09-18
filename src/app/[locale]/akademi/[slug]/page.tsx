@@ -7,6 +7,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Link } from "@/i18n/navigation";
 import { CtaBand } from "@/components/cta-band";
+import { InlineQuote } from "@/components/inline-quote";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
@@ -259,6 +260,13 @@ export default async function AkademiPostPage({ params }: Props) {
             </section>
           )}
         </div>
+      </div>
+
+      {/* Teklif formu yazının sonunda. Akademi yazıları ticari aramada da
+          çıkıyor ("boy kesme hattı"nda 3., "dilme hattı"nda 7. — 2026-09-18);
+          okuyan kişi teklif sayfasına geçmeden yazabilsin. */}
+      <div className="mx-auto max-w-3xl px-4">
+        <InlineQuote />
       </div>
 
       <div className="mx-auto mt-14 max-w-3xl px-4">

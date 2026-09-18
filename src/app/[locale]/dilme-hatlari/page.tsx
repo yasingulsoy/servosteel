@@ -4,6 +4,7 @@ import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
+import { InlineQuote } from "@/components/inline-quote";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
@@ -68,7 +69,10 @@ export default async function DilmeHatlariPage({ params }: Props) {
         </div>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+          {/* min-w-0: ızgara öğesi içeriğinden daha dar olabilsin. Olmadan tablonun
+              min-w-[...] değeri sütunu mobil ekrandan geniş tutuyor, sağ taraf
+              (özellik kartları, form) kesiliyordu; tablo kendi kutusunda kaysın. */}
+          <div className="min-w-0 lg:col-span-2">
             <Reveal>
               <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
                 {t("tableTitle")}
@@ -97,6 +101,9 @@ export default async function DilmeHatlariPage({ params }: Props) {
               </div>
               <p className="mt-4 text-sm text-muted">{t("tableNote")}</p>
             </Reveal>
+
+            {/* Teklif formu ölçü tablosunun hemen altında — bkz. inline-quote.tsx */}
+            <InlineQuote name={t("title")} />
           </div>
 
           <aside>

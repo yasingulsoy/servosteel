@@ -7,6 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { ProfileIcon } from "@/components/profile-icon";
 import { Reveal } from "@/components/reveal";
+import { QuickQuote } from "@/components/quick-quote";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
 import { rollFormItems, hasPhoto } from "@/lib/catalog";
@@ -35,6 +36,7 @@ export default async function RollFormHatlariPage({ params }: Props) {
   const t = await getTranslations("hub");
   const tRoll = await getTranslations("products.rollform");
   const tc = await getTranslations("common");
+  const guvence = ((await getTranslations("home")).raw("stats") as { value: string; label: string }[]).slice(0, 2);
   const flow = t.raw("flow") as string[];
   const faq = t.raw("faq") as FaqItem[];
 
@@ -123,6 +125,10 @@ export default async function RollFormHatlariPage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      {/* Teklif formu hat ızgarasının hemen altında: listeye bakan ziyaretçi
+          teklif sayfasına geçmeden yazabilsin — bkz. quick-quote.tsx */}
+      <QuickQuote guvence={guvence} />
 
       <RelatedVideos path="/roll-form-hatlari" />
 
