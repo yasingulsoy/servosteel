@@ -221,25 +221,23 @@ arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.
 
 ## D. Panel işleri — Yasin'de
 
-**Search Console — dizine ekleme istekleri (günde ~10 kota, 2026-09-17'de doldu)**
+**Search Console — dizine ekleme istekleri (günde ~10 kota)**
 
-Türkçe Akademi yazılarının tamamı 17 Eylül'de düzeltildi (049c1df: yanlış
-hesap örnekleri, özet, SSS) ama Google en son 8-27 Ağustos'ta taradı — hâlâ
-eski, hatalı hâlini görüyor. Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
-18 Eylül'de sırayla (ilk ikisi sıralanan yazılar):
+Akademi yazılarının tamamı 17 Eylül'de düzeltildi (049c1df: yanlış hesap
+örnekleri, özet, SSS, 9 dil) ama Google en son 7-28 Ağustos'ta taramıştı.
+Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
 
-- [ ] `/akademi/boy-kesme-hatti-nasil-secilir` — "boy kesme hattı"nda 3.
-- [ ] `/akademi/rulo-dilme-hatti-maliyeti` — "dilme hattı"nda 7. (İstanbul)
-- [ ] `/akademi/rulo-dilme-hatti-nasil-secilir`
-- [ ] `/akademi/sac-fire-oranini-dusurmek`
-- [ ] `/akademi/progresif-kalip-servo-besleyici-secimi`
-- [ ] `/akademi/servo-besleyici-nasil-secilir`
-- [ ] `/akademi/solar-profil-hatti-yatirim-geri-donusu`
-- [ ] `/akademi/rulo-hatti-nereden-alinmali`
-
-17 Eylül'de istenenler Google tarafından aynı gün tarandı ama "Tarandı - şu
-anda dizine eklenmedi" durumunda: TR/EN roll form nedir, TR mini ve kasalı
-servo sürücü, EN cased servo feeder. TR otomatik istifleyici **dizine girdi**.
+- [x] **17 Eylül:** TR/EN roll form nedir, TR mini ve kasalı servo sürücü, EN
+  cased servo feeder, TR otomatik istifleyici — **18 Eylül'de 6'sı da dizinde**;
+  "roll form nedir" ilk gününde "rollform hattı"nda 3. sıraya girdi.
+- [x] **18 Eylül (10 istek, 10'u kabul):** TR boy kesme hattı nasıl seçilir,
+  rulo dilme hattı maliyeti, rulo dilme hattı nasıl seçilir, sac fire, progresif
+  kalıp, servo besleyici nasıl seçilir, solar ROI, rulo hattı nereden alınmalı;
+  EN how-to-choose-a-cut-to-length-line, coil-slitting-line-cost.
+- [ ] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
+  (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
+  `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
+  (19 Ağu), `where-to-buy-a-coil-processing-line` (28 Ağu).
 
 **Yandex**
 - [ ] **Ana ayna** ayarı: `https://` seçilecek (ikisinde de boş)
