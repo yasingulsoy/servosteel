@@ -398,7 +398,7 @@ govde.push(
   SORU("F.a", "tr.servosteel.com.tr diye ikinci bir site varmış — ana sitenin neredeyse birebir kopyası. Bu bilinçli mi yapılmıştı? Şu an ana siteye yönlendiriyorum ama arka planını bilmek istiyorum."),
   SORU("F.b", "Mevcut SEO ajansının link çalışmasını durdurabilir miyiz? Raporlarını inceledim: kurdukları linkler 2010'ların yöntemi ve bugün fayda değil zarar veriyor."),
   SORU("F.c", "info@servosteel.com.tr'ye gelen mailler reddediliyor — son 10 günde 433 kayıt var. Sunucumuz karşı tarafı doğrulayamadığı için gelen maili geri çeviriyor; muhtemelen müşteri talebi de kaybediyoruz. Veridyen'e ticket açalım mı?"),
-  SORU("F.d", "Şu üç eski site hâlâ ayakta ve “servosteel” aramasında bizim altımızda sıralanıyor: servosteel.wixsite.com, servosteel.blogspot.com, servosteel.com. Kimde bunlar, kapatabilir miyiz?")
+  SORU("F.d", "servosteel.blogspot.com hâlâ ayakta ve “servosteel” aramasında bizim altımızda sıralanıyor; yazıları SEO ajansının kalıbında. Ajanstan kapatmasını isteyebilir miyiz? (servosteel.com İngiltere'de aynı adı taşıyan başka bir firma, bizim değil; servosteel.wixsite.com kapandı.)")
 );
 
 /* ---------- G. ÜYELİK ---------- */

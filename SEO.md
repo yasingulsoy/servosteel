@@ -177,10 +177,12 @@ Geri kalanı tarama bütçesi, o da otoriteye bağlı.
 
 ### Marka adımızı kendimizle bölüyoruz
 
-"servosteel" aramasında 1. sırayız ama altımızdaki sıralar kendi terk edilmiş
-mülklerimiz. `servosteel.wixsite.com` kapandı (7 Eylül teyit, 404 veriyor);
-**`servosteel.blogspot.com` ve `www.servosteel.com` hâlâ ayakta.** Kapatılıp
-yönlendirilirlerse o sıralar kendi alt sayfalarımıza kalır.
+"servosteel" aramasında 1. sırayız ama altımızdaki sıralardan biri ajansın
+açtığı **`servosteel.blogspot.com`** — hâlâ ayakta. `servosteel.wixsite.com`
+kapandı (7 Eylül teyit, 404 veriyor). **`www.servosteel.com` bizim değil**:
+İngiltere'de (Dudley) aynı adlı bir çelik servis merkezi, dilme ve rulo açma
+hizmeti veriyor (2026-09-20 düzeltildi). Blogspot kapatılıp yönlendirilirse o
+sıra kendi alt sayfalarımıza kalır.
 
 
 ## 2. Kelime gerçeği — ve 16 tuzak
@@ -562,8 +564,9 @@ alakalı içerik, kirli linkten daha çok iş görüyor.
 
 ### Şimdi, engel yok
 
-- [ ] **`servosteel.blogspot.com` · `www.servosteel.com`** — kapat ya da 301'le.
-      (`wixsite` kendiliğinden kapandı.)
+- [ ] **`servosteel.blogspot.com`** — ajansa kapattır ya da 301'lettir.
+      (`wixsite` kendiliğinden kapandı; `www.servosteel.com` İngiltere'deki
+      başka bir firma, bizim değil.)
 - [ ] **Sektör dizinlerine kayıt** — bunlar zaten bizim kelimelerimizde
       sıralanıyor, otoriteleri hazır: makinaturkiye · Europages · IndustryStock ·
       **DirectIndustry** ("cut-to-length cutting line" aramasında üst sırada).
@@ -895,7 +898,7 @@ eşiğine getirdi; eşiği atlatan şey link.
 | 4 | Tüzel kişilik unvanı → KVKK sayfası | Filiz Hanım | Form kişisel veri topluyor, aydınlatma yok |
 | 5 | Boy kesme + istifleyici tablosu | mühendislik | Tablosu kalan son iki sayfa |
 | 6 | Referans logo izni | Filiz Hanım | 18 rakibin 15'inde var, bizde kilitli |
-| 7 | Blogspot / www.servosteel.com kapat | **sen** | Marka sıralarımızı kendimiz bölüyoruz |
+| 7 | Ajansın blogspot'unu kapattır | **sen** | Marka sıralarımızı kendimiz bölüyoruz |
 | 8 | Yandex bölge + ana ayna | **sen** | Rusya 3. pazar, panel işi |
 | 9 | Türkçe hub içeriğini derinleştir | ben | Kademe 1'in kalan işi |
 | 10 | İngilizce eğitici içerik serisi | ben | Kademe 3'ün tek yolu |

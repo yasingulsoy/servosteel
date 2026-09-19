@@ -444,8 +444,15 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
 
 **Terk edilmiş mülkler** — "servosteel" aramasında kendi sıralarımızı bölüyorlar
 - [x] `servosteel.wixsite.com` — **404 veriyor, kapanmış** (2026-09-07 teyit)
-- [ ] `servosteel.blogspot.com` — 200, ayakta
-- [ ] `www.servosteel.com` — 200, ayrı alan adı, ayakta
+- [ ] `servosteel.blogspot.com` — 200, ayakta. **Ajansın açtığı blog**: yazılar
+  ajansın "… for Sale Europe | Servosteel Solutions" kalıbında (2026-09-20
+  bakıldı). Hesap ajansta; link çalışmasını durdurma talebiyle birlikte
+  kapatılması da istenmeli.
+- [x] `www.servosteel.com` — **bizim değil** (2026-09-20, Yasin düzeltti):
+  İngiltere'de, Dudley'de aynı adı taşıyan bağımsız bir çelik servis merkezi;
+  dilme, rulo açma, dekapaj ve lazer hizmeti veriyor. Kapatılacak bir şey yok.
+  İngiltere'deki "servosteel" aramalarında karışabiliriz; ayrımı şemadaki
+  unvan, adres ve logo taşıyor.
 
 ---
 
