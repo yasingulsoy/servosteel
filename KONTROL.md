@@ -87,8 +87,34 @@ dışından, o yüzden **yurt dışı önce**. Hesabı firma açar (ben açamam)
 kayıt için hazır metin: [seo/ilan-metinleri.md](seo/ilan-metinleri.md).
 
 **Yurt dışı**
-- [ ] **Europages** — ücretsiz kayıt ("List my company"), TR sayfası da var.
-  ChatGPT'nin "Turkey manufacturer" sorularında kaynak gösterdiği site.
+- [x] **Europages — açıldı ve dolduruldu (2026-09-19).** ChatGPT'nin "Turkey
+  manufacturer" sorularında kaynak gösterdiği site. Profil:
+  europages.co.uk/en/company/servosteel-22418082 (aynısı europages.com.tr/tr
+  altında). Temel bilgi, logo, 8 tesis/ürün fotoğrafı, tanıtım videosu ve
+  **14 ürün** girildi; hepsi "Çevrimiçi", puanları %65–70. Her üründe fotoğraf,
+  kendi videosu, 5 anahtar kelime (TR + EN) ve site sayfasının linki var.
+  Kategoriler: roll form hatları "Rulo şekillendirme makineleri"; açıcı, dilme,
+  boy kesme, istifleyici "Metal işleme makineleri"; servo sürücüler ve kompakt
+  hat "Besleme Teknolojisi". ("İstif" araması forklift istifleyicisine çıkıyor,
+  o kategori kullanılmadı.) Profil sitede şemaya `sameAs` olarak eklendi.
+  - [ ] **Trapez eklenmedi** — ürün fotoğrafı yok (sitede de yok), Europages en
+    az bir görsel istiyor. Fotoğraf gelince eklenecek.
+  - [ ] **Teslimat ve ödeme sekmesi boş** — Incoterms (EXW/FOB/CIF…) ve ödeme
+    koşulu bilinmiyor; ödeme Filiz Hanım'a soru B.c, Incoterms listede yok.
+    Cevapsız işaretlenmedi.
+  - [ ] **KDV alanında "TR1015933789" yazıyor** — nereden geldiği belli değil,
+    alıcıya "Numarayı göster" ile açılıyor. Vergi numarasıyla teyit edilmeli,
+    yanlışsa silinmeli.
+  - [ ] **Görünürlük — 26 Eyl'de tekrar bak.** 19 Eyl'de firma sayfası
+    `noindex` ve Europages aramasında adla bile çıkmıyor. Aynı aramadaki rakip
+    profillerin bir kısmı `index`, bir kısmı `noindex`; sebep (yenilik mi,
+    ücretli paket mi) belli değil. Bir hafta sonra hâlâ böyleyse ücretsiz kayıt
+    alıcıya görünmüyor demektir. (Europages art arda sorguda insan doğrulaması
+    açıyor; kontrolü tarayıcıdan, sayfa sayfa yap.)
+  - **Prime teklifi (19 Eyl):** fiyatı sitede yayımlanmıyor, yalnızca satış
+    görüşmesinde veriliyor. Karar: şimdilik alınmadı — reklam bütçesi yok ve
+    ücretsiz kaydın getirisi henüz ölçülmedi. Ölçü: Europages "Talep Merkezi" +
+    GA4'te europages yönlendirmesi.
 - [ ] **ensun.io** — "Top 100 Roll Forming Machinery Suppliers in Turkey"
   listesi Google ABD'de 8. sırada; profil talep etme sayfasına bakılacak
   (robotu engelliyor, elle).

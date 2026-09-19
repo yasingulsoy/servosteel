@@ -87,3 +87,12 @@ export const SOCIAL_URLS = [
   YOUTUBE_URL,
   "https://x.com/servosteel_tr",
 ];
+
+/** Dizin profilleri — kurumsal şemada sameAs olarak basılır, sayfada görünmez.
+    Amaç varlık eşleşmesi: ChatGPT "Turkey manufacturer" sorularında Europages'i
+    kaynak gösteriyor (KONTROL.md B.0), profil ile site aynı şirket olarak
+    bağlanmalı. Europages 2026-09-19'da açıldı; alıcı yurt dışı olduğu için
+    İngilizce adres (aynı profil europages.com.tr/tr altında da açılıyor). */
+export const DIRECTORY_URLS = [
+  "https://www.europages.co.uk/en/company/servosteel-22418082",
+];

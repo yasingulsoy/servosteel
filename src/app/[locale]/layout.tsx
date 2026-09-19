@@ -12,7 +12,7 @@ import { PageAttention } from "@/components/page-attention";
 import { Analytics } from "@/components/analytics";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
-import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
+import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, DIRECTORY_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
 import "../globals.css";
 
 /* FONTLAR — alt küme başına bir preload etiketi basılır (next/font/google).
@@ -178,7 +178,7 @@ const orgJsonLd = {
       availableLanguage: ["Turkish", "English", "German", "Spanish", "Italian", "Hungarian", "Polish", "Russian", "Arabic"],
     },
   ],
-  sameAs: SOCIAL_URLS,
+  sameAs: [...SOCIAL_URLS, ...DIRECTORY_URLS],
 };
 
 export default async function LocaleLayout({
