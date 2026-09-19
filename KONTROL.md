@@ -652,6 +652,18 @@ sağlam; 14 Eylül sonrası boşluk formdan değil. **19 Eylül'deki o tek
 `generate_lead` testtir, talep sayısına katılmaz** (ad "TEST - form denemesi").
 Test kaydı #10 aynı akşam panelden silindi; GA4 olayı silinemiyor.
 
+**E.26 · Eylülde form talebi durdu, sebep teknik değil (2026-09-19).**
+10 Ağu–2 Eyl: 8 gerçek form talebi, haftada ~2. 3–19 Eyl: **0** — GA4'teki
+14 Eyl kaydı liste satıcısı spam'i, 19 Eyl kaydı test. Aynı dönemde iletişim ve
+teklif sayfalarının görüntülenmesi sabit kaldı ama `form_start` sıfıra indi.
+Formlara dokunan değişiklik yok (ilk değişiklik 15 Eyl), uçtan uca test çalıştı
+(§E.25). Telefon + e-posta tuşu tıklaması ise ölçüldüğü 30 Ağu'dan beri
+haftalık 5 → 8 → 10. Yorum: ilgi azalmamış, kanal değişmiş olabilir — firmaya
+"eylülde telefon/e-postayla gelen soru ağustostan az mı" sorulmalı.
+**Ölçüm tuzakları:** GA4 ülke değeri `Türkiye` (`Turkey` değil). GSC'de
+markasız tıklamayı sorgu satırlarından toplamak anonim sorguları düşürür ve
+gerçeğin yarısını gösterir — markasız = toplam − marka.
+
 ---
 
 ## Kapanmış işler
