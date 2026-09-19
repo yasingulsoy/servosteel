@@ -217,7 +217,11 @@ python clarity.py --gun 3 --kirilim Device
 | GSC | `sc-domain:servosteel.com.tr` | `--property` vermek **şart** |
 
 GA4 "kaç oturum" der, Clarity "o sayfada ne yaptı" der. Dönüşüm sıfırken sebebi
-ancak Clarity gösterir. İkisi de `IS_PRODUCTION_SITE` korumasına bağlı —
+ancak Clarity gösterir.
+
+**Form sağlığı:** GA4'te `lead_error` olayı **0 olmalı**. Varsa `http_status`
+söyler: 500 = mail gitmedi (talep panelde "mail gitmedi" işaretiyle duruyor,
+SMTP/kota bakılır), 429 = hız sınırı, 400 = geçersiz alan, 0 = ağ (§E.25). İkisi de `IS_PRODUCTION_SITE` korumasına bağlı —
 önizleme kopyalarında hiç yüklenmez.
 
 ### C.3 İzlenen kelimeler — sıralama takibi
@@ -618,6 +622,29 @@ cümleleri Servosteel'in iddiası olarak alıntılıyor.
 **Araç:** `python scripts/akademi-sss-ekle.py <dil> <girdi.json> --kuru`.
 Gövdeye dokunmaz. Özet ve SSS'deki her sayının yazıda geçtiğini, özetin 25–90
 kelime, soruların 3–5 ve cevapların en fazla 70 kelime olduğunu denetler.
+
+**E.24 · Yurt dışı gösterim yarıya indi, talep kaybı yok (2026-09-19).**
+27 Ağu–2 Eyl → 10–16 Eyl, Türkiye dışı: 1.157 → 604 gösterim, tıklama 17 → 15.
+Kaybın çoğu iki sayfada: `/en/machines/automatic-stacker` 177 → 0 (konum 31,
+"automatic stacking machine" ailesi — §C.3'teki tuzak kelime) ve
+`/it/comparison/slitting-vs-cut-to-length` 64 → 0 (konum 9, "taglio
+longitudinale significato" — bilgi araması). URL denetimi: kaybeden 12 sayfanın
+hepsi dizinde, kanonik kendisi. Sayfa düşmedi, alakasız sorgudaki görünürlük
+gitti. **Kural:** gösterim düşünce önce sayfa × sorgu kırılımı (API'de
+`country notEquals tur` süzgeci), sonra URL denetimi. Alarm yalnızca alım
+niyetli sorguda ya da dizinden çıkışta.
+
+**E.25 · Form talebi mail gitmezse iz bırakmadan kayboluyordu (2026-09-19).**
+Veritabanına yalnızca başarılı mailden SONRA yazılıyordu, GA4 `generate_lead`
+de yalnızca başarıda gidiyordu. SMTP şifresi değişse ya da alıcı kutu kotayı
+doldursa ziyaretçi "gönderilemedi" görür, biz hiçbir yerde görmezdik. Şimdi:
+mail gitmezse talep panele `kaynak='form-mail-gitmedi'` ile yazılır (listede
+kırmızı "mail gitmedi"), tarayıcı GA4'e `lead_error` + `http_status` gönderir.
+Aynı gün içerik spam süzgeci kaldırıldı (Yasin: "spam gelsin, talep gelsin");
+çöp panelden "Spam" işaretlenir. Not: süzgeç talebi GA4'ten gizleyemezdi —
+elenen gönderene de "başarılı" deniyor, `generate_lead` gidiyordu. 19 Eylül'de
+veritabanında formdan gelmiş **hiç** kayıt yoktu (5 kaydın 5'i elle, 15 Eyl),
+GA4'te son `generate_lead` 14 Eylül.
 
 ---
 

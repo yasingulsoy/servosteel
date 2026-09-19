@@ -148,6 +148,11 @@ export function TalepListesi({ liste }: { liste: Talep[] }) {
                 <td className="px-4 py-3 text-muted">
                   {t.tur === "rfq" ? "Teklif" : "İletişim"}
                   {t.kaynak === "elle" ? " · elle" : ""}
+                  {/* Formdan geldi ama bildirim maili gitmedi (api/talep):
+                      firma bu talebi yalnızca burada görür — gözden kaçmasın. */}
+                  {t.kaynak === "form-mail-gitmedi" ? (
+                    <span className="font-medium text-red-700"> · mail gitmedi</span>
+                  ) : null}
                 </td>
                 <td className="px-4 py-3">
                   <Rozet durum={t.durum} />

@@ -64,6 +64,11 @@ export default async function TalepSayfasi({
         {" · "}
         {t.tur === "rfq" ? "Teklif talebi" : "İletişim formu"}
         {t.kaynak === "elle" ? " · elle girildi" : ""}
+        {t.kaynak === "form-mail-gitmedi" ? (
+          <span className="font-medium text-red-700">
+            {" · "}bildirim maili gitmedi — müşteriye buradan dönün
+          </span>
+        ) : null}
       </p>
 
       {/* İki sütun yalnızca geniş ekranda: solda mesaj ve notlar, sağda

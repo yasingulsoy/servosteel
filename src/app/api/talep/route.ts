@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendLead, type Lead } from "@/lib/mail";
 import { talepEkle } from "@/lib/leads-db";
-import { spamPuani } from "@/lib/spam";
 
 /**
  * Form taleplerini alır ve e-posta olarak gönderir.
@@ -10,6 +9,13 @@ import { spamPuani } from "@/lib/spam";
  * masaüstünde tarayıcıdan webmail kullanan biri "gönder"e bastığında çoğu kez
  * hiçbir şey olmuyor — yapılandırılmış bir e-posta istemcisi yok. Ziyaretçi
  * formu doldurmuş, gönderdiğini sanmış, talep hiç var olmamış oluyordu.
+ *
+ * İÇERİK SPAM SÜZGECİ YOK — bilerek (2026-09-19, Yasin: "spam gelsin, talep
+ * gelsin"). 15 Eylül'de eklenen puanlama süzgeci kaldırıldı: bir gerçek talebi
+ * kaçırmanın bedeli, gelen kutusundaki birkaç çöp mailden çok daha yüksek.
+ * Çöp, admin panelinde "Spam" olarak işaretlenir; gerçek talep sayısından
+ * düşülür. Kalan iki koruma insanı hiç engellemez: görünmez bal küpü alanı
+ * (yalnızca bot doldurur) ve IP başına dakikada 3 gönderim.
  */
 
 export const runtime = "nodejs"; // nodemailer TCP soket açar, edge'de çalışmaz
@@ -49,9 +55,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "json" }, { status: 400 });
   }
 
-  /* Bal küpü: gerçek kullanıcı bu alanı göremez, bot doldurur. Bota "başarılı"
-     denir ki tekrar denemesin, ama mail gönderilmez. */
-  if (str(raw.website)) return NextResponse.json({ ok: true });
+  /* Bal küpü: gerçek kullanıcı bu alanı göremez (display:none — tarayıcının
+     otomatik doldurması da görünmez alana dokunmaz), bot doldurur. Bota
+     "başarılı" denir ki tekrar denemesin, ama mail gönderilmez. Günlüğe yazılır
+     ki kaç gönderimin burada kaldığı sayılabilsin. */
+  if (str(raw.website)) {
+    console.warn(`[talep] bal küpü dolu, gönderilmedi — ${str(raw.email, 160)}`);
+    return NextResponse.json({ ok: true });
+  }
 
   const lead: Lead = {
     kind: raw.kind === "rfq" ? "rfq" : "contact",
@@ -71,26 +82,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "gecersiz" }, { status: 400 });
   }
 
-  /* Spam süzgeci — mail de veritabanı da görmeden eler.
-     Gönderene "başarılı" deniyor: engellendiğini bilen gönderen metni
-     değiştirip tekrar dener. Sayaç sunucu günlüğünde kalıyor. */
-  const s = spamPuani({ mesaj: lead.message, konu: lead.subject, eposta: lead.email });
-  if (s.spam) {
-    console.warn(
-      `[talep] spam elendi (puan ${s.puan}): ${s.sebepler.join(", ")} — ${lead.email}`
-    );
-    return NextResponse.json({ ok: true });
-  }
-
-  try {
-    await sendLead(lead);
-
-    /* Veritabanına kayıt E-POSTADAN SONRA ve `await` edilmeden değil, ama
-       hatası yutularak yapılıyor (`talepEkle` içeride try/catch'li).
-       Sıra bilinçli: **e-posta aslıdır, veritabanı kopyadır.** Postgres
-       düşerse talep yine de firmaya ulaşır. Tersini yapsaydık bir gün
-       veritabanı yüzünden iş kaybederdik. */
-    await talepEkle({
+  /* `talepEkle` hata fırlatmaz (içeride yutuyor) — kayıt hiçbir yolu bozamaz. */
+  const kaydet = (kaynak: string) =>
+    talepEkle({
       tur: lead.kind,
       dil: lead.locale,
       ad: lead.name ?? "",
@@ -102,14 +96,25 @@ export async function POST(req: Request) {
         .filter(Boolean)
         .join("\n\n"),
       sayfa: req.headers.get("referer") ?? "",
-      kaynak: "form",
+      kaynak,
     });
 
-    return NextResponse.json({ ok: true });
+  try {
+    await sendLead(lead);
   } catch (err) {
-    /* Sunucu günlüğüne yaz, ziyaretçiye ayrıntı verme. Bu satır önemli:
-       SMTP bilgisi eksik/yanlışsa sessizce kaybolmasın, günlükte görünsün. */
+    /* Mail gitmedi. 2026-09-19'a kadar talep burada TAMAMEN kayboluyordu:
+       veritabanına yalnızca başarılı mailden sonra yazılıyordu, geriye tek
+       iz sunucu günlüğündeki bu satır kalıyordu. Artık panele "mail gitmedi"
+       işaretiyle yazılıyor — SMTP şifresi değişse ya da alıcı kutu kotayı
+       doldursa bile talep elde kalır. Ziyaretçiye yine hata dönülür ("bizi
+       arayın"): firmaya bildirim ulaşmadı, aramaktan vazgeçmesin. */
     console.error("[talep] gönderilemedi:", err);
+    await kaydet("form-mail-gitmedi");
     return NextResponse.json({ ok: false, error: "gonderim" }, { status: 500 });
   }
+
+  /* Başarılı yolda kayıt mailden SONRA. Sıra bilinçli: **e-posta aslıdır,
+     veritabanı kopyadır.** Postgres düşerse talep yine de firmaya ulaşır. */
+  await kaydet("form");
+  return NextResponse.json({ ok: true });
 }

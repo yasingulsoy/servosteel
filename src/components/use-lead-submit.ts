@@ -33,6 +33,7 @@ export function useLeadSubmit(kind: "rfq" | "contact") {
     const data = new FormData(e.currentTarget);
     const get = (k: string) => String(data.get(k) ?? "").trim();
     setStatus("sending");
+    let httpDurum = 0; // 0 = yanıt hiç gelmedi (ağ hatası)
 
     try {
       const res = await fetch("/api/talep", {
@@ -53,11 +54,17 @@ export function useLeadSubmit(kind: "rfq" | "contact") {
           website: get("website"), // bal küpü — bkz. api/talep/route.ts
         }),
       });
+      httpDurum = res.status;
       if (!res.ok) throw new Error(String(res.status));
       setStatus("sent");
       window.gtag?.("event", "generate_lead", { form_type: kind, locale });
     } catch {
       setStatus("failed");
+      /* Başarısız gönderim de ölçülür. SMTP şifresi değişir ya da alıcı kutu
+         kotayı doldurursa sunucu 500 döner: ziyaretçi hata görür ama GA4'te iz
+         kalmaz, talepler "gelmiyor" gibi görünür — oysa form kırıktır.
+         http_status: 500 gönderim, 429 hız sınırı, 400 geçersiz, 0 ağ. */
+      window.gtag?.("event", "lead_error", { form_type: kind, locale, http_status: httpDurum });
     }
   };
 
