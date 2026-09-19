@@ -645,6 +645,11 @@ Aynı gün içerik spam süzgeci kaldırıldı (Yasin: "spam gelsin, talep gelsi
 elenen gönderene de "başarılı" deniyor, `generate_lead` gidiyordu. 19 Eylül'de
 veritabanında formdan gelmiş **hiç** kayıt yoktu (kayıtların hepsi panelden elle
 girilmiş), GA4'te son `generate_lead` 14 Eylül.
+**Uçtan uca test, 19 Eyl 20:21** (deploy `3b855e5` sonrası, Yasin'in isteğiyle):
+`/makineler/rulo-acicilar` formu → `/api/talep` 200 `{"ok":true}` (mail sunucusu
+kabul etti) → kayıt **#10** `kaynak='form'` → GA4 anlık `generate_lead` 1. Zincir
+sağlam; 14 Eylül sonrası boşluk formdan değil. **#10 ve 19 Eylül'deki o tek
+`generate_lead` testtir, talep sayısına katılmaz** (ad "TEST - form denemesi").
 
 ---
 
