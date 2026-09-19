@@ -115,22 +115,18 @@ kayıt için hazır metin: [seo/ilan-metinleri.md](seo/ilan-metinleri.md).
 [seo/youtube-basliklar.md](seo/youtube-basliklar.md). YouTube Studio'dan elle
 ya da yetki verilince betikle.
 
-- [ ] **Tüzel kişilik unvanı.** Katalog iki farklı yazıyor: s.3 "STEEL Makina
-  Kalıp **ve Sanayi** Ltd. Şti.", s.6 "Steel Makina Kalıp **San. ve Tic.**
-  Ltd. Şti." Ticaret sicilindeki tam hâli lazım.
-  **KVKK/gizlilik sayfası buna bağlı** — aylardır bu yüzden yazılamıyor.
-  Yanında iki bilgi daha: **VERBİS kaydı var mı**, **form e-postaları ne kadar
-  saklanıyor**. Üçü gelince 9 dile ben yazarım.
-
-  > **İPUCU (2026-09-07, GSC).** `servosteel makina sanayi ve diş ticaret
-  > anonim...` sorgusu 28 günde **27 gösterim / 15 tık** getiriyor ve o sorguda
-  > **1. sıradayız**. Yani birileri bu unvanı biliyor ve arıyor. Katalogdaki
-  > "Steel Makina Kalıp **Ltd. Şti.**" ile çelişiyor: biri **A.Ş.**, diğeri
-  > **Ltd. Şti.** İki ayrı tüzel kişilik olabilir.
-  > **Arama sorgusu tescil kaydı değildir** — siteye yazılmadı. Filiz Hanım'a
-  > sorulacak somut soru artık şu: *"Servosteel Makina Sanayi ve Dış Ticaret
-  > A.Ş. ile Steel Makina Kalıp Ltd. Şti. aynı firma mı, hangisi veri
-  > sorumlusu olarak yazılacak?"*
+- [x] **Tüzel kişilik unvanı — bulundu (2026-09-19, Ticaret Sicil Gazetesi
+  sorgusu):** **SERVOSTEEL MAKİNA SANAYİ VE DIŞ TİCARET ANONİM ŞİRKETİ**,
+  İstanbul, sicil no **1015933**. Kurumsal şemaya `legalName` olarak yazıldı.
+  Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil (eski ya da ayrı
+  tüzel kişilik; 2015 videoları "Steel Makina" adıyla). Dizin kayıtlarında ve
+  KVKK sayfasında bu unvan kullanılacak.
+- [ ] **Vergi numarası** — sitede ve eski sitede yok. Kamuya açık kaynak:
+  ebelge.gib.gov.tr → e-Fatura Kayıtlı Kullanıcılar → unvanla sorgu (VKN
+  10 hane). Ya da herhangi bir faturanın üstü. Europages kaydı bunu istiyor.
+- [ ] **KVKK/gizlilik sayfası** için kalan iki bilgi: **VERBİS kaydı var mı**,
+  **form e-postaları ne kadar saklanıyor**. Unvan geldi; bu ikisi gelince 9
+  dile ben yazarım.
 - [ ] **Mevcut ajansın link inşasını durdur** — 2010'ların yöntemi, zarar
   veriyor. Kanıtı §E.9'da.
 - [ ] **Hangi fuarlara katıldık** (geçmiş yıllar dahil) — katılımcı listeleri

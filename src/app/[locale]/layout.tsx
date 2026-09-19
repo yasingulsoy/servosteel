@@ -139,6 +139,9 @@ const orgJsonLd = {
   /* Olculmus varyant: "servo steel" (ayri yazim) 28 gunde 30 gosterim, 3,1.
      Varlik eslesmesi icin yazilir — uydurma degil, GSC'den okundu. */
   alternateName: ["Servo Steel", "ServoSteel"],
+  /* Ticaret Sicil Gazetesi kaydı (2026-09-19): İstanbul, sicil no 1015933.
+     Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil. */
+  legalName: "Servosteel Makina Sanayi ve Dış Ticaret Anonim Şirketi",
   url: SITE_URL,
   /* "Üretici mi, tedarikçi mi?" belirsizliğini şema düzeyinde de kapatır. */
   description:
