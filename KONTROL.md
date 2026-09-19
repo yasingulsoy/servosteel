@@ -118,6 +118,9 @@ ya da yetki verilince betikle.
 - [x] **Tüzel kişilik unvanı — bulundu (2026-09-19, Ticaret Sicil Gazetesi
   sorgusu):** **SERVOSTEEL MAKİNA SANAYİ VE DIŞ TİCARET ANONİM ŞİRKETİ**,
   İstanbul, sicil no **1015933**. Kurumsal şemaya `legalName` olarak yazıldı.
+  İTO Bilgi Bankası (aynı gün): üyelik **faal**, tescilli adres "Yunus Emre
+  Mah. İskenderpaşa Cad. **Batek** No: 21 İç Kapı No: 1, Sancaktepe" —
+  sitedeki "21/1" ile aynı yer, "Batek" bina adı. Vergi no burada da yok.
   Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil (eski ya da ayrı
   tüzel kişilik; 2015 videoları "Steel Makina" adıyla). Dizin kayıtlarında ve
   KVKK sayfasında bu unvan kullanılacak.
