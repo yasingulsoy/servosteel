@@ -83,6 +83,8 @@
     { "pazar": "es", "grup": "Boy kesme", "kelime": "línea de corte transversal", "hacim": null },
     { "pazar": "es", "grup": "Besleme", "kelime": "alimentador de prensa", "hacim": 10 },
 
+    { "pazar": "pl", "grup": "Besleme", "kelime": "podajnik walcowy", "hacim": 140 },
+    { "pazar": "pl", "grup": "Besleme", "kelime": "podajnik do prasy mimośrodowej", "hacim": 40 },
     { "pazar": "pl", "grup": "Besleme", "kelime": "podajnik servo", "hacim": 40 },
     { "pazar": "pl", "grup": "Besleme", "kelime": "podajnik do prasy", "hacim": 10 },
     { "pazar": "pl", "grup": "Besleme", "kelime": "linie podające", "hacim": null },

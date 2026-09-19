@@ -1889,11 +1889,11 @@
         }
       },
       "servo-suruculer": {
-        "name": "Podajniki Serwo",
-        "metaTitle": "Podajniki serwo do pras — NC, mini i standard",
+        "name": "Podajniki Walcowe Servo",
+        "metaTitle": "Podajnik walcowy servo do prasy — NC, mini i standard",
         "short": "Precyzyjne podawanie krokowe do pras; seria standardowa i mini.",
-        "hero": "Podajniki serwo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
-        "meta": "Podajniki serwo: seria standardowa i mini do linii prasowych, precyzyjne podawanie oparte na Schneider Lexium.",
+        "hero": "Podajniki walcowe servo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
+        "meta": "Podajnik walcowy servo do prasy: seria standardowa i mini do linii prasowych, precyzyjne podawanie blachy oparte na Schneider Lexium.",
         "features": [
           {
             "title": "Precyzja kroku milimetrowa",

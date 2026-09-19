@@ -664,6 +664,18 @@ haftalık 5 → 8 → 10. Yorum: ilgi azalmamış, kanal değişmiş olabilir �
 markasız tıklamayı sorgu satırlarından toplamak anonim sorguları düşürür ve
 gerçeğin yarısını gösterir — markasız = toplam − marka.
 
+**E.27 · Lehçe yazım tuzağı: "serwo" hiç aranmıyor (2026-09-19).** PL sitede
+kelime her yerde "serwo" yazılıydı; Google Ads (Polonya): `podajnik servo` 40,
+`podajnik serwo` / `podajniki serwo` **veri yok**. Asıl terim `podajnik walcowy`
+140/ay — sonuç sayfası pres sac besleyicileri. `podajnik rolkowy` (480) taşıma
+masası, `podajnik taśmy` (70) bant aparatı: **ikisi de tuzak**. `podajnik servo`
+gösterimleri 8 sayfaya dağılmıştı, asıl ürün sayfası 60. sıradaydı. Ana servo
+sürücü sayfasının adı, başlığı, açıklaması ve giriş cümlesi "Podajniki Walcowe
+Servo / Podajnik walcowy servo do prasy" yapıldı; iki terim takibe eklendi.
+Başlangıç: walcowy ilk 48'de yok, mimośrodowej ilk 45'te yok, servo 11.
+**3 Ekim'de ölç.** Kural: sitenin çeviri terimi alıcının yazdığı terim
+olmayabilir — başlıktaki terimi hacim verisi ve sonuç sayfasıyla doğrula.
+
 ---
 
 ## Kapanmış işler

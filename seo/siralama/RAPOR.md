@@ -1,6 +1,6 @@
 # Google sıralama durumu — 19 Eylül 2026
 
-Google **masaüstü**, ilk 50 organik sonuç · 77 kelime · ölçüm saati 14:31 · maliyet 0,285 $ · kalan bakiye 32,55 $
+Google **masaüstü**, ilk 50 organik sonuç · 79 kelime · ölçüm saati 14:31 · maliyet 0,305 $ · kalan bakiye 32,36 $
 
 Karşılaştırma: 18 Eylül 2026 ölçümü
 
@@ -16,11 +16,11 @@ GSC sütunu: aynı sorgu Search Console'da, 22 Ağu → 18 Eyl, tüm cihazlar �
 | Almanya | 7 | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 0 |
 | İtalya | 6 | 0 | 0 | 0 | 0 | 6 | 0 | 0 | 0 |
 | İspanya | 4 | 0 | 0 | 0 | 0 | 4 | 0 | 0 | 0 |
-| Polonya | 5 | 0 | 0 | 1 | 0 | 4 | 0 | 0 | 0 |
+| Polonya | 7 | 0 | 0 | 1 | 0 | 6 | 0 | 0 | 0 |
 | Rusça (Kazakistan) | 4 | 0 | 0 | 0 | 0 | 4 | 0 | 0 | 0 |
 | Suudi Arabistan (İngilizce) | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
 | BAE (İngilizce) | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
-| **toplam** | 72 | 4 | 3 | 3 | 1 | 61 | 6 | 3 | 5 |
+| **toplam** | 74 | 4 | 3 | 3 | 1 | 63 | 6 | 3 | 5 |
 
 Marka ve hesaplayıcı kelimeleri özete girmez (teklif getirmezler); en alttaki ayrı tabloda.
 
@@ -137,6 +137,8 @@ Marka ve hesaplayıcı kelimeleri özete girmez (teklif getirmezler); en alttaki
 
 | kelime | grup | hacim/ay | sıra | önceki | değişim | sıralanan sayfa | video | 1. sırada | GSC 28 gün |
 |---|---|---:|---:|---:|---|---|:-:|---|---|
+| podajnik walcowy | Besleme | 140 | yok (ilk 48) | — |  |  |  | olx.pl | — |
+| podajnik do prasy mimośrodowej | Besleme | 40 | yok (ilk 45) | — |  |  |  | allegro.pl | — |
 | podajnik servo | Besleme | 40 | 11 | 11 | = | /pl/machines/straightener-servo-feeders/cased |  | shungdar.com.tw | 86 · 12,2 |
 | linia do cięcia poprzecznego | Boy kesme | 10 | yok (ilk 47) | yok (ilk 47) | = |  |  | bud-masz.com.pl | — |
 | linia do cięcia wzdłużnego | Dilme | 10 | yok (ilk 48) | yok (ilk 47) | = |  |  | machineseeker.pl | — |
