@@ -643,8 +643,8 @@ kırmızı "mail gitmedi"), tarayıcı GA4'e `lead_error` + `http_status` gönde
 Aynı gün içerik spam süzgeci kaldırıldı (Yasin: "spam gelsin, talep gelsin");
 çöp panelden "Spam" işaretlenir. Not: süzgeç talebi GA4'ten gizleyemezdi —
 elenen gönderene de "başarılı" deniyor, `generate_lead` gidiyordu. 19 Eylül'de
-veritabanında formdan gelmiş **hiç** kayıt yoktu (5 kaydın 5'i elle, 15 Eyl),
-GA4'te son `generate_lead` 14 Eylül.
+veritabanında formdan gelmiş **hiç** kayıt yoktu (kayıtların hepsi panelden elle
+girilmiş), GA4'te son `generate_lead` 14 Eylül.
 
 ---
 
