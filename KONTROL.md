@@ -648,8 +648,9 @@ girilmiş), GA4'te son `generate_lead` 14 Eylül.
 **Uçtan uca test, 19 Eyl 20:21** (deploy `3b855e5` sonrası, Yasin'in isteğiyle):
 `/makineler/rulo-acicilar` formu → `/api/talep` 200 `{"ok":true}` (mail sunucusu
 kabul etti) → kayıt **#10** `kaynak='form'` → GA4 anlık `generate_lead` 1. Zincir
-sağlam; 14 Eylül sonrası boşluk formdan değil. **#10 ve 19 Eylül'deki o tek
+sağlam; 14 Eylül sonrası boşluk formdan değil. **19 Eylül'deki o tek
 `generate_lead` testtir, talep sayısına katılmaz** (ad "TEST - form denemesi").
+Test kaydı #10 aynı akşam panelden silindi; GA4 olayı silinemiyor.
 
 ---
 
