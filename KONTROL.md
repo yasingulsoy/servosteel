@@ -198,6 +198,22 @@ ve Clarity script'leri. Hepsi OK ise ve **yeni URL** eklendiyse:
 > ve site haritası dışına düşen hreflang hedefi **yok**. Kritik TR/EN/DE/IT/PL/
 > ES/RU sayfaları URL denetiminde "dizine eklendi". Teknik tarafta açık kalmadı;
 > yurt dışındaki eksik görünürlük içerik ve bulunurluk sorunudur.
+>
+> Aynı gün bakılan ve **sorun çıkmayan** yerler — bir daha araştırılmasın:
+> • `public/videos` 895 MB ama `.gitignore`'da, git'te yalnızca `.gitkeep` var
+>   ve canlıda 404 dönüyor: deploy'a girmiyor, yalnızca yerel çalışma dosyası.
+> • Ana sayfadaki 5 videonun hepsi `preload="none"`; açılışta yalnızca poster
+>   (140 KB) iniyor. Hero 7,5 MB yalnızca oynatılırken akıyor.
+> • İç link haritası: menü/alt bilgi dışı linki **0** olan 36 sayfanın hepsi
+>   dizinde (dil ana sayfaları, karşılaştırma/referans/sürdürülebilirlik
+>   hub'ları). `hakkimizda` ve `uygulamalar` 9 dilde 1'er linkti; yeni akademi
+>   yazılarından editoryal link verildi.
+> • EN roll form hub'ında ürün kartları ilk ekranda (508 px), teklif bandı
+>   sayfanın %36'sında: Clarity'deki düşük kaydırma yüzdesi tasarım hatası değil.
+> • Clarity 3 gün: öfke tıklaması 0, JS hatası 0; ölü tıklama sayfa başına 1-3
+>   oturum, örüntü yok.
+> • **Ölçülemeyen:** PageSpeed ve CrUX API'leri eldeki anahtarla 429/403 veriyor.
+>   Saha CWV verisi için anahtarın bu API'lere açılması gerekiyor.
 ```bash
 npm run indexnow
 ```
