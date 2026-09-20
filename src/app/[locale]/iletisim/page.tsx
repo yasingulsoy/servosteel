@@ -1,6 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Clock, Mail, MapPin, Phone, Printer } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa6";
 import { SpecularButton } from "@/components/specular-button";
 import { pageAlternates, pageTitle } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
@@ -62,6 +61,24 @@ export default async function IletisimPage({ params }: Props) {
           ))}
         </div>
 
+        {/* İLETİŞİM FORMU — teklif değil, genel mesaj kanalı.
+            Haritanın ÜSTÜNDE duruyor: altındayken telefonda 2,2 ekran
+            aşağıdaydı ve 14 günde sayfaya giren 46 kişiden yalnızca 1'i
+            forma dokundu (GA4 form_start). Sırayı bozmayın. */}
+        <Reveal>
+          <div className="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-10">
+            <div className="max-w-2xl">
+              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl">
+                {t("form.title")}
+              </h2>
+              <p className="mt-3 text-muted">{t("form.text")}</p>
+            </div>
+            <div className="mt-8">
+              <ContactForm />
+            </div>
+          </div>
+        </Reveal>
+
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <Reveal>
             <div className="flex h-full flex-col rounded-2xl bg-shell p-8 text-white">
@@ -109,20 +126,6 @@ export default async function IletisimPage({ params }: Props) {
           </Reveal>
         </div>
 
-        {/* İLETİŞİM FORMU — teklif değil, genel mesaj kanalı */}
-        <Reveal>
-          <div className="mt-12 rounded-2xl border border-line bg-card p-6 sm:p-10">
-            <div className="max-w-2xl">
-              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink sm:text-3xl">
-                {t("form.title")}
-              </h2>
-              <p className="mt-3 text-muted">{t("form.text")}</p>
-            </div>
-            <div className="mt-8">
-              <ContactForm />
-            </div>
-          </div>
-        </Reveal>
 
         <Reveal>
           <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl bg-surface-alt p-8 lg:flex-row lg:items-center">

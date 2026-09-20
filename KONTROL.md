@@ -150,6 +150,13 @@ ya da yetki verilince betikle.
   Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil (eski ya da ayrı
   tüzel kişilik; 2015 videoları "Steel Makina" adıyla). Dizin kayıtlarında ve
   KVKK sayfasında bu unvan kullanılacak.
+- [ ] **WhatsApp Business numarası — ölçülmüş en yüksek talepli kanal, kapalı.**
+  Hangi cep numarasında WhatsApp Business hesabı açılacak? Hesap açılmadan
+  tuş konmayacak (ölü tuşun ne yaptığı §E.14'te). Gerekçe: o tuş çalışmadığı
+  hâlde **oturum başına %4,10** tıklanıyordu, telefon + e-posta toplamı %1,57.
+  Yurt dışı trafiğimiz Cezayir, Nijerya, Hindistan, Malezya, Singapur —
+  sanayide ilk kanal WhatsApp. Numara gelirse kanal kartını, teklif formunun
+  yanına ikinci kapıyı ve dokuz dildeki metni aynı gün koyarım. Ayrıntı: §E.29.
 - [ ] **Vergi numarası** — sitede ve eski sitede yok. Kamuya açık kaynak:
   ebelge.gib.gov.tr → e-Fatura Kayıtlı Kullanıcılar → unvanla sorgu (VKN
   10 hane). Ya da herhangi bir faturanın üstü. Europages kaydı bunu istiyor.
@@ -758,6 +765,39 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 `maszyna do profilowania blachy` (590) **bulmaca siteleri**, PL
 `profilarka do blachy` (170) çatıcının el profil makinesi. Bu dördü
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
+
+---
+
+**E.28 · İletişim formu telefonda 2,2 ekran aşağıdaydı (2026-09-20).**
+E.26'da "görüntüleme sabit, `form_start` sıfır" diye bırakılan soru ölçüldü.
+14 günde `/iletisim` + `/en/contact-us` sayfasına **46 kişi** girdi (iletişim
+sitenin 2. çok görüntülenen sayfası, 51 görüntülenme); aynı 14 günde
+`form_start` **2** — biri 19 Eylül testi. Yani forma dokunma oranı **~%2**.
+Sebep konumdu: sayfa sırası hero → telefon/e-posta kartları → adres kartı →
+Google haritası (320 px iframe) → **form**. Ölçüm (375×812):
+
+| | önce | sonra |
+|---|---:|---:|
+| formun üstü, telefon | 1789 px (2,20 ekran) | **1001 px (1,23 ekran)** |
+| gönder düğmesi, telefon | 2335 px | **1547 px** |
+| formun üstü, masaüstü 1024×768 | 1130 px (1,47 ekran) | **750 px (0,98 ekran)** |
+
+Form haritanın üstüne alındı (sıra: kartlar → form → adres+harita → teklif
+kutusu). Sayfada geçirilen süre `/iletisim` 21,5 sn, `/en/contact-us` **5,4 sn**
+— yabancı ziyaretçi sayfayı açıp çıkıyordu, forma kadar inmiyordu.
+**Kural: iletişim sayfasında harita formdan sonra gelir.** Harita kimseyi
+müşteri yapmaz, form yapar.
+**3 Ekim'de ölç:** `form_start` / iletişim sayfası görüntülenmesi oranı.
+
+**E.29 · WhatsApp kapısı hâlâ kapalı ve ölçülmüş talebi var (2026-09-20).**
+E.14'te ölü tuş kaldırıldı, doğrusuydu — ama kanal kapalı kaldı. O tuş
+**oturum başına %4,10** tıklanıyordu; telefon + e-posta ikilisi %1,57.
+Bugünkü yurt dışı trafiği Cezayir, Nijerya, Hindistan, Malezya, Singapur —
+sanayide WhatsApp'ın birinci kanal olduğu pazarlar. Günde ~30 oturumda
+%4,10 ≈ **günde 1 kişi kapıyı çalıyor, açan yok**. `iletisim/page.tsx`
+kanal ızgarası hâlâ `md:grid-cols-3` (üçüncü kart WhatsApp'ındı), boş duruyor.
+Numara firmadan gelmeden **uydurulmayacak**; sabit hatta (216 415 30 05)
+WhatsApp Business hesabı yok.
 
 ---
 
