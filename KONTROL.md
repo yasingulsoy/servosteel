@@ -326,7 +326,9 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   rulo dilme hattı maliyeti, rulo dilme hattı nasıl seçilir, sac fire, progresif
   kalıp, servo besleyici nasıl seçilir, solar ROI, rulo hattı nereden alınmalı;
   EN how-to-choose-a-cut-to-length-line, coil-slitting-line-cost.
-- [ ] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
+- [ ] **Sıradaki — önce YENİ yazı:** `/en/academy/how-to-check-a-coil-line-manufacturer`
+  (20 Eyl'de yazıldı, deploy sonrası `npm run indexnow` + GSC isteği).
+  Ardından en eski taranan EN yazılar: `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
   (19 Ağu), `where-to-buy-a-coil-processing-line` (28 Ağu).

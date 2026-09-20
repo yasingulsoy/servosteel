@@ -96,6 +96,9 @@ export const CONTENT_SLUGS = {
     "rulo-dilme-hatti-maliyeti": "coil-slitting-line-cost",
     "rulo-hatti-nereden-alinmali": "where-to-buy-a-coil-processing-line",
     "roll-form-nedir": "what-is-roll-forming",
+    /* 2026-09-20: şimdilik yalnızca İngilizce — yapay zeka asistanı "Türkiye'de
+       üretici kim" sorularında bizi anmıyordu (§C.5), o boşluğa yazıldı. */
+    "hat-ureticisi-nasil-denetlenir": "how-to-check-a-coil-line-manufacturer",
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 
