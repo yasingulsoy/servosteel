@@ -297,6 +297,11 @@ asistanın bizi kendiliğinden anıp anmadığı. Kayıt ve rapor:
 - İlk karşı hamle yapıldı: İngilizce dilme sayfasına "What is a coil processing
   line?", boy kesme sayfasına "Who buys a cut-to-length line?" soruları eklendi
   (FAQPage şemasına da giriyor, asistan alıntılayabilir).
+- İkinci hamle: **`/en/academy/how-to-check-a-coil-line-manufacturer`** yazıldı
+  (20 Eyl, şimdilik yalnızca İngilizce). "Üretici kim / kimden almalıyım"
+  sorusunun boşluğuna yazılmış 9 maddelik denetim listesi; dilme, boy kesme ve
+  roll form sayfalarından ilgili okuma olarak, "nereden alınmalı" yazısından
+  editoryal linkle bağlandı (§E.20 kuralı).
 
 ### C.4 Search Console özel raporları
 
