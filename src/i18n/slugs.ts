@@ -99,6 +99,7 @@ export const CONTENT_SLUGS = {
     /* 2026-09-20: şimdilik yalnızca İngilizce — yapay zeka asistanı "Türkiye'de
        üretici kim" sorularında bizi anmıyordu (§C.5), o boşluğa yazıldı. */
     "hat-ureticisi-nasil-denetlenir": "how-to-check-a-coil-line-manufacturer",
+    "roll-form-hatti-maliyeti": "roll-forming-line-cost",
   },
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 

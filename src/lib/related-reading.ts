@@ -26,6 +26,7 @@ export const relatedReading: Record<string, string[]> = {
     "hat-ureticisi-nasil-denetlenir",
   ],
   "/roll-form-hatlari": [
+    "roll-form-hatti-maliyeti",
     "solar-profil-hatti-yatirim-geri-donusu",
     "sac-fire-oranini-dusurmek",
     "rulo-hatti-nereden-alinmali",
