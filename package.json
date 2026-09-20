@@ -12,7 +12,8 @@
     "lint": "eslint",
     "indexnow": "node scripts/indexnow.mjs",
     "kontrol": "python scripts/canli-kontrol.py",
-    "siralama": "python scripts/siralama.py"
+    "siralama": "python scripts/siralama.py",
+    "yapayzeka": "python scripts/yapayzeka.py"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
