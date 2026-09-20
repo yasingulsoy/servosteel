@@ -353,11 +353,13 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   rulo dilme hattı maliyeti, rulo dilme hattı nasıl seçilir, sac fire, progresif
   kalıp, servo besleyici nasıl seçilir, solar ROI, rulo hattı nereden alınmalı;
   EN how-to-choose-a-cut-to-length-line, coil-slitting-line-cost.
-- [ ] **Sıradaki — önce YENİ altı sayfa** (20 Eyl'de yazıldı, deploy sonrası
-  `npm run indexnow` + GSC isteği): `/en/academy/how-to-check-a-coil-line-manufacturer`,
+- [ ] **Sıradaki — önce YENİ sekiz sayfa** (20 Eyl'de yazıldı, deploy sonrası
+  `npm run indexnow` + GSC isteği). Üretici denetim listesi:
+  `/en/academy/how-to-check-a-coil-line-manufacturer`,
+  `/akademi/hat-ureticisi-nasil-denetlenir`. Roll form fiyat yazısı:
   `/akademi/roll-form-hatti-maliyeti`, `/en/academy/roll-forming-line-cost`,
-  `/de/academy/roll-forming-line-cost`, `/it/academy/roll-forming-line-cost`,
-  `/ru/academy/roll-forming-line-cost`.
+  `/de/`, `/it/`, `/es/`, `/ru/academy/roll-forming-line-cost`.
+  (GSC günlük kotası ~10; sekizi bir günde gider.)
   Ardından en eski taranan EN yazılar: `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
