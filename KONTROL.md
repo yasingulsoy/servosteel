@@ -192,6 +192,12 @@ python scripts/canli-kontrol.py
 ```
 14 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap, GA4
 ve Clarity script'leri. Hepsi OK ise ve **yeni URL** eklendiyse:
+
+> **Tam tarama, 2026-09-20:** site haritasındaki **470 adresin 470'i 200**
+> döndü; yönlendirme, `noindex`, eksik/çift H1, boş ya da tekrar eden başlık
+> ve site haritası dışına düşen hreflang hedefi **yok**. Kritik TR/EN/DE/IT/PL/
+> ES/RU sayfaları URL denetiminde "dizine eklendi". Teknik tarafta açık kalmadı;
+> yurt dışındaki eksik görünürlük içerik ve bulunurluk sorunudur.
 ```bash
 npm run indexnow
 ```
@@ -331,8 +337,9 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   rulo dilme hattı maliyeti, rulo dilme hattı nasıl seçilir, sac fire, progresif
   kalıp, servo besleyici nasıl seçilir, solar ROI, rulo hattı nereden alınmalı;
   EN how-to-choose-a-cut-to-length-line, coil-slitting-line-cost.
-- [ ] **Sıradaki — önce YENİ yazı:** `/en/academy/how-to-check-a-coil-line-manufacturer`
-  (20 Eyl'de yazıldı, deploy sonrası `npm run indexnow` + GSC isteği).
+- [ ] **Sıradaki — önce YENİ üç sayfa** (20 Eyl'de yazıldı, deploy sonrası
+  `npm run indexnow` + GSC isteği): `/en/academy/how-to-check-a-coil-line-manufacturer`,
+  `/akademi/roll-form-hatti-maliyeti`, `/en/academy/roll-forming-line-cost`.
   Ardından en eski taranan EN yazılar: `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
