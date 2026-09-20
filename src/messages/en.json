@@ -278,6 +278,10 @@
       {
         "q": "What are the different types of slitting line?",
         "a": "The cutting principle does not change from one line to the next — circular knives on an arbor, set to the strip widths you need. What separates lines is capacity: coil weight, strip thickness, and how many strips one pass yields. The frame, the drive and the way strips are held under tension on the recoiler scale with those. Choosing between them comes back to your heaviest coil and thickest material — see the capacity question above."
+      },
+      {
+        "q": "What is a coil processing line?",
+        "a": "\"Coil processing line\" is the umbrella term for the lines that turn a steel coil into a usable form. There are four families: slitting lines cut the coil into narrower strips, cut-to-length lines cut it into flat sheets, roll forming lines shape it into a finished profile, and press feeding systems feed it into a press. Servosteel manufactures all four in one plant in Istanbul, which is why a slitting line and the press feeder behind it can be ordered as one project with one control philosophy."
       }
     ],
     "ctaTitle": "Let's size your slitting line",
@@ -348,6 +352,10 @@
       {
         "q": "What is the difference between blanking and cut-to-length?",
         "a": "A cut-to-length line produces rectangular sheet at a set length — every piece the same simple shape. Blanking cuts a profiled outline, a contour defined by a die rather than just a length. If the part is rectangular, a cut-to-length line does it faster and with far less tooling; if it has a contour, it belongs on a press."
+      },
+      {
+        "q": "Who buys a cut-to-length line?",
+        "a": "Steel service centres that sell sheet to fixed dimensions, sheet metal processors who buy coil because it is cheaper per tonne than sheet, and manufacturers whose own presses or laser cutters run on blanks. The decision is usually the same one: the coil price is lower, but the sheet has to be cut in-house to use it. We build the line around your coil weight, thickness and sheet size, and commission it on site."
       }
     ],
     "ctaTitle": "Let's engineer your cut-to-length line",

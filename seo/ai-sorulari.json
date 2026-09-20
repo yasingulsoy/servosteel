@@ -1,0 +1,18 @@
+{
+  "_not": "Yapay zeka asistanlarına sorulan alıcı soruları. Ölçüm: python scripts/yapayzeka.py. Soru eklerken alıcının gerçekten yazacağı cümleyi yaz; marka adımızı SORUYA KOYMA, ölçtüğümüz şey bizi kendiliğinden anıp anmadığı.",
+  "model": "gpt-5.6-sol",
+  "sorular": [
+    { "pazar": "us", "ulke": "US", "grup": "Dilme", "soru": "Who are the leading coil slitting line manufacturers in Turkey?" },
+    { "pazar": "us", "ulke": "US", "grup": "Roll form", "soru": "I need a roll forming machine manufacturer in Turkey. Which companies should I contact?" },
+    { "pazar": "us", "ulke": "US", "grup": "Besleme", "soru": "Which companies manufacture servo feeders and press feeding lines in Europe?" },
+    { "pazar": "us", "ulke": "US", "grup": "Roll form", "soru": "cable tray roll forming machine manufacturer recommendations" },
+    { "pazar": "us", "ulke": "US", "grup": "Genel", "soru": "Who makes complete coil processing lines (slitting and cut-to-length) for sheet metal?" },
+    { "pazar": "gb", "ulke": "GB", "grup": "Boy kesme", "soru": "Best cut to length line manufacturers for a steel service centre in Europe" },
+    { "pazar": "us", "ulke": "US", "grup": "Roll form", "soru": "Which manufacturers build solar mounting profile roll forming lines?" },
+    { "pazar": "de", "ulke": "DE", "grup": "Dilme", "soru": "Welche Hersteller bauen Längsteilanlagen und Querteilanlagen für Coils?" },
+    { "pazar": "it", "ulke": "IT", "grup": "Dilme", "soru": "Quali aziende producono linee di taglio longitudinale per coil?" },
+    { "pazar": "pl", "ulke": "PL", "grup": "Besleme", "soru": "Którzy producenci dostarczają podajniki walcowe servo i linie podające do pras?" },
+    { "pazar": "ru", "ulke": "KZ", "grup": "Dilme", "soru": "Какие производители выпускают линии продольной резки рулонного металла?" },
+    { "pazar": "tr", "ulke": "TR", "grup": "Dilme", "soru": "Rulo sac dilme hattı üreticileri kimler? Hangi firmalardan teklif almalıyım?" }
+  ]
+}

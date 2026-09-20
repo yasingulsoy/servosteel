@@ -1,0 +1,500 @@
+{
+ "tarih": "2026-09-20",
+ "model": "gpt-5.6-sol",
+ "maliyet": 1.1752,
+ "sorular": [
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Dilme",
+   "soru": "Who are the leading coil slitting line manufacturers in Turkey?",
+   "bizden": true,
+   "sira": 2,
+   "firmalar": [
+    "Coilmak",
+    "250 m/min",
+    "ServoSteel",
+    "15 tonnes",
+    "5 mm",
+    "MESCO Teknik",
+    "Elmaksan Machinery",
+    "Bosporas Machinery / AYIKA",
+    "Asrın Makina",
+    "Elmaksan"
+   ],
+   "kaynaklar": [
+    "coilmak.com",
+    "mescoteknik.com",
+    "servosteel.com.tr",
+    "turkishexporter.com.tr",
+    "werktuigen.com"
+   ],
+   "aramalar": [
+    "Turkey coil slitting line manufacturer",
+    "Türkiye slitting line manufacturer coil processing machinery",
+    "site:tr \"slitting line\" manufacturer Turkey",
+    "Turkish coil processing line manufacturers slitting cut to length",
+    "site:bosporas.com coil slitting lines Turkey",
+    "site:elmaksan.net slitting lines Turkey",
+    "site:asrinmakina.com slitting line Turkey",
+    "site:mescoteknik.com/en coil slitting lines"
+   ],
+   "yanit_uzunluk": 3518
+  },
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Roll form",
+   "soru": "I need a roll forming machine manufacturer in Turkey. Which companies should I contact?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "Turkish roll",
+    "ESTECH Engineering",
+    "Etomak Engineering",
+    "İdeal Makina",
+    "info@idealmakina.com.tr",
+    "+90 282 315 57 50",
+    "Magafi Makina",
+    "magafi@magafi.com",
+    "+90 312 354 24 67",
+    "Rollser"
+   ],
+   "kaynaklar": [
+    "rollser.com",
+    "steelex.com.tr"
+   ],
+   "aramalar": [
+    "Turkey roll forming machine manufacturer official",
+    "site:tr rollform makinesi üreticisi Turkey official",
+    "Turkish roll forming lines manufacturer official",
+    "Turkey metal roll forming machinery company official",
+    "site:eaemachinery.com roll forming line official contact Turkey",
+    "site:ycsrollform.com roll forming machine Turkey contact official",
+    "site:formtek.com.tr roll forming Turkey manufacturer official",
+    "site:metform.com.tr roll forming lines Turkey official"
+   ],
+   "yanit_uzunluk": 3475
+  },
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Besleme",
+   "soru": "Which companies manufacture servo feeders and press feeding lines in Europe?",
+   "bizden": true,
+   "sira": null,
+   "firmalar": [
+    "representative list of European manufacturers",
+    "ARKU Maschinenbau",
+    "GSW Schwabe",
+    "DREHER Automation",
+    "KOHLER Maschinenbau",
+    "Schuler Group",
+    "DIMECO",
+    "Saronni",
+    "IRON",
+    "Asservimenti Presse"
+   ],
+   "kaynaklar": [
+    "bosporas.com",
+    "insteel-piw.com",
+    "nordaspa.com",
+    "servosteel.com.tr",
+    "teneral.com.tr"
+   ],
+   "aramalar": [
+    "European manufacturer servo feeders press feeding lines coil handling equipment",
+    "servo roll feeder press feeding line manufacturer Germany Europe",
+    "coil feeding lines servo feeder manufacturer Italy Spain Turkey Europe",
+    "press feeding systems manufacturer Europe servo feeder",
+    "site:dimeco.com press feed lines servo feeder",
+    "site:arku.com press feeding lines coil servo feeder",
+    "site:gsw-schwabe.de feeding lines servo roll feeder",
+    "Germany manufacturer press feeding lines servo feeder coil official"
+   ],
+   "yanit_uzunluk": 3092
+  },
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Roll form",
+   "soru": "cable tray roll forming machine manufacturer recommendations",
+   "bizden": true,
+   "sira": 1,
+   "firmalar": [
+    "practical manufacturer shortlist",
+    "Servosteel",
+    "ShengHui Machinery",
+    "Brother Union Machinery",
+    "Believe Industry",
+    "Taicang Global Machinery",
+    "Wuxi Zhengchuang",
+    "Super Rollforming",
+    "ShengHui",
+    "Brother Union"
+   ],
+   "kaynaklar": [
+    "believeindustry.company",
+    "burollforming.com",
+    "cabletraymachine.com",
+    "servosteel.com.tr",
+    "shenghui-machinery.com",
+    "tgmcochina.com",
+    "zcrollformer.com"
+   ],
+   "aramalar": [
+    "cable tray roll forming machine manufacturer official",
+    "cable ladder roll forming line manufacturer official",
+    "cable tray making machine manufacturer USA official",
+    "cable tray roll forming machine manufacturer China Turkey official",
+    "site:samco-machinery.com cable tray roll forming",
+    "site:bradburygroup.com cable tray roll forming",
+    "site:formtekgroup.com cable tray roll forming",
+    "North America custom cable tray roll forming line manufacturer"
+   ],
+   "yanit_uzunluk": 5251
+  },
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Genel",
+   "soru": "Who makes complete coil processing lines (slitting and cut-to-length) for sheet metal?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "complete coil",
+    "Red Bud Industries",
+    "Braner USA",
+    "combined slitting",
+    "KORE Machinery",
+    "LM Equipment & Design",
+    "Formtek / CWP / Rowe / B&K",
+    "ARKU",
+    "Athader",
+    "Cinser"
+   ],
+   "kaynaklar": [
+    "arku.com",
+    "bradburygroup.com",
+    "braner.com",
+    "cinser.eu",
+    "cwpcoil.com",
+    "fengqimachinery.com",
+    "info.bradburygroup.com",
+    "koremachinery.com",
+    "lmequipment.com",
+    "redbudindustries.com",
+    "uskoreahotlink.com"
+   ],
+   "aramalar": [
+    "complete slitting lines cut to length lines manufacturer official coil processing",
+    "site:bradburygroup.com slitting cut-to-length lines",
+    "site:redbudindustries.com slitting cut-to-length lines",
+    "site:coe.com slitting cut to length lines",
+    "site:andritz.com metals slitting lines cut-to-length official",
+    "site:fagorarrasate.com slitting lines cut to length lines coil processing",
+    "site:butechbliss.com slitting lines cut to length lines",
+    "site:deltasteeltech.com slitting cut to length lines"
+   ],
+   "yanit_uzunluk": 4834
+  },
+  {
+   "pazar": "gb",
+   "ulke": "GB",
+   "grup": "Boy kesme",
+   "soru": "Best cut to length line manufacturers for a steel service centre in Europe",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "steel service centre",
+    "20 September 2026",
+    "FIMI Group",
+    "Best fit",
+    "Fagor Arrasate",
+    "ANDRITZ Salico",
+    "Heinrich GEORG",
+    "1,000 N/mm²",
+    "2,800 mm",
+    "0.1 to 15 mm"
+   ],
+   "kaynaklar": [
+    "andritz.com",
+    "fagorarrasate.com",
+    "fimigroup.it",
+    "georg.com",
+    "salico.net"
+   ],
+   "aramalar": [
+    "official cut to length lines steel service centers Europe manufacturer Fagor Arrasate",
+    "official cut to length lines steel service centers Europe manufacturer GEORG",
+    "official cut to length lines steel service centers Europe manufacturer FIMI",
+    "official cut to length lines steel service centers Europe manufacturer SALICO",
+    "site:athader.com cut to length lines official",
+    "site:burkhardt-schmidt.de cut to length line official",
+    "site:koehler-germany.com cut-to-length lines official",
+    "site:novastilmec.com cut to length lines official"
+   ],
+   "yanit_uzunluk": 5930
+  },
+  {
+   "pazar": "us",
+   "ulke": "US",
+   "grup": "Roll form",
+   "soru": "Which manufacturers build solar mounting profile roll forming lines?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "solar mounting",
+    "Shenghui Machinery",
+    "Wuxi Sunway Machinery",
+    "Xinnuo Machinery",
+    "Divine Group",
+    "Koneet Industries",
+    "KINGREAL Machinery",
+    "Hebei Yowin Machinery",
+    "Dongguang Boshiyi Machinery",
+    "Zunsheng Roll Forming Machinery"
+   ],
+   "kaynaklar": [
+    "bsyforming.com",
+    "divinegroup.com",
+    "huabo-auto.com",
+    "jxrollforming.com",
+    "profileforming.com",
+    "roll-former.com",
+    "rollformingmachineries.com",
+    "rollformingmanufacturers.com",
+    "shenghui-machinery.com",
+    "sunwaymachinery.com.cn",
+    "xnrollform.com",
+    "yowinmachine.com"
+   ],
+   "aramalar": [
+    "solar mounting profile roll forming machine manufacturer official",
+    "solar strut channel roll forming line manufacturer official",
+    "photovoltaic mounting bracket roll forming machine manufacturer official",
+    "solar panel mounting rail roll forming machine manufacturer official",
+    "site:samco-machinery.com solar roll forming mounting",
+    "site:bradburygroup.com solar roll forming line",
+    "site:dallan.com solar mounting profile roll forming",
+    "site:gasparini.com solar profile roll forming machine"
+   ],
+   "yanit_uzunluk": 4608
+  },
+  {
+   "pazar": "de",
+   "ulke": "DE",
+   "grup": "Dilme",
+   "soru": "Welche Hersteller bauen Längsteilanlagen und Querteilanlagen für Coils?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "Längsteilanlagen (Slitting Lines)",
+    "Querteilanlagen (Cut",
+    "b+s group / Burghardt + Schmidt",
+    "Heinrich Georg",
+    "STAM",
+    "Spotti Sergio Coil Processing",
+    "COMETAL",
+    "Cinser Coil Processing",
+    "Pressmach",
+    "JÖRG Machines"
+   ],
+   "kaynaklar": [
+    "b-s-germany.de",
+    "cinser.eu",
+    "cometal.imal-industries.com",
+    "de.wikipedia.org",
+    "gsw-group.com",
+    "jorg.com",
+    "pressmach.eu",
+    "spottisergio.it",
+    "stam.it"
+   ],
+   "aramalar": [
+    "Hersteller Längsteilanlagen Querteilanlagen Coils Deutschland",
+    "coil slitting lines cut to length lines manufacturers Europe",
+    "Längsteilanlagen Querteilanlagen Hersteller Coilverarbeitung",
+    "slitting lines cut-to-length lines manufacturer official",
+    "site:georg.com slitting lines cut-to-length lines coil official",
+    "site:fimimachinery.com slitting lines cut to length official",
+    "site:salico.com slitting lines cut to length official",
+    "site:fagorarrasate.com slitting lines cut to length official"
+   ],
+   "yanit_uzunluk": 4204
+  },
+  {
+   "pazar": "it",
+   "ulke": "IT",
+   "grup": "Dilme",
+   "soru": "Quali aziende producono linee di taglio longitudinale per coil?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "linee di taglio longitudinale per coil",
+    "slitting lines",
+    "CAMU",
+    "FASPAR",
+    "SALICO",
+    "Novastilmec",
+    "Spotti Sergio Coil Processing",
+    "L.D.M. Officina Meccanica",
+    "SAG",
+    "FIMI Group"
+   ],
+   "kaynaklar": [
+    "camu.it",
+    "cinser.eu",
+    "faspar.simic.it",
+    "gefran.it",
+    "ldmsrl.it",
+    "machinerycanyonn.com",
+    "novastilmec.com",
+    "salico.net",
+    "spottisergio.it"
+   ],
+   "aramalar": [
+    "produttori linee di taglio longitudinale coil slitting lines Italia",
+    "coil slitting line manufacturers Europe",
+    "linee taglio longitudinale coils produttore",
+    "steel coil slitting line manufacturers official",
+    "site:fimimachinery.com slitting lines coil official",
+    "site:danieli.com slitting lines coil official",
+    "site:stam.it slitting lines coil official",
+    "site:fagorarrasate.com slitting lines official"
+   ],
+   "yanit_uzunluk": 3543
+  },
+  {
+   "pazar": "pl",
+   "ulke": "PL",
+   "grup": "Besleme",
+   "soru": "Którzy producenci dostarczają podajniki walcowe servo i linie podające do pras?",
+   "bizden": false,
+   "sira": null,
+   "firmalar": [
+    "ZAPROM",
+    "INSTEEL",
+    "TFM",
+    "IRON",
+    "BTC Maszyny Stolarczyk",
+    "Servopresse, Herrblitz, SACFORM i Millutensil",
+    "SW Concept",
+    "BOSPORAS",
+    "Nidec Vamco",
+    "CWP Coil"
+   ],
+   "kaynaklar": [
+    "btc-maszyny.pl",
+    "cwpcoil.com",
+    "insteel-piw.com",
+    "pme-pressen.de",
+    "pressline.com.tr",
+    "pressreurope.com",
+    "rollser.com",
+    "swconcept.pl",
+    "tfm.pl",
+    "vamco.com",
+    "zaprom.pl"
+   ],
+   "aramalar": [
+    "producenci podajniki walcowe serwo linie podające do pras Polska",
+    "servo roll feeder press feed line manufacturers Europe",
+    "podajnik walcowy serwo do pras producent",
+    "press feeding line servo roll feeder manufacturer official",
+    "site:dimeco.com servo roll feeder press feeding lines",
+    "site:iron.it press feeding lines servo feeder",
+    "site:herrblitz.com servo roll feeder press feed lines",
+    "site:servopresse.it servo feeders press feeding lines"
+   ],
+   "yanit_uzunluk": 4780
+  },
+  {
+   "pazar": "ru",
+   "ulke": "KZ",
+   "grup": "Dilme",
+   "soru": "Какие производители выпускают линии продольной резки рулонного металла?",
+   "bizden": true,
+   "sira": null,
+   "firmalar": [
+    "ANDRITZ",
+    "GEORG",
+    "hpl Group",
+    "Euroslitter",
+    "STAM",
+    "SALICO / ANDRITZ Salico",
+    "GSW Schwabe",
+    "Braner USA",
+    "LM Equipment & Design",
+    "ANDRITZ Metals USA"
+   ],
+   "kaynaklar": [
+    "almaty.mobiprof.ru",
+    "andritz.com",
+    "braner.com",
+    "euroslitter.com",
+    "expometals.net",
+    "georg.com",
+    "gsw-group.com",
+    "hpl-group.de",
+    "lmequipment.com",
+    "servosteel.com.tr",
+    "st-mech.ru",
+    "stam.it",
+    "tairollform.com"
+   ],
+   "aramalar": [
+    "official slitting line manufacturer coil metal Europe slitting lines",
+    "official coil slitting line manufacturer USA",
+    "официальный производитель линии продольной резки рулонного металла",
+    "official coil slitting line manufacturer China Turkey",
+    "site:fagorarrasate.com slitting lines coil official",
+    "site:redbudindustries.com slitting lines official",
+    "site:georg.com slitting lines metal service centers official",
+    "site:sacform.com slitting line official"
+   ],
+   "yanit_uzunluk": 5894
+  },
+  {
+   "pazar": "tr",
+   "ulke": "TR",
+   "grup": "Dilme",
+   "soru": "Rulo sac dilme hattı üreticileri kimler? Hangi firmalardan teklif almalıyım?",
+   "bizden": true,
+   "sira": 1,
+   "firmalar": [
+    "Timko Makine",
+    "kalın sac ve ağır hizmet tipi hatlarda",
+    "16 mm’ye kadar kapasite",
+    "Teklif alın",
+    "Coilmak",
+    "250 m/dk’ya kadar hat hızı",
+    "Servosteel",
+    "1,5",
+    "0,5",
+    "Elmaksan"
+   ],
+   "kaynaklar": [
+    "coilmak.com",
+    "haskarmetal.com.tr",
+    "ostimsavunma.org",
+    "ovese.com.tr",
+    "s.makinaturkiye.com",
+    "servosteel.com.tr",
+    "timkomakine.com",
+    "turkishexporter.com.tr"
+   ],
+   "aramalar": [
+    "Türkiye rulo sac dilme hattı üreticisi slitting line manufacturer Turkey",
+    "coil slitting line manufacturer Turkey official",
+    "steel coil slitting line manufacturers Europe official",
+    "high speed coil slitting line manufacturer official",
+    "site:elmaksan.net slitting lines",
+    "site:coilmak.com coil slitting lines",
+    "site:timkomakine.com slitting lines",
+    "official coil slitting lines FIMI ANDRITZ Bronx International"
+   ],
+   "yanit_uzunluk": 5980
+  }
+ ]
+}

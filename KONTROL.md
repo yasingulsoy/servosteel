@@ -271,6 +271,33 @@ almak yerine kuruldu (2026-09-17).
 `iskele kalası` (210) kalas satın alanlar · `progresif kalıp` (210) kalıpçı
 arayanlar · `slit coil` (210, CPC $16,62) çelik satıcıları. Ayrıntı: SEO.md §2.
 
+### C.5 Yapay zeka görünürlüğü — asistan bizi anıyor mu
+
+```bash
+python scripts/yapayzeka.py              # 12 alıcı sorusu, ~1,20 $
+python scripts/yapayzeka.py --pazar us,de
+python scripts/yapayzeka.py --kuru       # ücretsiz: ne sorulacağını yazar
+```
+
+Neden burası: **asistandan gelen ziyaretçi sitedeki en iyi dönüşen kanal** —
+%4,00'e karşı organik aramada %0,47 (D bölümü, 2026-09-12). Soru listesi
+`seo/ai-sorulari.json`; marka adımız sorunun içinde geçmez, ölçtüğümüz şey
+asistanın bizi kendiliğinden anıp anmadığı. Kayıt ve rapor:
+[seo/ai-gorunurluk/RAPOR.md](seo/ai-gorunurluk/RAPOR.md). **Ayda bir tekrarla.**
+
+**İlk ölçüm (2026-09-20): 5/12.**
+- Anıldık: kablo kanalı roll form (**1.**), TR rulo dilme (**1.**), ABD dilme
+  (**2.**), Avrupa servo besleme, RU dilme hattı.
+- Anılmadık: "roll forming machine manufacturer in Turkey", komple coil
+  processing line, Avrupa boy kesme, solar profil hattı, **DE · IT · PL**.
+- Asistan bizi bulduğu 5 cevapta kaynak olarak **kendi sitemizi** okudu; yani
+  sayfa yetiyor, sorun bulunurluk. Baktığı diğer kaynaklar: turkishexporter.com.tr,
+  cinser.eu, werktuigen.com, steelex.com.tr, mescoteknik.com, coilmak.com →
+  dizin kayıtlarının asıl gerekçesi bu (§B.0).
+- İlk karşı hamle yapıldı: İngilizce dilme sayfasına "What is a coil processing
+  line?", boy kesme sayfasına "Who buys a cut-to-length line?" soruları eklendi
+  (FAQPage şemasına da giriyor, asistan alıntılayabilir).
+
 ### C.4 Search Console özel raporları
 
 - **Ürün snippet'leri:** hata/uyarı çıkarsa spec şemasında alan eksiği demektir.
