@@ -91,6 +91,7 @@
     { "pazar": "pl", "grup": "Dilme", "kelime": "linia do cięcia wzdłużnego", "hacim": 10 },
     { "pazar": "pl", "grup": "Boy kesme", "kelime": "linia do cięcia poprzecznego", "hacim": 10 },
 
+    { "pazar": "ru", "grup": "Roll form", "kelime": "профилегибочный станок", "hacim": 40 },
     { "pazar": "ru", "grup": "Roll form", "kelime": "станок для профнастила", "hacim": 10 },
     { "pazar": "ru", "grup": "Dilme", "kelime": "линия продольной резки", "hacim": 10 },
     { "pazar": "ru", "grup": "Boy kesme", "kelime": "линия поперечной резки", "hacim": 10 },
