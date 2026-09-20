@@ -16,16 +16,20 @@ export const relatedReading: Record<string, string[]> = {
     "rulo-dilme-hatti-nasil-secilir",
     "rulo-dilme-hatti-maliyeti",
     "sac-fire-oranini-dusurmek",
+    /* Şimdilik yalnızca İngilizce var; diğer dillerde `hasPost` süzer. */
+    "hat-ureticisi-nasil-denetlenir",
   ],
   "/boy-kesme-hatlari": [
     "boy-kesme-hatti-nasil-secilir",
     "rulo-agirligi-ve-uzunlugu-nasil-hesaplanir",
     "rulo-hatti-nereden-alinmali",
+    "hat-ureticisi-nasil-denetlenir",
   ],
   "/roll-form-hatlari": [
     "solar-profil-hatti-yatirim-geri-donusu",
     "sac-fire-oranini-dusurmek",
     "rulo-hatti-nereden-alinmali",
+    "hat-ureticisi-nasil-denetlenir",
   ],
   "/makineler": [
     "servo-besleyici-nasil-secilir",
