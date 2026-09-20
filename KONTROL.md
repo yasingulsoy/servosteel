@@ -435,10 +435,17 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
 - [ ] **liza@ kotası 1 GB'da sınırlı** — hosting paketi tavanı (WHM → paket →
   Max Mailbox Quota). Veridyen'den yükseltme istenecek.
 - [ ] **Veridyen'in ücretsiz +50.000 inode teklifi** — kabul edilecek mi
-- [ ] **`info@` adresine gelen mailler SMTP seviyesinde reddediliyor mu?**
-  Denetimde 10 günde 433 red kaydı görülmüştü; filtre silindikten sonra durumu
-  bir daha ölçülmedi. Müşteri talebi kaybediliyor olabilir — cPanel → Takip
-  Teslimatı'nda `info@` için sonucu "Reddedildi" olanlara bakılacak.
+- [x] **`info@` reddedilen mailler incelendi — müşteri kaybı yok** (2026-09-20,
+  Yasin cPanel "Teslimatı İzle" kaydını verdi). 15-20 Eylül aralığında
+  reddedilenlerin neredeyse tamamı **tek bir bot**: `sales11@` · `sales12@` ·
+  `sales14@tradepro.net`, günlerce **11 dakikada bir**, hepsi "Could not
+  complete sender verify". Kalanı RBL'de (spamcop) listeli kaynaklar ve sahte
+  "DocuSign" gönderenleri. Gerçek alıcıya benzeyen tek kayıt yok, yani sender
+  verify kuralı talep kaybettirmiyor.
+- [ ] **Asıl sorun ters yönde: çöp mail kutuya giriyor.** Aynı kayıtta spam
+  puanı 30-50 olan mailler "Kabul Edildi" ile `info@`'ya düşüyor. Gerçek teklif
+  talebi bu yığında gözden kaçabilir. cPanel → Apache SpamAssassin eşiği
+  sıkılaştırılmalı (yavuz@ kutusunda da aynı gevşeklik görülmüştü).
 - [ ] **4 CalDAV/CardDAV SRV kaydı** hâlâ köke bakıyor (artık Dokploy, 2079/2080
   portu yok) → `cpanel.servosteel.com.tr`'ye çevrilmeli
 
@@ -658,6 +665,10 @@ kabul etti) → kayıt **#10** `kaynak='form'` → GA4 anlık `generate_lead` 1.
 sağlam; 14 Eylül sonrası boşluk formdan değil. **19 Eylül'deki o tek
 `generate_lead` testtir, talep sayısına katılmaz** (ad "TEST - form denemesi").
 Test kaydı #10 aynı akşam panelden silindi; GA4 olayı silinemiyor.
+**Posta tarafı da doğrulandı (2026-09-20):** cPanel teslimat kaydında aynı
+dakikada (19 Eyl 20:21) `website@servosteel.com.tr` → `info@` maili "Kabul
+Edildi" görünüyor. Form maili bu adresten çıkıyor; zincirin son halkası da
+çalışıyor.
 
 **E.26 · Eylülde form talebi durdu, sebep teknik değil (2026-09-19).**
 10 Ağu–2 Eyl: 8 gerçek form talebi, haftada ~2. 3–19 Eyl: **0** — GA4'teki
