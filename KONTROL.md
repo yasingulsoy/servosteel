@@ -337,9 +337,10 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   rulo dilme hattı maliyeti, rulo dilme hattı nasıl seçilir, sac fire, progresif
   kalıp, servo besleyici nasıl seçilir, solar ROI, rulo hattı nereden alınmalı;
   EN how-to-choose-a-cut-to-length-line, coil-slitting-line-cost.
-- [ ] **Sıradaki — önce YENİ üç sayfa** (20 Eyl'de yazıldı, deploy sonrası
+- [ ] **Sıradaki — önce YENİ beş sayfa** (20 Eyl'de yazıldı, deploy sonrası
   `npm run indexnow` + GSC isteği): `/en/academy/how-to-check-a-coil-line-manufacturer`,
-  `/akademi/roll-form-hatti-maliyeti`, `/en/academy/roll-forming-line-cost`.
+  `/akademi/roll-form-hatti-maliyeti`, `/en/academy/roll-forming-line-cost`,
+  `/de/academy/roll-forming-line-cost`, `/it/academy/roll-forming-line-cost`.
   Ardından en eski taranan EN yazılar: `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
@@ -734,6 +735,13 @@ Servo / Podajnik walcowy servo do prasy" yapıldı; iki terim takibe eklendi.
 Başlangıç: walcowy ilk 48'de yok, mimośrodowej ilk 45'te yok, servo 11.
 **3 Ekim'de ölç.** Kural: sitenin çeviri terimi alıcının yazdığı terim
 olmayabilir — başlıktaki terimi hacim verisi ve sonuç sayfasıyla doğrula.
+**Aynı gün dört dil daha tarandı:** Almanca, İtalyanca, İspanyolca sayfalar
+zaten doğru terimi kullanıyor; Rusça'da `профилегибочный станок` (40/ay)
+eksikti, başlığa eklendi. **Tuzaklar:** ES `perfiladora` (210) kaş/kozmetik
+cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
+`maszyna do profilowania blachy` (590) **bulmaca siteleri**, PL
+`profilarka do blachy` (170) çatıcının el profil makinesi. Bu dördü
+hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
