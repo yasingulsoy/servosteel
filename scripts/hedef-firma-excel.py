@@ -93,6 +93,25 @@ ULKE_ESI = {
 }
 
 
+# Ayni firmanin iki alan adi. Kanit: iki alan adindaki satirda da ayni tuzel kisi
+# ("Dana Steel Processing Industry LLC") yaziyor.
+ALAN_ESI = {"danagroups.com": "danasteeluae.com"}
+
+
+def firma_anahtari(satir):
+    """Tekillestirme anahtari: alan adi + ulke.
+
+    Ad yetmez — "PRK Steel" ile "PRK Steel Products" ayni firma, iki satir
+    kaliyordu. Alan adi da tek basina yetmez — NS BlueScope Endonezya ve
+    Vietnam ayni alan adinda ama ayri tesis, ayri muhatap."""
+    m = re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[2] or "")) \
+        or re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[3] or ""))
+    if not m:
+        return "ad:" + sade(satir[0]) + "|" + sade(satir[1])
+    alan = m.group(1).lower().rstrip(".")
+    return ALAN_ESI.get(alan, alan) + "|" + sade(satir[1])
+
+
 def ulke_duzelt(ham):
     """'BAE (Dubai/Ajman)' -> 'BAE'. Coklu ulke ise ilkini alir."""
     d = re.sub(r"\(.*?\)", " ", str(ham or ""))          # parantezli sehir bilgisi
@@ -260,17 +279,23 @@ def main():
         sayfa_yaz(wb.create_sheet(ad[:31]), yeni_basliklar, duzgun)
 
         for satir in duzgun:
-            anahtar_firma = sade(satir[0]) + "|" + sade(satir[2])[:40]
+            anahtar_firma = firma_anahtari(satir)
             if anahtar_firma in gorulen:
-                gorulen[anahtar_firma].append(ad)
+                if ad not in gorulen[anahtar_firma]:
+                    gorulen[anahtar_firma].append(ad)
                 continue
             gorulen[anahtar_firma] = [ad]
-            hepsi.append([satir[i] if i < len(satir) else "" for i in range(len(kanonik))] + [ad])
+            hepsi.append((anahtar_firma,
+                          [satir[i] if i < len(satir) else "" for i in range(len(kanonik))]))
         kayit.append((ad, len(satirlar)))
         print("  %s: %d firma" % (ad, len(satirlar)))
 
     if hepsi:
-        sayfa_yaz(ozet, kanonik, hepsi, segment_sutunu=True)
+        # Iki segmentte cikan firma tek satir olur ama segmentlerin HEPSI yazilir:
+        # kablo kanali + raf ureten firmaya iki hat birden teklif edilir.
+        sayfa_yaz(ozet, kanonik,
+                  [satir + [" + ".join(gorulen[k])] for k, satir in hepsi],
+                  segment_sutunu=True)
     else:
         ozet.append(["Hiçbir dosyada tablo bulunamadı."])
 
