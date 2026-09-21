@@ -37,6 +37,17 @@ export const HEDEF_DURUM_ETIKET: Record<HedefDurum, string> = {
   gecildi: "Geçildi",
 };
 
+/** Ürün grupları — sitede öne çıkan sıra. Excel betiğindeki KATEGORI_ADI ile aynı. */
+export const KATEGORI_ADI: Record<number, string> = {
+  1: "Roll form hatları",
+  2: "Rulo sac dilme hatları",
+  3: "Rulo sac boy kesme hatları",
+  4: "Pres besleme sistemleri",
+  5: "Kompakt hatlar",
+  6: "Diğer",
+};
+export const KATEGORILER = [1, 2, 3, 4, 5, 6] as const;
+
 export type HedefFirma = {
   id: number;
   anahtar: string;
@@ -60,11 +71,15 @@ export type HedefFirma = {
   olusturuldu: string;
   guncellendi: string;
   aktarildi: string;
+  kategori: number;
+  kategori_notu: string;
+  sira: number;
+  kesif: boolean;
 };
 
 export type HedefSatiri = Pick<
   HedefFirma,
-  "id" | "firma" | "ulke" | "segmentler" | "eposta" | "dil" | "durum" | "gonderildi" | "listede"
+  "id" | "firma" | "ulke" | "segmentler" | "eposta" | "dil" | "durum" | "gonderildi" | "listede" | "kategori" | "kesif"
 >;
 
 export type Gonderim = {
@@ -136,6 +151,8 @@ const engelliUlkeler = () => Object.keys(ENGELLI_ULKELER);
 /* ----------------------------------------------------------------- liste */
 
 export type HedefFiltre = {
+  /** ürün grubu 1-6 */
+  grup?: string;
   durum?: string;
   ulke?: string;
   segment?: string;
@@ -151,6 +168,10 @@ function kosullar(f: HedefFiltre): { nerede: string; deger: unknown[] } {
   if (f.durum && HEDEF_DURUMLAR.includes(f.durum as HedefDurum)) {
     deger.push(f.durum);
     kosul.push(`h.durum = $${deger.length}`);
+  }
+  if (f.grup && /^[1-6]$/.test(f.grup)) {
+    deger.push(Number(f.grup));
+    kosul.push(`h.kategori = $${deger.length}`);
   }
   if (f.ulke) {
     deger.push(f.ulke);
@@ -183,9 +204,10 @@ export async function hedefFirmalar(
   const s = Number.isFinite(sayfa) && sayfa >= 1 ? Math.floor(sayfa) : 1;
   const [satirlar, sayim] = await Promise.all([
     sorguSert<HedefSatiri>(
-      `SELECT h.id, h.firma, h.ulke, h.segmentler, h.eposta, h.dil, h.durum, h.gonderildi, h.listede
+      `SELECT h.id, h.firma, h.ulke, h.segmentler, h.eposta, h.dil, h.durum, h.gonderildi, h.listede,
+              h.kategori, h.kesif
        FROM hedef_firmalar h ${nerede}
-       ORDER BY h.id
+       ORDER BY h.sira, h.id
        LIMIT ${SAYFA_BOYU} OFFSET ${(s - 1) * SAYFA_BOYU}`,
       deger
     ),
@@ -194,12 +216,19 @@ export async function hedefFirmalar(
   return { satirlar, toplam: Number(sayim[0]?.adet ?? 0) };
 }
 
-/** Süzgeçteki bir sonraki gönderilebilir firma — `sonra` verilirse ondan sonraki. */
+/**
+ * Süzgeçteki bir sonraki gönderilebilir firma — panel sırasıyla (ürün grubu önce);
+ * `sonra` verilirse o firmadan sonraki.
+ */
 export async function siradaki(f: HedefFiltre, sonra = 0): Promise<number | null> {
   const { nerede, deger } = kosullar({ ...f, durum: undefined, goster: "gonderilebilir" });
-  deger.push(sonra);
+  let ek = "";
+  if (sonra) {
+    deger.push(sonra);
+    ek = ` AND (h.sira, h.id) > (SELECT x.sira, x.id FROM hedef_firmalar x WHERE x.id = $${deger.length})`;
+  }
   const r = await sorguSert<{ id: number }>(
-    `SELECT h.id FROM hedef_firmalar h ${nerede} AND h.id > $${deger.length} ORDER BY h.id LIMIT 1`,
+    `SELECT h.id FROM hedef_firmalar h ${nerede}${ek} ORDER BY h.sira, h.id LIMIT 1`,
     deger
   );
   return r[0]?.id ?? null;
@@ -211,6 +240,8 @@ export async function hedefFirma(id: number): Promise<HedefFirma | null> {
 }
 
 export type HedefOzeti = {
+  /** ürün grubu → firma sayısı (listede) */
+  grup: Record<number, number>;
   toplam: number;
   epostali: number;
   gonderilebilir: number;
@@ -220,7 +251,7 @@ export type HedefOzeti = {
 };
 
 export async function hedefOzeti(): Promise<HedefOzeti> {
-  const [genel, durumlar, giden] = await Promise.all([
+  const [genel, durumlar, giden, gruplar] = await Promise.all([
     sorguSert<{ toplam: string; epostali: string; gonderilebilir: string }>(
       `SELECT count(*)::text AS toplam,
               count(*) FILTER (WHERE h.eposta <> '')::text AS epostali,
@@ -237,8 +268,12 @@ export async function hedefOzeti(): Promise<HedefOzeti> {
       `SELECT count(DISTINCT firma_id)::text AS adet FROM hedef_gonderim
        WHERE sonuc IN ('ok', 'belirsiz')`
     ),
+    sorguSert<{ kategori: number; adet: string }>(
+      `SELECT kategori, count(*)::text AS adet FROM hedef_firmalar WHERE listede GROUP BY kategori`
+    ),
   ]);
   return {
+    grup: Object.fromEntries(gruplar.map((g) => [Number(g.kategori), Number(g.adet)])),
     toplam: Number(genel[0]?.toplam ?? 0),
     epostali: Number(genel[0]?.epostali ?? 0),
     gonderilebilir: Number(genel[0]?.gonderilebilir ?? 0),

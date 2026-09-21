@@ -72,6 +72,9 @@ const ALANLAR = [
 ];
 /* Gönderilmiş firmada korunan alanlar. */
 const METIN = ["eposta", "dil", "konu", "govde", "link"];
+/* Ürün grubu ve panel sırası — sınıflandırma, her aktarımda güncellenir (durumdan bağımsız). */
+const GRUP = { kategori: "int", kategori_notu: "text", sira: "int", kesif: "boolean" };
+const GRUP_ALANLARI = Object.keys(GRUP);
 
 const firmalar = veri.firmalar;
 if (!Array.isArray(firmalar) || firmalar.length === 0) {
@@ -86,6 +89,11 @@ for (const f of firmalar) {
       process.exit(1);
     }
   }
+  /* Eski aktarım dosyasında grup alanları yok: varsayılanla gelir (grup 6, sıra 0). */
+  f.kategori = Number.isInteger(f.kategori) ? f.kategori : 6;
+  f.kategori_notu = typeof f.kategori_notu === "string" ? f.kategori_notu : "";
+  f.sira = Number.isInteger(f.sira) ? f.sira : 0;
+  f.kesif = f.kesif === true;
   if (!f.anahtar || gorulen.has(f.anahtar)) {
     console.error(`Boş ya da tekrarlanan anahtar: "${f.anahtar}"`);
     process.exit(1);
@@ -106,7 +114,7 @@ try {
   if (YAZ) await istemci.query(OUTREACH_SEMA);
   const { rows: mevcut } =
     YAZ || tablo[0].var
-      ? await istemci.query(`SELECT ${ALANLAR.join(", ")}, durum, listede FROM hedef_firmalar`)
+      ? await istemci.query(`SELECT ${[...ALANLAR, ...GRUP_ALANLARI].join(", ")}, durum, listede FROM hedef_firmalar`)
       : { rows: [] };
   const harita = new Map(mevcut.map((r) => [r.anahtar, r]));
   const listedeki = mevcut.filter((r) => r.listede).length;
@@ -119,7 +127,9 @@ try {
       continue;
     }
     const acik = r.durum === "bekliyor";
-    const fark = ALANLAR.some((a) => (acik || !METIN.includes(a)) && r[a] !== f[a]);
+    const fark =
+      ALANLAR.some((a) => (acik || !METIN.includes(a)) && r[a] !== f[a]) ||
+      GRUP_ALANLARI.some((a) => r[a] !== f[a]);
     if (!acik && METIN.some((a) => r[a] !== f[a])) korunan++;
     if (fark || !r.listede) degisen++;
     else ayni++;
@@ -145,21 +155,24 @@ try {
   /* Tek sorgu, tek gidiş-dönüş: tüm liste JSON olarak gider. Satır satır
      INSERT uzak veritabanında dakikalar sürüyordu. */
   const kayitlar = firmalar.map((f) => ({
-    ...Object.fromEntries(ALANLAR.map((a) => [a, f[a]])),
+    ...Object.fromEntries([...ALANLAR, ...GRUP_ALANLARI].map((a) => [a, f[a]])),
     iptal_anahtari: randomBytes(16).toString("base64url"),
   }));
+  const tumu = [...ALANLAR, ...GRUP_ALANLARI];
   const koru = (a) => `${a} = CASE WHEN hedef_firmalar.durum = 'bekliyor' THEN EXCLUDED.${a} ELSE hedef_firmalar.${a} END`;
 
   await istemci.query("BEGIN");
   await istemci.query(
-    `INSERT INTO hedef_firmalar (${ALANLAR.join(", ")}, iptal_anahtari)
-     SELECT ${ALANLAR.join(", ")}, iptal_anahtari
-     FROM json_to_recordset($1::json) AS x(${[...ALANLAR, "iptal_anahtari"].map((a) => `${a} text`).join(", ")})
+    `INSERT INTO hedef_firmalar (${tumu.join(", ")}, iptal_anahtari)
+     SELECT ${tumu.join(", ")}, iptal_anahtari
+     FROM json_to_recordset($1::json) AS x(${[...ALANLAR, "iptal_anahtari"].map((a) => `${a} text`)
+       .concat(GRUP_ALANLARI.map((a) => `${a} ${GRUP[a]}`)).join(", ")})
      ON CONFLICT (anahtar) DO UPDATE SET
        firma = EXCLUDED.firma, hitap = EXCLUDED.hitap, ulke = EXCLUDED.ulke,
        segmentler = EXCLUDED.segmentler, web = EXCLUDED.web, kanit = EXCLUDED.kanit,
        urun = EXCLUDED.urun, iletisim = EXCLUDED.iletisim,
        ${METIN.map(koru).join(",\n       ")},
+       ${GRUP_ALANLARI.map((a) => `${a} = EXCLUDED.${a}`).join(", ")},
        listede = true,
        aktarildi = now()`,
     [JSON.stringify(kayitlar)]

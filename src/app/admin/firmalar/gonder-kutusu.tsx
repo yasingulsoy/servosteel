@@ -26,6 +26,7 @@ export function GonderKutusu({
   engel,
   bekleSn,
   uyari,
+  grup,
   ulke,
   segment,
 }: {
@@ -38,6 +39,7 @@ export function GonderKutusu({
   engel: string | null;
   bekleSn: number;
   uyari: string | null;
+  grup?: string;
   ulke?: string;
   segment?: string;
 }) {
@@ -69,7 +71,7 @@ export function GonderKutusu({
   const gitti = sonuc?.tamam === true;
   const kapali = !!engel || gitti;
   const sorgu = new URLSearchParams(
-    Object.entries({ ulke, segment }).filter((x): x is [string, string] => !!x[1])
+    Object.entries({ grup, ulke, segment }).filter((x): x is [string, string] => !!x[1])
   ).toString();
   const alan =
     "w-full rounded-lg border border-line bg-card px-3 py-2.5 text-base outline-none focus-visible:border-accent disabled:bg-surface-alt disabled:text-muted sm:text-sm";
@@ -77,6 +79,7 @@ export function GonderKutusu({
   return (
     <form action={eylem} className="rounded-xl border border-line bg-card p-4 sm:p-5">
       <input type="hidden" name="id" value={id} />
+      {grup ? <input type="hidden" name="grup" value={grup} /> : null}
       {ulke ? <input type="hidden" name="ulke" value={ulke} /> : null}
       {segment ? <input type="hidden" name="segment" value={segment} /> : null}
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { HEDEF_DURUM_ETIKET, type HedefDurum, type HedefSatiri } from "@/lib/outreach-db";
+import { HEDEF_DURUM_ETIKET, KATEGORI_ADI, type HedefDurum, type HedefSatiri } from "@/lib/outreach-db";
 import { ENGELLI_ULKELER } from "@/lib/outreach-kurallar";
 import { goreli, kisaTarih } from "@/lib/zaman";
 
@@ -71,7 +71,8 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
                   <Adres s={s} />
                 </p>
                 <p className="mt-1.5 text-xs text-muted">
-                  {[s.ulke, s.segmentler, s.gonderildi ? goreli(s.gonderildi) : ""]
+                  {[KATEGORI_ADI[s.kategori], s.ulke, s.segmentler, s.kesif ? "otomatik keşif" : "",
+                    s.gonderildi ? goreli(s.gonderildi) : ""]
                     .filter(Boolean)
                     .join(" · ")}
                 </p>
@@ -87,7 +88,7 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
         <table className="w-full text-left text-sm">
           <thead className="bg-surface-alt">
             <tr>
-              {["Firma", "Ülke", "Segment", "E-posta", "Durum", "Gönderim"].map((h) => (
+              {["Firma", "Grup", "Ülke", "Segment", "E-posta", "Durum", "Gönderim"].map((h) => (
                 <th key={h} className="px-4 py-3 font-semibold">
                   {h}
                 </th>
@@ -106,7 +107,13 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
                   >
                     {s.firma}
                   </Link>
+                  {s.kesif ? (
+                    <span className="ml-2 rounded bg-surface-alt px-1.5 py-0.5 text-[11px] font-medium text-muted">
+                      keşif
+                    </span>
+                  ) : null}
                 </td>
+                <td className="px-4 py-3 text-muted">{KATEGORI_ADI[s.kategori] ?? "—"}</td>
                 <td className="whitespace-nowrap px-4 py-3 text-muted">{s.ulke || "—"}</td>
                 <td className="px-4 py-3 text-muted">{s.segmentler || "—"}</td>
                 <td className="px-4 py-3 text-muted">

@@ -128,6 +128,28 @@ ULKE_ESI = {
 }
 
 
+# Urun gruplari — sitede one cikan sira (Yasin 2026-09-22). Panel ve Excel bu siraya gore
+# dizilir. Cok segmentli firma en oncelikli grubuna girer. Celik servis merkezinin dilme mi
+# boy kesme mi oldugunu hedef-firma-kategori.py firmanin sitesine bakarak ayirir.
+KATEGORI_ADI = {
+    1: "Roll form hatları", 2: "Rulo sac dilme hatları", 3: "Rulo sac boy kesme hatları",
+    4: "Pres besleme sistemleri", 5: "Kompakt hatlar", 6: "Diğer",
+}
+SEGMENT_KATEGORI = {
+    "Kablo Kanalı": 1, "Solar Profil": 1, "Raf Sistemleri": 1, "İskele Kalası": 1,
+    "Yol Bariyeri": 1, "Gürültü Bariyeri": 1, "Çatı ve Cephe Paneli": 1, "Aşık ve Çelik Yapı": 1,
+    "Çelik Servis Merkezi": 2,
+    "Pres Atölyeleri": 4, "Alçıpan Profili": 4, "Çelik Mobilya": 4,
+    "Havalandırma Kanalı": 5,
+    "Market Rafı": 6,   # hat var ama sitede sayfasi yok
+}
+KATEGORI_DOSYA = os.path.join(KLASOR, "kategori.json")
+
+
+def segment_kategorisi(segler):
+    return min((SEGMENT_KATEGORI.get(s, 6) for s in segler), default=6)
+
+
 # Gonderilecek link: segmentin sayfasi, firmanin ulkesinin dilinde, UTM'li.
 # UTM sayesinde GA4'te "outreach / email" kaynagi segment ve firma kiriliminda
 # gorunur — hangi firma linke tikladi, takip telefonu ona gore acilir.
@@ -165,6 +187,8 @@ ULKE_DIL = {
     "Ekvador": "es", "Bolivya": "es", "Paraguay": "es", "Uruguay": "es", "Arjantin": "es",
     "Guatemala": "es", "Honduras": "es", "El Salvador": "es", "Kosta Rika": "es", "Panama": "es",
     "Dominik Cumhuriyeti": "es",
+    # Kesif B turunun yeni ulkeleri (2026-09-22)
+    "Madagaskar": "fr", "Kongo": "fr", "Nijer": "fr", "Gine": "fr", "Moritanya": "fr", "Nikaragua": "es", "Türkmenistan": "ru",
 }
 SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
 
@@ -472,6 +496,7 @@ def main():
     # tasir (bolge ajani 14 segmentin hepsini arar); digerlerinde dosya = segment.
     n = len(SEMA)
     toplanan = {}        # segment -> {"basliklar": [...], "satirlar": [...], "bolge": int}
+    arastirilan = set()  # elle/ajanla arastirilmis firmalar; yalniz bolge-kesif-*'de olan = otomatik kesif
     for dosya in dosyalar:
         anahtar = dosya[:-3]
         basliklar, satirlar = markdown_tablosu(
@@ -503,6 +528,8 @@ def main():
                 if artik and sade(artik) not in sade(satir[4]):
                     satir[4] = (artik + " — " + str(satir[4] or "")).strip(" —")
             satir[1] = temiz
+        if not dosya.startswith("bolge-kesif"):
+            arastirilan.update(firma_anahtari(satir) for satir in duzgun)
 
         if bolge:
             taninmayan = 0
@@ -555,13 +582,29 @@ def main():
     if hepsi:
         # Iki segmentte cikan firma tek satir olur ama segmentlerin HEPSI yazilir:
         # kablo kanali + raf ureten firmaya iki hat birden teklif edilir.
-        birlesik, panel = [], []
-        for k, satir in hepsi:
+        gozden = json.load(io.open(KATEGORI_DOSYA, encoding="utf-8")) if os.path.exists(KATEGORI_DOSYA) else {}
+        kayitlar = []
+        for sira0, (k, satir) in enumerate(hepsi):
             segler = sorted(gorulen[k], key=lambda x: (x in TEYITSIZ, x in SONA))
             ek = ek_sutunlar(segler, satir)
-            birlesik.append(satir + ek + [" + ".join(segler)])
-            panel.append(panel_kaydi(k, satir, ek, segler))
-        sayfa_yaz(ozet, kanonik, birlesik, segment_sutunu=True)
+            pk = panel_kaydi(k, satir, ek, segler)
+            g = gozden.get(k) or {"kategori": segment_kategorisi(segler), "not": "henüz gözden geçirilmedi",
+                                  "dogrulandi": False}
+            pk["kategori"] = g["kategori"]
+            pk["kesif"] = k not in arastirilan
+            pk["kategori_notu"] = g["not"] + (" · otomatik keşif" if pk["kesif"] else "")
+            # Sira: grup → e-postasi olan → sitede dogrulanan → elle arastirilan → eski sira
+            siralama = (g["kategori"], 0 if pk["eposta"] else 1, 0 if g["dogrulandi"] else 1,
+                        1 if pk["kesif"] else 0, sira0)
+            kayitlar.append((siralama, satir + ek + [" + ".join(segler), KATEGORI_ADI[g["kategori"]],
+                                                     pk["kategori_notu"]], pk))
+        kayitlar.sort(key=lambda x: x[0])
+        birlesik, panel = [], []
+        for i, (_, satir_, pk) in enumerate(kayitlar, 1):
+            pk["sira"] = i
+            birlesik.append(satir_)
+            panel.append(pk)
+        sayfa_yaz(ozet, kanonik + ["Segment", "Ürün grubu", "Gözden geçirme"], birlesik)
         bekleyen = durum_isaretle(ozet)
         print("  %d firma BEKLE ile işaretlendi (yalnızca teyitsiz segmentte)" % bekleyen)
     else:
@@ -575,6 +618,9 @@ def main():
                       ensure_ascii=False, indent=1)
         print("Panel aktarımı: %s (%d firma, %d e-postalı)" % (
             PANEL, len(panel), sum(1 for x in panel if x["eposta"])))
+        from collections import Counter
+        grup = Counter(x["kategori"] for x in panel)
+        print("Ürün grupları: " + " · ".join("%s %d" % (KATEGORI_ADI[k], grup[k]) for k in sorted(grup)))
 
     cift = sum(1 for v in gorulen.values() if len(v) > 1)
     print("\n" + CIKTI)

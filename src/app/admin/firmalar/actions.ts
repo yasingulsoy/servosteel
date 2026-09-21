@@ -72,6 +72,7 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   const konu = metin(form.get("konu"), 300).replace(/[\r\n]+/g, " ");
   const govde = govdeAl(form.get("govde"));
   const filtre = {
+    grup: metin(form.get("grup"), 2) || undefined,
     ulke: metin(form.get("ulke"), 80) || undefined,
     segment: metin(form.get("segment"), 80) || undefined,
   };

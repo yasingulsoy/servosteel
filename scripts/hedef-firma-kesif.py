@@ -141,6 +141,150 @@ ULKELER = [
     ("Vietnam", "VN", "vi", "84", ""), ("Endonezya", "ID", "id", "62", "Indonesia"),
 ]
 
+# ------------------------------------------------------------------ turlar
+# a: 59 ulke x ana arama · b: yeni ulkeler x ana arama · c: 59 ulke x es anlamli arama
+# d: buyuk pazarlarda sehir bazli ana arama. Her tur ayri dosyalara yazar; sonraki tur
+# onceki turlarin .md'lerindeki alan adlarini "zaten listede" sayip atlar.
+
+SORGU_B = {
+    "en": {"kablo-kanali": "cable ladder and perforated cable tray manufacturer",
+           "solar-profil": "solar panel mounting system manufacturer",
+           "raf-sistemleri": "storage racking system manufacturer",
+           "yol-bariyeri": "W beam highway guardrail manufacturer",
+           "cati-cephe-paneli": "sandwich panel manufacturer",
+           "celik-servis-merkezi": "steel coil processing slitting cut to length company",
+           "asik-celik-yapi": "C Z purlin and light gauge steel frame manufacturer",
+           "iskele-kalasi": "scaffolding plank steel board manufacturer",
+           "market-rafi": "gondola shelving supermarket racks manufacturer",
+           "havalandirma-kanali": "spiral duct and ductwork fabrication company",
+           "metal-mobilya": "steel office furniture filing cabinet manufacturer",
+           "alcipan-profili": "gypsum ceiling metal profiles manufacturer"},
+    "es": {"kablo-kanali": "fabricante de escalerillas portacables",
+           "solar-profil": "fabricante de soportes para paneles solares",
+           "raf-sistemleri": "fabricante de estanterías metálicas industriales",
+           "yol-bariyeri": "fabricante de barreras de contención vial",
+           "cati-cephe-paneli": "fabricante de lámina acanalada y teja metálica",
+           "celik-servis-merkezi": "corte y slitteo de bobinas de acero",
+           "asik-celik-yapi": "fabricante de correas y perfiles galvanizados",
+           "iskele-kalasi": "fabricante de plataformas y andamios metálicos",
+           "market-rafi": "fabricante de estanterías para supermercados",
+           "havalandirma-kanali": "fabricación de ductos de lámina galvanizada",
+           "metal-mobilya": "fabricante de muebles metálicos de oficina",
+           "alcipan-profili": "fabricante de perfiles galvanizados para tablaroca"},
+    "pt": {"kablo-kanali": "fabricante de leitos para cabos e perfilados",
+           "solar-profil": "fabricante de suportes para painéis fotovoltaicos",
+           "raf-sistemleri": "fabricante de estantes de aço industriais",
+           "yol-bariyeri": "fabricante de guard rail rodoviário",
+           "cati-cephe-paneli": "fabricante de telhas termoacústicas",
+           "celik-servis-merkezi": "centro de serviços de aço slitter bobinas",
+           "asik-celik-yapi": "fabricante de perfis de aço galvanizado steel frame",
+           "iskele-kalasi": "fabricante de pranchas metálicas para andaime",
+           "market-rafi": "fabricante de gôndolas e prateleiras para supermercado",
+           "havalandirma-kanali": "fabricante de dutos galvanizados para climatização",
+           "metal-mobilya": "fabricante de móveis de aço para escritório",
+           "alcipan-profili": "fabricante de perfis para forro de gesso"},
+    "fr": {"kablo-kanali": "fabricant de chemins de câbles perforés et échelles à câbles",
+           "solar-profil": "fabricant de supports pour panneaux photovoltaïques",
+           "raf-sistemleri": "fabricant de rayonnages métalliques",
+           "yol-bariyeri": "fabricant de glissières de sécurité routière",
+           "cati-cephe-paneli": "fabricant de bacs acier et tôles ondulées",
+           "celik-servis-merkezi": "centre de parachèvement acier refendage",
+           "asik-celik-yapi": "fabricant de pannes métalliques et charpente légère",
+           "iskele-kalasi": "fabricant de planchers d'échafaudage",
+           "market-rafi": "fabricant de gondoles et rayonnages pour magasins",
+           "havalandirma-kanali": "fabrication de gaines de climatisation en tôle",
+           "metal-mobilya": "fabricant de mobilier métallique de bureau",
+           "alcipan-profili": "fabricant de rails et montants pour plaques de plâtre"},
+    "ru": {"kablo-kanali": "производство перфорированных кабельных лотков",
+           "solar-profil": "производитель крепежных систем для солнечных панелей",
+           "raf-sistemleri": "производитель складских стеллажей",
+           "yol-bariyeri": "производство барьерного ограждения",
+           "cati-cephe-paneli": "производство сэндвич панелей",
+           "celik-servis-merkezi": "металлосервис порезка рулонной стали",
+           "asik-celik-yapi": "производство оцинкованных профилей прогонов",
+           "iskele-kalasi": "производство стальных настилов для лесов",
+           "market-rafi": "производство стеллажей для магазинов",
+           "havalandirma-kanali": "изготовление воздуховодов из оцинкованной стали",
+           "metal-mobilya": "производство металлических шкафов",
+           "alcipan-profili": "производство профилей для гипсокартона и подвесных потолков"},
+    "vi": {"kablo-kanali": "sản xuất thang máng cáp", "solar-profil": "sản xuất giá đỡ tấm pin mặt trời",
+           "raf-sistemleri": "sản xuất giá kệ sắt công nghiệp", "yol-bariyeri": "sản xuất hộ lan tôn sóng",
+           "cati-cephe-paneli": "sản xuất tấm panel cách nhiệt", "celik-servis-merkezi": "gia công xả băng cắt tấm thép cuộn",
+           "asik-celik-yapi": "sản xuất xà gồ C Z mạ kẽm", "iskele-kalasi": "sản xuất mâm giàn giáo",
+           "market-rafi": "sản xuất giá kệ siêu thị", "havalandirma-kanali": "gia công ống gió tôn",
+           "metal-mobilya": "sản xuất tủ locker sắt", "alcipan-profili": "sản xuất thanh xương trần thạch cao"},
+    "id": {"kablo-kanali": "pabrik kabel ladder dan cable tray", "solar-profil": "produsen struktur mounting PLTS",
+           "raf-sistemleri": "pabrik rak heavy duty", "yol-bariyeri": "pabrik guardrail W beam",
+           "cati-cephe-paneli": "produsen panel sandwich", "celik-servis-merkezi": "jasa slitting dan shearing coil",
+           "asik-celik-yapi": "produsen kanal C baja ringan", "iskele-kalasi": "pabrik steel deck scaffolding",
+           "market-rafi": "pabrik rak supermarket gondola", "havalandirma-kanali": "fabrikasi ducting BJLS",
+           "metal-mobilya": "pabrik lemari arsip besi", "alcipan-profili": "pabrik rangka hollow gypsum"},
+}
+
+# Yeni ulkeler: B2B e-postada onceden izin sarti olmayan (ya da AB disi) pazarlar.
+# +1 kullanan Karayip ulkeleri alinmadi (Dominik'teki ABD numarasi karisikligi).
+ULKELER_B = [
+    ("İrlanda", "IE", "en", "353", "Ireland"), ("Hollanda", "NL", "en", "31", "Netherlands"),
+    ("İsveç", "SE", "en", "46", "Sweden"), ("Finlandiya", "FI", "en", "358", "Finland"),
+    ("Norveç", "NO", "en", "47", "Norway"), ("Zambiya", "ZM", "en", "260", "Zambia"),
+    ("Zimbabve", "ZW", "en", "263", "Zimbabwe"), ("Botsvana", "BW", "en", "267", "Botswana"),
+    ("Namibya", "NA", "en", "264", "Namibia"), ("Ruanda", "RW", "en", "250", "Rwanda"),
+    ("Mauritius", "MU", "en", "230", "Mauritius"), ("Malavi", "MW", "en", "265", "Malawi"),
+    ("Libya", "LY", "en", "218", "Libya"), ("Nepal", "NP", "en", "977", "Nepal"),
+    ("Kamboçya", "KH", "en", "855", "Cambodia"), ("Moğolistan", "MN", "en", "976", "Mongolia"),
+    ("Papua Yeni Gine", "PG", "en", "675", "Papua New Guinea"), ("Fiji", "FJ", "en", "679", "Fiji"),
+    ("Gürcistan", "GE", "en", "995", "Georgia"), ("Ermenistan", "AM", "en", "374", "Armenia"),
+    ("Azerbaycan", "AZ", "en", "994", "Azerbaijan"), ("Sırbistan", "RS", "en", "381", "Serbia"),
+    ("Bosna-Hersek", "BA", "en", "387", "Bosnia and Herzegovina"),
+    ("Kuzey Makedonya", "MK", "en", "389", "North Macedonia"), ("Arnavutluk", "AL", "en", "355", "Albania"),
+    ("Karadağ", "ME", "en", "382", "Montenegro"), ("Moldova", "MD", "en", "373", "Moldova"),
+    ("Lübnan", "LB", "en", "961", "Lebanon"),
+    ("Madagaskar", "MG", "fr", "261", "Madagascar"), ("Kongo DC", "CD", "fr", "243", "RDC Congo"),
+    ("Kongo", "CG", "fr", "242", "Congo Brazzaville"), ("Gabon", "GA", "fr", "241", "Gabon"),
+    ("Togo", "TG", "fr", "228", "Togo"), ("Benin", "BJ", "fr", "229", "Bénin"),
+    ("Burkina Faso", "BF", "fr", "226", "Burkina Faso"), ("Mali", "ML", "fr", "223", "Mali"),
+    ("Nijer", "NE", "fr", "227", "Niger"), ("Gine", "GN", "fr", "224", "Guinée"),
+    ("Moritanya", "MR", "fr", "222", "Mauritanie"),
+    ("Honduras", "HN", "es", "504", "Honduras"), ("El Salvador", "SV", "es", "503", "El Salvador"),
+    ("Nikaragua", "NI", "es", "505", "Nicaragua"),
+    ("Tacikistan", "TJ", "ru", "992", "Таджикистан"), ("Türkmenistan", "TM", "ru", "993", "Туркменистан"),
+]
+
+# Sehir bazli: en buyuk pazarlarda ulke geneli aramada cikmayan yerel ureticiler
+SEHIRLER_D = [
+    ("Hindistan", "IN", "en", "91", s) for s in ("Mumbai", "Delhi", "Pune", "Chennai", "Ahmedabad", "Kolkata", "Hyderabad", "Bangalore")
+] + [
+    ("Meksika", "MX", "es", "52", s) for s in ("Monterrey", "Guadalajara", "Ciudad de México", "Querétaro")
+] + [
+    ("Brezilya", "BR", "pt", "55", s) for s in ("São Paulo", "Curitiba", "Belo Horizonte", "Porto Alegre")
+] + [
+    ("ABD", "US", "en", "1", s) for s in ("Texas", "California", "Ohio", "Georgia USA")
+] + [
+    ("Endonezya", "ID", "id", "62", s) for s in ("Jakarta", "Surabaya", "Bekasi")
+] + [
+    ("Vietnam", "VN", "vi", "84", s) for s in ("Hà Nội", "Hồ Chí Minh", "Bình Dương")
+] + [
+    ("Güney Afrika", "ZA", "en", "27", s) for s in ("Johannesburg", "Cape Town", "Durban")
+] + [
+    ("Nijerya", "NG", "en", "234", s) for s in ("Lagos", "Abuja")
+] + [
+    ("Mısır", "EG", "en", "20", s) for s in ("Cairo", "10th of Ramadan City")
+] + [
+    ("Suudi Arabistan", "SA", "en", "966", s) for s in ("Riyadh", "Jeddah", "Dammam")
+]
+
+
+def tur_tanimi(tur):
+    """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "b":
+        return ULKELER_B, SORGU, "-b"
+    if tur == "c":
+        return ULKELER, SORGU_B, "-c"
+    if tur == "d":
+        return SEHIRLER_D, SORGU, "-d"
+    return ULKELER, SORGU, ""
+
+
 # Rehber, pazar yeri, sosyal ag, haber, kamu — firma sitesi degil
 KARA_LISTE = re.compile(
     r"(indiamart|tradeindia|exportersindia|justdial|sulekha|alibaba|aliexpress|made-in-china|globalsources|"
@@ -155,7 +299,10 @@ KARA_LISTE = re.compile(
     r"statista|researchandmarkets|marketsandmarkets|mordorintelligence|6wresearch|grandviewresearch|"
     r"imarcgroup|expertmarketresearch|zaubacorp|tofler|infobel|ghanayello|kenyayello|nigeriagalleria|"
     r"businesslistings|africa-business|vymaps|dubaidirectory|yello|zawya|arabianbusiness|construction\.com|"
-    r"houzz|bark\.com|checkatrade|homeadvisor|angi\.com|trustpilot|clutch\.co|goodfirms|upwork|fiverr)", re.I)
+    r"houzz|bark\.com|checkatrade|homeadvisor|angi\.com|trustpilot|clutch\.co|goodfirms|upwork|fiverr|"
+    r"ngcontacts|goafricaonline|finelib|vconnect|africabizinfo|kenyabizinfo|businessdirectory|bizdirectory|"
+    r"yellowpages|pagesjaunes|paginasamarillas|cybo\.com|ensun|companieslist|allbiz|all\.biz|exportpages|"
+    r"tradewheel|yellowpagesnigeria|enf\.com|solarquotes|energysage)", re.I)
 
 # Rakip: makine uretenler (baslik/ozette)
 MAKINE = re.compile(
@@ -185,26 +332,27 @@ def istek(yol, govde=None, deneme=3):
             time.sleep(5 * (i + 1))
 
 
-def konum_kodlari():
+def konum_kodlari(ulkeler):
+    """Ulke konum kodlari (DataForSEO, ucretsiz uc). Onbellekte olmayanlar sorulur."""
     yol = os.path.join(KESIF, "konumlar.json")
-    if os.path.exists(yol):
-        return json.load(io.open(yol, encoding="utf-8"))
-    kodlar = {}
-    for _, iso, _, _, _ in ULKELER:
+    kodlar = json.load(io.open(yol, encoding="utf-8")) if os.path.exists(yol) else {}
+    for iso in sorted({u[1] for u in ulkeler} - set(kodlar)):
         t = istek("serp/google/locations/" + iso.lower())["tasks"][0]
         ulke = [x for x in (t.get("result") or []) if x.get("location_type") == "Country"]
         if ulke:
             kodlar[iso] = ulke[0]["location_code"]
+        else:
+            print("  [uyarı] %s için konum kodu yok, atlanıyor" % iso)
     json.dump(kodlar, io.open(yol, "w", encoding="utf-8"))
     return kodlar
 
 
-def gorevler(kodlar):
+def gorevler(kodlar, ulkeler, sorgu):
     liste = []
-    for ad, iso, dil, _, sorgu_ulke in ULKELER:
+    for ad, iso, dil, _, sorgu_ulke in ulkeler:
         if iso not in kodlar:
             continue
-        for seg, ifade in SORGU[dil].items():
+        for seg, ifade in sorgu[dil].items():
             kelime = ("%s %s" % (ifade, sorgu_ulke)).strip()
             liste.append({"keyword": kelime, "location_code": kodlar[iso], "language_code": dil,
                           "depth": DERINLIK, "tag": "%s|%s" % (iso, seg)})
@@ -249,11 +397,12 @@ def serp_cek(liste, yol):
     return gelen, maliyet
 
 
-def bilinen_alanlar():
-    """Listede ya da Elenenler'de gecen her alan adi — yeniden eklenmesin."""
+def bilinen_alanlar(haric=""):
+    """Listede ya da Elenenler'de gecen her alan adi — yeniden eklenmesin.
+    `haric`: bu turun kendi ciktisi; yeniden calistirmada kendi bulduklarini elemesin."""
     alanlar = set()
     for f in os.listdir(KLASOR):
-        if f.endswith(".md"):
+        if f.endswith(".md") and os.path.join(KLASOR, f) != haric:
             for u in re.findall(r"https?://[^\s|)\]]+", io.open(os.path.join(KLASOR, f), encoding="utf-8").read()):
                 alanlar.add(B.url_alani(u))
     return alanlar
@@ -423,6 +572,51 @@ def siki_parca(parca):
         return list(ex.map(siki_dogrula, parca))
 
 
+# ------------------------------------------------------------------ ince suzgec
+# Siki suzgecten sonra 40 satirlik ornekte hala ~%20 hedef disi vardi: is rehberi
+# (ngcontacts, goafricaonline), "top 10" listeleri, dev markalarin yerel subesi (Layher
+# Peru), gunes paneli KURUCUSU (montaj yapisi ureticisi degil), fiberglas/PVC kablo
+# kanali (roll form degil), yalnizca yalitim ureticisi (cam yunu). Hepsi arama basligi ve
+# ozetinden yakalaniyor — yeniden indirme gerekmez.
+
+REHBER_BASLIK = re.compile(
+    r"\b(directory|directorio|annuaire|companies in|empresas de .{0,20} en|list of|top ?\d+|best \d+|"
+    r"\d+ (best|top|leading)|yellow ?pages|p[aá]ginas amarillas|business (list|listing|directory)|"
+    r"\d{3,} companies|compan(y|ies) list)\b", re.I)
+DEV_MARKA = re.compile(
+    r"(^|\.)(layher|abb|se|schneider-electric|legrand|eaton|siemens|hilti|obo|obo-bettermann|niedax|"
+    r"panduit|atkore|kingspan|tatasteel|arcelormittal|ulma|ulmaconstruction|peri|doka|hunnebeck|altrad|"
+    r"lindab|saint-gobain|knauf|usg|etex|rockwool|owenscorning)\.", re.I)
+KABLO_PLASTIK = re.compile(r"\b(frp|grp|fib(er|re) ?glass|fibra de vidrio|pvc|plastic|pl[aá]stic|polymer)\b", re.I)
+CELIK = re.compile(r"steel|metal|galvani|acero|a[cç]o\b|acier|stahl|сталь|thép|baja|inox", re.I)
+SOLAR_YAPI = re.compile(
+    r"mount|structure|struct|racking|bracket|clamp|rail|frame|carport|ground ?screw|montaje|estructura|"
+    r"soporte|suporte|estrutura|fixation|support|крепеж|конструкц|giá đỡ|khung|rangka|dudukan|penyangga",
+    re.I)
+YALITIM = re.compile(r"glass ?wool|rock ?wool|stone ?wool|mineral wool|insulation|aislante|aislamiento|"
+                     r"isolamento|isolant|утеплит|изоляц|bông thủy tinh", re.I)
+CATI_URUN = re.compile(r"panel|sheet|roof|cladding|teja|l[aá]mina|telha|t[oô]le|bac|profnastil|профнастил|"
+                       r"сэндвич|tôn|atap|genteng|corrugat|trapez", re.I)
+
+
+def ince_suz(satir, aday):
+    """Doner: neden (str) ya da None (gecti)."""
+    metin = "%s %s" % (aday.get("title", ""), aday.get("description", ""))
+    baslik = aday.get("title", "")
+    if REHBER_BASLIK.search(baslik):
+        return "rehber / liste başlığı"
+    if DEV_MARKA.search(B.url_alani(satir["web"])):
+        return "dev marka şubesi"
+    seg = aday.get("seg")
+    if seg == "kablo-kanali" and KABLO_PLASTIK.search(baslik) and not CELIK.search(baslik):
+        return "plastik/fiberglas kablo kanalı"
+    if seg == "solar-profil" and not SOLAR_YAPI.search(metin):
+        return "güneş: montaj yapısı değil"
+    if seg == "cati-cephe-paneli" and YALITIM.search(baslik) and not CATI_URUN.search(baslik):
+        return "yalnız yalıtım"
+    return None
+
+
 def parca_isle(parca):
     """Bir surecte bir grup aday (ayni alan adinin adaylari ayni parcada: sayfalar bir
     kez indirilir). Doner: [(aday, satir|None, neden)]"""
@@ -435,15 +629,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d"],
+                    help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
-    serp_yolu = os.path.join(KESIF, "serp-%s.json" % a.tarih)
+    ulkeler, sorgu, ek = tur_tanimi(a.tur)
+    serp_yolu = os.path.join(KESIF, "serp-%s%s.json" % (a.tarih, ek))
 
     if a.plan or not os.path.exists(serp_yolu):
-        kodlar = konum_kodlari()
-        liste = gorevler(kodlar)
+        kodlar = konum_kodlari(ulkeler)
+        liste = gorevler(kodlar, ulkeler, sorgu)
         tahmin = len(liste) * (DERINLIK // 10) * SAYFA_UCRETI
-        print("%d ülke × 12 segment = %d arama, tahmini %.2f $" % (len(kodlar), len(liste), tahmin))
+        print("Tur %s: %d arama (%d konum), tahmini %.2f $" % (a.tur, len(liste), len({u[4] for u in ulkeler}), tahmin))
         if a.plan:
             return
         aramalar, maliyet = serp_cek(liste, serp_yolu)
@@ -452,8 +649,9 @@ def main():
         aramalar = json.load(io.open(serp_yolu, encoding="utf-8"))["aramalar"]
         print("Önbellekten: %s (%d arama)" % (serp_yolu, len(aramalar)))
 
-    ulke = {iso: (ad, tel) for ad, iso, _, tel, _ in ULKELER}
-    bilinen = bilinen_alanlar()
+    ulke = {iso: (ad, tel) for ad, iso, _, tel, _ in ulkeler}
+    yol = os.path.join(KLASOR, "bolge-kesif-%s%s.md" % (a.tarih, ek))
+    bilinen = bilinen_alanlar(haric=yol)
     adaylar, elenen = {}, {"rehber/pazar yeri": 0, "makine (rakip)": 0, "zaten listede": 0}
     for s in aramalar:
         for r in s["sonuclar"]:
@@ -482,7 +680,7 @@ def main():
     # Tek surec bir cekirdege takiliyordu (8.732 aday ~saatler): 8 surec x 8 is parcacigi.
     # Ara kayit: her biten parca kesif/dogrulama-<tarih>.jsonl'a yazilir; yarida kalirsa
     # ayni komut kaldigi yerden surer.
-    ara = os.path.join(KESIF, "dogrulama-%s.jsonl" % a.tarih)
+    ara = os.path.join(KESIF, "dogrulama-%s%s.jsonl" % (a.tarih, ek))
     bitmis = {}
     if os.path.exists(ara):
         for satir in io.open(ara, encoding="utf-8"):
@@ -535,14 +733,33 @@ def main():
             parca = []
     if parca:
         parcalar.append(parca)
-    satirlar = []
-    with ProcessPoolExecutor(8) as ex:
+    # Siki suzgec sonucu da ara kayitli: yeniden calistirmada sayfalar tekrar indirilmez
+    siki_yol = os.path.join(KESIF, "suzgec-%s%s.jsonl" % (a.tarih, ek))
+    siki = {}
+    if os.path.exists(siki_yol):
+        for sat in io.open(siki_yol, encoding="utf-8"):
+            k = json.loads(sat)
+            siki[tuple(k["anahtar"])] = (k["satir"], k["neden"])
+    anahtar_of = lambda x: (x["alan"], x["iso"], x["seg"])
+    parcalar = [[is_ for is_ in p_ if anahtar_of(is_[1]) not in siki] for p_ in parcalar]
+    parcalar = [p_ for p_ in parcalar if p_]
+    with ProcessPoolExecutor(8) as ex, io.open(siki_yol, "a", encoding="utf-8") as kayit:
         for p_, sonuc in zip(parcalar, ex.map(siki_parca, parcalar)):
-            for (satir, n) in sonuc:
-                if satir:
-                    satirlar.append(satir)
-                else:
-                    neden["sıkı süzgeç — " + n] = neden.get("sıkı süzgeç — " + n, 0) + 1
+            for (satir0, x), (satir, n) in zip(p_, sonuc):
+                siki[anahtar_of(x)] = (satir, n)
+                kayit.write(json.dumps({"anahtar": anahtar_of(x), "satir": satir, "neden": n}, ensure_ascii=False) + "\n")
+    satirlar = []
+    for satir0, x in ilk:
+        satir, n = siki.get(anahtar_of(x), (None, "sıkı süzgeç yapılmadı"))
+        if satir:
+            n = ince_suz(satir, x)
+            if n is None:
+                satirlar.append(satir)
+                continue
+            n = "ince süzgeç — " + n
+        else:
+            n = "sıkı süzgeç — " + n
+        neden[n] = neden.get(n, 0) + 1
     # Ayni alan adi + ulke tek firma: segmentleri ayri satir kalir, sira ulke/firma
     satirlar.sort(key=lambda s: (s["ulke"], s["firma"].lower(), s["segment"]))
     firma_sayisi = len({(B.url_alani(s["web"]), s["ulke"]) for s in satirlar})
@@ -550,12 +767,12 @@ def main():
     for n, adet in sorted(neden.items(), key=lambda x: -x[1]):
         print("  elendi — %s: %d" % (n, adet))
 
-    yol = os.path.join(KLASOR, "bolge-kesif-%s.md" % a.tarih)
     basliklar = ["Firma", "Ülke", "Web sitesi", "Doğrulama sayfası", "Ne üretiyor", "E-posta / İletişim", "Segment"]
     govde = [
-        "# Keşif — Google araması + otomatik doğrulama (%s)" % a.tarih, "",
+        "# Keşif %s — Google araması + otomatik doğrulama (%s)" % (a.tur.upper(), a.tarih), "",
         "Kaynak: DataForSEO Google organik sonuçları — ülke konumlu, o ülkenin iş dilinde",
-        "\"<ürün> üreticisi\" aramaları (%d ülke × 12 segment). `scripts/hedef-firma-kesif.py`." % len(ulke), "",
+        "\"<ürün> üreticisi\" aramaları (%d ülke, %d arama, tur %s). `scripts/hedef-firma-kesif.py --tur %s`."
+        % (len(ulke), len(aramalar), a.tur, a.tur), "",
         "Her satır otomatik doğrulandı: site açılıyor; segmentin ürünü sayfada geçiyor; firma kendini",
         "ÜRETİCİ olarak tanıtıyor (arama başlığı/özeti ya da sayfa başlığı, açıklaması, H1'i) ve",
         "başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yerel uzantı ya da sitede",

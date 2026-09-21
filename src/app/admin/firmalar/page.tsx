@@ -5,6 +5,8 @@ import { oturum, rolu } from "@/lib/admin-auth";
 import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
+  KATEGORILER,
+  KATEGORI_ADI,
   SAYFA_BOYU,
   bugunGonderilen,
   geriDonusDurumu,
@@ -29,6 +31,7 @@ import { FirmaListesi, SONUC_ETIKET } from "./firma-listesi";
 export const dynamic = "force-dynamic";
 
 type Arama = {
+  grup?: string;
   durum?: string;
   ulke?: string;
   segment?: string;
@@ -94,6 +97,7 @@ export default async function FirmalarSayfasi({
   }
 
   const filtre: HedefFiltre = {
+    grup: sp.grup || undefined,
     durum: sp.durum || undefined,
     ulke: sp.ulke || undefined,
     segment: sp.segment || undefined,
@@ -107,8 +111,8 @@ export default async function FirmalarSayfasi({
   const isinma = isinmaTavani(v?.ilkGun ?? null, ayar.gunlukTavan);
   const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
 
-  /* Detay sayfasına süzgeç taşınıyor: "Sıradaki firma" aynı ülke/segmentte kalsın. */
-  const surekli = qs({ ulke: filtre.ulke, segment: filtre.segment });
+  /* Detay sayfasına süzgeç taşınıyor: "Sıradaki firma" aynı grup/ülke/segmentte kalsın. */
+  const surekli = qs({ grup: filtre.grup, ulke: filtre.ulke, segment: filtre.segment });
   const sayfaQs = (n: number) => qs({ ...filtre, sayfa: n > 1 ? n : undefined });
 
   return (
@@ -231,8 +235,33 @@ export default async function FirmalarSayfasi({
               ))}
             </section>
 
+            {/* --------------------------------------------- ürün grupları
+                Sitede öne çıkan sıra: roll form → dilme → boy kesme → pres
+                besleme → kompakt → diğer. Liste de bu sırayla geliyor. */}
+            <nav
+              aria-label="Ürün grupları"
+              className="mt-6 -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-wrap lg:px-0"
+            >
+              <Link
+                href={`/admin/firmalar${qs({ ...filtre, grup: undefined }) ? `?${qs({ ...filtre, grup: undefined })}` : ""}`}
+                className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium ${!filtre.grup ? "bg-shell text-white" : "border border-line"}`}
+              >
+                Tümü {v.ozet.toplam}
+              </Link>
+              {KATEGORILER.map((k) => (
+                <Link
+                  key={k}
+                  href={`/admin/firmalar?${qs({ ...filtre, grup: String(k) })}`}
+                  className={`shrink-0 rounded-full px-3 py-1.5 text-sm font-medium ${filtre.grup === String(k) ? "bg-shell text-white" : "border border-line"}`}
+                >
+                  {k}. {KATEGORI_ADI[k]} {v.ozet.grup[k] ?? 0}
+                </Link>
+              ))}
+            </nav>
+
             {/* ------------------------------------------------- süzgeç */}
-            <form action="/admin/firmalar" className="mt-6 grid gap-2 sm:grid-cols-2 lg:flex lg:flex-wrap">
+            <form action="/admin/firmalar" className="mt-4 grid gap-2 sm:grid-cols-2 lg:flex lg:flex-wrap">
+              {filtre.grup ? <input type="hidden" name="grup" value={filtre.grup} /> : null}
               <select
                 name="durum"
                 defaultValue={filtre.durum ?? ""}

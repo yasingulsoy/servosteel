@@ -42,6 +42,15 @@ export const OUTREACH_SEMA = `
     guncellendi     TIMESTAMPTZ NOT NULL DEFAULT now(),
     aktarildi       TIMESTAMPTZ NOT NULL DEFAULT now()
   );
+  /* Urun grubu ve panel sirasi (2026-09-22): 1 roll form, 2 dilme, 3 boy kesme,
+     4 pres besleme, 5 kompakt hat, 6 diger. Sira Excel betiginde hesaplanir
+     (grup → e-postali → sitede dogrulanan → elle arastirilan), panel yalniz uygular. */
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS kategori SMALLINT NOT NULL DEFAULT 6;
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS kategori_notu TEXT NOT NULL DEFAULT '';
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS sira INTEGER NOT NULL DEFAULT 0;
+  /* true: yalniz otomatik kesiften (Google + otomatik dogrulama) gelen firma */
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS kesif BOOLEAN NOT NULL DEFAULT false;
+  CREATE INDEX IF NOT EXISTS hedef_firmalar_sira_idx ON hedef_firmalar (sira, id);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_durum_idx ON hedef_firmalar (durum);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_eposta_idx ON hedef_firmalar (lower(eposta));
 

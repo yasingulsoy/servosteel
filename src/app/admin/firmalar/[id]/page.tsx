@@ -5,6 +5,7 @@ import { oturum } from "@/lib/admin-auth";
 import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
+  KATEGORI_ADI,
   bugunGonderilen,
   engelliMi,
   firmaEngeli,
@@ -39,7 +40,7 @@ export default async function FirmaSayfasi({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ ulke?: string; segment?: string }>;
+  searchParams: Promise<{ grup?: string; ulke?: string; segment?: string }>;
 }) {
   const ben = await oturum();
   if (!ben) redirect("/admin/giris");
@@ -48,7 +49,7 @@ export default async function FirmaSayfasi({
   const no = Number(id);
   if (!Number.isInteger(no)) notFound();
   const sp = await searchParams;
-  const filtre = { ulke: sp.ulke || undefined, segment: sp.segment || undefined };
+  const filtre = { grup: sp.grup || undefined, ulke: sp.ulke || undefined, segment: sp.segment || undefined };
   const surekli = new URLSearchParams(
     Object.entries(filtre).filter((x): x is [string, string] => !!x[1])
   ).toString();
@@ -137,6 +138,12 @@ export default async function FirmaSayfasi({
           {[f.ulke, f.segmentler, `e-posta dili: ${f.dil}`].filter(Boolean).join(" · ")}
           {!f.listede ? " · son aktarımda listede yoktu" : ""}
         </p>
+        <p className="mt-1 text-sm">
+          <span className="font-semibold">
+            {f.kategori}. {KATEGORI_ADI[f.kategori] ?? "—"}
+          </span>
+          {f.kategori_notu ? <span className="text-muted"> — {f.kategori_notu}</span> : null}
+        </p>
 
         {talepleri.length ? (
           <section className="mt-5 rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3.5 text-sm text-emerald-900">
@@ -169,6 +176,7 @@ export default async function FirmaSayfasi({
                   engel={engel}
                   bekleSn={bekleSn}
                   uyari={ulkeUyarisi(f.ulke)}
+                  grup={filtre.grup}
                   ulke={filtre.ulke}
                   segment={filtre.segment}
                 />
