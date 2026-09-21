@@ -407,6 +407,42 @@ adreste e-postadaki bağlantının `utm_content=<alan adı>` izi varsa (api/tale
 Referer'ı `sayfa` olarak kaydediyor). Gmail'li firmalar yalnızca ikinci yoldan
 eşleşir.
 
+**Ürün grupları ve panel sırası (2026-09-22, Yasin: "sitede öne çıkan sıra").**
+Panel listesi ve Excel bu sırayla gelir; üstteki düğmelerle grup seçilir:
+1 **Roll form hatları** (kablo kanalı, solar, ağır raf, iskele kalası, yol ve
+gürültü bariyeri, trapez/cephe paneli, C-sigma-omega aşık) · 2 **Rulo sac dilme**
+· 3 **Rulo sac boy kesme** (çelik servis merkezleri; hangisi olduğu firmanın
+sitesinde dilme mi levha/boy kesme mi ağır bastığına göre) · 4 **Pres besleme
+sistemleri** (pres atölyeleri, alçıpan profilcileri, çelik mobilya — servo
+besleyici/doğrultmalı besleyici/açıcı teklif ediliyor) · 5 **Kompakt hatlar**
+(havalandırma kanalı) · 6 **Diğer** (market rafı — hattı var, sitede sayfası
+yok). Çok segmentli firma en öncelikli grubuna girer. Grup içinde sıra:
+e-postası olan → sitesinde ürünü doğrulanan → elle araştırılan → otomatik keşif.
+"Sıradaki firma" da bu sırayla ve seçili grubun içinde ilerler.
+
+```bash
+python scripts/hedef-firma-excel.py        # liste (butun .md dosyalari)
+python scripts/hedef-firma-kategori.py     # her firmanin sitesine bakar -> kategori.json
+python scripts/hedef-firma-excel.py        # gruplu/sirali Excel + panel JSON
+node scripts/hedef-firma-aktar.mjs --yaz   # panele (grup/sira her aktarimda guncellenir)
+```
+22 Eylül gözden geçirmesi (2.157 firmanın sitesi yeniden açıldı): roll form
+1.297 (1.262'sinde ürün sitede doğrulandı) · dilme 39 · boy kesme 44 · pres
+besleme 398 · kompakt 269 · diğer 110 · 34 firmanın sitesi açılmadı (grubunun
+sonunda, notunda yazıyor). Gözden geçirme OTOMATİK: site açılıyor mu, grubunun
+ürün kelimesi sayfada geçiyor mu — "bu firma gerçekten alıcı mı" kararı değil.
+
+**Otomatik keşif A turu (2026-09-21/22):** 59 ülke × 12 segment, 708 arama
+(0,85 $). 8.732 aday → ilk kontrol 3.067 → **sıkı süzgeç** (firma kendini
+üretici olarak tanıtıyor mu; başlıkta mağaza/kiralama/bayi/ithalatçı izi var mı;
+Dominik Cumhuriyeti için 809/829/849) → **ince süzgeç** (rehber/"top 10" başlığı,
+dev marka şubesi, güneşte montaj yapısı yoksa, FRP/PVC kablo kanalı, yalnız
+yalıtım) → **1.274 firma** (`bolge-kesif-2026-09-21.md`). Panelde "keşif"
+etiketli ve grubunda elle araştırılanların arkasında. Sıkı süzgeç öncesi 40
+satırlık örnekte yarısı hedef dışıydı; sonrasında ~%20 — gönderen önizlemede
+firmaya bir bakmalı. Sıradaki turlar hazır, çalıştırılmadı: `--tur b` (yeni
+ülkeler), `--tur c` (eş anlamlı aramalar), `--tur d` (şehir bazlı).
+
 **Listeyi büyütmek (2026-09-21):**
 ```bash
 python scripts/hedef-firma-eposta-bul.py            # adresi olmayan firmaların sitesinde yayımlanmış adres (rapor)

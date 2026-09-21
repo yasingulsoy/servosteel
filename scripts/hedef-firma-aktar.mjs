@@ -108,13 +108,25 @@ const istemci = new pg.Client({
 });
 await istemci.connect();
 
+/* Kuru çalıştırma şemaya dokunmaz: yeni sütunlar canlıda henüz yoksa okunmaz, "farklı" sayılır. */
+async function varOlanlar(sutunlar) {
+  const { rows } = await istemci.query(
+    `SELECT column_name FROM information_schema.columns WHERE table_name = 'hedef_firmalar'`
+  );
+  const var_ = new Set(rows.map((r) => r.column_name));
+  return sutunlar.filter((s) => var_.has(s));
+}
+
 try {
   /* Kuru çalıştırma veritabanına HİÇ yazmaz — tablo yoksa kurmaz da. */
   const { rows: tablo } = await istemci.query(`SELECT to_regclass('hedef_firmalar') IS NOT NULL AS var`);
   if (YAZ) await istemci.query(OUTREACH_SEMA);
   const { rows: mevcut } =
     YAZ || tablo[0].var
-      ? await istemci.query(`SELECT ${[...ALANLAR, ...GRUP_ALANLARI].join(", ")}, durum, listede FROM hedef_firmalar`)
+      ? await istemci.query(
+          `SELECT ${[...ALANLAR, ...(YAZ ? GRUP_ALANLARI : await varOlanlar(GRUP_ALANLARI))].join(", ")},
+                  durum, listede FROM hedef_firmalar`
+        )
       : { rows: [] };
   const harita = new Map(mevcut.map((r) => [r.anahtar, r]));
   const listedeki = mevcut.filter((r) => r.listede).length;

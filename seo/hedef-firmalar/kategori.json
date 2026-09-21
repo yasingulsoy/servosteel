@@ -11998,5 +11998,947 @@
 "not": "Market Rafı",
 "dogrulandi": true,
 "site": true
+},
+"alzaman.net|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mangeerac.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mvc-sa.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"duct.sammangroup.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sdf-ksa.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"franz.co.tz|tanzanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductexcel.co.th|tayland": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"iaq-thailand.com|tayland": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"pvegroup.asia|tayland": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"agt.tn|tunus": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climagaine.tn|tunus": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climr.net|tunus": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"uma.or.ug|uganda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"adec.om|umman": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cmsglobal.com|umman": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"majeestech.com|umman": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"suministrosindustriales.uy|uruguay": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"veinsa.com|uruguay": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cokhiphuhung.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"navida.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hadra.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"onggiosaoviet.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"phuclongintech.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"nicestar.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"thvinasun.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cookeindustries.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"qualityductsystem.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"roskill.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"smooth-air.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climat-montaj.uz|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jihoz.uz|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ventsystems.uz|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aerostar.uz|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"samhourico.com|ürdün": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"auxjo.com|ürdün": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kettaneh.com.jo|ürdün": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jet-ac.com|ürdün": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climatemp.cl|şili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"eliductos.cl|şili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"grupoindustrial.cl|şili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cuisinox-algerie.com|cezayir": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sodinco.dz|cezayir": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"teno-store.com|cezayir": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climatica-srl.com|dominik cumhuriyeti": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"compradirecta.do|dominik cumhuriyeti": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airtec.com.ec|ekvador": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"atymi.com.ec|ekvador": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"globalducting.com|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"traftek.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"indoducting.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mabruka.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"astem.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hepahumindo.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sonducts.com|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"indexengineerings.com|etiyopya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"abmaroc.com|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airisola.ma|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"deltaneu.ma|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"icat.ma|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vmdistribution.ma|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kdm.ci|fildişi sahili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"siegenphilippines.com|filipinler": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"spiralgroup.ph|filipinler": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ervent.fr|fransa": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sntolerie.fr|fransa": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tfvm-ventilation.fr|fransa": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"giecagt.com|guatemala": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"talleresperez.com.gt|guatemala": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"capeairconditioning.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ducttech.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hvacdistributors.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"insulpro.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jsmw.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"precisionduct.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"simplexducting.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aircareind.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"envigaurd.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kriducts.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ventairspiro.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"autoductfactory.com|irak": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ventservice.com.kg|kırgızistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"m.culmi.com.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"infopages.net.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kjgemilang.com.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"pgjyx.com.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"climart.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductosmonterrey.com|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductosnacionales.com|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fabricair.com|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vermont.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"siventi.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"technometal-hvac.com|mısır": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"leboaaz.com|nijerya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hvac.com.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"bricktier.com|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"chillerhouse.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductinginlahore.com|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"nowastarengineering.com|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"shanindustries.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"acrlatinoamerica.com|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductoscovacon.com|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ecoaires.com|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"formetalpanama.com|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mrfrio.com.pa|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tecparsrl.com.py|paraguay": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"artifrioperu.com|peru": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"atedsaperu.com|peru": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ccis.sn|senegal": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"isometa.sn|senegal": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"index-cool.com.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kailiaircon.com.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kmsengineering.com.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sgpbusiness.com|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tuckhwafab.com|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"wbair.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cooltech.lk|sri lanka": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kandaeng.com|sri lanka": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"afico.com.sa|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"alafcohvac.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sharqawi-co.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"rackzone.my|malezya": {
+"kategori": 6,
+"not": "Market Rafı · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"tientien.com.my|malezya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"uniwell.com.my|malezya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gondolaparatiendas.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gondolas-mexico.com.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gopri.com.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"holdin.com.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"buymoreindustrialequipments.com|nijerya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"eunicon.com.ng|nijerya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"aijaz.biz|pakistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"balpar.com.py|paraguay": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"andercru.com.pe|peru": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"sagama-retail.com|peru": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"bsmracking.sg|singapur": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"m.nikorex.com.sg|singapur": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"laelko.com|suudi arabistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"progroupthai.com|tayland": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rnbproduct.co.th|tayland": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"cokhithanhdat.com.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"kesieuthihanatech.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rackcosmo.com|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"tongkhogiake.com|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"novalok.co.nz|yeni zelanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"surestyle.co.nz|yeni zelanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"volume.co.nz|yeni zelanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"azn.uz|özbekistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"holodilnoe-oborudovanie.uz|özbekistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rshop.uz|özbekistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"stellaji.uz|özbekistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"racksandfixtures.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"adarshudyog.in|hindistan": {
+"kategori": 6,
+"not": "Market Rafı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"caem.net|i̇talya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"madixinc.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"storflex.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"accuratemetalfab.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"eden-retail.com|birleşik krallık": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"expandaracks.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
 }
 }
