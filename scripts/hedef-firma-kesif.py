@@ -34,6 +34,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+from html import unescape as html_coz
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from datetime import date
 
@@ -59,6 +60,7 @@ SEGMENT_ADI = {
     "celik-servis-merkezi": "Çelik Servis Merkezi", "asik-celik-yapi": "Aşık ve Çelik Yapı",
     "iskele-kalasi": "İskele Kalası", "market-rafi": "Market Rafı", "havalandirma-kanali": "Havalandırma Kanalı",
     "metal-mobilya": "Çelik Mobilya", "alcipan-profili": "Alçıpan Profili",
+    "pres-atolyeleri": "Pres Atölyeleri",
 }
 
 SORGU = {
@@ -143,8 +145,10 @@ ULKELER = [
 
 # ------------------------------------------------------------------ turlar
 # a: 59 ulke x ana arama · b: yeni ulkeler x ana arama · c: 59 ulke x es anlamli arama
-# d: buyuk pazarlarda sehir bazli ana arama. Her tur ayri dosyalara yazar; sonraki tur
-# onceki turlarin .md'lerindeki alan adlarini "zaten listede" sayip atlar.
+# d: buyuk pazarlarda sehir bazli ana arama · e: oncelikli urun gruplari (dilme / boy kesme ->
+# celik servis merkezi, pres besleme -> pres atolyesi), a+b ulkeleri, segment basina iki arama.
+# Her tur ayri dosyalara yazar; sonraki tur onceki turlarin .md'lerindeki alan adlarini
+# "zaten listede" sayip atlar.
 
 SORGU_B = {
     "en": {"kablo-kanali": "cable ladder and perforated cable tray manufacturer",
@@ -274,8 +278,31 @@ SEHIRLER_D = [
 ]
 
 
+# E turu (2026-09-22, Yasin: "oncelik roll form, dilme, boy kesme, pres besleme, kompakt"):
+# dilme ve boy kesme hattini CELIK SERVIS MERKEZI alir (40 + 49 firmayla en kucuk iki grup),
+# pres besleme ve kompakt hatti PRES ATOLYESI. Deger liste: segment basina iki arama.
+SORGU_E = {
+    "en": {"celik-servis-merkezi": ["steel service center", "coil slitting and cut to length services"],
+           "pres-atolyeleri": ["metal stamping company", "sheet metal pressing parts manufacturer"]},
+    "es": {"celik-servis-merkezi": ["centro de servicio de acero", "corte longitudinal y transversal de bobinas de acero"],
+           "pres-atolyeleri": ["estampado de metales", "troquelado de piezas metálicas"]},
+    "pt": {"celik-servis-merkezi": ["centro de serviços de aço", "corte de bobinas de aço slitter e blanks"],
+           "pres-atolyeleri": ["estamparia de metais", "estampagem de peças metálicas"]},
+    "fr": {"celik-servis-merkezi": ["centre de service acier", "découpe de bobines acier refendage cisaillage"],
+           "pres-atolyeleri": ["découpage emboutissage métal sous-traitance", "fabricant de pièces embouties en tôle"]},
+    "ru": {"celik-servis-merkezi": ["металлосервисный центр", "продольная и поперечная резка рулонной стали"],
+           "pres-atolyeleri": ["холодная листовая штамповка металла", "штамповка металлических деталей на заказ"]},
+    "vi": {"celik-servis-merkezi": ["trung tâm gia công thép cuộn", "xả băng cắt tấm thép cuộn"],
+           "pres-atolyeleri": ["gia công dập kim loại", "dập tấm kim loại theo yêu cầu"]},
+    "id": {"celik-servis-merkezi": ["steel service center", "jasa potong coil plat besi"],
+           "pres-atolyeleri": ["jasa stamping metal", "pabrik press part logam"]},
+}
+
+
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "e":
+        return ULKELER + ULKELER_B, SORGU_E, "-e"
     if tur == "b":
         return ULKELER_B, SORGU, "-b"
     if tur == "c":
@@ -302,12 +329,17 @@ KARA_LISTE = re.compile(
     r"houzz|bark\.com|checkatrade|homeadvisor|angi\.com|trustpilot|clutch\.co|goodfirms|upwork|fiverr|"
     r"ngcontacts|goafricaonline|finelib|vconnect|africabizinfo|kenyabizinfo|businessdirectory|bizdirectory|"
     r"yellowpages|pagesjaunes|paginasamarillas|cybo\.com|ensun|companieslist|allbiz|all\.biz|exportpages|"
-    r"tradewheel|yellowpagesnigeria|enf\.com|solarquotes|energysage)", re.I)
+    r"tradewheel|yellowpagesnigeria|enf\.com|solarquotes|energysage|"
+    r"iprocure|infopages|autoshow|pngpages|rwandayp|government\.com\.|aajjo|thebluebook|"
+    r"iberinform|guia1122|indusmart|otimize|xometry|planplus|companywall|bdstall|"
+    r"framecad)", re.I)   # framecad: LGS roll form makinesi ureticisi (rakip)
 
 # Rakip: makine uretenler (baslik/ozette)
 MAKINE = re.compile(
     r"roll\s*-?\s*form(ing|er)?\s*machine|forming machine|machinery|machines?\b|máquina|maquinaria|perfiladora|"
-    r"machine à profiler|profileuse|станок|оборудование для|máy cán|máy sản xuất|mesin|makine|"
+    r"machine à profiler|profileuse|станок|оборудование для|"
+    r"(?<!nhà )(?<!nha )máy (cán|sản xuất|xả|cắt|dập|uốn)|mesin|makine|"
+    r"l[ií]neas? de corte|linhas? de corte|(slitting|cut[ -]to[ -]length|slitter) (line|machine)s?|"
     r"equipamento para|equipment manufacturer", re.I)
 
 ULKE_UZANTI = {"GB": "uk"}
@@ -352,10 +384,11 @@ def gorevler(kodlar, ulkeler, sorgu):
     for ad, iso, dil, _, sorgu_ulke in ulkeler:
         if iso not in kodlar:
             continue
-        for seg, ifade in sorgu[dil].items():
-            kelime = ("%s %s" % (ifade, sorgu_ulke)).strip()
-            liste.append({"keyword": kelime, "location_code": kodlar[iso], "language_code": dil,
-                          "depth": DERINLIK, "tag": "%s|%s" % (iso, seg)})
+        for seg, ifadeler in sorgu[dil].items():
+            for ifade in ([ifadeler] if isinstance(ifadeler, str) else ifadeler):
+                kelime = ("%s %s" % (ifade, sorgu_ulke)).strip()
+                liste.append({"keyword": kelime, "location_code": kodlar[iso], "language_code": dil,
+                              "depth": DERINLIK, "tag": "%s|%s" % (iso, seg)})
     return liste
 
 
@@ -397,14 +430,28 @@ def serp_cek(liste, yol):
     return gelen, maliyet
 
 
+def tur_sirasi(dosya):
+    """bolge-kesif-<tarih>[-<tur>].md -> (tarih, tur); a turunun eki yok. Kesif disi dosya: None."""
+    m = re.match(r"bolge-kesif-(\d{4}-\d{2}-\d{2})(?:-([a-z]))?\.md$", dosya)
+    return (m.group(1), m.group(2) or "a") if m else None
+
+
 def bilinen_alanlar(haric=""):
     """Listede ya da Elenenler'de gecen her alan adi — yeniden eklenmesin.
-    `haric`: bu turun kendi ciktisi; yeniden calistirmada kendi bulduklarini elemesin."""
+    `haric`: bu turun kendi ciktisi; yeniden calistirmada kendi bulduklarini elemesin.
+    Kesif dosyalarindan yalniz bu turdan ONCEKILER sayilir: yeniden calistirmada sonraki
+    turun buldugu alan adi bu turdan dusmesin — sonraki turun kurali onu eleyebilir, o zaman
+    iki turdan da kaybolurdu (C/D/E ayni anda calisti, birbirinin bulduklarini icerebilir)."""
+    kendi = tur_sirasi(os.path.basename(haric)) if haric else None
     alanlar = set()
     for f in os.listdir(KLASOR):
-        if f.endswith(".md") and os.path.join(KLASOR, f) != haric:
-            for u in re.findall(r"https?://[^\s|)\]]+", io.open(os.path.join(KLASOR, f), encoding="utf-8").read()):
-                alanlar.add(B.url_alani(u))
+        if not f.endswith(".md") or os.path.join(KLASOR, f) == haric:
+            continue
+        sira = tur_sirasi(f)
+        if kendi and sira and sira > kendi:
+            continue
+        for u in re.findall(r"https?://[^\s|)\]]+", io.open(os.path.join(KLASOR, f), encoding="utf-8").read()):
+            alanlar.add(B.url_alani(u))
     return alanlar
 
 
@@ -428,7 +475,8 @@ def firma_adi(html, alan):
 
 
 def hucre(s):
-    return re.sub(r"\s+", " ", (s or "").replace("|", "/")).strip()
+    # Sayfa basliklari HTML varligiyla geliyor ("Kosto &#8211; Cut and Bend", "&amp;")
+    return re.sub(r"\s+", " ", html_coz(s or "").replace("|", "/")).strip()
 
 
 def aday_dogrula(a):
@@ -506,6 +554,37 @@ NEGATIF = re.compile(
 DO_TELEFON = re.compile(r"\b8[024]9[\s\-.)]*\d{3}[\s\-.]?\d{4}\b")
 BOZUK_KULLANICI = re.compile(r"^(u00[0-9a-f]{2}|x[0-9a-f]{2}|%[0-9a-f]{2})", re.I)
 
+# Celik servis merkezi kendini "uretici" diye tanitmaz: "service centre", "slitting", "corte de
+# bobinas", "продольная резка" der; cogu ayni zamanda stokcu/ithalatci oldugu icin "trading" /
+# "importadora" izi de eleme sebebi degil. A ve B turlarinda bu yuzden elenen ~100 adayin
+# cogu gercek servis merkeziydi (Ann Joo, Russel Metals, Venture Steel, Coil Pro, Flinkenberg).
+SERVIS_TANIM = re.compile(IMALATCI.pattern + "|" +
+    r"service ?cent(er|re)|servicecent|coil (processing|cent(er|re))|(steel|metal|coil) processing|"
+    r"processing (cent(er|re)|services?|capabilit)|slitt|slitter|cut[ -]to[ -]length|shearing|decoil|"
+    r"centro de servicio|centro de servi[cç]os|centre de (service|parach)|parach[eè]vement|refendage|"
+    r"fractionnage|coupage (des |de )?bobines|cisaillage|travail [aà] fa[cç]on|"
+    r"cortes? (longitudinal|transversal|de bobina|y rebaje|a flejes)|slitteo|flej(e|ad)|"
+    r"planchado y corte|alisado y corte|rebobinad|process?adora|"
+    r"металлосервис|металлоцентр|продольн\w* резк|поперечн\w* резк|резка (рулон|металл)|"
+    r"xả băng|cắt tấm|gia công thép|jasa (slitting|shearing|potong)|slitting coil|shearing coil|"
+    r"spaltning|stålservice|metal service|metall ?service", re.I)
+NEGATIF_SERVIS = re.compile(
+    r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
+    r"\bstore\b|\bshop\b|ferreter|home ?cent|hardware|precio|price list|pre[cç]o|\bprix\b|comprar|"
+    r"buy online|marketplace|cotiza en l[ií]nea|installer|instalador|contractor|contratista|consult|"
+    r"repuesto|spare parts|chisel|universit", re.I)
+# Pres atolyesi de "uretici" demeyebilir: "metal stamping", "estampado", "штамповка" yeter
+PRES_TANIM = re.compile(IMALATCI.pattern + "|" +
+    r"stamping|pressings?\b|pressed (metal|steel|parts?|components?)|press(ed)? parts|press shop|presswork|"
+    r"deep[ -]draw|progressive die|fine ?blank|estampad|estampaci[oó]n|estampagem|estamparia|troquelad|"
+    r"emboutiss|d[eé]coupage|штамповк|dập (kim loại|tấm|sắt|thép)|gia công dập|pengepresan|"
+    r"metal ?forming|conformado de (metal|chapa)", re.I)
+# segment -> (kendini tanitma, baslikta olmamasi gereken)
+TANIM = {"celik-servis-merkezi": (SERVIS_TANIM, NEGATIF_SERVIS), "pres-atolyeleri": (PRES_TANIM, NEGATIF)}
+# Siki suzgec kurali degisen segment: ara kayittaki ELENMIS satirlari yeniden degerlendirilir
+# (gecenler gecmis sayilir; yeni kural eskisinden gevsek).
+KURAL = {"celik-servis-merkezi": 2}
+
 
 def baslik_bilgisi(html):
     """<title>, meta/og aciklama, ilk H1 — firmanin kendini tanittigi yerler."""
@@ -541,6 +620,45 @@ def ad_sec(html, alan, serp_baslik):
     return etiket.replace("-", " ").title() if etiket else alan
 
 
+AYRAC = re.compile(r"\s+[-|–—·:/]\s+|:\s+|,\s*")
+HOSGELDIN = re.compile(r"^(welcome to|bienvenid[oa]s? a|bem[- ]vind[oa]s? [àa]|bienvenue (chez|sur|à))(?=[^\w]|$)\s*", re.I)
+KENAR = re.compile(r"^[^\w(«]+|[^\w)»]+$")
+TIRNAKLI = re.compile(r"[«\"“]([^»\"”]{2,45})[»\"”]")
+SIRKET_EKI = re.compile(r"\b(limited|ltd|llc|inc|corp(oration)?|company|gmbh|sdn bhd|bhd|pvt|pty|plc|ltda|"
+                        r"s\.?a\.?c?|s\.?r\.?l|industries|industrias|group|grupo|engineering)\b", re.I)
+
+
+def ad_duzelt(ad, alan):
+    """Sayfa basligindan gelen firma adi e-postada hitap oluyor: bas/son isaretler, "Welcome
+    to", uzun basliklar ayiklanir; ad cikmazsa alan adindan uretilir. Yazarken uygulanir —
+    ara kayittaki eski adlar da duzelir."""
+    etiket = re.sub(r"[^a-z0-9]", "", alan.split(".")[0].lower())
+    uyar = lambda p: len(etiket) >= 4 and etiket[:5] in re.sub(r"[^a-z0-9]", "", p.lower())
+    a = KENAR.sub("", HOSGELDIN.sub("", KENAR.sub("", html_coz(ad or "").strip())))
+    a = re.sub(r"\s+", " ", a).strip()
+    # "Firma – slogan", "Firma: urunler, urunler": alan adina uyan parca; uyan yoksa uzunsa ilki
+    parcalar = [KENAR.sub("", p) for p in AYRAC.split(a) if KENAR.sub("", p)]
+    uyan = [p for p in parcalar if uyar(p)]
+    if len(parcalar) > 1 and uyan:
+        a = uyan[0]
+    elif len(parcalar) > 1 and len(a) > 45:
+        a = parcalar[0]
+    if len(a) > 45:           # «Asia Stal Group» / "..."
+        t = TIRNAKLI.search(a)
+        if t:
+            a = t.group(1).strip()
+    # hala uzun ve sirket adi gibi durmuyor: basliktaki alan adina uyan kelime ("StroyVitrina.uz")
+    if len(a) > 45 and not (len(a) <= 60 and SIRKET_EKI.search(a)):
+        kelime = [k for k in re.findall(r"[\w.&'-]+", a) if uyar(k)]
+        a = re.sub(r"\.[a-z]{2,3}(\.[a-z]{2})?$", "", kelime[0]) if kelime else ""
+    a = re.sub(r"[\"“”«»]", "", a).strip()
+    if not a or "://" in a or a.lower().startswith("www.") or not re.search(r"[^\W\d_]", a):
+        return alan.split(".")[0].replace("-", " ").title() or alan
+    if a == a.lower() and re.sub(r"[^a-z0-9]", "", a) == etiket:
+        a = a.title()
+    return a
+
+
 def siki_dogrula(is_):
     """is_: (satir, aday). Doner: (satir|None, neden)."""
     satir, aday = is_
@@ -553,9 +671,10 @@ def siki_dogrula(is_):
     serp_ve_sayfa_basligi = " ".join([aday.get("title", ""),
                                       (re.search(r"<title[^>]*>(.*?)</title>", h1 or "", re.I | re.S) or [None, ""])[1],
                                       (re.search(r"<title[^>]*>(.*?)</title>", h0 or "", re.I | re.S) or [None, ""])[1]])
-    if NEGATIF.search(serp_ve_sayfa_basligi) and not IMALATCI.search(serp_ve_sayfa_basligi):
+    tanim, negatif = TANIM.get(aday.get("seg"), (IMALATCI, NEGATIF))
+    if negatif.search(serp_ve_sayfa_basligi) and not tanim.search(serp_ve_sayfa_basligi):
         return None, "başlıkta mağaza/kiralama/bayi izi"
-    if not IMALATCI.search(baslik):
+    if not tanim.search(baslik):
         return None, "kendini üretici olarak tanıtmıyor"
     if aday.get("iso") == "DO":
         alan = B.url_alani(satir["web"])
@@ -582,7 +701,15 @@ def siki_parca(parca):
 REHBER_BASLIK = re.compile(
     r"\b(directory|directorio|annuaire|companies in|empresas de .{0,20} en|list of|top ?\d+|best \d+|"
     r"\d+ (best|top|leading)|yellow ?pages|p[aá]ginas amarillas|business (list|listing|directory)|"
-    r"\d{3,} companies|compan(y|ies) list)\b", re.I)
+    r"\d{3,} companies|compan(y|ies) list|"
+    # B turu (2026-09-22): kurum, dernek, ajans, emlak — firma degil
+    r"federation|federaci[oó]n|f[eé]d[eé]ration|association|asociaci[oó]n|associa[cç][aã]o|chamber|"
+    r"c[aá]mara de|development agency|agencia|agency for|ministry|ministerio|minist[eè]re|council|"
+    r"market briefs?|real estate|inmobiliaria|imobili[aá]ria|портал|"
+    r"(business|b2b|construction|industrial|trade|building) portal|meilleures entreprises|"
+    r"mejores empresas|melhores empresas)\b", re.I)
+KURUM_ALANI = re.compile(r"(^|\.)(org|gov|gob|edu|ac|mil|int)(\.[a-z]{2})?$", re.I)
+METAL = re.compile(r"steel|metal|metál|металл|thép|besi|acero|a[cç]o\b|acier|stahl|čelik|челик|inox", re.I)
 DEV_MARKA = re.compile(
     r"(^|\.)(layher|abb|se|schneider-electric|legrand|eaton|siemens|hilti|obo|obo-bettermann|niedax|"
     r"panduit|atkore|kingspan|tatasteel|arcelormittal|ulma|ulmaconstruction|peri|doka|hunnebeck|altrad|"
@@ -598,13 +725,35 @@ YALITIM = re.compile(r"glass ?wool|rock ?wool|stone ?wool|mineral wool|insulatio
 CATI_URUN = re.compile(r"panel|sheet|roof|cladding|teja|l[aá]mina|telha|t[oô]le|bac|profnastil|профнастил|"
                        r"сэндвич|tôn|atap|genteng|corrugat|trapez", re.I)
 
+SERVIS_DISI = re.compile(r"\bhire\b|chisel|\bsaws?\b|repuesto|spare parts|auto ?parts|universit|conveyor|"
+                         r"sewing|scrap (metal|yard|dealer)|chatarr|sucata|ferraille", re.I)
+PRES_DISI = re.compile(r"rubber stamp|self[- ]?inking|\bseals?\b|\bsellos?\b|carimbo|tampon|печат|con dấu|"
+                       r"stempel|hot ?stamping|stamping foil|leather|textile|t-?shirt|printing|imprenta|"
+                       r"gr[aá]fica|passport|notar|postage|philatel|stamp duty|tattoo|concrete|clothing|cosmetic|"
+                       r"cart[oó]n|papel|\bpaper\b|plastigram|etiquetas?|\blabels?\b",
+                       re.I)
+# "slot" tek basina olmaz: "slotted cable tray", "slotted angle rack" gercek urun
+KUMAR = re.compile(r"\bslots? ?(online|gacor|terbaru|terpercaya|resmi|demo|88|777)\b|situs (slot|judi)|casino|"
+                   r"\bjudi\b|togel|gacor|login game|poker|\bbetting|sbobet", re.I)
+FIYAT = re.compile(r"price list|\bprices?\b|\bprecios?\b|\bpre[cç]os?\b|\bprix\b|bảng giá|báo giá|\bharga\b", re.I)
+KIRALIK = re.compile(r"\brenta\b|for rent\b|\balquiler|\baluguel|\bhire\b|\brental", re.I)
+PRES_METAL = re.compile(METAL.pattern + r"|alumin|deep[ -]draw|progressive|fine ?blank|sheet|chapa|l[aá]mina|"
+                        r"t[oô]le|листов|tấm|automotive|automot|bracket|washer|arandela", re.I)
+# Pres isi arama basliginda/ozetinde gorunmeli: "uretici" kelimesi tek basina yetmez (kelime
+# listesindeki "press" WordPress'te bile geciyor; metal mobilyaci pres atolyesi sayiliyordu)
+PRES_ISI = re.compile(r"stamp|pressings?\b|pressed|press(ed)? parts?|press shop|presswork|deep[ -]draw|"
+                      r"progressive die|fine ?blank|estampad|estampaci|estampagem|estamparia|troquel|"
+                      r"emboutiss|d[eé]coupage|штамп|dập|pengepresan|metal ?forming|conformado", re.I)
+
 
 def ince_suz(satir, aday):
     """Doner: neden (str) ya da None (gecti)."""
     metin = "%s %s" % (aday.get("title", ""), aday.get("description", ""))
     baslik = aday.get("title", "")
-    if REHBER_BASLIK.search(baslik):
-        return "rehber / liste başlığı"
+    if REHBER_BASLIK.search(baslik) or REHBER_BASLIK.search(satir.get("firma", "")):
+        return "rehber / kurum / liste başlığı"
+    if KURUM_ALANI.search(B.url_alani(satir["web"])):
+        return "kurum alan adı (.org/.gov/.edu)"
     if DEV_MARKA.search(B.url_alani(satir["web"])):
         return "dev marka şubesi"
     seg = aday.get("seg")
@@ -614,6 +763,22 @@ def ince_suz(satir, aday):
         return "güneş: montaj yapısı değil"
     if seg == "cati-cephe-paneli" and YALITIM.search(baslik) and not CATI_URUN.search(baslik):
         return "yalnız yalıtım"
+    if seg == "metal-mobilya" and not METAL.search(metin):
+        return "mobilya ama metal değil"
+    # D turu ornegi: "Andamios Querétaro - Venta, renta y ..." sıkı süzgeçten geçmişti
+    if KIRALIK.search(baslik) and not IMALATCI.search(baslik):
+        return "kiralama"
+    if KUMAR.search(metin):
+        return "ele geçirilmiş site (kumar reklamı)"
+    # Yalniz servis merkezinde: "X Price in Pakistan", "Báo Giá 2025" Guney Asya'da uretici
+    # sitelerinin de SEO basligi (Eurorack, Hi-Tech Autocon elenmisti)
+    if seg == "celik-servis-merkezi" and FIYAT.search(baslik) and not IMALATCI.search(baslik):
+        return "fiyat listesi — satıcı"
+    if seg == "celik-servis-merkezi" and SERVIS_DISI.search(metin):
+        return "servis merkezi değil (kiralama/yedek parça/hurda)"
+    if seg == "pres-atolyeleri" and (PRES_DISI.search(metin) or not PRES_METAL.search(metin)
+                                     or not PRES_ISI.search(metin)):
+        return "pres işi görünmüyor (kaşe/baskı/genel imalat)"
     return None
 
 
@@ -629,8 +794,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d"],
-                    help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli")
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e"],
+                    help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
+                         "e: oncelikli gruplar (servis merkezi, pres atolyesi)")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
@@ -739,6 +905,8 @@ def main():
     if os.path.exists(siki_yol):
         for sat in io.open(siki_yol, encoding="utf-8"):
             k = json.loads(sat)
+            if not k["satir"] and k.get("kural", 1) < KURAL.get(k["anahtar"][2], 1):
+                continue      # kural degisti: yeniden bakilacak
             siki[tuple(k["anahtar"])] = (k["satir"], k["neden"])
     anahtar_of = lambda x: (x["alan"], x["iso"], x["seg"])
     parcalar = [[is_ for is_ in p_ if anahtar_of(is_[1]) not in siki] for p_ in parcalar]
@@ -747,7 +915,8 @@ def main():
         for p_, sonuc in zip(parcalar, ex.map(siki_parca, parcalar)):
             for (satir0, x), (satir, n) in zip(p_, sonuc):
                 siki[anahtar_of(x)] = (satir, n)
-                kayit.write(json.dumps({"anahtar": anahtar_of(x), "satir": satir, "neden": n}, ensure_ascii=False) + "\n")
+                kayit.write(json.dumps({"anahtar": anahtar_of(x), "satir": satir, "neden": n,
+                                        "kural": KURAL.get(x["seg"], 1)}, ensure_ascii=False) + "\n")
     satirlar = []
     for satir0, x in ilk:
         satir, n = siki.get(anahtar_of(x), (None, "sıkı süzgeç yapılmadı"))
@@ -760,6 +929,8 @@ def main():
         else:
             n = "sıkı süzgeç — " + n
         neden[n] = neden.get(n, 0) + 1
+    for s_ in satirlar:
+        s_["firma"] = hucre(ad_duzelt(s_["firma"], B.url_alani(s_["web"])))
     # Ayni alan adi + ulke tek firma: segmentleri ayri satir kalir, sira ulke/firma
     satirlar.sort(key=lambda s: (s["ulke"], s["firma"].lower(), s["segment"]))
     firma_sayisi = len({(B.url_alani(s["web"]), s["ulke"]) for s in satirlar})
@@ -774,7 +945,8 @@ def main():
         "\"<ürün> üreticisi\" aramaları (%d ülke, %d arama, tur %s). `scripts/hedef-firma-kesif.py --tur %s`."
         % (len(ulke), len(aramalar), a.tur, a.tur), "",
         "Her satır otomatik doğrulandı: site açılıyor; segmentin ürünü sayfada geçiyor; firma kendini",
-        "ÜRETİCİ olarak tanıtıyor (arama başlığı/özeti ya da sayfa başlığı, açıklaması, H1'i) ve",
+        "ÜRETİCİ olarak tanıtıyor — çelik servis merkezinde dilme/boy kesme/işleme, pres atölyesinde",
+        "metal pres/derin çekme işi de sayılır — (arama başlığı/özeti ya da sayfa başlığı, açıklaması, H1'i) ve",
         "başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yerel uzantı ya da sitede",
         "ülke telefon kodu; Dominik Cumhuriyeti için 809/829/849); e-posta firmanın kendi sitesinde",
         "yazıyor (\"sitede:\" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.",

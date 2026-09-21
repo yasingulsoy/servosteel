@@ -12940,5 +12940,9143 @@
 "not": "Market Rafı · site açılmadı, tekrar bakılmalı",
 "dogrulandi": false,
 "site": false
+},
+"shuwagroup.com|ruanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"marketkonekt.com|sırbistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"clearyinstallations.ie|i̇rlanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"maxistor.ie|i̇rlanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"shelvingireland.ie|i̇rlanda": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"steelwoodnepal.com|nepal": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"atlas.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"steelindustries.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"rwandalinker.com|ruanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"elmontprofil.rs|sırbistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"potensperforacija.com|sırbistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"tankmont.com|sırbistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"bolideinfrastructure.com|zambiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"zambezi-roofing.com|zambiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metalformsolutions.co.zw|zimbabve": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"fayco.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"gusclad.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"oconnorroofing.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"skyclad.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"borga.com|i̇sveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"europrofil.se|i̇sveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"scandbygg.se|i̇sveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"stalprofil.se|i̇sveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dekoll.al|arnavutluk": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"bilev.az|azerbaycan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"al-m.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"canbos.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"limometal.com|bosna-hersek": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lovic.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"promaica.com|el salvador": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"servitecho.com.sv|el salvador": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"gepo.am|ermenistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ruukki.com|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"katepal.net|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kingi.fi|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metehe.fi|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"piristeel.fi|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vesivek.fi|finlandiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hermeq.nl|hollanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, İskele Kalası, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"kamildak.nl|hollanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"proenco.hn|honduras": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"liting.com.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"europanel.md|moldova": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"housefindernam.com|namibya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"southerncrossroofing.com|namibya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"prologistica.com|honduras": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"aapgroup.com.kh|kamboçya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"hartapack.com|kamboçya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"warehouse-solutionspecialized.asia|kamboçya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rmac.com.kh|kamboçya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"s3vtgroup.com.kh|kamboçya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"termalift.com.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"nlpool.no|norveç": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"spectra.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"ipigroup.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"lavasistemi.rs|sırbistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"challywoodpallets.co.zw|zimbabve": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"jungheinrich-shop.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"ohra.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rackzone.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"storagesystems.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"storeware.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"qimtek.se|i̇sveç": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mt-komex.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sunchaserx.com|bosna-hersek": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"bia.ge|gürcistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"enstall.com|hollanda": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"greenrack.nl|hollanda": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"gtm-as.com|hollanda": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"verticalsolar.nl|hollanda": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"advancedsolar.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sunchaserx.com|libya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"madagascar-tribune.com|madagaskar": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"neutron-mali.com|mali": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sunchaserx.com|moğolistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"mt-komex.co.rs|sırbistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"solarsystem.cwlundberg.com|i̇sveç": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"tectopower.se|i̇sveç": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"makoro.co.bw|botsvana": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"grupoindustrialamerica.com|nikaragua": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"saferoad.com|norveç": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"irishfencing.com|i̇rlanda": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"ridgewayfencing.com|i̇rlanda": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"nordicroadsafety.com|i̇sveç": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"miilux.fi|finlandiya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"vaski.com|finlandiya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"naggiar.net|lübnan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"oglaend-system.com|norveç": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"spac.com.pg|papua yeni gine": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"vahdat.bvbalyans.tj|tacikistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"kanis.rw|ruanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"eme.co.bw|botsvana": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"oldwood.nl|hollanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"dekometa.com.mk|kuzey makedonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"skfurnitureco.com|malavi": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"brightstarinds.com|mauritius": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"joonasindustries.com|mauritius": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"evereststeel.com.np|nepal": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"huskpowernepal.com.np|nepal": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mueblesenlinea.com|nikaragua": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metallockers.rs|sırbistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"store.almacssteel.co.zm|zambiya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"thirdevolution.co.zw|zimbabve": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"allstorageproviders.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"expondo.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"lockers.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"gigant.se|i̇sveç": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"venkonair.com|arnavutluk": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mrtechnic.az|azerbaycan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tarsagroup.az|azerbaycan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"globalexpo.co.bw|botsvana": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductsal.com|el salvador": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fsoperaciones.com|el salvador": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"msl.com.fj|fiji": {
+"kategori": 5,
+"not": "Havalandırma Kanalı · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"aquaheat.com.fj|fiji": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airpower.fi|finlandiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"reddion.com|hollanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"gauge.ly|libya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"halloumgroup.com|lübnan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tmmlebanon.com|lübnan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"robarmw.com|malavi": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aerolik.com|mauritius": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mansersaxon.com|mauritius": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ikhgobi.mn|moğolistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"uvashigroup.mn|moğolistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"scafftex.ie|i̇rlanda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"fasadgruppen.se|i̇sveç": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"elektro-inshaat.az|azerbaycan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hermi-solutions.com|bosna-hersek": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"zylelsalvador.com|el salvador": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"energovest.am|ermenistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"intelec.am|ermenistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"luxel.am|ermenistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"electomech.com|fiji": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"wibe-group.com|finlandiya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"domino.com.ge|gürcistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"eurostrut.com|hollanda": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"emsoind.com|honduras": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kiripost.com|kamboçya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"loubnany.com|lübnan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tramsteel.com|lübnan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aquamad.mg|madagaskar": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"brikonek.mu|mauritius": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ktcgroup.com.np|nepal": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vaishnostorage.com|nepal": {
+"kategori": 1,
+"not": "Kablo Kanalı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"sun-net.no|norveç": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hermi-solutions.com|sırbistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"asmlafrica.com|zambiya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"excelelectric.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"wibe-group.com|i̇sveç": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"meridian.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"bonanzaafrica.com|botsvana": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"thtt.fi|finlandiya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"milanostandsteel.com|lübnan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"handlerkraft.md|moldova": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"stelaj.md|moldova": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"megal.rs|sırbistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"paletniregali.rs|sırbistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"fleifel.com|lübnan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"klcranesbot.com|botsvana": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"hecasa.com.sv|el salvador": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"sistemasyproyectos.com.sv|el salvador": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"jobs.am|ermenistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"k2.ge|gürcistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"nimar.nl|hollanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"starke.com.na|namibya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"importacionesclimatec.com|nikaragua": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"termosistemanic.com|nikaragua": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aermade.no|norveç": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"isopartner.no|norveç": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"teknotherm.no|norveç": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"smartwebsocialsolution.com|papua yeni gine": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"alien.rw|ruanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"altera-ecd.rs|sırbistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"stinkom.rs|sırbistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"svecom.rs|sırbistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fezsughd.tj|tacikistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tajclim.tj|tacikistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"eurekatechzambia.com|zambiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aaventilation.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"acmanufacturing.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airtechstore.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"breffniair.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"freshairsupplies.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"isopartner.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mcaree-eng.com|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"shcbysweden.se|i̇sveç": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tvim.az|azerbaycan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"metaltehnologija.com|bosna-hersek": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"stainlessteam.fi|finlandiya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"werkcon.nl|hollanda": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"ccs-btp.com|moritanya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"monikagroup.com|nepal": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"prodanovic.rs|sırbistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"zamefa.com|zambiya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"unitedgypsum.co.zm|zambiya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"unitefasteners.com|i̇sveç": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"brandex.az|azerbaycan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"drvodizajn.ba|bosna-hersek": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"astecoolers.com|finlandiya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"elis.ge|gürcistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"congo-equipment.com|kongo dc": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"frigosan.com.mk|kuzey makedonya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"tracom.md|moldova": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"vitra.md|moldova": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"al-lux.ba|bosna-hersek": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"arantsk.am|ermenistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"pages.am|ermenistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"roofingandprofiles.com.fj|fiji": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"y2mcoltd.com|mauritius": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"roofart.md|moldova": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mongolianbusinessdatabase.com|moğolistan": {
+"kategori": 1,
+"not": "Raf Sistemleri, Solar Profil · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"bizon.tj|tacikistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"somon.tj|tacikistan": {
+"kategori": 1,
+"not": "İskele Kalası · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"eurosteel.al|arnavutluk": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ecomabenin.com|benin": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"metaling-jajce.com|bosna-hersek": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelco.co.bw|botsvana": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"construction.am|ermenistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"rmsgroup.am|ermenistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dayalssteels.com|fiji": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"aurajoki.fi|finlandiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"procons.fi|finlandiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelis.fi|finlandiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"sth-steel.fi|finlandiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"teraselementti.fi|finlandiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"tiggelovend-kok.nl|hollanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"wuppermann.com|hollanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dematco.net|kongo dc": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"aktiva.com.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ipmsteel.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelcon.mk|kuzey makedonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"rabyhalmutawassit.ly|libya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"simteclb.com|lübnan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dalalsteel.com|lübnan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"sultansteel.com|lübnan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"artisanpro-services.com|mali": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kosto.mu|mauritius": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"alcotek.md|moldova": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"angar.md|moldova": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"comsales.md|moldova": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"metalogalva.md|moldova": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"en.engineering-service.mn|moğolistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"wv.com.na|namibya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"hulassteel.com.np|nepal": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"yetipanel.com|namibya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"jagdambasteels.com|nepal": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"en.nordicsteel.no|norveç": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kenmore.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"picsa.com.pg|papua yeni gine": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"allcity.rw|ruanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"upcot.rw|ruanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"rolomatik.com|sırbistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"toza.rs|sırbistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"bvbalyans.tj|tacikistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sohtmon.farovon.tj|tacikistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sototoles.com|togo": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kitweprocessing.com|zambiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"altcom.co.zw|zimbabve": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"chromadek.co.zw|zimbabve": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vakisa.co.zw|zimbabve": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"befab.com|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"eqc.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hermeq.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, İskele Kalası, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"hostingireland.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kami.se|i̇sveç": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"namibiaindustrialsupplies.com.na|namibya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sokoing.rs|sırbistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"metak.az|azerbaycan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"clydepac.com|fiji": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"baltscand.com|finlandiya": {
+"kategori": 1,
+"not": "İskele Kalası, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"litana-group.com|finlandiya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"pept.fi|finlandiya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"storent.fi|finlandiya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"tutonmetal.ge|gürcistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"euroscaffold.com|hollanda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"fcg.nl|hollanda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"artilan.nl|hollanda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ach-lb.com|lübnan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ahmadiehgroup.com|lübnan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"bcslb.com|lübnan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"mcmining.mg|madagaskar": {
+"kategori": 1,
+"not": "İskele Kalası, Kablo Kanalı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"papputradeconcern.com|nepal": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"pramoal.rs|sırbistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ages.co.zw|zimbabve": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"arkobuildingproducts.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"atonengineering.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"guptaironsteel.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"madhavpipesandsteels.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"malurtubes.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"mohansteelcorp.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"parthcon.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"parthconengginfra.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"preengineeringsteelbuilding.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"shreerampeb.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"skylineindia.net|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"smesteel.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vedanshipeb.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"grupoazero.mx|meksika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"elosteel.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"gz-supplies.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"sevan-nigeria.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"wsteels.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"alabuo.sa|suudi arabistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"contractingksa.site|suudi arabistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"rafcosteel-sa.com|suudi arabistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"noithat190.com.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"thepbinhduong.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"xagocomposite.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"corelitecomposites.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"acepanels.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"arcpanel.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"austecpanels.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"linersupply.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"melbourneeps.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sipsindustries.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"structuralpanels.com.au|avustralya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sandwichpanelbangladesh.com|bangladeş": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"aciersgrosjean.be|belçika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"euro-profilage.com|belçika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"zinctech.be|belçika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hallgruppen.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelsell.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"galvanofer.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lbeltelhas.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metalesgpa.com.uy|uruguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tubacero.com.uy|uruguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"matec.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mcc.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelviet.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"rockwave.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelntm.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"fibrepro.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"thecompositegroup.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alltrade.uz|özbekistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelplast.uz|özbekistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"staldom.uz|özbekistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"teccojo.com|ürdün": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cubiertasmyc.cl|şili": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tecna-zinc.cl|şili": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ablemetal.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"berridge.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"douglasmetalroofing.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"higginssteelroofing.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"worthouse.com|abd": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"brasitoptelhas.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"criativatp.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"galvaminas.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"minasgoiastelhas.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"multiferferro.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"rbtelhasecalhas.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sanferaco.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"surimetais.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"telhasbarreiro.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"fabricadetelhasanduiche.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"visaco.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"zacelis.com.br|brezilya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"harlenciptautama.co.id|endonezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"constructionconnection.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"duro.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"gsmsteel.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"roofingsuppliers.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"atlasmetcore.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"azsteelroof.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"karimindustries.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kunj-enterprise.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mgindustries.net.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mountroof.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"pararthproducts.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ravifibre.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"roofingsheetmanufacturers.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"technonicol.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"wawroof.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cuqro.mx|meksika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"arcotechosestructuraselguero.com|meksika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"insutech-eg.com|mısır": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"siliconvalleyaluminium.com.ng|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"topkenroofing.com|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"encorearabia.com|suudi arabistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"baogiathepxaydung.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"butraco.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"daivietsteel.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"myvietgroup.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tanhongphuc.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mftsa.co.za|güney afrika": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"universesteelfactory.com|tunus": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"shreemahalaxmisteel.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"onggiohaianh.com.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"anyladder.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"kennisonforest.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scaffoldexpress.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"antascaffolding.com|angola": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"metalusa.co.ao|angola": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"andamiosalquimaq.com.ar|arjantin": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"andamioshaedo.com.ar|arjantin": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"turme.com.ar|arjantin": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"leoscaff.com|bae": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"shahidind.com|bae": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"diffusionmenuiserie.be|belçika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"slv-group.be|belçika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"brisko.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "İskele Kalası · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"caspiangroup.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"entrepose-mills.dz|cezayir": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"nicoletti-caribe.com|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"dapengmaoyiindonesia.com|endonezya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"qaprofil.com.qa|katar": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"becam.com.uy|uruguay": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"fosatrade.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"framecad.com|abd": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"scottsdalesteelframes.com|abd": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"australiansteelframing.com.au|avustralya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"cevisco.com.au|avustralya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dynamicsteelframe.com.au|avustralya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelframestrusses.net.au|avustralya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"portacabinsuae.com|bae": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"actil-bd.com|bangladeş": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"belgium-metal.be|belçika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"linden.be|belçika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"petermueller.be|belçika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steeltec.be|belçika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"acerodesigns.com|birleşik krallık": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"caledan.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"frameclad.com|birleşik krallık": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"lgsf.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"siclabrasil.com.br|brezilya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"quisqueyaacero.com|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"blokmodulaire.com|fas": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"charpente-maroc.com|fas": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ecosteelindustrie.com|fas": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"metalix.ma|fas": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"cic-ci.com|fildişi sahili": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"geniemetallique-ci.com|fildişi sahili": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"palcharpentier.com|fildişi sahili": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"armadal.fr|fransa": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"westcoastroofinggh.com|gana": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"csteel.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"lightsteel.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"lsfco.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelfd.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelframe.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"abhiyashindustries.co.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ajmerametals.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kishoreindustries.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"pmimpex.in|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"vipulinfraprojects.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"aluzincadimex.com|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"grupoaluzinc.com.do|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"harmonibinaprima.com|endonezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sandwichpanel-indonesia.co.id|endonezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"atlantique-profilage.fr|fransa": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"laminascondor.com|guatemala": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"absolutecontainers.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"afripanels.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"coolmaintenance.com|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"eastrandcontainers.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ecopanel.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"isowall.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mprojects.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelmanufacturing.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelsell.co.za|güney afrika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alfaapanels.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mactec.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metecno.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"nakron.in|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"phoenixxsmartbuild.com|hindistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"iraqinet.net|irak": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"npbsco.com|irak": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"advancedpanel.com|kanada": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"artspaninc.com|kanada": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelsell.ca|kanada": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"structuralpanels.ca|kanada": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"thermo-design.com|kanada": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"dspqatar.com|katar": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"qatarfactories.qa|katar": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"qatarcontact.com|katar": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"bmgholding.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kazpan.com|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"khadid.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kzok.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mayakmetall.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"nurzhas.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"profholod-kazakhstan.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sg10.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"astana.smartgroupkst.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"stynergy.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"feniebrossette.ma|fas": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"tachrone.ma|fas": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"metalusa.ci|fildişi sahili": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"fortal.fr|fransa": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"emsupplydirect.co.za|güney afrika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"mrladder.co.za|güney afrika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"allmarcindia.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scaffoldingsolutionqatar.com|katar": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"soyuz.pro|kazakistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"remiven.co.ke|kenya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"garciavega.co|kolombiya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scafor.com.co|kolombiya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"elmeck.com|kuveyt": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"krscaffold.com|malezya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"anma.com.pe|peru": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sirl.pt|portekiz": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"affixksa.com|suudi arabistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"arkansaudi.com|suudi arabistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"rotonco.com|suudi arabistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"tukoequipmentsupplier.co.tz|tanzanya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"jamalitech.com|uganda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"giangiaoxaydung.com.vn|vietnam": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"tanhoangthinh.com.vn|vietnam": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"metall-invest.uz|özbekistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"californiascaffolding.net|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"industrialrope.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"skylinescaffold.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"stvaonline.com|abd": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"indosteger.co.id|endonezya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scaffoldingnasionalindonesia.com|endonezya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"solusibangunan.id|endonezya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"safeheights.co.za|güney afrika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scaffoldwarehouse.co.za|güney afrika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sgbcape.com|güney afrika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"alliance-scaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"buildrich.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"buildscaff.net|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"diamondscaffolding.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"expee.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"gkmladders.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ricosteelsyndicate.co.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"saimetalsolution.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"shobhaglobs.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"voltampelectricals.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"wellcraft.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"acomee.com.mx|meksika": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"executone.com.mx|meksika": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"dungcuthicongxaylapdien.com.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ieec.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mysteel.com.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ngocminhec.com.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"thanhtien.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"estanterias.com.pa|panama": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mcgeeatlanta.com|abd": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rolloutracks.com|abd": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"astroshelving.co.za|güney afrika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"snehastoragesystem.in|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"estanteria.com.br|brezilya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mechchemssteel.in|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"racks-queretaro.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"goprestige.com|abd": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"stow-group.com|abd": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"metalpro.co.ao|angola": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"apcgroup.com.au|avustralya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"saferstoragesystems.com.au|avustralya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"bigdug.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"still.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"solucoesindustriais.com.br|brezilya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"bendertrading.com.do|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"suplidorarenma.com|dominik cumhuriyeti": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"ingerack.com.ec|ekvador": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rak.ec|ekvador": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"maroc-vente-producteurs-fournisseurs-importateurs.com|fas": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"manorga.com|fransa": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"akdenizrack.com|gana": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"indobuilt.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"metalstoragesystems.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"jjstoragesystems.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"conceptstorage.com|kanada": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"acsq.com.qa|katar": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"jigneshindustries.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"jkscaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"mnscaffolding.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"msscaffoldingmanufacturers.co.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"msafegroup.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"mumbaiscaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"pondhan.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"rksladders.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"brandscaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"arscaffolding.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"gujaratscaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"namoscaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sdsdelhi.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sendhamarai.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"sendhamarai.co|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"translitescaffolding.com|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"universalscaffolders.co.in|hindistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"mundiacero.com|meksika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"kairos-ct.com|mısır": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"alphabravoservices.com|nijerya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"findout.com.ng|nijerya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ascend.sa|suudi arabistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"giangiaomienbac.vn|vietnam": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"cmeargentina.com|arjantin": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"flexistrut.com.au|avustralya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"emiuae.ae|bae": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hadleygroup.ae|bae": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"legendstar.ae|bae": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mcrs.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"bandeirantesperfis.com.br|brezilya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"calhaskennedy.com.br|brezilya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"poleoduto.com.br|brezilya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"pabrikkabeltray.id|endonezya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ionee.co.id|endonezya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"trugrid.co.za|güney afrika": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mitoolcabletray.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"evolutionentp.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"saicabletraysindia.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"qatartechnical.com|katar": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"elcos.kz|kazakistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"orienttech.com.qa|katar": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rumaillahgroup.com|katar": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"nilewaynesgroup.com|kenya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"estanteria-mexico.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"estantesyanaquelesjackrack.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"estantes-metalicos.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"estantesnacionales.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"industrialdepot.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"provost.pt|portekiz": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"racks.pt|portekiz": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"easternwin.com|singapur": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"racking.sg|singapur": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"yktoh.com|singapur": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"zessentials.sg|singapur": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"beststorage.co.th|tayland": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"2sbtunisie.com|tunus": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"meublemetallique.com|tunus": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"bigllcoman.com|umman": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"cokhi3s.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"3arack.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kekhohangnamphat.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kesatngoctin.com|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"hydestor.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"barso.uz|özbekistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kifato.uz|özbekistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"raxpro.uz|özbekistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rotar.cl|şili": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rusticoindustrial.cl|şili": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"sjf.com|abd": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"travema.com.br|brezilya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"abpstoragesystems.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"aestoragesolution.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"jungheinrich.in|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"maxspacerackingsystems.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"myriadstoragesystem.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"planncosteel.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"pushpastorage.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rashmiracks.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"spacecreate.in|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"spancostorage.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"geesysindia.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"mnrelectricals.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"nationalpolecorporation.co.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"redbirdindia.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sahyadriindustries.co.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"skipperlimited.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"smartcubeindia.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"smssolutions.co.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sohumind.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"solbesolar.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"strolar.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"thakkargroup.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"vajrasimhaindustries.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"venturasalasar.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"yrsgroup.co.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"atlas-solar.com.mx|meksika": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"ecosolaris.com.mx|meksika": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"renixenergy.com|mısır": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"solar.sa.com|suudi arabistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"vntruss.vn|vietnam": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"australianbollards.com.au|avustralya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"safetyxpress.com.au|avustralya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"goronggorongbaja.id|endonezya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"guardrail.id|endonezya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"solusibersama.co.id|endonezya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"metalbondgh.com|gana": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"omenterprisesgrouppune.in|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"ynmsafety.com|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"phoenixfence.ca|kanada": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"11do.kz|kazakistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"almaty.kmicom.kz|kazakistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"bpi.com.pk|pakistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"era.com.pe|peru": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"digitalways.com.sa|suudi arabistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"chihaodecor.vn|vietnam": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"congtythanhtri.com.vn|vietnam": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"topcru.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"abc13.com|abd": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"barrier1.com|abd": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"racerock.com|abd": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"commic-sarl.com|kamerun": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"sococam-cm.com|kamerun": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"destnest.ca|kanada": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"eco-structure.ca|kanada": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"royaltp.com|kanada": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelframelab.com|kanada": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"yppcanada.com|kanada": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"alwasitcabins.com|katar": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"andrometa.kz|kazakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"astraprofil.kz|kazakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"gyj.com.co|kolombiya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ttkbuildingmaterials.com|malezya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"doumicom.com|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"vogue-engineering.com|pakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"comstalpanama.com|panama": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ht.com.pa|panama": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"prisa-pma.com|panama": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"zarpo.com.py|paraguay": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"alphaomega-groupe.com|senegal": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"eia-industries.com|senegal": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"wiren.co.tz|tanzanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"3dmetal.tn|tunus": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"multipleindustries.com|uganda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ducmanh.com.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"khaivy.com.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ezisteel.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"silverframes.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelframeman.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelframesolutions.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"borgasteel.com|abd": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"georgiametals.com|abd": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"acocerto.com.br|brezilya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ferrosl.com.br|brezilya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"sigmaaco.com.br|brezilya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"histeel.co.id|endonezya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"blackblock.africa|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"lrjsteel.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"midlandssteelstructures.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"roofbuilders.co.za|güney afrika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alwarsdeckindustry.com|hindistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"spanglesteel.net|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"technicostoragesystem.com|hindistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"bullracksdemexico.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"emerax.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"fabricacionesmetalicas.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"interflo.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"losai.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"maquiser.com|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"masracks.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"persamty.com|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rackt.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rcracks.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"silaracks.com.mx|meksika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"arab-mech.com|mısır": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"cardinalintegratedglobal.com|nijerya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kesathoamy.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"pentech.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"vietpos.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"fiasa.com.ar|arjantin": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"alshurooq.ae|bae": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"walraven.com|belçika": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"uksol.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"newfix.com.br|brezilya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"paratureforma.com|fildişi sahili": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"solnxtenergy.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"srpl-group.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"fps.kz|kazakistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"desproing.com|kolombiya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"indesa.com.co|kolombiya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"amazingsolar.com.my|malezya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"cokhingaicau.vn|vietnam": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"sunpower.net.vn|vietnam": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"zalaa.vn|vietnam": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"bowstone.net|abd": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"clenerack.co.za|güney afrika": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"solarsonic.co.za|güney afrika": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"arkadeepsolar.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"arssolartech.com|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"engko.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"finepunch.in|hindistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"tss-invest.kz|kazakistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"edemco.co|kolombiya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"proelco.com.co|kolombiya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"simsamx.mx|meksika": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cbmetal.com.pe|peru": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"coastalsaudi.net|suudi arabistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"africab.co.tz|tanzanya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"iaestz.com|tanzanya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sep.co.nz|yeni zelanda": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vyselectricidad.cl|şili": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"yamoli.cl|şili": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cemi-usa.com|abd": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ovisinc.com|abd": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"progoffice.com|abd": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"selcomfg.com|abd": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"grupoags.ind.br|brezilya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sifraeletro.com.br|brezilya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vrselectrical.co.za|güney afrika": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"apelectronic.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"akaaltech.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aksharacabletrays.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aparnarollform.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"jpelectricalcabletray.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cabletrays.co.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"econosteel.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"electrotechindustries.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"electrotechindustries.co.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"harshdeepcabletray.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hellermanntyton.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hindrunwaysystems.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jkrchennai.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kiashelectricals.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mahendraenterprises.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"makcabletrays.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"metalixind.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mrsrack.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"nationalsteelindustries.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"srperforators.com|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"rkengsolutions.co.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ralbo.in|hindistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"steels.kg|kırgızistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"annjoo.com.my|malezya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"m.nikkinmalaysia.com.my|malezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"saddiquesons.com|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"snssteel.com|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"universalironandsteel.com|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"comasa.com.pe|peru": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"imelsa.com.pe|peru": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"yohersa.com|peru": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"m-oliveira.com|portekiz": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sverdrupsteel.com|portekiz": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"cotcometalworks.co.th|tayland": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sumishometal.co.th|tayland": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"starflysteel.com|uganda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"kiwisteel.co.nz|yeni zelanda": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"gkws.uz|özbekistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"kzmc.uz|özbekistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steels.uz|özbekistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"titanprime.uz|özbekistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"aceromat.cl|şili": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ctmaceros.cl|şili": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"dipisa.cl|şili": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"formac.cl|şili": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"multiaceros.cl|şili": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"feon.fi|finlandiya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"flinkenberg.fi|finlandiya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"igmtrade.com|kuzey makedonya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bmtlb.com|lübnan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"demcosteel.com|lübnan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"joonasco.com|mauritius": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"emal.rs|sırbistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelservicecenter.co.rs|sırbistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"parfansteel.co.zw|zimbabve": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steel.ie|i̇rlanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bangbrostripsteel.se|i̇sveç": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"hnp.se|i̇sveç": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"millsteel.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ahmadind.com|bae": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"eu.nlmk.com|belçika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"centenarioaco.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metalmade.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"servmat.co.za|güney afrika": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"vulcansteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelbank.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"twrsteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"unmet.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bcsspl.in|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"divyrollform.com|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metinox.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metronox.co.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"narbadasteels.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"nexasteel.in|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"raunaqsteels.com|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"realmservices.co.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"shankheshwarsteel.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"shriparasnathsteelcompany.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"skslitters.com|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ssssgroup.com|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelex.net.in|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bensamex.com|meksika": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"temisa.mx|meksika": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"ezzsteel.com|mısır": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"rsstainless.com|mısır": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bluescope.com|avustralya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"gamsteel.com.au|avustralya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"unitedsteel.com.au|avustralya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bilalindustries.com|bae": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"fistco.net|bae": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"mideastmetal.com|bae": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"qsteel.net|bae": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"seasoninternational.net|bahreyn": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"vergalle.be|belçika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"allmetal.co.uk|birleşik krallık": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"businessmagnet.co.uk|birleşik krallık": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"sebden.com|birleşik krallık": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ssclaser.co.uk|birleşik krallık": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"mba-aco.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metalmotiva.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"holding-sns.dz|cezayir": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"wesleyconnect.com|endonezya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"diz-ghana.com|gana": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"isilosteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"jcpsteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"leitasteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sricity.in|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tracxn.com|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"knauf-interfer.com|hollanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ksservicecenter.com|hollanda": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"orbitaltrading.nl|hollanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"otk-stainless.com|hollanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"stainlessbandeurope.nl|hollanda": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"aceroscortados.com|honduras": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"canadasteel.ca|kanada": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"kitchenersteel.com|kanada": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metalsrus.ca|kanada": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sarnialambton.on.ca|kanada": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"nbtcqatar.com|katar": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metkar.kz|kazakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"arme.co|kolombiya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"imcck.com|kuveyt": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"qatamisteel.com|kuveyt": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"technoprom.kg|kırgızistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"thsteel.com.ly|libya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ppssc.com.my|malezya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"tozzhin.com.my|malezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"alisteel.com.eg|mısır": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"arcosteel.com.eg|mısır": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"linda.com.eg|mısır": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sabasteelng.com|nijerya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"isl.com.pk|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ncs-steel.pt|portekiz": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"akribis-sys.com|singapur": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"starke.com.sg|singapur": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"alatnicabarovic.com|sırbistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"companywall.rs|sırbistan": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"netmagazin.rs|sırbistan": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"planplus.rs|sırbistan": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"maxsteel.co.th|tayland": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"excellentsteeloman.com|umman": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"hayesint.co.nz|yeni zelanda": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"dialsat.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"mbp.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"golin.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tetraferro.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ssd.ma|fas": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ars-metal.com|fransa": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"graytexmetals.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelbankstainless.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"smpcindia.com|hindistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"www2.varsteel.ca|kanada": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ametall.kz|kazakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steel-tech.kz|kazakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tuboscolmena.com|kolombiya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"aislamientoindustrial.com|kosta rika": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"kinkee.com.my|malezya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ykpipes.com|malezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"donghaemmc.com|mısır": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"solwa.com.py|paraguay": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"alrouf.com.sa|suudi arabistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"pipingmaterial.sa|suudi arabistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"smc.vn|vietnam": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"thepdaiphat.vn|vietnam": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tonthepthangloi.com|vietnam": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"easysteel.co.nz|yeni zelanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"fribesco.com|yeni zelanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"azz.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"coilsteelprocessing.com|abd": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"harborpipe.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ohiopickling.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"pdmsteel.com|abd": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"scottsteelllc.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"scrapmonster.com|abd": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"imginox.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"kortgeral.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"mbmmetalurgica.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"somabrasil.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tecnotaglio.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ds-metalworks.com|endonezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sinarwajaindah.com|endonezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"berricktrading.co.za|güney afrika": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"surabayaindodepo.co.id|endonezya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"aaronpole.com|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"grinfra.com|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"rsiplgroup.com|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"vertexroadsafety.com|hindistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"brc.com.sa|suudi arabistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"saudipolycon.com|suudi arabistan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"atgtbactrungnam.vn|vietnam": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"congtyphonglinh.vn|vietnam": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"casmetal.com.ar|arjantin": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"pradecon.com.ar|arjantin": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"coilsteels.com.au|avustralya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"coilpro.be|belçika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"lsc-belgium.com|belçika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"asd.ltd|birleşik krallık": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"uss-limited.co.uk|birleşik krallık": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"acoplano.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"acoservice.com.br|brezilya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"pontescm.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"sampaio-sa.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"stripsteel.com.br|brezilya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"tracofer.dz|cezayir": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"proaluzinc.com.do|dominik cumhuriyeti": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"centroacero.com.ec|ekvador": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"bangunerasukses.com|endonezya": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"persadawijayasentosa.com|endonezya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"mmsteel.com.ph|filipinler": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"at2t.fr|fransa": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"selectsteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelpipespe.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"teichmannsteel.co.za|güney afrika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"biscosteels.com|hindistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"imperialms.ca|kanada": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"russelmetals.com|kanada": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"venturesteel.com|kanada": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"unionsteelqatar.com|katar": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steels.kz|kazakistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"steelstructureskenya.com|kenya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"costarica.centurymetals.com|kosta rika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"kzmc.kg|kırgızistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"r3labecuador.com|ekvador": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"satnusa.com|endonezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"manengineering.co.id|endonezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"fabricatorphilippines.com|filipinler": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sampoph.com|filipinler": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"shinkozan.com|filipinler": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"keymet.fi|finlandiya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"adiamix.com|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"groupe-tma.com|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"kuchly-sa.fr|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"oureval.fr|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sagaert.com|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"prema123.com|guatemala": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"allpress-sa.com|güney afrika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bead-shack.co.za|güney afrika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jamscoauto.co.za|güney afrika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"shoreham.co.za|güney afrika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ukhunimetal.co.za|güney afrika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bombaymetrics.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"coherentmarketinsights.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"devchhayagroup.in|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"eigenengineering.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"frigate.ai|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sanautomotive.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"saxeo.in|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"shilpansteelcast.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"shrihariindustries.co.in|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"swanindia.com|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"victura.co.in|hindistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"euro-techniek.nl|hollanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"hut.nl|hollanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"kmwe.com|hollanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"vekotechnology.com|hollanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"stratco.com.kh|kamboçya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"globestamping.com|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"hamiltonstamping.com|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"klassenfab.com|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"olympictoolanddie.com|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"promarkmfg.ca|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"trilliummetal.com|kanada": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"metaloffice.pe|peru": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metalco.pe|peru": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metalcom.pe|peru": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"adira.pt|portekiz": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"guialmi.pt|portekiz": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"afc.com.sg|singapur": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"heatofficefurniture.com|singapur": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"damro.lk|sri lanka": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"balton.com.uy|uruguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"pq-metalurgica.uy|uruguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"xuonghoaphat.com|vietnam": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mirseifov.uz|özbekistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"pro-nerj.uz|özbekistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"soni-ta.uz|özbekistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metalforma.cl|şili": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mueblesindustriales.cl|şili": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"asi-storage.com|abd": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"parentmetal.com|abd": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"source4industries.com|abd": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"southwestsolutions.com|abd": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"caesa.ind.br|brezilya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"grossernogueira.com.br|brezilya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"jetamoveis.com.br|brezilya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"schiermoveis.com.br|brezilya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"sentrafabrikasi.com|endonezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"creative-office.co.za|güney afrika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"capeofficefurniture.co.za|güney afrika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"filtotech.com|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"kalptaruindustries.in|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"modulartekfurniture.com|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"newkamalsteelindustries.com|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"srisaisowmyaindustries.co.in|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"vrengineering.in|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"equiposmetalicospolo.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"estanteria-queretaro.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"gabinetes-queretaro.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"lockersmexico.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"lockers-mexico.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mcpmobiliario.com|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"racks-estanteria.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"alphacast.co.th|tayland": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bangkokcp.com|tayland": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"kitc.co.th|tayland": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"texfocus.co.th|tayland": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"gshank.info|tayland": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"2stb.tn|tunus": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"amctunisie.com|tunus": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sac-marquage.com|tunus": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"appelsa.com.uy|uruguay": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"1122.com.uy|uruguay": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"83mec.com|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"cokhitonghop.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"cuongthanhsteel.com.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"technokom.com.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"komaspec.com|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"cokhinhatnam.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"vilapec.com|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"crighton.co.nz|yeni zelanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"seleng.co.nz|yeni zelanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"adb-bar.uz|özbekistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ferrum.uz|özbekistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ams.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dsp.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"irishpressings.com|i̇rlanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jobro.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"optima.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"tryckta.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"amgmetalmecanica.com|şili": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dev.red-conecta.com|şili": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"moellerpunch.com|şili": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"scrapchile.cl|şili": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"airsidesheetmetal.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hmfduct.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vortexduct.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"soclima.com|angola": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"alphaduct.com.au|avustralya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"trpgroup.com.au|avustralya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cvshvac.com|bae": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"emirateac.com|bae": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ductandvent.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aplazma.kz|kazakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"plm.kz|kazakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"rkmetiz.kz|kazakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"spez-detal.kz|kazakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"mecaytro.com.co|kolombiya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"metalmind.com.co|kolombiya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"troquelesjowahr.com|kolombiya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bratstvoinox.com.mk|kuzey makedonya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bazar.kg|kırgızistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"imagevalley.com.my|malezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jhstamp.com|malezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"northmetal.com.my|malezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"valiant-precision.com|malezya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"acestamping.com|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"cedinor.com.mx|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"fegam.com|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"maquinadosytroqueladosdemetal.com.mx|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"troyma.mx|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"vgr.com.mx|meksika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"artinox.md|moldova": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"attributum.md|moldova": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"norco.co.mz|mozambik": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"accordindustries.no|norveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"amnengineering.com|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"baigmetal.com.pk|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dawnprecision.com|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jawedmetal.com|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ktis.com.pk|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"metalinegroup.com|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"pakaero.com.pk|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"procon.com.pk|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"steelcraft.global|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"etmametalparts.com|portekiz": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"stamp-tools.com|portekiz": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"gmsingapore.com|singapur": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"nvt.com.sg|singapur": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"use.com.sg|singapur": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"xometry.sg|singapur": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"gredametal.com|sırbistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"metalpro.rs|sırbistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"steelcuts.co.nz|yeni zelanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"khlouse.com|ürdün": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"manufacturingguide.com|i̇sveç": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metalia.cl|şili": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"planncosteels.com|hindistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metalfranch.com.ar|arjantin": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"zbsrl.com.ar|arjantin": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"lejamllc.com|bae": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mobilia.ae|bae": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"furnitureconcept.com.bd|bangladeş": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"salmet.com.bo|bolivya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"beniaco.com.br|brezilya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"smtmuebles.com|ekvador": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"marques-de-france.fr|fransa": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"novimetal.fr|fransa": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"ripaton.fr|fransa": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"spark-office.fr|fransa": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"safeburg.kz|kazakistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"zontex.kz|kazakistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"centraldemuebles.com.co|kolombiya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mueblesenmetalymadera.com|kolombiya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metalexdelfuturo.com|kosta rika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mueblescrometalcr.com|kosta rika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mueblesmetalicoscastillo.com|kosta rika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"lionsteelworks.com|kuveyt": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"classicchair.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"ideesos.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"inspireoffice.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"sheltonoffice.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mksteel.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"sweethome.com.my|malezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"armetal.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"blog.gebesa.com|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"tumueble.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"trendwoodpk.com|pakistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"eximuebles.com|panama": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"grupokefren.com|panama": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"cbcmuebles.com.py|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"felipeaghemo.com.py|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"rbsteelsolutions.com|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"ecanopy.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"freshairsupplies.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airtrace.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"parkerenvironmental.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"theairshop.co.uk|birleşik krallık": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"agtdutos.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ambientair.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"casadacalhaguarulhos.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sevik.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"montef.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"msexaustec.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tcaindustria.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"casafroid.com|fas": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"firstflow.com.ph|filipinler": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ted-tolerie.fr|fransa": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"multigroup.com|guatemala": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kitchen-extraction.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"uvss.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"degreeday.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ducttech.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"gpspira.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"perfectaircon.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ssinsulationindia.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"rowen.kz|kazakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"industriasdiaz.com|kolombiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"industriasmetalicas.com|kolombiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"metalicaspazco.com|kolombiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"publiventas.co|kolombiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"grupolealcr.com|kosta rika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"serpimetal.com|kosta rika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kkc.com.kw|kuveyt": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kuwaitendersgate.com|kuveyt": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"leminarkuwait.com|kuveyt": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"marafiegroup.com|kuveyt": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"domvent.kg|kırgızistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"eakon.com.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ecoduct.my|malezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"blog.laminasyaceros.com|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"metalduct.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tuclima.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vintec.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airconservices.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"axionengineering.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jsengineers.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"globalcool507.com|panama": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"dic.pe|peru": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fmbtne.com.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"oceanmaster.com.sg|singapur": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"juffalijamed.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sotuca.com.tn|tunus": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ingenierialazar.com.uy|uruguay": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"phuonglinh.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"prodetech.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"robothome.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"thepvinhbinh.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"dosamec.com|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"xuandung.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"finmetals.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"infab.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"msme.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"nzduct.co.nz|yeni zelanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aurumprodest.com|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"server-service.uz|özbekistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"dismelec.cl|şili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hvacsystem.cl|şili": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ablesinc.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"adp-ca.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"californiaac.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mobile.langdonsheetmetal.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"omniduct.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"planosheetmetaltx.net|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sdfab.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"texasductsystems.com|abd": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"acfclimatizadores.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"topdutos.com.br|brezilya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"multikaryatechnic.co.id|endonezya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"dmaductingcc.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fixakitchen.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"gaucheair.com|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ipcindustries.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mveloair.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mzansihvac.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"zuid.co.za|güney afrika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aircarehvac.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airmaster.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"air-care.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aircaresystemsolutionindia.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aircaressi.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cosmicin.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"delsolindia.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"fanair.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"idokol.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ssinsulation.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kanvacool.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"loganathanairengg.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mitraenterprises.co.in|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ndsrindia.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"primeduct.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"seruminstitute.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"thesmarthvac.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"truestarairsystems.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"universalcleanroomtechnologies.com|hindistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airepsa.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cwtechsadecv.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"espiroductos.com|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"espiroductomonterrey.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"gandhi.com.mx|meksika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"castle-ei.com|mısır": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"alahram.com.sa|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"masarat-sa.com|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ventilationindustries.com.sa|suudi arabistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hitechcorp.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"onggiobinhduong.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"awi-me.com|bae": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"dcciinfo.com|bae": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gypsemna.com|bae": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"modulexindustries.com|bae": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"nationalprofile.com|bahreyn": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"shaheengroup.com|bahreyn": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"ceilingtilesuk.co.uk|birleşik krallık": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"termosteel-ecu.com|ekvador": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"88bangunan.co.id|endonezya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"mcggypsum.et|etiyopya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"isolpro.fr|fransa": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"zifort.fr|fransa": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"leaderpriceghana.com|gana": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"autospec.co.za|güney afrika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"drywallafrica.co.za|güney afrika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"solidceilings.co.za|güney afrika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"supertecceilings.co.za|güney afrika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"cubiq.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gypsonite.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"manrajceilingproducts.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"chiewyeongaluminium.com|malezya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"lcs.com.my|malezya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"aldhabieg.com|mısır": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"arishdrywall.com|pakistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"timberline.pk|pakistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"acetor.com.py|paraguay": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"amigocamionero.com.py|paraguay": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"leema.lk|sri lanka": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"powerprofile.lk|sri lanka": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"ksatendersgate.com|suudi arabistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"usgme.com|suudi arabistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"zmartbuild.com|tayland": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"superterrazzo.com|uganda": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gypcore.com|umman": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"sculptform.com|yeni zelanda": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"srpltd.co.nz|yeni zelanda": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"wert.uz|özbekistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"bhforrodegesso.com.br|brezilya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"cemear.com.br|brezilya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gessogimenez.com.br|brezilya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"inbraell.com.br|brezilya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"perfilgerais.com.br|brezilya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"thefastenerfactory.co.za|güney afrika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"absteel.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"aimtechindia.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"amaanent.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"amitengineering.co.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"asianmetal.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"bhumiassociates.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"jigneshsteel.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"landmarkcrafts.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"mylocalbusiness.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"nilkamalfasteners.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"rajalindustries.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"ritvi.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"rolexengineering.co.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"samarthcorporation.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"shriaarohiindustries.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"stainlessmetal.co.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"tusharfasteners.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"unifitindustries.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"vjindustries.com|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"vinayengineeringcompany.in|hindistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"perfilesylaminadoscomerciales.com.mx|meksika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"plafonesyacanalados.com|meksika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"plqro.com|meksika": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"alboayz.com|suudi arabistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gypsumboardwholesale.com|suudi arabistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"tranvachthachcao.vn|vietnam": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"emrack.com.au|avustralya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"hebeirack.com|bae": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"iam-me.ae|bae": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"orangefairs.com|bae": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"zyco.ae|bae": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"semcoltd.co.uk|birleşik krallık": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"stagecraft-uk.com|birleşik krallık": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gondolas.com.br|brezilya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"metalcraftghana.com|gana": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"razmo.co.za|güney afrika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"supermarket.co.za|güney afrika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"expandastands.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"ozone.in|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"demetalicos.com|kolombiya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"mueblesparanegocio.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"steelymetal.com|mısır": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"equiphotelpanama.com|panama": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"safem.tn|tunus": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"khosango247.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"posapp.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"sonitec.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"vina-tech.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"dachangestanteria.cl|şili": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"shovamuebles.cl|şili": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"fresnorack.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"modern-retailsolutions.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rackman.com|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rackdepot.us|abd": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gondomaster.com.br|brezilya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"zayaabadi.id|endonezya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gms-systems.com|güney afrika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rackandshelf.co.za|güney afrika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"aaraxindia.in|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"excellentracksystems.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"jkdisplaysolutions.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"kraft-tech.in|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"kwikstoragesystems.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"murphyracks.in|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"rehaltraders.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"superxshopfits.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"synergypunching.com|hindistan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"gaudi.com.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"medasa.mx|meksika": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"kesieuthibluetech.com|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"onetechgroup.com.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"paneltek.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"teholsteel.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cmax.co.ke|kenya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"insulationmaterials.co.ke|kenya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metalsem.com.co|kolombiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metalco.net|kosta rika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"haddadhamid.com|kuveyt": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ktc-steel.com|kuveyt": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kuwaitpolyurethane.com|kuveyt": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sandwichpanelkw.com|kuveyt": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"biast.kg|kırgızistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"eltr.kg|kırgızistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"paneli.kg|kırgızistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"stalmetural.kg|kırgızistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mechref.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"saicond.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"thermofoam.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"yhlgroup.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"aceroform.com.mx|meksika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"laminadosindustriales.com.mx|meksika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lapyma.com.mx|meksika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"aralabinsulation.com.ng|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"bethelmendels.com|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vitapurinsulation.com|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"zeberced.com|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"koldkraft.com|pakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"modernia.com.py|paraguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"semic.com.py|paraguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tucan.com.py|paraguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"industriallinks.com.sg|singapur": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"stonenet.com.sg|singapur": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"muqawiloon.com|suudi arabistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"evergrowing.co.tz|tanzanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"acwallintergroup.co.th|tayland": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cmm.co.th|tayland": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"eba.com.tn|tunus": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hwansungbiz.com|uganda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"eimodular.com|umman": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"msyalpanel.com|umman": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alfametales.com|uruguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"taner.com.mx|meksika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"truongmaisaigon.vn|vietnam": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"deld-v1.deld.al|arnavutluk": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"m2r.al|arnavutluk": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"assemco.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"nationalindustries.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"formero.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"meritcon.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dandbpressedmetal.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"performance.net.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"keyflex.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"totaltooling.com.au|avustralya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dubay.me|bae": {
+"kategori": 4,
+"not": "Pres Atölyeleri · site açılmadı, tekrar bakılmalı",
+"dogrulandi": false,
+"site": false
+},
+"emeshuae.com|bae": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"fenatek.com|bae": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"visionindustriesllc.com|bae": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bhamspec.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"brandauer.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"coler.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"thefriarygroup.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jcmetalworks.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"jcel.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"justsimplyblanks.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"littlefreckle.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"photofab.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"handtools.pryormarking.com|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"qualitetch.com|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"springfieldpressings.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"xometry.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"lsrpf.com|bolivya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"stancovani-dijelovi.com|bosna-hersek": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"stesseng.co.bw|botsvana": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"bruson.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"diafler.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"fit-tecnologia.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"metaisrossi.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"projcam.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"qualinox.com.br|brezilya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ummto.dz|cezayir": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"plastigramecuador.com|ekvador": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"thepsata.com.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"satthepsaigon.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"theptranlong.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"aasourcings.com|bangladeş": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"izharfoster.com|pakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"maengineeringsolution.pk|pakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vinhtansteel.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"giangiaotphcm.vn|vietnam": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"rapidtech.co.ke|kenya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"tandaiphong.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aecinteriors.com.pk|pakistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
 }
 }

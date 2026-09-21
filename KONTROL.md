@@ -413,10 +413,10 @@ Panel listesi ve Excel bu sırayla gelir; üstteki düğmelerle grup seçilir:
 gürültü bariyeri, trapez/cephe paneli, C-sigma-omega aşık) · 2 **Rulo sac dilme**
 · 3 **Rulo sac boy kesme** (çelik servis merkezleri; hangisi olduğu firmanın
 sitesinde dilme mi levha/boy kesme mi ağır bastığına göre) · 4 **Pres besleme
-sistemleri** (pres atölyeleri, alçıpan profilcileri, çelik mobilya — servo
-besleyici/doğrultmalı besleyici/açıcı teklif ediliyor) · 5 **Kompakt hatlar**
-(havalandırma kanalı) · 6 **Diğer** (market rafı — hattı var, sitede sayfası
-yok). Çok segmentli firma en öncelikli grubuna girer. Grup içinde sıra:
+sistemleri** (pres atölyeleri, çelik mobilya — servo besleyici/doğrultmalı
+besleyici/açıcı teklif ediliyor) · 5 **Kompakt hatlar** (havalandırma kanalı) ·
+6 **Diğer** (alçıpan profili — Yasin 22 Eylül: "sona bırak"; market rafı — hattı
+var, sitede sayfası yok). Çok segmentli firma en öncelikli grubuna girer. Grup içinde sıra:
 e-postası olan → sitesinde ürünü doğrulanan → elle araştırılan → otomatik keşif.
 "Sıradaki firma" da bu sırayla ve seçili grubun içinde ilerler.
 
@@ -426,22 +426,58 @@ python scripts/hedef-firma-kategori.py     # her firmanin sitesine bakar -> kate
 python scripts/hedef-firma-excel.py        # gruplu/sirali Excel + panel JSON
 node scripts/hedef-firma-aktar.mjs --yaz   # panele (grup/sira her aktarimda guncellenir)
 ```
-22 Eylül gözden geçirmesi (2.157 firmanın sitesi yeniden açıldı): roll form
-1.297 (1.262'sinde ürün sitede doğrulandı) · dilme 39 · boy kesme 44 · pres
-besleme 398 · kompakt 269 · diğer 110 · 34 firmanın sitesi açılmadı (grubunun
-sonunda, notunda yazıyor). Gözden geçirme OTOMATİK: site açılıyor mu, grubunun
+22 Eylül sonu (keşif A–E + site gözden geçirmesi; 3.599 firma, 3.377 e-postalı): roll
+form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · diğer 363 ·
+37 firmanın sitesi açılmadı (grubunun sonunda, notunda yazıyor). Gözden geçirme OTOMATİK: site açılıyor mu, grubunun
 ürün kelimesi sayfada geçiyor mu — "bu firma gerçekten alıcı mı" kararı değil.
 
-**Otomatik keşif A turu (2026-09-21/22):** 59 ülke × 12 segment, 708 arama
-(0,85 $). 8.732 aday → ilk kontrol 3.067 → **sıkı süzgeç** (firma kendini
-üretici olarak tanıtıyor mu; başlıkta mağaza/kiralama/bayi/ithalatçı izi var mı;
-Dominik Cumhuriyeti için 809/829/849) → **ince süzgeç** (rehber/"top 10" başlığı,
-dev marka şubesi, güneşte montaj yapısı yoksa, FRP/PVC kablo kanalı, yalnız
-yalıtım) → **1.274 firma** (`bolge-kesif-2026-09-21.md`). Panelde "keşif"
-etiketli ve grubunda elle araştırılanların arkasında. Sıkı süzgeç öncesi 40
-satırlık örnekte yarısı hedef dışıydı; sonrasında ~%20 — gönderen önizlemede
-firmaya bir bakmalı. Sıradaki turlar hazır, çalıştırılmadı: `--tur b` (yeni
-ülkeler), `--tur c` (eş anlamlı aramalar), `--tur d` (şehir bazlı).
+**Otomatik keşif turları (2026-09-21/22) — toplam 3,35 $, 2.755 firma:**
+
+| Tur | Kapsam | Arama | Ücret | Firma |
+|---|---|---|---|---|
+| A | 59 ülke × 12 segment, "<ürün> üreticisi" | 708 | 0,85 $ | 1.285 |
+| B | 44 yeni ülke (Balkanlar, Kuzey Avrupa, Afrika, Orta Asya) | 528 | 0,63 $ | 294 |
+| C | A'nın 59 ülkesi, eş anlamlı aramalar | 708 | 0,85 $ | 562 |
+| D | 36 büyük şehir (Hindistan, Meksika, Brezilya, ABD…) | 432 | 0,52 $ | 408 |
+| E | 103 ülke × çelik servis merkezi + pres atölyesi, segment başına 2 arama | 412 | 0,49 $ | 206 |
+
+```bash
+python scripts/hedef-firma-kesif.py --tur e --plan    # kaç arama, kaç $
+python scripts/hedef-firma-kesif.py --tur e           # ara + doğrula -> bolge-kesif-<tarih>-e.md
+python scripts/hedef-firma-kesif.py --tur a --tarih 2026-09-21   # eski turu yeni kurallarla yeniden yaz (ücretsiz, önbellek)
+```
+Süzgeç zinciri: **ilk kontrol** (ürün kelimesi sitede, üretim izi, dükkân
+değil, ülke tutuyor, e-posta sitede yazıyor) → **sıkı süzgeç** (firma kendini
+üretici olarak tanıtıyor — çelik servis merkezinde dilme/boy kesme/işleme, pres
+atölyesinde pres/derin çekme de sayılır; başlıkta mağaza/kiralama/bayi izi yok)
+→ **ince süzgeç** (rehber/portal/"top 10"/"les meilleures", kurum alan adı, dev
+marka şubesi, güneşte montaj yapısı yoksa, FRP/PVC kablo kanalı, yalnız yalıtım,
+metal olmayan mobilya, kiralama, fiyat listesi, kumar reklamlı ele geçirilmiş
+site; pres satırında başlıkta/özette pres işi görünmeli, kaşe/baskı/kâğıt değil).
+
+Öğrenilenler:
+- **Servis merkezi "üretici" demez.** A ve B'de ~100 gerçek servis merkezi
+  (Russel Metals, Venture Steel, Coil Pro, Ann Joo, Flinkenberg…) bu yüzden
+  elenmişti. Artık "service centre / slitting / corte de bobinas / продольная
+  резка" da sayılıyor. Kural değişince ara kayıttaki elenenler yeniden
+  değerlendirilir (`KURAL` sürümü) — dilme grubu 40 → 114, boy kesme 49 → 170.
+- **Tek başına kelime tuzağı:** kumar reklamı için "slot" aranınca "slotted cable tray"
+  ve "slotted angle rack" üreticileri elendi; "price/báo giá" başlığı Güney ve
+  Güneydoğu Asya'da üreticilerin de SEO kalıbı (Eurorack) — fiyat kuralı yalnız servis
+  merkezinde. Her yeni kuraldan sonra `listeden çıkacak` listesinin nedenine bakıldı.
+- **Yeniden çalıştırmada her tur yalnız ÖNCEKİ turların** alan adlarını "zaten
+  listede" sayar. C, D, E aynı anda koştu; sonraki turu da saymak, o tur firmayı
+  yeni kuralla elediğinde firmayı iki turdan birden düşürüyordu.
+- **Aynı e-posta tek satır.** Bir site 7 ülkenin aramasında çıktı (aynı info@);
+  Excel ilkini tutar, öbür ülkeleri notuna yazar. Panel de aynı adrese ikinci
+  tanıtım e-postasını kilitliyor (başka satırdan gitmişse "Bu adrese … yazıldı").
+- **Firma adı hitaba giriyor:** sayfa başlığındaki HTML varlıkları
+  ("&#8211;") çözülür, "Firma – slogan"dan firma parçası alınır, "Welcome to",
+  emoji ve URL atılır (`ad_duzelt`).
+- **Örnek kalite:** son süzgeçlerden önce D'de 40 satırın ~6'sı, E'de 25'in ~5'i
+  hedef dışıydı (rehber, pazar yeri, genel imalat atölyesi, rakip makineci) —
+  bulunanlar kara listeye/süzgece eklendi. Kalan ~%15 için gönderen önizlemede
+  firmanın sitesine bir bakmalı.
 
 **Listeyi büyütmek (2026-09-21):**
 ```bash

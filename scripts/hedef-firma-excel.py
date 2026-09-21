@@ -231,7 +231,9 @@ def hitap_adi(firma):
         a = re.sub(ek, "", a.strip(" ,.-"), flags=re.I)
     # Bastaki sirket turu: Endonezya PT/CV, Kazakistan/Rusya TOO/OOO
     a = re.sub(r"^\s*(pt\.?|cv\.?|too|тоо|ooo|ооо)\s+", "", a, flags=re.I)
-    return re.sub(r"\s+", " ", a).strip(" ,.-") or str(firma)
+    # bastaki/sondaki isaret ve emoji ("/ Wibe group", "▷ ...", ":: Omega Jordan ::")
+    a = re.sub(r"^[^\w(]+|[^\w)]+$", "", re.sub(r"\s+", " ", a))
+    return a.strip(" ,.-") or str(firma)
 
 
 def ek_sutunlar(segler, satir):
@@ -608,6 +610,30 @@ def main():
             kayitlar.append((siralama, satir + ek + [" + ".join(segler), KATEGORI_ADI[g["kategori"]],
                                                      pk["kategori_notu"]], pk))
         kayitlar.sort(key=lambda x: x[0])
+        # Ayni e-posta adresi tek satir: kesifte bir site birden cok ulkenin aramasinda cikiyor
+        # (rvsglobe.com yedi Korfez ulkesinde, ar-racking.com alti ulkede — hep ayni info@).
+        # Sirada ilk gelen kalir, digerleri listeye girmez (panelde listeden cikar); onlarin
+        # ulkeleri kalan satirin notuna yazilir. Panel de ayni adrese ikinci gonderimi kilitliyor.
+        ilk_adres, diger_ulke, tekil = {}, {}, []
+        for x in kayitlar:
+            e = x[2]["eposta"].lower()
+            if e and e in ilk_adres:
+                u = x[2]["ulke"]
+                if u and u != ilk_adres[e][2]["ulke"] and u not in diger_ulke[e]:
+                    diger_ulke[e].append(u)
+                continue
+            if e:
+                ilk_adres[e], diger_ulke[e] = x, []
+            tekil.append(x)
+        for e, ulkeler in diger_ulke.items():
+            if ulkeler:
+                pk = ilk_adres[e][2]
+                pk["kategori_notu"] += " · aynı adres şu ülke aramalarında da çıktı: " + ", ".join(ulkeler)
+                ilk_adres[e][1][-1] = pk["kategori_notu"]
+        if len(tekil) < len(kayitlar):
+            print("  %d satır başka bir satırla aynı e-posta adresini taşıyordu — listeye alınmadı"
+                  % (len(kayitlar) - len(tekil)))
+        kayitlar = tekil
         birlesik, panel = [], []
         for i, (_, satir_, pk) in enumerate(kayitlar, 1):
             pk["sira"] = i
