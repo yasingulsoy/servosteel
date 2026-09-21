@@ -616,11 +616,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Calcolatori: peso coil, alimentazione e resa di taglio",
-    "metaDesc": "Calcolatori tecnici gratuiti: peso e lunghezza coil, capacità di alimentazione presse, sfrido di taglio longitudinale. Senza registrazione.",
+    "metaTitle": "Calcolo peso lamiera e acciaio: lamiere, piastre e coil",
+    "metaDesc": "Calcolatore gratuito del peso dell'acciaio: peso di lamiere e piastre, peso e lunghezza dei coil, produzione dell'alimentatore pressa e resa del taglio longitudinale, con formule ed esempi.",
     "eyebrow": "Strumenti tecnici",
-    "title": "Calcolatori",
-    "desc": "Fate una stima rapida senza attendere un'offerta: peso coil, pezzi all'ora e sfrido di taglio. Tutti i risultati derivano dalla geometria.",
+    "title": "Calcolo peso lamiera, piastra e coil in acciaio",
+    "desc": "Calcolate il peso di una lamiera o piastra in acciaio, il peso e la lunghezza del nastro di un coil, la produzione dell'alimentatore e lo sfrido del taglio longitudinale. Ogni risultato deriva dalla geometria e dalla densità del materiale.",
     "disclaimer": "Questi strumenti servono a una valutazione preliminare; i risultati sono calcolati da geometria e densità del materiale. Per il dimensionamento esatto contattate il nostro ufficio tecnico.",
     "material": "Materiale",
     "steel": "Acciaio",
@@ -655,7 +655,67 @@
     "wastePct": "Percentuale di sfrido",
     "waste": "Larghezza sfrido",
     "yieldNote": "Il numero di nastri è arrotondato per difetto; la larghezza residua si somma allo sfrido insieme al rifilo. Regolare la larghezza del nastro riduce lo sfrido.",
-    "invalid": "I valori inseriti non sono validi."
+    "invalid": "I valori inseriti non sono validi.",
+    "crumb": "Calcolatori",
+    "sheetTitle": "Peso di lamiere e piastre",
+    "length": "Lunghezza",
+    "width": "Larghezza",
+    "qty": "Quantità",
+    "pieceWeight": "Peso per pezzo",
+    "totalWeight": "Peso totale",
+    "totalArea": "Superficie totale",
+    "perM2": "Peso al m²",
+    "guide": {
+      "sheet": {
+        "h": "Come si calcola il peso di una lamiera",
+        "p": "Una lamiera è un blocco rettangolare: il suo peso è il volume per la densità del metallo. Con le misure in millimetri, dividere per 1.000.000 trasforma mm³ × g/cm³ in chilogrammi.",
+        "formula": "Peso (kg) = lunghezza × larghezza × spessore (mm) × densità (g/cm³) ÷ 1.000.000",
+        "example": "Esempio: lamiera d'acciaio 2500 × 1250 mm, spessore 3 mm: 2500 × 1250 × 3 × 7,85 ÷ 1.000.000 = 73,6 kg. Un metro quadrato della stessa lamiera pesa 3 × 7,85 = 23,55 kg."
+      },
+      "coil": {
+        "h": "Come si calcola il peso di un coil d'acciaio",
+        "p": "Visto di lato, un coil è un anello. L'area dell'anello per la larghezza del coil dà il volume di metallo, qualunque sia lo spessore del nastro.",
+        "formula": "Peso (kg) = π ÷ 4 × (Ø est² − Ø int²) × larghezza × densità ÷ 1.000.000   (misure in mm)",
+        "example": "Esempio: un coil d'acciaio con diametro esterno 1400 mm, anima 508 mm e larghezza 1250 mm pesa π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1.000.000 ≈ 13.116 kg. Con spessore 1,5 mm svolge circa 891 m di nastro."
+      },
+      "length": {
+        "h": "Come ricavare la lunghezza del coil dal peso",
+        "p": "Se il peso del coil è noto dal certificato dell'acciaieria, la lunghezza del nastro deriva dallo stesso volume.",
+        "formula": "Lunghezza (m) = peso (kg) ÷ (larghezza (m) × spessore (m) × densità (kg/m³))",
+        "example": "Esempio: coil d'acciaio da 10 t, largo 1250 mm e spesso 1 mm: 10.000 ÷ (1,25 × 0,001 × 7.850) ≈ 1.019 m."
+      },
+      "densH": "Densità usate dal calcolatore",
+      "densP": "Un metro quadrato di lamiera da 1 mm pesa tanti chilogrammi quanto il valore della densità: un controllo rapido di qualsiasi risultato.",
+      "densHead": [
+        "Materiale",
+        "Densità (g/cm³)",
+        "1 m² a 1 mm (kg)"
+      ]
+    },
+    "faqEyebrow": "Peso della lamiera",
+    "faqTitle": "Domande frequenti",
+    "faq": [
+      {
+        "q": "Quanto pesa un metro quadrato di lamiera d'acciaio da 1 mm?",
+        "a": "7,85 kg. L'acciaio ha una densità di 7,85 g/cm³, quindi ogni millimetro di spessore aggiunge 7,85 kg al metro quadrato: 2 mm sono 15,7 kg/m², 3 mm sono 23,55 kg/m²."
+      },
+      {
+        "q": "Come si calcola il peso di un coil d'acciaio?",
+        "a": "Calcolate l'area dell'anello π ÷ 4 × (diametro esterno² − diametro interno²), moltiplicatela per la larghezza del coil e per 7,85 e dividete per 1.000.000 con le misure in millimetri. Lo spessore del nastro non serve per il peso, solo per la lunghezza."
+      },
+      {
+        "q": "Perché il peso calcolato è diverso da quello del certificato?",
+        "a": "La formula presuppone un coil perfettamente tondo e avvolto stretto. I coil reali hanno piccoli giochi tra le spire e si misurano sulla spira esterna: il calcolo è quindi una stima e, per l'acquisto, il riferimento è il peso del certificato."
+      },
+      {
+        "q": "Inox e alluminio cambiano il risultato?",
+        "a": "Solo tramite la densità. L'acciaio inox (7,9 g/cm³) pesa quasi quanto l'acciaio al carbonio; l'alluminio (2,7 g/cm³) pesa circa un terzo. Scegliete il materiale e il calcolatore applica il valore corretto."
+      },
+      {
+        "q": "Quanto dura un coil sulla mia pressa?",
+        "a": "Usate il calcolatore dell'alimentatore: passo × colpi al minuto dà i metri consumati all'ora, e la lunghezza del coil divisa per quel valore dà il tempo di funzionamento: il numero che decide ogni quanto la linea si ferma per il cambio coil."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Video macchine: le nostre linee in funzione",

@@ -616,11 +616,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Sac ve Rulo Ağırlık Hesaplama, Dilme Verimi",
-    "metaDesc": "Ücretsiz sac ve rulo ağırlık hesaplama araçları: sac levha ve rulo ağırlığı, rulo uzunluğu, pres besleme kapasitesi ve dilme fire oranı.",
+    "metaTitle": "Sac Ağırlık Hesaplama ve Rulo Sac Ağırlık Hesaplama",
+    "metaDesc": "Ücretsiz sac ve rulo ağırlık hesaplama: sac levha ve plaka ağırlığı, rulo sac ağırlığı ve uzunluğu, pres besleme kapasitesi ve dilme fire oranı — formülleri ve örnekleriyle.",
     "eyebrow": "Mühendislik araçları",
-    "title": "Hesaplama araçları",
-    "desc": "Teklif beklemeden hızlı ön hesap yapın: rulo ağırlığı, saatlik parça çıktısı ve dilme fire oranı. Tüm sonuçlar geometriden türetilir.",
+    "title": "Sac ve Rulo Sac Ağırlık Hesaplama",
+    "desc": "Sac levha ve plakanın ağırlığını, rulonun ağırlığını ve şerit uzunluğunu, pres besleme çıktısını ve dilme firesini hesaplayın. Tüm sonuçlar geometriden ve malzeme yoğunluğundan türetilir.",
     "disclaimer": "Bu araçlar ön değerlendirme içindir; sonuçlar geometri ve malzeme yoğunluğundan hesaplanır. Kesin hat boyutlandırması için mühendislik ekibimize danışın.",
     "material": "Malzeme",
     "steel": "Çelik",
@@ -655,7 +655,67 @@
     "wastePct": "Fire oranı",
     "waste": "Fire genişliği",
     "yieldNote": "Şerit sayısı tam sayıya yuvarlanır; artan genişlik kenar traşıyla birlikte fireye eklenir. Şerit genişliğini ayarlayarak fireyi düşürebilirsiniz.",
-    "invalid": "Girilen değerler geçersiz."
+    "invalid": "Girilen değerler geçersiz.",
+    "crumb": "Hesaplama araçları",
+    "sheetTitle": "Sac ve plaka ağırlığı",
+    "length": "Boy",
+    "width": "En",
+    "qty": "Adet",
+    "pieceWeight": "Levha başına ağırlık",
+    "totalWeight": "Toplam ağırlık",
+    "totalArea": "Toplam alan",
+    "perM2": "Metrekare ağırlığı",
+    "guide": {
+      "sheet": {
+        "h": "Sac ve plaka ağırlığı nasıl hesaplanır",
+        "p": "Sac levha dikdörtgen bir bloktur; ağırlığı hacminin malzeme yoğunluğuyla çarpımıdır. Tüm ölçüler milimetre girildiğinde 1.000.000'a bölmek mm³ × g/cm³ sonucunu kilograma çevirir.",
+        "formula": "Ağırlık (kg) = boy × en × kalınlık (mm) × yoğunluk (g/cm³) ÷ 1.000.000",
+        "example": "Örnek: 2500 × 1250 mm, 3 mm kalınlığında çelik sac: 2500 × 1250 × 3 × 7,85 ÷ 1.000.000 = 73,6 kg. Aynı sacın bir metrekaresi 3 × 7,85 = 23,55 kg gelir."
+      },
+      "coil": {
+        "h": "Rulo sac ağırlığı nasıl hesaplanır",
+        "p": "Yandan bakıldığında rulo bir halkadır. Halka alanı rulo genişliğiyle çarpılınca, şerit kalınlığı ne olursa olsun metalin hacmi bulunur.",
+        "formula": "Ağırlık (kg) = π ÷ 4 × (dış çap² − iç çap²) × genişlik × yoğunluk ÷ 1.000.000   (ölçüler mm)",
+        "example": "Örnek: dış çapı 1400 mm, göbeği 508 mm, genişliği 1250 mm olan çelik rulo π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1.000.000 ≈ 13.116 kg gelir. 1,5 mm kalınlıkta açıldığında yaklaşık 891 m şerit verir."
+      },
+      "length": {
+        "h": "Ağırlıktan rulo uzunluğu nasıl bulunur",
+        "p": "Rulo ağırlığı sertifikadan biliniyorsa şerit uzunluğu aynı hacimden çıkar.",
+        "formula": "Uzunluk (m) = ağırlık (kg) ÷ (genişlik (m) × kalınlık (m) × yoğunluk (kg/m³))",
+        "example": "Örnek: 10 ton, 1250 mm genişlik, 1 mm kalınlıkta çelik rulo: 10.000 ÷ (1,25 × 0,001 × 7.850) ≈ 1.019 m."
+      },
+      "densH": "Hesaplayıcıda kullanılan yoğunluklar",
+      "densP": "1 mm sacın bir metrekaresi, yoğunluk değeri kadar kilogram gelir — her sonucu hızlıca sağlamanın yolu.",
+      "densHead": [
+        "Malzeme",
+        "Yoğunluk (g/cm³)",
+        "1 mm'de 1 m² (kg)"
+      ]
+    },
+    "faqEyebrow": "Sac ağırlığı",
+    "faqTitle": "Sık sorulan sorular",
+    "faq": [
+      {
+        "q": "1 mm çelik sacın metrekaresi kaç kilo gelir?",
+        "a": "7,85 kg. Çeliğin yoğunluğu 7,85 g/cm³ olduğundan her milimetre kalınlık metrekareye 7,85 kg ekler: 2 mm 15,7 kg/m², 3 mm 23,55 kg/m² gelir."
+      },
+      {
+        "q": "Rulo sac ağırlığı nasıl hesaplanır?",
+        "a": "Halka alanını π ÷ 4 × (dış çap² − iç çap²) ile bulun, rulo genişliği ve 7,85 ile çarpın, tüm ölçüler milimetreyken 1.000.000'a bölün. Ağırlık için şerit kalınlığı gerekmez; kalınlık yalnızca uzunluk hesabında kullanılır."
+      },
+      {
+        "q": "Hesaplanan rulo ağırlığı neden sertifikadan farklı?",
+        "a": "Formül tam yuvarlak ve sıkı sarılmış bir rulo varsayar. Gerçek rulolar küçük boşluklarla sarılır ve dış sarımın üstünden ölçülür; bu yüzden hesap bir tahmindir, satın almada referans sertifikadaki ağırlıktır."
+      },
+      {
+        "q": "Paslanmaz ve alüminyum sonucu değiştirir mi?",
+        "a": "Yalnızca yoğunluk üzerinden. Paslanmaz çelik (7,9 g/cm³) neredeyse karbon çeliği kadar ağırdır; alüminyum (2,7 g/cm³) yaklaşık üçte biri kadar gelir. Malzemeyi seçtiğinizde hesaplayıcı doğru değeri kullanır."
+      },
+      {
+        "q": "Bir rulo presimde ne kadar gider?",
+        "a": "Pres besleme hesaplayıcısını kullanın: adım boyu × dakikadaki strok saatte tüketilen metreyi verir; rulo uzunluğunu bu sayıya bölmek rulonun ne kadar yeteceğini gösterir — hattın ne sıklıkla rulo değişimi için duracağını belirleyen sayı budur."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Makine Videoları: Hatlarımız Sahada Çalışırken",

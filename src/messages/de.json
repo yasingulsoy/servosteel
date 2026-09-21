@@ -616,11 +616,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Rechner für Coilgewicht, Vorschub und Spaltausbeute",
-    "metaDesc": "Kostenlose Engineering-Rechner: Coilgewicht und -länge, Pressenvorschubleistung, Spaltverschnitt. Ohne Anmeldung.",
+    "metaTitle": "Gewichtsrechner Stahl: Blech- und Coilgewicht berechnen",
+    "metaDesc": "Kostenloser Gewichtsrechner für Stahl: Blech- und Plattengewicht, Coilgewicht und Bandlänge, Pressenvorschub und Spaltausbeute – mit Formeln und Beispielen.",
     "eyebrow": "Engineering-Werkzeuge",
-    "title": "Rechner",
-    "desc": "Schnelle Vorabschätzung ohne Angebot: Coilgewicht, Teile pro Stunde und Spaltverschnitt. Alle Ergebnisse folgen aus der Geometrie.",
+    "title": "Gewichtsrechner Stahl: Blech, Platte und Coil",
+    "desc": "Berechnen Sie das Gewicht von Stahlblech und Platten, Gewicht und Bandlänge eines Coils, die Vorschubleistung und den Spaltverschnitt. Alle Ergebnisse folgen aus Geometrie und Werkstoffdichte.",
     "disclaimer": "Diese Werkzeuge dienen der Vorbewertung; die Ergebnisse werden aus Geometrie und Materialdichte berechnet. Für die genaue Anlagenauslegung wenden Sie sich an unser Engineering.",
     "material": "Werkstoff",
     "steel": "Stahl",
@@ -655,7 +655,67 @@
     "wastePct": "Verschnittquote",
     "waste": "Verschnittbreite",
     "yieldNote": "Die Streifenzahl wird abgerundet; die Restbreite geht zusammen mit dem Besäumschnitt in den Verschnitt. Eine angepasste Streifenbreite senkt den Verschnitt.",
-    "invalid": "Die eingegebenen Werte sind ungültig."
+    "invalid": "Die eingegebenen Werte sind ungültig.",
+    "crumb": "Rechner",
+    "sheetTitle": "Blech- und Plattengewicht",
+    "length": "Länge",
+    "width": "Breite",
+    "qty": "Stückzahl",
+    "pieceWeight": "Gewicht pro Stück",
+    "totalWeight": "Gesamtgewicht",
+    "totalArea": "Gesamtfläche",
+    "perM2": "Gewicht pro m²",
+    "guide": {
+      "sheet": {
+        "h": "Blechgewicht berechnen",
+        "p": "Ein Blech ist ein rechteckiger Block: Sein Gewicht ist das Volumen mal die Dichte des Werkstoffs. Bei Maßen in Millimetern macht die Division durch 1.000.000 aus mm³ × g/cm³ Kilogramm.",
+        "formula": "Gewicht (kg) = Länge × Breite × Dicke (mm) × Dichte (g/cm³) ÷ 1.000.000",
+        "example": "Beispiel: Stahlblech 2500 × 1250 mm, 3 mm dick: 2500 × 1250 × 3 × 7,85 ÷ 1.000.000 = 73,6 kg. Ein Quadratmeter desselben Blechs wiegt 3 × 7,85 = 23,55 kg."
+      },
+      "coil": {
+        "h": "Coilgewicht berechnen",
+        "p": "Von der Seite gesehen ist ein Coil ein Ring. Ringfläche mal Coilbreite ergibt das Metallvolumen – unabhängig von der Banddicke.",
+        "formula": "Gewicht (kg) = π ÷ 4 × (Außen-Ø² − Innen-Ø²) × Breite × Dichte ÷ 1.000.000   (Maße in mm)",
+        "example": "Beispiel: Ein Stahlcoil mit 1400 mm Außendurchmesser, 508 mm Innendurchmesser und 1250 mm Breite wiegt π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1.000.000 ≈ 13.116 kg. Bei 1,5 mm Dicke ergibt es rund 891 m Band."
+      },
+      "length": {
+        "h": "Coillänge aus dem Gewicht bestimmen",
+        "p": "Ist das Coilgewicht aus dem Werkszeugnis bekannt, folgt die Bandlänge aus demselben Volumen.",
+        "formula": "Länge (m) = Gewicht (kg) ÷ (Breite (m) × Dicke (m) × Dichte (kg/m³))",
+        "example": "Beispiel: 10-t-Stahlcoil, 1250 mm breit, 1 mm dick: 10.000 ÷ (1,25 × 0,001 × 7.850) ≈ 1.019 m."
+      },
+      "densH": "Im Rechner verwendete Dichten",
+      "densP": "Ein Quadratmeter Blech mit 1 mm Dicke wiegt so viele Kilogramm, wie die Dichte angibt – eine schnelle Kontrolle für jedes Ergebnis.",
+      "densHead": [
+        "Werkstoff",
+        "Dichte (g/cm³)",
+        "1 m² bei 1 mm (kg)"
+      ]
+    },
+    "faqEyebrow": "Blechgewicht",
+    "faqTitle": "Häufige Fragen",
+    "faq": [
+      {
+        "q": "Wie viel wiegt ein Quadratmeter Stahlblech mit 1 mm Dicke?",
+        "a": "7,85 kg. Stahl hat eine Dichte von 7,85 g/cm³, jeder Millimeter Dicke bringt also 7,85 kg pro Quadratmeter: 2 mm sind 15,7 kg/m², 3 mm sind 23,55 kg/m²."
+      },
+      {
+        "q": "Wie berechne ich das Gewicht eines Stahlcoils?",
+        "a": "Ringfläche π ÷ 4 × (Außendurchmesser² − Innendurchmesser²) bilden, mit der Coilbreite und 7,85 multiplizieren und bei Maßen in Millimetern durch 1.000.000 teilen. Die Banddicke braucht man nur für die Länge, nicht für das Gewicht."
+      },
+      {
+        "q": "Warum weicht das berechnete Coilgewicht vom Werkszeugnis ab?",
+        "a": "Die Formel setzt ein perfekt rundes, dicht gewickeltes Coil voraus. Reale Coils sind mit kleinen Spalten gewickelt und werden über die äußere Windung gemessen; die Rechnung ist daher eine Schätzung, für den Einkauf gilt das Gewicht im Werkszeugnis."
+      },
+      {
+        "q": "Ändern Edelstahl und Aluminium das Ergebnis?",
+        "a": "Nur über die Dichte. Edelstahl (7,9 g/cm³) ist fast so schwer wie unlegierter Stahl; Aluminium (2,7 g/cm³) wiegt etwa ein Drittel. Werkstoff wählen, der Rechner setzt den richtigen Wert ein."
+      },
+      {
+        "q": "Wie lange reicht ein Coil an meiner Presse?",
+        "a": "Mit dem Vorschubrechner: Vorschublänge × Hübe pro Minute ergibt die verbrauchten Meter pro Stunde; Coillänge geteilt durch diesen Wert ergibt die Laufzeit – die Zahl, die bestimmt, wie oft die Linie für einen Coilwechsel stoppt."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Maschinenvideos: unsere Anlagen im Einsatz",

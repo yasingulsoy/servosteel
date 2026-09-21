@@ -652,11 +652,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Sheet Metal & Steel Coil Weight Calculator",
-    "metaDesc": "Free sheet metal and steel coil weight calculator: sheet and coil weight, coil length, press feed capacity and slitting yield.",
+    "metaTitle": "Metal Weight Calculator: Steel Plate, Sheet & Coil",
+    "metaDesc": "Free metal weight calculator for steel plate, sheet and coil: sheet and plate weight, coil weight and length, press feed output and slitting yield — with formulas and examples.",
     "eyebrow": "Engineering tools",
-    "title": "Calculators",
-    "desc": "Run a quick estimate without waiting for a quote: coil weight, parts per hour and slitting scrap rate. Every result is derived from geometry.",
+    "title": "Metal Weight Calculator: Steel Plate, Sheet and Coil",
+    "desc": "Calculate the weight of a steel plate or sheet, the weight and strip length of a coil, press feed output and slitting scrap. Every result comes from geometry and material density.",
     "disclaimer": "These tools are for preliminary assessment; results are computed from geometry and material density. For exact line sizing, consult our engineering team.",
     "material": "Material",
     "steel": "Steel",
@@ -691,7 +691,67 @@
     "wastePct": "Scrap rate",
     "waste": "Scrap width",
     "yieldNote": "The strip count is rounded down; the leftover width is added to scrap together with the edge trim. Adjusting strip width can reduce scrap.",
-    "invalid": "The entered values are not valid."
+    "invalid": "The entered values are not valid.",
+    "crumb": "Calculators",
+    "sheetTitle": "Sheet and plate weight",
+    "length": "Length",
+    "width": "Width",
+    "qty": "Quantity",
+    "pieceWeight": "Weight per piece",
+    "totalWeight": "Total weight",
+    "totalArea": "Total area",
+    "perM2": "Weight per m²",
+    "guide": {
+      "sheet": {
+        "h": "How to calculate sheet and plate weight",
+        "p": "A sheet or plate is a rectangular block, so its weight is its volume multiplied by the density of the metal. With all dimensions in millimetres, dividing by 1,000,000 turns mm³ × g/cm³ into kilograms.",
+        "formula": "Weight (kg) = length × width × thickness (mm) × density (g/cm³) ÷ 1,000,000",
+        "example": "Example: a 2500 × 1250 mm steel sheet, 3 mm thick: 2500 × 1250 × 3 × 7.85 ÷ 1,000,000 = 73.6 kg. One square metre of the same sheet weighs 3 × 7.85 = 23.55 kg."
+      },
+      "coil": {
+        "h": "How to calculate steel coil weight",
+        "p": "Seen from the side, a coil is a ring. The ring area multiplied by the coil width gives the volume of metal, whatever the thickness of the strip.",
+        "formula": "Weight (kg) = π ÷ 4 × (OD² − ID²) × width × density ÷ 1,000,000   (dimensions in mm)",
+        "example": "Example: a steel coil with a 1400 mm outer diameter, a 508 mm core and a width of 1250 mm weighs π ÷ 4 × (1400² − 508²) × 1250 × 7.85 ÷ 1,000,000 ≈ 13,116 kg. At 1.5 mm thickness it unrolls into about 891 m of strip."
+      },
+      "length": {
+        "h": "How to find coil length from weight",
+        "p": "When the coil weight is known from the mill certificate, the strip length follows from the same volume.",
+        "formula": "Length (m) = weight (kg) ÷ (width (m) × thickness (m) × density (kg/m³))",
+        "example": "Example: a 10 t steel coil, 1250 mm wide and 1 mm thick: 10,000 ÷ (1.25 × 0.001 × 7,850) ≈ 1,019 m."
+      },
+      "densH": "Densities used in the calculator",
+      "densP": "One square metre of 1 mm sheet weighs as many kilograms as the density figure — a quick way to check any result.",
+      "densHead": [
+        "Material",
+        "Density (g/cm³)",
+        "1 m² at 1 mm (kg)"
+      ]
+    },
+    "faqEyebrow": "Metal weight",
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How much does one square metre of 1 mm steel sheet weigh?",
+        "a": "7.85 kg. Steel has a density of 7.85 g/cm³, so each millimetre of thickness adds 7.85 kg per square metre: 2 mm is 15.7 kg/m², 3 mm is 23.55 kg/m²."
+      },
+      {
+        "q": "How do I calculate the weight of a steel coil?",
+        "a": "Take the ring area π ÷ 4 × (outer diameter² − inner diameter²), multiply it by the coil width and by 7.85, then divide by 1,000,000 with all dimensions in millimetres. The strip thickness is not needed for the weight, only for the length."
+      },
+      {
+        "q": "Why does the calculated coil weight differ from the certificate?",
+        "a": "The formula assumes a perfectly round, tightly wound coil. Real coils are wound with small gaps and are measured over the outer wrap, so the calculation is an estimate; for purchasing, the weight on the mill certificate is the reference."
+      },
+      {
+        "q": "Do stainless steel and aluminium change the result?",
+        "a": "Only through density. Stainless steel (7.9 g/cm³) is almost as heavy as carbon steel; aluminium (2.7 g/cm³) weighs about a third as much. Choose the material and the calculator applies the right value."
+      },
+      {
+        "q": "How long will one coil run on my press?",
+        "a": "Use the press feed calculator: feed pitch × strokes per minute gives the metres used per hour, and the coil length divided by that figure gives the run time — the number that decides how often the line stops for a coil change."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Machine Videos: Our Lines Running on Site",

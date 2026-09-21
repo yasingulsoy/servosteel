@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Calculator, Package, Scissors } from "lucide-react";
-import { coilCalc, feedCalc, yieldCalc, DENSITIES, type MaterialKey } from "@/lib/calc";
+import { Calculator, Layers, Package, Scissors } from "lucide-react";
+import { coilCalc, feedCalc, sheetCalc, yieldCalc, DENSITIES, type MaterialKey } from "@/lib/calc";
 
 const field =
   "w-full rounded-lg border border-line bg-card px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/25";
@@ -73,6 +73,12 @@ export function Calculators() {
   const t = useTranslations("calc");
   const fmt = useFmt();
 
+  /* --- Sac / plaka ağırlığı — en çok aranan hesap ("sheet metal / steel plate
+     weight calculator"), bu yüzden ızgaranın ilk kartı --- */
+  const [sheetMat, setSheetMat] = useState<MaterialKey>("steel");
+  const [sheet, setSheet] = useState({ length: 2500, width: 1250, thickness: 3, qty: 1 });
+  const sheetRes = sheetCalc({ ...sheet, density: DENSITIES[sheetMat] });
+
   /* --- Rulo ağırlığı --- */
   const [material, setMaterial] = useState<MaterialKey>("steel");
   const [coil, setCoil] = useState({ od: 1400, id: 508, width: 1000, thickness: 2 });
@@ -91,24 +97,58 @@ export function Calculators() {
     (e: React.ChangeEvent<HTMLInputElement>) =>
       set(e.target.value === "" ? 0 : Number(e.target.value));
 
+  const malzemeSec = (deger: MaterialKey, ata: (m: MaterialKey) => void) => (
+    <Row label={t("material")}>
+      <select value={deger} onChange={(e) => ata(e.target.value as MaterialKey)} className={field}>
+        {(Object.keys(DENSITIES) as MaterialKey[]).map((k) => (
+          <option key={k} value={k}>
+            {t(k)} — {DENSITIES[k]} g/cm³
+          </option>
+        ))}
+      </select>
+    </Row>
+  );
+
   return (
-    <div className="grid gap-6 lg:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2">
+      {/* ---------- Sac / plaka ağırlığı ---------- */}
+      <Card icon={Layers} title={t("sheetTitle")}>
+        <div className="mt-5 space-y-3">
+          {malzemeSec(sheetMat, setSheetMat)}
+          <div className="grid grid-cols-2 gap-3">
+            <Row label={t("length")} suffix="mm">
+              <input type="number" min={0} value={sheet.length} onChange={num((v) => setSheet({ ...sheet, length: v }))} className={field} />
+            </Row>
+            <Row label={t("width")} suffix="mm">
+              <input type="number" min={0} value={sheet.width} onChange={num((v) => setSheet({ ...sheet, width: v }))} className={field} />
+            </Row>
+            <Row label={t("thickness")} suffix="mm">
+              <input type="number" min={0} step="0.1" value={sheet.thickness} onChange={num((v) => setSheet({ ...sheet, thickness: v }))} className={field} />
+            </Row>
+            <Row label={t("qty")}>
+              <input type="number" min={1} value={sheet.qty} onChange={num((v) => setSheet({ ...sheet, qty: v }))} className={field} />
+            </Row>
+          </div>
+        </div>
+
+        <div className="mt-5 rounded-xl bg-surface-alt p-4">
+          {sheetRes ? (
+            <>
+              <Result label={t("pieceWeight")} value={fmt(sheetRes.weight, 2)} unit="kg" />
+              {sheet.qty > 1 && <Result label={t("totalWeight")} value={fmt(sheetRes.total, 1)} unit="kg" />}
+              <Result label={t("totalArea")} value={fmt(sheetRes.area, 3)} unit="m²" />
+              <Result label={t("perM2")} value={fmt(sheetRes.perM2, 2)} unit="kg/m²" />
+            </>
+          ) : (
+            <p className="text-sm text-muted">{t("invalid")}</p>
+          )}
+        </div>
+      </Card>
+
       {/* ---------- Rulo ağırlığı ve uzunluğu ---------- */}
       <Card icon={Package} title={t("coilTitle")}>
         <div className="mt-5 space-y-3">
-          <Row label={t("material")}>
-            <select
-              value={material}
-              onChange={(e) => setMaterial(e.target.value as MaterialKey)}
-              className={field}
-            >
-              {(Object.keys(DENSITIES) as MaterialKey[]).map((k) => (
-                <option key={k} value={k}>
-                  {t(k)} — {DENSITIES[k]} g/cm³
-                </option>
-              ))}
-            </select>
-          </Row>
+          {malzemeSec(material, setMaterial)}
           <div className="grid grid-cols-2 gap-3">
             <Row label={t("od")} suffix="mm">
               <input type="number" min={0} value={coil.od} onChange={num((v) => setCoil({ ...coil, od: v }))} className={field} />

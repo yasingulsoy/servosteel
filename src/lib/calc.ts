@@ -16,6 +16,45 @@ export const DENSITIES = {
 
 export type MaterialKey = keyof typeof DENSITIES;
 
+export type SheetInput = {
+  /** Boy (mm) */
+  length: number;
+  /** En (mm) */
+  width: number;
+  /** Kalınlık (mm) */
+  thickness: number;
+  /** Adet */
+  qty: number;
+  /** Yoğunluk (g/cm³) */
+  density: number;
+};
+
+export type SheetResult = {
+  /** Bir levhanın ağırlığı (kg) */
+  weight: number;
+  /** Toplam ağırlık (kg) */
+  total: number;
+  /** Toplam alan (m²) */
+  area: number;
+  /** Metrekare ağırlığı (kg/m²) — kalınlık × yoğunluk */
+  perM2: number;
+};
+
+/**
+ * Sac / plaka ağırlığı.
+ *
+ * Levha dikdörtgen bir bloktur: ağırlık = hacim × yoğunluk. mm³ × g/cm³ →
+ * kg dönüşüm katsayısı 1e-6 (rulo hesabıyla aynı). Metrekare ağırlığı kalınlık
+ * × yoğunluk'tur: 1 mm çelik = 7,85 kg/m² — her sonucu elle sağlamanın yolu.
+ */
+export function sheetCalc({ length, width, thickness, qty, density }: SheetInput): SheetResult | null {
+  if (length <= 0 || width <= 0 || thickness <= 0 || density <= 0 || !(qty >= 1)) return null;
+
+  const weight = (length * width * thickness * density) / 1e6;
+  const areaM2 = (length * width) / 1e6;
+  return { weight, total: weight * qty, area: areaM2 * qty, perM2: thickness * density };
+}
+
 export type CoilInput = {
   /** Dış çap (mm) */
   od: number;

@@ -404,6 +404,9 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   istendi" onayı aldı.** Üretici denetim listesi (EN + TR) ve roll form fiyat
   yazısı (TR, EN, DE, IT, ES, RU). Aynı gün deploy sonrası `npm run indexnow`
   ile 478 URL Bing/Yandex'e bildirildi.
+- [ ] **Hesaplayıcı yeniden yayınlandıktan sonra (deploy sonrası) istek:**
+  `/en/calculators` önce (7 Ağustos'tan beri taranmadı), sonra `/de/`, `/pl/`,
+  `/it/calculators` ve `/hesaplayicilar`. Ardından `npm run indexnow`.
 - [ ] **21 Eylül tam taraması: site haritasındaki 478 adresin 463'ü dizinde
   (%96,9).** Google'ın farklı standart seçtiği sayfa **0**, robots/getirme hatası
   **0**. Komut: `python scripts/dizin-tarama.py <cikti.json>` (~20 dk, URL
@@ -823,6 +826,26 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
+
+**E.32 · En büyük arama havuzu ağırlık hesaplayıcısıydı, sayfamız görünmüyordu
+(2026-09-21).** Takip edilen 62 yurt dışı ticari kelimenin (4.790/ay) yalnızca 3'ünde
+ilk 50'deyiz — sorun başlık değil otorite. Hesaplayıcı aramaları ise ayda ~56.000:
+Hindistan 38.470 (`metal weight calculator` 27.100, `sheet weight calculator` 5.400),
+ABD 7.580 (`steel plate weight calculator` 3.600, `metal weight calculator` 2.900,
+`sheet metal weight calculator` 480, `coil weight calculator` 170), Almanya 3.230
+(`gewichtsrechner stahl` 1.600), Polonya 2.870 (`kalkulator wagi blachy` 720),
+İtalya 1.860 (`calcolo peso lamiera` 720), İngiltere/İspanya/Brezilya ~750.
+`/en/calculators` 90 günde **0 gösterim** aldı, 7 Ağustos'tan beri taranmadı. Üç
+sebep: başlık "Sheet Metal … Weight Calculator" diyordu ama **sac ağırlığı aracı
+yoktu**; H1 yalnızca "Calculators"dı; araçlar tarayıcıda çalıştığı için Google'ın
+okuyacağı metin yoktu. Düzeltme: sac/plaka ağırlığı aracı (ilk kart), 9 dilde yerel
+arama terimiyle H1 + başlık, formül + çözümlü örnek + yoğunluk tablosu
+(`calculator-guide.tsx`, tablo `DENSITIES`'ten üretilir) ve 5 soruluk SSS şeması.
+Örnek sayılar Python'la hesaplandı; tarayıcıda 2500×1250×3 çelik = 73,59 kg,
+alüminyum ×10 = 253,1 kg doğrulandı. **Ölç:** 5 ve 19 Ekim'de `/en/calculators` ve
+dil sürümlerinin gösterimi (GSC, sayfa filtresi). Kural: hacim verisine ticari
+kelimelerle sınırlı bakma — alıcının yan aramaları (araç, hesap, standart) çok
+daha büyük ve otorite istemeyebilir.
 
 **E.31 · Hedef firma araştırmasında dört duvar (2026-09-21).** 319'dan 882'ye
 çıkarken çarpılanlar — bir sonraki turda baştan hesaba kat:

@@ -5,6 +5,8 @@ import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { Calculators } from "@/components/calculators";
+import { CalculatorGuide } from "@/components/calculator-guide";
+import { FaqSection, type FaqItem } from "@/components/faq-section";
 import type { AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -23,11 +25,12 @@ export default async function HesaplayicilarPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("calc");
+  const faq = t.raw("faq") as FaqItem[];
 
   return (
     <>
       <PageHero
-        crumbs={[{ label: t("title"), href: "/hesaplayicilar" }]}
+        crumbs={[{ label: t("crumb"), href: "/hesaplayicilar" }]}
         eyebrow={t("eyebrow")}
         title={t("title")}
         description={t("desc")}
@@ -43,6 +46,11 @@ export default async function HesaplayicilarPage({ params }: Props) {
           </p>
         </Reveal>
       </section>
+
+      {/* Formul, cozumlu ornek, yogunluk tablosu: aramanin cevabi HTML'de hazir (bkz. calculator-guide.tsx) */}
+      <CalculatorGuide />
+
+      <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />
 
       <CtaBand />
     </>

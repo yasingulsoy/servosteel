@@ -616,11 +616,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Tekercssúly-, adagolás- és hasításkalkulátorok",
-    "metaDesc": "Ingyenes mérnöki kalkulátorok: tekercssúly és -hossz, présadagolási kapacitás, hasítási hulladékarány. Regisztráció nélkül.",
+    "metaTitle": "Acél súlykalkulátor: lemez, lemezlap és tekercs súlya",
+    "metaDesc": "Ingyenes acél súlykalkulátor: lemez és lemezlap súlya, tekercs súlya és szalaghossza, présadagoló teljesítménye és hosszvágási kihozatal — képletekkel és példákkal.",
     "eyebrow": "Mérnöki eszközök",
-    "title": "Kalkulátorok",
-    "desc": "Készítsen gyors becslést ajánlat nélkül: tekercssúly, óránkénti darabszám és hasítási hulladék. Minden eredmény geometriából származik.",
+    "title": "Acél súlykalkulátor: lemez, lemezlap és tekercs",
+    "desc": "Számítsa ki acéllemez vagy lemezlap súlyát, a tekercs súlyát és szalaghosszát, az adagoló teljesítményét és a hosszvágás hulladékát. Minden eredmény a geometriából és az anyagsűrűségből adódik.",
     "disclaimer": "Ezek az eszközök előzetes felméréshez valók; az eredmények geometriából és anyagsűrűségből számítanak. Pontos sorméretezéshez forduljon mérnöki csapatunkhoz.",
     "material": "Anyag",
     "steel": "Acél",
@@ -655,7 +655,67 @@
     "wastePct": "Hulladékarány",
     "waste": "Hulladék szélessége",
     "yieldNote": "A szalagszám lefelé kerekít; a maradék szélesség az élvágással együtt hulladék lesz. A szalagszélesség hangolása csökkenti a hulladékot.",
-    "invalid": "A megadott értékek érvénytelenek."
+    "invalid": "A megadott értékek érvénytelenek.",
+    "crumb": "Kalkulátorok",
+    "sheetTitle": "Lemez és lemezlap súlya",
+    "length": "Hossz",
+    "width": "Szélesség",
+    "qty": "Darabszám",
+    "pieceWeight": "Darabsúly",
+    "totalWeight": "Összsúly",
+    "totalArea": "Összterület",
+    "perM2": "Négyzetméter-súly",
+    "guide": {
+      "sheet": {
+        "h": "Hogyan számítható a lemez súlya",
+        "p": "A lemez téglatest: súlya a térfogat és a fém sűrűségének szorzata. Milliméterben megadott méreteknél az 1 000 000-val való osztás a mm³ × g/cm³ értéket kilogrammá alakítja.",
+        "formula": "Súly (kg) = hossz × szélesség × vastagság (mm) × sűrűség (g/cm³) ÷ 1 000 000",
+        "example": "Példa: 2500 × 1250 mm-es, 3 mm vastag acéllemez: 2500 × 1250 × 3 × 7,85 ÷ 1 000 000 = 73,6 kg. Ugyanennek a lemeznek egy négyzetmétere 3 × 7,85 = 23,55 kg."
+      },
+      "coil": {
+        "h": "Hogyan számítható az acéltekercs súlya",
+        "p": "Oldalról nézve a tekercs gyűrű. A gyűrű területe szorozva a tekercs szélességével adja a fém térfogatát, a szalagvastagságtól függetlenül.",
+        "formula": "Súly (kg) = π ÷ 4 × (külső Ø² − belső Ø²) × szélesség × sűrűség ÷ 1 000 000   (méretek mm-ben)",
+        "example": "Példa: 1400 mm külső átmérőjű, 508 mm belső átmérőjű, 1250 mm széles acéltekercs súlya π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1 000 000 ≈ 13 116 kg. 1,5 mm vastagságnál ez kb. 891 m szalag."
+      },
+      "length": {
+        "h": "Hogyan számítható a tekercs hossza a súlyból",
+        "p": "Ha a tekercs súlya ismert a műbizonylatból, a szalaghossz ugyanabból a térfogatból adódik.",
+        "formula": "Hossz (m) = súly (kg) ÷ (szélesség (m) × vastagság (m) × sűrűség (kg/m³))",
+        "example": "Példa: 10 t-s, 1250 mm széles, 1 mm vastag acéltekercs: 10 000 ÷ (1,25 × 0,001 × 7850) ≈ 1019 m."
+      },
+      "densH": "A kalkulátorban használt sűrűségek",
+      "densP": "Egy négyzetméter 1 mm-es lemez annyi kilogramm, amennyi a sűrűség értéke — gyors ellenőrzés bármely eredményhez.",
+      "densHead": [
+        "Anyag",
+        "Sűrűség (g/cm³)",
+        "1 m² 1 mm-nél (kg)"
+      ]
+    },
+    "faqEyebrow": "Lemezsúly",
+    "faqTitle": "Gyakori kérdések",
+    "faq": [
+      {
+        "q": "Mennyit nyom egy négyzetméter 1 mm-es acéllemez?",
+        "a": "7,85 kg. Az acél sűrűsége 7,85 g/cm³, így minden milliméter vastagság 7,85 kg-ot ad négyzetméterenként: 2 mm 15,7 kg/m², 3 mm 23,55 kg/m²."
+      },
+      {
+        "q": "Hogyan számítható egy acéltekercs súlya?",
+        "a": "Számítsa ki a gyűrű területét: π ÷ 4 × (külső átmérő² − belső átmérő²), szorozza meg a tekercs szélességével és 7,85-tel, majd milliméteres méreteknél ossza el 1 000 000-val. A szalagvastagság a súlyhoz nem kell, csak a hosszhoz."
+      },
+      {
+        "q": "Miért tér el a számított tekercssúly a bizonylattól?",
+        "a": "A képlet tökéletesen kerek, szorosan tekert tekercset feltételez. A valódi tekercsek menetei között kis hézagok vannak, és a külső menet fölött mérik őket, ezért a számítás becslés; vásárlásnál a műbizonylaton szereplő súly a mérvadó."
+      },
+      {
+        "q": "Változtat-e az eredményen a rozsdamentes acél és az alumínium?",
+        "a": "Csak a sűrűségen keresztül. A rozsdamentes acél (7,9 g/cm³) majdnem olyan nehéz, mint a szénacél; az alumínium (2,7 g/cm³) nagyjából harmadannyi. Válassza ki az anyagot, és a kalkulátor a megfelelő értéket használja."
+      },
+      {
+        "q": "Meddig elég egy tekercs a présemen?",
+        "a": "Használja az adagoló kalkulátort: a lépéshossz × percenkénti löketszám adja az óránként felhasznált métereket, a tekercshossz ezzel elosztva pedig a futásidőt — ez a szám dönti el, milyen gyakran áll le a sor tekercscserére."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Gépvideók: gépsoraink működés közben",

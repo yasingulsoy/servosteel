@@ -616,11 +616,11 @@
     }
   },
   "calc": {
-    "metaTitle": "Kalkulatory masy kręgu, podawania i uzysku cięcia",
-    "metaDesc": "Bezpłatne kalkulatory inżynierskie: masa i długość kręgu, wydajność podawania do prasy, odpad przy cięciu wzdłużnym. Bez rejestracji.",
+    "metaTitle": "Kalkulator wagi blachy i stali — arkusz, płyta, krąg",
+    "metaDesc": "Darmowy kalkulator wagi stali: waga blachy i płyty, waga i długość kręgu, wydajność podajnika prasy i uzysk cięcia wzdłużnego — ze wzorami i przykładami.",
     "eyebrow": "Narzędzia inżynierskie",
-    "title": "Kalkulatory",
-    "desc": "Zrób szybkie oszacowanie bez czekania na ofertę: masa kręgu, sztuki na godzinę i odpad przy cięciu. Wszystkie wyniki wynikają z geometrii.",
+    "title": "Kalkulator wagi blachy i stali: arkusz, płyta, krąg",
+    "desc": "Oblicz wagę arkusza lub płyty stalowej, wagę i długość taśmy w kręgu, wydajność podajnika i odpad przy cięciu wzdłużnym. Każdy wynik wynika z geometrii i gęstości materiału.",
     "disclaimer": "Narzędzia służą wstępnej ocenie; wyniki liczone są z geometrii i gęstości materiału. Po dokładny dobór linii skontaktuj się z naszym działem inżynieryjnym.",
     "material": "Materiał",
     "steel": "Stal",
@@ -655,7 +655,67 @@
     "wastePct": "Udział odpadu",
     "waste": "Szerokość odpadu",
     "yieldNote": "Liczba taśm jest zaokrąglana w dół; pozostała szerokość trafia do odpadu razem z obcięciem krawędzi. Dopasowanie szerokości taśmy zmniejsza odpad.",
-    "invalid": "Wprowadzone wartości są nieprawidłowe."
+    "invalid": "Wprowadzone wartości są nieprawidłowe.",
+    "crumb": "Kalkulatory",
+    "sheetTitle": "Waga blachy i płyty",
+    "length": "Długość",
+    "width": "Szerokość",
+    "qty": "Ilość",
+    "pieceWeight": "Waga sztuki",
+    "totalWeight": "Waga łączna",
+    "totalArea": "Powierzchnia łączna",
+    "perM2": "Waga m²",
+    "guide": {
+      "sheet": {
+        "h": "Jak obliczyć wagę blachy",
+        "p": "Arkusz blachy to prostopadłościan: jego waga to objętość razy gęstość metalu. Przy wymiarach w milimetrach dzielenie przez 1 000 000 zamienia mm³ × g/cm³ na kilogramy.",
+        "formula": "Waga (kg) = długość × szerokość × grubość (mm) × gęstość (g/cm³) ÷ 1 000 000",
+        "example": "Przykład: arkusz stalowy 2500 × 1250 mm o grubości 3 mm: 2500 × 1250 × 3 × 7,85 ÷ 1 000 000 = 73,6 kg. Metr kwadratowy tej blachy waży 3 × 7,85 = 23,55 kg."
+      },
+      "coil": {
+        "h": "Jak obliczyć wagę kręgu stali",
+        "p": "Z boku krąg jest pierścieniem. Pole pierścienia pomnożone przez szerokość kręgu daje objętość metalu, niezależnie od grubości taśmy.",
+        "formula": "Waga (kg) = π ÷ 4 × (Ø zewn² − Ø wewn²) × szerokość × gęstość ÷ 1 000 000   (wymiary w mm)",
+        "example": "Przykład: krąg stalowy o średnicy zewnętrznej 1400 mm, wewnętrznej 508 mm i szerokości 1250 mm waży π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1 000 000 ≈ 13 116 kg. Przy grubości 1,5 mm daje około 891 m taśmy."
+      },
+      "length": {
+        "h": "Jak obliczyć długość taśmy z wagi kręgu",
+        "p": "Gdy waga kręgu jest znana z atestu, długość taśmy wynika z tej samej objętości.",
+        "formula": "Długość (m) = waga (kg) ÷ (szerokość (m) × grubość (m) × gęstość (kg/m³))",
+        "example": "Przykład: krąg stalowy 10 t, szerokość 1250 mm, grubość 1 mm: 10 000 ÷ (1,25 × 0,001 × 7850) ≈ 1019 m."
+      },
+      "densH": "Gęstości używane w kalkulatorze",
+      "densP": "Metr kwadratowy blachy o grubości 1 mm waży tyle kilogramów, ile wynosi gęstość — szybka kontrola każdego wyniku.",
+      "densHead": [
+        "Materiał",
+        "Gęstość (g/cm³)",
+        "1 m² przy 1 mm (kg)"
+      ]
+    },
+    "faqEyebrow": "Waga blachy",
+    "faqTitle": "Najczęstsze pytania",
+    "faq": [
+      {
+        "q": "Ile waży metr kwadratowy blachy stalowej o grubości 1 mm?",
+        "a": "7,85 kg. Stal ma gęstość 7,85 g/cm³, więc każdy milimetr grubości dodaje 7,85 kg na metr kwadratowy: 2 mm to 15,7 kg/m², 3 mm to 23,55 kg/m²."
+      },
+      {
+        "q": "Jak obliczyć wagę kręgu stalowego?",
+        "a": "Oblicz pole pierścienia π ÷ 4 × (średnica zewnętrzna² − średnica wewnętrzna²), pomnóż przez szerokość kręgu i przez 7,85, a przy wymiarach w milimetrach podziel przez 1 000 000. Grubość taśmy nie jest potrzebna do wagi, tylko do długości."
+      },
+      {
+        "q": "Dlaczego obliczona waga kręgu różni się od atestu?",
+        "a": "Wzór zakłada idealnie okrągły, ciasno nawinięty krąg. Rzeczywiste kręgi mają drobne luzy między zwojami i mierzy się je po zewnętrznym zwoju, dlatego obliczenie jest szacunkiem, a przy zakupie odniesieniem jest waga z atestu."
+      },
+      {
+        "q": "Czy stal nierdzewna i aluminium zmieniają wynik?",
+        "a": "Tylko przez gęstość. Stal nierdzewna (7,9 g/cm³) waży prawie tyle co stal węglowa; aluminium (2,7 g/cm³) około jednej trzeciej. Wybierz materiał, a kalkulator użyje właściwej wartości."
+      },
+      {
+        "q": "Na jak długo wystarczy krąg na mojej prasie?",
+        "a": "Użyj kalkulatora podajnika: skok × liczba uderzeń na minutę daje metry zużyte na godzinę, a długość kręgu podzielona przez tę wartość daje czas pracy — liczbę, która decyduje, jak często linia staje na wymianę kręgu."
+      }
+    ]
   },
   "videos": {
     "metaTitle": "Filmy maszyn: nasze linie podczas pracy",
