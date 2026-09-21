@@ -1,6 +1,7 @@
 import { sorgu, sorguSert } from "@/lib/db";
 import { ENGELLI_ULKELER, epostaGecerli, sistemAdresiMi } from "@/lib/outreach-kurallar";
 import { OUTREACH_SEMA } from "@/lib/outreach-sema";
+import { kisaTarih } from "@/lib/zaman";
 
 /**
  * Hedef firmalar ve tanıtım e-postası gönderimi — veritabanı katmanı.
@@ -138,7 +139,12 @@ export async function outreachSemaKur(): Promise<boolean> {
  * Bu firmaya ŞU AN neden e-posta gönderilemez? Gönderilebiliyorsa `null`.
  * Günlük tavan, aralık ve sigorta burada değil — onlar firmaya değil güne ait.
  */
-export function firmaEngeli(f: HedefFirma, engelli: boolean): string | null {
+export function firmaEngeli(
+  f: HedefFirma,
+  engelli: boolean,
+  /** Bu adrese BAŞKA bir firma satırından giden e-posta (bkz. ayniAdreseGiden) */
+  onceki: AyniAdres | null = null
+): string | null {
   if (!f.listede) return "Firma son aktarımda listede yoktu (elenmiş olabilir).";
   if (f.durum !== "bekliyor") {
     return `Durumu "${HEDEF_DURUM_ETIKET[f.durum] ?? f.durum}" — yalnızca gönderilmemiş firmaya yazılır.`;
@@ -148,16 +154,42 @@ export function firmaEngeli(f: HedefFirma, engelli: boolean): string | null {
   if (sistemAdresiMi(f.eposta)) return `${f.eposta} bir sistem adresi (kimse okumaz) — iletişim formu ya da telefon.`;
   if (ENGELLI_ULKELER[f.ulke]) return ENGELLI_ULKELER[f.ulke];
   if (engelli) return "Bu adres engel listesinde (abonelikten çıktı ya da elle engellendi).";
+  if (onceki) {
+    return `Bu adrese ${kisaTarih(onceki.zaman)} tarihinde "${onceki.firma}" satırından yazıldı — aynı adrese ikinci tanıtım e-postası gitmez.`;
+  }
   if (!f.konu.trim() || !f.govde.trim()) return "Hazır e-posta metni yok.";
   return null;
 }
 
-/* SQL karşılığı: gönderilebilir firmalar. Günlük listede ve "sıradaki" düğmesinde. */
+/* SQL karşılığı: gönderilebilir firmalar. Günlük listede ve "sıradaki" düğmesinde.
+   Son satır: aynı adres başka bir firma satırında da olabilir (keşifte bir site
+   birden çok ülkenin aramasında çıkıyor) — adrese bir kez yazılır. */
 const GONDERILEBILIR = `
   h.listede AND h.durum = 'bekliyor' AND h.eposta <> '' AND h.konu <> ''
   AND NOT (h.ulke = ANY($1::text[]))
   AND NOT EXISTS (SELECT 1 FROM eposta_engel e WHERE e.eposta = lower(h.eposta))
+  AND NOT EXISTS (SELECT 1 FROM hedef_gonderim g
+                  WHERE lower(g.eposta) = lower(h.eposta) AND g.sonuc IN ('ok', 'belirsiz'))
 `;
+
+export type AyniAdres = { firma: string; zaman: string };
+
+/**
+ * Bu adrese başka bir firma satırından gitmiş (ya da gitmiş olabilecek) son e-posta.
+ * Aynı satırdan gideni durum zaten yakalıyor ("Gönderildi").
+ */
+export async function ayniAdreseGiden(eposta: string, firmaId: number): Promise<AyniAdres | null> {
+  if (!eposta) return null;
+  const r = await sorguSert<AyniAdres>(
+    `SELECT COALESCE(h.firma, '(silinmiş firma)') AS firma, g.zaman
+     FROM hedef_gonderim g LEFT JOIN hedef_firmalar h ON h.id = g.firma_id
+     WHERE lower(g.eposta) = lower($1) AND g.sonuc IN ('ok', 'belirsiz')
+       AND g.firma_id IS DISTINCT FROM $2
+     ORDER BY g.zaman DESC LIMIT 1`,
+    [eposta, firmaId]
+  );
+  return r[0] ?? null;
+}
 const engelliUlkeler = () => Object.keys(ENGELLI_ULKELER);
 
 /* ----------------------------------------------------------------- liste */

@@ -6,6 +6,7 @@ import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
   KATEGORI_ADI,
+  ayniAdreseGiden,
   bugunGonderilen,
   engelliMi,
   firmaEngeli,
@@ -58,10 +59,11 @@ export default async function FirmaSayfasi({
   const f = await hedefFirma(no);
   if (!f) notFound();
 
-  const [gecmis, notlar, engelli, bugun, durum, sonraki, ilkGun, gd, talepleri] = await Promise.all([
+  const [gecmis, notlar, engelli, onceki, bugun, durum, sonraki, ilkGun, gd, talepleri] = await Promise.all([
     gonderimler(no),
     hedefNotlar(no),
     engelliMi(f.eposta),
+    ayniAdreseGiden(f.eposta, f.id),
     bugunGonderilen(),
     gonderimDurumu(),
     siradaki(filtre, no),
@@ -78,7 +80,7 @@ export default async function FirmaSayfasi({
   const simdi = new Date(durum.simdi).getTime();
   const durdu = durum.durdu_bitis && new Date(durum.durdu_bitis).getTime() > simdi;
   const engel =
-    firmaEngeli(f, engelli) ??
+    firmaEngeli(f, engelli, onceki) ??
     (ayar.eksik.length ? `Gönderim ayarları eksik: ${ayar.eksik.join(", ")}.` : null) ??
     (durdu ? `Gönderim durduruldu (${tamTarih(durum.durdu_bitis!)}'e kadar): ${durum.durdu_sebep}` : null) ??
     geriDonusEngeli(gd.toplam, gd.hatali) ??

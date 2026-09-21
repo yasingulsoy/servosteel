@@ -6,6 +6,7 @@ import { kayitEkle } from "@/lib/panel-kayit";
 import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
+  ayniAdreseGiden,
   bugunGonderilen,
   engelle,
   engelliMi,
@@ -87,7 +88,7 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   if (!(await outreachSemaKur())) return { tamam: false, mesaj: "Veritabanına bağlanılamadı." };
   const f = await hedefFirma(id);
   if (!f) return { tamam: false, mesaj: "Firma bulunamadı." };
-  const engel = firmaEngeli(f, await engelliMi(f.eposta));
+  const engel = firmaEngeli(f, await engelliMi(f.eposta), await ayniAdreseGiden(f.eposta, f.id));
   if (engel) return { tamam: false, mesaj: engel };
 
   /* Alan adı e-posta almıyorsa göndermeye çalışmak geri dönüş demek. Sıra

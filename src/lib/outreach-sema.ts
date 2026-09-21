@@ -70,6 +70,8 @@ export const OUTREACH_SEMA = `
   );
   CREATE INDEX IF NOT EXISTS hedef_gonderim_zaman_idx ON hedef_gonderim (zaman DESC);
   CREATE INDEX IF NOT EXISTS hedef_gonderim_firma_idx ON hedef_gonderim (firma_id, zaman DESC);
+  /* Aynı adrese ikinci tanıtım e-postası gitmesin — adres birden çok firma satırında olabilir */
+  CREATE INDEX IF NOT EXISTS hedef_gonderim_eposta_idx ON hedef_gonderim (lower(eposta));
 
   CREATE TABLE IF NOT EXISTS hedef_not (
     id           SERIAL PRIMARY KEY,
