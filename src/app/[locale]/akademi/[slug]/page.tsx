@@ -84,20 +84,27 @@ function makeHeading(level: 2 | 3, counter: Map<string, number>) {
   };
 }
 
-/* MDX içindeki dahili linkler locale-önekli Link'e, dış linkler yeni sekmeye. */
-function makeMdxComponents() {
+/* MDX içindeki dahili linkler locale-önekli Link'e, dış linkler yeni sekmeye.
+   Akademi yazısına giden link, hedef yazı BU DİLDE yoksa link olarak basılmaz:
+   çeviri yazıda "/akademi/roll-form-nedir" gibi bir link o dilde 404'e gider
+   (2026-09-21'de DE/ES/IT/RU maliyet yazısında 4 tane yakalandı). Metin kalır. */
+function makeMdxComponents(locale: AppLocale) {
   const counter = new Map<string, number>();
   return {
     h2: makeHeading(2, counter),
     h3: makeHeading(3, counter),
-    a: ({ href = "", children }: { href?: string; children?: ReactNode }) =>
-      href.startsWith("/") ? (
-        <Link href={href}>{children}</Link>
-      ) : (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {children}
-        </a>
-      ),
+    a: ({ href = "", children }: { href?: string; children?: ReactNode }) => {
+      if (!href.startsWith("/")) {
+        return (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        );
+      }
+      const yazi = href.match(/^\/akademi\/([^/#?]+)/);
+      if (yazi && !getPostLocales(yazi[1]).includes(locale)) return <>{children}</>;
+      return <Link href={href}>{children}</Link>;
+    },
   };
 }
 
@@ -242,7 +249,7 @@ export default async function AkademiPostPage({ params }: Props) {
         <div className="prose prose-zinc max-w-none dark:prose-invert prose-headings:font-display prose-headings:tracking-tight prose-a:font-medium prose-a:text-accent-ink prose-img:rounded-xl xl:order-1 xl:max-w-3xl">
           <MDXRemote
             source={post.content}
-            components={makeMdxComponents()}
+            components={makeMdxComponents(locale as AppLocale)}
             options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
           />
 

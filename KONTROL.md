@@ -205,9 +205,11 @@ ya da yetki verilince betikle.
 
 ```bash
 python scripts/canli-kontrol.py
+python scripts/ic-link-kontrol.py      # sayfaların İÇİNDEKİ linkler, ~3 dk
 ```
 14 canlı kontrol: yeni yazı, başlıklar, video bölümleri, SSS'ler, sitemap, GA4
-ve Clarity script'leri. Hepsi OK ise ve **yeni URL** eklendiyse:
+ve Clarity script'leri. İkinci betik her sayfanın her iç linkini çağırır — ilki
+yalnızca site haritasındaki sayfalara bakar, içlerindeki kırık linki görmez (§E.30). Hepsi OK ise ve **yeni URL** eklendiyse:
 
 > **Tam tarama, 2026-09-20:** site haritasındaki **470 adresin 470'i 200**
 > döndü; yönlendirme, `noindex`, eksik/çift H1, boş ya da tekrar eden başlık
@@ -792,6 +794,17 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
+
+**E.30 · Çeviri yazının iç linki o dilde olmayan yazıya gider (2026-09-21).**
+Roll form maliyet yazısı 6 dilde yayına girdi; "roll form nedir" yazısı yalnızca
+TR ve EN'de var. DE/ES/IT/RU sürümündeki `/akademi/roll-form-nedir` linki
+`/de/academy/what-is-roll-forming` gibi **404** adreslere yerelleşti. canli-kontrol
+bunu görmedi (site haritasındaki 478 sayfanın hepsi 200); iç link taraması gördü:
+482 link hedefinden 4'ü 404. Cümleler düzeltildi ve **kalıcı koruma** kondu:
+akademi sayfasındaki MDX linki, hedef yazı o dilde yoksa link basmaz, metni bırakır
+(`akademi/[slug]/page.tsx`). Kural: yazıyı yeni dile çevirirken içindeki akademi
+linklerinin o dilde karşılığı olup olmadığına bak — koruma 404'ü engeller ama
+okuyucu linki kaybeder.
 
 **E.28 · İletişim formu telefonda 2,2 ekran aşağıdaydı (2026-09-20).**
 E.26'da "görüntüleme sabit, `form_start` sıfır" diye bırakılan soru ölçüldü.
