@@ -391,6 +391,22 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   istendi" onayı aldı.** Üretici denetim listesi (EN + TR) ve roll form fiyat
   yazısı (TR, EN, DE, IT, ES, RU). Aynı gün deploy sonrası `npm run indexnow`
   ile 478 URL Bing/Yandex'e bildirildi.
+- [ ] **21 Eylül tam taraması: site haritasındaki 478 adresin 463'ü dizinde
+  (%96,9).** Google'ın farklı standart seçtiği sayfa **0**, robots/getirme hatası
+  **0**. Komut: `python scripts/dizin-tarama.py <cikti.json>` (~20 dk, URL
+  Inspection API). Kalan 15:
+  - **İstek atılacak (Google hiç görmemiş / taramamış, 8):** `/it/academy/where-to-buy-a-coil-processing-line`,
+    `/ru/academy/how-to-calculate-coil-weight-and-length`, `/ru/academy/servo-feeder-selection-for-progressive-dies`,
+    `/ru/applications/automotive-and-appliances`, `/it/machines/servo-feeders/cased`,
+    `/hu/…/cased`, `/pl/…/cased`, `/ru/…/cased`.
+  - **Tarandı ama alınmadı (7) — istek tek başına yetmez:** kasalı servo sürücü
+    sayfası **de/es/ar**, `/pl/machines/servo-feeders/mini`, `/pl/machines/automatic-stacker`,
+    `/ar/applications/construction`, `/ru/comparison/servo-vs-mechanical-feeding`.
+    Örüntü: 15 sayfanın **7'si kasalı servo sürücü** (yedi dil). Sayfa düzgün
+    çevrili ama ince: ana içerik 249 kelime, çoğu model/genişlik tablosu, üst
+    sayfa "servo sürücüler"le %43 örtüşüyor. TR/EN'de dizinde (17 Eylül isteği).
+    Çözüm: katalogdaki SRV-KS verisinden (s.16) sayfaya kendine özgü içerik —
+    ne zaman kasalı, ne zaman mini; kalınlık/hız/merdane; 2-3 SSS — sonra istek.
 - [ ] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
