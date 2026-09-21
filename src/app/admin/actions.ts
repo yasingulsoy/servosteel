@@ -10,8 +10,8 @@ import {
   parolaAta,
   yoneticiSil,
   parolaDegistir,
-  rolu,
 } from "@/lib/admin-auth";
+import { adminYetkisi, yetki } from "@/lib/admin-yetki";
 import {
   DURUMLAR,
   DURUM_ETIKET,
@@ -29,30 +29,10 @@ import { kayitEkle } from "@/lib/panel-kayit";
 /**
  * Panelin sunucu eylemleri.
  *
- * **HER EYLEMDE yetki kontrolü var.** Next dokümanının uyardığı gibi sunucu
- * eylemleri arayüzden bağımsız olarak doğrudan POST ile çağrılabiliyor;
- * "zaten giriş yapmış olmadan bu düğmeyi göremez" demek güvenlik değildir.
+ * **HER EYLEMDE yetki kontrolü var** (`yetki` / `adminYetkisi`,
+ * lib/admin-yetki.ts): sunucu eylemleri arayüzden bağımsız olarak doğrudan
+ * POST ile çağrılabiliyor.
  */
-
-async function yetki(): Promise<string> {
-  const k = await oturum();
-  if (!k) throw new Error("yetkisiz");
-  return k;
-}
-
-/**
- * Yalnızca ADMIN rolü geçer. Kullanıcı açmak, silmek ve başkasının parolasını
- * değiştirmek buradan geçer.
- *
- * Kontrol SUNUCUDA, çünkü arayüzdeki "Kullanıcılar" menüsünü gizlemek
- * güvenlik değil: sunucu eylemi doğrudan POST ile çağrılabiliyor. Menüyü
- * görmeyen bir kullanıcı eylemi yine de tetikleyebilirdi.
- */
-async function adminYetkisi(): Promise<string> {
-  const k = await yetki();
-  if ((await rolu(k)) !== "admin") throw new Error("bu işlem yalnızca yönetici için");
-  return k;
-}
 
 const metin = (v: FormDataEntryValue | null, max = 500) =>
   typeof v === "string" ? v.trim().slice(0, max) : "";

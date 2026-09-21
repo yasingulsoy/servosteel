@@ -1,3 +1,6 @@
 # Excel calisma dosyasi her uretimde yeniden yazilir, kaynagi .md dosyalaridir.
 # Firma uzerinde Durum/Yanit doldurdugunda kendi kopyasi ezilmesin diye izlenmez.
 Servosteel-Hedef-Firmalar.xlsx
+
+# Panel aktarim dosyasi da her uretimde yeniden yazilir; kaynagi yine .md dosyalari.
+panel-aktarim.json

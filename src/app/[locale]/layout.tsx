@@ -12,7 +12,7 @@ import { PageAttention } from "@/components/page-attention";
 import { Analytics } from "@/components/analytics";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
 import { pageAlternates } from "@/i18n/seo";
-import { CONTACT, SITE_NAME, SITE_URL, SOCIAL_URLS, DIRECTORY_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
+import { CONTACT, LEGAL_NAME, SITE_NAME, SITE_URL, SOCIAL_URLS, DIRECTORY_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
 import "../globals.css";
 
 /* FONTLAR — alt küme başına bir preload etiketi basılır (next/font/google).
@@ -141,7 +141,7 @@ const orgJsonLd = {
   alternateName: ["Servo Steel", "ServoSteel"],
   /* Ticaret Sicil Gazetesi kaydı (2026-09-19): İstanbul, sicil no 1015933.
      Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil. */
-  legalName: "Servosteel Makina Sanayi ve Dış Ticaret Anonim Şirketi",
+  legalName: LEGAL_NAME,
   url: SITE_URL,
   /* "Üretici mi, tedarikçi mi?" belirsizliğini şema düzeyinde de kapatır. */
   description:

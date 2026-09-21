@@ -77,6 +77,13 @@ export const CONTACT = {
   addressCountry: "TR",
 };
 
+/**
+ * Tüzel kişilik unvanı — Ticaret Sicil Gazetesi'nden (sicil no 1015933,
+ * KONTROL.md). Kurumsal şemada (`[locale]/layout.tsx`) ve tanıtım
+ * e-postalarının altbilgisinde aynı yazım kullanılır.
+ */
+export const LEGAL_NAME = "Servosteel Makina Sanayi ve Dış Ticaret Anonim Şirketi";
+
 
 /** YouTube kanalı — yüzen tuş, sosyal ikonlar, videolar sayfası ve şema aynı adresi kullanır. */
 export const YOUTUBE_URL = "https://www.youtube.com/@ServoSteel.ServoMold";

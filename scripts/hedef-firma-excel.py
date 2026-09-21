@@ -4,6 +4,8 @@
   python scripts/hedef-firma-excel.py
 
 Cikti: seo/hedef-firmalar/Servosteel-Hedef-Firmalar.xlsx
+       seo/hedef-firmalar/panel-aktarim.json  (panel icin; aktarim:
+       node scripts/hedef-firma-aktar.mjs --yaz)
 
 Her segment bir sayfa; bastaki "TUM FIRMALAR" sayfasi hepsini birlestirir.
 Calisma dosyasi oldugu icin her satira Durum / Gonderim / Yanit / Not sutunlari
@@ -28,6 +30,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KLASOR = os.path.join(KOK, "seo", "hedef-firmalar")
 CIKTI = os.path.join(KLASOR, "Servosteel-Hedef-Firmalar.xlsx")
+PANEL = os.path.join(KLASOR, "panel-aktarim.json")
 
 ADLAR = {
     "kablo-kanali": "Kablo Kanalı",
@@ -226,6 +229,37 @@ def ek_sutunlar(segler, satir):
         if len(m) <= MAILTO_SINIR:
             taslak = m
     return [link, konu, metin, taslak]
+
+
+EPOSTA_KALIBI = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
+
+
+def panel_kaydi(anahtar, satir, ek, segler):
+    """Panel veritabanina gidecek tek firma. E-posta metni Excel'dekiyle AYNI (ek_sutunlar).
+
+    Adres, iletisim hucresindeki ILK adres. Dogrulayici adresi sitede bulamadiysa
+    hucreye "e-posta sitede doğrulanamadı" yazar — o satir adressiz sayilir,
+    hucrede baska bir adres gecse bile (dogrulanmamis adrese yazilmaz)."""
+    hucre = str(satir[5] or "")
+    m = EPOSTA_KALIBI.search(hucre)
+    eposta = m.group(0).rstrip(".") if m and "doğrulanamadı" not in hucre else ""
+    dil = ULKE_DIL.get(satir[1], "en")
+    return {
+        "anahtar": anahtar,
+        "firma": str(satir[0] or "").strip(),
+        "hitap": hitap_adi(satir[0]),
+        "ulke": str(satir[1] or "").strip(),
+        "web": str(satir[2] or "").strip(),
+        "kanit": str(satir[3] or "").strip(),
+        "urun": str(satir[4] or "").strip(),
+        "iletisim": hucre.strip(),
+        "eposta": eposta,
+        "dil": dil if dil in SABLON else "en",   # sablonu olmayan dil (hu) Ingilizce gider
+        "link": ek[0],
+        "konu": ek[1],
+        "govde": ek[2],
+        "segmentler": " + ".join(segler),
+    }
 
 
 # Ayni firmanin iki alan adi. Kanit: iki alan adindaki satirda da ayni tuzel kisi
@@ -516,10 +550,12 @@ def main():
     if hepsi:
         # Iki segmentte cikan firma tek satir olur ama segmentlerin HEPSI yazilir:
         # kablo kanali + raf ureten firmaya iki hat birden teklif edilir.
-        birlesik = []
+        birlesik, panel = [], []
         for k, satir in hepsi:
             segler = sorted(gorulen[k], key=lambda x: (x in TEYITSIZ, x in SONA))
-            birlesik.append(satir + ek_sutunlar(segler, satir) + [" + ".join(segler)])
+            ek = ek_sutunlar(segler, satir)
+            birlesik.append(satir + ek + [" + ".join(segler)])
+            panel.append(panel_kaydi(k, satir, ek, segler))
         sayfa_yaz(ozet, kanonik, birlesik, segment_sutunu=True)
         bekleyen = durum_isaretle(ozet)
         print("  %d firma BEKLE ile işaretlendi (yalnızca teyitsiz segmentte)" % bekleyen)
@@ -528,6 +564,12 @@ def main():
 
     wb.move_sheet("TÜM FİRMALAR", offset=-len(wb.sheetnames) + 1)
     wb.save(CIKTI)
+    if hepsi:
+        with io.open(PANEL, "w", encoding="utf-8", newline="\n") as d:
+            json.dump({"uretildi": date.today().isoformat(), "firmalar": panel}, d,
+                      ensure_ascii=False, indent=1)
+        print("Panel aktarımı: %s (%d firma, %d e-postalı)" % (
+            PANEL, len(panel), sum(1 for x in panel if x["eposta"])))
 
     cift = sum(1 for v in gorulen.values() if len(v) > 1)
     print("\n" + CIKTI)

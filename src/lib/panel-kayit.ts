@@ -37,6 +37,12 @@ export const OLAY_ETIKET = {
   kullanici_sil: "Kullanıcı sildi",
   parola_ver: "Başkasına parola verdi",
   parola_degistir: "Kendi parolasını değiştirdi",
+  hedef_gonder: "Tanıtım e-postası gönderdi",
+  hedef_gonder_hata: "Tanıtım e-postası gönderilemedi",
+  hedef_durum: "Hedef firmanın durumunu değiştirdi",
+  hedef_not: "Hedef firmaya not ekledi",
+  hedef_engel: "Adresi engel listesine ekledi",
+  sigorta_sifirla: "Gönderim sigortasını kaldırdı",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

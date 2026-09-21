@@ -372,6 +372,48 @@ Tıklayan firma = sıcak firma; takip telefonu önce ona. GA4 verisi 24–48 saa
 gecikmeli. **Excel'i yeniden üretmek Durum/Yanıt sütunlarını siler** — firma
 üzerinde çalışılan kopyayı ayrı adla saklasın.
 
+**Panelden gönderim (2026-09-21).** Liste artık panelde: **Panel → Hedef
+firmalar** (`/admin/firmalar`). Excel'deki hazır e-posta aynen gelir; önizlenir,
+gerekirse düzeltilir ve iki adımda ("Gönder…" → "Evet, … adresine gönder")
+firmanın kendi SMTP'sinden gider. Durum (yanıt geldi / olumlu / ilgilenmiyor),
+not ve gönderim geçmişi firma sayfasında — Excel'in Durum sütunu artık gerekmiyor.
+"Sıradaki firmayı aç" seçili ülke/segmentte bir sonraki gönderilebilir firmayı açar.
+
+```bash
+python scripts/hedef-firma-excel.py         # Excel + panel-aktarim.json
+node scripts/hedef-firma-aktar.mjs          # kuru: ne değişecek (hiçbir şey yazmaz)
+node scripts/hedef-firma-aktar.mjs --yaz    # canlı veritabanına yazar
+```
+Aktarım tekrar tekrar çalıştırılabilir: yeni firma eklenir, **gönderilmiş
+firmanın adresi ve metni korunur**, listeden çıkan firma silinmez ("listede
+değil" olur, gönderilemez), abonelik bağlantıları değişmez. Gelen liste mevcut
+listenin yarısından kısaysa yazmaz.
+
+Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
+- **Günde en çok 20** (`OUTREACH_DAILY_LIMIT`, üst sınır 50), iki e-posta arası
+  **en az 90 sn** (`OUTREACH_INTERVAL_SEC`, alt sınır 60). Gün İstanbul günü.
+- **Sigorta:** sunucu 4xx derse, girişi reddederse, cevabında hız sınırı / spam /
+  engel / relay geçerse ya da üst üste iki gönderim başarısız olursa gönderim
+  gün sonuna kadar (en az 6 saat) durur. Sebep listenin üstünde yazar. Yönetici
+  "Sigortayı şimdi kaldır" diyebilir — **yalnızca sebep giderildiyse** (ör.
+  parola düzeltildi). Hız sınırına üstüne gitmek kutuyu kara listeye sokar.
+- **Sunucu 45 sn cevap vermezse** e-posta gitmiş olabilir: firma "Gönderildi"
+  sayılır ve gün durur — aynı firmaya ikinci e-posta gitmesin.
+- **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
+- **Almanya ve Avusturya'ya e-posta gitmez** — şirketlere de önceden açık izin
+  şartı var (UWG §7, TKG 2021 §174). Telefon, iletişim formu, LinkedIn. Diğer AB
+  ülkelerinde önizlemede uyarı çıkar; karar gönderenin.
+- Her e-postanın sonunda **abonelikten çıkma bağlantısı + unvan + adres** var;
+  metin kutusunun dışında, silinemez. Bağlantı (`/api/unsubscribe`) açılınca
+  ONAY sorar — kurumsal e-posta tarayıcıları bağlantıları kendisi açıyor, açmak
+  çıkarsaydı alıcı okumadan listeden düşerdi. Gmail/Outlook'un "abonelikten çık"
+  tuşu tek tıkla çıkarır (RFC 8058). Çıkan adres **engel listesine** girer;
+  "bize yazmayın" diye cevap geleni firma sayfasından "Bu adresi engelle" ile.
+- Yalnızca düz metin, izleme pikseli yok. Kimin tıkladığı yine UTM'den.
+- Kurallar değişirse: `node scripts/outreach-kurallar-test.mjs` (saf kurallar)
+  ve gönderim akışı `python scripts/smtp-yutucu.py` ile yerel sahte SMTP'ye
+  karşı uçtan uca (421 / 550 / 535 / yavaş modları) — gerçek adrese değil.
+
 ### C.4 Search Console özel raporları
 
 - **Ürün snippet'leri:** hata/uyarı çıkarsa spec şemasında alan eksiği demektir.
@@ -540,6 +582,23 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
   altı commit yayına çıktı; istifleyici fotoğrafı, dokuz dildeki iç linkler ve
   `alternateName` canlıda doğrulandı. Dört saat gecikmişti; **otomatik deploy'un
   neden geciktiği hâlâ bilinmiyor**, tekrarlarsa Dokploy webhook'una bakılacak.
+
+**Tanıtım e-postası — panelden gönderimi açmak için (2026-09-21)**
+- [ ] **Ayrı bir e-posta kutusu aç** (hosting paneli → E-posta Hesapları), ör.
+  `export@servosteel.com.tr`. **website@ olmaz:** form bildirimleri oradan
+  gidiyor; aynı kutu girilirse panel gönderimi hiç açmaz. Yanıtlar bu kutuya
+  gelir — biri okumalı, ya da `OUTREACH_REPLY_TO` okunan bir adresi göstermeli.
+- [ ] **Dokploy → Environment'a ekle ve yeniden dağıt:**
+  `OUTREACH_SMTP_USER=export@servosteel.com.tr` ve `OUTREACH_SMTP_PASS=…`
+  (parola sohbete yazılmaz). İsteğe bağlı: `OUTREACH_FROM_NAME` (varsayılan
+  "Servosteel"), `OUTREACH_REPLY_TO`, `OUTREACH_BCC`. Sunucu ve port verilmezse
+  formunkiler (`SMTP_HOST`/`SMTP_PORT`) kullanılır. Eksikken panel listeyi ve
+  önizlemeyi gösterir, göndermez — sarı bant hangi değişkenin eksik olduğunu yazar.
+- [ ] **İlk günler `OUTREACH_BCC` = kendi Gmail adresin:** her gönderimin kopyası
+  oraya düşer; "Spam"e mi "Gelen kutusu"na mı gittiği ilk günden görülür.
+  Spam'e düşüyorsa gönderime devam edilmez, bakılır.
+- [ ] **İlk hafta günde 10-20** — yeni kutunun itibarı yok. Yanıt oranı ve
+  sigorta durumu listenin üstünde.
 
 **Veritabanı / panel**
 - [ ] **Postgres'in dış portu (25632) internete açık ve TLS YOK.** Ölçüldü
@@ -826,6 +885,18 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
+
+**E.33 · "Gönder…" tek tıkla onaysız gönderdi — sahte SMTP'de yakalandı
+(2026-09-21).** Panelin iki adımlı onayında ilk düğme `type="button"`, onay
+düğmesi aynı yerde `type="submit"`. Anahtarsız iki düğmeyi React AYNI DOM öğesi
+sayıp türünü yerinde değiştiriyor; tarayıcı tıklamanın varsayılan eylemini
+değişmiş türe göre uyguluyor → form gönderiliyor. Onay adımı kodda duruyordu
+ama çalışmıyordu; okuyarak görünmüyordu. Düzeltme: iki düğmeye ayrı `key` +
+ilk düğmede `preventDefault`. Aynı turda sunucu kuralları da istek yeniden
+oynatılarak denendi (aralık, tavan, gönderilmiş firmaya ikinci gönderim —
+arayüz atlatılınca da reddediliyor). **Kural: dışarıya giden her eylem gerçek
+adrese açılmadan önce yerel sahte SMTP'ye karşı uçtan uca denenir**
+(`scripts/smtp-yutucu.py`).
 
 **E.32 · En büyük arama havuzu ağırlık hesaplayıcısıydı, sayfamız görünmüyordu
 (2026-09-21).** Takip edilen 62 yurt dışı ticari kelimenin (4.790/ay) yalnızca 3'ünde

@@ -13,6 +13,7 @@ import {
   Menu,
   PanelLeftClose,
   PanelLeftOpen,
+  Send,
   UserCog,
   Users,
   X,
@@ -33,7 +34,7 @@ import { MENU_CEREZ } from "./menu-tercihi";
  * görünüm; asıl kilit sunucu eylemlerinde ve sayfanın kendisinde.
  */
 
-export type PanelBolum = "talepler" | "kullanicilar" | "kayitlar" | "profil";
+export type PanelBolum = "talepler" | "firmalar" | "kullanicilar" | "kayitlar" | "profil";
 
 /* Nabız: panelde geçen süre kayda doğru yazılsın diye (bkz. lib/panel-kayit). */
 const NABIZ_MS = 60_000;
@@ -305,6 +306,20 @@ export function PanelKabugu({
                       </ul>
                     </div>
                   </div>
+                </li>
+
+                {/* Tanıtım e-postası — herkese açık: gönderimi satış yapıyor.
+                    Sigortayı elle kaldırmak yalnızca yöneticide (sunucuda). */}
+                <li>
+                  <Link
+                    href="/admin/firmalar"
+                    onClick={kapatMobil}
+                    aria-current={aktif === "firmalar" ? "page" : undefined}
+                    className={oge(aktif === "firmalar")}
+                  >
+                    <Send className={ikon(aktif === "firmalar")} aria-hidden />
+                    <span className={`whitespace-nowrap ${yazi}`}>Hedef firmalar</span>
+                  </Link>
                 </li>
 
                 {admin ? (
