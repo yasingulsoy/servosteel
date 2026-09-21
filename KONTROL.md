@@ -157,6 +157,12 @@ ya da yetki verilince betikle.
   Yurt dışı trafiğimiz Cezayir, Nijerya, Hindistan, Malezya, Singapur —
   sanayide ilk kanal WhatsApp. Numara gelirse kanal kartını, teklif formunun
   yanına ikinci kapıyı ve dokuz dildeki metni aynı gün koyarım. Ayrıntı: §E.29.
+- [ ] **Alçıpan / hafif çelik profil hattı üretiyor muyuz?** Hedef firma
+  listesinde bu segmentte 30 firma var, ama sitede de katalogda da böyle bir hat
+  yok. En yakın ürün C/Sigma/Omega hattı 1,5–4 mm; alçıpan profili 0,4–0,6 mm,
+  yüksek hızlı ayrı bir hat. **Evet** ise ürün sayfasını 9 dilde açarım ve 28
+  firmanın "BEKLE" işareti kalkar; **hayır** ise segment listeden çıkar.
+  (Dana Steel ve PYMA başka segmentlerde de olduğu için onlara yazılabilir.)
 - [ ] **Vergi numarası** — sitede ve eski sitede yok. Kamuya açık kaynak:
   ebelge.gib.gov.tr → e-Fatura Kayıtlı Kullanıcılar → unvanla sorgu (VKN
   10 hane). Ya da herhangi bir faturanın üstü. Europages kaydı bunu istiyor.
@@ -331,6 +337,22 @@ asistanın bizi kendiliğinden anıp anmadığı. Kayıt ve rapor:
   sorusunun boşluğuna yazılmış 9 maddelik denetim listesi; dilme, boy kesme ve
   roll form sayfalarından ilgili okuma olarak, "nereden alınmalı" yazısından
   editoryal linkle bağlandı (§E.20 kuralı).
+
+### C.6 Hedef firma e-postaları — kim tıkladı
+
+`seo/hedef-firmalar/Servosteel-Hedef-Firmalar.xlsx` (319 firma, 8 segment) —
+kaynağı aynı klasördeki `.md` tablolar, üretimi `python scripts/hedef-firma-excel.py`.
+Her satırda firmanın dilinde hazır e-posta, konu, tek tıkla taslak (143 firma)
+ve UTM'li link var. E-posta metinlerinin kaynağı `seo/eposta-taslaklari.json`;
+içindeki iddiaların hepsi sitede yazıyor, fiyat/teslim/referans **yok**.
+
+```bash
+python scripts/outreach-olcum.py 7     # son 7 günde linke tıklayan firmalar
+```
+
+Tıklayan firma = sıcak firma; takip telefonu önce ona. GA4 verisi 24–48 saat
+gecikmeli. **Excel'i yeniden üretmek Durum/Yanıt sütunlarını siler** — firma
+üzerinde çalışılan kopyayı ayrı adla saklasın.
 
 ### C.4 Search Console özel raporları
 
