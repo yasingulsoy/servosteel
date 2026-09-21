@@ -169,16 +169,21 @@ ULKE_DIL = {
 SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
 
 
-def gonderim_linki(segment, ulke, satir):
+def gonderim_linki(segment, ulke, satir, form=False):
+    """form=True: teklif formu (/teklif-al, diger dillerde /<dil>/request-quote).
+    Ayni UTM + utm_term=teklif-formu: GA4'te firma hangi baglantiya tikladi ayrilir,
+    formdan gelen talebin `sayfa` alani (referer) firmanin alan adini tasir."""
     tr_yol, en_yol, kampanya = SEGMENT_SAYFA.get(segment, ("/", "/", "genel"))
+    if form:
+        tr_yol, en_yol = "/teklif-al", "/request-quote"
     dil = ULKE_DIL.get(ulke, "en")
     if dil not in SITE_DILLERI:      # fr/pt: e-posta o dilde, sayfa Ingilizce (sitede yok)
         dil = "en"
     yol = tr_yol if dil == "tr" else "/%s%s" % (dil, en_yol)
     m = re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[2] or ""))
     icerik = re.sub(r"[^a-z0-9.-]", "", (m.group(1) if m else sade(satir[0])).lower())[:40]
-    return "%s%s?utm_source=outreach&utm_medium=email&utm_campaign=%s&utm_content=%s" % (
-        SITE, yol, kampanya, icerik)
+    return "%s%s?utm_source=outreach&utm_medium=email&utm_campaign=%s&utm_content=%s%s" % (
+        SITE, yol, kampanya, icerik, "&utm_term=teklif-formu" if form else "")
 
 
 # Hazir e-posta: seo/eposta-taslaklari.json (iddialarin hepsi sitede yaziyor).
@@ -220,7 +225,7 @@ def ek_sutunlar(segler, satir):
         ek = t["ek"].replace("{liste}", liste)
     metin = (t["govde"].replace("{selam}", t["selam"]).replace("{firma}", firma)
              .replace("{cumle}", t["segment"][kamp]["cumle"]).replace("{ek}", ek)
-             .replace("{link}", link))
+             .replace("{link}", link).replace("{form}", gonderim_linki(seg, satir[1], satir, form=True)))
     konu = t["segment"][kamp]["konu"]
     eposta = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", str(satir[5] or ""))
     taslak = ""

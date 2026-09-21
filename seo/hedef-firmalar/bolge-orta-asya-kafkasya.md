@@ -6,7 +6,7 @@
 
 | Firma | Ülke | Segment | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim |
 |---|---|---|---|---|---|---|
-| Profland | Kazakistan | Kablo Kanalı | profland.kz | https://profland.kz/elektromontazhnaya-produkciya/kabelnie-lotki-met/ | Kablo ve merdiven lemaları, Karaganda, 2.500 m² üretim, 6.500 ton/yıl | +7 721 298 10 00 |
+| Profland | Kazakistan | Kablo Kanalı | profland.kz | https://profland.kz/elektromontazhnaya-produkciya/kabelnie-lotki-met/ | Kablo ve merdiven lemaları, Karaganda, 2.500 m² üretim, 6.500 ton/yıl | opt@profland.kz — sitede: https://profland.kz/contact-us/ |
 | ВК-Профиль | Kazakistan | Çatı ve Cephe Paneli | vkprofil.kz | https://vkprofil.kz/ | Profesyonel levha, metal çatı karosu, ek elemanlar, su sistemi, Ust-Kamenogorsk | vk_profil_lena@mail.ru |
 | Mirvalino | Özbekistan | Raf Sistemleri | mirvalino.uz | https://mirvalino.uz/ | Metal depo ve raf sistemleri, Taşkent | mirvalino@mail.ru |
 | Air V Duct | Kazakistan | Havalandırma Kanalı | airvduct.kz | https://airvduct.kz/ | Galvanizli çelikten havalı kanallar, Almata, mikro-bölge Nurshashkan 276 | sergeys@airv.kz |
@@ -15,7 +15,7 @@
 | IronPanel | Özbekistan | Çatı ve Cephe Paneli | ironpanel.uz | https://ironpanel.uz/ | Sündwich panel üretimi, Taşkent, Oltintopgan sokak, Bektemir bölgesi | info@ironpanel.uz |
 | GrandPanel | Özbekistan | Çatı ve Cephe Paneli | grandpanel.uz | https://grandpanel.uz/ | Çeşitli türlerde sündwich panel üretimi, Taşkent | kanıt orta |
 | Metal Racks | Kazakistan | Market Rafı | metalracks.kz | https://www.metalracks.kz/ | Metal raf sistemleri ve ticari ekipman, Almata, 2013'den beri, teknoloji donanımlı fabrika | masterbatch.kz@mail.ru |
-| KarMet | Kazakistan | Alçıpan Profili / Çatı ve Cephe Paneli | karmet.kz | https://karmet.kz/profil-dlja-gkl/ | Haddelenmiş metal ürünleri, galvanizli levhalar, çatı levhaları, alçıpan profilleri, Temirtau, 4.000 ton/ay | +7 (7213) 99-67-70 |
+| KarMet | Kazakistan | Alçıpan Profili / Çatı ve Cephe Paneli | karmet.kz | https://karmet.kz/profil-dlja-gkl/ | Haddelenmiş metal ürünleri, galvanizli levhalar, çatı levhaları, alçıpan profilleri, Temirtau, 4.000 ton/ay | info@karmet.kz — sitede: https://karmet.kz/contacts/ |
 | ДорСтройСнаб | Kazakistan | Yol Bariyeri | dorstroys.kz | https://dorstroys.kz/cat-tov/mobile-fencing/ | Yol ekipmanı ve bariyerleri, 100+ ürün çeşidi, Almata, 2003'ten beri, kendi üretimi | dorstroysnab@bk.ru |
 | VentZavod | Kazakistan | Havalandırma Kanalı | ventzavod.kz | https://ventzavod.kz/ | Galvanizli çelikten havalandırma kanalları, Nur-Sultan, 6.000+ m² atölye | 1973zhake@gmail.com |
 | Eco Panel Tech | Özbekistan | Çatı ve Cephe Paneli | ecopaneltech.uz | https://ecopaneltech.uz/ | Sündwich panel üretimi, Taşkent, Sergili bölgesi, uluslararası standartlar | +99833 991 1111 |
@@ -28,7 +28,7 @@
 | ARTS | Kazakistan | Havalandırma Kanalı | hvac-service.kz | https://hvac-service.kz/ | Havalandırma kanalları, ductwork, elektrik ısıtıcılar, Atyrau, petrol/gaz endüstrisi | info@hvac-service.kz |
 | LKW-Safe | Kazakistan | Çelik Mobilya | lkw-safe.kz | https://lkw-safe.kz/ | Metal mobilya, kasalar, raf sistemleri, Almata, tam cycle fabrika | l.k.w@mail.ru |
 | Mustafa | Kazakistan | Çelik Mobilya | mustafa-mebel.kz | https://mustafa-mebel.kz/ | Metal mobilya ve ticari ekipman, Almata ve Nur-Sultan, kendi fabrikası | mustafa_ali@mail.ru |
-| Smebel.uz | Özbekistan | Çelik Mobilya | smebel.uz | https://smebel.uz/ | Özel metal mobilya üretimi, Taşkent, 7-20 gün üretim süresi | +998 99 316 22 66 |
+| Smebel.uz | Özbekistan | Çelik Mobilya | smebel.uz | https://smebel.uz/ | Özel metal mobilya üretimi, Taşkent, 7-20 gün üretim süresi | info@smebel.uz — sitede: https://smebel.uz/kontakty/ |
 | МеталлоСклад | Kazakistan | Çatı ve Cephe Paneli | metallosklad.kz | https://metallosklad.kz/ | Profesyonel levha ve metal çatı, Kazakistan'ın en büyük üreticisi, Almata/Nur-Sultan/Karaganda/Temirtau, 20 yıl | sales@metallosklad.kz |
 
 ## Elenenler

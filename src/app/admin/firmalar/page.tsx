@@ -7,17 +7,20 @@ import {
   HEDEF_DURUM_ETIKET,
   SAYFA_BOYU,
   bugunGonderilen,
+  geriDonusDurumu,
   gonderimDurumu,
   hedefFirmalar,
   hedefOzeti,
+  ilkGonderimGunu,
   outreachSemaKur,
   segmentListesi,
   siradaki,
   sonGonderimler,
+  talebeDonen,
   ulkeListesi,
   type HedefFiltre,
 } from "@/lib/outreach-db";
-import { ayarlariOku } from "@/lib/outreach-kurallar";
+import { ayarlariOku, geriDonusEngeli, isinmaTavani } from "@/lib/outreach-kurallar";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../kabuk";
 import { sigortaSifirlaEylemi } from "./actions";
@@ -45,7 +48,7 @@ function qs(p: Record<string, string | number | undefined>): string {
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string) {
   try {
-    const [liste, ozet, ulkeler, segmentler, bugun, durum, son, ilk, rol] = await Promise.all([
+    const [liste, ozet, ulkeler, segmentler, bugun, durum, son, ilk, rol, ilkGun, gd, talep] = await Promise.all([
       hedefFirmalar(filtre, sayfa),
       hedefOzeti(),
       ulkeListesi(),
@@ -55,9 +58,12 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string) {
       sonGonderimler(8),
       siradaki(filtre),
       rolu(ben),
+      ilkGonderimGunu(),
+      geriDonusDurumu(),
+      talebeDonen(),
     ]);
     return {
-      v: { liste, ozet, ulkeler, segmentler, bugun, durum, son, ilk, admin: rol === "admin" },
+      v: { liste, ozet, ulkeler, segmentler, bugun, durum, son, ilk, admin: rol === "admin", ilkGun, gd, talep },
       hata: null,
     };
   } catch (e) {
@@ -98,6 +104,8 @@ export default async function FirmalarSayfasi({
   const ayar = ayarlariOku(process.env);
 
   const { v, hata } = await veriGetir(filtre, sayfa, ben);
+  const isinma = isinmaTavani(v?.ilkGun ?? null, ayar.gunlukTavan);
+  const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
 
   /* Detay sayfasına süzgeç taşınıyor: "Sıradaki firma" aynı ülke/segmentte kalsın. */
   const surekli = qs({ ulke: filtre.ulke, segment: filtre.segment });
@@ -174,27 +182,43 @@ export default async function FirmalarSayfasi({
                   ) : null}
                 </div>
               </section>
+            ) : geriDonus ? (
+              <section className="mt-5 flex gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3.5 text-sm text-red-800">
+                <ShieldAlert className="mt-0.5 size-5 shrink-0" aria-hidden />
+                <div>
+                  <p className="font-semibold">Gönderim durdu — geri dönüş eşiği aşıldı</p>
+                  <p className="mt-1">{geriDonus}</p>
+                </div>
+              </section>
             ) : (
               <section className="mt-5 flex gap-3 rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3.5 text-sm text-emerald-900">
                 <CircleCheck className="mt-0.5 size-5 shrink-0" aria-hidden />
                 <p>
-                  Gönderime hazır · gönderen <b>{ayar.gondericiAdi}</b> &lt;{ayar.user}&gt; · günde en çok{" "}
-                  {ayar.gunlukTavan}, iki e-posta arası en az {ayar.aralikSn} sn
+                  Gönderime hazır · gönderen <b>{ayar.gondericiAdi}</b> &lt;{ayar.user}&gt; · bugün en çok{" "}
+                  {isinma.tavan}
+                  {isinma.asama ? ` (${isinma.asama})` : ""} · iki e-posta arası en az {ayar.aralikSn} sn
                 </p>
               </section>
             )}
 
             {/* ------------------------------------------------ sayaçlar */}
-            <section className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <section className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-5">
               {(() => {
                 const yanit =
                   (v.ozet.durum.yanit ?? 0) + (v.ozet.durum.olumlu ?? 0) + (v.ozet.durum.red ?? 0);
                 const oran = v.ozet.gonderilen ? Math.round((yanit / v.ozet.gonderilen) * 100) : 0;
                 return [
-                  { etiket: "Bugün", deger: `${v.bugun}/${ayar.gunlukTavan}`, alt: "gönderilen / tavan" },
-                  { etiket: "Gönderilen", deger: v.ozet.gonderilen, alt: "firma, toplam" },
+                  { etiket: "Bugün", deger: `${v.bugun}/${isinma.tavan}`, alt: isinma.asama ?? "gönderilen / tavan" },
+                  {
+                    etiket: "Gönderilen",
+                    deger: v.ozet.gonderilen,
+                    alt: v.gd.hatali ? `${v.gd.hatali} geri döndü (son ${v.gd.toplam})` : "firma, toplam",
+                  },
                   { etiket: "Yanıt", deger: yanit, alt: v.ozet.gonderilen ? `%${oran} yanıt oranı` : "henüz gönderim yok" },
                   { etiket: "Olumlu", deger: v.ozet.durum.olumlu ?? 0, alt: "görüşmeye dönen" },
+                  /* Asıl ölçü: e-posta gönderilen firmadan sonradan gelen form talebi
+                     (alan adı ya da bağlantıdaki firma kodu eşleşmesi, bkz. talebeDonen). */
+                  { etiket: "Talep", deger: v.talep, alt: "e-postadan sonra form" },
                 ];
               })().map((k) => (
                 <div key={k.etiket} className="rounded-xl border border-line bg-card p-3.5">

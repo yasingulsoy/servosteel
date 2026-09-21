@@ -1,4 +1,5 @@
 import "server-only";
+import { resolve4, resolve6, resolveMx } from "node:dns/promises";
 import nodemailer from "nodemailer";
 import { altbilgi, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
@@ -29,6 +30,40 @@ export function altbilgiMetni(dil: string, iptalUrl: string): string {
 /** Gönderilecek tam metin: panelde yazılan gövde + değiştirilemeyen altbilgi. */
 export function tamMetin(govde: string, dil: string, iptalUrl: string): string {
   return govde.trimEnd() + altbilgiMetni(dil, iptalUrl);
+}
+
+/**
+ * Alıcının alan adı e-posta kabul ediyor mu — göndermeden ÖNCE.
+ *
+ *  "var"        MX kaydı var (ya da MX yok ama A/AAAA var: RFC 5321 örtük MX)
+ *  "yok"        alan adı yok, ya da "null MX" (öncelik 0, sunucu ".") — posta almıyor
+ *  "bilinmiyor" DNS'e ulaşılamadı; tekrar denenir, firma işaretlenmez
+ *
+ * Neden: kapanmış firmanın alan adına giden e-posta geri döner; geri dönüş
+ * oranı sağlayıcıların spam puanına doğrudan giriyor. Bunu göndermeden
+ * yakalamak bedava.
+ */
+export async function postaSunucusu(eposta: string): Promise<"var" | "yok" | "bilinmiyor"> {
+  const alan = eposta.split("@")[1]?.toLowerCase();
+  if (!alan) return "yok";
+  const kod = (e: unknown) => (e as { code?: string })?.code ?? "";
+  const yokKodlari = new Set(["ENOTFOUND", "ENODATA", "NXDOMAIN"]);
+  try {
+    const mx = await resolveMx(alan);
+    if (mx.length === 0) throw Object.assign(new Error("bos"), { code: "ENODATA" });
+    const gercek = mx.filter((m) => m.exchange && m.exchange !== ".");
+    return gercek.length ? "var" : "yok";
+  } catch (e) {
+    if (!yokKodlari.has(kod(e))) return "bilinmiyor";
+  }
+  for (const coz of [resolve4, resolve6]) {
+    try {
+      if ((await coz(alan)).length) return "var";
+    } catch (e) {
+      if (!yokKodlari.has(kod(e))) return "bilinmiyor";
+    }
+  }
+  return "yok";
 }
 
 /**

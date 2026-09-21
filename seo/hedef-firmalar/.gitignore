@@ -4,3 +4,6 @@ Servosteel-Hedef-Firmalar.xlsx
 
 # Panel aktarim dosyasi da her uretimde yeniden yazilir; kaynagi yine .md dosyalari.
 panel-aktarim.json
+
+# Kesif ham arama sonuclari (DataForSEO) — buyuk, yeniden uretilebilir; tablolar .md dosyalarinda.
+kesif/

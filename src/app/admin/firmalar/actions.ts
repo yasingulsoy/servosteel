@@ -10,11 +10,13 @@ import {
   engelle,
   engelliMi,
   firmaEngeli,
+  geriDonusDurumu,
   gonderimDurumu,
   gonderimKaydet,
   hedefDurumDegistir,
   hedefFirma,
   hedefNotEkle,
+  ilkGonderimGunu,
   outreachSemaKur,
   siraAl,
   siradaki,
@@ -23,8 +25,8 @@ import {
   sonSonuclar,
   type HedefDurum,
 } from "@/lib/outreach-db";
-import { ayarlariOku, hataSiniflandir } from "@/lib/outreach-kurallar";
-import { iptalAdresi, tamMetin, tanitimGonder } from "@/lib/outreach";
+import { ayarlariOku, geriDonusEngeli, hataSiniflandir, isinmaTavani } from "@/lib/outreach-kurallar";
+import { iptalAdresi, postaSunucusu, tamMetin, tanitimGonder } from "@/lib/outreach";
 import { tamTarih } from "@/lib/zaman";
 
 /**
@@ -33,11 +35,13 @@ import { tamTarih } from "@/lib/zaman";
  *
  * GÖNDERİM SIRASI (gonderEylemi) — her adım bir öncekini geçmeden çalışmaz:
  *   1. ayarlar tam mı (ayrı kutu, parola)
- *   2. firma gönderilebilir mi (durum, adres, ülke, engel listesi)
- *   3. bugünkü tavan dolmadı mı
- *   4. aralık geçti mi + sigorta atık değil mi — TEK koşullu UPDATE ile
+ *   2. firma gönderilebilir mi (durum, adres, ülke, engel listesi, sistem adresi)
+ *   3. alıcının alan adı e-posta alıyor mu (MX) — almıyorsa "Adres hatalı"
+ *   4. son 50 gönderimde geri dönüş %10'u geçmedi mi
+ *   5. bugünkü tavan dolmadı mı (ısınma: ilk hafta 10, ikinci hafta 15)
+ *   6. aralık geçti mi + sigorta atık değil mi — TEK koşullu UPDATE ile
  *      sıra alınır, iki kişi aynı anda basamaz
- *   5. gönder; sonucu kaydet; sunucu itiraz ettiyse sigortayı at
+ *   7. gönder; sonucu kaydet; sunucu itiraz ettiyse sigortayı at
  */
 
 export type GonderSonucu = {
@@ -85,11 +89,34 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   const engel = firmaEngeli(f, await engelliMi(f.eposta));
   if (engel) return { tamam: false, mesaj: engel };
 
-  const bugun = await bugunGonderilen();
-  if (bugun >= ayar.gunlukTavan) {
+  /* Alan adı e-posta almıyorsa göndermeye çalışmak geri dönüş demek. Sıra
+     alınmadan önce bakılıyor: kötü adres 90 sn'lik hakkı yemesin. */
+  const mx = await postaSunucusu(f.eposta);
+  if (mx === "bilinmiyor") {
+    return { tamam: false, mesaj: "Alıcının alan adı DNS'te sorgulanamadı — birazdan tekrar deneyin." };
+  }
+  if (mx === "yok") {
+    const alan = f.eposta.split("@")[1];
+    await hedefDurumDegistir(id, "hatali");
+    await hedefNotEkle(id, `Gönderilmedi: ${alan} alan adında e-posta sunucusu yok (MX/A kaydı bulunamadı).`, ben);
+    await kayitEkle(ben, "hedef_durum", `firma:${id}`, `${f.firma} — ${alan} e-posta almıyor → Adres hatalı`);
+    yenile(id);
     return {
       tamam: false,
-      mesaj: `Bugünkü tavan doldu (${bugun}/${ayar.gunlukTavan}). Yarın devam edilir.`,
+      mesaj: `${alan} alan adı e-posta almıyor (MX kaydı yok) — gönderilmedi, firma “Adres hatalı” işaretlendi.`,
+    };
+  }
+
+  const gd = await geriDonusDurumu();
+  const gdEngel = geriDonusEngeli(gd.toplam, gd.hatali);
+  if (gdEngel) return { tamam: false, mesaj: gdEngel };
+
+  const { tavan, asama } = isinmaTavani(await ilkGonderimGunu(), ayar.gunlukTavan);
+  const bugun = await bugunGonderilen();
+  if (bugun >= tavan) {
+    return {
+      tamam: false,
+      mesaj: `Bugünkü tavan doldu (${bugun}/${tavan}${asama ? ` — ${asama}` : ""}). Yarın devam edilir.`,
     };
   }
 
@@ -124,7 +151,7 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
     yenile(id);
     return {
       tamam: true,
-      mesaj: `Gönderildi: ${f.eposta} — bugün ${bugun + 1}/${ayar.gunlukTavan}.`,
+      mesaj: `Gönderildi: ${f.eposta} — bugün ${bugun + 1}/${tavan}.`,
       sonraki: await siradaki(filtre, id),
     };
   }

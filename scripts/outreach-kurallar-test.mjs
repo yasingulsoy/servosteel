@@ -85,4 +85,27 @@ t("iptal sayfasi dilleri tam", () => {
     assert.ok(m.soru.includes("{eposta}") && m.tamam.includes("{eposta}"), d);
   }
 });
+t("sistem adresi", () => {
+  for (const e of ["noreply@firma.com", "no-reply@firma.com", "postmaster@firma.com", "webmaster@firma.co.ke", "bounces@firma.com"])
+    assert.ok(K.sistemAdresiMi(e), e);
+  for (const e of ["info@firma.com", "ventas@firma.com.mx", "reply@firma.com"]) assert.ok(!K.sistemAdresiMi(e), e);
+});
+t("isinma tavani", () => {
+  assert.deepEqual(K.isinmaTavani(null, 20).tavan, 10);
+  assert.equal(K.isinmaTavani(0, 20).asama, "ısınma: 1. hafta, 1. gün");
+  assert.equal(K.isinmaTavani(6, 20).tavan, 10);
+  assert.equal(K.isinmaTavani(7, 20).tavan, 15);
+  assert.equal(K.isinmaTavani(13, 50).tavan, 15);
+  assert.equal(K.isinmaTavani(14, 50).tavan, 50);
+  assert.equal(K.isinmaTavani(14, 50).asama, null);
+  assert.equal(K.isinmaTavani(3, 5).tavan, 5);   // ayarlanan tavan daha düşükse o geçerli
+});
+t("geri donus esigi", () => {
+  assert.equal(K.geriDonusEngeli(0, 0), null);
+  assert.equal(K.geriDonusEngeli(10, 2), null);          // en az 3 firma
+  assert.ok(K.geriDonusEngeli(10, 3));                    // %30
+  assert.ok(K.geriDonusEngeli(30, 3));                    // %10 tam sınır
+  assert.equal(K.geriDonusEngeli(50, 4), null);           // %8
+  assert.ok(K.geriDonusEngeli(50, 5));
+});
 console.log(`${n} test gecti`);

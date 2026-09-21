@@ -19,7 +19,7 @@
 | Blue Pointer | Güney Afrika | Çelik Mobilya | bluepointer.co.za | https://bluepointer.co.za/ | Çelik dosyalama, kilitler, iş masaları, okul mobilyası, Pretoria | info@bluepointer.co.za |
 | Nails & Steel Products | Kenya | Aşık ve Çelik Yapı | nailsandsteel.com | https://www.nailsandsteel.com/ | Zed profilleri ve çelik profiller, 300+ ürün çeşidi, Nairobi | sales@nspltd.com |
 | Axe Struct | Güney Afrika | Solar Profil | axestruct.com | https://www.axestruct.com/ | PV güneş montaj sistemi, çatı/yer/kiosk, Cape Town | info@axestruct.com |
-| Zephyr Solar | Güney Afrika | Solar Profil | zephyrsolar.co.za | https://zephyrsolar.co.za/ | Solar montaj sistemi, lokal üretim 2013'den beri, KZN | iletişim formundan |
+| Zephyr Solar | Güney Afrika | Solar Profil | zephyrsolar.co.za | https://zephyrsolar.co.za/ | Solar montaj sistemi, lokal üretim 2013'den beri, KZN | info@zephyrsolar.co.za — sitede: https://zephyrsolar.co.za/ |
 | Macsteel | Güney Afrika | Çelik Servis Merkezi | macsteel.co.za | https://macsteel.co.za/division/macsteel-trading/macsteel-coil-processing/ | Coil slitting, cut-to-length, guillotine, 14 işlem hattı, Boksburg | info@macsteel.co.za |
 | Greenfield | Güney Afrika | Çelik Mobilya | greenfield.co.za | https://www.greenfield.co.za/ | Çelik lokomotif, dolap, sehpa, 50+ yıl Güney Afrika | sales@greenfield.co.za |
 | Castor & Ladder | Güney Afrika | Çelik Mobilya | castorandladder.co.za | https://castorandladder.co.za/ | Çelik mobilya, lokomotif, kargo kafası, masalar, Johannesburg | candl13@argent.co.za |
@@ -29,7 +29,7 @@
 | BSR | Güney Afrika | Alçıpan Profili | bsrsa.co.za | https://www.bsrsa.co.za/ | Hafif çelik ürünler, kirişler, bölmeler, yapı panelleri, Robertsham | info@bsrsa.co.za |
 | Press Spinning | Güney Afrika | Pres Atölyeleri | presspin.co.za | https://www.presspin.co.za/ | Hassas metal presleme ve şekillendirme, 3000 m² tesis, Cape Town | info@presspin.co.za |
 | Solar Mounting Solutions | Güney Afrika | Solar Profil | solarmountingsolutions.co.za | https://solarmountingsolutions.co.za/ | PV montaj sistemi, çatı bağlantıları, Durban North KZN | info@solarmountingsolutions.co.za |
-| Boma Mabati | Kenya | Çatı ve Cephe Paneli | bomamabati.co.ke | https://www.bomamabati.co.ke/ | Galvanizli çatı levhaları (tile, zed, box profil), yapı panelleri, Katani Nairobi | [email protected] |
+| Boma Mabati | Kenya | Çatı ve Cephe Paneli | bomamabati.co.ke | https://www.bomamabati.co.ke/ | Galvanizli çatı levhaları (tile, zed, box profil), yapı panelleri, Katani Nairobi | sales@bomamabati.co.ke — sitede: https://www.bomamabati.co.ke/ |
 | Metal Berg Manufacturing | Nijerya | Çatı ve Cephe Paneli | metalbergmanufacturing.com | https://www.metalbergmanufacturing.com/ | Çelik çatı, cephe kaplama, önceden üretilmiş binalar, özel çelik fabrikasyon, Lagos | info@metalbergmanufacturing.com |
 
 ## Elenenler

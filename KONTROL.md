@@ -389,9 +389,62 @@ firmanın adresi ve metni korunur**, listeden çıkan firma silinmez ("listede
 değil" olur, gönderilemez), abonelik bağlantıları değişmez. Gelen liste mevcut
 listenin yarısından kısaysa yazmaz.
 
+**E-posta metni — 2. sürüm (2026-09-21).** Liza'nın (Elizaveta Shpelevaya) kendi
+tanıtım e-postasının güçlü yanları alındı: **kurulum, devreye alma ve operatör
+eğitimi fiyata dahil**, mevcut hatların modernizasyonu, "doğru kişiye iletir
+misiniz" ricası ve kişi imzası (Elizaveta Shpelevaya). Sonunda iki davet var:
+**teklif formu** (`/teklif-al`, diğer dillerde `/<dil>/request-quote`,
+`utm_term=teklif-formu`) ya da **e-postayı yanıtlamak**. Alınmayanlar ve sebebi:
+Google Drive katalog bağlantısı (dosya paylaşım bağlantısı spam/oltalama
+işareti sayılıyor; katalog yanıt verene gönderilir), "Dear Sir/Madam" (toplu
+gönderim izi), 3+ bağlantı, uzun "iş birliği" metni. Kaynaklar
+`seo/eposta-taslaklari.json` → `_aciklama`.
+
+**Talep sayacı:** e-posta gönderilmiş firmadan sonradan gelen form talebi
+listenin üstünde "Talep" kartında, firma sayfasında yeşil kutuda. Eşleşme:
+talebi gönderenin e-posta alan adı firmanın alan adıysa ya da formun açıldığı
+adreste e-postadaki bağlantının `utm_content=<alan adı>` izi varsa (api/talep
+Referer'ı `sayfa` olarak kaydediyor). Gmail'li firmalar yalnızca ikinci yoldan
+eşleşir.
+
+**Listeyi büyütmek (2026-09-21):**
+```bash
+python scripts/hedef-firma-eposta-bul.py            # adresi olmayan firmaların sitesinde yayımlanmış adres (rapor)
+python scripts/hedef-firma-eposta-bul.py --uygula   # bulunanları .md tablolarına yaz
+python scripts/hedef-firma-kesif.py --plan          # yeni firma keşfi: kaç arama, kaç $
+python scripts/hedef-firma-kesif.py                 # ara + doğrula → bolge-kesif-<tarih>.md
+```
+Adres bulucu (`scripts/eposta_bulucu.py`) yalnızca firmanın sitesinde **yazan**
+adresi alır: kendi alan adındaki ya da sitede görünen ücretsiz posta (gmail…).
+Tahmin yok (info@alanadı yazılmaz), başka alan adındaki adres (siteyi yapan
+ajans) yok, iş/gizlilik/fatura/ihbar adresi yok; form yer tutucusu
+(`placeholder="company@gmail.com"`) ve ekranda kırpılmış adres elenir.
+Cloudflare'in gizlediği adresler çözülür. 21 Eylül: 230 adressiz sitenin
+107'sinde adres bulundu → e-postalı firma 559 → 660.
+
+Keşif, 59 ülkede o ülkenin iş dilinde 12 segment için Google'da "<ürün>
+üreticisi" arar (DataForSEO standart kuyruk, 708 arama ≈ 0,85 $; sonuçlar
+`seo/hedef-firmalar/kesif/` altında önbellekte, aynı gün tekrar ücret yok).
+Rehber/pazar yeri/sosyal ağ ve başlığında makine geçen (rakip) sonuçlar,
+listede ya da Elenenler'de zaten olan alan adları atılır. Kalan her aday için:
+ürün kelimesi sitede, üretim izi var ve dükkân değil, ülke tutuyor (yerel
+uzantı ya da sitede ülke telefon kodu), e-posta sitede yazıyor — biri eksikse
+girmez. AB'de izin şartı olan ülkeler (DE AT PL ES IT CZ RO) ve yaptırım
+altındaki pazarlar keşfe dahil değil.
+
 Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
 - **Günde en çok 20** (`OUTREACH_DAILY_LIMIT`, üst sınır 50), iki e-posta arası
   **en az 90 sn** (`OUTREACH_INTERVAL_SEC`, alt sınır 60). Gün İstanbul günü.
+- **Isınma:** ilk gönderimden itibaren 1. hafta günde en çok **10**, 2. hafta
+  **15**, sonra ayarlanan tavan. Yeni kutunun itibarı yok; sıfırdan yüksek
+  hacimle başlayan gönderici Gmail/Outlook'ta spam sayılıyor.
+- **Göndermeden önce alan adı kontrolü:** alıcının alan adında e-posta sunucusu
+  (MX, yoksa A kaydı) yoksa e-posta gönderilmez, firma "Adres hatalı" olur.
+  noreply@, postmaster@, webmaster@ gibi sistem adreslerine gönderilmez.
+- **Geri dönüş eşiği:** son 50 gönderimin %10'u (en az 3 firma) "Adres hatalı"
+  ise gönderim durur. Geri dönen e-postalar (bounce) gönderen kutusuna gelir,
+  panel onları okuyamaz — **gelen her geri dönüşte firmayı "Adres hatalı"
+  işaretleyin**; eşik ancak öyle çalışır.
 - **Sigorta:** sunucu 4xx derse, girişi reddederse, cevabında hız sınırı / spam /
   engel / relay geçerse ya da üst üste iki gönderim başarısız olursa gönderim
   gün sonuna kadar (en az 6 saat) durur. Sebep listenin üstünde yazar. Yönetici
@@ -597,8 +650,22 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
 - [ ] **İlk günler `OUTREACH_BCC` = kendi Gmail adresin:** her gönderimin kopyası
   oraya düşer; "Spam"e mi "Gelen kutusu"na mı gittiği ilk günden görülür.
   Spam'e düşüyorsa gönderime devam edilmez, bakılır.
-- [ ] **İlk hafta günde 10-20** — yeni kutunun itibarı yok. Yanıt oranı ve
-  sigorta durumu listenin üstünde.
+- [ ] **Gönderen adı imzayla aynı olsun:** e-postalar "Elizaveta Shpelevaya"
+  imzalı. `OUTREACH_FROM_NAME=Elizaveta Shpelevaya` ve yanıtlar Liza'ya
+  gitsin diye `OUTREACH_REPLY_TO=liza@servosteel.com.tr` (gönderim ayrı
+  kutudan sürer, itibar ayrı kalır). Kişiden gelen e-posta hem daha çok
+  açılıyor hem "toplu gönderim" gibi görünmüyor.
+- [ ] **DMARC raporu açılsın:** DNS'teki `_dmarc` kaydı `v=DMARC1; p=quarantine;`
+  — rapor adresi (`rua=`) yok, e-postalarımızın alıcıda SPF/DKIM'den geçip
+  geçmediğini göremiyoruz. Veridyen DNS'inde kayda
+  `rua=mailto:dmarc@servosteel.com.tr` eklenmeli (kutu açılmalı).
+- [ ] **Google Postmaster Tools** (isteğe bağlı): alan adı doğrulanırsa Gmail'in
+  bizi spam sayma oranı günlük görülür.
+- [ ] **Geri dönen e-postalar:** gönderen kutusuna "Undeliverable / Delivery
+  Status Notification" gelirse o firmayı panelde "Adres hatalı" işaretleyin.
+  Oran %10'u geçerse panel gönderimi kendisi durdurur.
+- [ ] **İlk hafta günde en çok 10** (panel zorluyor), ikinci hafta 15. Yanıt
+  oranı ve sigorta durumu listenin üstünde.
 
 **Veritabanı / panel**
 - [ ] **Postgres'in dış portu (25632) internete açık ve TLS YOK.** Ölçüldü

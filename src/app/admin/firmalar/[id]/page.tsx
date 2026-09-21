@@ -8,14 +8,17 @@ import {
   bugunGonderilen,
   engelliMi,
   firmaEngeli,
+  geriDonusDurumu,
   gonderimDurumu,
   gonderimler,
   hedefFirma,
   hedefNotlar,
+  hedefTalepleri,
+  ilkGonderimGunu,
   outreachSemaKur,
   siradaki,
 } from "@/lib/outreach-db";
-import { ayarlariOku, ulkeUyarisi } from "@/lib/outreach-kurallar";
+import { ayarlariOku, geriDonusEngeli, isinmaTavani, ulkeUyarisi } from "@/lib/outreach-kurallar";
 import { altbilgiMetni, iptalAdresi } from "@/lib/outreach";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
@@ -54,26 +57,33 @@ export default async function FirmaSayfasi({
   const f = await hedefFirma(no);
   if (!f) notFound();
 
-  const [gecmis, notlar, engelli, bugun, durum, sonraki] = await Promise.all([
+  const [gecmis, notlar, engelli, bugun, durum, sonraki, ilkGun, gd, talepleri] = await Promise.all([
     gonderimler(no),
     hedefNotlar(no),
     engelliMi(f.eposta),
     bugunGonderilen(),
     gonderimDurumu(),
     siradaki(filtre, no),
+    ilkGonderimGunu(),
+    geriDonusDurumu(),
+    hedefTalepleri(no),
   ]);
 
   /* Düğmeyi kapatan sebep — önce firmaya ait olanlar, sonra güne ait olanlar.
      Sunucu eylemi hepsini AYRICA kontrol ediyor; burası kullanıcıya boşuna
      tıklatmamak için. */
   const ayar = ayarlariOku(process.env);
+  const { tavan, asama } = isinmaTavani(ilkGun, ayar.gunlukTavan);
   const simdi = new Date(durum.simdi).getTime();
   const durdu = durum.durdu_bitis && new Date(durum.durdu_bitis).getTime() > simdi;
   const engel =
     firmaEngeli(f, engelli) ??
     (ayar.eksik.length ? `Gönderim ayarları eksik: ${ayar.eksik.join(", ")}.` : null) ??
     (durdu ? `Gönderim durduruldu (${tamTarih(durum.durdu_bitis!)}'e kadar): ${durum.durdu_sebep}` : null) ??
-    (bugun >= ayar.gunlukTavan ? `Bugünkü tavan doldu (${bugun}/${ayar.gunlukTavan}). Yarın devam edilir.` : null);
+    geriDonusEngeli(gd.toplam, gd.hatali) ??
+    (bugun >= tavan
+      ? `Bugünkü tavan doldu (${bugun}/${tavan}${asama ? ` — ${asama}` : ""}). Yarın devam edilir.`
+      : null);
   const bekleSn = durum.son_deneme
     ? Math.max(0, Math.ceil(ayar.aralikSn - (simdi - new Date(durum.son_deneme).getTime()) / 1000))
     : 0;
@@ -127,6 +137,21 @@ export default async function FirmaSayfasi({
           {[f.ulke, f.segmentler, `e-posta dili: ${f.dil}`].filter(Boolean).join(" · ")}
           {!f.listede ? " · son aktarımda listede yoktu" : ""}
         </p>
+
+        {talepleri.length ? (
+          <section className="mt-5 rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3.5 text-sm text-emerald-900">
+            <p className="font-semibold">Bu firma talep bıraktı ({talepleri.length})</p>
+            <ul className="mt-1.5 space-y-1">
+              {talepleri.map((t) => (
+                <li key={t.id}>
+                  <Link href={`/admin/talep/${t.id}`} className="underline-offset-4 hover:underline">
+                    {tamTarih(t.olusturuldu)} · {t.ad || t.eposta} · {t.tur === "rfq" ? "teklif formu" : "iletişim"}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <div className="mt-6 flex flex-col gap-7 xl:grid xl:grid-cols-[minmax(0,1fr)_360px] xl:items-start xl:gap-6">
           <div className="flex min-w-0 flex-col gap-7">

@@ -222,6 +222,48 @@ export function hataSiniflandir(h: SmtpHatasi): { tur: HataTuru; sebep: string }
   return { tur: "hata", sebep: metin || h.code || "bilinmeyen hata" };
 }
 
+/* ------------------------------------------------------- itibar kuralları */
+
+/**
+ * Sisteme ya da hiç kimseye gitmeyen adresler. Bunlara giden e-posta ya geri
+ * döner ya da "biz size yazmadık" şikâyeti olur — ikisi de itibardan yer.
+ */
+const SISTEM_ADRESI =
+  /^(no-?reply|donotreply|do-not-reply|noresponder|postmaster|abuse|mailer-daemon|hostmaster|webmaster|bounce\w*|devnull|null)@/i;
+
+export function sistemAdresiMi(e: string): boolean {
+  return SISTEM_ADRESI.test(e);
+}
+
+/**
+ * Isınma: yeni kutunun itibarı yok. Büyük sağlayıcılar (Gmail, Outlook) ilk
+ * haftalarda gelen hacme bakıyor; sıfırdan günde 20-50'ye çıkan gönderici
+ * "spam" sayılıyor. İlk gönderimden itibaren:
+ *   0-6. gün  → günde en çok 10
+ *   7-13. gün → günde en çok 15
+ *   sonrası   → ayarlanan tavan (OUTREACH_DAILY_LIMIT, üst sınır 50)
+ * `gun` = ilk başarılı gönderimden bu yana geçen İstanbul günü; hiç yoksa null.
+ */
+export function isinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
+  const g = gun ?? 0;
+  if (g < 7) return { tavan: Math.min(tavan, 10), asama: `ısınma: 1. hafta, ${g + 1}. gün` };
+  if (g < 14) return { tavan: Math.min(tavan, 15), asama: `ısınma: 2. hafta, ${g + 1}. gün` };
+  return { tavan, asama: null };
+}
+
+/**
+ * Geri dönüş eşiği. Geri dönen e-posta (bounce) gönderene gelir; panel onu
+ * okuyamaz, firmayı "Adres hatalı" işaretlemek elle. Son 50 gönderimde
+ * hatalı oranı %10'u (en az 3 firma) geçerse liste kirlidir: devam etmek
+ * sağlayıcıların gözünde "adres toplayıp yazan" göndericiye çevirir.
+ */
+export function geriDonusEngeli(toplam: number, hatali: number): string | null {
+  if (hatali >= 3 && toplam > 0 && hatali / toplam >= 0.1) {
+    return `Son ${toplam} gönderimin ${hatali}'i geri döndü (%${Math.round((hatali / toplam) * 100)}). Geri dönen adresler temizlenmeden ve sebebi anlaşılmadan gönderime devam edilmez.`;
+  }
+  return null;
+}
+
 /* ------------------------------------------------------------ ayarlar */
 
 export type OutreachAyarlari = {

@@ -1,5 +1,5 @@
 import { sorgu, sorguSert } from "@/lib/db";
-import { ENGELLI_ULKELER, epostaGecerli } from "@/lib/outreach-kurallar";
+import { ENGELLI_ULKELER, epostaGecerli, sistemAdresiMi } from "@/lib/outreach-kurallar";
 import { OUTREACH_SEMA } from "@/lib/outreach-sema";
 
 /**
@@ -118,6 +118,7 @@ export function firmaEngeli(f: HedefFirma, engelli: boolean): string | null {
   }
   if (!f.eposta) return "E-posta adresi yok (sitede doğrulanamadı). Telefon ya da iletişim formu.";
   if (!epostaGecerli(f.eposta)) return `E-posta adresi geçersiz görünüyor: ${f.eposta}`;
+  if (sistemAdresiMi(f.eposta)) return `${f.eposta} bir sistem adresi (kimse okumaz) — iletişim formu ya da telefon.`;
   if (ENGELLI_ULKELER[f.ulke]) return ENGELLI_ULKELER[f.ulke];
   if (engelli) return "Bu adres engel listesinde (abonelikten çıktı ya da elle engellendi).";
   if (!f.konu.trim() || !f.govde.trim()) return "Hazır e-posta metni yok.";
@@ -305,6 +306,37 @@ export async function bugunGonderilen(): Promise<number> {
   return Number(r[0]?.adet ?? 0);
 }
 
+/**
+ * İlk başarılı gönderimden bu yana geçen İstanbul günü (ısınma için);
+ * hiç gönderilmediyse null.
+ */
+export async function ilkGonderimGunu(): Promise<number | null> {
+  const r = await sorguSert<{ gun: number | null }>(
+    `SELECT ((now() AT TIME ZONE 'Europe/Istanbul')::date
+             - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date) AS gun
+     FROM hedef_gonderim WHERE sonuc IN ('ok', 'belirsiz')`
+  );
+  const g = r[0]?.gun;
+  return g === null || g === undefined ? null : Number(g);
+}
+
+/**
+ * Son 50 gönderilen firmadan kaçı "Adres hatalı" — geri dönüş eşiği için.
+ * Gönderim sonrası elle işaretlenen (geri dönen) ve gönderimde reddedilen
+ * adresler birlikte sayılır.
+ */
+export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
+  const r = await sorguSert<{ toplam: number; hatali: number }>(
+    `WITH son AS (
+       SELECT firma_id, max(zaman) AS zaman FROM hedef_gonderim
+       WHERE sonuc IN ('ok', 'belirsiz', 'alici') AND firma_id IS NOT NULL
+       GROUP BY firma_id ORDER BY max(zaman) DESC LIMIT 50)
+     SELECT count(*)::int AS toplam, count(*) FILTER (WHERE h.durum = 'hatali')::int AS hatali
+     FROM son JOIN hedef_firmalar h ON h.id = son.firma_id`
+  );
+  return { toplam: r[0]?.toplam ?? 0, hatali: r[0]?.hatali ?? 0 };
+}
+
 export async function gonderimDurumu(): Promise<GonderimDurumu> {
   const r = await sorguSert<GonderimDurumu>(
     `SELECT son_deneme, durdu_bitis, durdu_sebep, now() AS simdi FROM gonderim_durumu WHERE id = 1`
@@ -406,6 +438,49 @@ export async function hedefNotEkle(firmaId: number, govde: string, yazan: string
     yazan.slice(0, 80),
   ]);
   await sorguSert(`UPDATE hedef_firmalar SET guncellendi = now() WHERE id = $1`, [firmaId]);
+}
+
+/* ------------------------------------------------------ talebe dönüşüm */
+
+/**
+ * Hedef firmadan gelen talepler — e-postanın asıl ölçüsü.
+ *
+ * Eşleşme iki yoldan: talebi gönderenin e-posta alan adı firmanın alan adı
+ * (anahtarın ilk parçası, ör. "firma.com.mx") ya da talep formunun açıldığı
+ * sayfa adresinde e-postadaki bağlantının `utm_content=<alan adı>` izi
+ * (api/talep, Referer'ı `sayfa` olarak kaydediyor). Ücretsiz posta adresli
+ * firmalar yalnızca ikinci yoldan eşleşir — gmail.com alan adıyla eşleştirmek
+ * herkesi eşleştirirdi; anahtardaki alan adı firmanın SİTESİ, e-postası değil.
+ */
+const TALEP_ESLES = `
+  (lower(split_part(t.eposta, '@', 2)) = split_part(h.anahtar, '|', 1)
+   OR lower(split_part(t.eposta, '@', 2)) LIKE '%.' || split_part(h.anahtar, '|', 1)
+   OR lower(t.sayfa) LIKE '%utm_content=' || split_part(h.anahtar, '|', 1) || '&%'
+   OR lower(t.sayfa) LIKE '%utm_content=' || split_part(h.anahtar, '|', 1))
+`;
+
+export type HedefTalebi = { id: number; olusturuldu: string; ad: string; eposta: string; tur: string };
+
+export async function hedefTalepleri(firmaId: number): Promise<HedefTalebi[]> {
+  const r = await sorgu<HedefTalebi>(
+    `SELECT t.id, t.olusturuldu, t.ad, t.eposta, t.tur
+     FROM hedef_firmalar h JOIN talepler t ON ${TALEP_ESLES}
+     WHERE h.id = $1 AND t.durum <> 'spam'
+     ORDER BY t.olusturuldu DESC`,
+    [firmaId]
+  );
+  return r ?? [];   // talepler tablosu yoksa (hiç talep gelmemiş kurulum) boş
+}
+
+/** Gönderim yapılmış firmalardan kaçı sonradan talep bıraktı. */
+export async function talebeDonen(): Promise<number> {
+  const r = await sorgu<{ adet: number }>(
+    `SELECT count(DISTINCT h.id)::int AS adet
+     FROM hedef_firmalar h JOIN talepler t ON ${TALEP_ESLES}
+     WHERE t.durum <> 'spam'
+       AND EXISTS (SELECT 1 FROM hedef_gonderim g WHERE g.firma_id = h.id AND g.sonuc IN ('ok', 'belirsiz'))`
+  );
+  return r?.[0]?.adet ?? 0;
 }
 
 /* ------------------------------------------------------------ engel listesi */
