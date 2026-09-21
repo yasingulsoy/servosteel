@@ -54,7 +54,11 @@ LINK_BASLIK = "Gönderilecek link"
 
 # Sitede ve katalogda karsiligi olmayan segment. Firma "bu hatti uretiyoruz"
 # demeden bu firmalara yazilmasin diye Durum sutunu onceden doldurulur.
-TEYITSIZ = {"Alçıpan Profili": "BEKLE — alçıpan profil hattı üretiyor muyuz? (sitede/katalogda yok)"}
+TEYITSIZ = {}   # 2026-09-21: alcipan sorusu cevaplandi (hat yok, besleyici teklif edilir)
+
+# Cok segmentli firmada e-posta HAT teklifiyle acilir; yalnizca besleyici/acici
+# teklif edilen segment sona gider (Dana Steel'e once trapez hatti, besleyici en son).
+SONA = {"Alçıpan Profili"}
 
 
 def durum_isaretle(ws, segment_sutunu=None, segment_adi=None):
@@ -127,8 +131,10 @@ SEGMENT_SAYFA = {   # segment -> (TR yol, diger diller yolu, kampanya adi)
     "Çatı ve Cephe Paneli": ("/roll-form-hatlari/trapez-cephe-paneli", "/roll-forming-lines/trapezoidal-and-facade-panel", "cati-panel"),
     "Çelik Servis Merkezi": ("/dilme-hatlari", "/coil-slitting-lines", "celik-servis"),
     "Pres Atölyeleri":      ("/makineler/servo-suruculer", "/machines/servo-feeders", "pres-atolyesi"),
-    # Sitede alcipan profil hatti yok; urun teyidi gelene kadar roll form ana sayfasi.
-    "Alçıpan Profili":      ("/roll-form-hatlari", "/roll-forming-lines", "alcipan"),
+    # Firma alcipan HATTI uretmiyor (katalogda yok, kullanici 2026-09-21). Bu firmalara
+    # katalogdaki acici + dogrultmali servo surucu teklif edilir; kanit: firmanin
+    # "Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri" videosu (2017).
+    "Alçıpan Profili":      ("/makineler/dogrultmali-servo-suruculer", "/machines/straightener-servo-feeders", "alcipan"),
 }
 ULKE_DIL = {
     "İspanya": "es", "Meksika": "es", "Kolombiya": "es", "Peru": "es", "Şili": "es",
@@ -409,7 +415,7 @@ def main():
         # kablo kanali + raf ureten firmaya iki hat birden teklif edilir.
         birlesik = []
         for k, satir in hepsi:
-            segler = sorted(gorulen[k], key=lambda x: x in TEYITSIZ)   # teyitsiz sona
+            segler = sorted(gorulen[k], key=lambda x: (x in TEYITSIZ, x in SONA))
             birlesik.append(satir + ek_sutunlar(segler, satir) + [" + ".join(segler)])
         sayfa_yaz(ozet, kanonik, birlesik, segment_sutunu=True)
         bekleyen = durum_isaretle(ozet)

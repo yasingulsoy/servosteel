@@ -157,12 +157,15 @@ ya da yetki verilince betikle.
   Yurt dışı trafiğimiz Cezayir, Nijerya, Hindistan, Malezya, Singapur —
   sanayide ilk kanal WhatsApp. Numara gelirse kanal kartını, teklif formunun
   yanına ikinci kapıyı ve dokuz dildeki metni aynı gün koyarım. Ayrıntı: §E.29.
-- [ ] **Alçıpan / hafif çelik profil hattı üretiyor muyuz?** Hedef firma
-  listesinde bu segmentte 30 firma var, ama sitede de katalogda da böyle bir hat
-  yok. En yakın ürün C/Sigma/Omega hattı 1,5–4 mm; alçıpan profili 0,4–0,6 mm,
-  yüksek hızlı ayrı bir hat. **Evet** ise ürün sayfasını 9 dilde açarım ve 28
-  firmanın "BEKLE" işareti kalkar; **hayır** ise segment listeden çıkar.
-  (Dana Steel ve PYMA başka segmentlerde de olduğu için onlara yazılabilir.)
+- [x] ~~**Alçıpan / hafif çelik profil hattı üretiyor muyuz?**~~ — **Cevap
+  (2026-09-21): hayır.** Yasin: "katalogdakiler var" — katalogun roll form
+  bölümünde yalnızca kablo kanalı, market rafı, solar profil var. Bu segmentteki
+  30 firmaya **hat değil, katalogdaki rulo açıcı + doğrultmalı servo sürücü**
+  teklif ediliyor; dayanağı firmanın kendi videosu "Asma Tavan Hattı / Servo
+  Sürücü Ve Rulo Sac Açma Sistemleri" (2017, `EQ54wWjqJHM`). **Katalogda olmayan
+  ama listede kalan iki hat:** yol bariyeri (firmanın 22 Temmuz'da verdiği 7 roll
+  form hattı arasında) ve trapez/cephe (firmanın sektör tablosunun çatı satırı);
+  ikisinin teknik tablosunu mühendis 21 Ağustos'ta onayladı (§A.3).
 - [ ] **Vergi numarası** — sitede ve eski sitede yok. Kamuya açık kaynak:
   ebelge.gib.gov.tr → e-Fatura Kayıtlı Kullanıcılar → unvanla sorgu (VKN
   10 hane). Ya da herhangi bir faturanın üstü. Europages kaydı bunu istiyor.

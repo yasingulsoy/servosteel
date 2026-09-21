@@ -1,5 +1,5 @@
 {
-  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metni ve teknik tablosundan. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. {firma} {cumle} {ek} {link} {liste} yer tutuculardir.",
+  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metni ve teknik tablosundan. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. alcipan: firma alcipan HATTI uretmiyor (katalog, kullanici 2026-09-21); o firmalara katalogdaki rulo acici + dogrultmali servo surucu teklif edilir, kaniti firmanin kendi videosu «Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri» (YouTube EQ54wWjqJHM, 2017). {firma} {cumle} {ek} {link} {liste} yer tutuculardir.",
   "en": {
     "selam": "Dear {firma} team,",
     "govde": "{selam}\n\nServosteel is a manufacturer of coil processing and roll forming lines in Istanbul, exporting to more than 48 countries.\n\n{cumle}{ek}\n\nIf you are planning a new line or replacing an existing one, send us your profile drawing or capacity requirement. Our engineering team replies within 48 hours with a line layout and a technical offer.\n\nDetails: {link}\n\nBest regards,\nServosteel Engineering Team\n+90 216 415 30 05 · info@servosteel.com.tr",
@@ -19,7 +19,9 @@
       "celik-servis": {"konu": "Slitting and cut-to-length lines — Servosteel, Istanbul", "ad": "slitting and cut-to-length lines",
         "cumle": "We build complete coil slitting and cut-to-length lines: every unit from decoiler to recoiler or stacker is made in our own plant, tested before shipment and commissioned on site."},
       "pres-atolyesi": {"konu": "Servo feeders for your presses — Servosteel, Istanbul", "ad": "servo press feeders",
-        "cumle": "We build servo feeders, straightener feeders and decoilers that feed your presses in precise steps, with press synchronisation and recipe management."}
+        "cumle": "We build servo feeders, straightener feeders and decoilers that feed your presses in precise steps, with press synchronisation and recipe management."},
+      "alcipan": {"konu": "Decoilers and straightener feeders for profile lines — Servosteel, Istanbul", "ad": "decoilers and straightener servo feeders",
+        "cumle": "Our decoilers and straightener servo feeders already run on suspended ceiling profile lines, feeding the strip into the press in precise steps with press synchronisation and recipe management."}
     }
   },
   "es": {
@@ -41,7 +43,9 @@
       "celik-servis": {"konu": "Líneas de corte longitudinal y transversal — Servosteel, Estambul", "ad": "líneas de corte longitudinal y transversal",
         "cumle": "Fabricamos líneas completas de corte longitudinal y transversal: cada unidad, del desbobinador a la rebobinadora o el apilador, se fabrica en nuestra planta, se prueba antes del envío y se pone en marcha en sus instalaciones."},
       "pres-atolyesi": {"konu": "Alimentadores servo para sus prensas — Servosteel, Estambul", "ad": "alimentadores servo para prensas",
-        "cumle": "Fabricamos alimentadores servo, alimentadores con enderezadora y desbobinadores que alimentan sus prensas en pasos precisos, con sincronización con la prensa y gestión de recetas."}
+        "cumle": "Fabricamos alimentadores servo, alimentadores con enderezadora y desbobinadores que alimentan sus prensas en pasos precisos, con sincronización con la prensa y gestión de recetas."},
+      "alcipan": {"konu": "Desbobinadores y alimentadores con enderezadora para líneas de perfiles — Servosteel, Estambul", "ad": "desbobinadores y alimentadores servo con enderezadora",
+        "cumle": "Nuestros desbobinadores y alimentadores servo con enderezadora ya trabajan en líneas de perfiles para falso techo, alimentando la banda a la prensa en pasos precisos, con sincronización con la prensa y gestión de recetas."}
     }
   },
   "it": {
@@ -63,7 +67,9 @@
       "celik-servis": {"konu": "Linee di taglio longitudinale e trasversale — Servosteel, Istanbul", "ad": "linee di taglio longitudinale e trasversale",
         "cumle": "Realizziamo linee complete di taglio longitudinale e trasversale: ogni unità, dallo svolgitore al riavvolgitore o all'impilatore, è costruita nel nostro stabilimento, collaudata prima della spedizione e messa in servizio presso il cliente."},
       "pres-atolyesi": {"konu": "Alimentatori servo per le vostre presse — Servosteel, Istanbul", "ad": "alimentatori servo per presse",
-        "cumle": "Realizziamo alimentatori servo, alimentatori con raddrizzatrice e svolgitori che alimentano le vostre presse a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."}
+        "cumle": "Realizziamo alimentatori servo, alimentatori con raddrizzatrice e svolgitori che alimentano le vostre presse a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."},
+      "alcipan": {"konu": "Svolgitori e alimentatori con raddrizzatrice per linee di profili — Servosteel, Istanbul", "ad": "svolgitori e alimentatori servo con raddrizzatrice",
+        "cumle": "I nostri svolgitori e alimentatori servo con raddrizzatrice lavorano già su linee di profili per controsoffitti, alimentando il nastro alla pressa a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."}
     }
   },
   "de": {
@@ -85,7 +91,9 @@
       "celik-servis": {"konu": "Längs- und Querteilanlagen — Servosteel, Istanbul", "ad": "Längs- und Querteilanlagen",
         "cumle": "Wir bauen komplette Längsteil- und Querteilanlagen: Jede Einheit vom Abwickler bis zum Aufwickler oder Stapler wird in unserem Werk gefertigt, vor dem Versand getestet und vor Ort in Betrieb genommen."},
       "pres-atolyesi": {"konu": "Servo-Walzenvorschübe für Ihre Pressen — Servosteel, Istanbul", "ad": "Servo-Walzenvorschübe",
-        "cumle": "Wir bauen Servo-Walzenvorschübe, Richtvorschübe und Abwickelhaspeln, die Ihre Pressen in präzisen Schritten beschicken – mit Pressensynchronisation und Rezeptverwaltung."}
+        "cumle": "Wir bauen Servo-Walzenvorschübe, Richtvorschübe und Abwickelhaspeln, die Ihre Pressen in präzisen Schritten beschicken – mit Pressensynchronisation und Rezeptverwaltung."},
+      "alcipan": {"konu": "Abwickelhaspeln und Richtvorschübe für Profilanlagen — Servosteel, Istanbul", "ad": "Abwickelhaspeln und Servo-Richtvorschübe",
+        "cumle": "Unsere Abwickelhaspeln und Servo-Richtvorschübe laufen bereits auf Anlagen für Abhängedeckenprofile und führen das Band in präzisen Schritten der Presse zu – mit Pressensynchronisation und Rezeptverwaltung."}
     }
   },
   "pl": {
@@ -107,7 +115,9 @@
       "celik-servis": {"konu": "Linie do cięcia wzdłużnego i poprzecznego — Servosteel, Stambuł", "ad": "linie do cięcia wzdłużnego i poprzecznego",
         "cumle": "Budujemy kompletne linie do cięcia wzdłużnego i poprzecznego: każdy zespół, od rozwijarki po zwijarkę lub układarkę, powstaje w naszym zakładzie, jest testowany przed wysyłką i uruchamiany u klienta."},
       "pres-atolyesi": {"konu": "Podajniki walcowe servo do Państwa pras — Servosteel, Stambuł", "ad": "podajniki walcowe servo do pras",
-        "cumle": "Budujemy podajniki walcowe servo, podajniki z prostownicą i rozwijarki, które zasilają Państwa prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."}
+        "cumle": "Budujemy podajniki walcowe servo, podajniki z prostownicą i rozwijarki, które zasilają Państwa prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."},
+      "alcipan": {"konu": "Rozwijarki i podajniki z prostownicą do linii profili — Servosteel, Stambuł", "ad": "rozwijarki i podajniki walcowe servo z prostownicą",
+        "cumle": "Nasze rozwijarki i podajniki walcowe servo z prostownicą pracują już na liniach do profili sufitów podwieszanych, podając taśmę do prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."}
     }
   },
   "ru": {
@@ -129,7 +139,9 @@
       "celik-servis": {"konu": "Линии продольной и поперечной резки — Servosteel, Стамбул", "ad": "линии продольной и поперечной резки",
         "cumle": "Мы производим комплектные линии продольной и поперечной резки: каждый узел — от разматывателя до моталки или укладчика — изготавливается на нашем заводе, испытывается перед отгрузкой и вводится в эксплуатацию у заказчика."},
       "pres-atolyesi": {"konu": "Сервоподатчики для ваших прессов — Servosteel, Стамбул", "ad": "сервоподатчики для прессов",
-        "cumle": "Мы производим сервоподатчики, податчики с правильной машиной и разматыватели, которые подают металл в ваши прессы с точным шагом, с синхронизацией с прессом и управлением рецептами."}
+        "cumle": "Мы производим сервоподатчики, податчики с правильной машиной и разматыватели, которые подают металл в ваши прессы с точным шагом, с синхронизацией с прессом и управлением рецептами."},
+      "alcipan": {"konu": "Разматыватели и податчики с правкой для профильных линий — Servosteel, Стамбул", "ad": "разматыватели и сервоподатчики с правильной машиной",
+        "cumle": "Наши разматыватели и сервоподатчики с правильной машиной уже работают на линиях профилей для подвесных потолков: они подают ленту в пресс с точным шагом, с синхронизацией с прессом и управлением рецептами."}
     }
   },
   "tr": {
@@ -151,7 +163,9 @@
       "celik-servis": {"konu": "Dilme ve boy kesme hatları — Servosteel, İstanbul", "ad": "dilme ve boy kesme hatları",
         "cumle": "Komple dilme ve boy kesme hatları üretiyoruz: açıcıdan sarıcıya ya da istifleyiciye kadar her ünite kendi tesisimizde imal ediliyor, sevkiyattan önce test ediliyor ve sahada devreye alınıyor."},
       "pres-atolyesi": {"konu": "Preslerinize servo besleyici — Servosteel, İstanbul", "ad": "servo pres besleyicileri",
-        "cumle": "Preslerinizi hassas adımlarla besleyen servo besleyiciler, doğrultmalı servo besleyiciler ve rulo açıcılar üretiyoruz; pres senkronizasyonu ve reçete yönetimiyle."}
+        "cumle": "Preslerinizi hassas adımlarla besleyen servo besleyiciler, doğrultmalı servo besleyiciler ve rulo açıcılar üretiyoruz; pres senkronizasyonu ve reçete yönetimiyle."},
+      "alcipan": {"konu": "Profil hatları için rulo açıcı ve doğrultmalı servo besleyici — Servosteel, İstanbul", "ad": "rulo açıcılar ve doğrultmalı servo besleyiciler",
+        "cumle": "Rulo açıcılarımız ve doğrultmalı servo besleyicilerimiz asma tavan profil hatlarında çalışıyor; şeridi prese hassas adımlarla, pres senkronizasyonu ve reçete yönetimiyle besliyor."}
     }
   }
 }
