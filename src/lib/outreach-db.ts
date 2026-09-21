@@ -47,6 +47,18 @@ export const KATEGORI_ADI: Record<number, string> = {
   6: "Diğer",
 };
 export const KATEGORILER = [1, 2, 3, 4, 5, 6] as const;
+/** Öncelikli beş grup — "ekmek yedirecek" olanlar (Yasin 2026-09-22); 6 "Diğer" ayrı durur. */
+export const ONCELIKLI = [1, 2, 3, 4, 5] as const;
+
+/** Segment → ürün grubu. scripts/hedef-firma-excel.py SEGMENT_KATEGORI ile AYNI olmalı. */
+export const SEGMENT_GRUBU: Record<string, number> = {
+  "Kablo Kanalı": 1, "Solar Profil": 1, "Raf Sistemleri": 1, "İskele Kalası": 1,
+  "Yol Bariyeri": 1, "Gürültü Bariyeri": 1, "Çatı ve Cephe Paneli": 1, "Aşık ve Çelik Yapı": 1,
+  "Çelik Servis Merkezi": 2,
+  "Pres Atölyeleri": 4, "Çelik Mobilya": 4,
+  "Havalandırma Kanalı": 5,
+  "Alçıpan Profili": 6, "Market Rafı": 6,
+};
 
 export type HedefFirma = {
   id: number;
@@ -280,6 +292,49 @@ export async function hedefOzeti(): Promise<HedefOzeti> {
     gonderilen: Number(giden[0]?.adet ?? 0),
     durum: Object.fromEntries(durumlar.map((d) => [d.durum, Number(d.adet)])),
   };
+}
+
+export type GrupOzeti = {
+  kategori: number;
+  toplam: number;
+  gonderilebilir: number;
+  gonderilen: number;
+  yanit: number;
+  talep: number;
+  /** grubun sıradaki gönderilebilir firması */
+  siradaki: number | null;
+};
+
+/** Grup kartları: her ürün grubunda kaç firma, kaçı gönderilebilir, ne kadar ilerlendi. */
+export async function grupOzeti(): Promise<GrupOzeti[]> {
+  const [ana, talep] = await Promise.all([
+    sorguSert<Omit<GrupOzeti, "talep">>(
+      `WITH g AS (
+         SELECT h.kategori,
+                count(*)::int AS toplam,
+                count(*) FILTER (WHERE ${GONDERILEBILIR})::int AS gonderilebilir,
+                count(*) FILTER (WHERE EXISTS (SELECT 1 FROM hedef_gonderim x
+                  WHERE x.firma_id = h.id AND x.sonuc IN ('ok', 'belirsiz')))::int AS gonderilen,
+                count(*) FILTER (WHERE h.durum IN ('yanit', 'olumlu', 'red'))::int AS yanit
+         FROM hedef_firmalar h WHERE h.listede GROUP BY h.kategori),
+       s AS (
+         SELECT DISTINCT ON (h.kategori) h.kategori, h.id AS siradaki
+         FROM hedef_firmalar h WHERE ${GONDERILEBILIR}
+         ORDER BY h.kategori, h.sira, h.id)
+       SELECT g.*, s.siradaki FROM g LEFT JOIN s USING (kategori) ORDER BY g.kategori`,
+      [engelliUlkeler()]
+    ),
+    /* talepler tablosu hiç talep gelmemiş kurulumda olmayabilir — hata değil, sıfır */
+    sorgu<{ kategori: number; talep: number }>(
+      `SELECT h.kategori, count(DISTINCT h.id)::int AS talep
+       FROM hedef_firmalar h JOIN talepler t ON ${TALEP_ESLES}
+       WHERE t.durum <> 'spam'
+         AND EXISTS (SELECT 1 FROM hedef_gonderim x WHERE x.firma_id = h.id AND x.sonuc IN ('ok', 'belirsiz'))
+       GROUP BY h.kategori`
+    ),
+  ]);
+  const t = new Map((talep ?? []).map((x) => [Number(x.kategori), x.talep]));
+  return ana.map((g) => ({ ...g, kategori: Number(g.kategori), talep: t.get(Number(g.kategori)) ?? 0 }));
 }
 
 export async function ulkeListesi() {

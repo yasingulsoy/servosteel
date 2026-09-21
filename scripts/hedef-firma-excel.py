@@ -131,6 +131,8 @@ ULKE_ESI = {
 # Urun gruplari — sitede one cikan sira (Yasin 2026-09-22). Panel ve Excel bu siraya gore
 # dizilir. Cok segmentli firma en oncelikli grubuna girer. Celik servis merkezinin dilme mi
 # boy kesme mi oldugunu hedef-firma-kategori.py firmanin sitesine bakarak ayirir.
+# Alcipan profili "Diger"de (Yasin 2026-09-22: "alcipan profilini kaldir, sona birak" —
+# alcipan HATTI yok, yalniz acici/besleyici teklif ediliyor; oncelik bes ana grup).
 KATEGORI_ADI = {
     1: "Roll form hatları", 2: "Rulo sac dilme hatları", 3: "Rulo sac boy kesme hatları",
     4: "Pres besleme sistemleri", 5: "Kompakt hatlar", 6: "Diğer",
@@ -139,7 +141,8 @@ SEGMENT_KATEGORI = {
     "Kablo Kanalı": 1, "Solar Profil": 1, "Raf Sistemleri": 1, "İskele Kalası": 1,
     "Yol Bariyeri": 1, "Gürültü Bariyeri": 1, "Çatı ve Cephe Paneli": 1, "Aşık ve Çelik Yapı": 1,
     "Çelik Servis Merkezi": 2,
-    "Pres Atölyeleri": 4, "Alçıpan Profili": 4, "Çelik Mobilya": 4,
+    "Pres Atölyeleri": 4, "Çelik Mobilya": 4,
+    "Alçıpan Profili": 6,
     "Havalandırma Kanalı": 5,
     "Market Rafı": 6,   # hat var ama sitede sayfasi yok
 }
@@ -590,6 +593,12 @@ def main():
             pk = panel_kaydi(k, satir, ek, segler)
             g = gozden.get(k) or {"kategori": segment_kategorisi(segler), "not": "henüz gözden geçirilmedi",
                                   "dogrulandi": False}
+            # Grup her seferinde segmentlerden yeniden hesaplanir (esleme degisebilir); gozden
+            # gecirmeden yalniz dilme/boy kesme ayrimi, dogrulama ve not alinir.
+            kat = segment_kategorisi(segler)
+            if kat == 2 and g.get("kategori") == 3:
+                kat = 3
+            g = dict(g, kategori=kat)
             pk["kategori"] = g["kategori"]
             pk["kesif"] = k not in arastirilan
             pk["kategori_notu"] = g["not"] + (" · otomatik keşif" if pk["kesif"] else "")

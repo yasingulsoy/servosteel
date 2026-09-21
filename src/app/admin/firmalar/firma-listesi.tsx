@@ -1,12 +1,23 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { HEDEF_DURUM_ETIKET, KATEGORI_ADI, type HedefDurum, type HedefSatiri } from "@/lib/outreach-db";
+import {
+  HEDEF_DURUM_ETIKET,
+  KATEGORI_ADI,
+  SEGMENT_GRUBU,
+  type HedefDurum,
+  type HedefSatiri,
+} from "@/lib/outreach-db";
 import { ENGELLI_ULKELER } from "@/lib/outreach-kurallar";
 import { goreli, kisaTarih } from "@/lib/zaman";
 
 /**
  * Hedef firma listesi — mobilde KART, masaüstünde TABLO (talep listesiyle
  * aynı gerekçe: altı sütun 375 px'e sığmıyor, ilk kaybolan Durum olurdu).
+ *
+ * Liste ürün grubu sırasıyla geliyor (roll form → dilme → boy kesme → pres
+ * besleme → kompakt → diğer); grup süzülmemişse her grubun başına başlık
+ * satırı konuyor ki öncelik sırası listede de görünsün.
  */
 
 export const HEDEF_RENK: Record<HedefDurum, string> = {
@@ -45,7 +56,46 @@ function Adres({ s }: { s: HedefSatiri }) {
   return <span className="break-all">{s.eposta}</span>;
 }
 
-export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: string }) {
+/**
+ * Segmentler kısa: önce firmanın kendi grubundakiler, en çok iki tane; gerisi
+ * "+N" (tamamı üzerine gelince). Altı segmentli satır tabloyu dağıtıyordu.
+ */
+function Segment({ s }: { s: HedefSatiri }) {
+  const hepsi = s.segmentler.split("+").map((x) => x.trim()).filter(Boolean);
+  const sirali = [
+    ...hepsi.filter((x) => SEGMENT_GRUBU[x] === s.kategori),
+    ...hepsi.filter((x) => SEGMENT_GRUBU[x] !== s.kategori),
+  ];
+  const gorunen = sirali.slice(0, 2);
+  const kalan = sirali.length - gorunen.length;
+  return (
+    <span title={hepsi.join(" + ")}>
+      {gorunen.join(", ")}
+      {kalan > 0 ? <span className="text-muted"> +{kalan}</span> : null}
+    </span>
+  );
+}
+
+function GrupBasligi({ kategori }: { kategori: number }) {
+  return (
+    <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide">
+      <span className="grid size-5 place-items-center rounded-full bg-shell text-[11px] text-white">{kategori}</span>
+      {KATEGORI_ADI[kategori] ?? "—"}
+      {kategori === 6 ? <span className="font-medium normal-case tracking-normal text-muted">— öncelik dışı</span> : null}
+    </span>
+  );
+}
+
+export function FirmaListesi({
+  liste,
+  sorgu,
+  grupBasligi,
+}: {
+  liste: HedefSatiri[];
+  sorgu: string;
+  /** Grup süzülmemişse true: grup değiştikçe başlık satırı */
+  grupBasligi: boolean;
+}) {
   if (liste.length === 0) {
     return (
       <p className="rounded-xl border border-line bg-card px-4 py-12 text-center text-sm text-muted">
@@ -54,32 +104,41 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
     );
   }
   const href = (id: number) => `/admin/firmalar/${id}${sorgu ? `?${sorgu}` : ""}`;
+  const yeniGrup = (i: number) => grupBasligi && (i === 0 || liste[i - 1].kategori !== liste[i].kategori);
 
   return (
     <>
       {/* ---------------------------------------------- mobil: kartlar */}
       <ul className="space-y-3 lg:hidden">
-        {liste.map((s) => (
-          <li key={s.id} className="rounded-xl border border-line bg-card">
-            <Link href={href(s.id)} className="flex items-start gap-3 p-4 active:bg-surface-alt">
-              <div className="min-w-0 flex-1">
-                <div className="flex items-start justify-between gap-3">
-                  <span className="font-semibold leading-tight">{s.firma}</span>
-                  <HedefRozet durum={s.durum} />
+        {liste.map((s, i) => (
+          <Fragment key={s.id}>
+            {yeniGrup(i) ? (
+              <li className={`px-1 ${i ? "pt-3" : ""}`}>
+                <GrupBasligi kategori={s.kategori} />
+              </li>
+            ) : null}
+            <li className="rounded-xl border border-line bg-card">
+              <Link href={href(s.id)} className="flex items-start gap-3 p-4 active:bg-surface-alt">
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="font-semibold leading-tight">{s.firma}</span>
+                    <HedefRozet durum={s.durum} />
+                  </div>
+                  <p className="mt-1 text-sm text-muted">
+                    <Adres s={s} />
+                  </p>
+                  <p className="mt-1.5 text-xs text-muted">
+                    {s.ulke}
+                    {" · "}
+                    <Segment s={s} />
+                    {s.kesif ? " · otomatik keşif" : ""}
+                    {s.gonderildi ? ` · ${goreli(s.gonderildi)}` : ""}
+                  </p>
                 </div>
-                <p className="mt-1 text-sm text-muted">
-                  <Adres s={s} />
-                </p>
-                <p className="mt-1.5 text-xs text-muted">
-                  {[KATEGORI_ADI[s.kategori], s.ulke, s.segmentler, s.kesif ? "otomatik keşif" : "",
-                    s.gonderildi ? goreli(s.gonderildi) : ""]
-                    .filter(Boolean)
-                    .join(" · ")}
-                </p>
-              </div>
-              <ChevronRight className="mt-1 size-4 shrink-0 text-muted" aria-hidden />
-            </Link>
-          </li>
+                <ChevronRight className="mt-1 size-4 shrink-0 text-muted" aria-hidden />
+              </Link>
+            </li>
+          </Fragment>
         ))}
       </ul>
 
@@ -88,7 +147,7 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
         <table className="w-full text-left text-sm">
           <thead className="bg-surface-alt">
             <tr>
-              {["Firma", "Grup", "Ülke", "Segment", "E-posta", "Durum", "Gönderim"].map((h) => (
+              {["Firma", "Ülke", "Segment", "E-posta", "Durum", "Gönderim"].map((h) => (
                 <th key={h} className="px-4 py-3 font-semibold">
                   {h}
                 </th>
@@ -96,40 +155,50 @@ export function FirmaListesi({ liste, sorgu }: { liste: HedefSatiri[]; sorgu: st
             </tr>
           </thead>
           <tbody>
-            {liste.map((s) => (
-              <tr key={s.id} className="relative border-t border-line hover:bg-surface-alt">
-                <td className="px-4 py-3">
-                  {/* Satırın tamamı tıklanır ama sayfada tek bağlantı var —
-                      bkz. talep-listesi.tsx */}
-                  <Link
-                    href={href(s.id)}
-                    className="font-medium underline-offset-4 after:absolute after:inset-0 after:content-[''] hover:underline"
-                  >
-                    {s.firma}
-                  </Link>
-                  {s.kesif ? (
-                    <span className="ml-2 rounded bg-surface-alt px-1.5 py-0.5 text-[11px] font-medium text-muted">
-                      keşif
-                    </span>
-                  ) : null}
-                </td>
-                <td className="px-4 py-3 text-muted">{KATEGORI_ADI[s.kategori] ?? "—"}</td>
-                <td className="whitespace-nowrap px-4 py-3 text-muted">{s.ulke || "—"}</td>
-                <td className="px-4 py-3 text-muted">{s.segmentler || "—"}</td>
-                <td className="px-4 py-3 text-muted">
-                  <Adres s={s} />
-                </td>
-                <td className="px-4 py-3">
-                  <HedefRozet durum={s.durum} />
-                </td>
-                <td className="whitespace-nowrap px-4 py-3 text-muted">
-                  {s.gonderildi ? (
-                    <span title={kisaTarih(s.gonderildi)}>{goreli(s.gonderildi)}</span>
-                  ) : (
-                    "—"
-                  )}
-                </td>
-              </tr>
+            {liste.map((s, i) => (
+              <Fragment key={s.id}>
+                {yeniGrup(i) ? (
+                  <tr className="border-t border-line bg-surface-alt/60">
+                    <td colSpan={6} className="px-4 py-2.5">
+                      <GrupBasligi kategori={s.kategori} />
+                    </td>
+                  </tr>
+                ) : null}
+                <tr className="relative border-t border-line hover:bg-surface-alt">
+                  <td className="px-4 py-3">
+                    {/* Satırın tamamı tıklanır ama sayfada tek bağlantı var —
+                        bkz. talep-listesi.tsx */}
+                    <Link
+                      href={href(s.id)}
+                      className="font-medium underline-offset-4 after:absolute after:inset-0 after:content-[''] hover:underline"
+                    >
+                      {s.firma}
+                    </Link>
+                    {s.kesif ? (
+                      <span className="ml-2 rounded bg-surface-alt px-1.5 py-0.5 text-[11px] font-medium text-muted">
+                        keşif
+                      </span>
+                    ) : null}
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-3 text-muted">{s.ulke || "—"}</td>
+                  <td className="px-4 py-3 text-muted">
+                    <Segment s={s} />
+                  </td>
+                  <td className="px-4 py-3 text-muted">
+                    <Adres s={s} />
+                  </td>
+                  <td className="px-4 py-3">
+                    <HedefRozet durum={s.durum} />
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-3 text-muted">
+                    {s.gonderildi ? (
+                      <span title={kisaTarih(s.gonderildi)}>{goreli(s.gonderildi)}</span>
+                    ) : (
+                      "—"
+                    )}
+                  </td>
+                </tr>
+              </Fragment>
             ))}
           </tbody>
         </table>
