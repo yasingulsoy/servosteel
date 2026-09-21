@@ -38,6 +38,12 @@ ADLAR = {
     "alcipan-profili": "Alçıpan Profili",
     "cati-cephe-paneli": "Çatı ve Cephe Paneli",
     "pres-atolyeleri": "Pres Atölyeleri",
+    "asik-celik-yapi": "Aşık ve Çelik Yapı",
+    "iskele-kalasi": "İskele Kalası",
+    "market-rafi": "Market Rafı",
+    "gurultu-bariyeri": "Gürültü Bariyeri",
+    "havalandirma-kanali": "Havalandırma Kanalı",
+    "metal-mobilya": "Çelik Mobilya",
 }
 
 # Kanonik sutunlar ve onlara isaret eden kaliplar (once eslesen kazanir)
@@ -58,7 +64,7 @@ TEYITSIZ = {}   # 2026-09-21: alcipan sorusu cevaplandi (hat yok, besleyici tekl
 
 # Cok segmentli firmada e-posta HAT teklifiyle acilir; yalnizca besleyici/acici
 # teklif edilen segment sona gider (Dana Steel'e once trapez hatti, besleyici en son).
-SONA = {"Alçıpan Profili"}
+SONA = {"Alçıpan Profili", "Pres Atölyeleri", "Havalandırma Kanalı", "Çelik Mobilya"}
 
 
 def durum_isaretle(ws, segment_sutunu=None, segment_adi=None):
@@ -135,17 +141,36 @@ SEGMENT_SAYFA = {   # segment -> (TR yol, diger diller yolu, kampanya adi)
     # katalogdaki acici + dogrultmali servo surucu teklif edilir; kanit: firmanin
     # "Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri" videosu (2017).
     "Alçıpan Profili":      ("/makineler/dogrultmali-servo-suruculer", "/machines/straightener-servo-feeders", "alcipan"),
+    "Aşık ve Çelik Yapı":   ("/roll-form-hatlari/c-sigma-omega", "/roll-forming-lines/c-sigma-omega-profiles", "asik"),
+    "İskele Kalası":        ("/roll-form-hatlari/iskele-kalas", "/roll-forming-lines/scaffolding-plank", "iskele"),
+    # Market rafi: sektor sayfasi "magaza rafi profilleri + teshir elemanlari"ni anlatiyor.
+    "Market Rafı":          ("/uygulamalar/metal-mobilya", "/applications/metal-furniture-and-retail", "market-rafi"),
+    "Gürültü Bariyeri":     ("/roll-form-hatlari/gurultu-bariyeri", "/roll-forming-lines/noise-barrier", "gurultu"),
+    # Kanal hattinin girisi = acici + dogrultucu + besleyici; kompakt hat tam bu.
+    "Havalandırma Kanalı":  ("/makineler/kompakt-hatlar", "/machines/compact-lines", "havalandirma"),
+    "Çelik Mobilya":        ("/uygulamalar/metal-mobilya", "/applications/metal-furniture-and-retail", "mobilya"),
 }
 ULKE_DIL = {
     "İspanya": "es", "Meksika": "es", "Kolombiya": "es", "Peru": "es", "Şili": "es",
     "Polonya": "pl", "İtalya": "it", "Almanya": "de", "Macaristan": "hu",
-    "Kazakistan": "ru", "Özbekistan": "ru", "Türkiye": "tr",
-}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
+    "Kazakistan": "ru", "Özbekistan": "ru", "Kırgızistan": "ru", "Tacikistan": "ru", "Türkiye": "tr",
+    # E-posta dili Fransizca / Portekizce; sitede bu diller yok, link /en/ sayfasina gider
+    "Fransa": "fr", "Belçika": "fr", "Lüksemburg": "fr", "Fas": "fr", "Cezayir": "fr", "Tunus": "fr",
+    "Senegal": "fr", "Fildişi Sahili": "fr", "Kamerun": "fr", "Mali": "fr", "Burkina Faso": "fr",
+    "Benin": "fr", "Togo": "fr", "Gabon": "fr", "Kongo DC": "fr",
+    "Brezilya": "pt", "Portekiz": "pt", "Angola": "pt", "Mozambik": "pt",
+    "Ekvador": "es", "Bolivya": "es", "Paraguay": "es", "Uruguay": "es", "Arjantin": "es",
+    "Guatemala": "es", "Honduras": "es", "El Salvador": "es", "Kosta Rika": "es", "Panama": "es",
+    "Dominik Cumhuriyeti": "es",
+}
+SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
 
 
 def gonderim_linki(segment, ulke, satir):
     tr_yol, en_yol, kampanya = SEGMENT_SAYFA.get(segment, ("/", "/", "genel"))
     dil = ULKE_DIL.get(ulke, "en")
+    if dil not in SITE_DILLERI:      # fr/pt: e-posta o dilde, sayfa Ingilizce (sitede yok)
+        dil = "en"
     yol = tr_yol if dil == "tr" else "/%s%s" % (dil, en_yol)
     m = re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[2] or ""))
     icerik = re.sub(r"[^a-z0-9.-]", "", (m.group(1) if m else sade(satir[0])).lower())[:40]
@@ -208,6 +233,39 @@ def ek_sutunlar(segler, satir):
 ALAN_ESI = {"danagroups.com": "danasteeluae.com"}
 
 
+SEGMENT_ESI = {   # bolge ajanlarinin yazabilecegi Ingilizce karsiliklar
+    "cable tray": "Kablo Kanalı", "solar": "Solar Profil", "solar mounting": "Solar Profil",
+    "racking": "Raf Sistemleri", "storage racking": "Raf Sistemleri", "pallet racking": "Raf Sistemleri",
+    "guardrail": "Yol Bariyeri", "road barrier": "Yol Bariyeri",
+    "roofing": "Çatı ve Cephe Paneli", "roofing and cladding": "Çatı ve Cephe Paneli", "sandwich panel": "Çatı ve Cephe Paneli",
+    "steel service centre": "Çelik Servis Merkezi", "steel service center": "Çelik Servis Merkezi", "coil processing": "Çelik Servis Merkezi",
+    "press shop": "Pres Atölyeleri", "metal stamping": "Pres Atölyeleri", "stamping": "Pres Atölyeleri",
+    "drywall": "Alçıpan Profili", "drywall profile": "Alçıpan Profili", "ceiling profile": "Alçıpan Profili",
+    "purlin": "Aşık ve Çelik Yapı", "peb": "Aşık ve Çelik Yapı", "steel building": "Aşık ve Çelik Yapı",
+    "scaffolding": "İskele Kalası", "scaffolding plank": "İskele Kalası",
+    "retail shelving": "Market Rafı", "gondola shelving": "Market Rafı",
+    "noise barrier": "Gürültü Bariyeri", "hvac": "Havalandırma Kanalı", "ductwork": "Havalandırma Kanalı",
+    "ventilation": "Havalandırma Kanalı", "steel furniture": "Çelik Mobilya", "metal furniture": "Çelik Mobilya",
+}
+
+
+def segment_bul(ham):
+    """Ajanin yazdigi segment metnini 14 kanonik segmentten birine esler; bulamazsa ''."""
+    d = sade(re.sub(r"\(.*?\)", " ", str(ham or ""))).strip(" .")
+    for ad in ADLAR.values():
+        if d == sade(ad):
+            return ad
+    for anahtar, ad in ADLAR.items():
+        if d == anahtar or d == anahtar.replace("-", " "):
+            return ad
+    if d in SEGMENT_ESI:
+        return SEGMENT_ESI[d]
+    for ad in ADLAR.values():                 # "Kablo Kanalı + Raf" gibi: ilk tanınanı al
+        if sade(ad) in d:
+            return ad
+    return ""
+
+
 def firma_anahtari(satir):
     """Tekillestirme anahtari: alan adi + ulke.
 
@@ -268,14 +326,17 @@ def markdown_tablosu(metin):
         s = satirlar[i]
         if DUR.match(s.strip()):
             break
-        if s.lstrip().startswith("|") and i + 1 < len(satirlar) \
-           and re.match(r"^\s*\|[\s:|-]+\|\s*$", satirlar[i + 1]):
+        ayracli = i + 1 < len(satirlar) and re.match(r"^\s*\|[\s:|-]+\|\s*$", satirlar[i + 1])
+        # Ajan ayrac satirini unutursa tablo hic taninmiyordu: 5 bolge dosyasi, 162 firma
+        # sessizce kayboluyordu. "| Firma |" ile baslayan satir ayracsiz da baslik sayilir.
+        ayracsiz = re.match(r"^\s*\|\s*(#\s*\|\s*)?(firma|company)\s*\|", s, re.I)
+        if s.lstrip().startswith("|") and (ayracli or ayracsiz):
             ham = hucreler(s)
             tut = [k for k, b in enumerate(ham) if not gereksiz(b)]
             bu = [ham[k] for k in tut]
             if not basliklar:
                 basliklar = bu
-            j = i + 2
+            j = i + 2 if ayracli else i + 1
             while j < len(satirlar) and satirlar[j].lstrip().startswith("|"):
                 h = hucreler(satirlar[j])
                 satir = [(h[k] if k < len(h) else "") for k in tut]
@@ -367,14 +428,28 @@ def main():
     kanonik = [k for k, _ in SEMA] + EK_BASLIK
     hepsi, kayit, gorulen = [], [], {}
 
+    # --- 1. asama: tum dosyalardan satirlari SEGMENTINE gore topla ---
+    # bolge-*.md dosyalarinda her satir kendi segmentini "Segment" sutununda
+    # tasir (bolge ajani 14 segmentin hepsini arar); digerlerinde dosya = segment.
+    n = len(SEMA)
+    toplanan = {}        # segment -> {"basliklar": [...], "satirlar": [...], "bolge": int}
     for dosya in dosyalar:
         anahtar = dosya[:-3]
-        ad = ADLAR.get(anahtar, anahtar.replace("-", " ").title())
         basliklar, satirlar = markdown_tablosu(
             io.open(os.path.join(KLASOR, dosya), encoding="utf-8").read())
         if not satirlar:
             print("  [atlandı] %s — tablo bulunamadı" % dosya)
             continue
+        bolge = anahtar.startswith("bolge-")
+        seg_sutun = next((i for i, b in enumerate(basliklar) if sade(b) == "segment"), None)
+        if bolge and seg_sutun is None:
+            print("  [atlandı] %s — bölge dosyasında Segment sütunu yok" % dosya)
+            continue
+        segler_satir = []
+        if seg_sutun is not None:
+            segler_satir = [segment_bul(s[seg_sutun] if seg_sutun < len(s) else "") for s in satirlar]
+            basliklar = basliklar[:seg_sutun] + basliklar[seg_sutun + 1:]
+            satirlar = [s[:seg_sutun] + s[seg_sutun + 1:] for s in satirlar]
         yeni_basliklar, indeksler = esle(basliklar)
         duzgun = [[(satir[i] if i is not None and i < len(satir) else "") for i in indeksler]
                   for satir in satirlar]
@@ -390,16 +465,43 @@ def main():
                     satir[4] = (artik + " — " + str(satir[4] or "")).strip(" —")
             satir[1] = temiz
 
-        # Link + konu + hazir e-posta + taslak: 6 kanonik sutunun hemen arkasina.
-        n = len(SEMA)
-        yeni_basliklar = yeni_basliklar[:n] + EK_BASLIK + yeni_basliklar[n:]
-        for satir in duzgun:
+        if bolge:
+            taninmayan = 0
+            for satir, seg in zip(duzgun, segler_satir):
+                if not seg:
+                    taninmayan += 1
+                    continue
+                t = toplanan.setdefault(seg, {"basliklar": [k for k, _ in SEMA], "satirlar": [], "bolge": 0})
+                t["satirlar"].append(satir[:n] + [""] * (len(t["basliklar"]) - n))
+                t["bolge"] += 1
+            if taninmayan:
+                print("  [uyarı] %s — %d satırın segmenti tanınmadı, atlandı" % (dosya, taninmayan))
+        else:
+            ad = ADLAR.get(anahtar, anahtar.replace("-", " ").title())
+            t = toplanan.setdefault(ad, {"basliklar": yeni_basliklar, "satirlar": [], "bolge": 0})
+            if len(t["basliklar"]) < len(yeni_basliklar):
+                t["basliklar"] = yeni_basliklar
+            t["satirlar"] = duzgun + t["satirlar"]      # segment dosyasi once, bolge satirlari sonra
+
+    # --- 2. asama: segment sayfalarini yaz (segment icinde de tekillestirerek) ---
+    sira = {ad: i for i, ad in enumerate(sorted(ADLAR.values(), key=lambda a: [k for k, v in ADLAR.items() if v == a][0]))}
+    for ad in sorted(toplanan, key=lambda a: sira.get(a, 999)):
+        t = toplanan[ad]
+        gorulen_seg, satirlar = set(), []
+        for satir in t["satirlar"]:
+            k = firma_anahtari(satir)
+            if k in gorulen_seg:
+                continue
+            gorulen_seg.add(k)
+            satirlar.append(satir + [""] * (len(t["basliklar"]) - len(satir)))
+        yeni_basliklar = t["basliklar"][:n] + EK_BASLIK + t["basliklar"][n:]
+        for satir in satirlar:
             satir[n:n] = ek_sutunlar([ad], satir)
         ws_seg = wb.create_sheet(ad[:31])
-        sayfa_yaz(ws_seg, yeni_basliklar, duzgun)
+        sayfa_yaz(ws_seg, yeni_basliklar, satirlar)
         durum_isaretle(ws_seg, segment_adi=ad)
 
-        for satir in duzgun:
+        for satir in satirlar:
             anahtar_firma = firma_anahtari(satir)
             if anahtar_firma in gorulen:
                 if ad not in gorulen[anahtar_firma]:
@@ -408,7 +510,8 @@ def main():
             gorulen[anahtar_firma] = [ad]
             hepsi.append((anahtar_firma, list(satir[:len(SEMA)])))
         kayit.append((ad, len(satirlar)))
-        print("  %s: %d firma" % (ad, len(satirlar)))
+        ek_bilgi = " (%d'i bölge taramasından)" % t["bolge"] if t["bolge"] else ""
+        print("  %s: %d firma%s" % (ad, len(satirlar), ek_bilgi))
 
     if hepsi:
         # Iki segmentte cikan firma tek satir olur ama segmentlerin HEPSI yazilir:

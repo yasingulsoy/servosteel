@@ -1,5 +1,5 @@
 {
-  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metninden. ARALIK RAKAMI YAZILMAZ (Yasin 2026-09-21: 'araliklar hakkinda genis davran'): dar aralik ihtiyaci disinda kalan aliciyi ilk cumlede eler; yerine 'profilinize, kalinliginiza, kapasitenize gore boyutlandirilir' — sitede de 'hat projeye ozel boyutlandirilir' yaziyor. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. alcipan: firma alcipan HATTI uretmiyor (katalog, kullanici 2026-09-21); o firmalara katalogdaki rulo acici + dogrultmali servo surucu teklif edilir, kaniti firmanin kendi videosu «Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri» (YouTube EQ54wWjqJHM, 2017). {firma} {cumle} {ek} {link} {liste} yer tutuculardir.",
+  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metninden. ARALIK RAKAMI YAZILMAZ (Yasin 2026-09-21: 'araliklar hakkinda genis davran'): dar aralik ihtiyaci disinda kalan aliciyi ilk cumlede eler; yerine 'profilinize, kalinliginiza, kapasitenize gore boyutlandirilir' — sitede de 'hat projeye ozel boyutlandirilir' yaziyor. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. alcipan: firma alcipan HATTI uretmiyor (katalog, kullanici 2026-09-21); o firmalara katalogdaki rulo acici + dogrultmali servo surucu teklif edilir, kaniti firmanin kendi videosu «Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri» (YouTube EQ54wWjqJHM, 2017). Yeni segmentlerin dayanagi (2026-09-21): iskele, gurultu, asik = firmanin 22 Temmuz 7 roll form hatti listesi + muhendisin 21 Agustos tablo onayi; market-rafi = katalog s.36 + firma videosu; havalandirma = firma videosu «Havalandırma Ekipmanları / Servo Sürücü Ve Rulo Sac Açma Sistemleri»; mobilya = sitedeki metal mobilya sektor sayfasi. {firma} {cumle} {ek} {link} {liste} yer tutuculardir.",
   "en": {
     "selam": "Dear {firma} team,",
     "govde": "{selam}\n\nServosteel is a manufacturer of coil processing and roll forming lines in Istanbul, exporting to more than 48 countries.\n\n{cumle}{ek}\n\nIf you are planning a new line or replacing an existing one, send us your profile drawing or capacity requirement. Our engineering team replies within 48 hours with a line layout and a technical offer.\n\nDetails: {link}\n\nBest regards,\nServosteel Engineering Team\n+90 216 415 30 05 · info@servosteel.com.tr",
@@ -21,7 +21,19 @@
       "pres-atolyesi": {"konu": "Servo feeders for your presses — Servosteel, Istanbul", "ad": "servo press feeders",
         "cumle": "We build servo feeders, straightener feeders and decoilers that feed your presses in precise steps, with press synchronisation and recipe management."},
       "alcipan": {"konu": "Decoilers and straightener feeders for profile lines — Servosteel, Istanbul", "ad": "decoilers and straightener servo feeders",
-        "cumle": "Our decoilers and straightener servo feeders already run on suspended ceiling profile lines, feeding the strip into the press in precise steps with press synchronisation and recipe management."}
+        "cumle": "Our decoilers and straightener servo feeders already run on suspended ceiling profile lines, feeding the strip into the press in precise steps with press synchronisation and recipe management."},
+      "asik": {"konu": "C, Sigma and Omega profile lines — Servosteel, Istanbul", "ad": "C / Sigma / Omega profile lines",
+        "cumle": "We build lines that produce C, Sigma and Omega profiles for light steel structures on a single machine, with adjustable roll groups and recipes so a change of section takes minutes; each line is sized to your sections, thickness and capacity."},
+      "iskele": {"konu": "Scaffolding plank roll forming lines — Servosteel, Istanbul", "ad": "scaffolding plank lines",
+        "cumle": "We build lines for steel scaffolding planks, with the anti-slip embossing and drainage holes formed in-line and an optional press station for the hook ends."},
+      "market-rafi": {"konu": "Shelf profile lines for retail shelving — Servosteel, Istanbul", "ad": "retail shelving lines",
+        "cumle": "We build lines for shop and supermarket shelving profiles, with the hole pattern punched in-line and the surface kept undamaged, since these parts stay visible."},
+      "gurultu": {"konu": "Noise barrier panel lines — Servosteel, Istanbul", "ad": "noise barrier lines",
+        "cumle": "We build lines for the steel and aluminium cassette profiles of highway and railway noise barriers; perforated front panels and closed back panels can be produced on the same line."},
+      "havalandirma": {"konu": "Coil feeding for duct and ventilation lines — Servosteel, Istanbul", "ad": "compact coil feeding lines",
+        "cumle": "Our compact lines combine decoiling, straightening and servo feeding on one platform, and our feeders and decoilers already run at ventilation equipment producers."},
+      "mobilya": {"konu": "Coil feeding for steel furniture production — Servosteel, Istanbul", "ad": "servo feeders and compact lines",
+        "cumle": "We build servo feeders, compact lines and decoilers that feed your presses in precise steps; in furniture the part stays visible, so we set them up for consistent dimensions and an undamaged surface."}
     }
   },
   "es": {
@@ -45,7 +57,19 @@
       "pres-atolyesi": {"konu": "Alimentadores servo para sus prensas — Servosteel, Estambul", "ad": "alimentadores servo para prensas",
         "cumle": "Fabricamos alimentadores servo, alimentadores con enderezadora y desbobinadores que alimentan sus prensas en pasos precisos, con sincronización con la prensa y gestión de recetas."},
       "alcipan": {"konu": "Desbobinadores y alimentadores con enderezadora para líneas de perfiles — Servosteel, Estambul", "ad": "desbobinadores y alimentadores servo con enderezadora",
-        "cumle": "Nuestros desbobinadores y alimentadores servo con enderezadora ya trabajan en líneas de perfiles para falso techo, alimentando la banda a la prensa en pasos precisos, con sincronización con la prensa y gestión de recetas."}
+        "cumle": "Nuestros desbobinadores y alimentadores servo con enderezadora ya trabajan en líneas de perfiles para falso techo, alimentando la banda a la prensa en pasos precisos, con sincronización con la prensa y gestión de recetas."},
+      "asik": {"konu": "Líneas de perfiles C, Sigma y Omega — Servosteel, Estambul", "ad": "líneas de perfiles C / Sigma / Omega",
+        "cumle": "Fabricamos líneas que producen perfiles C, Sigma y Omega para estructuras ligeras de acero en una sola máquina, con grupos de rodillos ajustables y recetas para cambiar de sección en minutos; cada línea se dimensiona según sus secciones, espesores y capacidad."},
+      "iskele": {"konu": "Líneas de perfilado para plataformas de andamio — Servosteel, Estambul", "ad": "líneas para plataformas de andamio",
+        "cumle": "Fabricamos líneas para plataformas de andamio de acero, con el gofrado antideslizante y los agujeros de drenaje formados en línea y una estación de prensa opcional para los ganchos."},
+      "market-rafi": {"konu": "Líneas de perfiles para estanterías comerciales — Servosteel, Estambul", "ad": "líneas para estanterías comerciales",
+        "cumle": "Fabricamos líneas para perfiles de estanterías de tienda y supermercado, con el patrón de agujeros punzonado en línea y la superficie protegida, porque estas piezas quedan a la vista."},
+      "gurultu": {"konu": "Líneas para paneles de barreras acústicas — Servosteel, Estambul", "ad": "líneas para barreras acústicas",
+        "cumle": "Fabricamos líneas para los perfiles de casete de acero y aluminio de las barreras acústicas de carreteras y ferrocarriles; los paneles frontales perforados y los traseros cerrados pueden fabricarse en la misma línea."},
+      "havalandirma": {"konu": "Alimentación de bobina para líneas de conductos y ventilación — Servosteel, Estambul", "ad": "líneas compactas de alimentación de bobina",
+        "cumle": "Nuestras líneas compactas reúnen desbobinado, enderezado y alimentación servo en una sola plataforma, y nuestros alimentadores y desbobinadores ya trabajan en fabricantes de equipos de ventilación."},
+      "mobilya": {"konu": "Alimentación de bobina para la fabricación de muebles metálicos — Servosteel, Estambul", "ad": "alimentadores servo y líneas compactas",
+        "cumle": "Fabricamos alimentadores servo, líneas compactas y desbobinadores que alimentan sus prensas en pasos precisos; en el mueble la pieza queda a la vista, por eso los preparamos para una dimensión constante y una superficie intacta."}
     }
   },
   "it": {
@@ -69,7 +93,19 @@
       "pres-atolyesi": {"konu": "Alimentatori servo per le vostre presse — Servosteel, Istanbul", "ad": "alimentatori servo per presse",
         "cumle": "Realizziamo alimentatori servo, alimentatori con raddrizzatrice e svolgitori che alimentano le vostre presse a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."},
       "alcipan": {"konu": "Svolgitori e alimentatori con raddrizzatrice per linee di profili — Servosteel, Istanbul", "ad": "svolgitori e alimentatori servo con raddrizzatrice",
-        "cumle": "I nostri svolgitori e alimentatori servo con raddrizzatrice lavorano già su linee di profili per controsoffitti, alimentando il nastro alla pressa a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."}
+        "cumle": "I nostri svolgitori e alimentatori servo con raddrizzatrice lavorano già su linee di profili per controsoffitti, alimentando il nastro alla pressa a passi precisi, con sincronizzazione con la pressa e gestione delle ricette."},
+      "asik": {"konu": "Linee per profili C, Sigma e Omega — Servosteel, Istanbul", "ad": "linee per profili C / Sigma / Omega",
+        "cumle": "Realizziamo linee che producono profili C, Sigma e Omega per strutture leggere in acciaio su un'unica macchina, con gruppi di rulli regolabili e ricette per cambiare sezione in pochi minuti; ogni linea è dimensionata sulle vostre sezioni, spessori e capacità."},
+      "iskele": {"konu": "Linee di profilatura per tavole da ponteggio — Servosteel, Istanbul", "ad": "linee per tavole da ponteggio",
+        "cumle": "Realizziamo linee per tavole da ponteggio in acciaio, con goffratura antiscivolo e fori di drenaggio formati in linea e una stazione pressa opzionale per i ganci."},
+      "market-rafi": {"konu": "Linee per profili di scaffalature commerciali — Servosteel, Istanbul", "ad": "linee per scaffalature commerciali",
+        "cumle": "Realizziamo linee per profili di scaffalature da negozio e supermercato, con la foratura eseguita in linea e la superficie protetta, perché questi pezzi restano in vista."},
+      "gurultu": {"konu": "Linee per pannelli di barriere antirumore — Servosteel, Istanbul", "ad": "linee per barriere antirumore",
+        "cumle": "Realizziamo linee per i profili a cassetta in acciaio e alluminio delle barriere antirumore stradali e ferroviarie; pannelli frontali forati e pannelli posteriori chiusi possono essere prodotti sulla stessa linea."},
+      "havalandirma": {"konu": "Alimentazione coil per linee di canali e ventilazione — Servosteel, Istanbul", "ad": "linee compatte di alimentazione coil",
+        "cumle": "Le nostre linee compatte uniscono svolgitura, raddrizzatura e alimentazione servo su un'unica piattaforma, e i nostri alimentatori e svolgitori lavorano già presso produttori di apparecchiature per la ventilazione."},
+      "mobilya": {"konu": "Alimentazione coil per la produzione di mobili metallici — Servosteel, Istanbul", "ad": "alimentatori servo e linee compatte",
+        "cumle": "Realizziamo alimentatori servo, linee compatte e svolgitori che alimentano le vostre presse a passi precisi; nel mobile il pezzo resta in vista, per questo li prepariamo per dimensioni costanti e una superficie integra."}
     }
   },
   "de": {
@@ -93,7 +129,19 @@
       "pres-atolyesi": {"konu": "Servo-Walzenvorschübe für Ihre Pressen — Servosteel, Istanbul", "ad": "Servo-Walzenvorschübe",
         "cumle": "Wir bauen Servo-Walzenvorschübe, Richtvorschübe und Abwickelhaspeln, die Ihre Pressen in präzisen Schritten beschicken – mit Pressensynchronisation und Rezeptverwaltung."},
       "alcipan": {"konu": "Abwickelhaspeln und Richtvorschübe für Profilanlagen — Servosteel, Istanbul", "ad": "Abwickelhaspeln und Servo-Richtvorschübe",
-        "cumle": "Unsere Abwickelhaspeln und Servo-Richtvorschübe laufen bereits auf Anlagen für Abhängedeckenprofile und führen das Band in präzisen Schritten der Presse zu – mit Pressensynchronisation und Rezeptverwaltung."}
+        "cumle": "Unsere Abwickelhaspeln und Servo-Richtvorschübe laufen bereits auf Anlagen für Abhängedeckenprofile und führen das Band in präzisen Schritten der Presse zu – mit Pressensynchronisation und Rezeptverwaltung."},
+      "asik": {"konu": "Anlagen für C-, Sigma- und Omega-Profile — Servosteel, Istanbul", "ad": "C-/Sigma-/Omega-Profilanlagen",
+        "cumle": "Wir bauen Anlagen, die C-, Sigma- und Omega-Profile für den Stahlleichtbau auf einer Maschine fertigen – mit verstellbaren Rollensätzen und Rezepten, sodass ein Querschnittswechsel Minuten dauert; jede Anlage wird auf Ihre Querschnitte, Blechdicken und Kapazität ausgelegt."},
+      "iskele": {"konu": "Profilieranlagen für Gerüstbohlen — Servosteel, Istanbul", "ad": "Gerüstbohlenanlagen",
+        "cumle": "Wir bauen Anlagen für Stahl-Gerüstbohlen, bei denen Rutschhemmungsprägung und Entwässerungslöcher inline eingebracht werden; eine Pressenstation für die Hakenenden kann integriert werden."},
+      "market-rafi": {"konu": "Profilanlagen für Ladenregale — Servosteel, Istanbul", "ad": "Anlagen für Ladenregale",
+        "cumle": "Wir bauen Anlagen für Laden- und Supermarktregalprofile, mit inline gestanztem Lochbild und geschonter Oberfläche, denn diese Teile bleiben sichtbar."},
+      "gurultu": {"konu": "Anlagen für Lärmschutzwand-Paneele — Servosteel, Istanbul", "ad": "Lärmschutzwand-Anlagen",
+        "cumle": "Wir bauen Anlagen für die Kassettenprofile aus Stahl und Aluminium von Lärmschutzwänden an Straßen und Bahnstrecken; gelochte Frontpaneele und geschlossene Rückpaneele lassen sich auf derselben Anlage fertigen."},
+      "havalandirma": {"konu": "Coil-Zuführung für Lüftungskanal-Anlagen — Servosteel, Istanbul", "ad": "kompakte Coil-Zuführanlagen",
+        "cumle": "Unsere Kompaktanlagen vereinen Abhaspeln, Richten und Servo-Vorschub auf einer Plattform, und unsere Vorschübe und Haspeln laufen bereits bei Herstellern von Lüftungstechnik."},
+      "mobilya": {"konu": "Coil-Zuführung für die Stahlmöbelfertigung — Servosteel, Istanbul", "ad": "Servo-Vorschübe und Kompaktanlagen",
+        "cumle": "Wir bauen Servo-Vorschübe, Kompaktanlagen und Abwickelhaspeln, die Ihre Pressen in präzisen Schritten beschicken; bei Möbeln bleibt das Teil sichtbar, deshalb legen wir sie auf Maßhaltigkeit und eine unbeschädigte Oberfläche aus."}
     }
   },
   "pl": {
@@ -117,7 +165,19 @@
       "pres-atolyesi": {"konu": "Podajniki walcowe servo do Państwa pras — Servosteel, Stambuł", "ad": "podajniki walcowe servo do pras",
         "cumle": "Budujemy podajniki walcowe servo, podajniki z prostownicą i rozwijarki, które zasilają Państwa prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."},
       "alcipan": {"konu": "Rozwijarki i podajniki z prostownicą do linii profili — Servosteel, Stambuł", "ad": "rozwijarki i podajniki walcowe servo z prostownicą",
-        "cumle": "Nasze rozwijarki i podajniki walcowe servo z prostownicą pracują już na liniach do profili sufitów podwieszanych, podając taśmę do prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."}
+        "cumle": "Nasze rozwijarki i podajniki walcowe servo z prostownicą pracują już na liniach do profili sufitów podwieszanych, podając taśmę do prasy precyzyjnym krokiem, z synchronizacją z prasą i zarządzaniem recepturami."},
+      "asik": {"konu": "Linie do profili C, Sigma i Omega — Servosteel, Stambuł", "ad": "linie do profili C / Sigma / Omega",
+        "cumle": "Budujemy linie, które na jednej maszynie produkują profile C, Sigma i Omega do lekkich konstrukcji stalowych — z regulowanymi zespołami rolek i recepturami, dzięki którym zmiana przekroju trwa kilka minut; każdą linię dobieramy do Państwa przekrojów, grubości blachy i wydajności."},
+      "iskele": {"konu": "Linie do profilowania podestów rusztowaniowych — Servosteel, Stambuł", "ad": "linie do podestów rusztowaniowych",
+        "cumle": "Budujemy linie do stalowych podestów rusztowaniowych, z antypoślizgowym tłoczeniem i otworami odpływowymi wykonywanymi w linii oraz opcjonalną stacją prasy do formowania haków."},
+      "market-rafi": {"konu": "Linie do profili regałów sklepowych — Servosteel, Stambuł", "ad": "linie do regałów sklepowych",
+        "cumle": "Budujemy linie do profili regałów sklepowych i marketowych, z otworami wykrawanymi w linii i chronioną powierzchnią, ponieważ te elementy pozostają widoczne."},
+      "gurultu": {"konu": "Linie do paneli ekranów akustycznych — Servosteel, Stambuł", "ad": "linie do ekranów akustycznych",
+        "cumle": "Budujemy linie do stalowych i aluminiowych profili kasetowych ekranów akustycznych przy drogach i liniach kolejowych; perforowane panele czołowe i pełne panele tylne można produkować na tej samej linii."},
+      "havalandirma": {"konu": "Podawanie z kręgu dla linii kanałów wentylacyjnych — Servosteel, Stambuł", "ad": "kompaktowe linie podawania z kręgu",
+        "cumle": "Nasze linie kompaktowe łączą rozwijanie, prostowanie i podawanie servo na jednej platformie, a nasze podajniki i rozwijarki pracują już u producentów urządzeń wentylacyjnych."},
+      "mobilya": {"konu": "Podawanie z kręgu dla produkcji mebli metalowych — Servosteel, Stambuł", "ad": "podajniki servo i linie kompaktowe",
+        "cumle": "Budujemy podajniki walcowe servo, linie kompaktowe i rozwijarki, które zasilają Państwa prasy precyzyjnym krokiem; w meblach element pozostaje widoczny, dlatego przygotowujemy je pod powtarzalne wymiary i nieuszkodzoną powierzchnię."}
     }
   },
   "ru": {
@@ -141,7 +201,19 @@
       "pres-atolyesi": {"konu": "Сервоподатчики для ваших прессов — Servosteel, Стамбул", "ad": "сервоподатчики для прессов",
         "cumle": "Мы производим сервоподатчики, податчики с правильной машиной и разматыватели, которые подают металл в ваши прессы с точным шагом, с синхронизацией с прессом и управлением рецептами."},
       "alcipan": {"konu": "Разматыватели и податчики с правкой для профильных линий — Servosteel, Стамбул", "ad": "разматыватели и сервоподатчики с правильной машиной",
-        "cumle": "Наши разматыватели и сервоподатчики с правильной машиной уже работают на линиях профилей для подвесных потолков: они подают ленту в пресс с точным шагом, с синхронизацией с прессом и управлением рецептами."}
+        "cumle": "Наши разматыватели и сервоподатчики с правильной машиной уже работают на линиях профилей для подвесных потолков: они подают ленту в пресс с точным шагом, с синхронизацией с прессом и управлением рецептами."},
+      "asik": {"konu": "Линии для C-, Sigma- и Omega-профилей — Servosteel, Стамбул", "ad": "линии для C-/Sigma-/Omega-профилей",
+        "cumle": "Мы производим линии, выпускающие C-, Sigma- и Omega-профили для лёгких стальных конструкций на одной машине: регулируемые группы валков и рецепты позволяют сменить сечение за минуты, а каждая линия рассчитывается под ваши сечения, толщину металла и производительность."},
+      "iskele": {"konu": "Линии для стальных настилов строительных лесов — Servosteel, Стамбул", "ad": "линии для настилов лесов",
+        "cumle": "Мы производим линии для стальных настилов строительных лесов: противоскользящее тиснение и дренажные отверстия выполняются в линии, а для формовки крюков можно встроить прессовую станцию."},
+      "market-rafi": {"konu": "Линии для профилей торговых стеллажей — Servosteel, Стамбул", "ad": "линии для торговых стеллажей",
+        "cumle": "Мы производим линии для профилей торговых и магазинных стеллажей: перфорация выполняется в линии, а поверхность остаётся неповреждённой, ведь эти детали на виду."},
+      "gurultu": {"konu": "Линии для панелей шумозащитных экранов — Servosteel, Стамбул", "ad": "линии для шумозащитных экранов",
+        "cumle": "Мы производим линии для стальных и алюминиевых кассетных профилей шумозащитных экранов вдоль автомобильных и железных дорог; перфорированные лицевые и глухие тыльные панели выпускаются на одной линии."},
+      "havalandirma": {"konu": "Подача рулона для линий вентиляционных воздуховодов — Servosteel, Стамбул", "ad": "компактные линии подачи рулона",
+        "cumle": "Наши компактные линии объединяют размотку, правку и сервоподачу на одной платформе, а наши податчики и разматыватели уже работают у производителей вентиляционного оборудования."},
+      "mobilya": {"konu": "Подача рулона для производства металлической мебели — Servosteel, Стамбул", "ad": "сервоподатчики и компактные линии",
+        "cumle": "Мы производим сервоподатчики, компактные линии и разматыватели, которые подают металл в ваши прессы с точным шагом; в мебели деталь остаётся на виду, поэтому мы настраиваем их на стабильные размеры и неповреждённую поверхность."}
     }
   },
   "tr": {
@@ -165,7 +237,175 @@
       "pres-atolyesi": {"konu": "Preslerinize servo besleyici — Servosteel, İstanbul", "ad": "servo pres besleyicileri",
         "cumle": "Preslerinizi hassas adımlarla besleyen servo besleyiciler, doğrultmalı servo besleyiciler ve rulo açıcılar üretiyoruz; pres senkronizasyonu ve reçete yönetimiyle."},
       "alcipan": {"konu": "Profil hatları için rulo açıcı ve doğrultmalı servo besleyici — Servosteel, İstanbul", "ad": "rulo açıcılar ve doğrultmalı servo besleyiciler",
-        "cumle": "Rulo açıcılarımız ve doğrultmalı servo besleyicilerimiz asma tavan profil hatlarında çalışıyor; şeridi prese hassas adımlarla, pres senkronizasyonu ve reçete yönetimiyle besliyor."}
+        "cumle": "Rulo açıcılarımız ve doğrultmalı servo besleyicilerimiz asma tavan profil hatlarında çalışıyor; şeridi prese hassas adımlarla, pres senkronizasyonu ve reçete yönetimiyle besliyor."},
+      "asik": {"konu": "C, Sigma ve Omega profil hatları — Servosteel, İstanbul", "ad": "C / Sigma / Omega profil hatları",
+        "cumle": "Hafif çelik yapıların C, Sigma ve Omega profillerini tek hat üzerinde üreten hatlar yapıyoruz; ayarlanabilir merdane grupları ve reçete sistemiyle kesit değişimi dakikalar sürüyor, her hat kesitlerinize, sac kalınlığınıza ve kapasitenize göre boyutlandırılıyor."},
+      "iskele": {"konu": "İskele kalası roll form hatları — Servosteel, İstanbul", "ad": "iskele kalası hatları",
+        "cumle": "Çelik iskele kalası üreten hatlar yapıyoruz; kaymaz yüzey kabartması ve drenaj delikleri hat içinde açılıyor, kanca uçları için pres istasyonu eklenebiliyor."},
+      "market-rafi": {"konu": "Mağaza rafı profil hatları — Servosteel, İstanbul", "ad": "market rafı hatları",
+        "cumle": "Mağaza ve market rafı profilleri için, delik desenini hat içinde açan ve görünür parça olduğu için yüzeyi koruyan hatlar üretiyoruz."},
+      "gurultu": {"konu": "Gürültü bariyeri panel hatları — Servosteel, İstanbul", "ad": "gürültü bariyeri hatları",
+        "cumle": "Karayolu ve demiryolu gürültü bariyerlerinin çelik ve alüminyum kaset profillerini üreten hatlar yapıyoruz; delikli ön panel ve kapalı arka panel aynı hat üzerinde üretilebiliyor."},
+      "havalandirma": {"konu": "Havalandırma kanalı hatları için rulo besleme — Servosteel, İstanbul", "ad": "kompakt rulo besleme hatları",
+        "cumle": "Kompakt hatlarımız rulo açma, doğrultma ve servo beslemeyi tek platformda topluyor; besleyici ve açıcılarımız havalandırma ekipmanı üreticilerinde çalışıyor."},
+      "mobilya": {"konu": "Çelik mobilya üretimi için rulo besleme — Servosteel, İstanbul", "ad": "servo besleyiciler ve kompakt hatlar",
+        "cumle": "Preslerinizi hassas adımlarla besleyen servo besleyiciler, kompakt hatlar ve rulo açıcılar üretiyoruz; mobilyada parça görünür kaldığı için onları ölçü tutarlılığına ve hasarsız yüzeye göre kuruyoruz."}
+    }
+  },
+  "fr": {
+    "selam": "Madame, Monsieur,",
+    "govde": "{selam}\n\nServosteel est un fabricant de lignes de traitement de bobines et de lignes de profilage basé à Istanbul, qui exporte dans plus de 48 pays.\n\n{cumle}{ek}\n\nSi {firma} prévoit une nouvelle ligne ou le remplacement d'une ligne existante, envoyez-nous le plan de votre profil ou votre besoin en capacité. Notre équipe d'ingénierie répond sous 48 heures avec une implantation de ligne et une offre technique.\n\nPlus d'informations : {link}\n\nCordialement,\nL'équipe d'ingénierie Servosteel\n+90 216 415 30 05 · info@servosteel.com.tr",
+    "ek": " Nous fabriquons également {liste}.",
+    "ve": " et ",
+    "segment": {
+      "kablo-kanali": {
+        "konu": "Lignes de profilage pour chemins de câbles — Servosteel, Istanbul",
+        "ad": "des lignes pour chemins de câbles",
+        "cumle": "Nous fabriquons des lignes complètes pour chemins de câbles — dérouleur, redresseuse, amenage servo, poinçonnage, profilage et coupe, pilotés par un seul automate — chacune dimensionnée selon vos profils, vos épaisseurs et votre capacité."
+      },
+      "solar-profil": {
+        "konu": "Lignes pour profilés de structures photovoltaïques — Servosteel, Istanbul",
+        "ad": "des lignes pour profilés solaires",
+        "cumle": "Nous fabriquons des lignes qui produisent des profilés C, oméga et chapeau pour structures de montage photovoltaïques directement depuis la bobine, avec les trous de fixation poinçonnés en ligne."
+      },
+      "raf": {
+        "konu": "Lignes pour échelles et lisses de rayonnage — Servosteel, Istanbul",
+        "ad": "des lignes pour rayonnages",
+        "cumle": "Nous fabriquons des lignes pour échelles et lisses de rayonnage, avec les perforations sur plusieurs rangées poinçonnées en ligne par des poinçons servo, chacune dimensionnée selon vos sections, vos épaisseurs et votre capacité."
+      },
+      "yol-bariyeri": {
+        "konu": "Lignes de profilage pour glissières de sécurité — Servosteel, Istanbul",
+        "ad": "des lignes pour glissières de sécurité",
+        "cumle": "Nous fabriquons des lignes robustes pour glissières de sécurité à double et triple onde en tôle galvanisée, chacune dimensionnée selon la norme, l'épaisseur et la production dont vous avez besoin."
+      },
+      "cati-panel": {
+        "konu": "Lignes pour bacs acier et panneaux — Servosteel, Istanbul",
+        "ad": "des lignes pour bacs acier et panneaux",
+        "cumle": "Nous fabriquons des lignes pour bacs acier, couvertures à joint debout et panneaux de façade, conçues pour garder une tôle large bien plane et une surface prélaquée intacte."
+      },
+      "celik-servis": {
+        "konu": "Lignes de refendage et de coupe à longueur — Servosteel, Istanbul",
+        "ad": "des lignes de refendage et de coupe à longueur",
+        "cumle": "Nous fabriquons des lignes complètes de refendage et de coupe à longueur : chaque unité, du dérouleur à l'enrouleur ou à l'empileur, est fabriquée dans notre usine, testée avant expédition et mise en service sur site."
+      },
+      "pres-atolyesi": {
+        "konu": "Amenages servo pour vos presses — Servosteel, Istanbul",
+        "ad": "des amenages servo pour presses",
+        "cumle": "Nous fabriquons des amenages servo, des amenages-redresseurs et des dérouleurs qui alimentent vos presses pas à pas avec précision, avec synchronisation presse et gestion des recettes."
+      },
+      "alcipan": {
+        "konu": "Dérouleurs et amenages-redresseurs pour lignes de profilés — Servosteel, Istanbul",
+        "ad": "des dérouleurs et amenages-redresseurs servo",
+        "cumle": "Nos dérouleurs et amenages-redresseurs servo fonctionnent déjà sur des lignes de profilés pour faux plafonds, en alimentant la bande dans la presse pas à pas, avec synchronisation presse et gestion des recettes."
+      },
+      "asik": {
+        "konu": "Lignes pour profilés C, Sigma et Oméga — Servosteel, Istanbul",
+        "ad": "des lignes pour profilés C / Sigma / Oméga",
+        "cumle": "Nous fabriquons des lignes qui produisent des profilés C, Sigma et Oméga pour la construction métallique légère sur une seule machine, avec des groupes de galets réglables et des recettes pour changer de section en quelques minutes ; chaque ligne est dimensionnée selon vos sections, vos épaisseurs et votre capacité."
+      },
+      "iskele": {
+        "konu": "Lignes de profilage pour planchers d'échafaudage — Servosteel, Istanbul",
+        "ad": "des lignes pour planchers d'échafaudage",
+        "cumle": "Nous fabriquons des lignes pour planchers d'échafaudage en acier, avec l'embossage antidérapant et les trous d'évacuation réalisés en ligne et une station de presse optionnelle pour les crochets."
+      },
+      "market-rafi": {
+        "konu": "Lignes de profilés pour gondoles de magasin — Servosteel, Istanbul",
+        "ad": "des lignes pour rayonnages de magasin",
+        "cumle": "Nous fabriquons des lignes pour profilés de gondoles et de rayonnages de magasin, avec les perforations poinçonnées en ligne et la surface préservée, car ces pièces restent visibles."
+      },
+      "gurultu": {
+        "konu": "Lignes pour panneaux d'écrans acoustiques — Servosteel, Istanbul",
+        "ad": "des lignes pour écrans acoustiques",
+        "cumle": "Nous fabriquons des lignes pour les cassettes en acier et en aluminium des écrans acoustiques routiers et ferroviaires ; panneaux avant perforés et panneaux arrière pleins peuvent être produits sur la même ligne."
+      },
+      "havalandirma": {
+        "konu": "Alimentation de bobines pour lignes de gaines de ventilation — Servosteel, Istanbul",
+        "ad": "des lignes compactes d'alimentation de bobines",
+        "cumle": "Nos lignes compactes réunissent déroulage, redressage et amenage servo sur une seule plateforme, et nos amenages et dérouleurs fonctionnent déjà chez des fabricants d'équipements de ventilation."
+      },
+      "mobilya": {
+        "konu": "Alimentation de bobines pour la fabrication de mobilier métallique — Servosteel, Istanbul",
+        "ad": "des amenages servo et des lignes compactes",
+        "cumle": "Nous fabriquons des amenages servo, des lignes compactes et des dérouleurs qui alimentent vos presses pas à pas avec précision ; dans le mobilier la pièce reste visible, c'est pourquoi nous les réglons pour des cotes constantes et une surface intacte."
+      }
+    }
+  },
+  "pt": {
+    "selam": "Prezados,",
+    "govde": "{selam}\n\nA Servosteel é fabricante de linhas de processamento de bobinas e de perfilação, com sede em Istambul, e exporta para mais de 48 países.\n\n{cumle}{ek}\n\nSe a {firma} está planejando uma nova linha ou a substituição de uma linha existente, envie-nos o desenho do perfil ou a capacidade necessária. Nossa equipe de engenharia responde em até 48 horas com um layout de linha e uma proposta técnica.\n\nMais informações: {link}\n\nAtenciosamente,\nEquipe de Engenharia Servosteel\n+90 216 415 30 05 · info@servosteel.com.tr",
+    "ek": " Também fabricamos {liste}.",
+    "ve": " e ",
+    "segment": {
+      "kablo-kanali": {
+        "konu": "Linhas de perfilação para eletrocalhas — Servosteel, Istambul",
+        "ad": "linhas para eletrocalhas",
+        "cumle": "Fabricamos linhas completas para eletrocalhas e leitos para cabos — desbobinador, endireitadeira, alimentador servo, puncionamento, perfilação e corte sob um único CLP — cada uma dimensionada conforme seus perfis, espessuras e capacidade."
+      },
+      "solar-profil": {
+        "konu": "Linhas para perfis de estruturas solares — Servosteel, Istambul",
+        "ad": "linhas para perfis solares",
+        "cumle": "Fabricamos linhas que produzem perfis C, ômega e chapéu para estruturas de fixação de painéis solares diretamente da bobina, com os furos de montagem puncionados em linha."
+      },
+      "raf": {
+        "konu": "Linhas para colunas e longarinas de porta-paletes — Servosteel, Istambul",
+        "ad": "linhas para porta-paletes",
+        "cumle": "Fabricamos linhas para colunas e longarinas de porta-paletes, com as furações em várias fileiras puncionadas em linha por punções servo, cada uma dimensionada conforme suas seções, espessuras e capacidade."
+      },
+      "yol-bariyeri": {
+        "konu": "Linhas de perfilação para defensas metálicas — Servosteel, Istambul",
+        "ad": "linhas para defensas metálicas",
+        "cumle": "Fabricamos linhas robustas para defensas metálicas de duas e três ondas em chapa galvanizada, cada uma dimensionada conforme a norma, a espessura e a produção de que vocês precisam."
+      },
+      "cati-panel": {
+        "konu": "Linhas para telhas metálicas e painéis — Servosteel, Istambul",
+        "ad": "linhas para telhas metálicas e painéis",
+        "cumle": "Fabricamos linhas para telhas trapezoidais, coberturas zipadas e painéis de fachada, projetadas para manter a chapa larga plana e a superfície pintada intacta."
+      },
+      "celik-servis": {
+        "konu": "Linhas de corte longitudinal e transversal — Servosteel, Istambul",
+        "ad": "linhas de corte longitudinal e transversal",
+        "cumle": "Fabricamos linhas completas de corte longitudinal e de corte transversal: cada unidade, do desbobinador ao rebobinador ou empilhador, é fabricada em nossa planta, testada antes do embarque e comissionada no local."
+      },
+      "pres-atolyesi": {
+        "konu": "Alimentadores servo para suas prensas — Servosteel, Istambul",
+        "ad": "alimentadores servo para prensas",
+        "cumle": "Fabricamos alimentadores servo, alimentadores com endireitadeira e desbobinadores que alimentam suas prensas em passos precisos, com sincronização com a prensa e gestão de receitas."
+      },
+      "alcipan": {
+        "konu": "Desbobinadores e alimentadores com endireitadeira para linhas de perfis — Servosteel, Istambul",
+        "ad": "desbobinadores e alimentadores servo com endireitadeira",
+        "cumle": "Nossos desbobinadores e alimentadores servo com endireitadeira já trabalham em linhas de perfis para forro, alimentando a fita na prensa em passos precisos, com sincronização com a prensa e gestão de receitas."
+      },
+      "asik": {
+        "konu": "Linhas para perfis C, Sigma e Ômega — Servosteel, Istambul",
+        "ad": "linhas para perfis C / Sigma / Ômega",
+        "cumle": "Fabricamos linhas que produzem perfis C, Sigma e Ômega para estruturas leves de aço em uma única máquina, com grupos de rolos ajustáveis e receitas para trocar de seção em minutos; cada linha é dimensionada conforme suas seções, espessuras e capacidade."
+      },
+      "iskele": {
+        "konu": "Linhas de perfilação para pranchas de andaime — Servosteel, Istambul",
+        "ad": "linhas para pranchas de andaime",
+        "cumle": "Fabricamos linhas para pranchas metálicas de andaime, com o gofrado antiderrapante e os furos de drenagem feitos em linha e uma estação de prensa opcional para os ganchos."
+      },
+      "market-rafi": {
+        "konu": "Linhas de perfis para gôndolas de supermercado — Servosteel, Istambul",
+        "ad": "linhas para gôndolas e prateleiras de loja",
+        "cumle": "Fabricamos linhas para perfis de gôndolas e prateleiras de loja, com a furação puncionada em linha e a superfície preservada, pois essas peças ficam à vista."
+      },
+      "gurultu": {
+        "konu": "Linhas para painéis de barreiras acústicas — Servosteel, Istambul",
+        "ad": "linhas para barreiras acústicas",
+        "cumle": "Fabricamos linhas para os perfis tipo cassete, em aço e alumínio, de barreiras acústicas rodoviárias e ferroviárias; painéis frontais perfurados e painéis traseiros fechados podem ser produzidos na mesma linha."
+      },
+      "havalandirma": {
+        "konu": "Alimentação de bobinas para linhas de dutos de ventilação — Servosteel, Istambul",
+        "ad": "linhas compactas de alimentação de bobinas",
+        "cumle": "Nossas linhas compactas reúnem desbobinamento, endireitamento e alimentação servo em uma única plataforma, e nossos alimentadores e desbobinadores já trabalham em fabricantes de equipamentos de ventilação."
+      },
+      "mobilya": {
+        "konu": "Alimentação de bobinas para fabricação de móveis de aço — Servosteel, Istambul",
+        "ad": "alimentadores servo e linhas compactas",
+        "cumle": "Fabricamos alimentadores servo, linhas compactas e desbobinadores que alimentam suas prensas em passos precisos; no móvel a peça fica à vista, por isso os preparamos para dimensões constantes e uma superfície intacta."
+      }
     }
   }
 }

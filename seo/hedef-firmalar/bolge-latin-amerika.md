@@ -1,7 +1,7 @@
 # Hedef Firmalar — Bölge Taraması: Latin Amerika (İspanyolca)
 
 **Tarih:** 2026-09-21
-**Doğrulanmış firma sayısı:** 56
+**Doğrulanmış firma sayısı:** 45
 **Yöntem:** Her aday için web araması yapıldı (İspanyolca sorgu terimleriyle); ardından firmanın KENDİ web sitesi fiilen açılıp (fetch edilip) sayfada üretim/fabrika/roll forming kanıtı arandı. Sitesi açılmayan (DNS, SSL, 404/500) veya üretim kanıtı bulunamayan firmalar tabloya alınmadı. E-postalar yalnızca sitenin kendi sayfasında harfiyen görülen adreslerdir; görülmeyen hiçbir e-posta uydurulmadı, bunun yerine iletişim sayfası veya telefon verildi.
 
 ## Doğrulanmış Firmalar
@@ -24,9 +24,8 @@
 | Perfiles JMA | Arjantin | Alçıpan Profili | https://www.perfilesjma.com.ar/ | https://www.perfilesjma.com.ar/productos/drywall/ | Perfiles drywall galvanizado — IRAM certificado (IAS U 500-243), 15.000 m² fábrica moderna, Plátanos, Buenos Aires | info@perfilesjma.com.ar / +54 (011) 6088-1530 |
 | Solimet | Peru | Market Rafı | https://solimet.pe/ | https://solimet.pe/gondolas/ | Góndolas metálicas de alta calidad personalizadas — diseño + fabricación + implementación, Huaycan, Lima | ventas@solimet.pe / +51 976 290 596 |
 | APSA (Aceros Prefabricados S.A.) | Guatemala | Aşık ve Çelik Yapı | https://www.apsa.com.gt/ | https://www.apsa.com.gt/ | Estructuras metálicas, vigas de acero, diseño, fabricación, transporte y montaje — 2 plantas 50.000 m², desde 1964, Guatemala City | ventas@apsa.com.gt / +502 2329-2100 |
-| Aceros Arquitectónicos | Guatemala | Aşık ve Çelik Yapı | https://acerosarq.com/ | https://acerosarq.com/ | Estructuras de acero, vigas, perfiles — 1.100 ton/mes capacidad, 65 años, Amatitlán, Guatemala | ventas@acerosarq.com / +502 6644-2555 |
-| Estanterías Japonesas S.R.L. | Arjantin | Market Rafı | https://www.japonesassrl.com.ar/ | https://www.japonesassrl.com.ar/es | Estanterías metálicas, góndolas metálicas, racks, entrepisos — 7.250 m² planta industrial, desde 1974, Caseros, Buenos Aires | info@japonesassrl.com.ar |
-| Kiel Colombia | Kolombiya | Market Rafı | https://kiel.com.co/ | https://kiel.com.co/gondolas-o-estantes-para-supermercados/ | Góndolas para supermercados y tiendas — 28 años diseñando y fabricando, Palmira, Valle del Cauca | Kielcolombia@kiel.com.co / +57 317 439 6729 |
+| Estanterías Japonesas S.R.L. | Arjantin | Market Rafı | https://www.japonesassrl.com.ar/ | https://www.japonesassrl.com.ar/es | Estanterías metálicas, góndolas metálicas, racks, entrepisos — 7.250 m² planta industrial, desde 1974, Caseros, Buenos Aires | e-posta sitede doğrulanamadı — iletişim: https://www.japonesassrl.com.ar/es |
+| Kiel Colombia | Kolombiya | Market Rafı | https://kiel.com.co/ | https://kiel.com.co/gondolas-o-estantes-para-supermercados/ | Góndolas para supermercados y tiendas — 28 años diseñando y fabricando, Palmira, Valle del Cauca | e-posta sitede doğrulanamadı — iletişim: https://kiel.com.co/gondolas-o-estantes-para-supermercados/ |
 | AYAMSA | Meksika | Çatı ve Cephe Paneli | https://www.ayamsa.com | https://www.ayamsa.com | Lámina acanalada, Losacero (composite decking AD-15/20/25/30), perfiles de acero, corte longitudinal — 2 plantas (Monterrey + Mérida), ISO/TUV certificado | contacto@ayamsa.com / +52 81 8131 5410 |
 | Fortacero | Meksika | Çatı ve Cephe Paneli | https://www.fortacero.com | https://www.fortacero.com/lamina-acanalada | Lámina acanalada, productos de acero — 2 plantas (Monterrey + México), 19 sucursales, grúas hasta 45 ton | fortaceromty@fortacero.com / +52 81 8156-5200 |
 | MATRO | Meksika | Pres Atölyeleri | https://matro.com.mx | https://matro.com.mx/estampado-de-metal-monterrey | Estampado de metal Tier 1 — 15 prensas (150-800 ton), troquelado progresivo/transfer/manual, componentes automotriz, Coahuila | infomatro@matro.com.mx / +52 844 286 0693 |
@@ -56,6 +55,8 @@
 | CHASA Panama | Panama | Aşık ve Çelik Yapı | https://chasapanama.com | https://chasapanama.com/estructuras-metalicas-panama | Estructuras metálicas a medida, fabricación y montaje, servicios de mantenimiento — Tocumen, Ciudad de Panamá | info@chasapanama.com / +507 6284-8292 |
 
 ## Elenenler
+
+- **Aceros Arquitectónicos** — otomatik doğrulamada elendi (2026-09-21): sayfada segmentin ürünü geçmiyor
 
 Araştırılan ama doğrulanamadığı veya kriterlere uymadığı için listeye **alınmayan** firmalar:
 

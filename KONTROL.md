@@ -345,10 +345,23 @@ asistanın bizi kendiliğinden anıp anmadığı. Kayıt ve rapor:
 
 ### C.6 Hedef firma e-postaları — kim tıkladı
 
-`seo/hedef-firmalar/Servosteel-Hedef-Firmalar.xlsx` (319 firma, 8 segment) —
-kaynağı aynı klasördeki `.md` tablolar, üretimi `python scripts/hedef-firma-excel.py`.
-Her satırda firmanın dilinde hazır e-posta, konu, tek tıkla taslak (143 firma)
-ve UTM'li link var. E-posta metinlerinin kaynağı `seo/eposta-taslaklari.json`;
+`seo/hedef-firmalar/Servosteel-Hedef-Firmalar.xlsx` — **882 firma, 67 ülke, 14
+segment (2026-09-21)**. Kaynağı aynı klasördeki `.md` tablolar: 14 segment dosyası
+ve 11 `bolge-*.md` bölge dosyası (bölge dosyasında her satır kendi segmentini
+`Segment` sütununda taşır). Üretim: `python scripts/hedef-firma-excel.py`.
+Her satırda firmanın dilinde hazır e-posta (9 dil: EN ES PT FR IT DE PL RU TR),
+konu, tek tıkla taslak (537 firma) ve UTM'li link var. Fransızca ve Portekizce
+e-postaların linki İngilizce sayfaya gider — sitede o diller yok.
+
+```bash
+python scripts/hedef-firma-dogrula.py --dosya "bolge-*.md"            # rapor
+python scripts/hedef-firma-dogrula.py --dosya "bolge-*.md" --uygula   # temizle
+```
+Doğrulayıcı her satırı açar: site açılıyor mu, sayfada segmentin ürünü geçiyor
+mu (14 segment × çok dilli kelime listesi), sepet izi var ama üretim izi yok mu
+(dükkân), e-posta sitede gerçekten yazıyor mu. Açılmayan/ürünsüz/dükkân satırı
+"Elenenler"e taşınır; sitede bulunamayan e-posta silinip yerine iletişim sayfası
+yazılır. 403/5xx elenmez, "doğrulanamadı" notu alır (bot koruması). E-posta metinlerinin kaynağı `seo/eposta-taslaklari.json`;
 içindeki iddiaların hepsi sitede yazıyor, fiyat/teslim/referans **yok**.
 
 ```bash
@@ -810,6 +823,24 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
+
+**E.31 · Hedef firma araştırmasında dört duvar (2026-09-21).** 319'dan 882'ye
+çıkarken çarpılanlar — bir sonraki turda baştan hesaba kat:
+1. **WebSearch oturum başına 200 aramayla sınırlı** ve bütün alt ajanlar aynı
+   kotayı paylaşır. Dolunca DuckDuckGo/Bing/Google/Brave WebFetch ile bot sayfası
+   döner. Büyük tarama = yeni oturum.
+2. **Alt ajanlar uygulamanın tarayıcısını kullanamıyor** (izin sınıflandırıcısı
+   "iş akışına müdahale" diye engelliyor, bazen izin veriyor — tutarsız). Ana
+   oturum kullanabilir; Bing ~45 aramadan sonra doğrulama sorusu gösteriyor.
+3. **Ajanın WebFetch'i bazı ülke uzantılarına bağlanamıyor** (.ng .tz .ug .zw .az
+   ...); makinenin doğrudan bağlantısı açıyor. Doğrulamayı betik yapmalı.
+4. **Haiku tablo ayracını (`|---|`) unutuyor** — beş bölge dosyasında 162 firma
+   Excel'e hiç girmiyordu. Ayrıştırıcılar artık `| Firma |` satırını ayraçsız da
+   başlık sayıyor. Ajanın bildirdiği sayıya değil dosyaya bak: Latin Amerika
+   "56" dedi, dosyada 46 satır vardı.
+Ayrıca: dosyayı bir ajan yazarken doğrulayıcı `--uygula` çalıştırma — doğrulayıcı
+satırı metniyle bulduğu için yanlış satırı silmez, ama araya giren satırlar o
+turda denetlenmez.
 
 **E.30 · Çeviri yazının iç linki o dilde olmayan yazıya gider (2026-09-21).**
 Roll form maliyet yazısı 6 dilde yayına girdi; "roll form nedir" yazısı yalnızca
