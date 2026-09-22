@@ -543,6 +543,19 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   klasörüne düşmez; kopyası ancak `OUTREACH_BCC` adresine gelir.
 - **Aynı adrese bir kez:** adres başka bir firma satırında da olsa, ona bir kez
   tanıtım e-postası gittiyse (ya da gitmiş olabilirse) bir daha gönderilmez.
+- **Gelen kutusu takibi (2026-09-22, Yasin "cevap geldiğini nasıl anlayacağız"):**
+  panel gönderen kutularının INBOX'ını aynı şifreyle IMAP'ten okur — liste sayfası
+  açıldığında arka planda (kutu başına en çok 10 dk'da bir) ya da "Şimdi tara".
+  **Salt okunur:** hiçbir ileti okundu işaretlenmez, taşınmaz, silinmez. Yalnızca
+  e-posta GÖNDERDİĞİMİZ firmayla eşleşen iletide (önce In-Reply-To = bizim
+  Message-ID'miz, yoksa adres): kalıcı geri dönüş → "Adres hatalı" (geri dönüş
+  eşiği artık elle işaretlemeyi beklemiyor), yanıt → "Yanıt geldi" + yanıtın başı
+  firma notuna, "unsubscribe / remove me / dar de baja" → engel listesi (eşleşmese
+  de), otomatik yanıt ve gecikme bildirimi → yalnızca not. Alıntılanan eski ileti
+  ve altbilgimiz ayıklanır — altbilgideki "Unsubscribe" satırı iptal sayılmaz.
+  Kurallar `src/lib/gelen-kurallar.ts`, testi `node scripts/gelen-kurallar-test.mjs`
+  (Exim/Gmail raporu, gecikme, Outlook/Gmail otomatik yanıtı, alıntılı yanıtlar).
+  Yanıtların hepsini görmesi için `OUTREACH_REPLY_TO` BOŞ olmalı (bkz. D).
 - **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
 - **Almanya ve Avusturya'ya e-posta gitmez** — şirketlere de önceden açık izin
   şartı var (UWG §7, TKG 2021 §174). Telefon, iletişim formu, LinkedIn. Diğer AB
@@ -752,9 +765,11 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
   değişkenin eksik olduğunu yazar; yarım kutu için ayrı uyarı çıkar.
   **`.env.local`'a konmaz:** o dosya canlı veritabanına bağlı, lokal panel gerçek
   e-posta gönderir.
-- [ ] **Geri dönüşler okunsun:** bounce'lar gönderen kutuya gelir — dört kutu
-  Thunderbird'e eklenir ya da cPanel → Yönlendiriciler ile liza@'ya yönlendirilir;
-  yoksa geri dönen adres "Adres hatalı" işaretlenmez ve eşik çalışmaz.
+- [ ] **Yanıtlar panele düşsün:** Dokploy'da `OUTREACH_REPLY_TO` satırı silinir
+  (boş) — yanıtlar gönderen kutuya gelir, panel "Yanıt geldi" diye işler. cPanel →
+  Yönlendiriciler'de dört kutu liza@'ya yönlendirilir: Liza her yanıtı kendi
+  kutusunda görür, kopyası gönderen kutuda kalır (panel onu okur). Geri dönüşler ve
+  "unsubscribe" zaten gönderen kutuya geliyor; panel onları Reply-To'dan bağımsız işler.
 - [ ] **İlk günler `OUTREACH_BCC` = kendi Gmail adresin:** her gönderimin kopyası
   oraya düşer; "Spam"e mi "Gelen kutusu"na mı gittiği ilk günden görülür.
   Spam'e düşüyorsa gönderime devam edilmez, bakılır.

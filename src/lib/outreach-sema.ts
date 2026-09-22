@@ -99,4 +99,33 @@ export const OUTREACH_SEMA = `
     durdu_bitis  TIMESTAMPTZ,
     durdu_sebep  TEXT NOT NULL DEFAULT ''
   );
+
+  /* Gönderen kutularına GELEN ve işlenen iletiler — yanıt, geri dönüş, abonelik
+     iptali, otomatik yanıt (bkz. src/lib/gelen-tarama.ts). Anahtar IMAP'in UID'i:
+     aynı ileti iki kez işlenmez. tur: yanit | geri_donus | gecici | otomatik |
+     abonelik | ilgisiz (gönderdiğimiz bir firmayla eşleşmedi) */
+  CREATE TABLE IF NOT EXISTS gelen_eposta (
+    kutu           TEXT NOT NULL,
+    uidvalidity    BIGINT NOT NULL,
+    uid            BIGINT NOT NULL,
+    mesaj_kimligi  TEXT NOT NULL DEFAULT '',
+    kimden         TEXT NOT NULL DEFAULT '',
+    konu           TEXT NOT NULL DEFAULT '',
+    tur            TEXT NOT NULL,
+    firma_id       INTEGER REFERENCES hedef_firmalar(id) ON DELETE SET NULL,
+    ozet           TEXT NOT NULL DEFAULT '',
+    zaman          TIMESTAMPTZ,
+    islendi        TIMESTAMPTZ NOT NULL DEFAULT now(),
+    PRIMARY KEY (kutu, uidvalidity, uid)
+  );
+  CREATE INDEX IF NOT EXISTS gelen_eposta_islendi_idx ON gelen_eposta (islendi DESC);
+  /* Kutu başına tarama: nereye kadar okundu (UID), en son ne zaman, hata. */
+  CREATE TABLE IF NOT EXISTS gelen_tarama (
+    kutu         TEXT PRIMARY KEY,
+    uidvalidity  BIGINT,
+    son_uid      BIGINT NOT NULL DEFAULT 0,
+    basladi      TIMESTAMPTZ,
+    bitti        TIMESTAMPTZ,
+    son_hata     TEXT NOT NULL DEFAULT ''
+  );
 `;

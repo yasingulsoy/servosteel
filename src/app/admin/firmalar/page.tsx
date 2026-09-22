@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { after } from "next/server";
 import { ArrowRight, CircleCheck, Search, ShieldAlert, TriangleAlert } from "lucide-react";
 import { oturum, rolu } from "@/lib/admin-auth";
 import {
@@ -32,8 +33,10 @@ import {
   type OutreachAyarlari,
 } from "@/lib/outreach-kurallar";
 import { goreli, tamTarih } from "@/lib/zaman";
+import { gelenDurumu, type GelenDurumu } from "@/lib/gelen-db";
+import { gelenKutulariTara } from "@/lib/gelen-tarama";
 import { Kabuk } from "../kabuk";
-import { sigortaSifirlaEylemi } from "./actions";
+import { gelenTaraEylemi, sigortaSifirlaEylemi } from "./actions";
 import { FirmaListesi, SONUC_ETIKET } from "./firma-listesi";
 
 export const dynamic = "force-dynamic";
@@ -71,7 +74,7 @@ const sayi = (n: number) => n.toLocaleString("tr-TR");
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep, gelen] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -85,11 +88,12 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
         rolu(ben),
         geriDonusDurumu(),
         talebeDonen(),
+        gelenDurumu(),
       ]);
     return {
       v: {
         liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
-        admin: rol === "admin", gd, talep,
+        admin: rol === "admin", gd, talep, gelen,
       },
       hata: null,
     };
@@ -136,6 +140,17 @@ export default async function FirmalarSayfasi({
   const ayar = ayarlariOku(process.env);
 
   const { v, hata } = await veriGetir(filtre, sayfa, ben, ayar);
+  /* Gelen kutuları sayfa gönderildikten SONRA taranır — sayfa beklemez. Kutu
+     başına en çok 10 dakikada bir; sonuç bir sonraki açılışta görünür. */
+  if (!ayar.eksik.length) {
+    after(async () => {
+      try {
+        await gelenKutulariTara(ayar, { aralikSn: 600 });
+      } catch (e) {
+        console.error("gelen kutusu taraması:", (e as Error).message);
+      }
+    });
+  }
   const secim = v ? kutuSec(ayar, v.kutular.kutu, v.kutular.alan) : null;
   const duranlar = secim?.satirlar.filter((x) => x.durum.durdu) ?? [];
   const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
@@ -248,6 +263,7 @@ export default async function FirmalarSayfasi({
                 <span>{ayar.uyarilar.join(" ")}</span>
               </p>
             ) : null}
+            {ayar.kutular.length ? <GelenKutulari durum={v.gelen} kutular={ayar.kutular.map((k) => k.user)} /> : null}
 
             {/* ----------------------------------------- öncelikli gruplar */}
             <section className="mt-6" aria-labelledby="gruplar-baslik">
@@ -552,6 +568,90 @@ function KutuTablosu({
             </button>
           </form>
         </details>
+      ) : null}
+    </section>
+  );
+}
+
+const GELEN_ETIKET: Record<string, string> = {
+  yanit: "Yanıt",
+  geri_donus: "Geri döndü",
+  gecici: "Teslim gecikiyor",
+  otomatik: "Otomatik yanıt",
+  abonelik: "Abonelikten çıktı",
+};
+const GELEN_RENK: Record<string, string> = {
+  yanit: "bg-violet-500/15 text-violet-700",
+  geri_donus: "bg-red-500/15 text-red-700",
+  gecici: "bg-amber-500/15 text-amber-800",
+  otomatik: "bg-zinc-500/10 text-zinc-600",
+  abonelik: "bg-amber-500/15 text-amber-800",
+};
+
+/**
+ * Gelen kutuları — yanıtlar, geri dönüşler, abonelik iptalleri kendiliğinden
+ * işlenir (src/lib/gelen-tarama.ts). Burada: kutuların son taraması, bugün
+ * işlenenler ve son eşleşenler; "Şimdi tara" beklemeden tarar.
+ */
+function GelenKutulari({ durum, kutular }: { durum: GelenDurumu; kutular: string[] }) {
+  const tarama = new Map(durum.kutular.map((k) => [k.kutu, k]));
+  const b = durum.bugun;
+  return (
+    <section className="mt-3 rounded-xl border border-line bg-card px-4 py-3.5 text-sm">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="font-semibold">
+          Gelen kutuları <span className="font-normal text-muted">— yanıt, geri dönüş ve abonelik iptali kendiliğinden işlenir</span>
+        </p>
+        <form action={gelenTaraEylemi}>
+          <button className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold hover:bg-surface-alt">
+            Şimdi tara
+          </button>
+        </form>
+      </div>
+      <p className="mt-1 text-muted">
+        Bugün: {b.yanit ?? 0} yanıt · {b.geri_donus ?? 0} geri dönüş · {b.abonelik ?? 0} abonelik iptali ·{" "}
+        {b.otomatik ?? 0} otomatik yanıt
+      </p>
+      <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted">
+        {kutular.map((k) => {
+          const t = tarama.get(k);
+          return (
+            <li key={k} className="break-all">
+              {k}:{" "}
+              {t?.son_hata ? (
+                <span className="text-red-700">hata — {t.son_hata}</span>
+              ) : t?.bitti ? (
+                <span title={tamTarih(t.bitti)}>{goreli(t.bitti)} tarandı</span>
+              ) : (
+                "henüz taranmadı"
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      {durum.son.length ? (
+        <ul className="mt-3 divide-y divide-line border-t border-line">
+          {durum.son.map((g, i) => (
+            <li key={`${g.kutu}-${g.islendi}-${i}`} className="flex flex-col gap-0.5 py-2 sm:flex-row sm:items-baseline sm:gap-3">
+              <span className={`w-fit shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${GELEN_RENK[g.tur] ?? ""}`}>
+                {GELEN_ETIKET[g.tur] ?? g.tur}
+              </span>
+              <span className="min-w-0 flex-1 break-words">
+                {g.firma_id ? (
+                  <Link href={`/admin/firmalar/${g.firma_id}`} className="font-medium underline-offset-4 hover:underline">
+                    {g.firma ?? g.kimden}
+                  </Link>
+                ) : (
+                  <span className="font-medium">{g.kimden}</span>
+                )}
+                {g.ozet ? <span className="text-muted"> — {g.ozet.slice(0, 160)}</span> : null}
+              </span>
+              <span className="shrink-0 text-xs text-muted" title={tamTarih(g.islendi)}>
+                {goreli(g.islendi)}
+              </span>
+            </li>
+          ))}
+        </ul>
       ) : null}
     </section>
   );

@@ -43,6 +43,7 @@ export const OLAY_ETIKET = {
   hedef_not: "Hedef firmaya not ekledi",
   hedef_engel: "Adresi engel listesine ekledi",
   sigorta_sifirla: "Gönderim sigortasını kaldırdı",
+  gelen_tara: "Gelen kutularını taradı",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

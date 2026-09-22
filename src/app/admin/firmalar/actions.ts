@@ -32,6 +32,7 @@ import {
   type GonderenKutusu,
 } from "@/lib/outreach-kurallar";
 import { iptalAdresi, postaSunucusu, tamMetin, tanitimGonder } from "@/lib/outreach";
+import { gelenKutulariTara } from "@/lib/gelen-tarama";
 
 /**
  * Hedef firma eylemleri. Her birinin ilk satırı `yetki()` — sunucu eylemi
@@ -287,5 +288,22 @@ export async function sigortaSifirlaEylemi() {
   if (!(await outreachSemaKur())) return;
   const kaldirilan = await sigortaSifirla();
   await kayitEkle(ben, "sigorta_sifirla", "", kaldirilan.join(" · ").slice(0, 280));
+  yenile();
+}
+
+/**
+ * Gönderen kutularının gelen kutusunu ŞİMDİ tarar (sayfa açılışındaki
+ * kendiliğinden tarama en çok 10 dakikada bir). Aynı kutu 60 sn içinde iki
+ * kez taranmaz — çift tıklama iki tarama başlatmasın.
+ */
+export async function gelenTaraEylemi() {
+  const ben = await yetki();
+  const ayar = ayarlariOku(process.env);
+  if (ayar.eksik.length) return;
+  const sonuc = await gelenKutulariTara(ayar, { aralikSn: 60 });
+  const ozet = sonuc
+    .map((r) => `${r.kutu}: ${r.hata ? `hata — ${r.hata}` : r.atlandi ?? `${r.islenen} ileti (${r.yanit} yanıt, ${r.geriDonus} geri dönüş, ${r.abonelik} iptal)`}`)
+    .join(" · ");
+  await kayitEkle(ben, "gelen_tara", "", ozet.slice(0, 280));
   yenile();
 }
