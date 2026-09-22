@@ -5,7 +5,7 @@ import { oturum } from "@/lib/admin-auth";
 import { GELEN_SAYFA_BOYU, gelenListesi } from "@/lib/gelen-db";
 import { GIDEN_SAYFA_BOYU, gidenListesi, outreachSemaKur } from "@/lib/outreach-db";
 import { ayarlariOku } from "@/lib/outreach-kurallar";
-import { LOGO_CID, LOGO_PNG_BASE64 } from "@/lib/eposta-logo";
+import { cidleriAdreseCevir } from "@/lib/eposta-sablon";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
 import { SONUC_ETIKET } from "../firma-listesi";
@@ -164,13 +164,14 @@ export default async function GidenSayfasi({ searchParams }: { searchParams: Pro
                     </summary>
                     <div className="border-t border-line p-3.5">
                       {g.govde_html ? (
-                        /* Alıcının gördüğü hâli. sandbox="" — betik, form, üst sayfaya erişim yok */
+                        /* Alıcının gördüğü hâli. Betik yok (allow-scripts verilmedi); allow-same-origin
+                           yalnızca /eposta/ görselleri yüklensin diye (bkz. gonder-kutusu.tsx) */
                         <iframe
                           title={`E-posta: ${g.konu}`}
-                          sandbox=""
-                          /* Gömülü logo (cid) çerçevede çözülmez — aynı görsel veri adresiyle */
-                          srcDoc={g.govde_html.replaceAll(`cid:${LOGO_CID}`, `data:image/png;base64,${LOGO_PNG_BASE64}`)}
-                          className="h-96 w-full rounded-lg border border-line bg-white"
+                          sandbox="allow-same-origin"
+                          /* Gömülü görseller (cid) çerçevede çözülmez — aynı dosyalar /eposta/ adresinden */
+                          srcDoc={cidleriAdreseCevir(g.govde_html)}
+                          className="h-[36rem] w-full rounded-lg border border-line bg-white"
                         />
                       ) : (
                         <pre className="whitespace-pre-wrap break-words rounded-lg border border-line bg-white p-3 font-sans text-sm text-zinc-800">

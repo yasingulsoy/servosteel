@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, CircleCheck, Send, TriangleAlert } from "lucide-react";
 import { metindenHtml } from "@/lib/eposta-bicim";
+import { epostaSayfasi, gorselAdresi } from "@/lib/eposta-sablon";
 import { gonderEylemi, type GonderSonucu } from "./actions";
 import { EpostaEditoru } from "./eposta-editoru";
 
@@ -13,9 +14,11 @@ import { EpostaEditoru } from "./eposta-editoru";
  * Gönderim İKİ ADIMLI: "Gönder…" onay kutusunu açar, asıl gönderen ikinci
  * düğme — geri alınamayan, dışarıya giden bir iş tek yanlış tıklamayla
  * olmasın. Konu ve metin düzenlenebilir — metin biçimli editörde (kalın,
- * liste, bağlantı); düzenlenmezse sunucu hazır metinden aynı sade HTML'i
- * üretir. Altbilgi (abonelikten çıkma, unvan, adres) düzenlenemez, sunucu
- * her gönderimde kendisi ekler.
+ * liste, bağlantı); düzenlenmezse sunucu hazır metinden aynı HTML'i üretir.
+ * Süsler (teklif düğmesi, ürün fotoğrafları, imza logosu) ve altbilgi
+ * (abonelikten çıkma, unvan, adres) düzenlenemez, sunucu her gönderimde
+ * ekler; altındaki önizleme ALICININ GÖRECEĞİ hâl — sunucuyla aynı şablon
+ * (eposta-sablon.ts), yalnızca görseller gömülü değil /eposta/ adresinden.
  *
  * Düğmeyi kapatan sebepler (tavan, aralık, sigorta, ülke…) sunucuda da
  * AYRICA kontrol ediliyor; buradaki yalnızca kullanıcıya boşuna tıklatmamak için.
@@ -26,7 +29,8 @@ export function GonderKutusu({
   alici,
   konu,
   govde,
-  altbilgi,
+  dil,
+  altbilgiHtml,
   engel,
   bekleSn,
   uyari,
@@ -39,7 +43,10 @@ export function GonderKutusu({
   alici: string;
   konu: string;
   govde: string;
-  altbilgi: string;
+  /** E-posta dili — ürün fotoğraflarının alt yazısı */
+  dil: string;
+  /** Altbilginin HTML hâli (sunucu üretir: altbilgiHtmlMetni) */
+  altbilgiHtml: string;
   engel: string | null;
   bekleSn: number;
   uyari: string | null;
@@ -61,6 +68,18 @@ export function GonderKutusu({
   const sifirlaniyor = useRef(false);
   const baslangicHtml = useMemo(() => metindenHtml(govde), [govde]);
   const degisti = konuYazi !== konu || govdeHtml !== "";
+
+  /* Önizleme yazmayı yarım saniye geriden izler: her tuşta çerçeve baştan
+     yüklenip göz kırpmasın */
+  const [onizlenen, setOnizlenen] = useState(baslangicHtml);
+  useEffect(() => {
+    const t = setTimeout(() => setOnizlenen(govdeHtml || baslangicHtml), 500);
+    return () => clearTimeout(t);
+  }, [govdeHtml, baslangicHtml]);
+  const onizleme = useMemo(
+    () => epostaSayfasi(onizlenen, { dil, altbilgiHtml, kaynak: gorselAdresi }),
+    [onizlenen, dil, altbilgiHtml]
+  );
 
   /* Yeni sonuç gelince onay kapanır; sunucu "şu kadar bekle" dediyse sayaç
      ondan başlar. Efekt değil, çizim sırasında: React'in "önceki değeri
@@ -148,14 +167,24 @@ export function GonderKutusu({
         </button>
       ) : null}
 
-      <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">
-        İmza logosu ve altbilgi — her e-postaya otomatik eklenir
-      </p>
-      {/* eslint-disable-next-line @next/next/no-img-element -- e-postadaki görünümün aynısı, optimize edilmesin */}
-      <img src="/logo-full.png" alt="Servosteel" width={128} height={57} className="mt-1.5 h-[57px] w-32 rounded bg-white p-0.5" />
-      <pre className="mt-1.5 whitespace-pre-wrap break-words rounded-lg bg-surface-alt px-3 py-2.5 font-sans text-xs leading-relaxed text-muted">
-        {altbilgi.replace(/^\n+/, "")}
-      </pre>
+      <details open className="mt-4 rounded-lg border border-line">
+        <summary className="cursor-pointer px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted">
+          Alıcının göreceği hâli
+        </summary>
+        <p className="px-3 pb-2 text-xs text-muted">
+          Tek başına duran bağlantılar süslenir: teklif formu turuncu düğme, ürün sayfası küçük makine fotoğrafları olur.
+          İmza logosu ve altbilgi her e-postaya otomatik eklenir.
+        </p>
+        {/* Betik YOK (allow-scripts verilmedi): form, açılır pencere, üst sayfaya erişim de yok.
+            allow-same-origin yalnızca görseller yüklensin diye — tamamen kapalı çerçevenin
+            kökeni boş sayılıyor ve tarayıcı /eposta/ görsellerini ona yüklemiyor. */}
+        <iframe
+          title="E-posta önizlemesi"
+          sandbox="allow-same-origin"
+          srcDoc={onizleme}
+          className="h-[40rem] w-full rounded-b-lg border-t border-line bg-white"
+        />
+      </details>
 
       {uyari && !kapali ? (
         <p className="mt-4 flex gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5 text-sm text-amber-900">

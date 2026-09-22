@@ -1,11 +1,20 @@
 import "server-only";
+import { readFileSync } from "node:fs";
 import { resolve4, resolve6, resolveMx } from "node:dns/promises";
+import path from "node:path";
 import { ImapFlow } from "imapflow";
 import nodemailer from "nodemailer";
 import MailComposer from "nodemailer/lib/mail-composer";
-import { altbilgi, type GonderenKutusu, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
-import { BAGLANTI, metindenHtml } from "@/lib/eposta-bicim";
-import { LOGO_CID, LOGO_GENISLIK, LOGO_PNG_BASE64, LOGO_YUKSEKLIK } from "@/lib/eposta-logo";
+import {
+  altbilgi,
+  altbilgiHtml,
+  type GonderenKutusu,
+  type OutreachAyarlari,
+  type SmtpHatasi,
+} from "@/lib/outreach-kurallar";
+import { metindenDuz, metindenHtml } from "@/lib/eposta-bicim";
+import { LOGO_PNG_BASE64 } from "@/lib/eposta-logo";
+import { cidGorselleri, epostaSayfasi, gorselCid, LOGO_CID } from "@/lib/eposta-sablon";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
 
 /**
@@ -17,11 +26,12 @@ import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
  * ek DNS kaydı ve üçüncü taraf hesabı gerekmiyor. Neden ayrı kutu: bkz.
  * `ayarlariOku` — form bildirimleri etkilenmesin.
  *
- * Düz metin + SADE HTML (multipart/alternative): HTML yalnızca paragraf,
- * satır sonu ve bağlantı — görsel, uzak kaynak, izleme pikseli YOK. Soğuk
- * e-postada görsel ve izleme spam puanını yükseltiyor; kimin tıkladığını
- * zaten bağlantıdaki UTM söylüyor (`scripts/outreach-olcum.py`). Düz metin
- * hâli eskisiyle birebir aynı.
+ * Düz metin + HTML (multipart/alternative). HTML'in süsü (turuncu teklif
+ * düğmesi, 2–3 küçük ürün fotoğrafı, imza logosu) eposta-sablon.ts'te; görseller
+ * iletiye GÖMÜLÜ (cid, ~15 KB'lık küçük kopyalar, ileti ~85 KB) — uzak görsel
+ * Outlook'ta varsayılan engelli ve izleme pikseli sayılıyor. İzleme pikseli YOK;
+ * kimin tıkladığını bağlantıdaki UTM söylüyor (`scripts/outreach-olcum.py`).
+ * Düz metin parçasında görsel yok, bağlantılar "yazı (adres)".
  *
  * İleti önce BURADA kurulur (MailComposer); aynı ham ileti hem SMTP'ye gider
  * hem kutunun Gönderilmiş klasörüne konur — ikisi arasında fark olamaz.
@@ -38,36 +48,48 @@ export function altbilgiMetni(dil: string, iptalUrl: string): string {
   return altbilgi(dil, iptalUrl, LEGAL_NAME, ADRES_SATIRI);
 }
 
-/** Gönderilecek tam metin: panelde yazılan gövde + değiştirilemeyen altbilgi. */
-export function tamMetin(govde: string, dil: string, iptalUrl: string): string {
-  return govde.trimEnd() + altbilgiMetni(dil, iptalUrl);
+/** Altbilginin HTML hâli — abonelik bağlantısı tıklanır yazı. Panel önizlemesi de bunu kullanır. */
+export function altbilgiHtmlMetni(dil: string, iptalUrl: string): string {
+  return altbilgiHtml(dil, iptalUrl, LEGAL_NAME, ADRES_SATIRI);
 }
 
-const kacir = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/** Gönderilecek tam metin: panelde yazılan gövde (`[yazı](adres)` → "yazı (adres)") + değiştirilemeyen altbilgi. */
+export function tamMetin(govde: string, dil: string, iptalUrl: string): string {
+  return metindenDuz(govde).trimEnd() + altbilgiMetni(dil, iptalUrl);
+}
+
+/**
+ * Ürün küçük resmi: public/eposta/{slug}.jpg (scripts/eposta-gorselleri.py).
+ * Bir kez okunur, bellekte kalır. Dosya yoksa null — o görsel e-postaya
+ * konmaz, gönderim durmaz (şerit kalan görsellerle, hiç yoksa yalnızca
+ * bağlantıyla çıkar).
+ */
+const gorselOnbellek = new Map<string, Buffer | null>();
+function urunGorseli(slug: string): Buffer | null {
+  if (!/^[a-z0-9-]+$/.test(slug)) return null;
+  if (!gorselOnbellek.has(slug)) {
+    let veri: Buffer | null = null;
+    try {
+      veri = readFileSync(path.join(process.cwd(), "public", "eposta", `${slug}.jpg`));
+    } catch {
+      console.error(`[outreach] e-posta görseli yok: public/eposta/${slug}.jpg`);
+    }
+    gorselOnbellek.set(slug, veri);
+  }
+  return gorselOnbellek.get(slug) ?? null;
+}
 
 /**
  * HTML hâli: gövde (editörden temizlenmiş HTML ya da düz metinden üretilen) +
- * imza logosu (iletiye gömülü, cid — bkz. eposta-logo.ts) + küçük gri altbilgi.
- * Tek sütun, sistem yazı tipi, en çok 600 px; stiller satır içi — e-posta
- * istemcilerinin çoğu <style> okumaz. Düz metin hâlinde logo yok.
+ * şablonun süsleri + imza logosu + gri altbilgi (bkz. eposta-sablon.ts).
+ * Görseller `cid:` ile iletideki gömülü parçalara bağlanır (tanitimGonder ekler).
  */
 export function tamHtml(govdeHtml: string, dil: string, iptalUrl: string): string {
-  const alt = altbilgiMetni(dil, iptalUrl).replace(/^\s*--\s*\n/, "").trim();
-  const altHtml = kacir(alt)
-    .replace(BAGLANTI, (u) => `<a href="${u}" style="color:#777">${u}</a>`)
-    .replace(/\n/g, "<br>");
-  const govdeStilli = govdeHtml
-    .replace(/<p>/g, '<p style="margin:0 0 14px">')
-    .replace(/<blockquote>/g, '<blockquote style="margin:0 0 14px;padding-left:12px;border-left:3px solid #ddd;color:#555">');
-  return (
-    `<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0">` +
-    `<div style="max-width:600px;padding:8px 4px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222">` +
-    govdeStilli +
-    `<div style="margin:6px 0 0"><img src="cid:${LOGO_CID}" width="${LOGO_GENISLIK}" height="${LOGO_YUKSEKLIK}" alt="Servosteel" style="display:block;border:0;outline:none;text-decoration:none"></div>` +
-    `<p style="margin:22px 0 0;padding-top:10px;border-top:1px solid #ddd;font-size:12px;line-height:1.5;color:#777">${altHtml}</p>` +
-    `</div></body></html>`
-  );
+  return epostaSayfasi(govdeHtml, {
+    dil,
+    altbilgiHtml: altbilgiHtmlMetni(dil, iptalUrl),
+    kaynak: (a) => (a === "logo" || urunGorseli(a) ? `cid:${gorselCid(a)}` : null),
+  });
 }
 
 /** IMAP sunucusu: OUTREACH_IMAP_HOST / _PORT, yoksa gönderen kutusunun sunucusu, 993. */
@@ -203,7 +225,8 @@ export async function tanitimGonder(
     subject: e.konu,
     text: metin,
     html,
-    /* İmza logosu gömülü: HTML "cid:" ile gösterir, ayrı ek olarak görünmez */
+    /* Görseller gömülü: HTML "cid:" ile gösterir, ayrı ek olarak görünmez.
+       Yalnızca HTML'de gerçekten geçen ürün görselleri eklenir. */
     attachments: [
       {
         filename: "servosteel.png",
@@ -212,6 +235,12 @@ export async function tanitimGonder(
         cid: LOGO_CID,
         contentDisposition: "inline",
       },
+      ...cidGorselleri(html).flatMap((slug) => {
+        const veri = urunGorseli(slug);
+        return veri
+          ? [{ filename: `${slug}.jpg`, content: veri, contentType: "image/jpeg", cid: gorselCid(slug), contentDisposition: "inline" as const }]
+          : [];
+      }),
     ],
     headers: {
       /* Gmail/Outlook bunu görünce adresin yanına "abonelikten çık" koyuyor.

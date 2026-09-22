@@ -8,8 +8,8 @@ import sanitizeHtml from "sanitize-html";
  * Sunucu eylemi doğrudan POST ile çağrılabildiği için editörün ürettiğine
  * güvenilmez: yalnızca paragraf, satır sonu, kalın, italik, altı çizili, liste,
  * alıntı ve http/https/mailto bağlantısı kalır. Görsel, stil, betik, form,
- * iframe, olay özniteliği — hepsi atılır (soğuk e-postada görsel ve izleme
- * zaten spam puanı; bkz. outreach.ts).
+ * iframe, olay özniteliği — hepsi atılır. E-postadaki görseller (ürün
+ * fotoğrafları, logo) gövdeden değil şablondan gelir: eposta-sablon.ts.
  */
 export function govdeHtmlTemizle(html: string): string {
   return sanitizeHtml(html, {
@@ -27,7 +27,8 @@ export function htmldenMetin(html: string): string {
   return convert(html, {
     wordwrap: false,
     selectors: [
-      { selector: "a", options: { hideLinkHrefIfSameAsText: true } },
+      /* "yazı (adres)" — düz metinden gelen `[yazı](adres)` ile aynı biçim (eposta-bicim.ts) */
+      { selector: "a", options: { hideLinkHrefIfSameAsText: true, linkBrackets: ["(", ")"] } },
       { selector: "ul", options: { itemPrefix: " - " } },
       { selector: "p", options: { leadingLineBreaks: 1, trailingLineBreaks: 2 } },
     ],

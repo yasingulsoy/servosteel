@@ -6,11 +6,10 @@
  *
  * Kodun içinde (base64), dosyadan okunmuyor: sunucunun çalışma dizini ne olursa
  * olsun her gönderimde aynı. İletiye gömülü (cid) eklenir — uzak görsel Outlook'ta
- * varsayılan engelli ve bir çeşit izleme pikseli sayılıyor.
+ * varsayılan engelli ve bir çeşit izleme pikseli sayılıyor. Aynı baytlar
+ * public/eposta/logo.png olarak da var (panel önizlemesi, Giden sayfası).
  */
-export const LOGO_CID = "logo@servosteel.com.tr";
-export const LOGO_GENISLIK = 128;
-export const LOGO_YUKSEKLIK = 57;
+/* Content-ID ve gösterim boyutu (128×57): eposta-sablon.ts — önizlemeyle ortak */
 export const LOGO_PNG_BASE64 =
   "iVBORw0KGgoAAAANSUhEUgAAAQAAAABxCAMAAAANpY2EAAABgFBMVEX///////z+/v39/f38/Pz+/fn+/PP7+vb4+Pj39/X09PTy" +
   "8fHx8O/u7e3p6ur89+Lt6uXm5uXj5OTh4eDe3d3a29v78dD36cbr3sbY2Nf55pD02o//3gP+2QXX1dPT09PQ0NHNz9LNzc3MzMzL" +

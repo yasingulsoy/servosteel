@@ -73,6 +73,28 @@ export function altbilgi(dil: string, iptalUrl: string, unvan: string, adres: st
   return `\n\n-- \n${satir}\n${unvan}\n${adres}`;
 }
 
+/** HTML altbilgide bağlantı adres değil, tıklanır yazı: düz metindeki "Unsubscribe: {link}" → [Unsubscribe] */
+const IPTAL_HTML: Record<EpostaDili, string> = {
+  en: "Prefer not to hear from us again? {a}Unsubscribe{/a}",
+  es: "¿Prefiere no recibir más correos nuestros? {a}Darse de baja{/a}",
+  it: "Preferisce non ricevere altre nostre e-mail? {a}Annulla l'iscrizione{/a}",
+  de: "Sie möchten keine weiteren E-Mails von uns erhalten? {a}Abmelden{/a}",
+  pl: "Nie chcą Państwo otrzymywać od nas kolejnych wiadomości? {a}Rezygnacja{/a}",
+  ru: "Не хотите больше получать наши письма? {a}Отписаться{/a}",
+  tr: "Bizden başka e-posta almak istemiyorsanız {a}abonelikten çıkın{/a}.",
+  fr: "Vous préférez ne plus recevoir nos e-mails ? {a}Se désabonner{/a}",
+  pt: "Prefere não receber mais e-mails nossos? {a}Cancelar{/a}",
+};
+
+/** Altbilginin HTML hâli (e-postanın HTML parçası ve panel önizlemesi) — satırlar aynı, bağlantı yazılı. */
+export function altbilgiHtml(dil: string, iptalUrl: string, unvan: string, adres: string): string {
+  const k = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const satir = k(IPTAL_HTML[epostaDili(dil)])
+    .replace("{a}", `<a href="${k(iptalUrl)}" style="color:#777">`)
+    .replace("{/a}", "</a>");
+  return `${satir}<br>${k(unvan)}<br>${k(adres)}`;
+}
+
 /* ------------------------------------------------ abonelik iptal sayfası */
 
 export type IptalMetni = {

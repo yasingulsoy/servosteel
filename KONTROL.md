@@ -409,7 +409,10 @@ marketing) + "Servosteel · +90 216 415 30 05"; metin "ben" değil "biz" ağzın
 (`OUTREACH_FROM_NAME=Servosteel Export`) bununla uyumlu. HTML hâlinde imzanın
 altında **logo** var (bkz. C.6 "HTML ve editör"). Aktarımla 3.598 bekleyen
 firmanın metni güncellendi; gönderilmiş firmanın kaydı giden metni anlatmaya
-devam eder (eski imzalı).
+devam eder (eski imzalı). Aynı gün bağlantılar tıklanır yazıya, teklif formu
+düğmeye döndü, ürün bağlantısının yerine küçük makine fotoğrafları geldi (C.6).
+**Sıra:** yeni metin (`[yazı](adres)`) canlıya ancak onu anlayan kod yayına
+girdikten SONRA aktarılır — eski kod köşeli parantezleri olduğu gibi gösterir.
 
 **Talep sayacı:** e-posta gönderilmiş firmadan sonradan gelen form talebi
 listenin üstünde "Talep" kartında, firma sayfasında yeşil kutuda. Eşleşme:
@@ -591,15 +594,32 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   alıcı, sonuç, sunucu cevabı, kim gönderdi — "otomatik" ya da kullanıcı) ve e-posta
   alıcının gördüğü gibi (yalıtılmış çerçeve, `sandbox`); Gelen sekmesi işlenen
   yanıt/geri dönüş/iptal/otomatik yanıtlar. Kutuya ve sonuca göre süzülür.
-- **HTML ve editör:** e-posta düz metin + SADE HTML (multipart/alternative):
-  paragraf, bağlantı, kalın/italik/altı çizili, liste, alıntı — uzak kaynak ve
-  izleme YOK. Tek görsel imza logosu (2026-09-22, Yasin "logoyu imza olarak
-  ekle"): iletiye GÖMÜLÜ (`cid:`, multipart/related, ~9 KB, `src/lib/eposta-logo.ts`)
-  — uzak görsel Outlook'ta varsayılan engelli ve izleme pikseli sayılıyor. Beyaz
-  zeminli (koyu temada kaybolmasın), 128×57, düz metin hâlinde yok; ileti ~13 KB.
-  Giden sayfası logoyu aynı görselle gösterir. Firma sayfasındaki metin artık biçimli editörde (Tiptap); düzenlenmezse
-  sunucu hazır metinden aynı HTML'i üretir. Editörün HTML'i sunucuda izin listesiyle
-  temizlenir (`sanitize-html`, `src/lib/eposta-html.ts`), düz metin ondan üretilir.
+- **HTML ve editör:** e-posta düz metin + HTML (multipart/alternative): paragraf,
+  bağlantı, kalın/italik/altı çizili, liste, alıntı — uzak kaynak ve izleme YOK.
+  Görseller iletiye GÖMÜLÜ (`cid:`, multipart/related) — uzak görsel Outlook'ta
+  varsayılan engelli ve izleme pikseli sayılıyor: imza logosu (Yasin "logoyu imza
+  olarak ekle", `src/lib/eposta-logo.ts`, beyaz zeminli 128×57) ve **ürün
+  fotoğrafları** (aşağıda). Firma sayfasındaki metin biçimli editörde (Tiptap);
+  düzenlenmezse sunucu hazır metinden aynı HTML'i üretir. Editörün HTML'i sunucuda
+  izin listesiyle temizlenir (`sanitize-html`, `src/lib/eposta-html.ts`), düz
+  metin ondan üretilir; süsler temizlikten SONRA şablondan eklenir.
+- **Tıklanır bağlantı, düğme, ürün fotoğrafı (2026-09-22, Yasin "linkleri kısaltıp
+  tıklama şeklinde, makine görsellerini ufaltıp koy, maili süsle"):** şablonda
+  bağlantı `[yazı](adres)` — e-postada adres görünmez, yazı tıklanır; düz metin
+  parçasında "yazı (adres)". Kısaltma servisi (bit.ly vb.) KULLANILMADI: soğuk
+  e-postada spam/oltalama işareti; adres zaten kendi alan adımız. TEK BAŞINA duran
+  bağlantı paragrafı süslenir (`src/lib/eposta-sablon.ts`): teklif formu
+  (`utm_term=teklif-formu`) → sitenin turuncu düğmesi; ürün sayfası (`utm_campaign`
+  = segment) → o segmentin 3 küçük makine fotoğrafı + altında "Ayrıntıları
+  sitemizde inceleyin →". Fotoğraflar sitenin GERÇEK ürün fotoğraflarının küçük
+  kopyası (`public/eposta/`, `python scripts/eposta-gorselleri.py`; 336×252, e-postada
+  176×132, ~15 KB; asılları DEĞİŞMEDİ). Fotoğrafı olmayan trapez/cephe paneli ve
+  market rafına başka ürünün fotoğrafı konmaz: fabrika + o hatta da çalışan
+  makineler (açıcı, istifleyici…), alt yazı ne olduğunu söyler. Alt yazılar dokuz
+  dilde. Abonelikten çıkma satırı HTML'de tıklanır yazı ("Unsubscribe"). İleti
+  ~75 KB (eskisi ~13 KB). Firma sayfasında "Alıcının göreceği hâli" önizlemesi ve
+  Giden sayfası aynı şablonu gösterir (görseller `/eposta/` adresinden; çerçeve
+  `sandbox="allow-same-origin"`, betik yok). Test: `node scripts/eposta-sablon-test.mjs`.
 - **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
 - **Almanya ve Avusturya'ya e-posta gitmez** — şirketlere de önceden açık izin
   şartı var (UWG §7, TKG 2021 §174). Telefon, iletişim formu, LinkedIn. Diğer AB

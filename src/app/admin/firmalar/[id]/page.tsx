@@ -19,7 +19,7 @@ import {
   siradaki,
 } from "@/lib/outreach-db";
 import { ayarlariOku, geriDonusEngeli, kutuSec, ulkeUyarisi } from "@/lib/outreach-kurallar";
-import { altbilgiMetni, iptalAdresi } from "@/lib/outreach";
+import { altbilgiHtmlMetni, iptalAdresi } from "@/lib/outreach";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
 import { engelleEylemi, hedefDurumEylemi, hedefNotEylemi } from "../actions";
@@ -173,7 +173,8 @@ export default async function FirmaSayfasi({
                   alici={f.eposta}
                   konu={f.konu}
                   govde={f.govde}
-                  altbilgi={altbilgiMetni(f.dil, iptalAdresi(f.iptal_anahtari))}
+                  dil={f.dil}
+                  altbilgiHtml={altbilgiHtmlMetni(f.dil, iptalAdresi(f.iptal_anahtari))}
                   engel={engel}
                   bekleSn={bekleSn}
                   uyari={ulkeUyarisi(f.ulke)}

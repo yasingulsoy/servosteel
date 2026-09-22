@@ -236,12 +236,38 @@ def hitap_adi(firma):
     return a.strip(" ,.-") or str(firma)
 
 
+YAZILI_BAGLANTI = re.compile(r"\[([^\]\n]+)\]\((https?://[^\s)]+)\)")
+
+
+def duz_metin(metin):
+    """[yazi](adres) -> 'yazi (adres)' — Excel'deki hazir metin ve mailto taslagi duz metin
+    (panel ayni donusumu gonderimin duz metin parcasinda yapar: src/lib/eposta-bicim.ts)."""
+    return YAZILI_BAGLANTI.sub(r"\1 (\2)", metin)
+
+
 def ek_sutunlar(segler, satir):
-    """[link, konu, metin, taslak]. segler: teyitli segment basta."""
+    """[link, konu, metin, taslak] — Excel sutunlari, metin DUZ. segler: teyitli segment basta."""
+    link = gonderim_linki(segler[0], satir[1], satir)
+    konu, metin = eposta_metni(segler, satir)
+    if not metin:
+        return [link, "", "", ""]
+    metin = duz_metin(metin)
+    eposta = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", str(satir[5] or ""))
+    taslak = ""
+    if eposta:
+        m = "mailto:%s?subject=%s&body=%s" % (eposta.group(0), quote(konu), quote(metin))
+        if len(m) <= MAILTO_SINIR:
+            taslak = m
+    return [link, konu, metin, taslak]
+
+
+def eposta_metni(segler, satir):
+    """(konu, metin) — metinde baglantilar [yazi](adres): panel onlari tiklanir yazi,
+    teklif formunu dugme, urun sayfasini kucuk fotograflar yapar (src/lib/eposta-sablon.ts)."""
     seg = segler[0]
     link = gonderim_linki(seg, satir[1], satir)
     if seg in TEYITSIZ:
-        return [link, "", "", ""]
+        return "", ""
     dil = ULKE_DIL.get(satir[1], "en")
     t = SABLON.get(dil) or SABLON["en"]
     kamp = SEGMENT_SAYFA[seg][2]
@@ -256,20 +282,15 @@ def ek_sutunlar(segler, satir):
              .replace("{cumle}", t["segment"][kamp]["cumle"]).replace("{ek}", ek)
              .replace("{link}", link).replace("{form}", gonderim_linki(seg, satir[1], satir, form=True)))
     konu = t["segment"][kamp]["konu"]
-    eposta = re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", str(satir[5] or ""))
-    taslak = ""
-    if eposta:
-        m = "mailto:%s?subject=%s&body=%s" % (eposta.group(0), quote(konu), quote(metin))
-        if len(m) <= MAILTO_SINIR:
-            taslak = m
-    return [link, konu, metin, taslak]
+    return konu, metin
 
 
 EPOSTA_KALIBI = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
 
 def panel_kaydi(anahtar, satir, ek, segler):
-    """Panel veritabanina gidecek tek firma. E-posta metni Excel'dekiyle AYNI (ek_sutunlar).
+    """Panel veritabanina gidecek tek firma. E-posta metni Excel'dekiyle ayni, yalnizca
+    baglantilar yazili ([yazi](adres)); Excel'de duz ("yazi (adres)").
 
     Adres, iletisim hucresindeki ILK adres. Dogrulayici adresi sitede bulamadiysa
     hucreye "e-posta sitede doğrulanamadı" yazar — o satir adressiz sayilir,
@@ -291,7 +312,7 @@ def panel_kaydi(anahtar, satir, ek, segler):
         "dil": dil if dil in SABLON else "en",   # sablonu olmayan dil (hu) Ingilizce gider
         "link": ek[0],
         "konu": ek[1],
-        "govde": ek[2],
+        "govde": eposta_metni(segler, satir)[1],
         "segmentler": " + ".join(segler),
     }
 
