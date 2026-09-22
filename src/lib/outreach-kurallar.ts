@@ -181,11 +181,22 @@ export type SmtpHatasi = {
  */
 export type HataTuru = "sigorta" | "alici" | "hata";
 
+/**
+ * Sigorta kimi durdurur:
+ *  kutu — yalnızca bu kutu (giriş reddi, "relay"/yetki: ayar sorunu)
+ *  alan — bu alan adındaki BÜTÜN kutular (hız sınırı, spam/engel, itibar:
+ *         sağlayıcılar itibarı alan adına bakarak tutuyor; aynı alan adındaki
+ *         öbür kutuyla devam etmek aynı engele gitmek demek)
+ */
+export type SigortaKapsami = "kutu" | "alan";
+
 /* "relay" / "authenticat…": sunucu bizi göndermeye yetkili saymıyor — alıcının
    değil ayarın sorunu; alıcı hatası sayılsaydı her denemede bir firma yanlışlıkla
    "adres hatalı" olurdu. */
 const POLITIKA =
   /rate|limit|exceed|quota|too many|throttl|spam|block|blacklist|listed|policy|reputation|abuse|suspend|frozen|disabled|relay|not permitted|authenticat/i;
+/* Politika cevaplarından hesaba/ayara ait olanlar — alan adının itibarıyla ilgisi yok */
+const KUTU_POLITIKASI = /relay|not permitted|authenticat/i;
 const ALICI_YOK =
   /user unknown|unknown user|no such user|mailbox (is )?(unavailable|not found)|does not exist|invalid (recipient|address|mailbox)|recipient (address )?rejected|address rejected|5\.1\.\d/i;
 
@@ -193,7 +204,7 @@ function kisa(s: string): string {
   return s.replace(/\s+/g, " ").trim().slice(0, 240);
 }
 
-export function hataSiniflandir(h: SmtpHatasi): { tur: HataTuru; sebep: string } {
+export function hataSiniflandir(h: SmtpHatasi): { tur: HataTuru; sebep: string; kapsam: SigortaKapsami } {
   /* nodemailer'ın mesajı sunucu cevabını genelde zaten içeriyor
      ("Mail command failed: 421 …") — ikisini yan yana yazınca aynı satır
      iki kez okunuyordu. */
@@ -205,21 +216,26 @@ export function hataSiniflandir(h: SmtpHatasi): { tur: HataTuru; sebep: string }
   if (h.code === "EAUTH" || kod === 530 || kod === 534 || kod === 535) {
     return {
       tur: "sigorta",
-      sebep: "SMTP girişi reddedildi — OUTREACH_SMTP_USER / OUTREACH_SMTP_PASS kontrol edilmeli.",
+      sebep: "SMTP girişi reddedildi — kutunun adresi ve parolası (OUTREACH_SMTP_USER / _PASS) kontrol edilmeli.",
+      kapsam: "kutu",
     };
   }
   /* Kendi sunucumuzun 4xx'i: "şimdi değil" — hız sınırı ya da geçici engel.
      Üstüne gitmek hesabı kara listeye götürür. */
   if (kod >= 400 && kod < 500) {
-    return { tur: "sigorta", sebep: `Sunucu geçici olarak reddetti (${kod}): ${metin}` };
+    return { tur: "sigorta", sebep: `Sunucu geçici olarak reddetti (${kod}): ${metin}`, kapsam: "alan" };
   }
   if (POLITIKA.test(metin)) {
-    return { tur: "sigorta", sebep: `Sunucu gönderimi sınırladı ya da engelledi: ${metin}` };
+    return {
+      tur: "sigorta",
+      sebep: `Sunucu gönderimi sınırladı ya da engelledi: ${metin}`,
+      kapsam: KUTU_POLITIKASI.test(metin) ? "kutu" : "alan",
+    };
   }
   if (h.code === "EENVELOPE" || (kod >= 500 && (h.command === "RCPT TO" || ALICI_YOK.test(metin)))) {
-    return { tur: "alici", sebep: `Alıcı adresi reddedildi${kod ? ` (${kod})` : ""}: ${metin}` };
+    return { tur: "alici", sebep: `Alıcı adresi reddedildi${kod ? ` (${kod})` : ""}: ${metin}`, kapsam: "kutu" };
   }
-  return { tur: "hata", sebep: metin || h.code || "bilinmeyen hata" };
+  return { tur: "hata", sebep: metin || h.code || "bilinmeyen hata", kapsam: "kutu" };
 }
 
 /* ------------------------------------------------------- itibar kuralları */
@@ -236,7 +252,7 @@ export function sistemAdresiMi(e: string): boolean {
 }
 
 /**
- * Isınma: yeni kutunun itibarı yok. Büyük sağlayıcılar (Gmail, Outlook) ilk
+ * Isınma (KUTU başına): yeni kutunun itibarı yok. Büyük sağlayıcılar (Gmail, Outlook) ilk
  * haftalarda gelen hacme bakıyor; sıfırdan günde 20-50'ye çıkan gönderici
  * "spam" sayılıyor. İlk gönderimden itibaren:
  *   0-6. gün  → günde en çok 10
@@ -266,19 +282,41 @@ export function geriDonusEngeli(toplam: number, hatali: number): string | null {
 
 /* ------------------------------------------------------------ ayarlar */
 
-export type OutreachAyarlari = {
+/**
+ * Tek gönderen kutusu. `no` 1'den başlar: 1 = `OUTREACH_SMTP_USER`,
+ * 2…9 = `OUTREACH_SMTP_USER_2` … `_9`.
+ */
+export type GonderenKutusu = {
+  no: number;
   host: string;
   port: number;
+  /** Tam adres, küçük harf */
   user: string;
   pass: string;
-  gondericiAdi: string;
+  /** Görünen ad ("Elizaveta Shpelevaya") */
+  ad: string;
+  /** Adresin alan adı — itibar ve alan adı tavanı buna göre */
+  alan: string;
+};
+
+export type OutreachAyarlari = {
+  /** Kullanılabilir kutular (eksiksiz tanımlananlar), numara sırasıyla */
+  kutular: GonderenKutusu[];
   yanitAdresi: string;
   gizliKopya: string;
+  /** Kutu başına günlük tavan (ısınma sonrası), üst sınır 50 */
   gunlukTavan: number;
+  /** Alan adı başına günlük tavan — o alan adındaki kutuların TOPLAMI, üst sınır 150 */
+  alanTavani: number;
+  /** Aynı kutudan iki e-posta arası en az saniye */
   aralikSn: number;
-  /** Boşsa gönderime hazır. */
+  /** Boşsa gönderime hazır. Doluysa hiçbir kutu kullanılamıyor. */
   eksik: string[];
+  /** Tanımı yarım kalan ek kutular — onlar atlanır, diğerleri gönderir */
+  uyarilar: string[];
 };
+
+const EK_KUTU_EN_COK = 9;
 
 /**
  * Gönderim ayarları — ortam değişkenlerinden.
@@ -286,41 +324,234 @@ export type OutreachAyarlari = {
  * Kutu ve parola AYRI (`OUTREACH_SMTP_USER`/`_PASS`): form bildirimleri
  * `SMTP_USER` (website@) kutusundan gidiyor ve o kutu talebin tek kanalı.
  * Tanıtım e-postası yüzünden bir hız sınırı ya da engel yenirse talep
- * bildirimleri etkilenmemeli; aynı kutu verilirse gönderim açılmaz.
+ * bildirimleri etkilenmemeli; aynı kutu verilirse o kutu kullanılmaz.
  * Sunucu ve port aynı olabilir; verilmezse formunkiler kullanılır.
+ *
+ * Ek kutular `OUTREACH_SMTP_USER_2` / `OUTREACH_SMTP_PASS_2` … `_9`; sunucu,
+ * port ve görünen ad verilmezse 1. kutununkiler (`OUTREACH_SMTP_HOST_2`,
+ * `_PORT_2`, `OUTREACH_FROM_NAME_2` ile ayrı verilebilir — başka alan adındaki
+ * kutunun sunucusu farklıdır).
  *
  * Tavan ve aralığın sınırı KODDA: yeni kutunun itibarı yok, günde 50'nin
  * üstü ya da dakikada birden sık gönderim paylaşımlı sunucuda kara listeye
- * giden yol.
+ * giden yol. Alan adı tavanı ayrı: Gmail/Outlook itibarı kutuya değil alan
+ * adına bakıyor — aynı alan adında beş kutu açmak hacmi beşe katlamaz, o alan
+ * adından giden soğuk e-postayı beşe katlar.
  */
 export function ayarlariOku(env: Record<string, string | undefined>): OutreachAyarlari {
   const host = (env.OUTREACH_SMTP_HOST ?? env.SMTP_HOST ?? "").trim();
   const port = Number(env.OUTREACH_SMTP_PORT ?? env.SMTP_PORT ?? 465) || 465;
-  const user = (env.OUTREACH_SMTP_USER ?? "").trim();
-  const pass = env.OUTREACH_SMTP_PASS ?? "";
+  const ad = (env.OUTREACH_FROM_NAME ?? "").trim() || "Servosteel";
   const formKutusu = (env.SMTP_USER ?? "").trim().toLowerCase();
 
   const eksik: string[] = [];
-  if (!host) eksik.push("OUTREACH_SMTP_HOST");
-  if (!user) eksik.push("OUTREACH_SMTP_USER");
-  if (!pass) eksik.push("OUTREACH_SMTP_PASS");
-  if (user && formKutusu && user.toLowerCase() === formKutusu) {
-    eksik.push("OUTREACH_SMTP_USER form bildirim kutusuyla (SMTP_USER) aynı — ayrı bir kutu gerekli");
+  const uyarilar: string[] = [];
+  const kutular: GonderenKutusu[] = [];
+  const gorulen = new Set<string>();
+
+  /* 1. kutu: eksikse gönderim kapalı sayılır (panelin anlattığı kurulum bu) —
+     ancak ek kutulardan biri tamamsa onlarla gönderilir. */
+  const user1 = (env.OUTREACH_SMTP_USER ?? "").trim().toLowerCase();
+  const pass1 = env.OUTREACH_SMTP_PASS ?? "";
+  const eksik1: string[] = [];
+  if (!host) eksik1.push("OUTREACH_SMTP_HOST");
+  if (!user1) eksik1.push("OUTREACH_SMTP_USER");
+  if (!pass1) eksik1.push("OUTREACH_SMTP_PASS");
+  if (user1 && formKutusu && user1 === formKutusu) {
+    eksik1.push("OUTREACH_SMTP_USER form bildirim kutusuyla (SMTP_USER) aynı — ayrı bir kutu gerekli");
+  } else if (user1 && !user1.includes("@")) {
+    eksik1.push("OUTREACH_SMTP_USER tam adres olmalı (ör. export@alanadi.com)");
+  }
+  if (!eksik1.length) {
+    kutular.push({ no: 1, host, port, user: user1, pass: pass1, ad, alan: user1.split("@")[1] });
+    gorulen.add(user1);
   }
 
+  for (let n = 2; n <= EK_KUTU_EN_COK; n++) {
+    const user = (env[`OUTREACH_SMTP_USER_${n}`] ?? "").trim().toLowerCase();
+    const pass = env[`OUTREACH_SMTP_PASS_${n}`] ?? "";
+    if (!user && !pass) continue;
+    const h = (env[`OUTREACH_SMTP_HOST_${n}`] ?? "").trim() || host;
+    const p = Number(env[`OUTREACH_SMTP_PORT_${n}`] ?? port) || port;
+    const sorun = !user
+      ? `OUTREACH_SMTP_USER_${n} yok`
+      : !user.includes("@")
+        ? `OUTREACH_SMTP_USER_${n} tam adres olmalı`
+        : !pass
+          ? `OUTREACH_SMTP_PASS_${n} yok`
+          : !h
+            ? `OUTREACH_SMTP_HOST_${n} yok`
+            : user === formKutusu
+              ? `OUTREACH_SMTP_USER_${n} form bildirim kutusuyla (SMTP_USER) aynı`
+              : gorulen.has(user)
+                ? `OUTREACH_SMTP_USER_${n} başka bir kutuyla aynı (${user})`
+                : null;
+    if (sorun) {
+      uyarilar.push(`${n}. kutu kullanılmıyor: ${sorun}.`);
+      continue;
+    }
+    gorulen.add(user);
+    kutular.push({
+      no: n,
+      host: h,
+      port: p,
+      user,
+      pass,
+      ad: (env[`OUTREACH_FROM_NAME_${n}`] ?? "").trim() || ad,
+      alan: user.split("@")[1],
+    });
+  }
+
+  if (!kutular.length) eksik.push(...eksik1);
+  else if (eksik1.length && user1) uyarilar.push(`1. kutu kullanılmıyor: ${eksik1.join(", ")}.`);
+
   const tavan = Math.trunc(Number(env.OUTREACH_DAILY_LIMIT)) || 20;
+  const alanTavani = Math.trunc(Number(env.OUTREACH_DOMAIN_DAILY_LIMIT)) || 50;
   const aralik = Math.trunc(Number(env.OUTREACH_INTERVAL_SEC)) || 90;
 
   return {
-    host,
-    port,
-    user,
-    pass,
-    gondericiAdi: (env.OUTREACH_FROM_NAME ?? "").trim() || "Servosteel",
+    kutular,
     yanitAdresi: (env.OUTREACH_REPLY_TO ?? "").trim(),
     gizliKopya: (env.OUTREACH_BCC ?? "").trim(),
     gunlukTavan: Math.min(50, Math.max(1, tavan)),
+    alanTavani: Math.min(150, Math.max(1, alanTavani)),
     aralikSn: Math.max(60, aralik),
     eksik,
+    uyarilar,
   };
+}
+
+/* ---------------------------------------------------------- kutu seçimi */
+
+/**
+ * Alan adı ısınması — aynı alan adındaki kutuların TOPLAMI için. Yeni alan
+ * adının itibarı kutularınkinden önce gelir: beş yeni kutu ilk gün 5 × 10
+ * gönderirse alan adı ilk gününde 50 soğuk e-posta atmış olur.
+ *   0-6. gün  → günde en çok 20
+ *   7-13. gün → günde en çok 35
+ *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 150)
+ */
+export function alanIsinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
+  const g = gun ?? 0;
+  if (g < 7) return { tavan: Math.min(tavan, 20), asama: `alan adı ısınması: 1. hafta, ${g + 1}. gün` };
+  if (g < 14) return { tavan: Math.min(tavan, 35), asama: `alan adı ısınması: 2. hafta, ${g + 1}. gün` };
+  return { tavan, asama: null };
+}
+
+/** Bir kutunun anlık durumu — veritabanından (bkz. kutuDurumlari). */
+export type KutuDurumu = {
+  /** Bugün bu kutudan giden (başarılı + belirsiz) */
+  bugun: number;
+  /** Bu kutunun ilk gönderiminden bu yana geçen İstanbul günü; hiç yoksa null */
+  ilkGun: number | null;
+  /** Son denemeden bu yana geçen saniye; hiç yoksa null */
+  gecenSn: number | null;
+  /** Sigorta atık mı (bitiş zamanı gelecekte) */
+  durdu: boolean;
+  durduBitis: string | null;
+  durduSebep: string;
+};
+
+/** Alan adının bugünkü ve ilk gönderimi — o alan adındaki BÜTÜN kutular (eskiler dahil). */
+export type AlanDurumu = { bugun: number; ilkGun: number | null };
+
+export type KutuSatiri = {
+  kutu: GonderenKutusu;
+  /** Isınmayla birlikte bugünkü kutu tavanı */
+  tavan: number;
+  asama: string | null;
+  alanTavani: number;
+  alanAsamasi: string | null;
+  durum: KutuDurumu;
+  alanBugun: number;
+  /** null = şimdi gönderebilir; değilse neden gönderemiyor */
+  engel: string | null;
+  /** Aralık bekleniyorsa kalan saniye */
+  bekle: number | null;
+};
+
+export type KutuSecimi = {
+  /** Her kutu, ekranda gösterilecek hâliyle */
+  satirlar: KutuSatiri[];
+  /** Şimdi gönderebilecek kutular — deneme sırasıyla (bugün en az göndereni önce) */
+  uygun: GonderenKutusu[];
+  /** Hiçbiri uygun değil ama biri aralık bekliyorsa: en kısa bekleme (sn) */
+  bekle: number | null;
+  /** Hiçbiri uygun değilse ve beklenecek bir şey yoksa: neden */
+  sebep: string | null;
+  /** Bugün hâlâ gönderilebilecek toplam (kutu ve alan adı tavanları birlikte) */
+  kalan: number;
+  /** Bugün gönderilebilecek toplam (bugün gidenler dahil) */
+  gunlukKapasite: number;
+};
+
+const BOS_DURUM: KutuDurumu = {
+  bugun: 0, ilkGun: null, gecenSn: null, durdu: false, durduBitis: null, durduSebep: "",
+};
+
+/**
+ * Hangi kutudan gönderilecek? Sırayla: sigortası atık olan, kendi tavanı
+ * dolan, alan adının toplam tavanı dolan kutu atlanır; aralığı dolmayan
+ * "bekliyor" sayılır. Kalanlar bugün en az gönderenden başlayarak sıralanır —
+ * yük kutulara eşit dağılsın, hiçbir kutu tek başına tavana dayanmasın.
+ */
+export function kutuSec(
+  ayar: Pick<OutreachAyarlari, "kutular" | "gunlukTavan" | "alanTavani" | "aralikSn">,
+  kutuDurum: Record<string, KutuDurumu | undefined>,
+  alanDurum: Record<string, AlanDurumu | undefined>
+): KutuSecimi {
+  const satirlar: KutuSatiri[] = ayar.kutular.map((kutu) => {
+    const durum = kutuDurum[kutu.user] ?? BOS_DURUM;
+    const alan = alanDurum[kutu.alan] ?? { bugun: 0, ilkGun: null };
+    const { tavan, asama } = isinmaTavani(durum.ilkGun, ayar.gunlukTavan);
+    const ai = alanIsinmaTavani(alan.ilkGun, ayar.alanTavani);
+    let engel: string | null = null;
+    let bekle: number | null = null;
+    if (durum.durdu) engel = `durdu: ${durum.durduSebep || "sigorta"}`;
+    else if (durum.bugun >= tavan) engel = `kutunun bugünkü tavanı doldu (${durum.bugun}/${tavan})`;
+    else if (alan.bugun >= ai.tavan) engel = `${kutu.alan} alan adının bugünkü tavanı doldu (${alan.bugun}/${ai.tavan})`;
+    else if (durum.gecenSn !== null && durum.gecenSn < ayar.aralikSn) {
+      bekle = Math.max(1, Math.ceil(ayar.aralikSn - durum.gecenSn));
+      engel = `aralık: ${bekle} sn`;
+    }
+    return {
+      kutu, tavan, asama, alanTavani: ai.tavan, alanAsamasi: ai.asama, durum, alanBugun: alan.bugun, engel, bekle,
+    };
+  });
+
+  const uygun = satirlar
+    .filter((s) => s.engel === null)
+    .sort((a, b) => a.durum.bugun - b.durum.bugun || a.kutu.no - b.kutu.no)
+    .map((s) => s.kutu);
+  const bekleyen = satirlar.filter((s) => s.bekle !== null).map((s) => s.bekle as number);
+  const bekle = uygun.length || !bekleyen.length ? null : Math.min(...bekleyen);
+
+  /* Kapasite: her alan adında min(alan tavanı, o alandaki kutuların tavan toplamı).
+     Sigortası atık kutu bugünün kapasitesinden düşer. */
+  const alanlar = new Map<string, { alanTavani: number; alanBugun: number; kutuTavan: number; kutuKalan: number }>();
+  for (const s of satirlar) {
+    const a = alanlar.get(s.kutu.alan) ?? { alanTavani: s.alanTavani, alanBugun: s.alanBugun, kutuTavan: 0, kutuKalan: 0 };
+    if (!s.durum.durdu) {
+      a.kutuTavan += s.tavan;
+      a.kutuKalan += Math.max(0, s.tavan - s.durum.bugun);
+    }
+    alanlar.set(s.kutu.alan, a);
+  }
+  let kalan = 0;
+  let gunlukKapasite = 0;
+  for (const a of alanlar.values()) {
+    kalan += Math.max(0, Math.min(a.alanTavani - a.alanBugun, a.kutuKalan));
+    gunlukKapasite += Math.min(a.alanTavani, a.kutuTavan);
+  }
+
+  let sebep: string | null = null;
+  if (!uygun.length && bekle === null) {
+    if (!satirlar.length) sebep = "Gönderen kutusu tanımlı değil.";
+    else if (satirlar.every((s) => s.durum.durdu)) {
+      sebep = `Gönderim durdu — ${satirlar.map((s) => `${s.kutu.user}: ${s.durum.durduSebep || "sigorta"}`).join(" · ")}`;
+    } else {
+      sebep = `Bugünkü tavan doldu (${satirlar.reduce((t, s) => t + s.durum.bugun, 0)} gönderildi). Yarın devam edilir.`;
+    }
+  }
+  return { satirlar, uygun, bekle, sebep, kalan, gunlukKapasite };
 }

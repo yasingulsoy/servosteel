@@ -1,11 +1,13 @@
 import "server-only";
 import { resolve4, resolve6, resolveMx } from "node:dns/promises";
 import nodemailer from "nodemailer";
-import { altbilgi, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
+import { altbilgi, type GonderenKutusu, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
 
 /**
  * Tanıtım e-postasını firmanın KENDİ SMTP'sinden, AYRI bir kutudan gönderir.
+ * Birden çok kutu tanımlıysa hangisinden gideceğini gönderim eylemi seçer
+ * (kutuSec); burası yalnızca verilen kutuyla gönderir.
  *
  * Neden kendi sunucumuz: SPF/DKIM/DMARC zaten servosteel.com.tr için hizalı;
  * ek DNS kaydı ve üçüncü taraf hesabı gerekmiyor. Neden ayrı kutu: bkz.
@@ -78,14 +80,15 @@ export type GonderimCevabi =
   | { durum: "belirsiz"; yanit: string };
 
 export async function tanitimGonder(
-  ayar: OutreachAyarlari,
+  ayar: Pick<OutreachAyarlari, "yanitAdresi" | "gizliKopya">,
+  kutu: GonderenKutusu,
   e: { alici: string; konu: string; govde: string; dil: string; iptalUrl: string }
 ): Promise<GonderimCevabi> {
   const tasiyici = nodemailer.createTransport({
-    host: ayar.host,
-    port: ayar.port,
-    secure: ayar.port === 465, // 465 baştan TLS, 587 STARTTLS ile yükseltir
-    auth: { user: ayar.user, pass: ayar.pass },
+    host: kutu.host,
+    port: kutu.port,
+    secure: kutu.port === 465, // 465 baştan TLS, 587 STARTTLS ile yükseltir
+    auth: { user: kutu.user, pass: kutu.pass },
     /* Bağlanamadıysa ya da sunucu selam vermediyse e-posta KESİN gitmedi —
        normal hata. Selamdan sonraki takılmada ise hangi adımda kaldığı
        bilinemiyor (nodemailer her zaman aşımını "CONN" diye bildiriyor):
@@ -98,7 +101,7 @@ export async function tanitimGonder(
   });
 
   const gorev = tasiyici.sendMail({
-    from: { name: ayar.gondericiAdi, address: ayar.user },
+    from: { name: kutu.ad, address: kutu.user },
     to: e.alici,
     ...(ayar.yanitAdresi ? { replyTo: ayar.yanitAdresi } : {}),
     ...(ayar.gizliKopya ? { bcc: ayar.gizliKopya } : {}),
@@ -108,7 +111,7 @@ export async function tanitimGonder(
       /* Gmail/Outlook bunu görünce adresin yanına "abonelikten çık" koyuyor.
          Alıcıya "spam" düğmesinden daha kolay bir yol vermek, itibarı
          korumanın en ucuz yolu. POST tek tıkla çıkarır (RFC 8058). */
-      "List-Unsubscribe": `<${e.iptalUrl}>, <mailto:${ayar.user}?subject=unsubscribe>`,
+      "List-Unsubscribe": `<${e.iptalUrl}>, <mailto:${kutu.user}?subject=unsubscribe>`,
       "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
     },
   });

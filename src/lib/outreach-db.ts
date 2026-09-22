@@ -1,5 +1,12 @@
 import { sorgu, sorguSert } from "@/lib/db";
-import { ENGELLI_ULKELER, epostaGecerli, sistemAdresiMi } from "@/lib/outreach-kurallar";
+import {
+  ENGELLI_ULKELER,
+  epostaGecerli,
+  sistemAdresiMi,
+  type AlanDurumu,
+  type GonderenKutusu,
+  type KutuDurumu,
+} from "@/lib/outreach-kurallar";
 import { OUTREACH_SEMA } from "@/lib/outreach-sema";
 import { kisaTarih } from "@/lib/zaman";
 
@@ -106,6 +113,8 @@ export type Gonderim = {
   sonuc: "ok" | "hata" | "alici" | "belirsiz";
   yanit: string;
   mesaj_kimligi: string;
+  /** Hangi kutudan (tek kutulu dönemde boş) */
+  gonderen: string;
 };
 
 export type HedefNot = {
@@ -114,13 +123,6 @@ export type HedefNot = {
   olusturuldu: string;
   yazan: string;
   govde: string;
-};
-
-export type GonderimDurumu = {
-  son_deneme: string | null;
-  durdu_bitis: string | null;
-  durdu_sebep: string;
-  simdi: string;
 };
 
 /* CREATE TABLE her istekte çalışmasın — süreç başına bir kez yeter. */
@@ -410,15 +412,15 @@ export async function hedefNotlar(firmaId: number) {
   );
 }
 
-/* ------------------------------------------------ günlük tavan, aralık, sigorta */
+/* ---------------------------------- günlük tavan, aralık, sigorta — KUTU başına */
 
 /* İstanbul'da bugünün başı. Sunucu UTC'de çalışıyor; "bugün" İstanbul günü. */
 const BUGUN_BASI = `(date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') AT TIME ZONE 'Europe/Istanbul')`;
 
 /**
- * Bugün tavandan düşülen gönderimler: başarılı + belirsiz (zaman aşımı —
- * gitmiş olabilir). Alıcı reddi ve bağlantı hatası sayılmaz, çünkü e-posta
- * sunucumuzdan hiç çıkmadı.
+ * Bugün giden bütün tanıtım e-postaları (bütün kutular): başarılı + belirsiz
+ * (zaman aşımı — gitmiş olabilir). Alıcı reddi ve bağlantı hatası sayılmaz,
+ * çünkü e-posta sunucumuzdan hiç çıkmadı.
  */
 export async function bugunGonderilen(): Promise<number> {
   const r = await sorguSert<{ adet: string }>(
@@ -429,23 +431,76 @@ export async function bugunGonderilen(): Promise<number> {
 }
 
 /**
- * İlk başarılı gönderimden bu yana geçen İstanbul günü (ısınma için);
- * hiç gönderilmediyse null.
+ * Kutuların ve alan adlarının anlık durumu — kutu seçimi (kutuSec) bunu okur.
+ *
+ * Alan adı sayımı o alan adındaki BÜTÜN gönderimleri kapsar, bugün tanımlı
+ * olmayan (çıkarılmış) kutularınkini de: itibar alan adında birikiyor,
+ * kutuyu kaldırmak alan adının bugün gönderdiğini sıfırlamaz.
  */
-export async function ilkGonderimGunu(): Promise<number | null> {
-  const r = await sorguSert<{ gun: number | null }>(
-    `SELECT ((now() AT TIME ZONE 'Europe/Istanbul')::date
-             - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date) AS gun
-     FROM hedef_gonderim WHERE sonuc IN ('ok', 'belirsiz')`
-  );
-  const g = r[0]?.gun;
-  return g === null || g === undefined ? null : Number(g);
+export async function kutuDurumlari(
+  kutular: GonderenKutusu[]
+): Promise<{ kutu: Record<string, KutuDurumu>; alan: Record<string, AlanDurumu> }> {
+  const adresler = kutular.map((k) => k.user);
+  const alanlar = [...new Set(kutular.map((k) => k.alan))];
+  const [gonderim, durum, alan] = await Promise.all([
+    sorguSert<{ gonderen: string; bugun: number; ilk_gun: number | null }>(
+      `SELECT lower(gonderen) AS gonderen,
+              count(*) FILTER (WHERE zaman >= ${BUGUN_BASI})::int AS bugun,
+              ((now() AT TIME ZONE 'Europe/Istanbul')::date
+                 - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date) AS ilk_gun
+       FROM hedef_gonderim
+       WHERE sonuc IN ('ok', 'belirsiz') AND lower(gonderen) = ANY($1::text[])
+       GROUP BY 1`,
+      [adresler]
+    ),
+    sorguSert<{ gonderen: string; gecen_sn: number | null; durdu: boolean; durdu_bitis: string | null; durdu_sebep: string }>(
+      `SELECT gonderen,
+              extract(epoch FROM now() - son_deneme)::float8 AS gecen_sn,
+              COALESCE(durdu_bitis > now(), false) AS durdu,
+              durdu_bitis, durdu_sebep
+       FROM gonderen_durumu WHERE gonderen = ANY($1::text[])`,
+      [adresler]
+    ),
+    sorguSert<{ alan: string; bugun: number; ilk_gun: number | null }>(
+      `SELECT lower(split_part(gonderen, '@', 2)) AS alan,
+              count(*) FILTER (WHERE zaman >= ${BUGUN_BASI})::int AS bugun,
+              ((now() AT TIME ZONE 'Europe/Istanbul')::date
+                 - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date) AS ilk_gun
+       FROM hedef_gonderim
+       WHERE sonuc IN ('ok', 'belirsiz') AND lower(split_part(gonderen, '@', 2)) = ANY($1::text[])
+       GROUP BY 1`,
+      [alanlar]
+    ),
+  ]);
+
+  const kutu: Record<string, KutuDurumu> = {};
+  for (const a of adresler) {
+    const g = gonderim.find((x) => x.gonderen === a);
+    const d = durum.find((x) => x.gonderen === a);
+    kutu[a] = {
+      bugun: g?.bugun ?? 0,
+      ilkGun: g?.ilk_gun === null || g?.ilk_gun === undefined ? null : Number(g.ilk_gun),
+      gecenSn: d?.gecen_sn === null || d?.gecen_sn === undefined ? null : Number(d.gecen_sn),
+      durdu: d?.durdu ?? false,
+      durduBitis: d?.durdu_bitis ?? null,
+      durduSebep: d?.durdu_sebep ?? "",
+    };
+  }
+  const alanSonuc: Record<string, AlanDurumu> = {};
+  for (const a of alanlar) {
+    const x = alan.find((y) => y.alan === a);
+    alanSonuc[a] = {
+      bugun: x?.bugun ?? 0,
+      ilkGun: x?.ilk_gun === null || x?.ilk_gun === undefined ? null : Number(x.ilk_gun),
+    };
+  }
+  return { kutu, alan: alanSonuc };
 }
 
 /**
  * Son 50 gönderilen firmadan kaçı "Adres hatalı" — geri dönüş eşiği için.
  * Gönderim sonrası elle işaretlenen (geri dönen) ve gönderimde reddedilen
- * adresler birlikte sayılır.
+ * adresler birlikte sayılır. Kutudan bağımsız: kirli liste her kutuda kirli.
  */
 export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
   const r = await sorguSert<{ toplam: number; hatali: number }>(
@@ -459,59 +514,67 @@ export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: numbe
   return { toplam: r[0]?.toplam ?? 0, hatali: r[0]?.hatali ?? 0 };
 }
 
-export async function gonderimDurumu(): Promise<GonderimDurumu> {
-  const r = await sorguSert<GonderimDurumu>(
-    `SELECT son_deneme, durdu_bitis, durdu_sebep, now() AS simdi FROM gonderim_durumu WHERE id = 1`
-  );
-  return r[0] ?? { son_deneme: null, durdu_bitis: null, durdu_sebep: "", simdi: new Date().toISOString() };
-}
-
 /**
- * Gönderim sırasını ALIR: son denemeden bu yana `aralikSn` geçtiyse ve
- * sigorta atık değilse son deneme zamanını şimdi yapar ve `true` döner.
+ * Kutunun gönderim sırasını ALIR: o kutunun son denemesinden bu yana
+ * `aralikSn` geçtiyse ve kutunun sigortası atık değilse son deneme zamanını
+ * şimdi yapar ve `true` döner.
  *
- * Tek bir koşullu UPDATE — iki kişi aynı saniyede "Gönder"e bassa bile
- * yalnızca biri sırayı alır; kontrol ile yazma arasında boşluk yok.
- * Aralık, bir gönderimin en uzun süresinden (45 sn, bkz. outreach.ts)
- * uzun olduğu için aynı firmaya iki e-posta da gidemez.
+ * Tek bir koşullu INSERT … ON CONFLICT — iki kişi aynı saniyede "Gönder"e
+ * bassa bile aynı kutuyu yalnızca biri alır; kontrol ile yazma arasında
+ * boşluk yok. Aralık, bir gönderimin en uzun süresinden (45 sn, bkz.
+ * outreach.ts) uzun olduğu için aynı kutudan üst üste iki gönderim de
+ * çakışamaz. Farklı kutular birbirini beklemez.
  */
-export async function siraAl(aralikSn: number): Promise<boolean> {
+export async function siraAl(gonderen: string, aralikSn: number): Promise<boolean> {
   const r = await sorguSert(
-    `UPDATE gonderim_durumu SET son_deneme = now()
-     WHERE id = 1
-       AND (son_deneme IS NULL OR son_deneme <= now() - make_interval(secs => $1::int))
-       AND (durdu_bitis IS NULL OR durdu_bitis <= now())
-     RETURNING id`,
-    [aralikSn]
+    `INSERT INTO gonderen_durumu (gonderen, son_deneme) VALUES (lower($1), now())
+     ON CONFLICT (gonderen) DO UPDATE SET son_deneme = now()
+     WHERE (gonderen_durumu.son_deneme IS NULL
+            OR gonderen_durumu.son_deneme <= now() - make_interval(secs => $2::int))
+       AND (gonderen_durumu.durdu_bitis IS NULL OR gonderen_durumu.durdu_bitis <= now())
+     RETURNING gonderen`,
+    [gonderen, aralikSn]
   );
   return r.length > 0;
 }
 
 /**
- * Sigortayı atar: gönderim İstanbul'da gün bitene kadar durur, en az 6 saat.
- * 6 saat alt sınırı gece 23:50'de atan sigortanın 10 dakikada kalkmasın diye;
- * barındırma firmalarının hız sınırı penceresi genelde saatlik.
+ * Sigortayı atar: verilen kutulardan gönderim İstanbul'da gün bitene kadar
+ * durur, en az 6 saat. 6 saat alt sınırı gece 23:50'de atan sigortanın 10
+ * dakikada kalkmasın diye; barındırma firmalarının hız sınırı penceresi
+ * genelde saatlik. Kimin durduğuna çağıran karar verir (bkz. SigortaKapsami).
  */
-export async function sigortaAt(sebep: string) {
+export async function sigortaAt(gonderenler: string[], sebep: string) {
+  if (!gonderenler.length) return;
   await sorguSert(
-    `UPDATE gonderim_durumu SET
-       durdu_bitis = GREATEST(
-         (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') + interval '1 day') AT TIME ZONE 'Europe/Istanbul',
-         now() + interval '6 hours'),
-       durdu_sebep = $1
-     WHERE id = 1`,
-    [sebep.slice(0, 500)]
+    `INSERT INTO gonderen_durumu (gonderen, durdu_bitis, durdu_sebep)
+     SELECT lower(g), GREATEST(
+              (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') + interval '1 day') AT TIME ZONE 'Europe/Istanbul',
+              now() + interval '6 hours'),
+            $2
+     FROM unnest($1::text[]) AS g
+     ON CONFLICT (gonderen) DO UPDATE SET durdu_bitis = EXCLUDED.durdu_bitis, durdu_sebep = EXCLUDED.durdu_sebep`,
+    [gonderenler, sebep.slice(0, 500)]
   );
 }
 
-export async function sigortaSifirla() {
-  await sorguSert(`UPDATE gonderim_durumu SET durdu_bitis = NULL, durdu_sebep = '' WHERE id = 1`);
+/** Bütün kutuların sigortasını kaldırır; kaldırılanların sebeplerini döner (kayıt için). */
+export async function sigortaSifirla(): Promise<string[]> {
+  const r = await sorguSert<{ gonderen: string; durdu_sebep: string }>(
+    `WITH eski AS (
+       SELECT gonderen, durdu_sebep FROM gonderen_durumu WHERE durdu_bitis > now() FOR UPDATE)
+     UPDATE gonderen_durumu g SET durdu_bitis = NULL, durdu_sebep = ''
+     FROM eski WHERE g.gonderen = eski.gonderen
+     RETURNING g.gonderen, eski.durdu_sebep`
+  );
+  return r.map((x) => `${x.gonderen}: ${x.durdu_sebep}`);
 }
 
-/** Son iki denemenin sonucu (yeniden eskiye) — "üst üste iki hata" kuralı için. */
-export async function sonSonuclar(): Promise<string[]> {
+/** Bu kutunun son iki denemesinin sonucu (yeniden eskiye) — "üst üste iki hata" kuralı için. */
+export async function sonSonuclar(gonderen: string): Promise<string[]> {
   const r = await sorguSert<{ sonuc: string }>(
-    `SELECT sonuc FROM hedef_gonderim ORDER BY zaman DESC, id DESC LIMIT 2`
+    `SELECT sonuc FROM hedef_gonderim WHERE lower(gonderen) = lower($1) ORDER BY zaman DESC, id DESC LIMIT 2`,
+    [gonderen]
   );
   return r.map((x) => x.sonuc);
 }
@@ -521,6 +584,8 @@ export async function sonSonuclar(): Promise<string[]> {
 export async function gonderimKaydet(g: {
   firmaId: number;
   kullanici: string;
+  /** Gönderen kutu (tam adres) */
+  gonderen: string;
   eposta: string;
   konu: string;
   govde: string;
@@ -529,8 +594,8 @@ export async function gonderimKaydet(g: {
   mesajKimligi?: string;
 }) {
   await sorguSert(
-    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8)`,
+    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi, gonderen)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,lower($9))`,
     [
       g.firmaId,
       g.kullanici.slice(0, 80),
@@ -540,6 +605,7 @@ export async function gonderimKaydet(g: {
       g.sonuc,
       g.yanit.slice(0, 1000),
       (g.mesajKimligi ?? "").slice(0, 300),
+      g.gonderen.slice(0, 254),
     ]
   );
 }

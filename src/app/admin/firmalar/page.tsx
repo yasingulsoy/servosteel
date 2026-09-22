@@ -11,11 +11,10 @@ import {
   SEGMENT_GRUBU,
   bugunGonderilen,
   geriDonusDurumu,
-  gonderimDurumu,
   grupOzeti,
   hedefFirmalar,
   hedefOzeti,
-  ilkGonderimGunu,
+  kutuDurumlari,
   outreachSemaKur,
   segmentListesi,
   siradaki,
@@ -25,7 +24,13 @@ import {
   type GrupOzeti,
   type HedefFiltre,
 } from "@/lib/outreach-db";
-import { ayarlariOku, geriDonusEngeli, isinmaTavani } from "@/lib/outreach-kurallar";
+import {
+  ayarlariOku,
+  geriDonusEngeli,
+  kutuSec,
+  type KutuSatiri,
+  type OutreachAyarlari,
+} from "@/lib/outreach-kurallar";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../kabuk";
 import { sigortaSifirlaEylemi } from "./actions";
@@ -64,9 +69,9 @@ function qs(p: Record<string, string | number | undefined>): string {
 
 const sayi = (n: number) => n.toLocaleString("tr-TR");
 
-async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string) {
+async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, durum, son, ilk, rol, ilkGun, gd, talep] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -74,18 +79,17 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string) {
         ulkeListesi(),
         segmentListesi(),
         bugunGonderilen(),
-        gonderimDurumu(),
+        kutuDurumlari(ayar.kutular),
         sonGonderimler(8),
         siradaki(filtre),
         rolu(ben),
-        ilkGonderimGunu(),
         geriDonusDurumu(),
         talebeDonen(),
       ]);
     return {
       v: {
-        liste, ozet, gruplar, ulkeler, segmentler, bugun, durum, son, ilk,
-        admin: rol === "admin", ilkGun, gd, talep,
+        liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
+        admin: rol === "admin", gd, talep,
       },
       hata: null,
     };
@@ -131,8 +135,9 @@ export default async function FirmalarSayfasi({
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
   const ayar = ayarlariOku(process.env);
 
-  const { v, hata } = await veriGetir(filtre, sayfa, ben);
-  const isinma = isinmaTavani(v?.ilkGun ?? null, ayar.gunlukTavan);
+  const { v, hata } = await veriGetir(filtre, sayfa, ben, ayar);
+  const secim = v ? kutuSec(ayar, v.kutular.kutu, v.kutular.alan) : null;
+  const duranlar = secim?.satirlar.filter((x) => x.durum.durdu) ?? [];
   const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
   const grup = new Map((v?.gruplar ?? []).map((g) => [g.kategori, g]));
   const digerSegmentleri = Object.entries(SEGMENT_GRUBU)
@@ -184,7 +189,11 @@ export default async function FirmalarSayfasi({
               const yanit = (v.ozet.durum.yanit ?? 0) + (v.ozet.durum.olumlu ?? 0) + (v.ozet.durum.red ?? 0);
               const oran = v.ozet.gonderilen ? Math.round((yanit / v.ozet.gonderilen) * 100) : 0;
               const kalemler = [
-                { etiket: "Bugün", deger: `${v.bugun}/${isinma.tavan}`, alt: isinma.asama ?? "gönderilen / tavan" },
+                {
+                  etiket: "Bugün",
+                  deger: `${v.bugun}/${v.bugun + (secim?.kalan ?? 0)}`,
+                  alt: ayar.kutular.length > 1 ? `${ayar.kutular.length} kutu` : "gönderilen / tavan",
+                },
                 {
                   etiket: "Gönderilen",
                   deger: sayi(v.ozet.gonderilen),
@@ -222,32 +231,6 @@ export default async function FirmalarSayfasi({
                   </p>
                 </div>
               </section>
-            ) : v.durum.durdu_bitis && new Date(v.durum.durdu_bitis) > new Date(v.durum.simdi) ? (
-              <section className="mt-4 flex gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3.5 text-sm text-red-800">
-                <ShieldAlert className="mt-0.5 size-5 shrink-0" aria-hidden />
-                <div className="min-w-0 flex-1">
-                  <p className="font-semibold">
-                    Gönderim durdu — {tamTarih(v.durum.durdu_bitis)}&apos;de kendiliğinden açılır
-                  </p>
-                  <p className="mt-1 break-words">{v.durum.durdu_sebep}</p>
-                  {v.admin ? (
-                    <details className="mt-2">
-                      <summary className="cursor-pointer font-medium underline-offset-4 hover:underline">
-                        Sigortayı şimdi kaldır…
-                      </summary>
-                      <p className="mt-2">
-                        Yalnızca sebep giderildiyse (ör. parola düzeltildi). Hız sınırı ya da spam engeli
-                        yüzünden durduysa beklemek gerekir; üstüne gitmek kutuyu kara listeye sokar.
-                      </p>
-                      <form action={sigortaSifirlaEylemi} className="mt-2">
-                        <button className="rounded-lg bg-red-700 px-3 py-2 text-sm font-semibold text-white">
-                          Evet, gönderimi aç
-                        </button>
-                      </form>
-                    </details>
-                  ) : null}
-                </div>
-              </section>
             ) : geriDonus ? (
               <section className="mt-4 flex gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3.5 text-sm text-red-800">
                 <ShieldAlert className="mt-0.5 size-5 shrink-0" aria-hidden />
@@ -256,16 +239,15 @@ export default async function FirmalarSayfasi({
                   <p className="mt-1">{geriDonus}</p>
                 </div>
               </section>
-            ) : (
-              <section className="mt-4 flex gap-3 rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3.5 text-sm text-emerald-900">
-                <CircleCheck className="mt-0.5 size-5 shrink-0" aria-hidden />
-                <p>
-                  Gönderime hazır · gönderen <b>{ayar.gondericiAdi}</b> &lt;{ayar.user}&gt; · bugün en çok{" "}
-                  {isinma.tavan}
-                  {isinma.asama ? ` (${isinma.asama})` : ""} · iki e-posta arası en az {ayar.aralikSn} sn
-                </p>
-              </section>
-            )}
+            ) : secim ? (
+              <KutuTablosu secim={secim.satirlar} aralikSn={ayar.aralikSn} admin={v.admin} duran={duranlar.length} />
+            ) : null}
+            {ayar.uyarilar.length ? (
+              <p className="mt-2 flex gap-2 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+                <TriangleAlert className="mt-px size-4 shrink-0" aria-hidden />
+                <span>{ayar.uyarilar.join(" ")}</span>
+              </p>
+            ) : null}
 
             {/* ----------------------------------------- öncelikli gruplar */}
             <section className="mt-6" aria-labelledby="gruplar-baslik">
@@ -503,5 +485,74 @@ export default async function FirmalarSayfasi({
         ) : null}
       </main>
     </Kabuk>
+  );
+}
+
+/**
+ * Gönderen kutuları — her biri bugün kaç gönderdi, tavanı (ısınmayla), alan
+ * adının toplamı ve şu anki durumu. Tek kutuyken de aynı tablo: "neden
+ * gönderemiyorum" sorusunun cevabı hep aynı yerde.
+ */
+function KutuTablosu({
+  secim,
+  aralikSn,
+  admin,
+  duran,
+}: {
+  secim: KutuSatiri[];
+  aralikSn: number;
+  admin: boolean;
+  duran: number;
+}) {
+  const hazir = secim.some((x) => x.engel === null || x.bekle !== null);
+  return (
+    <section
+      className={`mt-4 rounded-xl border px-4 py-3.5 text-sm ${
+        hazir ? "border-emerald-300 bg-emerald-50 text-emerald-900" : "border-red-300 bg-red-50 text-red-800"
+      }`}
+    >
+      <p className="flex items-center gap-2 font-semibold">
+        {hazir ? <CircleCheck className="size-5 shrink-0" aria-hidden /> : <ShieldAlert className="size-5 shrink-0" aria-hidden />}
+        {hazir ? "Gönderime hazır" : "Şu an gönderilemiyor"} · {secim.length} kutu · aynı kutudan iki e-posta arası en az{" "}
+        {aralikSn} sn
+      </p>
+      <ul className="mt-2 divide-y divide-black/10">
+        {secim.map((x) => (
+          <li key={x.kutu.user} className="flex flex-col gap-0.5 py-1.5 sm:flex-row sm:items-baseline sm:gap-3">
+            <span className="min-w-0 break-all font-medium sm:w-72 sm:shrink-0">
+              {x.kutu.ad} &lt;{x.kutu.user}&gt;
+            </span>
+            <span className="tabular-nums">
+              bugün {x.durum.bugun}/{x.tavan}
+              {x.asama ? ` (${x.asama})` : ""} · {x.kutu.alan} {x.alanBugun}/{x.alanTavani}
+              {x.alanAsamasi ? ` (${x.alanAsamasi})` : ""}
+            </span>
+            <span className="break-words sm:ml-auto sm:text-right">
+              {x.engel === null
+                ? "hazır"
+                : x.durum.durdu && x.durum.durduBitis
+                  ? `durdu — ${tamTarih(x.durum.durduBitis)}'e kadar: ${x.durum.durduSebep}`
+                  : x.engel}
+            </span>
+          </li>
+        ))}
+      </ul>
+      {admin && duran ? (
+        <details className="mt-2">
+          <summary className="cursor-pointer font-medium underline-offset-4 hover:underline">
+            Sigortayı şimdi kaldır ({duran} kutu)…
+          </summary>
+          <p className="mt-2">
+            Yalnızca sebep giderildiyse (ör. parola düzeltildi). Hız sınırı ya da spam engeli
+            yüzünden durduysa beklemek gerekir; üstüne gitmek alan adını kara listeye sokar.
+          </p>
+          <form action={sigortaSifirlaEylemi} className="mt-2">
+            <button className="rounded-lg bg-red-700 px-3 py-2 text-sm font-semibold text-white">
+              Evet, bütün kutuları aç
+            </button>
+          </form>
+        </details>
+      ) : null}
+    </section>
   );
 }

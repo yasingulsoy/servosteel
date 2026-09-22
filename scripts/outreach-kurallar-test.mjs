@@ -54,22 +54,111 @@ t("siniflandirma", () => {
   const k = K.hataSiniflandir({ responseCode: 421, response: "421 4.7.0 Try later", message: "Mail command failed: 421 4.7.0 Try later" });
   assert.equal(k.sebep.split("421 4.7.0 Try later").length - 1, 1);
 });
-t("ayarlar", () => {
+t("ayarlar: tek kutu", () => {
   const bos = K.ayarlariOku({});
   assert.deepEqual(bos.eksik, ["OUTREACH_SMTP_HOST", "OUTREACH_SMTP_USER", "OUTREACH_SMTP_PASS"]);
+  assert.equal(bos.kutular.length, 0);
   const ayni = K.ayarlariOku({ SMTP_HOST: "h", SMTP_USER: "website@x.com", OUTREACH_SMTP_USER: "Website@x.com", OUTREACH_SMTP_PASS: "p" });
-  assert.equal(ayni.host, "h");
+  assert.equal(ayni.kutular.length, 0);
   assert.equal(ayni.eksik.length, 1);
   assert.match(ayni.eksik[0], /ayrı bir kutu/);
-  const tam = K.ayarlariOku({ OUTREACH_SMTP_HOST: "h", OUTREACH_SMTP_USER: "export@x.com", OUTREACH_SMTP_PASS: "p", OUTREACH_DAILY_LIMIT: "500", OUTREACH_INTERVAL_SEC: "10" });
+  const tam = K.ayarlariOku({ OUTREACH_SMTP_HOST: "h", OUTREACH_SMTP_USER: "Export@X.com", OUTREACH_SMTP_PASS: "p", OUTREACH_DAILY_LIMIT: "500", OUTREACH_INTERVAL_SEC: "10", OUTREACH_DOMAIN_DAILY_LIMIT: "900" });
   assert.deepEqual(tam.eksik, []);
+  assert.deepEqual(tam.uyarilar, []);
   assert.equal(tam.gunlukTavan, 50);
+  assert.equal(tam.alanTavani, 150);
   assert.equal(tam.aralikSn, 60);
-  assert.equal(tam.port, 465);
-  assert.equal(tam.gondericiAdi, "Servosteel");
+  assert.deepEqual(tam.kutular, [{ no: 1, host: "h", port: 465, user: "export@x.com", pass: "p", ad: "Servosteel", alan: "x.com" }]);
   const varsayilan = K.ayarlariOku({ OUTREACH_DAILY_LIMIT: "abc", OUTREACH_INTERVAL_SEC: "" });
   assert.equal(varsayilan.gunlukTavan, 20);
+  assert.equal(varsayilan.alanTavani, 50);
   assert.equal(varsayilan.aralikSn, 90);
+});
+t("ayarlar: ek kutular", () => {
+  const a = K.ayarlariOku({
+    OUTREACH_SMTP_HOST: "mail.servosteel.com.tr", OUTREACH_SMTP_USER: "export@servosteel.com.tr", OUTREACH_SMTP_PASS: "p1",
+    OUTREACH_FROM_NAME: "Elizaveta Shpelevaya", SMTP_USER: "website@servosteel.com.tr",
+    OUTREACH_SMTP_USER_2: "liza@servosteel-export.com", OUTREACH_SMTP_PASS_2: "p2", OUTREACH_SMTP_HOST_2: "mail.servosteel-export.com",
+    OUTREACH_SMTP_USER_3: "ali@servosteel-export.com",                       // parola yok
+    OUTREACH_SMTP_USER_4: "EXPORT@servosteel.com.tr", OUTREACH_SMTP_PASS_4: "p4",   // 1. kutuyla aynı
+    OUTREACH_SMTP_USER_5: "website@servosteel.com.tr", OUTREACH_SMTP_PASS_5: "p5",  // form kutusu
+    OUTREACH_SMTP_USER_6: "sales@servosteel-export.com", OUTREACH_SMTP_PASS_6: "p6", OUTREACH_FROM_NAME_6: "Servosteel Sales", OUTREACH_SMTP_PORT_6: "587",
+  });
+  assert.deepEqual(a.eksik, []);
+  assert.deepEqual(a.kutular.map((k) => [k.no, k.user, k.alan, k.host, k.port, k.ad]), [
+    [1, "export@servosteel.com.tr", "servosteel.com.tr", "mail.servosteel.com.tr", 465, "Elizaveta Shpelevaya"],
+    [2, "liza@servosteel-export.com", "servosteel-export.com", "mail.servosteel-export.com", 465, "Elizaveta Shpelevaya"],
+    [6, "sales@servosteel-export.com", "servosteel-export.com", "mail.servosteel.com.tr", 587, "Servosteel Sales"],
+  ]);
+  assert.equal(a.uyarilar.length, 3);
+  assert.match(a.uyarilar[0], /3\. kutu.*OUTREACH_SMTP_PASS_3/);
+  assert.match(a.uyarilar[1], /4\. kutu.*başka bir kutuyla aynı/);
+  assert.match(a.uyarilar[2], /5\. kutu.*form bildirim/);
+  /* 1. kutu yarım ama ek kutu tam: gönderim açık, uyarı var */
+  const b = K.ayarlariOku({ OUTREACH_SMTP_HOST: "h", OUTREACH_SMTP_USER: "x@a.com", OUTREACH_SMTP_USER_2: "y@b.com", OUTREACH_SMTP_PASS_2: "p" });
+  assert.deepEqual(b.eksik, []);
+  assert.deepEqual(b.kutular.map((k) => k.no), [2]);
+  assert.match(b.uyarilar[0], /1\. kutu.*OUTREACH_SMTP_PASS/);
+});
+t("alan adi isinmasi", () => {
+  assert.equal(K.alanIsinmaTavani(null, 50).tavan, 20);
+  assert.equal(K.alanIsinmaTavani(6, 50).tavan, 20);
+  assert.equal(K.alanIsinmaTavani(7, 50).tavan, 35);
+  assert.equal(K.alanIsinmaTavani(14, 50).tavan, 50);
+  assert.equal(K.alanIsinmaTavani(14, 50).asama, null);
+  assert.equal(K.alanIsinmaTavani(2, 10).tavan, 10);
+});
+t("kutu secimi", () => {
+  const kutu = (no, user) => ({ no, host: "h", port: 465, user, pass: "p", ad: "A", alan: user.split("@")[1] });
+  const ayar = { kutular: [kutu(1, "a@x.com"), kutu(2, "b@x.com"), kutu(3, "c@y.com")], gunlukTavan: 20, alanTavani: 50, aralikSn: 90 };
+  const d = (o) => ({ bugun: 0, ilkGun: 20, gecenSn: null, durdu: false, durduBitis: null, durduSebep: "", ...o });
+  const eski = { bugun: 0, ilkGun: 20 };
+  /* bugün en az gönderen önce; eşitse numara sırası */
+  let s = K.kutuSec(ayar, { "a@x.com": d({ bugun: 5 }), "b@x.com": d({ bugun: 2 }), "c@y.com": d({ bugun: 2 }) },
+    { "x.com": { bugun: 7, ilkGun: 20 }, "y.com": { bugun: 2, ilkGun: 20 } });
+  assert.deepEqual(s.uygun.map((k) => k.no), [2, 3, 1]);
+  assert.equal(s.bekle, null);
+  assert.equal(s.gunlukKapasite, 40 + 20);       // x.com: min(50, 20+20) · y.com: min(50, 20)
+  assert.equal(s.kalan, (15 + 18) + 18);
+  /* sigorta atık kutu atlanır ve kapasiteden düşer */
+  s = K.kutuSec(ayar, { "a@x.com": d({ durdu: true, durduSebep: "421" }), "b@x.com": d(), "c@y.com": d() },
+    { "x.com": eski, "y.com": eski });
+  assert.deepEqual(s.uygun.map((k) => k.no), [2, 3]);
+  assert.match(s.satirlar[0].engel, /durdu: 421/);
+  assert.equal(s.gunlukKapasite, 20 + 20);
+  /* alan adı tavanı: kutular eski (tavan 20) ama x.com ilk haftasında (20) ve 20 gitmiş → a ve b durur, c sürer */
+  s = K.kutuSec(ayar, { "a@x.com": d({ bugun: 10 }), "b@x.com": d({ bugun: 10 }), "c@y.com": d() },
+    { "x.com": { bugun: 20, ilkGun: 0 }, "y.com": eski });
+  assert.deepEqual(s.uygun.map((k) => k.no), [3]);
+  assert.match(s.satirlar[0].engel, /x\.com alan adının bugünkü tavanı doldu \(20\/20\)/);
+  /* aralık: hepsi yeni göndermişse en kısa bekleme döner */
+  s = K.kutuSec(ayar, { "a@x.com": d({ gecenSn: 30 }), "b@x.com": d({ gecenSn: 70 }), "c@y.com": d({ gecenSn: 10 }) },
+    { "x.com": eski, "y.com": eski });
+  assert.deepEqual(s.uygun, []);
+  assert.equal(s.bekle, 20);
+  assert.equal(s.sebep, null);
+  /* hepsi tavanda: sebep, bekleme yok */
+  s = K.kutuSec({ ...ayar, kutular: [ayar.kutular[0]] }, { "a@x.com": d({ bugun: 20 }) }, { "x.com": { bugun: 20, ilkGun: 20 } });
+  assert.deepEqual(s.uygun, []);
+  assert.equal(s.bekle, null);
+  assert.match(s.sebep, /tavan doldu/);
+  /* hepsi durmuş: sebep kutuları sayar */
+  s = K.kutuSec({ ...ayar, kutular: [ayar.kutular[0]] }, { "a@x.com": d({ durdu: true, durduSebep: "spam engeli" }) }, {});
+  assert.match(s.sebep, /a@x\.com: spam engeli/);
+  /* kutu ısınması: ilk gün kutu tavanı 10 */
+  s = K.kutuSec({ ...ayar, kutular: [ayar.kutular[2]] }, { "c@y.com": d({ bugun: 10, ilkGun: 0 }) }, { "y.com": { bugun: 10, ilkGun: 0 } });
+  assert.match(s.satirlar[0].engel, /kutunun bugünkü tavanı doldu \(10\/10\)/);
+  /* geçmişi olmayan kutu ısınmanın ilk günündedir: kapasite 10 */
+  assert.equal(K.kutuSec({ ...ayar, kutular: [ayar.kutular[0]] }, {}, {}).gunlukKapasite, 10);
+  assert.equal(K.kutuSec({ ...ayar, kutular: [] }, {}, {}).sebep, "Gönderen kutusu tanımlı değil.");
+});
+t("sigorta kapsami", () => {
+  const k = (h) => K.hataSiniflandir(h).kapsam;
+  assert.equal(k({ code: "EAUTH", responseCode: 535, response: "535 Authentication failed" }), "kutu");
+  assert.equal(k({ responseCode: 421, response: "421 4.7.0 Too many messages" }), "alan");
+  assert.equal(k({ responseCode: 550, response: "550 5.7.1 Relaying denied", command: "RCPT TO" }), "kutu");
+  assert.equal(k({ responseCode: 554, response: "554 5.7.1 Message rejected as spam", command: "DATA" }), "alan");
+  assert.equal(k({ responseCode: 550, response: "550 Domain servosteel.com.tr has exceeded the max emails per hour (100) allowed" }), "alan");
 });
 t("ulke kurallari", () => {
   assert.ok(K.ENGELLI_ULKELER["Almanya"]);

@@ -7,17 +7,15 @@ import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
   ayniAdreseGiden,
-  bugunGonderilen,
   engelle,
   engelliMi,
   firmaEngeli,
   geriDonusDurumu,
-  gonderimDurumu,
   gonderimKaydet,
   hedefDurumDegistir,
   hedefFirma,
   hedefNotEkle,
-  ilkGonderimGunu,
+  kutuDurumlari,
   outreachSemaKur,
   siraAl,
   siradaki,
@@ -26,9 +24,14 @@ import {
   sonSonuclar,
   type HedefDurum,
 } from "@/lib/outreach-db";
-import { ayarlariOku, geriDonusEngeli, hataSiniflandir, isinmaTavani } from "@/lib/outreach-kurallar";
+import {
+  ayarlariOku,
+  geriDonusEngeli,
+  hataSiniflandir,
+  kutuSec,
+  type GonderenKutusu,
+} from "@/lib/outreach-kurallar";
 import { iptalAdresi, postaSunucusu, tamMetin, tanitimGonder } from "@/lib/outreach";
-import { tamTarih } from "@/lib/zaman";
 
 /**
  * Hedef firma eylemleri. Her birinin ilk satırı `yetki()` — sunucu eylemi
@@ -39,10 +42,14 @@ import { tamTarih } from "@/lib/zaman";
  *   2. firma gönderilebilir mi (durum, adres, ülke, engel listesi, sistem adresi)
  *   3. alıcının alan adı e-posta alıyor mu (MX) — almıyorsa "Adres hatalı"
  *   4. son 50 gönderimde geri dönüş %10'u geçmedi mi
- *   5. bugünkü tavan dolmadı mı (ısınma: ilk hafta 10, ikinci hafta 15)
- *   6. aralık geçti mi + sigorta atık değil mi — TEK koşullu UPDATE ile
- *      sıra alınır, iki kişi aynı anda basamaz
- *   7. gönder; sonucu kaydet; sunucu itiraz ettiyse sigortayı at
+ *   5. kutu seçimi (kutuSec): sigortası atık, kendi tavanı (ısınma: ilk hafta
+ *      10, ikinci hafta 15) ya da alan adının toplam tavanı (ilk hafta 20,
+ *      ikinci 35, sonra OUTREACH_DOMAIN_DAILY_LIMIT) dolan kutu atlanır;
+ *      kalanlar bugün en az gönderenden başlayarak denenir
+ *   6. kutunun aralığı geçti mi + sigortası atık değil mi — TEK koşullu
+ *      yazmayla sıra alınır, iki kişi aynı kutuyu aynı anda alamaz
+ *   7. gönder; sonucu kaydet (hangi kutudan); sunucu itiraz ettiyse sigortayı
+ *      at — giriş hatasında kutuyu, hız sınırı/spam engelinde alan adını
  */
 
 export type GonderSonucu = {
@@ -113,38 +120,39 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   const gdEngel = geriDonusEngeli(gd.toplam, gd.hatali);
   if (gdEngel) return { tamam: false, mesaj: gdEngel };
 
-  const { tavan, asama } = isinmaTavani(await ilkGonderimGunu(), ayar.gunlukTavan);
-  const bugun = await bugunGonderilen();
-  if (bugun >= tavan) {
-    return {
-      tamam: false,
-      mesaj: `Bugünkü tavan doldu (${bugun}/${tavan}${asama ? ` — ${asama}` : ""}). Yarın devam edilir.`,
-    };
-  }
-
-  if (!(await siraAl(ayar.aralikSn))) {
-    const d = await gonderimDurumu();
-    const simdi = new Date(d.simdi).getTime();
-    if (d.durdu_bitis && new Date(d.durdu_bitis).getTime() > simdi) {
+  /* Kutu seçimi: sigortası atık, kendi tavanı ya da alan adının tavanı dolan
+     kutu atlanır; kalanlar bugün en az gönderenden başlayarak denenir. */
+  const durum = await kutuDurumlari(ayar.kutular);
+  const secim = kutuSec(ayar, durum.kutu, durum.alan);
+  if (!secim.uygun.length) {
+    if (secim.bekle !== null) {
       return {
         tamam: false,
-        mesaj: `Gönderim durduruldu (${tamTarih(d.durdu_bitis)}'e kadar): ${d.durdu_sebep}`,
+        mesaj: `Aynı kutudan iki e-posta arasında en az ${ayar.aralikSn} sn olmalı — ${secim.bekle} sn sonra gönderilebilir.`,
+        bekle: secim.bekle,
       };
     }
-    const gecen = d.son_deneme ? (simdi - new Date(d.son_deneme).getTime()) / 1000 : ayar.aralikSn;
-    const bekle = Math.max(1, Math.ceil(ayar.aralikSn - gecen));
-    return {
-      tamam: false,
-      mesaj: `İki gönderim arasında en az ${ayar.aralikSn} sn olmalı — ${bekle} sn sonra gönderilebilir.`,
-      bekle,
-    };
+    return { tamam: false, mesaj: secim.sebep ?? "Şu an gönderebilecek kutu yok." };
   }
+  let kutu: GonderenKutusu | null = null;
+  for (const aday of secim.uygun) {
+    if (await siraAl(aday.user, ayar.aralikSn)) {
+      kutu = aday;
+      break;
+    }
+  }
+  if (!kutu) {
+    /* Seçimle sıra alma arasında başka biri aynı kutuları kullandı */
+    return { tamam: false, mesaj: "Kutular az önce kullanıldı — birkaç saniye sonra tekrar deneyin.", bekle: 5 };
+  }
+  const gonderen = kutu;
+  const satir = secim.satirlar.find((s) => s.kutu.user === gonderen.user);
 
   const iptalUrl = iptalAdresi(f.iptal_anahtari);
   const gonderilen = tamMetin(govde, f.dil, iptalUrl);
-  const cevap = await tanitimGonder(ayar, { alici: f.eposta, konu, govde, dil: f.dil, iptalUrl });
-  const ozet = `${f.firma} · ${f.eposta}`;
-  const kayit = { firmaId: id, kullanici: ben, eposta: f.eposta, konu, govde: gonderilen };
+  const cevap = await tanitimGonder(ayar, gonderen, { alici: f.eposta, konu, govde, dil: f.dil, iptalUrl });
+  const ozet = `${f.firma} · ${f.eposta} · ${gonderen.user} kutusundan`;
+  const kayit = { firmaId: id, kullanici: ben, gonderen: gonderen.user, eposta: f.eposta, konu, govde: gonderilen };
 
   if (cevap.durum === "ok") {
     await gonderimKaydet({ ...kayit, sonuc: "ok", yanit: cevap.yanit, mesajKimligi: cevap.mesajKimligi });
@@ -153,23 +161,33 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
     yenile(id);
     return {
       tamam: true,
-      mesaj: `Gönderildi: ${f.eposta} — bugün ${bugun + 1}/${tavan}.`,
+      mesaj:
+        `Gönderildi: ${f.eposta} — ${gonderen.user} kutusundan` +
+        (satir ? ` (bu kutu bugün ${satir.durum.bugun + 1}/${satir.tavan})` : "") +
+        ` · bugün gönderilebilecek ${Math.max(0, secim.kalan - 1)} kaldı.`,
       sonraki: await siradaki(filtre, id),
     };
   }
 
+  /* Zaman aşımı sunucunun sorunu (kutunun değil): o sunucudaki bütün kutular durur.
+     Hız sınırı / spam / itibar alan adına ait: o alan adındaki bütün kutular durur. */
+  const ayniSunucu = ayar.kutular.filter((k) => k.host === gonderen.host).map((k) => k.user);
+  const ayniAlan = ayar.kutular.filter((k) => k.alan === gonderen.alan).map((k) => k.user);
+
   if (cevap.durum === "belirsiz") {
     /* Gitmiş olabilir. Aynı firmaya ikinci e-postayı atmaktansa bir firmayı
-       kaçırmak iyidir: "Gönderildi" işaretlenir, gün durdurulur. */
+       kaçırmak iyidir: "Gönderildi" işaretlenir, o sunucunun kutuları durdurulur. */
     await gonderimKaydet({ ...kayit, sonuc: "belirsiz", yanit: cevap.yanit });
     await hedefDurumDegistir(id, "gonderildi");
-    await sigortaAt(`${cevap.yanit} — e-posta gitmiş olabilir, gönderen kutusuna bakın.`);
+    await sigortaAt(
+      ayniSunucu,
+      `${cevap.yanit} — e-posta gitmiş olabilir, ${gonderen.user} kutusunun Gönderilmiş klasörüne bakın.`
+    );
     await kayitEkle(ben, "hedef_gonder_hata", `firma:${id}`, `${ozet} — belirsiz`);
     yenile(id);
     return {
       tamam: false,
-      mesaj:
-        "Sunucu zamanında cevap vermedi; e-posta gitmiş olabilir. Firma “Gönderildi” işaretlendi, gönderim bugünlük durduruldu.",
+      mesaj: `Sunucu zamanında cevap vermedi; e-posta gitmiş olabilir. Firma “Gönderildi” işaretlendi, ${gonderen.host} sunucusundaki ${ayniSunucu.length} kutu bugünlük durduruldu.`,
     };
   }
 
@@ -177,24 +195,30 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   await gonderimKaydet({ ...kayit, sonuc: k.tur === "alici" ? "alici" : "hata", yanit: k.sebep });
   if (k.tur === "alici") await hedefDurumDegistir(id, "hatali");
 
-  /* Sigorta: sunucu itiraz ettiyse hemen; değilse üst üste ikinci başarısızlıkta. */
-  const [, onceki] = await sonSonuclar();
-  let durdu = false;
+  /* Sigorta: sunucu itiraz ettiyse hemen — giriş/yetki hatasında yalnız bu kutu,
+     hız sınırı/spam/itibarda alan adının bütün kutuları. Değilse bu kutunun üst
+     üste ikinci başarısızlığında yalnız bu kutu. */
+  const [, onceki] = await sonSonuclar(gonderen.user);
+  let durdu = "";
   if (k.tur === "sigorta") {
-    await sigortaAt(k.sebep);
-    durdu = true;
+    const kimler = k.kapsam === "alan" ? ayniAlan : [gonderen.user];
+    await sigortaAt(kimler, `${gonderen.user}: ${k.sebep}`);
+    durdu =
+      k.kapsam === "alan"
+        ? `${gonderen.alan} alan adındaki ${kimler.length} kutu bugünlük durduruldu.`
+        : `${gonderen.user} kutusu bugünlük durduruldu.`;
   } else if (onceki && onceki !== "ok") {
-    await sigortaAt(`Üst üste iki başarısız gönderim. Son hata: ${k.sebep}`);
-    durdu = true;
+    await sigortaAt([gonderen.user], `Üst üste iki başarısız gönderim. Son hata: ${k.sebep}`);
+    durdu = `${gonderen.user} kutusu bugünlük durduruldu.`;
   }
   await kayitEkle(ben, "hedef_gonder_hata", `firma:${id}`, `${ozet} — ${k.sebep}`);
   yenile(id);
   return {
     tamam: false,
     mesaj: [
-      k.tur === "alici" ? "Adres reddedildi; firma “Adres hatalı” işaretlendi." : "Gönderilemedi.",
+      k.tur === "alici" ? "Adres reddedildi; firma “Adres hatalı” işaretlendi." : `Gönderilemedi (${gonderen.user}).`,
       k.sebep,
-      durdu ? "Gönderim bugünlük durduruldu." : "",
+      durdu,
     ]
       .filter(Boolean)
       .join(" "),
@@ -254,8 +278,7 @@ export async function engelleEylemi(form: FormData) {
 export async function sigortaSifirlaEylemi() {
   const ben = await adminYetkisi();
   if (!(await outreachSemaKur())) return;
-  const d = await gonderimDurumu();
-  await sigortaSifirla();
-  await kayitEkle(ben, "sigorta_sifirla", "", d.durdu_sebep.slice(0, 280));
+  const kaldirilan = await sigortaSifirla();
+  await kayitEkle(ben, "sigorta_sifirla", "", kaldirilan.join(" · ").slice(0, 280));
   yenile();
 }

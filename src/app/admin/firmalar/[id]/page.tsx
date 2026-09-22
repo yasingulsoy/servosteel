@@ -7,20 +7,18 @@ import {
   HEDEF_DURUM_ETIKET,
   KATEGORI_ADI,
   ayniAdreseGiden,
-  bugunGonderilen,
   engelliMi,
   firmaEngeli,
   geriDonusDurumu,
-  gonderimDurumu,
   gonderimler,
   hedefFirma,
   hedefNotlar,
   hedefTalepleri,
-  ilkGonderimGunu,
+  kutuDurumlari,
   outreachSemaKur,
   siradaki,
 } from "@/lib/outreach-db";
-import { ayarlariOku, geriDonusEngeli, isinmaTavani, ulkeUyarisi } from "@/lib/outreach-kurallar";
+import { ayarlariOku, geriDonusEngeli, kutuSec, ulkeUyarisi } from "@/lib/outreach-kurallar";
 import { altbilgiMetni, iptalAdresi } from "@/lib/outreach";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
@@ -59,15 +57,14 @@ export default async function FirmaSayfasi({
   const f = await hedefFirma(no);
   if (!f) notFound();
 
-  const [gecmis, notlar, engelli, onceki, bugun, durum, sonraki, ilkGun, gd, talepleri] = await Promise.all([
+  const ayar = ayarlariOku(process.env);
+  const [gecmis, notlar, engelli, onceki, kutular, sonraki, gd, talepleri] = await Promise.all([
     gonderimler(no),
     hedefNotlar(no),
     engelliMi(f.eposta),
     ayniAdreseGiden(f.eposta, f.id),
-    bugunGonderilen(),
-    gonderimDurumu(),
+    kutuDurumlari(ayar.kutular),
     siradaki(filtre, no),
-    ilkGonderimGunu(),
     geriDonusDurumu(),
     hedefTalepleri(no),
   ]);
@@ -75,21 +72,23 @@ export default async function FirmaSayfasi({
   /* Düğmeyi kapatan sebep — önce firmaya ait olanlar, sonra güne ait olanlar.
      Sunucu eylemi hepsini AYRICA kontrol ediyor; burası kullanıcıya boşuna
      tıklatmamak için. */
-  const ayar = ayarlariOku(process.env);
-  const { tavan, asama } = isinmaTavani(ilkGun, ayar.gunlukTavan);
-  const simdi = new Date(durum.simdi).getTime();
-  const durdu = durum.durdu_bitis && new Date(durum.durdu_bitis).getTime() > simdi;
+  const secim = kutuSec(ayar, kutular.kutu, kutular.alan);
   const engel =
     firmaEngeli(f, engelli, onceki) ??
     (ayar.eksik.length ? `Gönderim ayarları eksik: ${ayar.eksik.join(", ")}.` : null) ??
-    (durdu ? `Gönderim durduruldu (${tamTarih(durum.durdu_bitis!)}'e kadar): ${durum.durdu_sebep}` : null) ??
     geriDonusEngeli(gd.toplam, gd.hatali) ??
-    (bugun >= tavan
-      ? `Bugünkü tavan doldu (${bugun}/${tavan}${asama ? ` — ${asama}` : ""}). Yarın devam edilir.`
-      : null);
-  const bekleSn = durum.son_deneme
-    ? Math.max(0, Math.ceil(ayar.aralikSn - (simdi - new Date(durum.son_deneme).getTime()) / 1000))
-    : 0;
+    (secim.uygun.length || secim.bekle !== null ? null : secim.sebep);
+  const bekleSn = secim.uygun.length ? 0 : (secim.bekle ?? 0);
+  /* Önizlemede gösterilen gönderen: şimdi seçilecek kutu (aralık bekleniyorsa ilk boşalacak).
+     Gönderim anında yeniden seçilir — arada başkası gönderdiyse başka kutudan gidebilir. */
+  const siradakiKutu =
+    secim.uygun[0] ??
+    secim.satirlar.filter((x) => x.bekle !== null).sort((a, b) => (a.bekle ?? 0) - (b.bekle ?? 0))[0]?.kutu ??
+    ayar.kutular[0];
+  const gonderenYazisi = siradakiKutu
+    ? `${siradakiKutu.ad} <${siradakiKutu.user}>` +
+      (ayar.kutular.length > 1 ? ` · ${ayar.kutular.length} kutudan sırayla` : "")
+    : "(gönderen kutusu tanımlı değil — OUTREACH_SMTP_USER)";
 
   const web = ilkUrl(f.web);
   const kanit = ilkUrl(f.kanit);
@@ -170,7 +169,7 @@ export default async function FirmaSayfasi({
                 <GonderKutusu
                   key={f.id}
                   id={f.id}
-                  gonderen={ayar.user ? `${ayar.gondericiAdi} <${ayar.user}>` : "(OUTREACH_SMTP_USER tanımlı değil)"}
+                  gonderen={gonderenYazisi}
                   alici={f.eposta}
                   konu={f.konu}
                   govde={f.govde}
@@ -204,6 +203,7 @@ export default async function FirmaSayfasi({
                         <span className="text-muted">
                           {" · "}
                           <span title={tamTarih(g.zaman)}>{goreli(g.zaman)}</span> · {g.kullanici} · {g.eposta}
+                          {g.gonderen ? ` · ${g.gonderen} kutusundan` : ""}
                         </span>
                       </p>
                       {g.yanit ? <p className="mt-1 break-words text-xs text-muted">Sunucu: {g.yanit}</p> : null}

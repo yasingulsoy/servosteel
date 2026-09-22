@@ -12,7 +12,9 @@
  *   hedef_not        — firma altındaki notlar
  *   eposta_engel     — bir daha yazılmayacak adresler (abonelikten çıkan,
  *                      "yazmayın" diyen). Gönderimden önce HER SEFERİNDE bakılır.
- *   gonderim_durumu  — tek satır: son deneme zamanı (aralık kuralı) ve sigorta
+ *   gonderen_durumu  — kutu başına bir satır: son deneme zamanı (aralık
+ *                      kuralı) ve sigorta. (Eski tek satırlık gonderim_durumu
+ *                      kullanılmıyor; tek kutuyken yazılmıştı.)
  */
 export const OUTREACH_SEMA = `
   CREATE TABLE IF NOT EXISTS hedef_firmalar (
@@ -72,6 +74,9 @@ export const OUTREACH_SEMA = `
   CREATE INDEX IF NOT EXISTS hedef_gonderim_firma_idx ON hedef_gonderim (firma_id, zaman DESC);
   /* Aynı adrese ikinci tanıtım e-postası gitmesin — adres birden çok firma satırında olabilir */
   CREATE INDEX IF NOT EXISTS hedef_gonderim_eposta_idx ON hedef_gonderim (lower(eposta));
+  /* Hangi kutudan gitti — kutu ve alan adı tavanı, ısınma buna göre sayılır */
+  ALTER TABLE hedef_gonderim ADD COLUMN IF NOT EXISTS gonderen TEXT NOT NULL DEFAULT '';
+  CREATE INDEX IF NOT EXISTS hedef_gonderim_gonderen_idx ON hedef_gonderim (gonderen, zaman DESC);
 
   CREATE TABLE IF NOT EXISTS hedef_not (
     id           SERIAL PRIMARY KEY,
@@ -88,11 +93,10 @@ export const OUTREACH_SEMA = `
     zaman   TIMESTAMPTZ NOT NULL DEFAULT now()
   );
 
-  CREATE TABLE IF NOT EXISTS gonderim_durumu (
-    id           INTEGER PRIMARY KEY DEFAULT 1 CHECK (id = 1),
+  CREATE TABLE IF NOT EXISTS gonderen_durumu (
+    gonderen     TEXT PRIMARY KEY,
     son_deneme   TIMESTAMPTZ,
     durdu_bitis  TIMESTAMPTZ,
     durdu_sebep  TEXT NOT NULL DEFAULT ''
   );
-  INSERT INTO gonderim_durumu (id) VALUES (1) ON CONFLICT (id) DO NOTHING;
 `;
