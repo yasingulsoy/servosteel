@@ -2072,7 +2072,7 @@
       },
       "servo-suruculer": {
         "name": "Servo Feeders",
-        "metaTitle": "Servo Roll Feeders: NC Press Feeder for Coil",
+        "metaTitle": "Servo Roll Feeders: NC Press Feeder 0.2-4 mm, 1,600 mm",
         "short": "Precise step feeding into press lines; standard and mini series.",
         "hero": "Servo feeders advance the sheet into the die in millimetric steps; Schneider Lexium servo technology delivers high repeatability, press synchronisation and easy recipe management.",
         "meta": "Servo press feeders: standard and mini series roll feeders for coil lines, Schneider Lexium based precise sheet feeding.",
@@ -2132,7 +2132,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Straightener Servo Feeders",
-        "metaTitle": "Straightener Servo Feeders: Decoiler, Straightener, Feeder",
+        "metaTitle": "Straightener Servo Feeders: 0.4-6 mm, up to 1,600 mm",
         "short": "Straightening and servo feeding in one body: saves space and investment.",
         "hero": "A compact solution combining straightening rolls that remove coil-set memory with servo feeding in a single body; it eliminates the separate straightener investment and its floor space.",
         "meta": "Straightener servo feeders: straightening + precise feeding in one machine. A compact solution for press lines with cabinet and mini options.",
@@ -2232,7 +2232,7 @@
       },
       "kompakt-hatlar": {
         "name": "Compact Lines",
-        "metaTitle": "Compact Lines: Decoiler, Straightener & Feeder in One",
+        "metaTitle": "Compact Lines: 3-in-1 Coil Feeder 0.5-6 mm, 40-1,300 mm",
         "short": "Decoiler + straightener + feeder on one platform: the tight-space solution.",
         "hero": "Compact lines combine decoiling, straightening and servo feeding on a single platform; designed for businesses that want full-featured press feeding in limited space.",
         "meta": "Compact press feeding lines: decoiler, straightener and servo feeder on one platform. A complete solution for tight spaces.",

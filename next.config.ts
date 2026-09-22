@@ -280,7 +280,9 @@ const nextConfig: NextConfig = {
       ...many(HIDROLIK, en("/makineler/rulo-acicilar/hidrolik")),
       ...many(MEKANIK, en("/makineler/rulo-acicilar/mekanik")),
       p("/decoiler", en("/makineler/rulo-acicilar")),
+      p("/product/decoiler", en("/makineler/rulo-acicilar")),
       p("/decoilers", en("/makineler/rulo-acicilar")),
+      p("/product/decoilers", en("/makineler/rulo-acicilar")),
       p("/product-category/machines/decoilers", en("/makineler/rulo-acicilar")),
       p("/product-category/machines/decoilers/hydraulic-decoilers", en("/makineler/rulo-acicilar/hidrolik")),
       p("/product-category/machines/decoilers/mechanical-decoilers", en("/makineler/rulo-acicilar/mekanik")),
@@ -288,7 +290,9 @@ const nextConfig: NextConfig = {
       ...many(["servo-feeders"], en("/makineler/servo-suruculer")),
       ...many(["mini-servo-feeders"], en("/makineler/servo-suruculer/mini")),
       p("/servo-feeder", en("/makineler/servo-suruculer")),
+      p("/product/servo-feeder", en("/makineler/servo-suruculer")),
       p("/feeding-machines", en("/makineler/servo-suruculer")),
+      p("/product/feeding-machines", en("/makineler/servo-suruculer")),
       p("/product-category/machines/feeding-machines", en("/makineler/servo-suruculer")),
 
       ...many(["straightener-servo-feeders"], en("/makineler/dogrultmali-servo-suruculer")),
@@ -419,8 +423,19 @@ const nextConfig: NextConfig = {
          karari) makine listesine gonderiliyor — spec tablolari orada. */
       p("/Katalog.pdf", "/makineler"),
 
-      p("/product/:slug", "/makineler"),
-      p("/product-category/:path*", "/makineler"),
+      /* Eski sitenin İngilizce ürün adresleri — yakalayıcıdan ÖNCE. Yoksa
+         "/product/straightener" gibi adresler aşağıdaki `/product/:slug`
+         kuralına düşüp TÜRKÇE makine listesine iniyordu: eski site tek dilli
+         İngilizceydi, yani İngilizce arayan ziyaretçi anlamadığı sayfaya
+         varıyordu (2026-09-23'te beş adreste ölçüldü). */
+      p("/product/straightener", en("/makineler/dogrultmali-servo-suruculer")),
+      p("/straightener", en("/makineler/dogrultmali-servo-suruculer")),
+      p("/product/roll-forming-machine", en("/roll-form-hatlari")),
+      p("/roll-forming-machine", en("/roll-form-hatlari")),
+
+      /* Eşleşmeyen eski ürün adresi: hedef İNGİLİZCE liste (eski site İngilizceydi) */
+      p("/product/:slug", M),
+      p("/product-category/:path*", M),
 
       /* ---- ESKİ WORDPRESS BÖLÜM KÖKLERİ ----
        *
@@ -439,8 +454,8 @@ const nextConfig: NextConfig = {
       p("/blog/:path*", "/akademi"),
       p("/haberler", "/akademi"),
       p("/haberler/:path*", "/akademi"),
-      p("/products", "/makineler"),
-      p("/products/:path*", "/makineler"),
+      p("/products", M),
+      p("/products/:path*", M),
       p("/services", "/makineler"),
       p("/services/:path*", "/makineler"),
       p("/hizmetler", "/makineler"),

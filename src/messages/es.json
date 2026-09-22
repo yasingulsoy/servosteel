@@ -2004,7 +2004,7 @@
       },
       "servo-suruculer": {
         "name": "Alimentadores Servo",
-        "metaTitle": "Alimentadores servo para prensas: estándar, mini",
+        "metaTitle": "Alimentadores servo para prensas: 0,2-4 mm, 1.600 mm",
         "short": "Alimentación por pasos de precisión a prensas; series estándar y mini.",
         "hero": "Los alimentadores servo avanzan la chapa hacia el troquel en pasos milimétricos; la tecnología servo Schneider Lexium ofrece alta repetibilidad, sincronización con la prensa y gestión sencilla de recetas.",
         "meta": "Alimentadores servo: series estándar y mini para líneas de prensa, alimentación de precisión basada en Schneider Lexium.",
@@ -2056,7 +2056,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Alimentadores Servo con Enderezadora",
-        "metaTitle": "Alimentadores servo con enderezadora integrada",
+        "metaTitle": "Alimentador servo con enderezadora: 0,4-6 mm, 1.600 mm",
         "short": "Enderezado y alimentación en un cuerpo: ahorro de espacio e inversión.",
         "hero": "Una solución compacta que une en un solo cuerpo los rodillos enderezadores que eliminan la memoria de la bobina y la alimentación servo; elimina la enderezadora aparte y su espacio.",
         "meta": "Alimentadores servo con enderezadora: enderezado + alimentación de precisión en una máquina. Versiones de casete y mini.",
@@ -2152,7 +2152,7 @@
       },
       "kompakt-hatlar": {
         "name": "Líneas Compactas",
-        "metaTitle": "Líneas compactas: desbobinadora y alimentador",
+        "metaTitle": "Líneas compactas 3 en 1: 0,5-6 mm, 40-1.300 mm",
         "short": "Desbobinador + enderezadora + alimentador en una plataforma.",
         "hero": "Las líneas compactas reúnen desbobinado, enderezado y alimentación servo en una sola plataforma; pensadas para empresas que quieren alimentación de prensa completa en un espacio limitado.",
         "meta": "Líneas compactas de alimentación de prensas: desbobinadora, enderezadora y alimentador servo en una plataforma.",

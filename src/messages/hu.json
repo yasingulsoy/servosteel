@@ -2004,7 +2004,7 @@
       },
       "servo-suruculer": {
         "name": "Szervoadagolók",
-        "metaTitle": "Szervoadagolók présorokhoz: standard és mini",
+        "metaTitle": "Szervoadagolók présekhez: 0,2-4 mm, 1.600 mm-ig",
         "short": "Pontos léptető lemezadagolás présorokba; standard és mini széria.",
         "hero": "A szervoadagolók milliméteres léptékben juttatják a lemezt a szerszámba; a Schneider Lexium szervotechnológia nagy ismételhetőséget, présszinkront és egyszerű receptkezelést kínál.",
         "meta": "Szervoadagolók: standard és mini széria présorokhoz, Schneider Lexium alapú pontos lemezadagolás.",
@@ -2056,7 +2056,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Egyengetős Szervoadagolók",
-        "metaTitle": "Egyengetős szervoadagoló: egyengetés és adagolás",
+        "metaTitle": "Egyengetős szervoadagoló: 0,4-6 mm, 1.600 mm-ig",
         "short": "Egyengetés és szervoadagolás egy testben: hely és beruházás megtakarítása.",
         "hero": "Kompakt megoldás, amely a tekercs hajlási memóriáját megszüntető egyengető görgőket és a szervoadagolást egy testben egyesíti; kiváltja a külön egyengetőt és annak helyigényét.",
         "meta": "Egyengetős szervoadagolók: egyengetés + pontos adagolás egy gépben. Szekrényes és mini kivitel.",
@@ -2152,7 +2152,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompakt Sorok",
-        "metaTitle": "Kompakt présadagoló sor: lecsévélő és egyengető",
+        "metaTitle": "Kompakt présadagoló sor: 0,5-6 mm, 40-1.300 mm",
         "short": "Lecsévélő + egyengető + adagoló egy platformon.",
         "hero": "A kompakt sorok a lecsévélést, egyengetést és szervoadagolást egyetlen platformon egyesítik; olyan üzemeknek, amelyek korlátozott helyen teljes értékű présadagolást szeretnének.",
         "meta": "Kompakt présadagoló sorok: lecsévélő, egyengető és szervoadagoló egy platformon.",

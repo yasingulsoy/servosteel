@@ -2021,7 +2021,7 @@
       },
       "servo-suruculer": {
         "name": "Servo Sürücüler",
-        "metaTitle": "Servo Sürücüler: Pres Besleme Sistemleri",
+        "metaTitle": "Servo Sürücüler: Pres Besleme 0,2-4 mm, 1.600 mm'ye",
         "short": "Pres hatlarına hassas adımlı sac besleme; standart ve mini seri.",
         "hero": "Kalıba giden sacın milimetrik adımlarla ilerlemesini sağlayan servo sürücüler; Schneider Lexium servo teknolojisiyle yüksek tekrarlılık, pres senkronu ve kolay reçete yönetimi sunar.",
         "meta": "Servo sürücüler (servo feeder): pres besleme hatları için standart ve mini seri, Schneider Lexium tabanlı hassas sac besleme.",
@@ -2073,7 +2073,7 @@
       },
       "dogrultmali-servo-suruculer": {
         "name": "Doğrultmalı Servo Sürücüler",
-        "metaTitle": "Doğrultmalı Servo Sürücü: Sac Doğrultma, Besleme",
+        "metaTitle": "Doğrultmalı Servo Sürücü: 0,4-6 mm, 1.600 mm'ye",
         "short": "Doğrultma ve servo besleme tek gövdede: yerden ve yatırımdan tasarruf.",
         "hero": "Rulodaki kıvrım hafızasını alan doğrultma merdaneleri ile servo beslemeyi tek gövdede birleştiren kompakt çözüm; ayrı doğrultucu yatırımını ve yer ihtiyacını ortadan kaldırır.",
         "meta": "Doğrultmalı servo sürücüler: doğrultma + hassas besleme tek makinede. Kasalı ve mini seçenekleriyle pres hatları için kompakt çözüm.",
@@ -2169,7 +2169,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompakt Hatlar",
-        "metaTitle": "Kompakt Pres Besleme Hattı: Üçü Tek Şasede",
+        "metaTitle": "Kompakt Pres Besleme Hattı: 0,5-6 mm, 40-1.300 mm",
         "short": "Açıcı + doğrultucu + sürücü tek platformda: dar alan çözümü.",
         "hero": "Rulo açma, doğrultma ve servo beslemeyi tek platformda toplayan kompakt hatlar; sınırlı alanda tam fonksiyonlu pres besleme kurmak isteyen işletmeler için tasarlanır.",
         "meta": "Kompakt pres besleme hatları: rulo açıcı, doğrultucu ve servo sürücü tek platformda. Dar alanlar için komple çözüm.",
