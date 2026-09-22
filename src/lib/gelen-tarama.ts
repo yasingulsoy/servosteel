@@ -1,5 +1,4 @@
 import "server-only";
-import { ImapFlow } from "imapflow";
 import { simpleParser } from "mailparser";
 import { gelenSiniflandir, mesajKimlikleri, type Siniflama } from "@/lib/gelen-kurallar";
 import {
@@ -13,6 +12,7 @@ import {
 } from "@/lib/gelen-db";
 import { gelenOzeti } from "@/lib/gelen-ozet";
 import { engelle, hedefDurumDegistir, hedefNotEkle, outreachSemaKur } from "@/lib/outreach-db";
+import { imapIstemcisi } from "@/lib/outreach";
 import type { GonderenKutusu, OutreachAyarlari } from "@/lib/outreach-kurallar";
 
 /**
@@ -49,12 +49,6 @@ export type TaramaSonucu = {
 const KUTU_BASINA_EN_COK = 100;
 /** İletinin en çok bu kadarı indirilir — ek (katalog, PDF) gerekmiyor. */
 const ILETI_EN_COK_BAYT = 300_000;
-
-function imapSunucusu(kutu: GonderenKutusu) {
-  const host = (process.env.OUTREACH_IMAP_HOST ?? "").trim() || kutu.host;
-  const port = Number(process.env.OUTREACH_IMAP_PORT) || 993;
-  return { host, port };
-}
 
 async function uygula(
   kutu: GonderenKutusu,
@@ -108,18 +102,7 @@ async function kutuTara(
 
   let uidvalidity = kayit.uidvalidity;
   let sonUid = kayit.son_uid;
-  const { host, port } = imapSunucusu(kutu);
-  const istemci = new ImapFlow({
-    host,
-    port,
-    secure: port === 993,
-    auth: { user: kutu.user, pass: kutu.pass },
-    logger: false,
-    disableAutoIdle: true,
-    connectionTimeout: 15_000,
-    greetingTimeout: 15_000,
-    socketTimeout: 60_000,
-  });
+  const istemci = imapIstemcisi(kutu);
   try {
     await istemci.connect();
     const kilit = await istemci.getMailboxLock("INBOX", { readOnly: true });

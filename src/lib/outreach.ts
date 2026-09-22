@@ -1,6 +1,8 @@
 import "server-only";
 import { resolve4, resolve6, resolveMx } from "node:dns/promises";
+import { ImapFlow } from "imapflow";
 import nodemailer from "nodemailer";
+import MailComposer from "nodemailer/lib/mail-composer";
 import { altbilgi, type GonderenKutusu, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
 
@@ -13,9 +15,14 @@ import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
  * ek DNS kaydı ve üçüncü taraf hesabı gerekmiyor. Neden ayrı kutu: bkz.
  * `ayarlariOku` — form bildirimleri etkilenmesin.
  *
- * Yalnızca DÜZ METİN. Soğuk e-postada HTML, görsel ve izleme pikseli spam
- * puanını yükseltiyor; kimin tıkladığını zaten bağlantıdaki UTM söylüyor
- * (`scripts/outreach-olcum.py`).
+ * Düz metin + SADE HTML (multipart/alternative): HTML yalnızca paragraf,
+ * satır sonu ve bağlantı — görsel, uzak kaynak, izleme pikseli YOK. Soğuk
+ * e-postada görsel ve izleme spam puanını yükseltiyor; kimin tıkladığını
+ * zaten bağlantıdaki UTM söylüyor (`scripts/outreach-olcum.py`). Düz metin
+ * hâli eskisiyle birebir aynı.
+ *
+ * İleti önce BURADA kurulur (MailComposer); aynı ham ileti hem SMTP'ye gider
+ * hem kutunun Gönderilmiş klasörüne konur — ikisi arasında fark olamaz.
  */
 
 export const ADRES_SATIRI = `${CONTACT.addressStreet}, ${CONTACT.addressLocality} / ${CONTACT.addressRegion}, Türkiye`;
@@ -32,6 +39,91 @@ export function altbilgiMetni(dil: string, iptalUrl: string): string {
 /** Gönderilecek tam metin: panelde yazılan gövde + değiştirilemeyen altbilgi. */
 export function tamMetin(govde: string, dil: string, iptalUrl: string): string {
   return govde.trimEnd() + altbilgiMetni(dil, iptalUrl);
+}
+
+const kacir = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+const BAGLANTI = /https?:\/\/[^\s<>"]+[^\s<>".,;:!?)]/g;
+
+/** Düz metinden sade HTML: boş satır paragraf, satır sonu <br>, adresler bağlantı. */
+function paragraflar(metin: string): string {
+  return metin
+    .trim()
+    .split(/\n{2,}/)
+    .map((p) => {
+      const ic = kacir(p).replace(BAGLANTI, (u) => `<a href="${u}">${u}</a>`);
+      return `<p style="margin:0 0 14px">${ic.replace(/\n/g, "<br>")}</p>`;
+    })
+    .join("\n");
+}
+
+/** HTML hâli: aynı gövde + küçük gri altbilgi. Tek sütun, sistem yazı tipi, en çok 600 px. */
+export function tamHtml(govde: string, dil: string, iptalUrl: string): string {
+  const alt = altbilgiMetni(dil, iptalUrl).replace(/^\s*--\s*\n/, "").trim();
+  const altHtml = kacir(alt)
+    .replace(BAGLANTI, (u) => `<a href="${u}" style="color:#777">${u}</a>`)
+    .replace(/\n/g, "<br>");
+  return (
+    `<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0">` +
+    `<div style="max-width:600px;padding:8px 4px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222">` +
+    paragraflar(govde) +
+    `<p style="margin:22px 0 0;padding-top:10px;border-top:1px solid #ddd;font-size:12px;line-height:1.5;color:#777">${altHtml}</p>` +
+    `</div></body></html>`
+  );
+}
+
+/** IMAP sunucusu: OUTREACH_IMAP_HOST / _PORT, yoksa gönderen kutusunun sunucusu, 993. */
+export function imapSunucusu(kutu: GonderenKutusu) {
+  const host = (process.env.OUTREACH_IMAP_HOST ?? "").trim() || kutu.host;
+  const port = Number(process.env.OUTREACH_IMAP_PORT) || 993;
+  return { host, port };
+}
+
+export function imapIstemcisi(kutu: GonderenKutusu) {
+  const { host, port } = imapSunucusu(kutu);
+  return new ImapFlow({
+    host,
+    port,
+    secure: port === 993,
+    auth: { user: kutu.user, pass: kutu.pass },
+    logger: false,
+    disableAutoIdle: true,
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 60_000,
+  });
+}
+
+/**
+ * Giden iletinin kopyasını kutunun Gönderilmiş klasörüne koyar (IMAP APPEND,
+ * okunmuş işaretli) — e-posta istemcisinin kendiliğinden yaptığı iş: Liza
+ * kutuyu Thunderbird'de açınca giden e-postayı da görür, yanıt gelince konuşma
+ * birleşir. Klasör yoksa oluşturulur. Hata olursa gönderim yine geçerli —
+ * dönen metin nota yazılır; başarılıysa null.
+ */
+export async function gonderilmislereEkle(kutu: GonderenKutusu, ham: Buffer): Promise<string | null> {
+  const istemci = imapIstemcisi(kutu);
+  try {
+    await istemci.connect();
+    const klasorler = await istemci.list();
+    const gonderilmis =
+      klasorler.find((k) => k.specialUse === "\\Sent") ??
+      klasorler.find((k) => /^(inbox[./])?(sent|sent items|sent messages)$/i.test(k.path));
+    let yol = gonderilmis?.path;
+    if (!yol) {
+      const ayrac = klasorler.find((k) => k.delimiter)?.delimiter ?? ".";
+      yol = klasorler.some((k) => k.path.toUpperCase().startsWith(`INBOX${ayrac}`)) ? `INBOX${ayrac}Sent` : "Sent";
+      await istemci.mailboxCreate(yol);
+    }
+    await istemci.append(yol, ham, ["\\Seen"]);
+    await istemci.logout();
+    return null;
+  } catch (h) {
+    istemci.close();
+    const x = h as { message?: string; responseText?: string };
+    return `${x.responseText || x.message || String(h)}`.slice(0, 200);
+  }
 }
 
 /**
@@ -74,10 +166,11 @@ export async function postaSunucusu(eposta: string): Promise<"var" | "yok" | "bi
  */
 const SERT_SINIR_MS = 45_000;
 
+/** `metin`: giden düz metin (kayıt için), her durumda dolu. `ham`: giden ileti (Gönderilmiş'e kopya için). */
 export type GonderimCevabi =
-  | { durum: "ok"; yanit: string; mesajKimligi: string }
-  | { durum: "hata"; hata: SmtpHatasi }
-  | { durum: "belirsiz"; yanit: string };
+  | { durum: "ok"; yanit: string; mesajKimligi: string; ham: Buffer; metin: string }
+  | { durum: "hata"; hata: SmtpHatasi; metin: string }
+  | { durum: "belirsiz"; yanit: string; metin: string };
 
 export async function tanitimGonder(
   ayar: Pick<OutreachAyarlari, "yanitAdresi" | "gizliKopya">,
@@ -100,13 +193,15 @@ export async function tanitimGonder(
     socketTimeout: 60_000,
   });
 
-  const gorev = tasiyici.sendMail({
+  const metin = tamMetin(e.govde, e.dil, e.iptalUrl);
+  const dugum = new MailComposer({
     from: { name: kutu.ad, address: kutu.user },
     to: e.alici,
     ...(ayar.yanitAdresi ? { replyTo: ayar.yanitAdresi } : {}),
     ...(ayar.gizliKopya ? { bcc: ayar.gizliKopya } : {}),
     subject: e.konu,
-    text: tamMetin(e.govde, e.dil, e.iptalUrl),
+    text: metin,
+    html: tamHtml(e.govde, e.dil, e.iptalUrl),
     headers: {
       /* Gmail/Outlook bunu görünce adresin yanına "abonelikten çık" koyuyor.
          Alıcıya "spam" düğmesinden daha kolay bir yol vermek, itibarı
@@ -114,7 +209,11 @@ export async function tanitimGonder(
       "List-Unsubscribe": `<${e.iptalUrl}>, <mailto:${kutu.user}?subject=unsubscribe>`,
       "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
     },
-  });
+  }).compile();
+  /* Bcc başlığı ham iletiye yazılmaz (MailComposer atar); alıcılar zarfta. */
+  const ham = await dugum.build();
+  const mesajKimligi = dugum.messageId();
+  const gorev = tasiyici.sendMail({ envelope: dugum.getEnvelope(), raw: ham });
 
   let saat: ReturnType<typeof setTimeout> | undefined;
   const zamanAsimi = new Promise<"zaman">((coz) => {
@@ -124,7 +223,7 @@ export async function tanitimGonder(
   try {
     const r = await Promise.race([gorev, zamanAsimi]);
     if (r === "zaman") {
-      return { durum: "belirsiz", yanit: `Sunucu ${SERT_SINIR_MS / 1000} sn içinde cevap vermedi` };
+      return { durum: "belirsiz", yanit: `Sunucu ${SERT_SINIR_MS / 1000} sn içinde cevap vermedi`, metin };
     }
     /* Tek alıcı var; reddedildiyse nodemailer zaten hata fırlatır. Yine de
        "kabul edildi" listesi boşsa gitmiş saymıyoruz. */
@@ -132,9 +231,10 @@ export async function tanitimGonder(
       return {
         durum: "hata",
         hata: { code: "EENVELOPE", responseCode: 550, response: String(r.response ?? "alıcı kabul edilmedi") },
+        metin,
       };
     }
-    return { durum: "ok", yanit: String(r.response ?? ""), mesajKimligi: String(r.messageId ?? "") };
+    return { durum: "ok", yanit: String(r.response ?? ""), mesajKimligi, ham, metin };
   } catch (h) {
     const x = h as SmtpHatasi;
     return {
@@ -146,6 +246,7 @@ export async function tanitimGonder(
         command: x.command,
         message: x.message,
       },
+      metin,
     };
   } finally {
     clearTimeout(saat);
