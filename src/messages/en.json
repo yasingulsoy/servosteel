@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Coil Processing Lines: Slitting, Cut-to-Length, Roll Forming",
+    "title": "Roll Forming, Slitting & Cut-to-Length Line Manufacturer",
     "description": "Coil processing line manufacturer: custom slitting, cut-to-length and roll forming lines plus servo press feeders, from Istanbul to 48+ countries."
   },
   "topbar": {
@@ -286,6 +286,60 @@
     ],
     "ctaTitle": "Let's size your slitting line",
     "ctaText": "Send us your coil weight, sheet thickness and strip widths; we'll define the right series and line layout together."
+  },
+  "ruloIsleme": {
+    "nav": "Coil Processing Lines",
+    "short": "All three line families — slitting, cut-to-length and roll forming — in one place.",
+    "metaTitle": "Coil Processing Lines: Slitting, Cut-to-Length, Roll Form",
+    "metaDesc": "Coil processing lines built in Istanbul: slitting, cut-to-length and roll forming, with the decoilers, straighteners, servo feeders and stackers that run them.",
+    "eyebrow": "Lines",
+    "title": "Coil Processing Lines",
+    "desc": "Every line that works from coil starts the same way: decoiler, straightener, feed. What follows depends on the product — strip, sheet or profile. We design and build all three families, and each line is sized to your profile, thickness and capacity.",
+    "familiesTitle": "Three line families",
+    "families": {
+      "slitting": "Splits a wide coil into strips at your widths: 1,500-15,000 kg coils, 0.5-5 mm thickness.",
+      "ctl": "Turns coil into cut sheets: straightening, servo feeding, guillotine and stacking on one PLC.",
+      "rollform": "Forms the profile straight from coil: cable tray, solar profile, racking, scaffolding plank, guardrail, C/Sigma/Omega."
+    },
+    "machinesTitle": "Units on the line",
+    "machinesText": "We build the units at both ends of the line as well. They are supplied on their own too, and added to lines already running.",
+    "stepsTitle": "How a line is put together",
+    "steps": [
+      {
+        "title": "A profile drawing or a capacity",
+        "text": "Tell us what you produce, the material thickness and the capacity you are after."
+      },
+      {
+        "title": "Line layout and offer in 48 hours",
+        "text": "Our engineering team draws the line layout and sends it with a technical offer."
+      },
+      {
+        "title": "Tested at our factory, commissioned at yours",
+        "text": "Every line is assembled and tested at our factory before shipment; installation, commissioning and operator training are included in the price."
+      }
+    ],
+    "faqEyebrow": "FAQ",
+    "faqTitle": "About coil processing lines",
+    "faq": [
+      {
+        "q": "What is a coil processing line?",
+        "a": "It is the common name for lines that uncoil and process steel in coil form. All three start with a decoiler and a straightener: a slitting line gives strip, a cut-to-length line gives cut sheets, a roll forming line gives a finished profile."
+      },
+      {
+        "q": "Do I need slitting or cut-to-length?",
+        "a": "Slitting if you need strip, cut-to-length if you need sheets at a set length. The two often run side by side; we wrote the difference out in detail on the comparison page."
+      },
+      {
+        "q": "Can a machine be added to a line already running?",
+        "a": "In most cases yes. Decoilers, straightener servo feeders and stackers are supplied on their own; what decides it is the line's discharge height and whether the control system can give a signal."
+      },
+      {
+        "q": "Are installation and training included?",
+        "a": "Yes. After the line is assembled and tested at our factory, our engineers install it at your plant, commission it and train your operators; all three are in the price. Our lines run in more than 48 countries today."
+      }
+    ],
+    "ctaTitle": "Let's size your line together",
+    "ctaText": "Send your profile drawing or the capacity you need; we come back within 48 hours with a line layout and a technical offer."
   },
   "boykesme": {
     "metaTitle": "Cut-to-Length Lines: Coil to Sheet Cutting Machine",

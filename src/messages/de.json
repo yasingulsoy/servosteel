@@ -263,6 +263,60 @@
     "ctaTitle": "Legen wir Ihre Längsteilanlage aus",
     "ctaText": "Nennen Sie Coilgewicht, Blechdicke und Bandmaße; gemeinsam definieren wir die passende Baureihe und das Layout."
   },
+  "ruloIsleme": {
+    "nav": "Coil-Bearbeitungsanlagen",
+    "short": "Alle drei Anlagenfamilien — Längsteilen, Querteilen, Rollformen — auf einer Seite.",
+    "metaTitle": "Coil-Anlagen: Längsteilen, Querteilen, Rollformen",
+    "metaDesc": "Coil-Bearbeitungsanlagen aus Istanbul: Längsteil-, Querteil- und Rollformanlagen samt Haspeln, Richtmaschinen, Servovorschüben und Staplern.",
+    "eyebrow": "Anlagen",
+    "title": "Coil-Bearbeitungsanlagen",
+    "desc": "Jede Anlage, die vom Coil ausgeht, beginnt gleich: Abwickelhaspel, Richtmaschine, Vorschub. Danach trennen sich die Wege — Streifen, Tafel oder Profil. Wir konstruieren und bauen alle drei Familien; jede Anlage wird auf Ihr Profil, Ihre Dicke und Ihre Kapazität ausgelegt.",
+    "familiesTitle": "Drei Anlagenfamilien",
+    "families": {
+      "slitting": "Teilt breite Coils in Streifen in Ihren Breiten: Coils von 1.500-15.000 kg, Dicke 0,5-5 mm.",
+      "ctl": "Macht aus dem Coil Tafeln auf Maß: Richten, Servovorschub, Schere und Stapeln auf einer SPS.",
+      "rollform": "Formt das Profil direkt aus dem Coil: Kabelrinnen, Solarprofile, Regale, Gerüstbohlen, Leitplanken, C-/Sigma-/Omega-Profile."
+    },
+    "machinesTitle": "Einheiten der Anlage",
+    "machinesText": "Die Einheiten am Anfang und am Ende der Anlage bauen wir ebenfalls selbst. Sie sind auch einzeln erhältlich und lassen sich in laufende Anlagen einbinden.",
+    "stepsTitle": "So entsteht eine Anlage",
+    "steps": [
+      {
+        "title": "Profilzeichnung oder Kapazität",
+        "text": "Schreiben Sie uns, was Sie fertigen, welche Blechdicke und welche Kapazität Sie brauchen."
+      },
+      {
+        "title": "Layout und Angebot in 48 Stunden",
+        "text": "Unser Engineering-Team erstellt das Anlagenlayout und schickt es mit einem technischen Angebot."
+      },
+      {
+        "title": "Test im Werk, Inbetriebnahme bei Ihnen",
+        "text": "Jede Anlage wird vor dem Versand in unserem Werk montiert und getestet; Montage, Inbetriebnahme und Bedienerschulung sind im Preis enthalten."
+      }
+    ],
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Rund um Coil-Bearbeitungsanlagen",
+    "faq": [
+      {
+        "q": "Was ist eine Coil-Bearbeitungsanlage?",
+        "a": "So heißen Anlagen, die Stahl vom Coil abwickeln und weiterverarbeiten. Alle drei beginnen mit Haspel und Richtmaschine: die Längsteilanlage liefert Streifen, die Querteilanlage Tafeln auf Maß, die Rollformanlage ein fertiges Profil."
+      },
+      {
+        "q": "Längsteilen oder Querteilen?",
+        "a": "Längsteilen, wenn Sie Streifen brauchen; Querteilen, wenn Sie Tafeln auf feste Länge brauchen. Oft laufen beide nebeneinander; den Unterschied haben wir auf der Vergleichsseite ausführlich beschrieben."
+      },
+      {
+        "q": "Kann eine Maschine in eine laufende Anlage ergänzt werden?",
+        "a": "Meistens ja. Haspeln, Richt-Servovorschübe und Stapler liefern wir auch einzeln; entscheidend sind die Abwurfhöhe der Anlage und ob die Steuerung ein Signal geben kann."
+      },
+      {
+        "q": "Sind Montage und Schulung inbegriffen?",
+        "a": "Ja. Nach Montage und Test im Werk bauen unsere Ingenieure die Anlage bei Ihnen auf, nehmen sie in Betrieb und schulen Ihre Bediener; alles drei ist im Preis enthalten. Unsere Anlagen laufen heute in mehr als 48 Ländern."
+      }
+    ],
+    "ctaTitle": "Lassen Sie uns Ihre Anlage auslegen",
+    "ctaText": "Senden Sie uns Ihre Profilzeichnung oder Ihren Kapazitätsbedarf; innerhalb von 48 Stunden antworten wir mit Layout und technischem Angebot."
+  },
   "boykesme": {
     "metaTitle": "Querteilanlagen: Coil zu Blechtafel schneiden",
     "metaDesc": "Querteilanlagen: präzises Schneiden vom Coil zur Tafel. Richten, Servovorschub, Tafelschere und Stapeln über eine zentrale SPS. Schneider-Steuerungen.",

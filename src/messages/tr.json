@@ -263,6 +263,60 @@
     "ctaTitle": "Dilme hattınızı boyutlandıralım",
     "ctaText": "Rulo ağırlığı, sac kalınlığı ve şerit ölçülerinizi iletin; size uygun seriyi ve hat yerleşimini birlikte netleştirelim."
   },
+  "ruloIsleme": {
+    "nav": "Rulo İşleme Hatları",
+    "short": "Dilme, boy kesme ve roll form hatlarının tamamı tek sayfada.",
+    "metaTitle": "Rulo İşleme Hatları: Dilme, Boy Kesme, Roll Form",
+    "metaDesc": "Rulodan şeride, levhaya ya da profile: dilme, boy kesme ve roll form hatları; açıcı, doğrultucu, servo besleyici ve istifleyiciyle birlikte İstanbul'da üretilir.",
+    "eyebrow": "Hatlar",
+    "title": "Rulo İşleme Hatları",
+    "desc": "Rulo sacı işleyen her hat aynı yerde başlar: açıcı, doğrultucu, besleme. Sonrası ürüne göre ayrışır — şerit, levha ya da profil. Üç aileyi de tasarlayıp üretiyoruz; hat profilinize, kalınlığınıza ve kapasitenize göre boyutlandırılır.",
+    "familiesTitle": "Üç hat ailesi",
+    "families": {
+      "slitting": "Geniş ruloyu istediğiniz genişlikte şeritlere ayırır: 1.500-15.000 kg rulo, 0,5-5 mm kalınlık.",
+      "ctl": "Ruloyu ölçüsünde levhaya çevirir: doğrultma, servo besleme, giyotin ve istifleme tek PLC üzerinde.",
+      "rollform": "Profili doğrudan rulodan çıkarır: kablo kanalı, solar profil, raf, iskele kalası, yol bariyeri, C/Sigma/Omega."
+    },
+    "machinesTitle": "Hattın üniteleri",
+    "machinesText": "Hattın girişindeki ve çıkışındaki makineleri de kendimiz üretiyoruz. Tek tek de veriliyor, çalışan bir hatta da ekleniyor.",
+    "stepsTitle": "Hat nasıl kurulur",
+    "steps": [
+      {
+        "title": "Profil çizimi ya da kapasite",
+        "text": "Ne üreteceğinizi, sac kalınlığını ve hedeflediğiniz kapasiteyi yazmanız yeterli."
+      },
+      {
+        "title": "48 saatte yerleşim ve teklif",
+        "text": "Mühendislik ekibimiz hattın yerleşimini çıkarır, teknik teklifle birlikte gönderir."
+      },
+      {
+        "title": "Fabrikada test, sahada devreye alma",
+        "text": "Her hat sevkiyattan önce fabrikamızda kurulup test edilir; kurulum, devreye alma ve operatör eğitimi fiyata dahildir."
+      }
+    ],
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Rulo işleme hatları hakkında",
+    "faq": [
+      {
+        "q": "Rulo işleme hattı nedir?",
+        "a": "Rulo hâlindeki sacı açıp işleyen hatların ortak adıdır. Üçü de açıcı ve doğrultucuyla başlar: dilme hattı şerit, boy kesme hattı ölçülü levha, roll form hattı ise bitmiş profil verir."
+      },
+      {
+        "q": "Dilme mi boy kesme mi gerekiyor?",
+        "a": "Şerit üretecekseniz dilme, ölçülü levha kesecekseniz boy kesme hattı. İkisi çoğu zaman yan yana çalışır; farkını karşılaştırma sayfasında ayrıntılı yazdık."
+      },
+      {
+        "q": "Çalışan hattıma makine eklenebilir mi?",
+        "a": "Çoğu durumda evet. Açıcı, doğrultmalı servo besleyici ve istifleyici tek başına da veriliyor; belirleyici olan hattın boşaltma yüksekliği ve kontrol sisteminin sinyal verip veremediği."
+      },
+      {
+        "q": "Kurulum ve eğitim fiyata dahil mi?",
+        "a": "Evet. Hat fabrikamızda kurulup test edildikten sonra mühendislerimiz tesisinizde kurar, devreye alır ve operatörlerinizi eğitir; üçü de fiyata dahildir. Hatlarımız bugün 48'den fazla ülkede çalışıyor."
+      }
+    ],
+    "ctaTitle": "Hattınızı birlikte boyutlandıralım",
+    "ctaText": "Profil çiziminizi ya da kapasite ihtiyacınızı gönderin; 48 saat içinde hat yerleşimi ve teknik teklifle dönelim."
+  },
   "boykesme": {
     "metaTitle": "Boy Kesme Hatları: Rulodan Levha Kesme Makinesi",
     "metaDesc": "Boy kesme hatları: rulodan plakaya hassas kesim. Doğrultma, servo besleme, giyotin ve istifleme tek PLC üzerinden yönetilir. Schneider kontrol sistemleri.",

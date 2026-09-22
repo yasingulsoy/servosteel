@@ -9,6 +9,7 @@ import { sectors } from "@/lib/sectors";
 
 const paths = [
   { path: "", priority: 1 },
+  { path: "/rulo-isleme-hatlari", priority: 0.9 },
   { path: "/roll-form-hatlari", priority: 0.9 },
   { path: "/dilme-hatlari", priority: 0.9 },
   { path: "/boy-kesme-hatlari", priority: 0.9 },

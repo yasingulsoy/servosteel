@@ -263,6 +263,60 @@
     "ctaTitle": "Méretezzük a hasító sorát",
     "ctaText": "Adja meg a tekercssúlyt, a lemezvastagságot és a szalagméreteket; közösen tisztázzuk a megfelelő szériát és az elrendezést."
   },
+  "ruloIsleme": {
+    "nav": "Tekercsfeldolgozó sorok",
+    "short": "Mindhárom sorcsalád — hasítás, keresztvágás, profilozás — egy oldalon.",
+    "metaTitle": "Tekercsfeldolgozó sorok: hasítás, darabolás, profilozás",
+    "metaDesc": "Tekercsfeldolgozó sorok Isztambulból: hasítósorok, keresztvágó sorok és profilozó sorok, letekercselőkkel, egyengetőkkel, szervo adagolókkal és rakatolókkal.",
+    "eyebrow": "Sorok",
+    "title": "Tekercsfeldolgozó sorok",
+    "desc": "Minden sor, amely tekercsből indul, ugyanúgy kezdődik: letekercselő, egyengető, adagolás. Utána válik el az út — szalag, tábla vagy profil. Mindhárom családot mi tervezzük és gyártjuk; a sor az Önök profiljához, lemezvastagságához és kapacitásához méretezett.",
+    "familiesTitle": "Három sorcsalád",
+    "families": {
+      "slitting": "A széles tekercset az Önök szélességeire hasítja: 1.500-15.000 kg tekercs, 0,5-5 mm vastagság.",
+      "ctl": "A tekercsből méretre vágott táblát készít: egyengetés, szervo adagolás, olló és rakatolás egyetlen PLC-n.",
+      "rollform": "A profilt közvetlenül tekercsből formázza: kábeltálca, napelemes profil, polc, állványpalló, szalagkorlát, C/Szigma/Omega."
+    },
+    "machinesTitle": "A sor egységei",
+    "machinesText": "A sor elején és végén álló gépeket is mi gyártjuk. Külön is szállítjuk őket, és már működő sorba is beépíthetők.",
+    "stepsTitle": "Hogyan áll össze egy sor",
+    "steps": [
+      {
+        "title": "Profilrajz vagy kapacitás",
+        "text": "Elég megírni, mit gyártanak, milyen lemezvastagsággal és milyen kapacitással."
+      },
+      {
+        "title": "Elrendezés és ajánlat 48 órán belül",
+        "text": "Mérnökcsapatunk elkészíti a sor elrendezését, és műszaki ajánlattal együtt küldi."
+      },
+      {
+        "title": "Gyárunkban tesztelve, Önöknél üzembe helyezve",
+        "text": "Minden sort szállítás előtt összeszerelünk és letesztelünk a gyárunkban; a telepítés, az üzembe helyezés és a kezelők betanítása benne van az árban."
+      }
+    ],
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "A tekercsfeldolgozó sorokról",
+    "faq": [
+      {
+        "q": "Mi az a tekercsfeldolgozó sor?",
+        "a": "Így hívjuk azokat a sorokat, amelyek a tekercsben lévő acélt letekercselik és feldolgozzák. Mindhárom letekercselővel és egyengetővel kezdődik: a hasítósor szalagot, a keresztvágó sor méretre vágott táblát, a profilozó sor kész profilt ad."
+      },
+      {
+        "q": "Hasítás vagy keresztvágás kell?",
+        "a": "Hasítás, ha szalagra van szükségük; keresztvágás, ha adott hosszúságú táblára. A kettő gyakran együtt dolgozik; a különbséget az összehasonlító oldalon részletesen leírtuk."
+      },
+      {
+        "q": "Beépíthető gép egy már működő sorba?",
+        "a": "A legtöbb esetben igen. A letekercselőt, az egyengetős szervo adagolót és a rakatolót külön is szállítjuk; a sor kiadási magassága és a vezérlés jeladása dönti el."
+      },
+      {
+        "q": "A telepítés és a betanítás benne van az árban?",
+        "a": "Igen. A gyári összeszerelés és teszt után mérnökeink telepítik a sort Önöknél, üzembe helyezik és betanítják a kezelőket; mindhárom az ár része. Soraink ma több mint 48 országban működnek."
+      }
+    ],
+    "ctaTitle": "Méretezzük együtt a sorukat",
+    "ctaText": "Küldjék el a profilrajzot vagy a szükséges kapacitást; 48 órán belül elrendezéssel és műszaki ajánlattal válaszolunk."
+  },
   "boykesme": {
     "metaTitle": "Keresztvágó Sorok",
     "metaDesc": "Keresztvágó sorok: pontos vágás tekercsből táblává. Egyengetés, szervoadagolás, olló és rakatolás egyetlen PLC-ről vezérelve. Schneider vezérlés.",

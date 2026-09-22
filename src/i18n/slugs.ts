@@ -27,6 +27,8 @@ export const SLUG_BASE_LOCALE = "tr";
 
 /** Rota segmentleri (bölüm kökleri). */
 export const ROUTE_SLUGS = {
+  /* Uc hat ailesinin ust sayfasi — "coil processing line(s)" aramasinin karsiligi */
+  "rulo-isleme-hatlari": "coil-processing-lines",
   "dilme-hatlari": "coil-slitting-lines",
   "boy-kesme-hatlari": "cut-to-length-lines",
   "roll-form-hatlari": "roll-forming-lines",

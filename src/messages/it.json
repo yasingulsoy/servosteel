@@ -263,6 +263,60 @@
     "ctaTitle": "Dimensioniamo la tua linea di taglio",
     "ctaText": "Comunicaci peso del coil, spessore e larghezze dei nastri; definiremo insieme la serie e il layout."
   },
+  "ruloIsleme": {
+    "nav": "Linee di lavorazione coil",
+    "short": "Tutte e tre le famiglie di linee — taglio longitudinale, a misura e profilatura — in un'unica pagina.",
+    "metaTitle": "Linee di lavorazione coil: taglio e profilatura",
+    "metaDesc": "Linee di lavorazione coil costruite a Istanbul: taglio longitudinale, taglio a misura e profilatura, con svolgitori, raddrizzatrici, alimentatori servo e impilatori.",
+    "eyebrow": "Linee",
+    "title": "Linee di lavorazione coil",
+    "desc": "Ogni linea che parte dal coil comincia allo stesso modo: svolgitore, raddrizzatrice, alimentazione. Poi le strade si dividono — nastro, foglio o profilo. Progettiamo e costruiamo tutte e tre le famiglie; ogni linea è dimensionata sul vostro profilo, spessore e capacità.",
+    "familiesTitle": "Tre famiglie di linee",
+    "families": {
+      "slitting": "Divide il coil largo in nastri nelle vostre larghezze: coil da 1.500-15.000 kg, spessore 0,5-5 mm.",
+      "ctl": "Trasforma il coil in fogli a misura: raddrizzatura, alimentazione servo, cesoia e impilaggio su un unico PLC.",
+      "rollform": "Forma il profilo direttamente dal coil: passerelle portacavi, profili fotovoltaici, scaffalature, tavole da ponteggio, guardrail, C/Sigma/Omega."
+    },
+    "machinesTitle": "Unità della linea",
+    "machinesText": "Costruiamo anche le unità all'ingresso e all'uscita della linea. Vengono fornite singolarmente e si inseriscono in linee già in funzione.",
+    "stepsTitle": "Come nasce una linea",
+    "steps": [
+      {
+        "title": "Un disegno del profilo o una capacità",
+        "text": "Basta indicarci cosa producete, lo spessore del materiale e la capacità che vi serve."
+      },
+      {
+        "title": "Layout e offerta in 48 ore",
+        "text": "Il nostro ufficio tecnico prepara il layout della linea e lo invia con un'offerta tecnica."
+      },
+      {
+        "title": "Collaudata in fabbrica, messa in servizio da voi",
+        "text": "Ogni linea viene assemblata e collaudata nel nostro stabilimento prima della spedizione; installazione, messa in servizio e formazione degli operatori sono incluse nel prezzo."
+      }
+    ],
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Sulle linee di lavorazione coil",
+    "faq": [
+      {
+        "q": "Che cos'è una linea di lavorazione coil?",
+        "a": "È il nome comune delle linee che svolgono e lavorano l'acciaio in coil. Tutte e tre partono da svolgitore e raddrizzatrice: la linea di taglio longitudinale dà nastri, quella di taglio a misura dà fogli, la linea di profilatura dà un profilo finito."
+      },
+      {
+        "q": "Serve il taglio longitudinale o quello a misura?",
+        "a": "Longitudinale se vi servono nastri, a misura se vi servono fogli di lunghezza fissa. Spesso lavorano insieme; la differenza è spiegata in dettaglio nella pagina di confronto."
+      },
+      {
+        "q": "Si può aggiungere una macchina a una linea già in funzione?",
+        "a": "Nella maggior parte dei casi sì. Svolgitori, alimentatori servo con raddrizzatrice e impilatori sono forniti anche singolarmente; decidono l'altezza di scarico della linea e la possibilità del controllo di dare un segnale."
+      },
+      {
+        "q": "Installazione e formazione sono incluse?",
+        "a": "Sì. Dopo montaggio e collaudo nel nostro stabilimento, i nostri tecnici installano la linea presso di voi, la mettono in servizio e formano i vostri operatori; tutto è incluso nel prezzo. Le nostre linee oggi lavorano in più di 48 paesi."
+      }
+    ],
+    "ctaTitle": "Dimensioniamo insieme la vostra linea",
+    "ctaText": "Inviate il disegno del profilo o la capacità che vi serve; rispondiamo entro 48 ore con layout e offerta tecnica."
+  },
   "boykesme": {
     "metaTitle": "Linee di Taglio a Misura",
     "metaDesc": "Linee di taglio a misura: taglio di precisione da coil a foglio. Raddrizzatura, alimentazione servo, ghigliottina e impilaggio gestiti da un unico PLC.",

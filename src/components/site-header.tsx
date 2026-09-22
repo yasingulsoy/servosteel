@@ -283,6 +283,7 @@ export function SiteHeader() {
   const tHub = useTranslations("hub");
   const tSec = useTranslations("sectors");
   const tHome = useTranslations("home");
+  const tRulo = useTranslations("ruloIsleme");
   const ak = getAkademiUi(useLocale());
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -321,6 +322,13 @@ export function SiteHeader() {
     icon: i.icon,
   }));
   const hatMega: MegaItem[] = [
+    /* Üst sayfa başta: "coil processing line" arayan alıcı önce üçünün farkını
+       öğrenmek istiyor (bkz. rulo-isleme-hatlari/page.tsx) */
+    {
+      label: tRulo("nav"),
+      href: "/rulo-isleme-hatlari",
+      desc: tRulo("short"),
+    },
     {
       label: t("slitting"),
       href: "/dilme-hatlari",
@@ -505,6 +513,9 @@ export function SiteHeader() {
                 ))}
               </ul>
             </details>
+            <Link href="/rulo-isleme-hatlari" onClick={kapat} className={mobilSatir}>
+              {tRulo("nav")}
+            </Link>
             <Link href="/dilme-hatlari" onClick={kapat} className={mobilSatir}>
               {t("slitting")}
             </Link>

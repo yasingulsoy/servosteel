@@ -12,6 +12,12 @@
  * süzülür, olmayan dilde bölüm hiç basılmaz.
  */
 export const relatedReading: Record<string, string[]> = {
+  "/rulo-isleme-hatlari": [
+    "rulo-hatti-nereden-alinmali",
+    "hat-ureticisi-nasil-denetlenir",
+    "rulo-dilme-hatti-nasil-secilir",
+    "boy-kesme-hatti-nasil-secilir",
+  ],
   "/dilme-hatlari": [
     "rulo-dilme-hatti-nasil-secilir",
     "rulo-dilme-hatti-maliyeti",

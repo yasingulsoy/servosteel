@@ -263,6 +263,60 @@
     "ctaTitle": "Dobierzmy Twoją linię cięcia",
     "ctaText": "Podaj masę kręgu, grubość blachy i wymiary taśm; wspólnie ustalimy właściwą serię i układ linii."
   },
+  "ruloIsleme": {
+    "nav": "Linie do przetwarzania kręgów",
+    "short": "Wszystkie trzy rodziny linii — cięcie wzdłużne, poprzeczne i profilowanie — na jednej stronie.",
+    "metaTitle": "Linie do przetwarzania kręgów: cięcie i profilowanie",
+    "metaDesc": "Linie do przetwarzania kręgów budowane w Stambule: cięcie wzdłużne, cięcie poprzeczne i profilowanie, wraz z odwijakami, prostownicami, podajnikami serwo i układarkami.",
+    "eyebrow": "Linie",
+    "title": "Linie do przetwarzania kręgów",
+    "desc": "Każda linia, która zaczyna od kręgu, zaczyna tak samo: odwijak, prostownica, podawanie. Dalej drogi się rozchodzą — taśma, arkusz albo profil. Projektujemy i budujemy wszystkie trzy rodziny; linia jest dobierana do Państwa profilu, grubości i wydajności.",
+    "familiesTitle": "Trzy rodziny linii",
+    "families": {
+      "slitting": "Dzieli szeroki krąg na taśmy o Państwa szerokościach: kręgi 1.500-15.000 kg, grubość 0,5-5 mm.",
+      "ctl": "Zamienia krąg w arkusze na wymiar: prostowanie, podawanie serwo, nożyce i układanie na jednym PLC.",
+      "rollform": "Formuje profil prosto z kręgu: koryta kablowe, profile fotowoltaiczne, regały, podesty rusztowaniowe, bariery drogowe, C/Sigma/Omega."
+    },
+    "machinesTitle": "Zespoły linii",
+    "machinesText": "Maszyny na początku i na końcu linii również budujemy sami. Dostarczamy je osobno i wbudowujemy w linie już pracujące.",
+    "stepsTitle": "Jak powstaje linia",
+    "steps": [
+      {
+        "title": "Rysunek profilu albo wydajność",
+        "text": "Wystarczy napisać, co Państwo produkują, jaka jest grubość blachy i jakiej wydajności Państwo oczekują."
+      },
+      {
+        "title": "Układ linii i oferta w 48 godzin",
+        "text": "Nasz dział techniczny przygotowuje układ linii i wysyła go razem z ofertą techniczną."
+      },
+      {
+        "title": "Test w naszej fabryce, uruchomienie u Państwa",
+        "text": "Każda linia przed wysyłką jest montowana i testowana w naszej fabryce; montaż, uruchomienie i szkolenie operatorów są wliczone w cenę."
+      }
+    ],
+    "faqEyebrow": "Częste pytania",
+    "faqTitle": "O liniach do przetwarzania kręgów",
+    "faq": [
+      {
+        "q": "Czym jest linia do przetwarzania kręgów?",
+        "a": "To wspólna nazwa linii, które rozwijają i przetwarzają stal w kręgach. Wszystkie trzy zaczynają się od odwijaka i prostownicy: linia cięcia wzdłużnego daje taśmy, linia cięcia poprzecznego arkusze na wymiar, a linia profilująca gotowy profil."
+      },
+      {
+        "q": "Cięcie wzdłużne czy poprzeczne?",
+        "a": "Wzdłużne, jeśli potrzebują Państwo taśm; poprzeczne, jeśli arkuszy o stałej długości. Często pracują obok siebie; różnicę opisaliśmy szczegółowo na stronie porównania."
+      },
+      {
+        "q": "Czy można dołożyć maszynę do pracującej linii?",
+        "a": "W większości przypadków tak. Odwijaki, podajniki serwo z prostownicą i układarki dostarczamy osobno; decyduje wysokość wyładunku linii i to, czy sterowanie może podać sygnał."
+      },
+      {
+        "q": "Czy montaż i szkolenie są wliczone w cenę?",
+        "a": "Tak. Po montażu i testach w naszej fabryce nasi inżynierowie montują linię u Państwa, uruchamiają ją i szkolą operatorów; wszystko to jest w cenie. Nasze linie pracują dziś w ponad 48 krajach."
+      }
+    ],
+    "ctaTitle": "Dobierzmy razem Państwa linię",
+    "ctaText": "Proszę przesłać rysunek profilu albo potrzebną wydajność; w ciągu 48 godzin odpowiemy układem linii i ofertą techniczną."
+  },
   "boykesme": {
     "metaTitle": "Linie Cięcia Poprzecznego",
     "metaDesc": "Linie cięcia poprzecznego: z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i sztaplowanie na jednym sterowniku Schneider.",

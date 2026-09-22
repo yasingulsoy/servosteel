@@ -13,9 +13,11 @@ export function SiteFooter() {
   const tCmp = useTranslations("compare");
   const tSec = useTranslations("sectors");
   const tSus = useTranslations("sustain");
+  const tRulo = useTranslations("ruloIsleme");
   const ak = getAkademiUi(useLocale());
 
   const productLinks = [
+    { label: tRulo("nav"), href: "/rulo-isleme-hatlari" },
     { label: tn("rollform"), href: "/roll-form-hatlari" },
     { label: t("slitting"), href: "/dilme-hatlari" },
     { label: tn("ctl"), href: "/boy-kesme-hatlari" },

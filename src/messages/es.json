@@ -263,6 +263,60 @@
     "ctaTitle": "Dimensionemos su línea de corte",
     "ctaText": "Indíquenos peso de bobina, espesor y anchos de fleje; definiremos juntos la serie adecuada y el layout."
   },
+  "ruloIsleme": {
+    "nav": "Líneas de procesamiento de bobina",
+    "short": "Las tres familias de líneas — corte longitudinal, transversal y perfilado — en una página.",
+    "metaTitle": "Líneas de procesamiento de bobina: corte y perfilado",
+    "metaDesc": "Líneas de procesamiento de bobina fabricadas en Estambul: corte longitudinal, corte transversal y perfilado, con desbobinadores, enderezadoras, alimentadores servo y apiladores.",
+    "eyebrow": "Líneas",
+    "title": "Líneas de procesamiento de bobina",
+    "desc": "Toda línea que parte de la bobina empieza igual: desbobinador, enderezadora, alimentación. Lo que sigue depende del producto — fleje, chapa o perfil. Diseñamos y fabricamos las tres familias, y cada línea se dimensiona según su perfil, espesor y capacidad.",
+    "familiesTitle": "Tres familias de líneas",
+    "families": {
+      "slitting": "Divide la bobina ancha en flejes a sus medidas: bobinas de 1.500-15.000 kg, espesor 0,5-5 mm.",
+      "ctl": "Convierte la bobina en chapas a medida: enderezado, alimentación servo, guillotina y apilado en un solo PLC.",
+      "rollform": "Forma el perfil directamente desde la bobina: bandeja portacables, perfil solar, estantería, plataforma de andamio, barrera vial, C/Sigma/Omega."
+    },
+    "machinesTitle": "Unidades de la línea",
+    "machinesText": "También fabricamos las unidades de entrada y de salida. Se suministran por separado y se integran en líneas que ya están trabajando.",
+    "stepsTitle": "Cómo se arma una línea",
+    "steps": [
+      {
+        "title": "Un plano de perfil o una capacidad",
+        "text": "Basta con indicarnos qué produce, el espesor del material y la capacidad que busca."
+      },
+      {
+        "title": "Layout y oferta en 48 horas",
+        "text": "Nuestro equipo de ingeniería prepara el layout de la línea y lo envía con una oferta técnica."
+      },
+      {
+        "title": "Probada en fábrica, puesta en marcha en su planta",
+        "text": "Cada línea se monta y se prueba en nuestra fábrica antes del envío; la instalación, la puesta en marcha y la capacitación están incluidas en el precio."
+      }
+    ],
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Sobre las líneas de procesamiento de bobina",
+    "faq": [
+      {
+        "q": "¿Qué es una línea de procesamiento de bobina?",
+        "a": "Es el nombre común de las líneas que desenrollan y procesan acero en bobina. Las tres empiezan con desbobinador y enderezadora: la línea de corte longitudinal da flejes, la de corte transversal da chapas a medida y la de perfilado da un perfil terminado."
+      },
+      {
+        "q": "¿Corte longitudinal o transversal?",
+        "a": "Corte longitudinal si necesita flejes; transversal si necesita chapas de una longitud fija. Muchas veces funcionan juntas; explicamos la diferencia en detalle en la página de comparación."
+      },
+      {
+        "q": "¿Se puede añadir una máquina a una línea en marcha?",
+        "a": "En la mayoría de los casos sí. Los desbobinadores, los alimentadores servo con enderezadora y los apiladores se suministran por separado; lo deciden la altura de descarga de la línea y si el control puede dar una señal."
+      },
+      {
+        "q": "¿La instalación y la capacitación están incluidas?",
+        "a": "Sí. Después del montaje y las pruebas en nuestra fábrica, nuestros ingenieros la instalan en su planta, la ponen en marcha y capacitan a sus operadores; las tres cosas están en el precio. Nuestras líneas trabajan hoy en más de 48 países."
+      }
+    ],
+    "ctaTitle": "Dimensionemos su línea juntos",
+    "ctaText": "Envíe su plano de perfil o la capacidad que necesita; respondemos en 48 horas con un layout de línea y una oferta técnica."
+  },
   "boykesme": {
     "metaTitle": "Líneas de Corte a Medida",
     "metaDesc": "Líneas de corte a medida: corte de precisión de bobina a chapa. Enderezado, alimentación servo, guillotina y apilado gestionados por un único PLC.",
