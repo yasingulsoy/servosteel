@@ -115,6 +115,8 @@ export type Gonderim = {
   mesaj_kimligi: string;
   /** Hangi kutudan (tek kutulu dönemde boş) */
   gonderen: string;
+  /** Giden HTML hâli (2026-09-22'den önce boş) */
+  govde_html: string;
 };
 
 export type HedefNot = {
@@ -419,6 +421,36 @@ export async function gonderimler(firmaId: number) {
   );
 }
 
+export const GIDEN_SAYFA_BOYU = 40;
+
+/** "Giden" sayfası: bütün gönderim denemeleri, yeniden eskiye; kutuya ve sonuca göre süzülür. */
+export async function gidenListesi(
+  f: { kutu?: string; sonuc?: string },
+  sayfa = 1
+): Promise<{ satirlar: (Gonderim & { firma: string | null })[]; toplam: number }> {
+  const kosul: string[] = [];
+  const deger: unknown[] = [];
+  if (f.kutu) {
+    deger.push(f.kutu.toLowerCase());
+    kosul.push(`lower(g.gonderen) = $${deger.length}`);
+  }
+  if (f.sonuc && ["ok", "hata", "alici", "belirsiz"].includes(f.sonuc)) {
+    deger.push(f.sonuc);
+    kosul.push(`g.sonuc = $${deger.length}`);
+  }
+  const nerede = kosul.length ? `WHERE ${kosul.join(" AND ")}` : "";
+  const s = Math.max(1, Math.floor(sayfa) || 1);
+  const [satirlar, sayim] = await Promise.all([
+    sorguSert<Gonderim & { firma: string | null }>(
+      `SELECT g.*, h.firma FROM hedef_gonderim g LEFT JOIN hedef_firmalar h ON h.id = g.firma_id
+       ${nerede} ORDER BY g.zaman DESC, g.id DESC LIMIT ${GIDEN_SAYFA_BOYU} OFFSET ${(s - 1) * GIDEN_SAYFA_BOYU}`,
+      deger
+    ),
+    sorguSert<{ adet: string }>(`SELECT count(*)::text AS adet FROM hedef_gonderim g ${nerede}`, deger),
+  ]);
+  return { satirlar, toplam: Number(sayim[0]?.adet ?? 0) };
+}
+
 export async function sonGonderimler(adet = 10) {
   return sorguSert<Gonderim & { firma: string | null }>(
     `SELECT g.*, h.firma FROM hedef_gonderim g
@@ -612,13 +644,14 @@ export async function gonderimKaydet(g: {
   eposta: string;
   konu: string;
   govde: string;
+  govdeHtml?: string;
   sonuc: Gonderim["sonuc"];
   yanit: string;
   mesajKimligi?: string;
 }) {
   await sorguSert(
-    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi, gonderen)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,lower($9))`,
+    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi, gonderen, govde_html)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,lower($9),$10)`,
     [
       g.firmaId,
       g.kullanici.slice(0, 80),
@@ -629,6 +662,7 @@ export async function gonderimKaydet(g: {
       g.yanit.slice(0, 1000),
       (g.mesajKimligi ?? "").slice(0, 300),
       g.gonderen.slice(0, 254),
+      (g.govdeHtml ?? "").slice(0, 60000),
     ]
   );
 }

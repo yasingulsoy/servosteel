@@ -126,3 +126,36 @@ export async function gelenDurumu(adet = 6): Promise<GelenDurumu> {
   ]);
   return { kutular, bugun: Object.fromEntries(bugun.map((b) => [b.tur, b.adet])), son };
 }
+
+export const GELEN_SAYFA_BOYU = 40;
+export type GelenSatiri = GelenDurumu["son"][number] & { uid: number; zaman: string | null };
+
+/** "Gelen" sayfası: işlenen iletiler (ilgisizler hariç, istenirse dahil), yeniden eskiye. */
+export async function gelenListesi(
+  f: { kutu?: string; tur?: string; hepsi?: boolean },
+  sayfa = 1
+): Promise<{ satirlar: GelenSatiri[]; toplam: number }> {
+  const kosul: string[] = [];
+  const deger: unknown[] = [];
+  if (!f.hepsi) kosul.push(`e.tur <> 'ilgisiz'`);
+  if (f.kutu) {
+    deger.push(f.kutu.toLowerCase());
+    kosul.push(`e.kutu = $${deger.length}`);
+  }
+  if (f.tur) {
+    deger.push(f.tur);
+    kosul.push(`e.tur = $${deger.length}`);
+  }
+  const nerede = kosul.length ? `WHERE ${kosul.join(" AND ")}` : "";
+  const s = Math.max(1, Math.floor(sayfa) || 1);
+  const [satirlar, sayim] = await Promise.all([
+    sorguSert<GelenSatiri>(
+      `SELECT e.kutu, e.uid, e.kimden, e.konu, e.tur, e.firma_id, h.firma, e.ozet, e.islendi, e.zaman
+       FROM gelen_eposta e LEFT JOIN hedef_firmalar h ON h.id = e.firma_id
+       ${nerede} ORDER BY e.islendi DESC, e.uid DESC LIMIT ${GELEN_SAYFA_BOYU} OFFSET ${(s - 1) * GELEN_SAYFA_BOYU}`,
+      deger
+    ),
+    sorguSert<{ adet: string }>(`SELECT count(*)::text AS adet FROM gelen_eposta e ${nerede}`, deger),
+  ]);
+  return { satirlar, toplam: Number(sayim[0]?.adet ?? 0) };
+}

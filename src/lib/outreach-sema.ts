@@ -77,6 +77,8 @@ export const OUTREACH_SEMA = `
   /* Hangi kutudan gitti — kutu ve alan adı tavanı, ısınma buna göre sayılır */
   ALTER TABLE hedef_gonderim ADD COLUMN IF NOT EXISTS gonderen TEXT NOT NULL DEFAULT '';
   CREATE INDEX IF NOT EXISTS hedef_gonderim_gonderen_idx ON hedef_gonderim (gonderen, zaman DESC);
+  /* Giden HTML hâli (düz metin govde'de) — "Giden" sayfası e-postayı alıcının gördüğü gibi gösterir */
+  ALTER TABLE hedef_gonderim ADD COLUMN IF NOT EXISTS govde_html TEXT NOT NULL DEFAULT '';
 
   CREATE TABLE IF NOT EXISTS hedef_not (
     id           SERIAL PRIMARY KEY,

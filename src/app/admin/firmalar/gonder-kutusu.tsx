@@ -1,17 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowRight, CircleCheck, Send, TriangleAlert } from "lucide-react";
+import { metindenHtml } from "@/lib/eposta-bicim";
 import { gonderEylemi, type GonderSonucu } from "./actions";
+import { EpostaEditoru } from "./eposta-editoru";
 
 /**
  * E-posta önizleme + gönderim.
  *
  * Gönderim İKİ ADIMLI: "Gönder…" onay kutusunu açar, asıl gönderen ikinci
  * düğme — geri alınamayan, dışarıya giden bir iş tek yanlış tıklamayla
- * olmasın. Konu ve metin düzenlenebilir; altbilgi (abonelikten çıkma,
- * unvan, adres) düzenlenemez, sunucu her gönderimde kendisi ekler.
+ * olmasın. Konu ve metin düzenlenebilir — metin biçimli editörde (kalın,
+ * liste, bağlantı); düzenlenmezse sunucu hazır metinden aynı sade HTML'i
+ * üretir. Altbilgi (abonelikten çıkma, unvan, adres) düzenlenemez, sunucu
+ * her gönderimde kendisi ekler.
  *
  * Düğmeyi kapatan sebepler (tavan, aralık, sigorta, ülke…) sunucuda da
  * AYRICA kontrol ediliyor; buradaki yalnızca kullanıcıya boşuna tıklatmamak için.
@@ -50,7 +54,13 @@ export function GonderKutusu({
      reddedilirse (ör. aralık dolmadı) elle yapılan düzeltme kaybolmasın. */
   const [konuYazi, setKonuYazi] = useState(konu);
   const [govdeYazi, setGovdeYazi] = useState(govde);
-  const degisti = konuYazi !== konu || govdeYazi !== govde;
+  /* Editörün HTML'i — yalnızca düzenlendiyse gönderilir; boşsa sunucu hazır
+     metinden üretir (otomatik gönderimle aynı çıktı) */
+  const [govdeHtml, setGovdeHtml] = useState("");
+  const [surum, setSurum] = useState(0);
+  const sifirlaniyor = useRef(false);
+  const baslangicHtml = useMemo(() => metindenHtml(govde), [govde]);
+  const degisti = konuYazi !== konu || govdeHtml !== "";
 
   /* Yeni sonuç gelince onay kapanır; sunucu "şu kadar bekle" dediyse sayaç
      ondan başlar. Efekt değil, çizim sırasında: React'in "önceki değeri
@@ -102,23 +112,35 @@ export function GonderKutusu({
         />
       </label>
 
-      <label className="mt-4 block">
+      <div className="mt-4">
         <span className="text-xs font-semibold uppercase tracking-wide text-muted">Metin</span>
-        <textarea
-          name="govde"
-          value={govdeYazi}
-          onChange={(e) => setGovdeYazi(e.target.value)}
-          rows={16}
-          disabled={kapali}
-          className={`mt-1.5 leading-relaxed ${alan}`}
-        />
-      </label>
+        <div className="mt-1.5">
+          <EpostaEditoru
+            html={baslangicHtml}
+            surum={surum}
+            kapali={kapali}
+            degisince={(h, t) => {
+              if (sifirlaniyor.current) {
+                sifirlaniyor.current = false;
+                setGovdeHtml("");
+                setGovdeYazi(govde);
+                return;
+              }
+              setGovdeHtml(h);
+              setGovdeYazi(t);
+            }}
+          />
+        </div>
+        <input type="hidden" name="govde" value={govdeYazi} />
+        <input type="hidden" name="govde_html" value={govdeHtml} />
+      </div>
       {degisti && !kapali ? (
         <button
           type="button"
           onClick={() => {
             setKonuYazi(konu);
-            setGovdeYazi(govde);
+            sifirlaniyor.current = true;
+            setSurum((n) => n + 1);
           }}
           className="mt-1 text-xs font-medium text-muted underline-offset-4 hover:underline"
         >

@@ -186,6 +186,13 @@ export default async function FirmalarSayfasi({
               </p>
             ) : null}
           </div>
+          <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="/admin/firmalar/giden"
+            className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2.5 text-sm font-semibold hover:bg-surface-alt"
+          >
+            Giden · Gelen
+          </Link>
           {v?.ilk ? (
             <Link
               href={`/admin/firmalar/${v.ilk}${surekli ? `?${surekli}` : ""}`}
@@ -195,6 +202,7 @@ export default async function FirmalarSayfasi({
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : null}
+          </div>
         </header>
 
         {hata ? (

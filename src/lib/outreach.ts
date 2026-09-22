@@ -4,6 +4,7 @@ import { ImapFlow } from "imapflow";
 import nodemailer from "nodemailer";
 import MailComposer from "nodemailer/lib/mail-composer";
 import { altbilgi, type GonderenKutusu, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
+import { BAGLANTI, metindenHtml } from "@/lib/eposta-bicim";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
 
 /**
@@ -44,30 +45,23 @@ export function tamMetin(govde: string, dil: string, iptalUrl: string): string {
 const kacir = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
-const BAGLANTI = /https?:\/\/[^\s<>"]+[^\s<>".,;:!?)]/g;
-
-/** Düz metinden sade HTML: boş satır paragraf, satır sonu <br>, adresler bağlantı. */
-function paragraflar(metin: string): string {
-  return metin
-    .trim()
-    .split(/\n{2,}/)
-    .map((p) => {
-      const ic = kacir(p).replace(BAGLANTI, (u) => `<a href="${u}">${u}</a>`);
-      return `<p style="margin:0 0 14px">${ic.replace(/\n/g, "<br>")}</p>`;
-    })
-    .join("\n");
-}
-
-/** HTML hâli: aynı gövde + küçük gri altbilgi. Tek sütun, sistem yazı tipi, en çok 600 px. */
-export function tamHtml(govde: string, dil: string, iptalUrl: string): string {
+/**
+ * HTML hâli: gövde (editörden temizlenmiş HTML ya da düz metinden üretilen) +
+ * küçük gri altbilgi. Tek sütun, sistem yazı tipi, en çok 600 px; stiller
+ * satır içi — e-posta istemcilerinin çoğu <style> okumaz.
+ */
+export function tamHtml(govdeHtml: string, dil: string, iptalUrl: string): string {
   const alt = altbilgiMetni(dil, iptalUrl).replace(/^\s*--\s*\n/, "").trim();
   const altHtml = kacir(alt)
     .replace(BAGLANTI, (u) => `<a href="${u}" style="color:#777">${u}</a>`)
     .replace(/\n/g, "<br>");
+  const govdeStilli = govdeHtml
+    .replace(/<p>/g, '<p style="margin:0 0 14px">')
+    .replace(/<blockquote>/g, '<blockquote style="margin:0 0 14px;padding-left:12px;border-left:3px solid #ddd;color:#555">');
   return (
     `<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0">` +
     `<div style="max-width:600px;padding:8px 4px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222">` +
-    paragraflar(govde) +
+    govdeStilli +
     `<p style="margin:22px 0 0;padding-top:10px;border-top:1px solid #ddd;font-size:12px;line-height:1.5;color:#777">${altHtml}</p>` +
     `</div></body></html>`
   );
@@ -167,15 +161,18 @@ export async function postaSunucusu(eposta: string): Promise<"var" | "yok" | "bi
 const SERT_SINIR_MS = 45_000;
 
 /** `metin`: giden düz metin (kayıt için), her durumda dolu. `ham`: giden ileti (Gönderilmiş'e kopya için). */
-export type GonderimCevabi =
-  | { durum: "ok"; yanit: string; mesajKimligi: string; ham: Buffer; metin: string }
-  | { durum: "hata"; hata: SmtpHatasi; metin: string }
-  | { durum: "belirsiz"; yanit: string; metin: string };
+export type GonderimCevabi = { metin: string; html: string } & (
+  | { durum: "ok"; yanit: string; mesajKimligi: string; ham: Buffer }
+  | { durum: "hata"; hata: SmtpHatasi }
+  | { durum: "belirsiz"; yanit: string }
+);
 
 export async function tanitimGonder(
   ayar: Pick<OutreachAyarlari, "yanitAdresi" | "gizliKopya">,
   kutu: GonderenKutusu,
-  e: { alici: string; konu: string; govde: string; dil: string; iptalUrl: string }
+  /* govde: düz metin (kayıt ve metin parçası). govdeHtml: editörde düzenlenmiş,
+     TEMİZLENMİŞ HTML (bkz. eposta-html.ts); yoksa düz metinden üretilir. */
+  e: { alici: string; konu: string; govde: string; govdeHtml?: string; dil: string; iptalUrl: string }
 ): Promise<GonderimCevabi> {
   const tasiyici = nodemailer.createTransport({
     host: kutu.host,
@@ -194,6 +191,7 @@ export async function tanitimGonder(
   });
 
   const metin = tamMetin(e.govde, e.dil, e.iptalUrl);
+  const html = tamHtml(e.govdeHtml || metindenHtml(e.govde), e.dil, e.iptalUrl);
   const dugum = new MailComposer({
     from: { name: kutu.ad, address: kutu.user },
     to: e.alici,
@@ -201,7 +199,7 @@ export async function tanitimGonder(
     ...(ayar.gizliKopya ? { bcc: ayar.gizliKopya } : {}),
     subject: e.konu,
     text: metin,
-    html: tamHtml(e.govde, e.dil, e.iptalUrl),
+    html,
     headers: {
       /* Gmail/Outlook bunu görünce adresin yanına "abonelikten çık" koyuyor.
          Alıcıya "spam" düğmesinden daha kolay bir yol vermek, itibarı
@@ -223,7 +221,7 @@ export async function tanitimGonder(
   try {
     const r = await Promise.race([gorev, zamanAsimi]);
     if (r === "zaman") {
-      return { durum: "belirsiz", yanit: `Sunucu ${SERT_SINIR_MS / 1000} sn içinde cevap vermedi`, metin };
+      return { durum: "belirsiz", yanit: `Sunucu ${SERT_SINIR_MS / 1000} sn içinde cevap vermedi`, metin, html };
     }
     /* Tek alıcı var; reddedildiyse nodemailer zaten hata fırlatır. Yine de
        "kabul edildi" listesi boşsa gitmiş saymıyoruz. */
@@ -232,9 +230,10 @@ export async function tanitimGonder(
         durum: "hata",
         hata: { code: "EENVELOPE", responseCode: 550, response: String(r.response ?? "alıcı kabul edilmedi") },
         metin,
+        html,
       };
     }
-    return { durum: "ok", yanit: String(r.response ?? ""), mesajKimligi, ham, metin };
+    return { durum: "ok", yanit: String(r.response ?? ""), mesajKimligi, ham, metin, html };
   } catch (h) {
     const x = h as SmtpHatasi;
     return {
@@ -247,6 +246,7 @@ export async function tanitimGonder(
         message: x.message,
       },
       metin,
+      html,
     };
   } finally {
     clearTimeout(saat);

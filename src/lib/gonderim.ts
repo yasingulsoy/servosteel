@@ -23,6 +23,7 @@ import {
   type GonderenKutusu,
 } from "@/lib/outreach-kurallar";
 import { gonderilmislereEkle, iptalAdresi, postaSunucusu, tanitimGonder } from "@/lib/outreach";
+import { govdeHtmlTemizle, htmldenMetin } from "@/lib/eposta-html";
 
 /**
  * TEK bir tanıtım e-postasının gönderimi — panelin "Gönder" düğmesi ve
@@ -61,13 +62,19 @@ export async function tekGonderim(p: {
   firmaId: number;
   konu: string;
   govde: string;
+  /** Editörde düzenlenmiş HTML (elle gönderim) — burada TEMİZLENİR; düz metin ondan üretilir */
+  govdeHtml?: string;
   /** Panel kullanıcısı ya da "otomatik" */
   kullanici: string;
 }): Promise<TekGonderimSonucu> {
   const { firmaId: id, kullanici: ben } = p;
   /* Konu tek satır: başlığa satır sonu girerse sunucu başlık enjeksiyonu sayar. */
   const konu = p.konu.trim().slice(0, 300).replace(/[\r\n]+/g, " ");
-  const govde = p.govde.replace(/\r\n?/g, "\n").replace(/\s+$/, "").slice(0, 20000);
+  const temizHtml = p.govdeHtml ? govdeHtmlTemizle(p.govdeHtml.slice(0, 60000)) : "";
+  const govde = (temizHtml ? htmldenMetin(temizHtml) : p.govde)
+    .replace(/\r\n?/g, "\n")
+    .replace(/\s+$/, "")
+    .slice(0, 20000);
   if (!konu || !govde) return { tamam: false, mesaj: "Konu ve metin boş olamaz.", denendi: false };
 
   const ayar = ayarlariOku(process.env);
@@ -131,9 +138,24 @@ export async function tekGonderim(p: {
   const satir = secim.satirlar.find((s) => s.kutu.user === gonderen.user);
 
   const iptalUrl = iptalAdresi(f.iptal_anahtari);
-  const cevap = await tanitimGonder(ayar, gonderen, { alici: f.eposta, konu, govde, dil: f.dil, iptalUrl });
+  const cevap = await tanitimGonder(ayar, gonderen, {
+    alici: f.eposta,
+    konu,
+    govde,
+    govdeHtml: temizHtml || undefined,
+    dil: f.dil,
+    iptalUrl,
+  });
   const ozet = `${f.firma} · ${f.eposta} · ${gonderen.user} kutusundan`;
-  const kayit = { firmaId: id, kullanici: ben, gonderen: gonderen.user, eposta: f.eposta, konu, govde: cevap.metin };
+  const kayit = {
+    firmaId: id,
+    kullanici: ben,
+    gonderen: gonderen.user,
+    eposta: f.eposta,
+    konu,
+    govde: cevap.metin,
+    govdeHtml: cevap.html,
+  };
 
   if (cevap.durum === "ok") {
     await gonderimKaydet({ ...kayit, sonuc: "ok", yanit: cevap.yanit, mesajKimligi: cevap.mesajKimligi });

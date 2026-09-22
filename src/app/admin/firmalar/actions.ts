@@ -63,6 +63,7 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
     firmaId: id,
     konu: metin(form.get("konu"), 300),
     govde: govdeAl(form.get("govde")),
+    govdeHtml: typeof form.get("govde_html") === "string" ? String(form.get("govde_html")) : undefined,
     kullanici: ben,
   });
   yenile(id);

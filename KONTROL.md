@@ -556,6 +556,35 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   Kurallar `src/lib/gelen-kurallar.ts`, testi `node scripts/gelen-kurallar-test.mjs`
   (Exim/Gmail raporu, gecikme, Outlook/Gmail otomatik yanıtı, alıntılı yanıtlar).
   Yanıtların hepsini görmesi için `OUTREACH_REPLY_TO` BOŞ olmalı (bkz. D).
+- **Otomatik gönderim (2026-09-22, Yasin "otomatik gönderecek bir sistem kuralım"):**
+  panelde "Otomatik gönderim" bölümünden yönetici açar/durdurur (varsayılan
+  KAPALI; her değişiklik panel kaydında). Açıkken dakikada bir TUR: hafta içi
+  09–18 İstanbul (ayarlanabilir, hafta sonu isteğe bağlı), günün KALAN kapasitesi
+  pencerenin kalanına eşit yayılır ±%25 (20 e-posta / 9 saat ≈ 27 dk'da bir) —
+  toplu gönderim spam izi. Elle gönderimle AYNI fonksiyon (`src/lib/gonderim.ts`):
+  tavanlar, ısınma, aralık, sigorta, geri dönüş eşiği, aynı adres kilidi, MX.
+  Kapsam: seçili ürün grupları (varsayılan 1–5), **AB ülkeleri varsayılan HARİÇ**,
+  otomatik keşif firmaları dahil (kapatılabilir). "Bugün sırada" listesi günün
+  firmalarını gösterir; "Çıkar" gitmeden önce "Geçildi" yapar. Saat:
+  `src/instrumentation.ts` → `src/otomatik-saat.ts` açılışta rastgele anahtar
+  üretip her dakika uygulamanın kendi `/api/otomatik` adresine istek atar
+  (anahtarsız istek 404; yalnızca `next start`'ta — yerel `next dev` canlı
+  veritabanına bağlı olduğu için orada çalışmaz; `OUTREACH_AUTO_RUNNER=off` tamamen
+  kapatır). Tur kilidi tek satırlık koşullu yazma: iki örnek aynı dakikada iki tur
+  çalıştıramaz. Gelen kutusu taraması da bu turda (kutu başına ≤10 dk).
+- **Gönderilmiş klasörüne kopya:** ileti önce panelde kurulur (MailComposer), aynı
+  ham ileti SMTP'ye gider ve kutunun Gönderilmiş klasörüne (IMAP APPEND, okunmuş)
+  konur — Thunderbird'de görünür, yanıt konuşmaya bağlanır. Klasör yoksa oluşturulur;
+  konamazsa gönderim yine geçerli, firmaya not düşer.
+- **Giden · Gelen sayfası** (`/admin/firmalar/giden`): her gönderim denemesi (kutu,
+  alıcı, sonuç, sunucu cevabı, kim gönderdi — "otomatik" ya da kullanıcı) ve e-posta
+  alıcının gördüğü gibi (yalıtılmış çerçeve, `sandbox`); Gelen sekmesi işlenen
+  yanıt/geri dönüş/iptal/otomatik yanıtlar. Kutuya ve sonuca göre süzülür.
+- **HTML ve editör:** e-posta düz metin + SADE HTML (multipart/alternative):
+  paragraf, bağlantı, kalın/italik/altı çizili, liste, alıntı — görsel, uzak kaynak,
+  izleme YOK. Firma sayfasındaki metin artık biçimli editörde (Tiptap); düzenlenmezse
+  sunucu hazır metinden aynı HTML'i üretir. Editörün HTML'i sunucuda izin listesiyle
+  temizlenir (`sanitize-html`, `src/lib/eposta-html.ts`), düz metin ondan üretilir.
 - **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
 - **Almanya ve Avusturya'ya e-posta gitmez** — şirketlere de önceden açık izin
   şartı var (UWG §7, TKG 2021 §174). Telefon, iletişim formu, LinkedIn. Diğer AB
@@ -765,6 +794,9 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
   değişkenin eksik olduğunu yazar; yarım kutu için ayrı uyarı çıkar.
   **`.env.local`'a konmaz:** o dosya canlı veritabanına bağlı, lokal panel gerçek
   e-posta gönderir.
+- [ ] **Otomatik gönderimi aç** (kutular "hazır" göründükten ve ilk elle gönderimlerde
+  BCC kopyası Gelen kutusuna düştükten sonra): Hedef firmalar → "Otomatik gönderim"
+  → Aç. "Bugün sırada" listesine bir göz atılır; hedef dışı firma "Çıkar".
 - [ ] **Yanıtlar panele düşsün:** Dokploy'da `OUTREACH_REPLY_TO` satırı silinir
   (boş) — yanıtlar gönderen kutuya gelir, panel "Yanıt geldi" diye işler. cPanel →
   Yönlendiriciler'de dört kutu liza@'ya yönlendirilir: Liza her yanıtı kendi
