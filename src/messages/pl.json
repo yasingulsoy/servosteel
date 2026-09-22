@@ -2004,10 +2004,10 @@
       },
       "servo-suruculer": {
         "name": "Podajniki Walcowe Servo",
-        "metaTitle": "Podajnik walcowy servo do prasy — NC, mini i standard",
+        "metaTitle": "Podajnik servo do prasy — walcowy, NC, mini i standard",
         "short": "Precyzyjne podawanie krokowe do pras; seria standardowa i mini.",
         "hero": "Podajniki walcowe servo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
-        "meta": "Podajnik walcowy servo do prasy: seria standardowa i mini do linii prasowych, precyzyjne podawanie blachy oparte na Schneider Lexium.",
+        "meta": "Podajnik servo do prasy: podajniki walcowe w serii standardowej i mini, precyzyjne podawanie blachy na napędzie Schneider Lexium, dobierane do prasy.",
         "features": [
           {
             "title": "Precyzja kroku milimetrowa",
@@ -2152,10 +2152,10 @@
       },
       "kompakt-hatlar": {
         "name": "Linie Kompaktowe",
-        "metaTitle": "Linie kompaktowe: odwijak, prostownica, podajnik",
+        "metaTitle": "Linie podające kompaktowe: odwijak, prostownica, podajnik",
         "short": "Odwijak + prostownica + podajnik na jednej platformie.",
         "hero": "Linie kompaktowe łączą odwijanie, prostowanie i podawanie serwo na jednej platformie; przeznaczone dla zakładów, które chcą pełne podawanie do pras na ograniczonej powierzchni.",
-        "meta": "Kompaktowe linie podawania do pras: odwijak, prostownica i podajnik serwo na jednej platformie.",
+        "meta": "Linie podające do pras w wersji kompaktowej: odwijak, prostownica i podajnik serwo na jednej platformie, dobierane do prasy i materiału.",
         "features": [
           {
             "title": "Minimalna powierzchnia",
