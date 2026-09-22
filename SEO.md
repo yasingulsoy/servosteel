@@ -212,6 +212,7 @@ Aşağıdaki 16 terim toplam ~53.000 arama taşıyor ve hepsi tuzak. Bir raporda
 | maszyna do profilowania blachy (PL) | 590 | **bulmaca** — krzyżówka siteleri |
 | walcowanie profili (PL) | 140 | profil **büküm hizmeti**, makine değil |
 | profilarka do blachy (PL) | 170 | çatıcı/portatif (Schlebach, Jouanel, WUKO) |
+| automatic stacker (GB) | — | **palet istifleyici / depo ekipmanı** — ilk 10'un 7'si forklift, palet, kereste istifleyici (SERP 2026-09-23). GSC'de 240 gösterimimiz vardı, peşine düşülmedi |
 
 Son sekizi başlık çalışmasında yakalandı. Hepsi kendi dilindeki en yüksek
 hacimli adaylardı — SERP'e bakılmasa "kazanç" diye rapora girerlerdi.
@@ -324,6 +325,25 @@ Rusça meta başlıklar buna göre düzeltildi (bkz. git geçmişi).
 Firmadan "yapıyor muyuz" cevabı bekliyor (bkz. bölüm 5).
 
 ---
+
+**Gerçek olanlar (aynı gün aynı yöntemle bakıldı, 2026-09-23):**
+- **coil processing line(s)** — İngiltere/İtalya/Almanya, 28 günde 88 gösterim, 21-26. sıra,
+  tıklama 0. İlk 10: arku, selmach, bradbury, georg, galaxiecorp, alekvs — birebir rakip
+  sınıfı, alıcı niyeti. Terim üç hat ailesinin tamamını kastediyor, oysa aramaya dilme
+  hattı ürün sayfası çıkıyordu. **Yapıldı:** `/rulo-isleme-hatlari` üst sayfası, dokuz dilde
+  (`132e3a8`); ana sayfanın İngilizce başlığı aynı terimden çekildi ki iki sayfa yarışmasın.
+- **podajnik servo** — Polonya, 100 gösterim, tıklama 0. İlk 10'da servo besleyici
+  üreticileri ve **coiltech.com.tr** (3. ve 8. sırada, Lehçe sayfayla) — pazar Türk firmaya
+  açık. Bizde dört sayfa aynı kelimede yarışıyordu (9,7 / 12,1 / 17,2 ve merkez sayfa 62).
+  **Yapıldı:** merkez sayfa aranan kelimeyle öne alındı, iç link metni değiştirildi (`d9c6bc5`).
+
+**Yurt dışında asıl darboğaz on-page DEĞİL (2026-09-23 ölçümü).** Yerel dillerdeki
+sayfaların başlıkları aranan terimlerin birebir kendisi ("Längsteilanlagen",
+"Linee di Taglio Longitudinale", "Linie Cięcia Wzdłużnego"). Sorun bu sayfaların
+o terimlerde ilk 50'ye girememesi: 28 günde yurt dışından toplam 1.127 marka dışı
+gösterim var ve bunların çoğu 2.-3. sayfada. Başlık iyileştirmesinin taşıyacağı yük
+sınırlı — 7. sırada 28 gösterim, beklenen tıklama zaten 1'in altında. Kaldıraç
+otorite tarafında: dizin kayıtları, asistan alıntıları, YouTube başlıkları.
 
 ## 3. Rakipler — dünya kütüğü
 
