@@ -5,6 +5,7 @@ import nodemailer from "nodemailer";
 import MailComposer from "nodemailer/lib/mail-composer";
 import { altbilgi, type GonderenKutusu, type OutreachAyarlari, type SmtpHatasi } from "@/lib/outreach-kurallar";
 import { BAGLANTI, metindenHtml } from "@/lib/eposta-bicim";
+import { LOGO_CID, LOGO_GENISLIK, LOGO_PNG_BASE64, LOGO_YUKSEKLIK } from "@/lib/eposta-logo";
 import { CONTACT, LEGAL_NAME, SITE_URL } from "@/lib/site";
 
 /**
@@ -47,8 +48,9 @@ const kacir = (s: string) =>
 
 /**
  * HTML hâli: gövde (editörden temizlenmiş HTML ya da düz metinden üretilen) +
- * küçük gri altbilgi. Tek sütun, sistem yazı tipi, en çok 600 px; stiller
- * satır içi — e-posta istemcilerinin çoğu <style> okumaz.
+ * imza logosu (iletiye gömülü, cid — bkz. eposta-logo.ts) + küçük gri altbilgi.
+ * Tek sütun, sistem yazı tipi, en çok 600 px; stiller satır içi — e-posta
+ * istemcilerinin çoğu <style> okumaz. Düz metin hâlinde logo yok.
  */
 export function tamHtml(govdeHtml: string, dil: string, iptalUrl: string): string {
   const alt = altbilgiMetni(dil, iptalUrl).replace(/^\s*--\s*\n/, "").trim();
@@ -62,6 +64,7 @@ export function tamHtml(govdeHtml: string, dil: string, iptalUrl: string): strin
     `<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0">` +
     `<div style="max-width:600px;padding:8px 4px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#222">` +
     govdeStilli +
+    `<div style="margin:6px 0 0"><img src="cid:${LOGO_CID}" width="${LOGO_GENISLIK}" height="${LOGO_YUKSEKLIK}" alt="Servosteel" style="display:block;border:0;outline:none;text-decoration:none"></div>` +
     `<p style="margin:22px 0 0;padding-top:10px;border-top:1px solid #ddd;font-size:12px;line-height:1.5;color:#777">${altHtml}</p>` +
     `</div></body></html>`
   );
@@ -200,6 +203,16 @@ export async function tanitimGonder(
     subject: e.konu,
     text: metin,
     html,
+    /* İmza logosu gömülü: HTML "cid:" ile gösterir, ayrı ek olarak görünmez */
+    attachments: [
+      {
+        filename: "servosteel.png",
+        content: Buffer.from(LOGO_PNG_BASE64, "base64"),
+        contentType: "image/png",
+        cid: LOGO_CID,
+        contentDisposition: "inline",
+      },
+    ],
     headers: {
       /* Gmail/Outlook bunu görünce adresin yanına "abonelikten çık" koyuyor.
          Alıcıya "spam" düğmesinden daha kolay bir yol vermek, itibarı

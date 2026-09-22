@@ -149,8 +149,10 @@ export function GonderKutusu({
       ) : null}
 
       <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">
-        Altbilgi — her e-postaya otomatik eklenir
+        İmza logosu ve altbilgi — her e-postaya otomatik eklenir
       </p>
+      {/* eslint-disable-next-line @next/next/no-img-element -- e-postadaki görünümün aynısı, optimize edilmesin */}
+      <img src="/logo-full.png" alt="Servosteel" width={128} height={57} className="mt-1.5 h-[57px] w-32 rounded bg-white p-0.5" />
       <pre className="mt-1.5 whitespace-pre-wrap break-words rounded-lg bg-surface-alt px-3 py-2.5 font-sans text-xs leading-relaxed text-muted">
         {altbilgi.replace(/^\n+/, "")}
       </pre>

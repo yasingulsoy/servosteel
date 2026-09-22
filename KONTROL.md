@@ -392,13 +392,24 @@ listenin yarısından kısaysa yazmaz.
 **E-posta metni — 2. sürüm (2026-09-21).** Liza'nın (Elizaveta Shpelevaya) kendi
 tanıtım e-postasının güçlü yanları alındı: **kurulum, devreye alma ve operatör
 eğitimi fiyata dahil**, mevcut hatların modernizasyonu, "doğru kişiye iletir
-misiniz" ricası ve kişi imzası (Elizaveta Shpelevaya). Sonunda iki davet var:
+misiniz" ricası ve imza. Sonunda iki davet var:
 **teklif formu** (`/teklif-al`, diğer dillerde `/<dil>/request-quote`,
 `utm_term=teklif-formu`) ya da **e-postayı yanıtlamak**. Alınmayanlar ve sebebi:
 Google Drive katalog bağlantısı (dosya paylaşım bağlantısı spam/oltalama
 işareti sayılıyor; katalog yanıt verene gönderilir), "Dear Sir/Madam" (toplu
 gönderim izi), 3+ bağlantı, uzun "iş birliği" metni. Kaynaklar
 `seo/eposta-taslaklari.json` → `_aciklama`.
+
+**İmza — ekip imzası (2026-09-22, Yasin: "Elizaveta Shpelevaya olmayacak,
+Servosteel Ekibi / Pazarlama ekibi yaz").** Dokuz dilde imza "Pazarlama Ekibi"
+(en Marketing Team, es/pt Equipo/Equipe de Marketing, it Ufficio Marketing,
+de Ihr Marketing-Team, pl Dział Marketingu, ru Отдел маркетинга, fr L'équipe
+marketing) + "Servosteel · +90 216 415 30 05"; metin "ben" değil "biz" ağzından
+(it/pl/ru/fr'deki dişil tekil biçimler de gitti). Gönderen adı
+(`OUTREACH_FROM_NAME=Servosteel Export`) bununla uyumlu. HTML hâlinde imzanın
+altında **logo** var (bkz. C.6 "HTML ve editör"). Aktarımla 3.598 bekleyen
+firmanın metni güncellendi; gönderilmiş firmanın kaydı giden metni anlatmaya
+devam eder (eski imzalı).
 
 **Talep sayacı:** e-posta gönderilmiş firmadan sonradan gelen form talebi
 listenin üstünde "Talep" kartında, firma sayfasında yeşil kutuda. Eşleşme:
@@ -581,8 +592,12 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   alıcının gördüğü gibi (yalıtılmış çerçeve, `sandbox`); Gelen sekmesi işlenen
   yanıt/geri dönüş/iptal/otomatik yanıtlar. Kutuya ve sonuca göre süzülür.
 - **HTML ve editör:** e-posta düz metin + SADE HTML (multipart/alternative):
-  paragraf, bağlantı, kalın/italik/altı çizili, liste, alıntı — görsel, uzak kaynak,
-  izleme YOK. Firma sayfasındaki metin artık biçimli editörde (Tiptap); düzenlenmezse
+  paragraf, bağlantı, kalın/italik/altı çizili, liste, alıntı — uzak kaynak ve
+  izleme YOK. Tek görsel imza logosu (2026-09-22, Yasin "logoyu imza olarak
+  ekle"): iletiye GÖMÜLÜ (`cid:`, multipart/related, ~9 KB, `src/lib/eposta-logo.ts`)
+  — uzak görsel Outlook'ta varsayılan engelli ve izleme pikseli sayılıyor. Beyaz
+  zeminli (koyu temada kaybolmasın), 128×57, düz metin hâlinde yok; ileti ~13 KB.
+  Giden sayfası logoyu aynı görselle gösterir. Firma sayfasındaki metin artık biçimli editörde (Tiptap); düzenlenmezse
   sunucu hazır metinden aynı HTML'i üretir. Editörün HTML'i sunucuda izin listesiyle
   temizlenir (`sanitize-html`, `src/lib/eposta-html.ts`), düz metin ondan üretilir.
 - **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
@@ -805,12 +820,10 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
 - [ ] **İlk günler `OUTREACH_BCC` = kendi Gmail adresin:** her gönderimin kopyası
   oraya düşer; "Spam"e mi "Gelen kutusu"na mı gittiği ilk günden görülür.
   Spam'e düşüyorsa gönderime devam edilmez, bakılır.
-- [ ] **Gönderen adı:** e-postalar "Elizaveta Shpelevaya" imzalı, yanıtlar
-  `OUTREACH_REPLY_TO=liza@servosteel.com.tr` ile Liza'ya gider. Tek ve nötr bir
-  kutu (export@) varken `OUTREACH_FROM_NAME=Elizaveta Shpelevaya` önerilmişti;
-  kişi adlı kutularla (yasin@, gulsoy@, ege@) "Elizaveta Shpelevaya <yasin@…>"
-  tuhaf durur — bu yüzden `Servosteel Export`. Kutu başına ayrı ad
-  `OUTREACH_FROM_NAME_n` ile verilebilir.
+- [ ] **Gönderen adı:** e-postalar 2026-09-22'den beri EKİP imzalı ("Pazarlama
+  Ekibi / Servosteel · telefon"), kişi adı yok — `OUTREACH_FROM_NAME=Servosteel
+  Export` buna uyar; kişi adı ("Elizaveta Shpelevaya <yasin@…>") verilmez. Kutu
+  başına ayrı ad `OUTREACH_FROM_NAME_n` ile verilebilir.
 - [ ] **DMARC raporu açılsın:** DNS'teki `_dmarc` kaydı `v=DMARC1; p=quarantine;`
   — rapor adresi (`rua=`) yok, e-postalarımızın alıcıda SPF/DKIM'den geçip
   geçmediğini göremiyoruz. Veridyen DNS'inde kayda

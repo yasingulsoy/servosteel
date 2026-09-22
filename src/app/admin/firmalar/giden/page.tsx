@@ -5,6 +5,7 @@ import { oturum } from "@/lib/admin-auth";
 import { GELEN_SAYFA_BOYU, gelenListesi } from "@/lib/gelen-db";
 import { GIDEN_SAYFA_BOYU, gidenListesi, outreachSemaKur } from "@/lib/outreach-db";
 import { ayarlariOku } from "@/lib/outreach-kurallar";
+import { LOGO_CID, LOGO_PNG_BASE64 } from "@/lib/eposta-logo";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
 import { SONUC_ETIKET } from "../firma-listesi";
@@ -167,7 +168,8 @@ export default async function GidenSayfasi({ searchParams }: { searchParams: Pro
                         <iframe
                           title={`E-posta: ${g.konu}`}
                           sandbox=""
-                          srcDoc={g.govde_html}
+                          /* Gömülü logo (cid) çerçevede çözülmez — aynı görsel veri adresiyle */
+                          srcDoc={g.govde_html.replaceAll(`cid:${LOGO_CID}`, `data:image/png;base64,${LOGO_PNG_BASE64}`)}
                           className="h-96 w-full rounded-lg border border-line bg-white"
                         />
                       ) : (
