@@ -990,6 +990,19 @@ doğrulandı — hâlâ açık olanlar.
   Wikidata + sektör dizinleri
 
 **Kapandı**
+- ~~Paylaşım etiketleri her sayfada ANA SAYFAYI gösteriyordu~~ — 2026-09-22.
+  Canlıda her sayfanın `og:title`/`og:description`'ı ana sayfanınkiydi ve
+  `og:url` "/" idi: LinkedIn/WhatsApp'ta paylaşılan ürün bağlantısı ana sayfa
+  gibi görünüyor, paylaşım da ana sayfaya yazılıyordu. Görsel ise hiç yoktu
+  (yalnızca 404 sayfasında vardı, o da `localhost:3000` adresiyle). Sebep:
+  metadata SIĞ birleşiyor — layout'ta tanımlı `openGraph` sayfa kendi
+  `openGraph`ını vermeyince olduğu gibi kullanılıyor, verince de görsel
+  düşüyordu. Çözüm `sayfaMeta()` (`src/i18n/seo.ts`): 18 sayfa + akademi
+  yazıları kendi başlığı, açıklaması, adresi ve görseliyle paylaşılıyor.
+  Ürün sayfaları kendi fotoğrafını (`/gorseller/{slug}.jpg`), fotoğrafı
+  olmayanlar (trapez/cephe paneli) ve diğer sayfalar marka görselini alıyor
+  (`src/app/[locale]/opengraph-image.tsx`, 1200×630, dil önekiyle
+  `/opengraph-image`). Yeni sayfa açarken `sayfaMeta` kullanılmalı.
 - ~~cPanel `filtre1`~~ — silindi (2026-08-10), mail hemen geldi. Dersi
   KONTROL.md §E.12'de.
 - ~~4 CalDAV/CardDAV SRV kaydı~~ — iş kapanmadı ama SEO işi değil,

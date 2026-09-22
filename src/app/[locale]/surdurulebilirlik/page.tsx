@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Recycle, Zap, LineChart, Wrench } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -24,11 +24,10 @@ const PROOF_VIDEOS = ["NR25bt36uQg", "qmWM1NgcACw"];
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "sustain" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/surdurulebilirlik"),
-  };
+  return sayfaMeta(locale as AppLocale, "/surdurulebilirlik", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+  });
 }
 
 export default async function SurdurulebilirlikPage({ params }: Props) {

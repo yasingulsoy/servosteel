@@ -11,7 +11,7 @@ import { PointerGlow } from "@/components/pointer-glow";
 import { PageAttention } from "@/components/page-attention";
 import { Analytics } from "@/components/analytics";
 import { routing, isRtl, type AppLocale } from "@/i18n/routing";
-import { pageAlternates } from "@/i18n/seo";
+import { OG_LOCALE, pageAlternates } from "@/i18n/seo";
 import { CONTACT, LEGAL_NAME, SITE_NAME, SITE_URL, SOCIAL_URLS, DIRECTORY_URLS, IS_PRODUCTION_SITE } from "@/lib/site";
 import "../globals.css";
 
@@ -67,18 +67,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const ogLocaleMap: Record<string, string> = {
-    tr: "tr_TR",
-    en: "en_US",
-    de: "de_DE",
-    es: "es_ES",
-    it: "it_IT",
-    hu: "hu_HU",
-    pl: "pl_PL",
-    ru: "ru_RU",
-    ar: "ar_SA",
-  };
-
   return {
     metadataBase: new URL(SITE_URL),
     title: {
@@ -89,7 +77,7 @@ export async function generateMetadata({
     alternates: pageAlternates(locale as AppLocale, ""),
     openGraph: {
       type: "website",
-      locale: ogLocaleMap[locale] ?? "tr_TR",
+      locale: OG_LOCALE[locale as AppLocale] ?? OG_LOCALE[routing.defaultLocale],
       url: locale === routing.defaultLocale ? "/" : `/${locale}`,
       siteName: SITE_NAME,
       title: t("title"),

@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Check, Gauge, Layers, Ruler, Settings2 } from "lucide-react";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -18,11 +18,11 @@ const icons = [Layers, Ruler, Gauge, Settings2];
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "dilme" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/dilme-hatlari"),
-  };
+  return sayfaMeta(locale as AppLocale, "/dilme-hatlari", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+    gorsel: "/gorseller/dilme-hatlari.jpg",
+  });
 }
 
 export default async function DilmeHatlariPage({ params }: Props) {

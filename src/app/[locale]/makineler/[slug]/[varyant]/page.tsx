@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowLeft, Check, Cog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, localePath, pageTitle } from "@/i18n/seo";
+import { localePath, sayfaMeta } from "@/i18n/seo";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -11,7 +11,7 @@ import { Reveal } from "@/components/reveal";
 import { InlineQuote } from "@/components/inline-quote";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineVariants, isMachineVariant, variantsOf } from "@/lib/catalog";
+import { hasPhoto, isMachineVariant, machineVariants, variantsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 /**
@@ -41,11 +41,11 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug, varyant } = await params;
   if (!isMachineVariant(slug, varyant)) return {};
   const t = await getTranslations({ locale, namespace: ns(slug, varyant) });
-  return {
-    title: pageTitle(t.has("metaTitle") ? t("metaTitle") : t("name")),
-    description: t("meta"),
-    alternates: pageAlternates(locale as AppLocale, `/makineler/${slug}/${varyant}`),
-  };
+  return sayfaMeta(locale as AppLocale, `/makineler/${slug}/${varyant}`, {
+    baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
+    aciklama: t("meta"),
+    gorsel: hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
+  });
 }
 
 export default async function VariantPage({ params }: Props) {

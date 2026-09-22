@@ -2,7 +2,7 @@ import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -15,11 +15,10 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const ui = getAkademiUi(locale);
-  return {
-    title: pageTitle(ui.title),
-    description: ui.subtitle,
-    alternates: pageAlternates(locale as AppLocale, "/akademi"),
-  };
+  return sayfaMeta(locale as AppLocale, "/akademi", {
+    baslik: ui.title,
+    aciklama: ui.subtitle,
+  });
 }
 
 export default async function AkademiPage({ params }: Props) {

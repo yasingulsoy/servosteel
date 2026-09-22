@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { SpecularButton } from "@/components/specular-button";
@@ -25,11 +25,10 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "videos" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/videolar"),
-  };
+  return sayfaMeta(locale as AppLocale, "/videolar", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+  });
 }
 
 export default async function VideolarPage({ params }: Props) {

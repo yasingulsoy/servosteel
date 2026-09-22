@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Factory, Target, Users, Wrench } from "lucide-react";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -15,11 +15,11 @@ const valueIcons = [Target, Wrench, Factory, Users];
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/hakkimizda"),
-  };
+  return sayfaMeta(locale as AppLocale, "/hakkimizda", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+    gorsel: "/gorseller/tesis-bina.jpg",
+  });
 }
 
 export default async function HakkimizdaPage({ params }: Props) {

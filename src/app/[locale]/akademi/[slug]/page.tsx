@@ -13,7 +13,7 @@ import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractToc, slugifyHeading, textOf } from "@/lib/toc";
-import { localePath, pageTitle } from "@/i18n/seo";
+import { localePath, OG_LOCALE, pageTitle, siteGorseli } from "@/i18n/seo";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -46,10 +46,20 @@ export async function generateMetadata({ params }: Props) {
     alternates: { canonical: localePath(locale as AppLocale, `/akademi/${slug}`), languages },
     openGraph: {
       type: "article",
+      locale: OG_LOCALE[locale as AppLocale] ?? OG_LOCALE[routing.defaultLocale],
+      url: localePath(locale as AppLocale, `/akademi/${slug}`),
+      siteName: SITE_NAME,
       title: post.title,
       description: post.description,
       publishedTime: post.date,
-      images: post.cover ? [post.cover] : undefined,
+      /* Yazının kapağı yoksa site görseli */
+      images: [post.cover || siteGorseli(locale as AppLocale)],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [post.cover || siteGorseli(locale as AppLocale)],
     },
   };
 }

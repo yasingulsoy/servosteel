@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Scale } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -13,11 +13,10 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "compare" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/karsilastirma"),
-  };
+  return sayfaMeta(locale as AppLocale, "/karsilastirma", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+  });
 }
 
 export default async function KarsilastirmaPage({ params }: Props) {

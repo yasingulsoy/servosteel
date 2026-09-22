@@ -2,7 +2,7 @@ import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Globe2 } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -15,11 +15,10 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "refs" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/referanslar"),
-  };
+  return sayfaMeta(locale as AppLocale, "/referanslar", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+  });
 }
 
 export default async function ReferanslarPage({ params }: Props) {

@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Check, Crosshair, MonitorCog, Scissors, ShieldCheck } from "lucide-react";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
@@ -18,11 +18,11 @@ const icons = [Crosshair, Scissors, MonitorCog, ShieldCheck];
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "boykesme" });
-  return {
-    title: pageTitle(t("metaTitle")),
-    description: t("metaDesc"),
-    alternates: pageAlternates(locale as AppLocale, "/boy-kesme-hatlari"),
-  };
+  return sayfaMeta(locale as AppLocale, "/boy-kesme-hatlari", {
+    baslik: t("metaTitle"),
+    aciklama: t("metaDesc"),
+    gorsel: "/gorseller/boy-kesme-hatlari.jpg",
+  });
 }
 
 export default async function BoyKesmeHatlariPage({ params }: Props) {

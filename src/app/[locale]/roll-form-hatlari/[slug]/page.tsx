@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check, Settings2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { pageAlternates, pageTitle } from "@/i18n/seo";
+import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
 import { InlineQuote } from "@/components/inline-quote";
@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug } = await params;
   if (!isRollFormSlug(slug)) return {};
   const t = await getTranslations({ locale, namespace: `products.rollform.${slug}` });
-  return {
+  return sayfaMeta(locale as AppLocale, `/roll-form-hatlari/${slug}`, {
     /* `name` nav'da, kartlarda, breadcrumb'da kullanılıyor — ona dokunulmuyor.
        metaTitle yalnızca <title> için; aranan terim ürün adından farklı
        olduğunda devreye giriyor (ör. "trapez sac makinesi" 690/ay). */
-    title: pageTitle(t.has("metaTitle") ? t("metaTitle") : t("name")),
-    description: t("meta"),
-    alternates: pageAlternates(locale as AppLocale, `/roll-form-hatlari/${slug}`),
-  };
+    baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
+    aciklama: t("meta"),
+    gorsel: hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
+  });
 }
 
 export default async function RollFormLinePage({ params }: Props) {

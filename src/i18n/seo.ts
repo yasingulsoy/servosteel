@@ -3,6 +3,19 @@ import { SITE_NAME } from "@/lib/site";
 import { routing, localeHreflang, type AppLocale } from "./routing";
 import { localizeFullPath } from "./slugs";
 
+/** og:locale — Facebook/LinkedIn dil kodu (layout ve sayfa etiketleri ortak kullanır). */
+export const OG_LOCALE: Record<AppLocale, string> = {
+  tr: "tr_TR",
+  en: "en_US",
+  de: "de_DE",
+  es: "es_ES",
+  it: "it_IT",
+  hu: "hu_HU",
+  pl: "pl_PL",
+  ru: "ru_RU",
+  ar: "ar_SA",
+};
+
 /** Google SERP'te başlık ~60 karakterde kesilir. */
 const MAX_TITLE = 60;
 const SUFFIX_LEN = ` | ${SITE_NAME}`.length;
@@ -76,5 +89,56 @@ export function pageAlternates(
   return {
     canonical: localePath(locale, path),
     languages,
+  };
+}
+
+/**
+ * Site paylaşım görseli — `src/app/[locale]/opengraph-image.tsx` üretir
+ * (1200×630, marka renkleri). Adres dilin önekiyle: tr `/opengraph-image`,
+ * diğerleri `/en/opengraph-image`. Kendi fotoğrafı olmayan sayfalar bunu alır.
+ */
+export function siteGorseli(locale: AppLocale) {
+  return `${prefix(locale)}/opengraph-image`;
+}
+
+/**
+ * Sayfanın KENDİ paylaşım etiketleri (og:*, twitter:*).
+ *
+ * Gerekli çünkü metadata SIĞ birleşiyor: `openGraph` bir üst katmanda
+ * tanımlıysa ve sayfa kendi `openGraph`ını vermiyorsa, sayfa LAYOUT'unkini
+ * olduğu gibi kullanıyordu — 2026-09-22'de canlıdaki her sayfa ana sayfanın
+ * başlığıyla ve `og:url = /` ile paylaşılıyordu (LinkedIn/WhatsApp önizlemesi
+ * ana sayfayı gösteriyor, paylaşım ana sayfaya yazılıyordu).
+ *
+ * `gorsel`: ürün sayfalarının kendi fotoğrafı (`/gorseller/{slug}.jpg`).
+ * Verilmezse dosya kuralıyla gelen site görseli kalır
+ * (`src/app/[locale]/opengraph-image.tsx`).
+ */
+export function sayfaMeta(
+  locale: AppLocale,
+  path: string,
+  s: { baslik: string; aciklama: string; gorsel?: string; tur?: "website" | "article"; yayin?: string }
+): Metadata {
+  const gorsel = s.gorsel ?? siteGorseli(locale);
+  return {
+    title: pageTitle(s.baslik),
+    description: s.aciklama,
+    alternates: pageAlternates(locale, path),
+    openGraph: {
+      type: s.tur ?? "website",
+      locale: OG_LOCALE[locale] ?? OG_LOCALE[routing.defaultLocale],
+      url: localePath(locale, path),
+      siteName: SITE_NAME,
+      title: s.baslik,
+      description: s.aciklama,
+      images: [gorsel],
+      ...(s.yayin ? { publishedTime: s.yayin } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: s.baslik,
+      description: s.aciklama,
+      images: [gorsel],
+    },
   };
 }
