@@ -144,7 +144,11 @@ t("kutu secimi", () => {
   assert.match(s.sebep, /tavan doldu/);
   /* hepsi durmuş: sebep kutuları sayar */
   s = K.kutuSec({ ...ayar, kutular: [ayar.kutular[0]] }, { "a@x.com": d({ durdu: true, durduSebep: "spam engeli" }) }, {});
-  assert.match(s.sebep, /a@x\.com: spam engeli/);
+  assert.equal(s.sebep, "Gönderim durdu (1 kutu) — spam engeli");
+  /* aynı sebeple duran iki kutu: sebep bir kez yazılır */
+  s = K.kutuSec({ ...ayar, kutular: ayar.kutular.slice(0, 2) },
+    { "a@x.com": d({ durdu: true, durduSebep: "421" }), "b@x.com": d({ durdu: true, durduSebep: "421" }) }, {});
+  assert.equal(s.sebep, "Gönderim durdu (2 kutu) — 421");
   /* kutu ısınması: ilk gün kutu tavanı 10 */
   s = K.kutuSec({ ...ayar, kutular: [ayar.kutular[2]] }, { "c@y.com": d({ bugun: 10, ilkGun: 0 }) }, { "y.com": { bugun: 10, ilkGun: 0 } });
   assert.match(s.satirlar[0].engel, /kutunun bugünkü tavanı doldu \(10\/10\)/);

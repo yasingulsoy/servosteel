@@ -505,11 +505,24 @@ girmez. AB'de izin şartı olan ülkeler (DE AT PL ES IT CZ RO) ve yaptırım
 altındaki pazarlar keşfe dahil değil.
 
 Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
-- **Günde en çok 20** (`OUTREACH_DAILY_LIMIT`, üst sınır 50), iki e-posta arası
-  **en az 90 sn** (`OUTREACH_INTERVAL_SEC`, alt sınır 60). Gün İstanbul günü.
-- **Isınma:** ilk gönderimden itibaren 1. hafta günde en çok **10**, 2. hafta
-  **15**, sonra ayarlanan tavan. Yeni kutunun itibarı yok; sıfırdan yüksek
-  hacimle başlayan gönderici Gmail/Outlook'ta spam sayılıyor.
+- **Birden çok gönderen kutusu** (2026-09-22, Yasin "5 kutu açsam"):
+  `OUTREACH_SMTP_USER` + `OUTREACH_SMTP_USER_2` … `_9` (her birinin `_PASS_n`'i;
+  sunucu/port/görünen ad verilmezse 1. kutununki). Gönderim anında sigortası atık,
+  kendi tavanı ya da alan adının tavanı dolan kutu atlanır; kalanlardan **bugün en
+  az gönderen** seçilir. Yarım tanımlı kutu atlanır, listenin üstünde uyarı çıkar.
+- **Kutu başına günde en çok 20** (`OUTREACH_DAILY_LIMIT`, üst sınır 50), aynı
+  kutudan iki e-posta arası **en az 90 sn** (`OUTREACH_INTERVAL_SEC`, alt sınır
+  60). Gün İstanbul günü.
+- **Alan adı başına günde en çok 50** (`OUTREACH_DOMAIN_DAILY_LIMIT`, üst sınır
+  150) — o alan adındaki kutuların TOPLAMI. Gmail/Outlook/MailChannels itibarı
+  kutuya değil alan adına bakıyor: aynı alan adında beş kutu açmak hacmi beşe
+  katlamaz, o alan adından giden soğuk e-postayı beşe katlar; alan adı kara
+  listeye düşerse Liza'nın ve Yavuz Bey'in müşteri yazışmaları da gitmez. Daha
+  fazla hacim ayrı alan adı ister (ör. servosteel-export.com, kendi kutuları).
+- **Isınma:** kutu başına 1. hafta günde en çok **10**, 2. hafta **15**, sonra
+  ayarlanan tavan; alan adı başına 1. hafta **20**, 2. hafta **35**, sonra alan
+  adı tavanı. Yeni kutunun/alan adının itibarı yok; sıfırdan yüksek hacimle
+  başlayan gönderici Gmail/Outlook'ta spam sayılıyor.
 - **Göndermeden önce alan adı kontrolü:** alıcının alan adında e-posta sunucusu
   (MX, yoksa A kaydı) yoksa e-posta gönderilmez, firma "Adres hatalı" olur.
   noreply@, postmaster@, webmaster@ gibi sistem adreslerine gönderilmez.
@@ -517,13 +530,19 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   ise gönderim durur. Geri dönen e-postalar (bounce) gönderen kutusuna gelir,
   panel onları okuyamaz — **gelen her geri dönüşte firmayı "Adres hatalı"
   işaretleyin**; eşik ancak öyle çalışır.
-- **Sigorta:** sunucu 4xx derse, girişi reddederse, cevabında hız sınırı / spam /
-  engel / relay geçerse ya da üst üste iki gönderim başarısız olursa gönderim
-  gün sonuna kadar (en az 6 saat) durur. Sebep listenin üstünde yazar. Yönetici
-  "Sigortayı şimdi kaldır" diyebilir — **yalnızca sebep giderildiyse** (ör.
-  parola düzeltildi). Hız sınırına üstüne gitmek kutuyu kara listeye sokar.
+- **Sigorta — kimi durdurur:** giriş reddi ya da relay/yetki cevabı yalnızca
+  **o kutuyu**; 4xx, hız sınırı, spam/engel/itibar cevabı **o alan adındaki bütün
+  kutuları** (aynı alan adındaki öbür kutuyla devam etmek aynı engele gitmek);
+  aynı kutuda üst üste iki başarısızlık o kutuyu durdurur. Süre gün sonuna kadar,
+  en az 6 saat. Kutuların durumu listenin üstündeki tabloda. Yönetici "Sigortayı
+  şimdi kaldır" diyebilir — **yalnızca sebep giderildiyse** (ör. parola
+  düzeltildi). Hız sınırına üstüne gitmek alan adını kara listeye sokar.
 - **Sunucu 45 sn cevap vermezse** e-posta gitmiş olabilir: firma "Gönderildi"
-  sayılır ve gün durur — aynı firmaya ikinci e-posta gitmesin.
+  sayılır ve **o sunucudaki bütün kutular** gün sonuna kadar durur — aynı firmaya
+  ikinci e-posta gitmesin. Panelden SMTP ile giden e-posta kutunun Gönderilmiş
+  klasörüne düşmez; kopyası ancak `OUTREACH_BCC` adresine gelir.
+- **Aynı adrese bir kez:** adres başka bir firma satırında da olsa, ona bir kez
+  tanıtım e-postası gittiyse (ya da gitmiş olabilirse) bir daha gönderilmez.
 - **Alıcı reddi** (550 user unknown): firma "Adres hatalı" olur, gönderim sürer.
 - **Almanya ve Avusturya'ya e-posta gitmez** — şirketlere de önceden açık izin
   şartı var (UWG §7, TKG 2021 §174). Telefon, iletişim formu, LinkedIn. Diğer AB
@@ -708,25 +727,43 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
   `alternateName` canlıda doğrulandı. Dört saat gecikmişti; **otomatik deploy'un
   neden geciktiği hâlâ bilinmiyor**, tekrarlarsa Dokploy webhook'una bakılacak.
 
-**Tanıtım e-postası — panelden gönderimi açmak için (2026-09-21)**
-- [ ] **Ayrı bir e-posta kutusu aç** (hosting paneli → E-posta Hesapları), ör.
-  `export@servosteel.com.tr`. **website@ olmaz:** form bildirimleri oradan
-  gidiyor; aynı kutu girilirse panel gönderimi hiç açmaz. Yanıtlar bu kutuya
-  gelir — biri okumalı, ya da `OUTREACH_REPLY_TO` okunan bir adresi göstermeli.
-- [ ] **Dokploy → Environment'a ekle ve yeniden dağıt:**
-  `OUTREACH_SMTP_USER=export@servosteel.com.tr` ve `OUTREACH_SMTP_PASS=…`
-  (parola sohbete yazılmaz). İsteğe bağlı: `OUTREACH_FROM_NAME` (varsayılan
-  "Servosteel"), `OUTREACH_REPLY_TO`, `OUTREACH_BCC`. Sunucu ve port verilmezse
-  formunkiler (`SMTP_HOST`/`SMTP_PORT`) kullanılır. Eksikken panel listeyi ve
-  önizlemeyi gösterir, göndermez — sarı bant hangi değişkenin eksik olduğunu yazar.
+**Tanıtım e-postası — panelden gönderimi açmak için (2026-09-21, kutular 2026-09-22)**
+- [x] **Kutular açıldı (2026-09-22):** marketing@, yasin@, gulsoy@, ege@
+  (servosteel.com.tr, Veridyen cPanel). SMTP ayrıca açılmaz — kontrol edildi:
+  `mail.servosteel.com.tr` 465 (SSL) ve 587 açık, TLS ve AUTH var; SPF, DKIM
+  (`default._domainkey`), DMARC yerinde. **website@ olmaz:** form bildirimleri
+  oradan gidiyor; Dokploy'daki `SMTP_USER`/`SMTP_PASS`'e dokunulmaz.
+- [ ] **Şifreler değiştirilmeli:** dört kutunun şifresi 22 Eylül'de sohbete
+  yazıldı (üçü aynı). Yeni ve farklı şifreler doğrudan Dokploy'a girilir.
+- [ ] **Dokploy → Environment'a ekle ve yeniden dağıt** (parola sohbete yazılmaz):
+  ```
+  OUTREACH_SMTP_HOST=mail.servosteel.com.tr
+  OUTREACH_SMTP_PORT=465
+  OUTREACH_SMTP_USER=marketing@servosteel.com.tr    OUTREACH_SMTP_PASS=…
+  OUTREACH_SMTP_USER_2=yasin@servosteel.com.tr      OUTREACH_SMTP_PASS_2=…
+  OUTREACH_SMTP_USER_3=gulsoy@servosteel.com.tr     OUTREACH_SMTP_PASS_3=…
+  OUTREACH_SMTP_USER_4=ege@servosteel.com.tr        OUTREACH_SMTP_PASS_4=…
+  OUTREACH_FROM_NAME=Servosteel Export
+  OUTREACH_REPLY_TO=liza@servosteel.com.tr
+  OUTREACH_BCC=<kendi Gmail adresin>
+  ```
+  Dördü aynı alan adında: toplam 1. hafta günde 20, 2. hafta 35, sonra 50.
+  Eksikken panel listeyi ve önizlemeyi gösterir, göndermez — sarı bant hangi
+  değişkenin eksik olduğunu yazar; yarım kutu için ayrı uyarı çıkar.
+  **`.env.local`'a konmaz:** o dosya canlı veritabanına bağlı, lokal panel gerçek
+  e-posta gönderir.
+- [ ] **Geri dönüşler okunsun:** bounce'lar gönderen kutuya gelir — dört kutu
+  Thunderbird'e eklenir ya da cPanel → Yönlendiriciler ile liza@'ya yönlendirilir;
+  yoksa geri dönen adres "Adres hatalı" işaretlenmez ve eşik çalışmaz.
 - [ ] **İlk günler `OUTREACH_BCC` = kendi Gmail adresin:** her gönderimin kopyası
   oraya düşer; "Spam"e mi "Gelen kutusu"na mı gittiği ilk günden görülür.
   Spam'e düşüyorsa gönderime devam edilmez, bakılır.
-- [ ] **Gönderen adı imzayla aynı olsun:** e-postalar "Elizaveta Shpelevaya"
-  imzalı. `OUTREACH_FROM_NAME=Elizaveta Shpelevaya` ve yanıtlar Liza'ya
-  gitsin diye `OUTREACH_REPLY_TO=liza@servosteel.com.tr` (gönderim ayrı
-  kutudan sürer, itibar ayrı kalır). Kişiden gelen e-posta hem daha çok
-  açılıyor hem "toplu gönderim" gibi görünmüyor.
+- [ ] **Gönderen adı:** e-postalar "Elizaveta Shpelevaya" imzalı, yanıtlar
+  `OUTREACH_REPLY_TO=liza@servosteel.com.tr` ile Liza'ya gider. Tek ve nötr bir
+  kutu (export@) varken `OUTREACH_FROM_NAME=Elizaveta Shpelevaya` önerilmişti;
+  kişi adlı kutularla (yasin@, gulsoy@, ege@) "Elizaveta Shpelevaya <yasin@…>"
+  tuhaf durur — bu yüzden `Servosteel Export`. Kutu başına ayrı ad
+  `OUTREACH_FROM_NAME_n` ile verilebilir.
 - [ ] **DMARC raporu açılsın:** DNS'teki `_dmarc` kaydı `v=DMARC1; p=quarantine;`
   — rapor adresi (`rua=`) yok, e-postalarımızın alıcıda SPF/DKIM'den geçip
   geçmediğini göremiyoruz. Veridyen DNS'inde kayda

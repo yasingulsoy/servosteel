@@ -548,7 +548,9 @@ export function kutuSec(
   if (!uygun.length && bekle === null) {
     if (!satirlar.length) sebep = "Gönderen kutusu tanımlı değil.";
     else if (satirlar.every((s) => s.durum.durdu)) {
-      sebep = `Gönderim durdu — ${satirlar.map((s) => `${s.kutu.user}: ${s.durum.durduSebep || "sigorta"}`).join(" · ")}`;
+      /* Alan adı çapında atan sigorta her kutuda aynı sebeple durur — bir kez yazılır */
+      const sebepler = [...new Set(satirlar.map((s) => s.durum.durduSebep || "sigorta"))];
+      sebep = `Gönderim durdu (${satirlar.length} kutu) — ${sebepler.join(" · ")}`;
     } else {
       sebep = `Bugünkü tavan doldu (${satirlar.reduce((t, s) => t + s.durum.bugun, 0)} gönderildi). Yarın devam edilir.`;
     }

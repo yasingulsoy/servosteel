@@ -7,12 +7,6 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
-    },
-    {
-      "name": "outreach-test",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["C:/Users/YASIN~1.GUL/AppData/Local/Temp/claude/C--Users-yasin-gulsoy-Desktop-Projects-servosteel/90b19750-c40d-4ced-bc50-ddcaf4ffb6c0/scratchpad/dev-test.mjs"],
-      "port": 3217
     }
   ]
 }

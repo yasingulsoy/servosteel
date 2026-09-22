@@ -179,9 +179,11 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
        kaçırmak iyidir: "Gönderildi" işaretlenir, o sunucunun kutuları durdurulur. */
     await gonderimKaydet({ ...kayit, sonuc: "belirsiz", yanit: cevap.yanit });
     await hedefDurumDegistir(id, "gonderildi");
+    /* SMTP'den giden e-posta kutunun Gönderilmiş klasörüne DÜŞMEZ; kopyası ancak
+       OUTREACH_BCC adresine gelir. */
     await sigortaAt(
       ayniSunucu,
-      `${cevap.yanit} — e-posta gitmiş olabilir, ${gonderen.user} kutusunun Gönderilmiş klasörüne bakın.`
+      `${gonderen.user} kutusunda zaman aşımı (${cevap.yanit}) — e-posta gitmiş olabilir; BCC adresine kopyası geldiyse gitmiştir.`
     );
     await kayitEkle(ben, "hedef_gonder_hata", `firma:${id}`, `${ozet} — belirsiz`);
     yenile(id);
@@ -202,7 +204,12 @@ export async function gonderEylemi(_onceki: GonderSonucu, form: FormData): Promi
   let durdu = "";
   if (k.tur === "sigorta") {
     const kimler = k.kapsam === "alan" ? ayniAlan : [gonderen.user];
-    await sigortaAt(kimler, `${gonderen.user}: ${k.sebep}`);
+    await sigortaAt(
+      kimler,
+      kimler.length > 1
+        ? `${gonderen.user} kutusundaki cevap ${gonderen.alan} alan adının bütün kutularını durdurdu: ${k.sebep}`
+        : k.sebep
+    );
     durdu =
       k.kapsam === "alan"
         ? `${gonderen.alan} alan adındaki ${kimler.length} kutu bugünlük durduruldu.`
