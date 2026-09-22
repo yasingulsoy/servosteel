@@ -6,6 +6,7 @@ import { oturum, rolu } from "@/lib/admin-auth";
 import {
   HEDEF_DURUMLAR,
   HEDEF_DURUM_ETIKET,
+  KATEGORILER,
   KATEGORI_ADI,
   ONCELIKLI,
   SAYFA_BOYU,
@@ -35,8 +36,10 @@ import {
 import { goreli, tamTarih } from "@/lib/zaman";
 import { gelenDurumu, type GelenDurumu } from "@/lib/gelen-db";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
+import { otomatikAyar, otomatikSira, type OtomatikAyar } from "@/lib/otomatik-gonderim";
+import type { OtomatikSiradaki } from "@/lib/outreach-db";
 import { Kabuk } from "../kabuk";
-import { gelenTaraEylemi, sigortaSifirlaEylemi } from "./actions";
+import { gelenTaraEylemi, hedefDurumEylemi, otomatikAyarEylemi, sigortaSifirlaEylemi } from "./actions";
 import { FirmaListesi, SONUC_ETIKET } from "./firma-listesi";
 
 export const dynamic = "force-dynamic";
@@ -74,7 +77,7 @@ const sayi = (n: number) => n.toLocaleString("tr-TR");
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep, gelen] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep, gelen, otomatik] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -89,11 +92,12 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
         geriDonusDurumu(),
         talebeDonen(),
         gelenDurumu(),
+        otomatikAyar(),
       ]);
     return {
       v: {
         liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
-        admin: rol === "admin", gd, talep, gelen,
+        admin: rol === "admin", gd, talep, gelen, otomatik,
       },
       hata: null,
     };
@@ -152,6 +156,8 @@ export default async function FirmalarSayfasi({
     });
   }
   const secim = v ? kutuSec(ayar, v.kutular.kutu, v.kutular.alan) : null;
+  /* Otomatik gönderimin bugünkü sırası: kalan kapasite kadar (en çok 30) */
+  const sira = v?.otomatik ? await otomatikSira(v.otomatik, Math.min(30, secim?.kalan ?? 0)).catch(() => []) : [];
   const duranlar = secim?.satirlar.filter((x) => x.durum.durdu) ?? [];
   const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
   const grup = new Map((v?.gruplar ?? []).map((g) => [g.kategori, g]));
@@ -264,6 +270,9 @@ export default async function FirmalarSayfasi({
               </p>
             ) : null}
             {ayar.kutular.length ? <GelenKutulari durum={v.gelen} kutular={ayar.kutular.map((k) => k.user)} /> : null}
+            {v.otomatik && ayar.kutular.length ? (
+              <OtomatikGonderim a={v.otomatik} sira={sira} admin={v.admin} kalan={secim?.kalan ?? 0} />
+            ) : null}
 
             {/* ----------------------------------------- öncelikli gruplar */}
             <section className="mt-6" aria-labelledby="gruplar-baslik">
@@ -653,6 +662,156 @@ function GelenKutulari({ durum, kutular }: { durum: GelenDurumu; kutular: string
           ))}
         </ul>
       ) : null}
+    </section>
+  );
+}
+
+/**
+ * Otomatik gönderim — durum, aç/durdur ve ayarlar (yönetici), bugün sırada
+ * olan firmalar. Sıradaki firmayı "Çıkar" göndermeden önce listeden alır
+ * ("Geçildi" olur; firma sayfasından geri alınabilir).
+ */
+function OtomatikGonderim({
+  a,
+  sira,
+  admin,
+  kalan,
+}: {
+  a: OtomatikAyar;
+  sira: OtomatikSiradaki[];
+  admin: boolean;
+  kalan: number;
+}) {
+  const kapsam = [
+    `hafta içi${a.hafta_sonu ? " ve hafta sonu" : ""} ${a.baslangic}:00–${a.bitis}:00`,
+    `gruplar ${a.gruplar.join(", ")}`,
+    a.ab_dahil ? "AB dahil" : "AB hariç",
+    a.kesif_dahil ? "otomatik keşif dahil" : "yalnızca elle araştırılan",
+  ].join(" · ");
+  return (
+    <section
+      className={`mt-3 rounded-xl border px-4 py-3.5 text-sm ${
+        a.acik ? "border-emerald-300 bg-emerald-50/60" : "border-line bg-card"
+      }`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="font-semibold">
+          Otomatik gönderim —{" "}
+          <span className={a.acik ? "text-emerald-700" : "text-muted"}>{a.acik ? "AÇIK" : "kapalı"}</span>
+          <span className="font-normal text-muted"> · {kapsam}</span>
+        </p>
+        {admin ? (
+          <form action={otomatikAyarEylemi}>
+            <input type="hidden" name="islem" value={a.acik ? "durdur" : "ac"} />
+            <button
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold ${
+                a.acik ? "bg-red-700 text-white" : "bg-emerald-700 text-white"
+              }`}
+            >
+              {a.acik ? "Durdur" : "Aç"}
+            </button>
+          </form>
+        ) : null}
+      </div>
+      <p className="mt-1 text-muted">
+        {a.acik ? (
+          <>
+            {a.son_sonuc ? <>Son: {a.son_sonuc}</> : "Henüz tur çalışmadı (dakikada bir)."}
+            {a.son_tik ? <span title={tamTarih(a.son_tik)}> · tur {goreli(a.son_tik)}</span> : null}
+            {a.sonraki && a.sonraki_bekliyor ? (
+              <> · sıradaki gönderim {tamTarih(a.sonraki).slice(-5)}</>
+            ) : null}
+          </>
+        ) : (
+          "Açınca bugünün kalan kapasitesi pencereye eşit yayılır; elle gönderimle aynı kurallar (tavan, aralık, sigorta, geri dönüş eşiği, aynı adres) geçerli."
+        )}
+      </p>
+      {admin ? (
+        <details className="mt-2">
+          <summary className="cursor-pointer text-xs font-medium underline-offset-4 hover:underline">Ayarlar…</summary>
+          <form action={otomatikAyarEylemi} className="mt-2 flex flex-col gap-2 text-xs">
+            <input type="hidden" name="islem" value="kaydet" />
+            <fieldset className="flex flex-wrap gap-x-4 gap-y-1">
+              <legend className="mb-1 font-semibold">Ürün grupları</legend>
+              {KATEGORILER.map((k) => (
+                <label key={k} className="flex items-center gap-1.5">
+                  <input type="checkbox" name="grup" value={k} defaultChecked={a.gruplar.includes(k)} />
+                  {k} · {KATEGORI_ADI[k]}
+                </label>
+              ))}
+            </fieldset>
+            <label className="flex items-center gap-1.5">
+              <input type="checkbox" name="ab_dahil" defaultChecked={a.ab_dahil} />
+              AB ülkelerine de gönder (kurallar ülkeden ülkeye değişiyor; bazıları şirketlere de önceden izin arıyor)
+            </label>
+            <label className="flex items-center gap-1.5">
+              <input type="checkbox" name="kesif_dahil" defaultChecked={a.kesif_dahil} />
+              Otomatik keşif firmalarını da dahil et (~%15&apos;i hedef dışı olabilir — sıradakileri aşağıdan kontrol edin)
+            </label>
+            <div className="flex flex-wrap items-center gap-2">
+              <span>Saat (İstanbul):</span>
+              <select name="baslangic" defaultValue={a.baslangic} className="rounded border border-line bg-card px-1.5 py-1">
+                {Array.from({ length: 24 }, (_, i) => (
+                  <option key={i} value={i}>
+                    {String(i).padStart(2, "0")}:00
+                  </option>
+                ))}
+              </select>
+              <span>–</span>
+              <select name="bitis" defaultValue={a.bitis} className="rounded border border-line bg-card px-1.5 py-1">
+                {Array.from({ length: 24 }, (_, i) => i + 1).map((i) => (
+                  <option key={i} value={i}>
+                    {String(i).padStart(2, "0")}:00
+                  </option>
+                ))}
+              </select>
+              <label className="ml-2 flex items-center gap-1.5">
+                <input type="checkbox" name="hafta_sonu" defaultChecked={a.hafta_sonu} />
+                hafta sonu da
+              </label>
+            </div>
+            <button className="w-fit rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-surface-alt">
+              Kaydet
+            </button>
+          </form>
+        </details>
+      ) : null}
+      <div className="mt-3 border-t border-line pt-2">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+          Bugün sırada ({sira.length}
+          {kalan > sira.length ? ` / ${kalan}` : ""})
+        </p>
+        {sira.length ? (
+          <ol className="mt-1 divide-y divide-line">
+            {sira.map((f, i) => (
+              <li key={f.id} className="flex items-center gap-3 py-1.5">
+                <span className="w-5 shrink-0 text-right text-xs tabular-nums text-muted">{i + 1}</span>
+                <Link href={`/admin/firmalar/${f.id}`} className="min-w-0 flex-1 truncate font-medium underline-offset-4 hover:underline">
+                  {f.firma}
+                </Link>
+                <span className="hidden shrink-0 text-xs text-muted sm:inline">
+                  {f.ulke} · {KATEGORI_ADI[f.kategori]}
+                  {f.kesif ? " · keşif" : ""}
+                </span>
+                <form action={hedefDurumEylemi}>
+                  <input type="hidden" name="id" value={f.id} />
+                  <input type="hidden" name="durum" value="gecildi" />
+                  <button
+                    className="rounded border border-line px-2 py-0.5 text-xs hover:bg-surface-alt"
+                    title="Bu firmaya otomatik gönderilmesin (Geçildi)"
+                  >
+                    Çıkar
+                  </button>
+                </form>
+              </li>
+            ))}
+          </ol>
+        ) : (
+          <p className="mt-1 text-xs text-muted">
+            {kalan > 0 ? "Kapsama uyan gönderilebilir firma yok." : "Bugünkü tavan doldu."}
+          </p>
+        )}
+      </div>
     </section>
   );
 }

@@ -174,6 +174,29 @@ const GONDERILEBILIR = `
                   WHERE lower(g.eposta) = lower(h.eposta) AND g.sonuc IN ('ok', 'belirsiz'))
 `;
 
+export type OtomatikKapsam = { gruplar: number[]; abDahil: boolean; kesifDahil: boolean; abUlkeleri: string[] };
+export type OtomatikSiradaki = Pick<HedefFirma, "id" | "firma" | "ulke" | "eposta" | "kategori" | "kesif" | "segmentler">;
+
+/**
+ * Otomatik gönderimin sıradaki firmaları — panel sırasıyla (ürün grubu önce),
+ * elle gönderimle AYNI "gönderilebilir" kuralı + otomatiğin kapsamı: seçili
+ * gruplar, AB ülkeleri (varsayılan hariç), otomatik keşif firmaları.
+ */
+export async function otomatikSiradakiler(k: OtomatikKapsam, adet: number): Promise<OtomatikSiradaki[]> {
+  if (!k.gruplar.length || adet <= 0) return [];
+  return sorguSert<OtomatikSiradaki>(
+    `SELECT h.id, h.firma, h.ulke, h.eposta, h.kategori, h.kesif, h.segmentler
+     FROM hedef_firmalar h
+     WHERE ${GONDERILEBILIR}
+       AND h.kategori = ANY($2::int[])
+       AND ($3::boolean OR NOT (h.ulke = ANY($4::text[])))
+       AND ($5::boolean OR NOT h.kesif)
+     ORDER BY h.sira, h.id
+     LIMIT $6`,
+    [engelliUlkeler(), k.gruplar, k.abDahil, k.abUlkeleri, k.kesifDahil, Math.min(200, adet)]
+  );
+}
+
 export type AyniAdres = { firma: string; zaman: string };
 
 /**

@@ -44,6 +44,7 @@ export const OLAY_ETIKET = {
   hedef_engel: "Adresi engel listesine ekledi",
   sigorta_sifirla: "Gönderim sigortasını kaldırdı",
   gelen_tara: "Gelen kutularını taradı",
+  otomatik_ayar: "Otomatik gönderim ayarını değiştirdi",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

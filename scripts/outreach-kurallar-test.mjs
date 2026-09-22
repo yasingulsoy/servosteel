@@ -201,4 +201,27 @@ t("geri donus esigi", () => {
   assert.equal(K.geriDonusEngeli(50, 4), null);           // %8
   assert.ok(K.geriDonusEngeli(50, 5));
 });
+t("istanbul saati", () => {
+  /* 2026-09-22 06:30 UTC = 09:30 İstanbul, salı */
+  assert.deepEqual(K.istanbulSaati(new Date("2026-09-22T06:30:00Z")), { saat: 9, dakika: 30, haftaGunu: 2 });
+  /* 2026-09-26 21:05 UTC = 27 Eylül 00:05 İstanbul, pazar */
+  assert.deepEqual(K.istanbulSaati(new Date("2026-09-26T21:05:00Z")), { saat: 0, dakika: 5, haftaGunu: 0 });
+});
+t("otomatik pencere", () => {
+  const a = { baslangic: 9, bitis: 18, haftaSonu: false };
+  assert.deepEqual(K.otomatikPencere({ saat: 10, dakika: 0, haftaGunu: 2 }, a), { acik: true, sebep: null, kalanDk: 480 });
+  assert.equal(K.otomatikPencere({ saat: 8, dakika: 59, haftaGunu: 2 }, a).acik, false);
+  assert.equal(K.otomatikPencere({ saat: 18, dakika: 0, haftaGunu: 2 }, a).acik, false);
+  assert.equal(K.otomatikPencere({ saat: 12, dakika: 0, haftaGunu: 6 }, a).sebep, "hafta sonu");
+  assert.equal(K.otomatikPencere({ saat: 12, dakika: 0, haftaGunu: 0 }, { ...a, haftaSonu: true }).acik, true);
+});
+t("otomatik tempo", () => {
+  /* 20 e-posta, 9 saat: 27 dk ±%25 */
+  assert.equal(K.sonrakiAralikSn(540, 20, 90, 0.5), 1620);
+  assert.equal(K.sonrakiAralikSn(540, 20, 90, 0), 1215);
+  assert.equal(K.sonrakiAralikSn(540, 20, 90, 1), 2025);
+  /* pencerenin sonu yaklaşınca bile kutu aralığının altına inmez */
+  assert.equal(K.sonrakiAralikSn(5, 20, 90, 0.5), 90);
+  assert.equal(K.sonrakiAralikSn(60, 0, 90, 0.5), 3600);
+});
 console.log(`${n} test gecti`);

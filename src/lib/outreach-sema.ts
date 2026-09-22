@@ -119,6 +119,26 @@ export const OUTREACH_SEMA = `
     PRIMARY KEY (kutu, uidvalidity, uid)
   );
   CREATE INDEX IF NOT EXISTS gelen_eposta_islendi_idx ON gelen_eposta (islendi DESC);
+  /* Otomatik gönderim ayarı ve temposu — tek satır (bkz. src/lib/otomatik-gonderim.ts).
+     Varsayılan KAPALI: panelden yönetici açar. */
+  CREATE TABLE IF NOT EXISTS otomatik_gonderim (
+    id            INTEGER PRIMARY KEY DEFAULT 1 CHECK (id = 1),
+    acik          BOOLEAN NOT NULL DEFAULT false,
+    gruplar       SMALLINT[] NOT NULL DEFAULT '{1,2,3,4,5}',
+    ab_dahil      BOOLEAN NOT NULL DEFAULT false,
+    kesif_dahil   BOOLEAN NOT NULL DEFAULT true,
+    baslangic     SMALLINT NOT NULL DEFAULT 9,
+    bitis         SMALLINT NOT NULL DEFAULT 18,
+    hafta_sonu    BOOLEAN NOT NULL DEFAULT false,
+    son_tik       TIMESTAMPTZ,
+    son_gonderim  TIMESTAMPTZ,
+    sonraki       TIMESTAMPTZ,
+    son_sonuc     TEXT NOT NULL DEFAULT '',
+    degistiren    TEXT NOT NULL DEFAULT '',
+    degisti       TIMESTAMPTZ
+  );
+  INSERT INTO otomatik_gonderim (id) VALUES (1) ON CONFLICT (id) DO NOTHING;
+
   /* Kutu başına tarama: nereye kadar okundu (UID), en son ne zaman, hata. */
   CREATE TABLE IF NOT EXISTS gelen_tarama (
     kutu         TEXT PRIMARY KEY,

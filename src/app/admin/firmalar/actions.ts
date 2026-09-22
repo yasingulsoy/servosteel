@@ -18,6 +18,7 @@ import {
 import { ayarlariOku } from "@/lib/outreach-kurallar";
 import { tekGonderim } from "@/lib/gonderim";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
+import { otomatikAyar, otomatikAyarKaydet } from "@/lib/otomatik-gonderim";
 
 /**
  * Hedef firma eylemleri. Her birinin ilk satırı `yetki()` — sunucu eylemi
@@ -145,5 +146,49 @@ export async function gelenTaraEylemi() {
     .map((r) => `${r.kutu}: ${r.hata ? `hata — ${r.hata}` : r.atlandi ?? `${r.islenen} ileti (${r.yanit} yanıt, ${r.geriDonus} geri dönüş, ${r.abonelik} iptal)`}`)
     .join(" · ");
   await kayitEkle(ben, "gelen_tara", "", ozet.slice(0, 280));
+  yenile();
+}
+
+/**
+ * Otomatik gönderimi açar, durdurur ya da ayarını değiştirir — yalnızca
+ * yönetici. Düğme adı ("islem"): ac | durdur | kaydet. Her değişiklik panel
+ * kaydına yazılır (kim, ne zaman, ne yaptı).
+ */
+export async function otomatikAyarEylemi(form: FormData) {
+  const ben = await adminYetkisi();
+  if (!(await outreachSemaKur())) return;
+  const eski = await otomatikAyar();
+  if (!eski) return;
+  const islem = metin(form.get("islem"), 10);
+  const saat = (v: FormDataEntryValue | null, varsayilan: number, en: number, ust: number) => {
+    const n = Math.trunc(Number(v));
+    return Number.isFinite(n) && n >= en && n <= ust ? n : varsayilan;
+  };
+  const gruplar = form
+    .getAll("grup")
+    .map((g) => Number(g))
+    .filter((g) => Number.isInteger(g) && g >= 1 && g <= 6);
+  const yeni =
+    islem === "kaydet"
+      ? {
+          acik: eski.acik,
+          gruplar: gruplar.length ? [...new Set(gruplar)].sort() : eski.gruplar,
+          ab_dahil: form.get("ab_dahil") === "on",
+          kesif_dahil: form.get("kesif_dahil") === "on",
+          baslangic: saat(form.get("baslangic"), eski.baslangic, 0, 23),
+          bitis: saat(form.get("bitis"), eski.bitis, 1, 24),
+          hafta_sonu: form.get("hafta_sonu") === "on",
+        }
+      : { ...eski, acik: islem === "ac" };
+  if (yeni.bitis <= yeni.baslangic) yeni.bitis = Math.min(24, yeni.baslangic + 1);
+  await otomatikAyarKaydet(yeni, ben);
+  await kayitEkle(
+    ben,
+    "otomatik_ayar",
+    "",
+    `${yeni.acik ? "açık" : "kapalı"} · gruplar ${yeni.gruplar.join(",")} · AB ${yeni.ab_dahil ? "dahil" : "hariç"} · keşif ${
+      yeni.kesif_dahil ? "dahil" : "hariç"
+    } · ${yeni.baslangic}:00–${yeni.bitis}:00${yeni.hafta_sonu ? " · hafta sonu da" : ""}`
+  );
   yenile();
 }

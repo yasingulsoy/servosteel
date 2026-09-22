@@ -22,13 +22,16 @@ export const ENGELLI_ULKELER: Record<string, string> = {
     "Avusturya'da şirketlere de ticari e-posta için önceden açık izin gerekiyor (TKG 2021 §174). Telefon, iletişim formu ya da LinkedIn ile ulaşın.",
 };
 
-/** Gönderilebilen ama kuralları ülkeden ülkeye değişen AB ülkeleri — önizlemede uyarı çıkar. */
+/** Gönderilebilen ama kuralları ülkeden ülkeye değişen AB ülkeleri — önizlemede uyarı çıkar,
+ *  otomatik gönderim varsayılan olarak bunlara YAZMAZ (bkz. otomatik-gonderim.ts). */
 const AB_ULKELERI = new Set([
   "Belçika", "Bulgaristan", "Çekya", "Danimarka", "Estonya", "Finlandiya", "Fransa",
   "Hırvatistan", "Hollanda", "İrlanda", "İspanya", "İsveç", "İtalya", "Kıbrıs",
   "Letonya", "Litvanya", "Lüksemburg", "Macaristan", "Malta", "Polonya", "Portekiz",
   "Romanya", "Slovakya", "Slovenya", "Yunanistan",
 ]);
+
+export const AB_ULKE_LISTESI = [...AB_ULKELERI];
 
 export function ulkeUyarisi(ulke: string): string | null {
   if (!AB_ULKELERI.has(ulke)) return null;
@@ -556,4 +559,53 @@ export function kutuSec(
     }
   }
   return { satirlar, uygun, bekle, sebep, kalan, gunlukKapasite };
+}
+
+/* ------------------------------------------------------ otomatik gönderim */
+
+export type IstanbulSaati = { saat: number; dakika: number; /** 0 pazar … 6 cumartesi */ haftaGunu: number };
+
+const GUNLER: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+/** Verilen anın İstanbul'daki saati — sunucu UTC'de çalışıyor. */
+export function istanbulSaati(t: Date): IstanbulSaati {
+  const parca = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: "Europe/Istanbul",
+      hour: "2-digit",
+      minute: "2-digit",
+      weekday: "short",
+      hourCycle: "h23",
+    })
+      .formatToParts(t)
+      .map((p) => [p.type, p.value])
+  );
+  return { saat: Number(parca.hour), dakika: Number(parca.minute), haftaGunu: GUNLER[parca.weekday] ?? 1 };
+}
+
+/**
+ * Otomatik gönderim şu an çalışabilir mi? Hafta içi (hafta sonu açık değilse)
+ * ve [baslangic, bitis) saatleri arasında. `kalanDk`: pencerenin bitmesine kalan.
+ */
+export function otomatikPencere(
+  t: IstanbulSaati,
+  a: { baslangic: number; bitis: number; haftaSonu: boolean }
+): { acik: boolean; sebep: string | null; kalanDk: number } {
+  const dk = t.saat * 60 + t.dakika;
+  const kalanDk = Math.max(0, a.bitis * 60 - dk);
+  if (!a.haftaSonu && (t.haftaGunu === 0 || t.haftaGunu === 6)) return { acik: false, sebep: "hafta sonu", kalanDk };
+  if (dk < a.baslangic * 60) return { acik: false, sebep: `saat ${a.baslangic}:00'da başlar`, kalanDk };
+  if (dk >= a.bitis * 60) return { acik: false, sebep: `bugünkü pencere ${a.bitis}:00'da kapandı`, kalanDk: 0 };
+  return { acik: true, sebep: null, kalanDk };
+}
+
+/**
+ * Bir sonraki otomatik gönderime kaç saniye: kalan kapasite pencerenin kalanına
+ * EŞİT yayılır (20 e-posta, 9 saat → ~27 dk), hiçbir zaman kutu aralığından
+ * kısa değil. ±%25 oynatılır — dakikası dakikasına giden e-posta makine izi.
+ * `rastgele` 0…1 (test için dışarıdan).
+ */
+export function sonrakiAralikSn(kalanDk: number, kalan: number, aralikSn: number, rastgele: number): number {
+  const hedef = Math.max(aralikSn, (kalanDk * 60) / Math.max(1, kalan));
+  return Math.round(hedef * (0.75 + Math.min(1, Math.max(0, rastgele)) * 0.5));
 }
