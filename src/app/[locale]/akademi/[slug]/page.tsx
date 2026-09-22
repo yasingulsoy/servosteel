@@ -13,7 +13,7 @@ import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractToc, slugifyHeading, textOf } from "@/lib/toc";
-import { localePath, OG_LOCALE, pageTitle, siteGorseli } from "@/i18n/seo";
+import { localePath, OG_LOCALE, pageTitle, paylasimGorseli, siteGorseli } from "@/i18n/seo";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -52,14 +52,14 @@ export async function generateMetadata({ params }: Props) {
       title: post.title,
       description: post.description,
       publishedTime: post.date,
-      /* Yazının kapağı yoksa site görseli */
-      images: [post.cover || siteGorseli(locale as AppLocale)],
+      /* Kapak varsa paylaşım kopyası, yoksa site görseli */
+      images: [post.cover ? paylasimGorseli(post.cover) : siteGorseli(locale as AppLocale)],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [post.cover || siteGorseli(locale as AppLocale)],
+      images: [post.cover ? paylasimGorseli(post.cover) : siteGorseli(locale as AppLocale)],
     },
   };
 }

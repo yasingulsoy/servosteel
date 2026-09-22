@@ -114,12 +114,24 @@ export function siteGorseli(locale: AppLocale) {
  * Verilmezse dosya kuralıyla gelen site görseli kalır
  * (`src/app/[locale]/opengraph-image.tsx`).
  */
+/**
+ * Paylaşım kopyası: sitenin kendi fotoğrafı yerine 1200×630, 50-130 KB kopya
+ * (`public/paylasim/`, `python scripts/paylasim-gorselleri.py`).
+ *
+ * Neden: site fotoğrafları 340-780 KB ve oranları karışık; LinkedIn/WhatsApp
+ * önizlemesi 1200×630 bekliyor, WhatsApp büyük dosyada önizlemeyi bazen hiç
+ * göstermiyor. Kopyası olmayan adres (marka görseli, dış adres) aynen kalır.
+ */
+export function paylasimGorseli(gorsel: string) {
+  return gorsel.startsWith("/gorseller/") ? gorsel.replace("/gorseller/", "/paylasim/") : gorsel;
+}
+
 export function sayfaMeta(
   locale: AppLocale,
   path: string,
   s: { baslik: string; aciklama: string; gorsel?: string; tur?: "website" | "article"; yayin?: string }
 ): Metadata {
-  const gorsel = s.gorsel ?? siteGorseli(locale);
+  const gorsel = s.gorsel ? paylasimGorseli(s.gorsel) : siteGorseli(locale);
   return {
     title: pageTitle(s.baslik),
     description: s.aciklama,
