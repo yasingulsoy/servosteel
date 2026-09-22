@@ -18,7 +18,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { cikisEylemi, nabizEylemi } from "./actions";
+import { cikisEylemi } from "./actions";
 import { MENU_CEREZ } from "./menu-tercihi";
 
 /**
@@ -56,6 +56,7 @@ export function PanelKabugu({
   aktif,
   durum,
   kullanici,
+  surum,
   admin,
   ilkSabit,
   durumlar,
@@ -65,6 +66,8 @@ export function PanelKabugu({
   aktif: PanelBolum;
   durum?: string;
   kullanici: string;
+  /** Sayfayı çizen derlemenin kimliği (lib/panel-surum) — nabız sunucununkiyle karşılaştırır */
+  surum: string;
   admin: boolean;
   ilkSabit: boolean;
   durumlar: DurumSatiri[];
@@ -75,6 +78,8 @@ export function PanelKabugu({
   const [ustunde, setUstundeHam] = useState(() => sonUstunde);
   const [altAcik, setAltAcikHam] = useState(() => sonAltAcik ?? aktif === "talepler");
   const [mobilAcik, setMobilAcik] = useState(false);
+  /* Sunucu yeni sürüme geçti (deploy): bu sekmenin düğmeleri eski kimlikli, basılırsa 404 */
+  const [eskiSurum, setEskiSurum] = useState(false);
   const zamanlayici = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const setUstunde = (v: boolean) => {
@@ -110,7 +115,10 @@ export function PanelKabugu({
   /* Dakikalık nabız — oturumun son etkinliğini günceller. Talep okurken
      sayfa değişmediği için sunucu kişinin hâlâ orada olduğunu bilemiyordu.
      Yalnızca sekme GÖRÜNÜRKEN ve son 5 dakikada fare/klavye/dokunma varken
-     atar: arka planda unutulan ya da başından kalkılan panel süre yazmaz. */
+     atar: arka planda unutulan ya da başından kalkılan panel süre yazmaz.
+     Sunucu eylemi değil sabit adres (api/nabiz): eylem kimliği her derlemede
+     değişiyor, deploy'dan önce açık kalan sekme her dakika 404 alıyordu.
+     Dönen sürüm sayfanınkinden farklıysa bant çıkar, nabız durur. */
   useEffect(() => {
     let sonHareket = Date.now();
     const hareket = () => {
@@ -118,16 +126,25 @@ export function PanelKabugu({
     };
     const olaylar = ["pointerdown", "pointermove", "keydown", "scroll", "touchstart"];
     olaylar.forEach((o) => window.addEventListener(o, hareket, { passive: true }));
-    const nabiz = setInterval(() => {
+    const nabiz = setInterval(async () => {
       if (document.visibilityState !== "visible") return;
       if (Date.now() - sonHareket > HAREKETSIZ_MS) return;
-      nabizEylemi().catch(() => {});
+      try {
+        const r = await fetch("/api/nabiz", { method: "POST", cache: "no-store" });
+        const { surum: sunucuda } = (await r.json()) as { surum?: string };
+        if (sunucuda && sunucuda !== surum) {
+          setEskiSurum(true);
+          clearInterval(nabiz);
+        }
+      } catch {
+        /* ağ yok ya da sunucu yeniden başlıyor — bir sonraki dakika */
+      }
     }, NABIZ_MS);
     return () => {
       clearInterval(nabiz);
       olaylar.forEach((o) => window.removeEventListener(o, hareket));
     };
-  }, []);
+  }, [surum]);
 
   function sabitDegistir() {
     const yeni = !sabit;
@@ -443,6 +460,24 @@ export function PanelKabugu({
           </div>
         </header>
 
+        {eskiSurum ? (
+          <div
+            role="status"
+            className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900 sm:px-6 lg:px-8"
+          >
+            <span>
+              <strong>Panel güncellendi.</strong> Bu sayfa önceki sürümden açık kaldı — düğmeler çalışmaz, sayfayı yenileyin.
+              Düzenlediğiniz metin varsa önce kopyalayın.
+            </span>
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="rounded-lg bg-shell px-3 py-1.5 text-xs font-semibold text-white"
+            >
+              Yenile
+            </button>
+          </div>
+        ) : null}
         <div className="px-4 py-5 sm:px-6 sm:py-6 lg:px-8 lg:py-8">{children}</div>
       </div>
     </div>

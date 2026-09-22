@@ -5,7 +5,6 @@ import { redirect } from "next/navigation";
 import {
   girisYap,
   cikisYap,
-  oturum,
   yoneticiEkle,
   parolaAta,
   yoneticiSil,
@@ -46,13 +45,7 @@ function talepOzeti(t: Pick<Talep, "id" | "ad" | "firma" | "eposta">) {
   return [t.ad, t.firma].filter(Boolean).join(" · ") || t.eposta || `Talep #${t.id}`;
 }
 
-/**
- * Açık panel sekmesinin dakikalık nabzı: oturumun son etkinliğini günceller
- * (`oturum` bunu kendisi yapıyor). Oturum düşmüşse sessizce hiçbir şey yapmaz.
- */
-export async function nabizEylemi() {
-  await oturum();
-}
+/* Dakikalık nabız artık sunucu eylemi değil: src/app/api/nabiz/route.ts */
 
 export async function girisEylemi(_onceki: string | null, form: FormData) {
   const kullanici = metin(form.get("kullanici"), 80);

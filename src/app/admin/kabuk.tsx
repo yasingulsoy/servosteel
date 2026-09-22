@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { rolu } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, durumSayilari } from "@/lib/leads-db";
+import { panelSurumu } from "@/lib/panel-surum";
 import { PanelKabugu, type PanelBolum } from "./kabuk-istemci";
 import { MENU_CEREZ } from "./menu-tercihi";
 
@@ -41,6 +42,7 @@ export async function Kabuk({
       aktif={aktif}
       durum={durum}
       kullanici={kullanici}
+      surum={panelSurumu()}
       admin={rol === "admin"}
       ilkSabit={cerez.get(MENU_CEREZ)?.value === "acik"}
       durumlar={DURUMLAR.map((d) => ({

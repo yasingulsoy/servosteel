@@ -594,6 +594,14 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   alıcı, sonuç, sunucu cevabı, kim gönderdi — "otomatik" ya da kullanıcı) ve e-posta
   alıcının gördüğü gibi (yalıtılmış çerçeve, `sandbox`); Gelen sekmesi işlenen
   yanıt/geri dönüş/iptal/otomatik yanıtlar. Kutuya ve sonuca göre süzülür.
+- **Deploy'dan önce açık kalan panel sekmesi (2026-09-22, Yasin konsolda "Server
+  Action … was not found" gördü):** Next sunucu eylemlerinin kimliği her derlemede
+  değişiyor; eski sekmenin dakikalık nabzı (eskiden sunucu eylemi) her dakika 404
+  alıyordu. Nabız artık sabit adres (`/api/nabiz`) ve sunucunun derleme kimliğini
+  (`.next/BUILD_ID`, `src/lib/panel-surum.ts`) dönüyor; sayfanınkinden farklıysa
+  üstte "Panel güncellendi — yenileyin" bandı çıkar, nabız durur. Bant çıkmadan bir
+  düğmeye basılırsa `src/app/admin/error.tsx` teknik hata yerine aynı şeyi söyler.
+  İş kaybı yok: otomatik gönderim sunucuda döner, sekme/tarayıcı kapalıyken de çalışır.
 - **HTML ve editör:** e-posta düz metin + HTML (multipart/alternative): paragraf,
   bağlantı, kalın/italik/altı çizili, liste, alıntı — uzak kaynak ve izleme YOK.
   Görseller iletiye GÖMÜLÜ (`cid:`, multipart/related) — uzak görsel Outlook'ta
