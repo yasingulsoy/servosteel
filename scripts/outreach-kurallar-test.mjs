@@ -102,13 +102,11 @@ t("ayarlar: ek kutular", () => {
 });
 t("alan adi isinmasi", () => {
   assert.equal(K.alanIsinmaTavani(null, 50).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(0, 50).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(1, 50).tavan, 30);
-  assert.equal(K.alanIsinmaTavani(3, 50).tavan, 30);
-  assert.equal(K.alanIsinmaTavani(4, 50).tavan, 40);
-  assert.equal(K.alanIsinmaTavani(9, 50).tavan, 40);
-  assert.equal(K.alanIsinmaTavani(10, 50).tavan, 50);
-  assert.equal(K.alanIsinmaTavani(10, 50).asama, null);
+  assert.equal(K.alanIsinmaTavani(0, 150).tavan, 20);
+  assert.equal(K.alanIsinmaTavani(1, 150).tavan, 70);
+  assert.equal(K.alanIsinmaTavani(3, 150).tavan, 110);
+  assert.equal(K.alanIsinmaTavani(4, 150).tavan, 150);
+  assert.equal(K.alanIsinmaTavani(4, 150).asama, null);
   /* Ayarlanan tavan kademeden düşükse o kazanır */
   assert.equal(K.alanIsinmaTavani(2, 10).tavan, 10);
 });
@@ -190,12 +188,12 @@ t("sistem adresi", () => {
 t("isinma tavani", () => {
   assert.deepEqual(K.isinmaTavani(null, 20).tavan, 10);
   assert.equal(K.isinmaTavani(0, 20).asama, "ısınma: 1. gün");
-  assert.equal(K.isinmaTavani(0, 20).tavan, 10);
-  assert.equal(K.isinmaTavani(1, 20).tavan, 12);
-  assert.equal(K.isinmaTavani(3, 20).tavan, 12);
-  assert.equal(K.isinmaTavani(4, 20).tavan, 15);
-  assert.equal(K.isinmaTavani(7, 20).tavan, 15);
-  assert.equal(K.isinmaTavani(13, 50).tavan, 15);
+  assert.equal(K.isinmaTavani(0, 40).tavan, 10);
+  assert.equal(K.isinmaTavani(1, 40).tavan, 20);
+  assert.equal(K.isinmaTavani(3, 40).tavan, 30);
+  assert.equal(K.isinmaTavani(4, 40).tavan, 40);
+  assert.equal(K.isinmaTavani(4, 40).asama, null);
+  assert.equal(K.isinmaTavani(13, 50).tavan, 50);
   assert.equal(K.isinmaTavani(14, 50).tavan, 50);
   assert.equal(K.isinmaTavani(14, 50).asama, null);
   assert.equal(K.isinmaTavani(3, 5).tavan, 5);   // ayarlanan tavan daha düşükse o geçerli
@@ -204,9 +202,9 @@ t("geri donus esigi", () => {
   assert.equal(K.geriDonusEngeli(0, 0), null);
   assert.equal(K.geriDonusEngeli(10, 2), null);          // en az 3 firma
   assert.ok(K.geriDonusEngeli(10, 3));                    // %30
-  assert.ok(K.geriDonusEngeli(30, 3));                    // %10 tam sınır
-  assert.equal(K.geriDonusEngeli(50, 4), null);           // %8
-  assert.ok(K.geriDonusEngeli(50, 5));
+  assert.ok(K.geriDonusEngeli(50, 3));                    // %6 tam sınır
+  assert.equal(K.geriDonusEngeli(60, 3), null);           // %5 — eşiğin altı
+  assert.ok(K.geriDonusEngeli(50, 5));                    // %10
 });
 t("istanbul saati", () => {
   /* 2026-09-22 06:30 UTC = 09:30 İstanbul, salı */

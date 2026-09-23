@@ -281,31 +281,37 @@ export function sistemAdresiMi(e: string): boolean {
  * haftalarda gelen hacme bakıyor; sıfırdan günde 20-50'ye çıkan gönderici
  * "spam" sayılıyor. İlk gönderimden itibaren:
  *   1. gün    → günde en çok 10
- *   2-4. gün  → günde en çok 12
- *   5-13. gün → günde en çok 15
+ *   2. gün    → günde en çok 20
+ *   3-4. gün  → günde en çok 30
  *   sonrası   → ayarlanan tavan (OUTREACH_DAILY_LIMIT, üst sınır 50)
  *
- * 2026-09-23'te 10/12/15 kademesine çekildi (Yasin: "hızlandıralım mı"): ilk
- * günün 19 gönderiminde geri dönüş ve şikâyet yok, BCC kopyası Gmail'de Gelen
- * kutusuna düştü. Kutular yine de yeni — asıl fren burada, alan adında değil.
+ * 2026-09-23 (Yasin: "her kutudan 40'ar çıkmalı"): rampa dikleştirildi, kutu
+ * başına hedef tavan 40 (env). Karar Yasin'in; benim payıma düşen, çıkışı tek
+ * hamlede değil dört günde yapmak — sağlayıcılar rakama değil hacmin EĞİMİNE
+ * bakıyor, bir günde 10'dan 40'a çıkan kutu "devralınmış hesap" gibi görünür.
+ * Kutular bir günlük; alan adı eski. Fren: geri dönüş eşiği %6'ya çekildi.
  * `gun` = ilk başarılı gönderimden bu yana geçen İstanbul günü; hiç yoksa null.
  */
 export function isinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
   const g = gun ?? 0;
   if (g < 1) return { tavan: Math.min(tavan, 10), asama: `ısınma: ${g + 1}. gün` };
-  if (g < 4) return { tavan: Math.min(tavan, 12), asama: `ısınma: ${g + 1}. gün` };
-  if (g < 14) return { tavan: Math.min(tavan, 15), asama: `ısınma: 2. hafta, ${g + 1}. gün` };
+  if (g < 2) return { tavan: Math.min(tavan, 20), asama: `ısınma: ${g + 1}. gün` };
+  if (g < 4) return { tavan: Math.min(tavan, 30), asama: `ısınma: ${g + 1}. gün` };
   return { tavan, asama: null };
 }
 
 /**
  * Geri dönüş eşiği. Geri dönen e-posta (bounce) gönderene gelir; panel onu
  * okuyamaz, firmayı "Adres hatalı" işaretlemek elle. Son 50 gönderimde
- * hatalı oranı %10'u (en az 3 firma) geçerse liste kirlidir: devam etmek
+ * hatalı oranı %6'yı (en az 3 firma) geçerse liste kirlidir: devam etmek
  * sağlayıcıların gözünde "adres toplayıp yazan" göndericiye çevirir.
+ *
+ * 2026-09-23'te %10'dan %6'ya çekildi: günlük hacim 20'den 150'ye çıkarken
+ * aynı oran çok daha fazla kötü adres demek (%10 × 150 = günde 15 geri dönüş),
+ * o da alan adının itibarını hızla yakar. Hız yükseliyorsa fren de sıkılır.
  */
 export function geriDonusEngeli(toplam: number, hatali: number): string | null {
-  if (hatali >= 3 && toplam > 0 && hatali / toplam >= 0.1) {
+  if (hatali >= 3 && toplam > 0 && hatali / toplam >= 0.06) {
     return `Son ${toplam} gönderimin ${hatali}'i geri döndü (%${Math.round((hatali / toplam) * 100)}). Geri dönen adresler temizlenmeden ve sebebi anlaşılmadan gönderime devam edilmez.`;
   }
   return null;
@@ -459,8 +465,8 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  * adının itibarı kutularınkinden önce gelir: beş yeni kutu ilk gün 5 × 10
  * gönderirse alan adı ilk gününde 50 soğuk e-posta atmış olur.
  *   1. gün    → günde en çok 20
- *   2-4. gün  → günde en çok 30
- *   5-9. gün  → günde en çok 40
+ *   2. gün    → günde en çok 70
+ *   3-4. gün  → günde en çok 110
  *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 150)
  *
  * 2026-09-23'te hızlandırıldı. Gerekçe: servosteel.com.tr YENİ bir alan adı
@@ -473,8 +479,8 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
 export function alanIsinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
   const g = gun ?? 0;
   if (g < 1) return { tavan: Math.min(tavan, 20), asama: `alan adı ısınması: ${g + 1}. gün` };
-  if (g < 4) return { tavan: Math.min(tavan, 30), asama: `alan adı ısınması: ${g + 1}. gün` };
-  if (g < 10) return { tavan: Math.min(tavan, 40), asama: `alan adı ısınması: ${g + 1}. gün` };
+  if (g < 2) return { tavan: Math.min(tavan, 70), asama: `alan adı ısınması: ${g + 1}. gün` };
+  if (g < 4) return { tavan: Math.min(tavan, 110), asama: `alan adı ısınması: ${g + 1}. gün` };
   return { tavan, asama: null };
 }
 
