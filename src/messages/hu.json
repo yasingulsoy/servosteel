@@ -1070,6 +1070,34 @@
           "tableNote": "Minden modell: anyagvastagság 0,2 – 2 mm, adagolóhenger átmérő Ø80, 2 adagolóhenger, présvezérlés érzékelővel. A 7\"-os érintőkijelző és a 250 szerszámos memória alapfelszereltség; a hengerbevonat opcionális."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Széles és vastag szalaghoz",
+              "text": "Szalagszélesség 40-1.600 mm, vastagság 0,4-3 mm (opcionálisan 4 mm). A mini sorozat 600 mm-nél és 2 mm-nél véget ér; ami efölött van, az ezé a sorozaté."
+            },
+            {
+              "title": "Hajtóműves hajtás: nyomaték, nem sebesség",
+              "text": "A hajtómű sebességet cserél nyomatékra. A szabad adagolási sebesség 35 m/perc — a mini sorozat 100 m/percet ér el, de keskeny, vékony szalagon. A széles szalag pontos léptetése nyomatékot kíván."
+            },
+            {
+              "title": "Zárt ház, pneumatikus pilotoldás",
+              "text": "Az adagolóegység zárt házban dolgozik. Amikor a szerszám pilotcsapjai pozicionálják a szalagot, a görgők elengedik azt; a lépés végső korrekcióját a szerszám végzi."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mini vagy zárt házas sorozat?",
+              "a": "Két szám dönt: a szalag szélessége és vastagsága. 600 mm-ig és 2 mm-ig a mini sorozat gyorsabb (100 m/perc). Ha a szalag ennél szélesebb vagy vastagabb, a zárt házas sorozat kell, amely 1.600 mm-ig és 3 mm-ig (opcionálisan 4 mm) adagol."
+            },
+            {
+              "q": "Miért 35 m/perc, ha a mini 100-at tud?",
+              "a": "A hajtóműves hajtás sebességet cserél nyomatékra. A széles, vastag szalagot akadás nélkül, pontos lépésre mozgatni nyomatékot igényel, nem sebességet. Ha a prés gyors löketekkel dolgozik keskeny szalagon, eleve a mini sorozat a helyes választás."
+            },
+            {
+              "q": "Mi van, ha a szalagot egyengetni is kell?",
+              "a": "A zárt házas szervoadagoló adagol, nem egyenget. Ha a tekercsről érkező szalag egyengetést igényel, egyengetős szervoadagolót vagy kompakt sort használjon, amely a letekercselőt, az egyengetőt és az adagolót egy kereten egyesíti."
+            }
+          ],
           "name": "Zárt Házas Szervo Adagolók",
           "metaTitle": "Zárt Házas Szervo Adagoló — 40-1.600 mm",
           "meta": "Zárt házas szervo adagolók 40-1.600 mm szalagszélességhez: 0,4-3 mm vastagság (4 mm opcionális), hajtóműves adagolás, 250 szerszámos memória.",

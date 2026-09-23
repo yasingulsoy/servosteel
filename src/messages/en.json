@@ -1106,6 +1106,34 @@
           "tableNote": "All models: material thickness 0.2 – 2 mm, feeder roll diameter Ø80, 2 feed rolls, sensor press control. A 7\" touch display and 250-unit mold memory are standard; roller coating is optional."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Built for wide and thick strip",
+              "text": "Strip width 40-1,600 mm, thickness 0.4-3 mm (4 mm optional). The mini series stops at 600 mm and 2 mm; anything above that is this series' work."
+            },
+            {
+              "title": "Reductor drive: torque, not speed",
+              "text": "A reductor trades speed for torque. Free feed speed is 35 m/min — the mini series reaches 100 m/min, but on narrow, thin strip. Driving wide strip to an accurate step takes torque."
+            },
+            {
+              "title": "Closed body, pneumatic pilot release",
+              "text": "The feed unit runs in a closed body. When the pilot pins in the die position the strip, the rolls release it; the die makes the final correction to the step."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mini series or cased series?",
+              "a": "Two numbers decide it: strip width and thickness. Up to 600 mm and up to 2 mm, the mini series is faster (100 m/min). If your strip is wider than 600 mm or thicker than 2 mm, you need the cased series, which feeds up to 1,600 mm and 3 mm (4 mm optional)."
+            },
+            {
+              "q": "Why 35 m/min when the mini series does 100?",
+              "a": "The reductor drive trades speed for torque. Moving wide, thick strip to an accurate step without hesitation takes torque rather than speed. If your press runs fast strokes on narrow strip, the mini series is the right choice anyway."
+            },
+            {
+              "q": "What if the strip also needs straightening?",
+              "a": "A cased servo feeder feeds; it does not straighten. If the strip off the coil needs straightening, use a straightener servo feeder, or a compact line that puts decoiler, straightener and feeder on one frame."
+            }
+          ],
           "name": "Cased Servo Feeders",
           "metaTitle": "Cased Servo Feeder — 40-1,600 mm",
           "meta": "Cased servo feeders for 40-1,600 mm strip width: 0.4-3 mm thickness (4 mm optional), reductor driven feeding, 250-unit mold memory.",

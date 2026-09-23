@@ -1070,6 +1070,34 @@
           "tableNote": "Wszystkie modele: grubość materiału 0,2 – 2 mm, średnica rolki Ø80, 2 rolki podające, kontrola prasy czujnikiem. Ekran dotykowy 7\" i pamięć 250 narzędzi w standardzie; powlekanie rolek opcjonalnie."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Do szerokiej i grubej taśmy",
+              "text": "Szerokość taśmy 40-1.600 mm, grubość 0,4-3 mm (opcjonalnie 4 mm). Seria mini kończy się na 600 mm i 2 mm; powyżej tego pracuje ta seria."
+            },
+            {
+              "title": "Napęd z przekładnią: moment, nie prędkość",
+              "text": "Przekładnia zamienia prędkość na moment. Swobodna prędkość podawania wynosi 35 m/min — seria mini osiąga 100 m/min, ale na taśmie wąskiej i cienkiej. Precyzyjny skok szerokiej taśmy wymaga momentu."
+            },
+            {
+              "title": "Zamknięta obudowa, pneumatyczne zwalnianie pilotów",
+              "text": "Zespół podający pracuje w zamkniętej obudowie. Gdy piloty w tłoczniku pozycjonują taśmę, walce ją zwalniają; ostateczną korektę skoku wykonuje tłocznik."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Seria mini czy seria w obudowie?",
+              "a": "Decydują dwie liczby: szerokość i grubość taśmy. Do 600 mm i do 2 mm seria mini jest szybsza (100 m/min). Jeśli taśma jest szersza niż 600 mm albo grubsza niż 2 mm, potrzebna jest seria w obudowie, która podaje do 1.600 mm i 3 mm (opcjonalnie 4 mm)."
+            },
+            {
+              "q": "Dlaczego 35 m/min, skoro mini osiąga 100?",
+              "a": "Napęd z przekładnią zamienia prędkość na moment. Przesunięcie szerokiej, grubej taśmy na dokładny skok, bez zawahania, wymaga momentu, a nie prędkości. Jeśli prasa pracuje szybkimi skokami na wąskiej taśmie, i tak właściwym wyborem jest seria mini."
+            },
+            {
+              "q": "A jeśli taśmę trzeba też prostować?",
+              "a": "Podajnik serwo w obudowie podaje, nie prostuje. Jeśli taśma z kręgu wymaga prostowania, stosuje się podajnik serwo z prostownicą albo linię kompaktową, która łączy odwijak, prostownicę i podajnik na jednej ramie."
+            }
+          ],
           "name": "Podajniki Serwo w Obudowie",
           "metaTitle": "Podajnik Serwo w Obudowie — 40-1.600 mm",
           "meta": "Podajniki serwo w obudowie do szerokości 40-1.600 mm: grubość 0,4-3 mm (4 mm opcjonalnie), napęd przekładniowy, pamięć 250 narzędzi.",

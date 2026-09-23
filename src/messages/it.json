@@ -1070,6 +1070,34 @@
           "tableNote": "Tutti i modelli: spessore materiale 0,2 – 2 mm, diametro rullo Ø80, 2 rulli di alimentazione, controllo pressa tramite sensore. Display touch da 7\" e memoria per 250 stampi di serie; rivestimento rulli opzionale."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Per nastro largo e spesso",
+              "text": "Larghezza nastro 40-1.600 mm, spessore 0,4-3 mm (4 mm opzionale). La serie mini si ferma a 600 mm e 2 mm; oltre quel punto lavora questa serie."
+            },
+            {
+              "title": "Azionamento con riduttore: coppia, non velocità",
+              "text": "Il riduttore scambia velocità con coppia. La velocità libera di alimentazione è di 35 m/min: la serie mini arriva a 100 m/min, ma su nastro stretto e sottile. Muovere nastro largo con passo preciso richiede coppia."
+            },
+            {
+              "title": "Corpo chiuso, rilascio pilota pneumatico",
+              "text": "Il gruppo di alimentazione lavora in un corpo chiuso. Quando i piloti dello stampo posizionano il nastro, i rulli lo rilasciano; la correzione finale del passo la fa lo stampo."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Serie mini o serie con carter?",
+              "a": "Decidono due numeri: larghezza e spessore del nastro. Fino a 600 mm e fino a 2 mm la serie mini è più veloce (100 m/min). Se il nastro supera i 600 mm o i 2 mm serve la serie con carter, che alimenta fino a 1.600 mm e 3 mm (4 mm opzionale)."
+            },
+            {
+              "q": "Perché 35 m/min se la mini arriva a 100?",
+              "a": "L'azionamento con riduttore scambia velocità con coppia. Portare nastro largo e spesso al passo esatto, senza esitazioni, chiede coppia e non velocità. Se la vostra pressa lavora a colpi rapidi su nastro stretto, la scelta giusta è comunque la serie mini."
+            },
+            {
+              "q": "E se il nastro deve anche essere raddrizzato?",
+              "a": "Un alimentatore servo con carter alimenta, non raddrizza. Se il nastro in uscita dal coil richiede raddrizzatura, si usa un alimentatore servo con raddrizzatrice oppure una linea compatta che riunisce svolgitore, raddrizzatrice e alimentatore su un unico telaio."
+            }
+          ],
           "name": "Alimentatori Servo Carenati",
           "metaTitle": "Alimentatore Servo Carenato — 40-1.600 mm",
           "meta": "Alimentatori servo carenati per larghezza 40-1.600 mm: spessore 0,4-3 mm (4 mm opzionale), trasmissione a riduttore, memoria per 250 stampi.",

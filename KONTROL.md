@@ -692,8 +692,13 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
     Örüntü: 15 sayfanın **7'si kasalı servo sürücü** (yedi dil). Sayfa düzgün
     çevrili ama ince: ana içerik 249 kelime, çoğu model/genişlik tablosu, üst
     sayfa "servo sürücüler"le %43 örtüşüyor. TR/EN'de dizinde (17 Eylül isteği).
-    Çözüm: katalogdaki SRV-KS verisinden (s.16) sayfaya kendine özgü içerik —
-    ne zaman kasalı, ne zaman mini; kalınlık/hız/merdane; 2-3 SSS — sonra istek.
+    **Yazıldı (23 Eylül):** sayfaya 3 özellik + 3 SSS eklendi, dokuz dilde —
+    içerik 1.101 -> 2.652 karakter, sayfa artık FAQ şeması da veriyor. Kaynak
+    uydurma değil, sitenin kendi tabloları: kasalı 40-1.600 mm / 0,4-3 mm
+    (ops. 4) / 35 m/dk reduktörlü, mini 10-600 mm / 0,2-2 mm / 100 m/dk.
+    Anlatılan ayrım bu: **reduktör hızdan tork kazandırır**; geniş-kalın şerit
+    torkla, dar-ince şerit hızla beslenir. Ayrıca pnömatik pilot açma (akademi
+    yazısıyla aynı bilgi). Yayına girdikten sonra yedi dil için istek atılacak.
 - [ ] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`

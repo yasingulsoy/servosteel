@@ -1070,6 +1070,34 @@
           "tableNote": "Tüm modellerde malzeme kalınlığı 0,2 – 2 mm, sürücü merdane çapı Ø80, 2 sürme merdanesi, sensörle pres kontrolü. 7\" dokunmatik ekran ve 250 adet kalıp hafızası standart; merdane kaplama opsiyonel."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Geniş ve kalın şeride göre",
+              "text": "40-1.600 mm şerit genişliği, 0,4-3 mm kalınlık (opsiyonel 4 mm). Mini seri 600 mm ve 2 mm'de biter; bunun üstü bu serinin işi."
+            },
+            {
+              "title": "Reduktörlü tahrik: hız değil tork",
+              "text": "Reduktör hızı düşürüp torku artırır. Serbest besleme hızı 35 m/dk — mini seri 100 m/dk'ya çıkar ama dar ve ince şeritte. Geniş şeridi hassas adımla sürmek tork ister."
+            },
+            {
+              "title": "Kapalı gövde, pnömatik pilot açma",
+              "text": "Besleme grubu kapalı gövdede çalışır. Kalıptaki pilot pimleri şeridi konumlarken silindirler şeridi bırakır; adımın son düzeltmesini kalıp yapar."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mini seri mi, kasalı seri mi?",
+              "a": "İki sayı karar verdirir: şerit genişliği ve kalınlık. 600 mm'ye kadar ve 2 mm'ye kadar çalışıyorsanız mini seri daha hızlıdır (100 m/dk). Şeridiniz 600 mm'yi geçiyorsa ya da 2 mm'den kalınsa kasalı seri gerekir; 1.600 mm ve 3 mm'ye (opsiyonel 4 mm) kadar besler."
+            },
+            {
+              "q": "Neden 35 m/dk? Mini seri 100 m/dk diyor.",
+              "a": "Reduktörlü tahrik hızdan tork kazandırıyor. Geniş ve kalın şeridi duraksamadan, adım hatası bırakmadan sürmek için gereken şey hız değil tork. Presin vuruş sayısı yüksek ve şerit darsa doğru seçim zaten mini seri."
+            },
+            {
+              "q": "Şeridin doğrultulması da gerekiyorsa?",
+              "a": "Kasalı servo sürücü besleme yapar, doğrultma yapmaz. Rulodan gelen şerit doğrultma istiyorsa doğrultmalı servo sürücü ya da açıcı + doğrultucu + besleyiciyi tek şasede toplayan kompakt hat kullanılır."
+            }
+          ],
           "name": "Kasalı Servo Sürücüler",
           "metaTitle": "Kasalı Servo Sürücü — 40-1.600 mm",
           "meta": "40-1.600 mm sac genişliğinde kasalı servo sürücüler: 0,4-3 mm kalınlık (opsiyonel 4 mm), redüktör tahrikli sürme, 250 kalıp hafızası.",

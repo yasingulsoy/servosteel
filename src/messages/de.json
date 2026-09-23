@@ -1070,6 +1070,34 @@
           "tableNote": "Alle Modelle: Materialdicke 0,2 – 2 mm, Vorschubwalzendurchmesser Ø80, 2 Vorschubwalzen, Pressensteuerung über Sensor. 7\"-Touchdisplay und Speicher für 250 Werkzeuge serienmäßig; Walzenbeschichtung optional."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Für breites und dickes Band",
+              "text": "Bandbreite 40-1.600 mm, Dicke 0,4-3 mm (4 mm optional). Die Mini-Baureihe endet bei 600 mm und 2 mm; alles darüber ist Sache dieser Baureihe."
+            },
+            {
+              "title": "Getriebeantrieb: Drehmoment statt Tempo",
+              "text": "Das Getriebe tauscht Geschwindigkeit gegen Drehmoment. Die freie Vorschubgeschwindigkeit liegt bei 35 m/min — die Mini-Baureihe erreicht 100 m/min, aber bei schmalem, dünnem Band. Breites Band exakt zu takten braucht Drehmoment."
+            },
+            {
+              "title": "Geschlossenes Gehäuse, pneumatische Pilotfreigabe",
+              "text": "Die Vorschubeinheit arbeitet im geschlossenen Gehäuse. Wenn die Pilotstifte im Werkzeug das Band positionieren, geben die Walzen es frei; die Feinkorrektur des Schritts übernimmt das Werkzeug."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mini-Baureihe oder Gehäuse-Baureihe?",
+              "a": "Zwei Zahlen entscheiden: Bandbreite und Dicke. Bis 600 mm und bis 2 mm ist die Mini-Baureihe schneller (100 m/min). Ist Ihr Band breiter als 600 mm oder dicker als 2 mm, brauchen Sie die Gehäuse-Baureihe; sie führt bis 1.600 mm und 3 mm (optional 4 mm)."
+            },
+            {
+              "q": "Warum 35 m/min, wenn die Mini-Baureihe 100 schafft?",
+              "a": "Der Getriebeantrieb tauscht Geschwindigkeit gegen Drehmoment. Breites, dickes Band ohne Zögern auf Maß zu bewegen braucht Drehmoment, nicht Tempo. Läuft Ihre Presse schnelle Hübe auf schmalem Band, ist ohnehin die Mini-Baureihe richtig."
+            },
+            {
+              "q": "Und wenn das Band auch gerichtet werden muss?",
+              "a": "Ein Servovorschub im Gehäuse führt zu, er richtet nicht. Muss das Band vom Coil gerichtet werden, nehmen Sie einen Richt-Servovorschub oder eine Kompaktanlage, die Haspel, Richtmaschine und Vorschub auf einem Rahmen vereint."
+            }
+          ],
           "name": "Servovorschübe im Gehäuse",
           "metaTitle": "Servovorschub im Gehäuse — 40-1.600 mm",
           "meta": "Servovorschübe im Gehäuse für 40-1.600 mm Bandbreite: 0,4-3 mm Dicke (4 mm optional), Getriebeantrieb, Speicher für 250 Werkzeuge.",

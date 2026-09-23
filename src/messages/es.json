@@ -1070,6 +1070,34 @@
           "tableNote": "Todos los modelos: espesor de material 0,2 – 2 mm, diámetro de rodillo Ø80, 2 rodillos de alimentación, control de prensa por sensor. Pantalla táctil de 7\" y memoria de 250 matrices de serie; recubrimiento de rodillos opcional."
         },
         "kasali": {
+          "features": [
+            {
+              "title": "Para fleje ancho y grueso",
+              "text": "Ancho de fleje 40-1.600 mm, espesor 0,4-3 mm (4 mm opcional). La serie mini termina en 600 mm y 2 mm; por encima de eso trabaja esta serie."
+            },
+            {
+              "title": "Accionamiento con reductor: par, no velocidad",
+              "text": "El reductor cambia velocidad por par. La velocidad libre de alimentación es de 35 m/min: la serie mini llega a 100 m/min, pero con fleje estrecho y fino. Mover fleje ancho con paso preciso exige par."
+            },
+            {
+              "title": "Cuerpo cerrado, liberación neumática de pilotos",
+              "text": "El grupo de alimentación trabaja en cuerpo cerrado. Cuando los pilotos del troquel posicionan el fleje, los rodillos lo liberan; la corrección final del paso la hace el troquel."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Serie mini o serie con carcasa?",
+              "a": "Lo deciden dos números: ancho y espesor del fleje. Hasta 600 mm y hasta 2 mm, la serie mini es más rápida (100 m/min). Si su fleje supera los 600 mm o los 2 mm, necesita la serie con carcasa, que alimenta hasta 1.600 mm y 3 mm (4 mm opcional)."
+            },
+            {
+              "q": "¿Por qué 35 m/min si la serie mini hace 100?",
+              "a": "El reductor cambia velocidad por par. Mover fleje ancho y grueso hasta el paso exacto, sin titubeos, pide par y no velocidad. Si su prensa trabaja a golpes rápidos con fleje estrecho, la elección correcta es la serie mini."
+            },
+            {
+              "q": "¿Y si el fleje también necesita enderezado?",
+              "a": "Un alimentador servo con carcasa alimenta, no endereza. Si el fleje que sale de la bobina necesita enderezado, use un alimentador servo con enderezadora o una línea compacta que reúne desbobinador, enderezadora y alimentador en un solo bastidor."
+            }
+          ],
           "name": "Alimentadores Servo Encapsulados",
           "metaTitle": "Alimentador Servo Encapsulado — 40-1.600 mm",
           "meta": "Alimentadores servo encapsulados para ancho 40-1.600 mm: espesor 0,4-3 mm (4 mm opcional), accionamiento por reductor, memoria de 250 matrices.",
