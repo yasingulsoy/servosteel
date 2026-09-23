@@ -83,6 +83,9 @@ export type HedefFirma = {
   dil: string;
   konu: string;
   govde: string;
+  /** İkinci tur (hatırlatma) metni — ilk mektuba dönüş gelmeyen firmaya */
+  konu2: string;
+  govde2: string;
   link: string;
   durum: HedefDurum;
   listede: boolean;
@@ -147,10 +150,19 @@ export function firmaEngeli(
   f: HedefFirma,
   engelli: boolean,
   /** Bu adrese BAŞKA bir firma satırından giden e-posta (bkz. ayniAdreseGiden) */
-  onceki: AyniAdres | null = null
+  onceki: AyniAdres | null = null,
+  /** 1 ilk tanıtım · 2 hatırlatma (ilk mektuba dönüş gelmemiş firmaya) */
+  tur: 1 | 2 = 1
 ): string | null {
   if (!f.listede) return "Firma son aktarımda listede yoktu (elenmiş olabilir).";
-  if (f.durum !== "bekliyor") {
+  if (tur === 2) {
+    /* İkinci tur yalnızca "yazdık, hiçbir şey dönmedi" durumundaki firmaya gider.
+       Yanıt geldiyse durum "yanit", geri döndüyse "hatali", çıktıysa "iptal" olur
+       — üçü de burada elenir. */
+    if (f.durum !== "gonderildi") {
+      return `Durumu "${HEDEF_DURUM_ETIKET[f.durum] ?? f.durum}" — hatırlatma yalnızca dönüş gelmemiş firmaya yazılır.`;
+    }
+  } else if (f.durum !== "bekliyor") {
     return `Durumu "${HEDEF_DURUM_ETIKET[f.durum] ?? f.durum}" — yalnızca gönderilmemiş firmaya yazılır.`;
   }
   if (!f.eposta) return "E-posta adresi yok (sitede doğrulanamadı). Telefon ya da iletişim formu.";
@@ -158,6 +170,10 @@ export function firmaEngeli(
   if (sistemAdresiMi(f.eposta)) return `${f.eposta} bir sistem adresi (kimse okumaz) — iletişim formu ya da telefon.`;
   if (ENGELLI_ULKELER[f.ulke]) return ENGELLI_ULKELER[f.ulke];
   if (engelli) return "Bu adres engel listesinde (abonelikten çıktı ya da elle engellendi).";
+  if (tur === 2) {
+    if (!f.konu2.trim() || !f.govde2.trim()) return "Hatırlatma metni yok.";
+    return null;
+  }
   if (onceki) {
     return `Bu adrese ${kisaTarih(onceki.zaman)} tarihinde "${onceki.firma}" satırından yazıldı — aynı adrese ikinci tanıtım e-postası gitmez.`;
   }
@@ -175,6 +191,24 @@ const GONDERILEBILIR = `
   AND NOT EXISTS (SELECT 1 FROM hedef_gonderim g
                   WHERE lower(g.eposta) = lower(h.eposta) AND g.sonuc IN ('ok', 'belirsiz'))
 `;
+
+/* SQL karşılığı: hatırlatma (ikinci tur) gönderilebilir firmalar. İlk turdan
+   FARKLI üç koşul: durum "gonderildi" (yanıt/geri dönüş/çıkış hepsi durumu
+   değiştirir, üçü de burada elenir), hatırlatma metni hazır, ve ilk mektubun
+   üstünden yeterince gün geçmiş. Aynı adrese ikinci hatırlatma gitmez. */
+const IKINCI_TUR = (gunParam: string) => `
+  h.listede AND h.durum = 'gonderildi' AND h.eposta <> '' AND h.govde2 <> '' AND h.konu2 <> ''
+  AND NOT (h.ulke = ANY($1::text[]))
+  AND NOT EXISTS (SELECT 1 FROM eposta_engel e WHERE e.eposta = lower(h.eposta))
+  AND NOT EXISTS (SELECT 1 FROM hedef_gonderim g
+                  WHERE lower(g.eposta) = lower(h.eposta) AND g.tur >= 2 AND g.sonuc IN ('ok', 'belirsiz'))
+  AND EXISTS (SELECT 1 FROM hedef_gonderim g
+              WHERE lower(g.eposta) = lower(h.eposta) AND g.sonuc IN ('ok', 'belirsiz')
+                AND g.zaman < now() - (${gunParam} || ' days')::interval)
+`;
+
+/** Hatırlatmadan önce beklenen gün. Üç hafta: erken hatırlatma rahatsız eder. */
+export const IKINCI_TUR_GUN = 21;
 
 export type OtomatikKapsam = { gruplar: number[]; abDahil: boolean; kesifDahil: boolean; abUlkeleri: string[] };
 export type OtomatikSiradaki = Pick<HedefFirma, "id" | "firma" | "ulke" | "eposta" | "kategori" | "kesif" | "segmentler">;
@@ -219,6 +253,61 @@ export async function otomatikSiradakiler(
       oncelik.mesai,
     ]
   );
+}
+
+/**
+ * Hatırlatma (ikinci tur) sırasındaki firmalar. Otomatik gönderim buraya ANCAK
+ * ilk tur bittiğinde düşer: sıra boşalınca liste başa sarar ama aynı mektup
+ * tekrar gitmez — ikinci turun kendi metni var (hedef_firmalar.govde2).
+ *
+ * Sıralama ilk turunkiyle aynı mantıkta: hedefin kendi sabahı önce. Eşitlikte
+ * EN ESKİ ilk mektup önce — en uzun bekleyen firma sıranın başında.
+ */
+export async function ikinciTurAdaylari(
+  k: OtomatikKapsam,
+  adet: number,
+  oncelik: { sabah: string[]; mesai: string[] } = { sabah: [], mesai: [] },
+  gun = IKINCI_TUR_GUN
+): Promise<OtomatikSiradaki[]> {
+  if (!k.gruplar.length || adet <= 0) return [];
+  return sorguSert<OtomatikSiradaki>(
+    `SELECT h.id, h.firma, h.ulke, h.eposta, h.kategori, h.kesif, h.segmentler
+     FROM hedef_firmalar h
+     WHERE ${IKINCI_TUR("$9")}
+       AND h.kategori = ANY($2::int[])
+       AND ($3::boolean OR NOT (h.ulke = ANY($4::text[])))
+       AND ($5::boolean OR NOT h.kesif)
+     ORDER BY CASE WHEN h.ulke = ANY($7::text[]) THEN 0
+                   WHEN h.ulke = ANY($8::text[]) THEN 1
+                   ELSE 2 END,
+              h.gonderildi, h.id
+     LIMIT $6`,
+    [
+      engelliUlkeler(),
+      k.gruplar,
+      k.abDahil,
+      k.abUlkeleri,
+      k.kesifDahil,
+      Math.min(200, adet),
+      oncelik.sabah,
+      oncelik.mesai,
+      String(Math.max(1, Math.trunc(gun))),
+    ]
+  );
+}
+
+/** Hatırlatma sırasında kaç firma var — panelde ve tur sonucunda gösterilir. */
+export async function ikinciTurSayisi(k: OtomatikKapsam, gun = IKINCI_TUR_GUN): Promise<number> {
+  if (!k.gruplar.length) return 0;
+  const r = await sorguSert<{ adet: string }>(
+    `SELECT count(*)::text AS adet FROM hedef_firmalar h
+     WHERE ${IKINCI_TUR("$6")}
+       AND h.kategori = ANY($2::int[])
+       AND ($3::boolean OR NOT (h.ulke = ANY($4::text[])))
+       AND ($5::boolean OR NOT h.kesif)`,
+    [engelliUlkeler(), k.gruplar, k.abDahil, k.abUlkeleri, k.kesifDahil, String(Math.max(1, Math.trunc(gun)))]
+  );
+  return Number(r[0]?.adet ?? 0);
 }
 
 export type AyniAdres = { firma: string; zaman: string };
@@ -670,10 +759,12 @@ export async function gonderimKaydet(g: {
   sonuc: Gonderim["sonuc"];
   yanit: string;
   mesajKimligi?: string;
+  /** 1 ilk tanıtım · 2 hatırlatma */
+  tur?: 1 | 2;
 }) {
   await sorguSert(
-    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi, gonderen, govde_html)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,lower($9),$10)`,
+    `INSERT INTO hedef_gonderim (firma_id, kullanici, eposta, konu, govde, sonuc, yanit, mesaj_kimligi, gonderen, govde_html, tur)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,lower($9),$10,$11)`,
     [
       g.firmaId,
       g.kullanici.slice(0, 80),
@@ -685,6 +776,7 @@ export async function gonderimKaydet(g: {
       (g.mesajKimligi ?? "").slice(0, 300),
       g.gonderen.slice(0, 254),
       (g.govdeHtml ?? "").slice(0, 60000),
+      g.tur ?? 1,
     ]
   );
 }

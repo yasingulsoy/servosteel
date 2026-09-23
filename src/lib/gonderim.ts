@@ -66,6 +66,12 @@ export async function tekGonderim(p: {
   govdeHtml?: string;
   /** Panel kullanıcısı ya da "otomatik" */
   kullanici: string;
+  /**
+   * 1 ilk tanıtım · 2 hatırlatma. İkinci turda firmanın durumu "gonderildi"dir
+   * ve aynı adrese daha önce yazılmış olması engel değil — metin farklı
+   * (konu2/govde2) ve arada en az IKINCI_TUR_GUN gün var.
+   */
+  tur?: 1 | 2;
 }): Promise<TekGonderimSonucu> {
   const { firmaId: id, kullanici: ben } = p;
   /* Konu tek satır: başlığa satır sonu girerse sunucu başlık enjeksiyonu sayar. */
@@ -85,7 +91,8 @@ export async function tekGonderim(p: {
   if (!(await outreachSemaKur())) return { tamam: false, mesaj: "Veritabanına bağlanılamadı.", denendi: false };
   const f = await hedefFirma(id);
   if (!f) return { tamam: false, mesaj: "Firma bulunamadı.", denendi: false };
-  const engel = firmaEngeli(f, await engelliMi(f.eposta), await ayniAdreseGiden(f.eposta, f.id));
+  const tur = p.tur ?? 1;
+  const engel = firmaEngeli(f, await engelliMi(f.eposta), await ayniAdreseGiden(f.eposta, f.id), tur);
   if (engel) return { tamam: false, mesaj: engel, denendi: false };
 
   /* Alan adı e-posta almıyorsa göndermeye çalışmak geri dönüş demek. Sıra
@@ -155,6 +162,7 @@ export async function tekGonderim(p: {
     konu,
     govde: cevap.metin,
     govdeHtml: cevap.html,
+    tur,
   };
 
   if (cevap.durum === "ok") {

@@ -528,7 +528,8 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   kutudan iki e-posta arası **en az 90 sn** (`OUTREACH_INTERVAL_SEC`, alt sınır
   60). Gün İstanbul günü.
 - **Alan adı başına günde en çok 50** (`OUTREACH_DOMAIN_DAILY_LIMIT`, üst sınır
-  150) — o alan adındaki kutuların TOPLAMI. Gmail/Outlook/MailChannels itibarı
+  **200** — dört kutu × kutu tavanı 50; 2026-09-23'te 150'den çıkarıldı) — o alan
+  adındaki kutuların TOPLAMI. Gmail/Outlook/MailChannels itibarı
   kutuya değil alan adına bakıyor: aynı alan adında beş kutu açmak hacmi beşe
   katlamaz, o alan adından giden soğuk e-postayı beşe katlar; alan adı kara
   listeye düşerse Liza'nın ve Yavuz Bey'in müşteri yazışmaları da gitmez. Daha
@@ -586,6 +587,30 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   veritabanına bağlı olduğu için orada çalışmaz; `OUTREACH_AUTO_RUNNER=off` tamamen
   kapatır). Tur kilidi tek satırlık koşullu yazma: iki örnek aynı dakikada iki tur
   çalıştıramaz. Gelen kutusu taraması da bu turda (kutu başına ≤10 dk).
+- **Sıra hedefin kendi saatine göre (2026-09-23, Yasin "gece gündüz gitsin"):**
+  `src/lib/saat-dilimi.ts` listedeki 111 ülkenin saat dilimini tutuyor (sapma elle
+  hesaplanmıyor, `Intl` çözüyor — yaz saati kendiliğinden doğru). Sıra: yerel
+  **08–11 olan ülkeler önce**, 11–17 sonra, gecesi ya da hafta sonu olan en sonda.
+  Hiçbir firma elenmiyor, yalnızca sıralanıyor. Hafta sonu ülkeye göre: Cuma-Cumartesi
+  Suudi Arabistan, Kuveyt, Katar, Bahreyn, Umman, Mısır, Ürdün, Irak, Libya,
+  Bangladeş; **BAE 2022'de Cumartesi-Pazar'a geçti**, o listede değil. Pencereyi
+  24 saate açmak ancak bununla anlamlı — yoksa Meksikalı firmaya sabahın dördünde
+  e-posta gider. **Pencereyi genişletmek günlük hacmi ARTIRMAZ** (tavan bağlayıcı,
+  pencere değil); hafta sonunu açmak haftalık hacmi ~%40 artırır.
+- **Hatırlatma / ikinci tur (2026-09-23, Yasin "sıra bitince tekrar devam etsin"):**
+  ilk tur bitince liste başa sarar ama **aynı mektup ikinci kez gitmez** — ikinci
+  turun kendi metni var (`hedef_firmalar.konu2/govde2`, şablon
+  `seo/eposta-taslaklari.json` içinde `konu2`/`govde2`, dokuz dil). Metin kısa:
+  ilk mektuba açıktan atıf, satmadan önce gerçek bir şey (sitedeki metal ağırlık
+  hesaplayıcısı, `utm_term=hesaplayici`), tek kelimeyle çıkış ("hayır yazın, bir
+  daha yazmayız"). Dört koşul SQL'de (`IKINCI_TUR`): durum **"gonderildi"**
+  (yanıt geldiyse "yanit", geri döndüyse "hatali", çıktıysa "iptal" olur — üçü de
+  elenir), metin hazır, ilk mektubun üstünden **en az 21 gün** geçmiş, o adrese
+  hatırlatma daha önce gitmemiş. `hedef_gonderim.tur` kaçıncı tur olduğunu tutuyor.
+  Dördü de gerçek Postgres'te deneniyor: `node scripts/ikinci-tur-test.mjs`
+  (yerel küme; küme yoksa test atlanır, canlıya dokunmaz).
+  **Sıra: kod canlıya çıkmadan `konu2/govde2` veritabanına YAZILMAZ** — sütunlar
+  uygulama açılışında (`outreachSemaKur`) ekleniyor.
 - **Gönderilmiş klasörüne kopya:** ileti önce panelde kurulur (MailComposer), aynı
   ham ileti SMTP'ye gider ve kutunun Gönderilmiş klasörüne (IMAP APPEND, okunmuş)
   konur — Thunderbird'de görünür, yanıt konuşmaya bağlanır. Klasör yoksa oluşturulur;

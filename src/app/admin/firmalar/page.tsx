@@ -19,6 +19,7 @@ import {
   kutuDurumlari,
   outreachSemaKur,
   segmentListesi,
+  IKINCI_TUR_GUN,
   siradaki,
   sonGonderimler,
   talebeDonen,
@@ -36,7 +37,12 @@ import {
 import { goreli, tamTarih } from "@/lib/zaman";
 import { gelenDurumu, type GelenDurumu } from "@/lib/gelen-db";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
-import { otomatikAyar, otomatikSira, type OtomatikAyar } from "@/lib/otomatik-gonderim";
+import {
+  otomatikAyar,
+  otomatikHatirlatmaSayisi,
+  otomatikSira,
+  type OtomatikAyar,
+} from "@/lib/otomatik-gonderim";
 import type { OtomatikSiradaki } from "@/lib/outreach-db";
 import { Kabuk } from "../kabuk";
 import { gelenTaraEylemi, hedefDurumEylemi, otomatikAyarEylemi, sigortaSifirlaEylemi } from "./actions";
@@ -158,6 +164,8 @@ export default async function FirmalarSayfasi({
   const secim = v ? kutuSec(ayar, v.kutular.kutu, v.kutular.alan) : null;
   /* Otomatik gönderimin bugünkü sırası: kalan kapasite kadar (en çok 30) */
   const sira = v?.otomatik ? await otomatikSira(v.otomatik, Math.min(30, secim?.kalan ?? 0)).catch(() => []) : [];
+  /* İlk tur bitince liste başa sarar: dönüş gelmemiş firmalara hatırlatma gider. */
+  const hatirlatma = v?.otomatik && !sira.length ? await otomatikHatirlatmaSayisi(v.otomatik).catch(() => 0) : 0;
   const duranlar = secim?.satirlar.filter((x) => x.durum.durdu) ?? [];
   const geriDonus = v ? geriDonusEngeli(v.gd.toplam, v.gd.hatali) : null;
   const grup = new Map((v?.gruplar ?? []).map((g) => [g.kategori, g]));
@@ -279,7 +287,13 @@ export default async function FirmalarSayfasi({
             ) : null}
             {ayar.kutular.length ? <GelenKutulari durum={v.gelen} kutular={ayar.kutular.map((k) => k.user)} /> : null}
             {v.otomatik && ayar.kutular.length ? (
-              <OtomatikGonderim a={v.otomatik} sira={sira} admin={v.admin} kalan={secim?.kalan ?? 0} />
+              <OtomatikGonderim
+                a={v.otomatik}
+                sira={sira}
+                hatirlatma={hatirlatma}
+                admin={v.admin}
+                kalan={secim?.kalan ?? 0}
+              />
             ) : null}
 
             {/* ----------------------------------------- öncelikli gruplar */}
@@ -682,11 +696,14 @@ function GelenKutulari({ durum, kutular }: { durum: GelenDurumu; kutular: string
 function OtomatikGonderim({
   a,
   sira,
+  hatirlatma,
   admin,
   kalan,
 }: {
   a: OtomatikAyar;
   sira: OtomatikSiradaki[];
+  /** İlk tur bittiyse hatırlatma sırasında bekleyen firma sayısı */
+  hatirlatma: number;
   admin: boolean;
   kalan: number;
 }) {
@@ -816,7 +833,11 @@ function OtomatikGonderim({
           </ol>
         ) : (
           <p className="mt-1 text-xs text-muted">
-            {kalan > 0 ? "Kapsama uyan gönderilebilir firma yok." : "Bugünkü tavan doldu."}
+            {kalan <= 0
+              ? "Bugünkü tavan doldu."
+              : hatirlatma > 0
+                ? `İlk tur bitti. ${hatirlatma} firma hatırlatma sırasında — ilk mektuba dönüş gelmeyenlere, ${IKINCI_TUR_GUN} gün sonra, farklı metinle yazılır.`
+                : "Kapsama uyan gönderilebilir firma yok."}
           </p>
         )}
       </div>

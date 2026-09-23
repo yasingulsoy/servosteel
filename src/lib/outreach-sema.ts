@@ -52,6 +52,9 @@ export const OUTREACH_SEMA = `
   ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS sira INTEGER NOT NULL DEFAULT 0;
   /* true: yalniz otomatik kesiften (Google + otomatik dogrulama) gelen firma */
   ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS kesif BOOLEAN NOT NULL DEFAULT false;
+  /* İkinci tur (hatırlatma) e-postası — ilk mektuba dönüş gelmeyen firmaya. */
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS konu2 TEXT NOT NULL DEFAULT '';
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS govde2 TEXT NOT NULL DEFAULT '';
   CREATE INDEX IF NOT EXISTS hedef_firmalar_sira_idx ON hedef_firmalar (sira, id);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_durum_idx ON hedef_firmalar (durum);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_eposta_idx ON hedef_firmalar (lower(eposta));
@@ -79,6 +82,8 @@ export const OUTREACH_SEMA = `
   CREATE INDEX IF NOT EXISTS hedef_gonderim_gonderen_idx ON hedef_gonderim (gonderen, zaman DESC);
   /* Giden HTML hâli (düz metin govde'de) — "Giden" sayfası e-postayı alıcının gördüğü gibi gösterir */
   ALTER TABLE hedef_gonderim ADD COLUMN IF NOT EXISTS govde_html TEXT NOT NULL DEFAULT '';
+  /* Kaçıncı tur: 1 ilk tanıtım, 2 hatırlatma. */
+  ALTER TABLE hedef_gonderim ADD COLUMN IF NOT EXISTS tur SMALLINT NOT NULL DEFAULT 1;
 
   CREATE TABLE IF NOT EXISTS hedef_not (
     id           SERIAL PRIMARY KEY,

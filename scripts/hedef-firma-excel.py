@@ -261,6 +261,39 @@ def ek_sutunlar(segler, satir):
     return [link, konu, metin, taslak]
 
 
+def hesap_linki(satir):
+    """Metal agirlik hesaplayicisi (/hesaplayicilar, digerlerinde /<dil>/calculators) —
+    ikinci turdaki faydali baglanti. utm_term=hesaplayici: GA4'te hatirlatma
+    e-postasindan gelen tiklama teklif formundan ayrilir."""
+    dil = ULKE_DIL.get(satir[1], "en")
+    if dil not in SITE_DILLERI:
+        dil = "en"
+    yol = "/hesaplayicilar" if dil == "tr" else "/%s/calculators" % dil
+    m = re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[2] or ""))
+    icerik = re.sub(r"[^a-z0-9.-]", "", (m.group(1) if m else sade(satir[0])).lower())[:40]
+    return ("%s%s?utm_source=outreach&utm_medium=email&utm_campaign=hatirlatma"
+            "&utm_content=%s&utm_term=hesaplayici") % (SITE, yol, icerik)
+
+
+def ikinci_tur_metni(segler, satir):
+    """(konu2, govde2) — ILK e-postaya donus gelmeyen firmaya, uc hafta sonra giden
+    hatirlatma. Ilk turun aynisi degil: kisa, ilk mektuba aciktan atif yapiyor,
+    satmadan once gercek bir sey veriyor (hesaplayici) ve tek kelimeyle cikis
+    sunuyor. Segmenti teyitsizse ikinci tur da yazilmaz."""
+    seg = segler[0]
+    if seg in TEYITSIZ:
+        return "", ""
+    dil = ULKE_DIL.get(satir[1], "en")
+    t = SABLON.get(dil) or SABLON["en"]
+    if "govde2" not in t:
+        return "", ""
+    ad = t["segment"][SEGMENT_SAYFA[seg][2]]["ad"]
+    metin = (t["govde2"].replace("{selam}", t["selam"]).replace("{firma}", hitap_adi(satir[0]))
+             .replace("{ad}", ad).replace("{hesap}", hesap_linki(satir))
+             .replace("{form}", gonderim_linki(seg, satir[1], satir, form=True)))
+    return t["konu2"].replace("{ad}", ad), metin
+
+
 def eposta_metni(segler, satir):
     """(konu, metin) — metinde baglantilar [yazi](adres): panel onlari tiklanir yazi,
     teklif formunu dugme, urun sayfasini kucuk fotograflar yapar (src/lib/eposta-sablon.ts)."""
@@ -313,6 +346,8 @@ def panel_kaydi(anahtar, satir, ek, segler):
         "link": ek[0],
         "konu": ek[1],
         "govde": eposta_metni(segler, satir)[1],
+        "konu2": ikinci_tur_metni(segler, satir)[0],
+        "govde2": ikinci_tur_metni(segler, satir)[1],
         "segmentler": " + ".join(segler),
     }
 

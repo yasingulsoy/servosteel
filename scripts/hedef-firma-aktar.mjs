@@ -68,9 +68,11 @@ try {
 
 const ALANLAR = [
   "anahtar", "firma", "hitap", "ulke", "segmentler", "web", "kanit", "urun",
-  "iletisim", "eposta", "dil", "konu", "govde", "link",
+  "iletisim", "eposta", "dil", "konu", "govde", "link", "konu2", "govde2",
 ];
-/* Gönderilmiş firmada korunan alanlar. */
+/* Gönderilmiş firmada korunan alanlar — gönderilmiş metin bir daha değişmesin diye.
+   konu2/govde2 BİLEREK burada değil: ikinci tur metnine ihtiyacı olan firmalar
+   tam da gönderilmiş olanlar, korunsaydı onlara hiç yazılamazdı. */
 const METIN = ["eposta", "dil", "konu", "govde", "link"];
 /* Ürün grubu ve panel sırası — sınıflandırma, her aktarımda güncellenir (durumdan bağımsız). */
 const GRUP = { kategori: "int", kategori_notu: "text", sira: "int", kesif: "boolean" };
@@ -83,6 +85,8 @@ if (!Array.isArray(firmalar) || firmalar.length === 0) {
 }
 const gorulen = new Set();
 for (const f of firmalar) {
+  /* İkinci tur alanları olmayan eski aktarım dosyası da okunabilsin. */
+  for (const a of ["konu2", "govde2"]) if (typeof f[a] !== "string") f[a] = "";
   for (const a of ALANLAR) {
     if (typeof f[a] !== "string") {
       console.error(`Bozuk kayıt (${a} yok): ${JSON.stringify(f).slice(0, 200)}`);
@@ -183,6 +187,7 @@ try {
        firma = EXCLUDED.firma, hitap = EXCLUDED.hitap, ulke = EXCLUDED.ulke,
        segmentler = EXCLUDED.segmentler, web = EXCLUDED.web, kanit = EXCLUDED.kanit,
        urun = EXCLUDED.urun, iletisim = EXCLUDED.iletisim,
+       konu2 = EXCLUDED.konu2, govde2 = EXCLUDED.govde2,
        ${METIN.map(koru).join(",\n       ")},
        ${GRUP_ALANLARI.map((a) => `${a} = EXCLUDED.${a}`).join(", ")},
        listede = true,

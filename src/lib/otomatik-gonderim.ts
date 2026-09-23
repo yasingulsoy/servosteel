@@ -4,6 +4,8 @@ import { gelenKutulariTara } from "@/lib/gelen-tarama";
 import { tekGonderim } from "@/lib/gonderim";
 import {
   hedefFirma,
+  ikinciTurAdaylari,
+  ikinciTurSayisi,
   kutuDurumlari,
   otomatikSiradakiler,
   outreachSemaKur,
@@ -96,6 +98,11 @@ export async function otomatikSira(
   return otomatikSiradakiler(kapsam(a), adet, gonderimSirasi(simdi));
 }
 
+/** Hatırlatma (ikinci tur) sırasında bekleyen firma sayısı — panelde gösterilir. */
+export async function otomatikHatirlatmaSayisi(a: OtomatikAyar): Promise<number> {
+  return ikinciTurSayisi(kapsam(a));
+}
+
 async function turKilidiAl(): Promise<boolean> {
   const r = await sorguSert(
     `UPDATE otomatik_gonderim SET son_tik = now()
@@ -170,22 +177,37 @@ async function gonderimAdimi(simdi: Date, ayar: ReturnType<typeof ayarlariOku>):
   }
 
   /* Sıradaki firma. MX yoksa ya da adres o arada başka satırdan yazıldıysa
-     tekGonderim göndermeden döner — aynı turda bir sonrakine geçilir (en çok 5). */
-  const adaylar = await otomatikSira(a, 5, simdi);
+     tekGonderim göndermeden döner — aynı turda bir sonrakine geçilir (en çok 5).
+
+     İlk tur bitince liste başa sarar: dönüş gelmemiş firmalara HATIRLATMA gider.
+     Aynı mektup ikinci kez gitmez; hatırlatmanın kendi metni var (govde2) ve
+     ilk mektubun üstünden en az IKINCI_TUR_GUN gün geçmiş olması gerekir. */
+  let tur: 1 | 2 = 1;
+  let adaylar = await otomatikSira(a, 5, simdi);
   if (!adaylar.length) {
-    const s = "sırada firma yok (kapsamı genişletin ya da listeyi büyütün)";
+    tur = 2;
+    adaylar = await ikinciTurAdaylari(kapsam(a), 5, gonderimSirasi(simdi));
+  }
+  if (!adaylar.length) {
+    const s = "sırada firma yok — ilk tur bitti, hatırlatma sırası da boş (listeyi büyütün)";
     await sonucYaz(s, false, null);
     return s;
   }
   for (const aday of adaylar) {
     const f = await hedefFirma(aday.id);
     if (!f) continue;
-    const r = await tekGonderim({ firmaId: f.id, konu: f.konu, govde: f.govde, kullanici: "otomatik" });
-    if (!r.denendi && r.bekle === undefined && /MX|e-posta almıyor|yazıldı|Durumu/.test(r.mesaj)) continue;
+    const r = await tekGonderim({
+      firmaId: f.id,
+      konu: tur === 2 ? f.konu2 : f.konu,
+      govde: tur === 2 ? f.govde2 : f.govde,
+      kullanici: "otomatik",
+      tur,
+    });
+    if (!r.denendi && r.bekle === undefined && /MX|e-posta almıyor|yazıldı|Durumu|metni yok/.test(r.mesaj)) continue;
     /* Sonraki gönderim: kalan kapasite pencerenin kalanına yayılır */
     const kalanSonra = Math.max(0, secim.kalan - (r.denendi ? 1 : 0));
     const sonrakiSn = r.denendi ? sonrakiAralikSn(pencere.kalanDk, kalanSonra, ayar.aralikSn, Math.random()) : null;
-    const s = `${f.firma}: ${r.mesaj}`;
+    const s = `${f.firma}${tur === 2 ? " (hatırlatma)" : ""}: ${r.mesaj}`;
     await sonucYaz(s, r.denendi, sonrakiSn);
     return s;
   }
