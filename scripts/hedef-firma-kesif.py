@@ -145,7 +145,8 @@ ULKELER = [
 
 # ------------------------------------------------------------------ turlar
 # a: 59 ulke x ana arama · b: yeni ulkeler x ana arama · c: 59 ulke x es anlamli arama
-# d: buyuk pazarlarda sehir bazli ana arama · e: oncelikli urun gruplari (dilme / boy kesme ->
+# d: buyuk pazarlarda sehir bazli ana arama · f: d'nin devami, yeni sanayi sehirleri
+# e: oncelikli urun gruplari (dilme / boy kesme ->
 # celik servis merkezi, pres besleme -> pres atolyesi), a+b ulkeleri, segment basina iki arama.
 # Her tur ayri dosyalara yazar; sonraki tur onceki turlarin .md'lerindeki alan adlarini
 # "zaten listede" sayip atlar.
@@ -278,6 +279,56 @@ SEHIRLER_D = [
 ]
 
 
+# F turu (2026-09-23, Yasin: "firmalarla ilgili kismi genisilet"): d turunun devami —
+# ayni 12 kanitli segment, YENI sanayi sehirleri. Yeni segment ACILMADI: her segmentin
+# arkasinda firmanin kendi videosu/katalogu duruyor, dayanaksiz segment eklenmez.
+# Sehir adi DataForSEO konum kodu degil, arama metnine eklenen kelime (konum kodu
+# yine ulke) — d turunda da oyle; bilinmeyen sehir diye bir risk yok.
+SEHIRLER_F = [
+    ("Hindistan", "IN", "en", "91", s) for s in (
+        "Coimbatore", "Rajkot", "Ludhiana", "Faridabad", "Nashik", "Vadodara", "Surat", "Indore", "Jaipur", "Nagpur")
+] + [
+    ("Meksika", "MX", "es", "52", s) for s in ("Puebla", "San Luis Potosí", "Toluca", "León", "Tijuana")
+] + [
+    ("Brezilya", "BR", "pt", "55", s) for s in ("Joinville", "Caxias do Sul", "Campinas", "Recife", "Fortaleza")
+] + [
+    ("ABD", "US", "en", "1", s) for s in ("Illinois", "Pennsylvania", "Michigan", "North Carolina", "Florida")
+] + [
+    ("Endonezya", "ID", "id", "62", s) for s in ("Tangerang", "Semarang", "Medan")
+] + [
+    ("Vietnam", "VN", "vi", "84", s) for s in ("Đồng Nai", "Hải Phòng", "Long An")
+] + [
+    ("BAE", "AE", "en", "971", s) for s in ("Dubai", "Sharjah", "Abu Dhabi")
+] + [
+    ("Mısır", "EG", "en", "20", s) for s in ("Alexandria", "Borg El Arab")
+] + [
+    ("Pakistan", "PK", "en", "92", s) for s in ("Lahore", "Karachi", "Faisalabad")
+] + [
+    ("Kolombiya", "CO", "es", "57", s) for s in ("Bogotá", "Medellín", "Cali")
+] + [
+    ("Peru", "PE", "es", "51", s) for s in ("Lima", "Arequipa")
+] + [
+    ("Arjantin", "AR", "es", "54", s) for s in ("Buenos Aires", "Córdoba", "Rosario")
+] + [
+    ("Şili", "CL", "es", "56", s) for s in ("Santiago", "Concepción")
+] + [
+    ("Filipinler", "PH", "en", "63", s) for s in ("Manila", "Cebu")
+] + [
+    ("Tayland", "TH", "en", "66", s) for s in ("Bangkok", "Chonburi", "Rayong")
+] + [
+    ("Malezya", "MY", "en", "60", s) for s in ("Kuala Lumpur", "Johor Bahru", "Penang")
+] + [
+    ("Kazakistan", "KZ", "ru", "7", s) for s in ("Алматы", "Астана", "Шымкент")
+] + [
+    ("Özbekistan", "UZ", "ru", "998", s) for s in ("Ташкент", "Самарканд")
+] + [
+    ("Kenya", "KE", "en", "254", s) for s in ("Nairobi", "Mombasa")
+] + [
+    ("Fas", "MA", "fr", "212", s) for s in ("Casablanca", "Tanger")
+] + [
+    ("Cezayir", "DZ", "fr", "213", s) for s in ("Alger", "Oran", "Sétif")
+]
+
 # E turu (2026-09-22, Yasin: "oncelik roll form, dilme, boy kesme, pres besleme, kompakt"):
 # dilme ve boy kesme hattini CELIK SERVIS MERKEZI alir (40 + 49 firmayla en kucuk iki grup),
 # pres besleme ve kompakt hatti PRES ATOLYESI. Deger liste: segment basina iki arama.
@@ -301,6 +352,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "f":
+        return SEHIRLER_F, SORGU, "-f"
     if tur == "e":
         return ULKELER + ULKELER_B, SORGU_E, "-e"
     if tur == "b":
@@ -794,9 +847,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
-                         "e: oncelikli gruplar (servis merkezi, pres atolyesi)")
+                         "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
