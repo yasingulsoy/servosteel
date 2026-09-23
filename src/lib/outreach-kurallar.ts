@@ -280,14 +280,20 @@ export function sistemAdresiMi(e: string): boolean {
  * Isınma (KUTU başına): yeni kutunun itibarı yok. Büyük sağlayıcılar (Gmail, Outlook) ilk
  * haftalarda gelen hacme bakıyor; sıfırdan günde 20-50'ye çıkan gönderici
  * "spam" sayılıyor. İlk gönderimden itibaren:
- *   0-6. gün  → günde en çok 10
- *   7-13. gün → günde en çok 15
+ *   1. gün    → günde en çok 10
+ *   2-4. gün  → günde en çok 12
+ *   5-13. gün → günde en çok 15
  *   sonrası   → ayarlanan tavan (OUTREACH_DAILY_LIMIT, üst sınır 50)
+ *
+ * 2026-09-23'te 10/12/15 kademesine çekildi (Yasin: "hızlandıralım mı"): ilk
+ * günün 19 gönderiminde geri dönüş ve şikâyet yok, BCC kopyası Gmail'de Gelen
+ * kutusuna düştü. Kutular yine de yeni — asıl fren burada, alan adında değil.
  * `gun` = ilk başarılı gönderimden bu yana geçen İstanbul günü; hiç yoksa null.
  */
 export function isinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
   const g = gun ?? 0;
-  if (g < 7) return { tavan: Math.min(tavan, 10), asama: `ısınma: 1. hafta, ${g + 1}. gün` };
+  if (g < 1) return { tavan: Math.min(tavan, 10), asama: `ısınma: ${g + 1}. gün` };
+  if (g < 4) return { tavan: Math.min(tavan, 12), asama: `ısınma: ${g + 1}. gün` };
   if (g < 14) return { tavan: Math.min(tavan, 15), asama: `ısınma: 2. hafta, ${g + 1}. gün` };
   return { tavan, asama: null };
 }
@@ -452,14 +458,23 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  * Alan adı ısınması — aynı alan adındaki kutuların TOPLAMI için. Yeni alan
  * adının itibarı kutularınkinden önce gelir: beş yeni kutu ilk gün 5 × 10
  * gönderirse alan adı ilk gününde 50 soğuk e-posta atmış olur.
- *   0-6. gün  → günde en çok 20
- *   7-13. gün → günde en çok 35
+ *   1. gün    → günde en çok 20
+ *   2-4. gün  → günde en çok 30
+ *   5-9. gün  → günde en çok 40
  *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 150)
+ *
+ * 2026-09-23'te hızlandırıldı. Gerekçe: servosteel.com.tr YENİ bir alan adı
+ * değil — yıllardır gerçek yazışma yapıyor, SPF/DKIM/DMARC hizalı; ilk günün
+ * 19 gönderiminin tamamı kabul edildi, geri dönüş ve şikâyet yok, BCC kopyası
+ * Gelen kutusuna düştü. Yine de tek hamlede tavana çıkılmıyor: sağlayıcılar
+ * hacmin EĞİMİNE bakıyor. Sinyal bozulursa (geri dönüş, Tanıtımlar/Spam'e
+ * düşme) bu kademeler geri alınır — kararın dayanağı ölçüm, tahmin değil.
  */
 export function alanIsinmaTavani(gun: number | null, tavan: number): { tavan: number; asama: string | null } {
   const g = gun ?? 0;
-  if (g < 7) return { tavan: Math.min(tavan, 20), asama: `alan adı ısınması: 1. hafta, ${g + 1}. gün` };
-  if (g < 14) return { tavan: Math.min(tavan, 35), asama: `alan adı ısınması: 2. hafta, ${g + 1}. gün` };
+  if (g < 1) return { tavan: Math.min(tavan, 20), asama: `alan adı ısınması: ${g + 1}. gün` };
+  if (g < 4) return { tavan: Math.min(tavan, 30), asama: `alan adı ısınması: ${g + 1}. gün` };
+  if (g < 10) return { tavan: Math.min(tavan, 40), asama: `alan adı ısınması: ${g + 1}. gün` };
   return { tavan, asama: null };
 }
 

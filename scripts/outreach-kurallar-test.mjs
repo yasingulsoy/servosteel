@@ -102,10 +102,14 @@ t("ayarlar: ek kutular", () => {
 });
 t("alan adi isinmasi", () => {
   assert.equal(K.alanIsinmaTavani(null, 50).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(6, 50).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(7, 50).tavan, 35);
-  assert.equal(K.alanIsinmaTavani(14, 50).tavan, 50);
-  assert.equal(K.alanIsinmaTavani(14, 50).asama, null);
+  assert.equal(K.alanIsinmaTavani(0, 50).tavan, 20);
+  assert.equal(K.alanIsinmaTavani(1, 50).tavan, 30);
+  assert.equal(K.alanIsinmaTavani(3, 50).tavan, 30);
+  assert.equal(K.alanIsinmaTavani(4, 50).tavan, 40);
+  assert.equal(K.alanIsinmaTavani(9, 50).tavan, 40);
+  assert.equal(K.alanIsinmaTavani(10, 50).tavan, 50);
+  assert.equal(K.alanIsinmaTavani(10, 50).asama, null);
+  /* Ayarlanan tavan kademeden düşükse o kazanır */
   assert.equal(K.alanIsinmaTavani(2, 10).tavan, 10);
 });
 t("kutu secimi", () => {
@@ -185,8 +189,11 @@ t("sistem adresi", () => {
 });
 t("isinma tavani", () => {
   assert.deepEqual(K.isinmaTavani(null, 20).tavan, 10);
-  assert.equal(K.isinmaTavani(0, 20).asama, "ısınma: 1. hafta, 1. gün");
-  assert.equal(K.isinmaTavani(6, 20).tavan, 10);
+  assert.equal(K.isinmaTavani(0, 20).asama, "ısınma: 1. gün");
+  assert.equal(K.isinmaTavani(0, 20).tavan, 10);
+  assert.equal(K.isinmaTavani(1, 20).tavan, 12);
+  assert.equal(K.isinmaTavani(3, 20).tavan, 12);
+  assert.equal(K.isinmaTavani(4, 20).tavan, 15);
   assert.equal(K.isinmaTavani(7, 20).tavan, 15);
   assert.equal(K.isinmaTavani(13, 50).tavan, 15);
   assert.equal(K.isinmaTavani(14, 50).tavan, 50);

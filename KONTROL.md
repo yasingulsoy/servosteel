@@ -832,7 +832,15 @@ kayıtları: europages, ensun.io, Turkish Exporter — hesap açmak Yasin'de;
   OUTREACH_REPLY_TO=liza@servosteel.com.tr
   OUTREACH_BCC=<kendi Gmail adresin>
   ```
-  Dördü aynı alan adında: toplam 1. hafta günde 20, 2. hafta 35, sonra 50.
+  Dördü aynı alan adında. Isınma 2026-09-23'te hızlandırıldı (Yasin "hızlandıralım mı"):
+  alan adı toplamı 1. gün 20, 2-4. gün 30, 5-9. gün 40, sonra 50; kutu başına
+  1. gün 10, 2-4. gün 12, sonra 15. Gerekçe: alan adı yeni değil (yıllardır gerçek
+  yazışma, SPF/DKIM/DMARC hizalı), ilk günün 19 gönderiminin tamamı kabul edildi,
+  geri dönüş/şikâyet yok, BCC kopyası Gmail'de **Gelen kutusuna** düştü (Yasin teyit).
+  Bozulursa (geri dönüş, Tanıtımlar/Spam) kademeler geri alınır — `outreach-kurallar.ts`.
+  **Daha fazlası alan adı meselesi:** 50/gün tavanında 3.358 firma ~67 gün sürer;
+  hacmi ikiye katlamanın doğru yolu ikinci bir alan adı (kod çoklu alan adını
+  destekliyor, her alan adının tavanı ayrı) — ana alan adının itibarı riske girmez.
   Eksikken panel listeyi ve önizlemeyi gösterir, göndermez — sarı bant hangi
   değişkenin eksik olduğunu yazar; yarım kutu için ayrı uyarı çıkar.
   **`.env.local`'a konmaz:** o dosya canlı veritabanına bağlı, lokal panel gerçek
