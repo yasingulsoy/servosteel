@@ -451,7 +451,7 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
     yanitAdresi: (env.OUTREACH_REPLY_TO ?? "").trim(),
     gizliKopya: (env.OUTREACH_BCC ?? "").trim(),
     gunlukTavan: Math.min(50, Math.max(1, tavan)),
-    alanTavani: Math.min(150, Math.max(1, alanTavani)),
+    alanTavani: Math.min(200, Math.max(1, alanTavani)),
     aralikSn: Math.max(60, aralik),
     eksik,
     uyarilar,
@@ -467,7 +467,8 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  *   1. gün    → günde en çok 20
  *   2. gün    → günde en çok 70
  *   3-4. gün  → günde en çok 110
- *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 150)
+ *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 200 —
+ *               dört kutu × kutu tavanı 50; bunun üstü tek alan adına fazla)
  *
  * 2026-09-23'te hızlandırıldı. Gerekçe: servosteel.com.tr YENİ bir alan adı
  * değil — yıllardır gerçek yazışma yapıyor, SPF/DKIM/DMARC hizalı; ilk günün

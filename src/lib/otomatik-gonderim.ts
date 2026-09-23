@@ -9,6 +9,7 @@ import {
   outreachSemaKur,
   type OtomatikSiradaki,
 } from "@/lib/outreach-db";
+import { gonderimSirasi } from "@/lib/saat-dilimi";
 import {
   AB_ULKE_LISTESI,
   ayarlariOku,
@@ -83,9 +84,16 @@ const kapsam = (a: OtomatikAyar) => ({
   abUlkeleri: AB_ULKE_LISTESI,
 });
 
-/** Bugün sırada olan (henüz gitmemiş) firmalar — paneldeki "Bugün sırada" listesi. */
-export async function otomatikSira(a: OtomatikAyar, adet: number): Promise<OtomatikSiradaki[]> {
-  return otomatikSiradakiler(kapsam(a), adet);
+/**
+ * Bugün sırada olan (henüz gitmemiş) firmalar — paneldeki "Bugün sırada" listesi.
+ * Sıra hedefin kendi saatine göre diziliyor; panel gerçekte ne gideceğini gösterir.
+ */
+export async function otomatikSira(
+  a: OtomatikAyar,
+  adet: number,
+  simdi = new Date()
+): Promise<OtomatikSiradaki[]> {
+  return otomatikSiradakiler(kapsam(a), adet, gonderimSirasi(simdi));
 }
 
 async function turKilidiAl(): Promise<boolean> {
@@ -163,7 +171,7 @@ async function gonderimAdimi(simdi: Date, ayar: ReturnType<typeof ayarlariOku>):
 
   /* Sıradaki firma. MX yoksa ya da adres o arada başka satırdan yazıldıysa
      tekGonderim göndermeden döner — aynı turda bir sonrakine geçilir (en çok 5). */
-  const adaylar = await otomatikSira(a, 5);
+  const adaylar = await otomatikSira(a, 5, simdi);
   if (!adaylar.length) {
     const s = "sırada firma yok (kapsamı genişletin ya da listeyi büyütün)";
     await sonucYaz(s, false, null);

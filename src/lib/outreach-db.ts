@@ -180,11 +180,21 @@ export type OtomatikKapsam = { gruplar: number[]; abDahil: boolean; kesifDahil: 
 export type OtomatikSiradaki = Pick<HedefFirma, "id" | "firma" | "ulke" | "eposta" | "kategori" | "kesif" | "segmentler">;
 
 /**
- * Otomatik gönderimin sıradaki firmaları — panel sırasıyla (ürün grubu önce),
- * elle gönderimle AYNI "gönderilebilir" kuralı + otomatiğin kapsamı: seçili
- * gruplar, AB ülkeleri (varsayılan hariç), otomatik keşif firmaları.
+ * Otomatik gönderimin sıradaki firmaları — elle gönderimle AYNI "gönderilebilir"
+ * kuralı + otomatiğin kapsamı: seçili gruplar, AB ülkeleri (varsayılan hariç),
+ * otomatik keşif firmaları.
+ *
+ * Sıra artık hedefin KENDİ saatine bakıyor: yerel sabahı (08-11) olan ülkeler
+ * önce, mesaisi (11-17) olanlar sonra, gecesi ya da hafta sonu olan en sonda.
+ * Eşitlikte panel sırası (ürün grubu önce). Hiçbir firma elenmiyor, yalnızca
+ * sıralanıyor — pencere 24 saate açıldığında e-posta alıcının sabahına denk
+ * gelsin diye (bkz. saat-dilimi.ts).
  */
-export async function otomatikSiradakiler(k: OtomatikKapsam, adet: number): Promise<OtomatikSiradaki[]> {
+export async function otomatikSiradakiler(
+  k: OtomatikKapsam,
+  adet: number,
+  oncelik: { sabah: string[]; mesai: string[] } = { sabah: [], mesai: [] }
+): Promise<OtomatikSiradaki[]> {
   if (!k.gruplar.length || adet <= 0) return [];
   return sorguSert<OtomatikSiradaki>(
     `SELECT h.id, h.firma, h.ulke, h.eposta, h.kategori, h.kesif, h.segmentler
@@ -193,9 +203,21 @@ export async function otomatikSiradakiler(k: OtomatikKapsam, adet: number): Prom
        AND h.kategori = ANY($2::int[])
        AND ($3::boolean OR NOT (h.ulke = ANY($4::text[])))
        AND ($5::boolean OR NOT h.kesif)
-     ORDER BY h.sira, h.id
+     ORDER BY CASE WHEN h.ulke = ANY($7::text[]) THEN 0
+                   WHEN h.ulke = ANY($8::text[]) THEN 1
+                   ELSE 2 END,
+              h.sira, h.id
      LIMIT $6`,
-    [engelliUlkeler(), k.gruplar, k.abDahil, k.abUlkeleri, k.kesifDahil, Math.min(200, adet)]
+    [
+      engelliUlkeler(),
+      k.gruplar,
+      k.abDahil,
+      k.abUlkeleri,
+      k.kesifDahil,
+      Math.min(200, adet),
+      oncelik.sabah,
+      oncelik.mesai,
+    ]
   );
 }
 

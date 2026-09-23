@@ -10,6 +10,7 @@ import assert from "node:assert/strict";
  * denemesi için scripts/smtp-yutucu.py.
  */
 const K = await import(new URL("../src/lib/outreach-kurallar.ts", import.meta.url).href);
+const S = await import(new URL("../src/lib/saat-dilimi.ts", import.meta.url).href);
 
 let n = 0;
 const t = (ad, fn) => { fn(); n++; console.log("  ok -", ad); };
@@ -66,7 +67,7 @@ t("ayarlar: tek kutu", () => {
   assert.deepEqual(tam.eksik, []);
   assert.deepEqual(tam.uyarilar, []);
   assert.equal(tam.gunlukTavan, 50);
-  assert.equal(tam.alanTavani, 150);
+  assert.equal(tam.alanTavani, 200);
   assert.equal(tam.aralikSn, 60);
   assert.deepEqual(tam.kutular, [{ no: 1, host: "h", port: 465, user: "export@x.com", pass: "p", ad: "Servosteel", alan: "x.com" }]);
   const varsayilan = K.ayarlariOku({ OUTREACH_DAILY_LIMIT: "abc", OUTREACH_INTERVAL_SEC: "" });
@@ -228,5 +229,57 @@ t("otomatik tempo", () => {
   /* pencerenin sonu yaklaşınca bile kutu aralığının altına inmez */
   assert.equal(K.sonrakiAralikSn(5, 20, 90, 0.5), 90);
   assert.equal(K.sonrakiAralikSn(60, 0, 90, 0.5), 3600);
+});
+t("alan adi tavani ust siniri", () => {
+  /* Dort kutu x kutu tavani 50 = 200; env daha buyugunu yazsa da burada kesilir */
+  const o = (v) => K.ayarlariOku({
+    OUTREACH_HOST_1: "mail.x.com", OUTREACH_PORT_1: "465", OUTREACH_USER_1: "a@x.com",
+    OUTREACH_PASS_1: "p", OUTREACH_FROM_NAME_1: "X", OUTREACH_DOMAIN_DAILY_LIMIT: v,
+  });
+  assert.equal(o("200").alanTavani, 200);
+  assert.equal(o("999").alanTavani, 200);
+  assert.equal(o("70").alanTavani, 70);
+});
+t("hedefin kendi saati", () => {
+  /* 2026-09-23 03:00 UTC, carsamba: Hindistan 08:00, Meksika 21:00 (sali) */
+  assert.deepEqual(S.yerelZaman("Hindistan", new Date("2026-09-23T03:00:00Z")), { saat: 8, haftaGunu: 3 });
+  assert.deepEqual(S.yerelZaman("Meksika", new Date("2026-09-23T03:00:00Z")), { saat: 21, haftaGunu: 2 });
+  assert.equal(S.yerelZaman("Atlantis", new Date("2026-09-23T03:00:00Z")), null);
+});
+t("hafta sonu ulkeye gore", () => {
+  /* Korfez'de cuma-cumartesi tatil, pazar is gunu */
+  assert.equal(S.isGunu("Suudi Arabistan", 5), false);
+  assert.equal(S.isGunu("Suudi Arabistan", 6), false);
+  assert.equal(S.isGunu("Suudi Arabistan", 0), true);
+  /* BAE 2022'de cumartesi-pazara gecti */
+  assert.equal(S.isGunu("BAE", 5), true);
+  assert.equal(S.isGunu("BAE", 0), false);
+  assert.equal(S.isGunu("Nepal", 0), true);
+  assert.equal(S.isGunu("Nepal", 6), false);
+  assert.equal(S.isGunu("Hindistan", 0), false);
+  assert.equal(S.isGunu("Hindistan", 3), true);
+});
+t("gonderim sirasi hedefin sabahini one alir", () => {
+  /* 03:00 UTC carsamba: Hindistan'da 08:00 -> sabah; Meksika ve ABD gece */
+  const a = S.gonderimSirasi(new Date("2026-09-23T03:00:00Z"));
+  assert.ok(a.sabah.includes("Hindistan"));
+  assert.ok(!a.sabah.includes("Meksika") && !a.mesai.includes("Meksika"));
+  assert.ok(!a.sabah.includes("ABD") && !a.mesai.includes("ABD"));
+  /* 14:00 UTC: Meksika 08:00, ABD 09:00 -> sabah; Hindistan 19:00 -> disarida */
+  const b = S.gonderimSirasi(new Date("2026-09-23T14:00:00Z"));
+  assert.ok(b.sabah.includes("Meksika"));
+  assert.ok(b.sabah.includes("ABD"));
+  assert.ok(!b.sabah.includes("Hindistan") && !b.mesai.includes("Hindistan"));
+  /* Cuma 09:00 UTC: Suudi'de 12:00 ama cuma tatil -> listede yok; Hindistan 14:00 mesai */
+  const c = S.gonderimSirasi(new Date("2026-09-25T09:00:00Z"));
+  assert.ok(!c.sabah.includes("Suudi Arabistan") && !c.mesai.includes("Suudi Arabistan"));
+  assert.ok(c.mesai.includes("Hindistan"));
+});
+t("her hedef ulkenin saat dilimi var", () => {
+  /* Veritabanindaki 111 ulkenin hepsi tabloda; eksik olan siralamada en sona duser */
+  assert.equal(Object.keys(S.ULKE_DILIMI).length, 111);
+  for (const [ulke, dilim] of Object.entries(S.ULKE_DILIMI)) {
+    assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
+  }
 });
 console.log(`${n} test gecti`);
