@@ -112,7 +112,9 @@ const istemci = new pg.Client({
 });
 await istemci.connect();
 
-/* Kuru çalıştırma şemaya dokunmaz: yeni sütunlar canlıda henüz yoksa okunmaz, "farklı" sayılır. */
+/* Kuru çalıştırma şemaya dokunmaz: yeni sütunlar canlıda henüz yoksa OKUNMAZ —
+   okunmaya çalışılsa sorgu patlardı (kod yayına girmeden kuru çalıştırma yapılamazdı).
+   Eksik sütun `undefined` kalır, karşılaştırmada "farklı" çıkar; doğrusu da o. */
 async function varOlanlar(sutunlar) {
   const { rows } = await istemci.query(
     `SELECT column_name FROM information_schema.columns WHERE table_name = 'hedef_firmalar'`
@@ -125,12 +127,12 @@ try {
   /* Kuru çalıştırma veritabanına HİÇ yazmaz — tablo yoksa kurmaz da. */
   const { rows: tablo } = await istemci.query(`SELECT to_regclass('hedef_firmalar') IS NOT NULL AS var`);
   if (YAZ) await istemci.query(OUTREACH_SEMA);
+  const okunacak = YAZ
+    ? [...ALANLAR, ...GRUP_ALANLARI]   /* --yaz şemayı kurdu: hepsi var */
+    : await varOlanlar([...ALANLAR, ...GRUP_ALANLARI]);
   const { rows: mevcut } =
     YAZ || tablo[0].var
-      ? await istemci.query(
-          `SELECT ${[...ALANLAR, ...(YAZ ? GRUP_ALANLARI : await varOlanlar(GRUP_ALANLARI))].join(", ")},
-                  durum, listede FROM hedef_firmalar`
-        )
+      ? await istemci.query(`SELECT ${okunacak.join(", ")}, durum, listede FROM hedef_firmalar`)
       : { rows: [] };
   const harita = new Map(mevcut.map((r) => [r.anahtar, r]));
   const listedeki = mevcut.filter((r) => r.listede).length;
