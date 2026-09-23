@@ -597,6 +597,14 @@ Kurallar kodda, panelden değiştirilemez (`src/lib/outreach-kurallar.ts`):
   24 saate açmak ancak bununla anlamlı — yoksa Meksikalı firmaya sabahın dördünde
   e-posta gider. **Pencereyi genişletmek günlük hacmi ARTIRMAZ** (tavan bağlayıcı,
   pencere değil); hafta sonunu açmak haftalık hacmi ~%40 artırır.
+  **24 Eylül 01:02'de açıldı** (00:00–24:00, hafta sonu dahil). Taban ölçüsü:
+  eski sırayla 88 gönderimin **%42'si alıcının mesai saati dışına** düşüyordu
+  (Hindistan'a 19:00'da on bir mail, BAE/Umman 18:00, Meksika 07:00); yalnızca
+  %15'i 08-11 diliminde. Yeni sıralamanın canlı olduğu şöyle kanıtlandı: pencere
+  açıldıktan sonraki İLK gönderim, İstanbul 01:0x'te **Avustralya'ya, oradaki
+  saat 08:00**'de gitti — o anda sabahı olan dört ülkeden biri (Avustralya, Fiji,
+  Papua Yeni Gine, Yeni Zelanda). Üç commit de sunucu tarafı olduğu için deploy'un
+  dışarıdan parmak izi yok; doğrulama yolu bu.
 - **Hatırlatma / ikinci tur (2026-09-23, Yasin "sıra bitince tekrar devam etsin"):**
   ilk tur bitince liste başa sarar ama **aynı mektup ikinci kez gitmez** — ikinci
   turun kendi metni var (`hedef_firmalar.konu2/govde2`, şablon
