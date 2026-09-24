@@ -1326,14 +1326,35 @@ kaydına yazıldı.
 karşılamadığı ölçülemedi — bu makinede 25. kapı kapalı (Gmail'in MX'i de zaman
 aşımına uğruyor). Şimdilik 200 gönderimde 2.
 
-**İlk şüpheli `gulsoy@` kutusunun dolu olması.** Her iki red de o kutudan
-çıktı; diğer üçü 150 gönderimde sıfır hata verdi. İkisi de Yeni Zelanda'ya
-gittiği için tek başına kanıt değil (kutu seçimi ≈ rastgele, ikisinin aynı
-kutuya düşmesi ~%6), ama mekanizma birebir uyuyor: geri arama
-`RCPT TO:<gulsoy@servosteel.com.tr>` diye soruyor, kutu doluysa sunucu
-reddediyor, karşı taraf "Sender verify failed" yazıyor. Hesabın 1 GB kotası
-ve inode %80 zaten biliniyordu (bkz. mail altyapısı notu). **cPanel'de o
-kutunun doluluğuna bakılacak.**
+**Sebep `gulsoy@` kutusu — ülke değil, SAAT.** Üçüncü red gelince Yeni Zelanda'ya
+giden bütün gönderimler yan yana konuldu ve tablo netleşti:
+
+| saat | kutu | sonuç |
+|---|---|---|
+| 24 Eyl 01:31 | gulsoy@ | ok (Treadwell) |
+| 24 Eyl 23:06 | marketing@ | ok |
+| 24 Eyl 23:16 | yasin@ | ok |
+| **24 Eyl 23:30** | **gulsoy@** | **ok** (steel&tube) |
+| 24 Eyl 23:53 · 25 Eyl 00:01 | marketing@ | ok |
+| 25 Eyl 00:16 | yasin@ | ok |
+| **25 Eyl 00:31 · 00:42 · 00:54** | **gulsoy@** | **üçü de red** |
+
+Yeni Zelanda suçlu değil: aynı gece yedi NZ firmasına sorunsuz gidildi, üçü
+`gulsoy@`dan. O kutu 23:30'a kadar NZ'ye yazabiliyordu, **00:31'den sonra
+yazamıyor**. Yani bir eşik aşıldı. Mekanizma buna birebir oturuyor: geri arama
+`RCPT TO:<gulsoy@servosteel.com.tr>` diye soruyor, **kutu doluysa** sunucu
+reddediyor, karşı taraf "Sender verify failed" yazıyor. Hesabın 1 GB kotası ve
+inode %80 zaten biliniyordu; her giden e-posta ~85 KB'lık kopyasını Gönderilmiş
+klasörüne bırakıyor ve `gulsoy@` en çok gönderen kutulardan biri (51 gönderim).
+
+**Önemli sonuç: bu NZ'ye özel değil.** Kutu sorunu olduğu için, gün ilerledikçe
+sıkı doğrulama yapan HER ülkede aynı red gelir. Yeni Zelanda yalnızca İstanbul
+gece yarısında sabahı olan ülke olduğu için ilk oraya çarptı.
+
+**Yapıldı:** üç firma ("Geçildi") parkta, adresleri bozuk sayılmadı. `gulsoy@`
+kutusunun günlük durdurması **kaldırılmadı** — sigorta bu kez doğru sebeple attı.
+**cPanel'de o kutunun doluluğuna bakılacak; dolu ise boşaltmak ya da kotayı
+yükseltmek gerekiyor.**
 
 **DERS — veriyi koddan önce düzeltme (2026-09-25).** Yanan iki firmayı
 "Gönderilmedi"ye aldım ama düzeltme henüz YAYINDA DEĞİLDİ; canlıdaki eski
