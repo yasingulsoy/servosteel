@@ -282,4 +282,28 @@ t("her hedef ulkenin saat dilimi var", () => {
     assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
   }
 });
+t("gonderen dogrulamasi alici hatasi sayilmaz", () => {
+  /* 25 Eylul 2026'da gercekten gelen cevap. Exim RCPT TO'da 550 veriyor ama
+     sikayet ALICInin adresi degil, BIZIM gonderen adresimiz. "alici" sayilsaydi
+     saglam firma temelli yanardi ve geri donus sigortasi yanlis dolardi. */
+  const g = K.hataSiniflandir({
+    responseCode: 550,
+    command: "RCPT TO",
+    response: "550 Can't send mail - all recipients were rejected: 550 Sender verify failed",
+    message: "Can't send mail - all recipients were rejected: 550 Sender verify failed",
+  });
+  assert.equal(g.tur, "hata");
+  assert.match(g.sebep, /gönderen adresimizi doğrulayamadı/);
+  /* Gercek alici hatasi hala "alici" */
+  const a = K.hataSiniflandir({
+    responseCode: 550,
+    command: "RCPT TO",
+    response: "550 5.1.1 <yok@ornek.com>: Recipient address rejected: User unknown",
+    message: "550 5.1.1 Recipient address rejected: User unknown",
+  });
+  assert.equal(a.tur, "alici");
+  /* Gecici red ve giris hatasi degismedi */
+  assert.equal(K.hataSiniflandir({ responseCode: 421, response: "421 too many connections", message: "" }).tur, "sigorta");
+  assert.equal(K.hataSiniflandir({ code: "EAUTH", response: "535 auth failed", message: "" }).tur, "sigorta");
+});
 console.log(`${n} test gecti`);

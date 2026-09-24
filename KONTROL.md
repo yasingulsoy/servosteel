@@ -1294,6 +1294,41 @@ WhatsApp Business hesabı yok.
 
 ---
 
+## Gönderen doğrulaması reddi — alıcı hatası SANILIYORDU (25 Eylül)
+
+200 gönderimin ilk başarısızlığı Yeni Zelanda'dan geldi ve mesajın tamamı şuydu:
+`550 Can't send mail - all recipients were rejected: 550 Sender verify failed`.
+
+Bu **alıcının adresinin bozuk olduğu anlamına gelmiyor.** Alıcı sunucu (Exim),
+zarfın göndericisini doğrulamak için bizim MX'imize geri bağlanıyor ve
+`gulsoy@servosteel.com.tr` var mı diye soruyor; cevap alamayınca RCPT TO'da 550
+veriyor. Şikâyet alıcıda değil BİZDE. Kod ise "kod 500+ ve komut RCPT TO" görüp
+`tur: "alici"` diyor, firmayı "Adres hatalı" işaretleyip temelli yakıyordu.
+
+İki zarar birden: sağlam müşteri adayı kuyruktan düşüyor ve geri dönüş
+sigortası (son 50 gönderimde %6) yanlış sebeple doluyor — yani bir gün bütün
+gönderim, aslında bizim sunucumuzdan kaynaklanan bir sorun yüzünden "alıcı
+adresleri bozuk" gerekçesiyle duracaktı.
+
+Düzeltildi: `GONDEREN_DOGRULAMA` deseni alıcı kontrolünden ÖNCE bakıyor,
+`tur: "hata"` dönüyor — firma işaretlenmiyor, ama aynı kutudan üst üste iki
+başarısızlık olursa mevcut sigorta kutuyu günlüğüne durduruyor. Yani sistemik
+bir sorun sessizce firma yakmak yerine yüksek sesle kendini gösteriyor.
+Testi: `node scripts/outreach-kurallar-test.mjs` ("gonderen dogrulamasi alici
+hatasi sayilmaz") — gerçek alıcı hatası hâlâ `alici` sayılıyor.
+
+**Yakılan iki firma geri alındı** (2026-09-25): ampelite.co.nz ve Steel Frame
+Solutions, ikisi de Yeni Zelanda — örüntü tesadüf değil, oradaki barındırma
+sağlayıcısı gönderen doğrulamasını sıkı yapıyor. Firmalara not düşüldü, panel
+kaydına yazıldı.
+
+**Açık uç:** sunucumuzun boş göndericili geri aramayı (callout) neden
+karşılamadığı ölçülemedi — bu makinede 25. kapı kapalı (Gmail'in MX'i de zaman
+aşımına uğruyor). Tekrarlarsa cPanel tarafında bakılacak; şimdilik 200
+gönderimde 2.
+
+---
+
 ## Talebe giden yol — 24 Eylül ölçümü ve iki düzeltme
 
 Üç kanalın da sayısı aynı gün ölçüldü: mail teknik olarak kusursuz (91 gönderim,

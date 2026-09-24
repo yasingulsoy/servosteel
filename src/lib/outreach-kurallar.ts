@@ -225,6 +225,17 @@ const KUTU_POLITIKASI = /relay|not permitted|authenticat/i;
 const ALICI_YOK =
   /user unknown|unknown user|no such user|mailbox (is )?(unavailable|not found)|does not exist|invalid (recipient|address|mailbox)|recipient (address )?rejected|address rejected|5\.1\.\d/i;
 
+/* Alıcı sunucu BİZİM gönderen adresimizi doğrulayamadı. Exim bunu RCPT TO
+   aşamasında 550 ile reddediyor, o yüzden "alıcının adresi bozuk" sanılıyordu —
+   oysa sorun alıcıda değil bizde: karşı sunucu MX'imize geri bağlanıp
+   gulsoy@servosteel.com.tr var mı diye soruyor ve cevap alamıyor. Firmayı
+   "Adres hatalı" işaretlemek burada İKİ hata yapardı: sağlam bir müşteri
+   adayını temelli yakar, üstelik geri dönüş sigortasını yanlış sebeple
+   doldurup bütün gönderimi durdururdu. (İlk görülme: 25 Eylül 2026,
+   Steel Frame Solutions / Yeni Zelanda.) */
+const GONDEREN_DOGRULAMA =
+  /sender verify (failed|fail)|sender verification|verify failed for|callout|sender address rejected/i;
+
 function kisa(s: string): string {
   return s.replace(/\s+/g, " ").trim().slice(0, 240);
 }
@@ -255,6 +266,15 @@ export function hataSiniflandir(h: SmtpHatasi): { tur: HataTuru; sebep: string; 
       tur: "sigorta",
       sebep: `Sunucu gönderimi sınırladı ya da engelledi: ${metin}`,
       kapsam: KUTU_POLITIKASI.test(metin) ? "kutu" : "alan",
+    };
+  }
+  /* Gönderen doğrulaması alıcı kontrolünden ÖNCE: ikisi de RCPT TO'da 550
+     veriyor, sonra bakılsa alıcı sanılırdı. */
+  if (GONDEREN_DOGRULAMA.test(metin)) {
+    return {
+      tur: "hata",
+      sebep: `Alıcı sunucu bizim gönderen adresimizi doğrulayamadı${kod ? ` (${kod})` : ""}: ${metin}`,
+      kapsam: "kutu",
     };
   }
   if (h.code === "EENVELOPE" || (kod >= 500 && (h.command === "RCPT TO" || ALICI_YOK.test(metin)))) {
