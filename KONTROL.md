@@ -1324,8 +1324,25 @@ kaydına yazıldı.
 
 **Açık uç:** sunucumuzun boş göndericili geri aramayı (callout) neden
 karşılamadığı ölçülemedi — bu makinede 25. kapı kapalı (Gmail'in MX'i de zaman
-aşımına uğruyor). Tekrarlarsa cPanel tarafında bakılacak; şimdilik 200
-gönderimde 2.
+aşımına uğruyor). Şimdilik 200 gönderimde 2.
+
+**İlk şüpheli `gulsoy@` kutusunun dolu olması.** Her iki red de o kutudan
+çıktı; diğer üçü 150 gönderimde sıfır hata verdi. İkisi de Yeni Zelanda'ya
+gittiği için tek başına kanıt değil (kutu seçimi ≈ rastgele, ikisinin aynı
+kutuya düşmesi ~%6), ama mekanizma birebir uyuyor: geri arama
+`RCPT TO:<gulsoy@servosteel.com.tr>` diye soruyor, kutu doluysa sunucu
+reddediyor, karşı taraf "Sender verify failed" yazıyor. Hesabın 1 GB kotası
+ve inode %80 zaten biliniyordu (bkz. mail altyapısı notu). **cPanel'de o
+kutunun doluluğuna bakılacak.**
+
+**DERS — veriyi koddan önce düzeltme (2026-09-25).** Yanan iki firmayı
+"Gönderilmedi"ye aldım ama düzeltme henüz YAYINDA DEĞİLDİ; canlıdaki eski
+sınıflandırıcı dakikalar içinde ikisini de tekrar denedi, yine yaktı ve
+üstüne `gulsoy@` kutusunu "üst üste iki başarısız gönderim" diye durdurdu.
+Aynı kural e-posta şablonlarında da geçerliydi (metin, onu anlayan kod
+yayına girmeden veritabanına yazılmaz) — **veri düzeltmesi de öyle.** İkisi
+şimdilik "Geçildi"de bekliyor; deploy'dan sonra "Gönderilmedi"ye alınacak.
+Kutunun durdurması kaldırıldı, sebebi anlaşıldığı için.
 
 ---
 
