@@ -11,6 +11,10 @@ import { CONTACT } from "@/lib/site";
 const inputClass =
   "w-full rounded-lg border border-line bg-card px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/25";
 
+/* Etiket metinleri çeviride "Telefon *" biçiminde geliyor; yıldızı söküp
+   alanın GERÇEK durumuna göre yeniden koyuyoruz (bkz. quick-quote-form). */
+const yalin = (s: string) => s.replace(/\s*\*\s*$/, "");
+
 /**
  * Teklif talebi formu. Gönderim /api/talep üzerinden sunucu tarafında yapılır;
  * ziyaretçi sayfadan ayrılmaz ve talebin ulaştığını görür.
@@ -21,9 +25,24 @@ const inputClass =
  */
 export function RfqForm() {
   const t = useTranslations("quote.form");
+  const th = useTranslations("home");
   const options = t.raw("options") as string[];
   const [product, setProduct] = useState(options[0]);
   const { status, submit } = useLeadSubmit("rfq");
+
+  /* Zorunlu olan yalnızca ad, firma, e-posta ve ürün. Telefon 2026-09-24'te
+     zorunluluktan çıkarıldı: sunucu zaten istemiyordu (api/talep yalnızca ad
+     ve geçerli e-posta arar) ve ilk temasta numara istemek, hiç tanımadığı
+     yabancı tedarikçiye yazan alıcıyı formun ortasında geri döndürüyordu.
+     İsteğe bağlı alanlar artık öyle olduklarını BASMADAN ÖNCE söylüyor. */
+  const etiket = (ad: string, zorunlu: boolean) =>
+    zorunlu ? (
+      `${yalin(ad)} *`
+    ) : (
+      <>
+        {yalin(ad)} <span className="font-normal text-muted">({th("quickOptional")})</span>
+      </>
+    );
 
 
   if (status === "sent") return <LeadSent text={t("sent")} />;
@@ -32,37 +51,37 @@ export function RfqForm() {
     <form onSubmit={submit} className="grid gap-5 sm:grid-cols-2">
       <div>
         <label htmlFor="rfq-name" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("name")}
+          {etiket(t("name"), true)}
         </label>
         <input id="rfq-name" name="name" required autoComplete="name" className={inputClass} placeholder={t("namePh")} />
       </div>
       <div>
         <label htmlFor="rfq-company" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("company")}
+          {etiket(t("company"), true)}
         </label>
         <input id="rfq-company" name="company" required autoComplete="organization" className={inputClass} placeholder={t("companyPh")} />
       </div>
       <div>
         <label htmlFor="rfq-email" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("email")}
+          {etiket(t("email"), true)}
         </label>
         <input id="rfq-email" name="email" type="email" required autoComplete="email" className={inputClass} placeholder={t("emailPh")} />
       </div>
       <div>
         <label htmlFor="rfq-phone" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("phone")}
+          {etiket(t("phone"), false)}
         </label>
-        <input id="rfq-phone" name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder={t("phonePh")} />
+        <input id="rfq-phone" name="phone" type="tel" autoComplete="tel" className={inputClass} placeholder={t("phonePh")} />
       </div>
       <div>
         <label htmlFor="rfq-location" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("location")}
+          {etiket(t("location"), false)}
         </label>
         <input id="rfq-location" name="location" autoComplete="country-name" className={inputClass} placeholder={t("locationPh")} />
       </div>
       <div>
         <label htmlFor="rfq-product" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("product")}
+          {etiket(t("product"), true)}
         </label>
         <select
           id="rfq-product"
@@ -81,13 +100,13 @@ export function RfqForm() {
       </div>
       <div className="sm:col-span-2">
         <label htmlFor="rfq-specs" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("specs")}
+          {etiket(t("specs"), false)}
         </label>
         <input id="rfq-specs" name="specs" className={inputClass} placeholder={t("specsPh")} />
       </div>
       <div className="sm:col-span-2">
         <label htmlFor="rfq-message" className="mb-1.5 block text-sm font-medium text-ink">
-          {t("message")}
+          {etiket(t("message"), false)}
         </label>
         <textarea id="rfq-message" name="message" rows={5} className={inputClass} placeholder={t("messagePh")} />
       </div>

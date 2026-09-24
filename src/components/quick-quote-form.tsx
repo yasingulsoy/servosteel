@@ -15,7 +15,10 @@ const inputClass =
 const yalin = (s: string) => s.replace(/\s*\*\s*$/, "");
 
 /**
- * Dört alanlı teklif formu: ad soyad, e-posta, telefon, not.
+ * Dört alanlı teklif formu: ad soyad, e-posta, telefon, not. Zorunlu olan
+ * yalnızca ad ve e-posta — sunucunun da istediği bu ikisi (api/talep). Telefon
+ * 2026-09-24'te zorunluluktan çıkarıldı: ilk temasta hiç tanımadığı yabancı
+ * tedarikçiye numara vermek istemeyen alıcı formu yarıda bırakıyordu.
  *
  * Anasayfa bandı (`QuickQuote`) ve ürün sayfalarındaki kart (`InlineQuote`)
  * aynı formu kullanır. Gönderim teklif sayfasıyla aynı (/api/talep, "rfq");
@@ -60,9 +63,9 @@ export function QuickQuoteForm({ product, idPrefix }: { product?: string; idPref
       </div>
       <div>
         <label htmlFor={id("phone")} className="mb-1.5 block text-sm font-medium text-ink">
-          {etiket(t("phone"), true)}
+          {etiket(t("phone"), false)}
         </label>
-        <input id={id("phone")} name="phone" type="tel" required autoComplete="tel" className={inputClass} placeholder={t("phonePh")} />
+        <input id={id("phone")} name="phone" type="tel" autoComplete="tel" className={inputClass} placeholder={t("phonePh")} />
       </div>
       <div className="sm:col-span-2">
         <label htmlFor={id("message")} className="mb-1.5 block text-sm font-medium text-ink">
