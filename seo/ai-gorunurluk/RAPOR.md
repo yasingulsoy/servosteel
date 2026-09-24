@@ -1,63 +1,63 @@
-# Yapay zeka görünürlüğü — 20 Eylül 2026
+# Yapay zeka görünürlüğü — 24 Eylül 2026
 
-ChatGPT (gpt-5.6-sol), web aramasi açık · 12 soru · maliyet 1.18 $
+ChatGPT (gpt-5.6-sol), web aramasi açık · 12 soru · maliyet 1.14 $
 
-**Bizi anan cevap: 5/12.** Asistandan gelen ziyaretçi sitedeki en iyi dönüşen kanal (§KONTROL D), o yüzden buradaki her kayıp cevap doğrudan taleptir.
+**Bizi anan cevap: 3/12.** Asistandan gelen ziyaretçi sitedeki en iyi dönüşen kanal (§KONTROL D), o yüzden buradaki her kayıp cevap doğrudan taleptir.
 
 | pazar | soru | bizi andı mı | listede sıra | birlikte anıldıklarımız |
 |---|---|:-:|---:|---|
-| us | Who are the leading coil slitting line manufacturers in Turk | **evet** | 2 | Coilmak, 250 m/min, 15 tonnes, 5 mm |
-| us | I need a roll forming machine manufacturer in Turkey. Which  | hayır | — | Turkish roll, ESTECH Engineering, Etomak Engineering, İdeal Makina |
-| us | Which companies manufacture servo feeders and press feeding  | **evet** | — | representative list of European manufacturers, ARKU Maschinenbau, GSW Schwabe, DREHER Automation |
-| us | cable tray roll forming machine manufacturer recommendations | **evet** | 1 | practical manufacturer shortlist, ShengHui Machinery, Brother Union Machinery, Believe Industry |
-| us | Who makes complete coil processing lines (slitting and cut-t | hayır | — | complete coil, Red Bud Industries, Braner USA, combined slitting |
-| gb | Best cut to length line manufacturers for a steel service ce | hayır | — | steel service centre, 20 September 2026, FIMI Group, Best fit |
-| us | Which manufacturers build solar mounting profile roll formin | hayır | — | solar mounting, Shenghui Machinery, Wuxi Sunway Machinery, Xinnuo Machinery |
-| de | Welche Hersteller bauen Längsteilanlagen und Querteilanlagen | hayır | — | Längsteilanlagen (Slitting Lines), Querteilanlagen (Cut, b+s group / Burghardt + Schmidt, Heinrich Georg |
-| it | Quali aziende producono linee di taglio longitudinale per co | hayır | — | linee di taglio longitudinale per coil, slitting lines, CAMU, FASPAR |
-| pl | Którzy producenci dostarczają podajniki walcowe servo i lini | hayır | — | ZAPROM, INSTEEL, TFM, IRON |
-| ru | Какие производители выпускают линии продольной резки рулонно | **evet** | — | ANDRITZ, GEORG, hpl Group, Euroslitter |
-| tr | Rulo sac dilme hattı üreticileri kimler? Hangi firmalardan t | **evet** | 1 | Timko Makine, kalın sac ve ağır hizmet tipi hatlarda, 16 mm’ye kadar kapasite, Teklif alın |
+| us | Who are the leading coil slitting line manufacturers in Turk | **evet** | 3 | SACFORM / AGMline, BOSPORAS Machinery, Coilmak, 250 m/min |
+| us | I need a roll forming machine manufacturer in Turkey. Which  | hayır | — | Turkish roll, YCS Machinery, sales@ycsrollform.com, +90 532 568 16 83 |
+| us | Which companies manufacture servo feeders and press feeding  | **evet** | — | ARKU Maschinenbau GmbH, Schuler Group, TENERAL Technology, Servopresse S.r.l. |
+| us | cable tray roll forming machine manufacturer recommendations | hayır | — | cable, Samco Machinery / Samco India, Jinggong Technology, Hangzhou Roll Forming Technology |
+| us | Who makes complete coil processing lines (slitting and cut-t | hayır | — | complete coil, Braner USA, LM Equipment & Design, ATHADER |
+| gb | Best cut to length line manufacturers for a steel service ce | hayır | — | first, Fagor Arrasate, Best fit, ANDRITZ Metals |
+| us | Which manufacturers build solar mounting profile roll formin | hayır | — | Wuxi Sunway Machinery, JX Roll Forming / Wuxi Jianxiang Maosheng, Jiangyin Hailong Machinery, Xinnuo Roll Forming Machinery |
+| de | Welche Hersteller bauen Längsteilanlagen und Querteilanlagen | hayır | — | Längsteilung (Slitting Lines), Querteilung (Cut, ANDRITZ Sundwig, Hemer, 3.200 mm Bandbreite und 25 mm Dicke |
+| it | Quali aziende producono linee di taglio longitudinale per co | hayır | — | CAMU, Novastilmec, L.D.M. Officina Meccanica, FASPAR |
+| pl | Którzy producenci dostarczają podajniki walcowe servo i lini | hayır | — | ZAPROM, SW Concept, INSTEEL, INES, Słowenia |
+| ru | Какие производители выпускают линии продольной резки рулонно | hayır | — | неполный список производителей, SALICO Group, STAM, Euroslitter |
+| tr | Rulo sac dilme hattı üreticileri kimler? Hangi firmalardan t | **evet** | 3 | Unizon Machinery, Coilmak, Sacform / AGMline, Bosporas Machinery |
 
 ## Asistanın baktığı kaynaklar — nerede kayıtlı olmalıyız
 
 | kaynak | kaç cevapta |
 |---|---:|
-| servosteel.com.tr | 5 |
-| cinser.eu | 3 |
+| stam.it | 4 |
+| servosteel.com.tr | 3 |
+| bosporas.com | 3 |
+| athader.com | 3 |
+| novastilmec.com | 3 |
+| pressmach.eu | 3 |
+| salico.net | 3 |
 | coilmak.com | 2 |
-| turkishexporter.com.tr | 2 |
-| rollser.com | 2 |
-| insteel-piw.com | 2 |
-| shenghui-machinery.com | 2 |
-| braner.com | 2 |
-| cwpcoil.com | 2 |
-| lmequipment.com | 2 |
-| andritz.com | 2 |
-| georg.com | 2 |
-| salico.net | 2 |
-| gsw-group.com | 2 |
+| pressline.com.tr | 2 |
 | spottisergio.it | 2 |
-| stam.it | 2 |
-| mescoteknik.com | 1 |
-| werktuigen.com | 1 |
-| steelex.com.tr | 1 |
-| bosporas.com | 1 |
+| andritz.com | 2 |
+| euroslitter.com | 2 |
+| europages.co.uk | 1 |
+| tekmak.com | 1 |
+| turkishexporter.com.tr | 1 |
+| adaygrup.com.tr | 1 |
+| etomak.com | 1 |
+| idealmakina.com.tr | 1 |
+| magafi.com | 1 |
+| mechform.com.tr | 1 |
 
 ## En çok birlikte anıldığımız firmalar
 
+- Novastilmec — 3 cevapta
 - Coilmak — 2 cevapta
-- Elmaksan — 2 cevapta
-- GSW Schwabe — 2 cevapta
-- IRON — 2 cevapta
-- Braner USA — 2 cevapta
-- LM Equipment & Design — 2 cevapta
-- FIMI Group — 2 cevapta
+- BOSPORAS — 2 cevapta
+- KINGREAL Machinery — 2 cevapta
 - STAM — 2 cevapta
 - Spotti Sergio Coil Processing — 2 cevapta
+- Pressmach — 2 cevapta
+- SACFORM / AGMline — 1 cevapta
+- BOSPORAS Machinery — 1 cevapta
 - 250 m/min — 1 cevapta
-- 15 tonnes — 1 cevapta
-- 5 mm — 1 cevapta
+- Mekanikel Engineering — 1 cevapta
+- Tekmak — 1 cevapta
 
 ---
 

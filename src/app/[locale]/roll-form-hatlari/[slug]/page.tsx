@@ -4,6 +4,7 @@ import { ArrowRight, Check, Settings2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
+import { UreticiSatiri } from "@/components/uretici-satiri";
 import { CtaBand } from "@/components/cta-band";
 import { InlineQuote } from "@/components/inline-quote";
 import { SpecularButton } from "@/components/specular-button";
@@ -76,6 +77,8 @@ export default async function RollFormLinePage({ params }: Props) {
         title={t("name")}
         description={t("hero")}
       />
+
+      <UreticiSatiri cumle={td("ureticiSatiri")} satirlar={tableRows} />
 
       <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
         <Reveal>

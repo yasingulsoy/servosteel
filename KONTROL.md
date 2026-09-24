@@ -1294,6 +1294,43 @@ WhatsApp Business hesabı yok.
 
 ---
 
+## Talebe giden yol — 24 Eylül ölçümü ve iki düzeltme
+
+Üç kanalın da sayısı aynı gün ölçüldü: mail teknik olarak kusursuz (91 gönderim,
+%99'u alıcının sabahında, 0 geri dönüş), trafik zirvede (71 oturum/gün), SEO'da
+konum iki ayda 15'ten 7'ye inmiş — ama **hiçbir kanal talep üretmiyordu**.
+Sızıntının yeri ikiye ayrıldı:
+
+- **Form.** 7 günde telefon linkine 20, e-posta linkine 12 tıklama; form 1 kez
+  dolduruldu. Teklif formu 8 alandan 5'ini zorunlu tutuyordu ve biri TELEFONDU.
+  Sunucu (`api/talep`) yalnızca ad ve geçerli e-posta arıyor — zorunluluk
+  yalnızca tarayıcıya konmuştu. İki formda da (teklif sayfası + ürün sayfası)
+  telefon isteğe bağlı yapıldı; zorunlu alanlar artık BASMADAN ÖNCE işaretli
+  (`ff9c01b`). Hiç tanımadığı yabancı tedarikçiye ilk temasta numara vermek
+  istemeyen alıcı formu yarıda bırakıyordu.
+- **Yapay zekada üretici künyesi yok.** 12 sorunun 3'ünde anıldık. Örüntü:
+  soru "Türkiye'de" dediğinde varız, doğrudan ÜRÜN sorulduğunda yokuz ("cable
+  tray roll forming machine manufacturer" → Samco, Jinggong; "solar mounting
+  profile" → dört Çinli). Asistanın okuduğu kaynaklar rakiplerin KENDİ
+  siteleri (stam.it 4 cevapta, bosporas.com 3, athader.com 3); bizim sitemiz de
+  3 cevapta kaynaktı — yani okunuyoruz, ama sayfa "bu makineyi Servosteel
+  üretir, İstanbul'da, şu aralıkta" cümlesini hiç kurmuyordu. Ürün anlatılıyor,
+  üretici anlatılmıyordu. Başlığın altına `UreticiSatiri` eklendi: tek cümle
+  künye + sayfanın KENDİ tablosunun ilk üç satırı. Ürün ve makine şablonlarının
+  ikisinde de, dokuz dilde. Cümlede ürün adı yok (H1'de zaten var) — böylece
+  cins/hâl uyumu riski de yok.
+
+Neden önemli: asistandan gelen ziyaretçi ölçülen **en iyi dönüşen kanal**
+(%4,00; organik arama %0,47 — 8,5 kat) ve GA4 o kanalda haftada 27 oturum
+gösteriyor. Ölçüm: `python scripts/yapayzeka.py` (12 soru, 1,14 $),
+rapor `seo/ai-gorunurluk/RAPOR.md`.
+
+**Açık kalan, bizde olmayan:** WhatsApp numarası. Eski düğme oturum başına
+%4,10 tıklanıyordu, telefon + e-posta ikisi birlikte %1,57. Numara gelmeden
+iletişim ızgarasındaki boş üçüncü kart doldurulmayacak.
+
+---
+
 ## Kapanmış işler
 
 Ayrıntısı git geçmişinde. Burada yalnızca "bu bir daha açılmayacak" kaydı:
