@@ -470,8 +470,8 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
     kutular,
     yanitAdresi: (env.OUTREACH_REPLY_TO ?? "").trim(),
     gizliKopya: (env.OUTREACH_BCC ?? "").trim(),
-    gunlukTavan: Math.min(60, Math.max(1, tavan)),
-    alanTavani: Math.min(250, Math.max(1, alanTavani)),
+    gunlukTavan: Math.min(75, Math.max(1, tavan)),
+    alanTavani: Math.min(300, Math.max(1, alanTavani)),
     aralikSn: Math.max(60, aralik),
     eksik,
     uyarilar,
@@ -487,15 +487,19 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  *   1. gün    → günde en çok 20
  *   2. gün    → günde en çok 70
  *   3-4. gün  → günde en çok 110
- *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 250 —
- *               dört kutu × kutu tavanı 60 = 240, beşinci kutuya da yer var).
+ *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 300 —
+ *               dört kutu × kutu tavanı 75).
  *
  * Bu üst sınırlar TAVSİYE değil, yazım hatasının aşamayacağı sınır: gerçek
- * sayıyı env veriyor. 25 Eylül 2026'da 50/200'den 60/250'ye çıkarıldı —
- * dört günde 241 gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster
- * Tools yeşil. Yükseltmeden ÖNCE kutuların doluluğu düzeltilmeli: dolu
- * kutu alıcı sunucuların gönderen doğrulamasını düşürüyor ve hacim artınca
- * sessiz red de artar.
+ * sayıyı env veriyor. 25 Eylül 2026'da Yasin'in isteğiyle 50/200 → 75/300.
+ * Dayanak: dört günde 241 gönderim, sıfır geri dönüş, sıfır şikâyet,
+ * Postmaster Tools yeşil.
+ *
+ * İKİ UYARI, ikisi de ölçülmüş şeyler:
+ *   1. Merdiven 4. günde env'e devrediyor; 110'dan 300'e BİR GÜNDE çıkmak
+ *      2,7 katlık sıçrama demek. Süzgeçlerin tepki verdiği şey tam da bu.
+ *   2. Kutular DOLU (bkz. kopyaSorunu). Dolu kutu alıcı sunucuların
+ *      gönderen doğrulamasını düşürüyor; hacim arttıkça sessiz red artar.
  *
  * 2026-09-23'te hızlandırıldı. Gerekçe: servosteel.com.tr YENİ bir alan adı
  * değil — yıllardır gerçek yazışma yapıyor, SPF/DKIM/DMARC hizalı; ilk günün

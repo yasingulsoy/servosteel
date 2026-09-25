@@ -30,7 +30,10 @@ function KirilimTablosu({ baslik, satirlar, grup }: { baslik: string; satirlar: 
   if (!satirlar.length) return null;
   const enCok = Math.max(1, ...satirlar.map((x) => x.gonderim));
   return (
-    <div className="rounded-xl border border-line bg-card px-4 py-3">
+    /* min-w-0: ızgara hücresinin varsayılan min-width'i `auto` — onsuz kart
+       içeriğinden dar olamıyor ve dar ekranda sağa taşıyordu (375 px'te
+       422 px'lik sayfa). */
+    <div className="min-w-0 rounded-xl border border-line bg-card px-4 py-3">
       <p className="text-xs font-semibold uppercase tracking-wide text-muted">{baslik}</p>
       <ul className="mt-2 space-y-1.5 text-sm">
         {satirlar.map((x) => (
@@ -38,7 +41,7 @@ function KirilimTablosu({ baslik, satirlar, grup }: { baslik: string; satirlar: 
             <span className="min-w-0 flex-1 truncate">
               {grup ? (KATEGORI_ADI[Number(x.ad)] ?? x.ad) : x.ad}
             </span>
-            <span className="h-2 w-20 shrink-0 overflow-hidden rounded-full bg-surface-alt">
+            <span className="hidden h-2 w-20 shrink-0 overflow-hidden rounded-full bg-surface-alt sm:block">
               <span
                 className="block h-full rounded-full bg-accent"
                 style={{ width: `${Math.round((x.gonderim / enCok) * 100)}%` }}
@@ -93,12 +96,13 @@ export function Gunluk({
       </div>
 
       <div className="mt-2 overflow-x-auto rounded-xl border border-line bg-card">
-        <table className="w-full min-w-[540px] text-left text-sm">
+        <table className="w-full min-w-[460px] text-left text-sm">
           <thead>
             <tr className="border-b border-line text-xs uppercase tracking-wide text-muted">
               <th className="px-3 py-2 font-semibold">Gün</th>
               <th className="px-3 py-2 font-semibold">Gönderim</th>
               <th className="px-3 py-2 text-right font-semibold">Tıklama</th>
+              <th className="px-3 py-2 text-right font-semibold">Oran</th>
               <th className="px-3 py-2 text-right font-semibold">Yanıt</th>
               <th className="px-3 py-2 text-right font-semibold">Geri dönüş</th>
               <th className="px-3 py-2 text-right font-semibold">İptal</th>
@@ -111,7 +115,7 @@ export function Gunluk({
                 <td className="px-3 py-1.5">
                   <span className="flex items-center gap-2">
                     {/* Çubuk: o günün en yoğun güne oranı — sayıyı okumadan eğilim görünsün */}
-                    <span className="h-2 w-28 shrink-0 overflow-hidden rounded-full bg-surface-alt">
+                    <span className="hidden h-2 w-28 shrink-0 overflow-hidden rounded-full bg-surface-alt sm:block">
                       <span
                         className="block h-full rounded-full bg-accent"
                         style={{ width: `${Math.round((g.gonderim / enCok) * 100)}%` }}
@@ -121,6 +125,9 @@ export function Gunluk({
                   </span>
                 </td>
                 <td className="px-3 py-1.5 text-right tabular-nums">{g.tiklama ? sayi(g.tiklama) : "—"}</td>
+                <td className="px-3 py-1.5 text-right tabular-nums text-muted">
+                  {g.gonderim && g.tiklama ? `%${Math.round((g.tiklama / g.gonderim) * 100)}` : "—"}
+                </td>
                 <td className={`px-3 py-1.5 text-right tabular-nums ${g.yanit ? "font-semibold text-violet-700" : ""}`}>
                   {g.yanit ? sayi(g.yanit) : "—"}
                 </td>
@@ -131,6 +138,30 @@ export function Gunluk({
               </tr>
             ))}
           </tbody>
+          {/* Toplam satırı tabloda dursun: gün gün bakarken dönüp özete
+              çıkmadan pencerenin tamamı görünüyor. */}
+          <tfoot>
+            <tr className="border-t-2 border-line bg-surface-alt/60 font-semibold">
+              <td className="whitespace-nowrap px-3 py-2">Toplam · {gunler.length} gün</td>
+              <td className="px-3 py-2">
+                <span className="flex items-center gap-2">
+                  {/* Üstteki satırlarda çubuk var; toplamda yok ama sayı aynı
+                      hizada kalsın diye çubuk kadar boşluk bırakılıyor. */}
+                  <span className="hidden w-28 shrink-0 sm:block" aria-hidden />
+                  <span className="tabular-nums">{sayi(toplam.gonderim)}</span>
+                </span>
+              </td>
+              <td className="px-3 py-2 text-right tabular-nums">{toplam.tiklama ? sayi(toplam.tiklama) : "—"}</td>
+              <td className="px-3 py-2 text-right tabular-nums">
+                {toplam.gonderim && toplam.tiklama
+                  ? `%${Math.round((toplam.tiklama / toplam.gonderim) * 100)}`
+                  : "—"}
+              </td>
+              <td className="px-3 py-2 text-right tabular-nums">{toplam.yanit ? sayi(toplam.yanit) : "—"}</td>
+              <td className="px-3 py-2 text-right tabular-nums">{toplam.geri ? sayi(toplam.geri) : "—"}</td>
+              <td className="px-3 py-2 text-right tabular-nums">{toplam.iptal ? sayi(toplam.iptal) : "—"}</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
 

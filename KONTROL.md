@@ -1382,12 +1382,15 @@ Grup 1'in 96. firması 0,040; grup 2'nin 6. firması 0,037 — iç içe geçiyor
 Her grup BÜYÜKLÜĞÜ ORANINDA günlük pay alıyor ve hepsi aşağı yukarı aynı gün
 bitiyor. Doğrulandı: sıradaki 200 firmanın dağılımı 121 / 9 / 9 / 30 / 31.
 
-**Tavanlar:** kutu başına üst sınır 50 → **60**, alan adı 200 → **250**
-(dört kutu × 60 = 240, beşinci kutuya da yer). Bunlar tavsiye değil, yazım
-hatasının aşamayacağı sınır; gerçek sayıyı env veriyor. Yükseltmenin dayanağı:
-dört günde 241 gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster Tools
-yeşil. **Ama kutular dolu** — hacim artmadan önce o düzeltilmeli, yoksa
-gönderen doğrulaması reddi de artar.
+**Tavanlar (Yasin env'i 75/300 yaptı):** kod üst sınırı kutu başına 50 →
+**75**, alan adı 200 → **300**. Bunlar tavsiye değil, yazım hatasının
+aşamayacağı sınır; gerçek sayıyı env veriyor. Dayanak: dört günde 241
+gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster Tools yeşil.
+
+İki uyarı kodun içine de yazıldı: **(1)** merdiven 4. günde env'e devrediyor,
+yani 26 Eylül'de 110'dan 300'e BİR GÜNDE çıkılıyor — 2,7 kat, süzgeçlerin
+tepki verdiği sıçrama tam bu. **(2)** kutular dolu; dolu kutu gönderen
+doğrulamasını düşürüyor, hacim arttıkça sessiz red artar.
 
 ---
 
