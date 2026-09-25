@@ -127,8 +127,26 @@ export async function gelenDurumu(adet = 6): Promise<GelenDurumu> {
   return { kutular, bugun: Object.fromEntries(bugun.map((b) => [b.tur, b.adet])), son };
 }
 
+/**
+ * Menü rozeti: yanıt vermiş ama henüz elden geçmemiş firma sayısı.
+ * "Yanıt geldi" durumu, biri firmayı Olumlu/İlgilenmiyor yapınca düşer —
+ * yani rozet "sana bakan iş" demek, "toplam yanıt" değil.
+ */
+export async function bekleyenYanitSayisi(): Promise<number> {
+  const r = await sorguSert<{ adet: string }>(
+    `SELECT count(*)::text AS adet FROM hedef_firmalar WHERE durum = 'yanit'`
+  );
+  return Number(r[0]?.adet ?? 0);
+}
+
 export const GELEN_SAYFA_BOYU = 40;
-export type GelenSatiri = GelenDurumu["son"][number] & { uid: number; zaman: string | null };
+/* uidvalidity + uid: iletinin kutudaki adresi. Gövde burada durmuyor, panelde
+   "aç" denince bu ikisiyle kutudan çekiliyor (bkz. gelen-oku.ts). */
+export type GelenSatiri = GelenDurumu["son"][number] & {
+  uid: number;
+  uidvalidity: number;
+  zaman: string | null;
+};
 
 /** "Gelen" sayfası: işlenen iletiler (ilgisizler hariç, istenirse dahil), yeniden eskiye. */
 export async function gelenListesi(
@@ -150,7 +168,7 @@ export async function gelenListesi(
   const s = Math.max(1, Math.floor(sayfa) || 1);
   const [satirlar, sayim] = await Promise.all([
     sorguSert<GelenSatiri>(
-      `SELECT e.kutu, e.uid, e.kimden, e.konu, e.tur, e.firma_id, h.firma, e.ozet, e.islendi, e.zaman
+      `SELECT e.kutu, e.uid, e.uidvalidity, e.kimden, e.konu, e.tur, e.firma_id, h.firma, e.ozet, e.islendi, e.zaman
        FROM gelen_eposta e LEFT JOIN hedef_firmalar h ON h.id = e.firma_id
        ${nerede} ORDER BY e.islendi DESC, e.uid DESC LIMIT ${GELEN_SAYFA_BOYU} OFFSET ${(s - 1) * GELEN_SAYFA_BOYU}`,
       deger

@@ -18,6 +18,7 @@ import {
 import { ayarlariOku } from "@/lib/outreach-kurallar";
 import { tekGonderim } from "@/lib/gonderim";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
+import { gelenIletiyiOku, type OkumaSonucu } from "@/lib/gelen-oku";
 import { otomatikAyar, otomatikAyarKaydet } from "@/lib/otomatik-gonderim";
 
 /**
@@ -46,6 +47,7 @@ const govdeAl = (v: FormDataEntryValue | null) =>
 
 function yenile(id?: number) {
   revalidatePath("/admin/firmalar");
+  revalidatePath("/admin/gelen");
   if (id) revalidatePath(`/admin/firmalar/${id}`);
 }
 
@@ -138,6 +140,23 @@ export async function sigortaSifirlaEylemi() {
  * kendiliğinden tarama en çok 10 dakikada bir). Aynı kutu 60 sn içinde iki
  * kez taranmaz — çift tıklama iki tarama başlatmasın.
  */
+/**
+ * Gelen kutusundaki bir iletiyi AÇIP okur (panelin gelen listesinde "Aç").
+ * Gövde veritabanında durmuyor; ileti kutudan çekiliyor (bkz. gelen-oku.ts).
+ * Kutuya dokunmaz — salt okunur, "okundu" işaretlemez.
+ */
+export async function gelenIletiEylemi(
+  kutu: string,
+  uidvalidity: number,
+  uid: number
+): Promise<OkumaSonucu> {
+  await yetki();
+  if (!/^[^\s@]+@[^\s@]+$/.test(kutu) || !Number.isInteger(uidvalidity) || !Number.isInteger(uid)) {
+    return { tamam: false, hata: "Geçersiz ileti." };
+  }
+  return gelenIletiyiOku(kutu, uidvalidity, uid);
+}
+
 export async function gelenTaraEylemi() {
   const ben = await yetki();
   const ayar = ayarlariOku(process.env);

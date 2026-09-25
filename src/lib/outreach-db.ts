@@ -668,6 +668,26 @@ export async function kutuDurumlari(
  * Gönderim sonrası elle işaretlenen (geri dönen) ve gönderimde reddedilen
  * adresler birlikte sayılır. Kutudan bağımsız: kirli liste her kutuda kirli.
  */
+/**
+ * Gönderilen mailin kopyası kutunun "Gönderilmiş" klasörüne konabiliyor mu?
+ *
+ * Konamıyorsa firmaya not düşülüyordu ve orada kalıyordu — 23 Eylül 2026'da
+ * kutular dolduğunda ("Mailbox is full / Blocks limit exceeded / Inode limit
+ * exceeded") giden 192 mailin 185'i kopyalanamadı ve bunu kimse görmedi.
+ * İki zararı var: Gönderilmiş klasörü boş kaldığı için Liza ne gittiğini
+ * Thunderbird'de göremiyor, ve DOLU KUTU alıcı sunucuların gönderen
+ * doğrulamasını (callout) düşürüp "550 Sender verify failed" reddine yol
+ * açıyor. Panelin üstünde görünmesi gereken bir şey.
+ */
+export async function kopyaSorunu(): Promise<{ adet: number; ornek: string }> {
+  const r = await sorguSert<{ adet: number; ornek: string | null }>(
+    `SELECT count(*)::int AS adet, max(govde) AS ornek FROM hedef_not
+     WHERE olusturuldu > now() - interval '24 hours'
+       AND govde ILIKE 'Gönderildi ama kopyası%'`
+  );
+  return { adet: r[0]?.adet ?? 0, ornek: (r[0]?.ornek ?? "").slice(0, 200) };
+}
+
 export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
   const r = await sorguSert<{ toplam: number; hatali: number }>(
     `WITH son AS (

@@ -13,6 +13,7 @@ import {
   SEGMENT_GRUBU,
   bugunGonderilen,
   geriDonusDurumu,
+  kopyaSorunu,
   grupOzeti,
   hedefFirmalar,
   hedefOzeti,
@@ -83,7 +84,7 @@ const sayi = (n: number) => n.toLocaleString("tr-TR");
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, talep, gelen, otomatik] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, kopya, talep, gelen, otomatik] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -96,6 +97,7 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
         siradaki(filtre),
         rolu(ben),
         geriDonusDurumu(),
+        kopyaSorunu(),
         talebeDonen(),
         gelenDurumu(),
         otomatikAyar(),
@@ -103,7 +105,7 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
     return {
       v: {
         liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
-        admin: rol === "admin", gd, talep, gelen, otomatik,
+        admin: rol === "admin", gd, kopya, talep, gelen, otomatik,
       },
       hata: null,
     };
@@ -284,6 +286,25 @@ export default async function FirmalarSayfasi({
                 <TriangleAlert className="mt-px size-4 shrink-0" aria-hidden />
                 <span>{ayar.uyarilar.join(" ")}</span>
               </p>
+            ) : null}
+            {v.kopya.adet > 0 ? (
+              <section className="mt-2 flex gap-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3.5 text-sm text-red-800">
+                <ShieldAlert className="mt-0.5 size-5 shrink-0" aria-hidden />
+                <div>
+                  <p className="font-semibold">
+                    Kutular dolu — son 24 saatte {sayi(v.kopya.adet)} mailin kopyası Gönderilmiş
+                    klasörüne konamadı
+                  </p>
+                  <p className="mt-1">
+                    Mail gitti ama kutuda izi yok: Thunderbird&apos;de ne gönderildiği görünmez ve
+                    yanıtlar konuşmaya bağlanmaz. Dahası dolu kutu, alıcı sunucuların gönderen
+                    doğrulamasını düşürüp <strong>550 Sender verify failed</strong> reddine yol
+                    açıyor — o red bize &ldquo;alıcının adresi bozuk&rdquo; gibi görünüyor.
+                    cPanel &rarr; E-posta Hesapları&apos;ndan kutuların doluluğuna bakılmalı.
+                  </p>
+                  <p className="mt-1 text-xs opacity-80">Sunucunun cevabı: {v.kopya.ornek}</p>
+                </div>
+              </section>
             ) : null}
             {ayar.kutular.length ? <GelenKutulari durum={v.gelen} kutular={ayar.kutular.map((k) => k.user)} /> : null}
             {v.otomatik && ayar.kutular.length ? (
@@ -751,9 +772,14 @@ function OtomatikGonderim({
           "Açınca bugünün kalan kapasitesi pencereye eşit yayılır; elle gönderimle aynı kurallar (tavan, aralık, sigorta, geri dönüş eşiği, aynı adres) geçerli."
         )}
       </p>
+      {/* Ayarlar AÇIK geliyor: kapalıyken ayar değiştirilip Kaydet'e basılmadan
+          kapatıldı ve hiçbir şey yazılmadı (25 Eylül 2026). Ayar görünmeyen
+          yerde durmamalı. */}
       {admin ? (
-        <details className="mt-2">
-          <summary className="cursor-pointer text-xs font-medium underline-offset-4 hover:underline">Ayarlar…</summary>
+        <details className="mt-3 rounded-lg border border-line bg-card px-3 py-2" open>
+          <summary className="cursor-pointer text-xs font-semibold underline-offset-4 hover:underline">
+            Ayarlar — değiştirdikten sonra <strong>Kaydet</strong>&apos;e basmayı unutmayın
+          </summary>
           <form action={otomatikAyarEylemi} className="mt-2 flex flex-col gap-2 text-xs">
             <input type="hidden" name="islem" value="kaydet" />
             <fieldset className="flex flex-wrap gap-x-4 gap-y-1">

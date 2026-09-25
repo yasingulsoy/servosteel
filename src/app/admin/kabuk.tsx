@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { rolu } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, durumSayilari } from "@/lib/leads-db";
+import { bekleyenYanitSayisi } from "@/lib/gelen-db";
 import { panelSurumu } from "@/lib/panel-surum";
 import { PanelKabugu, type PanelBolum } from "./kabuk-istemci";
 import { MENU_CEREZ } from "./menu-tercihi";
@@ -27,11 +28,13 @@ export async function Kabuk({
   kullanici: string;
   children: React.ReactNode;
 }) {
-  const [rol, sayilar, cerez] = await Promise.all([
+  const [rol, sayilar, yanit, cerez] = await Promise.all([
     rolu(kullanici),
     /* Okunamazsa menüde "0" YAZILMIYOR — "0 yeni talep" yanlış bilgi
        olurdu. Sayı rozetleri tamamen gizleniyor. */
     durumSayilari().catch(() => null),
+    /* Tablo henüz kurulmamışsa (şema yoksa) rozet 0 — menü yine çizilir. */
+    bekleyenYanitSayisi().catch(() => 0),
     cookies(),
   ]);
 
@@ -44,6 +47,7 @@ export async function Kabuk({
       kullanici={kullanici}
       surum={panelSurumu()}
       admin={rol === "admin"}
+      yanitSayisi={yanit}
       ilkSabit={cerez.get(MENU_CEREZ)?.value === "acik"}
       durumlar={DURUMLAR.map((d) => ({
         anahtar: d,

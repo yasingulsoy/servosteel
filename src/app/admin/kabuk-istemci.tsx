@@ -9,6 +9,7 @@ import {
   ExternalLink,
   History,
   Inbox,
+  MailOpen,
   LogOut,
   Menu,
   PanelLeftClose,
@@ -34,7 +35,7 @@ import { MENU_CEREZ } from "./menu-tercihi";
  * görünüm; asıl kilit sunucu eylemlerinde ve sayfanın kendisinde.
  */
 
-export type PanelBolum = "talepler" | "firmalar" | "kullanicilar" | "kayitlar" | "profil";
+export type PanelBolum = "talepler" | "firmalar" | "gelen" | "kullanicilar" | "kayitlar" | "profil";
 
 /* Nabız: panelde geçen süre kayda doğru yazılsın diye (bkz. lib/panel-kayit). */
 const NABIZ_MS = 60_000;
@@ -58,6 +59,7 @@ export function PanelKabugu({
   kullanici,
   surum,
   admin,
+  yanitSayisi,
   ilkSabit,
   durumlar,
   toplam,
@@ -69,6 +71,8 @@ export function PanelKabugu({
   /** Sayfayı çizen derlemenin kimliği (lib/panel-surum) — nabız sunucununkiyle karşılaştırır */
   surum: string;
   admin: boolean;
+  /** Menüdeki "Gelen kutusu" rozeti: elden geçmemiş yanıt sayısı */
+  yanitSayisi: number;
   ilkSabit: boolean;
   durumlar: DurumSatiri[];
   toplam: number | null;
@@ -336,6 +340,25 @@ export function PanelKabugu({
                   >
                     <Send className={ikon(aktif === "firmalar")} aria-hidden />
                     <span className={`whitespace-nowrap ${yazi}`}>Hedef firmalar</span>
+                  </Link>
+                </li>
+
+                {/* Gelen kutusu: gönderen kutularına düşen yanıt, geri dönüş ve
+                    abonelik iptalleri. Rozet, henüz elden geçmemiş yanıt sayısı. */}
+                <li>
+                  <Link
+                    href="/admin/gelen"
+                    onClick={kapatMobil}
+                    aria-current={aktif === "gelen" ? "page" : undefined}
+                    className={oge(aktif === "gelen")}
+                  >
+                    <MailOpen className={ikon(aktif === "gelen")} aria-hidden />
+                    <span className={`whitespace-nowrap ${yazi}`}>Gelen kutusu</span>
+                    {yanitSayisi > 0 ? (
+                      <span className={`ml-auto shrink-0 rounded-full bg-violet-500/15 px-1.5 py-0.5 text-[11px] font-semibold text-violet-700 ${yazi}`}>
+                        {yanitSayisi}
+                      </span>
+                    ) : null}
                   </Link>
                 </li>
 
