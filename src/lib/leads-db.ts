@@ -138,10 +138,10 @@ export async function talepEkle(t: {
   return r?.[0]?.id ?? null;
 }
 
-export async function olayEkle(tur: string, yol: string, dil: string, ulke = "") {
+export async function olayEkle(tur: string, yol: string, dil: string, ulke = "", kaynak = "") {
   await sorgu(
-    `INSERT INTO olaylar (tur, yol, dil, ulke) VALUES ($1,$2,$3,$4)`,
-    [tur.slice(0, 40), yol.slice(0, 300), dil.slice(0, 8), ulke.slice(0, 80)]
+    `INSERT INTO olaylar (tur, yol, dil, ulke, kaynak) VALUES ($1,$2,$3,$4,$5)`,
+    [tur.slice(0, 40), yol.slice(0, 300), dil.slice(0, 8), ulke.slice(0, 80), kaynak.slice(0, 120)]
   );
 }
 

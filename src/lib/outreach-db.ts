@@ -688,6 +688,90 @@ export async function kopyaSorunu(): Promise<{ adet: number; ornek: string }> {
   return { adet: r[0]?.adet ?? 0, ornek: (r[0]?.ornek ?? "").slice(0, 200) };
 }
 
+/**
+ * Kampanyanın gün gün karnesi — panelde tek tabloda.
+ *
+ * Tek sorguda beş sayı: o gün kaç mail gitti, kaçı tıklandı, kaç yanıt,
+ * kaç geri dönüş, kaç abonelik iptali. Ayrı ayrı bakılınca "bugün 109
+ * gönderdik" gibi tek başına bir şey söylemeyen bir sayı kalıyordu;
+ * tıklama ve yanıt yan yana gelince oran görünüyor.
+ *
+ * Gün İSTANBUL günü — gönderim penceresi de öyle sayılıyor, ikisi tutsun.
+ * Tıklama `olaylar.tur = 'outreach'`: e-postadaki bağlantıdan gelen ziyaret
+ * (bkz. api/olay). Eski günlerde tıklama kaydı yok, orada 0 görünür.
+ */
+export type GunSatiri = {
+  gun: string;
+  gonderim: number;
+  tiklama: number;
+  yanit: number;
+  geri_donus: number;
+  abonelik: number;
+};
+
+export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
+  const n = Math.min(60, Math.max(1, Math.trunc(gun)));
+  return sorguSert<GunSatiri>(
+    `WITH gunler AS (
+       SELECT (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') - (i || ' days')::interval)::date AS g
+       FROM generate_series(0, $1::int - 1) AS i
+     ),
+     g AS (
+       SELECT (zaman AT TIME ZONE 'Europe/Istanbul')::date AS g, count(*)::int AS n
+       FROM hedef_gonderim WHERE sonuc = 'ok' GROUP BY 1
+     ),
+     t AS (
+       SELECT (olusturuldu AT TIME ZONE 'Europe/Istanbul')::date AS g, count(*)::int AS n
+       FROM olaylar WHERE tur = 'outreach' GROUP BY 1
+     ),
+     e AS (
+       SELECT (islendi AT TIME ZONE 'Europe/Istanbul')::date AS g, tur, count(*)::int AS n
+       FROM gelen_eposta GROUP BY 1, 2
+     )
+     SELECT to_char(gunler.g, 'YYYY-MM-DD') AS gun,
+            COALESCE(g.n, 0) AS gonderim,
+            COALESCE(t.n, 0) AS tiklama,
+            COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'yanit'), 0) AS yanit,
+            COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'geri_donus'), 0) AS geri_donus,
+            COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'abonelik'), 0) AS abonelik
+     FROM gunler LEFT JOIN g ON g.g = gunler.g LEFT JOIN t ON t.g = gunler.g
+     ORDER BY gunler.g DESC`,
+    [n]
+  );
+}
+
+/**
+ * Tanıtım e-postasındaki bağlantıya tıklayan firmalar — en yenisi başta.
+ *
+ * Eşleşme alan adından: `olaylar.kaynak` utm_content'ten gelen alan adı,
+ * firmanın `web` alanında geçiyor. Eşleşmezse satır yine gösterilir (alan
+ * adıyla), çünkü "biri tıkladı" bilgisi eşleşmese de değerli.
+ */
+export type Tiklayan = {
+  zaman: string;
+  kaynak: string;
+  yol: string;
+  firma_id: number | null;
+  firma: string | null;
+  ulke: string | null;
+};
+
+export async function sonTiklayanlar(adet = 12): Promise<Tiklayan[]> {
+  return sorguSert<Tiklayan>(
+    `SELECT o.olusturuldu AS zaman, o.kaynak, o.yol, h.id AS firma_id, h.firma, h.ulke
+     FROM olaylar o
+     LEFT JOIN LATERAL (
+       SELECT id, firma, ulke FROM hedef_firmalar
+       WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
+       ORDER BY id LIMIT 1
+     ) h ON true
+     WHERE o.tur = 'outreach'
+     ORDER BY o.olusturuldu DESC
+     LIMIT $1`,
+    [Math.min(50, Math.max(1, Math.trunc(adet)))]
+  );
+}
+
 export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
   const r = await sorguSert<{ toplam: number; hatali: number }>(
     `WITH son AS (

@@ -32,7 +32,11 @@ function sinirAsildi(ip: string): boolean {
   return son.length > AZAMI;
 }
 
-const IZINLI = new Set(["telefon", "eposta"]);
+/* "outreach": tanıtım e-postasındaki bağlantıdan gelen ziyaret. utm_content
+   o maili alan firmanın alan adını taşıyor (bkz. hedef-firma-excel.py
+   gonderim_linki) — yani hangi firmanın tıkladığı buradan bilinir. Kendi
+   linkimizin kendi parametresi; çerez, IP, kullanıcı kimliği yine yok. */
+const IZINLI = new Set(["telefon", "eposta", "outreach"]);
 
 export async function POST(req: Request) {
   const ip =
@@ -53,11 +57,14 @@ export async function POST(req: Request) {
 
   const yol = typeof g.yol === "string" ? g.yol.slice(0, 300) : "";
   const dil = typeof g.dil === "string" ? g.dil.slice(0, 8) : "";
+  /* Yalnızca alan adı biçimi — başka bir şey yazılamasın. */
+  const ham = typeof g.kaynak === "string" ? g.kaynak.slice(0, 120) : "";
+  const kaynak = tur === "outreach" && /^[a-z0-9.-]+$/i.test(ham) ? ham.toLowerCase() : "";
 
   /* Ülke, CDN/ters vekilin koyduğu başlıktan — yoksa boş. Kendimiz IP'den
      çıkarmıyoruz, IP'yi hiç saklamıyoruz. */
   const ulke = req.headers.get("cf-ipcountry") ?? "";
 
-  await olayEkle(tur, yol, dil, ulke);
+  await olayEkle(tur, yol, dil, ulke, kaynak);
   return new NextResponse(null, { status: 204 });
 }

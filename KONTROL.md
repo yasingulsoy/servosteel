@@ -1367,6 +1367,35 @@ Kutunun durdurması kaldırıldı, sebebi anlaşıldığı için.
 
 ---
 
+## Panel: gelen kutusu, gün gün karne, tıklayan firmalar (25 Eylül)
+
+- **Gelen kutusu kendi başlığında** (`/admin/gelen`). Önce "Giden" sayfasının
+  sekmesiydi, kimse bulamıyordu. Menüde rozet: elden geçmemiş yanıt sayısı
+  (firma Olumlu/İlgilenmiyor yapılınca düşer — "sana bakan iş" demek).
+- **Mailler okunabiliyor.** Gövde veritabanında DURMUYOR (yalnızca 500
+  karakter özet); satırdaki "Mailin tamamını aç" iletiyi `kutu + uidvalidity
+  + uid` ile kutudan çeker (`src/lib/gelen-oku.ts`). Salt okunur, BODY.PEEK:
+  panelde mail açmak onu Thunderbird'de "okundu" YAPMAZ. Metin düz basılır —
+  gelen posta güvenilmez içerik, HTML'ini işlemeye gerek yok.
+- **Kutu doluluğu artık kırmızı bant.** Sunucunun cevabı ("Mailbox is full")
+  firma notlarının içine gömülüydü, iki gün görünmedi.
+- **Ayarlar açık geliyor** — kapalı katlanır bölüm yüzünden pencere ayarı
+  değiştirilip kaydedilmemişti.
+- **Gün gün karne** (`gunlukOzet`): her gün gönderim, tıklama, yanıt, geri
+  dönüş, iptal tek tabloda. "Bugün 109 gönderdik" tek başına bir şey
+  söylemiyordu; tıklama ve yanıt yanına gelince oran görünüyor.
+- **Tıklayan firmalar.** Outreach bağlantısındaki `utm_content` o maili alan
+  firmanın ALAN ADINI taşıyor; `?utm_source=outreach` ile gelen ziyaret
+  `olaylar.tur='outreach'` olarak kendi veritabanımıza yazılıyor ve alan
+  adından firmaya eşleniyor. Yani "kaç tıklama" değil **kim tıkladı**
+  görünüyor — satış için asıl değerli olan bu. GA4 bunu firma bazında
+  söyleyemiyor. Çerez/IP yok; yazılan tek şey kendi linkimizin kendi
+  parametresi. Doğrulandı: `danasteeluae.com` → Dana Steel (BAE).
+  **Ölçüm 25 Eylül'de başladı** — önceki günlerin tıklama sütunu boş, "veri
+  yok" demek, "sıfır tıklama" değil.
+
+---
+
 ## Talebe giden yol — 24 Eylül ölçümü ve iki düzeltme
 
 Üç kanalın da sayısı aynı gün ölçüldü: mail teknik olarak kusursuz (91 gönderim,

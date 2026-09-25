@@ -75,6 +75,23 @@ export function Analytics() {
 },true);`}
       </Script>
 
+      {/* Tanıtım e-postasından gelen ziyaret — kendi veritabanımıza.
+          `utm_content` o maili alan firmanın alan adı, yani panelde "kim
+          tıkladı" görünür; GA4 bunu firma bazında söyleyemiyor. Sayfa
+          başına bir kez, sendBeacon ile (tıklamayı geciktirmez). Çerez ve
+          IP yok — yazılan tek şey kendi linkimizin kendi parametresi. */}
+      <Script id="outreach-tik" strategy="afterInteractive">
+        {`try{var q=new URLSearchParams(location.search);
+  if(q.get('utm_source')==='outreach'&&navigator.sendBeacon){
+    navigator.sendBeacon('/api/olay',new Blob([JSON.stringify({
+      tur:'outreach',
+      yol:location.pathname,
+      dil:document.documentElement.lang||'',
+      kaynak:(q.get('utm_content')||'')
+    })],{type:'application/json'}));
+  }}catch(e){}`}
+      </Script>
+
       {/* Clarity'nin kendi yükleyicisi: script etiketini kendisi oluşturup
           DOM'a sokuyor. next/script'in `src`'siyle değiştirilmedi çünkü
           Clarity kuyruk fonksiyonunu (`clarity.q`) etiketten ÖNCE tanımlamak

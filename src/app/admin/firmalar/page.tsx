@@ -13,7 +13,9 @@ import {
   SEGMENT_GRUBU,
   bugunGonderilen,
   geriDonusDurumu,
+  gunlukOzet,
   kopyaSorunu,
+  sonTiklayanlar,
   grupOzeti,
   hedefFirmalar,
   hedefOzeti,
@@ -47,6 +49,7 @@ import {
 import type { OtomatikSiradaki } from "@/lib/outreach-db";
 import { Kabuk } from "../kabuk";
 import { gelenTaraEylemi, hedefDurumEylemi, otomatikAyarEylemi, sigortaSifirlaEylemi } from "./actions";
+import { Gunluk } from "./gunluk";
 import { FirmaListesi, SONUC_ETIKET } from "./firma-listesi";
 
 export const dynamic = "force-dynamic";
@@ -84,7 +87,7 @@ const sayi = (n: number) => n.toLocaleString("tr-TR");
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, kopya, talep, gelen, otomatik] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, gunler, kopya, tiklayanlar, talep, gelen, otomatik] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -97,7 +100,9 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
         siradaki(filtre),
         rolu(ben),
         geriDonusDurumu(),
+        gunlukOzet(14),
         kopyaSorunu(),
+        sonTiklayanlar(12),
         talebeDonen(),
         gelenDurumu(),
         otomatikAyar(),
@@ -105,7 +110,7 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
     return {
       v: {
         liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
-        admin: rol === "admin", gd, kopya, talep, gelen, otomatik,
+        admin: rol === "admin", gd, gunler, kopya, tiklayanlar, talep, gelen, otomatik,
       },
       hata: null,
     };
@@ -316,6 +321,8 @@ export default async function FirmalarSayfasi({
                 kalan={secim?.kalan ?? 0}
               />
             ) : null}
+
+            <Gunluk gunler={v.gunler} tiklayanlar={v.tiklayanlar} />
 
             {/* ----------------------------------------- öncelikli gruplar */}
             <section className="mt-6" aria-labelledby="gruplar-baslik">
