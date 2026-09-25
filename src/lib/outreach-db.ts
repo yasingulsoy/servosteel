@@ -754,14 +754,16 @@ export type Tiklayan = {
   firma_id: number | null;
   firma: string | null;
   ulke: string | null;
+  /** Firmanın durumu — "gonderildi" ise tıkladı ama HENÜZ yanıt vermedi */
+  durum: string | null;
 };
 
 export async function sonTiklayanlar(adet = 12): Promise<Tiklayan[]> {
   return sorguSert<Tiklayan>(
-    `SELECT o.olusturuldu AS zaman, o.kaynak, o.yol, h.id AS firma_id, h.firma, h.ulke
+    `SELECT o.olusturuldu AS zaman, o.kaynak, o.yol, h.id AS firma_id, h.firma, h.ulke, h.durum
      FROM olaylar o
      LEFT JOIN LATERAL (
-       SELECT id, firma, ulke FROM hedef_firmalar
+       SELECT id, firma, ulke, durum FROM hedef_firmalar
        WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
        ORDER BY id LIMIT 1
      ) h ON true
@@ -771,6 +773,49 @@ export async function sonTiklayanlar(adet = 12): Promise<Tiklayan[]> {
     [Math.min(50, Math.max(1, Math.trunc(adet)))]
   );
 }
+
+/**
+ * Ürün grubu ve ülke kırılımında gönderim / tıklama.
+ *
+ * "Hangi ürün ilgi çekiyor, hangi pazar soğuk" sorusunun cevabı. Gönderim
+ * sayısı ilk günden anlamlı; tıklama sütunu 25 Eylül 2026'dan itibaren
+ * dolmaya başlar (ölçüm o gün kondu).
+ *
+ * Tıklama, ziyaretin `utm_content`'indeki alan adının firmaya eşlenmesiyle
+ * bulunuyor — eşleşmeyen tıklama kırılıma girmez, toplamda görünür.
+ */
+export type Kirilim = { ad: string; anahtar: number | string; gonderim: number; tiklama: number };
+
+async function kirilim(alan: "kategori" | "ulke"): Promise<Kirilim[]> {
+  return sorguSert<Kirilim>(
+    `WITH g AS (
+       SELECT h.${alan} AS k, count(*)::int AS n
+       FROM hedef_gonderim s JOIN hedef_firmalar h ON h.id = s.firma_id
+       WHERE s.sonuc = 'ok' GROUP BY 1
+     ),
+     t AS (
+       SELECT h.${alan} AS k, count(*)::int AS n
+       FROM olaylar o
+       JOIN LATERAL (
+         SELECT ${alan} FROM hedef_firmalar
+         WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
+         ORDER BY id LIMIT 1
+       ) h ON true
+       WHERE o.tur = 'outreach' GROUP BY 1
+     )
+     SELECT COALESCE(g.k, t.k)::text AS anahtar, COALESCE(g.k, t.k)::text AS ad,
+            COALESCE(g.n, 0) AS gonderim, COALESCE(t.n, 0) AS tiklama
+     FROM g FULL OUTER JOIN t ON t.k = g.k
+     WHERE COALESCE(g.n, 0) > 0
+     ORDER BY COALESCE(g.n, 0) DESC
+     LIMIT 12`
+  );
+}
+
+export const grupKirilimi = () => kirilim("kategori");
+export const ulkeKirilimi = () => kirilim("ulke");
+
+
 
 export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
   const r = await sorguSert<{ toplam: number; hatali: number }>(

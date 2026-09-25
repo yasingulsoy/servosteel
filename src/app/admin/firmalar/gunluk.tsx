@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MousePointerClick } from "lucide-react";
-import type { GunSatiri, Tiklayan } from "@/lib/outreach-db";
+import { KATEGORI_ADI, type GunSatiri, type Kirilim, type Tiklayan } from "@/lib/outreach-db";
 import { goreli, tamTarih } from "@/lib/zaman";
 
 /**
@@ -26,7 +26,46 @@ function gunEtiketi(g: string): string {
   return `${g.slice(8, 10)}.${g.slice(5, 7)} ${gun}`;
 }
 
-export function Gunluk({ gunler, tiklayanlar }: { gunler: GunSatiri[]; tiklayanlar: Tiklayan[] }) {
+function KirilimTablosu({ baslik, satirlar, grup }: { baslik: string; satirlar: Kirilim[]; grup?: boolean }) {
+  if (!satirlar.length) return null;
+  const enCok = Math.max(1, ...satirlar.map((x) => x.gonderim));
+  return (
+    <div className="rounded-xl border border-line bg-card px-4 py-3">
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted">{baslik}</p>
+      <ul className="mt-2 space-y-1.5 text-sm">
+        {satirlar.map((x) => (
+          <li key={x.anahtar} className="flex items-center gap-2">
+            <span className="min-w-0 flex-1 truncate">
+              {grup ? (KATEGORI_ADI[Number(x.ad)] ?? x.ad) : x.ad}
+            </span>
+            <span className="h-2 w-20 shrink-0 overflow-hidden rounded-full bg-surface-alt">
+              <span
+                className="block h-full rounded-full bg-accent"
+                style={{ width: `${Math.round((x.gonderim / enCok) * 100)}%` }}
+              />
+            </span>
+            <span className="w-12 shrink-0 text-right tabular-nums">{sayi(x.gonderim)}</span>
+            <span className="w-14 shrink-0 text-right tabular-nums text-muted">
+              {x.tiklama ? `${sayi(x.tiklama)} tık` : "—"}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export function Gunluk({
+  gunler,
+  tiklayanlar,
+  gruplar,
+  ulkeler,
+}: {
+  gunler: GunSatiri[];
+  tiklayanlar: Tiklayan[];
+  gruplar: Kirilim[];
+  ulkeler: Kirilim[];
+}) {
   const enCok = Math.max(1, ...gunler.map((g) => g.gonderim));
   const toplam = gunler.reduce(
     (a, g) => ({
@@ -95,6 +134,11 @@ export function Gunluk({ gunler, tiklayanlar }: { gunler: GunSatiri[]; tiklayanl
         </table>
       </div>
 
+      <div className="mt-3 grid gap-3 lg:grid-cols-2">
+        <KirilimTablosu baslik="Ürün grubuna göre" satirlar={gruplar} grup />
+        <KirilimTablosu baslik="Ülkeye göre (ilk 12)" satirlar={ulkeler} />
+      </div>
+
       <div className="mt-3 rounded-xl border border-line bg-card px-4 py-3">
         <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
           <MousePointerClick className="size-3.5" aria-hidden /> Maildeki bağlantıya tıklayanlar
@@ -111,6 +155,13 @@ export function Gunluk({ gunler, tiklayanlar }: { gunler: GunSatiri[]; tiklayanl
                   <span className="font-semibold">{t.kaynak}</span>
                 )}
                 {t.ulke ? <span className="text-xs text-muted">{t.ulke}</span> : null}
+                {/* Tıkladı ama hâlâ "Gönderildi": ilgilendi, yazmadı — hatırlatmanın
+                    en sıcak adayı. */}
+                {t.durum === "gonderildi" ? (
+                  <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
+                    yanıt vermedi
+                  </span>
+                ) : null}
                 <span className="text-xs text-muted">{t.yol}</span>
                 <span className="ml-auto text-xs text-muted" title={tamTarih(t.zaman)}>
                   {goreli(t.zaman)}

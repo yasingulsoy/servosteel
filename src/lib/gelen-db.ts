@@ -166,14 +166,19 @@ export async function gelenListesi(
   }
   const nerede = kosul.length ? `WHERE ${kosul.join(" AND ")}` : "";
   const s = Math.max(1, Math.floor(sayfa) || 1);
-  const [satirlar, sayim] = await Promise.all([
-    sorguSert<GelenSatiri>(
-      `SELECT e.kutu, e.uid, e.uidvalidity, e.kimden, e.konu, e.tur, e.firma_id, h.firma, e.ozet, e.islendi, e.zaman
+  /* uid ve uidvalidity BIGINT: node-postgres bigint'i METİN döndürüyor
+     (taramaKilidiAl'da da öyle). Tipte `number` yazdığı hâlde çalışma
+     anında string gelirse iletiyi açan doğrulama "geçersiz" der — 25 Eylül
+     2026'da gelen kutusundaki her mail bu yüzden açılmıyordu. */
+  const [ham, sayim] = await Promise.all([
+    sorguSert<Omit<GelenSatiri, "uid" | "uidvalidity"> & { uid: string; uidvalidity: string }>(
+      `SELECT e.kutu, e.uid::text, e.uidvalidity::text, e.kimden, e.konu, e.tur, e.firma_id, h.firma, e.ozet, e.islendi, e.zaman
        FROM gelen_eposta e LEFT JOIN hedef_firmalar h ON h.id = e.firma_id
        ${nerede} ORDER BY e.islendi DESC, e.uid DESC LIMIT ${GELEN_SAYFA_BOYU} OFFSET ${(s - 1) * GELEN_SAYFA_BOYU}`,
       deger
     ),
     sorguSert<{ adet: string }>(`SELECT count(*)::text AS adet FROM gelen_eposta e ${nerede}`, deger),
   ]);
+  const satirlar = ham.map((r) => ({ ...r, uid: Number(r.uid), uidvalidity: Number(r.uidvalidity) }));
   return { satirlar, toplam: Number(sayim[0]?.adet ?? 0) };
 }

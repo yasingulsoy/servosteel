@@ -13,9 +13,11 @@ import {
   SEGMENT_GRUBU,
   bugunGonderilen,
   geriDonusDurumu,
+  grupKirilimi,
   gunlukOzet,
   kopyaSorunu,
   sonTiklayanlar,
+  ulkeKirilimi,
   grupOzeti,
   hedefFirmalar,
   hedefOzeti,
@@ -87,7 +89,7 @@ const sayi = (n: number) => n.toLocaleString("tr-TR");
 
 async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: OutreachAyarlari) {
   try {
-    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, gunler, kopya, tiklayanlar, talep, gelen, otomatik] =
+    const [liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk, rol, gd, gunler, grupK, kopya, tiklayanlar, ulkeK, talep, gelen, otomatik] =
       await Promise.all([
         hedefFirmalar(filtre, sayfa),
         hedefOzeti(),
@@ -101,8 +103,10 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
         rolu(ben),
         geriDonusDurumu(),
         gunlukOzet(14),
+        grupKirilimi(),
         kopyaSorunu(),
         sonTiklayanlar(12),
+        ulkeKirilimi(),
         talebeDonen(),
         gelenDurumu(),
         otomatikAyar(),
@@ -110,7 +114,7 @@ async function veriGetir(filtre: HedefFiltre, sayfa: number, ben: string, ayar: 
     return {
       v: {
         liste, ozet, gruplar, ulkeler, segmentler, bugun, kutular, son, ilk,
-        admin: rol === "admin", gd, gunler, kopya, tiklayanlar, talep, gelen, otomatik,
+        admin: rol === "admin", gd, gunler, grupK, kopya, tiklayanlar, ulkeK, talep, gelen, otomatik,
       },
       hata: null,
     };
@@ -322,7 +326,7 @@ export default async function FirmalarSayfasi({
               />
             ) : null}
 
-            <Gunluk gunler={v.gunler} tiklayanlar={v.tiklayanlar} />
+            <Gunluk gunler={v.gunler} tiklayanlar={v.tiklayanlar} gruplar={v.grupK} ulkeler={v.ulkeK} />
 
             {/* ----------------------------------------- öncelikli gruplar */}
             <section className="mt-6" aria-labelledby="gruplar-baslik">

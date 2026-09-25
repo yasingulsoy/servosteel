@@ -147,14 +147,25 @@ export async function sigortaSifirlaEylemi() {
  */
 export async function gelenIletiEylemi(
   kutu: string,
-  uidvalidity: number,
-  uid: number
+  uidvalidity: number | string,
+  uid: number | string
 ): Promise<OkumaSonucu> {
   await yetki();
-  if (!/^[^\s@]+@[^\s@]+$/.test(kutu) || !Number.isInteger(uidvalidity) || !Number.isInteger(uid)) {
+  /* Sayıya ÇEVİREREK bak: bu ikisi veritabanında BIGINT ve sürücü bigint'i
+     metin döndürüyor. Doğrudan Number.isInteger'a sorulunca her ileti
+     "geçersiz" çıkıyordu (25 Eylül 2026). */
+  const gecerlilik = Number(uidvalidity);
+  const numara = Number(uid);
+  if (
+    !/^[^\s@]+@[^\s@]+$/.test(kutu) ||
+    !Number.isSafeInteger(gecerlilik) ||
+    !Number.isSafeInteger(numara) ||
+    gecerlilik < 0 ||
+    numara < 1
+  ) {
     return { tamam: false, hata: "Geçersiz ileti." };
   }
-  return gelenIletiyiOku(kutu, uidvalidity, uid);
+  return gelenIletiyiOku(kutu, gecerlilik, numara);
 }
 
 export async function gelenTaraEylemi() {
