@@ -240,6 +240,17 @@ export async function otomatikSiradakiler(
      ORDER BY CASE WHEN h.ulke = ANY($7::text[]) THEN 0
                    WHEN h.ulke = ANY($8::text[]) THEN 1
                    ELSE 2 END,
+              /* Ürün grupları ARASINDA dönüşümlü: sıra numarası yerine
+                 "grubun yüzde kaçı bitti" değerine göre gidiliyor. Grup 1'in
+                 96. firması 96/2381 = 0,040; grup 2'nin 6. firması
+                 6/160 = 0,037 — yani ikisi iç içe geçiyor ve her grup
+                 BÜYÜKLÜĞÜ ORANINDA günlük pay alıyor, hepsi aşağı yukarı
+                 aynı gün bitiyor.
+                 Öncesi: sira alani gruplara blok verildigi icin 2.381 roll form
+                 firmasının hepsi bitmeden dilmeye tek mail gitmiyordu —
+                 234 gönderimin 233'ü tek gruba gitti (25 Eylül 2026). */
+              (row_number() OVER (PARTITION BY h.kategori ORDER BY h.sira, h.id))::numeric
+                / count(*) OVER (PARTITION BY h.kategori),
               h.sira, h.id
      LIMIT $6`,
     [

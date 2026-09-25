@@ -1367,34 +1367,30 @@ Kutunun durdurması kaldırıldı, sebebi anlaşıldığı için.
 
 ---
 
-## AÇIK SORU: gönderim tek ürün grubunu yiyor (25 Eylül)
+## Gönderim gruplara dağıtıldı + tavanlar yükseltildi (25 Eylül)
 
-Kırılım tablosu kurulunca çıktı: **234 gönderimin 233'ü ürün grubu 1'e**
-(roll form hatları) gitti. Sebep `sira` alanının gruplara BLOK verilmesi:
+**Sorun:** 234 gönderimin 233'ü ürün grubu 1'e (roll form) gitmişti. sira alanı
+gruplara BLOK verildiği için 2.381 roll form firması bitmeden dilme, boy kesme,
+pres besleme ve kompakt hatlara tek mail gitmiyordu — grup 2'nin sırası ~13,
+grup 5'inki ~22 gün sonra geliyordu. Üstelik dilme ve boy kesme en küçük iki
+grup (160 + 170) ve sıralamada en güçlü olduğumuz yer orası.
 
-| grup | sıra aralığı | firma | gitti | bekliyor |
-|---|---|---|---|---|
-| 1 roll form | 1 – 2.381 | 2.381 | 233 | 1.982 |
-| 2 dilme | 2.382 – 2.541 | 160 | **0** | 148 |
-| 3 boy kesme | 2.542 – 2.711 | 170 | **0** | 154 |
-| 4 pres besleme | 2.712 – 3.230 | 519 | **0** | 499 |
-| 5 kompakt | 3.231 – 3.742 | 512 | **0** | 505 |
+**Çözüm (Yasin: "dağıt her gruba günlük pay ver"):** sıra artık numaraya değil
+**grubun yüzde kaçının bittiğine** bakıyor —
+`row_number() OVER (PARTITION BY kategori ORDER BY sira, id) / count(*) OVER (PARTITION BY kategori)`.
+Grup 1'in 96. firması 0,040; grup 2'nin 6. firması 0,037 — iç içe geçiyorlar.
+Her grup BÜYÜKLÜĞÜ ORANINDA günlük pay alıyor ve hepsi aşağı yukarı aynı gün
+bitiyor. Doğrulandı: sıradaki 200 firmanın dağılımı 121 / 9 / 9 / 30 / 31.
 
-Sıradaki 200 firmanın 200'ü de grup 1. 150/gün ile grup 2'nin sırası **~13
-gün** sonra, grup 5'inki ~22 gün sonra geliyor.
-
-Grup önceliği Yasin'in kararıydı (22 Eylül: "öncelik roll form, dilme, boy
-kesme, pres besleme, kompakt") — ama "önce roll form" ile "2.381'i bitmeden
-diğerine hiç yazma" aynı şey değil. Dikkat çeken yan: dilme ve boy kesme
-**en küçük iki grup** (160 + 170) ve sıralamada en güçlü olduğumuz yer
-oralar (yapay zekâ cevaplarında dilmede 3. sıra, Google'da "dilme hattı" 7.).
-İkisi birden iki günde biter.
-
-**Karar Yasin'in:** ya böyle kalır, ya da sıra gruplar arasında dönüşümlü
-dağıtılır (her grup her gün payını alır). Kod değişikliği tek yerde —
-`otomatikSiradakiler`'in ORDER BY'ı. Sorulmadan değiştirilmedi.
+**Tavanlar:** kutu başına üst sınır 50 → **60**, alan adı 200 → **250**
+(dört kutu × 60 = 240, beşinci kutuya da yer). Bunlar tavsiye değil, yazım
+hatasının aşamayacağı sınır; gerçek sayıyı env veriyor. Yükseltmenin dayanağı:
+dört günde 241 gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster Tools
+yeşil. **Ama kutular dolu** — hacim artmadan önce o düzeltilmeli, yoksa
+gönderen doğrulaması reddi de artar.
 
 ---
+
 
 ## Panel: gelen kutusu, gün gün karne, tıklayan firmalar (25 Eylül)
 

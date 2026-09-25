@@ -470,8 +470,8 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
     kutular,
     yanitAdresi: (env.OUTREACH_REPLY_TO ?? "").trim(),
     gizliKopya: (env.OUTREACH_BCC ?? "").trim(),
-    gunlukTavan: Math.min(50, Math.max(1, tavan)),
-    alanTavani: Math.min(200, Math.max(1, alanTavani)),
+    gunlukTavan: Math.min(60, Math.max(1, tavan)),
+    alanTavani: Math.min(250, Math.max(1, alanTavani)),
     aralikSn: Math.max(60, aralik),
     eksik,
     uyarilar,
@@ -487,8 +487,15 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  *   1. gün    → günde en çok 20
  *   2. gün    → günde en çok 70
  *   3-4. gün  → günde en çok 110
- *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 200 —
- *               dört kutu × kutu tavanı 50; bunun üstü tek alan adına fazla)
+ *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 250 —
+ *               dört kutu × kutu tavanı 60 = 240, beşinci kutuya da yer var).
+ *
+ * Bu üst sınırlar TAVSİYE değil, yazım hatasının aşamayacağı sınır: gerçek
+ * sayıyı env veriyor. 25 Eylül 2026'da 50/200'den 60/250'ye çıkarıldı —
+ * dört günde 241 gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster
+ * Tools yeşil. Yükseltmeden ÖNCE kutuların doluluğu düzeltilmeli: dolu
+ * kutu alıcı sunucuların gönderen doğrulamasını düşürüyor ve hacim artınca
+ * sessiz red de artar.
  *
  * 2026-09-23'te hızlandırıldı. Gerekçe: servosteel.com.tr YENİ bir alan adı
  * değil — yıllardır gerçek yazışma yapıyor, SPF/DKIM/DMARC hizalı; ilk günün

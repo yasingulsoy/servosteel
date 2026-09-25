@@ -66,8 +66,8 @@ t("ayarlar: tek kutu", () => {
   const tam = K.ayarlariOku({ OUTREACH_SMTP_HOST: "h", OUTREACH_SMTP_USER: "Export@X.com", OUTREACH_SMTP_PASS: "p", OUTREACH_DAILY_LIMIT: "500", OUTREACH_INTERVAL_SEC: "10", OUTREACH_DOMAIN_DAILY_LIMIT: "900" });
   assert.deepEqual(tam.eksik, []);
   assert.deepEqual(tam.uyarilar, []);
-  assert.equal(tam.gunlukTavan, 50);
-  assert.equal(tam.alanTavani, 200);
+  assert.equal(tam.gunlukTavan, 60);
+  assert.equal(tam.alanTavani, 250);
   assert.equal(tam.aralikSn, 60);
   assert.deepEqual(tam.kutular, [{ no: 1, host: "h", port: 465, user: "export@x.com", pass: "p", ad: "Servosteel", alan: "x.com" }]);
   const varsayilan = K.ayarlariOku({ OUTREACH_DAILY_LIMIT: "abc", OUTREACH_INTERVAL_SEC: "" });
@@ -237,7 +237,7 @@ t("alan adi tavani ust siniri", () => {
     OUTREACH_PASS_1: "p", OUTREACH_FROM_NAME_1: "X", OUTREACH_DOMAIN_DAILY_LIMIT: v,
   });
   assert.equal(o("200").alanTavani, 200);
-  assert.equal(o("999").alanTavani, 200);
+  assert.equal(o("999").alanTavani, 250);
   assert.equal(o("70").alanTavani, 70);
 });
 t("hedefin kendi saati", () => {
