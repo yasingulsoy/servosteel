@@ -317,6 +317,10 @@ export function isinmaTavani(gun: number | null, tavan: number): { tavan: number
   if (g < 1) return { tavan: Math.min(tavan, 10), asama: `ısınma: ${g + 1}. gün` };
   if (g < 2) return { tavan: Math.min(tavan, 20), asama: `ısınma: ${g + 1}. gün` };
   if (g < 4) return { tavan: Math.min(tavan, 30), asama: `ısınma: ${g + 1}. gün` };
+  /* Alan adı merdiveniyle aynı ara basamak: 180'lik alan tavanı dört kutuya
+     bölününce zaten ~45 düşüyor, bu sınır yalnızca alan tavanı bağlamazsa
+     (kutu sayısı değişirse) devreye girer. */
+  if (g < 6) return { tavan: Math.min(tavan, 50), asama: `ısınma: ${g + 1}. gün` };
   return { tavan, asama: null };
 }
 
@@ -487,6 +491,7 @@ export function ayarlariOku(env: Record<string, string | undefined>): OutreachAy
  *   1. gün    → günde en çok 20
  *   2. gün    → günde en çok 70
  *   3-4. gün  → günde en çok 110
+ *   5-6. gün  → günde en çok 180
  *   sonrası   → OUTREACH_DOMAIN_DAILY_LIMIT (varsayılan 50, üst sınır 300 —
  *               dört kutu × kutu tavanı 75).
  *
@@ -513,6 +518,13 @@ export function alanIsinmaTavani(gun: number | null, tavan: number): { tavan: nu
   if (g < 1) return { tavan: Math.min(tavan, 20), asama: `alan adı ısınması: ${g + 1}. gün` };
   if (g < 2) return { tavan: Math.min(tavan, 70), asama: `alan adı ısınması: ${g + 1}. gün` };
   if (g < 4) return { tavan: Math.min(tavan, 110), asama: `alan adı ısınması: ${g + 1}. gün` };
+  /* ARA BASAMAK (Yasin, 25 Eylül 2026: "yarın 180 pazartesi 300"). Merdiven
+     eskiden 4. günde doğrudan env'e devrediyordu; 110'dan 300'e bir günde
+     çıkmak 2,7 katlık sıçrama demekti ve süzgeçlerin tepki verdiği şey tam
+     olarak bu. İki gün 180'de durup sonra env'e geçiliyor:
+       4-5. gün (26-27 Eylül) → 180
+       6. günden (28 Eylül, pazartesi) → OUTREACH_DOMAIN_DAILY_LIMIT */
+  if (g < 6) return { tavan: Math.min(tavan, 180), asama: `alan adı ısınması: ${g + 1}. gün` };
   return { tavan, asama: null };
 }
 

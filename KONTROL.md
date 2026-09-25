@@ -1387,10 +1387,20 @@ bitiyor. Doğrulandı: sıradaki 200 firmanın dağılımı 121 / 9 / 9 / 30 / 3
 aşamayacağı sınır; gerçek sayıyı env veriyor. Dayanak: dört günde 241
 gönderim, sıfır geri dönüş, sıfır şikâyet, Postmaster Tools yeşil.
 
-İki uyarı kodun içine de yazıldı: **(1)** merdiven 4. günde env'e devrediyor,
-yani 26 Eylül'de 110'dan 300'e BİR GÜNDE çıkılıyor — 2,7 kat, süzgeçlerin
-tepki verdiği sıçrama tam bu. **(2)** kutular dolu; dolu kutu gönderen
-doğrulamasını düşürüyor, hacim arttıkça sessiz red artar.
+**Merdivene ara basamak kondu** (Yasin: "yarın 180 pazartesi 300"). Eskiden
+4. günde doğrudan env'e devrediyordu, yani 110'dan 300'e bir günde — 2,7 katlık
+sıçrama, süzgeçlerin tepki verdiği şey tam bu. Yeni hâli:
+
+| tarih | gün | alan tavanı | kutu tavanı | günde |
+|---|---|---|---|---|
+| 22 Eyl Sal | 0 | 20 | 10 | 20 |
+| 23 Eyl Çar | 1 | 70 | 20 | 70 |
+| 24-25 Eyl | 2-3 | 110 | 30 | 110 |
+| **26-27 Eyl** | **4-5** | **180** | **50** | **180** |
+| **28 Eyl Pzt** | **6+** | env (300) | env (75) | **300** |
+
+Kalan uyarı: **kutular dolu.** Dolu kutu gönderen doğrulamasını düşürüyor,
+hacim arttıkça sessiz red artar — 180'e çıkmadan önce boşaltılmalı.
 
 ---
 

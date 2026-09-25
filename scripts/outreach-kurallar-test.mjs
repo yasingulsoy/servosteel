@@ -103,13 +103,18 @@ t("ayarlar: ek kutular", () => {
 });
 t("alan adi isinmasi", () => {
   assert.equal(K.alanIsinmaTavani(null, 50).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(0, 150).tavan, 20);
-  assert.equal(K.alanIsinmaTavani(1, 150).tavan, 70);
-  assert.equal(K.alanIsinmaTavani(3, 150).tavan, 110);
-  assert.equal(K.alanIsinmaTavani(4, 150).tavan, 150);
-  assert.equal(K.alanIsinmaTavani(4, 150).asama, null);
+  assert.equal(K.alanIsinmaTavani(0, 300).tavan, 20);
+  assert.equal(K.alanIsinmaTavani(1, 300).tavan, 70);
+  assert.equal(K.alanIsinmaTavani(3, 300).tavan, 110);
+  /* Ara basamak: 110'dan 300'e bir gunde cikilmiyor, iki gun 180'de duruluyor */
+  assert.equal(K.alanIsinmaTavani(4, 300).tavan, 180);
+  assert.equal(K.alanIsinmaTavani(5, 300).tavan, 180);
+  assert.equal(K.alanIsinmaTavani(5, 300).asama, "alan adı ısınması: 6. gün");
+  assert.equal(K.alanIsinmaTavani(6, 300).tavan, 300);
+  assert.equal(K.alanIsinmaTavani(6, 300).asama, null);
   /* Ayarlanan tavan kademeden düşükse o kazanır */
   assert.equal(K.alanIsinmaTavani(2, 10).tavan, 10);
+  assert.equal(K.alanIsinmaTavani(4, 120).tavan, 120);
 });
 t("kutu secimi", () => {
   const kutu = (no, user) => ({ no, host: "h", port: 465, user, pass: "p", ad: "A", alan: user.split("@")[1] });
@@ -192,8 +197,12 @@ t("isinma tavani", () => {
   assert.equal(K.isinmaTavani(0, 40).tavan, 10);
   assert.equal(K.isinmaTavani(1, 40).tavan, 20);
   assert.equal(K.isinmaTavani(3, 40).tavan, 30);
+  /* Ara basamak: 4-5. gun 50 (alan tavani zaten daha once baglar) */
+  assert.equal(K.isinmaTavani(4, 75).tavan, 50);
+  assert.equal(K.isinmaTavani(5, 75).tavan, 50);
+  assert.equal(K.isinmaTavani(6, 75).tavan, 75);
+  assert.equal(K.isinmaTavani(6, 75).asama, null);
   assert.equal(K.isinmaTavani(4, 40).tavan, 40);
-  assert.equal(K.isinmaTavani(4, 40).asama, null);
   assert.equal(K.isinmaTavani(13, 50).tavan, 50);
   assert.equal(K.isinmaTavani(14, 50).tavan, 50);
   assert.equal(K.isinmaTavani(14, 50).asama, null);
