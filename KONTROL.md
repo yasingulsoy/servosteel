@@ -1294,6 +1294,67 @@ WhatsApp Business hesabı yok.
 
 ---
 
+## Panel baştan düzenlendi: Genel bakış, E-posta istemcisi, Kampanya (26 Eylül)
+
+Yasin: "e-posta uygulaması gibi, hesapları tek tek seçip geleni gideni görüp
+e-posta çıkabilmeliyim … herşey dağınık … a'dan z'ye profesyonel bir admin
+panel istiyorum" ve "sadece bugün değil tüm zamanlar olmalı".
+
+**Menü:** Menü (Genel bakış · Talepler · E-posta) — Tanıtım (Kampanya · Hedef
+firmalar) — Yönetim (Kullanıcılar · Kayıtlar, yalnızca yönetici) — Hesap.
+Girişten sonra `/admin/genel` açılıyor.
+
+- **Genel bakış** (`/admin/genel`): talep, site iletişimi, gönderim, tıklama,
+  yanıt, olumlu — her biri **tüm zamanlar + bugün**. Uyarılar tek yerde ve
+  gruplu (aynı tarama hatası dört kutuda ise tek satır). Dikkat isteyenler,
+  son yanıtlar (tıklayınca e-posta istemcisinde o ileti açılır), sıcak
+  firmalar (tıklayıp teklif sayfasına bakan, henüz yanıt vermemiş), son talepler.
+- **E-posta** (`/admin/eposta`): kutuların KENDİSİ, IMAP'ten (`src/lib/posta.ts`).
+  Dört hesap tek tek; Gelen / Gönderilmiş; okuma (düz metin, BODY.PEEK —
+  Thunderbird'de "okundu" yapmaz); **Yanıtla** (alıntı + imza, In-Reply-To /
+  References ile konuşmaya bağlanır, iletiye "yanıtlandı" işareti konur),
+  **İlet**, **Yeni e-posta**. Kopya gönderen kutunun Gönderilmiş'ine konur.
+  Gelen'de taramanın sınıfı (yanıt, geri dönüş…) ve hedef firma eşleşmesi
+  satırda görünür. Eski `/admin/gelen` ve "Giden → Gelen" sekmesi buraya yönleniyor.
+- **Elle e-postanın kuralları** (`src/lib/posta-gonder.ts`, panel ve Claude
+  aynı yoldan): saatte en çok **40** elle e-posta (toplam); abonelikten
+  çıkmış adrese **yeni** e-posta gitmez, yanıt gider; her gönderim ve hata
+  Kayıtlar'da. Tanıtım kuralları (tavan, ısınma, aralık) burada yok.
+- **Kampanya** (`/admin/kampanya`): gönderim panosu — 7 / 14 / 30 gün /
+  **Tüm zamanlar**, kutular, otomatik gönderim ayarı, gün gün karne. Karnedeki
+  yanıltıcı "Oran" sütunu (%44 gibi — aynı firma 5 kez tıklayınca şişiyordu)
+  kaldırıldı, yerine **o gün tıklayan farklı firma sayısı**.
+- **Hedef firmalar** yalnızca liste + süzgeç (883 → 403 satır); "Gönderim
+  kaydı" Kampanya'nın altında.
+
+**Claude'un e-posta erişimi** — `/api/posta` + `node scripts/posta.mjs`
+(kutular, yanitlar, liste, oku, yanitla, gonder, ilet). Anahtar
+`POSTA_API_ANAHTARI` (48 karakter, rastgele); tanımlı değilse uç **404** —
+var olduğu bile görünmez. `--gonder` verilmedikçe HİÇBİR ŞEY GÖNDERMEZ:
+e-postanın son hâlini gösterir ve sunucudaki bütün kontrolleri çalıştırır.
+Gönderimler Kayıtlar'da **claude** adıyla. Claude yine de her gönderimden
+önce Yasin'e sorar.
+
+- [ ] **Yasin: Dokploy → uygulama → Environment'a `POSTA_API_ANAHTARI` ekle,
+  değeri `.env.local`'daki aynı satırdan kopyala** (26 Eylül'de üretildi;
+  sohbete yapıştırma) → Deploy. Eklenmezse panel çalışır, yalnızca Claude'un
+  ucu kapalı kalır.
+
+Bilinen boşluk: kutular dolu olduğu günlerde (22-25 Eylül) giden tanıtım
+maillerinin kopyası Gönderilmiş'e konamadı ("Mailbox is full"). O maillerin
+kaydı Kampanya → Gönderim kaydı'nda duruyor, kutuda yok.
+
+**Nasıl doğrulandı (yerelde, canlıya dokunmadan):** canlı veritabanından salt
+okunur kopya (`servosteel_panel`, iş bitince silindi), SMTP yutucusu
+(`scripts/smtp-yutucu.py`, 127.0.0.1:2525) ve sahte IMAP sunucusu
+(`scripts/imap-sahte.py`, 127.0.0.1:9993 — Gelen/Gönderilmiş, arama, işaret,
+APPEND). Gerçek imapflow istemcisiyle: liste + sayfalama (45 ileti), okuma
+(ekli, yalnız HTML), yanıt zinciri (`In-Reply-To <strip-1@…>`,
+`References <ilk-1@…> <strip-1@…>`), \Answered işareti, Gönderilmiş'i
+olmayan kutuda klasörün açılması, abonelik engeli, geçersiz adres, tarama.
+
+---
+
 ## Gönderen doğrulaması reddi — alıcı hatası SANILIYORDU (25 Eylül)
 
 200 gönderimin ilk başarısızlığı Yeni Zelanda'dan geldi ve mesajın tamamı şuydu:
@@ -1412,7 +1473,7 @@ hacim arttıkça sessiz red artar — 180'e çıkmadan önce boşaltılmalı.
   (firma Olumlu/İlgilenmiyor yapılınca düşer — "sana bakan iş" demek).
 - **Mailler okunabiliyor.** Gövde veritabanında DURMUYOR (yalnızca 500
   karakter özet); satırdaki "Mailin tamamını aç" iletiyi `kutu + uidvalidity
-  + uid` ile kutudan çeker (`src/lib/gelen-oku.ts`). Salt okunur, BODY.PEEK:
+  + uid` ile kutudan çeker (26 Eylül'den beri E-posta istemcisi, `src/lib/posta.ts`). Salt okunur, BODY.PEEK:
   panelde mail açmak onu Thunderbird'de "okundu" YAPMAZ. Metin düz basılır —
   gelen posta güvenilmez içerik, HTML'ini işlemeye gerek yok.
 - **Kutu doluluğu artık kırmızı bant.** Sunucunun cevabı ("Mailbox is full")

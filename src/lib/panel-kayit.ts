@@ -45,6 +45,8 @@ export const OLAY_ETIKET = {
   sigorta_sifirla: "Gönderim sigortasını kaldırdı",
   gelen_tara: "Gelen kutularını taradı",
   otomatik_ayar: "Otomatik gönderim ayarını değiştirdi",
+  eposta_gonder: "E-posta gönderdi",
+  eposta_gonder_hata: "E-posta gönderilemedi",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

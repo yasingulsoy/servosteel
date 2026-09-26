@@ -44,7 +44,7 @@ export default async function GidenSayfasi({ searchParams }: { searchParams: Pro
 
   /* "Gelen" artık panelde kendi başlığında (/admin/gelen). Eski bağlantılar
      ve yer imleri bozulmasın diye sekme oraya yönlendiriyor. */
-  if (sp.sekme === "gelen") redirect("/admin/gelen");
+  if (sp.sekme === "gelen") redirect("/admin/eposta");
   const kutular = ayarlariOku(process.env).kutular.map((k) => k.user);
   const kutu = sp.kutu && /^[^\s@]+@[^\s@]+$/.test(sp.kutu) ? sp.kutu : undefined;
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
@@ -55,16 +55,17 @@ export default async function GidenSayfasi({ searchParams }: { searchParams: Pro
     `/admin/firmalar/giden?${qs({ kutu, sonuc: sp.sonuc, sayfa: n > 1 ? n : undefined })}`;
 
   return (
-    <Kabuk aktif="firmalar" kullanici={ben}>
+    <Kabuk aktif="kampanya" kullanici={ben}>
       <main>
-        <Link href="/admin/firmalar" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
-          <ArrowLeft className="size-4" aria-hidden /> Hedef firmalar
+        <Link href="/admin/kampanya" className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-ink">
+          <ArrowLeft className="size-4" aria-hidden /> Kampanya
         </Link>
-        <h1 className="mt-2 font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">Giden kutusu</h1>
+        <h1 className="mt-2 font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">Gönderim kaydı</h1>
         <p className="mt-1 text-sm text-muted">
-          Her gönderim denemesi: hangi kutudan, kime, sonuç ne. Gelen yanıtlar ayrı sayfada —{" "}
-          <Link href="/admin/gelen" className="underline underline-offset-4">
-            Gelen kutusu
+          Tanıtım e-postalarının her denemesi — hangi kutudan, kime, sonuç ve sunucunun cevabı.
+          Başarısızlar da burada. Kutuların kendisi (Gelen, Gönderilmiş) için{" "}
+          <Link href="/admin/eposta" className="underline underline-offset-4">
+            E-posta
           </Link>
           .
         </p>

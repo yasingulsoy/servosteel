@@ -4,17 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
+  Building2,
   ChevronDown,
+  LayoutDashboard,
+  Mail,
+  Megaphone,
   Ellipsis,
   ExternalLink,
   History,
   Inbox,
-  MailOpen,
   LogOut,
   Menu,
   PanelLeftClose,
   PanelLeftOpen,
-  Send,
   UserCog,
   Users,
   X,
@@ -35,7 +37,15 @@ import { MENU_CEREZ } from "./menu-tercihi";
  * görünüm; asıl kilit sunucu eylemlerinde ve sayfanın kendisinde.
  */
 
-export type PanelBolum = "talepler" | "firmalar" | "gelen" | "kullanicilar" | "kayitlar" | "profil";
+export type PanelBolum =
+  | "genel"
+  | "talepler"
+  | "eposta"
+  | "kampanya"
+  | "firmalar"
+  | "kullanicilar"
+  | "kayitlar"
+  | "profil";
 
 /* Nabız: panelde geçen süre kayda doğru yazılsın diye (bkz. lib/panel-kayit). */
 const NABIZ_MS = 60_000;
@@ -217,9 +227,9 @@ export function PanelKabugu({
           }`}
         >
           <Link
-            href="/admin"
+            href="/admin/genel"
             onClick={kapatMobil}
-            aria-label="Talepler"
+            aria-label="Genel bakış"
             className={`block h-10 overflow-hidden transition-[width] duration-300 ${
               genis ? "w-[91px]" : "w-10"
             }`}
@@ -242,6 +252,17 @@ export function PanelKabugu({
             <div>
               {baslik("Menü")}
               <ul className="flex flex-col gap-1">
+                <li>
+                  <Link
+                    href="/admin/genel"
+                    onClick={kapatMobil}
+                    aria-current={aktif === "genel" ? "page" : undefined}
+                    className={oge(aktif === "genel")}
+                  >
+                    <LayoutDashboard className={ikon(aktif === "genel")} aria-hidden />
+                    <span className={`whitespace-nowrap ${yazi}`}>Genel bakış</span>
+                  </Link>
+                </li>
                 <li>
                   <button
                     type="button"
@@ -329,8 +350,60 @@ export function PanelKabugu({
                   </div>
                 </li>
 
-                {/* Tanıtım e-postası — herkese açık: gönderimi satış yapıyor.
-                    Sigortayı elle kaldırmak yalnızca yöneticide (sunucuda). */}
+                {/* E-posta: dört gönderen kutusunun posta istemcisi. Rozet,
+                    henüz elden geçmemiş yanıt sayısı. */}
+                <li>
+                  <Link
+                    href="/admin/eposta"
+                    onClick={kapatMobil}
+                    aria-current={aktif === "eposta" ? "page" : undefined}
+                    className={oge(aktif === "eposta")}
+                  >
+                    <span className="relative">
+                      <Mail className={ikon(aktif === "eposta")} aria-hidden />
+                      {yanitSayisi > 0 ? (
+                        <span
+                          className={`absolute -right-1 -top-1 size-2.5 rounded-full bg-violet-500 ring-2 ring-card ${
+                            genis ? "hidden" : "hidden lg:block"
+                          }`}
+                          aria-hidden
+                        />
+                      ) : null}
+                    </span>
+                    <span className={`flex-1 whitespace-nowrap ${yazi}`}>
+                      E-posta
+                      {yanitSayisi ? <span className="sr-only">, {yanitSayisi} yanıt bekliyor</span> : null}
+                    </span>
+                    {yanitSayisi > 0 ? (
+                      <span
+                        className={`rounded-full bg-violet-500/15 px-2 py-1 text-[11px] font-bold leading-none text-violet-700 ${suslu}`}
+                        aria-hidden
+                      >
+                        {yanitSayisi}
+                      </span>
+                    ) : null}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Tanıtım e-postası — herkese açık: gönderimi satış yapıyor.
+                Sigortayı elle kaldırmak ve ayar değiştirmek yalnızca yöneticide
+                (sunucuda denetleniyor). */}
+            <div>
+              {baslik("Tanıtım")}
+              <ul className="flex flex-col gap-1">
+                <li>
+                  <Link
+                    href="/admin/kampanya"
+                    onClick={kapatMobil}
+                    aria-current={aktif === "kampanya" ? "page" : undefined}
+                    className={oge(aktif === "kampanya")}
+                  >
+                    <Megaphone className={ikon(aktif === "kampanya")} aria-hidden />
+                    <span className={`whitespace-nowrap ${yazi}`}>Kampanya</span>
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/admin/firmalar"
@@ -338,31 +411,17 @@ export function PanelKabugu({
                     aria-current={aktif === "firmalar" ? "page" : undefined}
                     className={oge(aktif === "firmalar")}
                   >
-                    <Send className={ikon(aktif === "firmalar")} aria-hidden />
+                    <Building2 className={ikon(aktif === "firmalar")} aria-hidden />
                     <span className={`whitespace-nowrap ${yazi}`}>Hedef firmalar</span>
                   </Link>
                 </li>
+              </ul>
+            </div>
 
-                {/* Gelen kutusu: gönderen kutularına düşen yanıt, geri dönüş ve
-                    abonelik iptalleri. Rozet, henüz elden geçmemiş yanıt sayısı. */}
-                <li>
-                  <Link
-                    href="/admin/gelen"
-                    onClick={kapatMobil}
-                    aria-current={aktif === "gelen" ? "page" : undefined}
-                    className={oge(aktif === "gelen")}
-                  >
-                    <MailOpen className={ikon(aktif === "gelen")} aria-hidden />
-                    <span className={`whitespace-nowrap ${yazi}`}>Gelen kutusu</span>
-                    {yanitSayisi > 0 ? (
-                      <span className={`ml-auto shrink-0 rounded-full bg-violet-500/15 px-1.5 py-0.5 text-[11px] font-semibold text-violet-700 ${yazi}`}>
-                        {yanitSayisi}
-                      </span>
-                    ) : null}
-                  </Link>
-                </li>
-
-                {admin ? (
+            {admin ? (
+              <div>
+                {baslik("Yönetim")}
+                <ul className="flex flex-col gap-1">
                   <li>
                     <Link
                       href="/admin/kullanicilar"
@@ -374,9 +433,6 @@ export function PanelKabugu({
                       <span className={`whitespace-nowrap ${yazi}`}>Kullanıcılar</span>
                     </Link>
                   </li>
-                ) : null}
-
-                {admin ? (
                   <li>
                     <Link
                       href="/admin/kayitlar"
@@ -388,9 +444,9 @@ export function PanelKabugu({
                       <span className={`whitespace-nowrap ${yazi}`}>Kayıtlar</span>
                     </Link>
                   </li>
-                ) : null}
-              </ul>
-            </div>
+                </ul>
+              </div>
+            ) : null}
 
             <div>
               {baslik("Hesap")}

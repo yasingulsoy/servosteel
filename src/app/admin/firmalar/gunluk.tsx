@@ -63,7 +63,10 @@ export function Gunluk({
   tiklayanlar,
   gruplar,
   ulkeler,
+  tiklayanFirma,
 }: {
+  /** Pencerede tıklayan farklı firma (toplam satırı) */
+  tiklayanFirma: number;
   gunler: GunSatiri[];
   tiklayanlar: Tiklayan[];
   gruplar: Kirilim[];
@@ -102,7 +105,7 @@ export function Gunluk({
               <th className="px-3 py-2 font-semibold">Gün</th>
               <th className="px-3 py-2 font-semibold">Gönderim</th>
               <th className="px-3 py-2 text-right font-semibold">Tıklama</th>
-              <th className="px-3 py-2 text-right font-semibold">Oran</th>
+              <th className="px-3 py-2 text-right font-semibold" title="O gün maildeki bağlantıya tıklayan farklı firma">Firma</th>
               <th className="px-3 py-2 text-right font-semibold">Yanıt</th>
               <th className="px-3 py-2 text-right font-semibold">Geri dönüş</th>
               <th className="px-3 py-2 text-right font-semibold">İptal</th>
@@ -125,9 +128,9 @@ export function Gunluk({
                   </span>
                 </td>
                 <td className="px-3 py-1.5 text-right tabular-nums">{g.tiklama ? sayi(g.tiklama) : "—"}</td>
-                <td className="px-3 py-1.5 text-right tabular-nums text-muted">
-                  {g.gonderim && g.tiklama ? `%${Math.round((g.tiklama / g.gonderim) * 100)}` : "—"}
-                </td>
+                {/* Ham tıklamayı gönderime bölmek yanıltıyordu: tek firma 24 kez
+                    tıklayınca "oran %44" çıkıyordu. Farklı firma sayısı dürüst ölçü. */}
+                <td className="px-3 py-1.5 text-right tabular-nums text-muted">{g.tiklayan ? sayi(g.tiklayan) : "—"}</td>
                 <td className={`px-3 py-1.5 text-right tabular-nums ${g.yanit ? "font-semibold text-violet-700" : ""}`}>
                   {g.yanit ? sayi(g.yanit) : "—"}
                 </td>
@@ -152,10 +155,8 @@ export function Gunluk({
                 </span>
               </td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.tiklama ? sayi(toplam.tiklama) : "—"}</td>
-              <td className="px-3 py-2 text-right tabular-nums">
-                {toplam.gonderim && toplam.tiklama
-                  ? `%${Math.round((toplam.tiklama / toplam.gonderim) * 100)}`
-                  : "—"}
+              <td className="px-3 py-2 text-right tabular-nums" title="Pencerede en az bir kez tıklayan farklı firma — günlerin toplamı değil">
+                {tiklayanFirma ? sayi(tiklayanFirma) : "—"}
               </td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.yanit ? sayi(toplam.yanit) : "—"}</td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.geri ? sayi(toplam.geri) : "—"}</td>

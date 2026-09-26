@@ -186,6 +186,33 @@ export async function durumSayilari() {
   );
 }
 
+/**
+ * Talep ve site iletişim sayıları — TÜM ZAMANLAR, son 30 gün ve bugün.
+ * İletişim: sitede telefon ya da e-posta bağlantısına tıklama (bkz. api/olay).
+ */
+export type TalepOzeti = {
+  toplam: number;
+  bugun: number;
+  son30: number;
+  yeni: number;
+  iletisim: number;
+  iletisim30: number;
+};
+
+export async function talepOzeti(): Promise<TalepOzeti> {
+  const r = await sorguSert<TalepOzeti>(
+    `WITH b AS (SELECT date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') AT TIME ZONE 'Europe/Istanbul' AS gun)
+     SELECT
+       (SELECT count(*) FROM talepler)::int AS toplam,
+       (SELECT count(*) FROM talepler, b WHERE olusturuldu >= b.gun)::int AS bugun,
+       (SELECT count(*) FROM talepler WHERE olusturuldu > now() - interval '30 days')::int AS son30,
+       (SELECT count(*) FROM talepler WHERE durum = 'yeni')::int AS yeni,
+       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta'))::int AS iletisim,
+       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta') AND olusturuldu > now() - interval '30 days')::int AS iletisim30`
+  );
+  return r[0];
+}
+
 export async function olaySayilari(gun = 30) {
   return sorguSert<{ tur: string; adet: string }>(
     `SELECT tur, count(*)::text AS adet FROM olaylar

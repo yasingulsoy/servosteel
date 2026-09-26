@@ -3,7 +3,7 @@ import { oturum, panelAcik } from "@/lib/admin-auth";
 import { GirisFormu } from "./giris-formu";
 
 export default async function GirisSayfasi() {
-  if (await oturum()) redirect("/admin");
+  if (await oturum()) redirect("/admin/genel");
 
   if (!(await panelAcik())) {
     return (

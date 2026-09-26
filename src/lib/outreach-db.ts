@@ -715,13 +715,17 @@ export type GunSatiri = {
   gun: string;
   gonderim: number;
   tiklama: number;
+  /** O gün tıklayan FARKLI firma — aynı firmanın 24 tıklaması tek sayılır */
+  tiklayan: number;
   yanit: number;
   geri_donus: number;
   abonelik: number;
 };
 
 export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
-  const n = Math.min(60, Math.max(1, Math.trunc(gun)));
+  /* 400 gün: "tüm zamanlar" seçilince ilk gönderimden bugüne; üst sınır
+     yanlış bir parametrenin binlerce satır üretmesini engelliyor. */
+  const n = Math.min(400, Math.max(1, Math.trunc(gun)));
   return sorguSert<GunSatiri>(
     `WITH gunler AS (
        SELECT (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') - (i || ' days')::interval)::date AS g
@@ -732,7 +736,8 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
        FROM hedef_gonderim WHERE sonuc = 'ok' GROUP BY 1
      ),
      t AS (
-       SELECT (olusturuldu AT TIME ZONE 'Europe/Istanbul')::date AS g, count(*)::int AS n
+       SELECT (olusturuldu AT TIME ZONE 'Europe/Istanbul')::date AS g, count(*)::int AS n,
+              count(DISTINCT NULLIF(kaynak, ''))::int AS f
        FROM olaylar WHERE tur = 'outreach' GROUP BY 1
      ),
      e AS (
@@ -742,6 +747,7 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
      SELECT to_char(gunler.g, 'YYYY-MM-DD') AS gun,
             COALESCE(g.n, 0) AS gonderim,
             COALESCE(t.n, 0) AS tiklama,
+            COALESCE(t.f, 0) AS tiklayan,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'yanit'), 0) AS yanit,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'geri_donus'), 0) AS geri_donus,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'abonelik'), 0) AS abonelik
@@ -749,6 +755,23 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
      ORDER BY gunler.g DESC`,
     [n]
   );
+}
+
+/**
+ * Pencerede (son `gun` İstanbul günü) en az bir kez tıklayan FARKLI firma.
+ * Günlük tablonun toplam satırı için — günlerin farklı-firma sayılarını
+ * toplamak, iki gün tıklayan firmayı iki kez sayardı.
+ */
+export async function tiklayanFirmaSayisi(gun: number): Promise<number> {
+  const n = Math.min(400, Math.max(1, Math.trunc(gun)));
+  const r = await sorguSert<{ adet: number }>(
+    `SELECT count(DISTINCT kaynak)::int AS adet FROM olaylar
+     WHERE tur = 'outreach' AND kaynak <> ''
+       AND olusturuldu >= (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') - (($1::int - 1) || ' days')::interval)
+                          AT TIME ZONE 'Europe/Istanbul'`,
+    [n]
+  );
+  return r[0]?.adet ?? 0;
 }
 
 /**
@@ -827,6 +850,85 @@ export const grupKirilimi = () => kirilim("kategori");
 export const ulkeKirilimi = () => kirilim("ulke");
 
 
+
+/**
+ * Kampanyanın TÜM ZAMANLAR karnesi ve bugünü — tek sorguda.
+ *
+ * Yasin, 26 Eylül 2026: "sadece bugün değil tüm zamanlarda olmalı". Panelin
+ * üstündeki sayılar hem bugünü hem toplamı gösteriyor; biri diğerinin yerine
+ * okunmasın diye ikisi yan yana.
+ *
+ * Gün İSTANBUL günü. Tıklama ölçümü 25 Eylül 2026'da başladı — toplam tıklama
+ * o günden bu yana, gönderim toplamı ise ilk günden.
+ */
+export type KampanyaToplami = {
+  gonderim: number;
+  gonderim_bugun: number;
+  tiklama: number;
+  tiklama_bugun: number;
+  tiklayan_firma: number;
+  teklif_sayfasi: number;
+  yanit: number;
+  yanit_bugun: number;
+  geri_donus: number;
+  abonelik: number;
+  olumlu: number;
+  ilk_gonderim: string | null;
+  /** İlk gönderim gününden bugüne kaç İstanbul günü (bugün dahil) — "tüm zamanlar" penceresi */
+  gun_sayisi: number;
+};
+
+export async function kampanyaToplami(): Promise<KampanyaToplami> {
+  const r = await sorguSert<KampanyaToplami>(
+    `WITH bugun AS (
+       SELECT (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') AT TIME ZONE 'Europe/Istanbul') AS b
+     )
+     SELECT
+       (SELECT count(*) FROM hedef_gonderim WHERE sonuc = 'ok')::int AS gonderim,
+       (SELECT count(*) FROM hedef_gonderim, bugun WHERE sonuc = 'ok' AND zaman >= bugun.b)::int AS gonderim_bugun,
+       (SELECT count(*) FROM olaylar WHERE tur = 'outreach')::int AS tiklama,
+       (SELECT count(*) FROM olaylar, bugun WHERE tur = 'outreach' AND olusturuldu >= bugun.b)::int AS tiklama_bugun,
+       (SELECT count(DISTINCT kaynak) FROM olaylar WHERE tur = 'outreach' AND kaynak <> '')::int AS tiklayan_firma,
+       (SELECT count(*) FROM olaylar WHERE tur = 'outreach' AND (yol LIKE '%request-quote%' OR yol LIKE '%teklif-al%'))::int AS teklif_sayfasi,
+       (SELECT count(*) FROM gelen_eposta WHERE tur = 'yanit')::int AS yanit,
+       (SELECT count(*) FROM gelen_eposta, bugun WHERE tur = 'yanit' AND islendi >= bugun.b)::int AS yanit_bugun,
+       (SELECT count(*) FROM gelen_eposta WHERE tur = 'geri_donus')::int AS geri_donus,
+       (SELECT count(*) FROM gelen_eposta WHERE tur = 'abonelik')::int AS abonelik,
+       (SELECT count(*) FROM hedef_firmalar WHERE durum = 'olumlu')::int AS olumlu,
+       (SELECT min(zaman) FROM hedef_gonderim WHERE sonuc = 'ok') AS ilk_gonderim,
+       COALESCE((SELECT (now() AT TIME ZONE 'Europe/Istanbul')::date
+                        - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date + 1
+                 FROM hedef_gonderim WHERE sonuc = 'ok'), 0)::int AS gun_sayisi`
+  );
+  return r[0];
+}
+
+/**
+ * Sıcak firmalar: maildeki bağlantıya tıklamış, çoğu teklif sayfasına kadar
+ * gelmiş, ama hâlâ YANIT VERMEMİŞ ("Gönderildi"de duran) firmalar. Bir telefon
+ * ya da kısa bir mail için en yüksek ihtimalli isimler — önce teklif sayfasına
+ * en çok girenler.
+ */
+export type SicakFirma = { firma_id: number; firma: string; ulke: string; tik: number; teklif: number; son: string };
+
+export async function sicakFirmalar(adet = 6): Promise<SicakFirma[]> {
+  return sorguSert<SicakFirma>(
+    `SELECT h.id AS firma_id, h.firma, h.ulke, count(*)::int AS tik,
+            count(*) FILTER (WHERE o.yol LIKE '%request-quote%' OR o.yol LIKE '%teklif-al%')::int AS teklif,
+            max(o.olusturuldu) AS son
+     FROM olaylar o
+     JOIN LATERAL (
+       SELECT id, firma, ulke, durum FROM hedef_firmalar
+       WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
+       ORDER BY id LIMIT 1
+     ) h ON true
+     WHERE o.tur = 'outreach' AND h.durum = 'gonderildi'
+     GROUP BY h.id, h.firma, h.ulke
+     ORDER BY teklif DESC, tik DESC, son DESC
+     LIMIT $1`,
+    [Math.min(20, Math.max(1, Math.trunc(adet)))]
+  );
+}
 
 export async function geriDonusDurumu(): Promise<{ toplam: number; hatali: number }> {
   const r = await sorguSert<{ toplam: number; hatali: number }>(

@@ -139,9 +139,87 @@ export async function bekleyenYanitSayisi(): Promise<number> {
   return Number(r[0]?.adet ?? 0);
 }
 
+/**
+ * E-posta istemcisinin Gelen listesi için: taramanın bu iletileri nasıl
+ * sınıfladığı (yanıt, geri dönüş, otomatik…) ve hangi hedef firmayla
+ * eşlediği. Anahtar uid. uid/uidvalidity BIGINT — metin olarak gelir.
+ */
+export type GelenSinifi = { tur: string; firma_id: number | null; firma: string | null };
+
+export async function gelenSiniflari(
+  kutu: string,
+  uidvalidity: number,
+  uidler: number[]
+): Promise<Map<number, GelenSinifi>> {
+  if (!uidler.length || !uidvalidity) return new Map();
+  const r = await sorguSert<GelenSinifi & { uid: string }>(
+    `SELECT e.uid::text AS uid, e.tur, e.firma_id, h.firma
+     FROM gelen_eposta e LEFT JOIN hedef_firmalar h ON h.id = e.firma_id
+     WHERE e.kutu = lower($1) AND e.uidvalidity = $2 AND e.uid = ANY($3::bigint[])`,
+    [kutu, uidvalidity, uidler]
+  );
+  return new Map(r.map((x) => [Number(x.uid), { tur: x.tur, firma_id: x.firma_id, firma: x.firma }]));
+}
+
+/**
+ * Bir adres listesinin hangi hedef firmalara ait olduğu — Gönderilmiş'teki
+ * alıcıyı ve okunan iletinin karşı tarafını firma sayfasına bağlamak için.
+ */
+export async function firmaEslesmeleri(adresler: string[]): Promise<Map<string, { id: number; firma: string }>> {
+  const temiz = [...new Set(adresler.map((a) => a.trim().toLowerCase()).filter(Boolean))];
+  if (!temiz.length) return new Map();
+  const r = await sorguSert<{ eposta: string; id: number; firma: string }>(
+    `SELECT DISTINCT ON (lower(eposta)) lower(eposta) AS eposta, id, firma
+     FROM hedef_firmalar WHERE lower(eposta) = ANY($1::text[])
+     ORDER BY lower(eposta), id`,
+    [temiz]
+  );
+  return new Map(r.map((x) => [x.eposta, { id: x.id, firma: x.firma }]));
+}
+
+/**
+ * Kutu başına elden geçmemiş yanıt: firması hâlâ "Yanıt geldi"de duran
+ * yanıtlar. Biri firmayı Olumlu/İlgilenmiyor yapınca düşer — e-posta
+ * menüsündeki rozet "sana bakan iş" demek.
+ */
+export async function kutuBasinaBekleyenYanit(): Promise<Map<string, number>> {
+  const r = await sorguSert<{ kutu: string; adet: string }>(
+    `SELECT e.kutu, count(DISTINCT e.firma_id)::text AS adet
+     FROM gelen_eposta e JOIN hedef_firmalar h ON h.id = e.firma_id
+     WHERE e.tur = 'yanit' AND h.durum = 'yanit'
+     GROUP BY e.kutu`
+  );
+  return new Map(r.map((x) => [x.kutu, Number(x.adet)]));
+}
+
+/** Son yanıtlar — genel bakışta; her biri e-posta istemcisinde doğrudan açılır. */
+export type YanitSatiri = {
+  kutu: string;
+  uidvalidity: number;
+  uid: number;
+  kimden: string;
+  konu: string;
+  ozet: string;
+  islendi: string;
+  firma_id: number | null;
+  firma: string | null;
+  ulke: string | null;
+};
+
+export async function sonYanitlar(adet = 5): Promise<YanitSatiri[]> {
+  const r = await sorguSert<Omit<YanitSatiri, "uid" | "uidvalidity"> & { uid: string; uidvalidity: string }>(
+    `SELECT e.kutu, e.uidvalidity::text, e.uid::text, e.kimden, e.konu, e.ozet, e.islendi, e.firma_id, h.firma, h.ulke
+     FROM gelen_eposta e LEFT JOIN hedef_firmalar h ON h.id = e.firma_id
+     WHERE e.tur = 'yanit'
+     ORDER BY e.islendi DESC LIMIT $1`,
+    [Math.min(20, Math.max(1, Math.trunc(adet)))]
+  );
+  return r.map((x) => ({ ...x, uid: Number(x.uid), uidvalidity: Number(x.uidvalidity) }));
+}
+
 export const GELEN_SAYFA_BOYU = 40;
 /* uidvalidity + uid: iletinin kutudaki adresi. Gövde burada durmuyor, panelde
-   "aç" denince bu ikisiyle kutudan çekiliyor (bkz. gelen-oku.ts). */
+   "aç" denince bu ikisiyle kutudan çekiliyor (bkz. posta.ts). */
 export type GelenSatiri = GelenDurumu["son"][number] & {
   uid: number;
   uidvalidity: number;

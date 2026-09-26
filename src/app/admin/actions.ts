@@ -58,7 +58,7 @@ export async function girisEylemi(_onceki: string | null, form: FormData) {
   if (!tamam) return "Kullanıcı adı veya parola hatalı.";
 
   await semaKur();
-  redirect("/admin");
+  redirect("/admin/genel");
 }
 
 export async function cikisEylemi() {
