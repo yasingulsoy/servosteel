@@ -184,6 +184,59 @@ Your previous email said delivery failed, can you resend the catalogue?
   assert.equal(s.tur, "yanit");
 });
 
+/* 26 Eylül, MATRO: Office 365 reddi (550 5.7.133) gövdesinde gönderdiğimiz
+   iletinin başlıklarını alıntılıyor; "Exim 4.99.5" sürümü 4.x.x geçici kod
+   sanıldı ve kalıcı ret "geçici" kaydedildi. */
+const O365_RED = `From: postmaster@matro.com.mx
+To: ege@servosteel.com.tr
+Subject: Undeliverable: Alimentadores servo para sus prensas — Servosteel, Estambul
+Content-Type: text/plain; charset=utf-8
+
+Your message to infomatro@matro.com.mx couldn't be delivered.
+The group infomatro only accepts messages from people in its organization or on its allowed senders list.
+
+More Info for Email Admins
+Status code: 550 5.7.133
+
+Original Message Details
+Created Date:   9/25/2026 10:31:30 PM
+Sender Address: ege@servosteel.com.tr
+Recipient Address:      infomatro@matro.com.mx
+
+Original Message Headers
+
+Received: from hera.veridyen.com (45.151.248.76) by BN1PEPF0000468E.mail.protection.outlook.com
+Received: from [78.142.209.185] (port=41822 helo=servosteel.com.tr)
+ by hera.veridyen.com with esmtpsa (TLS1.3) tls TLS_AES_256_GCM_SHA384
+ (Exim 4.99.5) (envelope-from <ege@servosteel.com.tr>)
+ id 1wx9A2-00000001aB7-3kQx for infomatro@matro.com.mx;
+`;
+
+await t("office 365 reddi: alintilanan basliktaki Exim surumu kalici hatayi gecici yapmaz", async () => {
+  const s = await sinifla(O365_RED);
+  assert.equal(s.tur, "geri_donus");
+  assert.equal(s.kalici, true);
+  assert.ok(s.adresler.includes("infomatro@matro.com.mx"));
+});
+
+await t("gercek gecici hata alintili baslikla da gecici kalir", async () => {
+  const s = await sinifla(`From: Mail Delivery System <Mailer-Daemon@hera.veridyen.com>
+To: ege@servosteel.com.tr
+Subject: Mail delivery failed: returning message to sender
+X-Failed-Recipients: info@yavas.example
+
+This message was created automatically by mail delivery software.
+A message that you sent has not yet been delivered to one or more of its recipients after more than 24 hours on the queue.
+  info@yavas.example
+    451 4.7.1 Greylisted, please try again later
+
+------ This is a copy of the message, including all the headers. ------
+Received: from [78.142.209.185] by hera.veridyen.com with esmtpsa (Exim 4.99.5)
+`);
+  assert.equal(s.tur, "geri_donus");
+  assert.equal(s.kalici, false);
+});
+
 await t("ileti kimlikleri", async () => {
   assert.deepEqual(K.mesajKimlikleri("<ABC@servosteel.com.tr>", "<x@y> <abc@servosteel.com.tr>", undefined),
     ["abc@servosteel.com.tr", "x@y"]);

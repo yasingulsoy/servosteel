@@ -86,8 +86,22 @@ const SISTEM_GONDERICI = /^(mailer-daemon|mailerdaemon|mail-daemon|postmaster)@/
 const SISTEM_AD = /mail delivery (system|subsystem)|mailer-daemon|postmaster|microsoft outlook$|e-posta teslim/i;
 const GERI_DONUS_KONU =
   /undeliver|undelivered|delivery (status notification|failure|has failed|failed|incomplete)|mail delivery failed|returned mail|failure notice|non[- ]?deliver|could not be delivered|returned to sender|no se pudo entregar|entrega fallida|não (foi possível )?entreg|non remis|unzustellbar|non recapitat|не доставлено|iletilemedi|teslim edilemedi/i;
-const KALICI = /permanent(ly)? (error|failure|fatal)|\b5\.\d{1,3}\.\d{1,3}\b|\b55[0-4]\b|does not exist|user unknown|unknown user|no such (user|mailbox|recipient)|mailbox (is )?(unavailable|not found|disabled)|address rejected|recipient (address )?rejected|not a valid|invalid (recipient|address|mailbox)|account (has been )?disabled|domain (not found|does not exist)|host or domain name not found|name or service not known/i;
-const GECICI = /temporar(y|ily)|delayed|delay|will (continue|retry|be retried)|has not yet been delivered|still trying|\b4\.\d{1,3}\.\d{1,3}\b|\b4[25]\d\b.*(try again|later)/i;
+/* Durum kodlarında orta hane 0-7 (RFC 3463 konu sınıfları): "Exim 4.99.5" gibi
+   bir sürüm numarası "4.x.x geçici hata" sanılmasın. */
+const KALICI = /permanent(ly)? (error|failure|fatal)|\b5\.[0-7]\.\d{1,3}\b|\b55[0-4]\b|does not exist|user unknown|unknown user|no such (user|mailbox|recipient)|mailbox (is )?(unavailable|not found|disabled)|address rejected|recipient (address )?rejected|not a valid|invalid (recipient|address|mailbox)|account (has been )?disabled|domain (not found|does not exist)|host or domain name not found|name or service not known/i;
+const GECICI = /temporar(y|ily)|delayed|delay|will (continue|retry|be retried)|has not yet been delivered|still trying|\b4\.[0-7]\.\d{1,3}\b|\b4[25]\d\b.*(try again|later)/i;
+
+/* Geri dönüş metninin çoğu, gönderdiğimiz iletinin başlıklarını da alıntılıyor
+   (Office 365: "Original Message Headers", Exim: "This is a copy of the
+   message…"). O başlıklardaki "Received: … (Exim 4.99.5)" satırı 550 5.7.133
+   kalıcı reddini "geçici" gösterdi (26 Eylül, MATRO). Kod yalnızca raporun
+   kendi metninde aranır. */
+const KOPYA_BASI = /^\s*(original message headers|-+ ?this is a copy of the message|-+ ?original message ?-+|received: from )/im;
+
+function raporMetni(metin: string): string {
+  const i = metin.search(KOPYA_BASI);
+  return i > 0 ? metin.slice(0, i) : metin;
+}
 
 function geriDonusMu(g: GelenOzet): boolean {
   if (g.raporlar.length) return true;
@@ -132,7 +146,7 @@ function kaliciMi(g: GelenOzet): boolean {
     if (a === "failed") return true;
     if (a === "delayed") return false;
   }
-  const metin = `${g.konu}\n${g.metin}`;
+  const metin = raporMetni(`${g.konu}\n${g.metin}`);
   if (GECICI.test(metin) && !/permanent/i.test(metin)) return false;
   return KALICI.test(metin);
 }
