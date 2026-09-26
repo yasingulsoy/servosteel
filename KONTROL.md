@@ -1355,6 +1355,57 @@ olmayan kutuda klasörün açılması, abonelik engeli, geçersiz adres, tarama.
 
 ---
 
+## Kolaylık: e-postada arama, takip hatırlatması, pazartesi özeti (26 Eylül)
+
+Yasin: "sen kolaylık kısmını yap".
+
+- **E-postada arama** (`/admin/eposta`, listenin üstü): kişi, adres, konu ya
+  da metin. Varsayılan o kutunun o klasörü; **"Tüm hesaplarda"** işaretlenince
+  dört kutunun Gelen + Gönderilmiş'i birlikte, en yeni 60 sonuç (fazlası
+  varsa uyarı). Aramayı IMAP sunucusu yapar (Türkçe/İspanyolca karakter
+  doğru gider). Sonuçtan açılan ileti kendi kutusu ve klasörüyle açılır,
+  yanıtla/ilet çalışır. Claude için: `node scripts/posta.mjs ara <metin>`,
+  `liste <kutu> gelen --ara "…"`.
+- **Takip hatırlatması**: talep ve hedef firma sayfasında "Takip" kutusu —
+  yarın / 3 gün / 1 hafta / 2 hafta / 1 ay ya da takvimden gün + kısa not.
+  Genel bakışta "Takip — bugün ve önümüzdeki 7 gün" listesi, menüde
+  **Genel bakış** yanında kırmızı sayı (günü gelen/geçen), talep ve firma
+  listelerinde tarih rozeti. Kendiliğinden: talep **Teklif gönderildi**
+  olunca takip yoksa 3 gün sonrası ("Teklif takibi — dönüş iste"); talep
+  kazanılır/kaybedilir/spam, firma ilgilenmiyor/çıktı/adres hatalı/geçildi
+  olunca takip kalkar. Gün İstanbul günü.
+- **Pazartesi özeti** (Genel bakış → "Haftalık özet e-postası"): geçen
+  haftanın (pazartesi-pazar) talep, site telefon/e-posta tuşu, tanıtım
+  e-postası hunisi (gönderim, tıklama, tıklayan firma, teklif sayfası,
+  yanıt), Google araması (bağlıysa), takip sayısı ve bugüne kadarki
+  toplamlar — önceki haftayla yan yana; haftanın talepleri ve yanıt veren
+  firmalar listesi. Her pazartesi 08:30'dan sonraki ilk dakikalık turda,
+  haftada bir kez (veritabanında sahiplenilir), olmazsa 30 dk arayla en çok
+  3 deneme. Açıldığı haftaya geriye dönük gitmez. Gönderen, talep
+  bildirimleriyle aynı SMTP (`SMTP_*`). "Önizle" sayfası e-postanın
+  aynısını gösterir; "Şimdi gönder" (10 dk'da bir) hemen dener. Ayarı ve
+  gönderimi yalnızca yönetici değiştirir.
+- **Google satırları isteğe bağlı**: sunucuda `GSC_HIZMET_HESABI` (Search
+  Console'a eklenmiş servis hesabının JSON anahtarı, tek satır base64) varsa
+  özet tıklama, gösterim, ortalama sıra ve en çok tıklanan 5 aramayı ekler;
+  yoksa o satırlar olmadan gider. Yerelde `~/.config/claude-seo/`
+  anahtarıyla denendi (14–20 Eylül: 69 tık, 2.168 gösterim, sıra 8,4).
+  Dikkat: o servis hesabı dekoartizan'ı da görüyor ve Servosteel'de "Tam"
+  yetkili — sunucuya konup konmayacağı Yasin'in kararı.
+- **Düzeltilen hata (yayından önce yakalandı):** React 19, `action` verilen
+  formu eylem bitince sıfırlıyor ve kontrollü seçim/onay kutusunu geri
+  yüklemiyor. Yazma formunda "gulsoy"dan yazılan mail, adres hatasından sonra
+  ekranda sessizce "ege"ye dönüyordu; özet formunda "Açık" boşalıyordu.
+  İkisi de artık `onSubmit` + `startTransition` ile gönderiliyor.
+
+- [ ] **Yasin: deploy.**
+- [ ] **Yasin: Genel bakış → Haftalık özet e-postası → alıcıları yaz
+  (kendisi + patron), "Açık", Kaydet.** Önce "Önizle", istenirse "Şimdi
+  gönder" ile bir deneme.
+- [ ] (İsteğe bağlı) `GSC_HIZMET_HESABI` — Google satırları için.
+
+---
+
 ## Gönderen doğrulaması reddi — alıcı hatası SANILIYORDU (25 Eylül)
 
 200 gönderimin ilk başarısızlığı Yeni Zelanda'dan geldi ve mesajın tamamı şuydu:

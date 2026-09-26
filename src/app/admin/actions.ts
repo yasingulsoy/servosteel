@@ -24,6 +24,7 @@ import {
   type Talep,
 } from "@/lib/leads-db";
 import { kayitEkle } from "@/lib/panel-kayit";
+import { TALEP_KAPALI, takipKaldir, takipYoksaKoy } from "@/lib/takip";
 
 /**
  * Panelin sunucu eylemleri.
@@ -75,6 +76,9 @@ export async function durumEylemi(form: FormData) {
   const once = await talep(id);
   const eskiDurum = once?.durum;
   await durumDegistir(id, durum);
+  /* Teklif gidince takip yoksa 3 gün sonrası; kapanan talebin takibi kalkar. */
+  if (durum === "teklif_gonderildi") await takipYoksaKoy("talep", id, 3, "Teklif takibi — dönüş iste").catch(() => {});
+  if (TALEP_KAPALI.includes(durum)) await takipKaldir("talep", id).catch(() => {});
   if (once && eskiDurum !== durum) {
     await kayitEkle(
       ben,
@@ -85,6 +89,7 @@ export async function durumEylemi(form: FormData) {
   }
   revalidatePath("/admin");
   revalidatePath(`/admin/talep/${id}`);
+  revalidatePath("/admin/genel");
 }
 
 export async function notEylemi(form: FormData) {

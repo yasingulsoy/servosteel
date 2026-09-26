@@ -53,6 +53,9 @@ export type Talep = {
   sayfa: string;
   kaynak: string;
   durum: Durum;
+  /** Yalnızca listede (talepler()): takip günü 'YYYY-MM-DD' ve günü geldi mi (İstanbul) */
+  takip_gunu?: string | null;
+  takip_geldi?: boolean | null;
 };
 
 export type Not = {
@@ -84,6 +87,11 @@ export async function semaKur(): Promise<boolean> {
     );
     CREATE INDEX IF NOT EXISTS talepler_olusturuldu_idx ON talepler (olusturuldu DESC);
     CREATE INDEX IF NOT EXISTS talepler_durum_idx ON talepler (durum);
+    /* Takip hatırlatması (2026-09-26): "şu gün tekrar yaz / ara". İstanbul
+       günü; bkz. lib/takip.ts. */
+    ALTER TABLE talepler ADD COLUMN IF NOT EXISTS takip DATE;
+    ALTER TABLE talepler ADD COLUMN IF NOT EXISTS takip_notu TEXT NOT NULL DEFAULT '';
+    CREATE INDEX IF NOT EXISTS talepler_takip_idx ON talepler (takip) WHERE takip IS NOT NULL;
 
     CREATE TABLE IF NOT EXISTS talep_not (
       id           SERIAL PRIMARY KEY,
@@ -162,8 +170,11 @@ export async function talepler(filtre?: { durum?: string; ara?: string }) {
     );
   }
   const nerede = kosul.length ? `WHERE ${kosul.join(" AND ")}` : "";
+  /* Takip günü metin olarak: pg DATE'i yerel saatli Date'e çeviriyor, gün kayabilir. */
   return sorguSert<Talep>(
-    `SELECT * FROM talepler ${nerede} ORDER BY olusturuldu DESC LIMIT 500`,
+    `SELECT *, to_char(takip, 'YYYY-MM-DD') AS takip_gunu,
+            takip <= (now() AT TIME ZONE 'Europe/Istanbul')::date AS takip_geldi
+     FROM talepler ${nerede} ORDER BY olusturuldu DESC LIMIT 500`,
     deger
   );
 }

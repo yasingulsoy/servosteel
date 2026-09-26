@@ -55,6 +55,11 @@ export const OUTREACH_SEMA = `
   /* İkinci tur (hatırlatma) e-postası — ilk mektuba dönüş gelmeyen firmaya. */
   ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS konu2 TEXT NOT NULL DEFAULT '';
   ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS govde2 TEXT NOT NULL DEFAULT '';
+  /* Takip hatirlatmasi (2026-09-26): "su gun tekrar yaz / ara". Istanbul
+     gunu; bkz. lib/takip.ts. */
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS takip DATE;
+  ALTER TABLE hedef_firmalar ADD COLUMN IF NOT EXISTS takip_notu TEXT NOT NULL DEFAULT '';
+  CREATE INDEX IF NOT EXISTS hedef_firmalar_takip_idx ON hedef_firmalar (takip) WHERE takip IS NOT NULL;
   CREATE INDEX IF NOT EXISTS hedef_firmalar_sira_idx ON hedef_firmalar (sira, id);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_durum_idx ON hedef_firmalar (durum);
   CREATE INDEX IF NOT EXISTS hedef_firmalar_eposta_idx ON hedef_firmalar (lower(eposta));

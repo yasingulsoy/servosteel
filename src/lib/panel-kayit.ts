@@ -47,6 +47,9 @@ export const OLAY_ETIKET = {
   otomatik_ayar: "Otomatik gönderim ayarını değiştirdi",
   eposta_gonder: "E-posta gönderdi",
   eposta_gonder_hata: "E-posta gönderilemedi",
+  takip: "Takip tarihi koydu",
+  ozet_ayar: "Haftalık özet ayarını değiştirdi",
+  ozet_gonder: "Haftalık özeti gönderdi",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

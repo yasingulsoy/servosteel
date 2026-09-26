@@ -2,6 +2,7 @@ import "server-only";
 import { sorguSert } from "@/lib/db";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
 import { tekGonderim } from "@/lib/gonderim";
+import { haftalikOzetAdimi } from "@/lib/haftalik-ozet";
 import {
   hedefFirma,
   ikinciTurAdaylari,
@@ -122,11 +123,17 @@ async function sonucYaz(sonuc: string, gonderildi: boolean, sonrakiSn: number | 
   );
 }
 
-export type TurSonucu = { gonderim: string; gelen: string };
+export type TurSonucu = { gonderim: string; gelen: string; ozet?: string };
 
 /** Bir tur. Hata fırlatmaz — sonucu döner ve otomatik_gonderim.son_sonuc'a yazar. */
 export async function otomatikTur(simdi = new Date()): Promise<TurSonucu> {
   if (!(await outreachSemaKur())) return { gonderim: "veritabanı yok", gelen: "" };
+
+  /* Pazartesi özeti — tanıtım gönderiminin ayarlarından ve kilidinden
+     bağımsız; zamanı değilse tek hafif sorgu (bkz. haftalik-ozet.ts). */
+  const ozet = await haftalikOzetAdimi().catch((e) => `haftalık özet: ${(e as Error).message}`.slice(0, 300));
+  if (ozet) console.log(`[otomatik] ${ozet}`);
+
   const ayar = ayarlariOku(process.env);
   if (ayar.eksik.length) return { gonderim: "gönderim ayarları eksik", gelen: "" };
   if (!(await turKilidiAl())) return { gonderim: "başka tur sürüyor", gelen: "" };
@@ -148,7 +155,7 @@ export async function otomatikTur(simdi = new Date()): Promise<TurSonucu> {
   } catch (e) {
     gelen = `hata: ${(e as Error).message}`.slice(0, 300);
   }
-  return { gonderim, gelen };
+  return ozet ? { gonderim, gelen, ozet } : { gonderim, gelen };
 }
 
 async function gonderimAdimi(simdi: Date, ayar: ReturnType<typeof ayarlariOku>): Promise<string> {

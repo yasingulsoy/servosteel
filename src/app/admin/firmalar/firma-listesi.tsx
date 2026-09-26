@@ -10,6 +10,7 @@ import {
 } from "@/lib/outreach-db";
 import { ENGELLI_ULKELER } from "@/lib/outreach-kurallar";
 import { goreli, kisaTarih } from "@/lib/zaman";
+import { TakipRozeti } from "../talep-listesi";
 
 /**
  * Hedef firma listesi — mobilde KART, masaüstünde TABLO (talep listesiyle
@@ -133,6 +134,11 @@ export function FirmaListesi({
                     <Segment s={s} />
                     {s.kesif ? " · otomatik keşif" : ""}
                     {s.gonderildi ? ` · ${goreli(s.gonderildi)}` : ""}
+                    {s.takip_gunu ? (
+                      <span className="ml-2 inline-block align-middle">
+                        <TakipRozeti gun={s.takip_gunu} geldi={s.takip_geldi} />
+                      </span>
+                    ) : null}
                   </p>
                 </div>
                 <ChevronRight className="mt-1 size-4 shrink-0 text-muted" aria-hidden />
@@ -188,7 +194,10 @@ export function FirmaListesi({
                     <Adres s={s} />
                   </td>
                   <td className="px-4 py-3">
-                    <HedefRozet durum={s.durum} />
+                    <span className="flex flex-wrap items-center gap-1.5">
+                      <HedefRozet durum={s.durum} />
+                      <TakipRozeti gun={s.takip_gunu} geldi={s.takip_geldi} />
+                    </span>
                   </td>
                   <td className="whitespace-nowrap px-4 py-3 text-muted">
                     {s.gonderildi ? (

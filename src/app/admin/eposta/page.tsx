@@ -7,7 +7,16 @@ import { firmaEslesmeleri, gelenDurumu, gelenSiniflari, kutuBasinaBekleyenYanit 
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
 import { outreachSemaKur } from "@/lib/outreach-db";
 import { ayarlariOku } from "@/lib/outreach-kurallar";
-import { kutuGorunumu, postaKutulari, type Klasor } from "@/lib/posta";
+import {
+  ARAMA_EN_COK,
+  aramaTemizle,
+  herYerdeAra,
+  iletiOku,
+  kutuGorunumu,
+  postaKutulari,
+  type Klasor,
+  type OkunanIleti,
+} from "@/lib/posta";
 import { IMZA, alintiTarihi, alintila, iletBlogu, iletKonusu, yanitKonusu } from "@/lib/posta-bicim";
 import { Kabuk } from "../kabuk";
 import { gelenTaraEylemi } from "../firmalar/actions";
@@ -18,7 +27,9 @@ import {
   IletiOkuyucu,
   MobilSecici,
   posta,
+  type AramaBaglami,
   type ListeSatiri,
+  type Sinif,
 } from "./gorunum";
 import { YazmaFormu } from "./yazma-formu";
 
@@ -31,12 +42,34 @@ export const dynamic = "force-dynamic";
  * geleni gideni görüp e-posta çıkabilmeliyim". Önceki gelen kutusu yalnızca
  * taramanın işlediği iletileri gösteriyordu ve Giden başka sayfadaydı.
  *
- * Adres çubuğu durumu taşıyor (kutu, klasor, uid, sayfa, yaz) — geri tuşu,
- * yer imi ve paylaşılan bağlantı çalışır. Her gezinme kutuya BİR kez bağlanır
- * (liste + seçili ileti aynı oturumda).
+ * Adres çubuğu durumu taşıyor (kutu, klasor, uid, sayfa, yaz, ara, kapsam) —
+ * geri tuşu, yer imi ve paylaşılan bağlantı çalışır. Normal gezinme kutuya
+ * BİR kez bağlanır (liste + seçili ileti aynı oturumda). "Tüm hesaplarda"
+ * arama her kutuya bir oturum açar; okunan ileti ayrıca çekilir.
  */
 
-type Arama = { kutu?: string; klasor?: string; sayfa?: string; uid?: string; yaz?: string; kime?: string };
+type Arama = {
+  kutu?: string;
+  klasor?: string;
+  sayfa?: string;
+  uid?: string;
+  yaz?: string;
+  kime?: string;
+  ara?: string;
+  kapsam?: string;
+};
+
+type Liste = {
+  satirlar: ListeSatiri[];
+  toplam: number;
+  sayfa: number;
+  sayfaSayisi: number;
+  hata: string | null;
+  uyari: string | null;
+  klasorYok: boolean;
+};
+
+type Firma = { id: number; firma: string };
 
 export default async function EpostaSayfasi({ searchParams }: { searchParams: Promise<Arama> }) {
   const ben = await oturum();
@@ -64,12 +97,8 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
   const uid = Math.floor(Number(sp.uid)) || undefined;
   const yaz = sp.yaz === "yeni" || sp.yaz === "yanit" || sp.yaz === "ilet" ? sp.yaz : null;
-
-  const [g, bekleyen, durum] = await Promise.all([
-    kutuGorunumu(kutu, klasor, sayfa, uid),
-    kutuBasinaBekleyenYanit().catch(() => new Map<string, number>()),
-    gelenDurumu(0).catch(() => null),
-  ]);
+  const ara = aramaTemizle(sp.ara);
+  const arama: AramaBaglami = ara ? { ara, tum: sp.kapsam === "tum" } : null;
 
   /* Yanıtlar sayfa gönderildikten SONRA işlenir — sayfa beklemez. Tarama kutu
      başına en çok 10 dakikada bir çalışır, fazlası kendiliğinden atlanır. */
@@ -84,30 +113,119 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
     });
   }
 
-  /* Listeyi veritabanıyla zenginleştir: Gelen'de taramanın sınıfı (yanıt,
-     geri dönüş…), her iki klasörde de karşı tarafın hangi hedef firma olduğu. */
-  let satirlar: ListeSatiri[] = [];
-  let seciliSinif = null;
-  let seciliFirma = null;
-  if (g.tamam) {
-    const [siniflar, firmalar] = await Promise.all([
-      klasor === "gelen"
-        ? gelenSiniflari(kutu, g.uidvalidity, g.iletiler.map((m) => m.uid)).catch(() => new Map())
-        : Promise.resolve(new Map()),
-      firmaEslesmeleri([...g.iletiler.map((m) => m.kisiAdres), g.secili?.kimdenAdres ?? ""]).catch(() => new Map()),
+  const [bekleyen, durum] = await Promise.all([
+    kutuBasinaBekleyenYanit().catch(() => new Map<string, number>()),
+    gelenDurumu(0).catch(() => null),
+  ]);
+
+  let liste: Liste;
+  let secili: OkunanIleti | null = null;
+  let seciliHata: string | null = null;
+  let seciliSinif: Sinif | null = null;
+  let seciliFirma: Firma | null = null;
+
+  if (arama?.tum) {
+    /* ------------------------------------------ bütün kutularda arama */
+    const [bulunan, okunan] = await Promise.all([herYerdeAra(ara), uid ? iletiOku(kutu, klasor, uid) : null]);
+    if (okunan?.tamam) secili = okunan.ileti;
+    else if (okunan) seciliHata = okunan.hata;
+
+    /* Sınıf, kutu + klasör sürümüyle (uidvalidity) eşleşiyor — Gelen
+       satırları kutu kutu sorulur. */
+    const gruplar = new Map<string, { kutu: string; uidvalidity: number; uidler: number[] }>();
+    for (const m of bulunan.satirlar) {
+      if (m.klasor !== "gelen") continue;
+      const anahtar = `${m.kutu}|${m.uidvalidity}`;
+      const g = gruplar.get(anahtar) ?? { kutu: m.kutu, uidvalidity: m.uidvalidity, uidler: [] };
+      g.uidler.push(m.uid);
+      gruplar.set(anahtar, g);
+    }
+    const [siniflar, firmalar, okunanSinif] = await Promise.all([
+      Promise.all(
+        [...gruplar.values()].map((g) =>
+          gelenSiniflari(g.kutu, g.uidvalidity, g.uidler)
+            .then((s) => [...s].map(([u, x]) => [`${g.kutu}|${u}`, x] as const))
+            .catch(() => [])
+        )
+      ).then((l) => new Map<string, Sinif>(l.flat())),
+      firmaEslesmeleri([...bulunan.satirlar.map((m) => m.kisiAdres), secili?.kimdenAdres ?? ""]).catch(
+        () => new Map<string, Firma>()
+      ),
+      okunan?.tamam && klasor === "gelen"
+        ? gelenSiniflari(kutu, okunan.uidvalidity, [okunan.ileti.uid]).catch(() => new Map<number, Sinif>())
+        : Promise.resolve(new Map<number, Sinif>()),
     ]);
-    satirlar = g.iletiler.map((m) => ({ ...m, sinif: siniflar.get(m.uid) ?? null, firma: firmalar.get(m.kisiAdres) ?? null }));
-    if (g.secili) {
-      seciliSinif = siniflar.get(g.secili.uid) ?? null;
-      seciliFirma = firmalar.get(g.secili.kimdenAdres) ?? null;
+
+    const hataliKutular = bulunan.hatalar;
+    liste = {
+      satirlar: bulunan.satirlar.map((m) => ({
+        ...m,
+        sinif: siniflar.get(`${m.kutu}|${m.uid}`) ?? null,
+        firma: firmalar.get(m.kisiAdres) ?? null,
+      })),
+      toplam: bulunan.toplam,
+      sayfa: 1,
+      sayfaSayisi: 1,
+      hata: hataliKutular.length && !bulunan.satirlar.length && hataliKutular.length === kutular.length
+        ? hataliKutular.join(" · ")
+        : null,
+      uyari:
+        [
+          hataliKutular.length && hataliKutular.length < kutular.length
+            ? `Aranamayan kutu: ${hataliKutular.join(" · ")}`
+            : null,
+          bulunan.toplam > bulunan.satirlar.length
+            ? `En yeni ${ARAMA_EN_COK} sonuç gösteriliyor (toplam ${bulunan.toplam.toLocaleString("tr-TR")}) — aramayı daraltın.`
+            : null,
+        ]
+          .filter(Boolean)
+          .join(" ") || null,
+      klasorYok: false,
+    };
+    if (secili) {
+      seciliSinif = okunanSinif.get(secili.uid) ?? null;
+      seciliFirma = firmalar.get(secili.kimdenAdres) ?? null;
+    }
+  } else {
+    /* ------------------------------- tek kutu: klasör ya da içinde arama */
+    const g = await kutuGorunumu(kutu, klasor, sayfa, uid, ara);
+    if (g.tamam) {
+      /* Listeyi veritabanıyla zenginleştir: Gelen'de taramanın sınıfı (yanıt,
+         geri dönüş…), her iki klasörde de karşı tarafın hangi hedef firma olduğu. */
+      const [siniflar, firmalar] = await Promise.all([
+        klasor === "gelen"
+          ? gelenSiniflari(kutu, g.uidvalidity, [...g.iletiler.map((m) => m.uid), ...(g.secili ? [g.secili.uid] : [])]).catch(
+              () => new Map<number, Sinif>()
+            )
+          : Promise.resolve(new Map<number, Sinif>()),
+        firmaEslesmeleri([...g.iletiler.map((m) => m.kisiAdres), g.secili?.kimdenAdres ?? ""]).catch(
+          () => new Map<string, Firma>()
+        ),
+      ]);
+      liste = {
+        satirlar: g.iletiler.map((m) => ({ ...m, sinif: siniflar.get(m.uid) ?? null, firma: firmalar.get(m.kisiAdres) ?? null })),
+        toplam: g.toplam,
+        sayfa: g.sayfa,
+        sayfaSayisi: g.sayfaSayisi,
+        hata: null,
+        uyari: null,
+        klasorYok: !g.klasorYolu,
+      };
+      secili = g.secili;
+      seciliHata = g.seciliHata;
+      if (g.secili) {
+        seciliSinif = siniflar.get(g.secili.uid) ?? null;
+        seciliFirma = firmalar.get(g.secili.kimdenAdres) ?? null;
+      }
+    } else {
+      liste = { satirlar: [], toplam: 0, sayfa: 1, sayfaSayisi: 1, hata: g.hata, uyari: null, klasorYok: false };
     }
   }
 
   const hesaplar = kutular.map((k) => ({ ...k, bekleyen: bekleyen.get(k.user) ?? 0 }));
   const tarama = durum?.kutular.find((k) => k.kutu === kutu) ?? null;
-  const secili = g.tamam ? g.secili : null;
   const okumaVar = Boolean(yaz || uid);
-  const kapat = posta(kutu, klasor, { uid: yaz ? uid : undefined, sayfa: g.tamam ? g.sayfa : sayfa });
+  const kapat = posta(kutu, klasor, { uid: yaz ? uid : undefined, sayfa: liste.sayfa, arama });
 
   /* ---------------------------------------------- sağ panel: ne gösterilecek */
   let sag: React.ReactNode;
@@ -149,13 +267,14 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         ileti={secili}
         kutu={kutu}
         klasor={klasor}
-        sayfa={g.tamam ? g.sayfa : sayfa}
+        sayfa={liste.sayfa}
         sinif={seciliSinif}
         firma={seciliFirma}
+        arama={arama}
       />
     );
-  } else if (g.tamam && g.seciliHata) {
-    sag = <p className="m-5 text-sm text-red-700">{g.seciliHata}</p>;
+  } else if (seciliHata) {
+    sag = <p className="m-5 text-sm text-red-700">{seciliHata}</p>;
   } else {
     sag = <BosOkuyucu />;
   }
@@ -187,13 +306,15 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
             <IletiListesi
               kutu={kutu}
               klasor={klasor}
-              satirlar={satirlar}
-              toplam={g.tamam ? g.toplam : 0}
-              sayfa={g.tamam ? g.sayfa : 1}
-              sayfaSayisi={g.tamam ? g.sayfaSayisi : 1}
+              satirlar={liste.satirlar}
+              toplam={liste.toplam}
+              sayfa={liste.sayfa}
+              sayfaSayisi={liste.sayfaSayisi}
               seciliUid={uid}
-              hata={g.tamam ? null : g.hata}
-              klasorYok={g.tamam && !g.klasorYolu}
+              hata={liste.hata}
+              uyari={liste.uyari}
+              klasorYok={liste.klasorYok}
+              arama={arama}
             />
           </section>
 

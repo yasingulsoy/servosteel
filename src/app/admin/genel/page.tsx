@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { ArrowRight, Flame, Inbox, Mail, ShieldAlert, TriangleAlert } from "lucide-react";
-import { oturum } from "@/lib/admin-auth";
+import { AlarmClock, ArrowRight, Flame, Inbox, Mail, ShieldAlert, TriangleAlert } from "lucide-react";
+import { oturum, rolu } from "@/lib/admin-auth";
 import { bekleyenYanitSayisi, gelenDurumu, sonYanitlar } from "@/lib/gelen-db";
+import { gscBagli } from "@/lib/gsc";
+import { ozetAyari, ozetSemasiKur, sonOzet } from "@/lib/haftalik-ozet";
 import { DURUM_ETIKET, semaKur, talepler, talepOzeti, type Talep } from "@/lib/leads-db";
 import {
   geriDonusDurumu,
@@ -13,9 +15,12 @@ import {
   sicakFirmalar,
 } from "@/lib/outreach-db";
 import { ayarlariOku, geriDonusEngeli } from "@/lib/outreach-kurallar";
+import { takipListesi } from "@/lib/takip";
+import { takipGoreli, takipTarihi } from "@/lib/takip-bicim";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../kabuk";
 import { DURUM_RENK } from "../talep-listesi";
+import { OzetKarti } from "./ozet-karti";
 
 export const dynamic = "force-dynamic";
 
@@ -38,9 +43,15 @@ function hataGrupla<T extends { son_hata: string }>(liste: T[]): Map<string, T[]
   return m;
 }
 
+async function ozetDurumu() {
+  if (!(await ozetSemasiKur())) return null;
+  const [ayar, son] = await Promise.all([ozetAyari(), sonOzet()]);
+  return { ayar, son };
+}
+
 async function veri() {
   const ayar = ayarlariOku(process.env);
-  const [talep, sonTalepler, kampanya, sicak, yanitlar, bekleyen, kopya, gd, kutular, tarama] = await Promise.all([
+  const [talep, sonTalepler, kampanya, sicak, yanitlar, bekleyen, kopya, gd, kutular, tarama, takip] = await Promise.all([
     talepOzeti(),
     talepler({}).then((l: Talep[]) => l.slice(0, 5)),
     kampanyaToplami(),
@@ -51,10 +62,11 @@ async function veri() {
     geriDonusDurumu(),
     kutuDurumlari(ayar.kutular),
     gelenDurumu(0),
+    takipListesi(7, 12),
   ]);
   const duran = Object.values(kutular.kutu).filter((d) => d.durdu).length;
   const taramaHatasi = tarama.kutular.filter((k) => k.son_hata);
-  return { talep, sonTalepler, kampanya, sicak, yanitlar, bekleyen, kopya, gd, duran, taramaHatasi };
+  return { talep, sonTalepler, kampanya, sicak, yanitlar, bekleyen, kopya, gd, duran, taramaHatasi, takip };
 }
 
 export default async function GenelBakis() {
@@ -69,6 +81,8 @@ export default async function GenelBakis() {
   } catch (e) {
     hata = (e as Error).message;
   }
+  const [rol, ozet] = await Promise.all([rolu(ben), ozetDurumu().catch(() => null)]);
+  const smtpEksik = ["SMTP_HOST", "SMTP_USER", "SMTP_PASS"].filter((k) => !process.env[k]?.trim()).join(", ") || null;
 
   /* min-w-0: ızgara öğesinin varsayılan min-width'i `auto` — onsuz tek
      satıra kısaltılan bir yanıt özeti kartı KENDİ tam genişliğine itiyor ve
@@ -138,10 +152,52 @@ export default async function GenelBakis() {
             })()}
 
             <div className="grid gap-4 lg:grid-cols-2">
+              {/* ------------------------------------------------------ takip */}
+              <section id="takip" className={`${kart} scroll-mt-20`}>
+                <h2 className={kutuBasligi}>Takip — bugün ve önümüzdeki 7 gün</h2>
+                {v.takip.satirlar.length ? (
+                  <ul className="mt-2 divide-y divide-line text-sm">
+                    {v.takip.satirlar.map((t) => (
+                      <li key={`${t.tur}-${t.id}`}>
+                        <Link
+                          href={t.tur === "talep" ? `/admin/talep/${t.id}` : `/admin/firmalar/${t.id}`}
+                          className="block py-2.5 hover:text-accent-strong"
+                        >
+                          <span className="flex items-baseline gap-2">
+                            <span className="min-w-0 flex-1 truncate font-semibold">{t.ad || "(adsız)"}</span>
+                            <span className="shrink-0 text-[11px] text-muted">{t.tur === "talep" ? "Talep" : "Firma"}</span>
+                            <span className={`shrink-0 text-xs tabular-nums ${t.gun <= 0 ? "font-semibold text-red-700" : "text-muted"}`}>
+                              {t.gun <= 1 ? takipGoreli(t.tarih, v.takip.bugun) : takipTarihi(t.tarih)}
+                            </span>
+                          </span>
+                          {t.notu || t.ulke ? (
+                            <span className="mt-0.5 block truncate text-muted">{[t.notu, t.ulke].filter(Boolean).join(" · ")}</span>
+                          ) : null}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-2 text-sm text-muted">
+                    Yakında takip edilecek iş yok. Talep ya da firma sayfasındaki &ldquo;Takip&rdquo; kutusundan tarih konur;
+                    teklif gönderilen talebe 3 gün sonrası kendiliğinden konur.
+                  </p>
+                )}
+              </section>
+
               {/* ---------------------------------------------- dikkat isteyenler */}
               <section className={kart}>
                 <h2 className={kutuBasligi}>Dikkat isteyenler</h2>
                 <ul className="mt-2 divide-y divide-line text-sm">
+                  <li>
+                    <a href="#takip" className="flex items-center gap-3 py-2.5 hover:text-accent-strong">
+                      <AlarmClock className="size-5 shrink-0 text-muted" aria-hidden />
+                      <span className="flex-1">
+                        <strong className="tabular-nums">{sayi(v.takip.satirlar.filter((t) => t.gun <= 0).length)}</strong>{" "}takibin günü geldi ya da geçti
+                      </span>
+                      <ArrowRight className="size-4 text-muted" aria-hidden />
+                    </a>
+                  </li>
                   <li>
                     <Link href="/admin?durum=yeni" className="flex items-center gap-3 py-2.5 hover:text-accent-strong">
                       <Inbox className="size-5 shrink-0 text-muted" aria-hidden />
@@ -263,6 +319,26 @@ export default async function GenelBakis() {
                   <p className="mt-2 text-sm text-muted">Henüz talep yok.</p>
                 )}
               </section>
+
+              {/* ------------------------------------------------ haftalık özet */}
+              {ozet ? (
+                <OzetKarti
+                  admin={rol === "admin"}
+                  acik={ozet.ayar.acik}
+                  alicilar={ozet.ayar.alicilar}
+                  son={
+                    ozet.son
+                      ? {
+                          tarih: ozet.son.gonderildi ? tamTarih(ozet.son.gonderildi) : `${ozet.son.hafta} haftası`,
+                          yazi: ozet.son.gonderildi ? "gönderildi" : ozet.son.sonuc || "gönderiliyor…",
+                          tamam: Boolean(ozet.son.gonderildi),
+                        }
+                      : null
+                  }
+                  eksik={smtpEksik}
+                  gscBagli={gscBagli()}
+                />
+              ) : null}
             </div>
 
             <p className="flex items-center gap-2 text-xs text-muted">

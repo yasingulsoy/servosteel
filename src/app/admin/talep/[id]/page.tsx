@@ -4,9 +4,11 @@ import { ArrowLeft, Phone, Mail } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, notlar, talep } from "@/lib/leads-db";
 import { talepAcildi } from "@/lib/panel-kayit";
+import { takipOku } from "@/lib/takip";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { durumEylemi, notEylemi, silEylemi } from "../../actions";
 import { Kabuk } from "../../kabuk";
+import { TakipKutusu } from "../../takip-kutusu";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +26,8 @@ export default async function TalepSayfasi({
 
   const t = await talep(no);
   if (!t) notFound();
-  const n = await notlar(no);
+  /* Takip sütunları şema kurulumuyla gelir; henüz kurulmadıysa kutu görünmez. */
+  const [n, tk] = await Promise.all([notlar(no), takipOku("talep", no).catch(() => null)]);
   await talepAcildi(ben, no, [t.ad, t.firma].filter(Boolean).join(" · ") || t.eposta || `Talep #${no}`);
 
   const tel = t.telefon.replace(/\s/g, "");
@@ -80,7 +83,7 @@ export default async function TalepSayfasi({
       <div className="mt-6 flex flex-col gap-7 xl:grid xl:grid-cols-[minmax(0,1fr)_360px] xl:items-start xl:gap-6">
         <div className="contents xl:flex xl:min-w-0 xl:flex-col xl:gap-6">
           {t.mesaj ? (
-            <section className="order-4">
+            <section className="order-5">
               <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">Mesaj</h2>
               <p className="mt-2 whitespace-pre-wrap break-words rounded-xl border border-line bg-card p-4 text-sm leading-relaxed sm:p-5">
                 {t.mesaj}
@@ -88,7 +91,7 @@ export default async function TalepSayfasi({
             </section>
           ) : null}
 
-          <section className="order-5">
+          <section className="order-6">
             <h2 className="text-xs font-semibold uppercase tracking-wide text-muted">
               Notlar ({n.length})
             </h2>
@@ -167,7 +170,13 @@ export default async function TalepSayfasi({
             </div>
           </section>
 
-          <section className="order-3 rounded-xl border border-line bg-card px-4 py-2 sm:px-5 sm:py-3">
+          {tk ? (
+            <div className="order-3">
+              <TakipKutusu key={tk.tarih ?? "yok"} tur="talep" id={t.id} tarih={tk.tarih} notu={tk.notu} bugun={tk.bugun} />
+            </div>
+          ) : null}
+
+          <section className="order-4 rounded-xl border border-line bg-card px-4 py-2 sm:px-5 sm:py-3">
             <dl className="divide-y divide-line">
               {satir("E-posta", t.eposta, t.eposta ? `mailto:${t.eposta}` : undefined)}
               {satir("Telefon", t.telefon, tel ? `tel:${tel}` : undefined)}
@@ -178,7 +187,7 @@ export default async function TalepSayfasi({
             </dl>
           </section>
 
-          <form action={silEylemi} className="order-6 border-t border-line pt-6 xl:border-0 xl:pt-0">
+          <form action={silEylemi} className="order-7 border-t border-line pt-6 xl:border-0 xl:pt-0">
             <input type="hidden" name="id" value={t.id} />
             <button className="text-sm font-medium text-red-600 underline-offset-4 hover:underline">
               Bu talebi sil

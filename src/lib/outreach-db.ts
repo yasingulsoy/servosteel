@@ -103,7 +103,11 @@ export type HedefFirma = {
 export type HedefSatiri = Pick<
   HedefFirma,
   "id" | "firma" | "ulke" | "segmentler" | "eposta" | "dil" | "durum" | "gonderildi" | "listede" | "kategori" | "kesif"
->;
+> & {
+  /** Takip günü 'YYYY-MM-DD' ve günü geldi mi (İstanbul) — bkz. lib/takip.ts */
+  takip_gunu: string | null;
+  takip_geldi: boolean | null;
+};
 
 export type Gonderim = {
   id: number;
@@ -398,7 +402,8 @@ export async function hedefFirmalar(
   const [satirlar, sayim] = await Promise.all([
     sorguSert<HedefSatiri>(
       `SELECT h.id, h.firma, h.ulke, h.segmentler, h.eposta, h.dil, h.durum, h.gonderildi, h.listede,
-              h.kategori, h.kesif
+              h.kategori, h.kesif, to_char(h.takip, 'YYYY-MM-DD') AS takip_gunu,
+              h.takip <= (now() AT TIME ZONE 'Europe/Istanbul')::date AS takip_geldi
        FROM hedef_firmalar h ${nerede}
        ORDER BY h.sira, h.id
        LIMIT ${SAYFA_BOYU} OFFSET ${(s - 1) * SAYFA_BOYU}`,

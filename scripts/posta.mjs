@@ -9,7 +9,8 @@
  *
  *   node scripts/posta.mjs kutular
  *   node scripts/posta.mjs yanitlar [adet]
- *   node scripts/posta.mjs liste <kutu> [gelen|giden] [sayfa]
+ *   node scripts/posta.mjs ara <metin> [--adet 60]          (bütün kutular, Gelen + Gönderilmiş)
+ *   node scripts/posta.mjs liste <kutu> [gelen|giden] [sayfa] [--ara "metin"]
  *   node scripts/posta.mjs oku <kutu> <uid> [gelen|giden]
  *   node scripts/posta.mjs yanitla <kutu> <uid> --metin-dosya yanit.txt [--bilgi a@b.com] [--alintisiz]
  *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt
@@ -25,7 +26,7 @@
  */
 import fs from "node:fs";
 
-const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres"]);
+const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet"]);
 const konum = [];
 const bayrak = {};
 const argv = process.argv.slice(2);
@@ -101,8 +102,10 @@ async function calis() {
   /** İstek gövdesi: komut + konum argümanları + bayraklar */
   const govde = { islem };
   if (islem === "yanitlar") govde.adet = Number(geri[0]) || 10;
+  if (islem === "ara") Object.assign(govde, { ara: geri.join(" "), adet: Number(bayrak.adet) || undefined });
   if (["liste", "oku", "yanitla", "gonder", "ilet"].includes(islem)) govde.kutu = geri[0];
-  if (islem === "liste") Object.assign(govde, { klasor: geri[1] || "gelen", sayfa: Number(geri[2]) || 1 });
+  if (islem === "liste")
+    Object.assign(govde, { klasor: geri[1] || "gelen", sayfa: Number(geri[2]) || 1, ara: bayrak.ara || "" });
   if (islem === "oku") Object.assign(govde, { uid: Number(geri[1]), klasor: geri[2] || bayrak.klasor || "gelen" });
   if (["yanitla", "ilet"].includes(islem)) Object.assign(govde, { uid: Number(geri[1]), klasor: bayrak.klasor || "gelen" });
   if (["yanitla", "gonder", "ilet"].includes(islem)) {
@@ -162,6 +165,14 @@ async function calis() {
     ilgisiz: "",
   };
 
+  /** Liste satırı — ara'da başında kutu ve klasör */
+  const satirYaz = (m, onEk = "") => {
+    const isaret = `${m.okundu ? " " : "●"}${m.yanitlandi ? "↩" : " "}${m.ekVar ? "+" : " "}`;
+    const sinif = m.sinif && TUR[m.sinif.tur] ? ` [${TUR[m.sinif.tur]}${m.sinif.firma ? ` · ${m.sinif.firma}` : ""}]` : "";
+    const firma = !sinif && m.firma ? ` [${m.firma.firma}]` : "";
+    console.log(`${onEk}${String(m.uid).padStart(6)} ${isaret} ${tarih(m.tarih)}  ${kes(m.kisi, 26)}  ${m.konu}${sinif}${firma}`);
+  };
+
   if (islem === "kutular") {
     for (const k of v.kutular) {
       console.log(`${k.user.padEnd(34)} ${k.ad}${k.bekleyenYanit ? `  · ${k.bekleyenYanit} yanıt bekliyor` : ""}`);
@@ -176,17 +187,19 @@ async function calis() {
     const ad = v.klasor === "giden" ? "Gönderilmiş" : "Gelen";
     console.log(`${v.kutu} · ${ad} · ${v.toplam} ileti · sayfa ${v.sayfa}/${v.sayfaSayisi}\n`);
     if (v.klasorYolu === null) console.log("(Bu kutuda Gönderilmiş klasörü yok — ilk gönderimde oluşturulur.)");
-    for (const m of v.iletiler) {
-      const isaret = `${m.okundu ? " " : "●"}${m.yanitlandi ? "↩" : " "}${m.ekVar ? "+" : " "}`;
-      const sinif =
-        m.sinif && TUR[m.sinif.tur] ? ` [${TUR[m.sinif.tur]}${m.sinif.firma ? ` · ${m.sinif.firma}` : ""}]` : "";
-      const firma = !sinif && m.firma ? ` [${m.firma.firma}]` : "";
-      console.log(
-        `${String(m.uid).padStart(6)} ${isaret} ${tarih(m.tarih)}  ${kes(m.kisi, 26)}  ${m.konu}${sinif}${firma}`
-      );
+    for (const m of v.iletiler) satirYaz(m);
+    if (v.sayfa < v.sayfaSayisi) {
+      const ara = govde.ara ? ` --ara "${govde.ara}"` : "";
+      console.log(`\nDaha eski: node scripts/posta.mjs liste ${v.kutu} ${v.klasor} ${v.sayfa + 1}${ara}`);
     }
-    if (v.sayfa < v.sayfaSayisi)
-      console.log(`\nDaha eski: node scripts/posta.mjs liste ${v.kutu} ${v.klasor} ${v.sayfa + 1}`);
+  } else if (islem === "ara") {
+    const kesildi = v.toplam > v.iletiler.length ? ` (en yeni ${v.iletiler.length})` : "";
+    console.log(`"${v.ara}" · ${v.toplam} sonuç${kesildi}\n`);
+    for (const h of v.hatalar) console.log(`(aranamadı — ${h})`);
+    for (const m of v.iletiler) {
+      satirYaz(m, `${`${m.kutu.split("@")[0]}·${m.klasor === "giden" ? "gönd" : "gelen"}`.padEnd(14)} `);
+    }
+    if (v.iletiler.length) console.log("\nOkumak için: node scripts/posta.mjs oku <kutu> <uid> [gelen|giden]");
   } else if (islem === "oku") {
     const x = v.ileti;
     console.log(`Konu:   ${x.konu}`);

@@ -70,6 +70,7 @@ export function PanelKabugu({
   surum,
   admin,
   yanitSayisi,
+  takipSayisi,
   ilkSabit,
   durumlar,
   toplam,
@@ -83,6 +84,8 @@ export function PanelKabugu({
   admin: boolean;
   /** Menüdeki "Gelen kutusu" rozeti: elden geçmemiş yanıt sayısı */
   yanitSayisi: number;
+  /** Menüdeki "Genel bakış" rozeti: günü gelmiş ya da geçmiş takip sayısı */
+  takipSayisi: number;
   ilkSabit: boolean;
   durumlar: DurumSatiri[];
   toplam: number | null;
@@ -259,8 +262,30 @@ export function PanelKabugu({
                     aria-current={aktif === "genel" ? "page" : undefined}
                     className={oge(aktif === "genel")}
                   >
-                    <LayoutDashboard className={ikon(aktif === "genel")} aria-hidden />
-                    <span className={`whitespace-nowrap ${yazi}`}>Genel bakış</span>
+                    <span className="relative">
+                      <LayoutDashboard className={ikon(aktif === "genel")} aria-hidden />
+                      {takipSayisi > 0 ? (
+                        <span
+                          className={`absolute -right-1 -top-1 size-2.5 rounded-full bg-red-500 ring-2 ring-card ${
+                            genis ? "hidden" : "hidden lg:block"
+                          }`}
+                          aria-hidden
+                        />
+                      ) : null}
+                    </span>
+                    <span className={`flex-1 whitespace-nowrap ${yazi}`}>
+                      Genel bakış
+                      {takipSayisi ? <span className="sr-only">, {takipSayisi} takibin günü geldi</span> : null}
+                    </span>
+                    {takipSayisi > 0 ? (
+                      <span
+                        className={`rounded-full bg-red-500/15 px-2 py-1 text-[11px] font-bold leading-none text-red-700 ${suslu}`}
+                        title="Günü gelen takip"
+                        aria-hidden
+                      >
+                        {takipSayisi}
+                      </span>
+                    ) : null}
                   </Link>
                 </li>
                 <li>

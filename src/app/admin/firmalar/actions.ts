@@ -19,6 +19,7 @@ import { ayarlariOku } from "@/lib/outreach-kurallar";
 import { tekGonderim } from "@/lib/gonderim";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
 import { otomatikAyar, otomatikAyarKaydet } from "@/lib/otomatik-gonderim";
+import { FIRMA_KAPALI, takipKaldir } from "@/lib/takip";
 
 /**
  * Hedef firma eylemleri. Her birinin ilk satırı `yetki()` — sunucu eylemi
@@ -86,6 +87,8 @@ export async function hedefDurumEylemi(form: FormData) {
   const f = await hedefFirma(id);
   if (!f || f.durum === durum) return;
   await hedefDurumDegistir(id, durum);
+  /* İlgilenmeyen, çıkan, adresi hatalı ya da geçilen firmanın takibi kalkar. */
+  if (FIRMA_KAPALI.includes(durum)) await takipKaldir("firma", id).catch(() => {});
   await kayitEkle(
     ben,
     "hedef_durum",

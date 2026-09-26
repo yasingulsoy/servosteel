@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useEffect, useRef, useState } from "react";
+import { startTransition, useActionState, useEffect, useRef, useState } from "react";
 import { CircleCheck, Loader2, Send, TriangleAlert, X } from "lucide-react";
 import { epostaGonderEylemi, type YazmaSonucu } from "./actions";
 
@@ -39,9 +39,11 @@ export function YazmaFormu({
   const [sonuc, eylem, bekliyor] = useActionState<YazmaSonucu, FormData>(epostaGonderEylemi, null);
   const [bilgiAcik, setBilgiAcik] = useState(false);
   const [gonderen, setGonderen] = useState(kutu);
-  /* Alanlar KONTROLLÜ: React 19 form eylemi bitince kontrolsüz alanları
-     sıfırlıyor — eylem hata döndürse bile ("geçersiz adres" gibi). Kontrolsüz
-     kalsalar kullanıcı yazdığı maili kaybederdi. */
+  /* Alanlar KONTROLLÜ ve form `action` ile DEĞİL `onSubmit` ile gönderiliyor.
+     React 19, `action` verilen formu eylem bitince sıfırlıyor — eylem hata
+     döndürse bile ("geçersiz adres" gibi). Metin kutuları durumdan geri
+     yükleniyor ama seçim kutusu yüklenmiyordu: "gulsoy"dan yazılan mail,
+     hatadan sonra ekranda sessizce "ege"ye dönüyordu. */
   const [alici, setAlici] = useState(kime);
   const [bilgi, setBilgi] = useState("");
   const [baslik2, setKonu] = useState(konu);
@@ -63,7 +65,14 @@ export function YazmaFormu({
     "w-full rounded-lg border border-line bg-card px-3 py-2 text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/25 disabled:opacity-60";
 
   return (
-    <form action={eylem} className="flex h-full flex-col">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const veri = new FormData(e.currentTarget);
+        startTransition(() => eylem(veri));
+      }}
+      className="flex h-full flex-col"
+    >
       <div className="flex items-center justify-between gap-2 border-b border-line px-4 py-3">
         <h2 className="font-semibold">{baslik}</h2>
         <Link href={kapatHref} className="rounded-lg p-1.5 text-muted hover:bg-surface-alt hover:text-ink" aria-label="Kapat">

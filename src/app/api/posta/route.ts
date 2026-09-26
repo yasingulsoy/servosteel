@@ -2,7 +2,7 @@ import { timingSafeEqual } from "node:crypto";
 import { NextResponse, type NextRequest } from "next/server";
 import { firmaEslesmeleri, gelenSiniflari, kutuBasinaBekleyenYanit, sonYanitlar } from "@/lib/gelen-db";
 import { outreachSemaKur } from "@/lib/outreach-db";
-import { iletiOku, kutuGorunumu, postaKutulari, type Klasor } from "@/lib/posta";
+import { ARAMA_EN_COK, aramaTemizle, herYerdeAra, iletiOku, kutuGorunumu, postaKutulari, type Klasor } from "@/lib/posta";
 import { IMZA, alintiTarihi, alintila, iletBlogu, iletKonusu, kutuKisaAdi, yanitKonusu } from "@/lib/posta-bicim";
 import { elleGonder, type ElleGonderim } from "@/lib/posta-gonder";
 
@@ -55,6 +55,8 @@ type Govde = {
   sayfa?: number;
   uid?: number;
   adet?: number;
+  /** "ara": bütün kutularda, Gelen + Gönderilmiş; "liste": o klasörde */
+  ara?: string;
   kime?: string;
   bilgi?: string;
   konu?: string;
@@ -117,12 +119,26 @@ export async function POST(istek: NextRequest) {
     return NextResponse.json({ tamam: true, yanitlar: await sonYanitlar(Number(g.adet) || 10) });
   }
 
+  if (g.islem === "ara") {
+    const ara = aramaTemizle(g.ara);
+    if (!ara) return hata("Aranacak metin yok.");
+    const r = await herYerdeAra(ara, Math.min(100, Math.max(1, Number(g.adet) || ARAMA_EN_COK)));
+    const firmalar = await firmaEslesmeleri(r.satirlar.map((m) => m.kisiAdres)).catch(() => new Map());
+    return NextResponse.json({
+      tamam: true,
+      ara,
+      toplam: r.toplam,
+      hatalar: r.hatalar,
+      iletiler: r.satirlar.map((m) => ({ ...m, firma: firmalar.get(m.kisiAdres) ?? null })),
+    });
+  }
+
   const kutu = kutuCoz(g.kutu);
   if (!kutu) return hata(`Kutu yok ya da tanımlı değil. Tanımlı olanlar: ${postaKutulari().map((k) => k.user).join(", ")}`);
   const klasor = klasorCoz(g.klasor);
 
   if (g.islem === "liste") {
-    const r = await kutuGorunumu(kutu, klasor, Number(g.sayfa) || 1);
+    const r = await kutuGorunumu(kutu, klasor, Number(g.sayfa) || 1, undefined, aramaTemizle(g.ara));
     if (!r.tamam) return hata(r.hata, 502);
     const [siniflar, firmalar] = await Promise.all([
       klasor === "gelen"
@@ -195,7 +211,7 @@ export async function POST(istek: NextRequest) {
     });
   }
 
-  return hata("Bilinmeyen işlem. Olanlar: kutular, yanitlar, liste, oku, gonder, yanitla, ilet.");
+  return hata("Bilinmeyen işlem. Olanlar: kutular, yanitlar, ara, liste, oku, gonder, yanitla, ilet.");
 }
 
 export function GET() {

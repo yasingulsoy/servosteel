@@ -79,6 +79,38 @@ function body(lead: Lead): string {
   return lines.join("\n");
 }
 
+/**
+ * Panelin kendi e-postası (haftalık özet) — talep bildirimiyle AYNI SMTP,
+ * ama alıcılar çağırandan gelir (MAIL_TO değil). Talep yoluna dokunmamak
+ * için ayrı fonksiyon.
+ */
+export async function panelEpostasi(p: { alicilar: string[]; konu: string; metin: string; html: string }): Promise<void> {
+  const host = process.env.SMTP_HOST?.trim();
+  const user = process.env.SMTP_USER?.trim();
+  const pass = process.env.SMTP_PASS;
+  const eksik = [!host && "SMTP_HOST", !user && "SMTP_USER", !pass && "SMTP_PASS"].filter(Boolean);
+  if (eksik.length) throw new Error(`Eksik ortam değişkeni: ${eksik.join(", ")}`);
+  if (!p.alicilar.length) throw new Error("Alıcı yok.");
+  const port = Number(process.env.SMTP_PORT ?? 465);
+
+  const transport = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass },
+    connectionTimeout: 15_000,
+    greetingTimeout: 15_000,
+    socketTimeout: 60_000,
+  });
+  await transport.sendMail({
+    from: `"Servosteel Panel" <${user}>`,
+    to: p.alicilar,
+    subject: p.konu,
+    text: p.metin,
+    html: p.html,
+  });
+}
+
 export async function sendLead(lead: Lead): Promise<void> {
   const cfg = config();
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Phone, Mail, ChevronRight } from "lucide-react";
+import { AlarmClock, Phone, Mail, ChevronRight } from "lucide-react";
 import { DURUM_ETIKET, type Talep } from "@/lib/leads-db";
+import { takipTarihi } from "@/lib/takip-bicim";
 import { goreli, kisaTarih } from "@/lib/zaman";
 
 /**
@@ -32,6 +33,22 @@ function Rozet({ durum }: { durum: string }) {
       className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${DURUM_RENK[durum] ?? ""}`}
     >
       {DURUM_ETIKET[durum as keyof typeof DURUM_ETIKET] ?? durum}
+    </span>
+  );
+}
+
+/** Takip günü — geldiyse ya da geçtiyse kırmızı. */
+export function TakipRozeti({ gun, geldi }: { gun?: string | null; geldi?: boolean | null }) {
+  if (!gun) return null;
+  return (
+    <span
+      className={`inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+        geldi ? "bg-red-500/15 text-red-700" : "bg-surface-alt text-muted"
+      }`}
+      title={geldi ? "Takibin günü geldi" : "Takip günü"}
+    >
+      <AlarmClock className="size-3" aria-hidden />
+      {takipTarihi(gun)}
     </span>
   );
 }
@@ -69,7 +86,7 @@ export function TalepListesi({ liste }: { liste: Talep[] }) {
                   <p className="mt-0.5 truncate text-sm text-muted">{t.firma}</p>
                 ) : null}
 
-                <p className="mt-1.5 text-xs text-muted">
+                <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted">
                   {[
                     t.ulke,
                     t.tur === "rfq" ? "Teklif" : "İletişim",
@@ -77,6 +94,7 @@ export function TalepListesi({ liste }: { liste: Talep[] }) {
                   ]
                     .filter(Boolean)
                     .join(" · ")}
+                  <TakipRozeti gun={t.takip_gunu} geldi={t.takip_geldi} />
                 </p>
               </div>
               <ChevronRight className="mt-1 size-4 shrink-0 text-muted" aria-hidden />
@@ -155,7 +173,10 @@ export function TalepListesi({ liste }: { liste: Talep[] }) {
                   ) : null}
                 </td>
                 <td className="px-4 py-3">
-                  <Rozet durum={t.durum} />
+                  <span className="flex flex-wrap items-center gap-1.5">
+                    <Rozet durum={t.durum} />
+                    <TakipRozeti gun={t.takip_gunu} geldi={t.takip_geldi} />
+                  </span>
                 </td>
               </tr>
             ))}

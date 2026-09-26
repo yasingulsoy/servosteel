@@ -161,16 +161,59 @@ async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIlet
   };
 }
 
+/** Listede her ileti için istenen alanlar — gövde yok, yalnızca zarf. */
+const OZET_SORGUSU = { uid: true, flags: true, envelope: true, internalDate: true, size: true, bodyStructure: true };
+
+type HamIleti = Awaited<ReturnType<ImapIstemci["fetchAll"]>>[number];
+
+function ozetle(m: HamIleti, klasor: Klasor): IletiOzeti {
+  const e = m.envelope;
+  const karsi = (klasor === "gelen" ? e?.from : e?.to) as Adresler;
+  const tarih = e?.date ?? m.internalDate;
+  return {
+    uid: m.uid,
+    tarih: tarih ? new Date(tarih).toISOString() : null,
+    kisi: kisaAd(karsi),
+    kisiAdres: (karsi?.[0]?.address ?? "").toLowerCase(),
+    konu: e?.subject ?? "",
+    okundu: m.flags?.has("\\Seen") ?? false,
+    yanitlandi: m.flags?.has("\\Answered") ?? false,
+    ekVar: ekVarMi(m.bodyStructure),
+    boyut: m.size ?? 0,
+  };
+}
+
+/** Arama kutusuna yazılan: boşluklar sadeleşir, en çok 100 karakter. */
+export function aramaTemizle(v: unknown): string {
+  return (typeof v === "string" ? v : "").replace(/\s+/g, " ").trim().slice(0, 100);
+}
+
+/**
+ * Kimden, kime, bilgi, konu ya da metinde geçen — IMAP SEARCH, aramayı
+ * sunucu yapar. Büyük/küçük harf duyarsız; Türkçe karakterli arama UTF-8
+ * gider (CHARSET'i imapflow kendisi ekliyor).
+ */
+const aramaOlcutu = (ara: string) => ({
+  or: [{ from: ara }, { to: ara }, { cc: ara }, { subject: ara }, { body: ara }],
+});
+
+/** Tüm kutularda aramada gösterilen en çok sonuç. */
+export const ARAMA_EN_COK = 60;
+
 /**
  * Bir kutunun bir klasörü: bir sayfa ileti (en yenisi başta) ve istenirse
  * seçili iletinin tamamı — TEK IMAP oturumunda. Her gezinmede kutuya bir
  * kez bağlanılıyor; paylaşımlı sunucunun eşzamanlı oturum sınırı zorlanmasın.
+ *
+ * `arama` verilirse liste yalnızca eşleşen iletiler: sunucu UID'leri bulur,
+ * en büyük UID (en son gelen) başta, zarflar sayfa sayfa çekilir.
  */
 export async function kutuGorunumu(
   kutuAdresi: string,
   klasor: Klasor,
   sayfa: number,
-  seciliUid?: number
+  seciliUid?: number,
+  arama = ""
 ): Promise<KutuGorunumu> {
   const kutu = kutuBul(kutuAdresi);
   if (!kutu) return { tamam: false, hata: "Bu kutu gönderim ayarlarında tanımlı değil." };
@@ -188,39 +231,34 @@ export async function kutuGorunumu(
     const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
     try {
       const kutuBilgisi = istemci.mailbox;
-      const toplam = kutuBilgisi ? kutuBilgisi.exists : 0;
       const uidvalidity = kutuBilgisi ? Number(kutuBilgisi.uidValidity) : 0;
-      const sayfaSayisi = Math.max(1, Math.ceil(toplam / POSTA_SAYFA_BOYU));
-      const s = Math.min(Math.max(1, Math.trunc(sayfa) || 1), sayfaSayisi);
+      const sayfaYap = (toplam: number) => {
+        const sayfaSayisi = Math.max(1, Math.ceil(toplam / POSTA_SAYFA_BOYU));
+        return { sayfaSayisi, s: Math.min(Math.max(1, Math.trunc(sayfa) || 1), sayfaSayisi) };
+      };
 
-      /* Sıra numarası 1 en eski — en yeniden geriye doğru bir sayfa */
-      const bitis = toplam - (s - 1) * POSTA_SAYFA_BOYU;
-      const baslangic = Math.max(1, bitis - POSTA_SAYFA_BOYU + 1);
-      const iletiler: IletiOzeti[] = [];
-      if (bitis >= 1) {
-        const ham = await istemci.fetchAll(`${baslangic}:${bitis}`, {
-          uid: true,
-          flags: true,
-          envelope: true,
-          internalDate: true,
-          size: true,
-          bodyStructure: true,
-        });
-        for (const m of ham.reverse()) {
-          const e = m.envelope;
-          const karsi = (klasor === "gelen" ? e?.from : e?.to) as Adresler;
-          const tarih = e?.date ?? m.internalDate;
-          iletiler.push({
-            uid: m.uid,
-            tarih: tarih ? new Date(tarih).toISOString() : null,
-            kisi: kisaAd(karsi),
-            kisiAdres: (karsi?.[0]?.address ?? "").toLowerCase(),
-            konu: e?.subject ?? "",
-            okundu: m.flags?.has("\\Seen") ?? false,
-            yanitlandi: m.flags?.has("\\Answered") ?? false,
-            ekVar: ekVarMi(m.bodyStructure),
-            boyut: m.size ?? 0,
-          });
+      let toplam: number;
+      let iletiler: IletiOzeti[] = [];
+      let sayfaSayisi: number;
+      let s: number;
+      if (arama) {
+        const uidler = ((await istemci.search(aramaOlcutu(arama), { uid: true })) || []).sort((a, b) => b - a);
+        toplam = uidler.length;
+        ({ sayfaSayisi, s } = sayfaYap(toplam));
+        const dilim = uidler.slice((s - 1) * POSTA_SAYFA_BOYU, s * POSTA_SAYFA_BOYU);
+        if (dilim.length) {
+          const ham = await istemci.fetchAll(dilim.join(","), OZET_SORGUSU, { uid: true });
+          iletiler = ham.map((m) => ozetle(m, klasor)).sort((a, b) => b.uid - a.uid);
+        }
+      } else {
+        toplam = kutuBilgisi ? kutuBilgisi.exists : 0;
+        ({ sayfaSayisi, s } = sayfaYap(toplam));
+        /* Sıra numarası 1 en eski — en yeniden geriye doğru bir sayfa */
+        const bitis = toplam - (s - 1) * POSTA_SAYFA_BOYU;
+        const baslangic = Math.max(1, bitis - POSTA_SAYFA_BOYU + 1);
+        if (bitis >= 1) {
+          const ham = await istemci.fetchAll(`${baslangic}:${bitis}`, OZET_SORGUSU);
+          iletiler = ham.reverse().map((m) => ozetle(m, klasor));
         }
       }
 
@@ -242,12 +280,16 @@ export async function kutuGorunumu(
   }
 }
 
-/** Tek bir iletinin tamamı — listeyi çekmeden (Claude'un ucu, yanıtlanan iletinin kimliği). */
+/**
+ * Tek bir iletinin tamamı — listeyi çekmeden (tüm kutularda aramada okunan
+ * ileti, Claude'un ucu, yanıtlanan iletinin kimliği). Klasörün UIDVALIDITY'si
+ * de döner: taramanın sınıfı (yanıt, geri dönüş…) onunla eşleşiyor.
+ */
 export async function iletiOku(
   kutuAdresi: string,
   klasor: Klasor,
   uid: number
-): Promise<{ tamam: true; ileti: OkunanIleti } | { tamam: false; hata: string }> {
+): Promise<{ tamam: true; ileti: OkunanIleti; uidvalidity: number } | { tamam: false; hata: string }> {
   const kutu = kutuBul(kutuAdresi);
   if (!kutu) return { tamam: false, hata: "Bu kutu gönderim ayarlarında tanımlı değil." };
   if (!Number.isSafeInteger(uid) || uid < 1) return { tamam: false, hata: "Geçersiz ileti numarası." };
@@ -259,8 +301,9 @@ export async function iletiOku(
     if (!yol) return { tamam: false, hata: "Bu kutuda Gönderilmiş klasörü yok." };
     const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
     try {
+      const uidvalidity = istemci.mailbox ? Number(istemci.mailbox.uidValidity) : 0;
       const ileti = await iletiyiCoz(istemci, uid);
-      return ileti ? { tamam: true, ileti } : { tamam: false, hata: ILETI_YOK };
+      return ileti ? { tamam: true, ileti, uidvalidity } : { tamam: false, hata: ILETI_YOK };
     } finally {
       kilit.release();
     }
@@ -269,6 +312,62 @@ export async function iletiOku(
   } finally {
     await kapat(istemci);
   }
+}
+
+export type AramaSatiri = IletiOzeti & { kutu: string; klasor: Klasor; uidvalidity: number };
+
+/**
+ * Bütün kutularda, Gelen'de ve Gönderilmiş'te arama — "bu firmayla ne
+ * yazıştık?" sorusu için; tanıtım e-postası bir kutudan gidiyor, yanıtı başka
+ * bir iletiye verilmiş olabiliyor. Kutu başına tek oturum, kutular aynı anda.
+ * Klasör başına en yeni `enCok` eşleşme alınır, hepsi tarihe göre dizilip ilk
+ * `enCok` döner; `toplam` bütün eşleşmelerin sayısı.
+ */
+export async function herYerdeAra(
+  arama: string,
+  enCok = ARAMA_EN_COK
+): Promise<{ satirlar: AramaSatiri[]; toplam: number; hatalar: string[] }> {
+  const kutular = ayarlariOku(process.env).kutular;
+  const sonuc = await Promise.all(
+    kutular.map(async (kutu) => {
+      const satirlar: AramaSatiri[] = [];
+      let toplam = 0;
+      const istemci = imapIstemcisi(kutu);
+      try {
+        await istemci.connect();
+        for (const klasor of ["gelen", "giden"] as const) {
+          const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
+          if (!yol) continue;
+          const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
+          try {
+            const uidvalidity = istemci.mailbox ? Number(istemci.mailbox.uidValidity) : 0;
+            const uidler = ((await istemci.search(aramaOlcutu(arama), { uid: true })) || []).sort((a, b) => b - a);
+            toplam += uidler.length;
+            const dilim = uidler.slice(0, enCok);
+            if (dilim.length) {
+              const ham = await istemci.fetchAll(dilim.join(","), OZET_SORGUSU, { uid: true });
+              for (const m of ham) satirlar.push({ ...ozetle(m, klasor), kutu: kutu.user, klasor, uidvalidity });
+            }
+          } finally {
+            kilit.release();
+          }
+        }
+        return { satirlar, toplam, hata: null };
+      } catch (e) {
+        return { satirlar, toplam, hata: `${kutu.user}: ${baglantiHatasi(e)}` };
+      } finally {
+        await kapat(istemci);
+      }
+    })
+  );
+  return {
+    satirlar: sonuc
+      .flatMap((x) => x.satirlar)
+      .sort((a, b) => (b.tarih ?? "").localeCompare(a.tarih ?? ""))
+      .slice(0, enCok),
+    toplam: sonuc.reduce((t, x) => t + x.toplam, 0),
+    hatalar: sonuc.flatMap((x) => (x.hata ? [x.hata] : [])),
+  };
 }
 
 /**

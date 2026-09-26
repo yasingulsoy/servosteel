@@ -9,7 +9,8 @@ kabul; durum bellekte, yeniden baslatinca sifirlanir.
 
 Desteklenen: CAPABILITY, LOGIN, LIST/LSUB (Gonderilmis special-use isaretli), SELECT/EXAMINE,
 FETCH/UID FETCH (UID FLAGS ENVELOPE INTERNALDATE RFC822.SIZE BODYSTRUCTURE
-BODY.PEEK[]<a.b>), SEARCH (SINCE, UID), STORE, APPEND, CREATE, STATUS, NOOP, LOGOUT.
+BODY.PEEK[]<a.b>), SEARCH (SINCE, UID, OR, NOT, FROM, TO, CC, SUBJECT, BODY,
+TEXT, CHARSET), STORE, APPEND, CREATE, STATUS, NOOP, LOGOUT.
 
 Kutular:
   ege@        Gelen: 4 ornek (yanit, ekli, yalniz HTML, Turkce ic yazisma) · Gonderilmis: 1
@@ -465,26 +466,75 @@ class Isleyici(socketserver.StreamRequestHandler):
         self.yaz(f"{e} OK FETCH tamam\r\n".encode())
 
     def k_SEARCH(self, e, a, u):
-        """Yalnızca taramanın kullandıkları: SINCE <tarih>, UID <küme>, ALL."""
+        """Taramanın ve panel aramasının kullandıkları: SINCE, UID, ALL, OR,
+        FROM / TO / CC / SUBJECT / BODY / TEXT (büyük-küçük harf duyarsız,
+        başlıklar MIME çözülerek), CHARSET."""
         if not self.secili:
             self.yaz(f"{e} BAD klasor secili degil\r\n".encode())
             return
         kutu = KUTULAR[self.kullanici][self.secili]
-        adaylar = list(enumerate(kutu, start=1))
-        i = 0
-        while i < len(a):
-            o = str(a[i]).upper()
+        en = max((m["uid"] for m in kutu), default=0)
+        a = list(a)
+        if a and str(a[0]).upper() == "CHARSET":
+            a = a[2:]
+
+        def metin(x):
+            return (x.decode("utf-8", "replace") if isinstance(x, bytes) else str(x)).lower()
+
+        def baslik(m, ad):
+            msg = email.message_from_bytes(m["raw"], policy=email.policy.default)
+            return str(msg.get(ad, "") or "").lower()
+
+        def govde(m):
+            msg = email.message_from_bytes(m["raw"], policy=email.policy.default)
+            parca = msg.get_body(preferencelist=("plain", "html"))
+            return (parca.get_content() if parca else "").lower()
+
+        def hepsi(dizi):
+            """Bir ölçüt dizisinin tamamı (VE) → koşul"""
+            kosullar = []
+            i = 0
+            while i < len(dizi):
+                k, i = olcut(dizi, i)
+                kosullar.append(k)
+            return lambda s, m: all(k(s, m) for k in kosullar)
+
+        def olcut(dizi, i):
+            """dizi[i]'den bir ölçüt okur → (koşul, sonraki i)"""
+            x = dizi[i]
+            if isinstance(x, list):
+                return hepsi(x), i + 1
+            o = metin(x).upper()
+            if o == "OR":
+                k1, j = olcut(dizi, i + 1)
+                k2, j = olcut(dizi, j)
+                return (lambda s, m: k1(s, m) or k2(s, m)), j
+            if o == "NOT":
+                k1, j = olcut(dizi, i + 1)
+                return (lambda s, m: not k1(s, m)), j
+            if o == "ALL":
+                return (lambda s, m: True), i + 1
             if o == "SINCE":
-                sinir = time.mktime(time.strptime(str(a[i + 1]), "%d-%b-%Y"))
-                adaylar = [(s, m) for s, m in adaylar if m["idate"] >= sinir]
-                i += 2
-            elif o == "UID":
-                en = max((m["uid"] for m in kutu), default=0)
-                istenen = kume(a[i + 1], en)
-                adaylar = [(s, m) for s, m in adaylar if m["uid"] in istenen]
-                i += 2
-            else:
-                i += 1
+                sinir = time.mktime(time.strptime(metin(dizi[i + 1]), "%d-%b-%Y"))
+                return (lambda s, m: m["idate"] >= sinir), i + 2
+            if o == "UID":
+                istenen = kume(metin(dizi[i + 1]), en)
+                return (lambda s, m: m["uid"] in istenen), i + 2
+            if o in ("FROM", "TO", "CC", "SUBJECT"):
+                aranan = metin(dizi[i + 1])
+                ad = {"FROM": "From", "TO": "To", "CC": "Cc", "SUBJECT": "Subject"}[o]
+                return (lambda s, m: aranan in baslik(m, ad)), i + 2
+            if o == "BODY":
+                aranan = metin(dizi[i + 1])
+                return (lambda s, m: aranan in govde(m)), i + 2
+            if o == "TEXT":
+                aranan = metin(dizi[i + 1])
+                return (lambda s, m: aranan in m["raw"].decode("utf-8", "replace").lower() or aranan in govde(m)), i + 2
+            print("  bilinmeyen SEARCH olcutu:", o, flush=True)
+            return (lambda s, m: True), i + 1
+
+        kosul = hepsi(a)
+        adaylar = [(s, m) for s, m in enumerate(kutu, start=1) if kosul(s, m)]
         sonuc = " ".join(str(m["uid"] if u else s) for s, m in adaylar)
         self.yaz(f"* SEARCH {sonuc}\r\n{e} OK SEARCH tamam\r\n".replace("* SEARCH \r\n", "* SEARCH\r\n").encode())
 

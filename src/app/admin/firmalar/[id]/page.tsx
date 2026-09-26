@@ -20,8 +20,10 @@ import {
 } from "@/lib/outreach-db";
 import { ayarlariOku, geriDonusEngeli, kutuSec, ulkeUyarisi } from "@/lib/outreach-kurallar";
 import { altbilgiHtmlMetni, iptalAdresi } from "@/lib/outreach";
+import { takipOku } from "@/lib/takip";
 import { goreli, tamTarih } from "@/lib/zaman";
 import { Kabuk } from "../../kabuk";
+import { TakipKutusu } from "../../takip-kutusu";
 import { engelleEylemi, hedefDurumEylemi, hedefNotEylemi } from "../actions";
 import { HedefRozet, SONUC_ETIKET } from "../firma-listesi";
 import { GonderKutusu } from "../gonder-kutusu";
@@ -58,7 +60,7 @@ export default async function FirmaSayfasi({
   if (!f) notFound();
 
   const ayar = ayarlariOku(process.env);
-  const [gecmis, notlar, engelli, onceki, kutular, sonraki, gd, talepleri] = await Promise.all([
+  const [gecmis, notlar, engelli, onceki, kutular, sonraki, gd, talepleri, tk] = await Promise.all([
     gonderimler(no),
     hedefNotlar(no),
     engelliMi(f.eposta),
@@ -67,6 +69,7 @@ export default async function FirmaSayfasi({
     siradaki(filtre, no),
     geriDonusDurumu(),
     hedefTalepleri(no),
+    takipOku("firma", no).catch(() => null),
   ]);
 
   /* Düğmeyi kapatan sebep — önce firmaya ait olanlar, sonra güne ait olanlar.
@@ -274,6 +277,10 @@ export default async function FirmaSayfasi({
                 ))}
               </div>
             </section>
+
+            {tk ? (
+              <TakipKutusu key={tk.tarih ?? "yok"} tur="firma" id={f.id} tarih={tk.tarih} notu={tk.notu} bugun={tk.bugun} />
+            ) : null}
 
             <section className="rounded-xl border border-line bg-card px-4 py-2 sm:px-5 sm:py-3">
               <dl className="divide-y divide-line">
