@@ -1200,6 +1200,26 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.35 · Geri dönüş mailindeki alıntı başlık, kalıcı reddi "geçici" yaptı
+(2026-09-26).** Office 365'in ret maili gönderdiğimiz iletinin başlıklarını da
+alıntılıyor: `Received: … (Exim 4.99.5)`. Metinden kod arayan kural "4.99.5"i
+4.x.x geçici hata kodu sandı; MATRO'nun `550 5.7.133` (yalnız şirket içinden
+mail alan grup) reddi "Teslim gecikiyor" oldu, firma "Gönderildi"de kaldı —
+hatırlatma turu aynı ölü adrese yine gidecekti. Düzeltme (`bd4ea99`): kod
+yalnız raporun kendi metninde aranır (alıntı başlığından önce), durum kodunun
+orta hanesi 0-7 olmalı. Kayıt elle düzeltildi. **Kural: sınıflandırıcıya gelen
+metin, bizim gönderdiğimizi de içerebilir — kendi imzamız, sürümümüz, adresimiz
+"karşı tarafın sözü" sanılmasın.**
+
+**E.34 · React 19 form sıfırlaması seçim ve onay kutusunu geri yüklemiyor
+(2026-09-26).** `action` verilen form, eylem bitince — eylem hata DÖNDÜRSE
+bile — sıfırlanıyor. Kontrollü metin kutuları durumdan geri geliyor ama
+`<select>` ve checkbox gelmiyor: yazma formunda "gulsoy"dan yazılan mail,
+adres hatasından sonra ekranda sessizce "ege"ye döndü; özet formunda "Açık"
+boşaldı ve sonraki kayıt özeti kapatacaktı. Düzeltme: bu formlar `onSubmit` +
+`startTransition(() => eylem(new FormData(form)))` ile gönderiliyor.
+**Kural: seçim/onay kutusu olan ve hata dönebilen formda `action` kullanma.**
+
 **E.33 · "Gönder…" tek tıkla onaysız gönderdi — sahte SMTP'de yakalandı
 (2026-09-21).** Panelin iki adımlı onayında ilk düğme `type="button"`, onay
 düğmesi aynı yerde `type="submit"`. Anahtarsız iki düğmeyi React AYNI DOM öğesi
