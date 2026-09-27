@@ -1,7 +1,9 @@
 import "server-only";
 import { sorgu, sorguSert } from "@/lib/db";
 import { gscHaftasi, type GscHaftasi } from "@/lib/gsc";
+import { olaySemasiKur } from "@/lib/leads-db";
 import { panelEpostasi } from "@/lib/mail";
+import { TIKLAMALAR } from "@/lib/outreach-db";
 import { adresleriAyikla } from "@/lib/posta-bicim";
 import { SITE_URL } from "@/lib/site";
 import { takipListesi } from "@/lib/takip";
@@ -110,6 +112,9 @@ export type OzetSayilari = {
   tiklayan_once: number;
   teklif_sayfasi: number;
   teklif_sayfasi_once: number;
+  /** Güvenlik tarayıcısının açması — tıklamaya katılmadı (bkz. outreach-db TIKLAMALAR) */
+  otomatik: number;
+  otomatik_once: number;
   yanit: number;
   yanit_once: number;
   geri_donus: number;
@@ -132,18 +137,32 @@ export type OzetVerisi = {
 /* Bu hafta [b1, s1), önceki hafta [b0, b1) — İstanbul gece yarıları. */
 const BU = (k: string) => `${k} >= p.b1 AND ${k} < p.s1`;
 const ONCE = (k: string) => `${k} >= p.b0 AND ${k} < p.b1`;
-const TEKLIF_SAYFASI = `(yol LIKE '%request-quote%' OR yol LIKE '%teklif-al%')`;
 
 export async function ozetVerisi(aralik: OzetAraligi): Promise<OzetVerisi> {
+  /* Tıklama sayısı olaylar.etkilesim'i okuyor; pazartesi sabahı panel hiç
+     açılmamış olabilir. */
+  await olaySemasiKur();
   const p = `WITH p AS (
     SELECT ($1::date)::timestamp AT TIME ZONE 'Europe/Istanbul' AS b1,
            ($2::date + 1)::timestamp AT TIME ZONE 'Europe/Istanbul' AS s1,
            ($1::date - 7)::timestamp AT TIME ZONE 'Europe/Istanbul' AS b0
   )`;
+  /* Tanıtım e-postası tıklamaları tek geçişte: insan ve otomatik tarama ayrı */
+  const tk = `, tk AS (
+    SELECT count(*) FILTER (WHERE ${BU("t.olusturuldu")} AND NOT t.otomatik)::int AS tiklama,
+           count(*) FILTER (WHERE ${ONCE("t.olusturuldu")} AND NOT t.otomatik)::int AS tiklama_once,
+           count(DISTINCT NULLIF(t.kaynak, '')) FILTER (WHERE ${BU("t.olusturuldu")} AND NOT t.otomatik)::int AS tiklayan,
+           count(DISTINCT NULLIF(t.kaynak, '')) FILTER (WHERE ${ONCE("t.olusturuldu")} AND NOT t.otomatik)::int AS tiklayan_once,
+           count(*) FILTER (WHERE ${BU("t.olusturuldu")} AND NOT t.otomatik AND t.teklif)::int AS teklif_sayfasi,
+           count(*) FILTER (WHERE ${ONCE("t.olusturuldu")} AND NOT t.otomatik AND t.teklif)::int AS teklif_sayfasi_once,
+           count(*) FILTER (WHERE ${BU("t.olusturuldu")} AND t.otomatik)::int AS otomatik,
+           count(*) FILTER (WHERE ${ONCE("t.olusturuldu")} AND t.otomatik)::int AS otomatik_once
+    FROM ${TIKLAMALAR} t, p
+  )`;
   const deger = [aralik.bas, aralik.son];
   const [sayilar, talepler, yanitlar, takip, gsc] = await Promise.all([
     sorguSert<OzetSayilari>(
-      `${p}
+      `${p}${tk}
        SELECT
          (SELECT count(*) FROM talepler WHERE ${BU("olusturuldu")} AND durum <> 'spam')::int AS talep,
          (SELECT count(*) FROM talepler WHERE ${ONCE("olusturuldu")} AND durum <> 'spam')::int AS talep_once,
@@ -152,12 +171,8 @@ export async function ozetVerisi(aralik: OzetAraligi): Promise<OzetVerisi> {
          (SELECT count(*) FROM olaylar WHERE ${ONCE("olusturuldu")} AND tur IN ('telefon', 'eposta'))::int AS iletisim_once,
          (SELECT count(*) FROM hedef_gonderim WHERE ${BU("zaman")} AND sonuc = 'ok')::int AS gonderim,
          (SELECT count(*) FROM hedef_gonderim WHERE ${ONCE("zaman")} AND sonuc = 'ok')::int AS gonderim_once,
-         (SELECT count(*) FROM olaylar WHERE ${BU("olusturuldu")} AND tur = 'outreach')::int AS tiklama,
-         (SELECT count(*) FROM olaylar WHERE ${ONCE("olusturuldu")} AND tur = 'outreach')::int AS tiklama_once,
-         (SELECT count(DISTINCT kaynak) FROM olaylar WHERE ${BU("olusturuldu")} AND tur = 'outreach' AND kaynak <> '')::int AS tiklayan,
-         (SELECT count(DISTINCT kaynak) FROM olaylar WHERE ${ONCE("olusturuldu")} AND tur = 'outreach' AND kaynak <> '')::int AS tiklayan_once,
-         (SELECT count(*) FROM olaylar WHERE ${BU("olusturuldu")} AND tur = 'outreach' AND ${TEKLIF_SAYFASI})::int AS teklif_sayfasi,
-         (SELECT count(*) FROM olaylar WHERE ${ONCE("olusturuldu")} AND tur = 'outreach' AND ${TEKLIF_SAYFASI})::int AS teklif_sayfasi_once,
+         tk.tiklama, tk.tiklama_once, tk.tiklayan, tk.tiklayan_once,
+         tk.teklif_sayfasi, tk.teklif_sayfasi_once, tk.otomatik, tk.otomatik_once,
          (SELECT count(*) FROM gelen_eposta WHERE ${BU("islendi")} AND tur = 'yanit')::int AS yanit,
          (SELECT count(*) FROM gelen_eposta WHERE ${ONCE("islendi")} AND tur = 'yanit')::int AS yanit_once,
          (SELECT count(*) FROM gelen_eposta WHERE ${BU("islendi")} AND tur = 'geri_donus')::int AS geri_donus,
@@ -166,7 +181,7 @@ export async function ozetVerisi(aralik: OzetAraligi): Promise<OzetVerisi> {
          (SELECT count(*) FROM talepler WHERE durum = 'kazanildi')::int AS kazanilan,
          (SELECT count(*) FROM hedef_firmalar WHERE durum = 'olumlu')::int AS olumlu,
          (SELECT count(*) FROM hedef_gonderim WHERE sonuc = 'ok')::int AS gonderim_toplam
-       FROM p`,
+       FROM p, tk`,
       deger
     ),
     sorguSert<{ id: number; ad: string; ulke: string; tur: string }>(
@@ -243,8 +258,11 @@ export function ozetIcerik(v: OzetVerisi): { konu: string; metin: string; html: 
     ["Talep (spam hariç)", `${sayi(s.talep)}${s.teklif_formu ? ` · ${sayi(s.teklif_formu)} teklif formu` : ""}`, sayi(s.talep_once)],
     ["Sitede telefon / e-posta tuşu", sayi(s.iletisim), sayi(s.iletisim_once)],
     ["Tanıtım e-postası gönderildi", sayi(s.gonderim), sayi(s.gonderim_once)],
-    ["E-postadaki bağlantıya tıklama", `${sayi(s.tiklama)} · ${sayi(s.tiklayan)} firma`, `${sayi(s.tiklama_once)} · ${sayi(s.tiklayan_once)} firma`],
+    ["E-postadaki bağlantıya tıklama (kişi)", `${sayi(s.tiklama)} · ${sayi(s.tiklayan)} firma`, `${sayi(s.tiklama_once)} · ${sayi(s.tiklayan_once)} firma`],
     ["Teklif sayfasına gelen (e-postadan)", sayi(s.teklif_sayfasi), sayi(s.teklif_sayfasi_once)],
+    /* Ayrı satır, tıklamaya katılmadan: kurumsal alıcının güvenlik tarayıcısı
+       maili teslimde açıp bütün bağlantıları deniyor. */
+    ["Güvenlik taraması (tıklamaya katılmadı)", sayi(s.otomatik), sayi(s.otomatik_once)],
     ["Yanıt", sayi(s.yanit), sayi(s.yanit_once)],
     ["Geri dönen / abonelikten çıkan", `${sayi(s.geri_donus)} / ${sayi(s.abonelik)}`, "—"],
   ];

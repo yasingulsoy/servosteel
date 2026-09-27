@@ -341,9 +341,13 @@ export default async function GenelBakis() {
               ) : null}
             </div>
 
-            <p className="flex items-center gap-2 text-xs text-muted">
-              <TriangleAlert className="size-3.5" aria-hidden />
-              Tıklama ölçümü 25 Eylül 2026&apos;da başladı; öncesindeki gönderimlerin tıklamaları sayılmadı.
+            <p className="flex items-start gap-2 text-xs text-muted">
+              <TriangleAlert className="mt-px size-3.5 shrink-0" aria-hidden />
+              <span>
+                Tıklama ölçümü 25 Eylül 2026&apos;da başladı; öncesindeki gönderimlerin tıklamaları sayılmadı.
+                Alıcı sunucularının güvenlik taramaları ({sayi(v.kampanya.otomatik)}) tıklamaya ve sıcak firmalara
+                katılmıyor — Kampanya sayfasında ayrı sütunda.
+              </span>
             </p>
           </>
         ) : null}

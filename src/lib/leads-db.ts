@@ -6,7 +6,7 @@ import { sorgu, sorguSert } from "@/lib/db";
  * Üç tablo:
  *   talepler   — formdan gelen ve elle girilen talepler, durumu ve sahibi
  *   talep_not  — her talebin altındaki notlar (kim, ne zaman, ne yazdı)
- *   olaylar    — telefon/e-posta tuşu tıklamaları
+ *   olaylar    — telefon/e-posta tuşu tıklamaları, tanıtım e-postasından gelen ziyaretler
  *
  * Şema kod tarafından kuruluyor (`semaKur`). Ayrı bir migration aracı
  * getirmedim: üç tablo için Prisma/Drizzle kurmak, kurulumu basitleştirmek
@@ -101,7 +101,21 @@ export async function semaKur(): Promise<boolean> {
       govde        TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS talep_not_talep_idx ON talep_not (talep_id, olusturuldu DESC);
+  `);
+  return r !== null && (await olaySemasiKur());
+}
 
+/* Süreç başına bir kez — beacon ucu her tıklamada çağırıyor. */
+let olayHazir = false;
+
+/**
+ * `olaylar` tablosu, panelin geri kalanından ayrı kurulur: beacon ucu, kampanya
+ * sayfası ve pazartesi özeti `semaKur`'dan önce çalışabiliyor ve yeni
+ * sütunları sorguluyor — sütun onlardan önce var olmalı.
+ */
+export async function olaySemasiKur(): Promise<boolean> {
+  if (olayHazir) return true;
+  const r = await sorgu(`
     CREATE TABLE IF NOT EXISTS olaylar (
       id           SERIAL PRIMARY KEY,
       olusturuldu  TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -118,8 +132,19 @@ export async function semaKur(): Promise<boolean> {
     ALTER TABLE olaylar ADD COLUMN IF NOT EXISTS kaynak TEXT NOT NULL DEFAULT 'beacon';
     CREATE INDEX IF NOT EXISTS olaylar_olusturuldu_idx ON olaylar (olusturuldu DESC);
     CREATE INDEX IF NOT EXISTS olaylar_tur_idx ON olaylar (tur);
+    /* Tanıtım e-postası ziyaretinde sayfada gerçek bir hareket (fare, tekerlek,
+       dokunma, tuş) oldu mu. Güvenlik tarayıcıları sayfayı açıp hiçbir şey
+       yapmadan kapatıyor (bkz. outreach-db TIKLAMALAR). NULL = bu ölçüm
+       (27 Eylül 2026'da yazıldı) yayına girmeden önceki kayıt. */
+    ALTER TABLE olaylar ADD COLUMN IF NOT EXISTS etkilesim BOOLEAN;
+    /* Sayfa açılışının rastgele kimliği: aynı ziyaretin ikinci işareti ilk
+       satırı bulsun diye. Her açılışta yeni, kişiyi ya da cihazı tanımaz. */
+    ALTER TABLE olaylar ADD COLUMN IF NOT EXISTS gorunum TEXT NOT NULL DEFAULT '';
+    CREATE UNIQUE INDEX IF NOT EXISTS olaylar_gorunum_uq ON olaylar (gorunum) WHERE gorunum <> '';
+    CREATE INDEX IF NOT EXISTS olaylar_outreach_idx ON olaylar (kaynak, olusturuldu) WHERE tur = 'outreach';
   `);
-  return r !== null;
+  olayHazir = r !== null;
+  return olayHazir;
 }
 
 /* ---------------------------------------------------------------- yazma */
@@ -146,10 +171,28 @@ export async function talepEkle(t: {
   return r?.[0]?.id ?? null;
 }
 
-export async function olayEkle(tur: string, yol: string, dil: string, ulke = "", kaynak = "") {
+/**
+ * Olay yazar. `gorunum` verilirse aynı sayfa açılışının ikinci işareti yeni
+ * satır açmaz, ilkine işlenir: açılışta etkilesim=false gelir, ilk gerçek
+ * hareket true'ya çevirir. Sıra ters gelse de (işaretler ayrı istek) sonuç
+ * aynı — ON CONFLICT ikisini birleştiriyor.
+ */
+export async function olayEkle(
+  tur: string,
+  yol: string,
+  dil: string,
+  ulke = "",
+  kaynak = "",
+  gorunum = "",
+  etkilesim: boolean | null = null
+) {
+  await olaySemasiKur();
   await sorgu(
-    `INSERT INTO olaylar (tur, yol, dil, ulke, kaynak) VALUES ($1,$2,$3,$4,$5)`,
-    [tur.slice(0, 40), yol.slice(0, 300), dil.slice(0, 8), ulke.slice(0, 80), kaynak.slice(0, 120)]
+    `INSERT INTO olaylar (tur, yol, dil, ulke, kaynak, gorunum, etkilesim) VALUES ($1,$2,$3,$4,$5,$6,$7)
+     ON CONFLICT (gorunum) WHERE gorunum <> ''
+     DO UPDATE SET etkilesim = olaylar.etkilesim OR EXCLUDED.etkilesim`,
+    [tur.slice(0, 40), yol.slice(0, 300), dil.slice(0, 8), ulke.slice(0, 80), kaynak.slice(0, 120),
+     gorunum.slice(0, 64), etkilesim]
   );
 }
 

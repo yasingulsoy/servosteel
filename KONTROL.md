@@ -368,7 +368,9 @@ içindeki iddiaların hepsi sitede yazıyor, fiyat/teslim/referans **yok**.
 python scripts/outreach-olcum.py 7     # son 7 günde linke tıklayan firmalar
 ```
 
-Tıklayan firma = sıcak firma; takip telefonu önce ona. GA4 verisi 24–48 saat
+Tıklayan firma = sıcak firma; takip telefonu önce ona. Panel yalnızca kişi
+tıklamasını sayıyor, güvenlik taraması ayrı (E.36; 27 Eylül'de yazıldı,
+yayından sonra geçerli). GA4 verisi 24–48 saat
 gecikmeli. **Excel'i yeniden üretmek Durum/Yanıt sütunlarını siler** — firma
 üzerinde çalışılan kopyayı ayrı adla saklasın.
 
@@ -1200,6 +1202,19 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.36 · Tıklamaların 71/77'si güvenlik tarayıcısıydı (2026-09-27).**
+Kurumsal alıcıların güvenlik tarayıcısı (Microsoft Defender, Mimecast,
+Proofpoint gibi) maili teslimde açıp içindeki bütün bağlantıları gerçek bir
+tarayıcıda deniyor; sayfadaki ölçüm betiği orada da çalıştığı için panelde
+"tıklama" oldu. 25-27 Eylül'deki 77 tıklamanın 71'i gönderimden 0,4-9 dk sonra
+geldi. Hepsinde iki bağlantı aynı saniyede açıldı, çoğunda 30 sn arayla ikinci
+tur vardı. "Sıcak firmalar"ın başındaki Prestar (24 tıklama, 12 teklif
+sayfası) tek bir taramaydı. iRack'in ilk 4 tıklaması da öyleydi: 7,5 saat
+sonra, dördü aynı saniyede. Gerçekte 4 firmadan 6 kişi tıklaması ve 1 teklif
+sayfası ziyareti vardı. Düzeltme: bkz. aşağıda "Tıklamalar: güvenlik taraması
+ayrıldı". **Kural: sayfada hareket görülmeyen e-posta tıklaması "ilgi"
+sayılmaz; tıklama sayısını raporlamadan önce zamanlamasına bak.**
+
 **E.35 · Geri dönüş mailindeki alıntı başlık, kalıcı reddi "geçici" yaptı
 (2026-09-26).** Office 365'in ret maili gönderdiğimiz iletinin başlıklarını da
 alıntılıyor: `Received: … (Exim 4.99.5)`. Metinden kod arayan kural "4.99.5"i
@@ -1311,6 +1326,42 @@ sanayide WhatsApp'ın birinci kanal olduğu pazarlar. Günde ~30 oturumda
 kanal ızgarası hâlâ `md:grid-cols-3` (üçüncü kart WhatsApp'ındı), boş duruyor.
 Numara firmadan gelmeden **uydurulmayacak**; sabit hatta (216 415 30 05)
 WhatsApp Business hesabı yok.
+
+---
+
+## Tıklamalar: güvenlik taraması ayrıldı (27 Eylül)
+
+Yasin'e "tıklama sayıları taramalardan ayrılsın mı?" diye soruldu, cevabı:
+"sence ne yapmak sağlıklı olur". Ayrıldı, ama silinmedi (bkz. E.36).
+
+- **Ne değişti:** tıklama, tıklayan firma, teklif sayfası, sıcak firmalar,
+  ürün/ülke kırılımı ve pazartesi özeti artık yalnızca kişi ziyaretini sayıyor.
+  Taramalar üç yerde ayrı görünüyor: gün gün tablosunda "Tarama" sütunu,
+  tıklayanlar listesinin altında kapalı liste, özette ayrı satır. Genel
+  bakıştaki not toplam tarama sayısını yazıyor.
+- **Nasıl ayrılıyor:**
+  - Sitedeki `lib/outreach-betik.ts` açılışta `etkilesim:false` işareti
+    gönderiyor.
+  - İlk gerçek harekette (yer değiştiren fare, tekerlek, dokunma, tuş) aynı
+    `gorunum` kimliğiyle `true` gönderiyor.
+  - `api/olay` iki işareti tek satırda birleştiriyor (`ON CONFLICT`, sıra ters
+    gelse de).
+  - Yayından önceki kayıtlarda `etkilesim` NULL. Bunlarda gönderimden sonraki
+    15 dk içindeki ya da aynı firmadan ±2 sn içinde ikinci tıklaması olan
+    ziyaret tarama sayılıyor.
+  - Hepsi tek tanımdan geliyor: `outreach-db.ts` → `TIKLAMALAR`.
+- **Canlı veride sınandı (salt okunur):** 77 tıklamanın 6'sı kişi (iRack 2,
+  Smart Sign 2, Apex Steel 1, HADID 1), 71'i tarama; kişi teklif sayfası 1.
+- **Yerelde denendi:**
+  - Uçta beş durum: sıra ters, eski betik, bozuk kimlik, telefon olayı.
+  - Gerçek tarayıcıda betikle üretilen olay sayılmadı; fare hareketi satırı
+    `true` yaptı.
+  - 375 px'te taşma yok.
+  - `node scripts/outreach-betik-test.mjs` (7 test).
+- **Yayından sonra kontrol:** yeni bir tanıtım tıklaması geldikten sonra
+  `SELECT etkilesim, count(*) FROM olaylar WHERE tur = 'outreach' AND
+  olusturuldu > now() - interval '1 day' GROUP BY 1`. `false`/`true`
+  görünmeli; hep NULL ise yeni betik yayına girmemiştir.
 
 ---
 

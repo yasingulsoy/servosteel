@@ -15,6 +15,10 @@ import { goreli, tamTarih } from "@/lib/zaman";
  * biliniyor — satıcı için asıl değerli olan bu. Ölçüm 25 Eylül 2026'da
  * başladı; öncesindeki günlerde tıklama sütunu boş görünür, veri yok demek,
  * sıfır tıklama demek değil.
+ *
+ * Tıklama = bir kişinin ziyareti. Kurumsal alıcının güvenlik tarayıcısı maili
+ * teslimde açıp bütün bağlantıları deniyor; o "Tarama" sütununda ayrı durur,
+ * tıklamaya ve listeye karışmaz (bkz. outreach-db TIKLAMALAR).
  */
 
 const sayi = (n: number) => n.toLocaleString("tr-TR");
@@ -58,9 +62,40 @@ function KirilimTablosu({ baslik, satirlar, grup }: { baslik: string; satirlar: 
   );
 }
 
+/** Tıklayanlar listesinin satırı — güvenlik taraması soluk, rozetsiz. */
+function TiklayanSatiri({ t, tarama }: { t: Tiklayan; tarama?: boolean }) {
+  return (
+    <li className={`flex flex-wrap items-baseline gap-x-2 py-1.5 ${tarama ? "text-muted" : ""}`}>
+      {t.firma_id ? (
+        <Link
+          href={`/admin/firmalar/${t.firma_id}`}
+          className={`underline-offset-4 hover:underline ${tarama ? "" : "font-semibold"}`}
+        >
+          {t.firma}
+        </Link>
+      ) : (
+        <span className={tarama ? "" : "font-semibold"}>{t.kaynak}</span>
+      )}
+      {t.ulke ? <span className="text-xs text-muted">{t.ulke}</span> : null}
+      {/* Tıkladı ama hâlâ "Gönderildi": ilgilendi, yazmadı — hatırlatmanın
+          en sıcak adayı. Taramada anlamsız: kimse ilgilenmedi. */}
+      {!tarama && t.durum === "gonderildi" ? (
+        <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
+          yanıt vermedi
+        </span>
+      ) : null}
+      <span className="text-xs text-muted">{t.yol}</span>
+      <span className="ml-auto text-xs text-muted" title={tamTarih(t.zaman)}>
+        {goreli(t.zaman)}
+      </span>
+    </li>
+  );
+}
+
 export function Gunluk({
   gunler,
   tiklayanlar,
+  taramalar,
   gruplar,
   ulkeler,
   tiklayanFirma,
@@ -68,7 +103,10 @@ export function Gunluk({
   /** Pencerede tıklayan farklı firma (toplam satırı) */
   tiklayanFirma: number;
   gunler: GunSatiri[];
+  /** Kişi tıklamaları, en yenisi başta */
   tiklayanlar: Tiklayan[];
+  /** Güvenlik taramaları, en yenisi başta — ayrı ve kapalı listede */
+  taramalar: Tiklayan[];
   gruplar: Kirilim[];
   ulkeler: Kirilim[];
 }) {
@@ -77,11 +115,12 @@ export function Gunluk({
     (a, g) => ({
       gonderim: a.gonderim + g.gonderim,
       tiklama: a.tiklama + g.tiklama,
+      tarama: a.tarama + g.otomatik,
       yanit: a.yanit + g.yanit,
       geri: a.geri + g.geri_donus,
       iptal: a.iptal + g.abonelik,
     }),
-    { gonderim: 0, tiklama: 0, yanit: 0, geri: 0, iptal: 0 }
+    { gonderim: 0, tiklama: 0, tarama: 0, yanit: 0, geri: 0, iptal: 0 }
   );
 
   return (
@@ -91,21 +130,27 @@ export function Gunluk({
           Gün gün
         </h2>
         <p className="text-xs text-muted">
-          {gunler.length} günde {sayi(toplam.gonderim)} gönderim · {sayi(toplam.tiklama)} tıklama ·{" "}
-          {sayi(toplam.yanit)} yanıt
+          {gunler.length} günde {sayi(toplam.gonderim)} gönderim · {sayi(toplam.tiklama)} tıklama
+          {toplam.tarama ? ` (+${sayi(toplam.tarama)} güvenlik taraması)` : ""} · {sayi(toplam.yanit)} yanıt
           {toplam.geri ? ` · ${sayi(toplam.geri)} geri dönüş` : ""}
           {toplam.iptal ? ` · ${sayi(toplam.iptal)} iptal` : ""}
         </p>
       </div>
 
       <div className="mt-2 overflow-x-auto rounded-xl border border-line bg-card">
-        <table className="w-full min-w-[460px] text-left text-sm">
+        <table className="w-full min-w-[520px] text-left text-sm">
           <thead>
             <tr className="border-b border-line text-xs uppercase tracking-wide text-muted">
               <th className="px-3 py-2 font-semibold">Gün</th>
               <th className="px-3 py-2 font-semibold">Gönderim</th>
-              <th className="px-3 py-2 text-right font-semibold">Tıklama</th>
+              <th className="px-3 py-2 text-right font-semibold" title="Bir kişinin maildeki bağlantıdan gelmesi">Tıklama</th>
               <th className="px-3 py-2 text-right font-semibold" title="O gün maildeki bağlantıya tıklayan farklı firma">Firma</th>
+              <th
+                className="px-3 py-2 text-right font-semibold"
+                title="Alıcı sunucusunun güvenlik tarayıcısı maili teslimde açıp bağlantıları deniyor — tıklamaya katılmaz"
+              >
+                Tarama
+              </th>
               <th className="px-3 py-2 text-right font-semibold">Yanıt</th>
               <th className="px-3 py-2 text-right font-semibold">Geri dönüş</th>
               <th className="px-3 py-2 text-right font-semibold">İptal</th>
@@ -131,6 +176,7 @@ export function Gunluk({
                 {/* Ham tıklamayı gönderime bölmek yanıltıyordu: tek firma 24 kez
                     tıklayınca "oran %44" çıkıyordu. Farklı firma sayısı dürüst ölçü. */}
                 <td className="px-3 py-1.5 text-right tabular-nums text-muted">{g.tiklayan ? sayi(g.tiklayan) : "—"}</td>
+                <td className="px-3 py-1.5 text-right tabular-nums text-muted">{g.otomatik ? sayi(g.otomatik) : "—"}</td>
                 <td className={`px-3 py-1.5 text-right tabular-nums ${g.yanit ? "font-semibold text-violet-700" : ""}`}>
                   {g.yanit ? sayi(g.yanit) : "—"}
                 </td>
@@ -158,6 +204,7 @@ export function Gunluk({
               <td className="px-3 py-2 text-right tabular-nums" title="Pencerede en az bir kez tıklayan farklı firma — günlerin toplamı değil">
                 {tiklayanFirma ? sayi(tiklayanFirma) : "—"}
               </td>
+              <td className="px-3 py-2 text-right tabular-nums text-muted">{toplam.tarama ? sayi(toplam.tarama) : "—"}</td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.yanit ? sayi(toplam.yanit) : "—"}</td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.geri ? sayi(toplam.geri) : "—"}</td>
               <td className="px-3 py-2 text-right tabular-nums">{toplam.iptal ? sayi(toplam.iptal) : "—"}</td>
@@ -178,35 +225,34 @@ export function Gunluk({
         {tiklayanlar.length ? (
           <ul className="mt-2 divide-y divide-line text-sm">
             {tiklayanlar.map((t, i) => (
-              <li key={`${t.kaynak}-${t.zaman}-${i}`} className="flex flex-wrap items-baseline gap-x-2 py-1.5">
-                {t.firma_id ? (
-                  <Link href={`/admin/firmalar/${t.firma_id}`} className="font-semibold underline-offset-4 hover:underline">
-                    {t.firma}
-                  </Link>
-                ) : (
-                  <span className="font-semibold">{t.kaynak}</span>
-                )}
-                {t.ulke ? <span className="text-xs text-muted">{t.ulke}</span> : null}
-                {/* Tıkladı ama hâlâ "Gönderildi": ilgilendi, yazmadı — hatırlatmanın
-                    en sıcak adayı. */}
-                {t.durum === "gonderildi" ? (
-                  <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
-                    yanıt vermedi
-                  </span>
-                ) : null}
-                <span className="text-xs text-muted">{t.yol}</span>
-                <span className="ml-auto text-xs text-muted" title={tamTarih(t.zaman)}>
-                  {goreli(t.zaman)}
-                </span>
-              </li>
+              <TiklayanSatiri key={`${t.kaynak}-${t.zaman}-${i}`} t={t} />
             ))}
           </ul>
+        ) : taramalar.length ? (
+          <p className="mt-1.5 text-sm text-muted">Henüz bir kişinin tıklaması yok — aşağıdakilerin hepsi güvenlik taraması.</p>
         ) : (
           <p className="mt-1.5 text-sm text-muted">
             Henüz kayıtlı tıklama yok. Ölçüm 25 Eylül 2026&apos;da başladı — daha önce gönderilen
             maillerin tıklamaları sayılmadı.
           </p>
         )}
+        {taramalar.length ? (
+          <details className="mt-2 border-t border-line pt-2">
+            <summary className="cursor-pointer text-xs font-semibold text-muted hover:text-ink">
+              Güvenlik taramaları — tıklamaya sayılmadı (son {sayi(taramalar.length)})
+            </summary>
+            <p className="mt-1.5 text-xs text-muted">
+              Kurumsal alıcıların güvenlik tarayıcısı (ör. Microsoft Defender, Mimecast, Proofpoint) maili
+              teslimde açıp bağlantıları deniyor: gönderimden birkaç dakika sonra, iki bağlantı aynı saniyede.
+              Bir kişinin ilgisi değil — ama mailin o firmanın sunucusuna ulaştığını gösteriyor.
+            </p>
+            <ul className="mt-1 divide-y divide-line text-sm">
+              {taramalar.map((t, i) => (
+                <TiklayanSatiri key={`${t.kaynak}-${t.zaman}-${i}`} t={t} tarama />
+              ))}
+            </ul>
+          </details>
+        ) : null}
       </div>
     </section>
   );

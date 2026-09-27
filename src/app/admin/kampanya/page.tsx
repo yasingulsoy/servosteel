@@ -59,20 +59,22 @@ export default async function KampanyaSayfasi({ searchParams }: { searchParams: 
   const toplam = await kampanyaToplami();
   const gunSayisi = aralik === "tumu" ? Math.max(1, toplam.gun_sayisi || 14) : Number(aralik);
 
-  const [kutular, rol, gd, gunler, grupK, kopya, tiklayanlar, ulkeK, talep, otomatik, son, tiklayanFirma] = await Promise.all([
-    kutuDurumlari(ayar.kutular),
-    rolu(ben),
-    geriDonusDurumu(),
-    gunlukOzet(gunSayisi),
-    grupKirilimi(),
-    kopyaSorunu(),
-    sonTiklayanlar(15),
-    ulkeKirilimi(),
-    talebeDonen(),
-    otomatikAyar(),
-    sonGonderimler(10),
-    tiklayanFirmaSayisi(gunSayisi),
-  ]);
+  const [kutular, rol, gd, gunler, grupK, kopya, tiklayanlar, taramalar, ulkeK, talep, otomatik, son, tiklayanFirma] =
+    await Promise.all([
+      kutuDurumlari(ayar.kutular),
+      rolu(ben),
+      geriDonusDurumu(),
+      gunlukOzet(gunSayisi),
+      grupKirilimi(),
+      kopyaSorunu(),
+      sonTiklayanlar(15),
+      sonTiklayanlar(15, true),
+      ulkeKirilimi(),
+      talebeDonen(),
+      otomatikAyar(),
+      sonGonderimler(10),
+      tiklayanFirmaSayisi(gunSayisi),
+    ]);
   const admin = rol === "admin";
   const secim = ayar.kutular.length ? kutuSec(ayar, kutular.kutu, kutular.alan) : null;
   const sira = otomatik ? await otomatikSira(otomatik, Math.min(30, secim?.kalan ?? 0)).catch(() => []) : [];
@@ -83,6 +85,7 @@ export default async function KampanyaSayfasi({ searchParams }: { searchParams: 
 
   const kartlar: { etiket: string; deger: string; alt: string; vurgu?: boolean }[] = [
     { etiket: "Gönderim", deger: sayi(toplam.gonderim), alt: `bugün ${sayi(toplam.gonderim_bugun)}${tavan ? ` / ${sayi(tavan)}` : ""}` },
+    /* Kişi tıklaması; güvenlik taraması gün gün tablosunda ayrı sütunda (bkz. outreach-db TIKLAMALAR) */
     { etiket: "Tıklama", deger: sayi(toplam.tiklama), alt: `bugün ${sayi(toplam.tiklama_bugun)} · ${sayi(toplam.tiklayan_firma)} firma` },
     { etiket: "Teklif sayfası", deger: sayi(toplam.teklif_sayfasi), alt: "maildeki bağlantıdan" },
     { etiket: "Yanıt", deger: sayi(toplam.yanit), alt: `bugün ${sayi(toplam.yanit_bugun)}`, vurgu: toplam.yanit > 0 },
@@ -203,7 +206,14 @@ export default async function KampanyaSayfasi({ searchParams }: { searchParams: 
             ))}
           </nav>
           <div className="[&>section]:mt-3">
-            <Gunluk gunler={gunler} tiklayanlar={tiklayanlar} gruplar={grupK} ulkeler={ulkeK} tiklayanFirma={tiklayanFirma} />
+            <Gunluk
+              gunler={gunler}
+              tiklayanlar={tiklayanlar}
+              taramalar={taramalar}
+              gruplar={grupK}
+              ulkeler={ulkeK}
+              tiklayanFirma={tiklayanFirma}
+            />
           </div>
         </section>
 

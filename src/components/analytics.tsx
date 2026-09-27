@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { OUTREACH_BETIGI } from "@/lib/outreach-betik";
 import { CLARITY_PROJECT_ID, GA_MEASUREMENT_ID, IS_PRODUCTION_SITE } from "@/lib/site";
 
 /**
@@ -75,21 +76,11 @@ export function Analytics() {
 },true);`}
       </Script>
 
-      {/* Tanıtım e-postasından gelen ziyaret — kendi veritabanımıza.
-          `utm_content` o maili alan firmanın alan adı, yani panelde "kim
-          tıkladı" görünür; GA4 bunu firma bazında söyleyemiyor. Sayfa
-          başına bir kez, sendBeacon ile (tıklamayı geciktirmez). Çerez ve
-          IP yok — yazılan tek şey kendi linkimizin kendi parametresi. */}
+      {/* Tanıtım e-postasından gelen ziyaret — kendi veritabanımıza. Açılışta
+          bir, ilk gerçek harekette bir işaret; güvenlik tarayıcısının
+          açmasını insandan ayırıyor (bkz. lib/outreach-betik.ts). */}
       <Script id="outreach-tik" strategy="afterInteractive">
-        {`try{var q=new URLSearchParams(location.search);
-  if(q.get('utm_source')==='outreach'&&navigator.sendBeacon){
-    navigator.sendBeacon('/api/olay',new Blob([JSON.stringify({
-      tur:'outreach',
-      yol:location.pathname,
-      dil:document.documentElement.lang||'',
-      kaynak:(q.get('utm_content')||'')
-    })],{type:'application/json'}));
-  }}catch(e){}`}
+        {OUTREACH_BETIGI}
       </Script>
 
       {/* Clarity'nin kendi yükleyicisi: script etiketini kendisi oluşturup

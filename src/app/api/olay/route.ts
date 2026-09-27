@@ -11,7 +11,9 @@ import { olayEkle } from "@/lib/leads-db";
  *
  * KİŞİSEL VERİ YAZILMAZ. Yalnızca olay türü, yol ve dil. IP, çerez, kullanıcı
  * kimliği yok — bu uç noktanın KVKK açısından ek bir yükümlülük doğurmaması
- * için bilerek böyle.
+ * için bilerek böyle. Tanıtım e-postası ziyaretinde bir de sayfa açılışının
+ * rastgele kimliği (`gorunum`) ve "sayfada hareket oldu mu" bilgisi geliyor;
+ * kimlik her açılışta yeniden üretiliyor, kişiyi ya da cihazı tanımıyor.
  */
 
 export const runtime = "nodejs";
@@ -61,10 +63,18 @@ export async function POST(req: Request) {
   const ham = typeof g.kaynak === "string" ? g.kaynak.slice(0, 120) : "";
   const kaynak = tur === "outreach" && /^[a-z0-9.-]+$/i.test(ham) ? ham.toLowerCase() : "";
 
+  /* Aynı ziyaretin iki işareti: açılışta etkilesim=false, ilk gerçek hareket
+     (fare, tekerlek, dokunma, tuş) gelince true — `gorunum` ikisini tek
+     satırda birleştirir. Yayından önce açılmış sayfanın işaretinde ikisi de
+     yok; o satır NULL kalır ve gönderim saatine göre ayrılır. */
+  const gorunum =
+    tur === "outreach" && typeof g.gorunum === "string" && /^[a-z0-9-]{8,64}$/i.test(g.gorunum) ? g.gorunum : "";
+  const etkilesim = gorunum && typeof g.etkilesim === "boolean" ? g.etkilesim : null;
+
   /* Ülke, CDN/ters vekilin koyduğu başlıktan — yoksa boş. Kendimiz IP'den
      çıkarmıyoruz, IP'yi hiç saklamıyoruz. */
   const ulke = req.headers.get("cf-ipcountry") ?? "";
 
-  await olayEkle(tur, yol, dil, ulke, kaynak);
+  await olayEkle(tur, yol, dil, ulke, kaynak, gorunum, etkilesim);
   return new NextResponse(null, { status: 204 });
 }

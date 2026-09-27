@@ -1,4 +1,5 @@
 import { sorgu, sorguSert } from "@/lib/db";
+import { olaySemasiKur } from "@/lib/leads-db";
 import {
   ENGELLI_ULKELER,
   epostaGecerli,
@@ -140,7 +141,9 @@ let semaHazir = false;
 export async function outreachSemaKur(): Promise<boolean> {
   if (semaHazir) return true;
   const r = await sorgu(OUTREACH_SEMA);
-  semaHazir = r !== null;
+  /* Tıklama sayıları olaylar.etkilesim'i okuyor (bkz. TIKLAMALAR) — kampanya
+     sayfası leads şemasından önce açılabilir. */
+  semaHazir = r !== null && (await olaySemasiKur());
   return semaHazir;
 }
 
@@ -705,6 +708,56 @@ export async function kopyaSorunu(): Promise<{ adet: number; ornek: string }> {
 }
 
 /**
+ * Tanıtım e-postası tıklamaları, OTOMATİK TARAMA işaretli — tıklama sayan her
+ * sorgu buradan okur: `FROM ${TIKLAMALAR} t WHERE NOT t.otomatik`.
+ *
+ * Kurumsal alıcıların güvenlik tarayıcısı (Microsoft Defender, Mimecast,
+ * Proofpoint…) mail teslim edilir edilmez içindeki bütün bağlantıları gerçek
+ * bir tarayıcıda açıyor; sayfadaki ölçüm betiği orada da çalışıyor. 25-27
+ * Eylül 2026'daki 77 tıklamanın 71'i böyleydi: gönderimden 0,4-9 dakika
+ * sonra, iki bağlantı aynı saniyede, çoğu 30 sn arayla ikinci tur. "Sıcak
+ * firmalar"ın başındaki 24 tıklamalı, 12 teklif sayfalı firma tek bir
+ * taramaydı; insan tıklaması 4 firmadan 6 taneydi.
+ *
+ * Ayrım:
+ *  - `etkilesim` dolu (bu ölçüm yayına girdikten sonra): sayfada fare, tekerlek,
+ *    dokunma ya da tuş hareketi olduysa insan, olmadıysa otomatik (bkz.
+ *    lib/outreach-betik.ts).
+ *  - `etkilesim` NULL (öncesi, ya da yayından önce açık kalmış sayfa):
+ *    firmaya son gönderimden sonraki 15 dakika içindeyse ya da aynı firmadan
+ *    ±2 saniye içinde başka bir tıklama varsa otomatik — insan iki bağlantıyı
+ *    aynı saniyede açamıyor. iRack'in ilk dört tıklaması (7,5 saat sonra, dördü
+ *    aynı saniyede) böyle ayrılıyor; ardından gelen iki tıklaması insan.
+ *
+ * Otomatik tıklama silinmez, ayrı sayılır: güvenlik taraması, mailin firmanın
+ * sunucusuna ulaştığını da gösteriyor.
+ */
+export const TIKLAMALAR = `(
+  SELECT o.id, o.olusturuldu, o.kaynak, o.yol,
+         h.id AS firma_id, h.firma, h.ulke, h.durum, h.kategori,
+         (o.yol LIKE '%request-quote%' OR o.yol LIKE '%teklif-al%') AS teklif,
+         CASE WHEN o.etkilesim IS NOT NULL THEN NOT o.etkilesim
+              ELSE COALESCE(o.olusturuldu < g.zaman + interval '15 minutes', false)
+                   OR EXISTS (
+                     SELECT 1 FROM olaylar x
+                     WHERE x.tur = 'outreach' AND x.kaynak = o.kaynak AND x.kaynak <> '' AND x.id <> o.id
+                       AND x.olusturuldu BETWEEN o.olusturuldu - interval '2 seconds'
+                                             AND o.olusturuldu + interval '2 seconds')
+         END AS otomatik
+  FROM olaylar o
+  LEFT JOIN LATERAL (
+    SELECT id, firma, ulke, durum, kategori FROM hedef_firmalar
+    WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
+    ORDER BY id LIMIT 1
+  ) h ON true
+  LEFT JOIN LATERAL (
+    SELECT max(zaman) AS zaman FROM hedef_gonderim
+    WHERE firma_id = h.id AND sonuc = 'ok' AND zaman <= o.olusturuldu
+  ) g ON true
+  WHERE o.tur = 'outreach'
+)`;
+
+/**
  * Kampanyanın gün gün karnesi — panelde tek tabloda.
  *
  * Tek sorguda beş sayı: o gün kaç mail gitti, kaçı tıklandı, kaç yanıt,
@@ -713,8 +766,8 @@ export async function kopyaSorunu(): Promise<{ adet: number; ornek: string }> {
  * tıklama ve yanıt yan yana gelince oran görünüyor.
  *
  * Gün İSTANBUL günü — gönderim penceresi de öyle sayılıyor, ikisi tutsun.
- * Tıklama `olaylar.tur = 'outreach'`: e-postadaki bağlantıdan gelen ziyaret
- * (bkz. api/olay). Eski günlerde tıklama kaydı yok, orada 0 görünür.
+ * Tıklama e-postadaki bağlantıdan gelen İNSAN ziyareti; otomatik tarama ayrı
+ * sütunda (bkz. TIKLAMALAR). Eski günlerde tıklama kaydı yok, orada 0 görünür.
  */
 export type GunSatiri = {
   gun: string;
@@ -722,6 +775,8 @@ export type GunSatiri = {
   tiklama: number;
   /** O gün tıklayan FARKLI firma — aynı firmanın 24 tıklaması tek sayılır */
   tiklayan: number;
+  /** Güvenlik tarayıcısının açması — tıklamaya katılmaz */
+  otomatik: number;
   yanit: number;
   geri_donus: number;
   abonelik: number;
@@ -741,9 +796,11 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
        FROM hedef_gonderim WHERE sonuc = 'ok' GROUP BY 1
      ),
      t AS (
-       SELECT (olusturuldu AT TIME ZONE 'Europe/Istanbul')::date AS g, count(*)::int AS n,
-              count(DISTINCT NULLIF(kaynak, ''))::int AS f
-       FROM olaylar WHERE tur = 'outreach' GROUP BY 1
+       SELECT (olusturuldu AT TIME ZONE 'Europe/Istanbul')::date AS g,
+              count(*) FILTER (WHERE NOT otomatik)::int AS n,
+              count(DISTINCT NULLIF(kaynak, '')) FILTER (WHERE NOT otomatik)::int AS f,
+              count(*) FILTER (WHERE otomatik)::int AS oto
+       FROM ${TIKLAMALAR} t GROUP BY 1
      ),
      e AS (
        SELECT (islendi AT TIME ZONE 'Europe/Istanbul')::date AS g, tur, count(*)::int AS n
@@ -753,6 +810,7 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
             COALESCE(g.n, 0) AS gonderim,
             COALESCE(t.n, 0) AS tiklama,
             COALESCE(t.f, 0) AS tiklayan,
+            COALESCE(t.oto, 0) AS otomatik,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'yanit'), 0) AS yanit,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'geri_donus'), 0) AS geri_donus,
             COALESCE((SELECT n FROM e WHERE e.g = gunler.g AND e.tur = 'abonelik'), 0) AS abonelik
@@ -770,8 +828,8 @@ export async function gunlukOzet(gun = 14): Promise<GunSatiri[]> {
 export async function tiklayanFirmaSayisi(gun: number): Promise<number> {
   const n = Math.min(400, Math.max(1, Math.trunc(gun)));
   const r = await sorguSert<{ adet: number }>(
-    `SELECT count(DISTINCT kaynak)::int AS adet FROM olaylar
-     WHERE tur = 'outreach' AND kaynak <> ''
+    `SELECT count(DISTINCT kaynak)::int AS adet FROM ${TIKLAMALAR} t
+     WHERE NOT otomatik AND kaynak <> ''
        AND olusturuldu >= (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') - (($1::int - 1) || ' days')::interval)
                           AT TIME ZONE 'Europe/Istanbul'`,
     [n]
@@ -781,6 +839,8 @@ export async function tiklayanFirmaSayisi(gun: number): Promise<number> {
 
 /**
  * Tanıtım e-postasındaki bağlantıya tıklayan firmalar — en yenisi başta.
+ * `otomatik` true ise yalnızca güvenlik taramaları, değilse yalnızca insan
+ * tıklamaları (bkz. TIKLAMALAR); ikisi aynı listede karışmasın.
  *
  * Eşleşme alan adından: `olaylar.kaynak` utm_content'ten gelen alan adı,
  * firmanın `web` alanında geçiyor. Eşleşmezse satır yine gösterilir (alan
@@ -797,19 +857,14 @@ export type Tiklayan = {
   durum: string | null;
 };
 
-export async function sonTiklayanlar(adet = 12): Promise<Tiklayan[]> {
+export async function sonTiklayanlar(adet = 12, otomatik = false): Promise<Tiklayan[]> {
   return sorguSert<Tiklayan>(
-    `SELECT o.olusturuldu AS zaman, o.kaynak, o.yol, h.id AS firma_id, h.firma, h.ulke, h.durum
-     FROM olaylar o
-     LEFT JOIN LATERAL (
-       SELECT id, firma, ulke, durum FROM hedef_firmalar
-       WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
-       ORDER BY id LIMIT 1
-     ) h ON true
-     WHERE o.tur = 'outreach'
-     ORDER BY o.olusturuldu DESC
+    `SELECT olusturuldu AS zaman, kaynak, yol, firma_id, firma, ulke, durum
+     FROM ${TIKLAMALAR} t
+     WHERE otomatik = $2
+     ORDER BY olusturuldu DESC
      LIMIT $1`,
-    [Math.min(50, Math.max(1, Math.trunc(adet)))]
+    [Math.min(50, Math.max(1, Math.trunc(adet))), otomatik]
   );
 }
 
@@ -821,7 +876,9 @@ export async function sonTiklayanlar(adet = 12): Promise<Tiklayan[]> {
  * dolmaya başlar (ölçüm o gün kondu).
  *
  * Tıklama, ziyaretin `utm_content`'indeki alan adının firmaya eşlenmesiyle
- * bulunuyor — eşleşmeyen tıklama kırılıma girmez, toplamda görünür.
+ * bulunuyor — eşleşmeyen tıklama kırılıma girmez, toplamda görünür. Otomatik
+ * tarama sayılmaz: Meksika'yı "en ilgili pazar" gösteren 17 tıklamanın 17'si
+ * taramaydı.
  */
 export type Kirilim = { ad: string; anahtar: number | string; gonderim: number; tiklama: number };
 
@@ -833,14 +890,9 @@ async function kirilim(alan: "kategori" | "ulke"): Promise<Kirilim[]> {
        WHERE s.sonuc = 'ok' GROUP BY 1
      ),
      t AS (
-       SELECT h.${alan} AS k, count(*)::int AS n
-       FROM olaylar o
-       JOIN LATERAL (
-         SELECT ${alan} FROM hedef_firmalar
-         WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
-         ORDER BY id LIMIT 1
-       ) h ON true
-       WHERE o.tur = 'outreach' GROUP BY 1
+       SELECT t.${alan} AS k, count(*)::int AS n
+       FROM ${TIKLAMALAR} t
+       WHERE NOT t.otomatik AND t.firma_id IS NOT NULL GROUP BY 1
      )
      SELECT COALESCE(g.k, t.k)::text AS anahtar, COALESCE(g.k, t.k)::text AS ad,
             COALESCE(g.n, 0) AS gonderim, COALESCE(t.n, 0) AS tiklama
@@ -864,7 +916,8 @@ export const ulkeKirilimi = () => kirilim("ulke");
  * okunmasın diye ikisi yan yana.
  *
  * Gün İSTANBUL günü. Tıklama ölçümü 25 Eylül 2026'da başladı — toplam tıklama
- * o günden bu yana, gönderim toplamı ise ilk günden.
+ * o günden bu yana, gönderim toplamı ise ilk günden. Tıklama, tıklayan firma
+ * ve teklif sayfası İNSAN ziyareti; güvenlik taraması `otomatik`te ayrı.
  */
 export type KampanyaToplami = {
   gonderim: number;
@@ -873,6 +926,8 @@ export type KampanyaToplami = {
   tiklama_bugun: number;
   tiklayan_firma: number;
   teklif_sayfasi: number;
+  /** Güvenlik tarayıcısının açtığı bağlantılar (bkz. TIKLAMALAR) */
+  otomatik: number;
   yanit: number;
   yanit_bugun: number;
   geri_donus: number;
@@ -887,14 +942,19 @@ export async function kampanyaToplami(): Promise<KampanyaToplami> {
   const r = await sorguSert<KampanyaToplami>(
     `WITH bugun AS (
        SELECT (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') AT TIME ZONE 'Europe/Istanbul') AS b
+     ),
+     tk AS (
+       SELECT count(*) FILTER (WHERE NOT otomatik)::int AS tiklama,
+              count(*) FILTER (WHERE NOT otomatik AND olusturuldu >= (SELECT b FROM bugun))::int AS tiklama_bugun,
+              count(DISTINCT NULLIF(kaynak, '')) FILTER (WHERE NOT otomatik)::int AS tiklayan_firma,
+              count(*) FILTER (WHERE NOT otomatik AND teklif)::int AS teklif_sayfasi,
+              count(*) FILTER (WHERE otomatik)::int AS otomatik
+       FROM ${TIKLAMALAR} t
      )
      SELECT
        (SELECT count(*) FROM hedef_gonderim WHERE sonuc = 'ok')::int AS gonderim,
        (SELECT count(*) FROM hedef_gonderim, bugun WHERE sonuc = 'ok' AND zaman >= bugun.b)::int AS gonderim_bugun,
-       (SELECT count(*) FROM olaylar WHERE tur = 'outreach')::int AS tiklama,
-       (SELECT count(*) FROM olaylar, bugun WHERE tur = 'outreach' AND olusturuldu >= bugun.b)::int AS tiklama_bugun,
-       (SELECT count(DISTINCT kaynak) FROM olaylar WHERE tur = 'outreach' AND kaynak <> '')::int AS tiklayan_firma,
-       (SELECT count(*) FROM olaylar WHERE tur = 'outreach' AND (yol LIKE '%request-quote%' OR yol LIKE '%teklif-al%'))::int AS teklif_sayfasi,
+       tk.tiklama, tk.tiklama_bugun, tk.tiklayan_firma, tk.teklif_sayfasi, tk.otomatik,
        (SELECT count(*) FROM gelen_eposta WHERE tur = 'yanit')::int AS yanit,
        (SELECT count(*) FROM gelen_eposta, bugun WHERE tur = 'yanit' AND islendi >= bugun.b)::int AS yanit_bugun,
        (SELECT count(*) FROM gelen_eposta WHERE tur = 'geri_donus')::int AS geri_donus,
@@ -903,7 +963,8 @@ export async function kampanyaToplami(): Promise<KampanyaToplami> {
        (SELECT min(zaman) FROM hedef_gonderim WHERE sonuc = 'ok') AS ilk_gonderim,
        COALESCE((SELECT (now() AT TIME ZONE 'Europe/Istanbul')::date
                         - (min(zaman) AT TIME ZONE 'Europe/Istanbul')::date + 1
-                 FROM hedef_gonderim WHERE sonuc = 'ok'), 0)::int AS gun_sayisi`
+                 FROM hedef_gonderim WHERE sonuc = 'ok'), 0)::int AS gun_sayisi
+     FROM tk`
   );
   return r[0];
 }
@@ -912,23 +973,19 @@ export async function kampanyaToplami(): Promise<KampanyaToplami> {
  * Sıcak firmalar: maildeki bağlantıya tıklamış, çoğu teklif sayfasına kadar
  * gelmiş, ama hâlâ YANIT VERMEMİŞ ("Gönderildi"de duran) firmalar. Bir telefon
  * ya da kısa bir mail için en yüksek ihtimalli isimler — önce teklif sayfasına
- * en çok girenler.
+ * en çok girenler. Yalnızca insan tıklaması: listenin başındaki firmalar
+ * güvenlik taramasıydı, kimse onları arayıp vakit kaybetmesin.
  */
 export type SicakFirma = { firma_id: number; firma: string; ulke: string; tik: number; teklif: number; son: string };
 
 export async function sicakFirmalar(adet = 6): Promise<SicakFirma[]> {
   return sorguSert<SicakFirma>(
-    `SELECT h.id AS firma_id, h.firma, h.ulke, count(*)::int AS tik,
-            count(*) FILTER (WHERE o.yol LIKE '%request-quote%' OR o.yol LIKE '%teklif-al%')::int AS teklif,
-            max(o.olusturuldu) AS son
-     FROM olaylar o
-     JOIN LATERAL (
-       SELECT id, firma, ulke, durum FROM hedef_firmalar
-       WHERE o.kaynak <> '' AND web ILIKE '%' || o.kaynak || '%'
-       ORDER BY id LIMIT 1
-     ) h ON true
-     WHERE o.tur = 'outreach' AND h.durum = 'gonderildi'
-     GROUP BY h.id, h.firma, h.ulke
+    `SELECT firma_id, firma, ulke, count(*)::int AS tik,
+            count(*) FILTER (WHERE teklif)::int AS teklif,
+            max(olusturuldu) AS son
+     FROM ${TIKLAMALAR} t
+     WHERE NOT otomatik AND firma_id IS NOT NULL AND durum = 'gonderildi'
+     GROUP BY firma_id, firma, ulke
      ORDER BY teklif DESC, tik DESC, son DESC
      LIMIT $1`,
     [Math.min(20, Math.max(1, Math.trunc(adet)))]
