@@ -1,11 +1,11 @@
 import "server-only";
 import { sorguSert } from "@/lib/db";
 import { kayitEkle } from "@/lib/panel-kayit";
-import { epostaGonder, postaKutulari, yanitlandiIsaretle } from "@/lib/posta";
-import { adresleriAyikla } from "@/lib/posta-bicim";
+import { ekleriIndir, epostaGonder, postaKutulari, yanitlandiIsaretle, type GidenEk, type Klasor } from "@/lib/posta";
+import { adresleriAyikla, boyutYaz } from "@/lib/posta-bicim";
 
 /**
- * Elle e-posta göndermenin TEK yolu — paneldeki form da (eposta/actions.ts),
+ * Elle e-posta göndermenin TEK yolu — paneldeki form da (eposta/gonder/route.ts),
  * Claude'un kullandığı uç da (api/posta) buradan geçer. Kurallar bir yerde:
  *
  *   - gönderen kutusu gönderim ayarlarındaki kutulardan biri olmalı;
@@ -15,13 +15,18 @@ import { adresleriAyikla } from "@/lib/posta-bicim";
  *   - abonelikten çıkmış adrese YENİ e-posta gitmez; yanıtta gider ("beni
  *     listeden çıkarın" yazana "çıkardık" demek gerekebilir);
  *   - her gönderim ve her başarısızlık panel kaydına düşer (kim, hangi
- *     kutudan, kime, konu) — Kayıtlar sayfasında görünür.
+ *     kutudan, kime, konu) — Kayıtlar sayfasında görünür;
+ *   - ekler (yüklenen dosyalar + iletilen iletinin seçilen ekleri) toplam en
+ *     çok EK_TOPLAM_EN_COK bayt.
  *
  * Tanıtım e-postasının kuralları (günlük tavan, ısınma, aralık) BURADA YOK:
  * bu bire bir yazışma.
  */
 
 export const ELLE_SAATLIK = 40;
+
+/** Bir e-postadaki eklerin toplamı en çok — paylaşımlı sunucunun kabul ettiği makul boyut. */
+export const EK_TOPLAM_EN_COK = 20 * 1024 * 1024;
 
 export type ElleGonderim = {
   /** Panel kullanıcısı ya da "claude" — panel kaydına yazılır */
@@ -38,6 +43,10 @@ export type ElleGonderim = {
   yanitUid?: number;
   /** Bütün kontroller çalışır, e-posta GİTMEZ (Claude'un ucundaki önizleme) */
   dene?: boolean;
+  /** Formdan yüklenen dosyalar */
+  ekler?: GidenEk[];
+  /** İletilen iletinin gönderime eklenecek ekleri (parça numaraları) */
+  iletilenEkler?: { kutu: string; klasor: Klasor; uid: number; parcalar: string[] };
 };
 
 export type ElleSonuc = { tamam: boolean; mesaj: string };
@@ -78,7 +87,29 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
     }
   }
 
+  const yuklenen = g.ekler ?? [];
+  const yuklenenBoyut = yuklenen.reduce((t, e) => t + e.icerik.length, 0);
+  if (yuklenenBoyut > EK_TOPLAM_EN_COK) {
+    return { tamam: false, mesaj: `Ekler çok büyük (${boyutYaz(yuklenenBoyut)}) — toplam en çok ${boyutYaz(EK_TOPLAM_EN_COK)}.` };
+  }
+
   if (g.dene) return { tamam: true, mesaj: "Kontrollerden geçti — GÖNDERİLMEDİ (önizleme)." };
+
+  /* İletilen iletinin ekleri gönderim anında kutudan alınır — tarayıcıya
+     inip geri yüklenmez. */
+  let iletilen: GidenEk[] = [];
+  if (g.iletilenEkler?.parcalar.length) {
+    const r = await ekleriIndir(
+      g.iletilenEkler.kutu,
+      g.iletilenEkler.klasor,
+      g.iletilenEkler.uid,
+      g.iletilenEkler.parcalar,
+      EK_TOPLAM_EN_COK - yuklenenBoyut
+    );
+    if (!r.tamam) return { tamam: false, mesaj: r.hata };
+    iletilen = r.ekler;
+  }
+  const ekler = [...iletilen, ...yuklenen];
 
   const r = await epostaGonder({
     kutuAdresi: kutu,
@@ -87,9 +118,11 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
     konu: g.konu ?? "",
     metin: g.metin ?? "",
     yanitlanan: yanitMi ? { mesajKimligi, referanslar: g.referanslar ?? "" } : undefined,
+    ekler,
   });
 
-  const ozet = `${kutu} → ${[...kime.gecerli, ...bilgi.gecerli].join(", ")} — ${g.konu ?? ""}`.slice(0, 280);
+  const ekYazisi = ekler.length ? ` · ${ekler.length} ek (${boyutYaz(ekler.reduce((t, e) => t + e.icerik.length, 0))})` : "";
+  const ozet = `${kutu} → ${[...kime.gecerli, ...bilgi.gecerli].join(", ")} — ${g.konu ?? ""}${ekYazisi}`.slice(0, 280);
   if (!r.tamam) {
     await kayitEkle(g.kim, "eposta_gonder_hata", kutu, `${ozet} · ${r.hata}`.slice(0, 280));
     return { tamam: false, mesaj: r.hata };

@@ -132,3 +132,135 @@ export function kisaAd(v: { name?: string; address?: string }[] | undefined): st
 export function kutuKisaAdi(adres: string): string {
   return (adres ?? "").split("@")[0] || adres;
 }
+
+/* ---------------------------------------------------------------- ekler */
+
+/** IMAP BODYSTRUCTURE düğümü — imapflow'un verdiğinin burada gereken kısmı. */
+export type YapiDugumu = {
+  part?: string;
+  type: string;
+  parameters?: Record<string, string>;
+  id?: string;
+  encoding?: string;
+  size?: number;
+  disposition?: string;
+  dispositionParameters?: Record<string, string>;
+  childNodes?: YapiDugumu[];
+  envelope?: { subject?: string };
+};
+
+export type Ek = {
+  /** IMAP parça numarası ("2", "1.2") — indirirken bununla istenir */
+  parca: string;
+  ad: string;
+  tur: string;
+  /** Yaklaşık gerçek boyut (base64 şişmesi düşülmüş) */
+  boyut: number;
+  /** Metnin içine gömülü görsel (imza logosu, yapıştırılmış ekran görüntüsü) */
+  satirIci: boolean;
+};
+
+const UZANTI: Record<string, string> = {
+  "image/png": "png",
+  "image/jpeg": "jpg",
+  "image/gif": "gif",
+  "image/webp": "webp",
+  "image/bmp": "bmp",
+  "application/pdf": "pdf",
+  "message/rfc822": "eml",
+  "text/plain": "txt",
+  "text/calendar": "ics",
+};
+
+/** Dosya adından yol ayırıcı ve denetim karakterleri atılır; boş kalırsa yedek ad. */
+export function ekAdiTemizle(ad: string, yedek: string): string {
+  const t = (ad ?? "")
+    .replace(/[\u0000-\u001f\u007f]/g, "")
+    .replace(/[\\/]/g, "_")
+    .replace(/^\.+/, "")
+    .trim()
+    .slice(0, 150);
+  return t || yedek;
+}
+
+/**
+ * Bir iletinin ekleri, BODYSTRUCTURE'dan — iletinin tamamı indirilmeden, ne
+ * kadar büyük olursa olsun eksiksiz. Gövde metni (adsız text/plain, text/html)
+ * ve teslim raporu parçaları ek sayılmaz. Ekli bir e-posta (message/rfc822)
+ * tek bir .eml olarak kalır, içine inilmez.
+ */
+export function ekleriBul(kok: YapiDugumu): Ek[] {
+  const ekler: Ek[] = [];
+  const gez = (d: YapiDugumu) => {
+    const tur = (d.type ?? "").toLowerCase();
+    if (tur !== "message/rfc822" && d.childNodes?.length) {
+      for (const c of d.childNodes) gez(c);
+      return;
+    }
+    if (tur.startsWith("multipart/")) return;
+    const yerlesim = (d.disposition ?? "").toLowerCase();
+    const ham = d.dispositionParameters?.filename ?? d.parameters?.name ?? "";
+    const adli = Boolean(ham.trim());
+    if (!adli && yerlesim !== "attachment") {
+      if (tur.startsWith("text/")) return; // gövde, teslim raporu başlıkları
+      if (tur === "message/delivery-status" || tur === "message/disposition-notification") return;
+    }
+    const parca = d.part ?? "1";
+    const yedek =
+      tur === "message/rfc822" && d.envelope?.subject
+        ? `${d.envelope.subject}.eml`
+        : `${tur.startsWith("image/") ? "gorsel" : "ek"}-${parca}.${UZANTI[tur] ?? "bin"}`;
+    const boyut = d.size ?? 0;
+    ekler.push({
+      parca,
+      ad: ekAdiTemizle(ham, ekAdiTemizle(yedek, `ek-${parca}`)),
+      tur: tur || "application/octet-stream",
+      boyut: (d.encoding ?? "").toLowerCase() === "base64" ? Math.floor(boyut * 0.74) : boyut,
+      satirIci: Boolean(d.id) && tur.startsWith("image/") && yerlesim !== "attachment",
+    });
+  };
+  gez(kok);
+  return ekler;
+}
+
+/** "1,2 MB" · "340 KB" · "12 B" */
+export function boyutYaz(bayt: number): string {
+  if (!Number.isFinite(bayt) || bayt < 1024) return `${Math.max(0, Math.round(bayt || 0))} B`;
+  if (bayt < 1024 * 1024) return `${Math.round(bayt / 1024)} KB`;
+  return `${(bayt / (1024 * 1024)).toLocaleString("tr-TR", { maximumFractionDigits: 1 })} MB`;
+}
+
+/**
+ * Metindeki "[cid:…]" yer tutucuları siler — Outlook'un düz metin hâlinde
+ * gömülü görselin yeri. Görseller okuyucuda ayrıca gösteriliyor.
+ */
+export function cidTemizle(metin: string): string {
+  return (metin ?? "")
+    .replace(/\[cid:[^\]\s]*\]/gi, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/** Tarayıcıda AÇILMASI güvenli türler — betik çalıştıramayanlar. SVG ve HTML bilerek yok. */
+export const ONIZLENEBILIR: ReadonlySet<string> = new Set([
+  "image/png",
+  "image/jpeg",
+  "image/gif",
+  "image/webp",
+  "image/bmp",
+  "application/pdf",
+  "text/plain",
+]);
+
+/** Content-Disposition: ASCII yedek ad + UTF-8 ad (RFC 6266 / 5987). */
+export function icerikYerlesimi(ad: string, satirIci: boolean): string {
+  const ascii =
+    ad
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^\x20-\x7e]/g, "_")
+      .replace(/["\\]/g, "_") || "ek";
+  const utf8 = encodeURIComponent(ad).replace(/['()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`);
+  return `${satirIci ? "inline" : "attachment"}; filename="${ascii}"; filename*=UTF-8''${utf8}`;
+}

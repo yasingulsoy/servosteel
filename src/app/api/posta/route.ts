@@ -2,14 +2,23 @@ import { timingSafeEqual } from "node:crypto";
 import { NextResponse, type NextRequest } from "next/server";
 import { firmaEslesmeleri, gelenSiniflari, kutuBasinaBekleyenYanit, sonYanitlar } from "@/lib/gelen-db";
 import { outreachSemaKur } from "@/lib/outreach-db";
-import { ARAMA_EN_COK, aramaTemizle, herYerdeAra, iletiOku, kutuGorunumu, postaKutulari, type Klasor } from "@/lib/posta";
+import {
+  ARAMA_EN_COK,
+  aramaTemizle,
+  ekleriIndir,
+  herYerdeAra,
+  iletiOku,
+  kutuGorunumu,
+  postaKutulari,
+  type Klasor,
+} from "@/lib/posta";
 import { IMZA, alintiTarihi, alintila, iletBlogu, iletKonusu, kutuKisaAdi, yanitKonusu } from "@/lib/posta-bicim";
 import { elleGonder, type ElleGonderim } from "@/lib/posta-gonder";
 
 /**
  * Claude'un e-posta ucu — panelin E-posta sayfasının yaptığını komut
- * satırından yapar: kutuları sayar, klasör listeler, ileti okur, yazar,
- * yanıtlar, iletir. İstemcisi `scripts/posta.mjs`.
+ * satırından yapar: kutuları sayar, klasör listeler, arar, ileti okur, eki
+ * indirir, yazar, yanıtlar, ekleriyle iletir. İstemcisi `scripts/posta.mjs`.
  *
  * Yasin, 26 Eylül 2026: "gerektiği yerde bunu sen de yapabilmelisin".
  *
@@ -66,7 +75,14 @@ type Govde = {
   /** İmza eklensin mi (varsayılan evet — paneldeki form da imzayla açılıyor) */
   imza?: boolean;
   dene?: boolean;
+  /** "ilet": orijinalin ekleri de gitsin mi (varsayılan evet, gömülü görseller hariç) */
+  ekler?: boolean;
+  /** "ek": indirilecek parça numarası */
+  parca?: string;
 };
+
+/** "ek" işleminde tek ekin en büyük boyutu — JSON içinde base64 gider. */
+const API_EK_EN_COK = 10 * 1024 * 1024;
 
 const metin = (v: unknown, max: number) => (typeof v === "string" ? v : "").slice(0, max);
 
@@ -85,10 +101,14 @@ function govdeKur(g: Govde): string {
   return g.imza === false ? m : `${m}\n\n${IMZA}`;
 }
 
-async function gonder(t: Omit<ElleGonderim, "kim">) {
+async function gonder(t: Omit<ElleGonderim, "kim">, ekAdlari: string[] = []) {
   const s = await elleGonder({ ...t, kim: KIM });
   return NextResponse.json(
-    { ...s, dene: Boolean(t.dene), taslak: { kutu: t.kutu, kime: t.kime, bilgi: t.bilgi ?? "", konu: t.konu, metin: t.metin } },
+    {
+      ...s,
+      dene: Boolean(t.dene),
+      taslak: { kutu: t.kutu, kime: t.kime, bilgi: t.bilgi ?? "", konu: t.konu, metin: t.metin, ekler: ekAdlari },
+    },
     { status: s.tamam ? 200 : 400 }
   );
 }
@@ -167,6 +187,14 @@ export async function POST(istek: NextRequest) {
     return NextResponse.json({ tamam: true, kutu, klasor, ileti: r.ileti, firma: firmalar.get(r.ileti.kimdenAdres) ?? null });
   }
 
+  if (g.islem === "ek") {
+    /* Tek bir ek, base64 — müşterinin gönderdiği çizimi/şartnameyi okumak için. */
+    const r = await ekleriIndir(kutu, klasor, uid, [metin(g.parca, 40)], API_EK_EN_COK);
+    if (!r.tamam) return hata(r.hata);
+    const e = r.ekler[0];
+    return NextResponse.json({ tamam: true, ad: e.ad, tur: e.tur, boyut: e.icerik.length, icerik: e.icerik.toString("base64") });
+  }
+
   if (g.islem === "gonder") {
     return gonder({
       kutu,
@@ -201,17 +229,23 @@ export async function POST(istek: NextRequest) {
     const r = await iletiOku(kutu, klasor, uid);
     if (!r.tamam) return hata(r.hata);
     const x = r.ileti;
-    return gonder({
-      kutu,
-      kime: metin(g.kime, 4000),
-      bilgi: metin(g.bilgi, 4000),
-      konu: metin(g.konu, 300) || iletKonusu(x.konu),
-      metin: govdeKur(g) + iletBlogu(x),
-      dene: g.dene === true,
-    });
+    /* Panelin "İlet"i gibi: ekler gider, iletinin içine gömülü görseller (imza logosu) gitmez. */
+    const ekler = g.ekler === false ? [] : x.ekler.filter((e) => !e.satirIci);
+    return gonder(
+      {
+        kutu,
+        kime: metin(g.kime, 4000),
+        bilgi: metin(g.bilgi, 4000),
+        konu: metin(g.konu, 300) || iletKonusu(x.konu),
+        metin: govdeKur(g) + iletBlogu(x),
+        dene: g.dene === true,
+        iletilenEkler: ekler.length ? { kutu, klasor, uid, parcalar: ekler.map((e) => e.parca) } : undefined,
+      },
+      ekler.map((e) => e.ad)
+    );
   }
 
-  return hata("Bilinmeyen işlem. Olanlar: kutular, yanitlar, ara, liste, oku, gonder, yanitla, ilet.");
+  return hata("Bilinmeyen işlem. Olanlar: kutular, yanitlar, ara, liste, oku, ek, gonder, yanitla, ilet.");
 }
 
 export function GET() {

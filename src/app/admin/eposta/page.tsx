@@ -258,6 +258,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         mesajKimligi={yanit ? secili.mesajKimligi : ""}
         referanslar={yanit ? secili.referanslar : ""}
         yanitUid={yanit && klasor === "gelen" ? secili.uid : undefined}
+        iletilen={!yanit && secili.ekler.length ? { kutu, klasor, uid: secili.uid, ekler: secili.ekler } : undefined}
         kapatHref={kapat}
       />
     );

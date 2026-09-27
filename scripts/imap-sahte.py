@@ -96,6 +96,7 @@ def kutu_kur():
         (ileti("Liza Shpelevaya <liza@servosteel.com.tr>", "ege@servosteel.com.tr",
                "Fiyat listesi güncellendi", "Merhaba,\n\nYeni fiyat listesi ekte değil, sunucuda. Çalışmalara başlayabiliriz.\n\nLiza",
                tarih=gun(20, 11, 30), kimlik="<liza-1@servosteel.com.tr>"), {"\\Seen"}),
+        (ekli_ileti(), set()),
     ]
     ege_giden = [
         (ileti("Servosteel Export <ege@servosteel.com.tr>", "ventas@stripsteel.example",
@@ -170,23 +171,102 @@ def zarf(m):
     ]) + b")"
 
 
+def ham_parametreler(deger):
+    """Başlıktaki parametreler ÇÖZÜLMEDEN — Dovecot gibi: filename*=utf-8''… olduğu
+    gibi gider, çözmek istemcinin (imapflow) işi."""
+    if not deger:
+        return []
+    return [(k, v.strip().strip('"')) for k, v in re.findall(r';\s*([^=;\s]+)\s*=\s*("(?:[^"\\]|\\.)*"|[^;]*)', katla(deger))]
+
+
+def param_listesi(ps):
+    return b"(" + b" ".join(dizgi(k.upper()) + b" " + dizgi(v) for k, v in ps) + b")" if ps else b"NIL"
+
+
 def parametreler(p):
-    ps = p.get_params(header="content-type") or []
-    ps = ps[1:]
-    if not ps:
-        return b"NIL"
-    return b"(" + b" ".join(dizgi(k.upper()) + b" " + dizgi(str(v)) for k, v in ps) + b")"
+    return param_listesi(ham_parametreler(p.get("Content-Type")))
 
 
 def yerlesim(p):
     d = p.get("Content-Disposition")
     if not d:
         return b"NIL"
-    tur = d.split(";")[0].strip().upper()
-    ps = p.get_params(header="content-disposition") or []
-    ps = ps[1:]
-    pb = b"(" + b" ".join(dizgi(k.upper()) + b" " + dizgi(str(v)) for k, v in ps) + b")" if ps else b"NIL"
-    return b"(" + dizgi(tur) + b" " + pb + b")"
+    tur = katla(d).split(";")[0].strip().upper()
+    return b"(" + dizgi(tur) + b" " + param_listesi(ham_parametreler(d)) + b")"
+
+
+def parca_bul(msg, yol):
+    """IMAP parça numarası ("2", "1.2") → iletinin o parçası. Tek parçalı iletide "1" kendisi."""
+    p = msg
+    for n in yol.split("."):
+        n = int(n)
+        if p.is_multipart():
+            alt = p.get_payload()
+            if not 1 <= n <= len(alt):
+                return None
+            p = alt[n - 1]
+        elif n != 1:
+            return None
+    return p
+
+
+def parca_bayt(p):
+    """Parçanın (MIME başlıkları, kodlanmış gövdesi)."""
+    ham = p.as_bytes(policy=email.policy.SMTP)
+    i = ham.find(b"\r\n\r\n")
+    return (ham[: i + 4], ham[i + 4:]) if i >= 0 else (b"", ham)
+
+
+def bolum(msg, ham, ad):
+    """BODY[ad]: '' tüm ileti · HEADER · TEXT · 'N(.N)*' parça gövdesi · 'N(.N)*.MIME' parça başlığı."""
+    if ad == "":
+        return ham
+    i = ham.find(b"\r\n\r\n")
+    if ad == "HEADER":
+        return ham[: i + 4] if i >= 0 else ham
+    if ad == "TEXT":
+        return ham[i + 4:] if i >= 0 else b""
+    mime = ad.endswith(".MIME")
+    p = parca_bul(msg, ad[:-5] if mime else ad)
+    if p is None:
+        return b""
+    basliklar, govde = parca_bayt(p)
+    return basliklar if mime else govde
+
+
+def png(g, y, renk):
+    """Geçerli küçük bir PNG — Pillow'suz (ek önizlemesi gerçek görsel görsün)."""
+    import struct
+    import zlib
+
+    def obek(tur, veri):
+        return struct.pack(">I", len(veri)) + tur + veri + struct.pack(">I", zlib.crc32(tur + veri) & 0xFFFFFFFF)
+
+    satir = b"\x00" + bytes(renk) * g
+    return (b"\x89PNG\r\n\x1a\n" + obek(b"IHDR", struct.pack(">IIBBBBB", g, y, 8, 2, 0, 0, 0))
+            + obek(b"IDAT", zlib.compress(satir * y)) + obek(b"IEND", b""))
+
+
+def ekli_ileti():
+    """iRack'e benzer: gömülü logo (cid), Türkçe adlı büyük PDF eki, görsel eki — 512 KB'ı aşar."""
+    import random
+
+    m = EmailMessage(policy=email.policy.SMTP)
+    m["From"] = "info Irack Storage solution <info@irackeg.example>"
+    m["To"] = "Servosteel Export <ege@servosteel.com.tr>"
+    m["Subject"] = "Re: Rack upright and beam lines — Servosteel, Istanbul"
+    m["Date"] = email.utils.format_datetime(gun(26, 14, 51))
+    m["Message-ID"] = "<irack-1@irackeg.example>"
+    m.set_content("Dear sir\n\nWe are purchasing a new production line for the attached sections.\n"
+                  "Please provide a technical study and your best price.\n\nBest regards,\n\n"
+                  "[cid:logo-irack]\n\nOsama Haridy\nCEO")
+    m.add_alternative('<html><body><p>Dear sir</p><p>We are purchasing a new production line for the attached '
+                      'sections.</p><img src="cid:logo-irack"><p>Osama Haridy</p></body></html>', subtype="html")
+    m.get_payload()[1].add_related(png(60, 20, (200, 30, 30)), "image", "png", cid="<logo-irack>")
+    pdf = b"%PDF-1.4\n" + random.Random(7).randbytes(700_000) + b"\n%%EOF\n"
+    m.add_attachment(pdf, maintype="application", subtype="pdf", filename="Kesit çizimi – raf dikmesi.pdf")
+    m.add_attachment(png(320, 200, (40, 90, 160)), maintype="image", subtype="png", filename="profil-kesiti.png")
+    return m.as_bytes()
 
 
 def yapi(p):
@@ -448,17 +528,20 @@ class Isleyici(socketserver.StreamRequestHandler):
                     parca.append(b"ENVELOPE " + zarf(msg))
                 elif o == "BODYSTRUCTURE":
                     parca.append(b"BODYSTRUCTURE " + yapi(msg))
-                elif o.startswith("BODY.PEEK[]") or o.startswith("BODY[]"):
-                    veri = m["raw"]
-                    ek = re.search(r"<(\d+)(?:\.(\d+))?>", o)
-                    if ek:
-                        bas = int(ek.group(1))
-                        uz = int(ek.group(2)) if ek.group(2) else len(veri)
-                        veri = veri[bas:bas + uz]
-                        parca.append(b"BODY[]<%d> {%d}\r\n" % (bas, len(veri)) + veri)
+                elif re.match(r"^BODY(\.PEEK)?\[", o):
+                    b = re.match(r"^BODY(?:\.PEEK)?\[([^\]]*)\](?:<(\d+)(?:\.(\d+))?>)?$", o)
+                    if not b:
+                        print("  anlaşılmayan BODY ogesi:", o, flush=True)
+                        continue
+                    ad, bas, uz = b.group(1), b.group(2), b.group(3)
+                    veri = bolum(msg, m["raw"], ad)
+                    if bas is not None:
+                        bas = int(bas)
+                        veri = veri[bas:bas + (int(uz) if uz else len(veri))]
+                        parca.append(f"BODY[{ad}]<{bas}> ".encode() + b"{%d}\r\n" % len(veri) + veri)
                     else:
-                        parca.append(b"BODY[] {%d}\r\n" % len(veri) + veri)
-                    if o.startswith("BODY[]") and not self.salt_okunur:
+                        parca.append(f"BODY[{ad}] ".encode() + b"{%d}\r\n" % len(veri) + veri)
+                    if not o.startswith("BODY.PEEK") and not self.salt_okunur:
                         m["flags"].add("\\Seen")
                 else:
                     print("  bilinmeyen FETCH ogesi:", o, flush=True)

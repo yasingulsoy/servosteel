@@ -1314,6 +1314,45 @@ WhatsApp Business hesabı yok.
 
 ---
 
+## E-posta ekleri: görme, açma, indirme, iletme, dosya ekleme (27 Eylül)
+
+Yasin (iRack'in ekran görüntüsüyle): "ekler falan gözükmüyor … teklif
+bekleyenleri zaten ileteceğiz maille, bu sorunları görmek istemiyorum".
+
+**Sorun:** okuyucu iletinin ilk 512 KB'ını indirip ekleri oradan
+çıkarıyordu. Ek büyükse (iRack'in kesit çizimi) ek o kısımda değildi ve hiç
+görünmüyordu; imza logosu metinde "[cid:…]" diye kalıyordu.
+
+- **Ekler artık iletinin yapısından (BODYSTRUCTURE)** çıkıyor — ileti ne kadar
+  büyük olursa olsun eksiksiz. Her ek: ad (Türkçe karakterli adlar dahil),
+  tür, boyut, **Aç** (görsel, PDF, düz metin) ve **İndir**; görselde küçük
+  önizleme. İletinin içine gömülü görseller (imza logosu, yapıştırılmış
+  çizim) ayrı satırda; metindeki "[cid:…]" kalıntıları siliniyor.
+- **İndirme `/admin/eposta/ek`**: yalnızca panel oturumuyla, ek kutudan
+  akıtılarak (bellekte biriktirilmeden). Güvenlik: yalnızca görsel/PDF/metin
+  tarayıcıda açılır, HTML, SVG ve geri kalan her şey her zaman *indirilir*
+  (betik çalıştıramaz); nosniff; PDF dışında CSP sandbox. İstenen parça
+  iletinin eklerinden biri olmalı (gövde parçası bu yoldan verilmez).
+- **İlet** orijinalin eklerini de gönderir: formda ekler işaretli gelir,
+  gömülü görseller (logo) işaretsiz. Ekler gönderim anında kutudan alınır,
+  tarayıcıya inip geri yüklenmez.
+- **Dosya ekle**: yeni e-postaya, yanıta ve iletmeye bilgisayardan dosya
+  (en çok 10 dosya, toplam 20 MB; 2 MB üstünde "sunucu yoğunken gecikebilir"
+  uyarısı). Gönderim artık `/admin/eposta/gonder` üzerinden: önce oturum ve
+  boyut denetlenir, gövde sonra okunur (sunucu eyleminin sınırını büyütmek
+  her eylemi oturumsuz büyük isteğe açardı).
+- **Claude:** `node scripts/posta.mjs oku <kutu> <uid>` ekleri parça
+  numarasıyla listeler, `ek <kutu> <uid> <parça>` diske indirir, `ilet`
+  ekleri de iletir (`--eksiz` ile iletmez).
+
+**Nasıl denendi:** sahte IMAP'e iRack biçiminde bir ileti kondu (gömülü logo,
+700 KB'lık Türkçe adlı PDF, görsel eki; ileti 512 KB'ı aşıyor). Ekler
+eksiksiz listelendi, PDF bayt bayt aynı indi, iletilen mailde PDF + görsel +
+yüklenen dosya vardı ve logo yoktu; 23 MB istek 413, 11 dosya ret, oturumsuz
+istek 401, gövde parçası istemek 404.
+
+---
+
 ## Panel baştan düzenlendi: Genel bakış, E-posta istemcisi, Kampanya (26 Eylül)
 
 Yasin: "e-posta uygulaması gibi, hesapları tek tek seçip geleni gideni görüp

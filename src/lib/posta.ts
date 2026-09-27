@@ -1,4 +1,5 @@
 import "server-only";
+import { Readable } from "node:stream";
 import { simpleParser, type AddressObject } from "mailparser";
 import nodemailer from "nodemailer";
 import MailComposer from "nodemailer/lib/mail-composer";
@@ -6,7 +7,15 @@ import { gonderilmislereEkle, imapIstemcisi } from "@/lib/outreach";
 import { ayarlariOku, type GonderenKutusu } from "@/lib/outreach-kurallar";
 import { htmldenMetin } from "@/lib/eposta-html";
 import { metindenHtml } from "@/lib/eposta-bicim";
-import { adresGoster, kisaAd, referansZinciri } from "@/lib/posta-bicim";
+import {
+  adresGoster,
+  cidTemizle,
+  ekleriBul,
+  kisaAd,
+  referansZinciri,
+  type Ek,
+  type YapiDugumu,
+} from "@/lib/posta-bicim";
 
 /**
  * Panelin e-posta istemcisi — gönderen kutularının GERÇEK klasörleri.
@@ -70,7 +79,8 @@ export type OkunanIleti = {
   bilgi: string;
   tarih: string | null;
   metin: string;
-  ekler: string[];
+  /** BODYSTRUCTURE'dan — ileti kırpılsa da eksiksiz */
+  ekler: Ek[];
   kirpildi: boolean;
   /** Yanıt için: bu iletinin Message-ID'si ve References zinciri */
   mesajKimligi: string;
@@ -133,10 +143,14 @@ async function kapat(istemci: ImapIstemci) {
 
 /** Kilitli (açık) klasörden bir iletinin tamamı, düz metin. Yoksa null. */
 async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIleti | null> {
-  const m = await istemci.fetchOne(String(uid), { uid: true, source: { maxLength: ILETI_EN_COK_BAYT } }, { uid: true });
+  const m = await istemci.fetchOne(
+    String(uid),
+    { uid: true, bodyStructure: true, source: { maxLength: ILETI_EN_COK_BAYT } },
+    { uid: true }
+  );
   if (!m || !m.source) return null;
   const p = await simpleParser(m.source);
-  const govde = (p.text || (p.html ? htmldenMetin(p.html) : "")).replace(/\r\n?/g, "\n").trim();
+  const govde = cidTemizle((p.text || (p.html ? htmldenMetin(p.html) : "")).replace(/\r\n?/g, "\n"));
   const kimden = adresListesi(p.from);
   const yanitla = adresListesi(p.replyTo);
   const referanslar = Array.isArray(p.references) ? p.references.join(" ") : (p.references ?? "");
@@ -149,11 +163,9 @@ async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIlet
     bilgi: adresGoster(adresListesi(p.cc)),
     tarih: p.date ? p.date.toISOString() : null,
     metin: govde || "(ileti boş görünüyor)",
-    ekler: (p.attachments ?? [])
-      .filter((a) => a.contentDisposition !== "inline")
-      .map((a) => a.filename ?? "")
-      .filter(Boolean)
-      .slice(0, 20),
+    /* Ekler kaynağın ilk 512 KB'ından değil yapıdan: büyük iletide eki
+       taşıyan kısım indirilmiyordu ve ek hiç görünmüyordu (iRack, 26 Eylül). */
+    ekler: m.bodyStructure ? ekleriBul(m.bodyStructure as YapiDugumu).slice(0, 40) : [],
     kirpildi: m.source.length >= ILETI_EN_COK_BAYT,
     mesajKimligi: p.messageId ?? "",
     referanslar,
@@ -314,6 +326,131 @@ export async function iletiOku(
   }
 }
 
+/* ------------------------------------------------------------- ekler */
+
+/** Tek bir ekin indirilebileceği en büyük boyut (okuyucudaki Aç / İndir). */
+export const EK_EN_COK_BAYT = 30 * 1024 * 1024;
+
+type Kilit = Awaited<ReturnType<ImapIstemci["getMailboxLock"]>>;
+
+/** Klasörü açar, iletinin ekler listesini yapıdan çıkarır — iki ek işlevinin ortak girişi. */
+async function ekliIletiyiAc(
+  istemci: ImapIstemci,
+  klasor: Klasor,
+  uid: number
+): Promise<{ kilit: Kilit; ekler: Ek[] } | { hata: string; durum: number }> {
+  await istemci.connect();
+  const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
+  if (!yol) return { hata: "Bu kutuda Gönderilmiş klasörü yok.", durum: 404 };
+  const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
+  const m = await istemci.fetchOne(String(uid), { uid: true, bodyStructure: true }, { uid: true });
+  if (!m || !m.bodyStructure) {
+    kilit.release();
+    return { hata: ILETI_YOK, durum: 404 };
+  }
+  return { kilit, ekler: ekleriBul(m.bodyStructure as YapiDugumu) };
+}
+
+export type EkAkisi =
+  | { tamam: true; ek: Ek; akis: ReadableStream<Uint8Array> }
+  | { tamam: false; durum: number; hata: string };
+
+/**
+ * Bir eki kutudan AKITARAK verir — bellekte biriktirmeden, iletinin geri
+ * kalanını indirmeden. Bağlantı ve klasör kilidi akış bitene (ya da tarayıcı
+ * vazgeçene) kadar açık kalır. İstenen parça iletinin eklerinden biri
+ * olmalı; gövde ya da rapor parçası bu yoldan verilmez.
+ */
+export async function ekAkisi(kutuAdresi: string, klasor: Klasor, uid: number, parca: string): Promise<EkAkisi> {
+  const kutu = kutuBul(kutuAdresi);
+  if (!kutu) return { tamam: false, durum: 404, hata: "Bu kutu gönderim ayarlarında tanımlı değil." };
+  if (!Number.isSafeInteger(uid) || uid < 1 || !/^\d{1,3}(\.\d{1,3}){0,9}$/.test(parca)) {
+    return { tamam: false, durum: 400, hata: "Geçersiz istek." };
+  }
+  const istemci = imapIstemcisi(kutu);
+  let kilit: Kilit | null = null;
+  let devredildi = false;
+  try {
+    const a = await ekliIletiyiAc(istemci, klasor, uid);
+    if ("hata" in a) return { tamam: false, durum: a.durum, hata: a.hata };
+    kilit = a.kilit;
+    const ek = a.ekler.find((e) => e.parca === parca);
+    if (!ek) return { tamam: false, durum: 404, hata: "Ek bulunamadı — ileti taşınmış ya da silinmiş olabilir." };
+
+    const d = await istemci.download(String(uid), parca, { uid: true, maxBytes: EK_EN_COK_BAYT });
+    const acikKilit = kilit;
+    let bitti = false;
+    const bitir = () => {
+      if (bitti) return;
+      bitti = true;
+      acikKilit.release();
+      void kapat(istemci);
+    };
+    d.content.once("end", bitir);
+    d.content.once("close", bitir);
+    d.content.once("error", bitir);
+    devredildi = true;
+    return { tamam: true, ek, akis: Readable.toWeb(d.content) as unknown as ReadableStream<Uint8Array> };
+  } catch (e) {
+    return { tamam: false, durum: 502, hata: baglantiHatasi(e) };
+  } finally {
+    if (!devredildi) {
+      kilit?.release();
+      await kapat(istemci);
+    }
+  }
+}
+
+/** Giden e-postaya konacak ek — yüklenen dosya ya da iletilen iletinin eki. */
+export type GidenEk = { ad: string; tur: string; icerik: Buffer };
+
+/**
+ * İletirken: seçilen ekler bellekte, iletinin yapısındaki adlarıyla. Toplam
+ * `enCok` baytı aşarsa hiçbiri alınmaz ve sebebi döner.
+ */
+export async function ekleriIndir(
+  kutuAdresi: string,
+  klasor: Klasor,
+  uid: number,
+  parcalar: string[],
+  enCok: number
+): Promise<{ tamam: true; ekler: GidenEk[] } | { tamam: false; hata: string }> {
+  const kutu = kutuBul(kutuAdresi);
+  if (!kutu) return { tamam: false, hata: "İletilen iletinin kutusu tanımlı değil." };
+  if (!parcalar.length) return { tamam: true, ekler: [] };
+  const istemci = imapIstemcisi(kutu);
+  let kilit: Kilit | null = null;
+  try {
+    const a = await ekliIletiyiAc(istemci, klasor, uid);
+    if ("hata" in a) return { tamam: false, hata: `İletilen ileti açılamadı: ${a.hata}` };
+    kilit = a.kilit;
+    const secilen = parcalar.map((p) => a.ekler.find((e) => e.parca === p));
+    if (secilen.some((e) => !e)) return { tamam: false, hata: "İletilen iletinin eki bulunamadı — ileti değişmiş olabilir." };
+
+    const ekler: GidenEk[] = [];
+    let toplam = 0;
+    for (const ek of secilen as Ek[]) {
+      const d = await istemci.download(String(uid), ek.parca, { uid: true, maxBytes: enCok + 1 });
+      const parcaParca: Buffer[] = [];
+      for await (const c of d.content) {
+        toplam += (c as Buffer).length;
+        if (toplam > enCok) {
+          d.content.destroy();
+          return { tamam: false, hata: `Ekler çok büyük — iletilebilecek toplam en çok ${Math.round(enCok / 1048576)} MB.` };
+        }
+        parcaParca.push(c as Buffer);
+      }
+      ekler.push({ ad: ek.ad, tur: ek.tur, icerik: Buffer.concat(parcaParca) });
+    }
+    return { tamam: true, ekler };
+  } catch (e) {
+    return { tamam: false, hata: baglantiHatasi(e) };
+  } finally {
+    kilit?.release();
+    await kapat(istemci);
+  }
+}
+
 export type AramaSatiri = IletiOzeti & { kutu: string; klasor: Klasor; uidvalidity: number };
 
 /**
@@ -405,6 +542,8 @@ export type GonderimGirdisi = {
   metin: string;
   /** Yanıtsa: yanıtlanan iletinin Message-ID'si ve References zinciri (konuşma bağlansın) */
   yanitlanan?: { mesajKimligi: string; referanslar: string };
+  /** Yüklenen dosyalar ve iletilen iletinin seçilen ekleri */
+  ekler?: GidenEk[];
 };
 
 export type GonderimSonucu =
@@ -444,6 +583,9 @@ export async function epostaGonder(g: GonderimGirdisi): Promise<GonderimSonucu> 
           inReplyTo: g.yanitlanan.mesajKimligi,
           references: referansZinciri(g.yanitlanan.referanslar, g.yanitlanan.mesajKimligi),
         }
+      : {}),
+    ...(g.ekler?.length
+      ? { attachments: g.ekler.map((e) => ({ filename: e.ad, content: e.icerik, contentType: e.tur })) }
       : {}),
   }).compile();
   const ham = await dugum.build();

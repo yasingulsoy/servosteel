@@ -1,7 +1,8 @@
 /**
  * E-posta kutularına komut satırından erişim — sitedeki /api/posta ucunu
  * çağırır. Panelin E-posta sayfasının yaptığını yapar: kutuları sayar, klasör
- * listeler, ileti okur, yazar, yanıtlar, iletir. Claude bunu kullanır.
+ * listeler, arar, ileti okur, eki indirir, yazar, yanıtlar, ekleriyle iletir.
+ * Claude bunu kullanır.
  *
  * Anahtar: POSTA_API_ANAHTARI (.env.local ya da ortam) — sunucudakiyle AYNI.
  * Adres:   POSTA_API_ADRESI, yoksa https://servosteel.com.tr
@@ -12,9 +13,10 @@
  *   node scripts/posta.mjs ara <metin> [--adet 60]          (bütün kutular, Gelen + Gönderilmiş)
  *   node scripts/posta.mjs liste <kutu> [gelen|giden] [sayfa] [--ara "metin"]
  *   node scripts/posta.mjs oku <kutu> <uid> [gelen|giden]
+ *   node scripts/posta.mjs ek <kutu> <uid> <parça> [--klasor giden] [--dosya yol]   (eki diske indirir)
  *   node scripts/posta.mjs yanitla <kutu> <uid> --metin-dosya yanit.txt [--bilgi a@b.com] [--alintisiz]
  *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt
- *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden]
+ *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden] [--eksiz]
  *
  * <kutu>: "ege" ya da "ege@servosteel.com.tr".
  * Metin: --metin "…" ya da --metin-dosya <dosya> (UTF-8). İmza sunucuda
@@ -26,7 +28,7 @@
  */
 import fs from "node:fs";
 
-const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet"]);
+const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet", "dosya"]);
 const konum = [];
 const bayrak = {};
 const argv = process.argv.slice(2);
@@ -103,7 +105,9 @@ async function calis() {
   const govde = { islem };
   if (islem === "yanitlar") govde.adet = Number(geri[0]) || 10;
   if (islem === "ara") Object.assign(govde, { ara: geri.join(" "), adet: Number(bayrak.adet) || undefined });
-  if (["liste", "oku", "yanitla", "gonder", "ilet"].includes(islem)) govde.kutu = geri[0];
+  if (["liste", "oku", "ek", "yanitla", "gonder", "ilet"].includes(islem)) govde.kutu = geri[0];
+  if (islem === "ek") Object.assign(govde, { uid: Number(geri[1]), parca: geri[2] ?? "", klasor: bayrak.klasor || "gelen" });
+  if (islem === "ilet") govde.ekler = !bayrak.eksiz;
   if (islem === "liste")
     Object.assign(govde, { klasor: geri[1] || "gelen", sayfa: Number(geri[2]) || 1, ara: bayrak.ara || "" });
   if (islem === "oku") Object.assign(govde, { uid: Number(geri[1]), klasor: geri[2] || bayrak.klasor || "gelen" });
@@ -157,6 +161,8 @@ async function calis() {
         })
       : "—";
   const kes = (s, n) => (s.length > n ? `${s.slice(0, n - 1)}…` : s.padEnd(n));
+  const boyut = (b) =>
+    b < 1024 ? `${b} B` : b < 1048576 ? `${Math.round(b / 1024)} KB` : `${(b / 1048576).toFixed(1).replace(".", ",")} MB`;
   const TUR = {
     yanit: "YANIT",
     geri_donus: "geri dönüş",
@@ -207,12 +213,26 @@ async function calis() {
     console.log(`Kime:   ${x.kime}`);
     if (x.bilgi) console.log(`Bilgi:  ${x.bilgi}`);
     console.log(`Tarih:  ${tarih(x.tarih)}`);
-    if (x.ekler.length) console.log(`Ekler:  ${x.ekler.join(", ")}`);
     console.log(`\n${x.metin}`);
-    if (x.kirpildi) console.log("\n[ileti çok büyük — kırpıldı]");
+    if (x.kirpildi) console.log("\n[metnin sonu kırpıldı — ileti çok uzun; ekler aşağıda eksiksiz]");
+    if (x.ekler.length) {
+      console.log(`\nEkler (${x.ekler.length}):`);
+      for (const e of x.ekler) {
+        console.log(`  parça ${e.parca.padEnd(5)} ${e.ad} · ${boyut(e.boyut)}${e.satirIci ? " · iletideki görsel" : ""}`);
+      }
+      const k = x.ekler.find((e) => !e.satirIci) ?? x.ekler[0];
+      const klasorEki = v.klasor === "giden" ? " --klasor giden" : "";
+      console.log(`İndirmek için: node scripts/posta.mjs ek ${v.kutu} ${x.uid} ${k.parca}${klasorEki}`);
+    }
+  } else if (islem === "ek") {
+    const yol = typeof bayrak.dosya === "string" && bayrak.dosya ? bayrak.dosya : v.ad;
+    fs.writeFileSync(yol, Buffer.from(v.icerik, "base64"));
+    console.log(`Kaydedildi: ${yol} (${boyut(v.boyut)}, ${v.tur})`);
   } else {
     const t = v.taslak;
-    console.log(`Kimden: ${t.kutu}\nKime:   ${t.kime}${t.bilgi ? `\nBilgi:  ${t.bilgi}` : ""}\nKonu:   ${t.konu}\n`);
+    console.log(`Kimden: ${t.kutu}\nKime:   ${t.kime}${t.bilgi ? `\nBilgi:  ${t.bilgi}` : ""}\nKonu:   ${t.konu}`);
+    if (t.ekler?.length) console.log(`Ekler:  ${t.ekler.join(", ")}`);
+    console.log("");
     console.log(t.metin);
     console.log(`\n${"─".repeat(60)}`);
     console.log(v.tamam ? v.mesaj : `OLMADI: ${v.mesaj}`);

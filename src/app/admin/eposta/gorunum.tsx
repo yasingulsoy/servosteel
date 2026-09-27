@@ -2,8 +2,15 @@ import Form from "next/form";
 import Link from "next/link";
 import {
   CornerUpLeft,
+  Download,
+  ExternalLink,
+  File as DosyaIkon,
+  FileArchive,
+  FileImage,
+  FileText,
   Forward,
   Inbox,
+  Mail,
   MailOpen,
   Paperclip,
   PenLine,
@@ -14,7 +21,7 @@ import {
   X,
 } from "lucide-react";
 import type { IletiOzeti, Klasor, OkunanIleti } from "@/lib/posta";
-import { kutuKisaAdi } from "@/lib/posta-bicim";
+import { ONIZLENEBILIR, boyutYaz, kutuKisaAdi, type Ek } from "@/lib/posta-bicim";
 import { goreli, tamTarih } from "@/lib/zaman";
 
 /**
@@ -474,19 +481,128 @@ export function IletiOkuyucu({
 
       <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
         <pre className="whitespace-pre-wrap break-words font-sans text-sm leading-relaxed text-ink">{ileti.metin}</pre>
-        {ileti.kirpildi ? <p className="mt-3 text-xs text-muted">İleti uzun olduğu için kırpıldı — tamamı kutuda.</p> : null}
+        {ileti.kirpildi ? (
+          <p className="mt-3 text-xs text-muted">Metnin sonu kırpıldı (ileti çok uzun) — ekler aşağıda eksiksiz.</p>
+        ) : null}
       </div>
 
-      {ileti.ekler.length ? (
-        <footer className="border-t border-line px-5 py-3 text-sm">
-          <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
-            <Paperclip className="size-3.5" aria-hidden /> Ekler
-          </p>
-          <p className="mt-1 break-words text-muted">{ileti.ekler.join(" · ")}</p>
-          <p className="mt-1 text-xs text-muted">Ekleri açmak için kutuyu Thunderbird&apos;de açın — panel dosya indirmez.</p>
-        </footer>
-      ) : null}
+      {ileti.ekler.length ? <EkListesi ekler={ileti.ekler} kutu={kutu} klasor={klasor} uid={ileti.uid} /> : null}
     </article>
+  );
+}
+
+/* ---------------------------------------------------------------- ekler */
+
+/** Ekin panel adresi — açmak için `goster`, yoksa indirir (bkz. eposta/ek/route.ts). */
+export function ekAdresi(kutu: string, klasor: Klasor, uid: number, parca: string, goster = false): string {
+  const p = new URLSearchParams({ kutu, klasor, uid: String(uid), parca });
+  if (goster) p.set("goster", "1");
+  return `/admin/eposta/ek?${p.toString()}`;
+}
+
+function ekTuru(tur: string, ad: string): { ikon: typeof DosyaIkon; ad: string } {
+  const uzanti = ad.split(".").pop()?.toLowerCase() ?? "";
+  if (tur.startsWith("image/")) return { ikon: FileImage, ad: "Görsel" };
+  if (tur === "application/pdf") return { ikon: FileText, ad: "PDF" };
+  if (tur === "message/rfc822") return { ikon: Mail, ad: "E-posta" };
+  if (/zip|rar|7z|tar|gzip/.test(tur) || ["zip", "rar", "7z", "tar", "gz"].includes(uzanti)) return { ikon: FileArchive, ad: "Arşiv" };
+  if (/word/.test(tur) || ["doc", "docx"].includes(uzanti)) return { ikon: FileText, ad: "Word" };
+  if (/sheet|excel/.test(tur) || ["xls", "xlsx", "csv"].includes(uzanti)) return { ikon: FileText, ad: "Excel" };
+  if (["dwg", "dxf", "step", "stp", "igs", "iges"].includes(uzanti)) return { ikon: DosyaIkon, ad: "Çizim" };
+  if (tur.startsWith("text/")) return { ikon: FileText, ad: "Metin" };
+  return { ikon: DosyaIkon, ad: uzanti ? uzanti.toUpperCase() : "Dosya" };
+}
+
+/**
+ * Okuyucunun altı: ekler (Aç / İndir, görselde küçük önizleme) ve iletinin
+ * içindeki görseller (imza logosu, yapıştırılmış çizim). Görseller ve PDF
+ * tarayıcıda açılır; diğer türler yalnızca indirilir.
+ */
+function EkListesi({ ekler, kutu, klasor, uid }: { ekler: Ek[]; kutu: string; klasor: Klasor; uid: number }) {
+  const dosyalar = ekler.filter((e) => !e.satirIci);
+  const gorseller = ekler.filter((e) => e.satirIci);
+  const dugme =
+    "inline-flex shrink-0 items-center gap-1 rounded-md border border-line px-2 py-1 text-xs font-semibold hover:bg-surface-alt";
+  const onizleme = (e: Ek) => ONIZLENEBILIR.has(e.tur) && e.tur.startsWith("image/") && e.boyut < 8 * 1024 * 1024;
+  return (
+    <footer className="max-h-[45%] shrink-0 overflow-y-auto border-t border-line px-5 py-3">
+      {dosyalar.length ? (
+        <section aria-label="Ekler">
+          <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted">
+            <Paperclip className="size-3.5" aria-hidden /> Ekler ({dosyalar.length})
+          </p>
+          <ul className="mt-2 space-y-2">
+            {dosyalar.map((e) => {
+              const { ikon: Ikon, ad } = ekTuru(e.tur, e.ad);
+              return (
+                <li key={e.parca} className="flex min-w-0 items-center gap-3 rounded-lg border border-line p-2">
+                  {onizleme(e) ? (
+                    <a href={ekAdresi(kutu, klasor, uid, e.parca, true)} target="_blank" rel="noopener noreferrer" className="shrink-0">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- oturumla kutudan akan ek; next/image iyileştiricisi çerezsiz ister */}
+                      <img
+                        src={ekAdresi(kutu, klasor, uid, e.parca, true)}
+                        alt=""
+                        loading="lazy"
+                        className="size-12 rounded border border-line bg-white object-cover"
+                      />
+                    </a>
+                  ) : (
+                    <Ikon className="size-9 shrink-0 text-muted" strokeWidth={1.5} aria-hidden />
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium" title={e.ad}>
+                      {e.ad}
+                    </p>
+                    <p className="text-xs text-muted">
+                      {ad} · {boyutYaz(e.boyut)}
+                    </p>
+                  </div>
+                  {ONIZLENEBILIR.has(e.tur) ? (
+                    <a href={ekAdresi(kutu, klasor, uid, e.parca, true)} target="_blank" rel="noopener noreferrer" className={dugme}>
+                      <ExternalLink className="size-3.5" aria-hidden /> Aç
+                    </a>
+                  ) : null}
+                  <a href={ekAdresi(kutu, klasor, uid, e.parca)} download={e.ad} className={dugme}>
+                    <Download className="size-3.5" aria-hidden /> İndir
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ) : null}
+
+      {gorseller.length ? (
+        <section aria-label="İletideki görseller" className={dosyalar.length ? "mt-3" : ""}>
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted">İletideki görseller ({gorseller.length})</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {gorseller.slice(0, 12).map((e) =>
+              onizleme(e) ? (
+                <a
+                  key={e.parca}
+                  href={ekAdresi(kutu, klasor, uid, e.parca, true)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`${e.ad} · ${boyutYaz(e.boyut)}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element -- oturumla kutudan akan ek */}
+                  <img
+                    src={ekAdresi(kutu, klasor, uid, e.parca, true)}
+                    alt={e.ad}
+                    loading="lazy"
+                    className="h-16 max-w-32 rounded border border-line bg-white object-contain"
+                  />
+                </a>
+              ) : (
+                <a key={e.parca} href={ekAdresi(kutu, klasor, uid, e.parca)} download={e.ad} className={dugme}>
+                  <Download className="size-3.5" aria-hidden /> {e.ad}
+                </a>
+              )
+            )}
+          </div>
+        </section>
+      ) : null}
+    </footer>
   );
 }
 

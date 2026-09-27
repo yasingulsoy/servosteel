@@ -89,4 +89,79 @@ t("adres gosterimi ve kisa ad", () => {
   assert.equal(P.kutuKisaAdi("ege@servosteel.com.tr"), "ege");
 });
 
+/* imapflow'un BODYSTRUCTURE çıktısı biçiminde: iRack'teki gibi alternatif gövde +
+   gömülü logo + Türkçe adlı PDF + görsel eki + ekli e-posta + teslim raporu */
+const YAPI = {
+  type: "multipart/mixed",
+  childNodes: [
+    {
+      part: "1",
+      type: "multipart/alternative",
+      childNodes: [
+        { part: "1.1", type: "text/plain", parameters: { charset: "utf-8" }, encoding: "quoted-printable", size: 900 },
+        {
+          part: "1.2",
+          type: "multipart/related",
+          childNodes: [
+            { part: "1.2.1", type: "text/html", encoding: "quoted-printable", size: 2000 },
+            { part: "1.2.2", type: "image/png", id: "<logo-irack>", encoding: "base64", size: 4000 },
+          ],
+        },
+      ],
+    },
+    {
+      part: "2",
+      type: "application/pdf",
+      encoding: "base64",
+      size: 1_000_000,
+      disposition: "attachment",
+      dispositionParameters: { filename: "Kesit çizimi – raf dikmesi.pdf" },
+    },
+    { part: "3", type: "image/jpeg", parameters: { name: "../../etc/profil.jpg" }, encoding: "base64", size: 3000 },
+    {
+      part: "4",
+      type: "message/rfc822",
+      envelope: { subject: "Eski teklif" },
+      size: 5000,
+      childNodes: [{ part: "4.1", type: "text/plain", size: 100 }],
+    },
+    { part: "5", type: "message/delivery-status", size: 300 },
+    { part: "6", type: "text/plain", disposition: "attachment", size: 50 },
+  ],
+};
+
+t("ekler yapidan: govde ve rapor haric, gomulu gorsel ayri", () => {
+  const e = P.ekleriBul(YAPI);
+  assert.deepEqual(
+    e.map((x) => [x.parca, x.ad, x.satirIci]),
+    [
+      ["1.2.2", "gorsel-1.2.2.png", true],
+      ["2", "Kesit çizimi – raf dikmesi.pdf", false],
+      ["3", "_.._etc_profil.jpg", false], // yol ayırıcı ve baştaki noktalar temizlendi
+      ["4", "Eski teklif.eml", false], // ekli e-postanın içine inilmez
+      ["6", "ek-6.txt", false], // adsız ama "attachment" metin eki
+    ]
+  );
+  /* base64 şişmesi düşülür: 1.000.000 kodlanmış bayt ≈ 740 KB gerçek */
+  assert.equal(e[1].boyut, 740_000);
+  /* tek parçalı ileti: parça numarası yoksa "1" */
+  assert.deepEqual(P.ekleriBul({ type: "application/pdf", size: 10, disposition: "attachment" }).map((x) => x.parca), ["1"]);
+  assert.deepEqual(P.ekleriBul({ type: "text/plain", size: 10 }), []);
+});
+
+t("boyut, cid temizligi, indirme basligi", () => {
+  assert.equal(P.boyutYaz(512), "512 B");
+  assert.equal(P.boyutYaz(700_016), "684 KB");
+  assert.equal(P.boyutYaz(2.5 * 1024 * 1024), "2,5 MB");
+  assert.equal(P.cidTemizle("Best regards,\n\n[cid:095aff34-da6d-49c1-8c61-3499c071355d]\n\n\nOsama"), "Best regards,\n\nOsama");
+  assert.equal(P.cidTemizle("logo [cid:image001.png@01DA2B3C.4D5E6F70] burada"), "logo  burada");
+  assert.equal(
+    P.icerikYerlesimi("Kesit çizimi – raf dikmesi.pdf", false),
+    "attachment; filename=\"Kesit cizimi _ raf dikmesi.pdf\"; filename*=UTF-8''Kesit%20%C3%A7izimi%20%E2%80%93%20raf%20dikmesi.pdf"
+  );
+  assert.match(P.icerikYerlesimi("a\"b'(c).png", true), /^inline; filename="a_b'\(c\)\.png"; filename\*=UTF-8''a%22b%27%28c%29\.png$/);
+  assert.equal(P.ONIZLENEBILIR.has("image/svg+xml"), false); // betik çalıştırabilir
+  assert.equal(P.ONIZLENEBILIR.has("text/html"), false);
+});
+
 console.log(`${n} test gecti`);
