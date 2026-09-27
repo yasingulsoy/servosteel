@@ -156,6 +156,20 @@ def olc_canli(gorevler):
     return yanitlar, sum(t.get("cost") or 0 for t in yanitlar)
 
 
+def organik_sayisi(t):
+    s = ((t or {}).get("result") or [None])[0] or {}
+    return sum(1 for o in s.get("items") or [] if o.get("type") == "organic")
+
+
+def kisa_mi(t, derinlik):
+    """Yanıt eksik sayfayla mı geldi? 27 Eylül'de kuyruk 80 kelimenin 37'sinde 27-35 organik
+    sonuç döndürdü (24 Eylül'de hiçbirinde 38'in altı yoktu); kiminde ilk sayfa hiç yoktu,
+    marka "servosteel" 1. iken "yok" okundu. 40106 = "kısmi sonuç", 0 = bizim ağ hatamız."""
+    if not t or t.get("status_code") in (0, 40106):
+        return True
+    return t.get("status_code") == 20000 and organik_sayisi(t) < derinlik * 0.75
+
+
 def olc_standart(gorevler, bekleme_dk):
     """Ucuz kuyruk. Süre dolunca bitmeyenler canlı uçtan ölçülür (onlar iki kez ücretlenir).
     Döner: (sıra no → yanıt, maliyet)
@@ -266,6 +280,19 @@ def olc(kelimeler, liste, etiket, a):
         gelen = dict(enumerate(yanitlar))
     else:
         gelen, maliyet = olc_standart(gorevler, a.bekle)
+    # Eksik gelen bir kez canlı uçtan yeniden ölçülür; hangisinde daha çok sonuç varsa o kalır.
+    # Google'ın gerçekten az sonuç verdiği aramalar da (ABD roll forming machine 13-20) bir
+    # kez daha sorulur — görev başı 0,01 $, yanlış "çıktı" alarmından ucuz.
+    kisa = [no for no in range(len(gorevler)) if kisa_mi(gelen.get(no), liste["derinlik"])]
+    if kisa:
+        print("  %d görevin sonuç sayfaları eksik geldi, canlı uçtan yeniden ölçülüyor" % len(kisa), flush=True)
+        yanitlar, ek = olc_canli([gorevler[no] for no in kisa])
+        maliyet += ek
+        for no, t in zip(kisa, yanitlar):
+            eski = gelen.get(no)
+            if eski is None or t.get("status_code") == 20000 and (
+                    eski.get("status_code") != 20000 or organik_sayisi(t) > organik_sayisi(eski)):
+                gelen[no] = t
     for no, x in enumerate(sonuclar):
         ana = coz(gelen[no], liste["alan"])
         if no in ekler:
