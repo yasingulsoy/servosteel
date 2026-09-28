@@ -49,11 +49,13 @@ export type ElleGonderim = {
   /** Yanıtsa: yanıtlanan iletinin Message-ID'si ve References zinciri */
   mesajKimligi?: string;
   referanslar?: string;
-  /** Yanıtlanan iletinin UID'si ve klasörü — kutuda "yanıtlandı" işaretlenir */
+  /** Yanıtlanan iletinin UID'si, klasörü ve kutusu — orada "yanıtlandı" işaretlenir.
+      Kutu verilmezse gönderen kutu (gönderen değiştirildiyse ileti öteki kutuda kalır). */
   yanitUid?: number;
   yanitKlasor?: Klasor;
-  /** Taslaktan gönderiliyorsa: gidince taslak Taslaklar'dan kalkar */
-  taslakUid?: number;
+  yanitKutu?: string;
+  /** Taslaktan gönderiliyorsa: gidince taslak kendi kutusunun Taslaklar'ından kalkar */
+  taslak?: { kutu: string; uid: number };
   /** Bütün kontroller çalışır, e-posta GİTMEZ (Claude'un ucundaki önizleme) */
   dene?: boolean;
   /** Formdan yüklenen dosyalar */
@@ -147,8 +149,15 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
   }
 
   await kayitEkle(g.kim, "eposta_gonder", kutu, ozet);
-  if (yanitMi && g.yanitUid && g.yanitUid > 0) await yanitlandiIsaretle(kutu, g.yanitUid, g.yanitKlasor ?? "gelen");
-  if (g.taslakUid && g.taslakUid > 0) await taslakSil(kutu, g.taslakUid);
+  if (yanitMi) {
+    /* Taslaktan giden yanıtta UID bilinmiyor: ileti Message-ID'siyle bulunur */
+    if (g.yanitUid && g.yanitUid > 0) {
+      await yanitlandiIsaretle((g.yanitKutu || kutu).trim().toLowerCase(), { uid: g.yanitUid, klasor: g.yanitKlasor ?? "gelen" });
+    } else if (g.taslak) {
+      await yanitlandiIsaretle(kutu, { mesajKimligi });
+    }
+  }
+  if (g.taslak && g.taslak.uid > 0) await taslakSil(g.taslak.kutu, g.taslak.uid);
   return {
     tamam: true,
     mesaj: r.kopyaHatasi

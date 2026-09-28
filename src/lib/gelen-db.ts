@@ -31,6 +31,42 @@ export async function taramaBitir(kutu: string, uidvalidity: number | null, sonU
   );
 }
 
+/** Taramanın nereye kadar geldiği — kilit ALMADAN (taşımadan önce işleme bakar). */
+export async function taramaKaydi(kutu: string): Promise<TaramaKaydi | null> {
+  const r = await sorguSert<{ uidvalidity: string | null; son_uid: string }>(
+    `SELECT uidvalidity::text, son_uid::text FROM gelen_tarama WHERE kutu = lower($1)`,
+    [kutu]
+  );
+  if (!r.length) return null;
+  return { uidvalidity: r[0].uidvalidity === null ? null : Number(r[0].uidvalidity), son_uid: Number(r[0].son_uid) };
+}
+
+/**
+ * Bu kutuda aynı Message-ID'li ileti daha önce işlendiyse kaydı iletinin
+ * YENİ UID'sine taşır ve türünü döner; işlenmediyse null. Arşiv'e ya da
+ * Silinmiş'e taşınıp Gelen'e geri dönen ileti yeni UID alır: kayıt iletiyi
+ * izler — ikinci satır açılmaz (yanıt sayıları iki kez saymasın), firmaya
+ * ikinci kez not düşmez, sınıfı (Yanıt rozeti) yerinde kalır.
+ */
+export async function kaydiYeniUideTasi(
+  kutu: string,
+  mesajKimligi: string,
+  uidvalidity: number,
+  uid: number
+): Promise<string | null> {
+  if (!mesajKimligi) return null;
+  const r = await sorguSert<{ tur: string }>(
+    `UPDATE gelen_eposta g SET uidvalidity = $3, uid = $4
+     FROM (SELECT uidvalidity, uid FROM gelen_eposta
+           WHERE kutu = lower($1) AND mesaj_kimligi = $2
+           ORDER BY islendi LIMIT 1) o
+     WHERE g.kutu = lower($1) AND g.uidvalidity = o.uidvalidity AND g.uid = o.uid
+     RETURNING g.tur`,
+    [kutu, mesajKimligi.slice(0, 300), uidvalidity, uid]
+  );
+  return r[0]?.tur ?? null;
+}
+
 export async function gelenIslendiMi(kutu: string, uidvalidity: number, uid: number): Promise<boolean> {
   const r = await sorguSert(
     `SELECT 1 FROM gelen_eposta WHERE kutu = lower($1) AND uidvalidity = $2 AND uid = $3`,

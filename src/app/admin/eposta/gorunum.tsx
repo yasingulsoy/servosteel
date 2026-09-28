@@ -423,6 +423,7 @@ export function IletiListesi({
                       {alicidan(mKlasor) ? <span className="font-normal text-muted">Kime: </span> : null}
                       {m.kisi}
                     </span>
+                    {m.bayrakli ? <Flag className="size-3.5 shrink-0 fill-red-500 text-red-600" aria-label="bayraklı" /> : null}
                     <span className="shrink-0 text-xs tabular-nums text-muted">{listeTarihi(m.tarih)}</span>
                   </div>
                   <div className="mt-0.5 flex items-center gap-1.5">
@@ -480,6 +481,7 @@ export function IletiOkuyucu({
   ileti,
   kutu,
   klasor,
+  klasorler = [],
   sayfa,
   sinif,
   firma,
@@ -488,6 +490,8 @@ export function IletiOkuyucu({
   ileti: OkunanIleti;
   kutu: string;
   klasor: Klasor;
+  /** Kutunun klasörleri — başlıktaki ad ve "Taşı…" listesi */
+  klasorler?: KlasorBilgisi[];
   sayfa: number;
   sinif: Sinif | null;
   firma: { id: number; firma: string } | null;
@@ -496,8 +500,13 @@ export function IletiOkuyucu({
   const tur = sinif?.tur && TUR_ETIKET[sinif.tur] ? sinif.tur : null;
   const firmaId = sinif?.firma_id ?? firma?.id ?? null;
   const firmaAdi = sinif?.firma ?? firma?.firma ?? null;
+  /* Açık klasörün türü: tüm hesaplarda aramada klasör listesi yok, anahtar türün kendisi ("gelen"/"giden") */
+  const klasorTuru =
+    klasorler.find((k) => k.anahtar === klasor)?.tur ?? (klasor in KLASOR_IKONU ? (klasor as keyof typeof KLASOR_IKONU) : null);
+  const taslak = klasorTuru === "taslak";
   const dugme =
     "inline-flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-sm font-semibold hover:bg-surface-alt";
+  const yazBag = (yaz: string) => posta(kutu, klasor, { uid: ileti.uid, sayfa, yaz, arama });
   return (
     <article className="flex h-full min-h-0 flex-col">
       <header className="border-b border-line px-5 py-4">
@@ -521,18 +530,33 @@ export function IletiOkuyucu({
               <dd className="min-w-0 break-words text-muted">{ileti.bilgi}</dd>
             </>
           ) : null}
+          {ileti.gizli ? (
+            <>
+              <dt className="text-muted">Gizli</dt>
+              <dd className="min-w-0 break-words text-muted">{ileti.gizli}</dd>
+            </>
+          ) : null}
           <dt className="text-muted">Tarih</dt>
           <dd className="text-muted">{ileti.tarih ? tamTarih(ileti.tarih) : "—"}</dd>
         </dl>
         <div className="mt-3 flex flex-wrap items-center gap-2">
-          {klasor === "gelen" ? (
-            <Link href={posta(kutu, klasor, { uid: ileti.uid, sayfa, yaz: "yanit", arama })} className={dugme}>
-              <CornerUpLeft className="size-4" aria-hidden /> Yanıtla
+          {taslak ? (
+            <Link href={yazBag("taslak")} className={`${dugme} border-accent bg-accent/15`}>
+              <FilePen className="size-4" aria-hidden /> Taslağı düzenle
             </Link>
-          ) : null}
-          <Link href={posta(kutu, klasor, { uid: ileti.uid, sayfa, yaz: "ilet", arama })} className={dugme}>
-            <Forward className="size-4" aria-hidden /> İlet
-          </Link>
+          ) : (
+            <>
+              <Link href={yazBag("yanit")} className={dugme}>
+                <Reply className="size-4" aria-hidden /> Yanıtla
+              </Link>
+              <Link href={yazBag("yanit-tum")} className={dugme}>
+                <ReplyAll className="size-4" aria-hidden /> Tümünü yanıtla
+              </Link>
+              <Link href={yazBag("ilet")} className={dugme}>
+                <Forward className="size-4" aria-hidden /> İlet
+              </Link>
+            </>
+          )}
           {tur ? (
             <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${TUR_RENK[tur]}`}>{TUR_ETIKET[tur]}</span>
           ) : null}
@@ -541,6 +565,18 @@ export function IletiOkuyucu({
               {firmaAdi ?? "Firma sayfası"} →
             </Link>
           ) : null}
+        </div>
+        <div className="mt-2">
+          <IletiIslemleri
+            kutu={kutu}
+            klasor={klasor}
+            tur={klasorTuru}
+            uid={ileti.uid}
+            okundu={ileti.okundu}
+            bayrakli={ileti.bayrakli}
+            klasorler={klasorler.map((k) => ({ anahtar: k.anahtar, ad: k.ad, derinlik: k.derinlik }))}
+            listeHref={posta(kutu, klasor, { sayfa, arama })}
+          />
         </div>
       </header>
 

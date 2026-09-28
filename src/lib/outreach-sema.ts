@@ -131,6 +131,8 @@ export const OUTREACH_SEMA = `
     PRIMARY KEY (kutu, uidvalidity, uid)
   );
   CREATE INDEX IF NOT EXISTS gelen_eposta_islendi_idx ON gelen_eposta (islendi DESC);
+  /* Aynı ileti Gelen'e geri taşınınca (yeni UID) ikinci kez işlenmesin — bkz. gelen-tarama */
+  CREATE INDEX IF NOT EXISTS gelen_eposta_kimlik_idx ON gelen_eposta (kutu, mesaj_kimligi);
   /* Otomatik gönderim ayarı ve temposu — tek satır (bkz. src/lib/otomatik-gonderim.ts).
      Varsayılan KAPALI: panelden yönetici açar. */
   CREATE TABLE IF NOT EXISTS otomatik_gonderim (

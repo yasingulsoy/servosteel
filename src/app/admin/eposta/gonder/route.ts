@@ -66,12 +66,17 @@ export async function POST(istek: NextRequest) {
     iletUid > 0 && parcalar.length
       ? { kutu: alan("ilet_kutu", 254), klasor: alan("ilet_klasor", 200) || "gelen", uid: iletUid, parcalar }
       : undefined;
-  const taslakUid = Math.floor(Number(alan("taslak_uid", 20))) || undefined;
+  /* Açık taslak: hangi kutunun Taslaklar'ında, hangi UID ile. Gönderen
+     değiştirilmiş olabilir — taslak kendi kutusundan silinir. */
+  const kutu = alan("kutu", 254).trim().toLowerCase();
+  const taslakUid = Math.floor(Number(alan("taslak_uid", 20))) || 0;
+  const taslak = taslakUid > 0 ? { kutu: alan("taslak_kutu", 254).trim().toLowerCase() || kutu, uid: taslakUid } : undefined;
+  const mesajKimligi = alan("mesaj_kimligi", 1000);
+  const referanslar = alan("referanslar", 4000);
 
   /* Taslak kaydet: gönderim kuralları yok (alıcı eksik olabilir), kutunun
      Taslaklar klasörüne konur; eskisi varsa değiştirilir. */
   if (alan("islem", 20) === "taslak") {
-    const kutu = alan("kutu", 254).trim().toLowerCase();
     let tasinan: GidenEk[] = [];
     if (iletilenEkler) {
       const r = await ekleriIndir(iletilenEkler.kutu, iletilenEkler.klasor, iletilenEkler.uid, iletilenEkler.parcalar, EK_TOPLAM_EN_COK);
@@ -87,26 +92,33 @@ export async function POST(istek: NextRequest) {
       konu: alan("konu", 300),
       metin: alan("metin", 50_000),
       ekler: [...tasinan, ...ekler],
-      eskiUid: taslakUid,
+      yanitlanan: mesajKimligi ? { mesajKimligi, referanslar } : undefined,
+      eski: taslak,
     });
     if (!r.tamam) return cevap(false, r.hata);
     revalidatePath("/admin/eposta");
-    return NextResponse.json({ tamam: true, mesaj: "Taslak kaydedildi.", taslakUid: r.uid });
+    const saat = new Date().toLocaleTimeString("tr-TR", { timeZone: "Europe/Istanbul", hour: "2-digit", minute: "2-digit" });
+    return NextResponse.json({
+      tamam: true,
+      mesaj: r.uid ? `Taslak kaydedildi (${saat}).` : `Taslak kaydedildi (${saat}) — ama kutuda bulunamadı; yeniden kaydederseniz ikinci kopya oluşur.`,
+      taslak: r.uid ? { kutu, uid: r.uid, ekler: r.ekler } : null,
+    });
   }
 
   const sonuc = await elleGonder({
     kim: ben,
-    kutu: alan("kutu", 254),
+    kutu,
     kime: alan("kime", 4000),
     bilgi: alan("bilgi", 4000),
     gizli: alan("gizli", 4000),
     konu: alan("konu", 300),
     metin: alan("metin", 50_000),
-    mesajKimligi: alan("mesaj_kimligi", 1000),
-    referanslar: alan("referanslar", 4000),
+    mesajKimligi,
+    referanslar,
     yanitUid: Number(alan("yanit_uid", 20)),
     yanitKlasor: alan("yanit_klasor", 200) || "gelen",
-    taslakUid,
+    yanitKutu: alan("yanit_kutu", 254),
+    taslak,
     ekler,
     iletilenEkler,
   });
@@ -118,7 +130,7 @@ export async function POST(istek: NextRequest) {
     if (talepId > 0) {
       const kime = adresleriAyikla(alan("kime", 4000)).gecerli;
       const bilgi = adresleriAyikla(alan("bilgi", 4000)).gecerli;
-      const not = `İletildi: ${kime.join(", ")}${bilgi.length ? ` · bilgi: ${bilgi.join(", ")}` : ""} — ${alan("kutu", 254)} kutusundan`;
+      const not = `İletildi: ${kime.join(", ")}${bilgi.length ? ` · bilgi: ${bilgi.join(", ")}` : ""} — ${kutu} kutusundan`;
       await notEkle(talepId, not, ben).catch(() => {});
       await kayitEkle(ben, "not", `talep:${talepId}`, `Talep #${talepId} — ${not}`).catch(() => {});
       revalidatePath(`/admin/talep/${talepId}`);

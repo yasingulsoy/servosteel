@@ -7,16 +7,21 @@ kabul; durum bellekte, yeniden baslatinca sifirlanir.
 
   python scripts/imap-sahte.py
 
-Desteklenen: CAPABILITY, LOGIN, LIST/LSUB (Gonderilmis special-use isaretli), SELECT/EXAMINE,
+Desteklenen: CAPABILITY, LOGIN, LIST/LSUB (special-use isaretli), SELECT/EXAMINE,
 FETCH/UID FETCH (UID FLAGS ENVELOPE INTERNALDATE RFC822.SIZE BODYSTRUCTURE
 BODY.PEEK[]<a.b>), SEARCH (SINCE, UID, OR, NOT, FROM, TO, CC, SUBJECT, BODY,
-TEXT, CHARSET), STORE, APPEND, CREATE, STATUS, NOOP, LOGOUT.
+TEXT, HEADER, CHARSET), STORE, APPEND, CREATE, STATUS, COPY, MOVE, EXPUNGE,
+NOOP, LOGOUT. UID'ler klasor basina hic tekrar kullanilmaz (gercek sunucu gibi).
 
 Kutular:
-  ege@        Gelen: 4 ornek (yanit, ekli, yalniz HTML, Turkce ic yazisma) · Gonderilmis: 1
+  ege@        Gelen: 5 ornek (yanit, ekli, yalniz HTML, Turkce ic yazisma, buyuk ekli) ·
+              Gonderilmis: 1 · Taslaklar: 1 · Onemsiz: 1 · Silinmis: bos · Arsiv: 1 ·
+              Musteriler (ozel klasor) + alt klasoru Musteriler.Misir — hepsi SPECIAL-USE isaretli
   marketing@  Gelen: 45 ileti (sayfalama) · Gonderilmis: bos
   yasin@      Gelen: bos · Gonderilmis klasoru YOK (ilk gonderimde acilir)
-  gulsoy@     Gelen: 1 · Gonderilmis: bos
+  gulsoy@     Gelen: 1 · Gonderilmis: bos — Arsiv/Onemsiz/Silinmis/Taslaklar YOK (ilk
+              kullanimda acilir; isaretsiz, istemci adindan tanir)
+  website@    Gelen: 1 site formu bildirimi (form kutusu)
 
 UIDVALIDITY 2^31'in ustunde: BIGINT / Number donusumleri de sinansin.
 
@@ -71,6 +76,17 @@ def gun(g, s=10, d=0):
 
 
 KUTULAR = {}
+# (kullanici, klasor) -> siradaki UID: tasinan/silinen iletinin UID'si yeniden verilmez
+SONRAKI_UID = {}
+# Yalnizca ege@'de butun ozel klasorler SPECIAL-USE isaretli; otekilerde yalnizca Sent
+OZEL_ISARET = {"Sent": "\\Sent", "Drafts": "\\Drafts", "Junk": "\\Junk", "Trash": "\\Trash", "Archive": "\\Archive"}
+
+
+def yeni_uid(kul, ad):
+    kutu = KUTULAR[kul][ad]
+    n = max(SONRAKI_UID.get((kul, ad), 1), max((m["uid"] for m in kutu), default=0) + 1)
+    SONRAKI_UID[(kul, ad)] = n + 1
+    return n
 
 
 def kutu_kur():
@@ -115,14 +131,47 @@ def kutu_kur():
                "Katalog gönderebilir misiniz?", tarih=gun(26, 8, 15), kimlik="<t-1@tedarik.example>"), set()),
     ]
 
+    ege_taslak = [
+        (ileti("Servosteel Export <ege@servosteel.com.tr>", "procurement@giffin.example",
+               "Re: Guardrail roll forming lines — company profile",
+               "Dear Procurement team,\n\nPlease find our company profile attached.\n\nBest regards,",
+               tarih=gun(26, 12, 0), kimlik="<taslak-1@servosteel.com.tr>", bilgi="connect@giffin.example",
+               yanit="<giffin-1@giffin.example>", referans="<giffin-1@giffin.example>",
+               ek=("Servosteel-Profil.pdf", b"%PDF-1.4 profil")), {"\\Draft", "\\Seen"}),
+    ]
+    ege_onemsiz = [
+        (ileti("SEO Uzmani <promo@seo-spam.example>", "ege@servosteel.com.tr", "Rank #1 on Google in 7 days!!!",
+               "Dear owner, we guarantee first page...", tarih=gun(21, 3, 0), kimlik="<spam-1@seo-spam.example>"), set()),
+    ]
+    ege_arsiv = [
+        (ileti("Musteri <satin@eski-musteri.example>", "ege@servosteel.com.tr", "Teşekkürler — sevkiyat ulaştı",
+               "Makine sorunsuz çalışıyor.", tarih=gun(2, 9, 0), kimlik="<arsiv-1@eski-musteri.example>"), {"\\Seen"}),
+    ]
+    ege_musteri = [
+        (ileti("Ahmed Salah <ahmed@misir-celik.example>", "ege@servosteel.com.tr", "Slitting line — follow up",
+               "Can we visit your factory in October?", tarih=gun(19, 15, 20), kimlik="<misir-1@misir-celik.example>"),
+         {"\\Flagged"}),
+    ]
+    website = [
+        (ileti("Servosteel Web <website@servosteel.com.tr>", "website@servosteel.com.tr",
+               "Yeni teklif talebi #13 — PAL CHARPENTIER (Fransa)",
+               "Ürün: Rulo dilme hattı\nKalınlık: 0,5–3 mm\nGenişlik: 1250 mm\n\nİletişim: achats@pal.example",
+               tarih=gun(28, 9, 12), kimlik="<form-13@servosteel.com.tr>"), set()),
+    ]
+
     def dolu(liste, ilk_uid):
         return [{"uid": ilk_uid + i, "raw": raw, "flags": set(f), "idate": time.time() - (len(liste) - i) * 3600}
                 for i, (raw, f) in enumerate(liste)]
 
-    KUTULAR["ege@servosteel.com.tr"] = {"INBOX": dolu(ege_gelen, 101), "Sent": dolu(ege_giden, 1)}
+    KUTULAR["ege@servosteel.com.tr"] = {
+        "INBOX": dolu(ege_gelen, 101), "Drafts": dolu(ege_taslak, 3), "Sent": dolu(ege_giden, 1),
+        "Archive": dolu(ege_arsiv, 11), "Junk": dolu(ege_onemsiz, 21), "Trash": [],
+        "Musteriler": dolu(ege_musteri, 1), "Musteriler.Misir": [],
+    }
     KUTULAR["marketing@servosteel.com.tr"] = {"INBOX": dolu(pazarlama, 1), "Sent": []}
     KUTULAR["yasin@servosteel.com.tr"] = {"INBOX": []}
     KUTULAR["gulsoy@servosteel.com.tr"] = {"INBOX": dolu(gulsoy, 7), "Sent": []}
+    KUTULAR["website@servosteel.com.tr"] = {"INBOX": dolu(website, 40), "Sent": []}
 
 
 # ------------------------------------------------------------------ biçim
@@ -385,7 +434,7 @@ class Isleyici(socketserver.StreamRequestHandler):
         self.kullanici = None
         self.secili = None
         self.salt_okunur = True
-        self.yaz(b"* OK [CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS] Sahte IMAP hazir\r\n")
+        self.yaz(b"* OK [CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS MOVE] Sahte IMAP hazir\r\n")
         while True:
             k = self.komut_oku()
             if k is None:
@@ -416,7 +465,7 @@ class Isleyici(socketserver.StreamRequestHandler):
     # ---- komutlar
 
     def k_CAPABILITY(self, e, a, u):
-        self.yaz(b"* CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS\r\n" + f"{e} OK CAPABILITY tamam\r\n".encode())
+        self.yaz(b"* CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS MOVE\r\n" + f"{e} OK CAPABILITY tamam\r\n".encode())
 
     def k_NOOP(self, e, a, u):
         self.yaz(f"{e} OK NOOP\r\n".encode())
@@ -425,7 +474,7 @@ class Isleyici(socketserver.StreamRequestHandler):
         kul = str(a[0]).lower()
         KUTULAR.setdefault(kul, {"INBOX": []})
         self.kullanici = kul
-        self.yaz(f"{e} OK [CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS] LOGIN tamam\r\n".encode())
+        self.yaz(f"{e} OK [CAPABILITY IMAP4rev1 SPECIAL-USE UIDPLUS MOVE] LOGIN tamam\r\n".encode())
 
     def k_LOGOUT(self, e, a, u):
         self.yaz(b"* BYE gule gule\r\n" + f"{e} OK LOGOUT tamam\r\n".encode())
@@ -436,12 +485,13 @@ class Isleyici(socketserver.StreamRequestHandler):
         if desen == "":
             self.yaz(f'* {komut} (\\Noselect) "." ""\r\n{e} OK {komut} tamam\r\n'.encode())
             return
-        for ad in KUTULAR[self.kullanici]:
+        klasorler = KUTULAR[self.kullanici]
+        for ad in klasorler:
             if desen not in ("*", "%") and kutu_adi(desen) != ad:
                 continue
-            bayrak = "\\HasNoChildren"
-            if ozel and ad == "Sent":
-                bayrak += " \\Sent"
+            bayrak = "\\HasChildren" if any(k.startswith(ad + ".") for k in klasorler) else "\\HasNoChildren"
+            if ozel and ad in OZEL_ISARET and (ad == "Sent" or self.kullanici.startswith("ege@")):
+                bayrak += " " + OZEL_ISARET[ad]
             self.yaz(f'* {komut} ({bayrak}) "." "{ad}"\r\n'.encode())
         self.yaz(f"{e} OK {komut} tamam\r\n".encode())
 
@@ -467,7 +517,7 @@ class Isleyici(socketserver.StreamRequestHandler):
             return
         self.secili = ad
         self.salt_okunur = salt
-        uidnext = (max((m["uid"] for m in kutu), default=0)) + 1
+        uidnext = max(SONRAKI_UID.get((self.kullanici, ad), 1), max((m["uid"] for m in kutu), default=0) + 1)
         self.yaz(
             b"* FLAGS (\\Answered \\Flagged \\Deleted \\Seen \\Draft)\r\n"
             + b"* OK [PERMANENTFLAGS (\\Answered \\Flagged \\Deleted \\Seen \\Draft \\*)] izinli\r\n"
@@ -492,7 +542,7 @@ class Isleyici(socketserver.StreamRequestHandler):
         ad = kutu_adi(a[0])
         kutu = KUTULAR[self.kullanici].get(ad, [])
         gorulmemis = sum(1 for m in kutu if "\\Seen" not in m["flags"])
-        uidnext = (max((m["uid"] for m in kutu), default=0)) + 1
+        uidnext = max(SONRAKI_UID.get((self.kullanici, ad), 1), max((m["uid"] for m in kutu), default=0) + 1)
         self.yaz(f'* STATUS "{ad}" (MESSAGES {len(kutu)} UIDNEXT {uidnext} UIDVALIDITY {UIDVALIDITY} UNSEEN {gorulmemis})\r\n{e} OK STATUS\r\n'.encode())
 
     def _hedefler(self, kume_metni, uid_mu):
@@ -607,6 +657,9 @@ class Isleyici(socketserver.StreamRequestHandler):
                 aranan = metin(dizi[i + 1])
                 ad = {"FROM": "From", "TO": "To", "CC": "Cc", "SUBJECT": "Subject"}[o]
                 return (lambda s, m: aranan in baslik(m, ad)), i + 2
+            if o == "HEADER":
+                ad, aranan = str(dizi[i + 1]), metin(dizi[i + 2])
+                return (lambda s, m: aranan in baslik(m, ad)), i + 3
             if o == "BODY":
                 aranan = metin(dizi[i + 1])
                 return (lambda s, m: aranan in govde(m)), i + 2
@@ -652,9 +705,61 @@ class Isleyici(socketserver.StreamRequestHandler):
                 bayraklar = {str(b) for b in x}
             elif isinstance(x, bytes):
                 veri = x
-        uid = (max((m["uid"] for m in kutu), default=0)) + 1
+        uid = yeni_uid(self.kullanici, ad)
         kutu.append({"uid": uid, "raw": veri or b"", "flags": bayraklar, "idate": time.time()})
         self.yaz(f"{e} OK [APPENDUID {UIDVALIDITY} {uid}] APPEND tamam\r\n".encode())
+
+    def _kopyala(self, e, a, u, tasi):
+        """COPY / MOVE: hedefte yeni UID'ler (COPYUID); MOVE kaynaktan siler ve EXPUNGE bildirir."""
+        komut = "MOVE" if tasi else "COPY"
+        if not self.secili or (tasi and self.salt_okunur):
+            self.yaz(f"{e} NO klasor secili degil ya da salt okunur\r\n".encode())
+            return
+        hedef_ad = kutu_adi(a[1])
+        hedef = KUTULAR[self.kullanici].get(hedef_ad)
+        if hedef is None:
+            self.yaz(f"{e} NO [TRYCREATE] hedef klasor yok\r\n".encode())
+            return
+        secilen = self._hedefler(a[0], u)
+        if not secilen:
+            self.yaz(f"{e} OK {komut} bos\r\n".encode())
+            return
+        eski, yeni = [], []
+        for _, m in secilen:
+            uid = yeni_uid(self.kullanici, hedef_ad)
+            hedef.append({"uid": uid, "raw": m["raw"], "flags": set(m["flags"]) - {"\\Deleted"}, "idate": m["idate"]})
+            eski.append(str(m["uid"]))
+            yeni.append(str(uid))
+        kod = f"COPYUID {UIDVALIDITY} {','.join(eski)} {','.join(yeni)}"
+        if not tasi:
+            self.yaz(f"{e} OK [{kod}] COPY tamam\r\n".encode())
+            return
+        self.yaz(f"* OK [{kod}] tasindi\r\n".encode())
+        self._sil([m for _, m in secilen])
+        self.yaz(f"{e} OK MOVE tamam\r\n".encode())
+
+    def _sil(self, silinecek):
+        """Iletileri secili klasorden cikarir; her biri icin '* n EXPUNGE' (sondan basa, sira bozulmasin)."""
+        kutu = KUTULAR[self.kullanici][self.secili]
+        siralar = sorted((kutu.index(m) + 1 for m in silinecek), reverse=True)
+        for s in siralar:
+            del kutu[s - 1]
+            self.yaz(f"* {s} EXPUNGE\r\n".encode())
+
+    def k_COPY(self, e, a, u):
+        self._kopyala(e, a, u, False)
+
+    def k_MOVE(self, e, a, u):
+        self._kopyala(e, a, u, True)
+
+    def k_EXPUNGE(self, e, a, u):
+        if not self.secili or self.salt_okunur:
+            self.yaz(f"{e} NO salt okunur\r\n".encode())
+            return
+        kutu = KUTULAR[self.kullanici][self.secili]
+        adaylar = [m for _, m in self._hedefler(a[0], True)] if u and a else list(kutu)
+        self._sil([m for m in adaylar if "\\Deleted" in m["flags"]])
+        self.yaz(f"{e} OK EXPUNGE tamam\r\n".encode())
 
 
 class Sunucu(socketserver.ThreadingTCPServer):

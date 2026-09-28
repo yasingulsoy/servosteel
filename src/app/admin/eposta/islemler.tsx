@@ -20,7 +20,8 @@ import {
  * Okuyucunun araç çubuğu — Outlook'taki gibi: okundu/okunmadı, bayrak, arşivle,
  * önemsiz, sil (Silinmiş'e taşır; oradaysa "Geri al" Gelen'e döndürür), taşı.
  * `/admin/eposta/islem`e JSON gönderir. Taşıyan işlemden sonra ileti bu
- * klasörde olmadığı için listeye dönülür; işaretlerde sayfa tazelenir.
+ * klasörde olmadığı için listeye dönülür; "okunmadı yap"ta da (açık kalsa
+ * yeniden okundu sayılırdı); öteki işaretlerde sayfa tazelenir.
  */
 
 type HedefKlasor = { anahtar: string; ad: string; derinlik: number };
@@ -64,7 +65,9 @@ export function IletiIslemleri({
         }
         setSonuc(j);
         if (j.tamam) {
-          if (j.tasindi) router.push(listeHref);
+          /* "Okunmadı yap"ta da listeye dönülür: ileti açık kalsaydı sayfanın
+             kendiliğinden tazelenmesi onu yeniden okundu yapardı. */
+          if (j.tasindi || islem === "okunmadi") router.push(listeHref);
           else router.refresh();
         }
       } catch {

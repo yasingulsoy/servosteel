@@ -10,24 +10,29 @@ import { outreachSemaKur } from "@/lib/outreach-db";
 import { ayarlariOku } from "@/lib/outreach-kurallar";
 import {
   ARAMA_EN_COK,
+  BOS_ILETI,
   aramaTemizle,
   formKutusuAdresi,
   herYerdeAra,
   iletiOku,
   kutuGorunumu,
+  kutuKlasorleri,
   postaKutulari,
   type Klasor,
+  type KlasorBilgisi,
   type OkunanIleti,
 } from "@/lib/posta";
 import {
   IMZA,
   TALEP_ILET_ALICILARI,
+  adresleriAyikla,
   alintiTarihi,
   alintila,
   iletBlogu,
   iletKonusu,
   talepIletKonusu,
   talepIletMetni,
+  tumunuYanitlaAlicilari,
   yanitKonusu,
 } from "@/lib/posta-bicim";
 import { Kabuk } from "../kabuk";
@@ -43,6 +48,7 @@ import {
   type ListeSatiri,
   type Sinif,
 } from "./gorunum";
+import { Yenileyici } from "./islemler";
 import { YazmaFormu } from "./yazma-formu";
 
 export const dynamic = "force-dynamic";
@@ -58,6 +64,10 @@ export const dynamic = "force-dynamic";
  * geri tuşu, yer imi ve paylaşılan bağlantı çalışır. Normal gezinme kutuya
  * BİR kez bağlanır (liste + seçili ileti aynı oturumda). "Tüm hesaplarda"
  * arama her kutuya bir oturum açar; okunan ileti ayrıca çekilir.
+ *
+ * Outlook gibi (28 Eylül 2026): kutunun bütün klasörleri, açılan ileti okundu
+ * sayılır, araç çubuğu (okunmadı, bayrak, arşiv, önemsiz, sil, taşı), tümünü
+ * yanıtla, gizli alıcı, taslak. Liste dakikada bir kendiliğinden tazelenir.
  */
 
 type Arama = {
@@ -85,6 +95,8 @@ type Liste = {
 
 type Firma = { id: number; firma: string };
 
+const YAZ_KIPLERI = ["yeni", "yanit", "yanit-tum", "ilet", "talep", "taslak"] as const;
+
 export default async function EpostaSayfasi({ searchParams }: { searchParams: Promise<Arama> }) {
   const ben = await oturum();
   if (!ben) redirect("/admin/giris");
@@ -107,10 +119,11 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   }
 
   const kutu = kutular.find((k) => k.user === (sp.kutu ?? "").trim().toLowerCase())?.user ?? kutular[0].user;
-  const klasor: Klasor = sp.klasor === "giden" ? "giden" : "gelen";
+  /* Özel klasörde türü ("gelen", "taslak"…), ötekinde sunucudaki yolu */
+  const klasor: Klasor = (sp.klasor ?? "").slice(0, 200) || "gelen";
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
   const uid = Math.floor(Number(sp.uid)) || undefined;
-  const yaz = sp.yaz === "yeni" || sp.yaz === "yanit" || sp.yaz === "ilet" || sp.yaz === "talep" ? sp.yaz : null;
+  const yaz = YAZ_KIPLERI.find((k) => k === sp.yaz) ?? null;
   const ara = aramaTemizle(sp.ara);
   const arama: AramaBaglami = ara ? { ara, tum: sp.kapsam === "tum" } : null;
 
@@ -133,6 +146,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   ]);
 
   let liste: Liste;
+  let klasorler: KlasorBilgisi[] = [];
   let secili: OkunanIleti | null = null;
   let seciliHata: string | null = null;
   let seciliSinif: Sinif | null = null;
@@ -140,7 +154,12 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
 
   if (arama?.tum) {
     /* ------------------------------------------ bütün kutularda arama */
-    const [bulunan, okunan] = await Promise.all([herYerdeAra(ara), uid ? iletiOku(kutu, klasor, uid) : null]);
+    const [bulunan, okunan, kutununKlasorleri] = await Promise.all([
+      herYerdeAra(ara),
+      uid ? iletiOku(kutu, klasor, uid, { okunduYap: !yaz }) : null,
+      kutuKlasorleri(kutu),
+    ]);
+    klasorler = kutununKlasorleri;
     if (okunan?.tamam) secili = okunan.ileti;
     else if (okunan) seciliHata = okunan.hata;
 
@@ -202,8 +221,10 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
     }
   } else {
     /* ------------------------------- tek kutu: klasör ya da içinde arama */
-    const g = await kutuGorunumu(kutu, klasor, sayfa, uid, ara);
+    /* Açılan ileti okundu sayılır (Outlook gibi); yazarken işaret değişmez */
+    const g = await kutuGorunumu(kutu, klasor, sayfa, uid, ara, { okunduYap: !yaz });
     if (g.tamam) {
+      klasorler = g.klasorler;
       /* Listeyi veritabanıyla zenginleştir: Gelen'de taramanın sınıfı (yanıt,
          geri dönüş…), her iki klasörde de karşı tarafın hangi hedef firma olduğu. */
       const [siniflar, firmalar] = await Promise.all([
@@ -239,6 +260,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   const hesaplar = kutular.map((k) => ({ ...k, bekleyen: bekleyen.get(k.user) ?? 0 }));
   const tarama = durum?.kutular.find((k) => k.kutu === kutu) ?? null;
   const okumaVar = Boolean(yaz || uid);
+  const acikTur = klasorler.find((k) => k.anahtar === klasor)?.tur ?? null;
   const kapat = posta(kutu, klasor, { uid: yaz ? uid : undefined, sayfa: liste.sayfa, arama });
 
   /* ---------------------------------------------- sağ panel: ne gösterilecek */
@@ -277,6 +299,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   } else if (yaz === "yeni") {
     sag = (
       <YazmaFormu
+        key={`yeni-${kutu}`}
         kutular={kutular}
         kutu={kutu}
         baslik="Yeni e-posta"
@@ -285,15 +308,51 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         kapatHref={kapat}
       />
     );
-  } else if ((yaz === "yanit" || yaz === "ilet") && secili) {
-    const yanit = yaz === "yanit";
+  } else if (yaz === "taslak" && secili && acikTur === "taslak") {
+    /* Taslaklar'daki taslak düzenlenir: alanlar taslaktan, ekleri taslağın
+       içinden. key sabit: kaydedince adres yeni taslağın UID'sine geçer, form
+       (imleç, yazılanlar) yerinde kalır — bkz. yazma-formu. */
+    const adres = (v: string) => adresleriAyikla(v).gecerli.join(", ");
     sag = (
       <YazmaFormu
-        key={`${yaz}-${secili.uid}`}
+        key="taslak"
         kutular={kutular}
         kutu={kutu}
-        baslik={yanit ? "Yanıtla" : "İlet"}
-        kime={yanit ? secili.yanitAdresi : ""}
+        baslik="Taslak"
+        kime={adres(secili.kime)}
+        bilgi={adres(secili.bilgi)}
+        gizli={adres(secili.gizli)}
+        konu={secili.konu}
+        metin={secili.metin === BOS_ILETI ? "" : secili.metin}
+        mesajKimligi={secili.yanitladigi}
+        referanslar={secili.referanslar}
+        iletilen={secili.ekler.length ? { kutu, klasor, uid: secili.uid, ekler: secili.ekler } : undefined}
+        taslak={{ kutu, uid: secili.uid }}
+        kapatHref={posta(kutu, klasor, { uid: secili.uid, sayfa: liste.sayfa })}
+      />
+    );
+  } else if ((yaz === "yanit" || yaz === "yanit-tum" || yaz === "ilet") && secili && acikTur !== "taslak") {
+    const yanit = yaz !== "ilet";
+    /* Kendi gönderdiğimiz iletiye yanıt (Gönderilmiş'ten takip): alıcılara
+       gider, kendimize değil — Thunderbird de böyle yapar. */
+    const kendimden = secili.kimdenAdres === kutu;
+    const alicilar = (v: string) => adresleriAyikla(v).gecerli.filter((a) => a !== kutu).join(", ");
+    const { kime, bilgi } =
+      yaz === "yanit"
+        ? { kime: kendimden ? alicilar(secili.kime) : secili.yanitAdresi, bilgi: "" }
+        : yaz === "yanit-tum"
+          ? kendimden
+            ? { kime: alicilar(secili.kime), bilgi: alicilar(secili.bilgi) }
+            : tumunuYanitlaAlicilari(secili.yanitAdresi, secili.kime, secili.bilgi, kutu)
+          : { kime: "", bilgi: "" };
+    sag = (
+      <YazmaFormu
+        key={`${yaz}-${kutu}-${klasor}-${secili.uid}`}
+        kutular={kutular}
+        kutu={kutu}
+        baslik={yaz === "yanit" ? "Yanıtla" : yaz === "yanit-tum" ? "Tümünü yanıtla" : "İlet"}
+        kime={kime}
+        bilgi={bilgi}
         konu={yanit ? yanitKonusu(secili.konu) : iletKonusu(secili.konu)}
         metin={
           yanit
@@ -302,7 +361,9 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         }
         mesajKimligi={yanit ? secili.mesajKimligi : ""}
         referanslar={yanit ? secili.referanslar : ""}
-        yanitUid={yanit && klasor === "gelen" ? secili.uid : undefined}
+        yanitUid={yanit ? secili.uid : undefined}
+        yanitKlasor={klasor}
+        yanitKutu={kutu}
         iletilen={!yanit && secili.ekler.length ? { kutu, klasor, uid: secili.uid, ekler: secili.ekler } : undefined}
         kapatHref={kapat}
       />
@@ -313,6 +374,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         ileti={secili}
         kutu={kutu}
         klasor={klasor}
+        klasorler={klasorler}
         sayfa={liste.sayfa}
         sinif={seciliSinif}
         firma={seciliFirma}
@@ -331,7 +393,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         <header className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <div>
             <h1 className="font-display text-xl font-bold uppercase tracking-tight sm:text-2xl">E-posta</h1>
-            <p className="text-sm text-muted">{kutular.length} hesap · okumak iletiyi kutuda &ldquo;okundu&rdquo; yapmaz</p>
+            <p className="text-sm text-muted">{kutular.length} hesap · açılan ileti okundu sayılır · liste dakikada bir tazelenir</p>
           </div>
           <Link
             href={posta(kutu, klasor, { yaz: "yeni" })}
@@ -341,11 +403,19 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
           </Link>
         </header>
 
-        <MobilSecici hesaplar={hesaplar} kutu={kutu} klasor={klasor} />
+        {!yaz ? <Yenileyici /> : null}
+        <MobilSecici hesaplar={hesaplar} kutu={kutu} klasor={klasor} klasorler={klasorler} />
 
         <div className="overflow-hidden rounded-xl border border-line bg-card lg:grid lg:h-[calc(100dvh-11rem)] lg:min-h-[32rem] lg:grid-cols-[15rem_minmax(0,22rem)_minmax(0,1fr)]">
           <aside className="hidden min-h-0 border-r border-line lg:block">
-            <HesapPaneli hesaplar={hesaplar} kutu={kutu} klasor={klasor} tarama={tarama} taraEylemi={gelenTaraEylemi} />
+            <HesapPaneli
+              hesaplar={hesaplar}
+              kutu={kutu}
+              klasor={klasor}
+              klasorler={klasorler}
+              tarama={tarama}
+              taraEylemi={gelenTaraEylemi}
+            />
           </aside>
 
           <section className={`${okumaVar ? "hidden lg:flex" : "flex"} min-h-0 flex-col border-line lg:border-r`}>
@@ -361,6 +431,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
               uyari={liste.uyari}
               klasorYok={liste.klasorYok}
               arama={arama}
+              klasorler={klasorler}
             />
           </section>
 

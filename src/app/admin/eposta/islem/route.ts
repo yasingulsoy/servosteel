@@ -1,6 +1,8 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { oturum } from "@/lib/admin-auth";
+import { gelenIletileriIsle } from "@/lib/gelen-tarama";
+import { ayarlariOku } from "@/lib/outreach-kurallar";
 import { kayitEkle } from "@/lib/panel-kayit";
 import { ILETI_ISLEMLERI, iletiIslemi, type IletiIslemi } from "@/lib/posta";
 
@@ -12,7 +14,12 @@ import { ILETI_ISLEMLERI, iletiIslemi, type IletiIslemi } from "@/lib/posta";
  * Gönderim ucu gibi: önce oturum, Origin bu siteden değilse ret. Taşıyan
  * işlemler (sil dahil) panel kaydına düşer — kimin hangi iletiyi nereye
  * kaldırdığı görünsün; okundu/bayrak işaretleri kayda yazılmaz (gürültü).
+ *
+ * Gelen'den taşımadan ÖNCE ileti taramadan geçer: tarama yalnızca Gelen'e
+ * bakıyor, taranmadan arşivlenen yanıt firmaya işlenmezdi.
  */
+const GELENDEN_TASIYAN = new Set<IletiIslemi>(["arsivle", "onemsiz", "sil", "tasi"]);
+
 export const dynamic = "force-dynamic";
 
 const cevap = (tamam: boolean, mesaj: string, ek: Record<string, unknown> = {}, status = 200) =>
@@ -37,6 +44,9 @@ export async function POST(istek: NextRequest) {
 
   const kutu = yazi(g.kutu, 254).trim().toLowerCase();
   const klasor = yazi(g.klasor, 200) || "gelen";
+  if (klasor === "gelen" && GELENDEN_TASIYAN.has(islem)) {
+    await gelenIletileriIsle(ayarlariOku(process.env), kutu, uidler).catch(() => 0);
+  }
   const r = await iletiIslemi(kutu, klasor, uidler, islem, yazi(g.hedef, 200) || undefined);
   if (!r.tamam) return cevap(false, r.hata);
 
