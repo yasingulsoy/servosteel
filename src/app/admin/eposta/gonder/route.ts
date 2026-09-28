@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { oturum } from "@/lib/admin-auth";
 import { notEkle } from "@/lib/leads-db";
 import { kayitEkle } from "@/lib/panel-kayit";
-import type { GidenEk } from "@/lib/posta";
+import { ekleriIndir, taslakKaydet, type GidenEk } from "@/lib/posta";
 import { adresleriAyikla, ekAdiTemizle } from "@/lib/posta-bicim";
 import { EK_TOPLAM_EN_COK, elleGonder } from "@/lib/posta-gonder";
 
@@ -62,22 +62,53 @@ export async function POST(istek: NextRequest) {
     .map(String)
     .filter((p) => PARCA.test(p))
     .slice(0, 40);
+  const iletilenEkler =
+    iletUid > 0 && parcalar.length
+      ? { kutu: alan("ilet_kutu", 254), klasor: alan("ilet_klasor", 200) || "gelen", uid: iletUid, parcalar }
+      : undefined;
+  const taslakUid = Math.floor(Number(alan("taslak_uid", 20))) || undefined;
+
+  /* Taslak kaydet: gönderim kuralları yok (alıcı eksik olabilir), kutunun
+     Taslaklar klasörüne konur; eskisi varsa değiştirilir. */
+  if (alan("islem", 20) === "taslak") {
+    const kutu = alan("kutu", 254).trim().toLowerCase();
+    let tasinan: GidenEk[] = [];
+    if (iletilenEkler) {
+      const r = await ekleriIndir(iletilenEkler.kutu, iletilenEkler.klasor, iletilenEkler.uid, iletilenEkler.parcalar, EK_TOPLAM_EN_COK);
+      if (!r.tamam) return cevap(false, r.hata);
+      tasinan = r.ekler;
+    }
+    const liste = (ad: string) => adresleriAyikla(alan(ad, 4000)).gecerli;
+    const r = await taslakKaydet({
+      kutuAdresi: kutu,
+      kime: liste("kime"),
+      bilgi: liste("bilgi"),
+      gizli: liste("gizli"),
+      konu: alan("konu", 300),
+      metin: alan("metin", 50_000),
+      ekler: [...tasinan, ...ekler],
+      eskiUid: taslakUid,
+    });
+    if (!r.tamam) return cevap(false, r.hata);
+    revalidatePath("/admin/eposta");
+    return NextResponse.json({ tamam: true, mesaj: "Taslak kaydedildi.", taslakUid: r.uid });
+  }
 
   const sonuc = await elleGonder({
     kim: ben,
     kutu: alan("kutu", 254),
     kime: alan("kime", 4000),
     bilgi: alan("bilgi", 4000),
+    gizli: alan("gizli", 4000),
     konu: alan("konu", 300),
     metin: alan("metin", 50_000),
     mesajKimligi: alan("mesaj_kimligi", 1000),
     referanslar: alan("referanslar", 4000),
     yanitUid: Number(alan("yanit_uid", 20)),
+    yanitKlasor: alan("yanit_klasor", 200) || "gelen",
+    taslakUid,
     ekler,
-    iletilenEkler:
-      iletUid > 0 && parcalar.length
-        ? { kutu: alan("ilet_kutu", 254), klasor: alan("ilet_klasor") === "giden" ? "giden" : "gelen", uid: iletUid, parcalar }
-        : undefined,
+    iletilenEkler,
   });
   if (sonuc.tamam) {
     revalidatePath("/admin/eposta");

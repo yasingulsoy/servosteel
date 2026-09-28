@@ -8,12 +8,17 @@ import { ayarlariOku, type GonderenKutusu } from "@/lib/outreach-kurallar";
 import { htmldenMetin } from "@/lib/eposta-html";
 import { metindenHtml } from "@/lib/eposta-bicim";
 import {
+  KLASOR_TURU_ADI,
   adresGoster,
   ekleriBul,
   gorselIzleriniTemizle,
   kisaAd,
+  klasorleriDuzenle,
   referansZinciri,
   type Ek,
+  type HamKlasor,
+  type KlasorBilgisi,
+  type KlasorTuru,
   type YapiDugumu,
 } from "@/lib/posta-bicim";
 
@@ -26,8 +31,11 @@ import {
  * Gönderme aynı kutunun SMTP'siyle yapılır ve kopyası Gönderilmiş'e konur —
  * Thunderbird ne görüyorsa panel de onu görür.
  *
- * KUTUYA DOKUNMAZ (okurken): klasör salt okunur açılır, gövde BODY.PEEK ile
- * alınır. Panelde bir mail açmak onu Thunderbird'de "okundu" yapmaz.
+ * Outlook gibi (Yasin, 28 Eylül 2026: "outlook gibi mail aracı olmalı"): kutudaki
+ * bütün klasörler, panelde AÇILAN ileti okundu sayılır, okunmadı/bayrak/taşı/
+ * sil/arşivle/önemsiz, taslak. Sil = Silinmiş klasörüne taşı; kalıcı silme yok.
+ * Listeyi göstermek, Claude'un ucunun okuması ve ek indirmek kutuya DOKUNMAZ
+ * (salt okunur, BODY.PEEK).
  *
  * Gövde DÜZ METİN: gelen posta güvenilmeyen içerik; HTML'ini işlemek gereksiz
  * risk. Yalnızca HTML parçası olan ileti metne çevrilir.
@@ -36,8 +44,13 @@ import {
  * uç (`api/posta`) çağırıyor — ikisi aynı kodla çalışır.
  */
 
-export type Klasor = "gelen" | "giden";
-export const KLASOR_ADI: Record<Klasor, string> = { gelen: "Gelen", giden: "Gönderilmiş" };
+/**
+ * Klasörün adres çubuğundaki adı: özel klasörde türü ("gelen", "giden",
+ * "taslak", "arsiv", "onemsiz", "cop"), ötekinde sunucudaki yolu (bkz.
+ * posta-bicim klasorleriDuzenle).
+ */
+export type Klasor = string;
+export type { KlasorBilgisi, KlasorTuru };
 
 /** Sayfa başına ileti sayısı. */
 export const POSTA_SAYFA_BOYU = 40;
@@ -98,6 +111,7 @@ export type IletiOzeti = {
   konu: string;
   okundu: boolean;
   yanitlandi: boolean;
+  bayrakli: boolean;
   ekVar: boolean;
   boyut: number;
 };
@@ -109,6 +123,10 @@ export type OkunanIleti = {
   kimdenAdres: string;
   kime: string;
   bilgi: string;
+  /** Gizli alıcılar — yalnızca taslakta ve Gönderilmiş kopyasında bulunur */
+  gizli: string;
+  okundu: boolean;
+  bayrakli: boolean;
   tarih: string | null;
   metin: string;
   /** BODYSTRUCTURE'dan — ileti kırpılsa da eksiksiz */
@@ -124,6 +142,10 @@ export type OkunanIleti = {
 export type KutuGorunumu =
   | {
       tamam: true;
+      /** Kutunun bütün klasörleri, okunmamış sayılarıyla — kenar çubuğu */
+      klasorler: KlasorBilgisi[];
+      /** Açık klasör; kutuda yoksa null */
+      klasor: KlasorBilgisi | null;
       klasorYolu: string | null;
       uidvalidity: number;
       toplam: number;
@@ -137,13 +159,34 @@ export type KutuGorunumu =
 
 type ImapIstemci = ReturnType<typeof imapIstemcisi>;
 
-/** Gönderilmiş klasörünün yolu — sunucu \Sent işaretini vermiyorsa addan. Okurken OLUŞTURMAZ. */
-async function gonderilmisYolu(istemci: ImapIstemci): Promise<string | null> {
-  const klasorler = await istemci.list();
-  const k =
-    klasorler.find((x) => x.specialUse === "\\Sent") ??
-    klasorler.find((x) => /^(inbox[./])?(sent|sent items|sent messages|gönderilmiş öğeler)$/i.test(x.path));
-  return k?.path ?? null;
+/** Kutunun klasörleri panelin sırasıyla; `sayilarla` okunmamış ve toplam sayıları da (STATUS). */
+async function klasorleriOku(istemci: ImapIstemci, sayilarla = false): Promise<KlasorBilgisi[]> {
+  const liste = await istemci.list(sayilarla ? { statusQuery: { messages: true, unseen: true } } : undefined);
+  return klasorleriDuzenle(liste as unknown as HamKlasor[]);
+}
+
+const klasorBul = (klasorler: KlasorBilgisi[], anahtar: Klasor) => klasorler.find((k) => k.anahtar === anahtar) ?? null;
+
+/** Anahtarın sunucudaki yolu — yoksa null. Okurken klasör OLUŞTURMAZ. */
+async function klasorYolu(istemci: ImapIstemci, anahtar: Klasor): Promise<string | null> {
+  if (anahtar === "gelen") return "INBOX";
+  return klasorBul(await klasorleriOku(istemci), anahtar)?.yol ?? null;
+}
+
+/**
+ * Özel klasör kutuda yoksa (Arşiv, Önemsiz, Silinmiş, Taslaklar) açar — yerini
+ * kutunun düzeninden alır: öteki klasörler "INBOX." altındaysa oraya.
+ */
+async function ozelKlasorAc(istemci: ImapIstemci, klasorler: KlasorBilgisi[], tur: KlasorTuru): Promise<string> {
+  const var_ = klasorler.find((k) => k.tur === tur);
+  if (var_) return var_.yol;
+  const ad = { arsiv: "Archive", onemsiz: "Junk", cop: "Trash", taslak: "Drafts", giden: "Sent", gelen: "INBOX" }[tur];
+  const liste = await istemci.list();
+  const ornek = liste.find((k) => k.path.toUpperCase() !== "INBOX" && k.delimiter);
+  const onek = ornek && ornek.path.toUpperCase().startsWith(`INBOX${ornek.delimiter}`) ? `INBOX${ornek.delimiter}` : "";
+  const yol = `${onek}${ad}`;
+  await istemci.mailboxCreate(yol);
+  return yol;
 }
 
 type Adresler = { name?: string; address?: string }[] | undefined;
@@ -177,7 +220,7 @@ async function kapat(istemci: ImapIstemci) {
 async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIleti | null> {
   const m = await istemci.fetchOne(
     String(uid),
-    { uid: true, bodyStructure: true, source: { maxLength: ILETI_EN_COK_BAYT } },
+    { uid: true, flags: true, bodyStructure: true, source: { maxLength: ILETI_EN_COK_BAYT } },
     { uid: true }
   );
   if (!m || !m.source) return null;
@@ -193,6 +236,9 @@ async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIlet
     kimdenAdres: (kimden?.[0]?.address ?? "").toLowerCase(),
     kime: adresGoster(adresListesi(p.to)) || "—",
     bilgi: adresGoster(adresListesi(p.cc)),
+    gizli: adresGoster(adresListesi(p.bcc)),
+    okundu: m.flags?.has("\\Seen") ?? false,
+    bayrakli: m.flags?.has("\\Flagged") ?? false,
     tarih: p.date ? p.date.toISOString() : null,
     metin: govde || "(ileti boş görünüyor)",
     /* Ekler kaynağın ilk 512 KB'ından değil yapıdan: büyük iletide eki
@@ -210,9 +256,13 @@ const OZET_SORGUSU = { uid: true, flags: true, envelope: true, internalDate: tru
 
 type HamIleti = Awaited<ReturnType<ImapIstemci["fetchAll"]>>[number];
 
-function ozetle(m: HamIleti, klasor: Klasor): IletiOzeti {
+/** Listede karşı taraf: Gönderilmiş ve Taslaklar'da alıcı, ötekilerde gönderen. */
+const alicidanMi = (k: KlasorBilgisi | null | undefined, anahtar: Klasor) =>
+  k ? k.tur === "giden" || k.tur === "taslak" : anahtar === "giden" || anahtar === "taslak";
+
+function ozetle(m: HamIleti, alicidan: boolean): IletiOzeti {
   const e = m.envelope;
-  const karsi = (klasor === "gelen" ? e?.from : e?.to) as Adresler;
+  const karsi = (alicidan ? e?.to : e?.from) as Adresler;
   const tarih = e?.date ?? m.internalDate;
   return {
     uid: m.uid,
@@ -222,6 +272,7 @@ function ozetle(m: HamIleti, klasor: Klasor): IletiOzeti {
     konu: e?.subject ?? "",
     okundu: m.flags?.has("\\Seen") ?? false,
     yanitlandi: m.flags?.has("\\Answered") ?? false,
+    bayrakli: m.flags?.has("\\Flagged") ?? false,
     ekVar: ekVarMi(m.bodyStructure),
     boyut: m.size ?? 0,
   };
@@ -257,7 +308,9 @@ export async function kutuGorunumu(
   klasor: Klasor,
   sayfa: number,
   seciliUid?: number,
-  arama = ""
+  arama = "",
+  /** Panelde açılan ileti okundu sayılsın (Outlook gibi) — Claude'un ucu vermez */
+  secenek: { okunduYap?: boolean } = {}
 ): Promise<KutuGorunumu> {
   const kutu = kutuBul(kutuAdresi);
   if (!kutu) return { tamam: false, hata: "Bu kutu gönderim ayarlarında tanımlı değil." };
@@ -265,14 +318,18 @@ export async function kutuGorunumu(
   const istemci = imapIstemcisi(kutu);
   try {
     await istemci.connect();
-    const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
+    const klasorler = await klasorleriOku(istemci, true);
+    const acik = klasorBul(klasorler, klasor);
+    const yol = acik?.yol ?? null;
     if (!yol) {
       return {
-        tamam: true, klasorYolu: null, uidvalidity: 0, toplam: 0, sayfa: 1, sayfaSayisi: 1,
+        tamam: true, klasorler, klasor: null, klasorYolu: null, uidvalidity: 0, toplam: 0, sayfa: 1, sayfaSayisi: 1,
         iletiler: [], secili: null, seciliHata: null,
       };
     }
-    const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
+    const alicidan = alicidanMi(acik, klasor);
+    const secimVar = Boolean(seciliUid && Number.isSafeInteger(seciliUid) && seciliUid > 0);
+    const kilit = await istemci.getMailboxLock(yol, { readOnly: !(secenek.okunduYap && secimVar) });
     try {
       const kutuBilgisi = istemci.mailbox;
       const uidvalidity = kutuBilgisi ? Number(kutuBilgisi.uidValidity) : 0;
@@ -292,7 +349,7 @@ export async function kutuGorunumu(
         const dilim = uidler.slice((s - 1) * POSTA_SAYFA_BOYU, s * POSTA_SAYFA_BOYU);
         if (dilim.length) {
           const ham = await istemci.fetchAll(dilim.join(","), OZET_SORGUSU, { uid: true });
-          iletiler = ham.map((m) => ozetle(m, klasor)).sort((a, b) => b.uid - a.uid);
+          iletiler = ham.map((m) => ozetle(m, alicidan)).sort((a, b) => b.uid - a.uid);
         }
       } else {
         toplam = kutuBilgisi ? kutuBilgisi.exists : 0;
@@ -302,18 +359,33 @@ export async function kutuGorunumu(
         const baslangic = Math.max(1, bitis - POSTA_SAYFA_BOYU + 1);
         if (bitis >= 1) {
           const ham = await istemci.fetchAll(`${baslangic}:${bitis}`, OZET_SORGUSU);
-          iletiler = ham.reverse().map((m) => ozetle(m, klasor));
+          iletiler = ham.reverse().map((m) => ozetle(m, alicidan));
         }
       }
 
       let secili: OkunanIleti | null = null;
       let seciliHata: string | null = null;
-      if (seciliUid && Number.isSafeInteger(seciliUid) && seciliUid > 0) {
-        secili = await iletiyiCoz(istemci, seciliUid);
+      if (secimVar) {
+        secili = await iletiyiCoz(istemci, seciliUid as number);
         if (!secili) seciliHata = ILETI_YOK;
+        /* Outlook gibi: açılan ileti okundu. Liste ve klasör sayısı da aynı
+           cevapta güncellenir — ekran kutuyla tutarlı kalsın. */
+        if (secili && secenek.okunduYap && !secili.okundu) {
+          const tamam = await istemci
+            .messageFlagsAdd(String(secili.uid), ["\\Seen"], { uid: true })
+            .catch(() => false);
+          if (tamam) {
+            secili = { ...secili, okundu: true };
+            iletiler = iletiler.map((m) => (m.uid === secili?.uid ? { ...m, okundu: true } : m));
+            if (acik) acik.okunmamis = Math.max(0, acik.okunmamis - 1);
+          }
+        }
       }
 
-      return { tamam: true, klasorYolu: yol, uidvalidity, toplam, sayfa: s, sayfaSayisi, iletiler, secili, seciliHata };
+      return {
+        tamam: true, klasorler, klasor: acik, klasorYolu: yol, uidvalidity, toplam, sayfa: s, sayfaSayisi,
+        iletiler, secili, seciliHata,
+      };
     } finally {
       kilit.release();
     }
@@ -341,8 +413,8 @@ export async function iletiOku(
   const istemci = imapIstemcisi(kutu);
   try {
     await istemci.connect();
-    const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
-    if (!yol) return { tamam: false, hata: "Bu kutuda Gönderilmiş klasörü yok." };
+    const yol = await klasorYolu(istemci, klasor);
+    if (!yol) return { tamam: false, hata: "Bu klasör kutuda yok." };
     const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
     try {
       const uidvalidity = istemci.mailbox ? Number(istemci.mailbox.uidValidity) : 0;
@@ -372,8 +444,8 @@ async function ekliIletiyiAc(
   uid: number
 ): Promise<{ kilit: Kilit; ekler: Ek[] } | { hata: string; durum: number }> {
   await istemci.connect();
-  const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
-  if (!yol) return { hata: "Bu kutuda Gönderilmiş klasörü yok.", durum: 404 };
+  const yol = await klasorYolu(istemci, klasor);
+  if (!yol) return { hata: "Bu klasör kutuda yok.", durum: 404 };
   const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
   const m = await istemci.fetchOne(String(uid), { uid: true, bodyStructure: true }, { uid: true });
   if (!m || !m.bodyStructure) {
@@ -504,8 +576,9 @@ export async function herYerdeAra(
       const istemci = imapIstemcisi(kutu);
       try {
         await istemci.connect();
+        const klasorler = await klasorleriOku(istemci);
         for (const klasor of ["gelen", "giden"] as const) {
-          const yol = klasor === "gelen" ? "INBOX" : await gonderilmisYolu(istemci);
+          const yol = klasorBul(klasorler, klasor)?.yol;
           if (!yol) continue;
           const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
           try {
@@ -515,7 +588,7 @@ export async function herYerdeAra(
             const dilim = uidler.slice(0, enCok);
             if (dilim.length) {
               const ham = await istemci.fetchAll(dilim.join(","), OZET_SORGUSU, { uid: true });
-              for (const m of ham) satirlar.push({ ...ozetle(m, klasor), kutu: kutu.user, klasor, uidvalidity });
+              for (const m of ham) satirlar.push({ ...ozetle(m, klasor === "giden"), kutu: kutu.user, klasor, uidvalidity });
             }
           } finally {
             kilit.release();
@@ -545,13 +618,15 @@ export async function herYerdeAra(
  * görünür. Okumanın aksine bu kutuyu DEĞİŞTİRİR, ama yalnızca bu bayrağı.
  * Olmazsa gönderim yine geçerli; sessizce geçilir.
  */
-export async function yanitlandiIsaretle(kutuAdresi: string, uid: number): Promise<void> {
+export async function yanitlandiIsaretle(kutuAdresi: string, uid: number, klasor: Klasor = "gelen"): Promise<void> {
   const kutu = kutuBul(kutuAdresi);
   if (!kutu || !Number.isSafeInteger(uid) || uid < 1) return;
   const istemci = imapIstemcisi(kutu);
   try {
     await istemci.connect();
-    const kilit = await istemci.getMailboxLock("INBOX");
+    const yol = await klasorYolu(istemci, klasor);
+    if (!yol) return;
+    const kilit = await istemci.getMailboxLock(yol);
     try {
       await istemci.messageFlagsAdd(String(uid), ["\\Answered"], { uid: true });
     } finally {
@@ -564,12 +639,194 @@ export async function yanitlandiIsaretle(kutuAdresi: string, uid: number): Promi
   }
 }
 
+/* ------------------------------------------------------- ileti işlemleri */
+
+export const ILETI_ISLEMLERI = [
+  "okundu",
+  "okunmadi",
+  "bayrak",
+  "bayrak-kaldir",
+  "arsivle",
+  "onemsiz",
+  "onemsiz-degil",
+  "sil",
+  "geri-al",
+  "tasi",
+] as const;
+export type IletiIslemi = (typeof ILETI_ISLEMLERI)[number];
+
+/** Taşıyan işlemlerin hedefi — "tasi"da hedef kullanıcıdan gelir. */
+const HEDEF_TURU: Partial<Record<IletiIslemi, KlasorTuru>> = {
+  arsivle: "arsiv",
+  onemsiz: "onemsiz",
+  "onemsiz-degil": "gelen",
+  sil: "cop",
+  "geri-al": "gelen",
+};
+
+/**
+ * Outlook'taki araç çubuğu: işaretle, bayrakla, taşı. SİL, Silinmiş klasörüne
+ * taşır — kalıcı silme panelde yok; Silinmiş'teki ileti "geri al"la Gelen'e
+ * döner. Hedef özel klasör (Arşiv, Önemsiz, Silinmiş) kutuda yoksa açılır.
+ */
+export async function iletiIslemi(
+  kutuAdresi: string,
+  klasor: Klasor,
+  uidler: number[],
+  islem: IletiIslemi,
+  hedef?: Klasor
+): Promise<{ tamam: true; mesaj: string; tasindi: boolean } | { tamam: false; hata: string }> {
+  const kutu = kutuBul(kutuAdresi);
+  if (!kutu) return { tamam: false, hata: "Bu kutu tanımlı değil." };
+  const liste = [...new Set(uidler)].filter((u) => Number.isSafeInteger(u) && u > 0).slice(0, 200);
+  if (!liste.length) return { tamam: false, hata: "İleti seçilmedi." };
+  if (!(ILETI_ISLEMLERI as readonly string[]).includes(islem)) return { tamam: false, hata: "Bilinmeyen işlem." };
+
+  const istemci = imapIstemcisi(kutu);
+  try {
+    await istemci.connect();
+    const klasorler = await klasorleriOku(istemci);
+    const kaynak = klasorBul(klasorler, klasor);
+    if (!kaynak) return { tamam: false, hata: "Klasör kutuda yok." };
+    const aralik = liste.join(",");
+    const adet = liste.length > 1 ? `${liste.length} ileti` : "İleti";
+
+    const bayrak = { okundu: "\\Seen", okunmadi: "\\Seen", bayrak: "\\Flagged", "bayrak-kaldir": "\\Flagged" } as const;
+    if (islem in bayrak) {
+      const kilit = await istemci.getMailboxLock(kaynak.yol);
+      try {
+        const b = bayrak[islem as keyof typeof bayrak];
+        if (islem === "okundu" || islem === "bayrak") await istemci.messageFlagsAdd(aralik, [b], { uid: true });
+        else await istemci.messageFlagsRemove(aralik, [b], { uid: true });
+      } finally {
+        kilit.release();
+      }
+      const yazi = { okundu: "okundu", okunmadi: "okunmadı", bayrak: "bayraklandı", "bayrak-kaldir": "bayrağı kaldırıldı" }[
+        islem as keyof typeof bayrak
+      ];
+      return { tamam: true, mesaj: `${adet} ${yazi}.`, tasindi: false };
+    }
+
+    if (islem === "sil" && kaynak.tur === "cop") {
+      return { tamam: false, hata: "İleti zaten Silinmiş'te. Kalıcı silme panelden yapılmıyor." };
+    }
+    let hedefYol: string;
+    let hedefAd: string;
+    const tur = HEDEF_TURU[islem];
+    if (tur) {
+      hedefYol = await ozelKlasorAc(istemci, klasorler, tur);
+      hedefAd = KLASOR_TURU_ADI[tur];
+    } else {
+      const h = hedef ? klasorBul(klasorler, hedef) : null;
+      if (!h) return { tamam: false, hata: "Hedef klasör yok." };
+      hedefYol = h.yol;
+      hedefAd = h.ad;
+    }
+    if (hedefYol === kaynak.yol) return { tamam: false, hata: `İleti zaten ${hedefAd} klasöründe.` };
+
+    const kilit = await istemci.getMailboxLock(kaynak.yol);
+    try {
+      const r = await istemci.messageMove(aralik, hedefYol, { uid: true });
+      if (!r) return { tamam: false, hata: "Sunucu taşımayı kabul etmedi." };
+    } finally {
+      kilit.release();
+    }
+    return { tamam: true, mesaj: `${adet} ${hedefAd} klasörüne taşındı.`, tasindi: true };
+  } catch (e) {
+    return { tamam: false, hata: baglantiHatasi(e) };
+  } finally {
+    await kapat(istemci);
+  }
+}
+
+/* ------------------------------------------------------------- taslaklar */
+
+export type TaslakGirdisi = {
+  kutuAdresi: string;
+  kime: string[];
+  bilgi: string[];
+  gizli: string[];
+  konu: string;
+  metin: string;
+  ekler?: GidenEk[];
+  /** Aynı taslak daha önce kaydedildiyse eski kopyası silinir */
+  eskiUid?: number;
+};
+
+/**
+ * Taslağı kutunun Taslaklar klasörüne koyar (\Draft) — Thunderbird de görür.
+ * Yeniden kaydedince eski kopya silinir; Outlook da taslağı yerinde günceller.
+ * Taslak kutunun kendi taslağı: silmesi kalıcı ama yalnızca eski sürümü.
+ */
+export async function taslakKaydet(g: TaslakGirdisi): Promise<{ tamam: true; uid: number | null } | { tamam: false; hata: string }> {
+  const kutu = kutuBul(g.kutuAdresi);
+  if (!kutu) return { tamam: false, hata: "Bu kutu tanımlı değil." };
+  const dugum = new MailComposer({
+    from: { name: kutu.ad, address: kutu.user },
+    ...(g.kime.length ? { to: g.kime } : {}),
+    ...(g.bilgi.length ? { cc: g.bilgi } : {}),
+    ...(g.gizli.length ? { bcc: g.gizli } : {}),
+    subject: (g.konu ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, 300),
+    text: (g.metin ?? "").replace(/\r\n?/g, "\n").slice(0, 50_000),
+    ...(g.ekler?.length
+      ? { attachments: g.ekler.map((e) => ({ filename: e.ad, content: e.icerik, contentType: e.tur })) }
+      : {}),
+  }).compile();
+  dugum.keepBcc = true;
+  const ham = await dugum.build();
+
+  const istemci = imapIstemcisi(kutu);
+  try {
+    await istemci.connect();
+    const yol = await ozelKlasorAc(istemci, await klasorleriOku(istemci), "taslak");
+    const r = await istemci.append(yol, ham, ["\\Draft", "\\Seen"]);
+    if (!r) return { tamam: false, hata: "Taslak kaydedilemedi." };
+    if (g.eskiUid && Number.isSafeInteger(g.eskiUid) && g.eskiUid > 0) {
+      const kilit = await istemci.getMailboxLock(yol);
+      try {
+        await istemci.messageDelete(String(g.eskiUid), { uid: true });
+      } finally {
+        kilit.release();
+      }
+    }
+    return { tamam: true, uid: typeof r.uid === "number" ? r.uid : null };
+  } catch (e) {
+    return { tamam: false, hata: baglantiHatasi(e) };
+  } finally {
+    await kapat(istemci);
+  }
+}
+
+/** Gönderilen taslağın kaydı Taslaklar'dan kalkar (Outlook gibi). Olmazsa sessizce geçilir. */
+export async function taslakSil(kutuAdresi: string, uid: number): Promise<void> {
+  const kutu = kutuBul(kutuAdresi);
+  if (!kutu || !Number.isSafeInteger(uid) || uid < 1) return;
+  const istemci = imapIstemcisi(kutu);
+  try {
+    await istemci.connect();
+    const yol = await klasorYolu(istemci, "taslak");
+    if (!yol) return;
+    const kilit = await istemci.getMailboxLock(yol);
+    try {
+      await istemci.messageDelete(String(uid), { uid: true });
+    } finally {
+      kilit.release();
+    }
+  } catch {
+    /* taslak kalırsa elle silinir */
+  } finally {
+    await kapat(istemci);
+  }
+}
+
 /* ------------------------------------------------------------ gönderme */
 
 export type GonderimGirdisi = {
   kutuAdresi: string;
   kime: string[];
   bilgi: string[];
+  /** Gizli alıcılar (Bcc) — alıcılar görmez, Gönderilmiş kopyasında durur */
+  gizli?: string[];
   konu: string;
   metin: string;
   /** Yanıtsa: yanıtlanan iletinin Message-ID'si ve References zinciri (konuşma bağlansın) */
@@ -597,7 +854,8 @@ export async function epostaGonder(g: GonderimGirdisi): Promise<GonderimSonucu> 
   const kutu = kutuBul(g.kutuAdresi);
   if (!kutu) return { tamam: false, hata: "Bu kutu gönderim ayarlarında tanımlı değil." };
   if (!g.kime.length) return { tamam: false, hata: "Alıcı yok." };
-  if (g.kime.length + g.bilgi.length > 20) return { tamam: false, hata: "Tek seferde en çok 20 alıcı." };
+  const gizli = g.gizli ?? [];
+  if (g.kime.length + g.bilgi.length + gizli.length > 20) return { tamam: false, hata: "Tek seferde en çok 20 alıcı." };
   const konu = (g.konu ?? "").replace(/[\r\n]+/g, " ").trim().slice(0, 300);
   const metin = (g.metin ?? "").replace(/\r\n?/g, "\n").trim().slice(0, 50_000);
   if (!konu) return { tamam: false, hata: "Konu boş olamaz." };
@@ -607,6 +865,7 @@ export async function epostaGonder(g: GonderimGirdisi): Promise<GonderimSonucu> 
     from: { name: kutu.ad, address: kutu.user },
     to: g.kime,
     ...(g.bilgi.length ? { cc: g.bilgi } : {}),
+    ...(gizli.length ? { bcc: gizli } : {}),
     subject: konu,
     text: metin,
     html: htmlSarmala(metindenHtml(metin)),
@@ -652,6 +911,13 @@ export async function epostaGonder(g: GonderimGirdisi): Promise<GonderimSonucu> 
     tasiyici.close();
   }
 
-  const kopyaHatasi = await gonderilmislereEkle(kutu, ham);
+  /* Giden iletide Bcc başlığı yok (alıcılar görmesin); Gönderilmiş kopyasında
+     var — Outlook da kime gizli gittiğini gösterir. Aynı düğüm: Message-ID aynı. */
+  let kopya = ham;
+  if (gizli.length) {
+    dugum.keepBcc = true;
+    kopya = await dugum.build();
+  }
+  const kopyaHatasi = await gonderilmislereEkle(kutu, kopya);
   return { tamam: true, mesajKimligi, kopyaHatasi };
 }

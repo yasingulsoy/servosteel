@@ -1,13 +1,17 @@
 import Form from "next/form";
 import Link from "next/link";
 import {
+  Archive,
   CornerUpLeft,
   Download,
   ExternalLink,
   File as DosyaIkon,
   FileArchive,
   FileImage,
+  FilePen,
   FileText,
+  Flag,
+  Folder,
   Forward,
   Inbox,
   Mail,
@@ -15,14 +19,19 @@ import {
   Paperclip,
   PenLine,
   RefreshCw,
+  Reply,
+  ReplyAll,
   Search,
   Send,
+  ShieldAlert,
+  Trash2,
   TriangleAlert,
   X,
 } from "lucide-react";
-import type { IletiOzeti, Klasor, OkunanIleti } from "@/lib/posta";
-import { ONIZLENEBILIR, boyutYaz, kutuKisaAdi, type Ek } from "@/lib/posta-bicim";
+import type { IletiOzeti, Klasor, KlasorBilgisi, OkunanIleti } from "@/lib/posta";
+import { KLASOR_TURU_ADI, ONIZLENEBILIR, boyutYaz, kutuKisaAdi, type Ek } from "@/lib/posta-bicim";
 import { goreli, tamTarih } from "@/lib/zaman";
+import { IletiIslemleri } from "./islemler";
 
 /**
  * E-posta istemcisinin görünüm parçaları — veriyi PROP olarak alırlar, kendileri
@@ -33,7 +42,30 @@ import { goreli, tamTarih } from "@/lib/zaman";
  * telefonda üstte yatay düğmeler.
  */
 
-export type HesapSatiri = { user: string; ad: string; bekleyen: number };
+export type HesapSatiri = { user: string; ad: string; bekleyen: number; tanitim: boolean };
+
+/** Klasör simgesi — Outlook'taki gibi türüne göre */
+const KLASOR_IKONU = {
+  gelen: Inbox,
+  taslak: FilePen,
+  giden: Send,
+  arsiv: Archive,
+  onemsiz: ShieldAlert,
+  cop: Trash2,
+} as const;
+const klasorIkonu = (k: { tur: string | null }) => (k.tur ? KLASOR_IKONU[k.tur as keyof typeof KLASOR_IKONU] : Folder);
+
+/** Klasörün adı — tüm hesaplarda aramada satırlar "gelen"/"giden" taşır */
+export function klasorAdi(klasorler: KlasorBilgisi[], anahtar: Klasor): string {
+  return (
+    klasorler.find((k) => k.anahtar === anahtar)?.ad ??
+    (KLASOR_TURU_ADI as Record<string, string>)[anahtar] ??
+    anahtar
+  );
+}
+
+/** Okunmamış sayısı anlamsız klasörler: kendi gönderdiklerimiz ve taslaklar */
+const alicidan = (anahtar: Klasor) => anahtar === "giden" || anahtar === "taslak";
 export type Sinif = { tur: string; firma_id: number | null; firma: string | null };
 /** Tüm hesaplarda aramada her satır kendi kutusunu ve klasörünü taşır. */
 export type ListeSatiri = IletiOzeti & {
@@ -98,12 +130,15 @@ export function HesapPaneli({
   hesaplar,
   kutu,
   klasor,
+  klasorler,
   tarama,
   taraEylemi,
 }: {
   hesaplar: HesapSatiri[];
   kutu: string;
   klasor: Klasor;
+  /** Seçili hesabın klasörleri, okunmamış sayılarıyla */
+  klasorler: KlasorBilgisi[];
   tarama: { bitti: string | null; son_hata: string } | null;
   taraEylemi: () => Promise<void>;
 }) {
@@ -134,6 +169,11 @@ export function HesapPaneli({
                   title={`${h.ad} <${h.user}>`}
                 >
                   <span className="min-w-0 flex-1 truncate">{h.user}</span>
+                  {!h.tanitim ? (
+                    <span className="shrink-0 text-[10px] font-semibold uppercase text-muted" title="Sitenin form kutusu — tanıtım e-postası buradan gitmez">
+                      form
+                    </span>
+                  ) : null}
                   {h.bekleyen > 0 ? (
                     <span className="shrink-0 rounded-full bg-violet-500/15 px-1.5 py-0.5 text-[11px] font-semibold text-violet-700" title="Elden geçmemiş yanıt">
                       {h.bekleyen}
@@ -142,24 +182,36 @@ export function HesapPaneli({
                 </Link>
                 {secili ? (
                   <ul className="mb-1 ml-3 mt-0.5 space-y-0.5 border-l border-line pl-2">
-                    {(
-                      [
-                        ["gelen", "Gelen", Inbox],
-                        ["giden", "Gönderilmiş", Send],
-                      ] as const
-                    ).map(([k, ad, Ikon]) => (
-                      <li key={k}>
-                        <Link
-                          href={posta(h.user, k)}
-                          aria-current={klasor === k ? "page" : undefined}
-                          className={`flex items-center gap-2 rounded-md px-2 py-1.5 text-sm ${
-                            klasor === k ? "bg-accent/15 font-semibold text-ink" : "text-muted hover:text-ink"
-                          }`}
-                        >
-                          <Ikon className="size-4 shrink-0" aria-hidden /> {ad}
-                        </Link>
-                      </li>
-                    ))}
+                    {(klasorler.length
+                      ? klasorler
+                      : [
+                          { anahtar: "gelen", ad: "Gelen", tur: "gelen", okunmamis: 0, toplam: 0, derinlik: 0, yol: "INBOX" },
+                        ]
+                    ).map((k) => {
+                      const Ikon = klasorIkonu(k);
+                      /* Taslaklar'da okunmamış yok, kaç taslak olduğu yazılır */
+                      const sayi = k.tur === "taslak" ? k.toplam : alicidan(k.anahtar) ? 0 : k.okunmamis;
+                      return (
+                        <li key={k.anahtar}>
+                          <Link
+                            href={posta(h.user, k.anahtar)}
+                            aria-current={klasor === k.anahtar ? "page" : undefined}
+                            style={k.derinlik ? { paddingLeft: `${0.5 + k.derinlik * 0.75}rem` } : undefined}
+                            className={`flex items-center gap-2 rounded-md px-2 py-1.5 text-sm ${
+                              klasor === k.anahtar ? "bg-accent/15 font-semibold text-ink" : "text-muted hover:text-ink"
+                            }`}
+                          >
+                            <Ikon className="size-4 shrink-0" aria-hidden />
+                            <span className="min-w-0 flex-1 truncate">{k.ad}</span>
+                            {sayi > 0 ? (
+                              <span className={`shrink-0 text-xs tabular-nums ${k.tur === "taslak" ? "text-muted" : "font-semibold text-ink"}`}>
+                                {sayi}
+                              </span>
+                            ) : null}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 ) : null}
               </li>
@@ -191,7 +243,17 @@ export function HesapPaneli({
 }
 
 /** Telefonda üstte: hesap ve klasör düğmeleri, yatay kayar. */
-export function MobilSecici({ hesaplar, kutu, klasor }: { hesaplar: HesapSatiri[]; kutu: string; klasor: Klasor }) {
+export function MobilSecici({
+  hesaplar,
+  kutu,
+  klasor,
+  klasorler,
+}: {
+  hesaplar: HesapSatiri[];
+  kutu: string;
+  klasor: Klasor;
+  klasorler: KlasorBilgisi[];
+}) {
   const dugme = (secili: boolean) =>
     `shrink-0 rounded-full border px-3 py-1.5 text-sm ${
       secili ? "border-accent bg-accent/15 font-semibold text-ink" : "border-line bg-card text-muted"
@@ -206,13 +268,13 @@ export function MobilSecici({ hesaplar, kutu, klasor }: { hesaplar: HesapSatiri[
           </Link>
         ))}
       </div>
-      <div className="flex gap-2">
-        <Link href={posta(kutu, "gelen")} className={dugme(klasor === "gelen")}>
-          Gelen
-        </Link>
-        <Link href={posta(kutu, "giden")} className={dugme(klasor === "giden")}>
-          Gönderilmiş
-        </Link>
+      <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+        {(klasorler.length ? klasorler : [{ anahtar: "gelen", ad: "Gelen", tur: "gelen", okunmamis: 0 }]).map((k) => (
+          <Link key={k.anahtar} href={posta(kutu, k.anahtar)} className={dugme(klasor === k.anahtar)}>
+            {k.ad}
+            {k.okunmamis > 0 && !alicidan(k.anahtar) ? <span className="ml-1 font-semibold text-ink">{k.okunmamis}</span> : null}
+          </Link>
+        ))}
       </div>
     </div>
   );
@@ -277,9 +339,12 @@ export function IletiListesi({
   uyari,
   klasorYok,
   arama = null,
+  klasorler = [],
 }: {
   kutu: string;
   klasor: Klasor;
+  /** Kutunun klasörleri — başlıktaki ad */
+  klasorler?: KlasorBilgisi[];
   satirlar: ListeSatiri[];
   toplam: number;
   sayfa: number;
@@ -291,7 +356,7 @@ export function IletiListesi({
   klasorYok?: boolean;
   arama?: AramaBaglami;
 }) {
-  const klasorAdi = klasor === "gelen" ? "Gelen" : "Gönderilmiş";
+  const acikAd = klasorAdi(klasorler, klasor);
   return (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex items-baseline justify-between gap-2 border-b border-line px-4 py-3">
@@ -300,12 +365,12 @@ export function IletiListesi({
             <>
               “{arama.ara}”
               <span className="ml-1.5 font-normal text-muted">
-                · {arama.tum ? "tüm hesaplar" : `${klasorAdi} · ${kutuKisaAdi(kutu)}`}
+                · {arama.tum ? "tüm hesaplar" : `${acikAd} · ${kutuKisaAdi(kutu)}`}
               </span>
             </>
           ) : (
             <>
-              {klasorAdi}
+              {acikAd}
               <span className="ml-1.5 font-normal text-muted">· {kutuKisaAdi(kutu)}</span>
             </>
           )}
@@ -325,7 +390,7 @@ export function IletiListesi({
           <span>{hata}</span>
         </p>
       ) : klasorYok ? (
-        <p className="m-4 text-sm text-muted">Bu kutuda Gönderilmiş klasörü yok. İlk gönderimde kendiliğinden oluşturulur.</p>
+        <p className="m-4 text-sm text-muted">Bu klasör kutuda yok. Gönderilmiş ve Taslaklar ilk kullanımda kendiliğinden açılır.</p>
       ) : satirlar.length === 0 ? (
         <p className="flex flex-1 flex-col items-center justify-center gap-2 p-8 text-center text-sm text-muted">
           <MailOpen className="size-6 opacity-40" aria-hidden />
@@ -337,7 +402,7 @@ export function IletiListesi({
             const mKutu = m.kutu ?? kutu;
             const mKlasor = m.klasor ?? klasor;
             const secili = m.uid === seciliUid && mKutu === kutu && mKlasor === klasor;
-            const okunmadi = !m.okundu && mKlasor === "gelen";
+            const okunmadi = !m.okundu && !alicidan(mKlasor);
             const tur = m.sinif?.tur && TUR_ETIKET[m.sinif.tur] ? m.sinif.tur : null;
             const firma = m.sinif?.firma ?? m.firma?.firma ?? null;
             return (
@@ -349,13 +414,13 @@ export function IletiListesi({
                 >
                   {m.kutu ? (
                     <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted">
-                      {kutuKisaAdi(m.kutu)} · {mKlasor === "gelen" ? "Gelen" : "Gönderilmiş"}
+                      {kutuKisaAdi(m.kutu)} · {klasorAdi(klasorler, mKlasor)}
                     </p>
                   ) : null}
                   <div className="flex items-baseline gap-2">
                     {okunmadi ? <span className="size-2 shrink-0 translate-y-[-1px] rounded-full bg-accent" aria-label="okunmadı" /> : null}
                     <span className={`min-w-0 flex-1 truncate text-sm ${okunmadi ? "font-bold text-ink" : "font-medium"}`}>
-                      {mKlasor === "giden" ? <span className="font-normal text-muted">Kime: </span> : null}
+                      {alicidan(mKlasor) ? <span className="font-normal text-muted">Kime: </span> : null}
                       {m.kisi}
                     </span>
                     <span className="shrink-0 text-xs tabular-nums text-muted">{listeTarihi(m.tarih)}</span>
@@ -441,7 +506,7 @@ export function IletiOkuyucu({
         </Link>
         {arama?.tum ? (
           <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-muted">
-            {kutuKisaAdi(kutu)} · {klasor === "gelen" ? "Gelen" : "Gönderilmiş"}
+            {kutuKisaAdi(kutu)} · {klasorAdi(klasorler, klasor)}
           </p>
         ) : null}
         <h2 className="break-words text-lg font-semibold leading-snug">{ileti.konu || "(konusuz)"}</h2>

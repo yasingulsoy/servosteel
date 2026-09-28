@@ -25,7 +25,7 @@ const UYARI_BAYT = 2 * 1024 * 1024;
 /** Sunucudaki sınırla aynı (posta-gonder.ts EK_TOPLAM_EN_COK). */
 const EN_COK_BAYT = 20 * 1024 * 1024;
 
-export type Iletilen = { kutu: string; klasor: "gelen" | "giden"; uid: number; ekler: Ek[] };
+export type Iletilen = { kutu: string; klasor: string; uid: number; ekler: Ek[] };
 
 export function YazmaFormu({
   kutular,

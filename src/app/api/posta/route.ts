@@ -93,7 +93,8 @@ function kutuCoz(v: unknown): string | null {
   return postaKutulari().find((k) => k.user === a || kutuKisaAdi(k.user) === a)?.user ?? null;
 }
 
-const klasorCoz = (v: unknown): Klasor => (v === "giden" ? "giden" : "gelen");
+/* "gelen", "giden", "taslak", "arsiv", "onemsiz", "cop" ya da kutudaki klasörün yolu (liste cevabındaki `klasorler`) */
+const klasorCoz = (v: unknown): Klasor => (typeof v === "string" && v.trim() ? v.trim().slice(0, 200) : "gelen");
 
 /** Yazılan metin + imza. Metin yazanın; imza panelle aynı. */
 function govdeKur(g: Govde): string {
@@ -171,6 +172,7 @@ export async function POST(istek: NextRequest) {
       kutu,
       klasor,
       klasorYolu: r.klasorYolu,
+      klasorler: r.klasorler.map((k) => ({ anahtar: k.anahtar, ad: k.ad, toplam: k.toplam, okunmamis: k.okunmamis })),
       toplam: r.toplam,
       sayfa: r.sayfa,
       sayfaSayisi: r.sayfaSayisi,

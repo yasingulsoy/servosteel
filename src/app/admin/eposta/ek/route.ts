@@ -26,7 +26,7 @@ export async function GET(istek: NextRequest) {
   if (!(await oturum())) return new NextResponse("Oturum yok — panele giriş yapın.", { status: 401 });
 
   const sp = istek.nextUrl.searchParams;
-  const klasor: Klasor = sp.get("klasor") === "giden" ? "giden" : "gelen";
+  const klasor: Klasor = (sp.get("klasor") ?? "").slice(0, 200) || "gelen";
   const r = await ekAkisi(sp.get("kutu") ?? "", klasor, Math.floor(Number(sp.get("uid"))), sp.get("parca") ?? "");
   if (!r.tamam) return new NextResponse(r.hata, { status: r.durum, headers: { "Content-Type": "text/plain; charset=utf-8" } });
 

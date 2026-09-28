@@ -1,7 +1,15 @@
 import "server-only";
 import { sorguSert } from "@/lib/db";
 import { kayitEkle } from "@/lib/panel-kayit";
-import { ekleriIndir, epostaGonder, postaKutulari, yanitlandiIsaretle, type GidenEk, type Klasor } from "@/lib/posta";
+import {
+  ekleriIndir,
+  epostaGonder,
+  postaKutulari,
+  taslakSil,
+  yanitlandiIsaretle,
+  type GidenEk,
+  type Klasor,
+} from "@/lib/posta";
 import { adresleriAyikla, boyutYaz } from "@/lib/posta-bicim";
 
 /**
@@ -34,13 +42,18 @@ export type ElleGonderim = {
   kutu: string;
   kime: string;
   bilgi?: string;
+  /** Gizli alıcılar (Bcc) */
+  gizli?: string;
   konu: string;
   metin: string;
   /** Yanıtsa: yanıtlanan iletinin Message-ID'si ve References zinciri */
   mesajKimligi?: string;
   referanslar?: string;
-  /** Yanıtlanan gelen iletinin UID'si — kutuda "yanıtlandı" işaretlenir */
+  /** Yanıtlanan iletinin UID'si ve klasörü — kutuda "yanıtlandı" işaretlenir */
   yanitUid?: number;
+  yanitKlasor?: Klasor;
+  /** Taslaktan gönderiliyorsa: gidince taslak Taslaklar'dan kalkar */
+  taslakUid?: number;
   /** Bütün kontroller çalışır, e-posta GİTMEZ (Claude'un ucundaki önizleme) */
   dene?: boolean;
   /** Formdan yüklenen dosyalar */
@@ -57,10 +70,13 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
 
   const kime = adresleriAyikla(g.kime ?? "");
   const bilgi = adresleriAyikla(g.bilgi ?? "");
-  const bozuk = [...kime.gecersiz, ...bilgi.gecersiz];
+  const gizli = adresleriAyikla(g.gizli ?? "");
+  const bozuk = [...kime.gecersiz, ...bilgi.gecersiz, ...gizli.gecersiz];
   if (bozuk.length) return { tamam: false, mesaj: `Geçersiz adres: ${bozuk.join(", ")}` };
   if (!kime.gecerli.length) return { tamam: false, mesaj: "En az bir alıcı adresi yazın." };
-  if (kime.gecerli.length + bilgi.gecerli.length > 20) return { tamam: false, mesaj: "Tek seferde en çok 20 alıcı." };
+  if (kime.gecerli.length + bilgi.gecerli.length + gizli.gecerli.length > 20) {
+    return { tamam: false, mesaj: "Tek seferde en çok 20 alıcı." };
+  }
   if (!(g.konu ?? "").trim()) return { tamam: false, mesaj: "Konu boş olamaz." };
   if (!(g.metin ?? "").trim()) return { tamam: false, mesaj: "Metin boş olamaz." };
 
@@ -77,7 +93,7 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
   if (!yanitMi) {
     const engelli = await sorguSert<{ eposta: string }>(
       `SELECT eposta FROM eposta_engel WHERE eposta = ANY($1::text[])`,
-      [[...kime.gecerli, ...bilgi.gecerli]]
+      [[...kime.gecerli, ...bilgi.gecerli, ...gizli.gecerli]]
     );
     if (engelli.length) {
       return {
@@ -115,6 +131,7 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
     kutuAdresi: kutu,
     kime: kime.gecerli,
     bilgi: bilgi.gecerli,
+    gizli: gizli.gecerli,
     konu: g.konu ?? "",
     metin: g.metin ?? "",
     yanitlanan: yanitMi ? { mesajKimligi, referanslar: g.referanslar ?? "" } : undefined,
@@ -122,14 +139,16 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
   });
 
   const ekYazisi = ekler.length ? ` · ${ekler.length} ek (${boyutYaz(ekler.reduce((t, e) => t + e.icerik.length, 0))})` : "";
-  const ozet = `${kutu} → ${[...kime.gecerli, ...bilgi.gecerli].join(", ")} — ${g.konu ?? ""}${ekYazisi}`.slice(0, 280);
+  const gizliYazisi = gizli.gecerli.length ? ` · gizli: ${gizli.gecerli.join(", ")}` : "";
+  const ozet = `${kutu} → ${[...kime.gecerli, ...bilgi.gecerli].join(", ")}${gizliYazisi} — ${g.konu ?? ""}${ekYazisi}`.slice(0, 280);
   if (!r.tamam) {
     await kayitEkle(g.kim, "eposta_gonder_hata", kutu, `${ozet} · ${r.hata}`.slice(0, 280));
     return { tamam: false, mesaj: r.hata };
   }
 
   await kayitEkle(g.kim, "eposta_gonder", kutu, ozet);
-  if (yanitMi && g.yanitUid && g.yanitUid > 0) await yanitlandiIsaretle(kutu, g.yanitUid);
+  if (yanitMi && g.yanitUid && g.yanitUid > 0) await yanitlandiIsaretle(kutu, g.yanitUid, g.yanitKlasor ?? "gelen");
+  if (g.taslakUid && g.taslakUid > 0) await taslakSil(kutu, g.taslakUid);
   return {
     tamam: true,
     mesaj: r.kopyaHatasi
