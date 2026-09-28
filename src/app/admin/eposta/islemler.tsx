@@ -77,7 +77,8 @@ export function IletiIslemleri({
 
   const dugme =
     "inline-flex items-center gap-1.5 rounded-lg border border-line px-2.5 py-1.5 text-sm hover:bg-surface-alt disabled:opacity-50";
-  const tasinabilir = klasorler.filter((k) => k.anahtar !== klasor);
+  /* Taslaklar hedef değil: oraya düşen ileti taslak sanılıp "gönderilebilirdi" */
+  const tasinabilir = klasorler.filter((k) => k.anahtar !== klasor && k.anahtar !== "taslak");
 
   return (
     <div className="flex flex-wrap items-center gap-1.5">
