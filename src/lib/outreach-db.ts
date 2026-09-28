@@ -1165,6 +1165,40 @@ export async function hedefTalepleri(firmaId: number): Promise<HedefTalebi[]> {
   return r ?? [];   // talepler tablosu yoksa (hiç talep gelmemiş kurulum) boş
 }
 
+/**
+ * Formdan gelen talep bir hedef firmaya aitse (bkz. TALEP_ESLES) ve firma hâlâ
+ * "Gönderildi"deyse durumunu günceller: teklif formu → Olumlu, iletişim formu →
+ * Yanıt geldi; firmaya not düşer.
+ *
+ * Neden: PAL CHARPENTIER (28 Eylül 2026) tanıtım mailindeki bağlantıdan formla
+ * teklif istedi, Gmail'le yazdığı için yanıt olarak görülmedi. Firma
+ * "Gönderildi"de kaldı: "tıkladı, yazmadı" listesinin başında duruyordu ve 21
+ * gün sonra "mailimizi gördünüz mü?" hatırlatması alacaktı.
+ *
+ * Hata fırlatmaz: talep kaydını ve maili hiçbir şey bozmamalı.
+ */
+export async function talebiFirmayaIsle(talepId: number): Promise<void> {
+  try {
+    const r = await sorgu<{ id: number; tur: string }>(
+      `SELECT h.id, t.tur
+       FROM talepler t JOIN hedef_firmalar h ON ${TALEP_ESLES}
+       WHERE t.id = $1 AND h.durum = 'gonderildi'`,
+      [talepId]
+    );
+    for (const f of r ?? []) {
+      const teklif = f.tur === "rfq";
+      await hedefDurumDegistir(f.id, teklif ? "olumlu" : "yanit");
+      await hedefNotEkle(
+        f.id,
+        `Siteden ${teklif ? "teklif" : "iletişim"} formu bıraktı (talep #${talepId}) — tanıtım mailinden sonra.`,
+        "site formu"
+      );
+    }
+  } catch (e) {
+    console.error("[talep] hedef firmaya işlenemedi:", (e as Error).message);
+  }
+}
+
 /** Gönderim yapılmış firmalardan kaçı sonradan talep bıraktı. */
 export async function talebeDonen(): Promise<number> {
   const r = await sorgu<{ adet: number }>(

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendLead, type Lead } from "@/lib/mail";
 import { talepEkle } from "@/lib/leads-db";
+import { talebiFirmayaIsle } from "@/lib/outreach-db";
 
 /**
  * Form taleplerini alır ve e-posta olarak gönderir.
@@ -82,9 +83,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "gecersiz" }, { status: 400 });
   }
 
-  /* `talepEkle` hata fırlatmaz (içeride yutuyor) — kayıt hiçbir yolu bozamaz. */
-  const kaydet = (kaynak: string) =>
-    talepEkle({
+  /* `talepEkle` hata fırlatmaz (içeride yutuyor) — kayıt hiçbir yolu bozamaz.
+     Talep bir tanıtım maili alan firmadansa firmanın durumu da güncellenir
+     (bkz. talebiFirmayaIsle) — o da hata fırlatmaz. */
+  const kaydet = async (kaynak: string) => {
+    const id = await talepEkle({
       tur: lead.kind,
       dil: lead.locale,
       ad: lead.name ?? "",
@@ -98,6 +101,8 @@ export async function POST(req: Request) {
       sayfa: req.headers.get("referer") ?? "",
       kaynak,
     });
+    if (id) await talebiFirmayaIsle(id);
+  };
 
   try {
     await sendLead(lead);
