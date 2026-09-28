@@ -192,6 +192,8 @@ ULKE_DIL = {
     "Dominik Cumhuriyeti": "es",
     # Kesif B turunun yeni ulkeleri (2026-09-22)
     "Madagaskar": "fr", "Kongo": "fr", "Nijer": "fr", "Gine": "fr", "Moritanya": "fr", "Nikaragua": "es", "Türkmenistan": "ru",
+    # Kesif I turunun yeni ulkeleri (2026-09-28); Liberya, Sierra Leone, Gambiya, Esvatini, Lesotho: en
+    "Burundi": "fr", "Çad": "fr", "Cibuti": "fr", "Yeşil Burun Adaları": "pt",
 }
 SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
 

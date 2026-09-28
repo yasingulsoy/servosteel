@@ -147,6 +147,7 @@ ULKELER = [
 # a: 59 ulke x ana arama · b: yeni ulkeler x ana arama · c: 59 ulke x es anlamli arama
 # d: buyuk pazarlarda sehir bazli ana arama · f: d'nin devami, yeni sanayi sehirleri
 # g: Afrika ve Orta Dogu sehirleri · h: b'nin Afrika ulkeleri + Lubnan, es anlamli arama
+# i: Afrika'da yerel urun terimleri (bolgeye gore ayri sorgu takimi) + 9 yeni Afrika ulkesi
 # e: oncelikli urun gruplari (dilme / boy kesme ->
 # celik servis merkezi, pres besleme -> pres atolyesi), a+b ulkeleri, segment basina iki arama.
 # Her tur ayri dosyalara yazar; sonraki tur onceki turlarin .md'lerindeki alan adlarini
@@ -401,6 +402,51 @@ AFRIKA_ORTADOGU_B = [u for u in ULKELER_B if u[1] in {
     "ZM", "ZW", "BW", "NA", "RW", "MU", "MW", "LY", "LB",
     "MG", "CD", "CG", "GA", "TG", "BJ", "BF", "ML", "NE", "GN", "MR"}]
 
+# I turu (2026-09-28, Yasin "firma arastirmasina devam et"): Afrika'da YEREL urun
+# terimleri. 888 gonderimde en iyi donen bolge Afrika (kisi tiklamasi %3, iki teklif
+# talebi), en iyi donen dil Fransizca — ama Fildisi Sahili ve Senegal'de sirada firma
+# kalmamisti. Onceki turlar "roofing sheet manufacturer" gibi genel terimle aradi;
+# alici kendi terimini yaziyor: tole bac alu zinc (Bati Afrika), mabati / iron sheets
+# (Dogu), IBR / roll formers / lipped channel (Guney), long span (Nijerya, Gana),
+# madres (Portekizce Afrika). Asik grubunda celik yapi yuklenicileri de aranir —
+# PAL CHARPENTIER (teklif talebi) boyle bir firma. Dil anahtari "en:dogu" gibi: iki
+# nokta oncesi arama dili, sonrasi sorgu takimi (bkz. gorevler).
+_I_BOLGE = {
+    "fr": {"CI", "SN", "CM", "BF", "ML", "BJ", "TG", "GN", "GA", "CG", "CD", "NE", "MG", "MR", "MA", "DZ", "TN"},
+    "en:bati": {"NG", "GH"},
+    "en:dogu": {"KE", "TZ", "UG", "RW", "ET", "MW"},
+    "en:guney": {"ZA", "ZW", "ZM", "BW", "NA", "MU"},
+    "pt": {"AO", "MZ"},
+}
+ULKELER_I = [
+    (ad, iso, anahtar, tel, sorgu_ulke)
+    for ad, iso, _, tel, sorgu_ulke in ULKELER + ULKELER_B
+    for anahtar, isolar in _I_BOLGE.items() if iso in isolar
+] + [
+    # Hic aranmamis Afrika ulkeleri
+    ("Burundi", "BI", "fr", "257", "Burundi"), ("Çad", "TD", "fr", "235", "Tchad"),
+    ("Cibuti", "DJ", "fr", "253", "Djibouti"),
+    ("Liberya", "LR", "en:bati", "231", "Liberia"), ("Sierra Leone", "SL", "en:bati", "232", "Sierra Leone"),
+    ("Gambiya", "GM", "en:bati", "220", "Gambia"),
+    ("Esvatini", "SZ", "en:guney", "268", "Eswatini"), ("Lesotho", "LS", "en:guney", "266", "Lesotho"),
+    ("Yeşil Burun Adaları", "CV", "pt", "238", "Cabo Verde"),
+]
+
+SORGU_I = {
+    "fr": {"cati-cephe-paneli": ["fabrication de tôles bac alu zinc", "usine de tôles et tuiles métalliques"],
+           "asik-celik-yapi": ["entreprise de charpente métallique", "construction métallique hangars et bâtiments industriels"],
+           "alcipan-profili": "fabricant de profilés métalliques pour faux plafond",
+           "raf-sistemleri": "fabricant d'étagères métalliques"},
+    "en:bati": {"cati-cephe-paneli": ["long span aluminium roofing sheets company", "aluzinc roofing sheets producer"],
+                "asik-celik-yapi": ["structural steel fabrication company", "steel roof trusses fabricators"]},
+    "en:dogu": {"cati-cephe-paneli": ["mabati roofing sheets manufacturer", "corrugated iron sheets factory"],
+                "asik-celik-yapi": ["structural steel fabrication company", "light gauge steel roof trusses"]},
+    "en:guney": {"cati-cephe-paneli": ["IBR roof sheeting manufacturer", "roof sheeting roll formers"],
+                 "asik-celik-yapi": ["lipped channel purlins manufacturer", "structural steel fabricators"]},
+    "pt": {"cati-cephe-paneli": ["fábrica de chapas de cobertura", "chapas IBR e onduladas"],
+           "asik-celik-yapi": ["empresa de estruturas metálicas", "fabricante de madres metálicas"]},
+}
+
 # E turu (2026-09-22, Yasin: "oncelik roll form, dilme, boy kesme, pres besleme, kompakt"):
 # dilme ve boy kesme hattini CELIK SERVIS MERKEZI alir (40 + 49 firmayla en kucuk iki grup),
 # pres besleme ve kompakt hatti PRES ATOLYESI. Deger liste: segment basina iki arama.
@@ -424,6 +470,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "i":
+        return ULKELER_I, SORGU_I, "-i"
     if tur == "g":
         return SEHIRLER_G, SORGU, "-g"
     if tur == "h":
@@ -512,6 +560,7 @@ def konum_kodlari(ulkeler):
 
 
 def gorevler(kodlar, ulkeler, sorgu):
+    """dil "en:dogu" olabilir: arama dili "en", sorgu takimi "en:dogu" (bkz. I turu)."""
     liste = []
     for ad, iso, dil, _, sorgu_ulke in ulkeler:
         if iso not in kodlar:
@@ -519,7 +568,7 @@ def gorevler(kodlar, ulkeler, sorgu):
         for seg, ifadeler in sorgu[dil].items():
             for ifade in ([ifadeler] if isinstance(ifadeler, str) else ifadeler):
                 kelime = ("%s %s" % (ifade, sorgu_ulke)).strip()
-                liste.append({"keyword": kelime, "location_code": kodlar[iso], "language_code": dil,
+                liste.append({"keyword": kelime, "location_code": kodlar[iso], "language_code": dil.split(":")[0],
                               "depth": DERINLIK, "tag": "%s|%s" % (iso, seg)})
     return liste
 
@@ -926,10 +975,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
-                         "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama")
+                         "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
+                         "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente)")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)

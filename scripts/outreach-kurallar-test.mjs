@@ -285,8 +285,10 @@ t("gonderim sirasi hedefin sabahini one alir", () => {
   assert.ok(c.mesai.includes("Hindistan"));
 });
 t("her hedef ulkenin saat dilimi var", () => {
-  /* Veritabanindaki 111 ulkenin hepsi tabloda; eksik olan siralamada en sona duser */
-  assert.equal(Object.keys(S.ULKE_DILIMI).length, 111);
+  /* Veritabanindaki ulkelerin ve kesif listelerindeki (hedef-firma-kesif.py) ulkelerin hepsi
+     tabloda: 127. 28 Eylul'e kadar Gabon, Gine, Kongo, Nijer eksikti — oradaki firmalar yerel
+     saate bakilmadan siranin sonunda gidiyordu. Eksik olan siralamada en sona duser. */
+  assert.equal(Object.keys(S.ULKE_DILIMI).length, 127);
   for (const [ulke, dilim] of Object.entries(S.ULKE_DILIMI)) {
     assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
   }
