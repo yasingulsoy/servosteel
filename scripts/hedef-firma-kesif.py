@@ -553,6 +553,9 @@ KARA_LISTE = re.compile(
     r"cardify|zimbabwhere|thinklocal|dubaiexporters|pharmaexpo|turkishmarketer|youmats|toolz\.ng|"
     # I turu elle gozden gecirmesinden (2026-09-28): pazar yeri, ihale, kamu ticaret portali, gazete
     r"constructionhub|beready\.mu|dztenders|iway-tn|tunisieindustrie|times\.co\.sz|"
+    # J turu (Arapca) elle gozden gecirmesinden (2026-09-29): gazete, TV, borsa, ilan/ihale portali, rehber
+    r"albayan\.ae|alwatan\.ae|alanba\.com|okaz\.com|argaam|almamlakatv|qbusinessgate|bluepages\.com|"
+    r"easyuae|tashtebati|mfatihasuq|dubaiinvestments|"
     r"framecad)", re.I)   # framecad: LGS roll form makinesi ureticisi (rakip)
 
 # Rakip: makine uretenler (baslik/ozette)

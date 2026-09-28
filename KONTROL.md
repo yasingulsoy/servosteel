@@ -459,6 +459,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | G | Afrika + Orta Doğu'nun hiç aranmamış 75 sanayi şehri × 12 segment (28 Eyl) | 900 | 1,08 $ | 79 (186'dan, elle) |
 | H | b'nin 19 Afrika ülkesi + Lübnan, eş anlamlı arama (28 Eyl) | 240 | 0,29 $ | 14 (26'dan, elle) |
 | I | 42 Afrika ülkesi (9'u ilk kez), alıcının kendi terimiyle: tôle bac, charpente métallique, mabati, IBR, long span, madres (28 Eyl) | 208 | 0,25 $ | 35 (50'den, elle) |
+| J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) — aktarım bekliyor |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -493,9 +494,34 @@ bölgeye göre (`"en:dogu"` gibi dil anahtarı). 50 satırın 15'i elle elendi:
 Kongo, Nijer saat dilimi tablosunda yoktu; oradaki firmalara yerel saate bakılmadan
 yazılıyordu. Tabloya bu dördü ve keşfin bulabileceği bütün ülkeler eklendi
 (`d1792b1`, yayında geçerli).
-**Sıradaki aday:** Arapça arama (Mısır, Suudi, Irak, Cezayir). Mısır'dan iRack teklif
-istedi, ama Arapça siteler bugünkü süzgeçte "ürün kelimesi yok" diye düşüyor ve
-Arapça e-posta taslağı yok. İkisi birlikte yapılmalı.
+**J turu — Arapça (2026-09-28/29, Yasin "yapalım"):** Arap ülkelerinde Arapça arama ve
+Arapça tanıtım e-postası. Önceden Arapça siteler süzgeçte "ürün kelimesi yok" diye
+düşüyordu, çünkü kelime listelerinde Arapça yoktu. Bütün süzgeçlere Arapça karşılıklar
+eklendi; telefon kontrolü Arapça rakamı (٠١٢) çeviriyor, firma adı Arapça başlıktan
+alınıyor. 50 satırın 24'ü elle elendi:
+- 11'i gazete, TV, borsa ya da ilan/ihale portalı (Arapça aramada haber siteleri çok çıkıyor);
+- 2'si entegre hadde (Katar Çelik, Iraqi Hadeed);
+- geri kalanı satıcı, taahhüt ya da bakım firması, prekast beton, alçı, kimya, Çinli
+  ihracatçı ve bir demo şablon sitesi.
+
+Kalan 26 firmanın dağılımı: Suudi Arabistan 7, Libya 5, BAE, Irak, Katar, Kuveyt ve Tunus
+2'şer, Mısır, Umman, Ürdün ve Cezayir birer. Bu firmalar çatı ve sandviç panel, çelik yapı,
+hava kanalı, raf ve market rafı üreticileri; bir de boru fabrikası var.
+
+**Arapça e-posta yalnız bu turun firmalarına gider** (dosya adı `-j`). Önce İngilizce
+yazılmış 484 Arap ülkesi firması İngilizce kalır; hatırlatma ilk mektubun dilinde gitsin.
+Metin İngilizcenin birebir karşılığı; terimler sitenin `ar.json`'undan. HTML sağdan sola
+diziliyor; abonelik satırı ve sayfası Arapça. Gelen Arapça "إلغاء الاشتراك", otomatik yanıt
+ve alıntı başlığı tanınıyor.
+
+**Aktarım bekliyor:** metin onayı ve `85591ee` yayını. Yayından önce aktarılırsa mail
+sağdan sola düzeni ve Arapça altbilgisi olmadan gider. Yayının izi: `/api/unsubscribe?t=x`
+sayfası `<html lang="en" dir="ltr">` döner (29 Eylül'de hâlâ `dir`siz).
+
+**Kayıp:** 524 aday "ülke tutmuyor" diye düştü. Arapça siteler telefonu ülke kodsuz
+yazıyor (0100…). Yerel biçim ülkeler arasında çakıştığı için (Körfez'de 05…) kural
+gevşetilmedi.
+
 
 ```bash
 python scripts/hedef-firma-kesif.py --tur e --plan    # kaç arama, kaç $
