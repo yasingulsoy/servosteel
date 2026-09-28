@@ -1,8 +1,10 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { oturum } from "@/lib/admin-auth";
+import { notEkle } from "@/lib/leads-db";
+import { kayitEkle } from "@/lib/panel-kayit";
 import type { GidenEk } from "@/lib/posta";
-import { ekAdiTemizle } from "@/lib/posta-bicim";
+import { adresleriAyikla, ekAdiTemizle } from "@/lib/posta-bicim";
 import { EK_TOPLAM_EN_COK, elleGonder } from "@/lib/posta-gonder";
 
 /**
@@ -77,6 +79,19 @@ export async function POST(istek: NextRequest) {
         ? { kutu: alan("ilet_kutu", 254), klasor: alan("ilet_klasor") === "giden" ? "giden" : "gelen", uid: iletUid, parcalar }
         : undefined,
   });
-  if (sonuc.tamam) revalidatePath("/admin/eposta");
+  if (sonuc.tamam) {
+    revalidatePath("/admin/eposta");
+    /* Talep iletildiyse talebin notlarına iz: kime, hangi kutudan. Not
+       yazılamasa da gönderim geçerli — mail gitti. */
+    const talepId = Math.floor(Number(alan("talep_id", 20)));
+    if (talepId > 0) {
+      const kime = adresleriAyikla(alan("kime", 4000)).gecerli;
+      const bilgi = adresleriAyikla(alan("bilgi", 4000)).gecerli;
+      const not = `İletildi: ${kime.join(", ")}${bilgi.length ? ` · bilgi: ${bilgi.join(", ")}` : ""} — ${alan("kutu", 254)} kutusundan`;
+      await notEkle(talepId, not, ben).catch(() => {});
+      await kayitEkle(ben, "not", `talep:${talepId}`, `Talep #${talepId} — ${not}`).catch(() => {});
+      revalidatePath(`/admin/talep/${talepId}`);
+    }
+  }
   return cevap(sonuc.tamam, sonuc.mesaj);
 }

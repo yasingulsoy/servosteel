@@ -38,6 +38,7 @@ export function YazmaFormu({
   referanslar = "",
   yanitUid,
   iletilen,
+  talepId,
   kapatHref,
 }: {
   kutular: { user: string; ad: string }[];
@@ -51,6 +52,8 @@ export function YazmaFormu({
   yanitUid?: number;
   /** İletirken: orijinal ileti ve ekleri (gönderimde kutudan alınır) */
   iletilen?: Iletilen;
+  /** Talep iletirken: gönderilince talebe "iletildi" notu düşer */
+  talepId?: number;
   kapatHref: string;
 }) {
   const router = useRouter();
@@ -124,6 +127,7 @@ export function YazmaFormu({
         <input type="hidden" name="mesaj_kimligi" value={mesajKimligi} />
         <input type="hidden" name="referanslar" value={referanslar} />
         {yanitUid ? <input type="hidden" name="yanit_uid" value={yanitUid} /> : null}
+        {talepId ? <input type="hidden" name="talep_id" value={talepId} /> : null}
         {iletilen ? (
           <>
             <input type="hidden" name="ilet_kutu" value={iletilen.kutu} />
@@ -319,12 +323,19 @@ export function YazmaFormu({
         ) : null}
 
         {bitti ? (
-          <Link
-            href={`/admin/eposta?kutu=${encodeURIComponent(gonderen)}&klasor=giden`}
-            className="ml-auto text-sm font-semibold underline underline-offset-4"
-          >
-            Gönderilmiş&apos;e git
-          </Link>
+          <span className="ml-auto flex flex-wrap items-center gap-3">
+            {talepId ? (
+              <Link href={`/admin/talep/${talepId}`} className="text-sm font-semibold underline underline-offset-4">
+                Talebe dön
+              </Link>
+            ) : null}
+            <Link
+              href={`/admin/eposta?kutu=${encodeURIComponent(gonderen)}&klasor=giden`}
+              className="text-sm font-semibold underline underline-offset-4"
+            >
+              Gönderilmiş&apos;e git
+            </Link>
+          </span>
         ) : (
           <span className="ml-auto text-xs text-muted">Kopyası gönderen kutunun Gönderilmiş klasörüne konur.</span>
         )}

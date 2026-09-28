@@ -146,6 +146,7 @@ ULKELER = [
 # ------------------------------------------------------------------ turlar
 # a: 59 ulke x ana arama · b: yeni ulkeler x ana arama · c: 59 ulke x es anlamli arama
 # d: buyuk pazarlarda sehir bazli ana arama · f: d'nin devami, yeni sanayi sehirleri
+# g: Afrika ve Orta Dogu sehirleri · h: b'nin Afrika ulkeleri + Lubnan, es anlamli arama
 # e: oncelikli urun gruplari (dilme / boy kesme ->
 # celik servis merkezi, pres besleme -> pres atolyesi), a+b ulkeleri, segment basina iki arama.
 # Her tur ayri dosyalara yazar; sonraki tur onceki turlarin .md'lerindeki alan adlarini
@@ -329,6 +330,77 @@ SEHIRLER_F = [
     ("Cezayir", "DZ", "fr", "213", s) for s in ("Alger", "Oran", "Sétif")
 ]
 
+# G ve H turlari (2026-09-28, Yasin: "firma bulmaya genislemeye gelistirmeye devam et"):
+# ilk 776 gonderimin olcusu yonu gosterdi. Afrika'ya ~180 e-posta gitti: 5 firmadan kisi
+# tiklamasi ve kampanyanin iki teklif talebi (iRack Misir, PAL CHARPENTIER Fildisi Sahili)
+# oradan. Guneydogu Asya'ya ~100 e-posta gitti, tek kisi tiklamasi yok; Amerika'da ~130
+# e-postaya bir tiklama. Ama Afrika havuzu kucuk (Fildisi Sahili 7, Senegal 5, Kamerun 8
+# firma — hepsine yazildi) ve ulke geneli arama her seferinde ayni ilk 20'yi getiriyor.
+# G: Afrika ve Orta Dogu'da HIC aranmamis sanayi sehirleri (d/f'dekiler tekrar edilmedi;
+# kisi tiklamasi olmayan Guney Afrika, Katar, Bahreyn alinmadi). Ayni 12 kanitli segment.
+# H: b turunun Afrika ulkeleri + Lubnan'a es anlamli aramalar (c turu yalniz a'nin 59
+# ulkesine yapilmisti). Ad belirsiz sehirlerde ulke adi da yazildi ("Aba Nigeria").
+SEHIRLER_G = [
+    ("Nijerya", "NG", "en", "234", s) for s in ("Kano", "Port Harcourt", "Ibadan", "Onitsha", "Aba Nigeria")
+] + [
+    ("Gana", "GH", "en", "233", s) for s in ("Accra", "Kumasi", "Tema Ghana")
+] + [
+    ("Kenya", "KE", "en", "254", s) for s in ("Nakuru", "Kisumu", "Thika", "Athi River")
+] + [
+    ("Tanzanya", "TZ", "en", "255", s) for s in ("Dar es Salaam", "Arusha")
+] + [
+    ("Uganda", "UG", "en", "256", "Kampala"), ("Etiyopya", "ET", "en", "251", "Addis Ababa"),
+    ("Ruanda", "RW", "en", "250", "Kigali"), ("Malavi", "MW", "en", "265", "Blantyre Malawi"),
+    ("Botsvana", "BW", "en", "267", "Gaborone"), ("Namibya", "NA", "en", "264", "Windhoek"),
+    ("Angola", "AO", "pt", "244", "Luanda"),
+] + [
+    ("Zambiya", "ZM", "en", "260", s) for s in ("Lusaka", "Kitwe")
+] + [
+    ("Zimbabve", "ZW", "en", "263", s) for s in ("Harare", "Bulawayo")
+] + [
+    ("Mozambik", "MZ", "pt", "258", s) for s in ("Maputo", "Beira Moçambique")
+] + [
+    ("Libya", "LY", "en", "218", s) for s in ("Tripoli Libya", "Benghazi", "Misrata")
+] + [
+    ("Fildişi Sahili", "CI", "fr", "225", "Abidjan"), ("Senegal", "SN", "fr", "221", "Dakar"),
+    ("Gabon", "GA", "fr", "241", "Libreville"), ("Togo", "TG", "fr", "228", "Lomé"),
+    ("Benin", "BJ", "fr", "229", "Cotonou"), ("Burkina Faso", "BF", "fr", "226", "Ouagadougou"),
+    ("Mali", "ML", "fr", "223", "Bamako"), ("Nijer", "NE", "fr", "227", "Niamey"),
+    ("Gine", "GN", "fr", "224", "Conakry"), ("Madagaskar", "MG", "fr", "261", "Antananarivo"),
+    ("Moritanya", "MR", "fr", "222", "Nouakchott"),
+] + [
+    ("Kamerun", "CM", "fr", "237", s) for s in ("Douala", "Yaoundé")
+] + [
+    ("Tunus", "TN", "fr", "216", s) for s in ("Tunis", "Sfax", "Sousse")
+] + [
+    ("Fas", "MA", "fr", "212", s) for s in ("Rabat", "Fès", "Agadir", "Kénitra")
+] + [
+    ("Cezayir", "DZ", "fr", "213", s) for s in ("Constantine Algérie", "Blida", "Béjaïa")
+] + [
+    ("Kongo DC", "CD", "fr", "243", s) for s in ("Kinshasa", "Lubumbashi")
+] + [
+    ("Kongo", "CG", "fr", "242", s) for s in ("Brazzaville", "Pointe-Noire")
+] + [
+    ("Mısır", "EG", "en", "20", s) for s in ("Obour City", "Sadat City", "6th of October City", "Badr City Egypt", "Suez")
+] + [
+    ("Suudi Arabistan", "SA", "en", "966", s) for s in ("Jubail", "Yanbu")
+] + [
+    ("Irak", "IQ", "en", "964", s) for s in ("Baghdad", "Erbil", "Basra", "Sulaymaniyah")
+] + [
+    ("Ürdün", "JO", "en", "962", s) for s in ("Amman", "Zarqa")
+] + [
+    ("Umman", "OM", "en", "968", s) for s in ("Muscat", "Sohar")
+] + [
+    ("BAE", "AE", "en", "971", s) for s in ("Ajman", "Ras Al Khaimah")
+] + [
+    ("Lübnan", "LB", "en", "961", "Beirut"),
+]
+
+# H: b turunun Afrika ulkeleri + Lubnan (es anlamli arama hic yapilmamisti)
+AFRIKA_ORTADOGU_B = [u for u in ULKELER_B if u[1] in {
+    "ZM", "ZW", "BW", "NA", "RW", "MU", "MW", "LY", "LB",
+    "MG", "CD", "CG", "GA", "TG", "BJ", "BF", "ML", "NE", "GN", "MR"}]
+
 # E turu (2026-09-22, Yasin: "oncelik roll form, dilme, boy kesme, pres besleme, kompakt"):
 # dilme ve boy kesme hattini CELIK SERVIS MERKEZI alir (40 + 49 firmayla en kucuk iki grup),
 # pres besleme ve kompakt hatti PRES ATOLYESI. Deger liste: segment basina iki arama.
@@ -352,6 +424,10 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "g":
+        return SEHIRLER_G, SORGU, "-g"
+    if tur == "h":
+        return AFRIKA_ORTADOGU_B, SORGU_B, "-h"
     if tur == "f":
         return SEHIRLER_F, SORGU, "-f"
     if tur == "e":
@@ -847,9 +923,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
-                         "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri")
+                         "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
+                         "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)

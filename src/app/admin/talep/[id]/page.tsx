@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, Phone, Mail } from "lucide-react";
+import { ArrowLeft, Forward, Phone, Mail } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
 import { DURUMLAR, DURUM_ETIKET, notlar, talep } from "@/lib/leads-db";
 import { talepAcildi } from "@/lib/panel-kayit";
@@ -127,9 +127,10 @@ export default async function TalepSayfasi({
         </div>
 
         <div className="contents xl:flex xl:flex-col xl:gap-6">
-          {tel || t.eposta ? (
-            <div className="order-1 flex gap-3">
-              {tel ? (
+          {/* İlet: talebin özetiyle dolu mail, satışa (info@ + yavuz@) — Yasin,
+              28 Eylül 2026: "talep geldi, talebi iletmem lazım". */}
+          <div className="order-1 flex gap-3">
+            {tel ? (
                 <a
                   href={`tel:${tel}`}
                   className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-zinc-950 active:opacity-90"
@@ -147,8 +148,14 @@ export default async function TalepSayfasi({
                   E-posta
                 </a>
               ) : null}
-            </div>
-          ) : null}
+            <Link
+              href={`/admin/eposta?yaz=talep&talep=${t.id}`}
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-card px-4 py-3.5 text-sm font-bold hover:bg-surface-alt active:bg-surface-alt"
+            >
+              <Forward className="size-4" strokeWidth={2.4} aria-hidden />
+              İlet
+            </Link>
+          </div>
 
           {/* Durum — mobilde tek sıra, yatay kaydırmalı */}
           <section className="order-2 xl:rounded-xl xl:border xl:border-line xl:bg-card xl:p-5">

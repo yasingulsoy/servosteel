@@ -5,11 +5,13 @@ import { PenLine } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
 import { firmaEslesmeleri, gelenDurumu, gelenSiniflari, kutuBasinaBekleyenYanit } from "@/lib/gelen-db";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
+import { talep } from "@/lib/leads-db";
 import { outreachSemaKur } from "@/lib/outreach-db";
 import { ayarlariOku } from "@/lib/outreach-kurallar";
 import {
   ARAMA_EN_COK,
   aramaTemizle,
+  formKutusuAdresi,
   herYerdeAra,
   iletiOku,
   kutuGorunumu,
@@ -17,7 +19,17 @@ import {
   type Klasor,
   type OkunanIleti,
 } from "@/lib/posta";
-import { IMZA, alintiTarihi, alintila, iletBlogu, iletKonusu, yanitKonusu } from "@/lib/posta-bicim";
+import {
+  IMZA,
+  TALEP_ILET_ALICILARI,
+  alintiTarihi,
+  alintila,
+  iletBlogu,
+  iletKonusu,
+  talepIletKonusu,
+  talepIletMetni,
+  yanitKonusu,
+} from "@/lib/posta-bicim";
 import { Kabuk } from "../kabuk";
 import { gelenTaraEylemi } from "../firmalar/actions";
 import {
@@ -57,6 +69,8 @@ type Arama = {
   kime?: string;
   ara?: string;
   kapsam?: string;
+  /** yaz=talep: iletilecek talebin numarası */
+  talep?: string;
 };
 
 type Liste = {
@@ -96,7 +110,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   const klasor: Klasor = sp.klasor === "giden" ? "giden" : "gelen";
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
   const uid = Math.floor(Number(sp.uid)) || undefined;
-  const yaz = sp.yaz === "yeni" || sp.yaz === "yanit" || sp.yaz === "ilet" ? sp.yaz : null;
+  const yaz = sp.yaz === "yeni" || sp.yaz === "yanit" || sp.yaz === "ilet" || sp.yaz === "talep" ? sp.yaz : null;
   const ara = aramaTemizle(sp.ara);
   const arama: AramaBaglami = ara ? { ara, tum: sp.kapsam === "tum" } : null;
 
@@ -229,7 +243,38 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
 
   /* ---------------------------------------------- sağ panel: ne gösterilecek */
   let sag: React.ReactNode;
-  if (yaz === "yeni") {
+  if (yaz === "talep") {
+    /* Talebi satışa ilet: özetle dolu mail, alıcılar info@ + yavuz@, gönderen
+       sitenin form kutusu (website@) — tanımlı değilse seçili kutu. */
+    const talepNo = Math.floor(Number(sp.talep)) || 0;
+    const t = talepNo > 0 ? await talep(talepNo).catch(() => null) : null;
+    const form = formKutusuAdresi();
+    sag = t ? (
+      <YazmaFormu
+        key={`talep-${t.id}`}
+        kutular={kutular}
+        kutu={kutular.some((k) => k.user === form) ? form : kutu}
+        baslik={`Talebi ilet · #${t.id}`}
+        kime={TALEP_ILET_ALICILARI}
+        konu={talepIletKonusu(t)}
+        metin={talepIletMetni(
+          t,
+          new Date(t.olusturuldu).toLocaleString("tr-TR", {
+            timeZone: "Europe/Istanbul",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+          })
+        )}
+        talepId={t.id}
+        kapatHref={`/admin/talep/${t.id}`}
+      />
+    ) : (
+      <p className="m-5 text-sm text-red-700">Talep bulunamadı.</p>
+    );
+  } else if (yaz === "yeni") {
     sag = (
       <YazmaFormu
         kutular={kutular}

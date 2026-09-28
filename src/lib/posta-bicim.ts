@@ -271,3 +271,168 @@ export function icerikYerlesimi(ad: string, satirIci: boolean): string {
   const utf8 = encodeURIComponent(ad).replace(/['()*]/g, (c) => `%${c.charCodeAt(0).toString(16).toUpperCase()}`);
   return `${satirIci ? "inline" : "attachment"}; filename="${ascii}"; filename*=UTF-8''${utf8}`;
 }
+
+/* ------------------------------------------------------------- klasörler */
+
+/**
+ * Özel klasörler — adres çubuğunda kısa adlarıyla, panelde bu sırayla. Sunucu
+ * yolları farklı ("INBOX.Sent", "Sent Items", "INBOX.spam"…); hangisinin ne
+ * olduğunu sunucunun SPECIAL-USE işareti, yoksa imapflow'un ad tahmini söylüyor.
+ */
+export type KlasorTuru = "gelen" | "taslak" | "giden" | "arsiv" | "onemsiz" | "cop";
+export const KLASOR_TURLERI: readonly KlasorTuru[] = ["gelen", "taslak", "giden", "arsiv", "onemsiz", "cop"];
+export const KLASOR_TURU_ADI: Record<KlasorTuru, string> = {
+  gelen: "Gelen",
+  taslak: "Taslaklar",
+  giden: "Gönderilmiş",
+  arsiv: "Arşiv",
+  onemsiz: "Önemsiz",
+  cop: "Silinmiş",
+};
+const OZEL_KULLANIM: Record<string, KlasorTuru> = {
+  "\drafts": "taslak",
+  "\sent": "giden",
+  "\archive": "arsiv",
+  "\junk": "onemsiz",
+  "\trash": "cop",
+};
+
+/** imapflow'un LIST cevabından gereken kadarı */
+export type HamKlasor = {
+  path: string;
+  name: string;
+  delimiter: string;
+  flags: Iterable<string>;
+  specialUse?: string;
+  specialUseSource?: string;
+  status?: { messages?: number; unseen?: number };
+};
+
+export type KlasorBilgisi = {
+  /** Adres çubuğundaki adı: özel klasörde tür ("onemsiz"), ötekinde yolu */
+  anahtar: string;
+  /** Sunucudaki yolu ("INBOX.Junk") */
+  yol: string;
+  ad: string;
+  tur: KlasorTuru | null;
+  toplam: number;
+  okunmamis: number;
+  /** Özel olmayan klasörde iç içelik (0 = en üst) — listede girinti */
+  derinlik: number;
+};
+
+/**
+ * Sunucunun klasör listesini panelin sırasına koyar: önce özel klasörler
+ * (Gelen, Taslaklar, Gönderilmiş, Arşiv, Önemsiz, Silinmiş), sonra ötekiler
+ * yollarına göre. Seçilemeyen (\Noselect) kök düğümler atlanır. Aynı türü iki
+ * klasör iddia ederse sunucunun işaretlediği, addan tahmin edilene üstün gelir;
+ * kaybeden sıradan klasör olarak kalır — ileti kaybolmasın, görünsün.
+ */
+export function klasorleriDuzenle(liste: HamKlasor[]): KlasorBilgisi[] {
+  const secilebilir = liste.filter((k) => ![...k.flags].some((f) => /^\(noselect|nonexistent)$/i.test(f)));
+  const tur = new Map<string, KlasorTuru>();
+  const alinan = new Set<KlasorTuru>();
+  const oncelik = (k: HamKlasor) => (k.path.toUpperCase() === "INBOX" ? -1 : k.specialUseSource === "name" ? 1 : 0);
+  for (const k of [...secilebilir].sort((a, b) => oncelik(a) - oncelik(b))) {
+    const t: KlasorTuru | undefined =
+      k.path.toUpperCase() === "INBOX" ? "gelen" : OZEL_KULLANIM[(k.specialUse ?? "").toLowerCase()];
+    if (t && !alinan.has(t)) {
+      tur.set(k.path, t);
+      alinan.add(t);
+    }
+  }
+  const sira = (b: KlasorBilgisi) => (b.tur ? KLASOR_TURLERI.indexOf(b.tur) : KLASOR_TURLERI.length);
+  return secilebilir
+    .map((k): KlasorBilgisi => {
+      const t = tur.get(k.path) ?? null;
+      const parcalar = k.delimiter ? k.path.split(k.delimiter) : [k.path];
+      const kok = parcalar.length > 1 && parcalar[0].toUpperCase() === "INBOX" ? 1 : 0;
+      /* Özel olmayan klasörün adı bir türün kısa adıyla çakışırsa ("gelen" diye bir klasör) önek alır */
+      const anahtar = t ?? ((KLASOR_TURLERI as readonly string[]).includes(k.path.toLowerCase()) ? `k:${k.path}` : k.path);
+      return {
+        anahtar,
+        yol: k.path,
+        ad: t ? KLASOR_TURU_ADI[t] : k.name || k.path,
+        tur: t,
+        toplam: k.status?.messages ?? 0,
+        okunmamis: k.status?.unseen ?? 0,
+        derinlik: t ? 0 : Math.max(0, parcalar.length - 1 - kok),
+      };
+    })
+    .sort((a, b) => sira(a) - sira(b) || a.yol.localeCompare(b.yol, "tr"));
+}
+
+/**
+ * Tümünü yanıtla: gönderen (ya da Reply-To) Kime'ye; ilk iletinin Kime ve
+ * Bilgi'sindekiler Bilgi'ye. Kendi adresimiz ve tekrarlar çıkar — Outlook da
+ * kendine yazmaz.
+ */
+export function tumunuYanitlaAlicilari(
+  yanitAdresi: string,
+  kime: string,
+  bilgi: string,
+  kendi: string
+): { kime: string; bilgi: string } {
+  const ben = (kendi ?? "").trim().toLowerCase();
+  const ilk = adresleriAyikla(yanitAdresi).gecerli.filter((a) => a !== ben);
+  const oteki = [...adresleriAyikla(kime).gecerli, ...adresleriAyikla(bilgi).gecerli].filter(
+    (a, i, l) => a !== ben && !ilk.includes(a) && l.indexOf(a) === i
+  );
+  return { kime: ilk.join(", "), bilgi: oteki.join(", ") };
+}
+
+/* --------------------------------------------------------- talep iletme */
+
+/** Talebi iletmenin varsayılan alıcıları: satış (Yasin, 28 Eylül 2026: "info ve yavuz maillerine"). */
+export const TALEP_ILET_ALICILARI = "info@servosteel.com.tr, yavuz@servosteel.com.tr";
+
+/** İletilecek talebin gereken alanları (leads-db Talep'in bir kısmı) */
+export type IletilenTalep = {
+  id: number;
+  tur: string;
+  ad: string;
+  eposta: string;
+  firma: string;
+  telefon: string;
+  ulke: string;
+  dil: string;
+  mesaj: string;
+  sayfa: string;
+};
+
+export function talepIletKonusu(t: IletilenTalep): string {
+  const kim = t.firma || t.ad || t.eposta || `#${t.id}`;
+  const tur = t.tur === "rfq" ? "Teklif talebi" : "İletişim formu";
+  return `${tur} #${t.id} — ${kim}${t.ulke ? ` (${t.ulke})` : ""}`.replace(/\s+/g, " ").trim().slice(0, 300);
+}
+
+/**
+ * Satışa iletilen talebin metni — içeride Türkçe, müşteriye gitmez. Boş alan
+ * yazılmaz. Tanıtım mailindeki bağlantıdan geldiyse söylenir (formun açıldığı
+ * adreste `utm_source=outreach`). `tarih` İstanbul saatiyle hazır metin.
+ */
+export function talepIletMetni(t: IletilenTalep, tarih: string): string {
+  const alan = (ad: string, deger: string) => (deger?.trim() ? [`${ad}: ${deger.trim()}`] : []);
+  const kampanyadan = /[?&]utm_source=outreach\b/i.test(t.sayfa ?? "");
+  return [
+    "Merhaba,",
+    "",
+    `Siteden ${t.tur === "rfq" ? "bir teklif talebi" : "bir iletişim formu"} geldi (talep #${t.id}, ${tarih}).` +
+      (kampanyadan ? " Tanıtım mailimizdeki bağlantıdan gelip formu doldurdu." : "") +
+      " Bilgiler aşağıda.",
+    "",
+    ...alan("Ad", t.ad),
+    ...alan("Firma", t.firma),
+    ...alan("E-posta", t.eposta),
+    ...alan("Telefon", t.telefon),
+    ...alan("Ülke", t.ulke),
+    ...alan("Form dili", (t.dil ?? "").toUpperCase()),
+    "",
+    "Mesaj:",
+    t.mesaj?.trim() || "(mesaj yok)",
+    "",
+    "Gereğini rica ederim.",
+    "",
+    "Saygılarımla,",
+  ].join("\n");
+}

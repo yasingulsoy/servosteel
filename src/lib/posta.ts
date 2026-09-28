@@ -45,16 +45,48 @@ export const POSTA_SAYFA_BOYU = 40;
 /** 512 KB: uzun alıntı zincirli yanıtlar sığar, ekli devasa ileti indirilmez. */
 const ILETI_EN_COK_BAYT = 512 * 1024;
 
-export type PostaKutusu = { user: string; ad: string };
+export type PostaKutusu = {
+  user: string;
+  ad: string;
+  /** Tanıtım e-postası bu kutudan gidiyor mu — form kutusunda (website@) hayır */
+  tanitim: boolean;
+};
 
-/** Panelde görünen kutular — gönderim ayarlarındaki kutuların aynısı. */
+/**
+ * Sitenin form bildirim kutusu (`SMTP_USER`, website@). Tanıtım e-postası bu
+ * kutudan GİTMEZ (bkz. outreach-kurallar: form kutusu gönderici olamaz); panelde
+ * okunur ve elle yazılır — talep iletmek için (Yasin, 28 Eylül 2026: "talep
+ * geldi, iletmem lazım"). Şifresi sunucuda zaten tanımlı; yeni ayar gerekmez.
+ */
+function formKutusu(env: Record<string, string | undefined>): GonderenKutusu | null {
+  const user = (env.SMTP_USER ?? "").trim().toLowerCase();
+  const pass = env.SMTP_PASS ?? "";
+  const host = (env.SMTP_HOST ?? "").trim();
+  if (!user.includes("@") || !pass || !host) return null;
+  const port = Number(env.SMTP_PORT ?? 465) || 465;
+  return { no: 0, host, port, user, pass, ad: "Servosteel", alan: user.split("@")[1] };
+}
+
+/** Panelde görünen kutular: tanıtım gönderen kutular + form kutusu (en sonda). */
+function panelKutulari(): GonderenKutusu[] {
+  const kutular = ayarlariOku(process.env).kutular;
+  const form = formKutusu(process.env);
+  return form && !kutular.some((k) => k.user === form.user) ? [...kutular, form] : kutular;
+}
+
 export function postaKutulari(): PostaKutusu[] {
-  return ayarlariOku(process.env).kutular.map((k) => ({ user: k.user, ad: k.ad }));
+  const tanitim = new Set(ayarlariOku(process.env).kutular.map((k) => k.user));
+  return panelKutulari().map((k) => ({ user: k.user, ad: k.ad, tanitim: tanitim.has(k.user) }));
+}
+
+/** Form kutusunun adresi (website@) — tanımlı değilse boş */
+export function formKutusuAdresi(): string {
+  return formKutusu(process.env)?.user ?? "";
 }
 
 function kutuBul(adres: string): GonderenKutusu | null {
   const a = (adres ?? "").trim().toLowerCase();
-  return ayarlariOku(process.env).kutular.find((k) => k.user === a) ?? null;
+  return panelKutulari().find((k) => k.user === a) ?? null;
 }
 
 export type IletiOzeti = {
@@ -464,7 +496,7 @@ export async function herYerdeAra(
   arama: string,
   enCok = ARAMA_EN_COK
 ): Promise<{ satirlar: AramaSatiri[]; toplam: number; hatalar: string[] }> {
-  const kutular = ayarlariOku(process.env).kutular;
+  const kutular = panelKutulari();
   const sonuc = await Promise.all(
     kutular.map(async (kutu) => {
       const satirlar: AramaSatiri[] = [];
