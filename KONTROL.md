@@ -1213,7 +1213,10 @@ sayfası) tek bir taramaydı. iRack'in ilk 4 tıklaması da öyleydi: 7,5 saat
 sonra, dördü aynı saniyede. Gerçekte 4 firmadan 6 kişi tıklaması ve 1 teklif
 sayfası ziyareti vardı. Düzeltme: bkz. aşağıda "Tıklamalar: güvenlik taraması
 ayrıldı". **Kural: sayfada hareket görülmeyen e-posta tıklaması "ilgi"
-sayılmaz; tıklama sayısını raporlamadan önce zamanlamasına bak.**
+sayılmaz; tıklama sayısını raporlamadan önce zamanlamasına bak.** Ek
+(28 Eylül): hareket de yetmiyor. Bir tarayıcı türü ilk turda fare/tuş olayı
+üretiyor; onu ele veren, açılış DÜZENİ: aynı saniyede birden çok bağlantı,
+20-40 sn sonra aynı sayfaya ikinci tur. Tek bir sinyale güvenme.
 
 **E.35 · Geri dönüş mailindeki alıntı başlık, kalıcı reddi "geçici" yaptı
 (2026-09-26).** Office 365'in ret maili gönderdiğimiz iletinin başlıklarını da
@@ -1346,12 +1349,21 @@ Yasin'e "tıklama sayıları taramalardan ayrılsın mı?" diye soruldu, cevabı
     `gorunum` kimliğiyle `true` gönderiyor.
   - `api/olay` iki işareti tek satırda birleştiriyor (`ON CONFLICT`, sıra ters
     gelse de).
-  - Yayından önceki kayıtlarda `etkilesim` NULL. Bunlarda gönderimden sonraki
-    15 dk içindeki ya da aynı firmadan ±2 sn içinde ikinci tıklaması olan
-    ziyaret tarama sayılıyor.
+  - Tarama sayılan ziyaret (biri yeter): hareket yok; aynı firmadan ±2 sn
+    içinde başka ziyaret; aynı sayfaya 20-40 sn arayla ikinci ziyaret.
+    Hareket ölçümünden önceki kayıtlarda (`etkilesim` NULL) bir de
+    gönderimden sonraki 15 dk.
+  - **28 Eylül düzeltmesi:** ilk sürüm hareketi kesin kanıt sayıyordu.
+    Yayından sonraki ilk gecede hareketli 60 ziyaretin 56'sı taramaydı: bir
+    tarayıcı türü ilk turda fare/tuş olayı üretiyor. Gönderimden 0,5-7 dk
+    sonra geliyor, bağlantıları aynı saniyede açıyor, 22-34 sn sonra aynı
+    sayfalara hareketsiz ikinci tur atıyor. Panel bir gece 27 "kişi"
+    gösterdi, gerçekte 4'tü. Düzen kuralı eklendi.
   - Hepsi tek tanımdan geliyor: `outreach-db.ts` → `TIKLAMALAR`.
 - **Canlı veride sınandı (salt okunur):** 77 tıklamanın 6'sı kişi (iRack 2,
   Smart Sign 2, Apex Steel 1, HADID 1), 71'i tarama; kişi teklif sayfası 1.
+  28 Eylül düzeltmesiyle 141 tıklamanın 10'u kişi (7 firma), 131'i tarama;
+  eski kayıtların sınıfı değişmedi.
 - **Yerelde denendi:**
   - Uçta beş durum: sıra ters, eski betik, bozuk kimlik, telefon olayı.
   - Gerçek tarayıcıda betikle üretilen olay sayılmadı; fare hareketi satırı

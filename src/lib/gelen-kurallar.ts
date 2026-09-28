@@ -156,6 +156,14 @@ function kaliciMi(g: GelenOzet): boolean {
 const OTOMATIK_KONU =
   /^(automatic reply|auto(matic)?[- ]?reply|auto:|autoreply|auto-response|out of (the )?office|ooo\b|otomatik yan[ıi]t|respuesta autom[aá]tica|resposta autom[aá]tica|r[ée]ponse automatique|automatische antwort|risposta automatica|автоответ|автоматический ответ|abwesenheit|fuera de la oficina|absence|vacation|on leave|away from)/i;
 
+/* Konusu "RE: …" olup kendini gövdede ele veren sistem cevabı. Giffin'in
+   destek sistemi (27 Eylül 2026) başlık koymadan "This is an automated
+   acknowledgement. Please do not reply directly" yazdı ve yanıt sayıldı.
+   Yalnız yanıtın kendi metninde aranır (alıntı değil), ve kalıp "bu bir
+   otomatik iletidir" cümlesi — "hattımız tam otomatik" gibi bir söz tutmaz. */
+const OTOMATIK_GOVDE =
+  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)/i;
+
 function otomatikMi(g: GelenOzet): string | null {
   const as = (g.basliklar["auto-submitted"] ?? "").trim();
   if (as && !/^no\b/i.test(as)) return `Auto-Submitted: ${as}`;
@@ -191,6 +199,8 @@ export function gelenSiniflandir(g: GelenOzet): Siniflama {
   const oto = otomatikMi(g);
   if (oto) return { tur: "otomatik", sebep: oto };
   const yeni = yeniMetin(g.metin);
+  const otoGovde = OTOMATIK_GOVDE.exec(yeni);
+  if (otoGovde) return { tur: "otomatik", sebep: `metin: “${otoGovde[0]}”` };
   const abone = abonelikMi(g, yeni);
   if (abone) return { tur: "abonelik", sebep: abone };
   return { tur: "yanit", ozet: yeni.replace(/\s+/g, " ").trim().slice(0, 500) };

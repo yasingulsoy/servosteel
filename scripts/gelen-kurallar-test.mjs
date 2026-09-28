@@ -237,6 +237,50 @@ Received: from [78.142.209.185] by hera.veridyen.com with esmtpsa (Exim 4.99.5)
   assert.equal(s.kalici, false);
 });
 
+await t("basliksiz sistem cevabi govdesinden otomatik (Giffin, 27 Eylul)", async () => {
+  const s = await sinifla(`From: "Connect G - Home of Traffic" <connect@giffin.ae>
+To: Servosteel Export <ege@servosteel.com.tr>
+Subject: RE: Guardrail roll forming lines - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+Connect - Procurement
+Thank you for introducing your company
+
+Dear Sir / Madam,
+Thank you for reaching out and for introducing your company's services to our group.
+Please note that your email has also been forwarded to the above addresses for their visibility.
+
+Kind regards,
+
+This is an automated acknowledgement. Please do not reply directly to this email.
+
+________________________________
+From: Servosteel Export <ege@servosteel.com.tr>
+Sent: Sunday, 27 September 2026 11:15:03
+Subject: RE: Guardrail roll forming lines - Servosteel, Istanbul
+
+Dear Procurement Team,
+`);
+  assert.equal(s.tur, "otomatik");
+  assert.match(s.sebep, /automated acknowledgement/i);
+});
+
+await t("otomatik kelimesi gecen gercek yanit yanit kalir", async () => {
+  const s = await sinifla(`From: Ahmed <ahmed@firma.example>
+To: ege@servosteel.com.tr
+Subject: RE: Rack upright and beam lines - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+Hello, our current line is fully automated but too slow. Please send an offer for 20 m/min.
+This is an automated line with PLC, we need the same.
+
+Regards, Ahmed
+
+> This is an automated message from Servosteel
+`);
+  assert.equal(s.tur, "yanit");
+});
+
 await t("ileti kimlikleri", async () => {
   assert.deepEqual(K.mesajKimlikleri("<ABC@servosteel.com.tr>", "<x@y> <abc@servosteel.com.tr>", undefined),
     ["abc@servosteel.com.tr", "x@y"]);

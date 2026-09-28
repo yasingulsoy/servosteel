@@ -719,15 +719,23 @@ export async function kopyaSorunu(): Promise<{ adet: number; ornek: string }> {
  * firmalar"ın başındaki 24 tıklamalı, 12 teklif sayfalı firma tek bir
  * taramaydı; insan tıklaması 4 firmadan 6 taneydi.
  *
- * Ayrım:
- *  - `etkilesim` dolu (bu ölçüm yayına girdikten sonra): sayfada fare, tekerlek,
- *    dokunma ya da tuş hareketi olduysa insan, olmadıysa otomatik (bkz.
- *    lib/outreach-betik.ts).
- *  - `etkilesim` NULL (öncesi, ya da yayından önce açık kalmış sayfa):
- *    firmaya son gönderimden sonraki 15 dakika içindeyse ya da aynı firmadan
- *    ±2 saniye içinde başka bir tıklama varsa otomatik — insan iki bağlantıyı
+ * Otomatik sayılan ziyaret (herhangi biri yeter):
+ *  - Sayfada hiç hareket olmadı (`etkilesim` false; bkz. lib/outreach-betik.ts).
+ *  - Aynı firmadan ±2 saniye içinde başka bir ziyaret var: insan iki bağlantıyı
  *    aynı saniyede açamıyor. iRack'in ilk dört tıklaması (7,5 saat sonra, dördü
  *    aynı saniyede) böyle ayrılıyor; ardından gelen iki tıklaması insan.
+ *  - Aynı firmadan AYNI sayfaya 20-40 saniye arayla ikinci ziyaret: tarayıcının
+ *    ikinci turu.
+ *  - `etkilesim` NULL ise (hareket ölçümünden önceki kayıt ya da yayından önce
+ *    açık kalmış sayfa): firmaya son gönderimden sonraki 15 dakika.
+ *
+ * Hareket tek başına yetmiyor. 27-28 Eylül'de, ölçüm yayına girince, bir
+ * tarayıcı türünün ilk turda fare/tuş olayı ÜRETTİĞİ görüldü. Bu tur
+ * gönderimden 0,5-7 dk sonra geliyor, bağlantılar aynı saniyede açılıyor ve
+ * 22-34 sn sonra aynı sayfalara hareketsiz ikinci tur geliyor. Hareketli 60
+ * ziyaretin 56'sı böyleydi. Gönderim saati bu yüzden hareketli kayıtta
+ * kullanılmıyor: 6 dk sonra tek başına gelen, ikinci turu olmayan hareketli
+ * ziyaret (Hayes, NZ; aynı sayfaya 1 ve 2 saat sonra yine geldi) bir kişiydi.
  *
  * Otomatik tıklama silinmez, ayrı sayılır: güvenlik taraması, mailin firmanın
  * sunucusuna ulaştığını da gösteriyor.
@@ -736,14 +744,16 @@ export const TIKLAMALAR = `(
   SELECT o.id, o.olusturuldu, o.kaynak, o.yol,
          h.id AS firma_id, h.firma, h.ulke, h.durum, h.kategori,
          (o.yol LIKE '%request-quote%' OR o.yol LIKE '%teklif-al%') AS teklif,
-         CASE WHEN o.etkilesim IS NOT NULL THEN NOT o.etkilesim
-              ELSE COALESCE(o.olusturuldu < g.zaman + interval '15 minutes', false)
-                   OR EXISTS (
-                     SELECT 1 FROM olaylar x
-                     WHERE x.tur = 'outreach' AND x.kaynak = o.kaynak AND x.kaynak <> '' AND x.id <> o.id
-                       AND x.olusturuldu BETWEEN o.olusturuldu - interval '2 seconds'
-                                             AND o.olusturuldu + interval '2 seconds')
-         END AS otomatik
+         (o.etkilesim IS FALSE
+          OR (o.etkilesim IS NULL AND COALESCE(o.olusturuldu < g.zaman + interval '15 minutes', false))
+          OR EXISTS (
+            SELECT 1 FROM olaylar x
+            WHERE x.tur = 'outreach' AND x.kaynak = o.kaynak AND x.kaynak <> '' AND x.id <> o.id
+              AND (x.olusturuldu BETWEEN o.olusturuldu - interval '2 seconds'
+                                     AND o.olusturuldu + interval '2 seconds'
+                   OR (x.yol = o.yol
+                       AND abs(extract(epoch FROM x.olusturuldu - o.olusturuldu)) BETWEEN 20 AND 40)))
+         ) AS otomatik
   FROM olaylar o
   LEFT JOIN LATERAL (
     SELECT id, firma, ulke, durum, kategori FROM hedef_firmalar

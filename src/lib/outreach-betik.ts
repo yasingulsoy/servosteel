@@ -8,11 +8,16 @@
  * İKİ İŞARET, TEK SATIR. Kurumsal alıcıların güvenlik tarayıcısı (Microsoft
  * Defender, Mimecast, Proofpoint…) mail teslim edilir edilmez içindeki bütün
  * bağlantıları gerçek bir tarayıcıda açıyor; bu betik orada da çalışıyor.
- * 25-27 Eylül 2026'daki 77 tıklamanın 71'i böyleydi. Tarayıcı sayfayı açıp
- * hiçbir şey yapmadan kapatıyor, insan fareyi oynatıyor, kaydırıyor,
- * dokunuyor. Bu yüzden açılışta `etkilesim: false` gider, ilk gerçek
- * hareketle aynı `gorunum` kimliğiyle `true` gider; sunucu ikisini tek
+ * 25-27 Eylül 2026'daki 77 tıklamanın 71'i böyleydi. Tarayıcıların çoğu
+ * sayfayı açıp hiçbir şey yapmadan kapatıyor; insan fareyi oynatıyor,
+ * kaydırıyor, dokunuyor. Bu yüzden açılışta `etkilesim: false` gider, ilk
+ * gerçek hareketle aynı `gorunum` kimliğiyle `true` gider; sunucu ikisini tek
  * satırda birleştirir.
+ *
+ * Hareket kesin kanıt DEĞİL: bir tarayıcı türü ilk turda fare/tuş olayı
+ * üretiyor (28 Eylül). Onu açılış düzeni ele veriyor: aynı saniyede birden
+ * çok bağlantı açılıyor, 20-40 sn sonra aynı sayfalara ikinci tur geliyor.
+ * Karar sunucuda veriliyor: bkz. outreach-db TIKLAMALAR.
  *
  * Kaydırma (`scroll`) bilerek sayılmıyor: betikle kaydırılabilir. Fare
  * hareketinde yer değişimi sıfırsa sayılmıyor: tarayıcı, sayfa imlecin

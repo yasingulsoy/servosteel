@@ -243,8 +243,9 @@ export function Gunluk({
             </summary>
             <p className="mt-1.5 text-xs text-muted">
               Kurumsal alıcıların güvenlik tarayıcısı (ör. Microsoft Defender, Mimecast, Proofpoint) maili
-              teslimde açıp bağlantıları deniyor: gönderimden birkaç dakika sonra, iki bağlantı aynı saniyede.
-              Bir kişinin ilgisi değil — ama mailin o firmanın sunucusuna ulaştığını gösteriyor.
+              teslimde açıp bağlantıları deniyor. Gönderimden birkaç dakika sonra geliyor, bağlantıları aynı
+              saniyede açıyor ve yarım dakika sonra aynı sayfalara bir kez daha giriyor; kimi fareyi de
+              oynatıyor. Bir kişinin ilgisi değil, ama mailin o firmanın sunucusuna ulaştığını gösteriyor.
             </p>
             <ul className="mt-1 divide-y divide-line text-sm">
               {taramalar.map((t, i) => (
