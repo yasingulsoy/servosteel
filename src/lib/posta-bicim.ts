@@ -290,11 +290,11 @@ export const KLASOR_TURU_ADI: Record<KlasorTuru, string> = {
   cop: "Silinmiş",
 };
 const OZEL_KULLANIM: Record<string, KlasorTuru> = {
-  "\drafts": "taslak",
-  "\sent": "giden",
-  "\archive": "arsiv",
-  "\junk": "onemsiz",
-  "\trash": "cop",
+  "\\drafts": "taslak",
+  "\\sent": "giden",
+  "\\archive": "arsiv",
+  "\\junk": "onemsiz",
+  "\\trash": "cop",
 };
 
 /** imapflow'un LIST cevabından gereken kadarı */
@@ -329,7 +329,7 @@ export type KlasorBilgisi = {
  * kaybeden sıradan klasör olarak kalır — ileti kaybolmasın, görünsün.
  */
 export function klasorleriDuzenle(liste: HamKlasor[]): KlasorBilgisi[] {
-  const secilebilir = liste.filter((k) => ![...k.flags].some((f) => /^\(noselect|nonexistent)$/i.test(f)));
+  const secilebilir = liste.filter((k) => ![...k.flags].some((f) => /^\\(noselect|nonexistent)$/i.test(f)));
   const tur = new Map<string, KlasorTuru>();
   const alinan = new Set<KlasorTuru>();
   const oncelik = (k: HamKlasor) => (k.path.toUpperCase() === "INBOX" ? -1 : k.specialUseSource === "name" ? 1 : 0);

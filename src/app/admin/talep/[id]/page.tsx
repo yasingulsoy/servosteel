@@ -131,23 +131,23 @@ export default async function TalepSayfasi({
               28 Eylül 2026: "talep geldi, talebi iletmem lazım". */}
           <div className="order-1 flex gap-3">
             {tel ? (
-                <a
-                  href={`tel:${tel}`}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-zinc-950 active:opacity-90"
-                >
-                  <Phone className="size-4" strokeWidth={2.4} aria-hidden />
-                  Ara
-                </a>
-              ) : null}
-              {t.eposta ? (
-                <a
-                  href={`mailto:${t.eposta}`}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-card px-4 py-3.5 text-sm font-bold active:bg-surface-alt"
-                >
-                  <Mail className="size-4" strokeWidth={2.4} aria-hidden />
-                  E-posta
-                </a>
-              ) : null}
+              <a
+                href={`tel:${tel}`}
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3.5 text-sm font-bold text-zinc-950 active:opacity-90"
+              >
+                <Phone className="size-4" strokeWidth={2.4} aria-hidden />
+                Ara
+              </a>
+            ) : null}
+            {t.eposta ? (
+              <a
+                href={`mailto:${t.eposta}`}
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-card px-4 py-3.5 text-sm font-bold active:bg-surface-alt"
+              >
+                <Mail className="size-4" strokeWidth={2.4} aria-hidden />
+                E-posta
+              </a>
+            ) : null}
             <Link
               href={`/admin/eposta?yaz=talep&talep=${t.id}`}
               className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-card px-4 py-3.5 text-sm font-bold hover:bg-surface-alt active:bg-surface-alt"

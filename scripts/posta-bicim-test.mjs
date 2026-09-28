@@ -172,4 +172,66 @@ t("boyut, cid temizligi, indirme basligi", () => {
   assert.equal(P.ONIZLENEBILIR.has("text/html"), false);
 });
 
+t("klasorler: ozel klasorler once, adlari Turkce, kok dugum atlanir", () => {
+  const k = P.klasorleriDuzenle([
+    { path: "INBOX.Projeler.2026", name: "2026", delimiter: ".", flags: [] },
+    { path: "INBOX.Trash", name: "Trash", delimiter: ".", flags: [], specialUse: "\\Trash", specialUseSource: "extension", status: { messages: 3, unseen: 0 } },
+    { path: "INBOX", name: "INBOX", delimiter: ".", flags: [], specialUse: "\\Inbox", status: { messages: 12, unseen: 2 } },
+    { path: "INBOX.Projeler", name: "Projeler", delimiter: ".", flags: [] },
+    { path: "INBOX.spam", name: "spam", delimiter: ".", flags: [], specialUse: "\\Junk", specialUseSource: "name" },
+    { path: "INBOX.Sent", name: "Sent", delimiter: ".", flags: [], specialUse: "\\Sent", specialUseSource: "extension" },
+    { path: "INBOX.Drafts", name: "Drafts", delimiter: ".", flags: [], specialUse: "\\Drafts" },
+    { path: "[Gmail]", name: "[Gmail]", delimiter: "/", flags: ["\\Noselect"] },
+  ]);
+  assert.deepEqual(k.map((x) => x.anahtar), ["gelen", "taslak", "giden", "onemsiz", "cop", "INBOX.Projeler", "INBOX.Projeler.2026"]);
+  assert.deepEqual(k.map((x) => x.ad), ["Gelen", "Taslaklar", "Gönderilmiş", "Önemsiz", "Silinmiş", "Projeler", "2026"]);
+  assert.equal(k[0].okunmamis, 2);
+  assert.equal(k[0].toplam, 12);
+  assert.deepEqual(k.map((x) => x.derinlik), [0, 0, 0, 0, 0, 0, 1]);
+});
+
+t("klasorler: ayni turu iki klasor isterse sunucunun isareti kazanir", () => {
+  const k = P.klasorleriDuzenle([
+    { path: "Sent Items", name: "Sent Items", delimiter: "/", flags: [], specialUse: "\\Sent", specialUseSource: "name" },
+    { path: "Sent", name: "Sent", delimiter: "/", flags: [], specialUse: "\\Sent", specialUseSource: "extension" },
+    { path: "gelen", name: "gelen", delimiter: "/", flags: [] },
+  ]);
+  const giden = k.find((x) => x.tur === "giden");
+  assert.equal(giden.yol, "Sent");
+  /* kaybeden siradan klasor olarak gorunur, ileti kaybolmaz */
+  assert.ok(k.some((x) => x.yol === "Sent Items" && x.tur === null));
+  /* turun kisa adiyla cakisan klasor adi onek alir */
+  assert.ok(k.some((x) => x.yol === "gelen" && x.anahtar === "k:gelen"));
+});
+
+t("tumunu yanitla: kendimiz ve tekrarlar cikar", () => {
+  const r = P.tumunuYanitlaAlicilari(
+    "Osama <osama@irack.example>",
+    "Servosteel Export <ege@servosteel.com.tr>, Ali <ali@irack.example>",
+    "osama@irack.example, ALI@irack.example, satis@irack.example",
+    "ege@servosteel.com.tr"
+  );
+  assert.equal(r.kime, "osama@irack.example");
+  assert.equal(r.bilgi, "ali@irack.example, satis@irack.example");
+});
+
+t("talep iletme: konu ve metin", () => {
+  const talep = {
+    id: 13, tur: "rfq", ad: "KPEKPE PALE", eposta: "palcharpentier@gmail.com", firma: "PALCHARPENTIER",
+    telefon: "+225 0709060799", ulke: "Côte d’Ivoire", dil: "en", mesaj: "Roll Forming Line — C+/Sigma/Omega",
+    sayfa: "https://servosteel.com.tr/en/request-quote?utm_source=outreach&utm_content=palcharpentier.com",
+  };
+  assert.equal(P.talepIletKonusu(talep), "Teklif talebi #13 — PALCHARPENTIER (Côte d’Ivoire)");
+  const m = P.talepIletMetni(talep, "28 Eylül 2026 09:59");
+  assert.match(m, /teklif talebi geldi \(talep #13, 28 Eylül 2026 09:59\)\. Tanıtım mailimizdeki bağlantıdan/);
+  assert.match(m, /\nTelefon: \+225 0709060799\n/);
+  assert.match(m, /\nForm dili: EN\n/);
+  assert.match(m, /Mesaj:\nRoll Forming Line/);
+  /* bos alan yazilmaz, kampanya izi yoksa soylenmez */
+  const d = P.talepIletMetni({ ...talep, telefon: "", sayfa: "https://servosteel.com.tr/teklif-al" }, "x");
+  assert.doesNotMatch(d, /Telefon:/);
+  assert.doesNotMatch(d, /Tanıtım mailimizdeki/);
+  assert.equal(P.talepIletKonusu({ ...talep, tur: "contact", firma: "", ulke: "" }), "İletişim formu #13 — KPEKPE PALE");
+});
+
 console.log(`${n} test gecti`);
