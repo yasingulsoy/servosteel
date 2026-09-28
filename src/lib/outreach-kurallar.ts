@@ -40,12 +40,18 @@ export function ulkeUyarisi(ulke: string): string | null {
 
 /* ------------------------------------------------------------ diller */
 
-/** Şablonu olan diller (seo/eposta-taslaklari.json ile aynı). Macarca şablon yok → İngilizce. */
-const DILLER = ["en", "es", "it", "de", "pl", "ru", "tr", "fr", "pt"] as const;
+/** Şablonu olan diller (seo/eposta-taslaklari.json ile aynı). Macarca şablon yok → İngilizce.
+ *  Arapça (28 Eylül 2026): yalnız Arapça keşif turunun firmalarına — sağdan sola (bkz. sagdanSola). */
+const DILLER = ["en", "es", "it", "de", "pl", "ru", "tr", "fr", "pt", "ar"] as const;
 export type EpostaDili = (typeof DILLER)[number];
 
 export function epostaDili(dil: string): EpostaDili {
   return (DILLER as readonly string[]).includes(dil) ? (dil as EpostaDili) : "en";
+}
+
+/** Sağdan sola yazılan e-posta dili — HTML'de dir="rtl", abonelik sayfası da öyle. */
+export function sagdanSola(dil: string): boolean {
+  return epostaDili(dil) === "ar";
 }
 
 /* ---------------------------------------------------------- altbilgi */
@@ -60,6 +66,7 @@ const IPTAL_SATIRI: Record<EpostaDili, string> = {
   tr: "Bizden başka e-posta almak istemiyorsanız: {link}",
   fr: "Vous préférez ne plus recevoir nos e-mails ? Se désabonner : {link}",
   pt: "Prefere não receber mais e-mails nossos? Cancelar: {link}",
+  ar: "لا ترغبون في تلقي رسائلنا مرة أخرى؟ إلغاء الاشتراك: {link}",
 };
 
 /**
@@ -84,6 +91,7 @@ const IPTAL_HTML: Record<EpostaDili, string> = {
   tr: "Bizden başka e-posta almak istemiyorsanız {a}abonelikten çıkın{/a}.",
   fr: "Vous préférez ne plus recevoir nos e-mails ? {a}Se désabonner{/a}",
   pt: "Prefere não receber mais e-mails nossos? {a}Cancelar{/a}",
+  ar: "لا ترغبون في تلقي رسائلنا مرة أخرى؟ {a}إلغاء الاشتراك{/a}",
 };
 
 /** Altbilginin HTML hâli (e-postanın HTML parçası ve panel önizlemesi) — satırlar aynı, bağlantı yazılı. */
@@ -169,6 +177,13 @@ export const IPTAL_SAYFASI: Record<EpostaDili, IptalMetni> = {
     dugme: "Sim, cancelar",
     tamam: "Pronto. Não enviaremos mais e-mails para {eposta}.",
     gecersiz: "Este link não é válido. Para não receber mais nossos e-mails, basta responder com «cancelar».",
+  },
+  ar: {
+    baslik: "إلغاء الاشتراك",
+    soru: "هل تريدون التوقف عن تلقي رسائل Servosteel على العنوان {eposta}؟",
+    dugme: "نعم، ألغوا اشتراكي",
+    tamam: "تم. لن نرسل بعد الآن أي رسائل إلى {eposta}.",
+    gecersiz: "هذا الرابط غير صالح. لإيقاف رسائلنا، يكفي الرد على الرسالة بعبارة «إلغاء الاشتراك».",
   },
 };
 

@@ -35,42 +35,42 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like 
 
 # Segment -> sayfada gecmesi beklenen kelimelerden en az biri (kucuk harf, alt dizgi)
 KELIME = {
-    "kablo-kanali": [ "portacavi", "canali", "canalizz", "kabelové", "žlab", "kabelov", "trays", "ladder","cable tray", "cable ladder", "trunking", "kabelrinne", "kabeltrasse", "chemin de c", "chemins de c",
+    "kablo-kanali": [ "حوامل كابلات", "حوامل الكابلات", "كابل تراي", "مجاري كابلات", "مجاري الكابلات", "سلالم كابلات", "portacavi", "canali", "canalizz", "kabelové", "žlab", "kabelov", "trays", "ladder","cable tray", "cable ladder", "trunking", "kabelrinne", "kabeltrasse", "chemin de c", "chemins de c",
                      "portacable", "bandeja", "eletrocalha", "leito", "passerell", "korytk", "kabelgoot", "máng cáp",
                      "kabel tray", "лоток", "лотк", "kabelstege", "kábeltálca", "jgheab", "kablovsk", "σχάρ", "cable management"],
-    "solar-profil": [ "napelem", "fotowoltai", "panou", "pv-","solar", "photovolt", "fotovolt", "fotowolt", "pv ", "mounting structure", "солнечн", "surya", "mặt trời"],
-    "raf-sistemleri": [ "regál", "scaffalature", "estantería","rack", "regal", "regał", "estanter", "rayonnage", "scaffal", "stelling", "стеллаж", "rak ", "kệ",
+    "solar-profil": [ "شمسي", "الشمسية", "الطاقة الشمسية", "napelem", "fotowoltai", "panou", "pv-","solar", "photovolt", "fotovolt", "fotowolt", "pv ", "mounting structure", "солнечн", "surya", "mặt trời"],
+    "raf-sistemleri": [ "رفوف", "أرفف", "ارفف", "الرفوف", "regál", "scaffalature", "estantería","rack", "regal", "regał", "estanter", "rayonnage", "scaffal", "stelling", "стеллаж", "rak ", "kệ",
                        "shelving", "porta-palete", "porta palete", "polc", "raft", "стелаж", "mezzanin"],
-    "yol-bariyeri": [ "svodid", "szalagkorlát", "parapet", "glisier", "bariere","guardrail", "guard rail", "crash barrier", "w-beam", "w beam", "thrie", "glissi", "schutzplank",
+    "yol-bariyeri": [ "حواجز الطرق", "حواجز معدنية", "حاجز معدني", "جاردريل", "جارد ريل", "svodid", "szalagkorlát", "parapet", "glisier", "bariere","guardrail", "guard rail", "crash barrier", "w-beam", "w beam", "thrie", "glissi", "schutzplank",
                      "leitplank", "bariera", "bariery", "odbojn", "defensa", "barreira", "hộ lan", "огражд", "road safety",
                      "barrier", "barandas", "sicurvia"],
-    "cati-cephe-paneli": [ "tablă", "tabla", "țiglă", "tigla", "acoperi", "střeš", "trapézlemez", "lemez", "tető", "blachodach", "pokryc", "genteng", "techo", "metal sheet", "profiled sheet","roof", "cladding", "sandwich", "trapez", "corrugat", "standing seam", "bac acier", "tôle", "tole ",
+    "cati-cephe-paneli": [ "ساندوتش", "صاج", "ألواح", "الواح", "أسقف", "اسقف", "سقف", "كلادينج", "واجهات", "tablă", "tabla", "țiglă", "tigla", "acoperi", "střeš", "trapézlemez", "lemez", "tető", "blachodach", "pokryc", "genteng", "techo", "metal sheet", "profiled sheet","roof", "cladding", "sandwich", "trapez", "corrugat", "standing seam", "bac acier", "tôle", "tole ",
                           "teja", "lámina", "lamina", "telha", "lamier", "grecat", "dakplat", "профнастил", "сэндвич", "кровл",
                           "tôn", "atap", "facade", "façade", "fachada", "cubierta", "blacha", "plech"],
-    "celik-servis-merkezi": [ "dělení", "podélné", "hosszvágás", "debitare", "rozcinanie", "servicecenter", "service center","slitting", "slitter", "cut to length", "cut-to-length", "coil", "service cent", "refendage",
+    "celik-servis-merkezi": [ "تشريح", "تقطيع", "لفائف", "رولات", "كويلات", "مركز خدمة", "dělení", "podélné", "hosszvágás", "debitare", "rozcinanie", "servicecenter", "service center","slitting", "slitter", "cut to length", "cut-to-length", "coil", "service cent", "refendage",
                              "spalt", "längsteil", "querteil", "corte longitudinal", "corte transversal", "cięcie", "rozkr",
                              "продольн", "поперечн", "bobin", "desbobin", "rotoli", "nastri"],
-    "pres-atolyeleri": [ "lisov", "présel", "ştanţ", "stant", "stamp", "pressed", "presswork", "stampi","stamping", "pressing", "press", "emboutiss", "stanz", "estampad", "troquel", "estamparia",
+    "pres-atolyeleri": [ "مكابس", "كبس", "سحب عميق", "تشكيل المعادن", "lisov", "présel", "ştanţ", "stant", "stamp", "pressed", "presswork", "stampi","stamping", "pressing", "press", "emboutiss", "stanz", "estampad", "troquel", "estamparia",
                         "stampagg", "tłocz", "lisován", "штамп", "dập", "progressive die", "deep draw", "metal forming"],
-    "alcipan-profili": [ "tablaroca", "panel de yeso", "durock", "sadrokarton", "gipszkarton", "rigips", "profile c", "profile u","drywall", "plasterboard", "gypsum", "ceiling", "stud", "placo", "plâtre", "platre", "trockenbau",
+    "alcipan-profili": [ "جبس", "جبسون", "قطاعات", "أسقف معلقة", "اسقف معلقة", "tablaroca", "panel de yeso", "durock", "sadrokarton", "gipszkarton", "rigips", "profile c", "profile u","drywall", "plasterboard", "gypsum", "ceiling", "stud", "placo", "plâtre", "platre", "trockenbau",
                         "cartongesso", "pladur", "gipskarton", "гипсокартон", "baja ringan", "furring", "t-grid", "t grid",
                         "light gauge", "steel frame", "steel framing"],
-    "asik-celik-yapi": [ "ocelové konstrukce", "acélszerkezet", "structuri metalice", "konstrukcje stalowe", "hangar","purlin", "sigma", "pre-engineered", "pre engineered", "peb", "steel building", "steel structure",
+    "asik-celik-yapi": [ "هياكل معدنية", "هياكل حديدية", "الهياكل المعدنية", "مدادات", "إنشاءات معدنية", "انشاءات معدنية", "هناجر", "مباني معدنية", "مباني حديدية", "جملونات", "بيرلين", "ocelové konstrukce", "acélszerkezet", "structuri metalice", "konstrukcje stalowe", "hangar","purlin", "sigma", "pre-engineered", "pre engineered", "peb", "steel building", "steel structure",
                         "light gauge", "lgs", "лстк", "прогон", "correa", "terça", "terca", "arcarecc", "panne", "pfette",
                         "xà gồ", "galpón", "galpao", "galpão", "charpente", "estructura met", "metal building", "c-section",
                         "z-section", "c section", "z section", "profil c", "profile c"],
-    "iskele-kalasi": [ "skele", "lešenje", "állvány", "schele","scaffold", "plank", "walk board", "walkboard", "catwalk", "andamio", "andaime", "échafaud", "echafaud",
+    "iskele-kalasi": [ "سقالات", "سقالة", "السقالات", "skele", "lešenje", "állvány", "schele","scaffold", "plank", "walk board", "walkboard", "catwalk", "andamio", "andaime", "échafaud", "echafaud",
                       "gerüst", "gerust", "ponteggi", "rusztow", "леса", "lešen", "ringlock", "cuplock", "steel deck"],
-    "market-rafi": [ "gondol", "regál", "polc", "raft","gondola", "góndola", "gôndola", "gondole", "supermarket", "retail", "shop shelving", "store fixture",
+    "market-rafi": [ "سوبر ماركت", "سوبرماركت", "جندولا", "أرفف عرض", "ارفف عرض", "رفوف عرض", "gondol", "regál", "polc", "raft","gondola", "góndola", "gôndola", "gondole", "supermarket", "retail", "shop shelving", "store fixture",
                     "shopfit", "ladenbau", "negozi", "sklepow", "торгов", "siêu thị", "minimarket", "display", "shelving",
                     "estanter", "prateleira", "rayonnage", "regał", "stellaggi"],
-    "gurultu-bariyeri": [ "hluk", "zajvéd", "zgomot", "hałas", "rumore", "noise","noise barrier", "noise wall", "acoustic", "sound barrier", "écran acoustique", "ecran acoustique",
+    "gurultu-bariyeri": [ "حواجز صوتية", "الحواجز الصوتية", "عازل صوت", "عوازل الصوت", "hluk", "zajvéd", "zgomot", "hałas", "rumore", "noise","noise barrier", "noise wall", "acoustic", "sound barrier", "écran acoustique", "ecran acoustique",
                          "lärmschutz", "larmschutz", "acústic", "acustic", "antirumore", "akustycz", "шумозащит", "protihluk",
                          "zajvédő", "fonoassorb", "fonoabsorb", "sound wall"],
-    "havalandirma-kanali": [ "klima", "vzduchotech", "légtechn", "wentyl", "condotte", "air duct", "ductos","duct", "hvac", "ventilat", "air distribution", "damper", "diffuser", "gaine", "lüftung",
+    "havalandirma-kanali": [ "دكت", "دكتات", "مجاري هواء", "مجاري الهواء", "تكييف", "تهوية", "klima", "vzduchotech", "légtechn", "wentyl", "condotte", "air duct", "ductos","duct", "hvac", "ventilat", "air distribution", "damper", "diffuser", "gaine", "lüftung",
                             "luftung", "ducto", "conducto", "duto", "canali", "kanały", "воздуховод", "вентиляц", "ống gió",
                             "ventilasi", "spiral", "air handling"],
-    "metal-mobilya": [ "skříň", "szekrény", "dulap", "tresor", "caja fuerte", "archiv", "armadi","furniture", "locker", "cabinet", "filing", "cupboard", "almirah", "safe", "mobilier", "möbel", "mobel",
+    "metal-mobilya": [ "أثاث معدني", "اثاث معدني", "دواليب", "خزائن", "لوكر", "مكاتب معدنية", "أثاث مكتبي", "skříň", "szekrény", "dulap", "tresor", "caja fuerte", "archiv", "armadi","furniture", "locker", "cabinet", "filing", "cupboard", "almirah", "safe", "mobilier", "möbel", "mobel",
                       "mueble", "móveis", "moveis", "mobili", "meble", "мебел", "tủ", "lemari", "workbench", "shelving",
                       "armoire", "armario", "schrank"],
 }
@@ -90,10 +90,12 @@ EPOSTA = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 URETIM = ["manufactur", "factory", "fabric", "fabrik", "werk", "produc", "produz", "produkc", "výrob", "vyrob", "gyárt",
           "usine", "fábrica", "fabrica", "завод", "производ", "pabrik", "sản xuất", "planta", "hersteller", "made in",
           "plant ", "own production", "üretim", "atelier", "fabbrica", "stabiliment", "zakład", "fabryka", "závod",
-          "fabricant", "fabricante", "fabbricant", "manufacture", "producer", "производител", "виробни"]
+          "fabricant", "fabricante", "fabbricant", "manufacture", "producer", "производител", "виробни",
+          "مصنع", "مصانع", "تصنيع", "إنتاج", "انتاج", "خط إنتاج", "خطوط الإنتاج"]
 # Sepet izi: e-ticaret sitesi
 SEPET = ["add to cart", "add-to-cart", "warenkorb", "carrito", "carrinho", "košík", "kosár", "koszyk", "panier",
-         "sepete ekle", "в корзину", "keranjang", "giỏ hàng", "woocommerce-cart", "cdn.shopify"]
+         "sepete ekle", "в корзину", "keranjang", "giỏ hàng", "woocommerce-cart", "cdn.shopify",
+         "أضف إلى السلة", "اضف الى السلة", "أضف للسلة", "سلة التسوق", "سلة المشتريات"]
 
 _onbellek = {}
 

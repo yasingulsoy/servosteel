@@ -17,8 +17,18 @@ const t = (ad, fn) => { fn(); n++; console.log("  ok -", ad); };
 
 t("dil geri dusmesi", () => {
   assert.equal(K.epostaDili("hu"), "en");
-  assert.equal(K.epostaDili("ar"), "en");
+  assert.equal(K.epostaDili("vi"), "en");
   assert.equal(K.epostaDili("pl"), "pl");
+  /* Arapca 28 Eylul'den beri sablonlu: yalniz Arapca kesif turunun firmalarina */
+  assert.equal(K.epostaDili("ar"), "ar");
+  assert.ok(K.sagdanSola("ar") && !K.sagdanSola("en") && !K.sagdanSola("hu"));
+});
+t("arapca altbilgi ve abonelik sayfasi", () => {
+  const a = K.altbilgi("ar", "https://x/api/unsubscribe?t=abc", "UNVAN", "ADRES");
+  assert.ok(a.includes("إلغاء الاشتراك: https://x/api/unsubscribe?t=abc"));
+  assert.ok(K.altbilgiHtml("ar", "U", "A", "B").includes('<a href="U" style="color:#777">إلغاء الاشتراك</a>'));
+  for (const k of ["baslik", "soru", "dugme", "tamam", "gecersiz"]) assert.ok(K.IPTAL_SAYFASI.ar[k], k);
+  assert.ok(K.IPTAL_SAYFASI.ar.soru.includes("{eposta}") && K.IPTAL_SAYFASI.ar.tamam.includes("{eposta}"));
 });
 t("altbilgi", () => {
   const a = K.altbilgi("pl", "https://x/api/unsubscribe?t=abc", "UNVAN", "ADRES");

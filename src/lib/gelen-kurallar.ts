@@ -54,9 +54,11 @@ const ALINTI_BASI = new RegExp(
     String.raw`^il .{3,200}ha scritto:\s*$`,
     String.raw`^.{3,200}(пишет|написал\(а\)|написал):\s*$`,
     String.raw`^.{3,200}tarihinde .{0,120}(şunu yazdı|yazdı):\s*$`,
-    String.raw`^-{2,}\s*(original message|mensaje original|mensagem original|message d'origine|ursprüngliche nachricht|messaggio originale|исходное сообщение|orijinal ileti)\s*-{2,}\s*$`,
+    /* Arapça Gmail/Outlook: "في الخميس، ٢٥ سبتمبر ٢٠٢٦ ... كتب:" */
+    String.raw`^في .{3,200}كتب\s*:\s*$`,
+    String.raw`^-{2,}\s*(original message|mensaje original|mensagem original|message d'origine|ursprüngliche nachricht|messaggio originale|исходное сообщение|orijinal ileti|الرسالة الأصلية)\s*-{2,}\s*$`,
     String.raw`^_{10,}\s*$`,
-    String.raw`^(from|de|von|da|от|kimden)\s*:\s.+$`,
+    String.raw`^(from|de|von|da|от|kimden|من)\s*:\s.+$`,
   ].join("|"),
   "im"
 );
@@ -154,7 +156,7 @@ function kaliciMi(g: GelenOzet): boolean {
 /* --------------------------------------------------- otomatik yanıt */
 
 const OTOMATIK_KONU =
-  /^(automatic reply|auto(matic)?[- ]?reply|auto:|autoreply|auto-response|out of (the )?office|ooo\b|otomatik yan[ıi]t|respuesta autom[aá]tica|resposta autom[aá]tica|r[ée]ponse automatique|automatische antwort|risposta automatica|автоответ|автоматический ответ|abwesenheit|fuera de la oficina|absence|vacation|on leave|away from)/i;
+  /^(automatic reply|auto(matic)?[- ]?reply|auto:|autoreply|auto-response|out of (the )?office|ooo\b|otomatik yan[ıi]t|respuesta autom[aá]tica|resposta autom[aá]tica|r[ée]ponse automatique|automatische antwort|risposta automatica|автоответ|автоматический ответ|abwesenheit|fuera de la oficina|absence|vacation|on leave|away from|رد تلقائي|رد آلي|الرد التلقائي|خارج المكتب)/i;
 
 /* Konusu "RE: …" olup kendini gövdede ele veren sistem cevabı. Giffin'in
    destek sistemi (27 Eylül 2026) başlık koymadan "This is an automated
@@ -162,7 +164,7 @@ const OTOMATIK_KONU =
    Yalnız yanıtın kendi metninde aranır (alıntı değil), ve kalıp "bu bir
    otomatik iletidir" cümlesi — "hattımız tam otomatik" gibi bir söz tutmaz. */
 const OTOMATIK_GOVDE =
-  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)/i;
+  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)|(هذه|هذا) (رسالة|رد) (تلقائية|تلقائي|آلية|آلي)/i;
 
 function otomatikMi(g: GelenOzet): string | null {
   const as = (g.basliklar["auto-submitted"] ?? "").trim();
@@ -177,7 +179,7 @@ function otomatikMi(g: GelenOzet): string | null {
 /* ------------------------------------------------- abonelik iptali */
 
 const ABONELIK =
-  /unsubscribe|remove me|take me off|opt[- ]?out|stop (sending|emailing|contacting)|do not (contact|email|send|write)|don'?t (contact|email|send|write)|darse de baja|dar(me)? de baja|no (me|nos) (env[ií]e|env[ií]en|escriba|escriban|contacte)|descadastr|cancelar (inscri|assinatura)|pare de (enviar|mandar)|n[ãa]o (quero|desejo) (mais )?receber|d[ée]sabonn|d[ée]sinscri|ne plus (recevoir|m'envoyer)|abbestell|abmeld|keine (weiteren )?(e-?mails|nachrichten)|cancellami|disiscri|non (voglio|desidero) (pi[uù] )?ricevere|отпис|больше не (пишите|присылайте)|abonelikten [çc][ıi]k|listeden [çc][ıi]kar|bir daha (yazmay|g[öo]ndermey)|wypis|rezygnuj/i;
+  /unsubscribe|remove me|take me off|opt[- ]?out|stop (sending|emailing|contacting)|do not (contact|email|send|write)|don'?t (contact|email|send|write)|darse de baja|dar(me)? de baja|no (me|nos) (env[ií]e|env[ií]en|escriba|escriban|contacte)|descadastr|cancelar (inscri|assinatura)|pare de (enviar|mandar)|n[ãa]o (quero|desejo) (mais )?receber|d[ée]sabonn|d[ée]sinscri|ne plus (recevoir|m'envoyer)|abbestell|abmeld|keine (weiteren )?(e-?mails|nachrichten)|cancellami|disiscri|non (voglio|desidero) (pi[uù] )?ricevere|отпис|больше не (пишите|присылайте)|abonelikten [çc][ıi]k|listeden [çc][ıi]kar|bir daha (yazmay|g[öo]ndermey)|wypis|rezygnuj|إلغاء الاشتراك|الغاء الاشتراك|ألغوا اشتراكي|الغوا اشتراكي|أزيلوا (عنواني|بريدي)|احذفوا (عنواني|بريدي)|لا ترسلوا|لا تراسلونا|توقفوا عن (الإرسال|المراسلة|مراسلتنا)/i;
 
 function abonelikMi(g: GelenOzet, yeni: string): string | null {
   const konu = g.konu.replace(/^\s*((re|aw|sv|fw|fwd|rv|enc|tr)\s*:\s*)+/i, "").trim();

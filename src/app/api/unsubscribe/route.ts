@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 import { engelle, engelliMi, iptalBul, outreachSemaKur } from "@/lib/outreach-db";
-import { IPTAL_SAYFASI, epostaDili, maskele } from "@/lib/outreach-kurallar";
+import { IPTAL_SAYFASI, epostaDili, maskele, sagdanSola } from "@/lib/outreach-kurallar";
 
 /**
  * Tanıtım e-postalarındaki "abonelikten çık" bağlantısı.
@@ -43,7 +43,7 @@ function kacir(s: string): string {
 
 function sayfa(dil: string, baslik: string, icerik: string, durum = 200): Response {
   const html = `<!doctype html>
-<html lang="${kacir(dil)}">
+<html lang="${kacir(dil)}" dir="${sagdanSola(dil) ? "rtl" : "ltr"}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

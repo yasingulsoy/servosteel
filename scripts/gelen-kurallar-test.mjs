@@ -294,6 +294,47 @@ Regards, Ahmed
   assert.equal(s.tur, "yanit");
 });
 
+/* Arapca (28 Eylul): Arapca kesif turunun firmalarina e-posta Arapca gidiyor */
+const b64 = (s) => `=?UTF-8?B?${Buffer.from(s).toString("base64")}?=`;
+
+await t("arapca abonelik iptali", async () => {
+  const s = await sinifla(`From: Mohamed <m@masnaa.example>
+To: marketing@servosteel.com.tr
+Subject: ${b64("رد: خطوط الرفوف")}
+Content-Type: text/plain; charset=utf-8
+
+من فضلكم إلغاء الاشتراك، لا ترسلوا لنا رسائل أخرى.
+`);
+  assert.equal(s.tur, "abonelik");
+});
+
+await t("arapca otomatik yanit konusu", async () => {
+  const s = await sinifla(`From: Info <info@masnaa.example>
+To: marketing@servosteel.com.tr
+Subject: ${b64("رد تلقائي: خطوط الرفوف")}
+Content-Type: text/plain; charset=utf-8
+
+شكرا لرسالتكم، سنرد عليكم في أقرب وقت.
+`);
+  assert.equal(s.tur, "otomatik");
+});
+
+await t("arapca yanit: alinti basligindan sonrasi (altbilgimiz) sayilmaz", async () => {
+  const s = await sinifla(`From: Ahmed <ahmed@masnaa.example>
+To: marketing@servosteel.com.tr
+Subject: ${b64("رد: خطوط مقاطع C وSigma وOmega")}
+Content-Type: text/plain; charset=utf-8
+
+السلام عليكم، نحن مهتمون بخط مقاطع C بسماكة 2 مم. أرسلوا لنا عرض سعر من فضلكم.
+
+في الخميس، ٢٥ سبتمبر ٢٠٢٦، Servosteel <marketing@servosteel.com.tr> كتب:
+إلى فريق المصنع المحترم،
+لا ترغبون في تلقي رسائلنا مرة أخرى؟ إلغاء الاشتراك
+`);
+  assert.equal(s.tur, "yanit");
+  assert.ok(!K.yeniMetin("سطر\nفي الخميس، ٢٥ سبتمبر ٢٠٢٦، X كتب:\nإلغاء الاشتراك").includes("إلغاء"));
+});
+
 await t("ileti kimlikleri", async () => {
   assert.deepEqual(K.mesajKimlikleri("<ABC@servosteel.com.tr>", "<x@y> <abc@servosteel.com.tr>", undefined),
     ["abc@servosteel.com.tr", "x@y"]);

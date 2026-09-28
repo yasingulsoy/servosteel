@@ -148,6 +148,7 @@ ULKELER = [
 # d: buyuk pazarlarda sehir bazli ana arama · f: d'nin devami, yeni sanayi sehirleri
 # g: Afrika ve Orta Dogu sehirleri · h: b'nin Afrika ulkeleri + Lubnan, es anlamli arama
 # i: Afrika'da yerel urun terimleri (bolgeye gore ayri sorgu takimi) + 9 yeni Afrika ulkesi
+# j: 14 Arap ulkesinde Arapca arama — bu turun firmalarina e-posta Arapca
 # e: oncelikli urun gruplari (dilme / boy kesme ->
 # celik servis merkezi, pres besleme -> pres atolyesi), a+b ulkeleri, segment basina iki arama.
 # Her tur ayri dosyalara yazar; sonraki tur onceki turlarin .md'lerindeki alan adlarini
@@ -447,6 +448,42 @@ SORGU_I = {
            "asik-celik-yapi": ["empresa de estruturas metálicas", "fabricante de madres metálicas"]},
 }
 
+# J turu (2026-09-28, Yasin "yapalim"): Arap ulkelerinde ARAPCA arama. Misir'dan iRack teklif
+# istedi; onceki turlar Arap ulkelerinde Ingilizce aradi — sitesi yalniz Arapca olan ureticiler
+# hic cikmadi, ciksa da dogrulayicinin kelime listelerinde Arapca yoktu ("urun kelimesi yok").
+# Bu turun firmalarina e-posta ARAPCA gider (hedef-firma-excel.py ARAPCA_TURU: dosya adi -j).
+# Umman "سلطنة عمان": yalniz "عمان" Urdun'un baskenti Amman'la ayni yaziliyor.
+ULKELER_J = [
+    ("Mısır", "EG", "ar", "20", "مصر"), ("Suudi Arabistan", "SA", "ar", "966", "السعودية"),
+    ("BAE", "AE", "ar", "971", "الإمارات"), ("Kuveyt", "KW", "ar", "965", "الكويت"),
+    ("Katar", "QA", "ar", "974", "قطر"), ("Umman", "OM", "ar", "968", "سلطنة عمان"),
+    ("Bahreyn", "BH", "ar", "973", "البحرين"), ("Ürdün", "JO", "ar", "962", "الأردن"),
+    ("Irak", "IQ", "ar", "964", "العراق"), ("Lübnan", "LB", "ar", "961", "لبنان"),
+    ("Libya", "LY", "ar", "218", "ليبيا"), ("Cezayir", "DZ", "ar", "213", "الجزائر"),
+    ("Fas", "MA", "ar", "212", "المغرب"), ("Tunus", "TN", "ar", "216", "تونس"),
+]
+SORGU_J = {
+    "ar": {"kablo-kanali": ["مصنع حوامل كابلات", "مصنع كابل تراي"],
+           "solar-profil": "مصنع هياكل ألواح الطاقة الشمسية",
+           "raf-sistemleri": ["مصنع رفوف معدنية", "مصنع أرفف مخازن ثقيلة"],
+           "yol-bariyeri": "مصنع حواجز الطرق المعدنية",
+           "cati-cephe-paneli": ["مصنع ساندوتش بانل", "مصنع ألواح أسقف معدنية"],
+           "celik-servis-merkezi": "تشريح وتقطيع لفائف الصاج",
+           "asik-celik-yapi": ["مصنع هياكل معدنية", "مصنع مدادات مجلفنة"],
+           "iskele-kalasi": "مصنع سقالات معدنية",
+           "market-rafi": "مصنع أرفف سوبر ماركت",
+           "havalandirma-kanali": "مصنع دكت تكييف",
+           "metal-mobilya": "مصنع أثاث مكتبي معدني",
+           "alcipan-profili": "مصنع قطاعات جبس بورد"},
+}
+
+# Arapca-Hint ve Farsca rakamlar -> ASCII (telefon kodu kontrolu: "+٢٠" da "+20" sayilsin)
+ARAP_RAKAM = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
+ARAPCA_HARF = re.compile(r"[؀-ۿ]")
+# Arapca baslikta firma adi olamayan sayfa adlari
+ARAPCA_GENEL = {"الرئيسية", "الصفحة الرئيسية", "من نحن", "اتصل بنا", "منتجاتنا", "خدماتنا", "المنتجات",
+                "الخدمات", "الموقع الرسمي", "مرحبا بكم"}
+
 # E turu (2026-09-22, Yasin: "oncelik roll form, dilme, boy kesme, pres besleme, kompakt"):
 # dilme ve boy kesme hattini CELIK SERVIS MERKEZI alir (40 + 49 firmayla en kucuk iki grup),
 # pres besleme ve kompakt hatti PRES ATOLYESI. Deger liste: segment basina iki arama.
@@ -470,6 +507,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "j":
+        return ULKELER_J, SORGU_J, "-j"
     if tur == "i":
         return ULKELER_I, SORGU_I, "-i"
     if tur == "g":
@@ -522,7 +561,9 @@ MAKINE = re.compile(
     r"machine à profiler|profileuse|станок|оборудование для|"
     r"(?<!nhà )(?<!nha )máy (cán|sản xuất|xả|cắt|dập|uốn)|mesin|makine|"
     r"l[ií]neas? de corte|linhas? de corte|(slitting|cut[ -]to[ -]length|slitter) (line|machine)s?|"
-    r"equipamento para|equipment manufacturer", re.I)
+    r"equipamento para|equipment manufacturer|"
+    # Arapca: ماكينة/ماكينات, مكائن, آلات (yalniz "الات" olmaz: "مجالات", "اتصالات" icinde geciyor)
+    r"ماكين|مكينة|مكائن|آلات", re.I)
 
 ULKE_UZANTI = {"GB": "uk"}
 
@@ -702,7 +743,7 @@ def aday_dogrula(a):
             tel = re.compile(r"(\+|00|\()\s?%s[\s\-().]" % a["tel"])
         if len(uzanti) == 2 and uzanti not in ("co", "io", "me", "tv", "cc", "ai"):
             return None, "başka ülkenin uzantısı (.%s)" % uzanti
-        if not tel.search(tum):
+        if not tel.search(tum.translate(ARAP_RAKAM)):
             return None, "ülke tutmuyor (telefon kodu yok)"
     return {
         "firma": hucre(firma_adi(h0 if k0 == 200 else h1, alan)),
@@ -726,13 +767,15 @@ def aday_dogrula(a):
 IMALATCI = re.compile(
     r"manufactur|fabricante|fabricamos|fabricaci[oó]n|f[aá]brica\b|fabricant|fabbric|produttor|"
     r"producent|производ|завод|s[aả]n xu[aấ]t|nh[aà] m[aá]y|produsen|pabrik|factory|fabricator|"
-    r"fabrication|we produce|producimos|produzimos|fabrik|hersteller|roll[ -]?form|industr(ies|ia[sl]?) ",
+    r"fabrication|we produce|producimos|produzimos|fabrik|hersteller|roll[ -]?form|industr(ies|ia[sl]?) |"
+    r"مصنع|مصانع|تصنيع|نصنع|ننتج|للصناعة|للصناعات|صناعة|إنتاج|انتاج",
     re.I)
 NEGATIF = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
     r"\bstore\b|\bshop\b|ferreter|home ?cent|hardware|wholesal|mayorista|atacad|importador|importer|"
     r"\btrading\b|dealer|revendedor|precio|price list|pre[cç]o|\bprix\b|comprar|buy online|marketplace|"
-    r"cotiza en l[ií]nea|supermercado de|installer|instalador|contractor|contratista|consult", re.I)
+    r"cotiza en l[ií]nea|supermercado de|installer|instalador|contractor|contratista|consult|"
+    r"متجر|معرض|موزع|وكيل|وكلاء|تاجر|للتجارة|تجارة|أسعار|اسعار|تأجير|إيجار|ايجار|مقاولات|مقاول|استشار", re.I)
 # Dominik Cumhuriyeti de +1 kullaniyor: ABD bicimli her numara gecmesin, alan kodu sart
 DO_TELEFON = re.compile(r"\b8[024]9[\s\-.)]*\d{3}[\s\-.]?\d{4}\b")
 BOZUK_KULLANICI = re.compile(r"^(u00[0-9a-f]{2}|x[0-9a-f]{2}|%[0-9a-f]{2})", re.I)
@@ -750,7 +793,8 @@ SERVIS_TANIM = re.compile(IMALATCI.pattern + "|" +
     r"planchado y corte|alisado y corte|rebobinad|process?adora|"
     r"металлосервис|металлоцентр|продольн\w* резк|поперечн\w* резк|резка (рулон|металл)|"
     r"xả băng|cắt tấm|gia công thép|jasa (slitting|shearing|potong)|slitting coil|shearing coil|"
-    r"spaltning|stålservice|metal service|metall ?service", re.I)
+    r"spaltning|stålservice|metal service|metall ?service|"
+    r"تشريح|تقطيع (ال)?(لفائف|رولات|الصاج|صاج)|مركز خدمة", re.I)
 NEGATIF_SERVIS = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
     r"\bstore\b|\bshop\b|ferreter|home ?cent|hardware|precio|price list|pre[cç]o|\bprix\b|comprar|"
@@ -800,11 +844,18 @@ def ad_sec(html, alan, serp_baslik):
         sade_a = re.sub(r"[^a-z0-9]", "", a.lower())
         if len(etiket) >= 4 and (etiket[:5] in sade_a or (len(sade_a) >= 4 and sade_a[:5] in etiket)):
             return re.sub(r"\s+", " ", a).strip()[:60]
+    # Arapca site: basliktaki Arapca ad (Latin alan adiyla harf ortakligi aranamaz) —
+    # "مصنع السعد للهياكل المعدنية" selamlamada alan adindan uretilen "Alsaadsteel"den dogal
+    for a in adaylar:
+        a = re.sub(r"\s+", " ", a).strip()
+        if ARAPCA_HARF.search(a) and 3 <= len(a) <= 45 and a not in ARAPCA_GENEL and not REHBER_BASLIK.search(a):
+            return a
     return etiket.replace("-", " ").title() if etiket else alan
 
 
 AYRAC = re.compile(r"\s+[-|–—·:/]\s+|:\s+|,\s*")
-HOSGELDIN = re.compile(r"^(welcome to|bienvenid[oa]s? a|bem[- ]vind[oa]s? [àa]|bienvenue (chez|sur|à))(?=[^\w]|$)\s*", re.I)
+HOSGELDIN = re.compile(r"^(welcome to|bienvenid[oa]s? a|bem[- ]vind[oa]s? [àa]|bienvenue (chez|sur|à)|"
+                       r"مرحب[اً]* بكم في|أهلا بكم في|اهلا بكم في)(?=[^\w]|$)\s*", re.I)
 KENAR = re.compile(r"^[^\w(«]+|[^\w)»]+$")
 TIRNAKLI = re.compile(r"[«\"“]([^»\"”]{2,45})[»\"”]")
 SIRKET_EKI = re.compile(r"\b(limited|ltd|llc|inc|corp(oration)?|company|gmbh|sdn bhd|bhd|pvt|pty|plc|ltda|"
@@ -890,23 +941,28 @@ REHBER_BASLIK = re.compile(
     r"c[aá]mara de|development agency|agencia|agency for|ministry|ministerio|minist[eè]re|council|"
     r"market briefs?|real estate|inmobiliaria|imobili[aá]ria|портал|"
     r"(business|b2b|construction|industrial|trade|building) portal|meilleures entreprises|"
-    r"mejores empresas|melhores empresas)\b", re.I)
+    r"mejores empresas|melhores empresas|"
+    # Arapca rehber/liste: "دليل المصانع", "أفضل 10", "أرقام وعناوين", "قائمة شركات"
+    r"دليل|أفضل \d+|قائمة (أفضل|شركات|مصانع)|أرقام|عناوين|شركات .{0,20} في)\b", re.I)
 KURUM_ALANI = re.compile(r"(^|\.)(org|gov|gob|edu|ac|mil|int)(\.[a-z]{2})?$", re.I)
-METAL = re.compile(r"steel|metal|metál|металл|thép|besi|acero|a[cç]o\b|acier|stahl|čelik|челик|inox", re.I)
+METAL = re.compile(r"steel|metal|metál|металл|thép|besi|acero|a[cç]o\b|acier|stahl|čelik|челик|inox|"
+                   r"حديد|صلب|معدن|ستانلس|ستانليس|ألومنيوم|الومنيوم|مجلفن", re.I)
 DEV_MARKA = re.compile(
     r"(^|\.)(layher|abb|se|schneider-electric|legrand|eaton|siemens|hilti|obo|obo-bettermann|niedax|"
     r"panduit|atkore|kingspan|tatasteel|arcelormittal|ulma|ulmaconstruction|peri|doka|hunnebeck|altrad|"
     r"lindab|saint-gobain|knauf|usg|etex|rockwool|owenscorning)\.", re.I)
-KABLO_PLASTIK = re.compile(r"\b(frp|grp|fib(er|re) ?glass|fibra de vidrio|pvc|plastic|pl[aá]stic|polymer)\b", re.I)
-CELIK = re.compile(r"steel|metal|galvani|acero|a[cç]o\b|acier|stahl|сталь|thép|baja|inox", re.I)
+KABLO_PLASTIK = re.compile(r"\b(frp|grp|fib(er|re) ?glass|fibra de vidrio|pvc|plastic|pl[aá]stic|polymer|"
+                           r"فايبر|بلاستيك|بلاستك)\b", re.I)
+CELIK = re.compile(r"steel|metal|galvani|acero|a[cç]o\b|acier|stahl|сталь|thép|baja|inox|حديد|صلب|مجلفن|معدن", re.I)
 SOLAR_YAPI = re.compile(
     r"mount|structure|struct|racking|bracket|clamp|rail|frame|carport|ground ?screw|montaje|estructura|"
-    r"soporte|suporte|estrutura|fixation|support|крепеж|конструкц|giá đỡ|khung|rangka|dudukan|penyangga",
+    r"soporte|suporte|estrutura|fixation|support|крепеж|конструкц|giá đỡ|khung|rangka|dudukan|penyangga|"
+    r"هياكل|هيكل|حوامل|حامل|تثبيت|قواعد|شاسيه",
     re.I)
 YALITIM = re.compile(r"glass ?wool|rock ?wool|stone ?wool|mineral wool|insulation|aislante|aislamiento|"
-                     r"isolamento|isolant|утеплит|изоляц|bông thủy tinh", re.I)
+                     r"isolamento|isolant|утеплит|изоляц|bông thủy tinh|صوف صخري|صوف زجاجي|عزل حراري|عوازل", re.I)
 CATI_URUN = re.compile(r"panel|sheet|roof|cladding|teja|l[aá]mina|telha|t[oô]le|bac|profnastil|профнастил|"
-                       r"сэндвич|tôn|atap|genteng|corrugat|trapez", re.I)
+                       r"сэндвич|tôn|atap|genteng|corrugat|trapez|ساندوتش|صاج|ألواح|الواح|سقف|أسقف|اسقف|كلادينج|قرميد", re.I)
 
 SERVIS_DISI = re.compile(r"\bhire\b|chisel|\bsaws?\b|repuesto|spare parts|auto ?parts|universit|conveyor|"
                          r"sewing|scrap (metal|yard|dealer)|chatarr|sucata|ferraille", re.I)
@@ -918,8 +974,9 @@ PRES_DISI = re.compile(r"rubber stamp|self[- ]?inking|\bseals?\b|\bsellos?\b|car
 # "slot" tek basina olmaz: "slotted cable tray", "slotted angle rack" gercek urun
 KUMAR = re.compile(r"\bslots? ?(online|gacor|terbaru|terpercaya|resmi|demo|88|777)\b|situs (slot|judi)|casino|"
                    r"\bjudi\b|togel|gacor|login game|poker|\bbetting|sbobet", re.I)
-FIYAT = re.compile(r"price list|\bprices?\b|\bprecios?\b|\bpre[cç]os?\b|\bprix\b|bảng giá|báo giá|\bharga\b", re.I)
-KIRALIK = re.compile(r"\brenta\b|for rent\b|\balquiler|\baluguel|\bhire\b|\brental", re.I)
+FIYAT = re.compile(r"price list|\bprices?\b|\bprecios?\b|\bpre[cç]os?\b|\bprix\b|bảng giá|báo giá|\bharga\b|"
+                   r"أسعار|اسعار|\bسعر\b", re.I)
+KIRALIK = re.compile(r"\brenta\b|for rent\b|\balquiler|\baluguel|\bhire\b|\brental|تأجير|إيجار|ايجار", re.I)
 PRES_METAL = re.compile(METAL.pattern + r"|alumin|deep[ -]draw|progressive|fine ?blank|sheet|chapa|l[aá]mina|"
                         r"t[oô]le|листов|tấm|automotive|automot|bracket|washer|arandela", re.I)
 # Pres isi arama basliginda/ozetinde gorunmeli: "uretici" kelimesi tek basina yetmez (kelime
@@ -977,11 +1034,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
-                         "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente)")
+                         "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente) | "
+                         "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider)")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)

@@ -197,6 +197,20 @@ ULKE_DIL = {
 }
 SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri kalan her ulke: en (Korfez ve Kuzey Afrika is dunyasi Ingilizce yazisiyor)
 
+# Arapca kesif turunun (bolge-kesif-*-j.md) firmalari: sitesi Arapca, e-posta Arapca gider
+# (2026-09-28, Yasin "yapalim"). Dil ULKEDEN degil bu listeden: daha once Ingilizce yazilmis
+# Misir/Korfez firmalari Ingilizce kalir — hatirlatma (konu2/govde2) ilk mektubun dilinde gitsin.
+# main() doldurur; firma_anahtari ile eslesir.
+ARAPCA_TURU = re.compile(r"^bolge-kesif-\d{4}-\d{2}-\d{2}-j\.md$")
+ARAPCA_FIRMALAR = set()
+
+
+def satir_dili(satir):
+    """E-postanin dili: Arapca turdan geldiyse ar, yoksa ulkenin dili (varsayilan en)."""
+    if ARAPCA_FIRMALAR and firma_anahtari(satir) in ARAPCA_FIRMALAR:
+        return "ar"
+    return ULKE_DIL.get(str(satir[1] or "").strip(), "en")
+
 
 def gonderim_linki(segment, ulke, satir, form=False):
     """form=True: teklif formu (/teklif-al, diger dillerde /<dil>/request-quote).
@@ -205,7 +219,7 @@ def gonderim_linki(segment, ulke, satir, form=False):
     tr_yol, en_yol, kampanya = SEGMENT_SAYFA.get(segment, ("/", "/", "genel"))
     if form:
         tr_yol, en_yol = "/teklif-al", "/request-quote"
-    dil = ULKE_DIL.get(ulke, "en")
+    dil = satir_dili(satir)
     if dil not in SITE_DILLERI:      # fr/pt: e-posta o dilde, sayfa Ingilizce (sitede yok)
         dil = "en"
     yol = tr_yol if dil == "tr" else "/%s%s" % (dil, en_yol)
@@ -267,7 +281,7 @@ def hesap_linki(satir):
     """Metal agirlik hesaplayicisi (/hesaplayicilar, digerlerinde /<dil>/calculators) —
     ikinci turdaki faydali baglanti. utm_term=hesaplayici: GA4'te hatirlatma
     e-postasindan gelen tiklama teklif formundan ayrilir."""
-    dil = ULKE_DIL.get(satir[1], "en")
+    dil = satir_dili(satir)
     if dil not in SITE_DILLERI:
         dil = "en"
     yol = "/hesaplayicilar" if dil == "tr" else "/%s/calculators" % dil
@@ -285,7 +299,7 @@ def ikinci_tur_metni(segler, satir):
     seg = segler[0]
     if seg in TEYITSIZ:
         return "", ""
-    dil = ULKE_DIL.get(satir[1], "en")
+    dil = satir_dili(satir)
     t = SABLON.get(dil) or SABLON["en"]
     if "govde2" not in t:
         return "", ""
@@ -303,7 +317,7 @@ def eposta_metni(segler, satir):
     link = gonderim_linki(seg, satir[1], satir)
     if seg in TEYITSIZ:
         return "", ""
-    dil = ULKE_DIL.get(satir[1], "en")
+    dil = satir_dili(satir)
     t = SABLON.get(dil) or SABLON["en"]
     kamp = SEGMENT_SAYFA[seg][2]
     firma = hitap_adi(satir[0])
@@ -311,7 +325,7 @@ def eposta_metni(segler, satir):
     ek = ""
     if digerleri:
         adlar = [t["segment"][k]["ad"] for k in digerleri]
-        liste = adlar[0] if len(adlar) == 1 else ", ".join(adlar[:-1]) + t["ve"] + adlar[-1]
+        liste = adlar[0] if len(adlar) == 1 else t.get("virgul", ", ").join(adlar[:-1]) + t["ve"] + adlar[-1]
         ek = t["ek"].replace("{liste}", liste)
     metin = (t["govde"].replace("{selam}", t["selam"]).replace("{firma}", firma)
              .replace("{cumle}", t["segment"][kamp]["cumle"]).replace("{ek}", ek)
@@ -333,7 +347,7 @@ def panel_kaydi(anahtar, satir, ek, segler):
     hucre = str(satir[5] or "")
     m = EPOSTA_KALIBI.search(hucre)
     eposta = m.group(0).rstrip(".") if m and "doğrulanamadı" not in hucre else ""
-    dil = ULKE_DIL.get(satir[1], "en")
+    dil = satir_dili(satir)
     return {
         "anahtar": anahtar,
         "firma": str(satir[0] or "").strip(),
@@ -593,6 +607,8 @@ def main():
             satir[1] = temiz
         if not dosya.startswith("bolge-kesif"):
             arastirilan.update(firma_anahtari(satir) for satir in duzgun)
+        if ARAPCA_TURU.match(dosya):
+            ARAPCA_FIRMALAR.update(firma_anahtari(satir) for satir in duzgun)
 
         if bolge:
             taninmayan = 0

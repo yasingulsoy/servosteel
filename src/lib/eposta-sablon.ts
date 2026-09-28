@@ -43,73 +43,88 @@ export const URUN_GORSELI: Record<string, Record<string, string>> = {
     tr: "Kablo kanalı hattı", en: "Cable tray line", es: "Línea para bandejas portacables",
     it: "Linea per passerelle portacavi", de: "Kabelrinnen-Anlage", pl: "Linia do korytek kablowych",
     ru: "Линия для кабельных лотков", fr: "Ligne pour chemins de câbles", pt: "Linha para eletrocalhas",
+    ar: "خط مجاري الكابلات",
   },
   "solar-profil": {
     tr: "Solar profil hattı", en: "Solar profile line", es: "Línea para perfiles solares",
     it: "Linea per profili fotovoltaici", de: "Solarprofil-Anlage", pl: "Linia do profili fotowoltaicznych",
     ru: "Линия для солнечных профилей", fr: "Ligne pour profilés solaires", pt: "Linha para perfis solares",
+    ar: "خط البروفيلات الشمسية",
   },
   "agir-raf": {
     tr: "Raf hattı", en: "Storage rack line", es: "Línea para estanterías", it: "Linea per scaffalature",
     de: "Regalanlage", pl: "Linia do regałów", ru: "Стеллажная линия", fr: "Ligne pour rayonnages",
     pt: "Linha para porta-paletes",
+    ar: "خط الرفوف الثقيلة",
   },
   "iskele-kalas": {
     tr: "İskele kalası hattı", en: "Scaffolding plank line", es: "Línea para plataformas de andamio",
     it: "Linea per tavole da ponteggio", de: "Gerüstbohlen-Anlage", pl: "Linia do podestów rusztowaniowych",
     ru: "Линия для настилов лесов", fr: "Ligne pour planchers d'échafaudage", pt: "Linha para pranchas de andaime",
+    ar: "خط ألواح السقالات",
   },
   "yol-bariyeri": {
     tr: "Yol bariyeri hattı", en: "Guardrail line", es: "Línea para barreras viales", it: "Linea per guardrail",
     de: "Schutzplanken-Anlage", pl: "Linia do barier drogowych", ru: "Линия для дорожных ограждений",
     fr: "Ligne pour glissières de sécurité", pt: "Linha para defensas metálicas",
+    ar: "خط حواجز الطرق",
   },
   "gurultu-bariyeri": {
     tr: "Gürültü bariyeri hattı", en: "Noise barrier line", es: "Línea para barreras acústicas",
     it: "Linea per barriere antirumore", de: "Lärmschutzwand-Anlage", pl: "Linia do ekranów akustycznych",
     ru: "Линия для шумозащитных экранов", fr: "Ligne pour écrans acoustiques", pt: "Linha para barreiras acústicas",
+    ar: "خط الحواجز الصوتية",
   },
   "c-sigma-omega": {
     tr: "C / Sigma / Omega profil hattı", en: "C / Sigma / Omega profile line", es: "Línea de perfiles C / Sigma / Omega",
     it: "Linea per profili C / Sigma / Omega", de: "C-/Sigma-/Omega-Profilanlage", pl: "Linia do profili C / Sigma / Omega",
     ru: "Линия для C-/Sigma-/Omega-профилей", fr: "Ligne pour profilés C / Sigma / Oméga", pt: "Linha para perfis C / Sigma / Ômega",
+    ar: "خط مقاطع C / Sigma / Omega",
   },
   "dilme-hatlari": {
     tr: "Dilme hattı", en: "Slitting line", es: "Línea de corte longitudinal", it: "Linea di taglio longitudinale",
     de: "Längsteilanlage", pl: "Linia do cięcia wzdłużnego", ru: "Линия продольной резки", fr: "Ligne de refendage",
     pt: "Linha de corte longitudinal",
+    ar: "خط التشريح",
   },
   "boy-kesme-hatlari": {
     tr: "Boy kesme hattı", en: "Cut-to-length line", es: "Línea de corte transversal", it: "Linea di taglio trasversale",
     de: "Querteilanlage", pl: "Linia do cięcia poprzecznego", ru: "Линия поперечной резки", fr: "Ligne de coupe à longueur",
     pt: "Linha de corte transversal",
+    ar: "خط القص حسب الطول",
   },
   "rulo-acicilar": {
     tr: "Rulo açıcı", en: "Decoiler", es: "Desbobinador", it: "Svolgitore", de: "Abwickelhaspel", pl: "Rozwijarka",
     ru: "Разматыватель", fr: "Dérouleur", pt: "Desbobinador",
+    ar: "فرّادة اللفائف",
   },
   "servo-suruculer": {
     tr: "Servo sürücü", en: "Servo feeder", es: "Alimentador servo", it: "Alimentatore servo", de: "Servo-Walzenvorschub",
     pl: "Podajnik walcowy servo", ru: "Сервоподатчик", fr: "Amenage servo", pt: "Alimentador servo",
+    ar: "مغذّي السيرفو",
   },
   "dogrultmali-servo-suruculer": {
     tr: "Doğrultmalı servo sürücü", en: "Straightener servo feeder", es: "Alimentador servo con enderezadora",
     it: "Alimentatore servo con raddrizzatrice", de: "Servo-Richtvorschub", pl: "Podajnik servo z prostownicą",
     ru: "Сервоподатчик с правильной машиной", fr: "Amenage-redresseur servo", pt: "Alimentador servo com endireitadeira",
+    ar: "مغذّي السيرفو بالتقويم",
   },
   "kompakt-hatlar": {
     tr: "Kompakt hat", en: "Compact line", es: "Línea compacta", it: "Linea compatta", de: "Kompaktanlage",
     pl: "Linia kompaktowa", ru: "Компактная линия", fr: "Ligne compacte", pt: "Linha compacta",
+    ar: "خط مدمج",
   },
   "otomatik-istifleyici": {
     tr: "Otomatik istifleyici", en: "Automatic stacker", es: "Apilador automático", it: "Impilatore automatico",
     de: "Automatischer Stapler", pl: "Automatyczny układacz", ru: "Автоматический штабелёр", fr: "Empileur automatique",
     pt: "Empilhador automático",
+    ar: "مكدّس آلي",
   },
   "tesis-uretim": {
     tr: "İstanbul'daki fabrikamız", en: "Our factory in Istanbul", es: "Nuestra fábrica en Estambul",
     it: "Il nostro stabilimento a Istanbul", de: "Unser Werk in Istanbul", pl: "Nasz zakład w Stambule",
     ru: "Наш завод в Стамбуле", fr: "Notre usine à Istanbul", pt: "Nossa fábrica em Istambul",
+    ar: "مصنعنا في إسطنبول",
   },
 };
 
@@ -198,13 +213,15 @@ function dugme(href: string, yazi: string): string {
 }
 
 function urunSeridi(href: string, yazi: string, kampanya: string, dil: string, kaynak: GorselKaynagi): string {
+  /* Sağdan sola dilde ok da sola bakar */
+  const ok = dil === "ar" ? "&larr;" : "&rarr;";
   const gorseller = KAMPANYA_GORSELLERI[kampanya].flatMap((slug) => {
     const src = kaynak(slug);
     return src ? [{ src, ad: kacir(altYazi(slug, dil)) }] : [];
   });
   const baglanti =
     `<p style="margin:${gorseller.length ? 8 : 0}px 0 16px">` +
-    `<a href="${href}" style="color:${VURGU_KOYU};font-weight:bold;text-decoration:none">${yazi}&nbsp;&rarr;</a></p>`;
+    `<a href="${href}" style="color:${VURGU_KOYU};font-weight:bold;text-decoration:none">${yazi}&nbsp;${ok}</a></p>`;
   if (!gorseller.length) return baglanti;
   const n = gorseller.length;
   /* 8 px aralık hücrelere EŞİT paylaştırılır (sol + sağ ≈ aynı): hepsi aynı genişlikte kalsın */
@@ -228,11 +245,16 @@ function urunSeridi(href: string, yazi: string, kampanya: string, dil: string, k
 /**
  * Alıcının gördüğü tam sayfa: gövde (editörden temizlenmiş ya da düz metinden
  * üretilmiş HTML) + süsler + imza logosu + gri altbilgi (hazır HTML).
+ *
+ * Arapça sağdan sola: sayfa ve kutu dir="rtl", metin sağa yaslı; alıntı çizgisi
+ * ve liste girintisi sağda. Tablo sütunları (fotoğraf şeridi) dir'e uyar.
  */
 export function epostaSayfasi(
   govdeHtml: string,
   s: { dil: string; altbilgiHtml: string; kaynak: GorselKaynagi }
 ): string {
+  const rtl = s.dil === "ar";
+  const yan = rtl ? "right" : "left";
   const govde = govdeHtml
     .replace(YALNIZ_BAGLANTI, (tum, href: string, yazi: string) => {
       const t = baglantiTuru(href);
@@ -240,14 +262,17 @@ export function epostaSayfasi(
       return t.tur === "dugme" ? dugme(href, yazi) : urunSeridi(href, yazi, t.kampanya, s.dil, s.kaynak);
     })
     .replace(/<p>/g, '<p style="margin:0 0 14px">')
-    .replace(/<blockquote>/g, '<blockquote style="margin:0 0 14px;padding-left:12px;border-left:3px solid #ddd;color:#555">')
-    .replace(/<(ul|ol)>/g, '<$1 style="margin:0 0 14px;padding-left:22px">');
+    .replace(
+      /<blockquote>/g,
+      `<blockquote style="margin:0 0 14px;padding-${yan}:12px;border-${yan}:3px solid #ddd;color:#555">`
+    )
+    .replace(/<(ul|ol)>/g, `<$1 style="margin:0 0 14px;padding-${yan}:22px">`);
   const logo = s.kaynak("logo");
   return (
-    `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
+    `<!doctype html><html${rtl ? ' lang="ar" dir="rtl"' : ""}><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
     `<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"></head>` +
     `<body style="margin:0;padding:0;background-color:#ffffff">` +
-    `<div style="max-width:600px;padding:16px 4px 8px;border-top:3px solid ${VURGU};font-family:${YAZI_TIPI};font-size:15px;line-height:1.55;color:#222">` +
+    `<div${rtl ? ' dir="rtl"' : ""} style="max-width:600px;padding:16px 4px 8px;border-top:3px solid ${VURGU};font-family:${YAZI_TIPI};font-size:15px;line-height:1.55;color:#222${rtl ? ";text-align:right" : ""}">` +
     govde +
     (logo
       ? `<div style="margin:6px 0 0"><img src="${logo}" width="${LOGO_GENISLIK}" height="${LOGO_YUKSEKLIK}" alt="Servosteel" ` +

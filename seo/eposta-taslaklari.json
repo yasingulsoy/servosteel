@@ -1,5 +1,5 @@
 {
-  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metninden. ARALIK RAKAMI YAZILMAZ (Yasin 2026-09-21: 'araliklar hakkinda genis davran'): dar aralik ihtiyaci disinda kalan aliciyi ilk cumlede eler; yerine 'profilinize, kalinliginiza, kapasitenize gore boyutlandirilir' — sitede de 'hat projeye ozel boyutlandirilir' yaziyor. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. alcipan: firma alcipan HATTI uretmiyor (katalog, kullanici 2026-09-21); o firmalara katalogdaki rulo acici + dogrultmali servo surucu teklif edilir, kaniti firmanin kendi videosu «Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri» (YouTube EQ54wWjqJHM, 2017). Yeni segmentlerin dayanagi (2026-09-21): iskele, gurultu, asik = firmanin 22 Temmuz 7 roll form hatti listesi + muhendisin 21 Agustos tablo onayi; market-rafi = katalog s.36 + firma videosu; havalandirma = firma videosu «Havalandırma Ekipmanları / Servo Sürücü Ve Rulo Sac Açma Sistemleri»; mobilya = sitedeki metal mobilya sektor sayfasi. {firma} {cumle} {ek} {link} {liste} yer tutuculardir. 2026-09-21 govde surumu: firmanin kendi tanitim e-postasindan (Elizaveta Shpelevaya, kullanici paylasti) alinanlar: kurulum + devreye alma + operator egitimi FIYATA DAHIL, mevcut hat modernizasyonu, 'dogru kisiye iletir misiniz' ricasi. IMZA 2026-09-22'den beri kisi degil EKIP imzasi (Yasin: 'Elizaveta Shpelevaya olmayacak, Servosteel Ekibi / Pazarlama ekibi yaz'): 'Pazarlama Ekibi' + 'Servosteel · telefon'; metin 'ben' degil 'biz' agzindan (it/pl/ru/fr'deki disil tekil bicimler de gitti). 'On yili askin' = hakkimizda ('for more than a decade'); 'hatlarimiz 48+ ulkede calisiyor' = hakkimizda/footer; tesiste kurulum, devreye alma, operator egitimi = ana sayfa surec adimlari. {form} = teklif formu (utm_term=teklif-formu); kullanici istegi: e-posta teklif formuna ya da yanitlamaya davet etsin. 2026-09-22 (Yasin: 'linkleri kisaltip tiklama seklinde, makine gorselleri ufaltip koy, maili susle'): baglantilar [yazi](adres) — e-postada adres gorunmez; tek basina duran [..]({form}) turuncu dugme, segment cumlesinin altindaki [..]({link}) o segmentin 2-3 kucuk makine fotografi olur (src/lib/eposta-sablon.ts); duz metin parcasinda 'yazi (adres)'. Katalog/Drive baglantisi ILK e-postaya konmaz (dosya paylasim baglantisi spam/oltalama isareti); isteyene yanitta gonderilir.",
+  "_aciklama": "Hedef firma e-postalarinin kaynagi. scripts/hedef-firma-excel.py bunu okur, her firmaya dilinde ve segmentinde hazir e-posta yazar. Iddialarin HEPSI sitede yaziyor: 48+ ulke (hakkimizda/footer), 48 saatte donus + hat yerlesimi ve teknik teklif (teklif-al), segment cumleleri urun sayfalarinin hero metninden. ARALIK RAKAMI YAZILMAZ (Yasin 2026-09-21: 'araliklar hakkinda genis davran'): dar aralik ihtiyaci disinda kalan aliciyi ilk cumlede eler; yerine 'profilinize, kalinliginiza, kapasitenize gore boyutlandirilir' — sitede de 'hat projeye ozel boyutlandirilir' yaziyor. Fiyat, teslim suresi, referans YAZILMAZ — sitede yok. alcipan: firma alcipan HATTI uretmiyor (katalog, kullanici 2026-09-21); o firmalara katalogdaki rulo acici + dogrultmali servo surucu teklif edilir, kaniti firmanin kendi videosu «Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri» (YouTube EQ54wWjqJHM, 2017). Yeni segmentlerin dayanagi (2026-09-21): iskele, gurultu, asik = firmanin 22 Temmuz 7 roll form hatti listesi + muhendisin 21 Agustos tablo onayi; market-rafi = katalog s.36 + firma videosu; havalandirma = firma videosu «Havalandırma Ekipmanları / Servo Sürücü Ve Rulo Sac Açma Sistemleri»; mobilya = sitedeki metal mobilya sektor sayfasi. {firma} {cumle} {ek} {link} {liste} yer tutuculardir. 2026-09-21 govde surumu: firmanin kendi tanitim e-postasindan (Elizaveta Shpelevaya, kullanici paylasti) alinanlar: kurulum + devreye alma + operator egitimi FIYATA DAHIL, mevcut hat modernizasyonu, 'dogru kisiye iletir misiniz' ricasi. IMZA 2026-09-22'den beri kisi degil EKIP imzasi (Yasin: 'Elizaveta Shpelevaya olmayacak, Servosteel Ekibi / Pazarlama ekibi yaz'): 'Pazarlama Ekibi' + 'Servosteel · telefon'; metin 'ben' degil 'biz' agzindan (it/pl/ru/fr'deki disil tekil bicimler de gitti). 'On yili askin' = hakkimizda ('for more than a decade'); 'hatlarimiz 48+ ulkede calisiyor' = hakkimizda/footer; tesiste kurulum, devreye alma, operator egitimi = ana sayfa surec adimlari. {form} = teklif formu (utm_term=teklif-formu); kullanici istegi: e-posta teklif formuna ya da yanitlamaya davet etsin. 2026-09-22 (Yasin: 'linkleri kisaltip tiklama seklinde, makine gorselleri ufaltip koy, maili susle'): baglantilar [yazi](adres) — e-postada adres gorunmez; tek basina duran [..]({form}) turuncu dugme, segment cumlesinin altindaki [..]({link}) o segmentin 2-3 kucuk makine fotografi olur (src/lib/eposta-sablon.ts); duz metin parcasinda 'yazi (adres)'. Katalog/Drive baglantisi ILK e-postaya konmaz (dosya paylasim baglantisi spam/oltalama isareti); isteyene yanitta gonderilir. ar (2026-09-28, Yasin 'yapalim'): YALNIZ Arapca kesif turunun (bolge-kesif-*-j.md) firmalarina — o firmalarin sitesi Arapca; daha once Ingilizce yazilmis Arap ulkesi firmalari Ingilizce kalir (hatirlatma ilk mektubun dilinde gitsin). Baglantilar /ar/ sayfalarina. Terimler sitenin ar.json'undan (مجموعات الأسطوانات, التخريم, المقوّم, فرّادات اللفائف). 'virgul' + 've': Arapca liste 'A، B وC'. Imza satiri 'Servosteel' ile basliyor: sagdan sola metinde telefon numarasinin gruplari ters donmez (Unicode bidi W7), gorunmez yon isareti gerekmedi.",
   "en": {
     "konu2": "Following up: {ad}",
     "govde2": "{selam}\n\nA few weeks ago we wrote to you about {ad} and have not heard back. It may simply not have reached the right desk.\n\nWhether or not you ever buy a line from us, there is one thing on our website you may find useful: a metal weight calculator. It gives coil weight from the dimensions and coil length from the weight, for steel, stainless steel, aluminium and copper.\n\n[Open the calculator]({hesap})\n\nIf a new line, more capacity or an upgrade is on your list, send us a profile drawing or the capacity you need. Our engineers reply within 48 hours with a line layout and a technical offer — installation, commissioning and operator training are included in the price.\n\n[Request a quote]({form})\n\nIf none of this is relevant for {firma}, reply with a single \"no\" and we will not write again.\n\nBest regards,\nMarketing Team\nServosteel · +90 216 415 30 05",
@@ -423,6 +423,87 @@
         "konu": "Alimentação de bobinas para fabricação de móveis de aço — Servosteel, Istambul",
         "ad": "alimentadores servo e linhas compactas",
         "cumle": "Fabricamos alimentadores servo, linhas compactas e desbobinadores que alimentam suas prensas em passos precisos; no móvel a peça fica à vista, por isso os preparamos para dimensões constantes e uma superfície intacta."
+      }
+    }
+  },
+  "ar": {
+    "konu2": "متابعة: {ad}",
+    "govde2": "{selam}\n\nكتبنا إليكم قبل بضعة أسابيع بخصوص {ad} ولم يصلنا ردٌّ منكم، وربما لم تصل رسالتنا ببساطة إلى الشخص المعني.\n\nوسواء اشتريتم منّا خطًّا يومًا ما أم لا، ففي موقعنا أداة قد تفيدكم: حاسبة أوزان المعادن. تحسب وزن اللفيفة من أبعادها، وطول اللفيفة من وزنها، للصلب والفولاذ المقاوم للصدأ والألومنيوم والنحاس.\n\n[افتحوا الحاسبة]({hesap})\n\nوإن كان في خططكم خط جديد أو زيادة في الطاقة الإنتاجية أو تحديث لخط قائم، فأرسلوا إلينا رسم المقطع أو الطاقة الإنتاجية المطلوبة. يردّ مهندسونا خلال 48 ساعة بمخطط للخط وعرض فني؛ والتركيب والتشغيل وتدريب المشغّلين مشمولة في السعر.\n\n[اطلبوا عرض سعر]({form})\n\nوإن لم يكن شيء من هذا يخص {firma}، فيكفي أن تردّوا بكلمة واحدة «لا» ولن نراسلكم مرة أخرى.\n\nمع أطيب التحيات،\nفريق التسويق\nServosteel · +90 216 415 30 05",
+    "selam": "إلى فريق {firma} المحترم،",
+    "govde": "{selam}\n\nنكتب إليكم من شركة Servosteel في إسطنبول. منذ أكثر من عشر سنوات نصمّم ونصنّع خطوط معالجة اللفائف وخطوط التشكيل بالدرفلة، وتعمل خطوطنا اليوم في أكثر من 48 دولة.\n\n{cumle}{ek}\n\n[اطّلعوا على التفاصيل في موقعنا]({link})\n\nيُجمَّع كل خط ويُختبر في مصنعنا قبل الشحن، ثم يتولّى مهندسونا تركيبه وتشغيله في مصنعكم وتدريب المشغّلين لديكم؛ والتركيب والتشغيل والتدريب مشمولة في السعر. كما نقوم بتحديث الخطوط القائمة.\n\nهل تخطّطون لخط جديد أو لزيادة الطاقة الإنتاجية أو لتحديث خط قائم؟ يمكنكم طلب عرض سعر في دقيقتين:\n\n[اطلبوا عرض سعر]({form})\n\nأو ردّوا ببساطة على هذه الرسالة مرفقين رسم المقطع أو الطاقة الإنتاجية المطلوبة، وسيردّ فريقنا الهندسي خلال 48 ساعة بمخطط للخط وعرض فني.\n\nوإن كان شخص آخر في {firma} يتولّى هذا الأمر، فسنكون ممتنّين لو تفضّلتم بتحويل هذه الرسالة إلى مدير الإنتاج أو المدير الهندسي لديكم.\n\nمع أطيب التحيات،\nفريق التسويق\nServosteel · +90 216 415 30 05",
+    "ek": " كما نصنع {liste}.",
+    "ve": " و",
+    "virgul": "، ",
+    "segment": {
+      "kablo-kanali": {
+        "konu": "خطوط تشكيل مجاري الكابلات — Servosteel، إسطنبول",
+        "ad": "خطوط مجاري الكابلات",
+        "cumle": "نصنع خطوطًا متكاملة لمجاري الكابلات: الفرّاد والمقوّم ومغذّي السيرفو والتخريم والتشكيل بالدرفلة والقص، تُدار كلها بوحدة PLC واحدة، ويُصمَّم كل خط وفق مقاطع مجاري الكابلات لديكم وسماكة الصاج والطاقة الإنتاجية المطلوبة."
+      },
+      "solar-profil": {
+        "konu": "خطوط بروفيلات هياكل الطاقة الشمسية — Servosteel، إسطنبول",
+        "ad": "خطوط البروفيلات الشمسية",
+        "cumle": "نصنع خطوطًا تنتج مقاطع C وHat وOmega لهياكل تثبيت الألواح الشمسية مباشرةً من اللفيفة، مع تخريم فتحات التثبيت على الخط نفسه."
+      },
+      "raf": {
+        "konu": "خطوط قوائم الرفوف وعوارضها — Servosteel، إسطنبول",
+        "ad": "خطوط الرفوف",
+        "cumle": "نصنع خطوطًا لقوائم الرفوف الحاملة وعوارضها، تُخرَّم فيها فتحات التركيب المتعددة الصفوف على الخط بمخرِّمات سيرفو، ويُصمَّم كل خط وفق مقاطعكم وسماكة الصاج والطاقة الإنتاجية المطلوبة."
+      },
+      "yol-bariyeri": {
+        "konu": "خطوط تشكيل حواجز الطرق — Servosteel، إسطنبول",
+        "ad": "خطوط حواجز الطرق",
+        "cumle": "نصنع خطوطًا للخدمة الثقيلة تنتج مقاطع حواجز الطرق W-beam والثلاثية الموجات من الصاج المجلفن، ويُصمَّم كل خط وفق المواصفة والسماكة والطاقة الإنتاجية التي تحتاجونها."
+      },
+      "cati-panel": {
+        "konu": "خطوط الصفائح شبه المنحرفة والألواح — Servosteel، إسطنبول",
+        "ad": "خطوط صفائح الأسقف والألواح",
+        "cumle": "نصنع خطوطًا للصفائح شبه المنحرفة وأسقف الطيّة القائمة وألواح الواجهات، مصمَّمة للحفاظ على استواء الصفيحة العريضة وعلى سلامة السطح المدهون."
+      },
+      "celik-servis": {
+        "konu": "خطوط تشريح اللفائف والقص حسب الطول — Servosteel، إسطنبول",
+        "ad": "خطوط التشريح والقص حسب الطول",
+        "cumle": "نصنع خطوطًا متكاملة لتشريح اللفائف والقص حسب الطول: كل وحدة، من الفرّاد حتى جهاز إعادة اللف أو المكدّس، تُصنع في مصنعنا وتُختبر قبل الشحن وتُشغَّل في موقعكم."
+      },
+      "pres-atolyesi": {
+        "konu": "مغذّيات سيرفو لمكابسكم — Servosteel، إسطنبول",
+        "ad": "مغذّيات السيرفو للمكابس",
+        "cumle": "نصنع مغذّيات السيرفو ومغذّيات السيرفو بالتقويم وفرّادات اللفائف التي تغذّي مكابسكم بخطوات دقيقة، مع التزامن مع المكبس وإدارة الوصفات."
+      },
+      "alcipan": {
+        "konu": "فرّادات اللفائف ومغذّيات السيرفو بالتقويم لخطوط البروفيلات — Servosteel، إسطنبول",
+        "ad": "فرّادات اللفائف ومغذّيات السيرفو بالتقويم",
+        "cumle": "تعمل فرّادات اللفائف ومغذّيات السيرفو بالتقويم التي نصنعها بالفعل على خطوط بروفيلات الأسقف المعلّقة، فتغذّي الشريط إلى المكبس بخطوات دقيقة مع التزامن مع المكبس وإدارة الوصفات."
+      },
+      "asik": {
+        "konu": "خطوط مقاطع C وSigma وOmega — Servosteel، إسطنبول",
+        "ad": "خطوط مقاطع C / Sigma / Omega",
+        "cumle": "نصنع خطوطًا تنتج مقاطع C وSigma وOmega للإنشاءات الفولاذية الخفيفة على ماكينة واحدة، بمجموعات أسطوانات قابلة للضبط ونظام وصفات يجعل تغيير المقطع مسألة دقائق؛ ويُصمَّم كل خط وفق مقاطعكم وسماكتها والطاقة الإنتاجية المطلوبة."
+      },
+      "iskele": {
+        "konu": "خطوط تشكيل ألواح السقالات — Servosteel، إسطنبول",
+        "ad": "خطوط ألواح السقالات",
+        "cumle": "نصنع خطوطًا لألواح السقالات الفولاذية، تُشكَّل فيها نقوش السطح المانعة للانزلاق وفتحات التصريف على الخط، مع محطة مكبس اختيارية لأطراف الخطاطيف."
+      },
+      "market-rafi": {
+        "konu": "خطوط بروفيلات رفوف المتاجر — Servosteel، إسطنبول",
+        "ad": "خطوط رفوف المتاجر",
+        "cumle": "نصنع خطوطًا لبروفيلات رفوف المتاجر والسوبر ماركت، يُخرَّم فيها نمط الفتحات على الخط ويبقى السطح سليمًا، لأن هذه القطع تظل ظاهرة للعين."
+      },
+      "gurultu": {
+        "konu": "خطوط ألواح الحواجز الصوتية — Servosteel، إسطنبول",
+        "ad": "خطوط الحواجز الصوتية",
+        "cumle": "نصنع خطوطًا لبروفيلات الكاسيت الفولاذية والألومنيوم للحواجز الصوتية على الطرق السريعة والسكك الحديدية، ويمكن إنتاج الألواح الأمامية المثقّبة والألواح الخلفية المصمتة على الخط نفسه."
+      },
+      "havalandirma": {
+        "konu": "تغذية اللفائف لخطوط مجاري الهواء والتهوية — Servosteel، إسطنبول",
+        "ad": "خطوط تغذية اللفائف المدمجة",
+        "cumle": "تجمع خطوطنا المدمجة بين فرد اللفائف والتقويم والتغذية بالسيرفو على منصّة واحدة، وتعمل مغذّياتنا وفرّاداتنا بالفعل لدى منتجي معدات التهوية."
+      },
+      "mobilya": {
+        "konu": "تغذية اللفائف لإنتاج الأثاث المعدني — Servosteel، إسطنبول",
+        "ad": "مغذّيات السيرفو والخطوط المدمجة",
+        "cumle": "نصنع مغذّيات السيرفو والخطوط المدمجة وفرّادات اللفائف التي تغذّي مكابسكم بخطوات دقيقة؛ وفي الأثاث تبقى القطعة ظاهرة، لذلك نضبطها لأبعاد ثابتة وسطح سليم."
       }
     }
   }

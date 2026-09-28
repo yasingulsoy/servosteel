@@ -115,7 +115,20 @@ t("altbilgi HTML: abonelik baglantisi tiklanir yazi, satirlar kacirilir", () => 
   assert.ok(K.altbilgiHtml("hu", "U", "A", "B").includes(">Unsubscribe</a>"));
 });
 
-const DILLER = ["tr", "en", "es", "it", "de", "pl", "ru", "fr", "pt"];
+const DILLER = ["tr", "en", "es", "it", "de", "pl", "ru", "fr", "pt", "ar"];
+
+t("arapca e-posta sagdan sola: sayfa, kutu, ok yonu, alinti cizgisi", () => {
+  const ar = S.epostaSayfasi(B.metindenHtml(`نص\n\n[التفاصيل](${URUN})`), { dil: "ar", altbilgiHtml: "ALT", kaynak });
+  assert.ok(ar.startsWith('<!doctype html><html lang="ar" dir="rtl">'));
+  assert.ok(ar.includes('<div dir="rtl" style="') && ar.includes(";text-align:right\">"));
+  assert.ok(ar.includes("التفاصيل&nbsp;&larr;</a>") && !ar.includes("&rarr;"));
+  /* Alinti ve liste panel editorunun HTML'inden gelir: cizgi ve girinti sagda */
+  const editor = S.epostaSayfasi("<p>نص</p><blockquote>اقتباس</blockquote><ul><li>بند</li></ul>", { dil: "ar", altbilgiHtml: "", kaynak });
+  assert.ok(editor.includes("padding-right:12px;border-right:3px solid #ddd") && !editor.includes("border-left"));
+  assert.ok(editor.includes('<ul style="margin:0 0 14px;padding-right:22px">'));
+  const en = S.epostaSayfasi(B.metindenHtml(`x\n\n[y](${URUN})`), { dil: "en", altbilgiHtml: "", kaynak });
+  assert.ok(en.startsWith("<!doctype html><html><head>") && !en.includes('dir="rtl"') && en.includes("&rarr;"));
+});
 const sablon = JSON.parse(fs.readFileSync(new URL("../seo/eposta-taslaklari.json", import.meta.url), "utf8"));
 
 t("her segmentin fotograflari var, dosyalari var, 9 dilde alt yazisi var", () => {
