@@ -458,6 +458,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | E | 103 ülke × çelik servis merkezi + pres atölyesi, segment başına 2 arama | 412 | 0,49 $ | 206 |
 | G | Afrika + Orta Doğu'nun hiç aranmamış 75 sanayi şehri × 12 segment (28 Eyl) | 900 | 1,08 $ | 79 (186'dan, elle) |
 | H | b'nin 19 Afrika ülkesi + Lübnan, eş anlamlı arama (28 Eyl) | 240 | 0,29 $ | 14 (26'dan, elle) |
+| I | 42 Afrika ülkesi (9'u ilk kez), alıcının kendi terimiyle: tôle bac, charpente métallique, mabati, IBR, long span, madres (28 Eyl) | 208 | 0,25 $ | 35 (50'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -471,6 +472,30 @@ KİRALAMA hizmeti, "Egypt market"e satan Çinli ihracatçı. Hepsi elle elendi, 
 adları dosyanın "Elenenler" bölümünde (sonraki tur atlar), tekrar edenler
 `KARA_LISTE`'de. **Kural: şehir turundan sonra satırları elle gözden geçirmeden
 aktarma.** 93 satırdan 83 yeni firma panele girdi (24 ülke, en/fr).
+
+**I turu — yerel terim (2026-09-28, Yasin "firma araştırmasına devam et"):** 888
+gönderimde bölge karnesi: Afrika'da kişi tıklaması %3,0 (165'te 5) ve iki teklif
+talebi; Güneydoğu Asya %1,5, Latin Amerika %0,6. Dil karnesi: Fransızca %3,7, ama
+Fildişi Sahili ve Senegal'de sırada hiç firma kalmamıştı. Önceki turlar "roofing sheet
+manufacturer" gibi genel terimle aradı; I turu alıcının yazdığı terimle aradı:
+Fransızca Afrika'da tôle bac alu zinc, charpente métallique, faux plafond; Doğu
+Afrika'da mabati, iron sheets; Güney Afrika'da IBR, roll formers, lipped channel;
+Nijerya ve Gana'da long span; Angola ve Mozambik'te madres. Çelik yapı yüklenicileri
+de arandı, çünkü PAL CHARPENTIER (teklif talebi) böyle bir firma. Sorgu takımı
+bölgeye göre (`"en:dogu"` gibi dil anahtarı). 50 satırın 15'i elle elendi:
+- pazar yeri ve rehber (ConstructionHub, BeReady.mu, Tunus ticaret portalı);
+- gazete ve ihale sitesi;
+- petrol-gaz / madencilik hizmet firması (Marconi, REED, Sierra, Epoxy Oliserv);
+- satıcı;
+- aynı firmanın ikinci sitesi.
+
+İlk kez girenler: Burkina Faso, Burundi, Liberya. **Yolda bulunan:** Gabon, Gine,
+Kongo, Nijer saat dilimi tablosunda yoktu; oradaki firmalara yerel saate bakılmadan
+yazılıyordu. Tabloya bu dördü ve keşfin bulabileceği bütün ülkeler eklendi
+(`d1792b1`, yayında geçerli).
+**Sıradaki aday:** Arapça arama (Mısır, Suudi, Irak, Cezayir). Mısır'dan iRack teklif
+istedi, ama Arapça siteler bugünkü süzgeçte "ürün kelimesi yok" diye düşüyor ve
+Arapça e-posta taslağı yok. İkisi birlikte yapılmalı.
 
 ```bash
 python scripts/hedef-firma-kesif.py --tur e --plan    # kaç arama, kaç $

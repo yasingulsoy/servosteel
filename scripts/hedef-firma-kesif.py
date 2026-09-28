@@ -512,6 +512,8 @@ KARA_LISTE = re.compile(
     # G/H turu elle gozden gecirmesinden (2026-09-28): sehir aramasinda cikan rehber, harita, yazilim
     r"annuaire|yango|productfinder|businessghana|kenyans\.co|slideserve|odoo\.|eyeofriyadh|listgcc|"
     r"cardify|zimbabwhere|thinklocal|dubaiexporters|pharmaexpo|turkishmarketer|youmats|toolz\.ng|"
+    # I turu elle gozden gecirmesinden (2026-09-28): pazar yeri, ihale, kamu ticaret portali, gazete
+    r"constructionhub|beready\.mu|dztenders|iway-tn|tunisieindustrie|times\.co\.sz|"
     r"framecad)", re.I)   # framecad: LGS roll form makinesi ureticisi (rakip)
 
 # Rakip: makine uretenler (baslik/ozette)
