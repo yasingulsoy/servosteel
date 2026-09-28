@@ -9,8 +9,8 @@ import { htmldenMetin } from "@/lib/eposta-html";
 import { metindenHtml } from "@/lib/eposta-bicim";
 import {
   adresGoster,
-  cidTemizle,
   ekleriBul,
+  gorselIzleriniTemizle,
   kisaAd,
   referansZinciri,
   type Ek,
@@ -150,7 +150,7 @@ async function iletiyiCoz(istemci: ImapIstemci, uid: number): Promise<OkunanIlet
   );
   if (!m || !m.source) return null;
   const p = await simpleParser(m.source);
-  const govde = cidTemizle((p.text || (p.html ? htmldenMetin(p.html) : "")).replace(/\r\n?/g, "\n"));
+  const govde = gorselIzleriniTemizle((p.text || (p.html ? htmldenMetin(p.html) : "")).replace(/\r\n?/g, "\n"));
   const kimden = adresListesi(p.from);
   const yanitla = adresListesi(p.replyTo);
   const referanslar = Array.isArray(p.references) ? p.references.join(" ") : (p.references ?? "");

@@ -153,8 +153,16 @@ t("boyut, cid temizligi, indirme basligi", () => {
   assert.equal(P.boyutYaz(512), "512 B");
   assert.equal(P.boyutYaz(700_016), "684 KB");
   assert.equal(P.boyutYaz(2.5 * 1024 * 1024), "2,5 MB");
-  assert.equal(P.cidTemizle("Best regards,\n\n[cid:095aff34-da6d-49c1-8c61-3499c071355d]\n\n\nOsama"), "Best regards,\n\nOsama");
-  assert.equal(P.cidTemizle("logo [cid:image001.png@01DA2B3C.4D5E6F70] burada"), "logo  burada");
+  assert.equal(P.gorselIzleriniTemizle("Best regards,\n\n[cid:095aff34-da6d-49c1-8c61-3499c071355d]\n\n\nOsama"), "Best regards,\n\nOsama");
+  assert.equal(P.gorselIzleriniTemizle("logo [cid:image001.png@01DA2B3C.4D5E6F70] burada"), "logo  burada");
+  /* HTML'e gömülü görsel (Giffin, 27 Eylül): tek satırda ve satıra bölünmüş */
+  assert.equal(
+    P.gorselIzleriniTemizle("Stay connected\n\n[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABw+/=]\nLinkedIn\nlinkedin.com/company/x"),
+    "Stay connected\n\nLinkedIn\nlinkedin.com/company/x"
+  );
+  assert.equal(P.gorselIzleriniTemizle("a [data:image/jpeg;base64,AAAA\nBBBB==] b"), "a  b");
+  /* Köşeli parantezli olağan metin kalır */
+  assert.equal(P.gorselIzleriniTemizle("[data] sheet [see attached]"), "[data] sheet [see attached]");
   assert.equal(
     P.icerikYerlesimi("Kesit çizimi – raf dikmesi.pdf", false),
     "attachment; filename=\"Kesit cizimi _ raf dikmesi.pdf\"; filename*=UTF-8''Kesit%20%C3%A7izimi%20%E2%80%93%20raf%20dikmesi.pdf"

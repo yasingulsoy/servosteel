@@ -265,6 +265,19 @@ Dear Procurement Team,
   assert.match(s.sebep, /automated acknowledgement/i);
 });
 
+await t("gomulu gorsel izi yanit ozetine girmez", async () => {
+  const s = await sinifla(`From: Ali <ali@firma.example>
+To: ege@servosteel.com.tr
+Subject: RE: Rack upright and beam lines - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAADTUlEQVR42r2WTWhcVRTHf+feN+/NvFjTQLTQQC26qLhp3ejCLoLSVfGrJYIbBSFddiUKXTgku7oquHMWgm4kgtCA+xC6sLiwwQ9srYhCmxET2+TZefM+7j0uZpImZJLMNIkH3ubPffd37j3n/u8VJmYsX73lahfmzompfoC6U6gLAWFvoYjNEXtDffvj9NPxr5mYsQIQT859JNGhKXUFuJx9DRsitoJmSb3VGJ+W2uS110xUu6p5y6MeRMy+AlU9YpAwNj5LXzeIr6sr9UBg0JlTPepKRXw9EDiJywSRLTUzAkYEBZzXvUFdhsDJALC9x0Ar9/jcg4G4FuxLRXvOYgTywvPC04/z/LHHuN8qufr90r7scE+gNULedrz94pNcPDPGatsxe2MJr2AFtNP0aHcnRARU6WfXewJLr4S1gM+uLfLtb6ustktUOwezcIoqGCNUrNAuPEXpsFaoVSxedXCgKgRWuNVM+bWZbjjJcDgOCIzQLj3L93PGRqs8NVrlnwcFv9xtEUd2cGBghSQpuPTGcT48e4ybzRavXF4gSUu+mHyWl58b4fI3f7KcFDTeOwFAWngac4u8/+Vtwophu4Wa7c8rVCuWQ1XLcC0AAfVKHFlG4oB3XjpC/c3jfD6/yM93W9Qqhotnxjh7apRW6rBGBgMCOO3Uq3AP0y27NXzmiRrnPvmJd6/8yKtXfmApKfCqjJ8YRp1ua8Q7AmW9Cx9qXhURmL+1wne3Vxg5GvP7321uNlsYEWrhzjV8ZCtbTR0igvedBMo+ncg8ulux3hiDmN6uQO1T6xe8ew3ZXEORrdomfS9Ap51botzQpc7r+rdprOvquyxT4gvz2mtlXpWRoQojQwFFqdy5l+FVOTIcMRQZHmSev1ZyjIBXOHo4pBoaVlPHUpKvX2v9WRsdQ176t6DZnTQMDCLCnXsZziu266VrBv7HciehjXrf1rYWFSuE3Z/XOjIMBGGzBhBVeusDAVW3dl4vbSe9V9M4/r9wRmEBGymq/sAwqh4bqcKCQc2U2EAQw4FA156JNhDUTJm0cXpWs6QuYWwIov1/JgaRkTA2miX1tHF61jAxY1uN8WmfJ+dRriM2G9Aed3rqZyjXfZ6cbzXGp5mYsf8BXCqQ8wAeqgYAAAAASUVORK5CYII=]
+Hello, please send us an offer for the line.
+`);
+  assert.equal(s.tur, "yanit");
+  assert.equal(s.ozet, "Hello, please send us an offer for the line.");
+});
+
 await t("otomatik kelimesi gecen gercek yanit yanit kalir", async () => {
   const s = await sinifla(`From: Ahmed <ahmed@firma.example>
 To: ege@servosteel.com.tr

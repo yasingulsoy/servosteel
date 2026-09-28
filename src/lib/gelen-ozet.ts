@@ -27,7 +27,11 @@ export function gelenOzeti(p: ParsedMail): GelenOzet {
     kimden: (kimden?.address ?? "").toLowerCase(),
     kimdenAd: kimden?.name ?? "",
     konu: p.subject ?? "",
-    metin: p.text ?? "",
+    /* Gömülü görselin yer tutucusu ("[data:image/png;base64,…]", binlerce
+       harf) özete ve sınıflandırmaya girmesin — okuyucudaki temizlikle aynı
+       kalıp (posta-bicim GORSEL_IZI). Burada kopya: bu dosya Node testinde
+       doğrudan içe aktarılıyor, çalışma zamanı içe aktarması yok. */
+    metin: (p.text ?? "").replace(/\[(cid:[^\]\s]*|data:[a-z]+\/[a-z0-9.+-]+;base64,[a-z0-9+/=\s]*)\]/gi, ""),
     basliklar,
     raporlar,
   };

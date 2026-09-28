@@ -231,12 +231,19 @@ export function boyutYaz(bayt: number): string {
 }
 
 /**
- * Metindeki "[cid:…]" yer tutucuları siler — Outlook'un düz metin hâlinde
- * gömülü görselin yeri. Görseller okuyucuda ayrıca gösteriliyor.
+ * Metindeki gömülü görsel yer tutucularını siler. İki biçim var:
+ *  - "[cid:…]": Outlook'un düz metin hâlinde ekli görselin yeri. Ekli
+ *    görseller okuyucuda ayrıca gösteriliyor.
+ *  - "[data:image/png;base64,…]": görsel HTML'in İÇİNE gömülüyse düz metne
+ *    binlerce harflik bir dizi olarak geçiyor. Giffin'in 27 Eylül 2026
+ *    mailinde iki sosyal medya simgesi okuyucuyu harf yığınına çevirdi.
+ *    Yanıtta ve iletide alıntıya da giriyordu.
  */
-export function cidTemizle(metin: string): string {
+export const GORSEL_IZI = /\[(cid:[^\]\s]*|data:[a-z]+\/[a-z0-9.+-]+;base64,[a-z0-9+/=\s]*)\]/gi;
+
+export function gorselIzleriniTemizle(metin: string): string {
   return (metin ?? "")
-    .replace(/\[cid:[^\]\s]*\]/gi, "")
+    .replace(GORSEL_IZI, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
