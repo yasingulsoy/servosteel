@@ -1217,6 +1217,19 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.37 · Panel kutuya yazmaya başlayınca taramanın kör noktası açıldı
+(2026-09-28).** Gelen taraması yalnızca Gelen'e, son işlediği UID'den
+yenilere bakıyor. Panel ileti arşivleyip silebilir olunca şu yol açıldı:
+yanıt gelir, Yasin 10 dakikalık tarama aralığı içinde açıp arşivler, tarama
+iletiyi hiç görmez, firma "Gönderildi"de kalır ve ikinci tur ona da yazardı.
+Düzeltme: Gelen'den taşıyan her işlem (arşivle, sil, önemsiz, taşı) önce
+taramanın henüz görmediği iletileri (UID > son_uid) işler. Gelen'e geri
+dönen ileti yeni UID alır: Message-ID'sinden tanınır, kaydı yeni UID'ye geçer.
+Böylece yanıt iki kez sayılmaz, firmaya iki kez not düşmez. Yerelde denendi.
+**Açık:** Thunderbird'de (Liza) taranmadan taşınan ileti ve sunucunun
+doğrudan Önemsiz'e attığı yanıt hâlâ kaçabilir. **Kural: kutuya yazan her
+yeni özellikte "tarama görmeden ileti yer değiştirir mi?" diye sor.**
+
 **E.36 · Tıklamaların 71/77'si güvenlik tarayıcısıydı (2026-09-27).**
 Kurumsal alıcıların güvenlik tarayıcısı (Microsoft Defender, Mimecast,
 Proofpoint gibi) maili teslimde açıp içindeki bütün bağlantıları gerçek bir
@@ -1344,6 +1357,57 @@ sanayide WhatsApp'ın birinci kanal olduğu pazarlar. Günde ~30 oturumda
 kanal ızgarası hâlâ `md:grid-cols-3` (üçüncü kart WhatsApp'ındı), boş duruyor.
 Numara firmadan gelmeden **uydurulmayacak**; sabit hatta (216 415 30 05)
 WhatsApp Business hesabı yok.
+
+---
+
+## E-posta Outlook gibi: website@, talep iletme, klasörler, taslak (28 Eylül)
+
+Yasin: "burda website@ de eklememiz gerek ve outlook gibi mail aracının
+olması lazım, eksik ne varsa tamamla" — "talep geldi, iletmem lazım, onu
+yapamıyorum". `63171f4` (website@ + talep iletme) ve bu turun commit'leri.
+
+- **website@ panelde** (form kutusu, `SMTP_USER`): hesap listesinin sonunda
+  "FORM" etiketiyle; okunur, yazılır, iletilir. Tanıtım e-postası bu
+  kutudan GİTMEZ. Yeni ayar gerekmedi, şifre sunucuda vardı.
+- **Talebi ilet** (talep sayfasında "İlet"): özetle dolu e-posta, alıcı
+  info@ + yavuz@, gönderen website@. Gidince talebin notlarına "İletildi: …
+  — … kutusundan" düşer. Bu formda "Taslak kaydet" yok, çünkü taslaktan
+  gönderilince not düşmezdi.
+- **Klasörler**: kutunun bütün klasörleri okunmamış sayılarıyla: Gelen,
+  Taslaklar, Gönderilmiş, Arşiv, Önemsiz, Silinmiş, özel klasörler (alt
+  klasörler girintili). Liste dakikada bir kendiliğinden tazelenir.
+- **Açılan ileti okundu sayılır** (Outlook gibi). Önceden panel kutuya hiç
+  dokunmuyordu; artık dokunuyor, Liza da Thunderbird'de okunmuş görür.
+- **Araç çubuğu**: Yanıtla, Tümünü yanıtla (Reply-To + Kime + Bilgi,
+  kendimiz hariç), İlet, Okunmadı yap, Bayrakla, Arşivle, Önemsiz / Önemsiz
+  değil, Sil / Geri al, Taşı…. **Sil, Silinmiş'e taşır; kalıcı silme
+  panelde yok.** Arşiv, Önemsiz, Silinmiş ve Taslaklar kutuda yoksa ilk
+  kullanımda açılır. Gönderilmiş'teki kendi iletimize "Yanıtla" alıcıya gider
+  (takip maili için).
+- **Gizli (Bcc)**: yazma formunda "Gizli". Giden iletinin başlığında yok,
+  Gönderilmiş kopyasında var.
+- **Taslak**: "Taslak kaydet" kutunun Taslaklar klasörüne koyar
+  (Thunderbird da görür). Yeniden kaydedince eskisi silinir, ekler taslağın
+  içine girer. Taslaklar'da "Taslağı düzenle"; gönderince taslak kalkar.
+  Yanıt taslağı konuşma zincirini (In-Reply-To) korur; gidince asıl ileti
+  Message-ID'sinden bulunur ve "yanıtlandı" işaretlenir.
+- **Tüm hesaplarda arama** artık bütün klasörlerde (Önemsiz ve Silinmiş
+  hariç), yani arşivlenen yanıt da bulunur.
+- **Taşımadan önce tarama**: bkz. E.37.
+- Claude: `node scripts/posta.mjs liste <kutu> <klasör>` (çıktının başında
+  klasörler), `oku <kutu> <uid> <klasör>`.
+
+Yerel sahte IMAP/SMTP'de denendi:
+- klasörler ve sayılar; açınca okundu, okunmadı yap, bayrak;
+- arşivle (Arşiv'i olmayan kutuda klasör açıldı), sil, Silinmiş'ten geri al, önemsiz değil, özel klasöre taşı;
+- tümünü yanıtla; gizli alıcı (zarfta var, başlıkta yok, kopyada var);
+- taslak kaydet, yeniden kaydet (eskisi silindi), gönder (taslak kalktı);
+- Taslaklar'dan düzenleyip gönder (asıl ileti "yanıtlandı" oldu);
+- taranmamış yanıtı arşivle (firma "Yanıt geldi" oldu, tarama ilerlemedi); arşivden geri al (tek kayıt, tek not);
+- tüm hesaplarda arama; telefon görünümü.
+
+**Açık:** sunucunun Önemsiz'e attığı yanıtı tarama görmüyor. Panelde artık
+Önemsiz görünüyor; oradan "Önemsiz değil" denirse Gelen'e döner ve taranır.
 
 ---
 
@@ -1498,7 +1562,8 @@ Yasin: "sen kolaylık kısmını yap".
 
 - **E-postada arama** (`/admin/eposta`, listenin üstü): kişi, adres, konu ya
   da metin. Varsayılan o kutunun o klasörü; **"Tüm hesaplarda"** işaretlenince
-  dört kutunun Gelen + Gönderilmiş'i birlikte, en yeni 60 sonuç (fazlası
+  bütün kutuların bütün klasörleri (28 Eylül'den beri; Önemsiz ve Silinmiş
+  hariç), en yeni 60 sonuç (fazlası
   varsa uyarı). Aramayı IMAP sunucusu yapar (Türkçe/İspanyolca karakter
   doğru gider). Sonuçtan açılan ileti kendi kutusu ve klasörüyle açılır,
   yanıtla/ilet çalışır. Claude için: `node scripts/posta.mjs ara <metin>`,

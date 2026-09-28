@@ -32,7 +32,7 @@ const EN_COK_BAYT = 20 * 1024 * 1024;
 
 export type Iletilen = { kutu: string; klasor: string; uid: number; ekler: Ek[] };
 type TaslakYeri = { kutu: string; uid: number };
-type Cevap = { tamam: boolean; mesaj: string; taslak?: (TaslakYeri & { ekler: Ek[] }) | null };
+type Cevap = { tamam: boolean; mesaj: string; uyari?: boolean; taslak?: (TaslakYeri & { ekler: Ek[] }) | null };
 
 export function YazmaFormu({
   kutular,
@@ -131,9 +131,15 @@ export function YazmaFormu({
         }
         if (ne === "gonder") {
           setSonuc({ tamam: j.tamam, mesaj: j.mesaj });
-          /* Taslaktan gönderildiyse taslak artık yok: sayfa tazelenirse bu
-             form kalkar ve "gönderildi" yazısı kaybolur — tazelenmez. */
-          if (j.tamam && !acilanTaslak) router.refresh();
+          if (!j.tamam) return;
+          if (!acilanTaslak) {
+            router.refresh();
+          } else if (!j.uyari) {
+            /* Taslaktan gönderildi: taslak artık yok, adres onu gösteriyor —
+               Taslaklar'a dönülür, sağda "gönderildi" yazar. Kopya
+               Gönderilmiş'e konamadıysa uyarı okunsun diye form yerinde kalır. */
+            router.replace(`/admin/eposta?${new URLSearchParams({ kutu: taslak?.kutu ?? gonderen, klasor: "taslak", gonderildi: gonderen })}`);
+          }
           return;
         }
         setSonuc({ tamam: j.tamam, mesaj: j.mesaj, taslak: true });

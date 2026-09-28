@@ -10,15 +10,17 @@
  *
  *   node scripts/posta.mjs kutular
  *   node scripts/posta.mjs yanitlar [adet]
- *   node scripts/posta.mjs ara <metin> [--adet 60]          (bütün kutular, Gelen + Gönderilmiş)
- *   node scripts/posta.mjs liste <kutu> [gelen|giden] [sayfa] [--ara "metin"]
- *   node scripts/posta.mjs oku <kutu> <uid> [gelen|giden]
+ *   node scripts/posta.mjs ara <metin> [--adet 60]          (bütün kutular, Önemsiz ve Silinmiş dışında bütün klasörler)
+ *   node scripts/posta.mjs liste <kutu> [klasör] [sayfa] [--ara "metin"]
+ *   node scripts/posta.mjs oku <kutu> <uid> [klasör]
  *   node scripts/posta.mjs ek <kutu> <uid> <parça> [--klasor giden] [--dosya yol]   (eki diske indirir)
  *   node scripts/posta.mjs yanitla <kutu> <uid> --metin-dosya yanit.txt [--bilgi a@b.com] [--alintisiz]
  *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt
  *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden] [--eksiz]
  *
  * <kutu>: "ege" ya da "ege@servosteel.com.tr".
+ * [klasör]: gelen (varsayılan), giden, taslak, arsiv, onemsiz, cop ya da özel
+ * klasörün yolu ("Musteriler") — "liste" çıktısının başında kutunun klasörleri yazar.
  * Metin: --metin "…" ya da --metin-dosya <dosya> (UTF-8). İmza sunucuda
  * eklenir (panelle aynı); istemezseniz --imzasiz.
  *
@@ -190,9 +192,12 @@ async function calis() {
       if (y.ozet) console.log(`   ${y.ozet.replace(/\s+/g, " ").slice(0, 160)}`);
     }
   } else if (islem === "liste") {
-    const ad = v.klasor === "giden" ? "Gönderilmiş" : "Gelen";
-    console.log(`${v.kutu} · ${ad} · ${v.toplam} ileti · sayfa ${v.sayfa}/${v.sayfaSayisi}\n`);
-    if (v.klasorYolu === null) console.log("(Bu kutuda Gönderilmiş klasörü yok — ilk gönderimde oluşturulur.)");
+    const ad = (v.klasorler ?? []).find((k) => k.anahtar === v.klasor)?.ad ?? v.klasor;
+    console.log(`${v.kutu} · ${ad} · ${v.toplam} ileti · sayfa ${v.sayfa}/${v.sayfaSayisi}`);
+    const klasorYazisi = (v.klasorler ?? []).map((k) => `${k.anahtar}${k.okunmamis ? ` (${k.okunmamis})` : ""}`);
+    if (klasorYazisi.length) console.log(`Klasörler: ${klasorYazisi.join(" · ")}`);
+    console.log("");
+    if (v.klasorYolu === null) console.log("(Bu klasör kutuda yok — Gönderilmiş ve Taslaklar ilk kullanımda açılır.)");
     for (const m of v.iletiler) satirYaz(m);
     if (v.sayfa < v.sayfaSayisi) {
       const ara = govde.ara ? ` --ara "${govde.ara}"` : "";
@@ -203,9 +208,9 @@ async function calis() {
     console.log(`"${v.ara}" · ${v.toplam} sonuç${kesildi}\n`);
     for (const h of v.hatalar) console.log(`(aranamadı — ${h})`);
     for (const m of v.iletiler) {
-      satirYaz(m, `${`${m.kutu.split("@")[0]}·${m.klasor === "giden" ? "gönd" : "gelen"}`.padEnd(14)} `);
+      satirYaz(m, `${`${m.kutu.split("@")[0]}·${m.klasor === "giden" ? "gönd" : m.klasor}`.padEnd(14)} `);
     }
-    if (v.iletiler.length) console.log("\nOkumak için: node scripts/posta.mjs oku <kutu> <uid> [gelen|giden]");
+    if (v.iletiler.length) console.log("\nOkumak için: node scripts/posta.mjs oku <kutu> <uid> <klasör>");
   } else if (islem === "oku") {
     const x = v.ileti;
     console.log(`Konu:   ${x.konu}`);
@@ -221,7 +226,7 @@ async function calis() {
         console.log(`  parça ${e.parca.padEnd(5)} ${e.ad} · ${boyut(e.boyut)}${e.satirIci ? " · iletideki görsel" : ""}`);
       }
       const k = x.ekler.find((e) => !e.satirIci) ?? x.ekler[0];
-      const klasorEki = v.klasor === "giden" ? " --klasor giden" : "";
+      const klasorEki = v.klasor !== "gelen" ? ` --klasor ${v.klasor}` : "";
       console.log(`İndirmek için: node scripts/posta.mjs ek ${v.kutu} ${x.uid} ${k.parca}${klasorEki}`);
     }
   } else if (islem === "ek") {

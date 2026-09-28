@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { after } from "next/server";
-import { PenLine } from "lucide-react";
+import { CircleCheck, PenLine } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
 import { firmaEslesmeleri, gelenDurumu, gelenSiniflari, kutuBasinaBekleyenYanit } from "@/lib/gelen-db";
 import { gelenKutulariTara } from "@/lib/gelen-tarama";
@@ -30,6 +30,7 @@ import {
   alintila,
   iletBlogu,
   iletKonusu,
+  kutuKisaAdi,
   talepIletKonusu,
   talepIletMetni,
   tumunuYanitlaAlicilari,
@@ -81,6 +82,8 @@ type Arama = {
   kapsam?: string;
   /** yaz=talep: iletilecek talebin numarası */
   talep?: string;
+  /** Taslaktan gönderildi (gönderen kutu) — sağda onay */
+  gonderildi?: string;
 };
 
 type Liste = {
@@ -124,6 +127,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
   const sayfa = Math.max(1, Math.floor(Number(sp.sayfa)) || 1);
   const uid = Math.floor(Number(sp.uid)) || undefined;
   const yaz = YAZ_KIPLERI.find((k) => k === sp.yaz) ?? null;
+  const gonderildi = kutular.find((k) => k.user === (sp.gonderildi ?? "").trim().toLowerCase())?.user ?? null;
   const ara = aramaTemizle(sp.ara);
   const arama: AramaBaglami = ara ? { ara, tum: sp.kapsam === "tum" } : null;
 
@@ -380,6 +384,17 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         firma={seciliFirma}
         arama={arama}
       />
+    );
+  } else if (gonderildi && !uid) {
+    sag = (
+      <div className="flex h-full flex-col items-center justify-center gap-2 p-10 text-center text-sm">
+        <CircleCheck className="size-8 text-emerald-600" aria-hidden />
+        <p className="font-semibold text-emerald-700">Taslak gönderildi.</p>
+        <p className="text-muted">Kopyası {kutuKisaAdi(gonderildi)} kutusunun Gönderilmiş klasöründe.</p>
+        <Link href={posta(gonderildi, "giden")} className="mt-1 font-semibold underline underline-offset-4">
+          Gönderilmiş&apos;e git
+        </Link>
+      </div>
     );
   } else if (seciliHata) {
     sag = <p className="m-5 text-sm text-red-700">{seciliHata}</p>;

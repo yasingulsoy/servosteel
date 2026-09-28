@@ -588,11 +588,12 @@ export async function ekleriIndir(
 export type AramaSatiri = IletiOzeti & { kutu: string; klasor: Klasor; uidvalidity: number };
 
 /**
- * Bütün kutularda, Gelen'de ve Gönderilmiş'te arama — "bu firmayla ne
- * yazıştık?" sorusu için; tanıtım e-postası bir kutudan gidiyor, yanıtı başka
- * bir iletiye verilmiş olabiliyor. Kutu başına tek oturum, kutular aynı anda.
- * Klasör başına en yeni `enCok` eşleşme alınır, hepsi tarihe göre dizilip ilk
- * `enCok` döner; `toplam` bütün eşleşmelerin sayısı.
+ * Bütün kutularda, bütün klasörlerde (Önemsiz ve Silinmiş hariç) arama — "bu
+ * firmayla ne yazıştık?" sorusu için; tanıtım e-postası bir kutudan gidiyor,
+ * yanıtı başka bir iletiye verilmiş, arşive kaldırılmış olabiliyor. Kutu
+ * başına tek oturum, kutular aynı anda. Klasör başına en yeni `enCok` eşleşme
+ * alınır, hepsi tarihe göre dizilip ilk `enCok` döner; `toplam` bütün
+ * eşleşmelerin sayısı.
  */
 export async function herYerdeAra(
   arama: string,
@@ -606,11 +607,9 @@ export async function herYerdeAra(
       const istemci = imapIstemcisi(kutu);
       try {
         await istemci.connect();
-        const klasorler = await klasorleriOku(istemci);
-        for (const klasor of ["gelen", "giden"] as const) {
-          const yol = klasorBul(klasorler, klasor)?.yol;
-          if (!yol) continue;
-          const kilit = await istemci.getMailboxLock(yol, { readOnly: true });
+        const klasorler = (await klasorleriOku(istemci)).filter((k) => k.tur !== "onemsiz" && k.tur !== "cop");
+        for (const k of klasorler) {
+          const kilit = await istemci.getMailboxLock(k.yol, { readOnly: true });
           try {
             const uidvalidity = istemci.mailbox ? Number(istemci.mailbox.uidValidity) : 0;
             const uidler = ((await istemci.search(aramaOlcutu(arama), { uid: true })) || []).sort((a, b) => b - a);
@@ -618,7 +617,9 @@ export async function herYerdeAra(
             const dilim = uidler.slice(0, enCok);
             if (dilim.length) {
               const ham = await istemci.fetchAll(dilim.join(","), OZET_SORGUSU, { uid: true });
-              for (const m of ham) satirlar.push({ ...ozetle(m, klasor === "giden"), kutu: kutu.user, klasor, uidvalidity });
+              for (const m of ham) {
+                satirlar.push({ ...ozetle(m, alicidanMi(k, k.anahtar)), kutu: kutu.user, klasor: k.anahtar, uidvalidity });
+              }
             }
           } finally {
             kilit.release();

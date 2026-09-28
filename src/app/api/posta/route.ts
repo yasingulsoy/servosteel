@@ -64,7 +64,7 @@ type Govde = {
   sayfa?: number;
   uid?: number;
   adet?: number;
-  /** "ara": bütün kutularda, Gelen + Gönderilmiş; "liste": o klasörde */
+  /** "ara": bütün kutularda, Önemsiz ve Silinmiş dışındaki bütün klasörlerde; "liste": o klasörde */
   ara?: string;
   kime?: string;
   bilgi?: string;

@@ -136,5 +136,5 @@ export async function POST(istek: NextRequest) {
       revalidatePath(`/admin/talep/${talepId}`);
     }
   }
-  return cevap(sonuc.tamam, sonuc.mesaj);
+  return NextResponse.json({ tamam: sonuc.tamam, mesaj: sonuc.mesaj, uyari: sonuc.uyari ?? false });
 }

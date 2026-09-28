@@ -64,7 +64,8 @@ export type ElleGonderim = {
   iletilenEkler?: { kutu: string; klasor: Klasor; uid: number; parcalar: string[] };
 };
 
-export type ElleSonuc = { tamam: boolean; mesaj: string };
+/** `uyari`: gitti ama kopyası Gönderilmiş'e konamadı — form uyarıyı göstermek için yerinde kalır */
+export type ElleSonuc = { tamam: boolean; mesaj: string; uyari?: boolean };
 
 export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
   const kutu = (g.kutu ?? "").trim().toLowerCase();
@@ -160,6 +161,7 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
   if (g.taslak && g.taslak.uid > 0) await taslakSil(g.taslak.kutu, g.taslak.uid);
   return {
     tamam: true,
+    uyari: Boolean(r.kopyaHatasi),
     mesaj: r.kopyaHatasi
       ? `Gönderildi — ama kopyası Gönderilmiş klasörüne konamadı: ${r.kopyaHatasi}`
       : "Gönderildi. Kopyası Gönderilmiş klasöründe.",

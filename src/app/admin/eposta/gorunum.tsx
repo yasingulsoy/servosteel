@@ -319,7 +319,7 @@ function AramaKutusu({ kutu, klasor, arama }: { kutu: string; klasor: Klasor; ar
             value="tum"
             defaultChecked={arama?.tum ?? false}
           />
-          Tüm hesaplarda (Gelen + Gönderilmiş)
+          Tüm hesaplarda, bütün klasörlerde
         </label>
         <button className="rounded-md px-2 py-1 text-xs font-semibold text-ink hover:bg-surface-alt">Ara</button>
       </div>
