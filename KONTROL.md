@@ -456,6 +456,21 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | C | A'nın 59 ülkesi, eş anlamlı aramalar | 708 | 0,85 $ | 562 |
 | D | 36 büyük şehir (Hindistan, Meksika, Brezilya, ABD…) | 432 | 0,52 $ | 408 |
 | E | 103 ülke × çelik servis merkezi + pres atölyesi, segment başına 2 arama | 412 | 0,49 $ | 206 |
+| G | Afrika + Orta Doğu'nun hiç aranmamış 75 sanayi şehri × 12 segment (28 Eyl) | 900 | 1,08 $ | 79 (186'dan, elle) |
+| H | b'nin 19 Afrika ülkesi + Lübnan, eş anlamlı arama (28 Eyl) | 240 | 0,29 $ | 14 (26'dan, elle) |
+
+**G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
+et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
+ve kampanyanın iki teklif talebi de oradan geldi (iRack Mısır, PAL CHARPENTIER
+Fildişi Sahili); Güneydoğu Asya'ya giden ~100 e-postada tek kişi tıklaması yok. Ama
+Afrika havuzu küçüktü (Fildişi Sahili 7, Senegal 5 firma — hepsine yazılmıştı).
+**Şehir aramasında süzgeç zayıf:** otomatik süzgeçten geçen 212 satırın ~%55'i hedef
+dışı çıktı — rehber/harita siteleri (Yango Maps, ListGCC, Annuaires Togo), yazılım
+(Odoo), fermuar üreticisi ("glissière" bariyer sanıldı), palet/kimya satıcısı, iskele
+KİRALAMA hizmeti, "Egypt market"e satan Çinli ihracatçı. Hepsi elle elendi, alan
+adları dosyanın "Elenenler" bölümünde (sonraki tur atlar), tekrar edenler
+`KARA_LISTE`'de. **Kural: şehir turundan sonra satırları elle gözden geçirmeden
+aktarma.** 93 satırdan 83 yeni firma panele girdi (24 ülke, en/fr).
 
 ```bash
 python scripts/hedef-firma-kesif.py --tur e --plan    # kaç arama, kaç $

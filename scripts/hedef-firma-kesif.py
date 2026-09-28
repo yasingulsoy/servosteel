@@ -461,6 +461,9 @@ KARA_LISTE = re.compile(
     r"tradewheel|yellowpagesnigeria|enf\.com|solarquotes|energysage|"
     r"iprocure|infopages|autoshow|pngpages|rwandayp|government\.com\.|aajjo|thebluebook|"
     r"iberinform|guia1122|indusmart|otimize|xometry|planplus|companywall|bdstall|"
+    # G/H turu elle gozden gecirmesinden (2026-09-28): sehir aramasinda cikan rehber, harita, yazilim
+    r"annuaire|yango|productfinder|businessghana|kenyans\.co|slideserve|odoo\.|eyeofriyadh|listgcc|"
+    r"cardify|zimbabwhere|thinklocal|dubaiexporters|pharmaexpo|turkishmarketer|youmats|toolz\.ng|"
     r"framecad)", re.I)   # framecad: LGS roll form makinesi ureticisi (rakip)
 
 # Rakip: makine uretenler (baslik/ozette)
