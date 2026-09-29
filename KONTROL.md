@@ -459,7 +459,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | G | Afrika + Orta Doğu'nun hiç aranmamış 75 sanayi şehri × 12 segment (28 Eyl) | 900 | 1,08 $ | 79 (186'dan, elle) |
 | H | b'nin 19 Afrika ülkesi + Lübnan, eş anlamlı arama (28 Eyl) | 240 | 0,29 $ | 14 (26'dan, elle) |
 | I | 42 Afrika ülkesi (9'u ilk kez), alıcının kendi terimiyle: tôle bac, charpente métallique, mabati, IBR, long span, madres (28 Eyl) | 208 | 0,25 $ | 35 (50'den, elle) |
-| J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) — aktarım bekliyor |
+| J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -514,9 +514,10 @@ Metin İngilizcenin birebir karşılığı; terimler sitenin `ar.json`'undan. HT
 diziliyor; abonelik satırı ve sayfası Arapça. Gelen Arapça "إلغاء الاشتراك", otomatik yanıt
 ve alıntı başlığı tanınıyor.
 
-**Aktarım bekliyor:** metin onayı ve `85591ee` yayını. Yayından önce aktarılırsa mail
-sağdan sola düzeni ve Arapça altbilgisi olmadan gider. Yayının izi: `/api/unsubscribe?t=x`
-sayfası `<html lang="en" dir="ltr">` döner (29 Eylül'de hâlâ `dir`siz).
+**Aktarıldı (29 Eylül 12:30):** Yasin Arapça metni onayladı ("şu an onayladım arapça
+maili"), yayın 12:29'da girdi (`/api/unsubscribe?t=x` sayfası `<html lang="en" dir="ltr">`
+dönmeye başladı), 26 firma panelde sırada. Kural: Arapça metin canlıya ancak onu işleyen kod
+yayına girdikten SONRA aktarılır; yoksa mail soldan sağa ve İngilizce altbilgiyle gider.
 
 **Kayıp:** 524 aday "ülke tutmuyor" diye düştü. Arapça siteler telefonu ülke kodsuz
 yazıyor (0100…). Yerel biçim ülkeler arasında çakıştığı için (Körfez'de 05…) kural
