@@ -95,7 +95,14 @@ export default async function Home({ params }: Props) {
             <h2 className="font-display max-w-xl text-3xl font-bold uppercase tracking-tight text-ink sm:text-4xl">
               {t("solutionsTitle")}
             </h2>
-            <p className="max-w-md text-muted">{t("solutionsText")}</p>
+            <div className="max-w-md">
+              <p className="text-muted">{t("solutionsText")}</p>
+              {/* Üç ailenin ortak sayfasına bağlantı — "coil processing lines" aramasının karşılığı */}
+              <Link href="/rulo-isleme-hatlari" className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                {(await getTranslations("ruloIsleme"))("nav")}
+                <ArrowRight />
+              </Link>
+            </div>
           </div>
         </Reveal>
 

@@ -40,7 +40,9 @@ export default async function DilmeHatlariPage({ params }: Props) {
   return (
     <>
       <PageHero
-        crumbs={[{ label: t("title"), href: "/dilme-hatlari" }]}
+        /* Üst sayfa kırıntıda: "coil processing line" arayana üç ailenin ortak sayfası
+           (Google 29 Eylül'de üst sayfayı keşfetmiş ama taramamıştı; bu sayfa onun yerine çıkıyordu) */
+        crumbs={[{ label: (await getTranslations("ruloIsleme"))("title"), href: "/rulo-isleme-hatlari" }, { label: t("title"), href: "/dilme-hatlari" }]}
         eyebrow={t("eyebrow")}
         title={t("title")}
         description={t("desc")}

@@ -42,7 +42,7 @@ export default async function RollFormHatlariPage({ params }: Props) {
   return (
     <>
       <PageHero
-        crumbs={[{ label: t("title"), href: "/roll-form-hatlari" }]}
+        crumbs={[{ label: (await getTranslations("ruloIsleme"))("title"), href: "/rulo-isleme-hatlari" }, { label: t("title"), href: "/roll-form-hatlari" }]}
         eyebrow={t("eyebrow")}
         title={t("title")}
         description={t("desc")}

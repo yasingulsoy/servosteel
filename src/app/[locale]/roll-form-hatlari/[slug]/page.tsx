@@ -71,6 +71,9 @@ export default async function RollFormLinePage({ params }: Props) {
     <>
       <PageHero
         crumbs={[
+          /* Ürün sayfasının üstünde aile ve üst sayfa da görünsün (kırıntı + BreadcrumbList) */
+          { label: (await getTranslations("ruloIsleme"))("title"), href: "/rulo-isleme-hatlari" },
+          { label: (await getTranslations("hub"))("title"), href: "/roll-form-hatlari" },
           { label: tRoll(`${slug}.name`), href: `/roll-form-hatlari/${slug}` },
         ]}
         eyebrow={td("eyebrowLine")}

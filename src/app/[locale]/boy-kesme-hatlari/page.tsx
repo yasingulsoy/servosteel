@@ -39,7 +39,7 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
   return (
     <>
       <PageHero
-        crumbs={[{ label: t("title"), href: "/boy-kesme-hatlari" }]}
+        crumbs={[{ label: (await getTranslations("ruloIsleme"))("title"), href: "/rulo-isleme-hatlari" }, { label: t("title"), href: "/boy-kesme-hatlari" }]}
         eyebrow={t("eyebrow")}
         title={t("title")}
         description={t("desc")}
