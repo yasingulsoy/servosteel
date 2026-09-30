@@ -15,6 +15,10 @@ import { sorgu, sorguSert } from "@/lib/db";
 
 export const DURUMLAR = [
   "yeni",
+  /* Satışa iletildi (2026-09-30, Yasin: "listede iletildi yazdır"). Talep
+     sayfasındaki İlet ile gidince kendiliğinden buraya geçer: iletilen talep
+     "Yeni — henüz kimse dönmedi" sayısında durup yeniden iletilmesin. */
+  "iletildi",
   "ulasildi",
   "bilgi_verildi",
   "teklif_gonderildi",
@@ -30,6 +34,7 @@ export type Durum = (typeof DURUMLAR)[number];
 
 export const DURUM_ETIKET: Record<Durum, string> = {
   yeni: "Yeni",
+  iletildi: "İletildi",
   ulasildi: "Ulaşıldı",
   bilgi_verildi: "Bilgi verildi",
   teklif_gonderildi: "Teklif gönderildi",
@@ -102,7 +107,20 @@ export async function semaKur(): Promise<boolean> {
     );
     CREATE INDEX IF NOT EXISTS talep_not_talep_idx ON talep_not (talep_id, olusturuldu DESC);
   `);
-  return r !== null && (await olaySemasiKur());
+  if (r === null) return false;
+  /* "İletildi" durumundan önce iletilen talepler "Yeni"de kaldı. İletme
+     notundan sonra talebe dokunulmadıysa (son güncelleme = not anı) İletildi
+     olur. Sonradan elle "Yeni"ye çekilen talebe dokunmaz: o işlem
+     guncellendi'yi ileri alır. İlk açılıştan sonra hiçbir satır tutmaz; ayrı
+     sorgu, çünkü tutmazsa şema kurulumu başarısız sayılmasın. */
+  await sorgu(`
+    UPDATE talepler t SET durum = 'iletildi'
+     WHERE t.durum = 'yeni'
+       AND EXISTS (SELECT 1 FROM talep_not n
+                    WHERE n.talep_id = t.id AND n.govde LIKE 'İletildi:%'
+                      AND t.guncellendi BETWEEN n.olusturuldu AND n.olusturuldu + interval '2 seconds')
+  `);
+  return olaySemasiKur();
 }
 
 /* Süreç başına bir kez — beacon ucu her tıklamada çağırıyor. */
@@ -283,6 +301,19 @@ export async function durumDegistir(id: number, durum: Durum) {
     `UPDATE talepler SET durum = $1, guncellendi = now() WHERE id = $2`,
     [durum, id]
   );
+}
+
+/**
+ * Talep satışa iletildi: "Yeni" ise "İletildi"ye geçer. İleri bir durumdaki
+ * talep (ulaşıldı, teklif gönderildi…) geri alınmaz. Durum değiştiyse true.
+ */
+export async function iletildiIsaretle(id: number): Promise<boolean> {
+  const r = await sorguSert<{ id: number }>(
+    `UPDATE talepler SET durum = 'iletildi', guncellendi = now()
+     WHERE id = $1 AND durum = 'yeni' RETURNING id`,
+    [id]
+  );
+  return r.length > 0;
 }
 
 export async function notEkle(talepId: number, govde: string, yazan: string) {

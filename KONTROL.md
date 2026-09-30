@@ -1425,6 +1425,11 @@ yapamıyorum". `63171f4` (website@ + talep iletme) ve bu turun commit'leri.
   info@ + yavuz@, gönderen website@. Gidince talebin notlarına "İletildi: …
   — … kutusundan" düşer. Bu formda "Taslak kaydet" yok, çünkü taslaktan
   gönderilince not düşmezdi.
+  **30 Eylül:** gidince "Yeni" talep **İletildi** durumuna geçer (listede
+  camgöbeği rozet, "yeni talep" sayısından düşer). İleri durumdaki talep
+  geri alınmaz. Daha önce iletilenler (#13 PAL, #15 Disc-O-Scaff) yayından
+  sonra panel ilk açıldığında kendiliğinden İletildi olur. Yasin iletilmiş
+  talebi "Yeni" görüp yeniden iletecekti.
 - **Klasörler**: kutunun bütün klasörleri okunmamış sayılarıyla: Gelen,
   Taslaklar, Gönderilmiş, Arşiv, Önemsiz, Silinmiş, özel klasörler (alt
   klasörler girintili). Liste dakikada bir kendiliğinden tazelenir.

@@ -19,6 +19,7 @@ import { goreli, kisaTarih } from "@/lib/zaman";
 
 export const DURUM_RENK: Record<string, string> = {
   yeni: "bg-accent/25 text-accent-strong",
+  iletildi: "bg-cyan-500/15 text-cyan-700",
   ulasildi: "bg-blue-500/15 text-blue-700",
   bilgi_verildi: "bg-violet-500/15 text-violet-700",
   teklif_gonderildi: "bg-amber-500/15 text-amber-700",

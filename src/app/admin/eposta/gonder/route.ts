@@ -1,7 +1,7 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { oturum } from "@/lib/admin-auth";
-import { notEkle } from "@/lib/leads-db";
+import { iletildiIsaretle, notEkle } from "@/lib/leads-db";
 import { kayitEkle } from "@/lib/panel-kayit";
 import { ekleriIndir, taslakKaydet, type GidenEk } from "@/lib/posta";
 import { adresleriAyikla, ekAdiTemizle } from "@/lib/posta-bicim";
@@ -133,7 +133,13 @@ export async function POST(istek: NextRequest) {
       const not = `İletildi: ${kime.join(", ")}${bilgi.length ? ` · bilgi: ${bilgi.join(", ")}` : ""} — ${kutu} kutusundan`;
       await notEkle(talepId, not, ben).catch(() => {});
       await kayitEkle(ben, "not", `talep:${talepId}`, `Talep #${talepId} — ${not}`).catch(() => {});
+      /* Yeni talep İletildi'ye geçer; listede ve "yeni talep" sayısında görünsün. */
+      if (await iletildiIsaretle(talepId).catch(() => false)) {
+        await kayitEkle(ben, "durum", `talep:${talepId}`, `Talep #${talepId} — Yeni → İletildi`).catch(() => {});
+      }
       revalidatePath(`/admin/talep/${talepId}`);
+      revalidatePath("/admin");
+      revalidatePath("/admin/genel");
     }
   }
   return NextResponse.json({ tamam: sonuc.tamam, mesaj: sonuc.mesaj, uyari: sonuc.uyari ?? false });
