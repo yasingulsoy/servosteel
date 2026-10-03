@@ -1257,6 +1257,15 @@ gösterimleri 8 sayfaya dağılmıştı, asıl ürün sayfası 60. sıradaydı. 
 sürücü sayfasının adı, başlığı, açıklaması ve giriş cümlesi "Podajniki Walcowe
 Servo / Podajnik walcowy servo do prasy" yapıldı; iki terim takibe eklendi.
 Başlangıç: walcowy ilk 48'de yok, mimośrodowej ilk 45'te yok, servo 11.
+**4 Ekim notu:** ölçmeden önce URL denetimine bak. PL ana servo sayfası
+(`/pl/machines/servo-feeders`) en son **18 Ağustos**'ta taranmış; 19 ve 23
+Eylül'deki başlık değişikliklerini Google hiç görmemiş. Sayfa hâlâ eski
+başlıkla 60. sırada. Çözüm başlığı bir daha değiştirmek değil, yeniden
+taratmak: GSC'de "Dizine eklenmesini iste". Aynı gün Almanca
+`hydraulische haspels` için de bakıldı: 90 günde 76 gösterim, karşılaştırma
+sayfası 5. sırada ama tık yok. Ürün sayfasının başlığı aranan çoğul hâle
+çevrildi ("Hydraulische Haspeln: 6-20 t, bis 1.600 mm"); iki DE sayfası da
+Ağustos'tan beri taranmamış.
 **3 Ekim'de ölç.** Kural: sitenin çeviri terimi alıcının yazdığı terim
 olmayabilir — başlıktaki terimi hacim verisi ve sonuç sayfasıyla doğrula.
 **Aynı gün dört dil daha tarandı:** Almanca, İtalyanca, İspanyolca sayfalar
