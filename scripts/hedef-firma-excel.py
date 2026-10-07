@@ -204,11 +204,19 @@ SITE_DILLERI = {"tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"}  # geri ka
 ARAPCA_TURU = re.compile(r"^bolge-kesif-\d{4}-\d{2}-\d{2}-j\.md$")
 ARAPCA_FIRMALAR = set()
 
+# Rusca kesif turunun (bolge-kesif-*-m.md) firmalari: Rusca aramayla bulundu, e-posta Rusca
+# (2026-10-07, Yasin "evet rusca turu da yap"). Orta Asya ULKE_DIL'de zaten ru; bu liste
+# Azerbaycan, Gurcistan, Ermenistan ve Moldova firmalari icin (onlar ULKE_DIL'de en).
+RUSCA_TURU = re.compile(r"^bolge-kesif-\d{4}-\d{2}-\d{2}-m\.md$")
+RUSCA_FIRMALAR = set()
+
 
 def satir_dili(satir):
-    """E-postanin dili: Arapca turdan geldiyse ar, yoksa ulkenin dili (varsayilan en)."""
+    """E-postanin dili: Arapca turdan geldiyse ar, Rusca turdan geldiyse ru, yoksa ulkenin dili (varsayilan en)."""
     if ARAPCA_FIRMALAR and firma_anahtari(satir) in ARAPCA_FIRMALAR:
         return "ar"
+    if RUSCA_FIRMALAR and firma_anahtari(satir) in RUSCA_FIRMALAR:
+        return "ru"
     return ULKE_DIL.get(str(satir[1] or "").strip(), "en")
 
 
@@ -609,6 +617,8 @@ def main():
             arastirilan.update(firma_anahtari(satir) for satir in duzgun)
         if ARAPCA_TURU.match(dosya):
             ARAPCA_FIRMALAR.update(firma_anahtari(satir) for satir in duzgun)
+        if RUSCA_TURU.match(dosya):
+            RUSCA_FIRMALAR.update(firma_anahtari(satir) for satir in duzgun)
 
         if bolge:
             taninmayan = 0

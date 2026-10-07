@@ -515,6 +515,39 @@ SORGU_K = {
 # firma); sehir aramasi her seferinde baska bir ilk 20 getiriyor (D/F/G'de oyleydi).
 # Listesi tur_tanimi'nda: SEHIRLER_D + SEHIRLER_F + SEHIRLER_G, sorgu takimi SORGU_K.
 
+# M turu (2026-10-07, Yasin "evet rusca turu da yap"): Orta Asya'dan iki teklif talebi Rusca
+# e-postaya geldi (Kainar Kazakistan, AddEffect Ozbekistan). Azerbaycan, Gurcistan, Ermenistan ve
+# Moldova B turunda yalniz Ingilizce arandi; oralarda is dunyasi Rusca da yaziyor ("ru:kafkas":
+# a ve c turlarinin Rusca iki terimi). Orta Asya'nin F turunda aranmamis 16 sanayi sehri de
+# eklendi ("ru:sehir": a'nin terimi). Ikisine de K'nin raf/kablo kanali/magaza rafi terimleri.
+# Bu turun firmalarina e-posta RUSCA gider (hedef-firma-excel.py RUSCA_TURU: dosya adi -m).
+ULKELER_M = [
+    ("Azerbaycan", "AZ", "ru:kafkas", "994", "Азербайджан"), ("Gürcistan", "GE", "ru:kafkas", "995", "Грузия"),
+    ("Ermenistan", "AM", "ru:kafkas", "374", "Армения"), ("Moldova", "MD", "ru:kafkas", "373", "Молдова"),
+] + [
+    ("Kazakistan", "KZ", "ru:sehir", "7", s)
+    for s in ("Караганда", "Актобе", "Павлодар", "Усть-Каменогорск", "Атырау", "Костанай", "Тараз")
+] + [
+    ("Özbekistan", "UZ", "ru:sehir", "998", s) for s in ("Наманган", "Андижан", "Фергана", "Бухара")
+] + [
+    ("Kırgızistan", "KG", "ru:sehir", "996", s) for s in ("Бишкек", "Ош Кыргызстан")
+] + [
+    ("Tacikistan", "TJ", "ru:sehir", "992", s) for s in ("Душанбе", "Худжанд")
+] + [
+    ("Türkmenistan", "TM", "ru:sehir", "993", "Ашхабад"),
+]
+
+
+def _liste(x):
+    return [x] if isinstance(x, str) else list(x)
+
+
+SORGU_M = {
+    "ru:kafkas": {seg: _liste(SORGU["ru"][seg]) + _liste(SORGU_B["ru"][seg]) + _liste(SORGU_K["ru"].get(seg, []))
+                  for seg in SORGU["ru"]},
+    "ru:sehir": {seg: _liste(SORGU["ru"][seg]) + _liste(SORGU_K["ru"].get(seg, [])) for seg in SORGU["ru"]},
+}
+
 # Arapca-Hint ve Farsca rakamlar -> ASCII (telefon kodu kontrolu: "+٢٠" da "+20" sayilsin)
 ARAP_RAKAM = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 ARAPCA_HARF = re.compile(r"[؀-ۿ]")
@@ -545,6 +578,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "m":
+        return ULKELER_M, SORGU_M, "-m"
     if tur == "l":
         return SEHIRLER_D + SEHIRLER_F + SEHIRLER_G, SORGU_K, "-l"
     if tur == "k":
@@ -1079,14 +1114,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
                          "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente) | "
                          "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider) | "
                          "k: raf ve kablo kanalinda yerel terimlerle ikinci tarama (AB disi) | "
-                         "l: k'nin terimleri d/f/g turlarinin 180 sanayi sehrinde")
+                         "l: k'nin terimleri d/f/g turlarinin 180 sanayi sehrinde | "
+                         "m: Kafkasya ve Moldova'da Rusca, Orta Asya'nin yeni sehirlerinde (e-posta Rusca gider)")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
