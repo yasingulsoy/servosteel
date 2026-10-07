@@ -510,6 +510,11 @@ SORGU_K = {
            "market-rafi": "pabrik rak display toko"},
 }
 
+# L turu (2026-10-07, ayni gun K'nin devami): K'nin raf / kablo kanali / magaza rafi terimleri
+# D, F ve G turlarinin 180 sanayi sehrinde. Ulke capinda arama doymus (K: 480 aramadan 47
+# firma); sehir aramasi her seferinde baska bir ilk 20 getiriyor (D/F/G'de oyleydi).
+# Listesi tur_tanimi'nda: SEHIRLER_D + SEHIRLER_F + SEHIRLER_G, sorgu takimi SORGU_K.
+
 # Arapca-Hint ve Farsca rakamlar -> ASCII (telefon kodu kontrolu: "+٢٠" da "+20" sayilsin)
 ARAP_RAKAM = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 ARAPCA_HARF = re.compile(r"[؀-ۿ]")
@@ -540,6 +545,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "l":
+        return SEHIRLER_D + SEHIRLER_F + SEHIRLER_G, SORGU_K, "-l"
     if tur == "k":
         return ULKELER_K, SORGU_K, "-k"
     if tur == "j":
@@ -1072,13 +1079,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
                          "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente) | "
                          "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider) | "
-                         "k: raf ve kablo kanalinda yerel terimlerle ikinci tarama (AB disi)")
+                         "k: raf ve kablo kanalinda yerel terimlerle ikinci tarama (AB disi) | "
+                         "l: k'nin terimleri d/f/g turlarinin 180 sanayi sehrinde")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
