@@ -477,6 +477,39 @@ SORGU_J = {
            "alcipan-profili": "مصنع قطاعات جبس بورد"},
 }
 
+# K turu (2026-10-07, Yasin: "tarama yap firma ekle ne kadar bulabilirsen"): kampanyanin ilk
+# 10 teklif talebinin 5'i raf (iRack, Rack and Build, Persa, Pebdea, AddEffect), 2'si kablo
+# kanali (National Industries, Kainar). Bu iki segmentte a/b/c turlarinda kullanilmamis yerel
+# terimlerle ikinci tarama: Meksika'da "charolas portacables", Vietnam'da "kệ sắt v lỗ",
+# Endonezya'da "rak besi siku" gibi alicinin yazdigi kelimeler. AddEffect kucuk raf istedigi
+# icin magaza rafi da bir aramayla eklendi. AB ulkeleri alinmadi: otomatik gonderim onlara
+# varsayilan olarak yazmiyor, bulunan firma sirada bekler.
+AB_ISO = {"FR", "BE", "PT", "IE", "NL", "SE", "FI"}
+ULKELER_K = [u for u in ULKELER + ULKELER_B if u[1] not in AB_ISO]
+SORGU_K = {
+    "en": {"raf-sistemleri": ["warehouse racking manufacturer", "heavy duty steel shelving manufacturer"],
+           "kablo-kanali": ["cable tray and trunking manufacturer", "unistrut channel and cable support manufacturer"],
+           "market-rafi": "retail shelving and display racks manufacturer"},
+    "es": {"raf-sistemleri": ["fabricante de racks para almacén", "fabricante de anaqueles metálicos"],
+           "kablo-kanali": ["fabricante de charolas portacables", "fabricante de canaletas y bandejas metálicas para cables"],
+           "market-rafi": "fabricante de exhibidores y góndolas metálicas"},
+    "pt": {"raf-sistemleri": ["fabricante de racks para armazenagem", "fabricante de prateleiras de aço"],
+           "kablo-kanali": ["fabricante de eletrocalha perfurada", "fábrica de eletrocalhas e acessórios"],
+           "market-rafi": "fabricante de expositores e gôndolas de aço"},
+    "fr": {"raf-sistemleri": ["fabricant de rayonnages lourds pour entrepôts", "fabricant de racks de stockage"],
+           "kablo-kanali": ["fabricant de chemins de câbles galvanisés", "fabricant de goulottes et supports de câbles métalliques"],
+           "market-rafi": "fabricant de présentoirs et gondoles métalliques"},
+    "ru": {"raf-sistemleri": ["производство металлических стеллажей", "стеллажи для склада от производителя"],
+           "kablo-kanali": ["кабельные лотки от производителя", "производство кабеленесущих систем"],
+           "market-rafi": "производство торговых стеллажей и витрин"},
+    "vi": {"raf-sistemleri": ["xưởng sản xuất kệ kho", "sản xuất kệ sắt v lỗ"],
+           "kablo-kanali": ["sản xuất máng cáp sơn tĩnh điện", "xưởng sản xuất thang cáp máng cáp"],
+           "market-rafi": "xưởng sản xuất kệ siêu thị"},
+    "id": {"raf-sistemleri": ["pabrik rak gudang heavy duty", "produsen rak besi siku"],
+           "kablo-kanali": ["produsen cable tray hot dip galvanis", "pabrik cable trunking"],
+           "market-rafi": "pabrik rak display toko"},
+}
+
 # Arapca-Hint ve Farsca rakamlar -> ASCII (telefon kodu kontrolu: "+٢٠" da "+20" sayilsin)
 ARAP_RAKAM = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 ARAPCA_HARF = re.compile(r"[؀-ۿ]")
@@ -507,6 +540,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "k":
+        return ULKELER_K, SORGU_K, "-k"
     if tur == "j":
         return ULKELER_J, SORGU_J, "-j"
     if tur == "i":
@@ -1037,12 +1072,13 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
                          "i: Afrika'da yerel urun terimleri (tole bac, mabati, IBR, long span, charpente) | "
-                         "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider)")
+                         "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider) | "
+                         "k: raf ve kablo kanalinda yerel terimlerle ikinci tarama (AB disi)")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
