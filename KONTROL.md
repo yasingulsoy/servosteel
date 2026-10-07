@@ -461,6 +461,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | I | 42 Afrika ülkesi (9'u ilk kez), alıcının kendi terimiyle: tôle bac, charpente métallique, mabati, IBR, long span, madres (28 Eyl) | 208 | 0,25 $ | 35 (50'den, elle) |
 | J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) |
 | K | 96 AB dışı ülke; raf, kablo kanalı ve mağaza rafı, yerel terimlerle ikinci tarama (7 Eki) | 480 | 0,58 $ | 47 (115'ten, elle) |
+| L | K'nin terimleri D/F/G'nin 180 sanayi şehrinde (7 Eki) | 900 | 1,08 $ | 81 (206'dan, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -521,7 +522,16 @@ elle elendi**:
 - konu dışı siteler.
 
 47 üretici panele aktarıldı (7 Eki 12:40). Yeni turda verim düştü (480 aramadan 47):
-bu segmentlerde ülke çapındaki aramalar doymuş görünüyor.
+bu segmentlerde ülke çapındaki aramalar doymuş görünüyor. **İlk sonuç aynı gün geldi:**
+K'dan gelen Racklog (Şili) mail 14:30'da gitti, 14:37'de ölçü vererek teklif istedi
+(talep #21).
+
+**L turu — aynı terimler 180 şehirde (2026-10-07):** 4.886 aday; otomatik süzgeç 206
+firma bıraktı. **126 satır elle elendi.** Şehir aramaları gazete, ilan, emlak, lojistik,
+iş ilanı ve fuar sitelerini çok getiriyor; raf aramaları ayrıca bayi ve kurulum
+firmalarını. 81 yeni üretici panele aktarıldı (33'ü Hindistan'da; Vietnam'da 8 kablo
+kanalı atölyesi). Sonuç: aynı terimlerle bir tur daha anlamsız; bundan sonraki keşif
+ya yeni dil ya yeni segment olmalı.
 
 Kalan 26 firmanın dağılımı: Suudi Arabistan 7, Libya 5, BAE, Irak, Katar, Kuveyt ve Tunus
 2'şer, Mısır, Umman, Ürdün ve Cezayir birer. Bu firmalar çatı ve sandviç panel, çelik yapı,
