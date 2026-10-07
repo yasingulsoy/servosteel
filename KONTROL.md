@@ -460,6 +460,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | H | b'nin 19 Afrika ülkesi + Lübnan, eş anlamlı arama (28 Eyl) | 240 | 0,29 $ | 14 (26'dan, elle) |
 | I | 42 Afrika ülkesi (9'u ilk kez), alıcının kendi terimiyle: tôle bac, charpente métallique, mabati, IBR, long span, madres (28 Eyl) | 208 | 0,25 $ | 35 (50'den, elle) |
 | J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) |
+| K | 96 AB dışı ülke; raf, kablo kanalı ve mağaza rafı, yerel terimlerle ikinci tarama (7 Eki) | 480 | 0,58 $ | 47 (115'ten, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -503,6 +504,24 @@ alınıyor. 50 satırın 24'ü elle elendi:
 - 2'si entegre hadde (Katar Çelik, Iraqi Hadeed);
 - geri kalanı satıcı, taahhüt ya da bakım firması, prekast beton, alçı, kimya, Çinli
   ihracatçı ve bir demo şablon sitesi.
+
+**K turu — raf ve kablo kanalı (2026-10-07, Yasin "tarama yap firma ekle ne kadar
+bulabilirsen"):** kampanyanın ilk 10 teklif talebinin 5'i raf (iRack, Rack and Build,
+Persa, Pebdea, AddEffect), 2'si kablo kanalı (National Industries, Kainar). Bu iki
+segment ve mağaza rafı, önceki turlarda kullanılmamış yerel terimlerle yeniden arandı:
+"charolas portacables", "kệ sắt v lỗ", "rak besi siku", "стеллажи для склада от
+производителя". AB ülkeleri alınmadı. 3.484 adayın 2.921'i rehber ya da pazar yeri,
+1.023'ü zaten listede çıktı; otomatik süzgeç 115 firma bıraktı. **115'in 69 satırı
+elle elendi**:
+- raf ve kablo kanalı aramaları perakendeci ve distribütörleri çok getiriyor (ULINE,
+  Leroy Merlin, element14, Unistrut bayileri);
+- depo/lojistik firmaları ve WMS yazılımı;
+- fuar standı ve reklam firmaları;
+- büyük marka şubeleri (EKF, OHRA), Türk üreticinin şubesi (Gersan Umman);
+- konu dışı siteler.
+
+47 üretici panele aktarıldı (7 Eki 12:40). Yeni turda verim düştü (480 aramadan 47):
+bu segmentlerde ülke çapındaki aramalar doymuş görünüyor.
 
 Kalan 26 firmanın dağılımı: Suudi Arabistan 7, Libya 5, BAE, Irak, Katar, Kuveyt ve Tunus
 2'şer, Mısır, Umman, Ürdün ve Cezayir birer. Bu firmalar çatı ve sandviç panel, çelik yapı,
