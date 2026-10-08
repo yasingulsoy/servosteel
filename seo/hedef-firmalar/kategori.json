@@ -28450,5 +28450,419 @@
 "not": "Market Rafı",
 "dogrulandi": true,
 "site": true
+},
+"vanheyghenstaal.be|belçika": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"papajayaagung.com|endonezya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"robert.fr|fransa": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"delftmetal.com|hollanda": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"hebels.com|hollanda": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"vogtenstaal.com|hollanda": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"smmoman.com|umman": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"nstsaigon.vn|vietnam": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metafox.be|belçika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"indosan.com|endonezya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"kalysse.fr|fransa": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"ketsatcaocap.vn|vietnam": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"culobel.com|belçika": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"emboutimetal.com|fransa": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"nguyenman.com.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"seiki.vn|vietnam": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"dierickxventilatie.be|belçika": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"peyre-sa.fr|fransa": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airspiralo.com|hollanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"degrootluchtkanalen.nl|hollanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"cokhip69.com.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kimnganphat.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"mes.net.vn|vietnam": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"norwoodqatar.com|katar": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"letran.vn|vietnam": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"dsteel.vn|vietnam": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"newtek.com.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"kesattienphat.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"saigonrack.com.vn|vietnam": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"bouwproducten.hardeman.nl|hollanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ksprofile.com|hollanda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"hbksf.com|katar": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ropasteel.com|kenya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"brossette.com.ng|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ipi.com.ng|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"steelqore.ng|nijerya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"almadallc.com|umman": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"chengyuansteel.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kimtoanthang.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"prosco.vn|vietnam": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"geldhof-vermeersch.be|belçika": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"putraroof.co.id|endonezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sabesteel.com|endonezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"finish-profiles.nl|hollanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sabprofiel.nl|hollanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ruirumabati.co.ke|kenya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cute-techaluminium.com.ng|nijerya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ecopanel.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelvisaco.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelhome.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"songthansteel.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tonmat.com.vn|vietnam": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kontrimo.be|belçika": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"firmastaal.nl|hollanda": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"ceviethung.vn|vietnam": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"smartme.vn|vietnam": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"quickrack.nl|hollanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"avasco.be|belçika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"cornix.be|belçika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"garudarackindo.com|endonezya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"corverkolf.nl|hollanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"heldenvanstaal.nl|hollanda": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"giakedehang.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kethepdanang.com.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"tanphuongphat.com|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kedehang.com|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"cokhitoancau.com.vn|vietnam": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"steelconstructions.nl|hollanda": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"doha.com.vn|vietnam": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
 }
 }

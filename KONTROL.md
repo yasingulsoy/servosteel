@@ -470,6 +470,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | R | AB 10 ülke — ajanlar rehber/üye listesinden üreticinin sitesini topladı (9 Eki) | 493 site | 0 $ | 142 (156'dan, elle) |
 | S | R'nin yöntemi talep gelen 13 ülkede (Meksika, Brezilya, Mısır, Kazakistan, Kolombiya, Şili, Arjantin, Peru, Özbekistan, Suudi, BAE, Fas, Cezayir) (9 Eki) | 513 site | 0 $ | 72 (91'den, elle) |
 | T | R'nin yöntemi Fransa, Belçika, Hollanda, Nijerya, Kenya, Güney Afrika, Katar, Umman, Endonezya, Vietnam (9 Eki) | 363 site | 0 $ | 70 (78'den, elle) |
+| U | R'nin yöntemi Filipinler, Tayland, Malezya, Pakistan, Kosta Rika, Guatemala, Ürdün, Kuveyt, Tunus, Gana (9 Eki) | 267 site | 0 $ | 37 (48'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -572,7 +573,9 @@ sıkı süzgeci geçti, 16'sı elle elendi; 70 firma panele girdi (01:39): Brezi
 Arjantin 7, Peru 7, Kolombiya 6, Şili 5, Suudi 5, Özbekistan 5, BAE 4, Kazakistan 2, Fas 2,
 Mısır 1. Bu ülkelerde liste doymuş: rehberin çoğu firma zaten listedeydi. **T (aynı gece, 10 ülke):** 363 site, 78 satır,
 3'ü elendi; 69 firma panele girdi (02:02): Vietnam 28, Hollanda 14, Belçika 8, Endonezya 5, Nijerya 4,
-Fransa 4, Katar, Kenya ve Umman 2'şer. Afrika ve Körfez'de rehberlerin çoğu firma zaten listedeydi. **142 AB üreticisi
+Fransa 4, Katar, Kenya ve Umman 2'şer. Afrika ve Körfez'de rehberlerin çoğu firma zaten listedeydi. **U (aynı gece):** 37 firma
+panele girdi (02:30). Küçük pazarlarda (Gana, Ürdün, Kuveyt, Guatemala) rehberler web sitesi göstermiyor.
+**Gece toplamı: N–U turlarından 321 yeni firma** (R 142 + O 2 + S 70 + T 69 + U 37 + 1 tekrar). **142 AB üreticisi
 panele girdi (9 Eki 01:35):** Romanya 29,
 Polonya 31, Macaristan 21, Çekya 15, Yunanistan 12, İtalya 10, Bulgaristan 10, İspanya 7,
 Slovakya 6, Portekiz 4; O'dan KÁLLÓ-fém ve Metalkas. Macarca e-posta şablonu YOK
