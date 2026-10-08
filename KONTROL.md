@@ -578,7 +578,7 @@ Mısır 1. Bu ülkelerde liste doymuş: rehberin çoğu firma zaten listedeydi. 
 Fransa 4, Katar, Kenya ve Umman 2'şer. Afrika ve Körfez'de rehberlerin çoğu firma zaten listedeydi. **U (aynı gece):** 37 firma
 panele girdi (02:20). Küçük pazarlarda (Gana, Ürdün, Kuveyt, Guatemala) rehberler web sitesi göstermiyor.
 **V (aynı gece):** 29 firma panele girdi (02:40); Irak ve Etiyopya'da sitesi olan üretici çok az.
-**W (aynı gece):** 25 firma panele girdi (02:55).
+**W (aynı gece):** 25 firma panele girdi (02:50).
 **Gece toplamı: N–W turlarından panele 375 yeni kayıt** (aktarım sayıları 145 + 70 + 69 + 37 + 29 + 25).
 Küçük pazarlarda (Irak, Etiyopya, Gana, Ürdün, Kuveyt, Honduras) ülke başına 2–8 firma çıktı; sonraki keşif
 büyük pazarlarda (Hindistan, ABD, İngiltere, Avustralya, Kanada) ya da AB'nin kalanında (Hırvatistan, Slovenya,
