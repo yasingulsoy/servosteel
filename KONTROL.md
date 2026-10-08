@@ -1307,6 +1307,18 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.38 · Ana sayfa başlığı alt sayfanın kelimesini taşırsa onunla yarışır
+(2026-10-08).** `/rulo-isleme-hatlari` 2 Ekim'de dizine girdi; TR başlığı
+"Rulo İşleme Hatları: Dilme, Boy Kesme, Roll Form" idi. 1–7 Ekim'de Google
+onu `boy kesme hattı` (36.), `rulo sac dilme hattı` (35.), `dilme hatları`
+(58.), `dilme hattı` (19.) aramalarında denedi; aynı hafta bu aramalarda asıl
+sayfaların gösterimi düştü (`boy kesme hattı` 13 → 4). Sayılar küçük, kesin
+neden değil; ama başlık kelimeleri alt sayfalara bırakıldı: "Rulo İşleme
+Hatları: Rulodan Şeride, Levhaya ve Profile". EN başlığa dokunulmadı: EN ana
+sayfa slitting/cut-to-length aramalarında hiç görünmüyor, `coil processing
+lines` 14. sırada. **20 Ekim'de bak:** TR `boy kesme hattı` / `dilme hattı`
+gösterimi asıl sayfalara döndü mü.
+
 **E.37 · Panel kutuya yazmaya başlayınca taramanın kör noktası açıldı
 (2026-09-28).** Gelen taraması yalnızca Gelen'e, son işlediği UID'den
 yenilere bakıyor. Panel ileti arşivleyip silebilir olunca şu yol açıldı:
