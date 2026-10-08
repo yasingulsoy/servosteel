@@ -27160,5 +27160,875 @@
 "not": "Alçıpan Profili",
 "dogrulandi": true,
 "site": true
+},
+"elit.bg|bulgaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"montage-engineering.com|bulgaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"s-metal.bg|bulgaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"acelszerkezetepites.hu|macaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"dobozkft.hu|macaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"lemezpartner.hu|macaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"stahlkft.hu|macaristan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"partnercons.com|romanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"profilmetalic.ro|romanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"profilemetalice.com|romanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelmasiv.ro|romanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kamaridis.gr|yunanistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"touloumis.gr|yunanistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"eurostal.cz|çekya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"fostmont.cz|çekya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"montkovo.cz|çekya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"talsa.com|i̇spanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kallofem.hu|macaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"aquaservice.bg|bulgaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ksi-ood.com|bulgaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"teto.bg|bulgaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"civispanel.hu|macaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hungarometal.hu|macaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lemezbazis.hu|macaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"pruszynski.hu|macaristan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alamentti.com.pl|polonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"europanels.pl|polonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"gor-stal.pl|polonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"arpanel.pl|polonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sestal.pl|polonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"colaborante.pt|portekiz": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"macofrei.pt|portekiz": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"painel2000.com|portekiz": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"aralex.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metigla.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"miriada.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"mtc-construct.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"novatik.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"piedra.com.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"proinvestgroup.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tinichigeria.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"tonmir.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"topanel.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"topsistem.ro|romanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"dachmetal.sk|slovakya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"kjg.sk|slovakya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"raftopoulos-metalla.gr|yunanistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"makrispanels.com|yunanistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"eshop.alpmont.cz|çekya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"evromat.cz|çekya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"pspizoterm.cz|çekya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"satjam.cz|çekya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"europerfil.com|i̇spanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelais.com|i̇spanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"econimo.it|i̇talya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"hramar.com|bulgaristan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"grafrendszer.hu|macaristan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"rusztowaniawarszawskie.com.pl|polonya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"egea.ro|romanya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"interfab.ro|romanya": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"besplast.cz|çekya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kopos.cz|çekya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"metalkas.com.pl|polonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"acsi.hu|macaristan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mezostahl.hu|macaristan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"waran-regaly.pl|polonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"met-baj.com.pl|polonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"regama.pl|polonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"rema-poznan.pl|polonya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"promanromania.ro|romanya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"dimitroulakos.gr|yunanistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"dirp.cz|çekya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kovona.cz|çekya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"giabscaffalature.com|i̇talya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"mctscaffalature.com|i̇talya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"prandoni-snc.it|i̇talya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"stampofer.it|i̇talya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"hetmaniok.pl|polonya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"pggroup.com.pl|polonya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"spomasz-konstrukcje.pl|polonya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"valueimpex.pl|polonya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"axinar.com|yunanistan": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"geosolsa.com|yunanistan": {
+"kategori": 1,
+"not": "Solar Profil, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"solarstem.com|i̇spanya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"jupiterholding.bg|bulgaristan": {
+"kategori": 1,
+"not": "Yol Bariyeri · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"en.gcmetal.pl|polonya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"godar.pl|polonya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"krysmet.com.pl|polonya": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"balkansteel.com|bulgaristan": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"tomferr.hu|macaristan": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"polmet.gda.pl|polonya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"interstal.pl|polonya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"plimet.pl|polonya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"mairon.ro|romanya": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ferostal.cz|çekya": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"metalprodukt.hu|macaristan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"budo-ex.pl|polonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"cekar.pl|polonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metavestiare.ro|romanya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"minolex.ro|romanya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"vestiarmetalic.ro|romanya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"alexnabytok.sk|slovakya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"alkan.gr|yunanistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metallikavalavani.gr|yunanistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"alfa3.cz|çekya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"armet.it|i̇talya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"guerraenardo.it|i̇talya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mobiltecno.it|i̇talya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"loschan.hu|macaristan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ncpmetal.com|portekiz": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"limex.ro|romanya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"royal-ed.ro|romanya": {
+"kategori": 4,
+"not": "Pres Atölyeleri · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"ferroplast.sk|slovakya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"lisonex.sk|slovakya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"kbnk.cz|çekya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"chernevclima.bg|bulgaristan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"hovivent.hu|macaristan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ryng.hu|macaristan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"szigetivent.hu|macaristan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"2kan.pl|polonya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"agwent.pl|polonya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"klimont.com.pl|polonya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"globalmatinstall.ro|romanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"kronvent.ro|romanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"proaer.ro|romanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"stadtmeister.ro|romanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"vztkocak.sk|slovakya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aerostatiki.gr|yunanistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"beratis-aiolos.gr|yunanistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"urban-technik.cz|çekya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airkonmetal.com|i̇spanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"brinner.es|i̇spanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"conductosgamat.es|i̇spanya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airgardasrl.it|i̇talya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"spec-profil.hu|macaristan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"hubusprofile.pl|polonya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"landsberg.pl|polonya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"metpol.pl|polonya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"kamarakis.gr|yunanistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"profilatileggeri.com|i̇talya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"polcmetal.hu|macaristan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"uzletberendezes.ugp.hu|macaristan": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"lakmar.pl|polonya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"roland1.pl|polonya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"modaco.ro|romanya": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
 }
 }

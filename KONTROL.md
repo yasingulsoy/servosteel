@@ -468,6 +468,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | P | Tayland, Malezya, AB dışı Balkanlar, yerel dilde — web araması (9 Eki) | 150 | 0 $ | 0 (11'den, elle) |
 | Q | İtalya, İspanya, Polonya'nın 23 sanayi şehri, şirket türü ekiyle — web araması (9 Eki) | 138 | 0 $ | 0 (3'ten, elle) |
 | R | AB 10 ülke — ajanlar rehber/üye listesinden üreticinin sitesini topladı (9 Eki) | 493 site | 0 $ | 142 (156'dan, elle) |
+| S | R'nin yöntemi talep gelen 13 ülkede (Meksika, Brezilya, Mısır, Kazakistan, Kolombiya, Şili, Arjantin, Peru, Özbekistan, Suudi, BAE, Fas, Cezayir) (9 Eki) | 513 site | 0 $ | 72 (91'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -565,7 +566,11 @@ demektir — `eksik` sorgular yeni turda tekrarlanır. **Ders 2 — rehberden ha
 ajan ülke başına rehber, dernek üye listesi, fuar katılımcı listesi sayfalarını açıp üreticinin
 KENDİ sitesini topladı (rehber listeye girmez). 493 sitenin 229'u ilk doğrulamayı, 157'si sıkı
 süzgeci geçti; 39 şüpheliye elle bakıldı, 12'si elendi (mağaza, toptancı, tesisat firması, yol
-işaretleme, inşaat demiri). **142 AB üreticisi panele girdi (9 Eki 01:35):** Romanya 29,
+işaretleme, inşaat demiri). **S (aynı gece, talep gelen 13 ülke):** 513 site, 91 satır
+sıkı süzgeci geçti, 16'sı elle elendi; 70 firma panele girdi (01:39): Brezilya 16, Meksika 10,
+Arjantin 7, Peru 7, Kolombiya 6, Şili 5, Suudi 5, Özbekistan 5, BAE 4, Kazakistan 2, Fas 2,
+Mısır 1. Bu ülkelerde liste doymuş: rehberin çoğu firma zaten listedeydi. **142 AB üreticisi
+panele girdi (9 Eki 01:35):** Romanya 29,
 Polonya 31, Macaristan 21, Çekya 15, Yunanistan 12, İtalya 10, Bulgaristan 10, İspanya 7,
 Slovakya 6, Portekiz 4; O'dan KÁLLÓ-fém ve Metalkas. Macarca e-posta şablonu YOK
 (`seo/eposta-taslaklari.json`: en es it de pl ru tr fr pt ar) — Macar firmalara İngilizce gider;

@@ -804,6 +804,9 @@ ULKELER_R = [u for u in ULKELER_O if u[1] in {"IT", "ES", "PL", "HU", "RO", "CZ"
 # yarisi ilk dogrulamayi gecti; web aramasinda bu oran %5'in altindaydi.
 ULKELER_S = [u for u in ULKELER if u[1] in {"MX", "BR", "CO", "CL", "PE", "AR", "EC", "EG", "SA", "AE", "MA",
                                              "DZ", "KZ", "UZ"}]
+# T turu: ayni yontem, R ve S'de olmayan butun ulkeler (ajan hangi ulkeyi tararsa).
+_RS = {u[1] for u in ULKELER_R + ULKELER_S}
+ULKELER_T = [u for u in ULKELER + ULKELER_B + ULKELER_O if u[1] not in _RS]
 
 
 def _ilk(x):
@@ -850,6 +853,8 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "t":
+        return ULKELER_T, {}, "-t"
     if tur == "s":
         return ULKELER_S, {}, "-s"
     if tur == "r":
@@ -1415,7 +1420,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
@@ -1429,7 +1434,8 @@ def main():
                          "p: Tayland, Malezya ve AB disi Balkanlar'da yerel dilde arama | "
                          "q: o ve n'nin terimleri Italya, Ispanya, Polonya ve Latin Amerika sanayi sehirlerinde | "
                          "r: AB'de rehber/liste sayfalarindan uretici sitesi (ajan ciktisi; SERP dosyasi elle) | "
-                         "s: r'nin yontemi Latin Amerika, Orta Dogu-Kuzey Afrika ve Orta Asya'da")
+                         "s: r'nin yontemi Latin Amerika, Orta Dogu-Kuzey Afrika ve Orta Asya'da | "
+                         "t: r'nin yontemi r ve s disindaki ulkelerde")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
