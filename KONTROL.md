@@ -462,6 +462,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | J | 14 Arap ülkesi, Arapça arama — e-postası Arapça (28-29 Eyl) | 224 | 0,27 $ | 26 (50'den, elle) |
 | K | 96 AB dışı ülke; raf, kablo kanalı ve mağaza rafı, yerel terimlerle ikinci tarama (7 Eki) | 480 | 0,58 $ | 47 (115'ten, elle) |
 | L | K'nin terimleri D/F/G'nin 180 sanayi şehrinde (7 Eki) | 900 | 1,08 $ | 81 (206'dan, elle) |
+| M | Kafkasya, Moldova ve Orta Asya'nın 9 ülkesi + 16 şehri, Rusça arama — e-postası Rusça (7-8 Eki) | 388 | 0,47 $ | 21 (142'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -532,6 +533,18 @@ iş ilanı ve fuar sitelerini çok getiriyor; raf aramaları ayrıca bayi ve kur
 firmalarını. 81 yeni üretici panele aktarıldı (33'ü Hindistan'da; Vietnam'da 8 kablo
 kanalı atölyesi). Sonuç: aynı terimlerle bir tur daha anlamsız; bundan sonraki keşif
 ya yeni dil ya yeni segment olmalı.
+
+**M turu — Rusça (2026-10-07/08):** Azerbaycan, Gürcistan, Ermenistan, Moldova ve beş
+Orta Asya ülkesinde Rusça "<ürün> производитель" aramaları; bu firmaların e-postası
+Rusça (`hedef-firma-excel.py` `RUSCA_TURU`). Otomatik süzgeç 168 satır bıraktı, **146'sı
+elle elendi**: bölgede Rusça arama çoğunlukla rehber (yell, 999.md, tap.az), haber, iş
+ilanı ve mağaza getiriyor; mepen.az/.kz/.kg aynı pazar yeri. Kararsız her siteye ana
+sayfasından bakıldı. 21 üretici panele girdi (12'si Kazakistan): EMS Group (Kostanay'da
+dilme yapan servis merkezi), Molibden (Atırav'da kendi LSTK profili), ПК Атлант (cephe alt
+sistemi), Центр Металлокровли, KOROBOV (kablo kanalı) gibi. Altı firmanın segmenti
+ürettiğine göre düzeltildi (çit üreticileri → çatı/cephe paneli). **Tuzak:** bir sitenin
+sayfası Python regex'inde GIL'i tutup süreci kilitledi; iş parçacığı zaman aşımı işe
+yaramadı. Kalan adaylar her biri ayrı süreçte, 120 sn sınırla doğrulandı.
 
 Kalan 26 firmanın dağılımı: Suudi Arabistan 7, Libya 5, BAE, Irak, Katar, Kuveyt ve Tunus
 2'şer, Mısır, Umman, Ürdün ve Cezayir birer. Bu firmalar çatı ve sandviç panel, çelik yapı,
