@@ -574,8 +574,9 @@ Arjantin 7, Peru 7, Kolombiya 6, Şili 5, Suudi 5, Özbekistan 5, BAE 4, Kazakis
 Mısır 1. Bu ülkelerde liste doymuş: rehberin çoğu firma zaten listedeydi. **T (aynı gece, 10 ülke):** 363 site, 78 satır,
 3'ü elendi; 69 firma panele girdi (02:02): Vietnam 28, Hollanda 14, Belçika 8, Endonezya 5, Nijerya 4,
 Fransa 4, Katar, Kenya ve Umman 2'şer. Afrika ve Körfez'de rehberlerin çoğu firma zaten listedeydi. **U (aynı gece):** 37 firma
-panele girdi (02:30). Küçük pazarlarda (Gana, Ürdün, Kuveyt, Guatemala) rehberler web sitesi göstermiyor.
-**Gece toplamı: N–U turlarından 321 yeni firma** (R 142 + O 2 + S 70 + T 69 + U 37 + 1 tekrar). **142 AB üreticisi
+panele girdi (02:20). Küçük pazarlarda (Gana, Ürdün, Kuveyt, Guatemala) rehberler web sitesi göstermiyor.
+**Gece toplamı: N–U turlarından panele 321 yeni kayıt** (aktarım sayıları 145 + 70 + 69 + 37);
+sırada e-postalı 811 firma bekliyor. **142 AB üreticisi
 panele girdi (9 Eki 01:35):** Romanya 29,
 Polonya 31, Macaristan 21, Çekya 15, Yunanistan 12, İtalya 10, Bulgaristan 10, İspanya 7,
 Slovakya 6, Portekiz 4; O'dan KÁLLÓ-fém ve Metalkas. Macarca e-posta şablonu YOK
