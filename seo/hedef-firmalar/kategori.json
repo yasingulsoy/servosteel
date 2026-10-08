@@ -28864,5 +28864,227 @@
 "not": "Yol Bariyeri",
 "dogrulandi": true,
 "site": true
+},
+"universaldeperfiles.com|kosta rika": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"3d.co.cr|kosta rika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"macopa.com|kosta rika": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"rak.com.kw|kuveyt": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"kksteel.com.pk|pakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli, Kablo Kanalı, Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"steelcity.pk|pakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"asiametal.co.th|tayland": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"jamco-jo.com|ürdün": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"colorsteel.com.ph|filipinler": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metalink.com.ph|filipinler": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"citytop.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cooldec.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"evergoldmetal.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"khproofing.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"roofseal.com.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"yarker.my|malezya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"sermthaisteelworks.com|tayland": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"helixsteel.ph|filipinler": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"nippon.com.ph|filipinler": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"scaffolding.com.ph|filipinler": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"thanavong.com|tayland": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"imecss.com.my|malezya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"jetsteelandservices.co.th|tayland": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"equisacorp.com|guatemala": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"electrolock.com.my|malezya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"en.ssic.co.th|tayland": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"systemprostorage.co.th|tayland": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"kyl.co.th|tayland": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"aysteel.pk|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"ferrous.com.pk|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"rizwansteel.com.pk|pakistan": {
+"kategori": 3,
+"not": "çelik servis — sitede boy kesme/levha ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"fantini.cr|kosta rika": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"rocky.co.th|tayland": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"royaltechltd.com.pk|pakistan": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sopem.com.tn|tunus": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"goodrayssteel.pk|pakistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"siamstorage.co.th|tayland": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
 }
 }
