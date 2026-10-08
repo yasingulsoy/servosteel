@@ -463,6 +463,11 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | K | 96 AB dışı ülke; raf, kablo kanalı ve mağaza rafı, yerel terimlerle ikinci tarama (7 Eki) | 480 | 0,58 $ | 47 (115'ten, elle) |
 | L | K'nin terimleri D/F/G'nin 180 sanayi şehrinde (7 Eki) | 900 | 1,08 $ | 81 (206'dan, elle) |
 | M | Kafkasya, Moldova ve Orta Asya'nın 9 ülkesi + 16 şehri, Rusça arama — e-postası Rusça (7-8 Eki) | 388 | 0,47 $ | 21 (142'den, elle) |
+| N | Latin Amerika 17 ülke, alıcının terimi (lámina pintro, costanera, PHR, durlock, telha) — web araması (9 Eki) | 109 | 0 $ | 0 (13'ten, elle) |
+| O | AB 14 ülke, yerel dilde (İtalya, İspanya, Polonya, Macaristan, Romanya, Çekya…) — web araması (9 Eki) | 185 | 0 $ | 2 (44'ten, elle) |
+| P | Tayland, Malezya, AB dışı Balkanlar, yerel dilde — web araması (9 Eki) | 150 | 0 $ | 0 (11'den, elle) |
+| Q | İtalya, İspanya, Polonya'nın 23 sanayi şehri, şirket türü ekiyle — web araması (9 Eki) | 138 | 0 $ | 0 (3'ten, elle) |
+| R | AB 10 ülke — ajanlar rehber/üye listesinden üreticinin sitesini topladı (9 Eki) | 493 site | 0 $ | 142 (156'dan, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -545,6 +550,28 @@ sistemi), Центр Металлокровли, KOROBOV (kablo kanalı) gibi. A
 ürettiğine göre düzeltildi (çit üreticileri → çatı/cephe paneli). **Tuzak:** bir sitenin
 sayfası Python regex'inde GIL'i tutup süreci kilitledi; iş parçacığı zaman aşımı işe
 yaramadı. Kalan adaylar her biri ayrı süreçte, 120 sn sınırla doğrulandı.
+
+**N–S turları — DataForSEO'suz keşif (2026-10-09 gecesi, Yasin "a'dan z'ye arama yap 3 saat
+boyunca"):** DataForSEO bakiyesi bitti (−0,01 $; hesabı dekoartizan ve OravityWeb de kullanıyor,
+benim tahminim 5,9 $ idi — ücretli işten önce `appendix/user_data` ile gerçek bakiyeye bak).
+Yerine Claude'un alt ajanları kullanıldı; çıktıları `seo/hedef-firmalar/kesif/ajan/<tur>/`,
+`scripts/hedef-firma-kesif-birlestir.py` SERP önbelleğine çevirir, `hedef-firma-kesif-kalan.py`
+her adayı ayrı süreçte (`hedef-firma-kesif-tek.py`, 120 sn) doğrular, ana betik sıfır aday bulup
+yalnız sıkı/ince süzgeci uygular. **Ders 1 — web araması işe yaramadı:** ülke konumu yok;
+"<ürün> üreticisi" aramaları AB'de iş gazetesi, firma rehberi, iş ilanı getirdi (O: 921 adaydan
+2 üretici; N, P, Q: sıfır). Şirket türü eki (srl, sp. z o.o.) de düzeltmedi. Tur başına 200 web
+araması sınırı var (bütün ajanlar ortak); aşan ajan boş sonuç yazar, `sonuclar: []` "aranmadı"
+demektir — `eksik` sorgular yeni turda tekrarlanır. **Ders 2 — rehberden hasat işe yaradı (R):**
+ajan ülke başına rehber, dernek üye listesi, fuar katılımcı listesi sayfalarını açıp üreticinin
+KENDİ sitesini topladı (rehber listeye girmez). 493 sitenin 229'u ilk doğrulamayı, 157'si sıkı
+süzgeci geçti; 39 şüpheliye elle bakıldı, 12'si elendi (mağaza, toptancı, tesisat firması, yol
+işaretleme, inşaat demiri). **142 AB üreticisi panele girdi (9 Eki 01:35):** Romanya 29,
+Polonya 31, Macaristan 21, Çekya 15, Yunanistan 12, İtalya 10, Bulgaristan 10, İspanya 7,
+Slovakya 6, Portekiz 4; O'dan KÁLLÓ-fém ve Metalkas. Macarca e-posta şablonu YOK
+(`seo/eposta-taslaklari.json`: en es it de pl ru tr fr pt ar) — Macar firmalara İngilizce gider;
+Romen, Çek, Slovak, Yunan, Bulgar da İngilizce. Hasatta ajanın notunu oku: "doğrulanmadı" dediği
+satırlara ana sayfadan bak. **Saat dilimi:** Slovenya, Letonya, Estonya, Kosova
+`src/lib/saat-dilimi.ts`'te yoktu, eklendi.
 
 Kalan 26 firmanın dağılımı: Suudi Arabistan 7, Libya 5, BAE, Irak, Katar, Kuveyt ve Tunus
 2'şer, Mısır, Umman, Ürdün ve Cezayir birer. Bu firmalar çatı ve sandviç panel, çelik yapı,

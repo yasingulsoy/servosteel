@@ -27034,5 +27034,131 @@
 "not": "Raf Sistemleri",
 "dogrulandi": true,
 "site": true
+},
+"bvz.kz|kazakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"molibden.kz|kazakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ust-kamenogorsk.uzsk.kz|kazakistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı · ürün sitede doğrulanamadı",
+"dogrulandi": false,
+"site": true
+},
+"unimet.ge|gürcistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"agran.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"karaganda.kupitzabor.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"metallobaza.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"atyrau.shtaketniki.kz|kazakistan": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"garduri.md|moldova": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"profnastil.md|moldova": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"electricagroup.am|ermenistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"korobov.kz|kazakistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"ts551711.kz|kazakistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"interstellaj.uz|özbekistan": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"newmett.az|azerbaycan": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"emsgroup.kz|kazakistan": {
+"kategori": 2,
+"not": "çelik servis — sitede dilme ağır basıyor",
+"dogrulandi": true,
+"site": true
+},
+"metalzavod.am|ermenistan": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"sardbod.com|tacikistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"pk-atlant.kz|kazakistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"rultehcom.com|moldova": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"gayur.tj|tacikistan": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
 }
 }

@@ -548,6 +548,278 @@ SORGU_M = {
     "ru:sehir": {seg: _liste(SORGU["ru"][seg]) + _liste(SORGU_K["ru"].get(seg, [])) for seg in SORGU["ru"]},
 }
 
+# N turu (2026-10-09, Yasin "firma bul tara ekle"): Latin Amerika'da ALICININ KENDI TERIMI —
+# I turunun Latin Amerika karsiligi. Kampanyanin uc teklif talebi buradan (Persa Meksika, Racklog
+# Sili, Rackers Ekvador); raf K/L'de tarandi, burada cati paneli, asik/hafif celik, alcipan
+# profili, bariyer ve servis merkezi aranir. Terim ulkeye gore degisiyor: Meksika'da lamina pintro,
+# losacero, polin monten, canal y poste (tablaroca), "habilitado" (servis merkezi); Kolombiya'da
+# teja termoacustica, perfil PHR; Peru'da calamina, TR4, parante; Sili'de costanera, metalcon,
+# doble onda; Arjantin'de chapa acanalada, durlock; Orta Amerika'da lamina troquelada, polin,
+# tablayeso; Brezilya'da telha trapezoidal, terca, montante. Meksika ve Brezilya'da d/f
+# sehirleri de (ulke geneli aramada yerel firma cikmiyor).
+_N_BOLGE = {
+    "es:mx": {"MX"}, "es:co": {"CO"}, "es:pe": {"PE"}, "es:andino": {"EC", "BO"}, "es:cl": {"CL"},
+    "es:ar": {"AR", "UY", "PY"}, "es:centro": {"GT", "CR", "PA", "HN", "SV", "NI", "DO"}, "pt:br": {"BR"},
+}
+ULKELER_N = [
+    (ad, iso, anahtar, tel, sorgu_ulke)
+    for ad, iso, _, tel, sorgu_ulke in ULKELER + ULKELER_B
+    for anahtar, isolar in _N_BOLGE.items() if iso in isolar
+] + [
+    ("Meksika", "MX", "es:mx", "52", s) for s in (
+        "Monterrey", "Guadalajara", "Ciudad de México", "Querétaro", "Puebla", "San Luis Potosí", "León", "Saltillo")
+] + [
+    ("Brezilya", "BR", "pt:br", "55", s) for s in (
+        "São Paulo", "Curitiba", "Belo Horizonte", "Porto Alegre", "Joinville", "Campinas", "Goiânia", "Salvador")
+]
+SORGU_N = {
+    "es:mx": {"cati-cephe-paneli": ["fabricante de lámina pintro", "fabricante de losacero y lámina acanalada"],
+              "asik-celik-yapi": ["fabricante de polín monten", "fabricante de perfiles monten galvanizados"],
+              "alcipan-profili": "fabricante de canal y poste para tablaroca",
+              "yol-bariyeri": "fabricante de defensa metálica de dos crestas",
+              "celik-servis-merkezi": ["habilitado de lámina en rollo", "centro de habilitado de acero"]},
+    "es:co": {"cati-cephe-paneli": ["fabricante de teja termoacústica", "fabricante de tejas y cubiertas metálicas"],
+              "asik-celik-yapi": ["fabricante de perfil PHR", "fabricante de perfiles en lámina galvanizada"],
+              "alcipan-profili": "fabricante de perfilería para drywall",
+              "yol-bariyeri": "fabricante de barandas y defensas viales",
+              "celik-servis-merkezi": "corte de bobinas de acero a la medida"},
+    "es:pe": {"cati-cephe-paneli": ["fabricante de coberturas metálicas TR4", "fábrica de calaminas y planchas onduladas"],
+              "asik-celik-yapi": ["fabricante de correas y perfiles para techos", "fabricante de viguetas y perfiles galvanizados"],
+              "alcipan-profili": "fabricante de parantes y rieles para drywall",
+              "celik-servis-merkezi": "corte de bobinas de acero a medida"},
+    "es:andino": {"cati-cephe-paneli": ["fabricante de cubiertas metálicas steel panel", "fabricante de techos de zinc y aluzinc"],
+                  "asik-celik-yapi": "fabricante de correas G y perfiles laminados en frío",
+                  "alcipan-profili": "fabricante de perfiles para gypsum",
+                  "celik-servis-merkezi": "corte de bobinas de acero a medida"},
+    "es:cl": {"cati-cephe-paneli": ["fabricante de planchas de zinc acanaladas", "fabricante de cubiertas y revestimientos metálicos"],
+              "asik-celik-yapi": ["fabricante de costaneras", "fabricante de perfiles metalcon"],
+              "alcipan-profili": "fabricante de perfiles para tabiquería y cielos",
+              "yol-bariyeri": "fabricante de barreras de contención doble onda",
+              "celik-servis-merkezi": "corte y slitter de bobinas de acero"},
+    "es:ar": {"cati-cephe-paneli": ["fábrica de chapa acanalada y trapezoidal", "fabricante de chapas para techos"],
+              "asik-celik-yapi": ["fábrica de perfiles C galvanizados", "fabricante de perfiles para steel framing"],
+              "alcipan-profili": "fabricante de perfiles para durlock",
+              "yol-bariyeri": "fabricante de defensas viales flex beam",
+              "celik-servis-merkezi": "corte de bobinas de chapa a medida"},
+    "es:centro": {"cati-cephe-paneli": ["fabricante de lámina troquelada", "fábrica de techos de aluzinc"],
+                  "asik-celik-yapi": ["fabricante de perfiles polín galvanizado", "fabricante de estructuras de techo de acero"],
+                  "alcipan-profili": "fabricante de perfiles para tablayeso y gypsum",
+                  "celik-servis-merkezi": "corte de lámina en rollo a la medida"},
+    "pt:br": {"cati-cephe-paneli": ["fabricante de telha trapezoidal galvalume", "fábrica de telhas metálicas onduladas"],
+              "asik-celik-yapi": ["fabricante de terças metálicas", "fabricante de perfis Z e U enrijecido"],
+              "alcipan-profili": "fabricante de montantes e guias para drywall",
+              "yol-bariyeri": "fabricante de defensa metálica semimaleável",
+              "celik-servis-merkezi": ["corte de bobinas de aço sob medida slitter", "distribuidor de aço com corte de bobinas"]},
+}
+
+# O turu (2026-10-09, Yasin "a'dan z'ye arama yap 3 saat boyunca"): AB'de YEREL DIL. 8 Ekim'de
+# AB'ye gonderim acildi (Almanya/Avusturya kapali kalir); listede Italya 39, Ispanya 31, Polonya 47,
+# Macaristan 6, Yunanistan 2 firma vardi — bu ulkeler hic kendi dilinde aranmamisti. Italya,
+# Ispanya, Polonya, Macaristan'a e-posta kendi dilinde gider (site dili); digerlerine Ingilizce.
+# Pres atolyesi de aranir (servo besleme oncelikli urun, AB'de metal sac presleme yaygin).
+ULKELER_O = [
+    ("İtalya", "IT", "it", "39", "Italia"), ("İspanya", "ES", "es:es", "34", "España"),
+    ("Polonya", "PL", "pl", "48", "Polska"), ("Macaristan", "HU", "hu", "36", ""),
+    ("Romanya", "RO", "ro", "40", "România"), ("Çekya", "CZ", "cs", "420", ""),
+    ("Slovakya", "SK", "sk", "421", ""), ("Yunanistan", "GR", "el", "30", "Ελλάδα"),
+    ("Bulgaristan", "BG", "bg", "359", "България"), ("Hırvatistan", "HR", "hr", "385", "Hrvatska"),
+    ("Slovenya", "SI", "sl", "386", "Slovenija"), ("Litvanya", "LT", "lt", "370", "Lietuva"),
+    ("Letonya", "LV", "lv", "371", "Latvija"), ("Estonya", "EE", "et", "372", "Eesti"),
+]
+SORGU_O = {
+    "it": {"kablo-kanali": ["produttore passerelle portacavi", "produttore canaline portacavi in acciaio"],
+           "solar-profil": "produttore strutture per impianti fotovoltaici",
+           "raf-sistemleri": ["produttore scaffalature industriali", "produttore scaffalature porta pallet"],
+           "yol-bariyeri": "produttore guardrail barriere stradali",
+           "cati-cephe-paneli": ["produttore lamiera grecata", "produttore pannelli sandwich"],
+           "celik-servis-merkezi": ["centro servizi acciaio taglio coils", "taglio lamiere da coil conto terzi"],
+           "asik-celik-yapi": ["produttore profili zincati arcarecci", "produttore profili sagomati a freddo"],
+           "iskele-kalasi": "produttore ponteggi", "market-rafi": "produttore scaffalature per negozi",
+           "havalandirma-kanali": "produzione canali aria in lamiera zincata",
+           "metal-mobilya": "produttore armadi metallici", "alcipan-profili": "produttore profili per cartongesso",
+           "pres-atolyeleri": ["tranciatura e stampaggio lamiera conto terzi", "stampaggio metalli a freddo"]},
+    "es:es": {"kablo-kanali": ["fabricante de bandejas portacables", "fabricante de canales metálicas para cables"],
+              "solar-profil": "fabricante de estructuras para placas solares",
+              "raf-sistemleri": ["fabricante de estanterías metálicas", "fabricante de racks para palets"],
+              "yol-bariyeri": "fabricante de bionda barrera de seguridad",
+              "cati-cephe-paneli": ["fabricante de chapa grecada", "fabricante de panel sándwich"],
+              "celik-servis-merkezi": ["centro de servicio de acero corte de bobinas", "corte longitudinal de bobinas de acero"],
+              "asik-celik-yapi": ["fabricante de correas metálicas", "fabricante de perfiles conformados en frío"],
+              "iskele-kalasi": "fabricante de andamios", "market-rafi": "fabricante de estanterías para tiendas",
+              "havalandirma-kanali": "fabricante de conductos de chapa galvanizada",
+              "metal-mobilya": "fabricante de taquillas metálicas", "alcipan-profili": "fabricante de perfiles para pladur",
+              "pres-atolyeleri": ["estampación de metales", "troquelado de chapa"]},
+    "pl": {"kablo-kanali": ["producent koryt kablowych", "producent korytek kablowych"],
+           "solar-profil": "producent konstrukcji fotowoltaicznych",
+           "raf-sistemleri": ["producent regałów magazynowych", "producent regałów paletowych"],
+           "yol-bariyeri": "producent barier drogowych",
+           "cati-cephe-paneli": ["producent blachy trapezowej", "producent blachodachówki"],
+           "celik-servis-merkezi": ["centrum serwisowe stali cięcie kręgów", "cięcie blach z kręgów"],
+           "asik-celik-yapi": ["producent profili zimnogiętych", "producent płatwi stalowych"],
+           "iskele-kalasi": "producent rusztowań", "market-rafi": "producent regałów sklepowych",
+           "havalandirma-kanali": "producent kanałów wentylacyjnych", "metal-mobilya": "producent szaf metalowych",
+           "alcipan-profili": "producent profili do płyt gipsowo-kartonowych",
+           "pres-atolyeleri": ["tłoczenie blach usługi", "tłocznia metali"]},
+    "hu": {"kablo-kanali": "kábeltálca gyártó", "solar-profil": "napelem tartószerkezet gyártó",
+           "raf-sistemleri": ["raktári polcrendszer gyártó", "raklapos állványrendszer gyártó"],
+           "yol-bariyeri": "szalagkorlát gyártó", "cati-cephe-paneli": ["trapézlemez gyártó", "szendvicspanel gyártó"],
+           "celik-servis-merkezi": "acél tekercs hosszvágás darabolás",
+           "asik-celik-yapi": ["acél szelemen gyártó", "acélszerkezet gyártó"], "iskele-kalasi": "állványzat gyártó",
+           "market-rafi": "üzletberendezés polc gyártó", "havalandirma-kanali": "légcsatorna gyártó",
+           "metal-mobilya": "fém öltözőszekrény gyártó", "alcipan-profili": "gipszkarton profil gyártó",
+           "pres-atolyeleri": ["fémsajtolás lemezalkatrész gyártás", "préselés bérmunka"]},
+    "ro": {"kablo-kanali": "producător jgheaburi metalice pentru cabluri", "solar-profil": "producător structuri panouri fotovoltaice",
+           "raf-sistemleri": "producător rafturi metalice", "yol-bariyeri": "producător parapete rutiere",
+           "cati-cephe-paneli": ["producător tablă cutată", "producător țiglă metalică"],
+           "celik-servis-merkezi": "debitare tablă din bobine", "asik-celik-yapi": "producător profile zincate structuri metalice",
+           "iskele-kalasi": "producător schele metalice", "market-rafi": "producător rafturi magazin",
+           "havalandirma-kanali": "producător tubulatură ventilație", "metal-mobilya": "producător dulapuri metalice",
+           "alcipan-profili": "producător profile gips carton", "pres-atolyeleri": "ștanțare tablă piese metalice"},
+    "cs": {"kablo-kanali": "výrobce kabelových žlabů", "solar-profil": "výrobce konstrukcí pro fotovoltaiku",
+           "raf-sistemleri": "výrobce regálů", "yol-bariyeri": "výrobce svodidel",
+           "cati-cephe-paneli": ["výrobce trapézových plechů", "výrobce sendvičových panelů"],
+           "celik-servis-merkezi": "dělení plechů ze svitků", "asik-celik-yapi": "výrobce ocelových vaznic a profilů",
+           "iskele-kalasi": "výrobce lešení", "market-rafi": "výrobce obchodních regálů",
+           "havalandirma-kanali": "výroba vzduchotechnického potrubí", "metal-mobilya": "výrobce kovových skříní",
+           "alcipan-profili": "výrobce profilů pro sádrokarton", "pres-atolyeleri": "lisování plechových dílů"},
+    "sk": {"kablo-kanali": "výrobca káblových žľabov", "raf-sistemleri": "výrobca regálov", "yol-bariyeri": "výrobca zvodidiel",
+           "cati-cephe-paneli": "výrobca trapézových plechov", "asik-celik-yapi": "výrobca oceľových konštrukcií",
+           "iskele-kalasi": "výrobca lešení", "havalandirma-kanali": "výroba vzduchotechnického potrubia",
+           "metal-mobilya": "výrobca kovových skríň", "alcipan-profili": "výrobca profilov pre sadrokartón",
+           "pres-atolyeleri": "lisovanie plechových dielov"},
+    "el": {"kablo-kanali": "κατασκευή σχαρών καλωδίων", "solar-profil": "κατασκευή βάσεων φωτοβολταϊκών",
+           "raf-sistemleri": "κατασκευή ραφιών αποθήκης", "yol-bariyeri": "κατασκευή στηθαίων ασφαλείας",
+           "cati-cephe-paneli": ["παραγωγή πάνελ οροφής", "τραπεζοειδή λαμαρίνα παραγωγή"],
+           "asik-celik-yapi": "μεταλλικές κατασκευές τεγίδες", "iskele-kalasi": "κατασκευή σκαλωσιών",
+           "market-rafi": "κατασκευή ραφιέρες καταστημάτων", "havalandirma-kanali": "κατασκευή αεραγωγών",
+           "metal-mobilya": "κατασκευή μεταλλικά ερμάρια", "alcipan-profili": "παραγωγή προφίλ γυψοσανίδας",
+           "pres-atolyeleri": "κατασκευή μεταλλικών πρεσαριστών εξαρτημάτων"},
+    "bg": {"kablo-kanali": "производител на кабелни скари", "solar-profil": "производител на конструкции за фотоволтаици",
+           "raf-sistemleri": "производител на стелажи", "yol-bariyeri": "производител на мантинели",
+           "cati-cephe-paneli": ["производител на трапецовидна ламарина", "производител на сандвич панели"],
+           "asik-celik-yapi": "производител на метални конструкции и профили", "iskele-kalasi": "производител на скелета",
+           "market-rafi": "производител на търговско оборудване стелажи", "havalandirma-kanali": "производство на въздуховоди",
+           "metal-mobilya": "производител на метални шкафове", "alcipan-profili": "производител на профили за гипсокартон",
+           "pres-atolyeleri": "щанцоване на метални детайли"},
+    "hr": {"kablo-kanali": "proizvođač kabelskih polica", "solar-profil": "proizvođač nosača za solarne panele",
+           "raf-sistemleri": "proizvođač regala", "yol-bariyeri": "proizvođač zaštitnih ograda za ceste",
+           "cati-cephe-paneli": ["proizvođač trapeznog lima", "proizvođač sendvič panela"],
+           "asik-celik-yapi": "proizvođač čeličnih konstrukcija", "iskele-kalasi": "proizvođač skela",
+           "market-rafi": "proizvođač trgovačkih regala", "havalandirma-kanali": "proizvodnja ventilacijskih kanala",
+           "metal-mobilya": "proizvođač metalnih ormara", "alcipan-profili": "proizvođač profila za gips karton",
+           "pres-atolyeleri": "štancanje lima"},
+    "sl": {"kablo-kanali": "proizvajalec kabelskih polic", "raf-sistemleri": "proizvajalec regalov",
+           "yol-bariyeri": "proizvajalec varnostnih ograj",
+           "cati-cephe-paneli": ["proizvajalec trapezne pločevine", "proizvajalec sendvič panelov"],
+           "asik-celik-yapi": "proizvajalec jeklenih konstrukcij", "iskele-kalasi": "proizvajalec gradbenih odrov",
+           "havalandirma-kanali": "izdelava prezračevalnih kanalov", "metal-mobilya": "proizvajalec kovinskih omar",
+           "alcipan-profili": "proizvajalec profilov za mavčne plošče", "pres-atolyeleri": "štancanje pločevine"},
+    "lt": {"kablo-kanali": "kabelių lovelių gamintojas", "raf-sistemleri": "stelažų gamintojas",
+           "cati-cephe-paneli": ["stogo dangų gamintojas", "trapecinės skardos gamyba"],
+           "asik-celik-yapi": "metalo konstrukcijų gamintojas", "iskele-kalasi": "pastolių gamintojas",
+           "havalandirma-kanali": "ortakių gamyba", "metal-mobilya": "metalinių spintų gamintojas",
+           "alcipan-profili": "gipso kartono profilių gamyba"},
+    "lv": {"raf-sistemleri": "plauktu ražotājs", "cati-cephe-paneli": "jumta segumu ražotājs",
+           "asik-celik-yapi": "metāla konstrukciju ražotājs", "iskele-kalasi": "sastatņu ražotājs",
+           "havalandirma-kanali": "ventilācijas gaisa vadu ražošana", "metal-mobilya": "metāla skapju ražotājs",
+           "alcipan-profili": "ģipškartona profilu ražotājs"},
+    "et": {"raf-sistemleri": "riiulite tootja", "cati-cephe-paneli": "katusekatete tootja",
+           "asik-celik-yapi": "teraskonstruktsioonide tootja", "iskele-kalasi": "tellingute tootja",
+           "havalandirma-kanali": "ventilatsioonitorude tootmine", "metal-mobilya": "metallkappide tootja",
+           "alcipan-profili": "kipsplaadi profiilide tootja"},
+}
+
+# P turu (2026-10-09, ayni gece O'nun devami): Asya ve Balkanlar'da YEREL DIL. Tayland ve Malezya
+# a-c turlarinda yalniz Ingilizce arandi (Tayland 53, Malezya 130 firma); kucuk yerel uretici
+# sitesi Tayca / Malayca. Sirbistan, Bosna, Karadag, Kuzey Makedonya, Arnavutluk B turunda
+# yalniz Ingilizce arandi; Kosova hic aranmadi. E-posta Ingilizce gider (site dili degil).
+ULKELER_P = [
+    ("Tayland", "TH", "th", "66", ""), ("Malezya", "MY", "ms", "60", "Malaysia"),
+    ("Sırbistan", "RS", "sr", "381", "Srbija"), ("Bosna-Hersek", "BA", "sr", "387", "BiH"),
+    ("Karadağ", "ME", "sr", "382", "Crna Gora"), ("Kuzey Makedonya", "MK", "mk", "389", "Македонија"),
+    ("Arnavutluk", "AL", "sq", "355", "Shqipëri"), ("Kosova", "XK", "sq", "383", "Kosovë"),
+]
+SORGU_P = {
+    "th": {"kablo-kanali": "โรงงานผลิตรางเคเบิล", "solar-profil": "ผลิตโครงยึดแผงโซล่าเซลล์",
+           "raf-sistemleri": ["โรงงานผลิตชั้นวางสินค้า", "ผลิตแร็คเหล็กคลังสินค้า"], "yol-bariyeri": "ผลิตการ์ดเรล",
+           "cati-cephe-paneli": ["โรงงานผลิตเมทัลชีท", "ผลิตแผ่นหลังคาเหล็ก"], "celik-servis-merkezi": "บริการสลิตคอยล์เหล็ก",
+           "asik-celik-yapi": "โรงงานผลิตเหล็กตัวซี", "iskele-kalasi": "โรงงานผลิตนั่งร้าน",
+           "market-rafi": "ผลิตชั้นวางซุปเปอร์มาร์เก็ต", "havalandirma-kanali": "โรงงานผลิตท่อลม",
+           "metal-mobilya": "โรงงานผลิตตู้เหล็ก", "alcipan-profili": "ผลิตโครงคร่าวฝ้าเพดาน",
+           "pres-atolyeleri": "รับปั๊มชิ้นงานโลหะ"},
+    "ms": {"kablo-kanali": "pengeluar dulang kabel", "raf-sistemleri": "pengeluar rak besi",
+           "cati-cephe-paneli": ["pengeluar bumbung metal", "kilang zink bumbung"],
+           "asik-celik-yapi": "pengeluar kekuda bumbung keluli ringan", "iskele-kalasi": "pengeluar perancah",
+           "havalandirma-kanali": "pengeluar saluran udara", "metal-mobilya": "pengeluar almari besi",
+           "alcipan-profili": "pengeluar rangka siling", "yol-bariyeri": "pengeluar penghadang jalan"},
+    "sr": {"kablo-kanali": "proizvođač kablovskih regala", "solar-profil": "proizvođač nosača za solarne panele",
+           "raf-sistemleri": "proizvodnja metalnih regala", "yol-bariyeri": "proizvođač zaštitnih ograda za puteve",
+           "cati-cephe-paneli": ["proizvođač trapeznog lima", "proizvođač sendvič panela"],
+           "asik-celik-yapi": "proizvodnja čeličnih konstrukcija", "iskele-kalasi": "proizvođač skela",
+           "havalandirma-kanali": "proizvodnja ventilacionih kanala", "metal-mobilya": "proizvođač metalnih ormana",
+           "alcipan-profili": "proizvođač profila za gips ploče", "pres-atolyeleri": "štancovanje lima"},
+    "mk": {"raf-sistemleri": "производител на регали", "cati-cephe-paneli": ["производител на трапезен лим", "сендвич панели производство"],
+           "asik-celik-yapi": "челични конструкции производство", "iskele-kalasi": "производител на скели",
+           "havalandirma-kanali": "вентилациони канали производство", "metal-mobilya": "метални ормари производител"},
+    "sq": {"cati-cephe-paneli": ["prodhues llamarine", "panele sanduiç prodhim"], "asik-celik-yapi": "konstruksione metalike prodhim",
+           "raf-sistemleri": "prodhues rafte metalike", "iskele-kalasi": "prodhues skela",
+           "havalandirma-kanali": "kanale ventilimi prodhim", "metal-mobilya": "prodhues dollapë metalikë"},
+}
+
+# Q turu (2026-10-09, ayni gece): O ve N'nin terimleri SANAYI SEHIRLERINDE. Ulke capinda arama
+# ilk 10'da buyuk firmalari getiriyor; sehir aramasi yerel atolyeyi (D/F/L'de oyleydi).
+# Sehir basina segment basina ilk terim, yalniz en cok talep getiren / oncelikli gruplar.
+_Q_SEG = {"cati-cephe-paneli", "asik-celik-yapi", "raf-sistemleri", "kablo-kanali", "celik-servis-merkezi",
+          "pres-atolyeleri"}
+ULKELER_Q = [
+    ("İtalya", "IT", "it", "39", s) for s in (
+        "Milano", "Brescia", "Bergamo", "Torino", "Verona", "Vicenza", "Padova", "Bologna", "Treviso", "Modena")
+] + [
+    ("İspanya", "ES", "es:es", "34", s) for s in ("Madrid", "Barcelona", "Valencia", "Bilbao", "Zaragoza", "Sevilla")
+] + [
+    ("Polonya", "PL", "pl", "48", s) for s in ("Warszawa", "Kraków", "Wrocław", "Poznań", "Katowice", "Łódź", "Gdańsk")
+] + [
+    ("Meksika", "MX", "es:mx", "52", s) for s in (
+        "Monterrey", "Guadalajara", "Ciudad de México", "Querétaro", "Puebla", "San Luis Potosí", "León", "Saltillo")
+] + [
+    ("Brezilya", "BR", "pt:br", "55", s) for s in (
+        "São Paulo", "Curitiba", "Belo Horizonte", "Porto Alegre", "Joinville", "Campinas", "Goiânia", "Salvador")
+] + [
+    ("Kolombiya", "CO", "es:co", "57", s) for s in ("Bogotá", "Medellín", "Cali", "Barranquilla")
+] + [("Peru", "PE", "es:pe", "51", s) for s in ("Lima", "Arequipa")
+] + [("Şili", "CL", "es:cl", "56", s) for s in ("Santiago de Chile", "Concepción Chile")
+] + [("Arjantin", "AR", "es:ar", "54", s) for s in ("Buenos Aires", "Córdoba Argentina", "Rosario", "Mendoza")
+] + [("Ekvador", "EC", "es:andino", "593", s) for s in ("Guayaquil", "Quito")]
+
+
+# R turu (2026-10-09, ayni gece): REHBERDEN HASAT. N/O/P/Q web aramasiyla yapildi ve sonuclar
+# cogunlukla haber/rehber sitesi getirdi (O: 921 adaydan 2 uretici). R'de arastirma ajanlari ulke
+# basina rehber ve "en buyuk ureticiler" listelerini acip ureticinin KENDI sitesini topluyor;
+# rehber listeye girmez, yalniz kaynak. Her site sonra ayni dogrulayicidan gecer. SERP dosyasi
+# ajanlarin ciktisindan yazilir (sorgu takimi yok — bkz. KONTROL.md).
+ULKELER_R = [u for u in ULKELER_O if u[1] in {"IT", "ES", "PL", "HU", "RO", "CZ", "SK", "GR", "BG"}] + [
+    ("Portekiz", "PT", "pt", "351", "Portugal")]
+# S turu: R'nin yontemi teklif talebi gelen bolgelerde (Latin Amerika: Persa, Racklog, Rackers;
+# Misir: iRack, Rack and Build; Orta Asya: Kainar, AddEffect). R'de rehberden toplanan sitelerin
+# yarisi ilk dogrulamayi gecti; web aramasinda bu oran %5'in altindaydi.
+ULKELER_S = [u for u in ULKELER if u[1] in {"MX", "BR", "CO", "CL", "PE", "AR", "EC", "EG", "SA", "AE", "MA",
+                                             "DZ", "KZ", "UZ"}]
+
+
+def _ilk(x):
+    return x if isinstance(x, str) else x[0]
+
+
+SORGU_Q = {}
+for _anahtar, _takim in list(SORGU_O.items()) + list(SORGU_N.items()):
+    _dil = _anahtar.split(":")[0]
+    _q = {seg: _ilk(v) for seg, v in _takim.items() if seg in _Q_SEG}
+    # Latin Amerika takimlarinda raf / kablo kanali yok (K/L'de tarandi): K'nin ilk terimi
+    for seg in ("raf-sistemleri", "kablo-kanali"):
+        if seg not in _q and _dil in SORGU_K:
+            _q[seg] = _ilk(SORGU_K[_dil][seg])
+    SORGU_Q[_anahtar] = _q
+
 # Arapca-Hint ve Farsca rakamlar -> ASCII (telefon kodu kontrolu: "+٢٠" da "+20" sayilsin)
 ARAP_RAKAM = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")
 ARAPCA_HARF = re.compile(r"[؀-ۿ]")
@@ -578,6 +850,18 @@ SORGU_E = {
 
 def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
+    if tur == "s":
+        return ULKELER_S, {}, "-s"
+    if tur == "r":
+        return ULKELER_R, {}, "-r"
+    if tur == "q":
+        return ULKELER_Q, SORGU_Q, "-q"
+    if tur == "p":
+        return ULKELER_P, SORGU_P, "-p"
+    if tur == "o":
+        return ULKELER_O, SORGU_O, "-o"
+    if tur == "n":
+        return ULKELER_N, SORGU_N, "-n"
     if tur == "m":
         return ULKELER_M, SORGU_M, "-m"
     if tur == "l":
@@ -633,6 +917,13 @@ KARA_LISTE = re.compile(
     # J turu (Arapca) elle gozden gecirmesinden (2026-09-29): gazete, TV, borsa, ilan/ihale portali, rehber
     r"albayan\.ae|alwatan\.ae|alanba\.com|okaz\.com|argaam|almamlakatv|qbusinessgate|bluepages\.com|"
     r"easyuae|tashtebati|mfatihasuq|dubaiinvestments|"
+    # O turu (AB): rehber, pazar yeri, DIY zinciri
+    r"pkt\.pl|panoramafirm|aleo\.com|allegro|ceneo|firmy\.cz|zlatestranky|edb\.cz|paginegialle|"
+    r"virgilio|subito\.it|ceginformacio|cegjelzo|aranyoldalak|arukereso|jofogas|listafirme|firmania|"
+    r"emag\.ro|xo\.gr|vrisko|skroutz|zlatnestranice|poslovni\.hr|njuskalo|bizi\.si|najdi\.si|"
+    r"rekvizitai|firmas\.lv|lursoft|inforegister|teatmik|qdq\.com|empresite|einforma|axesor|"
+    r"infoempresa|habitissimo|milanuncios|wallapop|leroymerlin|bricodepot|bricomart|castorama|"
+    r"bauhaus|hornbach|manomano|obi\.|praktiker|dedeman|"
     r"framecad)", re.I)   # framecad: LGS roll form makinesi ureticisi (rakip)
 
 # Rakip: makine uretenler (baslik/ozette)
@@ -848,14 +1139,24 @@ IMALATCI = re.compile(
     r"manufactur|fabricante|fabricamos|fabricaci[oó]n|f[aá]brica\b|fabricant|fabbric|produttor|"
     r"producent|производ|завод|s[aả]n xu[aấ]t|nh[aà] m[aá]y|produsen|pabrik|factory|fabricator|"
     r"fabrication|we produce|producimos|produzimos|fabrik|hersteller|roll[ -]?form|industr(ies|ia[sl]?) |"
-    r"مصنع|مصانع|تصنيع|نصنع|ننتج|للصناعة|للصناعات|صناعة|إنتاج|انتاج",
+    r"مصنع|مصانع|تصنيع|نصنع|ننتج|للصناعة|للصناعات|صناعة|إنتاج|انتاج|"
+    # O turu: AB yerel dilleri
+    r"produzion|produttric|produkcj|gy[aá]rt|produc[aă]tor|produc[ţț]i|productie|v[yý]rob|κατασκευ|παραγωγ|"
+    r"proizvo|proizvajal|izdelav|gamintoj|gamyb|ražot|razot|tootja|tootmine|"
+    # P turu: Tayca, Malayca, Arnavutca
+    r"ผลิต|โรงงาน|pengeluar|kilang|prodh",
     re.I)
 NEGATIF = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
     r"\bstore\b|\bshop\b|ferreter|home ?cent|hardware|wholesal|mayorista|atacad|importador|importer|"
     r"\btrading\b|dealer|revendedor|precio|price list|pre[cç]o|\bprix\b|comprar|buy online|marketplace|"
     r"cotiza en l[ií]nea|supermercado de|installer|instalador|contractor|contratista|consult|"
-    r"متجر|معرض|موزع|وكيل|وكلاء|تاجر|للتجارة|تجارة|أسعار|اسعار|تأجير|إيجار|ايجار|مقاولات|مقاول|استشار", re.I)
+    r"متجر|معرض|موزع|وكيل|وكلاء|تاجر|للتجارة|تجارة|أسعار|اسعار|تأجير|إيجار|ايجار|مقاولات|مقاول|استشار|"
+    # O turu: AB yerel dilleri (magaza, toptanci, bayi, kiralama, fiyat listesi)
+    r"negozio|rivendit|noleggio|listino|\bsklep|hurtowni|dystrybut|wynajem|cennik|webáruház|webaruhaz|"
+    r"nagyker|bérlés|árlista|magazin online|distribuitor|închiriere|inchiriere|e-shop|velkoobchod|"
+    r"pronájem|ceník|cenník|κατάστημα|ενοικίαση|магазин|наем|trgovina|prodavnic|najam|cjenik|cenik|"
+    r"parduotuv|nuoma|veikals|pood", re.I)
 # Dominik Cumhuriyeti de +1 kullaniyor: ABD bicimli her numara gecmesin, alan kodu sart
 DO_TELEFON = re.compile(r"\b8[024]9[\s\-.)]*\d{3}[\s\-.]?\d{4}\b")
 BOZUK_KULLANICI = re.compile(r"^(u00[0-9a-f]{2}|x[0-9a-f]{2}|%[0-9a-f]{2})", re.I)
@@ -1114,7 +1415,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
@@ -1122,7 +1423,13 @@ def main():
                          "j: Arap ulkelerinde Arapca arama (e-posta Arapca gider) | "
                          "k: raf ve kablo kanalinda yerel terimlerle ikinci tarama (AB disi) | "
                          "l: k'nin terimleri d/f/g turlarinin 180 sanayi sehrinde | "
-                         "m: Kafkasya ve Moldova'da Rusca, Orta Asya'nin yeni sehirlerinde (e-posta Rusca gider)")
+                         "m: Kafkasya ve Moldova'da Rusca, Orta Asya'nin yeni sehirlerinde (e-posta Rusca gider) | "
+                         "n: Latin Amerika'da alicinin terimi (lamina pintro, costanera, PHR, durlock, telha, terca) | "
+                         "o: AB'de yerel dilde arama (Italya, Ispanya, Polonya, Macaristan, Balkan ve Baltik AB ulkeleri) | "
+                         "p: Tayland, Malezya ve AB disi Balkanlar'da yerel dilde arama | "
+                         "q: o ve n'nin terimleri Italya, Ispanya, Polonya ve Latin Amerika sanayi sehirlerinde | "
+                         "r: AB'de rehber/liste sayfalarindan uretici sitesi (ajan ciktisi; SERP dosyasi elle) | "
+                         "s: r'nin yontemi Latin Amerika, Orta Dogu-Kuzey Afrika ve Orta Asya'da")
     a = ap.parse_args()
     os.makedirs(KESIF, exist_ok=True)
     ulkeler, sorgu, ek = tur_tanimi(a.tur)
