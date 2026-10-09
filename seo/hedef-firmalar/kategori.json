@@ -29260,5 +29260,155 @@
 "not": "Havalandırma Kanalı",
 "dogrulandi": true,
 "site": true
+},
+"tektron.com.bo|bolivya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"consmetal.hn|honduras": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"cismetal.cm|kamerun": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"cupula.com.py|paraguay": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"htmetalurgica.com.py|paraguay": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"gis.sn|senegal": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"robertmetalworkshop.com|uganda": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"aluminium.hn|honduras": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"construtecho.com.hn|honduras": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alux-sarl.cm|kamerun": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ferrocam.cm|kamerun": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"atlanticasteel.com|mozambik": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"harichegroup.com|mozambik": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cel.com.py|paraguay": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"royalmabati.co.ug|uganda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"harvey.co.zm|zambiya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"femco.com.bo|bolivya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"ipsa.hn|honduras": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"sagrario.com.bo|bolivya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"pipaangola.co.ao|angola": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"construtex.com.py|paraguay": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"metalurgicacdasa.com.py|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"nomen.com.py|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"redemarca.com.py|paraguay": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"mje-works.com|uganda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
 }
 }

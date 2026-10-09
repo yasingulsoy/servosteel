@@ -473,6 +473,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | U | R'nin yöntemi Filipinler, Tayland, Malezya, Pakistan, Kosta Rika, Guatemala, Ürdün, Kuveyt, Tunus, Gana (9 Eki) | 267 site | 0 $ | 37 (48'den, elle) |
 | V | R'nin yöntemi Ekvador, Panama, Dominik, Uruguay, Sırbistan, Irak, Tanzanya, Etiyopya, Fildişi Sahili, Bangladeş (9 Eki) | 211 site | 0 $ | 29 (36'dan, elle) |
 | W | R'nin yöntemi Bolivya, Paraguay, Honduras, El Salvador, Kamerun, Senegal, Uganda, Zambiya, Angola, Mozambik (9 Eki) | 135 site | 0 $ | 25 (35'ten, elle) |
+| X | R'nin yöntemi İngiltere, İrlanda, İsveç, Finlandiya, Norveç, Hırvatistan, Slovenya, Litvanya, Letonya, Estonya (9 Eki) | 340 site | 0 $ | 83 (87'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -579,7 +580,13 @@ Fransa 4, Katar, Kenya ve Umman 2'şer. Afrika ve Körfez'de rehberlerin çoğu 
 panele girdi (02:20). Küçük pazarlarda (Gana, Ürdün, Kuveyt, Guatemala) rehberler web sitesi göstermiyor.
 **V (aynı gece):** 29 firma panele girdi (02:40); Irak ve Etiyopya'da sitesi olan üretici çok az.
 **W (aynı gece):** 25 firma panele girdi (02:50).
-**Gece toplamı: N–W turlarından panele 375 yeni kayıt** (aktarım sayıları 145 + 70 + 69 + 37 + 29 + 25).
+**X (aynı gece):** 83 firma panele girdi (03:07): İsveç 20, Litvanya 15, Slovenya 13, Letonya 8,
+Hırvatistan 6, Estonya, Norveç, İngiltere, İrlanda 5'er, Finlandiya 1. **Tuzak:** doğrulayıcıda Fince/İsveççe/
+Norveççe ürün ve üretim kelimesi yoktu; İskandinav sitelerinin çoğu "ürün kelimesi yok" diye düştü. Kelimeler
+eklendi, o satırlar jsonl'dan silinip yeniden doğrulandı (80'den 37'si geçti). **Kural: yeni dilde keşiften
+önce KELIME/IMALATCI/URETIM listelerine o dilin kelimelerini ekle.**
+**Gece toplamı: N–X turlarından panele 458 yeni kayıt** (aktarım sayıları 145 + 70 + 69 + 37 + 29 + 25 + 83);
+sırada e-postalı 938 firma bekliyor.
 Küçük pazarlarda (Irak, Etiyopya, Gana, Ürdün, Kuveyt, Honduras) ülke başına 2–8 firma çıktı; sonraki keşif
 büyük pazarlarda (Hindistan, ABD, İngiltere, Avustralya, Kanada) ya da AB'nin kalanında (Hırvatistan, Slovenya,
 Baltık, İskandinavya, İrlanda) daha verimli olur. **142 AB üreticisi

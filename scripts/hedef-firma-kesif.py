@@ -1151,7 +1151,9 @@ IMALATCI = re.compile(
     r"produzion|produttric|produkcj|gy[aá]rt|produc[aă]tor|produc[ţț]i|productie|v[yý]rob|κατασκευ|παραγωγ|"
     r"proizvo|proizvajal|izdelav|gamintoj|gamyb|ražot|razot|tootja|tootmine|"
     # P turu: Tayca, Malayca, Arnavutca
-    r"ผลิต|โรงงาน|pengeluar|kilang|prodh",
+    r"ผลิต|โรงงาน|pengeluar|kilang|prodh|"
+    # X turu: Fince, Isvecce, Norvecce
+    r"valmist|tuotanto|tehdas|tillverk|produksjon|fabrikk",
     re.I)
 NEGATIF = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
