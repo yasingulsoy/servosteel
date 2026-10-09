@@ -29410,5 +29410,503 @@
 "not": "Çelik Mobilya",
 "dogrulandi": true,
 "site": true
+},
+"neolat.lv|letonya": {
+"kategori": 6,
+"not": "Alçıpan Profili",
+"dogrulandi": true,
+"site": true
+},
+"kullarp.se|i̇sveç": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"metall-center.se|i̇sveç": {
+"kategori": 6,
+"not": "Market Rafı",
+"dogrulandi": true,
+"site": true
+},
+"dobrapolica.si|slovenya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"blsab.se|i̇sveç": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"eab.se|i̇sveç": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"hylllagret.se|i̇sveç": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
+},
+"pvcon.si|slovenya": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"nordmount.se|i̇sveç": {
+"kategori": 1,
+"not": "Solar Profil",
+"dogrulandi": true,
+"site": true
+},
+"opplandstaal.no|norveç": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"smea.se|i̇sveç": {
+"kategori": 1,
+"not": "Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"norskstaal.no|norveç": {
+"kategori": 2,
+"not": "çelik servis — dilme/boy kesme ayrımı sitede yok",
+"dogrulandi": true,
+"site": true
+},
+"indooroutdoors.co.uk|birleşik krallık": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"jalax.ee|estonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"metronmetal.ee|estonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"insafe.lv|letonya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"eigida.lt|litvanya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"trevis.si|slovenya": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"pce.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"tepege.se|i̇sveç": {
+"kategori": 4,
+"not": "Çelik Mobilya",
+"dogrulandi": true,
+"site": true
+},
+"plastme.lt|litvanya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"kovinskagalanterija.si|slovenya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"niko.si|slovenya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"orkoplast.si|slovenya": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"pressform.ie|i̇rlanda": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"davidsmetall.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"emab.com|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"gppab.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"hugma.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"ire.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"smemo.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"sodergrens.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"vastbopress.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"vindo.se|i̇sveç": {
+"kategori": 4,
+"not": "Pres Atölyeleri",
+"dogrulandi": true,
+"site": true
+},
+"etsnord.com|estonya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"airmist.fi|finlandiya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"domet-ventilacija.hr|hırvatistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"klimaterm.hr|hırvatistan": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"aspiros.lv|letonya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"rofleks.si|slovenya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"klima-dolinar.si|slovenya": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"sweeneysheetmetal.ie|i̇rlanda": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"alperplat.se|i̇sveç": {
+"kategori": 5,
+"not": "Havalandırma Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"levstal.com|estonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Yol Bariyeri",
+"dogrulandi": true,
+"site": true
+},
+"bajkmont.hr|hırvatistan": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"idm.lv|letonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"laitans.lv|letonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"starsmet.com|letonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelconstructions.lv|letonya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"ankamega.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"bmsprendimai.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"iwm.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"mtmsteel.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"steelprojects.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"metalconstructions.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"uabmad.lt|litvanya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"rollform.no|norveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"idus.si|slovenya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"petrovic.si|slovenya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı, Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"termoflor.si|slovenya": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"llentabsteel.se|i̇sveç": {
+"kategori": 1,
+"not": "Aşık ve Çelik Yapı",
+"dogrulandi": true,
+"site": true
+},
+"archprof.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"firth-steels.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"glprofiles.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"panelsandprofiles.co.uk|birleşik krallık": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"karukatus.ee|estonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lebens.lv|letonya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"ferrosas.lt|litvanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"klinkera.lt|litvanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"vakarulanka.lt|litvanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"lankstinys.lt|litvanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"plienitas.lt|litvanya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"alsvag.no|norveç": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"emimar.no|norveç": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"krobah.si|slovenya": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"clanesteelgardensheds.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"cpf.ie|i̇rlanda": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"areco.se|i̇sveç": {
+"kategori": 1,
+"not": "Çatı ve Cephe Paneli",
+"dogrulandi": true,
+"site": true
+},
+"interskele-lesko.hr|hırvatistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"skele.com.hr|hırvatistan": {
+"kategori": 1,
+"not": "İskele Kalası",
+"dogrulandi": true,
+"site": true
+},
+"stimo.hr|hırvatistan": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"bevec.si|slovenya": {
+"kategori": 1,
+"not": "Kablo Kanalı",
+"dogrulandi": true,
+"site": true
+},
+"metalo-gaminiai.lt|litvanya": {
+"kategori": 1,
+"not": "Raf Sistemleri",
+"dogrulandi": true,
+"site": true
 }
 }
