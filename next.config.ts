@@ -422,6 +422,8 @@ const nextConfig: NextConfig = {
       /* Eski katalog dosyasi. Katalog siteye konmayacagi icin (2026-08-19
          karari) makine listesine gonderiliyor — spec tablolari orada. */
       p("/Katalog.pdf", "/makineler"),
+      /* Aynı katalogun öteki adı — tarama istatistiklerinde 404 (2026-10-11) */
+      p("/Servo-Steel-Katalog.pdf", "/makineler"),
 
       /* Eski sitenin İngilizce ürün adresleri — yakalayıcıdan ÖNCE. Yoksa
          "/product/straightener" gibi adresler aşağıdaki `/product/:slug`

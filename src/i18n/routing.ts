@@ -65,6 +65,14 @@ export const routing = defineRouting({
   localePrefix: "as-needed",
   /* Otomatik dil algılama kapalı: / her zaman Türkçe açılır, dili kullanıcı seçer. */
   localeDetection: false,
+  /* HTTP `Link` başlığındaki hreflang KAPALI. Middleware bunu her sayfaya
+     dokuz dilin hepsiyle ve x-default = Türkçe olarak basıyordu; oysa doğru
+     liste HTML <head>'de ve site haritasında var (x-default İngilizce, yalnızca
+     sayfanın gerçekten olduğu diller — bkz. seo.ts). 2026-10-11'de GSC'de
+     görüldü: başlık yalnız TR/EN olan akademi yazılarının /es, /de, /ar, /hu,
+     /pl adreslerini ilan ediyordu, Google onları tarayıp 404 alıyordu; üstelik
+     bütün sayfalarda x-default iki kaynakta farklıydı. */
+  alternateLinks: false,
   /* Türkçe slug kökte, diğer sekiz dilde İngilizce slug (bkz. slugs.ts) */
   pathnames: buildPathnames(),
 });

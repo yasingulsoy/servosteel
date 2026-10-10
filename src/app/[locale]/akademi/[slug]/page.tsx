@@ -13,7 +13,7 @@ import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { TableOfContents } from "@/components/table-of-contents";
 import { extractToc, slugifyHeading, textOf } from "@/lib/toc";
-import { localePath, OG_LOCALE, pageTitle, paylasimGorseli, siteGorseli } from "@/i18n/seo";
+import { localePath, OG_LOCALE, pageTitle, paylasimGorseli, siteGorseli, X_DEFAULT_LOCALE } from "@/i18n/seo";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -32,10 +32,14 @@ export async function generateMetadata({ params }: Props) {
   for (const l of postLocales) {
     languages[localeHreflang[l]] = localePath(l, `/akademi/${slug}`);
   }
-  /* x-default: yazı varsayılan dilde varsa onu, yoksa mevcut ilk dili işaret eder. */
-  const defaultLocale = postLocales.includes(routing.defaultLocale)
-    ? routing.defaultLocale
-    : postLocales[0];
+  /* x-default: site haritasıyla AYNI sıra — İngilizce varsa o, yoksa varsayılan
+     dil, o da yoksa ilk mevcut dil. 2026-10-11'e kadar burada İngilizce
+     atlanıyordu; sayfa x-default'u Türkçe, site haritası İngilizce gösteriyordu. */
+  const defaultLocale = postLocales.includes(X_DEFAULT_LOCALE)
+    ? X_DEFAULT_LOCALE
+    : postLocales.includes(routing.defaultLocale)
+      ? routing.defaultLocale
+      : postLocales[0];
   if (defaultLocale) {
     languages["x-default"] = localePath(defaultLocale, `/akademi/${slug}`);
   }
