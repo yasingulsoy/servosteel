@@ -265,6 +265,42 @@ Dear Procurement Team,
   assert.match(s.sebep, /automated acknowledgement/i);
 });
 
+await t("alindi bildirimi: Fransizca ve destek sistemi (SLV, Wibe, 10 Ekim)", async () => {
+  const slv = await sinifla(`From: hello@slv-group.be
+To: gulsoy@servosteel.com.tr
+Subject: Re: Lignes de profilage pour planchers d'echafaudage - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+Concerne: votre courriel de ce jour.
+
+Nous accusons réception de votre courriel qui a retenu toute notre attention.
+
+Celui-ci sera traité dans les meilleurs délais.
+
+L'équipe SLV Group
+`);
+  assert.equal(slv.tur, "otomatik");
+  const wibe = await sinifla(`From: inquiry-INT@wibe-group.com
+To: ege@servosteel.com.tr
+Subject: Thank you, your case has been received! FC0169140, Cable tray roll forming lines - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+We've received your message - here's your case reference and how to reach us.
+
+Your case number
+FC0169140
+`);
+  assert.equal(wibe.tur, "otomatik");
+  const insan = await sinifla(`From: buyer@example.com
+To: gulsoy@servosteel.com.tr
+Subject: Re: Cable tray roll forming lines - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+We received your email. We are interested, please send the price for a 600 mm line.
+`);
+  assert.equal(insan.tur, "yanit");
+});
+
 await t("gomulu gorsel izi yanit ozetine girmez", async () => {
   const s = await sinifla(`From: Ali <ali@firma.example>
 To: ege@servosteel.com.tr

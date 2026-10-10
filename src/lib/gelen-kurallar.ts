@@ -162,9 +162,12 @@ const OTOMATIK_KONU =
    destek sistemi (27 Eylül 2026) başlık koymadan "This is an automated
    acknowledgement. Please do not reply directly" yazdı ve yanıt sayıldı.
    Yalnız yanıtın kendi metninde aranır (alıntı değil), ve kalıp "bu bir
-   otomatik iletidir" cümlesi — "hattımız tam otomatik" gibi bir söz tutmaz. */
+   otomatik iletidir" cümlesi — "hattımız tam otomatik" gibi bir söz tutmaz.
+   10 Ekim 2026: aynı türden iki alındı bildirimi daha yanıt sayıldı — SLV
+   Group (Belçika) "Nous accusons réception de votre courriel", Wibe Group
+   (Finlandiya) destek sistemi "your case has been received" + dosya numarası. */
 const OTOMATIK_GOVDE =
-  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)|(هذه|هذا) (رسالة|رد) (تلقائية|تلقائي|آلية|آلي)/i;
+  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)|(هذه|هذا) (رسالة|رد) (تلقائية|تلقائي|آلية|آلي)|nous accusons (bonne )?r[ée]ception de votre (courriel|message|e-?mail|demande)|your case has been received|here'?s your case reference/i;
 
 function otomatikMi(g: GelenOzet): string | null {
   const as = (g.basliklar["auto-submitted"] ?? "").trim();
