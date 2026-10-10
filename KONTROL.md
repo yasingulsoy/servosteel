@@ -877,6 +877,7 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   PL mini/istifleyici, EN akademi). **Dizinde olmayan 2:** `/it/` ve `/hu/machines/servo-feeders/cased`
   ("Keşfedildi, dizine eklenmedi"). Bekleyen istekler: bu ikisi + `/rulo-isleme-hatlari`
   (başlık 9 Eki'de değişti, E.38) + `/de/machines/decoilers/hydraulic` (son tarama 12 Ağu).
+  **11 Eki gece dördü de istendi, dördü de "Dizine eklenmesi istendi" onayı aldı.**
 - [x] **Hesaplayıcı yeniden yayınlandıktan sonra (deploy sonrası) istek:**
   `/en/calculators` önce (7 Ağustos'tan beri taranmadı), sonra `/de/`, `/pl/`,
   `/it/calculators` ve `/hesaplayicilar`. Ardından `npm run indexnow`.
@@ -1401,6 +1402,9 @@ sayfasında değil" (video sayfanın ana içeriği değil) — kurulum kararı, 
 değil. Manuel işlem, güvenlik sorunu, HTTPS, içerik haritası: temiz. Önemli
 Web Verileri: trafik yetersiz, veri yok. Analizler (son 28 gün): tık 272
 (+%17), gösterim 10,4 B (+%29).
+**Tam dizin taraması (11 Eki, API):** site haritasındaki 487 adresin **485'i
+dizinde**; dışarıdaki 2'si `/it` ve `/hu` kasalı servo sürücü (aynı gece
+istendi). Google'ın farklı standart seçtiği sayfa 0.
 
 **E.38 · Ana sayfa başlığı alt sayfanın kelimesini taşırsa onunla yarışır
 (2026-10-08).** `/rulo-isleme-hatlari` 2 Ekim'de dizine girdi; TR başlığı
