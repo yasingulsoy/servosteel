@@ -1378,6 +1378,30 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.39 · Dil altyapısı HTTP başlığında her sayfaya dokuz dil ilan ediyordu
+(2026-10-11).** next-intl middleware'i varsayılan olarak her yanıta `Link`
+başlığı ekliyor: dokuz dilin hepsi + `x-default` = Türkçe. HTML `<head>` ve
+site haritası ise yalnızca sayfanın gerçekten olduğu dilleri ve `x-default` =
+İngilizce veriyor. Sonuç: (1) **her sayfada iki farklı x-default**; (2) yalnız
+TR/EN olan akademi yazılarının `/es`, `/de`, `/ar`, `/hu`, `/pl` adresleri
+ilan ediliyordu — Google onları tarayıp 404 aldı (dizin raporundaki 38
+404'ün ilk dokuzu; tarama istatistiklerinde 3 Ekim'e kadar). HTML'e ve site
+haritasına bakan denetim bunu göremez; **yanıt başlığına bak** (`curl -I`).
+`routing.ts`'de `alternateLinks: false` (d2ad729). Aynı committe akademi
+yazısının x-default'u site haritasıyla eşitlendi (sayfa TR diyordu).
+**Tarama istatistikleri (90 gün, 6 Eki'ye kadar):** 6.380 istek, ort. yanıt
+435 ms, ana makinelerin üçünde de sorun yok. 200 %53, 301 %32, 404 %14.
+404'lerin %56'sı eski WordPress görselleri (`/wp-content/uploads`) — doğru
+davranış, yönlendirilmez. Eski `www.tr.` ürün adresleri listede 404 görünse de
+bugün hepsi 2–3 adımda doğru sayfaya iniyor (11 Eki'de tek tek denendi).
+**Dizin raporu (4 Eki):** 489 dizinde, 353 dışarıda — 273'ü yönlendirme (eski
+adresler), 18 "tarandı-eklenmedi" ve 4 "Google farklı standart seçti" hep
+eski WordPress adresleri, font ve feed. **Videolar:** 229 video "izleme
+sayfasında değil" (video sayfanın ana içeriği değil) — kurulum kararı, hata
+değil. Manuel işlem, güvenlik sorunu, HTTPS, içerik haritası: temiz. Önemli
+Web Verileri: trafik yetersiz, veri yok. Analizler (son 28 gün): tık 272
+(+%17), gösterim 10,4 B (+%29).
+
 **E.38 · Ana sayfa başlığı alt sayfanın kelimesini taşırsa onunla yarışır
 (2026-10-08).** `/rulo-isleme-hatlari` 2 Ekim'de dizine girdi; TR başlığı
 "Rulo İşleme Hatları: Dilme, Boy Kesme, Roll Form" idi. 1–7 Ekim'de Google
