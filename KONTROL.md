@@ -872,10 +872,15 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
   istendi" onayı aldı.** Üretici denetim listesi (EN + TR) ve roll form fiyat
   yazısı (TR, EN, DE, IT, ES, RU). Aynı gün deploy sonrası `npm run indexnow`
   ile 478 URL Bing/Yandex'e bildirildi.
-- [ ] **Hesaplayıcı yeniden yayınlandıktan sonra (deploy sonrası) istek:**
+- **10 Ekim URL denetimi (API):** aşağıdaki iki maddedeki ve "Sıradaki" listesindeki
+  30 adresin 28'i dizinde (hesaplayıcılar, RU/IT akademi, kasalı servo de/es/ar/pl/ru,
+  PL mini/istifleyici, EN akademi). **Dizinde olmayan 2:** `/it/` ve `/hu/machines/servo-feeders/cased`
+  ("Keşfedildi, dizine eklenmedi"). Bekleyen istekler: bu ikisi + `/rulo-isleme-hatlari`
+  (başlık 9 Eki'de değişti, E.38) + `/de/machines/decoilers/hydraulic` (son tarama 12 Ağu).
+- [x] **Hesaplayıcı yeniden yayınlandıktan sonra (deploy sonrası) istek:**
   `/en/calculators` önce (7 Ağustos'tan beri taranmadı), sonra `/de/`, `/pl/`,
   `/it/calculators` ve `/hesaplayicilar`. Ardından `npm run indexnow`.
-- [ ] **21 Eylül tam taraması: site haritasındaki 478 adresin 463'ü dizinde
+- [x] **21 Eylül tam taraması: site haritasındaki 478 adresin 463'ü dizinde
   (%96,9).** Google'ın farklı standart seçtiği sayfa **0**, robots/getirme hatası
   **0**. Komut: `python scripts/dizin-tarama.py <cikti.json>` (~20 dk, URL
   Inspection API). Kalan 15:
@@ -896,7 +901,7 @@ Bing/Yandex'e IndexNow ile 17 Eylül'de bildirildi.
     Anlatılan ayrım bu: **reduktör hızdan tork kazandırır**; geniş-kalın şerit
     torkla, dar-ince şerit hızla beslenir. Ayrıca pnömatik pilot açma (akademi
     yazısıyla aynı bilgi). Yayına girdikten sonra yedi dil için istek atılacak.
-- [ ] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
+- [x] **Sıradaki (EN, en eski taranan önce):** `how-to-choose-a-slitting-line`
   (8 Ağu), `solar-profile-line-roi` (18 Ağu), `reducing-sheet-metal-scrap-rate`,
   `servo-feeder-selection-for-progressive-dies`, `how-to-choose-a-servo-feeder`
   (19 Ağu), `where-to-buy-a-coil-processing-line` (28 Ağu).
