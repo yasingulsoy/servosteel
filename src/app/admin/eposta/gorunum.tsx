@@ -1,5 +1,6 @@
 import Form from "next/form";
 import Link from "next/link";
+import { HesapAkordeon } from "./hesap-akordeon";
 import {
   Archive,
   CornerUpLeft,
@@ -160,27 +161,31 @@ export function HesapPaneli({
             const secili = h.user === kutu;
             return (
               <li key={h.user}>
-                <Link
+                {/* Seçili hesap satırı klasör listesini açıp kapatır (hesap-akordeon.tsx).
+                    key: başka hesaba geçip dönünce liste yeniden açık gelsin. */}
+                <HesapAkordeon
+                  key={secili ? "secili" : "diger"}
                   href={posta(h.user, "gelen")}
-                  aria-current={secili ? "true" : undefined}
-                  className={`flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm ${
-                    secili ? "bg-surface-alt font-semibold text-ink" : "text-muted hover:bg-surface-alt hover:text-ink"
-                  }`}
+                  secili={secili}
+                  ad={h.user}
                   title={`${h.ad} <${h.user}>`}
+                  rozetler={
+                    <>
+                      {!h.tanitim ? (
+                        <span className="shrink-0 text-[10px] font-semibold uppercase text-muted" title="Sitenin form kutusu — tanıtım e-postası buradan gitmez">
+                          form
+                        </span>
+                      ) : null}
+                      {h.bekleyen > 0 ? (
+                        <span className="shrink-0 rounded-full bg-violet-500/15 px-1.5 py-0.5 text-[11px] font-semibold text-violet-700" title="Elden geçmemiş yanıt">
+                          {h.bekleyen}
+                        </span>
+                      ) : null}
+                    </>
+                  }
                 >
-                  <span className="min-w-0 flex-1 truncate">{h.user}</span>
-                  {!h.tanitim ? (
-                    <span className="shrink-0 text-[10px] font-semibold uppercase text-muted" title="Sitenin form kutusu — tanıtım e-postası buradan gitmez">
-                      form
-                    </span>
-                  ) : null}
-                  {h.bekleyen > 0 ? (
-                    <span className="shrink-0 rounded-full bg-violet-500/15 px-1.5 py-0.5 text-[11px] font-semibold text-violet-700" title="Elden geçmemiş yanıt">
-                      {h.bekleyen}
-                    </span>
-                  ) : null}
-                </Link>
-                {secili ? (
+                  {/* Klasörler yalnız seçili hesabın (klasorler o hesaba ait) */}
+                  {secili ? (
                   <ul className="mb-1 ml-3 mt-0.5 space-y-0.5 border-l border-line pl-2">
                     {(klasorler.length
                       ? klasorler
@@ -213,7 +218,8 @@ export function HesapPaneli({
                       );
                     })}
                   </ul>
-                ) : null}
+                  ) : null}
+                </HesapAkordeon>
               </li>
             );
           })}
