@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Odwijak hydrauliczny — układ hamulca szczękowego",
       "v9_1snhusMY": "Nawijak hydrauliczny"
     },
+    "watch": {
+      "metaTitle": "{title} — Wideo",
+      "metaDesc": "{title}. {summary} Servosteel, Stambuł — wideo, {duration}.",
+      "intro": "Ten film pochodzi z kanału YouTube firmy Servosteel. Servosteel projektuje i buduje linie do przetwarzania kręgów, linie profilujące i podajniki servo w swoim zakładzie w Stambule; każda linia jest testowana w fabryce przed wysyłką.",
+      "published": "Opublikowano",
+      "duration": "Czas trwania",
+      "youtube": "Obejrzyj w YouTube",
+      "productTitle": "W tym filmie",
+      "productCta": "Dane techniczne i oferta",
+      "moreTitle": "Więcej filmów: {group}",
+      "allVideos": "Wszystkie filmy"
+    },
     "bannerTitle": "109 filmów, 2,9 tys. subskrybentów",
     "bannerText": "Całe archiwum na naszym kanale YouTube, od linii cięcia po HMI i oprogramowanie raportowe — nowe filmy dodawane regularnie.",
     "bannerCta": "Przejdź na kanał YouTube",

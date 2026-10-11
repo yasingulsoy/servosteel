@@ -45,7 +45,8 @@ export default async function VideolarPage({ params }: Props) {
 
   return (
     <>
-      {/* Kanalın TAMAMI için VideoObject — gerçek tarih ve süreyle */}
+      {/* VideoObject — gerçek tarih ve süreyle. İzleme sayfası olan videoları
+          VideoSchema kendisi atlar (şemaları kendi sayfalarında). */}
       <VideoSchema
         items={[...allVideos, ...uncuratedVideos]}
         titleOf={titleOf}

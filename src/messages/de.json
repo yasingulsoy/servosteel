@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Hydraulische Haspel — Bremsbelagsystem",
       "v9_1snhusMY": "Hydraulischer Aufwickler"
     },
+    "watch": {
+      "metaTitle": "{title} — Video",
+      "metaDesc": "{title}. {summary} Servosteel, Istanbul — Video, {duration}.",
+      "intro": "Dieses Video stammt aus dem YouTube-Kanal von Servosteel. Servosteel konstruiert und baut Coil-Bearbeitungsanlagen, Rollformanlagen und Servovorschübe in seinem Werk in Istanbul; jede Anlage wird vor dem Versand im Werk getestet.",
+      "published": "Veröffentlicht",
+      "duration": "Dauer",
+      "youtube": "Auf YouTube ansehen",
+      "productTitle": "In diesem Video",
+      "productCta": "Technische Daten und Angebot",
+      "moreTitle": "Weitere Videos: {group}",
+      "allVideos": "Alle Videos"
+    },
     "bannerTitle": "109 Videos, 2,9 Tsd. Abonnenten",
     "bannerText": "Das gesamte Archiv auf unserem YouTube-Kanal, von Längsteilanlagen bis HMI- und Reporting-Software — neue Videos kommen regelmäßig.",
     "bannerCta": "Zum YouTube-Kanal",

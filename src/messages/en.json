@@ -851,6 +851,18 @@
       "AqcEyDbbWtA": "Hydraulic decoiler — brake pad system",
       "v9_1snhusMY": "Hydraulic recoiler"
     },
+    "watch": {
+      "metaTitle": "{title} — Video",
+      "metaDesc": "{title}. {summary} Servosteel, Istanbul — video, {duration}.",
+      "intro": "This video is from the Servosteel YouTube channel. Servosteel designs and builds coil processing lines, roll forming lines and press feeding machines at its facility in Istanbul; every line is tested at the factory before shipment.",
+      "published": "Published",
+      "duration": "Duration",
+      "youtube": "Watch on YouTube",
+      "productTitle": "Featured in this video",
+      "productCta": "Specifications and quote",
+      "moreTitle": "More videos: {group}",
+      "allVideos": "All videos"
+    },
     "bannerTitle": "109 videos, 2.9K subscribers",
     "bannerText": "The whole archive is on our YouTube channel, from slitting lines to HMI and reporting software — new installation videos are added regularly.",
     "bannerCta": "Go to the YouTube Channel",

@@ -6,6 +6,7 @@ import { localePath, X_DEFAULT_LOCALE } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
 import { compareItems } from "@/lib/compare";
 import { sectors } from "@/lib/sectors";
+import { embedUrl, izlemeSluglari, izlemeVideosu, thumbUrl } from "@/lib/videos";
 
 const paths = [
   { path: "", priority: 1 },
@@ -54,7 +55,7 @@ function postDates(): Record<string, string> {
  *    lastmod gördüğünde bu sinyali tamamen yok sayar. Yazılarda ise gerçek
  *    yayın tarihi kullanılır.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dates = postDates();
 
   const staticEntries = paths.flatMap(({ path, priority }) => {
@@ -97,5 +98,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticEntries, ...postEntries];
+  /* Video izleme sayfaları — dokuz dilde, her biri video site haritası
+     etiketiyle (video:video). Başlık ve açıklama o dilin metninden; tarih ve
+     süre YouTube'un gerçek metadata'sından (lib/videos.ts). */
+  const videoEntries = (
+    await Promise.all(
+      routing.locales.map(async (l) => {
+        const m = (await import(`../messages/${l}.json`)).default as {
+          videos: { items: Record<string, string>; watch: { intro: string } };
+        };
+        return izlemeSluglari.map((slug) => {
+          const v = izlemeVideosu(slug)!;
+          const path = `/videolar/${slug}`;
+          const languages: Record<string, string> = {};
+          for (const x of routing.locales) {
+            languages[localeHreflang[x]] = `${SITE_URL}${localePath(x, path)}`;
+          }
+          languages["x-default"] = `${SITE_URL}${localePath(X_DEFAULT_LOCALE, path)}`;
+          const title = m.videos.items[v.id];
+          return {
+            url: `${SITE_URL}${localePath(l, path)}`,
+            lastModified: new Date(v.date),
+            changeFrequency: "yearly" as const,
+            priority: 0.5,
+            alternates: { languages },
+            videos: [
+              {
+                title,
+                thumbnail_loc: thumbUrl(v.id),
+                description: `${title}. ${m.videos.watch.intro}`,
+                player_loc: embedUrl(v.id),
+                duration: v.sec,
+                publication_date: v.date,
+              },
+            ],
+          };
+        });
+      })
+    )
+  ).flat();
+
+  return [...staticEntries, ...postEntries, ...videoEntries];
 }

@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Svolgitore idraulico — sistema freno a ceppi",
       "v9_1snhusMY": "Avvolgitore idraulico"
     },
+    "watch": {
+      "metaTitle": "{title} — Video",
+      "metaDesc": "{title}. {summary} Servosteel, Istanbul — video, {duration}.",
+      "intro": "Questo video proviene dal canale YouTube di Servosteel. Servosteel progetta e costruisce linee di lavorazione coil, linee di profilatura e alimentatori servo nel proprio stabilimento di Istanbul; ogni linea viene collaudata in fabbrica prima della spedizione.",
+      "published": "Pubblicato",
+      "duration": "Durata",
+      "youtube": "Guarda su YouTube",
+      "productTitle": "In questo video",
+      "productCta": "Specifiche tecniche e preventivo",
+      "moreTitle": "Altri video: {group}",
+      "allVideos": "Tutti i video"
+    },
     "bannerTitle": "109 video, 2,9 mila iscritti",
     "bannerText": "L'intero archivio è sul nostro canale YouTube, dalle linee di taglio all'HMI e al software di reportistica; nuovi video vengono aggiunti regolarmente.",
     "bannerCta": "Vai al Canale YouTube",

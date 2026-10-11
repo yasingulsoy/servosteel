@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Hidraulikus lecsévélő — fékbetétes rendszer",
       "v9_1snhusMY": "Hidraulikus felcsévélő"
     },
+    "watch": {
+      "metaTitle": "{title} — Videó",
+      "metaDesc": "{title}. {summary} Servosteel, Isztambul — videó, {duration}.",
+      "intro": "Ez a videó a Servosteel YouTube-csatornájáról származik. A Servosteel isztambuli üzemében tervezi és gyártja tekercsfeldolgozó sorait, profilozó sorait és szervoadagolóit; minden sort a gyárban tesztelnek szállítás előtt.",
+      "published": "Közzétéve",
+      "duration": "Hossz",
+      "youtube": "Megnézem a YouTube-on",
+      "productTitle": "Ebben a videóban",
+      "productCta": "Műszaki adatok és árajánlat",
+      "moreTitle": "További videók: {group}",
+      "allVideos": "Összes videó"
+    },
     "bannerTitle": "109 videó, 2,9 E feliratkozó",
     "bannerText": "A teljes archívum a YouTube-csatornánkon, a hasító soroktól a HMI- és riportszoftverig — rendszeresen kerülnek fel új videók.",
     "bannerCta": "Tovább a YouTube-csatornára",

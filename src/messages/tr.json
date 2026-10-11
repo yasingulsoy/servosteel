@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Hidrolik rulo açıcı — fren balata sistemi",
       "v9_1snhusMY": "Hidrolik rulo sarıcı"
     },
+    "watch": {
+      "metaTitle": "{title} — Video",
+      "metaDesc": "{title}. {summary} Servosteel, İstanbul — video, {duration}.",
+      "intro": "Bu video Servosteel'in YouTube kanalından. Servosteel rulo işleme ve roll form hatlarını, pres besleme makinelerini İstanbul'daki tesisinde tasarlayıp üretir; her hat sevkiyattan önce fabrikada test edilir.",
+      "published": "Yayın tarihi",
+      "duration": "Süre",
+      "youtube": "YouTube'da izle",
+      "productTitle": "Bu videodaki ürün",
+      "productCta": "Teknik özellikler ve teklif",
+      "moreTitle": "Diğer videolar: {group}",
+      "allVideos": "Tüm videolar"
+    },
     "bannerTitle": "109 video, 2,9 B abone",
     "bannerText": "Dilme hattından HMI ve raporlama yazılımına kadar tüm arşiv YouTube kanalımızda — yeni kurulum videoları düzenli olarak ekleniyor.",
     "bannerCta": "YouTube Kanalına Git",

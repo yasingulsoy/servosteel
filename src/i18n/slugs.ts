@@ -1,4 +1,5 @@
 import type { AppLocale } from "./routing";
+import { IZLEME_SAYFALARI } from "../lib/video-izleme";
 
 /**
  * URL slug'larının TEK kaynağı.
@@ -103,6 +104,8 @@ export const CONTENT_SLUGS = {
     "hat-ureticisi-nasil-denetlenir": "how-to-check-a-coil-line-manufacturer",
     "roll-form-hatti-maliyeti": "roll-forming-line-cost",
   },
+  /* Video izleme sayfaları (2026-10-11) — tablo lib/video-izleme.ts'te */
+  videolar: Object.fromEntries(IZLEME_SAYFALARI.map((v) => [v.tr, v.en])) as Record<string, string>,
 } as const satisfies Record<keyof typeof ROUTE_SLUGS | string, Record<string, string>>;
 
 /**
@@ -133,6 +136,23 @@ export const VARIANT_SLUGS = {
     kasali: "cased",
   },
 } as const;
+
+/* Düzleştirmede aynı Türkçe slug iki grupta varsa sonraki öncekini SESSİZCE
+   ezer ve localizeFullPath o segmenti yanlış çevirir. Video sayfalarıyla
+   (25 yeni slug) bu risk büyüdü; aşağıdaki İngilizce denetiminin eşi. */
+const trGorulen: Record<string, string> = {};
+for (const [grup, tablo] of [...Object.entries(CONTENT_SLUGS), ...Object.entries(VARIANT_SLUGS)]) {
+  for (const tr of Object.keys(tablo)) {
+    if (trGorulen[tr] && trGorulen[tr] !== grup && (ROUTE_SLUGS as Record<string, string>)[tr] === undefined) {
+      const once = (CONTENT_SLUGS as Record<string, Record<string, string>>)[trGorulen[tr]]?.[tr]
+        ?? (VARIANT_SLUGS as Record<string, Record<string, string>>)[trGorulen[tr]]?.[tr];
+      if (once !== (tablo as Record<string, string>)[tr]) {
+        throw new Error(`slugs.ts: Türkçe slug "${tr}" hem "${trGorulen[tr]}" hem "${grup}" altında, farklı karşılıkla`);
+      }
+    }
+    trGorulen[tr] = grup;
+  }
+}
 
 /** Gruplu içerik tablosunu düzleştirir. */
 const FLAT_CONTENT: Record<string, string> = Object.assign(

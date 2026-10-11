@@ -1379,6 +1379,22 @@ hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
 
+**E.40 · Video izleme sayfaları (2026-10-11).** GSC'de 229 video "izleme
+sayfasında değil" diye dizin dışıydı (dizindeki 9). Sebep: sitede oynatıcı
+yok, kart YouTube'a gidiyor (17 Eylül kararı) — Google videoyu ancak
+oynatıcının ana içerik olduğu sayfadan alır. Yasin'in onayıyla: çevrilmiş
+başlığı olan **25 seçkin video × 9 dil = 225 izleme sayfası**
+(`/videolar/<tr-slug>`, `/en/videos/<en-slug>`; tablo `lib/video-izleme.ts`).
+Oynatıcı YALNIZ orada (youtube-nocookie iframe, ilk HTML'de; gömülü izlenme
+kanala sayılır). Sayfada videodaki ürünün sitedeki kısa tanımı + teknik
+tablosu, aynı gruptan videolar, teklif formu. Liste ve ürün sayfalarında
+küçük resim YouTube'a gitmeye devam ediyor; **başlık** izleme sayfasına
+bağlı (iç bağlantı). VideoObject artık yalnız izleme sayfasında (liste/ürün
+sayfasında o 25 video için basılmıyor). Site haritası 487 → 712 adres,
+225'i `video:video` etiketli. **25 Ekim'de bak:** GSC → Videoları dizine
+ekleme: "Video dizine eklendi" 9'dan arttı mı; Performans → Arama türü:
+Video'da gösterim başladı mı.
+
 **E.39 · Dil altyapısı HTTP başlığında her sayfaya dokuz dil ilan ediyordu
 (2026-10-11).** next-intl middleware'i varsayılan olarak her yanıta `Link`
 başlığı ekliyor: dokuz dilin hepsi + `x-default` = Türkçe. HTML `<head>` ve

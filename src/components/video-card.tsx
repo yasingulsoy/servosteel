@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { humanDuration, thumbUrl, watchUrl } from "@/lib/videos";
+import { Link } from "@/i18n/navigation";
+import { humanDuration, izlemeYolu, thumbUrl, watchUrl } from "@/lib/videos";
 
 /**
  * Video kartı — tıklayınca videoyu YouTube'da, yeni sekmede açar.
@@ -16,6 +17,10 @@ import { humanDuration, thumbUrl, watchUrl } from "@/lib/videos";
  *
  * SEO tarafı etkilenmez: VideoObject şeması sunucuda basılıyor ve arama
  * motoru önceden de iframe görmüyordu (oynatıcı yalnızca tıklamayla doğuyordu).
+ *
+ * 2026-10-11: videonun izleme sayfası varsa (lib/video-izleme.ts) BAŞLIK o
+ * sayfaya bağlanır; küçük resim YouTube'a gitmeye devam eder. İzleme
+ * sayfalarına iç bağlantı buradan akıyor — liste, ürün ve sektör sayfaları.
  */
 export function VideoCard({
   id,
@@ -28,6 +33,7 @@ export function VideoCard({
   sec: number;
   priority?: boolean;
 }) {
+  const sayfa = izlemeYolu(id);
   return (
     <figure className="group overflow-hidden rounded-2xl border border-line bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-lg hover:shadow-black/10">
       <div className="relative aspect-video bg-shell">
@@ -66,7 +72,15 @@ export function VideoCard({
         </a>
       </div>
       <figcaption className="p-4">
-        <h3 className="text-sm font-semibold leading-snug text-ink">{title}</h3>
+        <h3 className="text-sm font-semibold leading-snug text-ink">
+          {sayfa ? (
+            <Link href={sayfa} className="transition-colors hover:text-accent-ink">
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
+        </h3>
       </figcaption>
     </figure>
   );

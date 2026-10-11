@@ -1,3 +1,5 @@
+import { IZLEME_SAYFALARI } from "./video-izleme";
+
 /**
  * YouTube video kataloğu — küratörlü.
  *
@@ -392,4 +394,50 @@ export function videosForProduct(path: string): VideoItem[] {
   return (PRODUCT_VIDEO_IDS[path] ?? [])
     .map((id) => VIDEO_BY_ID.get(id))
     .filter((v): v is VideoItem => Boolean(v));
+}
+
+/* ---------------------------------------------------------------------------
+ * İzleme sayfaları (/videolar/[slug]) — bkz. lib/video-izleme.ts
+ * ------------------------------------------------------------------------- */
+
+const IZLEME_BY_ID = new Map<string, (typeof IZLEME_SAYFALARI)[number]>(IZLEME_SAYFALARI.map((v) => [v.id, v]));
+const IZLEME_BY_SLUG = new Map<string, (typeof IZLEME_SAYFALARI)[number]>(IZLEME_SAYFALARI.map((v) => [v.tr, v]));
+
+/** Videonun izleme sayfasının dahili (Türkçe) yolu; sayfası yoksa undefined. */
+export function izlemeYolu(id: string): string | undefined {
+  const v = IZLEME_BY_ID.get(id);
+  return v ? `/videolar/${v.tr}` : undefined;
+}
+
+/** Türkçe slug'dan izleme sayfasının videosu (gerçek tarih/süreyle). */
+export function izlemeVideosu(trSlug: string): VideoItem | undefined {
+  const v = IZLEME_BY_SLUG.get(trSlug);
+  return v ? videoMeta(v.id) : undefined;
+}
+
+/** Tüm izleme sayfalarının Türkçe slug'ları — generateStaticParams ve site haritası için. */
+export const izlemeSluglari: string[] = IZLEME_SAYFALARI.map((v) => v.tr);
+
+/** Videonun küratörlü grubu: ilk geçtiği grup (bir video iki grupta olabiliyor). */
+export function videoGrubu(id: string): VideoGroup | undefined {
+  return videoGroups.find((g) => g.items.some((v) => v.id === id));
+}
+
+/**
+ * Videoda görünen ürünün sayfası: PRODUCT_VIDEO_IDS'te bu videoyu listeleyen
+ * EN ÖZEL yol (kablo kanalı videosu hub'a değil kablo kanalı sayfasına), yoksa
+ * grubun sayfası. Eşleme başlık doğrulanarak kurulduğu için yeniden kullanılır.
+ */
+export function videoUrunYolu(id: string): string | undefined {
+  const yollar = Object.entries(PRODUCT_VIDEO_IDS)
+    .filter(([, ids]) => ids.includes(id))
+    .map(([yol]) => yol)
+    .sort((a, b) => b.split("/").length - a.split("/").length);
+  return yollar[0] ?? videoGrubu(id)?.href;
+}
+
+/* Her izleme sayfasının videosu katalogda olmalı: yoksa sayfa tarihsiz/süresiz
+   VideoObject basardı ve Google şemayı geçersiz sayardı. */
+for (const v of IZLEME_SAYFALARI) {
+  if (!CATALOG_BY_ID.has(v.id)) throw new Error(`videos.ts: izleme sayfası ${v.id} katalogda yok`);
 }

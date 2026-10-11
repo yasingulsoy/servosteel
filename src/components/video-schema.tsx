@@ -1,4 +1,4 @@
-import { embedUrl, isoDuration, thumbUrl, watchUrl, type VideoItem } from "@/lib/videos";
+import { embedUrl, isoDuration, izlemeYolu, thumbUrl, watchUrl, type VideoItem } from "@/lib/videos";
 
 /**
  * VideoObject JSON-LD — Google'ın video zengin sonuçları için.
@@ -6,19 +6,28 @@ import { embedUrl, isoDuration, thumbUrl, watchUrl, type VideoItem } from "@/lib
  * Zorunlu alanlar (name, thumbnailUrl, uploadDate) eksiksiz doldurulur;
  * tarih ve süre YouTube'un gerçek metadata'sından gelir (src/lib/videos.ts).
  * Tahmini tarih yazmak şemayı geçersiz kılar, o yüzden uydurulmaz.
+ *
+ * İzleme sayfası olan video (lib/video-izleme.ts) YALNIZ kendi sayfasında
+ * ilan edilir (`izlemeSayfasi`). Liste, ürün ve sektör sayfalarında atlanır:
+ * oynatıcı orada yok, Google o sayfaları "video ana içerik değil" diye
+ * eliyordu (11 Ekim: 229 video) ve aynı videoyu birden çok sayfada ilan
+ * etmek asıl sayfayı bulanıklaştırır.
  */
 export function VideoSchema({
   items,
   titleOf,
   description,
+  izlemeSayfasi = false,
 }: {
   items: VideoItem[];
   titleOf: (id: string) => string;
   description?: string;
+  izlemeSayfasi?: boolean;
 }) {
-  if (!items.length) return null;
+  const ilan = izlemeSayfasi ? items : items.filter((v) => !izlemeYolu(v.id));
+  if (!ilan.length) return null;
 
-  const jsonLd = items.map((v) => ({
+  const jsonLd = ilan.map((v) => ({
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: titleOf(v.id),

@@ -815,6 +815,18 @@
       "AqcEyDbbWtA": "Desbobinadora hidráulica — sistema de freno de zapata",
       "v9_1snhusMY": "Bobinadora hidráulica"
     },
+    "watch": {
+      "metaTitle": "{title} — Vídeo",
+      "metaDesc": "{title}. {summary} Servosteel, Estambul — vídeo, {duration}.",
+      "intro": "Este vídeo es del canal de YouTube de Servosteel. Servosteel diseña y fabrica líneas de procesamiento de bobina, líneas de perfilado y alimentadores servo en su planta de Estambul; cada línea se prueba en fábrica antes del envío.",
+      "published": "Publicado",
+      "duration": "Duración",
+      "youtube": "Ver en YouTube",
+      "productTitle": "En este vídeo",
+      "productCta": "Especificaciones y cotización",
+      "moreTitle": "Más vídeos: {group}",
+      "allVideos": "Todos los vídeos"
+    },
     "bannerTitle": "109 vídeos, 2,9 mil suscriptores",
     "bannerText": "Todo el archivo está en nuestro canal de YouTube, de líneas de corte a HMI y software de informes; se añaden vídeos nuevos con regularidad.",
     "bannerCta": "Ir al Canal de YouTube",
