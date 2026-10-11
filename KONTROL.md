@@ -475,6 +475,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | W | R'nin yöntemi Bolivya, Paraguay, Honduras, El Salvador, Kamerun, Senegal, Uganda, Zambiya, Angola, Mozambik (9 Eki) | 135 site | 0 $ | 25 (35'ten, elle) |
 | X | R'nin yöntemi İngiltere, İrlanda, İsveç, Finlandiya, Norveç, Hırvatistan, Slovenya, Litvanya, Letonya, Estonya (9 Eki) | 340 site | 0 $ | 83 (87'den, elle) |
 | Y | R'nin yöntemi Hindistan, ABD, Kanada, Avustralya, Yeni Zelanda, Sri Lanka, Bahreyn, Lübnan, Gürcistan, Ermenistan (9 Eki) | 373 site | 0 $ | 69 (81'den, elle) |
+| Z | ODAKLI — yalnız raf, market rafı, kablo kanalı (talep gelen segmentler); Meksika, Şili, Brezilya, Mısır, Suudi Arabistan, Özbekistan, Kazakistan, Hindistan, Nijerya, Güney Afrika (12 Eki) | 137 site | 0 $ | 21 (27'den, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -588,6 +589,13 @@ eklendi, o satırlar jsonl'dan silinip yeniden doğrulandı (80'den 37'si geçti
 önce KELIME/IMALATCI/URETIM listelerine o dilin kelimelerini ekle.**
 **Y (aynı gece):** 69 firma panele girdi; büyük grup şubeleri (Niedax, Kingspan, Valmont, Haulotte) elendi.
 **Gece toplamı: N–Y turlarından panele 527 yeni kayıt** (aktarım sayıları 145 + 70 + 69 + 37 + 29 + 25 + 83 + 69).
+
+**Z turu (12 Eki) dersi:** aynı ülkelerde segmente odaklanmak az verdi — 137 aday,
+44'ü ilk doğrulamayı geçti, 27'si ince süzgeci, elle 6 eleme sonrası 21. Mısır (6),
+Suudi Arabistan (3) ve Nijerya'da (3) arama hep rehber/ilan sitesine çıktı, bazı
+motorlar engelledi: bu üç ülkede rehber hasadı tükenmiş sayılır. Verim Hindistan (34),
+Meksika (20) ve Brezilya'da (17). Sıradaki tur ya yeni ülke ya da başka kaynak
+(fuar katılımcı listesi PDF'leri) gerektirir.
 Küçük pazarlarda (Irak, Etiyopya, Gana, Ürdün, Kuveyt, Honduras) ülke başına 2–8 firma çıktı; sonraki keşif
 büyük pazarlarda (Hindistan, ABD, İngiltere, Avustralya, Kanada) ya da AB'nin kalanında (Hırvatistan, Slovenya,
 Baltık, İskandinavya, İrlanda) daha verimli olur. **142 AB üreticisi
