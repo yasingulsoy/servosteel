@@ -1393,7 +1393,9 @@ bağlı (iç bağlantı). VideoObject artık yalnız izleme sayfasında (liste/�
 sayfasında o 25 video için basılmıyor). Site haritası 487 → 712 adres,
 225'i `video:video` etiketli. **25 Ekim'de bak:** GSC → Videoları dizine
 ekleme: "Video dizine eklendi" 9'dan arttı mı; Performans → Arama türü:
-Video'da gösterim başladı mı.
+Video'da gösterim başladı mı. **Canlı 11 Eki 13:48** (otomatik yayın takıldı,
+Yasin elle yayınladı); 712 adres IndexNow'a, site haritası Search Console
+API'siyle yeniden gönderildi.
 
 **E.39 · Dil altyapısı HTTP başlığında her sayfaya dokuz dil ilan ediyordu
 (2026-10-11).** next-intl middleware'i varsayılan olarak her yanıta `Link`
