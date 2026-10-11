@@ -301,6 +301,30 @@ We received your email. We are interested, please send the price for a 600 mm li
   assert.equal(insan.tur, "yanit");
 });
 
+await t("alindi bildirimi: Lehce konu ve Ingilizce govde (REMA, Ozone, 11 Ekim)", async () => {
+  const rema = await sinifla(`From: biuro@rema-poznan.pl
+To: marketing@servosteel.com.tr
+Subject: Automatyczna odpowiedź: Linie do słupów i belek regałowych - Servosteel, Stambuł
+Content-Type: text/plain; charset=utf-8
+
+Bardzo dziękujemy za przesłany mail. Potwierdzamy jego otrzymanie i postaramy
+się odpowiedzieć Państwu w jak najkrótszym czasie.
+`);
+  assert.equal(rema.tur, "otomatik");
+  const ozone = await sinifla(`From: customercare@ozone.in
+To: gulsoy@servosteel.com.tr
+Subject: Re: Shelf profile lines for retail shelving - Servosteel, Istanbul
+Content-Type: text/plain; charset=utf-8
+
+Dear Customer,
+
+Thank you for contacting Ozone.
+
+We have successfully received your message. Our team is currently reviewing your request, and we will get back to you shortly.
+`);
+  assert.equal(ozone.tur, "otomatik");
+});
+
 await t("gomulu gorsel izi yanit ozetine girmez", async () => {
   const s = await sinifla(`From: Ali <ali@firma.example>
 To: ege@servosteel.com.tr

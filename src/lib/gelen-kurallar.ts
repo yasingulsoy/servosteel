@@ -156,7 +156,7 @@ function kaliciMi(g: GelenOzet): boolean {
 /* --------------------------------------------------- otomatik yanıt */
 
 const OTOMATIK_KONU =
-  /^(automatic reply|auto(matic)?[- ]?reply|auto:|autoreply|auto-response|out of (the )?office|ooo\b|otomatik yan[ıi]t|respuesta autom[aá]tica|resposta autom[aá]tica|r[ée]ponse automatique|automatische antwort|risposta automatica|автоответ|автоматический ответ|abwesenheit|fuera de la oficina|absence|vacation|on leave|away from|رد تلقائي|رد آلي|الرد التلقائي|خارج المكتب)/i;
+  /^(automatic reply|auto(matic)?[- ]?reply|auto:|autoreply|auto-response|out of (the )?office|ooo\b|otomatik yan[ıi]t|respuesta autom[aá]tica|resposta autom[aá]tica|r[ée]ponse automatique|automatische antwort|risposta automatica|автоответ|автоматический ответ|abwesenheit|fuera de la oficina|absence|vacation|on leave|away from|رد تلقائي|رد آلي|الرد التلقائي|خارج المكتب|automatyczna odpowied[źz]|automatick[áa] odpov[ěe]ď|automatick[áa] odpove[ďd]|automatikus v[áa]lasz|automatski odgovor|samodejni odgovor|r[ăa]spuns automat|automatisch antwoord|automatiskt svar|automatisk svar|autosvar|automaattinen vastaus|automatinis atsakymas|autom[āa]tisk[āa] atbilde|automaatvastus|αυτόματη απάντηση|автоматичен отговор)/i;
 
 /* Konusu "RE: …" olup kendini gövdede ele veren sistem cevabı. Giffin'in
    destek sistemi (27 Eylül 2026) başlık koymadan "This is an automated
@@ -165,9 +165,13 @@ const OTOMATIK_KONU =
    otomatik iletidir" cümlesi — "hattımız tam otomatik" gibi bir söz tutmaz.
    10 Ekim 2026: aynı türden iki alındı bildirimi daha yanıt sayıldı — SLV
    Group (Belçika) "Nous accusons réception de votre courriel", Wibe Group
-   (Finlandiya) destek sistemi "your case has been received" + dosya numarası. */
+   (Finlandiya) destek sistemi "your case has been received" + dosya numarası.
+   11 Ekim: Ozone (Hindistan) "We have successfully received your message",
+   REMA (Polonya) gövdesi "Potwierdzamy jego otrzymanie"; REMA'nın konusu
+   "Automatyczna odpowiedź:" idi — konu kalıbına AB dilleri de eklendi (artık
+   o ülkelere de yazıyoruz). */
 const OTOMATIK_GOVDE =
-  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)|(هذه|هذا) (رسالة|رد) (تلقائية|تلقائي|آلية|آلي)|nous accusons (bonne )?r[ée]ception de votre (courriel|message|e-?mail|demande)|your case has been received|here'?s your case reference/i;
+  /this is an automated (acknowledg(e)?ment|response|reply|message|notification|e-?mail)|automated acknowledg(e)?ment|es un (mensaje|correo) autom[aá]tico|est un (message|courriel) automatique|dies ist eine automatische|[èe] un messaggio automatico|bu (bir )?otomatik (yan[ıi]t|mesaj|bildirim)|(هذه|هذا) (رسالة|رد) (تلقائية|تلقائي|آلية|آلي)|nous accusons (bonne )?r[ée]ception de votre (courriel|message|e-?mail|demande)|your case has been received|here'?s your case reference|we have successfully received your (message|e-?mail|request|inquiry|enquiry)|potwierdzamy (jego |jej )?otrzymanie/i;
 
 function otomatikMi(g: GelenOzet): string | null {
   const as = (g.basliklar["auto-submitted"] ?? "").trim();
