@@ -1403,7 +1403,9 @@ sayfasında o 25 video için basılmıyor). Site haritası 487 → 712 adres,
 ekleme: "Video dizine eklendi" 9'dan arttı mı; Performans → Arama türü:
 Video'da gösterim başladı mı. **Canlı 11 Eki 13:48** (otomatik yayın takıldı,
 Yasin elle yayınladı); 712 adres IndexNow'a, site haritası Search Console
-API'siyle yeniden gönderildi.
+API'siyle yeniden gönderildi. **12 Eki:** Google site haritasını 11 Eki 14:17'de okudu (712 adres, 225 video,
+hata 0); izleme sayfaları henüz "Google bilmiyor". 5 EN izleme sayfasına istek atıldı ve kabul edildi
+(kablo kanalı, dilme, boy kesme, ağır raf, yapısal U-C); 6.'da (solar) kota doldu.
 
 **E.39 · Dil altyapısı HTTP başlığında her sayfaya dokuz dil ilan ediyordu
 (2026-10-11).** next-intl middleware'i varsayılan olarak her yanıta `Link`
