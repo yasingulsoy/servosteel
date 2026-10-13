@@ -116,6 +116,7 @@ ULKE_ESI = {
     "uzbekistan": "Özbekistan", "türkiye": "Türkiye", "turkiye": "Türkiye",
     "turkey": "Türkiye", "nijerya": "Nijerya", "nigeria": "Nijerya",
     "kazakistan": "Kazakistan", "kazakhstan": "Kazakistan",
+    "rusya": "Rusya", "russia": "Rusya", "belarus": "Belarus", "ukrayna": "Ukrayna", "ukraine": "Ukrayna",
     "çekya": "Çekya", "cekya": "Çekya", "czechia": "Çekya",
     "portekiz": "Portekiz", "portugal": "Portekiz",
     "malezya": "Malezya", "malaysia": "Malezya",
@@ -182,6 +183,8 @@ ULKE_DIL = {
     "İspanya": "es", "Meksika": "es", "Kolombiya": "es", "Peru": "es", "Şili": "es",
     "Polonya": "pl", "İtalya": "it", "Almanya": "de", "Macaristan": "hu",
     "Kazakistan": "ru", "Özbekistan": "ru", "Kırgızistan": "ru", "Tacikistan": "ru", "Türkiye": "tr",
+    # Rusya ve Belarus Rusça; Ukrayna BİLEREK yok: Rusça e-posta orada yanlış anlaşılır, İngilizce gider (13 Eki 2026)
+    "Rusya": "ru", "Belarus": "ru",
     # E-posta dili Fransizca / Portekizce; sitede bu diller yok, link /en/ sayfasina gider
     "Fransa": "fr", "Belçika": "fr", "Lüksemburg": "fr", "Fas": "fr", "Cezayir": "fr", "Tunus": "fr",
     "Senegal": "fr", "Fildişi Sahili": "fr", "Kamerun": "fr", "Mali": "fr", "Burkina Faso": "fr",

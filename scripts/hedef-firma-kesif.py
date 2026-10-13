@@ -140,6 +140,9 @@ ULKELER = [
     ("Fransa", "FR", "fr", "33", "France"), ("Belçika", "BE", "fr", "32", "Belgique"),
     ("Kazakistan", "KZ", "ru", "7", "Казахстан"), ("Özbekistan", "UZ", "ru", "998", "Узбекистан"),
     ("Kırgızistan", "KG", "ru", "996", "Кыргызстан"),
+    # AA turu (13 Eki 2026, Yasin onayı): hiç taranmamış Rusça pazarlar. Ukrayna e-postası İngilizce (excel ULKE_DIL).
+    ("Rusya", "RU", "ru", "7", "Россия"), ("Belarus", "BY", "ru", "375", "Беларусь"),
+    ("Ukrayna", "UA", "ru", "380", "Україна"),
     ("Vietnam", "VN", "vi", "84", ""), ("Endonezya", "ID", "id", "62", "Indonesia"),
 ]
 
@@ -855,7 +858,7 @@ def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
     if tur in ("t", "u"):   # u: T'nin ikinci partisi (ayni ulke havuzu, ayri dosya)
         return ULKELER_T, {}, "-" + tur
-    if tur in ("v", "w", "x", "y", "z"):   # v, w, x: sonraki partiler, butun ulke havuzu (Ekvador S'deydi ama taranmamisti)
+    if tur in ("v", "w", "x", "y", "z", "aa"):   # v, w, x: sonraki partiler, butun ulke havuzu (Ekvador S'deydi ama taranmamisti)
         return ULKELER + ULKELER_B + ULKELER_O, {}, "-" + tur
     if tur == "s":
         return ULKELER_S, {}, "-s"
@@ -1153,7 +1156,9 @@ IMALATCI = re.compile(
     # P turu: Tayca, Malayca, Arnavutca
     r"ผลิต|โรงงาน|pengeluar|kilang|prodh|"
     # X turu: Fince, Isvecce, Norvecce
-    r"valmist|tuotanto|tehdas|tillverk|produksjon|fabrikk",
+    r"valmist|tuotanto|tehdas|tillverk|produksjon|fabrikk|"
+    # AA turu: Ukraynaca
+    r"виробн|виробля",
     re.I)
 NEGATIF = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
@@ -1424,7 +1429,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "

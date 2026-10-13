@@ -21,6 +21,7 @@ export const ULKE_DILIMI: Record<string, string> = {
   BAE: "Asia/Dubai",
   Bahreyn: "Asia/Bahrain",
   Bangladeş: "Asia/Dhaka",
+  Belarus: "Europe/Minsk",
   Belçika: "Europe/Brussels",
   Benin: "Africa/Porto-Novo",
   "Birleşik Krallık": "Europe/London",
@@ -114,6 +115,7 @@ export const ULKE_DILIMI: Record<string, string> = {
   Portekiz: "Europe/Lisbon",
   Romanya: "Europe/Bucharest",
   Ruanda: "Africa/Kigali",
+  Rusya: "Europe/Moscow", // ülke 11 dilimli; firmaların çoğu Moskova saatinde (Avrupa bölgesi)
   Senegal: "Africa/Dakar",
   "Sierra Leone": "Africa/Freetown",
   Şili: "America/Santiago",
