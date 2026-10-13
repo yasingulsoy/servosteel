@@ -858,7 +858,7 @@ def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
     if tur in ("t", "u"):   # u: T'nin ikinci partisi (ayni ulke havuzu, ayri dosya)
         return ULKELER_T, {}, "-" + tur
-    if tur in ("v", "w", "x", "y", "z", "aa"):   # v, w, x: sonraki partiler, butun ulke havuzu (Ekvador S'deydi ama taranmamisti)
+    if tur in ("v", "w", "x", "y", "z", "aa", "ab"):   # v, w, x: sonraki partiler, butun ulke havuzu (Ekvador S'deydi ama taranmamisti)
         return ULKELER + ULKELER_B + ULKELER_O, {}, "-" + tur
     if tur == "s":
         return ULKELER_S, {}, "-s"
@@ -1158,7 +1158,9 @@ IMALATCI = re.compile(
     # X turu: Fince, Isvecce, Norvecce
     r"valmist|tuotanto|tehdas|tillverk|produksjon|fabrikk|"
     # AA turu: Ukraynaca
-    r"виробн|виробля",
+    r"виробн|виробля|"
+    # AB turu: Azerbaycanca, Mogolca
+    r"istehsal|үйлдвэр",
     re.I)
 NEGATIF = re.compile(
     r"alquiler|arriendo|renta de|\brental|\bhire\b|aluguel|loca[cç][aã]o|location d|tienda|\bloja\b|"
@@ -1429,7 +1431,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
