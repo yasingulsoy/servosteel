@@ -477,6 +477,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | Y | R'nin yöntemi Hindistan, ABD, Kanada, Avustralya, Yeni Zelanda, Sri Lanka, Bahreyn, Lübnan, Gürcistan, Ermenistan (9 Eki) | 373 site | 0 $ | 69 (81'den, elle) |
 | Z | ODAKLI — yalnız raf, market rafı, kablo kanalı (talep gelen segmentler); Meksika, Şili, Brezilya, Mısır, Suudi Arabistan, Özbekistan, Kazakistan, Hindistan, Nijerya, Güney Afrika (12 Eki) | 137 site | 0 $ | 21 (27'den, elle) |
 | AA | YENİ ÜLKE — Rusya (5 ajan, segment başına), Belarus (2), Ukrayna (3); Yasin onayı 13 Eki. Rusya/Belarus Rusça, Ukrayna İngilizce e-posta | 372 site | 0 $ | 167 (174'ten, elle) |
+| AB | Rusya bölge bölge (6 ajan: Sibirya, Ural, Volga, Güney, Kuzeybatı+Orta, Uzak Doğu+Moskova çevresi) + Orta Asya derin (KZ ×2, UZ, AZ+KG+TJ, TM+MD+MN); 13 Eki akşam | 311 site | 0 $ | 118 (124'ten, elle): RU 113, MD 2, KZ 2, UZ 1 |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -605,6 +606,10 @@ tükenmiş pazarlarda 137 adaydan 21 çıktı. **Aynı gün ilk tur bitmişti:**
 13 Eki öğlene gönderim durdu (hatırlatma 21. günde başlıyor, ilk mail 22 Eyl) — sıra
 bitmeden yeni tur başlatılmalı. Aynı gün ilk mektup ve hatırlatma birlikte gitsin diye
 `turSec` (5eae085): iki sırada da firma varsa o gün az giden seçilir.
+**AB turu dersi:** Rusya bölgeleri yine verimli (6 ajandan 113 firma; Kuzeybatı+Orta tek
+başına 69 site getirdi). Orta Asya derin taramada neredeyse boş: Kazakistan ve Özbekistan
+önceki turlarda tükenmiş, Azerbaycan/Kırgızistan/Tacikistan/Türkmenistan/Moğolistan'da
+üreticilerin çoğunun kendi sitesi yok (11 ajanın 5'inden toplam 5 firma).
 Küçük pazarlarda (Irak, Etiyopya, Gana, Ürdün, Kuveyt, Honduras) ülke başına 2–8 firma çıktı; sonraki keşif
 büyük pazarlarda (Hindistan, ABD, İngiltere, Avustralya, Kanada) ya da AB'nin kalanında (Hırvatistan, Slovenya,
 Baltık, İskandinavya, İrlanda) daha verimli olur. **142 AB üreticisi
