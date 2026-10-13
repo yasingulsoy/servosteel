@@ -476,6 +476,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | X | R'nin yöntemi İngiltere, İrlanda, İsveç, Finlandiya, Norveç, Hırvatistan, Slovenya, Litvanya, Letonya, Estonya (9 Eki) | 340 site | 0 $ | 83 (87'den, elle) |
 | Y | R'nin yöntemi Hindistan, ABD, Kanada, Avustralya, Yeni Zelanda, Sri Lanka, Bahreyn, Lübnan, Gürcistan, Ermenistan (9 Eki) | 373 site | 0 $ | 69 (81'den, elle) |
 | Z | ODAKLI — yalnız raf, market rafı, kablo kanalı (talep gelen segmentler); Meksika, Şili, Brezilya, Mısır, Suudi Arabistan, Özbekistan, Kazakistan, Hindistan, Nijerya, Güney Afrika (12 Eki) | 137 site | 0 $ | 21 (27'den, elle) |
+| AA | YENİ ÜLKE — Rusya (5 ajan, segment başına), Belarus (2), Ukrayna (3); Yasin onayı 13 Eki. Rusya/Belarus Rusça, Ukrayna İngilizce e-posta | 372 site | 0 $ | 167 (174'ten, elle) |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -596,6 +597,14 @@ Suudi Arabistan (3) ve Nijerya'da (3) arama hep rehber/ilan sitesine çıktı, b
 motorlar engelledi: bu üç ülkede rehber hasadı tükenmiş sayılır. Verim Hindistan (34),
 Meksika (20) ve Brezilya'da (17). Sıradaki tur ya yeni ülke ya da başka kaynak
 (fuar katılımcı listesi PDF'leri) gerektirir.
+
+**AA turu (13 Eki) — en verimli tur:** 372 adaydan 174'ü doğrulamayı geçti (%47; önceki
+turlar %20–30). Rusça siteler e-postayı açık yazıyor ve productcenter.ru gibi üretici
+katalogları sitenin adresini veriyor. Ders: **verim yeni ülkede, eski ülkede değil** — Z'de
+tükenmiş pazarlarda 137 adaydan 21 çıktı. **Aynı gün ilk tur bitmişti:** 12 Eki 11:53'ten
+13 Eki öğlene gönderim durdu (hatırlatma 21. günde başlıyor, ilk mail 22 Eyl) — sıra
+bitmeden yeni tur başlatılmalı. Aynı gün ilk mektup ve hatırlatma birlikte gitsin diye
+`turSec` (5eae085): iki sırada da firma varsa o gün az giden seçilir.
 Küçük pazarlarda (Irak, Etiyopya, Gana, Ürdün, Kuveyt, Honduras) ülke başına 2–8 firma çıktı; sonraki keşif
 büyük pazarlarda (Hindistan, ABD, İngiltere, Avustralya, Kanada) ya da AB'nin kalanında (Hırvatistan, Slovenya,
 Baltık, İskandinavya, İrlanda) daha verimli olur. **142 AB üreticisi
