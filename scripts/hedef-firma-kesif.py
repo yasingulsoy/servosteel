@@ -858,6 +858,8 @@ def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
     if tur in ("t", "u"):   # u: T'nin ikinci partisi (ayni ulke havuzu, ayri dosya)
         return ULKELER_T, {}, "-" + tur
+    if tur == "ae":   # AE: fuar katilimci listeleri — tum ulke havuzu (bilinen alan adlari zaten elenir)
+        return ULKELER + ULKELER_B + ULKELER_O, {}, "-ae"
     if tur == "ad":   # AD: Balkanlar (Sirbistan, Bosna, Bulgaristan, Yunanistan, Makedonya, Karadag, Arnavutluk); yalniz bu yedi ulke
         return [u for u in ULKELER + ULKELER_B + ULKELER_O if u[1] in ("RS", "BA", "BG", "GR", "MK", "ME", "AL")], {}, "-ad"
     if tur == "ac":   # AC: Moskova (ana sehir) ve Ukrayna (Kiyev disi) ikinci tarama; yalniz RU ve UA
@@ -1435,7 +1437,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
