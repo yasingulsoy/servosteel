@@ -36,20 +36,20 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | ТПК Центр Металлокровли | Rusya | https://omsk.centermk.ru/ | https://omsk.centermk.ru/ | ТПК Центр Металлокровли (Омск) | cmkomsk@mail.ru — sitede: https://omsk.centermk.ru/ | Çatı ve Cephe Paneli |
 | Челябинский завод кабельных конструкций | Rusya | https://chzkk.ru/ | https://chzkk.ru/ | Челябинский завод кабельных конструкций (ПКФ ЧЗКК) | info@chzkk.ru — sitede: https://chzkk.ru/ | Kablo Kanalı |
 | Климат-Снаб | Rusya | https://climatsnab.ru/ | https://climatsnab.ru/ | Климат-Снаб | climatsnab@mail.ru — sitede: https://climatsnab.ru/ | Havalandırma Kanalı |
-| Чебоксарский завод «СТэП | Rusya | https://www.ctep.ru/ | https://www.ctep.ru/ | Чебоксарский завод «СТэП» | 220808@ctep.ru — sitede: https://www.ctep.ru/ | Aşık ve Çelik Yapı |
-| Чебоксарский завод «СТэП | Rusya | https://www.ctep.ru/ | https://www.ctep.ru/ | Чебоксарский завод «СТэП» | 220808@ctep.ru — sitede: https://www.ctep.ru/ | Çatı ve Cephe Paneli |
+| Чебоксарский завод «СТэП» | Rusya | https://www.ctep.ru/ | https://www.ctep.ru/ | Чебоксарский завод «СТэП» | 220808@ctep.ru — sitede: https://www.ctep.ru/ | Aşık ve Çelik Yapı |
+| Чебоксарский завод «СТэП» | Rusya | https://www.ctep.ru/ | https://www.ctep.ru/ | Чебоксарский завод «СТэП» | 220808@ctep.ru — sitede: https://www.ctep.ru/ | Çatı ve Cephe Paneli |
 | Даминарт | Rusya | https://daminart.ru/ | https://daminart.ru/ | Даминарт | info@daminart.ru — sitede: https://daminart.ru/kontakty/ | Market Rafı |
 | ДиПОС | Rusya | https://dipos.ru/ | https://dipos.ru/ | ДиПОС | info@dipos.ru — sitede: https://dipos.ru/ | Çelik Servis Merkezi |
 | Предприятие ДВК | Rusya | https://www.dvkspb.ru/ | https://www.dvkspb.ru/ | Предприятие ДВК | info@dvkspb.ru — sitede: https://www.dvkspb.ru/ | Çelik Mobilya |
 | ПК Эталон | Rusya | https://etalonpanel.ru/ | https://etalonpanel.ru/ | ПК Эталон | etalon7@bk.ru — sitede: https://etalonpanel.ru/ | Çatı ve Cephe Paneli |
 | EvroMet | Rusya | https://evromet-m.ru/ | https://evromet-m.ru/ | EvroMet | evromet.sale@mail.ru — sitede: https://evromet-m.ru/ | Çatı ve Cephe Paneli |
-| ГК «СтальИнвестСтрой | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Alçıpan Profili |
-| ГК «СтальИнвестСтрой | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Aşık ve Çelik Yapı |
-| ГК «СтальИнвестСтрой | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Çatı ve Cephe Paneli |
+| ГК «СтальИнвестСтрой» | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Alçıpan Profili |
+| ГК «СтальИнвестСтрой» | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Aşık ve Çelik Yapı |
+| ГК «СтальИнвестСтрой» | Rusya | https://gk-sis.ru/ | https://gk-sis.ru/ | ГК «СтальИнвестСтрой» | info@gk-sis.ru — sitede: https://gk-sis.ru/ | Çatı ve Cephe Paneli |
 | АЙРОНСИБ | Rusya | https://ironsib.com/ | https://ironsib.com/ | АЙРОНСИБ | maf@ironsib.com — sitede: https://ironsib.com/ | Aşık ve Çelik Yapı |
 | АЙРОНСИБ | Rusya | https://ironsib.com/ | https://ironsib.com/ | АЙРОНСИБ | maf@ironsib.com — sitede: https://ironsib.com/ | Raf Sistemleri |
 | АО Профсталь | Rusya | https://www.izpn.ru/ | http://www.izpn.ru/ | АО Профсталь | sale@izpn.ru — sitede: https://www.izpn.ru/ | Çatı ve Cephe Paneli |
-| НПП «Кабельрост | Rusya | https://kabelrost.com/ | https://kabelrost.com/ | НПП «Кабельрост» | info@kabelrost.com — sitede: https://kabelrost.com/ | Kablo Kanalı |
+| НПП «Кабельрост» | Rusya | https://kabelrost.com/ | https://kabelrost.com/ | НПП «Кабельрост» | info@kabelrost.com — sitede: https://kabelrost.com/ | Kablo Kanalı |
 | Завод Капитель | Rusya | https://kapitel-vent.ru/ | https://kapitel-vent.ru/ | Завод Капитель | sales@kapitel-vent.ru — sitede: https://kapitel-vent.ru/ | Havalandırma Kanalı |
 | Комплекс Дорожных Конструкций | Rusya | https://kdk-pro.ru/ | https://kdk-pro.ru/ | Комплекс Дорожных Конструкций (КДК) | kdk54@mail.ru — sitede: https://kdk-pro.ru/ | Yol Bariyeri |
 | КипМонтажПоставка | Rusya | https://www.kmp63.ru/ | https://www.kmp63.ru/ | КипМонтажПоставка (КМП) | info@kmp63.ru — sitede: https://www.kmp63.ru/ | Kablo Kanalı |
@@ -133,18 +133,18 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Лесамега | Rusya | https://xn--80aaigb7aj2b.xn--p1ai/ | https://xn--80aaigb7aj2b.xn--p1ai/ | Лесамега (лесамега.рф) | 7110747@mail.ru — sitede: https://xn--80aaigb7aj2b.xn--p1ai/ | İskele Kalası |
 | Эвергрин-Тверь | Rusya | https://xn--b1acfnzpb3h.xn--p1ai/ | https://xn--b1acfnzpb3h.xn--p1ai/ | Эвергрин-Тверь (эвергрин.рф) | ever_grin@mail.ru — sitede: https://xn--b1acfnzpb3h.xn--p1ai/ | Market Rafı |
 | Группа Компаний ЮСТ | Rusya | https://xn----ctbabaibcvek0ecbcdckt0avh0c5j.xn--p1ai/ | https://xn----ctbabaibcvek0ecbcdckt0avh0c5j.xn--p1ai/ | Группа Компаний ЮСТ | m23konpenza@yandex.ru — sitede: https://xn----ctbabaibcvek0ecbcdckt0avh0c5j.xn--p1ai/ | Havalandırma Kanalı |
-| ООО «СтилТэк | Rusya | https://xn--h1aecwfc1f.xn--p1ai/ | https://xn--h1aecwfc1f.xn--p1ai/ | ООО «СтилТэк» | samaraproflist@yandex.ru — sitede: https://xn--h1aecwfc1f.xn--p1ai/ | Çatı ve Cephe Paneli |
+| ООО «СтилТэк» | Rusya | https://xn--h1aecwfc1f.xn--p1ai/ | https://xn--h1aecwfc1f.xn--p1ai/ | ООО «СтилТэк» | samaraproflist@yandex.ru — sitede: https://xn--h1aecwfc1f.xn--p1ai/ | Çatı ve Cephe Paneli |
 | Чебоксарский завод металлоизделий | Rusya | https://xn----ntbpfaa8d.xn--p1ai/ | https://xn----ntbpfaa8d.xn--p1ai/ | Чебоксарский завод металлоизделий | hunter036@ya.ru — sitede: https://xn----ntbpfaa8d.xn--p1ai/ | Pres Atölyeleri |
 | Холод-Сервис | Rusya | https://xolodservice.ru/ | https://xolodservice.ru/ | Холод-Сервис | proekt@xolodservice.ru — sitede: https://xolodservice.ru/ | Havalandırma Kanalı |
 | Zavod Zhestyanykh Izdeliy | Rusya | https://artem-zavod.ru/ | https://artem-zavod.ru/ | Zavod Zhestyanykh Izdeliy | sales@artem-zavod.ru — sitede: https://artem-zavod.ru/ | Havalandırma Kanalı |
 | Zavod Zhestyanykh Izdeliy | Rusya | https://artem-zavod.ru/ | https://artem-zavod.ru/ | Zavod Zhestyanykh Izdeliy | sales@artem-zavod.ru — sitede: https://artem-zavod.ru/ | Çatı ve Cephe Paneli |
-| Завод «ЭЛЕКОР | Rusya | https://www.zavod-elekor.ru/ | https://www.zavod-elekor.ru/ | Завод «ЭЛЕКОР» | info@zavod-elekor.ru — sitede: https://www.zavod-elekor.ru/ | Kablo Kanalı |
+| Завод «ЭЛЕКОР» | Rusya | https://www.zavod-elekor.ru/ | https://www.zavod-elekor.ru/ | Завод «ЭЛЕКОР» | info@zavod-elekor.ru — sitede: https://www.zavod-elekor.ru/ | Kablo Kanalı |
 | ЗКМК | Rusya | https://zavod-kmk.ru/ | https://zavod-kmk.ru/ | ЗКМК (Завод Кабельных Металлических Конструкций) | info@zavod-kmk.ru — sitede: https://zavod-kmk.ru/ | Kablo Kanalı |
 | Воронежский завод вентиляционных изделий | Rusya | https://zavod-vent.ru/ | https://zavod-vent.ru/ | Воронежский завод вентиляционных изделий | dilinzavod@gmail.com — sitede: https://zavod-vent.ru/ | Havalandırma Kanalı |
 | Завод ВСА | Rusya | https://zavodvsa.ru/ | https://zavodvsa.ru/ | Завод ВСА | zavodvsa@mail.ru — sitede: https://zavodvsa.ru/ | Yol Bariyeri |
 | Завод кровельных материалов | Rusya | https://zkm.com.ru/ | https://zkm.com.ru/ | Завод кровельных материалов | oz@zkm.com.ru — sitede: https://zkm.com.ru/kontakty | Çatı ve Cephe Paneli |
 | ЗСК | Rusya | https://www.zskl.ru/ | https://www.zskl.ru/ | ЗСК (ООО Промизделия) | zskl@mail.ru — sitede: https://www.zskl.ru/contacts_zsk/ | Çatı ve Cephe Paneli |
-| Завод «Сэндвич панели Поволжья | Rusya | https://z-spp.ru/ | https://z-spp.ru/ | Завод «Сэндвич панели Поволжья» | zavod.spp@bk.ru — sitede: https://z-spp.ru/ | Çatı ve Cephe Paneli |
+| Завод «Сэндвич панели Поволжья» | Rusya | https://z-spp.ru/ | https://z-spp.ru/ | Завод «Сэндвич панели Поволжья» | zavod.spp@bk.ru — sitede: https://z-spp.ru/ | Çatı ve Cephe Paneli |
 | Геометрия LOFT | Rusya | https://geometria-loft.ru/ | https://geometria-loft.ru/ | Геометрия ЛОФТ | fabrika@geometria-loft.ru — sitede: https://geometria-loft.ru/kontakty/ | Çelik Mobilya |
 | Профнастил от производителя (uproflist) | Rusya | https://krasnoyarsk.uproflist.ru/ | https://krasnoyarsk.uproflist.ru/ | Профнастил от производителя (uproflist), Красноярск | info@uproflist.ru — sitede: https://krasnoyarsk.uproflist.ru/ | Çatı ve Cephe Paneli |
 | Bertus Group | Özbekistan | https://bertus.uz/ | https://bertus.uz/ | Bertus Group (Bertus Panels) | info@bertus.uz — sitede: https://bertus.uz/ | Çatı ve Cephe Paneli |
