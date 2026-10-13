@@ -479,6 +479,7 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | AA | YENİ ÜLKE — Rusya (5 ajan, segment başına), Belarus (2), Ukrayna (3); Yasin onayı 13 Eki. Rusya/Belarus Rusça, Ukrayna İngilizce e-posta | 372 site | 0 $ | 167 (174'ten, elle) |
 | AB | Rusya bölge bölge (6 ajan: Sibirya, Ural, Volga, Güney, Kuzeybatı+Orta, Uzak Doğu+Moskova çevresi) + Orta Asya derin (KZ ×2, UZ, AZ+KG+TJ, TM+MD+MN); 13 Eki akşam | 311 site | 0 $ | 118 (124'ten, elle): RU 113, MD 2, KZ 2, UZ 1 |
 | AC | Moskova şehir (2 ajan, segment bölünmüş) + Ukrayna Kiev dışı ikinci tarama; 13 Eki akşam. Ajan 1'de RU/UA dışında tanım yoktu (ac eki boştu) → betiğe `ac` tanımı eklendi | 96 site doğrulandı→52 | 0 $ | 39 (42'den, elle: 4 eleme) |
+| AE | FUAR KATILIMCI LİSTELERİ — 7 ajan (RU/KZ/UZ, IN/PK/BD/LK, BR/AR/CL/PE/CO, MX/EC/Orta Am., VN/ID/TH/MY/PH, MEA, Orta Asya/PL/RO/BG). 13–14 Eki. 105 aday, 51 geçti (ilk), 44 firma, 5 elen → 39 yeni. Fuar kaydı olmayan üreticiler de eklendi (Yasin: 'üretici olan her şey'). | 105 site | 0 $ | 39 |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
