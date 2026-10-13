@@ -297,8 +297,9 @@ t("gonderim sirasi hedefin sabahini one alir", () => {
 t("her hedef ulkenin saat dilimi var", () => {
   /* Veritabanindaki ulkelerin ve kesif listelerindeki (hedef-firma-kesif.py) ulkelerin hepsi
      tabloda: 127. 28 Eylul'e kadar Gabon, Gine, Kongo, Nijer eksikti — oradaki firmalar yerel
-     saate bakilmadan siranin sonunda gidiyordu. Eksik olan siralamada en sona duser. */
-  assert.equal(Object.keys(S.ULKE_DILIMI).length, 127);
+     saate bakilmadan siranin sonunda gidiyordu. Eksik olan siralamada en sona duser.
+     133: 9 Ekim Estonya, Kosova, Letonya, Slovenya; 13 Ekim Belarus, Rusya (AA turu). */
+  assert.equal(Object.keys(S.ULKE_DILIMI).length, 133);
   for (const [ulke, dilim] of Object.entries(S.ULKE_DILIMI)) {
     assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
   }
@@ -326,5 +327,16 @@ t("gonderen dogrulamasi alici hatasi sayilmaz", () => {
   /* Gecici red ve giris hatasi degismedi */
   assert.equal(K.hataSiniflandir({ responseCode: 421, response: "421 too many connections", message: "" }).tur, "sigorta");
   assert.equal(K.hataSiniflandir({ code: "EAUTH", response: "535 auth failed", message: "" }).tur, "sigorta");
+});
+t("ilk mektup ve hatirlatma birlikte (13 Ekim)", () => {
+  /* Ikisi de varsa o gun az giden secilir; esitlikte ilk mektup */
+  assert.equal(K.turSec(true, true, { ilk: 0, hatirlatma: 0 }), 1);
+  assert.equal(K.turSec(true, true, { ilk: 1, hatirlatma: 0 }), 2);
+  assert.equal(K.turSec(true, true, { ilk: 5, hatirlatma: 5 }), 1);
+  assert.equal(K.turSec(true, true, { ilk: 3, hatirlatma: 9 }), 1);
+  /* Biri bossa oteki tum kapasiteyi alir */
+  assert.equal(K.turSec(false, true, { ilk: 0, hatirlatma: 40 }), 2);
+  assert.equal(K.turSec(true, false, { ilk: 40, hatirlatma: 0 }), 1);
+  assert.equal(K.turSec(false, false, { ilk: 0, hatirlatma: 0 }), null);
 });
 console.log(`${n} test gecti`);

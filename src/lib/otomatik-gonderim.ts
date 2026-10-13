@@ -20,6 +20,7 @@ import {
   kutuSec,
   otomatikPencere,
   sonrakiAralikSn,
+  turSec,
 } from "@/lib/outreach-kurallar";
 
 /**
@@ -113,6 +114,17 @@ async function turKilidiAl(): Promise<boolean> {
   return r.length > 0;
 }
 
+/** Bugün (İstanbul) otomatiğin kaç ilk mektup, kaç hatırlatma gönderdiği — turSec için. */
+async function bugunkuTurlar(): Promise<{ ilk: number; hatirlatma: number }> {
+  const r = await sorguSert<{ ilk: number; hatirlatma: number }>(
+    `SELECT count(*) FILTER (WHERE tur < 2)::int AS ilk, count(*) FILTER (WHERE tur >= 2)::int AS hatirlatma
+     FROM hedef_gonderim
+     WHERE kullanici = 'otomatik' AND sonuc IN ('ok', 'belirsiz')
+       AND zaman >= (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') AT TIME ZONE 'Europe/Istanbul')`
+  );
+  return r[0] ?? { ilk: 0, hatirlatma: 0 };
+}
+
 async function sonucYaz(sonuc: string, gonderildi: boolean, sonrakiSn: number | null) {
   await sorguSert(
     `UPDATE otomatik_gonderim SET son_sonuc = $1,
@@ -186,20 +198,19 @@ async function gonderimAdimi(simdi: Date, ayar: ReturnType<typeof ayarlariOku>):
   /* Sıradaki firma. MX yoksa ya da adres o arada başka satırdan yazıldıysa
      tekGonderim göndermeden döner — aynı turda bir sonrakine geçilir (en çok 5).
 
-     İlk tur bitince liste başa sarar: dönüş gelmemiş firmalara HATIRLATMA gider.
-     Aynı mektup ikinci kez gitmez; hatırlatmanın kendi metni var (govde2) ve
-     ilk mektubun üstünden en az IKINCI_TUR_GUN gün geçmiş olması gerekir. */
-  let tur: 1 | 2 = 1;
-  let adaylar = await otomatikSira(a, 5, simdi);
-  if (!adaylar.length) {
-    tur = 2;
-    adaylar = await ikinciTurAdaylari(kapsam(a), 5, gonderimSirasi(simdi));
-  }
-  if (!adaylar.length) {
+     İki sıra var: ilk mektup ve HATIRLATMA (dönüş gelmemiş firmaya, kendi
+     metniyle — govde2 — ilk mektubun üstünden en az IKINCI_TUR_GUN gün sonra).
+     13 Ekim'den beri ikisi BİRLİKTE ilerler (turSec): o gün hangisinden az
+     gittiyse o; biri boşsa öteki. Önce ilk tur bitiyordu, hatırlatma bekliyordu. */
+  const ilkAdaylar = await otomatikSira(a, 5, simdi);
+  const hatirlatmaAdaylar = await ikinciTurAdaylari(kapsam(a), 5, gonderimSirasi(simdi));
+  const tur = turSec(ilkAdaylar.length > 0, hatirlatmaAdaylar.length > 0, await bugunkuTurlar());
+  if (tur === null) {
     const s = "sırada firma yok — ilk tur bitti, hatırlatma sırası da boş (listeyi büyütün)";
     await sonucYaz(s, false, null);
     return s;
   }
+  const adaylar = tur === 2 ? hatirlatmaAdaylar : ilkAdaylar;
   for (const aday of adaylar) {
     const f = await hedefFirma(aday.id);
     if (!f) continue;

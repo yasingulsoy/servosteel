@@ -702,6 +702,28 @@ export function otomatikPencere(
 }
 
 /**
+ * Otomatik turda ilk mektup mu, hatırlatma mı gidecek.
+ *
+ * 13 Ekim 2026'ya kadar sıra katıydı: ilk tur bitmeden hatırlatma gitmezdi.
+ * İlk tur 12 Ekim'de bitti, hatırlatmalar ancak 21. günü dolan firmalardan
+ * başlayabildi; yeni keşif turu girince de hatırlatmalar yine bekleyecekti.
+ * Yasin: "hatırlatma ve mail gönderimi beraber olsun". İki sırada da firma
+ * varsa o gün hangisinden AZ gittiyse o seçilir — gün içinde yarı yarıya
+ * ilerlerler; biri boşsa öteki tüm kapasiteyi alır. Eşitlikte ilk mektup
+ * (yeni firma daha sıcak).
+ */
+export function turSec(
+  ilkVar: boolean,
+  hatirlatmaVar: boolean,
+  bugun: { ilk: number; hatirlatma: number }
+): 1 | 2 | null {
+  if (ilkVar && hatirlatmaVar) return bugun.hatirlatma < bugun.ilk ? 2 : 1;
+  if (ilkVar) return 1;
+  if (hatirlatmaVar) return 2;
+  return null;
+}
+
+/**
  * Bir sonraki otomatik gönderime kaç saniye: kalan kapasite pencerenin kalanına
  * EŞİT yayılır (20 e-posta, 9 saat → ~27 dk), hiçbir zaman kutu aralığından
  * kısa değil. ±%25 oynatılır — dakikası dakikasına giden e-posta makine izi.
