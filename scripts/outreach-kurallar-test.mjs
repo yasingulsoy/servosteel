@@ -298,8 +298,10 @@ t("her hedef ulkenin saat dilimi var", () => {
   /* Veritabanindaki ulkelerin ve kesif listelerindeki (hedef-firma-kesif.py) ulkelerin hepsi
      tabloda: 127. 28 Eylul'e kadar Gabon, Gine, Kongo, Nijer eksikti — oradaki firmalar yerel
      saate bakilmadan siranin sonunda gidiyordu. Eksik olan siralamada en sona duser.
-     133: 9 Ekim Estonya, Kosova, Letonya, Slovenya; 13 Ekim Belarus, Rusya (AA turu). */
-  assert.equal(Object.keys(S.ULKE_DILIMI).length, 133);
+     133: 9 Ekim Estonya, Kosova, Letonya, Slovenya; 13 Ekim Belarus, Rusya (AA turu).
+     146: 14 Ekim AF turu (Brunei, Danimarka, Güney Kore, İsrail, İsviçre, İzlanda, Jamaika, Japonya,
+     Laos, Lüksemburg, Malta, Tayvan, Trinidad ve Tobago). */
+  assert.equal(Object.keys(S.ULKE_DILIMI).length, 146);
   for (const [ulke, dilim] of Object.entries(S.ULKE_DILIMI)) {
     assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
   }

@@ -810,6 +810,34 @@ ULKELER_S = [u for u in ULKELER if u[1] in {"MX", "BR", "CO", "CL", "PE", "AR", 
 # T turu: ayni yontem, R ve S'de olmayan butun ulkeler (ajan hangi ulkeyi tararsa).
 _RS = {u[1] for u in ULKELER_R + ULKELER_S}
 ULKELER_T = [u for u in ULKELER + ULKELER_B + ULKELER_O if u[1] not in _RS]
+# AF turu (2026-10-14, Yasin: "yeni firma ekle, bos kalmasin"): hic taranmamis ulkeler (Japonya, Guney Kore,
+# Tayvan, Israil, Isvicre, Danimarka, Izlanda, Luksemburg, Malta, Jamaika, Trinidad, Brunei, Laos) ve
+# Ingilizce fuar / uye listeleriyle ABD, Kanada, Birlesik Krallik. Ajan ciktisi ajan/af/ altinda.
+ULKELER_AF = [
+    ("ABD", "US", "en", "1", "USA"), ("Kanada", "CA", "en", "1", "Canada"),
+    ("Birleşik Krallık", "GB", "en", "44", "UK"),
+    ("İsviçre", "CH", "en", "41", "Switzerland"), ("Danimarka", "DK", "en", "45", "Denmark"),
+    ("İzlanda", "IS", "en", "354", "Iceland"), ("Lüksemburg", "LU", "en", "352", "Luxembourg"),
+    ("Malta", "MT", "en", "356", "Malta"),
+    ("Japonya", "JP", "en", "81", "Japan"), ("Güney Kore", "KR", "en", "82", "South Korea"),
+    ("Tayvan", "TW", "en", "886", "Taiwan"),
+    ("İsrail", "IL", "en", "972", "Israel"),
+    ("Jamaika", "JM", "en", "1876", "Jamaica"), ("Trinidad ve Tobago", "TT", "en", "1868", "Trinidad and Tobago"),
+    ("Brunei", "BN", "en", "673", "Brunei"), ("Laos", "LA", "en", "856", "Laos"),
+]
+# AG turu (2026-10-14, Yasin: "ne kadar bulabilirsen bul, tekrar gez"): AF'den sonra kalan bolgeler — ABD'nin
+# eyaletleri, Kanada eyaletleri ve Avustralya, Hindistan eyaletleri, Brezilya ve Meksika ic bolgeleri, Hollanda,
+# Belcika, Irlanda, Ispanya bolgeleri, Vietnam, Endonezya, Tayland, Filipinler, Guney Afrika, Fas, Misir.
+ULKELER_AG = [
+    ("ABD", "US", "en", "1", "USA"), ("Kanada", "CA", "en", "1", "Canada"), ("Avustralya", "AU", "en", "61", "Australia"),
+    ("Hindistan", "IN", "en", "91", "India"), ("Brezilya", "BR", "en", "55", "Brazil"), ("Meksika", "MX", "en", "52", "Mexico"),
+    ("Hollanda", "NL", "en", "31", "Netherlands"), ("Belçika", "BE", "en", "32", "Belgium"),
+    ("İrlanda", "IE", "en", "353", "Ireland"), ("İspanya", "ES", "en", "34", "Spain"),
+    ("Vietnam", "VN", "en", "84", "Vietnam"), ("Endonezya", "ID", "en", "62", "Indonesia"),
+    ("Tayland", "TH", "en", "66", "Thailand"), ("Filipinler", "PH", "en", "63", "Philippines"),
+    ("Güney Afrika", "ZA", "en", "27", "South Africa"), ("Fas", "MA", "en", "212", "Morocco"),
+    ("Mısır", "EG", "en", "20", "Egypt"),
+]
 
 
 def _ilk(x):
@@ -858,6 +886,10 @@ def tur_tanimi(tur):
     """(ulkeler, sorgu_seti, dosya_eki)"""
     if tur in ("t", "u"):   # u: T'nin ikinci partisi (ayni ulke havuzu, ayri dosya)
         return ULKELER_T, {}, "-" + tur
+    if tur == "af":   # AF: yeni ulkeler + ABD/Kanada/Birlesik Krallik fuar ve uye listeleri (ajan ciktisi)
+        return ULKELER_AF, {}, "-af"
+    if tur == "ag":   # AG: eyalet/il/sehir bazli ikinci tarama (ajan ciktisi), 17 ulke
+        return ULKELER_AG, {}, "-ag"
     if tur == "ae":   # AE: fuar katilimci listeleri — tum ulke havuzu (bilinen alan adlari zaten elenir)
         return ULKELER + ULKELER_B + ULKELER_O, {}, "-ae"
     if tur == "ad":   # AD: Balkanlar (Sirbistan, Bosna, Bulgaristan, Yunanistan, Makedonya, Karadag, Arnavutluk); yalniz bu yedi ulke
@@ -1437,7 +1469,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
