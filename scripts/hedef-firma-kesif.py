@@ -838,6 +838,18 @@ ULKELER_AG = [
     ("Güney Afrika", "ZA", "en", "27", "South Africa"), ("Fas", "MA", "en", "212", "Morocco"),
     ("Mısır", "EG", "en", "20", "Egypt"),
 ]
+# AH turu (2026-10-16): AG'de verimli cikan Vietnam (kuzey, guney ve orta) ile AG'de arama butcesi bitince
+# bos kalan Hollanda, Belcika ve Brezilya; Latin Amerika fuar katilimci listeleri. Ajanlar yalniz sitesinde
+# e-posta yazan ureticiyi, adresi ve sayfasiyla getirdi.
+ULKELER_AH = [
+    ("Vietnam", "VN", "en", "84", "Vietnam"), ("Hollanda", "NL", "en", "31", "Netherlands"),
+    ("Belçika", "BE", "en", "32", "Belgium"), ("Brezilya", "BR", "en", "55", "Brazil"),
+    ("Meksika", "MX", "en", "52", "Mexico"), ("Kolombiya", "CO", "en", "57", "Colombia"),
+    ("Peru", "PE", "en", "51", "Peru"), ("Şili", "CL", "en", "56", "Chile"),
+]
+# AI-AN turlari (2026-10-16, Yasin: "A'dan Z'ye tum dunyayi tara"): AH'nin yontemi (ajan yalniz sitesinde e-posta
+# yazan ureticiyi adres ve sayfasiyla getirir) butun ulke havuzunda, dalga dalga (dalga basina 5 ajan, ~175 arama).
+DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF
 
 
 def _ilk(x):
@@ -890,6 +902,10 @@ def tur_tanimi(tur):
         return ULKELER_AF, {}, "-af"
     if tur == "ag":   # AG: eyalet/il/sehir bazli ikinci tarama (ajan ciktisi), 17 ulke
         return ULKELER_AG, {}, "-ag"
+    if tur == "ah":   # AH: Vietnam, Hollanda/Belcika, Brezilya, Latin Amerika fuarlari (ajan ciktisi, e-postali)
+        return ULKELER_AH, {}, "-ah"
+    if tur in ("ai", "aj", "ak", "al", "am", "an"):   # dunya taramasi dalgalari (ajan ciktisi, e-postali)
+        return DUNYA, {}, "-" + tur
     if tur == "ae":   # AE: fuar katilimci listeleri — tum ulke havuzu (bilinen alan adlari zaten elenir)
         return ULKELER + ULKELER_B + ULKELER_O, {}, "-ae"
     if tur == "ad":   # AD: Balkanlar (Sirbistan, Bosna, Bulgaristan, Yunanistan, Makedonya, Karadag, Arnavutluk); yalniz bu yedi ulke
@@ -1469,7 +1485,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an"],
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
