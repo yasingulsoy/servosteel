@@ -850,6 +850,8 @@ ULKELER_AH = [
 # AI-AN turlari (2026-10-16, Yasin: "A'dan Z'ye tum dunyayi tara"): AH'nin yontemi (ajan yalniz sitesinde e-posta
 # yazan ureticiyi adres ve sayfasiyla getirir) butun ulke havuzunda, dalga dalga (dalga basina 5 ajan, ~175 arama).
 DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF
+# AN ve sonrasi: ayni havuzda ikinci gecisler (yeni sehirler ve segmentler)
+DUNYA_TURLARI = ("ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az")
 
 
 def _ilk(x):
@@ -904,7 +906,7 @@ def tur_tanimi(tur):
         return ULKELER_AG, {}, "-ag"
     if tur == "ah":   # AH: Vietnam, Hollanda/Belcika, Brezilya, Latin Amerika fuarlari (ajan ciktisi, e-postali)
         return ULKELER_AH, {}, "-ah"
-    if tur in ("ai", "aj", "ak", "al", "am", "an"):   # dunya taramasi dalgalari (ajan ciktisi, e-postali)
+    if tur in DUNYA_TURLARI:   # dunya taramasi dalgalari ve ikinci gecisler (ajan ciktisi, e-postali)
         return DUNYA, {}, "-" + tur
     if tur == "ae":   # AE: fuar katilimci listeleri — tum ulke havuzu (bilinen alan adlari zaten elenir)
         return ULKELER + ULKELER_B + ULKELER_O, {}, "-ae"
@@ -1485,7 +1487,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--tarih", default=date.today().isoformat())
-    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah", "ai", "aj", "ak", "al", "am", "an"],
+    ap.add_argument("--tur", default="a", choices=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "aa", "ab", "ac", "ad", "ae", "af", "ag", "ah"] + list(DUNYA_TURLARI),
                     help="a: ana | b: yeni ulkeler | c: es anlamli aramalar | d: sehir bazli | "
                          "e: oncelikli gruplar (servis merkezi, pres atolyesi) | f: yeni sanayi sehirleri | "
                          "g: Afrika ve Orta Dogu sehirleri | h: b'nin Afrika ulkelerine es anlamli arama | "
