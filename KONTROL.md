@@ -501,6 +501,10 @@ form 2.040 · dilme 114 · boy kesme 170 · pres besleme 483 · kompakt 429 · d
 | AW | PRES ATÖLYESİ TARAMASI 7. dalga (16 Eki) — Kanada 2. tur (Ontario, Quebec); Japonya (ilk tur); Hollanda, Belçika, Lüksemburg, İsviçre; ABD'nin güneydoğusu 2. tur; Güney Afrika, Fas, Tunus. 162 aday → otomatik 30 → hafif kontrol 73 → elle 1 çıkarıldı (Geerts: sitesi e-postasının geçici çalışmadığını yazıyor). **Japonya ilk kez:** 28 adaydan 19'u girdi; Japon sitelerinin çoğu yalnız form gösteriyor (ajan ~95 siteyi bu yüzden geçti), Japonca sayfa otomatik doğrulamada 'ürün kelimesi yok' ile düşüyor, hafif kontrol kurtarıyor. Mailler İngilizce gider. Kanada'da ajan ~35 alan adını zaten listede buldu. | 162 site | 0 $ | 102 |
 | AX | PRES ATÖLYESİ TARAMASI 8. dalga (16-17 Eki) — Fransa'nın geri kalanı; güney Polonya, Macaristan, Slovenya; Hindistan 2. tur; ABD'nin orta eyaletleri ve Teksas; Japonya 2. tur. Beş ajan da bağlantı kesintisinde 10 dk takıldı, yeniden başlatılınca bulduklarını yazdı. 112 aday → otomatik 29 → hafif kontrol 52 → elle çıkarılan yok. Wadhokar'da otomatik seçilen İK adresi (hrd@) değiştirildi; `eposta_bulucu.py` KOTU_KULLANICI'ya hrd/hrfeedback eklendi. **Doyma:** Orta Avrupa 10, Japonya 2. tur 12, Hindistan 25 aday (40'ı zaten listede). | 112 site | 0 $ | 81 |
 | AY | PRES ATÖLYESİ TARAMASI 9. dalga (17 Eki) — Güney Kore 2. tur; Brezilya (São Paulo eyaleti, Rio); İtalya'nın ortası/kuzeydoğusu 3. tur; Meksika'nın ortası. 132 aday → otomatik 30 → hafif kontrol 53 → elle 1 çıkarıldı (Proma Group: büyük otomotiv grubu). A. Pedro'da otomatik seçilen İK adresi (rh@) satın alma adresiyle değiştirildi; `eposta_bulucu.py` KOTU_KULLANICI'ya rh eklendi. Meksika'dan 2 roll form çatı paneli üreticisi (Villalaminados, Arpalsa) geldi. | 132 site | 0 $ | 82 |
+| AZ | PRES ATÖLYESİ TARAMASI 10. dalga (17 Eki) — Vietnam 2. tur; Tayland ve Malezya 2. tur; Romanya, Bulgaristan, Yunanistan 2. tur; Fransa'nın batısı ve güneyi (département bazında). Oturum kapanınca ajanlar yarıda kaldı; ara ara yazdıkları dosyalar işlendi (kayıp yok). 87 aday → otomatik 9 → hafif kontrol 47 → elle çıkarılan yok. **Pres atölyesi taraması doydu:** dalga başına 139'dan 56'ya indi; sıradaki dalgalar roll form müşterisi segmentlerinde ABD/Avrupa açığına (çatı paneli, havalandırma kanalı, aşık/çelik yapı, raf) dönüyor. | 87 site | 0 $ | 56 |
+| BA | ROLL FORM MÜŞTERİSİ SEGMENTLERİ, ABD/AVRUPA AÇIĞI 1. dalga (18 Eki) — panelde çatı paneli/kanal/aşık/raf firmalarının çoğu Hindistan, Rusya, Vietnam'daydı; ABD ve Avrupa neredeyse boştu. 5 ajan: ABD metal çatı ve cephe paneli; ABD/Kanada çelik yapı, aşık, hafif çelik karkas, alçıpan profili; ABD/Kanada havalandırma kanalı; Avrupa çatı paneli ve trapez sac (Polonya ağırlıklı); Avrupa spiral kanal ve raf. 178 aday → otomatik 70 → hafif kontrol 64 → elle çıkarılan yok. **Pres dalgalarının iki katı verim** (134 vs 56-82); tur kodları BA-BZ eklendi (`hedef-firma-kesif.py`). | 178 site | 0 $ | 134 |
+| BB | ROLL FORM MÜŞTERİSİ SEGMENTLERİ 2. dalga (18 Eki) — ABD raf, market rafı, metal mobilya; ABD/Kanada kablo kanalı, strut, solar, yol bariyeri; Avrupa kablo kanalı ve solar; Avrupa aşık, hafif çelik karkas, alçıpan profili; Kanada ve Latin Amerika çatı paneli. 137 aday → otomatik 55 → hafif kontrol 53 → elle çıkarılan yok; Unic Rotarex'te BT adresi (it@) kişi adresiyle değiştirildi. Kablo/solar ve Latin Amerika çatı panelinde ajanlar çok firmayı zaten listede buldu (25-55); verimli olan ABD metal mobilya, Kanada çatı paneli, Avrupa hafif çelik karkas. | 137 site | 0 $ | 107 |
+| BC | ROLL FORM MÜŞTERİSİ SEGMENTLERİ 3. dalga (18 Eki) — ABD metal çatı 2. tur; ABD havalandırma kanalı 2. tur; PL/CZ/SK/HU çatı paneli 2. tur; Güney Avrupa ve Benelüks trapez sac/sandviç panel; Birleşik Krallık, İrlanda, İskandinavya, İzlanda, Baltık çatı ve kanal. 123 aday → otomatik 43 → hafif kontrol 42 → elle 1 çıkarıldı (Snap-Rite: listedeki Gray Metal'in kardeşi). **Hata düzeltildi:** solan.lublin.pl "lublin.pl" okunmuştu; `eposta_bulucu.py` IKI_SEVIYE'ye Polonya bölge uzantıları (waw, lublin, krakow… .pl) eklendi; paneldeki anahtarlarda aynı çakışma yok (kontrol edildi). ABD ikinci turlar zayıf (çatı 18, kanal 29 aday). | 123 site | 0 $ | 84 |
 
 **G/H neden Afrika ve Orta Doğu (2026-09-28, Yasin "firma bulmaya genişlemeye devam
 et"):** ilk 776 gönderimde Afrika'ya giden ~180 e-postadan 5 firma kişi olarak tıkladı
@@ -1423,6 +1427,32 @@ cihazı, DE `Profiliermaschine` (210) çatı profil makinesi, PL
 hedeflenmedi; Lehçe fiyat yazısı bilerek yazılmadı.
 
 ---
+
+**E.41 · Tık yazılarda ve hesaplayıcılarda, ürün sayfaları 2. sayfada
+(2026-10-18).** GSC son 28 gün: 268 tık / 10,5 B gösterim — 4 Ekim'le aynı,
+büyüme Eylül'den beri yatay (haftada 65-78 tık). Marka dışı ticari sorgulardan
+ürün sayfalarına **1.915 gösterim, 6 tık**: dilme EN 787 gösterim 12,3. sıra,
+servo besleyici EN 319 / 12,5, rulo açıcı TR 214 / 11,3, rulo işleme EN 192 /
+16,7 ("coil processing lines" hâlâ dilme sayfasına düşüyor, 24. sıra). Tıkları
+akademi ve hesaplayıcılar alıyor (EN rulo hesabı yazısı 1.475, RU hesaplayıcı
+1.212, TR hesaplayıcı 784 gösterim) — ama hesaplayıcıda TEK ürün bağlantısı ve
+form yoktu, yazılar ürüne yalnızca metin içinden dağınık bağlanıyordu.
+**Yapıldı:** (1) her hesaplayıcı kartının altına "Bu iş için makine: …" (sac →
+boy kesme, rulo → açıcı, besleme → servo sürücü, dilme verimi → dilme hattı;
+`calc.relatedLine` 9 dil) ve sayfaya `InlineQuote`; (2) her akademi yazısının
+sonuna, formun üstüne "İlgili hatlar ve makineler" kutusu
+(`src/lib/related-machines.ts`, adlar mevcut çeviri anahtarlarından, yeni ürün
+metni yok); (3) EN boy kesme başlığına "Servo" (sayfa "servo / full-servo
+cut-to-length line" aramalarında 1-5. sırada, başlıkta kelime yoktu, 659
+gösterimde CTR %0,5); (4) TR rulo açıcı açıklaması "nedir" sorusuyla başlıyor
+("rulo açıcı nedir" 2,8. sıra, 53 gösterim, 0 tık). **Ölçüm 2026-11-15:** aynı
+28 günlük pencerede ürün sayfalarının ticari tıkı (taban 6), hesaplayıcı ve
+akademi sayfalarından gelen talep (panel `sayfa` alanı), dört sayfanın CTR'ı.
+**Dizin taraması aynı gün (API, 516 adres):** site haritasındaki video DIŞI 487
+adresin **487'si dizinde**; GSC'deki 221 "keşfedildi-eklenmedi"nin tamamı video
+izleme sayfası (örneklenen 29 videodan 0'ı dizinde, 23'ü "bilinmiyor"). 25 Ekim
+kontrolünde hâlâ böyleyse 7 dilin video sayfaları site haritasından çıkarılır
+(karar Yasin'de).
 
 **E.40 · Video izleme sayfaları (2026-10-11).** GSC'de 229 video "izleme
 sayfasında değil" diye dizin dışıydı (dizindeki 9). Sebep: sitede oynatıcı

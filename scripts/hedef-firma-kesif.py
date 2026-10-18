@@ -851,7 +851,8 @@ ULKELER_AH = [
 # yazan ureticiyi adres ve sayfasiyla getirir) butun ulke havuzunda, dalga dalga (dalga basina 5 ajan, ~175 arama).
 DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF
 # AN ve sonrasi: ayni havuzda ikinci gecisler (yeni sehirler ve segmentler)
-DUNYA_TURLARI = ("ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az")
+DUNYA_TURLARI = ("ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az") \
+    + tuple("b" + h for h in "abcdefghijklmnopqrstuvwxyz")   # BA-BZ: 18 Eki'den sonraki dalgalar
 
 
 def _ilk(x):

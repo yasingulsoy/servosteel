@@ -70,7 +70,12 @@ DOSYA_UZANTISI = re.compile(r"\.(png|jpe?g|gif|webp|svg|css|js|ico|pdf|woff2?|tt
 # Kanada eyalet uzantilari da (matritech.qc.ca): yoksa her Quebec firmasi "qc.ca" sayiliyordu (16 Eki).
 IKI_SEVIYE = re.compile(
     r"\.(com|co|net|org|gov|edu|ac|or|ne|go|in|ind|biz|info|ltd|plc|nom|web|gob|mil|sch|me)\.[a-z]{2}$"
-    r"|\.(qc|on|bc|ab|mb|sk|ns|nb|nl|pe|nt|yk|nu)\.ca$", re.I)
+    r"|\.(qc|on|bc|ab|mb|sk|ns|nb|nl|pe|nt|yk|nu)\.ca$"
+    # Polonya bolge uzantilari (solan.lublin.pl "lublin.pl" sayilmisti, 18 Eki)
+    r"|\.(waw|lublin|krakow|poznan|wroc|lodz|gda|katowice|szczecin|bialystok|olsztyn|rzeszow|torun|bydgoszcz"
+    r"|opole|kielce|gliwice|radom|slask|malopolska|mazowsze|pomorze|wielkopolska|podkarpacie|warmia|mazury"
+    r"|bielsko|tychy|czest|kalisz|konin|legnica|pila|elk|nysa|zgora|tarnow|sanok|krosno|mielec|zamosc|slupsk"
+    r"|koszalin|elblag|lomza|suwalki|gniezno|glogow|jgora|sklep|biz|info|gmina|powiat|miasta)\.pl$", re.I)
 
 # Sinirli onbellek: kesifte binlerce sayfa taraniyor; sinirsiz tutmak GB'larca bellek demek.
 from collections import OrderedDict  # noqa: E402
