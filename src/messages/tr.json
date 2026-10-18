@@ -711,6 +711,7 @@
     "waste": "Fire genişliği",
     "yieldNote": "Şerit sayısı tam sayıya yuvarlanır; artan genişlik kenar traşıyla birlikte fireye eklenir. Şerit genişliğini ayarlayarak fireyi düşürebilirsiniz.",
     "invalid": "Girilen değerler geçersiz.",
+    "relatedLine": "Bu iş için makine",
     "crumb": "Hesaplama araçları",
     "sheetTitle": "Sac ve plaka ağırlığı",
     "length": "Boy",
@@ -2009,7 +2010,7 @@
         "metaTitle": "Rulo Açıcılar: Hidrolik 6-20 Ton, Mekanik 500-4.000 kg",
         "short": "Hidrolik 6-20 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
         "hero": "Her hattın ilk halkası: ruloyu güvenle taşıyan, gerginliği kontrol ederek açan hidrolik ve mekanik açıcılar. Kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
-        "meta": "Hidrolik (6-20 ton) ve mekanik (500-4.000 kg) rulo açıcılar: pres besleme ve sac işleme hatları için müşteriye özel çözümler.",
+        "meta": "Rulo açıcı, rulo sacı taşıyıp hatta kontrollü gerginlikle açan makinedir. Hidrolik 6-20 ton, mekanik 500-4.000 kg modeller; 48 saatte projeye özel fiyat.",
         "features": [
           {
             "title": "Hidrolik mandren genişletme",

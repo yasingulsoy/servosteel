@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import { Link } from "@/i18n/navigation";
 import { CtaBand } from "@/components/cta-band";
 import { InlineQuote } from "@/components/inline-quote";
+import { RelatedMachines } from "@/components/related-machines";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getPost, getAllPostParams, getPostLocales } from "@/lib/akademi";
 import { getAkademiUi } from "@/lib/akademi-ui";
@@ -282,6 +283,9 @@ export default async function AkademiPostPage({ params }: Props) {
           )}
         </div>
       </div>
+
+      {/* Yazıdan ürün sayfasına köprü, formun hemen üstünde — bkz. related-machines.ts */}
+      <RelatedMachines slug={slug} locale={locale} />
 
       {/* Teklif formu yazının sonunda. Akademi yazıları ticari aramada da
           çıkıyor ("boy kesme hattı"nda 3., "dilme hattı"nda 7. — 2026-09-18);

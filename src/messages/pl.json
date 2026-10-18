@@ -711,6 +711,7 @@
     "waste": "Szerokość odpadu",
     "yieldNote": "Liczba taśm jest zaokrąglana w dół; pozostała szerokość trafia do odpadu razem z obcięciem krawędzi. Dopasowanie szerokości taśmy zmniejsza odpad.",
     "invalid": "Wprowadzone wartości są nieprawidłowe.",
+    "relatedLine": "Maszyna do tego zadania",
     "crumb": "Kalkulatory",
     "sheetTitle": "Waga blachy i płyty",
     "length": "Długość",

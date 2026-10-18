@@ -343,7 +343,7 @@
     "ctaText": "Send your profile drawing or the capacity you need; we come back within 48 hours with a line layout and a technical offer."
   },
   "boykesme": {
-    "metaTitle": "Cut-to-Length Lines: Coil to Sheet Cutting Machine",
+    "metaTitle": "Servo Cut-to-Length Lines: Coil to Sheet Cutting Machine",
     "metaDesc": "Cut-to-length lines: coil to sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
     "eyebrow": "Our expertise",
     "title": "Cut-to-Length Lines",
@@ -747,6 +747,7 @@
     "waste": "Scrap width",
     "yieldNote": "The strip count is rounded down; the leftover width is added to scrap together with the edge trim. Adjusting strip width can reduce scrap.",
     "invalid": "The entered values are not valid.",
+    "relatedLine": "Machine for this job",
     "crumb": "Calculators",
     "sheetTitle": "Sheet and plate weight",
     "length": "Length",

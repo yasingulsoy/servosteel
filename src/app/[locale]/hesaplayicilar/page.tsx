@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { Calculators } from "@/components/calculators";
 import { CalculatorGuide } from "@/components/calculator-guide";
+import { InlineQuote } from "@/components/inline-quote";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -45,6 +46,11 @@ export default async function HesaplayicilarPage({ params }: Props) {
             {t("disclaimer")}
           </p>
         </Reveal>
+
+        {/* Hesaplayıcı sitenin en çok gösterim alan sayfası, formu yoktu; hesabı
+            yapan kişi sıradaki adımı (teklif) sayfadan çıkmadan atabilsin.
+            Gerekçe: inline-quote.tsx ve calculators.tsx > Related. */}
+        <InlineQuote />
       </section>
 
       {/* Formul, cozumlu ornek, yogunluk tablosu: aramanin cevabi HTML'de hazir (bkz. calculator-guide.tsx) */}

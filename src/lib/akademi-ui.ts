@@ -17,6 +17,8 @@ export type AkademiUi = {
   shortAnswer: string;
   faqTitle: string;
   updated: string;
+  /** Yazının sonunda, ilgili ürün sayfalarına bağlantı kutusunun başlığı */
+  machinesTitle: string;
 };
 
 const FALLBACK: AkademiUi = {
@@ -33,6 +35,7 @@ const FALLBACK: AkademiUi = {
   shortAnswer: "Short answer",
   faqTitle: "Frequently asked questions",
   updated: "Updated",
+  machinesTitle: "Related lines and machines",
 };
 
 export const akademiUi: Record<string, AkademiUi> = {
@@ -51,6 +54,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Kısa cevap",
     faqTitle: "Sık sorulan sorular",
     updated: "Güncellendi",
+    machinesTitle: "İlgili hatlar ve makineler",
   },
   en: {
     nav: "Academy",
@@ -67,6 +71,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Short answer",
     faqTitle: "Frequently asked questions",
     updated: "Updated",
+    machinesTitle: "Related lines and machines",
   },
   de: {
     nav: "Akademie",
@@ -83,6 +88,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Kurz gesagt",
     faqTitle: "Häufige Fragen",
     updated: "Aktualisiert",
+    machinesTitle: "Passende Anlagen und Maschinen",
   },
   es: {
     nav: "Academia",
@@ -99,6 +105,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Respuesta breve",
     faqTitle: "Preguntas frecuentes",
     updated: "Actualizado",
+    machinesTitle: "Líneas y máquinas relacionadas",
   },
   it: {
     nav: "Accademia",
@@ -115,6 +122,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "In breve",
     faqTitle: "Domande frequenti",
     updated: "Aggiornato",
+    machinesTitle: "Linee e macchine correlate",
   },
   hu: {
     nav: "Akadémia",
@@ -131,6 +139,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Röviden",
     faqTitle: "Gyakori kérdések",
     updated: "Frissítve",
+    machinesTitle: "Kapcsolódó gyártósorok és gépek",
   },
   pl: {
     nav: "Akademia",
@@ -147,6 +156,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Krótka odpowiedź",
     faqTitle: "Najczęstsze pytania",
     updated: "Zaktualizowano",
+    machinesTitle: "Powiązane linie i maszyny",
   },
   ru: {
     nav: "Академия",
@@ -163,6 +173,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "Коротко",
     faqTitle: "Частые вопросы",
     updated: "Обновлено",
+    machinesTitle: "Линии и оборудование по теме",
   },
   ar: {
     nav: "الأكاديمية",
@@ -179,6 +190,7 @@ export const akademiUi: Record<string, AkademiUi> = {
     shortAnswer: "الإجابة المختصرة",
     faqTitle: "الأسئلة الشائعة",
     updated: "آخر تحديث",
+    machinesTitle: "الخطوط والآلات ذات الصلة",
   },
 };
 

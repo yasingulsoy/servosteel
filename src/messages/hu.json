@@ -711,6 +711,7 @@
     "waste": "Hulladék szélessége",
     "yieldNote": "A szalagszám lefelé kerekít; a maradék szélesség az élvágással együtt hulladék lesz. A szalagszélesség hangolása csökkenti a hulladékot.",
     "invalid": "A megadott értékek érvénytelenek.",
+    "relatedLine": "Gép ehhez a feladathoz",
     "crumb": "Kalkulátorok",
     "sheetTitle": "Lemez és lemezlap súlya",
     "length": "Hossz",

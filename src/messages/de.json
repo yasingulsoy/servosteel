@@ -711,6 +711,7 @@
     "waste": "Verschnittbreite",
     "yieldNote": "Die Streifenzahl wird abgerundet; die Restbreite geht zusammen mit dem Besäumschnitt in den Verschnitt. Eine angepasste Streifenbreite senkt den Verschnitt.",
     "invalid": "Die eingegebenen Werte sind ungültig.",
+    "relatedLine": "Maschine für diese Aufgabe",
     "crumb": "Rechner",
     "sheetTitle": "Blech- und Plattengewicht",
     "length": "Länge",

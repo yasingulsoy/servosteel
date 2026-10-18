@@ -711,6 +711,7 @@
     "waste": "Ancho de merma",
     "yieldNote": "El número de flejes se redondea a la baja; el ancho sobrante se suma a la merma junto con el refilado. Ajustar el ancho de fleje reduce la merma.",
     "invalid": "Los valores introducidos no son válidos.",
+    "relatedLine": "Máquina para este trabajo",
     "crumb": "Calculadoras",
     "sheetTitle": "Peso de chapa y placa",
     "length": "Largo",

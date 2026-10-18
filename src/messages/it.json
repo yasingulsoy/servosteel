@@ -711,6 +711,7 @@
     "waste": "Larghezza sfrido",
     "yieldNote": "Il numero di nastri è arrotondato per difetto; la larghezza residua si somma allo sfrido insieme al rifilo. Regolare la larghezza del nastro riduce lo sfrido.",
     "invalid": "I valori inseriti non sono validi.",
+    "relatedLine": "Macchina per questo lavoro",
     "crumb": "Calcolatori",
     "sheetTitle": "Peso di lamiere e piastre",
     "length": "Lunghezza",

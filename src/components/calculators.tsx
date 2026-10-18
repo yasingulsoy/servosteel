@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { Calculator, Layers, Package, Scissors } from "lucide-react";
+import { ArrowRight, Calculator, Layers, Package, Scissors } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { coilCalc, feedCalc, sheetCalc, yieldCalc, DENSITIES, type MaterialKey } from "@/lib/calc";
 
 const field =
@@ -59,6 +60,28 @@ function Card({
       </h2>
       {children}
     </section>
+  );
+}
+
+/**
+ * Kartın altında, o hesabı fabrikada yapan makineye bağlantı.
+ *
+ * NEDEN (2026-10-18, GSC son 28 gün): hesaplayıcılar sitenin en çok gösterim
+ * alan sayfaları (RU 1.212, TR 784; rulo ağırlığı yazısı EN 1.475) ama sayfada
+ * tek ürün bağlantısı yoktu. Rulo ağırlığını hesaplayan kişi sac işleyen firma;
+ * sıradaki sorusu "bunu hangi makine yapar". Ad, ürünün mevcut çeviri anahtarından.
+ */
+function Related({ href, nameKey }: { href: string; nameKey: string }) {
+  const t = useTranslations();
+  return (
+    <Link
+      href={href}
+      className="group mt-4 inline-flex flex-wrap items-center gap-x-1.5 text-sm font-semibold text-accent-ink"
+    >
+      <span className="font-medium text-muted">{t("calc.relatedLine")}:</span>
+      {t(nameKey)}
+      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180" strokeWidth={1.8} aria-hidden />
+    </Link>
   );
 }
 
@@ -143,6 +166,7 @@ export function Calculators() {
             <p className="text-sm text-muted">{t("invalid")}</p>
           )}
         </div>
+        <Related href="/boy-kesme-hatlari" nameKey="boykesme.title" />
       </Card>
 
       {/* ---------- Rulo ağırlığı ve uzunluğu ---------- */}
@@ -176,6 +200,7 @@ export function Calculators() {
             <p className="text-sm text-muted">{t("invalid")}</p>
           )}
         </div>
+        <Related href="/makineler/rulo-acicilar" nameKey="products.machines.rulo-acicilar.name" />
       </Card>
 
       {/* ---------- Pres besleme çıktısı ---------- */}
@@ -212,6 +237,7 @@ export function Calculators() {
           )}
         </div>
         <p className="mt-3 text-xs leading-relaxed text-muted">{t("feedNote")}</p>
+        <Related href="/makineler/servo-suruculer" nameKey="products.machines.servo-suruculer.name" />
       </Card>
 
       {/* ---------- Dilme verimi ---------- */}
@@ -242,6 +268,7 @@ export function Calculators() {
           )}
         </div>
         <p className="mt-3 text-xs leading-relaxed text-muted">{t("yieldNote")}</p>
+        <Related href="/dilme-hatlari" nameKey="dilme.title" />
       </Card>
     </div>
   );
