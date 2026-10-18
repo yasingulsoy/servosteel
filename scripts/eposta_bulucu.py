@@ -44,6 +44,8 @@ KOTU_KULLANICI = re.compile(
     r"privacy|gdpr|dpo|rgpd|lgpd|datenschutz|protecciondedatos|dataprotection|legal|compliance|"
     r"jobs?|careers?|career|rrhh|hr|cv|curriculum|recruit\w*|recrutement|empleo|empleos|trabajo|vagas|talento|"
     r"invoice\w*|factura\w*|facturacion|billing|accounts?|accounting|contabilidad|finance|payables?|"
+    # muhasebe ve sevkiyat kutulari (superiorwasher ar@, garitaautomotive delivery@ secilmisti, 16 Eki)
+    r"ar|receivables?|delivery|shipping|logistic\w*|logistyka|expedicion|expedition|hrd|hrfeedback|rh|"
     r"press|prensa|media|marketing|newsletter|unsubscribe|support-noreply|example|test|user|usuario|name|"
     r"your\.?name|youremail|email|correo|mail|whistle-?blow\w*|ethics?|etica|etik|denuncias?|complaints?|"
     r"quejas|reclam\w*|compliance\w*|"
@@ -64,9 +66,11 @@ KOTU_ALAN = re.compile(
 
 DOSYA_UZANTISI = re.compile(r"\.(png|jpe?g|gif|webp|svg|css|js|ico|pdf|woff2?|ttf|mp4)$", re.I)
 
-# Iki seviyeli ulke uzantilari: alan adinin "kayit" kismi uc parcadir (firma.com.mx)
+# Iki seviyeli ulke uzantilari: alan adinin "kayit" kismi uc parcadir (firma.com.mx).
+# Kanada eyalet uzantilari da (matritech.qc.ca): yoksa her Quebec firmasi "qc.ca" sayiliyordu (16 Eki).
 IKI_SEVIYE = re.compile(
-    r"\.(com|co|net|org|gov|edu|ac|or|ne|go|in|ind|biz|info|ltd|plc|nom|web|gob|mil|sch|me)\.[a-z]{2}$", re.I)
+    r"\.(com|co|net|org|gov|edu|ac|or|ne|go|in|ind|biz|info|ltd|plc|nom|web|gob|mil|sch|me)\.[a-z]{2}$"
+    r"|\.(qc|on|bc|ab|mb|sk|ns|nb|nl|pe|nt|yk|nu)\.ca$", re.I)
 
 # Sinirli onbellek: kesifte binlerce sayfa taraniyor; sinirsiz tutmak GB'larca bellek demek.
 from collections import OrderedDict  # noqa: E402
