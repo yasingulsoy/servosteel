@@ -17,6 +17,7 @@ import {
 } from "@/lib/outreach-db";
 import {
   ayarlariOku,
+  baglantiHatasi,
   geriDonusEngeli,
   hataSiniflandir,
   kutuSec,
@@ -24,6 +25,9 @@ import {
 } from "@/lib/outreach-kurallar";
 import { gonderilmislereEkle, iptalAdresi, postaSunucusu, tanitimGonder } from "@/lib/outreach";
 import { govdeHtmlTemizle, htmldenMetin } from "@/lib/eposta-html";
+
+/** Kendi sunucumuza üst üste iki kez bağlanamayan kutunun molası (dakika). */
+const BAGLANTI_MOLASI_DK = 60;
 
 /**
  * TEK bir tanıtım e-postasının gönderimi — panelin "Gönder" düğmesi ve
@@ -231,8 +235,13 @@ export async function tekGonderim(p: {
         ? `${gonderen.alan} alan adındaki ${kimler.length} kutu bugünlük durduruldu.`
         : `${gonderen.user} kutusu bugünlük durduruldu.`;
   } else if (onceki && onceki !== "ok") {
-    await sigortaAt([gonderen.user], `Üst üste iki başarısız gönderim. Son hata: ${k.sebep}`);
-    durdu = `${gonderen.user} kutusu bugünlük durduruldu.`;
+    /* Kendi sunucumuza bağlanamadıysak e-posta çıkmamıştır ve sorun geçicidir:
+       günlük değil kısa mola (bkz. baglantiHatasi). */
+    const mola = baglantiHatasi(cevap.hata) ? BAGLANTI_MOLASI_DK : undefined;
+    await sigortaAt([gonderen.user], `Üst üste iki başarısız gönderim. Son hata: ${k.sebep}`, mola);
+    durdu = mola
+      ? `${gonderen.user} kutusu sunucuya bağlanamadığı için ${mola} dakika durduruldu.`
+      : `${gonderen.user} kutusu bugünlük durduruldu.`;
   }
   await kayitEkle(ben, "hedef_gonder_hata", `firma:${id}`, `${ozet} — ${k.sebep}`);
   return {

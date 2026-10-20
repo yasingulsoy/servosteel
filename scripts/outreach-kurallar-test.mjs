@@ -341,4 +341,20 @@ t("ilk mektup ve hatirlatma birlikte (13 Ekim)", () => {
   assert.equal(K.turSec(true, false, { ilk: 40, hatirlatma: 0 }), 1);
   assert.equal(K.turSec(false, false, { ilk: 0, hatirlatma: 0 }), null);
 });
+t("kendi sunucumuza baglanamamak kisa mola (19 Ekim)", () => {
+  /* 19 Ekim 15:29-15:44: iki kutu nodemailer'dan bu hatayi aldi, besinci dakikada
+     ucuncu kutu ayni aliciya teslim etti. Gunluk sigorta ~60 e-postaya mal oldu. */
+  assert.equal(K.baglantiHatasi({ code: "ETIMEDOUT", command: "CONN", message: "Connection timeout" }), true);
+  assert.equal(K.baglantiHatasi({ code: "ETIMEDOUT", message: "Connection timeout" }), true);
+  assert.equal(K.baglantiHatasi({ code: "ECONNECTION", message: "connect ECONNREFUSED 1.2.3.4:587" }), true);
+  assert.equal(K.baglantiHatasi({ code: "ETIMEDOUT", command: "CONN", message: "Greeting never received" }), true);
+  /* Sunucu cevap verdiyse (hiz siniri, spam, alici) bu degil: gunluk sigorta kalir */
+  assert.equal(K.baglantiHatasi({ responseCode: 421, command: "CONN", response: "421 too many connections", message: "" }), false);
+  assert.equal(K.baglantiHatasi({ code: "EAUTH", responseCode: 535, message: "Invalid login" }), false);
+  assert.equal(K.baglantiHatasi({ code: "EENVELOPE", responseCode: 550, response: "550 user unknown" }), false);
+  /* Gonderim ortasinda zaman asimi baglanti hatasi sayilmaz */
+  assert.equal(K.baglantiHatasi({ code: "ETIMEDOUT", command: "DATA", message: "Timeout" }), false);
+  /* Siniflandirma degismedi: baglanti hatasi "hata", sigorta degil */
+  assert.equal(K.hataSiniflandir({ code: "ETIMEDOUT", command: "CONN", message: "Connection timeout" }).tur, "hata");
+});
 console.log(`${n} test gecti`);

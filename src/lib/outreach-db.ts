@@ -1043,18 +1043,27 @@ export async function siraAl(gonderen: string, aralikSn: number): Promise<boolea
  * durur, en az 6 saat. 6 saat alt sınırı gece 23:50'de atan sigortanın 10
  * dakikada kalkmasın diye; barındırma firmalarının hız sınırı penceresi
  * genelde saatlik. Kimin durduğuna çağıran karar verir (bkz. SigortaKapsami).
+ *
+ * `dakika` verilirse gün sonu yerine o kadar durur — kendi sunucumuza bağlanamama
+ * gibi geçici hatalar için (bkz. baglantiHatasi). Kısa mola, zaten atık olan uzun
+ * sigortayı kısaltmaz: bitiş ikisinin geç olanıdır.
  */
-export async function sigortaAt(gonderenler: string[], sebep: string) {
+export async function sigortaAt(gonderenler: string[], sebep: string, dakika?: number) {
   if (!gonderenler.length) return;
   await sorguSert(
     `INSERT INTO gonderen_durumu (gonderen, durdu_bitis, durdu_sebep)
-     SELECT lower(g), GREATEST(
-              (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') + interval '1 day') AT TIME ZONE 'Europe/Istanbul',
-              now() + interval '6 hours'),
+     SELECT lower(g),
+            CASE WHEN $3::int IS NULL THEN GREATEST(
+                   (date_trunc('day', now() AT TIME ZONE 'Europe/Istanbul') + interval '1 day') AT TIME ZONE 'Europe/Istanbul',
+                   now() + interval '6 hours')
+                 ELSE now() + make_interval(mins => $3::int) END,
             $2
      FROM unnest($1::text[]) AS g
-     ON CONFLICT (gonderen) DO UPDATE SET durdu_bitis = EXCLUDED.durdu_bitis, durdu_sebep = EXCLUDED.durdu_sebep`,
-    [gonderenler, sebep.slice(0, 500)]
+     ON CONFLICT (gonderen) DO UPDATE SET
+       durdu_bitis = CASE WHEN $3::int IS NULL THEN EXCLUDED.durdu_bitis
+                          ELSE GREATEST(gonderen_durumu.durdu_bitis, EXCLUDED.durdu_bitis) END,
+       durdu_sebep = EXCLUDED.durdu_sebep`,
+    [gonderenler, sebep.slice(0, 500), dakika ?? null]
   );
 }
 

@@ -251,6 +251,23 @@ const ALICI_YOK =
 const GONDEREN_DOGRULAMA =
   /sender verify (failed|fail)|sender verification|verify failed for|callout|sender address rejected/i;
 
+/**
+ * Kendi gönderim sunucumuza BAĞLANAMADIK mı (bağlantı aşaması, sunucu cevabı yok)?
+ * Bu durumda e-posta sunucudan hiç çıkmamıştır ve sorun geçicidir: 19 Ekim
+ * 15:29-15:44'te iki kutu "Connection timeout" aldı, beş dakika sonra üçüncü kutu
+ * aynı alıcıya teslim etti — ama "üst üste iki hata" kuralı iki kutuyu günün
+ * sonuna kadar durdurdu, ~60 e-posta gitmedi. Bağlantı hatası kısa mola alır
+ * (gonderim.ts), sunucunun itiraz ettiği hatalar günlük sigortada kalır.
+ * Gönderim ortasında kopan bağlantı buraya girmez: komut "CONN" değildir ve
+ * zaten "belirsiz" sert sınırı onu yakalar.
+ */
+export function baglantiHatasi(h: SmtpHatasi): boolean {
+  if (h.responseCode) return false;
+  if (h.command === "CONN") return true;
+  if (h.code === "ECONNECTION" || h.code === "EDNS") return true;
+  return /^connection timeout$|greeting never received|ECONNREFUSED|EHOSTUNREACH|ENETUNREACH/i.test(h.message ?? "");
+}
+
 function kisa(s: string): string {
   return s.replace(/\s+/g, " ").trim().slice(0, 240);
 }
