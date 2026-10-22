@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 81 (29 otomatik + 52 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 93 (29 otomatik + 64 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -96,3 +96,15 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Takeda Kogyo (株式会社竹田工業) | Japonya | https://tk-2001.co.jp/ | http://tk-2001.co.jp/ | Sheet metal for switchboards and cubicles, aluminium and stainless welding, Kahoku, Ishikawa | info@tk-2001.co.jp — sitede: http://tk-2001.co.jp/ | Pres Atölyeleri |
 | Ishikawa Kinzoku Seisakusho (株式会社石川金属製作所) | Japonya | https://www.ishikin.com/ | https://www.ishikin.com/company | Sheet metal job shop: laser cutting, turret punching, bending and welding, Ishikari, Hokkaido | i-info@ishikin.com — sitede: https://www.ishikin.com/company | Pres Atölyeleri |
 | Moriyama Tekko (株式会社森山鉄工) | Japonya | https://www.moriyamatekkou.co.jp/ | https://www.moriyamatekkou.co.jp/ | Sheet metal, laser cutting, 3D pipe bending and fabrication, plus own carts and stepladders, Kaga, Ishikawa | info@moriyamatekkou.co.jp — sitede: https://www.moriyamatekkou.co.jp/ | Pres Atölyeleri |
+| Defta | Fransa | https://www.defta.eu/ | https://www.defta.eu/contact/ | Stamped metal parts, opening systems and body parts for automotive and industry, Essômes-sur-Marne | contact@deftagroup.com — sitede: https://www.defta.eu/contact/ | Pres Atölyeleri |
+| SEBA Industries | Fransa | https://www.seba-industries.com/ | https://www.seba-industries.com/ | Custom sheet bending, cutting and shearing, cladding and coping parts, Wittelsheim (Mulhouse) | contact@seba-industries.fr — sitede: https://www.seba-industries.com/ | Pres Atölyeleri |
+| OMA S.A.S. | Fransa | https://www.emboutissageoma.com/ | https://www.emboutissageoma.com/ | Stamping plant with robotized press lines and welding of large-series parts for transport, Cerizay | info@omasas.fr — sitede: https://www.emboutissageoma.com/ | Pres Atölyeleri |
+| DEMC | Fransa | https://demc-decoupe-laser.fr/ | https://demc-decoupe-laser.fr/ | Fine industrial sheet metal: laser cutting, bending, stamping, welding, Périgny (La Rochelle) | info@demc-tolerie.fr — sitede: https://demc-decoupe-laser.fr/ | Pres Atölyeleri |
+| Electraplan-termelő Kft. | Macaristan | https://electraplan.eu/ | https://electraplan.eu/geppark-bergyartas/ | Contract metal parts production on eccentric presses and coil-fed automatic presses, Érd | info@electraplan.hu — sitede: https://electraplan.eu/geppark-bergyartas/ | Pres Atölyeleri |
+| Sweetone Industries Pvt. Ltd. | Hindistan | https://eyeletsandterminals.com/ | https://eyeletsandterminals.com/ | Stamped eyelets, rivets, terminals and precision sheet metal components, Gurugram | info@eyelets.in — sitede: https://eyeletsandterminals.com/ | Pres Atölyeleri |
+| Globe Engineering Solutions Pvt. Ltd. | Hindistan | https://dakshinindustries.com/ | https://dakshinindustries.com/ | Sheet metal components, CNC punching and press-brake forming, cable trays and racks, Ambattur Industrial Estate Chennai | info@globeengineering.in — sitede: https://dakshinindustries.com/ | Pres Atölyeleri |
+| Sangram Auto Components | Hindistan | https://www.sangramautocomps.com/ | https://www.sangramautocomps.com/contact.php | Precision sheet metal stampings and heavy press parts up to 1250T (brake back plates, brackets), MIDC Waluj Aurangabad | nikheel.deshmukh@sangramauto.com — sitede: https://www.sangramautocomps.com/contact.php | Pres Atölyeleri |
+| Metal Tech Company, Inc. | ABD | https://metaltechcompany.com/ | https://metaltechcompany.com/ | Precision metal stamping and custom metal components, Dallas TX | mtcadmin@metaltechcompany.com — sitede: https://metaltechcompany.com/ | Pres Atölyeleri |
+| Kooima Company | ABD | https://kooimacompany.com/ | https://kooimacompany.com/contact/ | Metal fabrication with laser cutting, bending and welding, Rock Valley IA | info@kooimacompany.com — sitede: https://kooimacompany.com/contact/ | Pres Atölyeleri |
+| Dubuque Stamping & Manufacturing | ABD | https://dubuquestamping.com/ | https://www.dubuquestamping.com/ | Single-station and progressive die metal stamping, Dubuque IA | info@dbqstamp.com — sitede: https://www.dubuquestamping.com/ | Pres Atölyeleri |
+| BKT Co., Ltd. (株式会社BKT) | Japonya | https://www.b-k-t.co.jp/ | https://www.b-k-t.co.jp/ | Fiber laser and waterjet plate cutting with bending and tapping, Hakusan, Ishikawa | sus@bkt.jp — sitede: https://www.b-k-t.co.jp/ | Pres Atölyeleri |

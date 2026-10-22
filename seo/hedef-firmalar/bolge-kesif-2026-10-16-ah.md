@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 119 (38 otomatik + 81 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü). Nam Tien Phat çıkarıldı: sitedeki adres (2designhcm@gmail.com) siteyi yapan ajansa ait görünüyor.
+**Doğrulanmış firma sayısı:** 129 (38 otomatik + 91 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -134,3 +134,13 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Metal Mobel Perú | Peru | https://www.metalmobel.com/ | https://www.metalmobel.com/ | Makes steel lockers, filing cabinets, shelving and slotted-angle racks, Ate Vitarte, Lima | ventas@metalmobel.com — sitede: https://www.metalmobel.com/ | Çelik Mobilya |
 | Proingevin Perú | Peru | https://proingevinperu.com/ | https://proingevinperu.com/ | Manufacturer of cable trays, pull boxes and electrical panels (plus imported hardware), San Martín de Porres, Lima | slandauro@proingevinperu.com — sitede: https://proingevinperu.com/ | Kablo Kanalı |
 | MM Climatización | Şili | https://mmclima.cl/ | https://mmclima.cl/ | Fabricates galvanized, stainless and black-iron HVAC ducts and fittings in own workshop, Chile | mmclima4@gmail.com — sitede: https://mmclima.cl/ | Havalandırma Kanalı |
+| Cong Ty TNHH SX XD TM va DV Huynh Anh | Vietnam | https://huynhanh.com/ | https://huynhanh.com/ | Makes C purlins, corrugated roofing sheet and B40 mesh, Tay Ninh city | huynhanh@huynhanh.vn — sitede: https://huynhanh.com/ | Aşık ve Çelik Yapı |
+| Hieselaar Metaal B.V. | Hollanda | https://hieselaar.nl/ | https://hieselaar.nl/ | Sheet metal job shop: laser cutting, punching, bending, powder coating, Schoonhoven | algemeen@hieselaarbv.nl — sitede: https://hieselaar.nl/ | Pres Atölyeleri |
+| Bruynzeel Storage Systems BV | Hollanda | https://www.bruynzeel-storage.com/ | https://www.bruynzeel-storage.com/ | Makes mobile shelving and archive storage systems, Panningen | info@bruynzeel.org — sitede: https://www.bruynzeel-storage.com/ | Raf Sistemleri |
+| Gispen | Hollanda | https://www.gispen.com/ | https://www.gispen.com/nl/contact | Makes office furniture including steel storage cabinets, Culemborg | info@gispen.nl — sitede: https://www.gispen.com/nl/contact | Çelik Mobilya |
+| Baens Staalframebouw | Hollanda | https://baensstaalframebouw.nl/ | https://baensstaalframebouw.nl/ | Light steel frame construction with own profile production, Ittervoort | info@baensafbouw.nl — sitede: https://baensstaalframebouw.nl/ | Aşık ve Çelik Yapı |
+| Grupo Rackesa | Meksika | https://www.gruporackesa.mx/ | https://www.gruporackesa.mx/ | Manufactures selective, drive-in, push-back and cantilever racks, mezzanines and shelving in own plant, Tlalnepantla EdoMex | ventas@gruporackesa.com — sitede: https://www.gruporackesa.mx/ | Raf Sistemleri |
+| Klever Metálicos | Meksika | https://gabinetesmetalicos.com.mx/ | https://gabinetesmetalicos.com.mx/ | Manufacturer of steel shelving, lockers, cabinets and industrial metal furniture, Mexico City | gabriela@metalicos.mx — sitede: https://gabinetesmetalicos.com.mx/ | Çelik Mobilya |
+| Metal Panel | Meksika | https://metalpanel.mx/ | https://metalpanel.mx/poste-metalico-para-tablaroca-en-mexicali/ | Roll-forms galvanized drywall studs in own plant, also insulated panels and roofing sheet, Tijuana BC / Apodaca NL | info@metalpanel.com.mx — sitede: https://metalpanel.mx/poste-metalico-para-tablaroca-en-mexicali/ | Alçıpan Profili |
+| Manufacturas TA | Meksika | https://www.manufacturasta.com.mx/ | https://www.manufacturasta.com.mx/ | Metal stamping job shop with 36 presses (10-1200 t) and in-house die making, San Luis Potosí SLP | ventas@manufacturasta.com — sitede: https://www.manufacturasta.com.mx/ | Pres Atölyeleri |
+| P&A Racks | Peru | https://www.pya-racks.pe/ | https://www.pya-racks.pe/ | Fabricates and installs industrial racks, mini racks and mezzanines, Callao | eduardo@pyaracks.com — sitede: https://www.pya-racks.pe/ | Raf Sistemleri |

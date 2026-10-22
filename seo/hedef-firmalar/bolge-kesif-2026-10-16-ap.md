@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 72 (34 otomatik + 38 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 81 (34 otomatik + 47 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -87,3 +87,12 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | SIFA AS | Norveç | https://sifa.no/ | https://www.sifa.no/ | Sheet metal processing: laser and water jet cutting, punching, bending, powder coating, Selbustrand (Trøndelag) | post@sifa.no — sitede: https://www.sifa.no/ | Pres Atölyeleri |
 | Aluhak AS | Norveç | https://www.aluhak.no/ | https://www.aluhak.no/ | Producer and supplier of aluminium scaffolding, Klepp Stasjon (Rogaland) | post@aluhak.no — sitede: https://www.aluhak.no/ | İskele Kalası |
 | Eskoleia AS | Norveç | https://eskoleia.no/ | https://eskoleia.no/kontakt-oss/ | Develops and produces steel furniture: lockers, storage, shelving, Kongsvinger | ordre@eskoleia.no — sitede: https://eskoleia.no/kontakt-oss/ | Çelik Mobilya |
+| Delta Panels | Avustralya | https://www.deltapanels.com.au/ | https://www.deltapanels.com.au/contact | Insulated roof, wall and ceiling panel manufacturer, Richlands (Brisbane) QLD | info@deltapanels.com — sitede: https://www.deltapanels.com.au/contact | Çatı ve Cephe Paneli |
+| ARLO Express Sheetmetals | Yeni Zelanda | https://www.arloexpressmetals.com/ | https://www.arloexpressmetals.com/contact-us | Rectangular and SPIRO spiral ductwork and sheet metal manufacturer, Otahuhu (Auckland) and Christchurch | sales@expressmetal.co.nz — sitede: https://www.arloexpressmetals.com/contact-us | Havalandırma Kanalı |
+| Metal Skills | Yeni Zelanda | https://www.metalskills.co.nz/ | https://www.metalskills.co.nz/ | Sheet metal fabrication job shop (turret punching, laser, folding, powder coating), East Tamaki (Auckland) | quotes@mskills.co.nz — sitede: https://www.metalskills.co.nz/ | Pres Atölyeleri |
+| Alfing Produktion AB | İsveç | https://www.alfingproduktion.se/ | https://www.alfingproduktion.se/kontakt/ | Sheet metal and tube contract manufacturer: laser cutting, punching, bending, welding, Älmhult | info@alfing.se — sitede: https://www.alfingproduktion.se/kontakt/ | Pres Atölyeleri |
+| Tunnplåt i Gävle AB | İsveç | https://tunnplat.se/ | https://tunnplat.se/kontakta-oss/ | Steel lockers and sheet metal cabinets for schools and industry, own factory in Gävle | info@tunnplatigavle.se — sitede: https://tunnplat.se/kontakta-oss/ | Çelik Mobilya |
+| MP Bolagen Industri AB | İsveç | https://mpbolagen.com/ | https://mpbolagen.com/en/cable-management/contact-cable-management | Makes cable ladders, wire trays and cable trays (Swedish production), Vetlanda | offert@mpbolagen.se — sitede: https://mpbolagen.com/en/cable-management/contact-cable-management | Kablo Kanalı |
+| HTP Metalworks (HT Presswork Group) | Endonezya | https://htpandon.co.id/ | https://htpandon.co.id/ | Precision metal stamping parts and press tooling, Pasir Jaya Industrial Estate, Tangerang | info@htpmetalworks.co.id — sitede: https://htpandon.co.id/ | Pres Atölyeleri |
+| DS Stålprofil A/S | Danimarka | https://www.ds-staalprofil.com/ | https://www.ds-staalprofil.com/da-dk/ | Makes steel roofing and facade sheets (trapezoidal, sinus, click seam), Hobro | ds@ds-staalprofil.dk — sitede: https://www.ds-staalprofil.com/da-dk/ | Çatı ve Cephe Paneli |
+| High Towns Factory for Metal Industries (Al Madaen Al Aliya) | Suudi Arabistan | https://hightowns.sa/ | https://hightowns.sa/ar/Factory | Steel structure fabrication with laser/plasma cutting and forming, Jeddah 3rd Industrial City | sales@hightowns.com.sa — sitede: https://hightowns.sa/ar/Factory | Aşık ve Çelik Yapı |

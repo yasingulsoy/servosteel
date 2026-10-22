@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 143 (84 otomatik + 59 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 162 (84 otomatik + 78 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -158,3 +158,22 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Megablok | İspanya | https://megablok.com/ | https://megablok.com/contacto/ | Makes changing-room lockers and metal cabinets, Zaragoza | comercial@megablok.com — sitede: https://megablok.com/contacto/ | Çelik Mobilya |
 | Expoluso | Portekiz | https://expoluso.com/pt/ | https://expoluso.com/en/ | Makes shopfitting and display equipment, Águeda | geral@expoluso.com — sitede: https://expoluso.com/en/ | Market Rafı |
 | Marisu | Portekiz | https://www.marisu.pt/ | https://www.marisu.pt/ | Makes wire-metal retail display stands, mesh panels and hooks, Oiã (Aveiro) | geral@marisu.pt — sitede: https://www.marisu.pt/ | Market Rafı |
+| ODS Engineering (O'Dwyer Steel) | İrlanda | https://odseng.com/ | https://odseng.com/contact/ | Steel fabrication for agricultural, industrial and modular steel buildings, Dundrum, Co. Tipperary | sales@odseng.ie — sitede: https://odseng.com/contact/ | Aşık ve Çelik Yapı |
+| St Helens Plant Limited | Birleşik Krallık | https://sthelensplant.co.uk/ | https://sthelensplant.co.uk/contact-us/ | System scaffolding manufacturer (Cuplock, Kwikstage, Ringlock), St Helens | info@sthp.co.uk — sitede: https://sthelensplant.co.uk/contact-us/ | İskele Kalası |
+| Neville Fee Engineering | Birleşik Krallık | https://nevillefee.com/ | https://nevillefee.com/contact/ | Structural steel and farm buildings, Tempo, Co. Fermanagh | info@feeengineering.co.uk — sitede: https://nevillefee.com/contact/ | Aşık ve Çelik Yapı |
+| Spiroland EOOD | Bulgaristan | https://spiroland.bg/ | https://spiroland.bg/ | Produces spiral-wound galvanized ventilation ducts, Plovdiv | office@spiroland.com — sitede: https://spiroland.bg/ | Havalandırma Kanalı |
+| Pan Komerc d.o.o. | Sırbistan | https://pankomerc.rs/ | https://pankomerc.rs/sr/ | Roll-forms trapezoidal, sinusoidal, tile and standing-seam sheet, Pozega | info@pankomerc.com — sitede: https://pankomerc.rs/sr/ | Çatı ve Cephe Paneli |
+| FON Inzinjering | Sırbistan | http://www.fon-ing.rs/ | http://www.fon-ing.rs/ | Manufactures rectangular and spiro ventilation ducts, Nis area | foning@mts.rs — sitede: http://www.fon-ing.rs/ | Havalandırma Kanalı |
+| KM instalacije d.o.o. | Slovenya | https://kminstalacije.si/ | https://kminstalacije.si/kontakt/ | Makes Spiro round and rectangular ventilation ducts and fittings, Skofja vas / Celje | info@km-i.si — sitede: https://kminstalacije.si/kontakt/ | Havalandırma Kanalı |
+| Racksystem sp. z o.o. (CSline) | Polonya | https://csline.pl/ | https://csline.pl/kontakt/ | Makes pallet and high-bay warehouse racking, plant in Myślenice (office Kraków) | biuro@racksystem.pl — sitede: https://csline.pl/kontakt/ | Raf Sistemleri |
+| BOHEMIA KLIMA s.r.o. | Çekya | https://vzt-potrubi.cz/ | https://vzt-potrubi.cz/ | Makes rectangular and Spiro round ventilation ducts, Prague | info@bohemiaklima.cz — sitede: https://vzt-potrubi.cz/ | Havalandırma Kanalı |
+| AZ KLIMA a.s. | Çekya | https://www.azklima.cz/ | https://www.azklima.cz/kontakty | Own production of rectangular ducts (Milovice) and Spiro ducts (Hodonín), Brno HQ | obchod.vyroba@azklima.com — sitede: https://www.azklima.cz/kontakty | Havalandırma Kanalı |
+| GreMi KLIMA s.r.o. | Slovakya | https://www.vzt-potrubie.sk/ | https://www.vzt-potrubie.sk/ | Makes rectangular and Spiro ventilation ducts, Likavka (Ružomberok) | vyroba@gremi.sk — sitede: https://www.vzt-potrubie.sk/ | Havalandırma Kanalı |
+| Lattonedil | İtalya | https://lattonedil.com/ | https://lattonedil.com/contatti/ | Manufacturer of metal roofing sheets and insulated panels, Carimate (CO) | info@lattonedil.it — sitede: https://lattonedil.com/contatti/ | Çatı ve Cephe Paneli |
+| CRM Canalizzazioni Srl | İtalya | https://www.crmcanali.com/ | https://www.crmcanali.com/ | Manufacturer of rectangular and circular air ducts, Bomporto (MO) | info@crmcanali.it — sitede: https://www.crmcanali.com/ | Havalandırma Kanalı |
+| Kee srl | İtalya | https://www.keesrl.it/ | https://www.keesrl.it/ | Designs and produces EN 1317 road safety barriers, Lugagnano Val d'Arda (PC) | info@keesrl.com — sitede: https://www.keesrl.it/ | Yol Bariyeri |
+| ItalPannelli | İtalya | https://www.italpannelli.it/ | https://www.italpannelli.it/contatti/ | Manufacturer of insulated sandwich panels for roofs and walls, Ancarano (TE) | info.italia@italpannelli.com — sitede: https://www.italpannelli.it/contatti/ | Çatı ve Cephe Paneli |
+| Sidermariotti | İtalya | https://www.sidermariotti.com/ | https://www.sidermariotti.com/ | Stainless steel service center with slitting and cut-to-length lines, Pontevico (BS) | info@sidermariotti.it — sitede: https://www.sidermariotti.com/ | Çelik Servis Merkezi |
+| Panelex | İspanya | https://panelexpanelsandwich.com/ | https://panelexpanelsandwich.com/ | Makes sandwich panels and profiled sheet in own plant, Puebla de la Calzada (Badajoz) | info@panelex.es — sitede: https://panelexpanelsandwich.com/ | Çatı ve Cephe Paneli |
+| Irmalex | Portekiz | https://www.irmalex.com/ | https://www.irmalex.com/en/ | Produces insulated panels, flat and profiled sheet, Felgueiras | geral@irmalex.pt — sitede: https://www.irmalex.com/en/ | Çatı ve Cephe Paneli |
+| Plecometal | İspanya | https://plecometal.es/ | https://plecometal.es/ | Profiles, folds and cuts sheet and makes sandwich panels and flashings, Atarfe (Granada) | comercial@plecometal.com — sitede: https://plecometal.es/ | Çatı ve Cephe Paneli |

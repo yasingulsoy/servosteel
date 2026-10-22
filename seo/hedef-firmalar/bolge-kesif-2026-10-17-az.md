@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 56 (9 otomatik + 47 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 68 (9 otomatik + 59 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -71,3 +71,15 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Penta Thick Industries (Thailand) Co., Ltd. | Tayland | https://www.pentathick.com/ | https://www.pentathick.com/contact-us/ | Steel service centre: coil slitting, re-rolling, levelling and shearing, Ban Pho Chachoengsao | sale@pentathick.com — sitede: https://www.pentathick.com/contact-us/ | Çelik Servis Merkezi |
 | TIV - Tôlerie Industrielle Varadaise | Fransa | https://www.tiv-laser.fr/ | https://www.tiv-laser.fr/ | Industrial sheet metal: laser cutting and folding up to 8 m, welding, assembly, Varades | contact@tiv-laser.fr — sitede: https://www.tiv-laser.fr/ | Pres Atölyeleri |
 | GL Groupe | Fransa | https://www.gl-groupe.fr/ | https://www.gl-groupe.fr/contact/ | Sheet and plate laser, plasma and oxy cutting, press-brake folding, Saint-Gilles and other sites | dpoxy@gl-groupe.fr — sitede: https://www.gl-groupe.fr/contact/ | Pres Atölyeleri |
+| Co Khi Ngoc Phu | Vietnam | https://cokhingocphu.com.vn/ | https://cokhingocphu.com.vn/ | Steel plate bending and stamping, laser cutting, enclosures and cable trays, Thu Duc HCMC | info@cokhingocphu.com — sitede: https://cokhingocphu.com.vn/ | Pres Atölyeleri |
+| PNS Manufacturing Co., Ltd. | Tayland | https://pns-metalwork.com/ | https://pns-metalwork.com/ | Steel stamping, cutting, bending, laser cutting and welding job shop, Mueang Samut Sakhon | info@pnsmetalwork.com — sitede: https://pns-metalwork.com/ | Pres Atölyeleri |
+| Viriya Sahakol Co., Ltd. | Tayland | https://www.viriyasahakol.co.th/ | https://www.viriyasahakol.co.th/ | Steel sheet cutting, punching, bending and rolling job shop making parts to drawing, Si Racha Chonburi | sales@viriyasahakol.com — sitede: https://www.viriyasahakol.co.th/ | Pres Atölyeleri |
+| Permsin Steel Works PCL | Tayland | https://permsinsteel.com/ | https://permsinsteel.com/en/contact-us/ | Steel coil slitting and cut-to-length service centre, Mueang Samut Sakhon | contact@permsin.com — sitede: https://permsinsteel.com/en/contact-us/ | Çelik Servis Merkezi |
+| S&Y Metal Stamping Sdn Bhd | Malezya | http://www.snymetalstamping.com/ | http://www.snymetalstamping.com/ | Precision metal stamping with in-house tool and die design, Port Klang Selangor | teetm@sny.com.my — sitede: http://www.snymetalstamping.com/ | Pres Atölyeleri |
+| Chan Way Precision Industry Co., Ltd. | Tayland | https://www.cwfsmold.in.th/ | https://www.cwfsmold.in.th/metal-stamping.html | Stamping dies and OEM flat, bent and deep-drawn stamped parts with plating, Don Mueang Bangkok | sales@aresplus.co.th — sitede: https://www.cwfsmold.in.th/metal-stamping.html | Pres Atölyeleri |
+| MBM Metalwork JSC | Bulgaristan | https://mbmmetalwork.com/ | https://mbmmetalwork.com/ | Cold stamping on presses up to 500 t, tool making, laser cutting and bending, Ruse | info.1@mbmmetalwork.bg — sitede: https://mbmmetalwork.com/ | Pres Atölyeleri |
+| Relly | Fransa | https://www.relly-tolerie.fr/ | https://www.relly-tolerie.fr/mentions-legales | Industrial sheet metal, stamping, punching and laser cutting, Eloyes | flrelly@relly.fr — sitede: https://www.relly-tolerie.fr/mentions-legales | Pres Atölyeleri |
+| OMA SAS | Fransa | https://www.emboutissageoma.com/ | https://www.emboutissageoma.com/ | High-volume stamping and welded assembly, press lines up to 1000 t, Cerizay | info@omasas.fr — sitede: https://www.emboutissageoma.com/ | Pres Atölyeleri |
+| Lormedo | Fransa | https://www.lormedo.com/ | https://www.lormedo.com/contact/ | Metal components from coil and sheet: stamping, punching, laser cutting, bending, Pouxeux | commercial@lormedo.fr — sitede: https://www.lormedo.com/contact/ | Pres Atölyeleri |
+| ATOLL Tôlerie Industrielle | Fransa | https://www.atoll-sa.fr/ | https://www.atoll-sa.fr/ | Industrial sheet metal: laser and punch cutting, folding, welding, painting, Luçon | mail@atoll-sa.fr — sitede: https://www.atoll-sa.fr/ | Pres Atölyeleri |
+| Rivière Synergie | Fransa | https://www.riviere-tolerie.fr/ | https://www.riviere-tolerie.fr/ | Industrial sheet metal and laser cutting, bending, welding, Lisieux | tolerie@rivieresynergie.fr — sitede: https://www.riviere-tolerie.fr/ | Pres Atölyeleri |

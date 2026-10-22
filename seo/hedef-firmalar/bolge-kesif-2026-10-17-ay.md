@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 82 (29 otomatik + 53 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 97 (29 otomatik + 68 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -97,3 +97,18 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Arpalsa Maquiladora de Lámina | Meksika | https://grupoarpalsamx.com/ | https://grupoarpalsamx.com/ | Roofing and cladding sheet fabrication and installation for industrial buildings, Atizapán Edomex | arpalsa@prodigy.net.mx — sitede: https://grupoarpalsamx.com/ | Çatı ve Cephe Paneli |
 | Enovaciones Mexicanas de Alambre (ENOMEX) | Meksika | https://www.enomex-sa.com/ | https://www.enomex-sa.com/ | Wire and sheet metal point-of-sale displays and retail furniture, Ecatepec Edomex | enomex.sa@prodigy.net.mx — sitede: https://www.enomex-sa.com/ | Çelik Mobilya |
 | Villalaminados | Meksika | https://villalaminados.com/ | https://villalaminados.com/ | Roll-formed corrugated roofing, steel deck, C purlins plus slitting on own lines, Cuautitlán Edomex | ventas@villalaminados.com — sitede: https://villalaminados.com/ | Çatı ve Cephe Paneli |
+| Hansung Metal (한성금속) | Güney Kore | http://hs-mc.co.kr/ | http://hs-mc.co.kr/ | Pressed/deep-drawn solenoid valve cases and lithium cell cases, Busan Gangseo (Noksan) | hsmc31@hanmail.net — sitede: http://hs-mc.co.kr/ | Pres Atölyeleri |
+| Samwon Sheet Metal (삼원판금) | Güney Kore | http://www.swsm.co.kr/ | http://www.swsm.co.kr/ | Sheet metal job shop: NCT punching, laser cutting, bending, Seoul Seongsu | samwon-cnc@hanmail.net — sitede: http://www.swsm.co.kr/ | Pres Atölyeleri |
+| Wookil Laser (욱일레이저) | Güney Kore | http://www.wookillaser.co.kr/ | http://www.wookillaser.co.kr/ | Sheet and pipe laser cutting, CNC bending and robot welding job shop, Siheung | wi888@hanmail.net — sitede: http://www.wookillaser.co.kr/ | Pres Atölyeleri |
+| Woori Steel Laser (우리철강레이저) | Güney Kore | http://www.wooristeel.co.kr/ | http://www.wooristeel.co.kr/ | Laser cutting, bending, shearing, tapping and rolling job shop, Siheung (Sihwa) | woori_steel@daum.net — sitede: http://www.wooristeel.co.kr/ | Pres Atölyeleri |
+| Jaeil Precision (제일정밀) | Güney Kore | http://www.jipco.co.kr/ | http://www.jipco.co.kr/ | Progressive-die stamped and deep-drawn cases (battery, detonator), EMI covers and brackets, Incheon Namdong | jipco1@hanmail.net — sitede: http://www.jipco.co.kr/ | Pres Atölyeleri |
+| EBADA (이바다) | Güney Kore | http://www.e-bada.co.kr/ | http://www.e-bada.co.kr/ | Roof panels, flashings and pressed roofing accessories from colour-coated coil, Siheung (Sihwa) | ebada4989778@naver.com — sitede: http://www.e-bada.co.kr/ | Çatı ve Cephe Paneli |
+| Dooyoung Industry (두영산업) | Güney Kore | http://www.dylaser.co.kr/ | http://www.dylaser.co.kr/ | Sheet metal job shop: 2D and pipe laser, NCT punching, bending, Siheung (Sihwa) | dy6482@daum.net — sitede: http://www.dylaser.co.kr/ | Pres Atölyeleri |
+| Dongjin Steel (동진스틸) | Güney Kore | http://www.dongjinsteel.co.kr/ | http://www.dongjinsteel.co.kr/ | Carbon and stainless sheet slitting and cutting centre, Siheung (Sihwa) | djsteel2001@naver.com — sitede: http://www.dongjinsteel.co.kr/ | Çelik Servis Merkezi |
+| JEA Industria Metalurgica | Brezilya | https://grupojea.com.br/ | https://grupojea.com.br/contato/ | Cable trays, wire trays, clamps, profiles and pipe supports, Maua SP | vendas@jea.com.br — sitede: https://grupojea.com.br/contato/ | Kablo Kanalı |
+| Laser Meccanica Srl | İtalya | https://www.lasermeccanica.com/ | https://www.lasermeccanica.com/ | Contract sheet metal job shop: laser cutting, CNC press brake bending, welding, assembly, Albano Laziale (RM) | info@lasermeccanica.it — sitede: https://www.lasermeccanica.com/ | Pres Atölyeleri |
+| Delta Mec Srl | İtalya | https://www.deltamecsrl.it/ | https://www.deltamecsrl.it/ | Precision sheet metal job shop: laser cutting, CNC punching, robotic bending, welding, Vedelago (TV) | info@deltamec.com — sitede: https://www.deltamecsrl.it/ | Pres Atölyeleri |
+| Albertini Pierangelo sas | İtalya | https://www.albertiniapb.info/ | https://www.albertiniapb.info/ | Cold stamping from coil strip and wire, window and shutter hardware, Bertinoro (FC) | info@albertiniapb.it — sitede: https://www.albertiniapb.info/ | Pres Atölyeleri |
+| Metfab (Ctouch) | Meksika | https://www.metfab.mx/ | https://www.metfab.mx/ | Sheet metal job shop: laser, CNC punching, bending, welding, painting, Zapopan Jalisco | mmontes@metral.mx — sitede: https://www.metfab.mx/ | Pres Atölyeleri |
+| Asientos y Estructuras Metálicas (AYEMSA) | Meksika | https://www.ayemsa.com/ | https://www.ayemsa.com/ | Bus seat frames and contract sheet metal (laser, bending, welding), Gustavo A. Madero CDMX | atrevino@ayemsa.com.mx — sitede: https://www.ayemsa.com/ | Pres Atölyeleri |
+| Grupo Tysa / Indacero | Meksika | https://grupotysa.com.mx/ | https://www.grupotysa.com.mx/ | Coated steel sheet slitting, cut-to-length and leveling (toll and sale), Tultitlán Edomex | ventas@grupotysa.mx — sitede: https://www.grupotysa.com.mx/ | Çelik Servis Merkezi |

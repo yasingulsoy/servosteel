@@ -11,7 +11,7 @@ başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yere
 yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
 "Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
 
-**Doğrulanmış firma sayısı:** 125 (56 otomatik + 69 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+**Doğrulanmış firma sayısı:** 135 (56 otomatik + 79 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
 
 | Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
 |---|---|---|---|---|---|---|
@@ -140,3 +140,13 @@ yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri
 | Meath Metal Products Ltd | İrlanda | https://www.meathmetal.com/ | https://www.meathmetal.com/ | Sheet metal components and pressings, CNC punching and folding, Dunboyne | info@meathmetal.com — sitede: https://www.meathmetal.com/ | Pres Atölyeleri |
 | Premet Fabrication Ltd (Cork Laser Services) | İrlanda | https://www.premetfabrication.com/ | https://www.premetfabrication.com/ | Laser cutting, sheet metal bending and folding, Cork | info@premetfabrication.com — sitede: https://www.premetfabrication.com/ | Pres Atölyeleri |
 | SDE (Salop Design and Engineering Ltd) | Birleşik Krallık | https://sde.technology/ | https://sde.technology/contact/ | Progression, transfer and hydraulic presswork, Shrewsbury | info@sde.technology — sitede: https://sde.technology/contact/ | Pres Atölyeleri |
+| Southern Spring & Stamping Inc | ABD | https://www.southernspring.com/ | https://www.southernspring.com/ | Springs, stampings, fourslide parts and sheet metal fabrication, Venice FL | mail@southernspring.com — sitede: https://www.southernspring.com/ | Pres Atölyeleri |
+| Spartanburg Steel Products | ABD | https://www.spartanburgsteelproducts.com/ | https://www.spartanburgsteelproducts.com/ | Large-tonnage automotive stampings and complex assemblies, Spartanburg SC | sales@ssprod.com — sitede: https://www.spartanburgsteelproducts.com/ | Pres Atölyeleri |
+| Groupe Industriel Lachance | Kanada | https://groupeindustriellachance.ca/ | https://www.groupeindustriellachance.ca/contact/ | Stamping and machining of ferrous and non-ferrous metals, Granby QC | commandes@gilachance.ca — sitede: https://www.groupeindustriellachance.ca/contact/ | Pres Atölyeleri |
+| Hopeway Laser | Kanada | https://www.hopeway-inc.ca/ | https://www.hopeway-inc.ca/ | Sheet metal laser cutting, press brake forming and tube laser cutting, Dundalk ON | john@hopewayinc.ca — sitede: https://www.hopeway-inc.ca/ | Pres Atölyeleri |
+| Hansen Industries | Kanada | https://hansenindustries.com/ | https://hansenindustries.com/ | Metal stamping with in-house progressive dies, punch/laser and sheet metal fabrication, Richmond BC | info@hanind.com — sitede: https://hansenindustries.com/ | Pres Atölyeleri |
+| Martin Robey Group | Birleşik Krallık | https://www.martinrobey.com/ | https://www.martinrobey.com/ | Subcontract sheet metal presswork and classic car body panels, Nuneaton | info@martinrobey.co.uk — sitede: https://www.martinrobey.com/ | Pres Atölyeleri |
+| QuTec (Pershore) Ltd | Birleşik Krallık | https://qutecpershoreltd.co.uk/ | https://qutecpershoreltd.co.uk/ | Pressing, punching and sheet metal fabrication, Pershore | production@qutecpershoreltd.com — sitede: https://qutecpershoreltd.co.uk/ | Pres Atölyeleri |
+| All Alloy Slitting Services | Birleşik Krallık | https://www.allalloyslittingservices.co.uk/ | https://www.allalloyslittingservices.co.uk/ | Coil slitting, cut to length and recoiling, Oldbury | enquiries@allalloy.co.uk — sitede: https://www.allalloyslittingservices.co.uk/ | Çelik Servis Merkezi |
+| George Emmott (Pawsons) Ltd | Birleşik Krallık | https://www.emmottsprings.co.uk/ | https://www.emmottsprings.co.uk/ | Flat strip pressings, clips and springs, Keighley | mail@emmottsprings.co.uk — sitede: https://www.emmottsprings.co.uk/ | Pres Atölyeleri |
+| TWP Manufacturing (Threeway Pressings) | Birleşik Krallık | https://threewaypressings.co.uk/ | https://threewaypressings.co.uk/contact/ | Pressed metal components and presswork, Tipton | info@twpgroup.co.uk — sitede: https://threewaypressings.co.uk/contact/ | Pres Atölyeleri |

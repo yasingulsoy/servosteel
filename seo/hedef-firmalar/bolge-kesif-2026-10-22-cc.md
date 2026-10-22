@@ -1,0 +1,50 @@
+# Keşif CC — Google araması + otomatik doğrulama (2026-10-22)
+
+Kaynak: Claude alt ajanı (web araması + sayfa okuma), Tayvan şehir şehir çok segmentli tarama (iyp.com.tw) — 22 Ekim 2026
+"<ürün> üreticisi" aramaları (139 ülke, 13 arama, tur cc). `scripts/hedef-firma-kesif.py --tur cc`.
+
+Her satır otomatik doğrulandı: site açılıyor; segmentin ürünü sayfada geçiyor; firma kendini
+ÜRETİCİ olarak tanıtıyor — çelik servis merkezinde dilme/boy kesme/işleme, pres atölyesinde
+metal pres/derin çekme işi de sayılır — (arama başlığı/özeti ya da sayfa başlığı, açıklaması, H1'i) ve
+başlığında mağaza, kiralama, bayi, ithalatçı izi yok; ülke tutuyor (yerel uzantı ya da sitede
+ülke telefon kodu; Dominik Cumhuriyeti için 809/829/849); e-posta firmanın kendi sitesinde
+yazıyor ("sitede:" sayfası). Rehber/pazar yeri siteleri ve makine üreticileri (rakip) elendi.
+"Ne üretiyor" sütunu Google'daki sayfa başlığı — elle doğrulanmadı.
+
+**Doğrulanmış firma sayısı:** 33 (0 otomatik + 33 elle: ajanın gördüğü e-posta sayfası, ülke adı/telefon/uzantı kontrolü)
+
+| Firma | Ülke | Web sitesi | Doğrulama sayfası | Ne üretiyor | E-posta / İletişim | Segment |
+|---|---|---|---|---|---|---|
+| 永毅精密工業有限公司 (Yung Yi Precision) | Tayvan | https://www.yungyi.tw/index.html | https://www.yungyi.tw/ | Deep-drawing metal stamping (filter shells, lock parts, nut caps) with 200T presses, Tainan | yungyi588@gmail.com — sitede: https://www.yungyi.tw/ | Pres Atölyeleri |
+| 芮鈺有限公司 | Tayvan | https://www.rui-yu.com.tw/about-us.html | https://www.rui-yu.com.tw/ | Contract metal stamping, tapping and welding shop with 30 years' experience, Changhua (Xiushui) | yumrhengxiang@gmail.com — sitede: https://www.rui-yu.com.tw/ | Pres Atölyeleri |
+| 一旭金屬工業有限公司 | Tayvan | https://www.yishui.com.tw/index.html | https://www.yishui.com.tw/index.html | Metal processing, stamped hardware and auto parts maker, New Taipei (Wugu) | zd.machine@yahoo.com.tw — sitede: https://www.yishui.com.tw/index.html | Pres Atölyeleri |
+| 山外有限公司 | Tayvan | https://www.sanwai.com.tw/index.html | https://www.sanwai.com.tw/ | Stamped and bent sheet-metal enclosures and parts for electronics, ISO 9001, New Taipei (Wugu) | info@sanwai.com.tw — sitede: https://www.sanwai.com.tw/ | Pres Atölyeleri |
+| 正大沖網 | Tayvan | https://www.jdcw.com.tw/product.html | https://www.jdcw.com.tw/ | Perforated sheet and expanded metal mesh maker, Taichung (Taiping) | zdcw2008@gmail.com — sitede: https://www.jdcw.com.tw/ | Pres Atölyeleri |
+| 兆磊精密股份有限公司 (Ziolite Precision) | Tayvan | https://www.ziolitetaiwan.com/index.html | https://www.ziolitetaiwan.com/ | Machinery sheet metal, stamping and precision parts manufacturer, Miaoli (Zhunan) | sales_zp@ziolitetaiwan.com — sitede: https://www.ziolitetaiwan.com/ | Pres Atölyeleri |
+| 豪鎰精密鈑金加工 | Tayvan | https://www.hao-yi.com.tw/index | https://www.hao-yi.com.tw/ | Machinery and semiconductor-equipment sheet-metal fabrication and welding, Taichung (Dali) | haoyi.ltd@gmail.com — sitede: https://www.hao-yi.com.tw/ | Pres Atölyeleri |
+| 上得原工業股份有限公司 | Tayvan | https://www.twsdy.com.tw/index.html | https://www.twsdy.com.tw/ | Stamped sheet-metal parts for HVAC, home appliances, auto and telecom, New Taipei (Tamsui) | sales@twsdy.com.tw — sitede: https://www.twsdy.com.tw/ | Pres Atölyeleri |
+| 松利不銹鋼有限公司 | Tayvan | https://www.songleesteel.com.tw/index.html | https://www.songleesteel.com.tw/ | Stainless coil and sheet trading and processing (cutting, bending, laser, punching), Kaohsiung (Ziguan) | songleesteel@yahoo.com — sitede: https://www.songleesteel.com.tw/ | Çelik Servis Merkezi |
+| 龍頂鋼鐵股份有限公司 | Tayvan | https://www.longding.com.tw/about-us.html | https://www.longding.com.tw/ | Steel and stainless stockist with CNC cutting, 4 m shear, press brake and rolling, Taoyuan (Longtan) | longdingst@yahoo.com.tw — sitede: https://www.longding.com.tw/ | Çelik Servis Merkezi |
+| 億昶鐵工廠 | Tayvan | https://www.22821412.com.tw/about-us.html | https://www.22821412.com.tw/ | Factory-direct warehouse storage cages and material racks, Taichung (Dali) | show2471@yahoo.com.tw — sitede: https://www.22821412.com.tw/ | Raf Sistemleri |
+| 恆瑜企業有限公司 | Tayvan | https://www.heng-yu.com.tw/about-us.html | https://www.heng-yu.com.tw/about-us.html | Factory-direct guardrails, construction fences and traffic safety barriers, Pingtung (Changzhi) | a6529840@yahoo.com.tw — sitede: https://www.heng-yu.com.tw/about-us.html | Yol Bariyeri |
+| 台灣湧利企業有限公司 | Tayvan | https://www.yonglitw.tw/index.html | https://www.yonglitw.tw/ | Factory-made slotted angle and boltless racks, light to heavy-duty storage racks, Tainan (Annan) | yongli5888@gmail.com — sitede: https://www.yonglitw.tw/ | Raf Sistemleri |
+| 永芳鐵鍊五金工廠股份有限公司 | Tayvan | https://www.yung-fang.com.tw/ | https://www.yung-fang.com.tw/ | Chain, building hardware and stamped parts factory, Tainan | yfsch@ms17.hinet.net — sitede: https://www.yung-fang.com.tw/ | Pres Atölyeleri |
+| 金偟企業有限公司 (Kingh) | Tayvan | https://www.king-h.com.tw/ | https://www.king-h.com.tw/about-us.html | Stamped motor housings, deep-drawn shells, heat sinks and hardware, New Taipei (Tucheng) | king.fans168@msa.hinet.net — sitede: https://www.king-h.com.tw/about-us.html | Pres Atölyeleri |
+| 允懋精密股份有限公司 (Yuma Precision) | Tayvan | https://www.yuma.tw/ | https://www.yuma.tw/ | Precision sheet-metal fabrication and enclosures for food and industrial equipment, Kaohsiung (Dashu) | chucc@yuma.com.tw — sitede: https://www.yuma.tw/ | Pres Atölyeleri |
+| 昌鎂企業 | Tayvan | https://www.chang-mei.com.tw/ | https://www.chang-mei.com.tw/contact | Metal stamping for bicycle, auto, lock and hand-tool parts, Changhua (Puxin) | guo.szliang@msa.hinet.net — sitede: https://www.chang-mei.com.tw/contact | Pres Atölyeleri |
+| 高成鋼鐵有限公司 | Tayvan | https://www.gaocheng.com.tw/ | https://www.gaocheng.com.tw/ | Steel and stainless processing plant: laser sheet-metal cutting, shearing, bending, welding, Taoyuan | gao.cheng07@msa.hinet.net — sitede: https://www.gaocheng.com.tw/ | Pres Atölyeleri |
+| 毅和工業有限公司 | Tayvan | https://www.yihuo.com.tw/ | https://www.yihuo.com.tw/ | Laser sheet-metal processing, bending, welding and custom control boxes, Changhua (Yuanlin) | yihe.a367108@msa.hinet.net — sitede: https://www.yihuo.com.tw/ | Pres Atölyeleri |
+| 立捷興有限公司 | Tayvan | https://www.lch-tw.com.tw/ | https://www.lch-tw.com.tw/ | Stainless burner tubes, BBQ and kitchen hardware parts, laser cutting and bending, Taichung (Longjing) | a6399158@ms78.hinet.net — sitede: https://www.lch-tw.com.tw/ | Pres Atölyeleri |
+| 陽鏵實業有限公司 | Tayvan | https://www.yangwha.tw/ | https://www.yangwha.tw/ | Fiber-laser cutting, CNC bending, shearing and steel fabrication job shop, Tainan (Annan) | yangwha@ms49.hinet.net — sitede: https://www.yangwha.tw/ | Pres Atölyeleri |
+| 豐田金屬工業有限公司 (Feng-Tien Metal) | Tayvan | https://www.feng-tien.com.tw/ | https://www.feng-tien.com.tw/ | Sheet-metal enclosures and frames for semiconductor, machine-tool and dust-collection equipment, two plants, Taichung (Fengyuan) | feng.tien168@msa.hinet.net — sitede: https://www.feng-tien.com.tw/ | Pres Atölyeleri |
+| 亨昌鐵材股份有限公司 | Tayvan | https://www.heng-chang.com.tw/ | https://www.heng-chang.com.tw/ | Steel plate cutting (flame, plasma, laser, waterjet), bending, rolling and steel sales, Kaohsiung (Yanchao) | heng.chaung@msa.hinet.net — sitede: https://www.heng-chang.com.tw/ | Çelik Servis Merkezi |
+| 榮進鐵材行 | Tayvan | https://www.rongjins.com.tw/ | https://www.rongjins.com.tw/ | Steel plate, galvanized and stainless stockist with forming, cutting and laser cutting, Kaohsiung (Renwu) | rj.steel@msa.hinet.net — sitede: https://www.rongjins.com.tw/ | Çelik Servis Merkezi |
+| 宏康鋼管股份有限公司 (Hung Kang Steel Tube) | Tayvan | https://www.hung-kang.com/ | https://www.hung-kang.com/ | Precision cold-drawn carbon, alloy and stainless steel tube mill, Tainan (Yongkang) | hk.ci@msa.hinet.net — sitede: https://www.hung-kang.com/ | Çelik Servis Merkezi |
+| 鴻群板金工業有限公司 | Tayvan | https://www.hong-chun.com.tw/ | https://www.hong-chun.com.tw/ | Precision machine sheet-metal enclosures and laser-cut parts with in-house painting, Taichung (Dadu) | b18577@ms61.hinet.net — sitede: https://www.hong-chun.com.tw/ | Pres Atölyeleri |
+| 嘉興不銹鋼行 | Tayvan | https://www.cha-sing.com.tw/ | https://www.cha-sing.com.tw/ | Stainless sheet, angle and flat-bar stockist with cutting and shaping, Chiayi (Shuishang) | jiaxing.steel@msa.hinet.net — sitede: https://www.cha-sing.com.tw/ | Çelik Servis Merkezi |
+| 聖菩企業有限公司 | Tayvan | https://www.sheng-pu.com.tw/ | https://www.sheng-pu.com.tw/ | Office furniture maker: mobile file cabinets, steel storage racks and library shelving, Kaohsiung (Gushan) | buly777.er@msa.hinet.net — sitede: https://www.sheng-pu.com.tw/ | Çelik Mobilya |
+| 王室金屬建材有限公司 | Tayvan | https://www.ws-metal.com.tw/ | https://www.ws-metal.com.tw/ | Facade cladding and wall panels, stainless and aluminium sheet laser cutting and bending, Changhua (Shengang) | wangs.metal@msa.hinet.net — sitede: https://www.ws-metal.com.tw/ | Çatı ve Cephe Paneli |
+| 協興傢俱 (協興鐵櫃傢俱行) | Tayvan | https://www.hsieh-hsing.com.tw/ | https://www.hsieh-hsing.com.tw/ | Factory-direct steel cabinets and office furniture, Taoyuan (Luzhu) | h970097@ms53.hinet.net — sitede: https://www.hsieh-hsing.com.tw/ | Çelik Mobilya |
+| 茂暐掛鈎企業有限公司 | Tayvan | https://www.maowei-hook.com.tw/ | https://www.maowei-hook.com.tw/ | Display hooks, slatwall and pegboard fittings and storage racks maker, Changhua | mao_wei@seed.net.tw — sitede: https://www.maowei-hook.com.tw/ | Market Rafı |
+| 詮立企業有限公司 | Tayvan | https://www.turely.com.tw/ | https://www.turely.com.tw/ | Exhaust ducts, blowers and dust-collection equipment maker, New Taipei (Tucheng) | pion.cham@msa.hinet.net — sitede: https://www.turely.com.tw/ | Havalandırma Kanalı |
+| 一二三風管工程 | Tayvan | https://www.123airduct.com.tw/ | https://www.123airduct.com.tw/about-us.html | Air duct, exhaust and smoke-control duct fabrication and installation with own works, Taichung (Taiping) | shin.h8008@msa.hinet.net — sitede: https://www.123airduct.com.tw/about-us.html | Havalandırma Kanalı |
