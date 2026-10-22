@@ -849,10 +849,17 @@ ULKELER_AH = [
 ]
 # AI-AN turlari (2026-10-16, Yasin: "A'dan Z'ye tum dunyayi tara"): AH'nin yontemi (ajan yalniz sitesinde e-posta
 # yazan ureticiyi adres ve sayfasiyla getirir) butun ulke havuzunda, dalga dalga (dalga basina 5 ajan, ~175 arama).
-DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF
+# BG ve BK yeniden taramasi (22 Eki): havuzda olmayan alti ulke
+ULKELER_BG = [
+    ("Myanmar", "MM", "en", "95", "Myanmar"), ("Kıbrıs", "CY", "el", "357", "Cyprus"),
+    ("Kosova", "XK", "sq", "383", "Kosovë"), ("Porto Riko", "PR", "es", "1", "Puerto Rico"),
+    ("Surinam", "SR", "en", "597", "Suriname"), ("Vanuatu", "VU", "en", "678", "Vanuatu"),
+]
+DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF + ULKELER_BG
 # AN ve sonrasi: ayni havuzda ikinci gecisler (yeni sehirler ve segmentler)
 DUNYA_TURLARI = ("ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az") \
-    + tuple("b" + h for h in "abcdefghijklmnopqrstuvwxyz")   # BA-BZ: 18 Eki'den sonraki dalgalar
+    + tuple("b" + h for h in "abcdefghijklmnopqrstuvwxyz") \
+    + tuple("c" + h for h in "abcdefghijklmnopqrstuvwxyz")   # BA-CZ: 18 Eki'den sonraki dalgalar
 
 
 def _ilk(x):

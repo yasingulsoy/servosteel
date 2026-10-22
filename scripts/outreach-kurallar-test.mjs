@@ -300,8 +300,9 @@ t("her hedef ulkenin saat dilimi var", () => {
      saate bakilmadan siranin sonunda gidiyordu. Eksik olan siralamada en sona duser.
      133: 9 Ekim Estonya, Kosova, Letonya, Slovenya; 13 Ekim Belarus, Rusya (AA turu).
      146: 14 Ekim AF turu (Brunei, Danimarka, Güney Kore, İsrail, İsviçre, İzlanda, Jamaika, Japonya,
-     Laos, Lüksemburg, Malta, Tayvan, Trinidad ve Tobago). */
-  assert.equal(Object.keys(S.ULKE_DILIMI).length, 146);
+     Laos, Lüksemburg, Malta, Tayvan, Trinidad ve Tobago). 148: 22 Ekim BG turu (Kıbrıs, Myanmar).
+     151: 22 Ekim BK turu (Porto Riko, Surinam, Vanuatu). */
+  assert.equal(Object.keys(S.ULKE_DILIMI).length, 151);
   for (const [ulke, dilim] of Object.entries(S.ULKE_DILIMI)) {
     assert.doesNotThrow(() => new Intl.DateTimeFormat("en-US", { timeZone: dilim }), `${ulke}: ${dilim}`);
   }
