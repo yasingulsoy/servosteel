@@ -29,6 +29,11 @@ import { govdeHtmlTemizle, htmldenMetin } from "@/lib/eposta-html";
 /** Kendi sunucumuza üst üste iki kez bağlanamayan kutunun molası (dakika). */
 const BAGLANTI_MOLASI_DK = 60;
 
+/** Sunucu zamanında cevap vermeyince o sunucunun kutularının molası (dakika).
+ *  22 Ekim'de tek bir zaman aşımı dört kutuyu günün kalanında durdurdu (~170
+ *  e-posta gitmedi); zaman aşımı geçicidir, sigorta günlük değil kısa. */
+const ZAMAN_ASIMI_MOLASI_DK = 60;
+
 /**
  * TEK bir tanıtım e-postasının gönderimi — panelin "Gönder" düğmesi ve
  * otomatik gönderici (otomatik-gonderim.ts) AYNI yoldan geçer, kurallar tek yerde.
@@ -195,19 +200,20 @@ export async function tekGonderim(p: {
 
   if (cevap.durum === "belirsiz") {
     /* Gitmiş olabilir. Aynı firmaya ikinci e-postayı atmaktansa bir firmayı
-       kaçırmak iyidir: "Gönderildi" işaretlenir, o sunucunun kutuları durdurulur.
+       kaçırmak iyidir: "Gönderildi" işaretlenir, o sunucunun kutuları kısa mola verir.
        SMTP'den giden e-posta kutunun Gönderilmiş klasörüne kendiliğinden DÜŞMEZ;
        kopyası ancak OUTREACH_BCC adresine gelir. */
     await gonderimKaydet({ ...kayit, sonuc: "belirsiz", yanit: cevap.yanit });
     await hedefDurumDegistir(id, "gonderildi");
     await sigortaAt(
       ayniSunucu,
-      `${gonderen.user} kutusunda zaman aşımı (${cevap.yanit}) — e-posta gitmiş olabilir; BCC adresine kopyası geldiyse gitmiştir.`
+      `${gonderen.user} kutusunda zaman aşımı (${cevap.yanit}) — e-posta gitmiş olabilir; BCC adresine kopyası geldiyse gitmiştir.`,
+      ZAMAN_ASIMI_MOLASI_DK
     );
     await kayitEkle(ben, "hedef_gonder_hata", `firma:${id}`, `${ozet} — belirsiz`);
     return {
       tamam: false,
-      mesaj: `Sunucu zamanında cevap vermedi; e-posta gitmiş olabilir. Firma “Gönderildi” işaretlendi, ${gonderen.host} sunucusundaki ${ayniSunucu.length} kutu bugünlük durduruldu.`,
+      mesaj: `Sunucu zamanında cevap vermedi; e-posta gitmiş olabilir. Firma “Gönderildi” işaretlendi, ${gonderen.host} sunucusundaki ${ayniSunucu.length} kutu ${ZAMAN_ASIMI_MOLASI_DK} dakika durduruldu.`,
       denendi: true,
       gonderen: gonderen.user,
     };
