@@ -859,7 +859,8 @@ DUNYA = ULKELER + ULKELER_B + ULKELER_O + ULKELER_AF + ULKELER_BG
 # AN ve sonrasi: ayni havuzda ikinci gecisler (yeni sehirler ve segmentler)
 DUNYA_TURLARI = ("ai", "aj", "ak", "al", "am", "an", "ao", "ap", "aq", "ar", "as", "at", "au", "av", "aw", "ax", "ay", "az") \
     + tuple("b" + h for h in "abcdefghijklmnopqrstuvwxyz") \
-    + tuple("c" + h for h in "abcdefghijklmnopqrstuvwxyz")   # BA-CZ: 18 Eki'den sonraki dalgalar
+    + tuple("c" + h for h in "abcdefghijklmnopqrstuvwxyz") \
+    + tuple("d" + h for h in "abcdefghijklmnopqrstuvwxyz")   # BA-DZ: 18 Eki'den sonraki dalgalar
 
 
 def _ilk(x):
