@@ -221,7 +221,9 @@ async function gonderimAdimi(simdi: Date, ayar: ReturnType<typeof ayarlariOku>):
       kullanici: "otomatik",
       tur,
     });
-    if (!r.denendi && r.bekle === undefined && /MX|e-posta almıyor|yazıldı|Durumu|metni yok/.test(r.mesaj)) continue;
+    /* DNS'i sorgulanamayan alan adı da atlanır: 25 Ekim'de DNS'i bozuk tek bir
+       firma (SERVFAIL) sıranın başında kaldı ve gönderim saatlerce durdu. */
+    if (!r.denendi && r.bekle === undefined && /MX|DNS|e-posta almıyor|yazıldı|Durumu|metni yok/.test(r.mesaj)) continue;
     /* Sonraki gönderim: kalan kapasite pencerenin kalanına yayılır */
     const kalanSonra = Math.max(0, secim.kalan - (r.denendi ? 1 : 0));
     const sonrakiSn = r.denendi ? sonrakiAralikSn(pencere.kalanDk, kalanSonra, ayar.aralikSn, Math.random()) : null;
