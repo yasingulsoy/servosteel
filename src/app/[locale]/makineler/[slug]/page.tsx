@@ -5,7 +5,6 @@ import { Link } from "@/i18n/navigation";
 import { localePath, sayfaMeta } from "@/i18n/seo";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { PageHero } from "@/components/page-hero";
-import { UreticiSatiri } from "@/components/uretici-satiri";
 import { CtaBand } from "@/components/cta-band";
 import { InlineQuote } from "@/components/inline-quote";
 import { SpecularButton } from "@/components/specular-button";
@@ -122,8 +121,6 @@ export default async function MachinePage({ params }: Props) {
         title={t("name")}
         description={t("hero")}
       />
-
-      <UreticiSatiri cumle={td("ureticiSatiri")} satirlar={tableRows} />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
