@@ -33,6 +33,19 @@ const AB_ULKELERI = new Set([
 
 export const AB_ULKE_LISTESI = [...AB_ULKELERI];
 
+/* --------------------------------------------------------- ürün grupları */
+
+/**
+ * İlk mektup sırasında ürün gruplarının günlük payı. Sıra, grupları
+ * büyüklükleri oranında iç içe geçiriyor; ağırlık bu payı çarpar (0,5 = yarı hız).
+ * 25 Ekim 2026'da 6.408 gönderimden sonra: pres besleme (pres atölyeleri +
+ * çelik mobilya, 1.317 gönderim) ve Diğer (alçıpan + market rafı, 510) hiç olumlu
+ * dönüş getirmedi; olumluların hepsi roll form grubundan (raf 5/515). Bu iki grup
+ * kesilmedi, yavaşlatıldı — kota aynı, öndeki gruplar daha hızlı ilerliyor.
+ * Ağırlığı yazılmayan grup 1.
+ */
+export const KATEGORI_AGIRLIGI: Record<number, number> = { 4: 0.5, 6: 0.5 };
+
 export function ulkeUyarisi(ulke: string): string | null {
   if (!AB_ULKELERI.has(ulke)) return null;
   return "AB ülkesi: ticari e-posta kuralları ülkeden ülkeye değişiyor, bazıları şirketlere yazmak için de önceden izin arıyor. Göndermek sizin kararınız; e-posta tek, firmaya özel ve abonelikten çıkma bağlantılı gider.";

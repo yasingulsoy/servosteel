@@ -148,10 +148,18 @@ SEGMENT_KATEGORI = {
     "Market Rafı": 6,   # hat var ama sitede sayfasi yok
 }
 KATEGORI_DOSYA = os.path.join(KLASOR, "kategori.json")
+# Grup ICINDE segment onceligi (kucuk once). 25 Eki 2026, 6.408 gonderimden sonra olumlu
+# donusler: raf 5/515, cati 2/822, asik/kablo/iskele/bariyer 1'er; solar 0/188. Raf one,
+# solar ve gurultu bariyeri sona. Yazilmayan segment 1.
+SEGMENT_ONCELIK = {"Raf Sistemleri": 0, "Solar Profil": 2, "Gürültü Bariyeri": 2}
 
 
 def segment_kategorisi(segler):
     return min((SEGMENT_KATEGORI.get(s, 6) for s in segler), default=6)
+
+
+def segment_onceligi(segler):
+    return min((SEGMENT_ONCELIK.get(s, 1) for s in segler), default=1)
 
 
 # Gonderilecek link: segmentin sayfasi, firmanin ulkesinin dilinde, UTM'li.
@@ -695,7 +703,7 @@ def main():
             siralama = (g["kategori"], 0 if pk["eposta"] else 1, 0 if g["dogrulandi"] else 1,
                         1 if pk["kesif"] else 0, sira0)
             kayitlar.append((siralama, satir + ek + [" + ".join(segler), KATEGORI_ADI[g["kategori"]],
-                                                     pk["kategori_notu"]], pk))
+                                                     pk["kategori_notu"]], pk, segment_onceligi(segler)))
         kayitlar.sort(key=lambda x: x[0])
         # Ayni e-posta adresi tek satir: kesifte bir site birden cok ulkenin aramasinda cikiyor
         # (rvsglobe.com yedi Korfez ulkesinde, ar-racking.com alti ulkede — hep ayni info@).
@@ -720,9 +728,11 @@ def main():
         if len(tekil) < len(kayitlar):
             print("  %d satır başka bir satırla aynı e-posta adresini taşıyordu — listeye alınmadı"
                   % (len(kayitlar) - len(tekil)))
-        kayitlar = tekil
+        # Ayni adresin hangi satirda kalacagi yukaridaki sirayla secildi (degisirse firma panelde
+        # anahtar degistirir); gonderim sirasi ise grup icinde segment onceligiyle kuruluyor.
+        kayitlar = sorted(tekil, key=lambda x: (x[0][0], x[0][1], x[3]) + x[0][2:])
         birlesik, panel = [], []
-        for i, (_, satir_, pk) in enumerate(kayitlar, 1):
+        for i, (_, satir_, pk, _) in enumerate(kayitlar, 1):
             pk["sira"] = i
             birlesik.append(satir_)
             panel.append(pk)

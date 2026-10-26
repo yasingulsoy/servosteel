@@ -2,6 +2,7 @@ import { sorgu, sorguSert } from "@/lib/db";
 import { olaySemasiKur } from "@/lib/leads-db";
 import {
   ENGELLI_ULKELER,
+  KATEGORI_AGIRLIGI,
   epostaGecerli,
   sistemAdresiMi,
   type AlanDurumu,
@@ -255,9 +256,12 @@ export async function otomatikSiradakiler(
                  aynı gün bitiyor.
                  Öncesi: sira alani gruplara blok verildigi icin 2.381 roll form
                  firmasının hepsi bitmeden dilmeye tek mail gitmiyordu —
-                 234 gönderimin 233'ü tek gruba gitti (25 Eylül 2026). */
+                 234 gönderimin 233'ü tek gruba gitti (25 Eylül 2026).
+                 Oran grubun ağırlığına bölünüyor (KATEGORI_AGIRLIGI): 0,5
+                 ağırlıklı grup, payının yarısı hızla ilerliyor. */
               (row_number() OVER (PARTITION BY h.kategori ORDER BY h.sira, h.id))::numeric
-                / count(*) OVER (PARTITION BY h.kategori),
+                / count(*) OVER (PARTITION BY h.kategori)
+                / ${KATEGORI_AGIRLIK_SQL},
               h.sira, h.id
      LIMIT $6`,
     [
@@ -347,6 +351,11 @@ export async function ayniAdreseGiden(eposta: string, firmaId: number): Promise<
   return r[0] ?? null;
 }
 const engelliUlkeler = () => Object.keys(ENGELLI_ULKELER);
+
+/** KATEGORI_AGIRLIGI'nın SQL karşılığı (sayılar koddan, kullanıcı girdisi yok). */
+const KATEGORI_AGIRLIK_SQL = `CASE h.kategori ${Object.entries(KATEGORI_AGIRLIGI)
+  .map(([k, a]) => `WHEN ${Number(k)} THEN ${Number(a)}`)
+  .join(" ")} ELSE 1 END`;
 
 /* ----------------------------------------------------------------- liste */
 
