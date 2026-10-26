@@ -62,6 +62,7 @@ export const CONTENT_SLUGS = {
     "servo-suruculer": "servo-feeders",
     "dogrultmali-servo-suruculer": "straightener-servo-feeders",
     "kompakt-hatlar": "compact-lines",
+    "servo-punch-pres": "servo-punch-press",
     "otomatik-istifleyici": "automatic-stacker",
   },
   "roll-form-hatlari": {

@@ -837,6 +837,7 @@
       "_lOTZE21aGE": "Sheet processing line for air handling units",
       "qmWM1NgcACw": "Structural U-C profile line — 350 × 5 mm",
       "NR25bt36uQg": "HMI and production reporting software",
+      "ooxTQBK7wII": "Roll forming line with Servo Punch Press — cable tray and C profile",
       "UCeR9epppK8": "Automatic stacker — U and C profiles",
       "MaJswAJo8JQ": "Cable tray production line",
       "J-O8xfI2ovA": "Heavy duty rack profile line",
@@ -2226,6 +2227,59 @@
             ["Control", "Schneider colour LCD touchscreen"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press for Roll Forming Lines | ServoPunch",
+        "short": "A servo punch press that punches holes and slots in the flat strip ahead of the roll former.",
+        "hero": "The punching unit that sits ahead of a roll forming line, after the decoiler and the straightener servo feeder. Holes and slots for cable tray, rack uprights, solar and C/U profiles are punched while the strip is still flat, so it enters the forming stations already punched. The machine pictured is the SRV-SP6, built in our own plant together with the rest of the line.",
+        "meta": "Servo Punch Press (ServoPunch) for roll forming lines: holes and slots punched in the flat strip, to the recipe. For cable tray, rack, solar and C/U profile lines.",
+        "features": [
+          {
+            "title": "Punching while flat",
+            "text": "Holes and slots are punched before the profile is formed. Punching a finished section distorts it around the hole; a hole punched in flat strip keeps its size and a clean edge."
+          },
+          {
+            "title": "The pattern comes from the recipe",
+            "text": "Hole position and spacing are recipe values, so a new layout is a data change rather than a tooling change. Hole shape and size are set by the tooling."
+          },
+          {
+            "title": "Part of the feeding chain",
+            "text": "The press sits after the decoiler and the straightener servo feeder; a roller guide at its entry leads the strip under the punch. Decoiler, feeder, press and roll former come from the same manufacturer."
+          },
+          {
+            "title": "Enclosed, guarded frame",
+            "text": "The die area runs inside guarding with doors and windows. The operator makes settings from the touchscreen panel on its arm, and the emergency stop is on the same panel."
+          }
+        ],
+        "sectors": [
+          "Cable tray manufacturers",
+          "Racking and storage systems",
+          "Solar mounting profiles",
+          "C, U and sigma structural profiles"
+        ],
+        "galleryAlt": [
+          "Roller unit at the entry of the Servo Punch Press",
+          "In line: decoiler, straightener servo feeder and Servo Punch Press, with the roll forming line behind"
+        ],
+        "faq": [
+          {
+            "q": "Where does the Servo Punch Press sit in the line?",
+            "a": "After the decoiler and the straightener servo feeder, before the roll forming machine. The order matters: if coil set is not taken out before the punch, the strip does not sit flat under the die and every feed error turns directly into a hole-position error. The strip leaves the press punched and enters forming that way."
+          },
+          {
+            "q": "Can it be added to the roll forming line I already have?",
+            "a": "Yes, if there is room for the press ahead of the line and the strip can reach the punch flat. If the line has no straightener, the press is planned together with one. Send your profile drawing, the hole pattern and the layout of the existing line, and we will work out where and how the press goes in."
+          },
+          {
+            "q": "Does the tooling change when the hole pattern changes?",
+            "a": "Not if what changes is hole position or spacing: those are recipe values, and a new layout is a data change. If the hole shape or size changes (a different diameter, a slot instead of a round hole), that means a new punch and die. Listing every hole shape across your product range at the start lets the tool set be built correctly."
+          },
+          {
+            "q": "Up to what sheet thickness can it punch?",
+            "a": "There is no single number: punching force grows with the length of the hole perimeter, the sheet thickness and the shear strength of the material. That is why the same press can punch a large slot in thin sheet but only a smaller hole in thick sheet. Tell us the material grade, the thickness and your largest hole or slot, and we will confirm the press and the tooling against them."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Automatic Stacker",

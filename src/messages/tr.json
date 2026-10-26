@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Klima santrali sac işleme hattı",
       "qmWM1NgcACw": "Yapısal U-C profil hattı — 350 × 5 mm",
       "NR25bt36uQg": "HMI ve üretim raporlama yazılımı",
+      "ooxTQBK7wII": "Servo Punch Presli roll form hattı — kablo kanalı ve C profil",
       "UCeR9epppK8": "Otomatik istifleyici — U ve C profil",
       "MaJswAJo8JQ": "Kablo kanalı üretim hattı",
       "J-O8xfI2ovA": "Ağır hizmet raf profili hattı",
@@ -2163,6 +2164,59 @@
             ["Kontrol", "Schneider renkli LCD dokunmatik"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Pres",
+        "metaTitle": "Servo Punch Pres (ServoPunch): Roll Form Hattında Delme",
+        "short": "Roll form hattının önünde, sac düzken delik ve slotları açan Servo Punch Pres.",
+        "hero": "Roll form hattının önüne, açıcı ve doğrultmalı servo sürücüden sonra giren delme ünitesi. Kablo kanalı, raf dikmesi, solar ve C/U profillerdeki delik ve slotlar sac henüz düzken açılır; şerit form istasyonlarına delinmiş olarak girer. Fotoğraftaki makine SRV-SP6; hattın geri kalanıyla birlikte kendi tesisimizde üretilir.",
+        "meta": "Roll form hatları için Servo Punch Pres (ServoPunch): delik ve slotlar sac düzken, reçeteye göre açılır. Kablo kanalı, raf, solar ve C/U profil hatları için.",
+        "features": [
+          {
+            "title": "Sac düzken delme",
+            "text": "Delik ve slotlar profil formlanmadan önce açılır. Bitmiş kesiti delmek profili deliğin çevresinde bozar; düz sacda açılan delik ölçüsünü ve temiz kenarını korur."
+          },
+          {
+            "title": "Desen reçeteden gelir",
+            "text": "Delik konumu ve aralığı reçete değeridir; yeni bir yerleşim kalıp değişikliği değil, veri değişikliğidir. Delik biçimi ve ölçüsünü ise kalıp belirler."
+          },
+          {
+            "title": "Besleme zincirinin parçası",
+            "text": "Pres, açıcı ve doğrultmalı servo sürücüden sonra yerleşir; girişteki merdaneli kılavuz şeridi zımbanın altına yönlendirir. Açıcı, sürücü, pres ve roll form makinesi aynı üreticiden gelir."
+          },
+          {
+            "title": "Kapalı, korumalı gövde",
+            "text": "Kalıp bölgesi kapaklı ve pencereli muhafazanın içinde çalışır. Operatör ayarları kol üzerindeki dokunmatik panelden yapar; acil durdurma da aynı paneldedir."
+          }
+        ],
+        "sectors": [
+          "Kablo kanalı üreticileri",
+          "Raf ve depolama sistemleri",
+          "Solar konstrüksiyon profilleri",
+          "C, U ve sigma yapı profilleri"
+        ],
+        "galleryAlt": [
+          "Servo Punch Pres girişindeki merdaneli ünite",
+          "Hatta: açıcı, doğrultmalı servo sürücü ve Servo Punch Pres; arkada roll form hattı"
+        ],
+        "faq": [
+          {
+            "q": "Servo Punch Pres hattın neresinde durur?",
+            "a": "Açıcı ve doğrultmalı servo sürücüden sonra, roll form makinesinden önce. Sıra önemlidir: rulo kavisi zımbadan önce alınmazsa sac kalıbın altına düz oturmaz ve her besleme hatası doğrudan delik konumu hatasına dönüşür. Şerit presten delinmiş çıkar, forma öyle girer."
+          },
+          {
+            "q": "Mevcut roll form hattıma eklenebilir mi?",
+            "a": "Hattın önünde pres için yer varsa ve şerit zımbaya düz gelebiliyorsa evet. Hatta doğrultucu yoksa pres onunla birlikte planlanır. Profil çiziminizi, delik desenini ve mevcut hattın yerleşimini gönderin; presin nereye ve nasıl gireceğini birlikte çıkaralım."
+          },
+          {
+            "q": "Delik deseni değişince kalıp değişir mi?",
+            "a": "Değişen delik konumu ya da aralığıysa hayır: bunlar reçete değeridir, yeni yerleşim bir veri değişikliğidir. Değişen delik biçimi ya da ölçüsüyse (farklı çap, yuvarlak yerine slot) bu yeni zımba ve dişi kalıp demektir. Hattı planlarken ürün gamınızdaki bütün delik biçimlerini en baştan listelemek kalıp setinin doğru kurulmasını sağlar."
+          },
+          {
+            "q": "Hangi sac kalınlığına kadar delebilir?",
+            "a": "Tek bir sayı yok: delme kuvveti delik çevresinin uzunluğu, sac kalınlığı ve malzemenin kesme dayanımıyla birlikte büyür. Aynı presin ince sacda büyük bir slotu, kalın sacda ise daha küçük bir deliği açabilmesi bu yüzdendir. Malzeme kalitesini, kalınlığı ve en büyük delik ya da slot ölçünüzü yazın; presi ve kalıbı buna göre doğrulayalım."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Otomatik İstifleyici",

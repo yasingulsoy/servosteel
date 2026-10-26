@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Línea de proceso de chapa para climatizadores",
       "qmWM1NgcACw": "Línea de perfiles estructurales U-C — 350 × 5 mm",
       "NR25bt36uQg": "HMI y software de informes de producción",
+      "ooxTQBK7wII": "Línea de perfilado con Servo Punch Press — bandeja portacables y perfil C",
       "UCeR9epppK8": "Apilador automático — perfiles U y C",
       "MaJswAJo8JQ": "Línea de producción de bandejas portacables",
       "J-O8xfI2ovA": "Línea de perfiles para estanterías de carga pesada",
@@ -2146,6 +2147,59 @@
             ["Control", "LCD táctil a color Schneider"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press: prensa punzonadora servo para perfilado",
+        "short": "Prensa punzonadora servo que perfora agujeros y ranuras en la banda plana antes de la perfiladora.",
+        "hero": "La unidad de punzonado que se coloca delante de una línea de perfilado, después de la desbobinadora y del alimentador servo con enderezadora. Los agujeros y ranuras de bandejas portacables, puntales de estantería, perfiles solares y C/U se punzonan mientras la banda sigue plana, de modo que entra ya perforada en las estaciones de conformado. La máquina de la foto es la SRV-SP6, fabricada en nuestra propia planta junto con el resto de la línea.",
+        "meta": "Servo Punch Press, prensa punzonadora servo para líneas de perfilado: agujeros y ranuras en la banda plana, según receta. Para líneas de bandeja portacables, estantería, solar y perfiles C/U.",
+        "features": [
+          {
+            "title": "Punzonado en plano",
+            "text": "Los agujeros y ranuras se punzonan antes de conformar el perfil. Punzonar una sección terminada la deforma alrededor del agujero; un agujero punzonado en banda plana conserva su medida y un borde limpio."
+          },
+          {
+            "title": "El patrón sale de la receta",
+            "text": "La posición y el paso de los agujeros son valores de receta, así que una nueva distribución es un cambio de datos y no de utillaje. La forma y el tamaño del agujero los define el utillaje."
+          },
+          {
+            "title": "Parte de la cadena de alimentación",
+            "text": "La prensa va después de la desbobinadora y del alimentador servo con enderezadora; una guía de rodillos en la entrada conduce la banda bajo el punzón. Desbobinadora, alimentador, prensa y perfiladora vienen del mismo fabricante."
+          },
+          {
+            "title": "Cuerpo cerrado y protegido",
+            "text": "La zona del troquel trabaja dentro de una protección con puertas y ventanas. El operario ajusta desde el panel táctil montado en su brazo, donde también está la parada de emergencia."
+          }
+        ],
+        "sectors": [
+          "Fabricantes de bandejas portacables",
+          "Sistemas de estanterías",
+          "Perfiles para estructuras solares",
+          "Perfiles estructurales C, U y sigma"
+        ],
+        "galleryAlt": [
+          "Unidad de rodillos a la entrada de la Servo Punch Press",
+          "En línea: desbobinadora, alimentador servo con enderezadora y Servo Punch Press, con la línea de perfilado detrás"
+        ],
+        "faq": [
+          {
+            "q": "¿Dónde va la Servo Punch Press dentro de la línea?",
+            "a": "Después de la desbobinadora y del alimentador servo con enderezadora, antes de la perfiladora. El orden importa: si la curvatura de la bobina no se elimina antes del punzonado, la banda no apoya plana bajo el troquel y cada error de avance se convierte directamente en un error de posición del agujero. La banda sale perforada de la prensa y así entra al conformado."
+          },
+          {
+            "q": "¿Se puede añadir a la línea de perfilado que ya tengo?",
+            "a": "Sí, si hay espacio para la prensa delante de la línea y la banda puede llegar plana al punzón. Si la línea no tiene enderezadora, la prensa se planifica junto con una. Envíenos el plano del perfil, el patrón de agujeros y la distribución de la línea actual, y definiremos dónde y cómo se integra la prensa."
+          },
+          {
+            "q": "¿Cambia el utillaje cuando cambia el patrón de agujeros?",
+            "a": "No, si lo que cambia es la posición o el paso: son valores de receta y una nueva distribución es un cambio de datos. Si cambia la forma o el tamaño del agujero (otro diámetro, una ranura en lugar de un agujero redondo), hace falta un punzón y una matriz nuevos. Listar desde el principio todas las formas de agujero de su gama permite construir bien el juego de utillajes."
+          },
+          {
+            "q": "¿Hasta qué espesor de chapa puede punzonar?",
+            "a": "No hay una cifra única: la fuerza de punzonado crece con el perímetro del agujero, el espesor de la chapa y la resistencia al corte del material. Por eso la misma prensa puede abrir una ranura grande en chapa fina pero solo un agujero más pequeño en chapa gruesa. Indíquenos la calidad del material, el espesor y su mayor agujero o ranura, y confirmaremos la prensa y el utillaje con esos datos."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Apilador automático",

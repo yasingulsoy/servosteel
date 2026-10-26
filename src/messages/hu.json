@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Lemezfeldolgozó sor légkezelő berendezésekhez",
       "qmWM1NgcACw": "Szerkezeti U-C profil sor — 350 × 5 mm",
       "NR25bt36uQg": "HMI és termelésjelentő szoftver",
+      "ooxTQBK7wII": "Profilhengerlő sor Servo Punch Press géppel — kábeltálca és C-profil",
       "UCeR9epppK8": "Automata rakatoló — U és C profilok",
       "MaJswAJo8JQ": "Kábeltálca gyártósor",
       "J-O8xfI2ovA": "Nehéz igénybevételű polcprofil sor",
@@ -2146,6 +2147,59 @@
             ["Vezérlés", "Schneider színes LCD érintőképernyő"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press: szervo lyukasztóprés profilhengerléshez",
+        "short": "Szervo lyukasztóprés, amely a profilhengerlő előtt, a sík szalagba lyukaszt furatokat és hosszlyukakat.",
+        "hero": "A lyukasztóegység, amely a profilhengerlő sor elé kerül, a lecsévélő és az egyengetős szervoadagoló után. A kábeltálcák, polcoszlopok, napelemes és C/U profilok furatai és hosszlyukai akkor készülnek, amikor a szalag még sík, így már kilyukasztva érkezik az alakító állomásokra. A képen látható gép az SRV-SP6, amelyet a sor többi részével együtt saját üzemünkben gyártunk.",
+        "meta": "Servo Punch Press szervo lyukasztóprés profilhengerlő sorokhoz: furatok és hosszlyukak a sík szalagban, recept szerint. Kábeltálca-, polc-, napelemes és C/U profilsorokhoz.",
+        "features": [
+          {
+            "title": "Lyukasztás sík szalagban",
+            "text": "A furatok és hosszlyukak a profil alakítása előtt készülnek. A kész keresztmetszet lyukasztása a furat körül eltorzítja a profilt; a sík szalagban lyukasztott furat megtartja méretét és tiszta élét."
+          },
+          {
+            "title": "A kiosztás a receptből jön",
+            "text": "A furatok helye és osztása receptérték, így egy új kiosztás adatmódosítás, nem szerszámcsere. A furat alakját és méretét a szerszám határozza meg."
+          },
+          {
+            "title": "Az adagolólánc része",
+            "text": "A prés a lecsévélő és az egyengetős szervoadagoló után áll; a bemenetnél lévő görgős vezeték a szalagot a bélyeg alá vezeti. A lecsévélő, az adagoló, a prés és a profilhengerlő ugyanattól a gyártótól származik."
+          },
+          {
+            "title": "Zárt, védett ház",
+            "text": "A szerszámtér ajtós, ablakos védőburkolaton belül dolgozik. A kezelő a karon lévő érintőképernyős panelről állít be mindent; a vészleállító is ezen a panelen van."
+          }
+        ],
+        "sectors": [
+          "Kábeltálca-gyártók",
+          "Polc- és tárolórendszerek",
+          "Napelemes tartószerkezeti profilok",
+          "C, U és szigma szerkezeti profilok"
+        ],
+        "galleryAlt": [
+          "Görgős egység a Servo Punch Press bemeneténél",
+          "A sorban: lecsévélő, egyengetős szervoadagoló és Servo Punch Press, mögötte a profilhengerlő sor"
+        ],
+        "faq": [
+          {
+            "q": "Hol helyezkedik el a Servo Punch Press a sorban?",
+            "a": "A lecsévélő és az egyengetős szervoadagoló után, a profilhengerlő gép előtt. A sorrend számít: ha a tekercsgörbület nincs kiegyengetve a lyukasztás előtt, a szalag nem fekszik síkban a szerszám alatt, és minden adagolási hiba közvetlenül furathelyzet-hibává válik. A szalag kilyukasztva hagyja el a prést, és így lép be az alakításba."
+          },
+          {
+            "q": "Hozzáadható a meglévő profilhengerlő soromhoz?",
+            "a": "Igen, ha a sor előtt van hely a présnek, és a szalag síkban juthat el a bélyegig. Ha a soron nincs egyengető, a prést azzal együtt tervezzük. Küldje el a profilrajzot, a furatkiosztást és a meglévő sor elrendezését, és kidolgozzuk, hová és hogyan kerül a prés."
+          },
+          {
+            "q": "Változik a szerszám, ha a furatkiosztás változik?",
+            "a": "Nem, ha csak a furatok helye vagy osztása változik: ezek receptértékek, az új kiosztás adatmódosítás. Ha a furat alakja vagy mérete változik (más átmérő, kerek furat helyett hosszlyuk), az új bélyeget és matricát jelent. Ha már az elején felsorolja a termékskálája összes furatformáját, a szerszámkészlet helyesen építhető fel."
+          },
+          {
+            "q": "Milyen lemezvastagságig tud lyukasztani?",
+            "a": "Nincs egyetlen szám: a lyukasztóerő a furat kerületével, a lemezvastagsággal és az anyag nyírószilárdságával együtt nő. Ezért tud ugyanaz a prés vékony lemezben nagy hosszlyukat, vastag lemezben viszont csak kisebb furatot kivágni. Adja meg az anyagminőséget, a vastagságot és a legnagyobb furat vagy hosszlyuk méretét, és ezekhez ellenőrizzük a prést és a szerszámot."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Automata rakatoló",

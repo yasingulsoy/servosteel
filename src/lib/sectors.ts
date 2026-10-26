@@ -35,7 +35,7 @@ export const sectors: Sector[] = [
     slug: "enerji",
     icon: "energy",
     lines: ["solar-profil", "kablo-kanali"],
-    machines: ["servo-suruculer", "rulo-acicilar"],
+    machines: ["servo-suruculer", "servo-punch-pres", "rulo-acicilar"],
     videos: [
       "WpgcqvfDGxY", // Solar GES C profil roll form hattı
       "Jb0Q2hUqkC0", // Solar GES C profil roll form hattı
@@ -71,7 +71,7 @@ export const sectors: Sector[] = [
     slug: "lojistik-depolama",
     icon: "logistics",
     lines: ["agir-raf"],
-    machines: ["servo-suruculer", "otomatik-istifleyici"],
+    machines: ["servo-suruculer", "servo-punch-pres", "otomatik-istifleyici"],
     videos: [
       "1VPa1ROQbhc", // Market raf roll forming hattı
       "SE8tTfxkKWI", // Raf imalatı

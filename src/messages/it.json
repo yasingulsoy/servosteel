@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Linea di lavorazione lamiera per unità di trattamento aria",
       "qmWM1NgcACw": "Linea profili strutturali U-C — 350 × 5 mm",
       "NR25bt36uQg": "HMI e software di reportistica di produzione",
+      "ooxTQBK7wII": "Linea di profilatura con Servo Punch Press — canalina e profilo C",
       "UCeR9epppK8": "Impilatore automatico — profili U e C",
       "MaJswAJo8JQ": "Linea di produzione passerelle portacavi",
       "J-O8xfI2ovA": "Linea profili per scaffalature pesanti",
@@ -2146,6 +2147,59 @@
             ["Controllo", "LCD touch a colori Schneider"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press: pressa punzonatrice servo per profilatura",
+        "short": "Pressa punzonatrice servo che esegue fori e asole sul nastro piano prima della profilatrice.",
+        "hero": "L'unità di punzonatura che si colloca davanti a una linea di profilatura, dopo lo svolgitore e l'alimentatore servo con raddrizzatrice. Fori e asole per canaline, montanti di scaffalatura, profili solari e C/U vengono punzonati mentre il nastro è ancora piano, così entra nelle stazioni di formatura già forato. La macchina in foto è la SRV-SP6, costruita nel nostro stabilimento insieme al resto della linea.",
+        "meta": "Servo Punch Press, pressa punzonatrice servo per linee di profilatura: fori e asole sul nastro piano, secondo ricetta. Per linee di canaline, scaffalature, solari e profili C/U.",
+        "features": [
+          {
+            "title": "Punzonatura in piano",
+            "text": "Fori e asole vengono punzonati prima che il profilo sia formato. Punzonare una sezione finita la deforma attorno al foro; un foro eseguito sul nastro piano mantiene la sua misura e un bordo pulito."
+          },
+          {
+            "title": "Lo schema arriva dalla ricetta",
+            "text": "Posizione e passo dei fori sono valori di ricetta: un nuovo schema è una modifica di dati, non di attrezzatura. Forma e dimensione del foro sono definite dall'attrezzatura."
+          },
+          {
+            "title": "Parte della catena di alimentazione",
+            "text": "La pressa si trova dopo lo svolgitore e l'alimentatore servo con raddrizzatrice; una guida a rulli all'ingresso porta il nastro sotto il punzone. Svolgitore, alimentatore, pressa e profilatrice arrivano dallo stesso costruttore."
+          },
+          {
+            "title": "Corpo chiuso e protetto",
+            "text": "La zona stampo lavora all'interno di una protezione con sportelli e finestre. L'operatore imposta i parametri dal pannello touch sul braccio, dove si trova anche l'arresto di emergenza."
+          }
+        ],
+        "sectors": [
+          "Produttori di canaline",
+          "Sistemi di scaffalature",
+          "Profili per strutture solari",
+          "Profili strutturali C, U e sigma"
+        ],
+        "galleryAlt": [
+          "Unità a rulli all'ingresso della Servo Punch Press",
+          "In linea: svolgitore, alimentatore servo con raddrizzatrice e Servo Punch Press, con la linea di profilatura dietro"
+        ],
+        "faq": [
+          {
+            "q": "Dove si colloca la Servo Punch Press nella linea?",
+            "a": "Dopo lo svolgitore e l'alimentatore servo con raddrizzatrice, prima della profilatrice. L'ordine conta: se la curvatura della bobina non viene tolta prima della punzonatura, il nastro non appoggia in piano sotto lo stampo e ogni errore di avanzamento diventa direttamente un errore di posizione del foro. Il nastro esce forato dalla pressa ed entra così nella formatura."
+          },
+          {
+            "q": "Si può aggiungere alla linea di profilatura che ho già?",
+            "a": "Sì, se davanti alla linea c'è spazio per la pressa e il nastro può arrivare piano al punzone. Se la linea non ha una raddrizzatrice, la pressa viene progettata insieme a una. Inviateci il disegno del profilo, lo schema dei fori e il layout della linea esistente: definiremo dove e come inserire la pressa."
+          },
+          {
+            "q": "L'attrezzatura cambia quando cambia lo schema dei fori?",
+            "a": "No, se cambiano la posizione o il passo: sono valori di ricetta e un nuovo schema è una modifica di dati. Se cambiano la forma o la dimensione del foro (un altro diametro, un'asola al posto di un foro tondo), servono un nuovo punzone e una nuova matrice. Elencare fin dall'inizio tutte le forme di foro della vostra gamma permette di costruire correttamente il set di attrezzature."
+          },
+          {
+            "q": "Fino a quale spessore di lamiera può punzonare?",
+            "a": "Non esiste un numero unico: la forza di punzonatura cresce con il perimetro del foro, lo spessore della lamiera e la resistenza al taglio del materiale. Per questo la stessa pressa può aprire un'asola grande su lamiera sottile ma solo un foro più piccolo su lamiera spessa. Indicateci qualità del materiale, spessore e il vostro foro o asola più grande, e verificheremo pressa e attrezzatura su questi dati."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Impilatore automatico",

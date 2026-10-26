@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Linia obróbki blachy do central wentylacyjnych",
       "qmWM1NgcACw": "Linia profili konstrukcyjnych U-C — 350 × 5 mm",
       "NR25bt36uQg": "HMI i oprogramowanie raportowania produkcji",
+      "ooxTQBK7wII": "Linia do profilowania z Servo Punch Press — koryto kablowe i profil C",
       "UCeR9epppK8": "Automatyczny sztapler — profile U i C",
       "MaJswAJo8JQ": "Linia produkcji koryt kablowych",
       "J-O8xfI2ovA": "Linia profili do regałów ciężkich",
@@ -2146,6 +2147,59 @@
             ["Sterowanie", "kolorowy dotykowy LCD Schneider"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press: serwoprasa wykrawająca do profilowania",
+        "short": "Serwoprasa wykrawająca otwory i fasolki w płaskiej taśmie przed profilarką.",
+        "hero": "Jednostka wykrawająca ustawiana przed linią do profilowania, za odwijakiem i podajnikiem serwo z prostownicą. Otwory i fasolki w korytach kablowych, słupach regałowych, profilach solarnych i C/U są wykrawane, gdy taśma jest jeszcze płaska, więc trafia do stacji formujących już perforowana. Maszyna na zdjęciu to SRV-SP6, budowana w naszym własnym zakładzie razem z resztą linii.",
+        "meta": "Servo Punch Press, serwoprasa wykrawająca do linii profilujących: otwory i fasolki w płaskiej taśmie, według receptury. Do linii koryt kablowych, regałów, profili solarnych i C/U.",
+        "features": [
+          {
+            "title": "Wykrawanie na płasko",
+            "text": "Otwory i fasolki są wykrawane, zanim profil zostanie uformowany. Wykrawanie gotowego przekroju odkształca go wokół otworu; otwór wykrojony w płaskiej taśmie zachowuje wymiar i czystą krawędź."
+          },
+          {
+            "title": "Wzór pochodzi z receptury",
+            "text": "Położenie i rozstaw otworów to wartości receptury, więc nowy układ to zmiana danych, a nie oprzyrządowania. Kształt i wielkość otworu wyznacza narzędzie."
+          },
+          {
+            "title": "Część łańcucha podawania",
+            "text": "Prasa stoi za odwijakiem i podajnikiem serwo z prostownicą; prowadnica rolkowa na wejściu kieruje taśmę pod stempel. Odwijak, podajnik, prasa i profilarka pochodzą od tego samego producenta."
+          },
+          {
+            "title": "Zamknięty, osłonięty korpus",
+            "text": "Strefa narzędzia pracuje wewnątrz osłony z drzwiami i oknami. Operator ustawia parametry z panelu dotykowego na ramieniu; na tym samym panelu jest wyłącznik awaryjny."
+          }
+        ],
+        "sectors": [
+          "Producenci koryt kablowych",
+          "Systemy regałowe",
+          "Profile do konstrukcji solarnych",
+          "Profile konstrukcyjne C, U i sigma"
+        ],
+        "galleryAlt": [
+          "Zespół rolkowy na wejściu Servo Punch Press",
+          "W linii: odwijak, podajnik serwo z prostownicą i Servo Punch Press, za nimi linia profilująca"
+        ],
+        "faq": [
+          {
+            "q": "Gdzie w linii stoi Servo Punch Press?",
+            "a": "Za odwijakiem i podajnikiem serwo z prostownicą, przed profilarką. Kolejność ma znaczenie: jeśli krzywizna z kręgu nie zostanie usunięta przed wykrawaniem, taśma nie leży płasko pod narzędziem, a każdy błąd podawania przekłada się wprost na błąd położenia otworu. Taśma wychodzi z prasy perforowana i tak wchodzi do formowania."
+          },
+          {
+            "q": "Czy można ją dołożyć do mojej istniejącej linii profilującej?",
+            "a": "Tak, jeśli przed linią jest miejsce na prasę, a taśma może dojść do stempla płasko. Jeśli linia nie ma prostownicy, prasę planuje się razem z nią. Prześlij rysunek profilu, wzór otworów i układ obecnej linii, a ustalimy, gdzie i jak włączyć prasę."
+          },
+          {
+            "q": "Czy narzędzie zmienia się, gdy zmienia się wzór otworów?",
+            "a": "Nie, jeśli zmienia się położenie lub rozstaw: to wartości receptury, a nowy układ to zmiana danych. Jeśli zmienia się kształt lub wielkość otworu (inna średnica, fasolka zamiast okrągłego otworu), potrzebny jest nowy stempel i matryca. Wypisanie na początku wszystkich kształtów otworów z całej oferty pozwala poprawnie zbudować zestaw narzędzi."
+          },
+          {
+            "q": "Do jakiej grubości blachy może wykrawać?",
+            "a": "Nie ma jednej liczby: siła wykrawania rośnie z obwodem otworu, grubością blachy i wytrzymałością materiału na ścinanie. Dlatego ta sama prasa wykroi dużą fasolkę w cienkiej blasze, a w grubej tylko mniejszy otwór. Podaj gatunek materiału, grubość i największy otwór lub fasolkę, a sprawdzimy pod nie prasę i narzędzie."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Automatyczny układacz",

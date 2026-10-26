@@ -79,6 +79,7 @@ export const videoGroups: VideoGroup[] = [
       { id: "qmWM1NgcACw", date: "2026-04-03T09:56:53+03:00", sec: 166 },
       { id: "NR25bt36uQg", date: "2026-02-11T13:08:05+03:00", sec: 224 },
       { id: "UCeR9epppK8", date: "2025-11-17T06:19:34+03:00", sec: 137 },
+      { id: "ooxTQBK7wII", date: "2025-07-01T23:20:06+03:00", sec: 89 },
       { id: "MaJswAJo8JQ", date: "2022-04-07T23:48:39+03:00", sec: 295 },
       { id: "J-O8xfI2ovA", date: "2024-08-29T13:26:54+03:00", sec: 96 },
       { id: "2lrDqMmHmlg", date: "2021-03-17T17:14:28+03:00", sec: 158 },
@@ -180,6 +181,7 @@ const CATALOG: CatalogItem[] = [
   { id: "NR25bt36uQg", date: "2026-02-11T13:08:05+03:00", sec: 224, title: "Roll Forming Line Machine HMI & Production Reporting Software U - C Profile" },
   { id: "UCeR9epppK8", date: "2025-11-17T06:19:34+03:00", sec: 137, title: "Roll Forming Line Automatic Stacker for U & C Profile Production" },
   { id: "ONmiUo8vtvk", date: "2025-08-01T17:29:17+03:00", sec: 123, title: "Decoiler Straightener Feeder System / Compact System" },
+  { id: "ooxTQBK7wII", date: "2025-07-01T23:20:06+03:00", sec: 89, title: "ServoSteel Production Line #cabletray #cprofile #profil #manufacturing #rollforming #rollformingline" },
   { id: "-IJBSlt7H6Y", date: "2025-06-01T11:38:32+03:00", sec: 217, title: "(10. YILIMIZ KUTLU OLSUN - HAPPY 10TH ANNIVERSARY)" },
   { id: "5vVTpg3hltE", date: "2024-11-06T17:44:27+03:00", sec: 147, title: "M Sigma Profil Ve Solar Ges C Profil Rollform Hattı / Solar C Profile / Sigma M Profil" },
   { id: "J-O8xfI2ovA", date: "2024-08-29T13:26:54+03:00", sec: 96, title: "Ağır Hizmet Çelik Raf Market Direği/ HEAVY DUTY RACK PROFILE ROLL FORMING LINE" },
@@ -376,7 +378,7 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/dilme-hatlari": ["h7aPJ6rJc_U", "JOHZwMBLqKo"],
   "/boy-kesme-hatlari": ["4QETxHS-CD4", "mwZx6X1mV0c"],
   "/roll-form-hatlari": ["MaJswAJo8JQ", "3xmcJvv6LNc"],
-  "/roll-form-hatlari/kablo-kanali": ["MaJswAJo8JQ"],
+  "/roll-form-hatlari/kablo-kanali": ["MaJswAJo8JQ", "ooxTQBK7wII"],
   "/roll-form-hatlari/solar-profil": ["3xmcJvv6LNc", "tm520w7WsBI"],
   "/roll-form-hatlari/agir-raf": ["J-O8xfI2ovA"],
   "/roll-form-hatlari/c-sigma-omega": ["qmWM1NgcACw", "5vVTpg3hltE"],
@@ -384,6 +386,7 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow"],
   "/makineler/dogrultmali-servo-suruculer": ["P3zbB3c6NBY", "bc5nAkQXJTw"],
   "/makineler/kompakt-hatlar": ["ONmiUo8vtvk", "7RcuUmfN7QE"],
+  "/makineler/servo-punch-pres": ["ooxTQBK7wII", "UCeR9epppK8"],
   "/makineler/otomatik-istifleyici": ["UCeR9epppK8", "kQbK5kXquaY"],
 };
 

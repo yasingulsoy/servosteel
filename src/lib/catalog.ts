@@ -20,6 +20,14 @@ export const machineItems = [
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
   { slug: "kompakt-hatlar" },
+  {
+    slug: "servo-punch-pres",
+    /* Ek saha fotoğrafları (bkz. galleryOf): giriş ünitesi yakın plan, hat görünümü */
+    gallery: [
+      { file: "servo-punch-pres-giris.jpg", ratio: "square" },
+      { file: "servo-punch-pres-hat.jpg", ratio: "4/3" },
+    ],
+  },
   { slug: "otomatik-istifleyici" },
 ] as const;
 
@@ -82,6 +90,17 @@ export function hasPhoto(slug: string): boolean {
     noPhoto?: boolean;
   }>;
   return !all.find((i) => i.slug === slug)?.noPhoto;
+}
+
+type GaleriFoto = { file: string; ratio: "4/3" | "square" };
+
+/**
+ * Makinenin ana fotoğrafının altında gösterilen ek fotoğraflar (`public/gorseller/`).
+ * Alt metinleri mesaj dosyasında `products.machines.<slug>.galleryAlt`, aynı sırayla.
+ */
+export function galleryOf(slug: string): readonly GaleriFoto[] {
+  const all = machineItems as ReadonlyArray<{ slug: string; gallery?: readonly GaleriFoto[] }>;
+  return all.find((i) => i.slug === slug)?.gallery ?? [];
 }
 
 export function rollFormIcon(slug: string) {

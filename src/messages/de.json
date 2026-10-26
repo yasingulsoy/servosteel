@@ -801,6 +801,7 @@
       "_lOTZE21aGE": "Blechbearbeitungsanlage für Lüftungsgeräte",
       "qmWM1NgcACw": "U-C-Profilanlage für Stahlbau — 350 × 5 mm",
       "NR25bt36uQg": "HMI und Produktionsberichtssoftware",
+      "ooxTQBK7wII": "Profilieranlage mit Servo Punch Press — Kabelrinne und C-Profil",
       "UCeR9epppK8": "Automatischer Stapler — U- und C-Profile",
       "MaJswAJo8JQ": "Kabeltrassen-Produktionsanlage",
       "J-O8xfI2ovA": "Schwerlastregal-Profilanlage",
@@ -2146,6 +2147,59 @@
             ["Steuerung", "Schneider Farb-LCD-Touch"]
           ]
         }
+      },
+      "servo-punch-pres": {
+        "name": "Servo Punch Press",
+        "metaTitle": "Servo Punch Press: Servo-Stanzpresse für Profilieranlagen",
+        "short": "Servo-Stanzpresse, die Löcher und Langlöcher vor der Profiliermaschine ins flache Band stanzt.",
+        "hero": "Die Stanzeinheit vor der Profilieranlage, nach Abwickelhaspel und Richt-Servovorschub. Löcher und Langlöcher für Kabelrinnen, Regalständer, Solar- und C/U-Profile werden gestanzt, solange das Band noch flach ist; es läuft bereits gelocht in die Umformstationen ein. Die abgebildete Maschine ist die SRV-SP6, gebaut in unserem eigenen Werk zusammen mit dem Rest der Anlage.",
+        "meta": "Servo Punch Press, die Servo-Stanzpresse für Profilieranlagen: Löcher und Langlöcher im flachen Band, nach Rezept gestanzt. Für Kabelrinnen-, Regal-, Solar- und C/U-Profilanlagen.",
+        "features": [
+          {
+            "title": "Stanzen im flachen Band",
+            "text": "Löcher und Langlöcher werden gestanzt, bevor das Profil umgeformt wird. Wer einen fertigen Querschnitt stanzt, verformt ihn rund um das Loch; ein im flachen Band gestanztes Loch behält Maß und saubere Kante."
+          },
+          {
+            "title": "Das Lochbild kommt aus dem Rezept",
+            "text": "Lochposition und Lochabstand sind Rezeptwerte; ein neues Lochbild ist eine Datenänderung, kein Werkzeugwechsel. Form und Größe des Lochs bestimmt das Werkzeug."
+          },
+          {
+            "title": "Teil der Zuführkette",
+            "text": "Die Presse steht nach Abwickelhaspel und Richt-Servovorschub; eine Rollenführung am Einlauf führt das Band unter den Stempel. Haspel, Vorschub, Presse und Profiliermaschine kommen vom selben Hersteller."
+          },
+          {
+            "title": "Geschlossenes, geschütztes Gehäuse",
+            "text": "Der Werkzeugbereich arbeitet in einer Schutzverkleidung mit Türen und Sichtfenstern. Der Bediener stellt am Touchpanel auf dem Schwenkarm ein; der Not-Halt sitzt am selben Panel."
+          }
+        ],
+        "sectors": [
+          "Kabelrinnenhersteller",
+          "Regal- und Lagersysteme",
+          "Solar-Unterkonstruktionsprofile",
+          "C-, U- und Sigma-Bauprofile"
+        ],
+        "galleryAlt": [
+          "Rolleneinheit am Einlauf der Servo Punch Press",
+          "In der Anlage: Abwickelhaspel, Richt-Servovorschub und Servo Punch Press, dahinter die Profilieranlage"
+        ],
+        "faq": [
+          {
+            "q": "Wo steht die Servo Punch Press in der Anlage?",
+            "a": "Nach Abwickelhaspel und Richt-Servovorschub, vor der Profiliermaschine. Die Reihenfolge zählt: Wird die Bundkrümmung nicht vor dem Stanzen herausgerichtet, liegt das Band nicht plan unter dem Werkzeug, und jeder Vorschubfehler wird direkt zu einem Lochpositionsfehler. Das Band verlässt die Presse gelocht und läuft so in die Umformung."
+          },
+          {
+            "q": "Lässt sie sich an meine bestehende Profilieranlage anbauen?",
+            "a": "Ja, wenn vor der Anlage Platz für die Presse ist und das Band plan zum Stempel gelangen kann. Hat die Anlage keine Richtmaschine, wird die Presse gemeinsam mit einer geplant. Senden Sie Profilzeichnung, Lochbild und das Layout der bestehenden Anlage, und wir klären, wo und wie die Presse eingebunden wird."
+          },
+          {
+            "q": "Ändert sich das Werkzeug, wenn sich das Lochbild ändert?",
+            "a": "Nicht, wenn sich nur Lochposition oder Abstand ändern: Das sind Rezeptwerte, ein neues Lochbild ist eine Datenänderung. Ändert sich Form oder Größe des Lochs (anderer Durchmesser, Langloch statt Rundloch), braucht es einen neuen Stempel und eine neue Matrize. Wer zu Beginn alle Lochformen seines Sortiments auflistet, bekommt einen passend aufgebauten Werkzeugsatz."
+          },
+          {
+            "q": "Bis zu welcher Blechdicke kann sie stanzen?",
+            "a": "Eine einzelne Zahl gibt es nicht: Die Stanzkraft wächst mit dem Lochumfang, der Blechdicke und der Scherfestigkeit des Werkstoffs. Deshalb stanzt dieselbe Presse in dünnem Blech ein großes Langloch, in dickem Blech nur ein kleineres Loch. Nennen Sie uns Werkstoffgüte, Dicke und Ihr größtes Loch oder Langloch, und wir prüfen Presse und Werkzeug daran."
+          }
+        ]
       },
       "otomatik-istifleyici": {
         "name": "Automatischer Stapler",

@@ -13,7 +13,7 @@ import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -61,6 +61,8 @@ export default async function MachinePage({ params }: Props) {
   const varyantlar = variantsOf(slug);
   /* FAQ opsiyoneldir — yalnızca mesaj dosyasında tanımlı makinelerde görünür. */
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
+  const galeri = galleryOf(slug);
+  const galeriAlt = t.has("galleryAlt") ? (t.raw("galleryAlt") as string[]) : [];
 
   /**
    * Makine sayfası şeması.
@@ -229,6 +231,21 @@ export default async function MachinePage({ params }: Props) {
                 <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} ratio="4/3" fit="contain" sizes="(max-width: 1024px) 100vw, 400px" />
               )}
             </Reveal>
+            {galeri.length > 0 && (
+              <Reveal delay={60}>
+                <div className="space-y-4">
+                  {galeri.map((g, i) => (
+                    <ProductShot
+                      key={g.file}
+                      src={`/gorseller/${g.file}`}
+                      alt={galeriAlt[i] ?? t("name")}
+                      ratio={g.ratio}
+                      sizes="(max-width: 1024px) 100vw, 400px"
+                    />
+                  ))}
+                </div>
+              </Reveal>
+            )}
             <Reveal delay={120}>
               <div className="rounded-2xl bg-shell p-7 text-white">
                 <h2 className="font-display text-lg font-bold uppercase tracking-tight">
