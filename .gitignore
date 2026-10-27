@@ -50,3 +50,7 @@ next-env.d.ts
 # firma e-posta listeleri (keşif turu çıktıları) — depo herkese açık, girmesin
 /batch*.txt
 /seo/hedef-firmalar/batch*.txt
+
+# Hedef firma listeleri (firma e-postalari) — depo herkese acik. Calisma kopyasi bu klasorde
+# yerelde, yedegi ve bulut kesfi gizli depoda: github.com/yasingulsoy/servosteel-kesif
+/seo/hedef-firmalar/
