@@ -2306,6 +2306,7 @@
           "Racking and storage systems",
           "Roofing and facade producers"
         ],
+        "galleryAlt": ["Gantry-type automatic stacker with bundle strapping station at the end of a profile line", "Stacked profile bundle passing through the strapping arch"],
         "faq": [
           {
             "q": "Can it be added to a line I already have?",
@@ -2346,6 +2347,7 @@
           }
         ],
         "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"],
+        "galleryAlt": ["Compact press feeding line: straightener servo feeder, decoiler and coil loading car"],
         "faq": [
           {
             "q": "Compact line or separate machines?",

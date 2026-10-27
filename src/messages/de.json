@@ -2226,6 +2226,7 @@
           "Regal- und Lagersysteme",
           "Dach- und Fassadenhersteller"
         ],
+        "galleryAlt": ["Automatischer Portalstapler mit Umreifungsstation am Ende einer Profillinie", "Gestapeltes Profilpaket im Bogen der Umreifungsmaschine"],
         "faq": [
           {
             "q": "Lässt er sich an eine bestehende Anlage nachrüsten?",
@@ -2266,6 +2267,7 @@
           }
         ],
         "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"],
+        "galleryAlt": ["Kompakte Pressenzuführung: Richt-Servovorschub, Abwickelhaspel und Coilwagen"],
         "faq": [
           {
             "q": "Kompaktanlage oder Einzelmaschinen?",

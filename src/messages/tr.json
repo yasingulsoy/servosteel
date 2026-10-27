@@ -2243,6 +2243,7 @@
           "Raf ve depolama sistemleri",
           "Çatı ve cephe üreticileri"
         ],
+        "galleryAlt": ["Profil hattının sonunda portal tipi otomatik istifleyici ve paket çemberleme istasyonu", "Çemberleme kemerinden geçen istiflenmiş profil paketi"],
         "faq": [
           {
             "q": "Mevcut hattıma sonradan eklenebilir mi?",
@@ -2283,6 +2284,7 @@
           }
         ],
         "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"],
+        "galleryAlt": ["Kompakt pres besleme hattı: doğrultmalı servo sürücü, açıcı ve rulo yükleme arabası"],
         "faq": [
           {
             "q": "Kompakt hat mı, ayrı makineler mi tercih etmeliyim?",

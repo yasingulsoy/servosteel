@@ -19,7 +19,11 @@ export const machineItems = [
   { slug: "rulo-acicilar" },
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
-  { slug: "kompakt-hatlar" },
+  {
+    slug: "kompakt-hatlar",
+    /* Ek saha fotoğrafı (bkz. galleryOf): pres besleme hattı — doğrultmalı sürücü, açıcı, rulo arabası */
+    gallery: [{ file: "kompakt-hatlar-pres-besleme.jpg", ratio: "video" }],
+  },
   {
     slug: "servo-punch-pres",
     /* Ek saha fotoğrafları (bkz. galleryOf): giriş ünitesi yakın plan, hat görünümü */
@@ -28,7 +32,14 @@ export const machineItems = [
       { file: "servo-punch-pres-hat.jpg", ratio: "4/3" },
     ],
   },
-  { slug: "otomatik-istifleyici" },
+  {
+    slug: "otomatik-istifleyici",
+    /* Ek saha fotoğrafları (bkz. galleryOf): profil hattı sonunda istif + çemberleme, paket yakın plan */
+    gallery: [
+      { file: "otomatik-istifleyici-hat.jpg", ratio: "4/3" },
+      { file: "otomatik-istifleyici-paket.jpg", ratio: "4/3" },
+    ],
+  },
 ] as const;
 
 /**
@@ -92,7 +103,7 @@ export function hasPhoto(slug: string): boolean {
   return !all.find((i) => i.slug === slug)?.noPhoto;
 }
 
-type GaleriFoto = { file: string; ratio: "4/3" | "square" };
+type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
 
 /**
  * Makinenin ana fotoğrafının altında gösterilen ek fotoğraflar (`public/gorseller/`).

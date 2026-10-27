@@ -123,14 +123,44 @@ function MegaItemCard({ item }: { item: MegaItem }) {
 }
 
 /* Açılır panelin görünürlük sınıfları — üzerine gelince ya da klavyeyle içine girince */
-const PANEL =
-  "invisible z-50 translate-y-2 opacity-0 transition-all duration-200 group-hover/mm:visible group-hover/mm:translate-y-0 group-hover/mm:opacity-100 group-focus-within/mm:visible group-focus-within/mm:translate-y-0 group-focus-within/mm:opacity-100";
+const PANEL_GIZLI = "invisible z-50 translate-y-2 opacity-0 transition-all duration-200";
+const PANEL = `${PANEL_GIZLI} group-hover/mm:visible group-hover/mm:translate-y-0 group-hover/mm:opacity-100 group-focus-within/mm:visible group-focus-within/mm:translate-y-0 group-focus-within/mm:opacity-100`;
 
-function Tetik({ label, active }: { label: string; active: boolean }) {
+/**
+ * Paneldeki bir bağlantıya basılınca panel kapanır. Panel yalnız CSS ile
+ * açılıyor (hover, focus-within); sayfa geçişinde header yerinde kaldığı
+ * için fare hâlâ panelin üstünde, tıklanan bağlantı da odakta kalıyordu —
+ * panel açık duruyor, sayfa değişmemiş gibi görünüyordu (2026-10-27).
+ * Fare gruptan çıkınca, yeniden girince ya da klavye odağı içeri gelince
+ * panel eski davranışına döner.
+ */
+function usePanelKapat() {
+  const [kapali, setKapali] = useState(false);
+  const ac = () => setKapali(false);
+  return {
+    kapali,
+    grupProps: {
+      onClickCapture: (e: React.MouseEvent) => {
+        if (!(e.target as HTMLElement).closest("a")) return;
+        setKapali(true);
+        (document.activeElement as HTMLElement | null)?.blur();
+      },
+      onMouseLeave: ac,
+      onMouseEnter: ac,
+      onFocus: ac,
+    },
+  };
+}
+
+function Tetik({ label, active, kapali }: { label: string; active: boolean; kapali: boolean }) {
   return (
     <button type="button" aria-haspopup="true" className={OGE}>
       {label}
-      <ChevronDown className="size-3.5 shrink-0 transition-transform duration-200 group-hover/mm:rotate-180" strokeWidth={1.8} aria-hidden />
+      <ChevronDown
+        className={`size-3.5 shrink-0 transition-transform duration-200 ${kapali ? "" : "group-hover/mm:rotate-180"}`}
+        strokeWidth={1.8}
+        aria-hidden
+      />
       <AltCizgi active={active} grup="mm" />
     </button>
   );
@@ -184,13 +214,14 @@ function UrunPaneli({
   seeAll: string;
   featured: Featured;
 }) {
+  const { kapali, grupProps } = usePanelKapat();
   return (
     /* static: panel en yakın konumlu ata olan ÇUBUĞA göre açılır.
        h-full: tetikten panele inerken fare çubuğun alt boşluğunda grubun
        dışına çıkmasın, panel kapanmasın. */
-    <div className="group/mm flex h-full items-center">
-      <Tetik label={label} active={active} />
-      <div className={`absolute inset-x-0 top-full pt-2 ${PANEL}`}>
+    <div className="group/mm flex h-full items-center" {...grupProps}>
+      <Tetik label={label} active={active} kapali={kapali} />
+      <div className={`absolute inset-x-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
         <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_240px] gap-2 rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
           <div>
             <PanelBaslik>{basliklar.roll}</PanelBaslik>
@@ -260,10 +291,11 @@ function KucukPanel({
   seeAll: string;
   active: boolean;
 }) {
+  const { kapali, grupProps } = usePanelKapat();
   return (
-    <div className="group/mm relative flex h-full items-center">
-      <Tetik label={label} active={active} />
-      <div className={`absolute start-0 top-full pt-2 ${PANEL}`}>
+    <div className="group/mm relative flex h-full items-center" {...grupProps}>
+      <Tetik label={label} active={active} kapali={kapali} />
+      <div className={`absolute start-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
         <div className="w-[420px] rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
           {items.map((item) => (
             <MegaItemCard key={item.href} item={item} />

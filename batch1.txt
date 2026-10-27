@@ -1,0 +1,91 @@
+== http://www.americandouglasmetals.com/
+C:/Users/YASIN~1.GUL/AppData/Local/Temp/claude/C--Users-yasin-gulsoy-Desktop-Projects-servosteel/90b19750-c40d-4ced-bc50-ddcaf4ffb6c0/scratchpad/em.sh: line 6: warning: command substitution: ignored null byte in input
+__FINAL__https://americandouglasmetals.com/ 200
+== http://www.amstekmetal.com/
+__FINAL__http://www.amstekmetal.com/ 200
+sales@amstekmetal.com
+HREF="http://archive.constantcontact.com/fs009/1103157461411/archive/1104275299238.html"
+HREF="http://visitor.r20.constantcontact.com/d.jsp?11r=dna5umdab&p=oi&m=1103157461411"
+href="http://www.smihq.org/public/contactsmi.html"
+== http://www.arbormetals.com/
+__FINAL__https://metalsinc.com/ 403
+== http://www.berlinmetals.com/
+__FINAL__https://www.berlinmetals.com/ 200
+href="/contact-us"
+href="/contact-us#LOCATIONDIRECTIONS"
+== http://www.blocksteel.com/
+__FINAL__https://www.blocksteel.com/ 200
+href="/contact"
+href="https://www.blocksteel.com/contact"
+== http://www.claytonmetals.com/
+__FINAL__http://claytonmetals.com/ 200
+href="/contact.aspx"
+href="/contact/request-mill-certification.aspx"
+href="/locations.aspx"
+== http://www.creststeel.com/
+__FINAL__https://creststeel.com/ 200
+cf:salesrequests@creststeel.com
+cf:salesrequests@creststeel.com
+href="https://creststeel.com/contact-rfq/"
+== http://www.curtissteelco.com/
+__FINAL__https://www.curtissteelco.com/ 403
+== http://www.dalcometals.com/
+__FINAL__https://www.dalcometals.com/ 200
+cf:info@dalcometals.com
+cf:info@dalcometals.com
+cf:info@dalcometals.com
+cf:info@dalcometals.com
+href="/contact"
+href="/our-location"
+href="https://www.dalcometals.com/contact"
+== http://www.eaglesteelproducts.com/
+__FINAL__http://www.eaglesteelproducts.com/ 000
+== http://www.easternstatessteel.com/
+__FINAL__http://easternstatessteel.com/ 200
+info@EasternStatesSteel.com
+href="http://0p8.d5c.mytemp.website/contact-us/"
+href="http://easternstatessteel.com/contact-us/"
+== http://www.econsteel.com/
+__FINAL__https://www.econsteel.com/ 200
+sales@econsteel.com
+href="https://www.econsteel.com/contact-us"
+== http://www.ericksonmetals.com/
+__FINAL__https://champagnemetals.com/ 200
+mayra.tautiu@torrentconsulting.com
+href="https://champagnemetals.com/contact-us/"
+href="https://champagnemetals.com/locations/"
+== http://www.greatsouthmetals.com/
+__FINAL__http://www.greatsouthmetals.com/ 000
+== http://www.harvardsteelsales.com/
+__FINAL__https://www.harvardsteelsales.com/ 200
+href="https://www.harvardsteelsales.com/contact-us"
+== http://www.hskstainless.com/
+__FINAL__https://www.hskstainless.com/ 200
+href="/contact-us.html"
+== http://www.indianastripsteel.com/
+__FINAL__http://www.indianastripsteel.com/ 200
+iss@indianastripsteel.com
+href="location.html"
+== http://www.interstatesteelco.com/
+__FINAL__https://www.nationalmaterial.com/ 200
+cmardis@nmlp.com
+nmcquotes@nmlp.com
+href="https://www.nationalmaterial.com/contact/"
+== http://www.jm-steel.com/
+__FINAL__https://www.jm-steel.com/ 200
+href="https://www.jm-steel.com/contact-us"
+== http://www.koilmetals.com/
+__FINAL__https://www.koilmetals.com/ 200
+David.Jagodzinski@koilmetals.com
+Justin.hermiz@koilmetals.com
+Michael.reed@koilmetals.com
+Steve.perica@koilmetals.com
+ashley.mcguire@koilmetals.com
+info@koilmetals.com
+jeff.wonboy@koilmetals.com
+jenny.hines@koilmetals.com
+kerrie.niemi@koilmetals.com
+richard.couch@koilmetals.com
+robert.dein@koilmetals.com
+vincent.guzman@koilmetals.com
+href="/#contact"

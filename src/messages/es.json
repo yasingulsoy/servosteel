@@ -2226,6 +2226,7 @@
           "Sistemas de estanterías",
           "Fabricantes de cubierta y fachada"
         ],
+        "galleryAlt": ["Apilador automático tipo pórtico con estación de flejado al final de una línea de perfiles", "Paquete de perfiles apilados pasando por el arco de flejado"],
         "faq": [
           {
             "q": "¿Se puede añadir a una línea que ya tengo?",
@@ -2266,6 +2267,7 @@
           }
         ],
         "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"],
+        "galleryAlt": ["Línea compacta de alimentación de prensa: alimentador servo con enderezadora, desbobinadora y carro de carga de bobinas"],
         "faq": [
           {
             "q": "¿Línea compacta o máquinas separadas?",
