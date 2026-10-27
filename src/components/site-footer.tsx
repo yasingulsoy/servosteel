@@ -14,6 +14,7 @@ export function SiteFooter() {
   const tSec = useTranslations("sectors");
   const tSus = useTranslations("sustain");
   const tRulo = useTranslations("ruloIsleme");
+  const tFair = useTranslations("fairs");
   const ak = getAkademiUi(useLocale());
 
   const productLinks = [
@@ -35,6 +36,7 @@ export function SiteFooter() {
     { label: t("refs"), href: "/referanslar" },
     { label: tSus("title"), href: "/surdurulebilirlik" },
     { label: t("videos"), href: "/videolar" },
+    { label: tFair("title"), href: "/fuarlar" },
     { label: tn("contact"), href: "/iletisim" },
     { label: tn("quote"), href: "/teklif-al" },
   ];

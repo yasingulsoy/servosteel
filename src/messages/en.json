@@ -548,6 +548,36 @@
     "ctaTitle": "Ask for references from your industry",
     "ctaText": "We'll share installations at facilities producing like yours, and arrange site visits."
   },
+  "fairs": {
+    "metaTitle": "Trade Fairs: Where Servosteel Exhibits",
+    "metaDesc": "Trade fairs Servosteel has exhibited at: EuroBLECH 2026 (Hanover, Hall 27 / D39), MAKTEK Eurasia 2026 (Istanbul) and Blechexpo 2017 (Stuttgart). Photos and videos.",
+    "eyebrow": "Our exhibitions",
+    "title": "Trade Fairs",
+    "desc": "The sheet metal and machinery fairs we have exhibited at: booth details, photos and videos.",
+    "date": "Date",
+    "venue": "Venue",
+    "hallBooth": "Hall {hall}, Booth {booth}",
+    "booth": "Booth {booth}",
+    "partner": "In cooperation with {name}",
+    "photos": "Photos",
+    "videos": "Videos",
+    "photoAlt": "{fair} — photo {n}",
+    "posterAlt": "{fair} announcement poster",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hanover, Germany",
+        "text": "At EuroBLECH, the world's leading sheet metal working exhibition, we presented our roll forming lines and coil slitting lines at booth D39 in Hall 27."
+      },
+      "maktek-2026": {
+        "place": "Tüyap Fair and Congress Center, Istanbul, Türkiye",
+        "text": "We exhibited at MAKTEK Eurasia at Tüyap Istanbul in cooperation with Dirinler Pres."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Germany",
+        "text": "We exhibited at Blechexpo, the international sheet metal working fair in Stuttgart."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Comparisons: Choose the Right Equipment",
     "metaDesc": "Servo or mechanical feeding? Slitting or cut-to-length? Hydraulic or mechanical decoiler? Compare the differences side by side before you invest.",

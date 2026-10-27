@@ -31,6 +31,7 @@ const M = en as unknown as {
   compare: { items: Record<string, { name: string; aName: string; bName: string; verdict: string; rows: { label: string; a: string; b: string }[] }> };
   sectors: { items: Record<string, { name: string; short: string; faq?: Faq[] }> };
   videos: { metaDesc: string };
+  fairs: { metaDesc: string };
   products: {
     rollform: Record<string, Item>;
     machines: Record<string, Item>;
@@ -134,6 +135,7 @@ ${academy.join("\n")}
 - [About Servosteel](${url("/hakkimizda")}): Coil handling and press feeding systems manufacturer; 10+ years; single-source, turnkey engineering.
 - [References](${url("/referanslar")}): Field installations across 48+ countries.
 - [Videos](${url("/videolar")}): ${M.videos.metaDesc}
+- [Trade fairs](${url("/fuarlar")}): ${M.fairs.metaDesc}
 - [Contact](${url("/iletisim")}): ${CONTACT}
 - [Request a Quote](${url("/teklif-al")}): Send sheet thickness, coil weight and target strip/sheet dimensions for a custom line proposal.
 

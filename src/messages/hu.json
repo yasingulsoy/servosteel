@@ -512,6 +512,36 @@
     "ctaTitle": "Kérjen referenciákat az iparágából",
     "ctaText": "Megosztjuk az Önéhez hasonló üzemekben lévő telepítéseinket, és üzemlátogatást szervezünk."
   },
+  "fairs": {
+    "metaTitle": "Kiállítások: itt állít ki a Servosteel",
+    "metaDesc": "Kiállítások, amelyeken a Servosteel kiállítóként részt vett: EuroBLECH 2026 (Hannover, 27-es csarnok / D39), MAKTEK 2026 (Isztambul) és Blechexpo 2017 (Stuttgart). Fotók és videók.",
+    "eyebrow": "Kiállításaink",
+    "title": "Kiállítások",
+    "desc": "A lemezmegmunkálási és gépipari kiállítások, amelyeken kiállítóként részt vettünk: standadatok, fotók és videók.",
+    "date": "Időpont",
+    "venue": "Helyszín",
+    "hallBooth": "{hall}. csarnok, {booth} stand",
+    "booth": "{booth} stand",
+    "partner": "Együttműködő partner: {name}",
+    "photos": "Fotók",
+    "videos": "Videók",
+    "photoAlt": "{fair} – {n}. fotó",
+    "posterAlt": "{fair} – meghívó plakát",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hannover, Németország",
+        "text": "A világ vezető lemezmegmunkálási kiállításán, az EuroBLECH-en a 27-es csarnok D39-es standján mutattuk be profilozó és hasító sorainkat."
+      },
+      "maktek-2026": {
+        "place": "Tüyap Vásár- és Kongresszusi Központ, Isztambul, Törökország",
+        "text": "A MAKTEK kiállításon az isztambuli Tüyapban a Dirinler Presszel együttműködésben vettünk részt."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Németország",
+        "text": "Kiállítóként vettünk részt a stuttgarti nemzetközi lemezmegmunkálási vásáron, a Blechexpón."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Összehasonlítások: válassza a megfelelő gépet",
     "metaDesc": "Szervo vagy mechanikus adagolás? Hasítás vagy darabolás? Hidraulikus vagy mechanikus lecsévélő? Hasonlítsa össze a különbségeket a beruházás előtt.",

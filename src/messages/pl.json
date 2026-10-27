@@ -512,6 +512,36 @@
     "ctaTitle": "Poproś o referencje ze swojej branży",
     "ctaText": "Udostępnimy instalacje w zakładach podobnych do Twojego i zorganizujemy wizyty."
   },
+  "fairs": {
+    "metaTitle": "Targi: gdzie wystawia się Servosteel",
+    "metaDesc": "Targi, na których wystawiał się Servosteel: EuroBLECH 2026 (Hanower, hala 27 / D39), MAKTEK 2026 (Stambuł) i Blechexpo 2017 (Stuttgart). Zdjęcia i filmy.",
+    "eyebrow": "Nasze targi",
+    "title": "Targi",
+    "desc": "Targi obróbki blach i maszyn, na których się wystawialiśmy: dane stoiska, zdjęcia i filmy.",
+    "date": "Data",
+    "venue": "Miejsce",
+    "hallBooth": "Hala {hall}, stoisko {booth}",
+    "booth": "Stoisko {booth}",
+    "partner": "We współpracy z {name}",
+    "photos": "Zdjęcia",
+    "videos": "Filmy",
+    "photoAlt": "{fair} — zdjęcie {n}",
+    "posterAlt": "Plakat {fair}",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hanower, Niemcy",
+        "text": "Na EuroBLECH, wiodących światowych targach obróbki blach, zaprezentowaliśmy nasze linie profilujące i linie cięcia wzdłużnego na stoisku D39 w hali 27."
+      },
+      "maktek-2026": {
+        "place": "Centrum Targowo-Kongresowe Tüyap, Stambuł, Turcja",
+        "text": "Wystawialiśmy się na targach MAKTEK w Tüyap w Stambule we współpracy z Dirinler Pres."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Niemcy",
+        "text": "Wystawialiśmy się na Blechexpo, międzynarodowych targach obróbki blach w Stuttgarcie."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Porównania: wybierz właściwe urządzenie",
     "metaDesc": "Podawanie serwo czy mechaniczne? Cięcie wzdłużne czy na wymiar? Odwijak hydrauliczny czy mechaniczny? Porównaj różnice przed inwestycją.",

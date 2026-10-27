@@ -44,6 +44,7 @@ export const ROUTE_SLUGS = {
   karsilastirma: "comparison",
   uygulamalar: "applications",
   surdurulebilirlik: "sustainability",
+  fuarlar: "trade-fairs",
 } as const;
 
 /**

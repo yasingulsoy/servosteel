@@ -512,6 +512,36 @@
     "ctaTitle": "Pida referencias de su sector",
     "ctaText": "Compartiremos instalaciones en plantas como la suya y organizaremos visitas."
   },
+  "fairs": {
+    "metaTitle": "Ferias: dónde expone Servosteel",
+    "metaDesc": "Ferias en las que ha expuesto Servosteel: EuroBLECH 2026 (Hannover, pabellón 27 / D39), MAKTEK 2026 (Estambul) y Blechexpo 2017 (Stuttgart). Fotos y vídeos.",
+    "eyebrow": "Nuestras ferias",
+    "title": "Ferias",
+    "desc": "Las ferias de chapa y maquinaria en las que hemos expuesto: datos del stand, fotos y vídeos.",
+    "date": "Fecha",
+    "venue": "Lugar",
+    "hallBooth": "Pabellón {hall}, stand {booth}",
+    "booth": "Stand {booth}",
+    "partner": "En colaboración con {name}",
+    "photos": "Fotos",
+    "videos": "Vídeos",
+    "photoAlt": "{fair} — foto {n}",
+    "posterAlt": "Cartel de {fair}",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hannover, Alemania",
+        "text": "En EuroBLECH, la feria líder mundial del trabajo de la chapa, presentamos nuestras líneas de perfilado y nuestras líneas de corte longitudinal en el stand D39 del pabellón 27."
+      },
+      "maktek-2026": {
+        "place": "Centro de Ferias y Congresos Tüyap, Estambul, Turquía",
+        "text": "Expusimos en MAKTEK, en Tüyap Estambul, en colaboración con Dirinler Pres."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Alemania",
+        "text": "Expusimos en Blechexpo, la feria internacional del trabajo de la chapa de Stuttgart."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Comparativas: elija el equipo adecuado",
     "metaDesc": "¿Alimentación servo o mecánica? ¿Corte longitudinal o a medida? ¿Desbobinadora hidráulica o mecánica? Compare las diferencias antes de invertir.",

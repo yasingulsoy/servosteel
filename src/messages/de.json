@@ -512,6 +512,36 @@
     "ctaTitle": "Fordern Sie Referenzen aus Ihrer Branche an",
     "ctaText": "Wir zeigen Installationen bei Herstellern wie Ihnen und organisieren Werksbesuche."
   },
+  "fairs": {
+    "metaTitle": "Messen: Hier stellt Servosteel aus",
+    "metaDesc": "Messen, auf denen Servosteel ausgestellt hat: EuroBLECH 2026 (Hannover, Halle 27 / D39), MAKTEK 2026 (Istanbul) und Blechexpo 2017 (Stuttgart). Fotos und Videos.",
+    "eyebrow": "Unsere Messeauftritte",
+    "title": "Messen",
+    "desc": "Die Blechbearbeitungs- und Maschinenmessen, auf denen wir ausgestellt haben: Standdaten, Fotos und Videos.",
+    "date": "Datum",
+    "venue": "Ort",
+    "hallBooth": "Halle {hall}, Stand {booth}",
+    "booth": "Stand {booth}",
+    "partner": "In Zusammenarbeit mit {name}",
+    "photos": "Fotos",
+    "videos": "Videos",
+    "photoAlt": "{fair} — Foto {n}",
+    "posterAlt": "Ankündigungsplakat {fair}",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hannover, Deutschland",
+        "text": "Auf der EuroBLECH, der weltweit führenden Messe für Blechbearbeitung, haben wir in Halle 27 am Stand D39 unsere Rollformanlagen und Längsteilanlagen vorgestellt."
+      },
+      "maktek-2026": {
+        "place": "Tüyap Messe- und Kongresszentrum, Istanbul, Türkei",
+        "text": "Auf der MAKTEK im Tüyap Istanbul haben wir gemeinsam mit Dirinler Pres ausgestellt."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Deutschland",
+        "text": "Auf der Blechexpo, der internationalen Fachmesse für Blechbearbeitung in Stuttgart, waren wir als Aussteller vertreten."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Vergleiche: die richtige Ausrüstung wählen",
     "metaDesc": "Servo- oder Mechanikvorschub? Längs- oder Querteilen? Hydraulische oder mechanische Haspel? Vergleichen Sie die Unterschiede vor der Investition.",

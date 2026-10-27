@@ -512,6 +512,36 @@
     "ctaTitle": "Sektörünüzden referans isteyin",
     "ctaText": "Size benzer üretim yapan tesislerdeki kurulumlarımızı ve saha ziyareti imkanlarını paylaşalım."
   },
+  "fairs": {
+    "metaTitle": "Fuarlar: Servosteel'in Katıldığı Sac İşleme Fuarları",
+    "metaDesc": "Servosteel'in katıldığı fuarlar: EuroBLECH 2026 (Hannover, Salon 27 / D39), MAKTEK Avrasya 2026 (İstanbul) ve Blechexpo 2017 (Stuttgart). Fotoğraflar ve videolar.",
+    "eyebrow": "Fuar katılımlarımız",
+    "title": "Fuarlar",
+    "desc": "Katıldığımız sac işleme ve makine fuarları: stand bilgileri, fotoğraflar ve videolar.",
+    "date": "Tarih",
+    "venue": "Yer",
+    "hallBooth": "Salon {hall}, Stand {booth}",
+    "booth": "Stand {booth}",
+    "partner": "{name} ile iş birliği içinde",
+    "photos": "Fotoğraflar",
+    "videos": "Videolar",
+    "photoAlt": "{fair} — fotoğraf {n}",
+    "posterAlt": "{fair} duyuru afişi",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hannover, Almanya",
+        "text": "Dünyanın önde gelen sac işleme fuarı EuroBLECH'te, 27. salondaki D39 standımızda roll form hatlarımızı ve rulo sac dilme hatlarımızı tanıttık."
+      },
+      "maktek-2026": {
+        "place": "Tüyap Fuar ve Kongre Merkezi, İstanbul",
+        "text": "İstanbul Tüyap'ta düzenlenen MAKTEK Avrasya'ya Dirinler Pres ile iş birliği içinde katıldık."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Almanya",
+        "text": "Stuttgart'ta düzenlenen uluslararası sac işleme fuarı Blechexpo'da yer aldık."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Karşılaştırmalar: Doğru Ekipmanı Seçin",
     "metaDesc": "Servo mu mekanik besleme? Dilme mi boy kesme? Hidrolik mi mekanik açıcı? Yatırım kararından önce farkları tablo halinde karşılaştırın.",

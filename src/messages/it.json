@@ -512,6 +512,36 @@
     "ctaTitle": "Richiedi referenze del tuo settore",
     "ctaText": "Condividiamo installazioni presso stabilimenti come il tuo e organizziamo visite."
   },
+  "fairs": {
+    "metaTitle": "Fiere: dove espone Servosteel",
+    "metaDesc": "Fiere a cui Servosteel ha partecipato come espositore: EuroBLECH 2026 (Hannover, padiglione 27 / D39), MAKTEK 2026 (Istanbul) e Blechexpo 2017 (Stoccarda). Foto e video.",
+    "eyebrow": "Le nostre fiere",
+    "title": "Fiere",
+    "desc": "Le fiere della lamiera e delle macchine a cui abbiamo partecipato come espositori: dati dello stand, foto e video.",
+    "date": "Data",
+    "venue": "Luogo",
+    "hallBooth": "Padiglione {hall}, stand {booth}",
+    "booth": "Stand {booth}",
+    "partner": "In collaborazione con {name}",
+    "photos": "Foto",
+    "videos": "Video",
+    "photoAlt": "{fair} — foto {n}",
+    "posterAlt": "Locandina di {fair}",
+    "items": {
+      "euroblech-2026": {
+        "place": "Deutsche Messe, Hannover, Germania",
+        "text": "A EuroBLECH, la fiera leader mondiale della lavorazione della lamiera, abbiamo presentato le nostre linee di profilatura e le nostre linee di taglio longitudinale nello stand D39 del padiglione 27."
+      },
+      "maktek-2026": {
+        "place": "Centro fieristico e congressi Tüyap, Istanbul, Turchia",
+        "text": "Abbiamo esposto a MAKTEK, al Tüyap di Istanbul, in collaborazione con Dirinler Pres."
+      },
+      "blechexpo-2017": {
+        "place": "Landesmesse Stuttgart, Germania",
+        "text": "Abbiamo esposto a Blechexpo, la fiera internazionale della lavorazione della lamiera di Stoccarda."
+      }
+    }
+  },
   "compare": {
     "metaTitle": "Confronti: scegliere l'impianto giusto",
     "metaDesc": "Alimentazione servo o meccanica? Taglio longitudinale o a misura? Svolgitore idraulico o meccanico? Confrontate le differenze prima di investire.",

@@ -18,6 +18,7 @@ const paths = [
   { path: "/hakkimizda", priority: 0.6 },
   { path: "/referanslar", priority: 0.6 },
   { path: "/videolar", priority: 0.5 },
+  { path: "/fuarlar", priority: 0.5 },
   { path: "/iletisim", priority: 0.7 },
   { path: "/teklif-al", priority: 0.8 },
   { path: "/akademi", priority: 0.6 },
