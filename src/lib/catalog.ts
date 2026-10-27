@@ -22,7 +22,7 @@ export const machineItems = [
   {
     slug: "kompakt-hatlar",
     /* Vitrin fotoğrafı (bkz. showcaseOf): pres besleme hattı — doğrultmalı sürücü, açıcı, rulo arabası */
-    showcase: { file: "kompakt-hatlar-pres-besleme.jpg", width: 1600, height: 764 },
+    showcase: [{ file: "kompakt-hatlar-pres-besleme.jpg", width: 1600, height: 764 }],
   },
   {
     slug: "servo-punch-pres",
@@ -34,11 +34,14 @@ export const machineItems = [
   },
   {
     slug: "otomatik-istifleyici",
-    /* Ek saha fotoğrafları (bkz. galleryOf): profil hattı sonunda istif + çemberleme, paket yakın plan */
-    gallery: [
-      { file: "otomatik-istifleyici-hat.jpg", ratio: "4/3" },
-      { file: "otomatik-istifleyici-paket.jpg", ratio: "4/3" },
+    /* Vitrin (bkz. showcaseOf): profil hattı sonunda istif + çemberleme, paket yakın plan.
+       Ana fotoğraf (levha istifi) bu sayfada gösterilmiyor (Yasin, 27 Eki);
+       ana sayfadaki ve /makineler'deki kartlarda duruyor. */
+    showcase: [
+      { file: "otomatik-istifleyici-hat.jpg", width: 1027, height: 771 },
+      { file: "otomatik-istifleyici-paket.jpg", width: 1004, height: 754 },
     ],
+    hideMainPhoto: true,
   },
 ] as const;
 
@@ -115,17 +118,23 @@ export function galleryOf(slug: string): readonly GaleriFoto[] {
 }
 
 type Vitrin = { file: string; width: number; height: number };
+type VitrinliOge = { slug: string; showcase?: readonly Vitrin[]; hideMainPhoto?: boolean };
 
 /**
- * Sayfa başlığının hemen altında tam genişlikte, kırpılmadan gösterilen
- * vitrin fotoğrafı (`public/gorseller/`). Geniş saha fotoğrafları yan sütunun
- * 4:3 kutusunda kenarlarından kırpılıyordu. Ölçüler dosyanın gerçek pikselleri:
- * en-boy oranı bunlardan gelir, yüklenirken sayfa kaymaz. Alt metni mesaj
- * dosyasında `products.machines.<slug>.showcaseAlt`.
+ * Sayfa başlığının hemen altında, kırpılmadan gösterilen vitrin fotoğrafları
+ * (`public/gorseller/`): tek fotoğraf tam genişlikte, iki fotoğraf yan yana.
+ * Geniş saha fotoğrafları yan sütunun 4:3 kutusunda kenarlarından kırpılıyordu.
+ * Ölçüler dosyanın gerçek pikselleri: en-boy oranı bunlardan gelir, yüklenirken
+ * sayfa kaymaz. Alt metinleri mesaj dosyasında
+ * `products.machines.<slug>.showcaseAlt`, aynı sırayla.
  */
-export function showcaseOf(slug: string): Vitrin | undefined {
-  const all = machineItems as ReadonlyArray<{ slug: string; showcase?: Vitrin }>;
-  return all.find((i) => i.slug === slug)?.showcase;
+export function showcaseOf(slug: string): readonly Vitrin[] {
+  return (machineItems as ReadonlyArray<VitrinliOge>).find((i) => i.slug === slug)?.showcase ?? [];
+}
+
+/** Ana fotoğraf makine sayfasında gösterilmesin mi (vitrin onun yerini alır). */
+export function hidesMainPhoto(slug: string): boolean {
+  return !!(machineItems as ReadonlyArray<VitrinliOge>).find((i) => i.slug === slug)?.hideMainPhoto;
 }
 
 export function rollFormIcon(slug: string) {

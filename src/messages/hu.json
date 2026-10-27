@@ -2226,7 +2226,7 @@
           "Polc- és tárolórendszerek",
           "Tető- és homlokzatgyártók"
         ],
-        "galleryAlt": ["Portál típusú automata rakatoló kötegpántoló állomással egy profilsor végén", "Rakatolt profilköteg a pántológép keretében"],
+        "showcaseAlt": ["Portál típusú automata rakatoló kötegpántoló állomással egy profilsor végén", "Rakatolt profilköteg a pántológép keretében"],
         "faq": [
           {
             "q": "Utólag felszerelhető meglévő sorra?",
@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["KKV sajtoló üzemek", "Autóipari beszállítók", "Szerszámüzemek", "Bérgyártás"],
-        "showcaseAlt": "Kompakt présadagoló sor: egyengetős szervoadagoló, lecsévélő és tekercsrakodó kocsi",
+        "showcaseAlt": ["Kompakt présadagoló sor: egyengetős szervoadagoló, lecsévélő és tekercsrakodó kocsi"],
         "faq": [
           {
             "q": "Kompakt sor vagy különálló gépek?",

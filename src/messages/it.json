@@ -2226,7 +2226,7 @@
           "Sistemi di scaffalature",
           "Produttori di coperture e facciate"
         ],
-        "galleryAlt": ["Impilatore automatico a portale con stazione di reggiatura alla fine di una linea di profili", "Pacco di profili impilati che passa nell'arco di reggiatura"],
+        "showcaseAlt": ["Impilatore automatico a portale con stazione di reggiatura alla fine di una linea di profili", "Pacco di profili impilati che passa nell'arco di reggiatura"],
         "faq": [
           {
             "q": "Si può aggiungere a una linea già in funzione?",
@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["PMI di stampaggio", "Fornitori automotive", "Attrezzerie", "Produzione conto terzi"],
-        "showcaseAlt": "Linea compatta di alimentazione pressa: alimentatore servo con raddrizzatrice, svolgitore e carrello di carico coil",
+        "showcaseAlt": ["Linea compatta di alimentazione pressa: alimentatore servo con raddrizzatrice, svolgitore e carrello di carico coil"],
         "faq": [
           {
             "q": "Linea compatta o macchine separate?",

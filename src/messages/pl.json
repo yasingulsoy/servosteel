@@ -2226,7 +2226,7 @@
           "Systemy regałowe",
           "Producenci pokryć i elewacji"
         ],
-        "galleryAlt": ["Automatyczny układacz bramowy ze stanowiskiem spinania paczek na końcu linii profili", "Ułożona paczka profili przechodząca przez ramę spinarki"],
+        "showcaseAlt": ["Automatyczny układacz bramowy ze stanowiskiem spinania paczek na końcu linii profili", "Ułożona paczka profili przechodząca przez ramę spinarki"],
         "faq": [
           {
             "q": "Czy da się dołożyć do istniejącej linii?",
@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"],
-        "showcaseAlt": "Kompaktowa linia podawania do prasy: podajnik serwo z prostownicą, odwijak i wózek do załadunku kręgów",
+        "showcaseAlt": ["Kompaktowa linia podawania do prasy: podajnik serwo z prostownicą, odwijak i wózek do załadunku kręgów"],
         "faq": [
           {
             "q": "Linia kompaktowa czy osobne maszyny?",

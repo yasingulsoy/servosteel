@@ -13,10 +13,18 @@ import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
+
+/* Sayfanın paylaşım/şema görseli: ana fotoğraf sayfada gösterilmiyorsa
+   sayfada görünen ilk vitrin fotoğrafı. */
+function sayfaGorseli(slug: string): string | undefined {
+  if (!hasPhoto(slug)) return undefined;
+  const vitrin = showcaseOf(slug);
+  return hidesMainPhoto(slug) && vitrin.length ? `/gorseller/${vitrin[0].file}` : `/gorseller/${slug}.jpg`;
+}
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -34,7 +42,7 @@ export async function generateMetadata({ params }: Props) {
   return sayfaMeta(locale as AppLocale, `/makineler/${slug}`, {
     baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
     aciklama: t("meta"),
-    gorsel: hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
+    gorsel: sayfaGorseli(slug),
   });
 }
 
@@ -64,6 +72,9 @@ export default async function MachinePage({ params }: Props) {
   const galeri = galleryOf(slug);
   const galeriAlt = t.has("galleryAlt") ? (t.raw("galleryAlt") as string[]) : [];
   const vitrin = showcaseOf(slug);
+  const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
+  const anaFoto = hasPhoto(slug) && !hidesMainPhoto(slug);
+  const gorsel = sayfaGorseli(slug);
 
   /**
    * Makine sayfası şeması.
@@ -90,7 +101,7 @@ export default async function MachinePage({ params }: Props) {
     "@id": `${SITE_URL}${localePath(locale as AppLocale, `/makineler/${slug}`)}#webpage`,
     name: t("name"),
     description: t("meta"),
-    ...(hasPhoto(slug) ? { primaryImageOfPage: `${SITE_URL}/gorseller/${slug}.jpg` } : {}),
+    ...(gorsel ? { primaryImageOfPage: `${SITE_URL}${gorsel}` } : {}),
     about: {
       "@type": "Thing",
       name: t("name"),
@@ -124,18 +135,24 @@ export default async function MachinePage({ params }: Props) {
         description={t("hero")}
       />
 
-      {/* Vitrin fotoğrafı — tam genişlikte, kendi en-boy oranında (bkz. showcaseOf) */}
-      {vitrin && (
+      {/* Vitrin — kendi en-boy oranında: tek fotoğraf tam genişlik, iki fotoğraf
+          masaüstünde yan yana (bkz. showcaseOf) */}
+      {vitrin.length > 0 && (
         <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
-          <Image
-            src={`/gorseller/${vitrin.file}`}
-            alt={t.has("showcaseAlt") ? t("showcaseAlt") : t("name")}
-            width={vitrin.width}
-            height={vitrin.height}
-            sizes="(max-width: 1280px) 100vw, 1216px"
-            loading="eager"
-            className="h-auto w-full rounded-2xl border border-line bg-surface-alt"
-          />
+          <div className={`grid gap-4 lg:gap-6 ${vitrin.length > 1 ? "sm:grid-cols-2" : ""}`}>
+            {vitrin.map((v, i) => (
+              <Image
+                key={v.file}
+                src={`/gorseller/${v.file}`}
+                alt={vitrinAlt[i] ?? t("name")}
+                width={v.width}
+                height={v.height}
+                sizes={vitrin.length > 1 ? "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 616px" : "(max-width: 1280px) 100vw, 1216px"}
+                loading="eager"
+                className="h-auto w-full rounded-2xl border border-line bg-surface-alt"
+              />
+            ))}
+          </div>
         </div>
       )}
 
@@ -240,11 +257,11 @@ export default async function MachinePage({ params }: Props) {
           </div>
 
           <aside className="space-y-6">
-            <Reveal>
-              {hasPhoto(slug) && (
+            {anaFoto && (
+              <Reveal>
                 <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} ratio="4/3" fit="contain" sizes="(max-width: 1024px) 100vw, 400px" />
-              )}
-            </Reveal>
+              </Reveal>
+            )}
             {galeri.length > 0 && (
               <Reveal delay={60}>
                 <div className="space-y-4">
