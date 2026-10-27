@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check, Cog } from "lucide-react";
@@ -12,7 +13,7 @@ import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -62,6 +63,7 @@ export default async function MachinePage({ params }: Props) {
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
   const galeri = galleryOf(slug);
   const galeriAlt = t.has("galleryAlt") ? (t.raw("galleryAlt") as string[]) : [];
+  const vitrin = showcaseOf(slug);
 
   /**
    * Makine sayfası şeması.
@@ -121,6 +123,21 @@ export default async function MachinePage({ params }: Props) {
         title={t("name")}
         description={t("hero")}
       />
+
+      {/* Vitrin fotoğrafı — tam genişlikte, kendi en-boy oranında (bkz. showcaseOf) */}
+      {vitrin && (
+        <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
+          <Image
+            src={`/gorseller/${vitrin.file}`}
+            alt={t.has("showcaseAlt") ? t("showcaseAlt") : t("name")}
+            width={vitrin.width}
+            height={vitrin.height}
+            sizes="(max-width: 1280px) 100vw, 1216px"
+            loading="eager"
+            className="h-auto w-full rounded-2xl border border-line bg-surface-alt"
+          />
+        </div>
+      )}
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">

@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["KMU-Stanzbetriebe", "Automobilzulieferer", "Werkzeugbau", "Lohnfertigung"],
-        "galleryAlt": ["Kompakte Pressenzuführung: Richt-Servovorschub, Abwickelhaspel und Coilwagen"],
+        "showcaseAlt": "Kompakte Pressenzuführung: Richt-Servovorschub, Abwickelhaspel und Coilwagen",
         "faq": [
           {
             "q": "Kompaktanlage oder Einzelmaschinen?",

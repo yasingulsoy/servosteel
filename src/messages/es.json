@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["Pymes de estampación", "Proveedores de automoción", "Talleres de troqueles", "Fabricación por contrato"],
-        "galleryAlt": ["Línea compacta de alimentación de prensa: alimentador servo con enderezadora, desbobinadora y carro de carga de bobinas"],
+        "showcaseAlt": "Línea compacta de alimentación de prensa: alimentador servo con enderezadora, desbobinadora y carro de carga de bobinas",
         "faq": [
           {
             "q": "¿Línea compacta o máquinas separadas?",

@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["Małe tłocznie", "Dostawcy motoryzacyjni", "Narzędziownie", "Produkcja kontraktowa"],
-        "galleryAlt": ["Kompaktowa linia podawania do prasy: podajnik serwo z prostownicą, odwijak i wózek do załadunku kręgów"],
+        "showcaseAlt": "Kompaktowa linia podawania do prasy: podajnik serwo z prostownicą, odwijak i wózek do załadunku kręgów",
         "faq": [
           {
             "q": "Linia kompaktowa czy osobne maszyny?",

@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["KKV sajtoló üzemek", "Autóipari beszállítók", "Szerszámüzemek", "Bérgyártás"],
-        "galleryAlt": ["Kompakt présadagoló sor: egyengetős szervoadagoló, lecsévélő és tekercsrakodó kocsi"],
+        "showcaseAlt": "Kompakt présadagoló sor: egyengetős szervoadagoló, lecsévélő és tekercsrakodó kocsi",
         "faq": [
           {
             "q": "Kompakt sor vagy különálló gépek?",

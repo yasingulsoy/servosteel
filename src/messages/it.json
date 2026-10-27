@@ -2267,7 +2267,7 @@
           }
         ],
         "sectors": ["PMI di stampaggio", "Fornitori automotive", "Attrezzerie", "Produzione conto terzi"],
-        "galleryAlt": ["Linea compatta di alimentazione pressa: alimentatore servo con raddrizzatrice, svolgitore e carrello di carico coil"],
+        "showcaseAlt": "Linea compatta di alimentazione pressa: alimentatore servo con raddrizzatrice, svolgitore e carrello di carico coil",
         "faq": [
           {
             "q": "Linea compatta o macchine separate?",

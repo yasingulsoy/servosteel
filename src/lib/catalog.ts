@@ -21,8 +21,8 @@ export const machineItems = [
   { slug: "dogrultmali-servo-suruculer" },
   {
     slug: "kompakt-hatlar",
-    /* Ek saha fotoğrafı (bkz. galleryOf): pres besleme hattı — doğrultmalı sürücü, açıcı, rulo arabası */
-    gallery: [{ file: "kompakt-hatlar-pres-besleme.jpg", ratio: "video" }],
+    /* Vitrin fotoğrafı (bkz. showcaseOf): pres besleme hattı — doğrultmalı sürücü, açıcı, rulo arabası */
+    showcase: { file: "kompakt-hatlar-pres-besleme.jpg", width: 1600, height: 764 },
   },
   {
     slug: "servo-punch-pres",
@@ -103,7 +103,7 @@ export function hasPhoto(slug: string): boolean {
   return !all.find((i) => i.slug === slug)?.noPhoto;
 }
 
-type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
+type GaleriFoto = { file: string; ratio: "4/3" | "square" };
 
 /**
  * Makinenin ana fotoğrafının altında gösterilen ek fotoğraflar (`public/gorseller/`).
@@ -112,6 +112,20 @@ type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
 export function galleryOf(slug: string): readonly GaleriFoto[] {
   const all = machineItems as ReadonlyArray<{ slug: string; gallery?: readonly GaleriFoto[] }>;
   return all.find((i) => i.slug === slug)?.gallery ?? [];
+}
+
+type Vitrin = { file: string; width: number; height: number };
+
+/**
+ * Sayfa başlığının hemen altında tam genişlikte, kırpılmadan gösterilen
+ * vitrin fotoğrafı (`public/gorseller/`). Geniş saha fotoğrafları yan sütunun
+ * 4:3 kutusunda kenarlarından kırpılıyordu. Ölçüler dosyanın gerçek pikselleri:
+ * en-boy oranı bunlardan gelir, yüklenirken sayfa kaymaz. Alt metni mesaj
+ * dosyasında `products.machines.<slug>.showcaseAlt`.
+ */
+export function showcaseOf(slug: string): Vitrin | undefined {
+  const all = machineItems as ReadonlyArray<{ slug: string; showcase?: Vitrin }>;
+  return all.find((i) => i.slug === slug)?.showcase;
 }
 
 export function rollFormIcon(slug: string) {

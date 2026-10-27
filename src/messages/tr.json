@@ -2284,7 +2284,7 @@
           }
         ],
         "sectors": ["KOBİ pres atölyeleri", "Otomotiv yan sanayi", "Kalıphaneler", "Sözleşmeli üretim"],
-        "galleryAlt": ["Kompakt pres besleme hattı: doğrultmalı servo sürücü, açıcı ve rulo yükleme arabası"],
+        "showcaseAlt": "Kompakt pres besleme hattı: doğrultmalı servo sürücü, açıcı ve rulo yükleme arabası",
         "faq": [
           {
             "q": "Kompakt hat mı, ayrı makineler mi tercih etmeliyim?",

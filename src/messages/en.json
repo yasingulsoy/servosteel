@@ -2347,7 +2347,7 @@
           }
         ],
         "sectors": ["SME stamping shops", "Automotive suppliers", "Die shops", "Contract manufacturing"],
-        "galleryAlt": ["Compact press feeding line: straightener servo feeder, decoiler and coil loading car"],
+        "showcaseAlt": "Compact press feeding line: straightener servo feeder, decoiler and coil loading car",
         "faq": [
           {
             "q": "Compact line or separate machines?",
