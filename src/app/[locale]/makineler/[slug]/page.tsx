@@ -130,6 +130,9 @@ export default async function MachinePage({ params }: Props) {
       <Vitrin
         fotolar={vitrin.map((v, i) => ({ src: `/gorseller/${v.file}`, alt: vitrinAlt[i] ?? t("name"), width: v.width, height: v.height }))}
       />
+      {/* Sahadan videolar üstte: vitrin varsa hemen altında, yoksa başlığın altında
+          (Yasin, 27 Eki: "tüm makineler için görsellerden sonra videoları koyalım") */}
+      <RelatedVideos path={`/makineler/${slug}`} ust />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
@@ -298,8 +301,6 @@ export default async function MachinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
-
-      <RelatedVideos path={`/makineler/${slug}`} />
 
       <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 

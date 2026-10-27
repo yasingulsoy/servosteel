@@ -106,6 +106,9 @@ export default async function VariantPage({ params }: Props) {
         description={t("hero")}
       />
 
+      {/* Üst makinenin sahadan videoları başlığın hemen altında — makine sayfalarıyla aynı düzen */}
+      <RelatedVideos path={`/makineler/${slug}`} ust />
+
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* min-w-0: ızgara öğesi içeriğinden daha dar olabilsin. Olmadan tablonun
@@ -221,8 +224,6 @@ export default async function VariantPage({ params }: Props) {
           </aside>
         </div>
       </section>
-
-      <RelatedVideos path={`/makineler/${slug}`} />
 
       <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 

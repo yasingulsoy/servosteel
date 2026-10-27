@@ -98,6 +98,9 @@ export default async function RollFormLinePage({ params }: Props) {
         </div>
       )}
 
+      {/* Sahadan videolar fotoğrafların hemen altında — makine sayfalarıyla aynı düzen */}
+      <RelatedVideos path={`/roll-form-hatlari/${slug}`} ust />
+
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* min-w-0: ızgara öğesi içeriğinden daha dar olabilsin. Olmadan tablonun
@@ -257,8 +260,6 @@ export default async function RollFormLinePage({ params }: Props) {
           </div>
         </Reveal>
       </section>
-
-      <RelatedVideos path={`/roll-form-hatlari/${slug}`} />
 
       <FaqSection eyebrow={td("faqEyebrow")} title={td("faqTitle")} items={faq} />
 

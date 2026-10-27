@@ -563,10 +563,11 @@
     "videos": "Videos",
     "photoAlt": "{fair} — photo {n}",
     "posterAlt": "{fair} announcement poster",
+    "videoLabel": "{fair} — video {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hanover, Germany",
-        "text": "At EuroBLECH, the world's leading sheet metal working exhibition, we presented our roll forming lines and coil slitting lines at booth D39 in Hall 27."
+        "text": "At EuroBLECH, the world's leading sheet metal working exhibition, we presented our products at booth D39 in Hall 27."
       },
       "maktek-2026": {
         "place": "Tüyap Fair and Congress Center, Istanbul, Türkiye",

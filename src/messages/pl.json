@@ -527,10 +527,11 @@
     "videos": "Filmy",
     "photoAlt": "{fair} — zdjęcie {n}",
     "posterAlt": "Plakat {fair}",
+    "videoLabel": "{fair} — film {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hanower, Niemcy",
-        "text": "Na EuroBLECH, wiodących światowych targach obróbki blach, zaprezentowaliśmy nasze linie profilujące i linie cięcia wzdłużnego na stoisku D39 w hali 27."
+        "text": "Na EuroBLECH, wiodących światowych targach obróbki blach, zaprezentowaliśmy nasze produkty na stoisku D39 w hali 27."
       },
       "maktek-2026": {
         "place": "Centrum Targowo-Kongresowe Tüyap, Stambuł, Turcja",

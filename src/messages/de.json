@@ -527,10 +527,11 @@
     "videos": "Videos",
     "photoAlt": "{fair} — Foto {n}",
     "posterAlt": "Ankündigungsplakat {fair}",
+    "videoLabel": "{fair} — Video {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hannover, Deutschland",
-        "text": "Auf der EuroBLECH, der weltweit führenden Messe für Blechbearbeitung, haben wir in Halle 27 am Stand D39 unsere Rollformanlagen und Längsteilanlagen vorgestellt."
+        "text": "Auf der EuroBLECH, der weltweit führenden Messe für Blechbearbeitung, haben wir in Halle 27 am Stand D39 unsere Produkte vorgestellt."
       },
       "maktek-2026": {
         "place": "Tüyap Messe- und Kongresszentrum, Istanbul, Türkei",

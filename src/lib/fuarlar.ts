@@ -45,7 +45,14 @@ export const fuarlar: Fuar[] = [
     stand: "D39",
     afis: { file: "afis.jpg", width: 941, height: 1672 },
     fotolar: [],
-    videolar: [],
+    /* Standdan telefon çekimleri (dikey, H.264/AAC, 17-54 sn), dosyalar olduğu
+       gibi; kapaklar videonun kendi karesinden, aynı çözünürlükte */
+    videolar: [1, 2, 3, 4, 5].map((n) => ({
+      file: `video-${n}.mp4`,
+      poster: `video-${n}.jpg`,
+      width: 464,
+      height: 848,
+    })),
     youtube: [],
   },
   {

@@ -527,10 +527,11 @@
     "videos": "Videók",
     "photoAlt": "{fair} – {n}. fotó",
     "posterAlt": "{fair} – meghívó plakát",
+    "videoLabel": "{fair} – {n}. videó",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hannover, Németország",
-        "text": "A világ vezető lemezmegmunkálási kiállításán, az EuroBLECH-en a 27-es csarnok D39-es standján mutattuk be profilozó és hasító sorainkat."
+        "text": "A világ vezető lemezmegmunkálási kiállításán, az EuroBLECH-en a 27-es csarnok D39-es standján mutattuk be termékeinket."
       },
       "maktek-2026": {
         "place": "Tüyap Vásár- és Kongresszusi Központ, Isztambul, Törökország",

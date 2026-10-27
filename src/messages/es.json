@@ -527,10 +527,11 @@
     "videos": "Vídeos",
     "photoAlt": "{fair} — foto {n}",
     "posterAlt": "Cartel de {fair}",
+    "videoLabel": "{fair} — vídeo {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hannover, Alemania",
-        "text": "En EuroBLECH, la feria líder mundial del trabajo de la chapa, presentamos nuestras líneas de perfilado y nuestras líneas de corte longitudinal en el stand D39 del pabellón 27."
+        "text": "En EuroBLECH, la feria líder mundial del trabajo de la chapa, presentamos nuestros productos en el stand D39 del pabellón 27."
       },
       "maktek-2026": {
         "place": "Centro de Ferias y Congresos Tüyap, Estambul, Turquía",

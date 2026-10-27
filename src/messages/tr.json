@@ -527,10 +527,11 @@
     "videos": "Videolar",
     "photoAlt": "{fair} — fotoğraf {n}",
     "posterAlt": "{fair} duyuru afişi",
+    "videoLabel": "{fair} — video {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hannover, Almanya",
-        "text": "Dünyanın önde gelen sac işleme fuarı EuroBLECH'te, 27. salondaki D39 standımızda roll form hatlarımızı ve rulo sac dilme hatlarımızı tanıttık."
+        "text": "Dünyanın önde gelen sac işleme fuarı EuroBLECH'te, 27. salondaki D39 standımızda ürünlerimizi tanıttık."
       },
       "maktek-2026": {
         "place": "Tüyap Fuar ve Kongre Merkezi, İstanbul",

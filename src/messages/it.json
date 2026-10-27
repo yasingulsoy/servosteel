@@ -527,10 +527,11 @@
     "videos": "Video",
     "photoAlt": "{fair} — foto {n}",
     "posterAlt": "Locandina di {fair}",
+    "videoLabel": "{fair} — video {n}",
     "items": {
       "euroblech-2026": {
         "place": "Deutsche Messe, Hannover, Germania",
-        "text": "A EuroBLECH, la fiera leader mondiale della lavorazione della lamiera, abbiamo presentato le nostre linee di profilatura e le nostre linee di taglio longitudinale nello stand D39 del padiglione 27."
+        "text": "A EuroBLECH, la fiera leader mondiale della lavorazione della lamiera, abbiamo presentato i nostri prodotti nello stand D39 del padiglione 27."
       },
       "maktek-2026": {
         "place": "Centro fieristico e congressi Tüyap, Istanbul, Turchia",

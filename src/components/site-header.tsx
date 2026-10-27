@@ -316,6 +316,7 @@ export function SiteHeader() {
   const tSec = useTranslations("sectors");
   const tHome = useTranslations("home");
   const tRulo = useTranslations("ruloIsleme");
+  const tFair = useTranslations("fairs");
   const ak = getAkademiUi(useLocale());
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -458,6 +459,7 @@ export function SiteHeader() {
             active={isActive("/uygulamalar")}
           />
           <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} />
+          <NavLink href="/fuarlar" label={tFair("title")} active={isActive("/fuarlar")} />
           <NavLink href="/hakkimizda" label={t("about")} active={isActive("/hakkimizda")} />
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} />
         </nav>
@@ -586,6 +588,9 @@ export function SiteHeader() {
             </details>
             <Link href="/akademi" onClick={kapat} className={mobilSatir}>
               {ak.nav}
+            </Link>
+            <Link href="/fuarlar" onClick={kapat} className={mobilSatir}>
+              {tFair("title")}
             </Link>
             <Link href="/hakkimizda" onClick={kapat} className={mobilSatir}>
               {t("about")}
