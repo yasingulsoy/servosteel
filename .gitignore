@@ -46,3 +46,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# firma e-posta listeleri (keşif turu çıktıları) — depo herkese açık, girmesin
+/batch*.txt
+/seo/hedef-firmalar/batch*.txt
