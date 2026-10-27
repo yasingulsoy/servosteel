@@ -1376,6 +1376,7 @@
         "short": "Nagy sebességű profilozás fotovoltaikus tartóprofilokhoz.",
         "hero": "Sor, amely a napelemes erőművek tartószerkezetének hat-, C- és Omega-profiljait közvetlenül a tekercsből gyártja; a lyukasztó állomások a rögzítőlyukakat soron belül készítik, és a profilok szerelésre készen érkeznek a helyszínre.",
         "meta": "Napelemes tartóprofil gyártósor: komplett, nagy sebességű profilozó sor lyukasztó állomásokkal fotovoltaikus szerkezetekhez.",
+        "showcaseAlt": ["C-profilos profilhengerlő sor: vágóegység és alakító állomások", "Hengerlő állomások, a háttérben a Servo Punch Press", "A C-profilos profilhengerlő sor áttekintő képe"],
         "features": [
           {
             "title": "Profilforma a projekthez",
@@ -1904,6 +1905,7 @@
         "short": "Könnyűszerkezetes acélprofilok: több keresztmetszet egy soron.",
         "hero": "Rugalmas megoldás, amely a könnyűszerkezetes építés tartóit, a C-, Sigma- és Omega-profilokat egyetlen soron gyártja; a keresztmetszetek közötti váltás percek alatt megy a állítható görgőcsoportok és a receptrendszer révén.",
         "meta": "C, Sigma és Omega profil gyártósor: állítható, több keresztmetszetű profilozás könnyűszerkezetes építéshez.",
+        "showcaseAlt": ["C-profilos vágóegység: ferde vágófej és szerszáma", "Vágófej közelről, mögötte a hengerlő állomások és a vezérlőpult", "Vágófej C-profil szerszámmal és hidraulikus csatlakozásokkal"],
         "features": [
           {
             "title": "Három keresztmetszet egy soron",
@@ -2177,10 +2179,8 @@
           "Napelemes tartószerkezeti profilok",
           "C, U és szigma szerkezeti profilok"
         ],
-        "galleryAlt": [
-          "Görgős egység a Servo Punch Press bemeneténél",
-          "A sorban: lecsévélő, egyengetős szervoadagoló és Servo Punch Press, mögötte a profilhengerlő sor"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 elölről: a lyukasztott szalag kilép a présből", "Servo Punch Press SRV-SP6 és vezérlőpultja, oldalnézet"],
+        "galleryAlt": ["Servo Punch Press a sorban, mögötte egyengetős szervoadagoló és lecsévélő", "Servo Punch Press és egyengetős szervoadagoló, mögöttük a profilhengerlő sor"],
         "faq": [
           {
             "q": "Hol helyezkedik el a Servo Punch Press a sorban?",

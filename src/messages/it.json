@@ -1376,6 +1376,7 @@
         "short": "Profilatura ad alta velocità per profili di montaggio fotovoltaico.",
         "hero": "Una linea che produce profili hat, C e Omega per le strutture degli impianti solari direttamente dal coil; la punzonatura apre i fori di montaggio in linea e i profili arrivano in cantiere pronti al montaggio.",
         "meta": "Linea profili di montaggio solare: linea completa di profilatura ad alta velocità con punzonatura per strutture fotovoltaiche.",
+        "showcaseAlt": ["Linea di profilatura per profili C: unità di taglio e stazioni di formatura", "Stazioni di profilatura, sullo sfondo la Servo Punch Press", "Vista d'insieme della linea di profilatura per profili C"],
         "features": [
           {
             "title": "Forma profilo su progetto",
@@ -1904,6 +1905,7 @@
         "short": "Profili in acciaio leggero: più sezioni su una linea.",
         "hero": "Una soluzione flessibile che produce profili C, Sigma e Omega — i portanti delle strutture in acciaio leggero — su un'unica linea; il cambio sezione avviene in pochi minuti grazie ai gruppi di rulli regolabili e al sistema di ricette.",
         "meta": "Linea profili C, Sigma e Omega: profilatura regolabile multi-sezione per strutture in acciaio leggero.",
+        "showcaseAlt": ["Unità di taglio per profili C: testa di taglio inclinata e relativo stampo", "Primo piano della testa di taglio, dietro le stazioni di profilatura e il pannello di controllo", "Testa di taglio con stampo per profilo C e collegamenti idraulici"],
         "features": [
           {
             "title": "Tre sezioni su una linea",
@@ -2177,10 +2179,8 @@
           "Profili per strutture solari",
           "Profili strutturali C, U e sigma"
         ],
-        "galleryAlt": [
-          "Unità a rulli all'ingresso della Servo Punch Press",
-          "In linea: svolgitore, alimentatore servo con raddrizzatrice e Servo Punch Press, con la linea di profilatura dietro"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 di fronte: il nastro punzonato esce dalla pressa", "Servo Punch Press SRV-SP6 e pannello di controllo, vista laterale"],
+        "galleryAlt": ["Servo Punch Press in linea, con alimentatore servo con raddrizzatrice e svolgitore dietro", "Servo Punch Press e alimentatore servo con raddrizzatrice, con la linea di profilatura dietro"],
         "faq": [
           {
             "q": "Dove si colloca la Servo Punch Press nella linea?",

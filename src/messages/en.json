@@ -1418,6 +1418,7 @@
         "short": "A high-speed roll forming solution for PV mounting profiles.",
         "hero": "A line producing hat, C and Omega profiles for solar power plant mounting structures directly from coil; punching stations open the mounting holes in-line, so profiles arrive on site ready to install.",
         "meta": "Solar mounting profile production line: a complete, high-speed roll forming line with punching stations for PV structure profiles, built in our Istanbul plant.",
+        "showcaseAlt": ["C profile roll forming line: cut-off unit and forming stations", "Roll forming stations, with the Servo Punch Press in the background", "Overview of the C profile roll forming line"],
         "features": [
           {
             "title": "Profile form to your project",
@@ -1952,6 +1953,7 @@
         "short": "Light steel framing profiles: multiple sections on one line.",
         "hero": "A flexible solution producing C, Sigma and Omega profiles — the load-bearers of light steel structures — on a single line; changeover between sections takes minutes thanks to adjustable roll groups and the recipe system.",
         "meta": "C, Sigma and Omega profile production line: an adjustable, multi-section roll forming solution for light steel framing profiles.",
+        "showcaseAlt": ["C profile cut-off unit: angled cutting head and its die", "Cutting head close-up, with the roll forming stations and control panel behind", "Cutting head with C profile die and its hydraulic connections"],
         "features": [
           {
             "title": "Three sections on one line",
@@ -2257,10 +2259,8 @@
           "Solar mounting profiles",
           "C, U and sigma structural profiles"
         ],
-        "galleryAlt": [
-          "Roller unit at the entry of the Servo Punch Press",
-          "In line: decoiler, straightener servo feeder and Servo Punch Press, with the roll forming line behind"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 from the front, with the punched strip leaving the press", "Servo Punch Press SRV-SP6 and its control panel, side view"],
+        "galleryAlt": ["Servo Punch Press in line, with the straightener servo feeder and decoiler behind", "Servo Punch Press and straightener servo feeder, with the roll forming line behind"],
         "faq": [
           {
             "q": "Where does the Servo Punch Press sit in the line?",

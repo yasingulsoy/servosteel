@@ -1376,6 +1376,7 @@
         "short": "Perfilado de alta velocidad para perfiles de montaje fotovoltaico.",
         "hero": "Una línea que produce perfiles hat, C y Omega para las estructuras de plantas solares directamente desde la bobina; el punzonado abre los agujeros de montaje en línea y los perfiles llegan a obra listos para instalar.",
         "meta": "Línea de perfiles de montaje solar: línea completa de perfilado de alta velocidad con punzonado para estructuras fotovoltaicas.",
+        "showcaseAlt": ["Línea de perfilado de perfil C: unidad de corte y estaciones de conformado", "Estaciones de perfilado, con la Servo Punch Press al fondo", "Vista general de la línea de perfilado de perfil C"],
         "features": [
           {
             "title": "Forma de perfil según proyecto",
@@ -1904,6 +1905,7 @@
         "short": "Perfiles de acero ligero: varias secciones en una línea.",
         "hero": "Una solución flexible que produce perfiles C, Sigma y Omega — los portantes de la construcción en acero ligero — en una sola línea; el cambio de sección se hace en minutos gracias a los grupos de rodillos regulables y al sistema de recetas.",
         "meta": "Línea de perfiles C, Sigma y Omega: perfilado regulable multisección para estructura de acero ligero.",
+        "showcaseAlt": ["Unidad de corte para perfil C: cabezal de corte inclinado y su matriz", "Primer plano del cabezal de corte, con las estaciones de perfilado y el panel de control detrás", "Cabezal de corte con matriz de perfil C y sus conexiones hidráulicas"],
         "features": [
           {
             "title": "Tres secciones en una línea",
@@ -2177,10 +2179,8 @@
           "Perfiles para estructuras solares",
           "Perfiles estructurales C, U y sigma"
         ],
-        "galleryAlt": [
-          "Unidad de rodillos a la entrada de la Servo Punch Press",
-          "En línea: desbobinadora, alimentador servo con enderezadora y Servo Punch Press, con la línea de perfilado detrás"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 de frente: la banda punzonada sale de la prensa", "Servo Punch Press SRV-SP6 y su panel de control, vista lateral"],
+        "galleryAlt": ["Servo Punch Press en línea, con el alimentador servo con enderezadora y la desbobinadora detrás", "Servo Punch Press y alimentador servo con enderezadora, con la línea de perfilado detrás"],
         "faq": [
           {
             "q": "¿Dónde va la Servo Punch Press dentro de la línea?",

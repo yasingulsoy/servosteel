@@ -5,12 +5,35 @@
 
 export const rollFormItems = [
   { slug: "kablo-kanali", icon: "kablo" },
-  { slug: "solar-profil", icon: "solar" },
+  {
+    slug: "solar-profil",
+    icon: "solar",
+    /* Vitrin (bkz. showcaseOf): C profil hattı — kesme ünitesiyle hat, istasyonlar
+       (arkada Servo Punch Pres), genel görünüm. Sayfada ana fotoğrafın (kırmızı
+       100. yıl kesme kafası) yerini alır; ana fotoğraf kartlarda duruyor. */
+    showcase: [
+      { file: "solar-profil-hat.jpg", width: 1290, height: 716 },
+      { file: "solar-profil-istasyonlar.jpg", width: 5120, height: 3840 },
+      { file: "solar-profil-genel.jpg", width: 4032, height: 3024 },
+    ],
+    hideMainPhoto: true,
+  },
   { slug: "agir-raf", icon: "raf" },
   { slug: "iskele-kalas", icon: "iskele" },
   { slug: "yol-bariyeri", icon: "bariyer" },
   { slug: "gurultu-bariyeri", icon: "gurultu" },
-  { slug: "c-sigma-omega", icon: "csigma" },
+  {
+    slug: "c-sigma-omega",
+    icon: "csigma",
+    /* Vitrin (bkz. showcaseOf): C profil kesme ünitesi ve kalıp yakın planları.
+       Sayfada ana fotoğrafın yerini alır; ana fotoğraf kartlarda duruyor. */
+    showcase: [
+      { file: "c-sigma-omega-kesme.jpg", width: 1290, height: 713 },
+      { file: "c-sigma-omega-kesme-kafasi.jpg", width: 4032, height: 3024 },
+      { file: "c-sigma-omega-kalip.jpg", width: 4032, height: 3024 },
+    ],
+    hideMainPhoto: true,
+  },
   /* Saha fotoğrafı henüz yok — ürün görseli bölümü basılmaz (bkz. hasPhoto) */
   { slug: "trapez-cephe-paneli", icon: "csigma", noPhoto: true },
 ] as const;
@@ -26,10 +49,17 @@ export const machineItems = [
   },
   {
     slug: "servo-punch-pres",
-    /* Ek saha fotoğrafları (bkz. galleryOf): giriş ünitesi yakın plan, hat görünümü */
+    /* Vitrin (bkz. showcaseOf): SRV-SP6 önden (şeritle) ve yandan. Ana fotoğraf
+       da önden görünüm — kartlarda o kullanılıyor, sayfada vitrin yeter.
+       Yan sütun (bkz. galleryOf): açıcı/sürücüyle hatta, doğrultmalı sürücüyle. */
+    showcase: [
+      { file: "servo-punch-pres.jpg", width: 5120, height: 3840 },
+      { file: "servo-punch-pres-yan.jpg", width: 5120, height: 3840 },
+    ],
+    hideMainPhoto: true,
     gallery: [
-      { file: "servo-punch-pres-giris.jpg", ratio: "square" },
-      { file: "servo-punch-pres-hat.jpg", ratio: "4/3" },
+      { file: "servo-punch-pres-besleme.jpg", ratio: "video" },
+      { file: "servo-punch-pres-dogrultma.jpg", ratio: "video" },
     ],
   },
   {
@@ -106,7 +136,7 @@ export function hasPhoto(slug: string): boolean {
   return !all.find((i) => i.slug === slug)?.noPhoto;
 }
 
-type GaleriFoto = { file: string; ratio: "4/3" | "square" };
+type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
 
 /**
  * Makinenin ana fotoğrafının altında gösterilen ek fotoğraflar (`public/gorseller/`).
@@ -120,21 +150,33 @@ export function galleryOf(slug: string): readonly GaleriFoto[] {
 type Vitrin = { file: string; width: number; height: number };
 type VitrinliOge = { slug: string; showcase?: readonly Vitrin[]; hideMainPhoto?: boolean };
 
+const vitrinliOgeler = [...rollFormItems, ...machineItems] as ReadonlyArray<VitrinliOge>;
+
 /**
  * Sayfa başlığının hemen altında, kırpılmadan gösterilen vitrin fotoğrafları
- * (`public/gorseller/`): tek fotoğraf tam genişlikte, iki fotoğraf yan yana.
- * Geniş saha fotoğrafları yan sütunun 4:3 kutusunda kenarlarından kırpılıyordu.
- * Ölçüler dosyanın gerçek pikselleri: en-boy oranı bunlardan gelir, yüklenirken
- * sayfa kaymaz. Alt metinleri mesaj dosyasında
- * `products.machines.<slug>.showcaseAlt`, aynı sırayla.
+ * (`public/gorseller/`, bkz. components/vitrin.tsx). Geniş saha fotoğrafları
+ * yan sütunun 4:3 kutusunda kenarlarından kırpılıyordu. Ölçüler dosyanın
+ * gerçek pikselleri: en-boy oranı bunlardan gelir, yüklenirken sayfa kaymaz.
+ * Alt metinleri mesaj dosyasında `products.{machines|rollform}.<slug>.showcaseAlt`,
+ * aynı sırayla.
  */
 export function showcaseOf(slug: string): readonly Vitrin[] {
-  return (machineItems as ReadonlyArray<VitrinliOge>).find((i) => i.slug === slug)?.showcase ?? [];
+  return vitrinliOgeler.find((i) => i.slug === slug)?.showcase ?? [];
 }
 
-/** Ana fotoğraf makine sayfasında gösterilmesin mi (vitrin onun yerini alır). */
+/** Ana fotoğraf ürün sayfasında gösterilmesin mi (vitrin onun yerini alır). */
 export function hidesMainPhoto(slug: string): boolean {
-  return !!(machineItems as ReadonlyArray<VitrinliOge>).find((i) => i.slug === slug)?.hideMainPhoto;
+  return !!vitrinliOgeler.find((i) => i.slug === slug)?.hideMainPhoto;
+}
+
+/**
+ * Sayfanın paylaşım/şema görseli: ana fotoğraf sayfada gösterilmiyorsa sayfada
+ * görünen ilk vitrin fotoğrafı.
+ */
+export function pageImageOf(slug: string): string | undefined {
+  if (!hasPhoto(slug)) return undefined;
+  const vitrin = showcaseOf(slug);
+  return hidesMainPhoto(slug) && vitrin.length ? `/gorseller/${vitrin[0].file}` : `/gorseller/${slug}.jpg`;
 }
 
 export function rollFormIcon(slug: string) {

@@ -1376,6 +1376,7 @@
         "short": "Schnelles Rollforming für PV-Montageprofile.",
         "hero": "Eine Anlage, die Hut-, C- und Omega-Profile für die Unterkonstruktion von Solarkraftwerken direkt vom Coil fertigt; Stanzstationen setzen die Montagelöcher inline — die Profile kommen montagefertig auf die Baustelle.",
         "meta": "Solarmontageprofil-Anlage: komplette Hochgeschwindigkeits-Rollformanlage mit Stanzstationen für PV-Konstruktionsprofile.",
+        "showcaseAlt": ["Profilieranlage für C-Profile: Trenneinheit und Umformstationen", "Umformstationen, im Hintergrund die Servo Punch Press", "Gesamtansicht der Profilieranlage für C-Profile"],
         "features": [
           {
             "title": "Profilform nach Projekt",
@@ -1904,6 +1905,7 @@
         "short": "Leichtbau-Stahlprofile: mehrere Querschnitte auf einer Anlage.",
         "hero": "Eine flexible Lösung, die C-, Sigma- und Omega-Profile — die Träger des Stahlleichtbaus — auf einer Anlage fertigt; der Wechsel zwischen Querschnitten dauert dank verstellbarer Rollengruppen und Rezeptsystem nur Minuten.",
         "meta": "C-, Sigma- und Omega-Profilanlage: verstellbares Mehrquerschnitt-Rollforming für den Stahlleichtbau.",
+        "showcaseAlt": ["Trenneinheit für C-Profile: schräger Schneidkopf mit Werkzeug", "Schneidkopf in Nahaufnahme, dahinter Umformstationen und Bedienpult", "Schneidkopf mit C-Profil-Werkzeug und Hydraulikanschlüssen"],
         "features": [
           {
             "title": "Drei Querschnitte, eine Anlage",
@@ -2177,10 +2179,8 @@
           "Solar-Unterkonstruktionsprofile",
           "C-, U- und Sigma-Bauprofile"
         ],
-        "galleryAlt": [
-          "Rolleneinheit am Einlauf der Servo Punch Press",
-          "In der Anlage: Abwickelhaspel, Richt-Servovorschub und Servo Punch Press, dahinter die Profilieranlage"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 von vorn: das gelochte Band läuft aus der Presse", "Servo Punch Press SRV-SP6 mit Bedienpult, Seitenansicht"],
+        "galleryAlt": ["Servo Punch Press in der Anlage, dahinter Richt-Servovorschub und Abwickelhaspel", "Servo Punch Press und Richt-Servovorschub, dahinter die Profilieranlage"],
         "faq": [
           {
             "q": "Wo steht die Servo Punch Press in der Anlage?",

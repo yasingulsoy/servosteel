@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Check, Cog } from "lucide-react";
@@ -13,18 +12,11 @@ import { Reveal } from "@/components/reveal";
 import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto } from "@/lib/catalog";
+import { Vitrin } from "@/components/vitrin";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
-
-/* Sayfanın paylaşım/şema görseli: ana fotoğraf sayfada gösterilmiyorsa
-   sayfada görünen ilk vitrin fotoğrafı. */
-function sayfaGorseli(slug: string): string | undefined {
-  if (!hasPhoto(slug)) return undefined;
-  const vitrin = showcaseOf(slug);
-  return hidesMainPhoto(slug) && vitrin.length ? `/gorseller/${vitrin[0].file}` : `/gorseller/${slug}.jpg`;
-}
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -42,7 +34,7 @@ export async function generateMetadata({ params }: Props) {
   return sayfaMeta(locale as AppLocale, `/makineler/${slug}`, {
     baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
     aciklama: t("meta"),
-    gorsel: sayfaGorseli(slug),
+    gorsel: pageImageOf(slug),
   });
 }
 
@@ -74,7 +66,7 @@ export default async function MachinePage({ params }: Props) {
   const vitrin = showcaseOf(slug);
   const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
   const anaFoto = hasPhoto(slug) && !hidesMainPhoto(slug);
-  const gorsel = sayfaGorseli(slug);
+  const gorsel = pageImageOf(slug);
 
   /**
    * Makine sayfası şeması.
@@ -135,26 +127,9 @@ export default async function MachinePage({ params }: Props) {
         description={t("hero")}
       />
 
-      {/* Vitrin — kendi en-boy oranında: tek fotoğraf tam genişlik, iki fotoğraf
-          masaüstünde yan yana (bkz. showcaseOf) */}
-      {vitrin.length > 0 && (
-        <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
-          <div className={`grid gap-4 lg:gap-6 ${vitrin.length > 1 ? "sm:grid-cols-2" : ""}`}>
-            {vitrin.map((v, i) => (
-              <Image
-                key={v.file}
-                src={`/gorseller/${v.file}`}
-                alt={vitrinAlt[i] ?? t("name")}
-                width={v.width}
-                height={v.height}
-                sizes={vitrin.length > 1 ? "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 616px" : "(max-width: 1280px) 100vw, 1216px"}
-                loading="eager"
-                className="h-auto w-full rounded-2xl border border-line bg-surface-alt"
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      <Vitrin
+        fotolar={vitrin.map((v, i) => ({ src: `/gorseller/${v.file}`, alt: vitrinAlt[i] ?? t("name"), width: v.width, height: v.height }))}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">

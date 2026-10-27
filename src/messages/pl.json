@@ -1376,6 +1376,7 @@
         "short": "Szybkie profilowanie profili montażowych PV.",
         "hero": "Linia produkująca profile hat, C i Omega do konstrukcji nośnych elektrowni słonecznych bezpośrednio z kręgu; stacje wykrawania wykonują otwory montażowe w linii, a profile trafiają na budowę gotowe do montażu.",
         "meta": "Linia profili montażowych solarnych: kompletna, szybka linia profilująca ze stacjami wykrawania do konstrukcji PV.",
+        "showcaseAlt": ["Linia do profilowania profili C: jednostka cięcia i stacje formujące", "Stacje profilujące, w tle Servo Punch Press", "Widok ogólny linii do profilowania profili C"],
         "features": [
           {
             "title": "Kształt profilu pod projekt",
@@ -1904,6 +1905,7 @@
         "short": "Profile lekkiej konstrukcji stalowej: wiele przekrojów na jednej linii.",
         "hero": "Elastyczne rozwiązanie produkujące profile C, Sigma i Omega — nośne elementy lekkich konstrukcji stalowych — na jednej linii; zmiana przekroju zajmuje minuty dzięki regulowanym grupom rolek i systemowi receptur.",
         "meta": "Linia profili C, Sigma i Omega: regulowane, wieloprzekrojowe profilowanie do lekkich konstrukcji stalowych.",
+        "showcaseAlt": ["Jednostka cięcia profili C: pochylona głowica tnąca i jej matryca", "Głowica tnąca z bliska, za nią stacje profilujące i pulpit sterowniczy", "Głowica tnąca z matrycą do profilu C i przyłączami hydraulicznymi"],
         "features": [
           {
             "title": "Trzy przekroje na jednej linii",
@@ -2177,10 +2179,8 @@
           "Profile do konstrukcji solarnych",
           "Profile konstrukcyjne C, U i sigma"
         ],
-        "galleryAlt": [
-          "Zespół rolkowy na wejściu Servo Punch Press",
-          "W linii: odwijak, podajnik serwo z prostownicą i Servo Punch Press, za nimi linia profilująca"
-        ],
+        "showcaseAlt": ["Servo Punch Press SRV-SP6 od przodu: wykrojona taśma wychodzi z prasy", "Servo Punch Press SRV-SP6 i pulpit sterowniczy, widok z boku"],
+        "galleryAlt": ["Servo Punch Press w linii, za nią podajnik serwo z prostownicą i odwijak", "Servo Punch Press i podajnik serwo z prostownicą, za nimi linia profilująca"],
         "faq": [
           {
             "q": "Gdzie w linii stoi Servo Punch Press?",

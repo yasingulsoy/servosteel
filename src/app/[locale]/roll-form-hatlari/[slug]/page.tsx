@@ -12,7 +12,8 @@ import { ProductShot } from "@/components/product-shot";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { rollFormItems, isRollFormSlug, rollFormIcon, hasPhoto } from "@/lib/catalog";
+import { Vitrin } from "@/components/vitrin";
+import { rollFormItems, isRollFormSlug, rollFormIcon, hasPhoto, showcaseOf, pageImageOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props) {
        olduğunda devreye giriyor (ör. "trapez sac makinesi" 690/ay). */
     baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
     aciklama: t("meta"),
-    gorsel: hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
+    gorsel: pageImageOf(slug),
   });
 }
 
@@ -65,6 +66,8 @@ export default async function RollFormLinePage({ params }: Props) {
   const hasTable = t.has("table");
   const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
   const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
+  const vitrin = showcaseOf(slug);
+  const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
 
   return (
     <>
@@ -80,13 +83,20 @@ export default async function RollFormLinePage({ params }: Props) {
         description={t("hero")}
       />
 
-      <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
-        <Reveal>
-          {hasPhoto(slug) && (
-            <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} priority />
-          )}
-        </Reveal>
-      </div>
+      {/* Vitrin varsa ana fotoğrafın yerini alır (bkz. showcaseOf) */}
+      {vitrin.length > 0 ? (
+        <Vitrin
+          fotolar={vitrin.map((v, i) => ({ src: `/gorseller/${v.file}`, alt: vitrinAlt[i] ?? t("name"), width: v.width, height: v.height }))}
+        />
+      ) : (
+        <div className="mx-auto max-w-7xl px-4 pt-10 lg:pt-14">
+          <Reveal>
+            {hasPhoto(slug) && (
+              <ProductShot src={`/gorseller/${slug}.jpg`} alt={t("name")} priority />
+            )}
+          </Reveal>
+        </div>
+      )}
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">

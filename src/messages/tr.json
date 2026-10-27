@@ -1376,6 +1376,7 @@
         "short": "GES konstrüksiyon profilleri için yüksek hızlı roll form çözümü.",
         "hero": "Güneş enerjisi santrallerinin taşıyıcı konstrüksiyonunda kullanılan hat, C ve Omega profilleri rulodan doğrudan üreten hat; delme istasyonları montaj deliklerini hat üzerinde açar, profiller sahaya montaja hazır iner.",
         "meta": "Solar panel montaj profili üretim hattı: GES konstrüksiyon profilleri için delme istasyonlu, yüksek hızlı komple roll form hattı.",
+        "showcaseAlt": ["C profil roll form hattı: kesme ünitesi ve şekillendirme istasyonları", "Roll form istasyonları, arka planda Servo Punch Pres", "C profil roll form hattının genel görünümü"],
         "features": [
           {
             "title": "Projeye özel profil formu",
@@ -1917,6 +1918,7 @@
         "short": "Hafif çelik yapı profilleri: tek hatta birden çok kesit.",
         "hero": "Hafif çelik yapıların taşıyıcıları olan C, Sigma ve Omega profilleri tek hat üzerinde üreten esnek çözüm; kesitler arası geçiş ayarlanabilir merdane grupları ve reçete sistemiyle dakikalar içinde yapılır.",
         "meta": "C, Sigma ve Omega profil üretim hattı: hafif çelik yapı profilleri için ayarlanabilir, çok kesitli roll form çözümü.",
+        "showcaseAlt": ["C profil kesme ünitesi: eğik gövdeli kesme kafası ve kalıbı", "Kesme kafası yakın plan; arkada roll form istasyonları ve kontrol paneli", "C profil kalıplı kesme kafası ve hidrolik bağlantıları"],
         "features": [
           {
             "title": "Tek hatta üç kesit",
@@ -2194,10 +2196,8 @@
           "Solar konstrüksiyon profilleri",
           "C, U ve sigma yapı profilleri"
         ],
-        "galleryAlt": [
-          "Servo Punch Pres girişindeki merdaneli ünite",
-          "Hatta: açıcı, doğrultmalı servo sürücü ve Servo Punch Pres; arkada roll form hattı"
-        ],
+        "showcaseAlt": ["Servo Punch Pres SRV-SP6 önden: delinmiş şerit presten çıkıyor", "Servo Punch Pres SRV-SP6 ve kontrol paneli, yandan görünüm"],
+        "galleryAlt": ["Hatta Servo Punch Pres; arkada doğrultmalı servo sürücü ve açıcı", "Servo Punch Pres ve doğrultmalı servo sürücü; arkada roll form hattı"],
         "faq": [
           {
             "q": "Servo Punch Pres hattın neresinde durur?",
