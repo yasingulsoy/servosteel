@@ -529,10 +529,11 @@ export function SiteHeader() {
             seeAll={t("seeAll")}
             active={isActive("/uygulamalar")}
           />
-          <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} />
           <NavLink href="/fuarlar" label={tFair("title")} active={isActive("/fuarlar")} />
           <NavLink href="/hakkimizda" label={t("about")} active={isActive("/hakkimizda")} />
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} />
+          {/* Akademi en sonda (Yasin, 28 Eki) */}
+          <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} />
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -661,9 +662,6 @@ export function SiteHeader() {
                 ))}
               </ul>
             </details>
-            <Link href="/akademi" onClick={kapat} className={mobilSatir}>
-              {ak.nav}
-            </Link>
             <Link href="/fuarlar" onClick={kapat} className={mobilSatir}>
               {tFair("title")}
             </Link>
@@ -672,6 +670,9 @@ export function SiteHeader() {
             </Link>
             <Link href="/iletisim" onClick={kapat} className={mobilSatir}>
               {t("contact")}
+            </Link>
+            <Link href="/akademi" onClick={kapat} className={mobilSatir}>
+              {ak.nav}
             </Link>
 
             <div className="mt-2 flex items-center justify-center border-t border-line pt-3">
