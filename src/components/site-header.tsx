@@ -65,9 +65,32 @@ function useIsActive() {
   return (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 }
 
-/* Menü öğesinin yazı/zemin sınıfı — çubuk her yerde beyaz, yazı koyu */
+/* Menü öğesinin yazı/zemin sınıfı — çubuk her yerde beyaz, yazı koyu.
+   1280 px altında yan boşluk daralır, yazı boyu aynı kalır (bkz. MASAUSTU). */
 const OGE =
-  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-3 text-sm font-medium text-ink transition-colors hover:bg-surface-alt";
+  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-2 text-sm font-medium text-ink transition-colors hover:bg-surface-alt xl:px-3";
+
+/**
+ * Masaüstü menünün göründüğü genişlik. Menü yalnız 1280 px ve üstünde
+ * açılıyordu; küçük dizüstülerde (pencere daraltılmış ya da ekran ölçekli,
+ * 1100–1279 px) yalnız hamburger görünüyordu (Yasin, 28 Eki 2026).
+ * Ölçülen en küçük genişlik (logo + 7 öğe + sağ düğmeler, daraltılmış
+ * boşlukla): ar 998, tr 1034, hu 1054, pl 1077, en 1107, it 1126, es 1152,
+ * de 1162 px. Eşikler bunun 15-45 px üstünde. Rusça "Производственные линии"
+ * ile 1280'de 63 px taşıyordu; menü etiketi "Линии" oldu (panel başlıkları
+ * zaten "Линии профилирования…"). Etiket değişirse yeniden ölç. Sınıflar tam
+ * yazılı — Tailwind kaynağı tarar.
+ */
+const MASAUSTU: Record<string, { goster: string; gizle: string }> = {
+  ru: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
+  de: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
+  es: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
+  en: { goster: "min-[1150px]:flex", gizle: "min-[1150px]:hidden" },
+  it: { goster: "min-[1150px]:flex", gizle: "min-[1150px]:hidden" },
+};
+function masaustuSiniflari(locale: string) {
+  return MASAUSTU[locale] ?? { goster: "min-[1100px]:flex", gizle: "min-[1100px]:hidden" };
+}
 
 /* Etkin sayfanın altın alt çizgisi */
 function AltCizgi({ active, grup }: { active: boolean; grup: "nl" | "mm" }) {
@@ -379,7 +402,9 @@ export function SiteHeader() {
   const tHome = useTranslations("home");
   const tRulo = useTranslations("ruloIsleme");
   const tFair = useTranslations("fairs");
-  const ak = getAkademiUi(useLocale());
+  const locale = useLocale();
+  const ak = getAkademiUi(locale);
+  const masaustu = masaustuSiniflari(locale);
   const isActive = useIsActive();
   const [mobileOpen, setMobileOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -488,7 +513,7 @@ export function SiteHeader() {
             width={256}
             height={113}
             fetchPriority="high"
-            className="h-11 w-auto min-[360px]:h-12 xl:h-11 dark:opacity-0"
+            className="h-11 w-auto min-[360px]:h-12 min-[1100px]:h-10 xl:h-11 dark:opacity-0"
           />
           {/* Koyu temada: altın korunur, yazı beyaz */}
           <Image
@@ -497,11 +522,11 @@ export function SiteHeader() {
             aria-hidden
             width={256}
             height={113}
-            className="absolute inset-0 h-11 w-auto opacity-0 min-[360px]:h-12 xl:h-11 dark:opacity-100"
+            className="absolute inset-0 h-11 w-auto opacity-0 min-[360px]:h-12 min-[1100px]:h-10 xl:h-11 dark:opacity-100"
           />
         </Link>
 
-        <nav className="hidden h-full items-center xl:flex" aria-label={t("mainAria")}>
+        <nav className={`hidden h-full items-center ${masaustu.goster}`} aria-label={t("mainAria")}>
           <MakinePaneli
             label={t("machines")}
             active={isActive("/makineler")}
@@ -559,7 +584,7 @@ export function SiteHeader() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? t("menuClose") : t("menuOpen")}
-            className="flex size-10 items-center justify-center rounded-lg text-ink transition-colors hover:bg-surface-alt xl:hidden"
+            className={`flex size-10 items-center justify-center rounded-lg text-ink transition-colors hover:bg-surface-alt ${masaustu.gizle}`}
           >
             {/* İki ikon üst üste durur; açık/kapalı duruma göre dönerek yer değiştirir */}
             <span className="relative block size-5">
@@ -578,7 +603,7 @@ export function SiteHeader() {
         kalır, yükseklik animasyonlanır. Kapalıyken inert: bağlantılar Tab
         sırasına ve ekran okuyucuya girmez, görünmez menü tuzağı oluşmaz.
       */}
-      <div ref={menuRef} className={`menu-collapse mx-auto max-w-7xl xl:hidden ${mobileOpen ? "is-open" : ""}`}>
+      <div ref={menuRef} className={`menu-collapse mx-auto max-w-7xl ${masaustu.gizle} ${mobileOpen ? "is-open" : ""}`}>
         <div ref={menuInnerRef} inert={!mobileOpen} className="pt-2">
           <nav
             className="menu-stagger max-h-[calc(100svh-6rem)] space-y-1 overflow-y-auto rounded-2xl border border-line bg-surface p-3 shadow-xl shadow-black/10"
