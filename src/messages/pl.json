@@ -161,7 +161,7 @@
     "ctaTitle": "Linia profilująca zbudowana wokół Twojego profilu"
   },
   "machinesHub": {
-    "eyebrow": "Systemy podawania do pras",
+    "h1": "Systemy podawania do pras",
     "title": "Maszyny",
     "metaTitle": "Maszyny — Systemy Podawania do Pras",
     "metaDesc": "Odwijaki, podajniki serwo, podajniki serwo z prostownicą i linie kompaktowe: rozwiązania podawania do pras na zamówienie.",
@@ -259,6 +259,10 @@
       {
         "q": "Jak przebiega uruchomienie?",
         "a": "Linia jest w całości montowana i testowana w naszym zakładzie przed wysyłką; na miejscu pozostaje tylko montaż i rozruch. To wyraźnie skraca czas instalacji. Szkolenie operatorów odbywa się podczas rozruchu."
+      },
+      {
+        "q": "Czy budujecie kombinowane linie cięcia wzdłużnego i poprzecznego?",
+        "a": "Tak. Obie zaczynają się od tych samych zespołów — odwijaka, prostownicy i podajnika — a zespoły cięcia wzdłużnego i poprzecznego można połączyć w jednej linii, dzięki czemu ten sam krąg wychodzi jako taśma albo jako płaski arkusz. To, czy lepsza będzie jedna linia kombinowana, czy dwie osobne, zależy od proporcji Twoich zamówień na taśmę i arkusze. Prześlij masę kręgu, zakres grubości oraz szerokości i długości, które tniesz, a dobierzemy linię do tych danych."
       }
     ],
     "ctaTitle": "Dobierzmy Twoją linię cięcia",
@@ -2080,7 +2084,7 @@
       },
       "servo-suruculer": {
         "name": "Podajniki Walcowe Servo",
-        "metaTitle": "Podajnik servo do prasy: 0,2-4 mm, do 1.600 mm",
+        "metaTitle": "Podajnik servo do prasy – podajniki walcowe do 1.600 mm",
         "short": "Precyzyjne podawanie krokowe do pras; seria standardowa i mini.",
         "hero": "Podajniki walcowe servo przesuwają blachę do matrycy w krokach milimetrowych; technologia serwo Schneider Lexium zapewnia wysoką powtarzalność, synchronizację z prasą i łatwe zarządzanie recepturami.",
         "meta": "Podajnik servo do prasy: podajniki walcowe w serii standardowej i mini, precyzyjne podawanie blachy na napędzie Schneider Lexium, dobierane do prasy.",

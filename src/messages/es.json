@@ -161,7 +161,7 @@
     "ctaTitle": "Una línea de perfilado en torno a su perfil"
   },
   "machinesHub": {
-    "eyebrow": "Sistemas de alimentación de prensas",
+    "h1": "Sistemas de alimentación de prensas",
     "title": "Máquinas",
     "metaTitle": "Máquinas — Sistemas de Alimentación de Prensas",
     "metaDesc": "Desbobinadoras, alimentadores servo, alimentadores servo con enderezadora y líneas compactas: soluciones de alimentación de prensas a medida.",
@@ -259,6 +259,10 @@
       {
         "q": "¿Cómo es la puesta en marcha?",
         "a": "La línea se monta y prueba por completo en nuestras instalaciones antes del envío; en obra solo quedan el montaje y la puesta en marcha. Eso acorta el tiempo de instalación. La formación del operario se imparte durante la puesta en marcha."
+      },
+      {
+        "q": "¿Fabrican líneas combinadas de corte longitudinal y corte a medida?",
+        "a": "Sí. Ambas comienzan con las mismas unidades — desbobinador, enderezadora, alimentador — y las unidades de corte longitudinal y de corte a medida pueden combinarse en una sola línea, de modo que la misma bobina sale como fleje o como chapa plana. Que le convenga una línea combinada o dos líneas separadas depende de la proporción entre sus pedidos de fleje y de chapa. Envíenos el peso de bobina, el rango de espesores y los anchos y largos que corta, y dimensionaremos la línea en consecuencia."
       }
     ],
     "ctaTitle": "Dimensionemos su línea de corte",

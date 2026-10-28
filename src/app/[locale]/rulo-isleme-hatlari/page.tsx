@@ -8,6 +8,7 @@ import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedReading } from "@/components/related-reading";
+import { InlineQuote } from "@/components/inline-quote";
 import { machineItems } from "@/lib/catalog";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -108,6 +109,11 @@ export default async function RuloIslemeHatlariPage({ params }: Props) {
             </Reveal>
           ))}
         </div>
+
+        {/* Formu olmayan tek ticari sayfaydı (2026-10-28). "coil processing
+            line(s)" ve DE "Coilanlagen" bu sayfada toplanıyor; aramadan gelen
+            ziyaretçi teklifini aile seçmeden burada bırakabilsin. */}
+        <InlineQuote name={t("title")} />
       </section>
 
       <section className="border-y border-line bg-surface-alt">

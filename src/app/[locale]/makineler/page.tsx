@@ -28,14 +28,18 @@ export default async function MakinelerPage({ params }: Props) {
   const t = await getTranslations("machinesHub");
   const tm = await getTranslations("products.machines");
   const tc = await getTranslations("common");
+  const tRulo = await getTranslations("ruloIsleme");
   const guvence = ((await getTranslations("home")).raw("stats") as { value: string; label: string }[]).slice(0, 2);
 
   return (
     <>
+      {/* H1 alıcının aradığı terim (tr "Pres Besleme Sistemleri", en "Press
+          Feeders and Coil Feeders"); "Makineler" menüde, kırıntıda ve video
+          sayfalarında ad olarak kalır, burada üst etiket (2026-10-28). */}
       <PageHero
         crumbs={[{ label: t("title"), href: "/makineler" }]}
-        eyebrow={t("eyebrow")}
-        title={t("title")}
+        eyebrow={t("title")}
+        title={t("h1")}
         description={t("desc")}
       />
 
@@ -79,6 +83,15 @@ export default async function MakinelerPage({ params }: Props) {
             );
           })}
         </div>
+
+        {/* Makine alıcısı komple hattı da görsün — açıcı ve sürücü hatların ilk halkası */}
+        <Link
+          href="/rulo-isleme-hatlari"
+          className="group mt-10 inline-flex items-center gap-1.5 font-semibold text-accent-ink transition-colors hover:text-accent-strong"
+        >
+          {tRulo("nav")}
+          <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5 rtl:rotate-180" strokeWidth={1.8} aria-hidden />
+        </Link>
       </section>
 
       {/* Teklif formu makine ızgarasının hemen altında — bkz. quick-quote.tsx */}

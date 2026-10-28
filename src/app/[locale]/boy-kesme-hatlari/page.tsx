@@ -1,5 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Check, Crosshair, MonitorCog, Scissors, ShieldCheck } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
 import { CtaBand } from "@/components/cta-band";
@@ -14,6 +15,15 @@ import { RelatedReading } from "@/components/related-reading";
 type Props = { params: Promise<{ locale: string }> };
 
 const icons = [Crosshair, Scissors, MonitorCog, ShieldCheck];
+
+/* Ayrı satılan makineye bağlanan bileşen — `boykesme.components` SIRASINA göre
+   (9 dilde aynı sıra, 2026-10-28). Liste sırası değişirse eşleme bozulur.
+   "Otomatik servo besleme" (3) ayrı sattığımız servo sürücüyle aynı ürün mü,
+   firmadan teyit bekliyor; o gelene kadar bağlanmaz. */
+const BILESEN_SAYFASI: Record<number, string> = {
+  0: "/makineler/rulo-acicilar",
+  5: "/makineler/otomatik-istifleyici",
+};
 
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
@@ -93,10 +103,16 @@ export default async function BoyKesmeHatlariPage({ params }: Props) {
                   {td("components")}
                 </h2>
                 <ul className="mt-5 space-y-3">
-                  {components.map((c) => (
+                  {components.map((c, i) => (
                     <li key={c} className="flex items-start gap-2.5 text-sm text-zinc-300">
                       <Check className="mt-0.5 size-4 shrink-0 text-accent" strokeWidth={2.2} aria-hidden />
-                      {c}
+                      {BILESEN_SAYFASI[i] ? (
+                        <Link href={BILESEN_SAYFASI[i]} className="text-white underline decoration-accent/60 underline-offset-4 transition-colors hover:decoration-accent">
+                          {c}
+                        </Link>
+                      ) : (
+                        c
+                      )}
                     </li>
                   ))}
                 </ul>

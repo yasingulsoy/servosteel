@@ -264,6 +264,22 @@ söyler: 500 = mail gitmedi (talep panelde "mail gitmedi" işaretiyle duruyor,
 SMTP/kota bakılır), 429 = hız sınırı, 400 = geçersiz alan, 0 = ağ (§E.25). İkisi de `IS_PRODUCTION_SITE` korumasına bağlı —
 önizleme kopyalarında hiç yüklenmez.
 
+**28 Ekim 2026 yayını — 4 hafta sonra (25 Kasım civarı) ölç.** Menü ikiye ayrıldı
+(Makineler / Üretim Hatları) ve şu sayfa değişiklikleri birlikte çıktı. Öncesi ile
+sonrası bu tarihten ayrı okunur:
+
+| değişiklik | izlenecek sorgu → beklenen sayfa | 28 Eki öncesi (28 gün) |
+|---|---|---|
+| EN dilme SSS'sindeki "What is a coil processing line?" kaldırıldı, rulo işleme hub'ına form kondu | "coil processing line(s)" → /en/coil-processing-lines | hub 14,9 (107 gös.), dilme 24,6; tekilde dilme 16,8, hub 29,6; 0 tık |
+| DE hub "Coilanlagen" (title, H1, nav, SSS) | "coilanlagen", "coilanlage" → /de/coil-processing-lines | 19,9 (87) · 16,0 (25) |
+| Makine hub'ı H1: tr "Pres Besleme Sistemleri", en "Press Feeders and Coil Feeders" | "pres besleme sistemleri" → /makineler; "press feeder" | 16,1 (14 gös., 2 tık); press feeder /en/machines/servo-feeders'ta 4,2 |
+| TR rulo açıcı başlığı "Rulo Açıcı ve Rulo Sac Açma Makinesi" | "rulo açma makinesi", "hidrolik rulo açıcı" → /makineler/rulo-acicilar | 26–44; 8,2 |
+| PL servo sürücü başlığına "podajniki walcowe" | "podajniki walcowe", "podajnik walcowy" | 9,8 (34) · 18,5 (13) |
+| Hat ↔ makine çapraz bağlantıları, TR Akademi girişlerinden ürüne bağlantı, 9 dilde kombine dilme/boy kesme SSS'si | "dilme hattı" → /dilme-hatlari (Akademi değil) | Akademi 5,8, ürün 15 |
+
+**Geri alma kuralı:** servo-feeders "servo feeder"da düşerse (28 Eki: 5,8) EN makine
+hub'ının H1'i eski haline döner — iki sayfa "press feeder"da yarışıyor olabilir.
+
 ### C.3 İzlenen kelimeler — sıralama takibi
 
 ```bash

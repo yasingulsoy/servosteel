@@ -161,7 +161,7 @@
     "ctaTitle": "Profilozó sor az Ön profiljára szabva"
   },
   "machinesHub": {
-    "eyebrow": "Présadagoló rendszerek",
+    "h1": "Présadagoló rendszerek",
     "title": "Gépek",
     "metaTitle": "Gépek — Présadagoló Rendszerek",
     "metaDesc": "Lecsévélők, szervoadagolók, egyengetős szervoadagolók és kompakt sorok: egyedi présadagoló megoldások.",
@@ -259,6 +259,10 @@
       {
         "q": "Hogyan zajlik az üzembe helyezés?",
         "a": "A sort szállítás előtt saját üzemünkben teljesen felépítjük és teszteljük; a helyszínen már csak a telepítés és az üzembe helyezés marad. Ez érezhetően lerövidíti a telepítési időt. A kezelők betanítása az üzembe helyezés során történik."
+      },
+      {
+        "q": "Gyártanak kombinált hasító és keresztvágó sort?",
+        "a": "Igen. Mindkettő ugyanazokkal az egységekkel kezdődik — lecsévélő, egyengető, adagoló —, a hasító és a keresztvágó egység pedig egyetlen sorban kombinálható, így ugyanaz a tekercs szalagként vagy sík táblaként is kijöhet. Hogy egy kombinált sor vagy két külön sor illik-e jobban Önhöz, az a szalag- és táblarendelései arányától függ. Küldje el a tekercs tömegét, a vastagsági tartományt, valamint a vágott szélességeket és hosszakat, és ezekhez méretezzük a sort."
       }
     ],
     "ctaTitle": "Méretezzük a hasító sorát",

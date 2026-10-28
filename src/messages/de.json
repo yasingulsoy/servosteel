@@ -161,7 +161,7 @@
     "ctaTitle": "Eine Rollformanlage rund um Ihr Profil"
   },
   "machinesHub": {
-    "eyebrow": "Pressenzuführsysteme",
+    "h1": "Pressenzuführsysteme",
     "title": "Maschinen",
     "metaTitle": "Maschinen — Pressenzuführsysteme",
     "metaDesc": "Abwickelhaspeln, Servovorschübe, Richt-Servovorschübe und Kompaktanlagen: kundenspezifische Pressenzuführlösungen.",
@@ -259,18 +259,22 @@
       {
         "q": "Wie läuft die Inbetriebnahme ab?",
         "a": "Die Anlage wird vor dem Versand in unserem Werk komplett aufgebaut und getestet; vor Ort bleiben nur Montage und Inbetriebnahme. Das verkürzt die Installationszeit deutlich. Die Bedienerschulung erfolgt während der Inbetriebnahme."
+      },
+      {
+        "q": "Bauen Sie kombinierte Längsteil- und Querteilanlagen?",
+        "a": "Ja. Beide beginnen mit denselben Einheiten — Abwickelhaspel, Richtmaschine, Vorschub — und die Längsteil- und Querteileinheiten lassen sich in einer Linie kombinieren, sodass dasselbe Coil als Streifen oder als ebene Tafel herauskommt. Ob eine kombinierte Linie oder zwei getrennte Anlagen besser passen, hängt vom Verhältnis Ihrer Streifen- und Tafelaufträge ab. Senden Sie uns Coilgewicht, Dickenbereich sowie die Breiten und Längen, die Sie schneiden — wir legen die Linie danach aus."
       }
     ],
     "ctaTitle": "Legen wir Ihre Längsteilanlage aus",
     "ctaText": "Nennen Sie Coilgewicht, Blechdicke und Bandmaße; gemeinsam definieren wir die passende Baureihe und das Layout."
   },
   "ruloIsleme": {
-    "nav": "Coil-Bearbeitungsanlagen",
+    "nav": "Coilanlagen",
     "short": "Alle drei Anlagenfamilien — Längsteilen, Querteilen, Rollformen — auf einer Seite.",
-    "metaTitle": "Coil-Anlagen: Längsteilen, Querteilen, Rollformen",
-    "metaDesc": "Coil-Bearbeitungsanlagen aus Istanbul: Längsteil-, Querteil- und Rollformanlagen samt Haspeln, Richtmaschinen, Servovorschüben und Staplern.",
+    "metaTitle": "Coilanlagen: Längsteilen, Querteilen und Rollformen",
+    "metaDesc": "Coilanlagen aus Istanbul: Längsteil-, Querteil- und Rollformanlagen samt Haspeln, Richtmaschinen, Servovorschüben und Staplern.",
     "eyebrow": "Anlagen",
-    "title": "Coil-Bearbeitungsanlagen",
+    "title": "Coilanlagen",
     "desc": "Jede Anlage, die vom Coil ausgeht, beginnt gleich: Abwickelhaspel, Richtmaschine, Vorschub. Danach trennen sich die Wege — Streifen, Tafel oder Profil. Wir konstruieren und bauen alle drei Familien; jede Anlage wird auf Ihr Profil, Ihre Dicke und Ihre Kapazität ausgelegt.",
     "familiesTitle": "Drei Anlagenfamilien",
     "families": {
@@ -296,10 +300,10 @@
       }
     ],
     "faqEyebrow": "Häufige Fragen",
-    "faqTitle": "Rund um Coil-Bearbeitungsanlagen",
+    "faqTitle": "Rund um Coilanlagen",
     "faq": [
       {
-        "q": "Was ist eine Coil-Bearbeitungsanlage?",
+        "q": "Was ist eine Coilanlage?",
         "a": "So heißen Anlagen, die Stahl vom Coil abwickeln und weiterverarbeiten. Alle drei beginnen mit Haspel und Richtmaschine: die Längsteilanlage liefert Streifen, die Querteilanlage Tafeln auf Maß, die Rollformanlage ein fertiges Profil."
       },
       {

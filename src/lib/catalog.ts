@@ -39,7 +39,12 @@ export const rollFormItems = [
 ] as const;
 
 export const machineItems = [
-  { slug: "rulo-acicilar" },
+  {
+    slug: "rulo-acicilar",
+    /* "Kullanım alanları" çiplerinin bağlantısı, `sectors` SIRASINA göre (bkz.
+       usageLinksOf): Pres besleme, Dilme, Boy kesme, Roll form — 9 dilde aynı sıra */
+    usageLinks: ["/makineler", "/dilme-hatlari", "/boy-kesme-hatlari", "/roll-form-hatlari"],
+  },
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
   {
@@ -72,6 +77,9 @@ export const machineItems = [
       { file: "otomatik-istifleyici-paket.jpg", width: 1004, height: 754 },
     ],
     hideMainPhoto: true,
+    /* Sonuna takıldığı hatlar — kullanım çiplerinin önüne bağlantılı çip olarak
+       (bkz. linesOf). Dilme yok: dilme hattı levha istiflemez, ruloyu geri sarar. */
+    lines: ["/boy-kesme-hatlari", "/roll-form-hatlari"],
   },
 ] as const;
 
@@ -145,6 +153,22 @@ type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
 export function galleryOf(slug: string): readonly GaleriFoto[] {
   const all = machineItems as ReadonlyArray<{ slug: string; gallery?: readonly GaleriFoto[] }>;
   return all.find((i) => i.slug === slug)?.gallery ?? [];
+}
+
+type BaglantiliMakine = { slug: string; usageLinks?: readonly string[]; lines?: readonly string[] };
+
+/**
+ * Makine sayfasındaki "Kullanım alanları" çiplerinin bağlantıları —
+ * `products.machines.<slug>.sectors` ile AYNI SIRADA. Boş dizi: çipler düz metin.
+ * Hat sayfaları ile makine sayfaları arasında karşılıklı bağlantı (2026-10-28).
+ */
+export function usageLinksOf(slug: string): readonly string[] {
+  return (machineItems as ReadonlyArray<BaglantiliMakine>).find((i) => i.slug === slug)?.usageLinks ?? [];
+}
+
+/** Makinenin sonuna takıldığı hat sayfaları — kullanım çiplerinin önünde bağlantılı çip. */
+export function linesOf(slug: string): readonly string[] {
+  return (machineItems as ReadonlyArray<BaglantiliMakine>).find((i) => i.slug === slug)?.lines ?? [];
 }
 
 type Vitrin = { file: string; width: number; height: number };

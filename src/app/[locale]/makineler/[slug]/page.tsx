@@ -13,7 +13,7 @@ import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
 import { Vitrin } from "@/components/vitrin";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -67,6 +67,18 @@ export default async function MachinePage({ params }: Props) {
   const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
   const anaFoto = hasPhoto(slug) && !hidesMainPhoto(slug);
   const gorsel = pageImageOf(slug);
+  /* Kullanım çipleri: bağlantısı olan çip hat sayfasına gider (bkz. usageLinksOf,
+     linesOf). Hat adları o sayfanın kendi başlığından — menüyle birebir aynı. */
+  const kullanimBag = usageLinksOf(slug);
+  const hatAdi: Record<string, string> = {
+    "/dilme-hatlari": (await getTranslations("dilme"))("title"),
+    "/boy-kesme-hatlari": (await getTranslations("boykesme"))("title"),
+    "/roll-form-hatlari": (await getTranslations("hub"))("title"),
+  };
+  const ciplar = [
+    ...linesOf(slug).map((href) => ({ label: hatAdi[href], href })),
+    ...sectors.map((label, i) => ({ label, href: kullanimBag[i] as string | undefined })),
+  ];
 
   /**
    * Makine sayfası şeması.
@@ -120,6 +132,7 @@ export default async function MachinePage({ params }: Props) {
       />
       <PageHero
         crumbs={[
+          { label: (await getTranslations("machinesHub"))("title"), href: "/makineler" },
           { label: tm(`${slug}.name`), href: `/makineler/${slug}` },
         ]}
         eyebrow={td("eyebrowMachine")}
@@ -225,9 +238,19 @@ export default async function MachinePage({ params }: Props) {
                 {td("usage")}
               </h2>
               <ul className="mt-6 flex flex-wrap gap-2.5">
-                {sectors.map((s) => (
-                  <li key={s} className="rounded-full border border-line bg-card px-4 py-2 text-sm font-medium text-ink">
-                    {s}
+                {ciplar.map((c) => (
+                  <li key={c.label}>
+                    {c.href ? (
+                      <Link
+                        href={c.href}
+                        className="group/c inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-card px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-accent hover:bg-accent/10"
+                      >
+                        {c.label}
+                        <ArrowRight className="size-3.5 text-accent-ink transition-transform group-hover/c:translate-x-0.5 rtl:rotate-180" strokeWidth={2} aria-hidden />
+                      </Link>
+                    ) : (
+                      <span className="block rounded-full border border-line bg-card px-4 py-2 text-sm font-medium text-ink">{c.label}</span>
+                    )}
                   </li>
                 ))}
               </ul>

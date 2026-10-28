@@ -161,7 +161,7 @@
     "ctaTitle": "Una linea di profilatura costruita sul tuo profilo"
   },
   "machinesHub": {
-    "eyebrow": "Sistemi di alimentazione presse",
+    "h1": "Sistemi di alimentazione presse",
     "title": "Macchine",
     "metaTitle": "Macchine — Sistemi di Alimentazione Presse",
     "metaDesc": "Svolgitori, alimentatori servo, alimentatori servo con raddrizzatrice e linee compatte: soluzioni di alimentazione presse su misura.",
@@ -259,6 +259,10 @@
       {
         "q": "Come avviene la messa in servizio?",
         "a": "La linea viene montata e collaudata integralmente nel nostro stabilimento prima della spedizione; in cantiere restano solo montaggio e avviamento. Questo riduce sensibilmente i tempi di installazione. La formazione degli operatori avviene durante la messa in servizio."
+      },
+      {
+        "q": "Realizzate linee combinate di taglio longitudinale e taglio a misura?",
+        "a": "Sì. Entrambe iniziano con le stesse unità — svolgitore, raddrizzatrice, alimentatore — e le unità di taglio longitudinale e di taglio a misura possono essere combinate in un'unica linea, così lo stesso coil esce come nastro o come lamiera piana. Se vi conviene una linea combinata o due linee separate dipende dal rapporto tra i vostri ordini di nastro e di lamiera. Inviateci il peso del coil, la gamma di spessori e le larghezze e lunghezze che tagliate: dimensioneremo la linea di conseguenza."
       }
     ],
     "ctaTitle": "Dimensioniamo la tua linea di taglio",

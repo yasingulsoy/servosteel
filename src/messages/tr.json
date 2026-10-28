@@ -161,11 +161,11 @@
     "ctaTitle": "Profilinize özel roll form hattı"
   },
   "machinesHub": {
-    "eyebrow": "Pres besleme sistemleri",
+    "h1": "Pres Besleme Sistemleri",
     "title": "Makineler",
     "metaTitle": "Pres Besleme Sistemleri ve Rulo Açıcılar",
     "metaDesc": "Rulo açıcılar, servo sürücüler, doğrultmalı servo sürücüler ve kompakt hatlar: pres besleme sistemlerinde müşteriye özel çözümler.",
-    "desc": "Hattın her halkası için tek çatı: rulo açıcılar, servo sürücüler, doğrultmalı sürücüler ve kompakt hatlar — hepsi kendi tesisimizde, ihtiyacınıza göre boyutlandırılarak üretilir.",
+    "desc": "Pres besleme sistemleri tek çatı altında: rulo açıcılar, servo sürücüler, doğrultmalı servo sürücüler ve kompakt hatlar — hepsi kendi tesisimizde, presinize ve malzemenize göre boyutlandırılarak üretilir.",
     "ctaTitle": "Doğru makineyi birlikte seçelim"
   },
   "detail": {
@@ -259,6 +259,10 @@
       {
         "q": "Devreye alma nasıl ilerliyor?",
         "a": "Hat, sevkiyattan önce kendi tesisimizde komple kurulup test edilir; sahada yalnızca montaj ve devreye alma yapılır. Bu yüzden kurulum süresi kısalır. Operatör eğitimi devreye alma sırasında verilir."
+      },
+      {
+        "q": "Kombine dilme ve boy kesme hattı yapıyor musunuz?",
+        "a": "Evet. Dilme ve boy kesme aynı ünitelerle başlar — rulo açıcı, doğrultma, besleme — ve iki kesme ünitesi tek hatta birleştirilebilir; aynı rulo şerit olarak da düz levha olarak da çıkar. Tek kombine hat mı, iki ayrı hat mı uygun olduğu şerit ve levha siparişlerinizin oranına bağlıdır. Rulo ağırlığını, kalınlık aralığını, kestiğiniz genişlik ve boyları gönderin; hattı buna göre boyutlandıralım."
       }
     ],
     "ctaTitle": "Dilme hattınızı boyutlandıralım",
@@ -2041,10 +2045,10 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Rulo Açıcılar",
-        "metaTitle": "Rulo Açıcılar: Hidrolik 6-20 Ton, Mekanik 500-4.000 kg",
+        "metaTitle": "Rulo Açıcı ve Rulo Sac Açma Makinesi: Hidrolik, Mekanik",
         "short": "Hidrolik 6-20 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
-        "hero": "Her hattın ilk halkası: ruloyu güvenle taşıyan, gerginliği kontrol ederek açan hidrolik ve mekanik açıcılar. Kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
-        "meta": "Rulo açıcı, rulo sacı taşıyıp hatta kontrollü gerginlikle açan makinedir. Hidrolik 6-20 ton, mekanik 500-4.000 kg modeller; 48 saatte projeye özel fiyat.",
+        "hero": "Rulo sac açma makinesi olarak da bilinen rulo açıcı, her hattın ilk halkasıdır: ruloyu güvenle taşır, gerginliği kontrol ederek açar. Hidrolik ve mekanik modeller kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
+        "meta": "Rulo açıcı (rulo sac açma makinesi) ruloyu taşır, hatta kontrollü gerginlikle açar. Hidrolik 6-20 ton, mekanik 500-4.000 kg; 48 saatte projeye özel fiyat.",
         "features": [
           {
             "title": "Hidrolik mandren genişletme",
