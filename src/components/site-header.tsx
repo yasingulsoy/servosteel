@@ -11,12 +11,12 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { SpecularButton } from "@/components/specular-button";
 import { ProfileIcon } from "@/components/profile-icon";
 import { SolutionIcon } from "@/components/solution-icon";
-import { rollFormItems, machineItems } from "@/lib/catalog";
+import { rollFormItems, machineItems, pageImageOf } from "@/lib/catalog";
 import { sectors } from "@/lib/sectors";
 import { getAkademiUi } from "@/lib/akademi-ui";
 import { CONTACT } from "@/lib/site";
 
-type MegaItem = { label: string; href: string; desc?: string; icon?: string; node?: React.ReactNode };
+type MegaItem = { label: string; href: string; desc?: string; icon?: string; node?: React.ReactNode; img?: string };
 
 /**
  * Çubuğun alt kenarında ince altın okuma çizgisi — sayfanın ne kadarının
@@ -187,21 +187,100 @@ function PanelBaslik({ children }: { children: React.ReactNode }) {
 type Featured = { title: string; text: string; cta: string; href: string };
 
 /**
- * "Ürünler" — roll form hatları, dilme, boy kesme ve makineler TEK panelde.
+ * "Makineler" — kendi menüsünde, çubuğun en başında (2026-10-28).
  *
- * Önceden bunlar dört ayrı menü öğesiydi ve menü sekiz öğeye çıkıyordu:
- * yazı 12 px'e inmişti, teklif tuşuna yer kalmamıştı (2026-09-17, "navbar
- * daha iyi olmalı"). Bağlantıların hepsi hâlâ HTML'de — panel CSS ile
- * gizleniyor — yani arama motorunun gördüğü site içi bağlantılar azalmadı.
- * Panel çubuğun tamamı genişliğinde açılır.
+ * AGM Line pazardan çekilince yönetim pres besleme makinelerini öne çıkarmak
+ * istedi: eski "Ürünler" panelinde roll form listesinin altında kalıyorlardı
+ * ("makineler kısmı çok altta"). Kartlar fotoğraflı. Fotoğraflar panel İLK
+ * açıldığında yüklenir — panel her sayfada HTML'de gizli duruyor, baştan
+ * basılsaydı altı fotoğraf her sayfa açılışında inerdi.
  */
-function UrunPaneli({
+function MakinePaneli({
+  label,
+  active,
+  items,
+  seeAll,
+}: {
+  label: string;
+  active: boolean;
+  items: MegaItem[];
+  seeAll: string;
+}) {
+  const { kapali, grupProps } = usePanelKapat();
+  const [gorsel, setGorsel] = useState(false);
+  return (
+    <div
+      className="group/mm flex h-full items-center"
+      {...grupProps}
+      onMouseEnter={() => {
+        grupProps.onMouseEnter();
+        setGorsel(true);
+      }}
+      onFocus={() => {
+        grupProps.onFocus();
+        setGorsel(true);
+      }}
+    >
+      <Tetik label={label} active={active} kapali={kapali} />
+      <div className={`absolute inset-x-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
+        <div className="rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
+          <div className="grid grid-cols-3 gap-1">
+            {items.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group/i flex items-center gap-3.5 rounded-xl p-2.5 transition-colors hover:bg-surface-alt"
+              >
+                <span className="relative aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-lg border border-line bg-surface-alt">
+                  {gorsel && item.img ? (
+                    <Image
+                      src={item.img}
+                      alt=""
+                      fill
+                      sizes="112px"
+                      className="object-cover transition-transform duration-300 group-hover/i:scale-105"
+                    />
+                  ) : null}
+                </span>
+                <span className="min-w-0">
+                  <span className="flex items-center gap-1 text-sm font-semibold text-ink">
+                    {item.label}
+                    <ArrowRight
+                      className="size-3.5 shrink-0 -translate-x-1 text-accent opacity-0 transition-all duration-200 group-hover/i:translate-x-0 group-hover/i:opacity-100 rtl:rotate-180"
+                      strokeWidth={2}
+                      aria-hidden
+                    />
+                  </span>
+                  {item.desc ? (
+                    <span className="mt-0.5 line-clamp-2 block text-xs leading-snug text-muted">{item.desc}</span>
+                  ) : null}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <SeeAll href="/makineler" label={seeAll} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * "Üretim Hatları" — roll form hatları, rulo işleme (dilme, boy kesme) ve
+ * özel profil kartı. Panel çubuğun tamamı genişliğinde açılır.
+ *
+ * 2026-09-17'de dört ayrı menü öğesi tek "Ürünler" panelinde toplanmıştı:
+ * menü sekiz öğeye çıkınca yazı 12 px'e inmiş, teklif tuşuna yer kalmamıştı.
+ * 2026-10-28'de makineler kendi menüsüne çıktı ve "Ürünler" bu paneli oldu;
+ * menü yedi öğe. Bağlantıların hepsi HTML'de — panel CSS ile gizleniyor —
+ * arama motorunun gördüğü site içi bağlantılar azalmadı.
+ */
+function HatPaneli({
   label,
   active,
   roll,
   hatlar,
-  makineler,
-  basliklar,
+  rollBaslik,
   seeAll,
   featured,
 }: {
@@ -209,8 +288,7 @@ function UrunPaneli({
   active: boolean;
   roll: MegaItem[];
   hatlar: MegaItem[];
-  makineler: MegaItem[];
-  basliklar: { roll: string; makineler: string };
+  rollBaslik: string;
   seeAll: string;
   featured: Featured;
 }) {
@@ -224,7 +302,7 @@ function UrunPaneli({
       <div className={`absolute inset-x-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
         <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_240px] gap-2 rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
           <div>
-            <PanelBaslik>{basliklar.roll}</PanelBaslik>
+            <PanelBaslik>{rollBaslik}</PanelBaslik>
             <div className="grid grid-cols-2 gap-0.5">
               {roll.map((item) => (
                 <MegaItemCard key={item.href} item={item} />
@@ -237,21 +315,6 @@ function UrunPaneli({
             {hatlar.map((item) => (
               <MegaItemCard key={item.href} item={item} />
             ))}
-            <PanelBaslik>{basliklar.makineler}</PanelBaslik>
-            <ul>
-              {makineler.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="group/m flex items-center justify-between gap-2 rounded-lg px-2.5 py-1.5 text-sm text-ink transition-colors hover:bg-surface-alt"
-                  >
-                    {item.label}
-                    <ArrowRight className="size-3.5 shrink-0 text-accent opacity-0 transition-opacity group-hover/m:opacity-100 rtl:rotate-180" strokeWidth={2} aria-hidden />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <SeeAll href="/makineler" label={seeAll} />
           </div>
 
           <div className="relative flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-accent to-accent-strong p-5 text-zinc-950">
@@ -309,7 +372,6 @@ function KucukPanel({
 
 export function SiteHeader() {
   const t = useTranslations("nav");
-  const tFooter = useTranslations("footer");
   const tRoll = useTranslations("products.rollform");
   const tMach = useTranslations("products.machines");
   const tHub = useTranslations("hub");
@@ -379,6 +441,7 @@ export function SiteHeader() {
     label: tMach(`${i.slug}.name`),
     href: `/makineler/${i.slug}`,
     desc: tMach(`${i.slug}.short`),
+    img: pageImageOf(i.slug),
   }));
   /* Uygulama sektörleri — alıcı makineyi değil kendi sektörünü arıyor,
      o yüzden menüde ürünlerle aynı seviyede duruyor (bkz. lib/sectors.ts). */
@@ -388,8 +451,11 @@ export function SiteHeader() {
     desc: tSec(`items.${s.slug}.short`),
   }));
 
-  const urunlerAktif =
-    isActive("/roll-form-hatlari") || isActive("/dilme-hatlari") || isActive("/boy-kesme-hatlari") || isActive("/makineler");
+  const hatlarAktif =
+    isActive("/roll-form-hatlari") ||
+    isActive("/rulo-isleme-hatlari") ||
+    isActive("/dilme-hatlari") ||
+    isActive("/boy-kesme-hatlari");
 
   const mobilSatir = "block rounded-lg px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt";
   const mobilAlt = "block rounded-lg px-3 py-2 text-sm text-ink hover:bg-surface-alt";
@@ -436,13 +502,18 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden h-full items-center xl:flex" aria-label={t("mainAria")}>
-          <UrunPaneli
-            label={tFooter("products")}
-            active={urunlerAktif}
+          <MakinePaneli
+            label={t("machines")}
+            active={isActive("/makineler")}
+            items={machineMega}
+            seeAll={t("seeAll")}
+          />
+          <HatPaneli
+            label={t("lines")}
+            active={hatlarAktif}
             roll={rollFormMega}
             hatlar={hatMega}
-            makineler={machineMega}
-            basliklar={{ roll: t("rollform"), makineler: t("machines") }}
+            rollBaslik={t("rollform")}
             seeAll={t("seeAll")}
             featured={{
               title: tHub("customTitle"),
@@ -527,18 +598,19 @@ export function SiteHeader() {
               </a>
             </div>
 
+            {/* Masaüstüyle aynı sıra: önce makineler, sonra üretim hatları */}
             <details className="group/d">
               <summary className={ozet}>
-                {t("rollform")}
+                {t("machines")}
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
               </summary>
               <ul className="mb-2 ms-3 border-s border-line ps-3">
                 <li>
-                  <Link href="/roll-form-hatlari" onClick={kapat} className={`${mobilAlt} font-medium`}>
+                  <Link href="/makineler" onClick={kapat} className={`${mobilAlt} font-medium`}>
                     {t("seeAll")}
                   </Link>
                 </li>
-                {rollFormMega.map((item) => (
+                {machineMega.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} onClick={kapat} className={mobilAlt}>
                       {item.label}
@@ -547,24 +619,27 @@ export function SiteHeader() {
                 ))}
               </ul>
             </details>
-            <Link href="/rulo-isleme-hatlari" onClick={kapat} className={mobilSatir}>
-              {tRulo("nav")}
-            </Link>
-            <Link href="/dilme-hatlari" onClick={kapat} className={mobilSatir}>
-              {t("slitting")}
-            </Link>
-            <Link href="/boy-kesme-hatlari" onClick={kapat} className={mobilSatir}>
-              {t("ctl")}
-            </Link>
             <details className="group/d">
               <summary className={ozet}>
-                {t("machines")}
+                {t("lines")}
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
               </summary>
               <ul className="mb-2 ms-3 border-s border-line ps-3">
-                {machineMega.map((item) => (
+                {hatMega.map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} onClick={kapat} className={mobilAlt}>
+                    <Link href={item.href} onClick={kapat} className={`${mobilAlt} font-medium`}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/roll-form-hatlari" onClick={kapat} className={`${mobilAlt} mt-1 font-medium`}>
+                    {t("rollform")}
+                  </Link>
+                </li>
+                {rollFormMega.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={kapat} className={`${mobilAlt} ps-6`}>
                       {item.label}
                     </Link>
                   </li>
