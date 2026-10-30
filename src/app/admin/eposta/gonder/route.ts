@@ -1,8 +1,6 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { oturum } from "@/lib/admin-auth";
-import { iletildiIsaretle, notEkle } from "@/lib/leads-db";
-import { kayitEkle } from "@/lib/panel-kayit";
 import { ekleriIndir, taslakKaydet, type GidenEk } from "@/lib/posta";
 import { adresleriAyikla, ekAdiTemizle } from "@/lib/posta-bicim";
 import { EK_TOPLAM_EN_COK, elleGonder } from "@/lib/posta-gonder";
@@ -105,6 +103,9 @@ export async function POST(istek: NextRequest) {
     });
   }
 
+  const talepId = Math.floor(Number(alan("talep_id", 20)));
+  const kaynakMesaj = alan("kaynak_mesaj", 1000);
+  const kaynakKimden = alan("kaynak_kimden", 254);
   const sonuc = await elleGonder({
     kim: ben,
     kutu,
@@ -121,22 +122,13 @@ export async function POST(istek: NextRequest) {
     taslak,
     ekler,
     iletilenEkler,
+    talepId: talepId > 0 ? talepId : undefined,
+    iletilenIleti: kaynakMesaj || kaynakKimden ? { mesajKimligi: kaynakMesaj, kimden: kaynakKimden } : undefined,
   });
   if (sonuc.tamam) {
     revalidatePath("/admin/eposta");
-    /* Talep iletildiyse talebin notlarına iz: kime, hangi kutudan. Not
-       yazılamasa da gönderim geçerli — mail gitti. */
-    const talepId = Math.floor(Number(alan("talep_id", 20)));
+    /* Talep notu, "İletildi" ve CRM aktarımı elleGonder'de (Claude'un ucu da aynı yoldan). */
     if (talepId > 0) {
-      const kime = adresleriAyikla(alan("kime", 4000)).gecerli;
-      const bilgi = adresleriAyikla(alan("bilgi", 4000)).gecerli;
-      const not = `İletildi: ${kime.join(", ")}${bilgi.length ? ` · bilgi: ${bilgi.join(", ")}` : ""} — ${kutu} kutusundan`;
-      await notEkle(talepId, not, ben).catch(() => {});
-      await kayitEkle(ben, "not", `talep:${talepId}`, `Talep #${talepId} — ${not}`).catch(() => {});
-      /* Yeni talep İletildi'ye geçer; listede ve "yeni talep" sayısında görünsün. */
-      if (await iletildiIsaretle(talepId).catch(() => false)) {
-        await kayitEkle(ben, "durum", `talep:${talepId}`, `Talep #${talepId} — Yeni → İletildi`).catch(() => {});
-      }
       revalidatePath(`/admin/talep/${talepId}`);
       revalidatePath("/admin");
       revalidatePath("/admin/genel");

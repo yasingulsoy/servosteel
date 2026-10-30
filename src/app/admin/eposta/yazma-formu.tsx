@@ -49,6 +49,7 @@ export function YazmaFormu({
   yanitKlasor,
   yanitKutu,
   iletilen,
+  iletKaynagi,
   talepId,
   taslak: acilanTaslak,
   kapatHref,
@@ -69,6 +70,8 @@ export function YazmaFormu({
   yanitKutu?: string;
   /** İletirken: orijinal ileti ve ekleri (gönderimde kutudan alınır). Taslakta: taslağın ekleri */
   iletilen?: Iletilen;
+  /** İletirken: iletilen iletinin kimliği ve göndereni — satışa giden tanıtım yanıtı CRM'e bağlanır */
+  iletKaynagi?: { mesajKimligi: string; kimden: string };
   /** Talep iletirken: gönderilince talebe "iletildi" notu düşer */
   talepId?: number;
   /** Taslaklar'dan açıldıysa: taslağın yeri */
@@ -195,6 +198,12 @@ export function YazmaFormu({
           </>
         ) : null}
         {talepId ? <input type="hidden" name="talep_id" value={talepId} /> : null}
+        {iletKaynagi ? (
+          <>
+            <input type="hidden" name="kaynak_mesaj" value={iletKaynagi.mesajKimligi} />
+            <input type="hidden" name="kaynak_kimden" value={iletKaynagi.kimden} />
+          </>
+        ) : null}
         {taslak ? (
           <>
             <input type="hidden" name="taslak_kutu" value={taslak.kutu} />

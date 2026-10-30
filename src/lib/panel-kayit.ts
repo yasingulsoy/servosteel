@@ -51,6 +51,8 @@ export const OLAY_ETIKET = {
   takip: "Takip tarihi koydu",
   ozet_ayar: "Haftalık özet ayarını değiştirdi",
   ozet_gonder: "Haftalık özeti gönderdi",
+  crm_aktar: "Satışa ileteni CRM'e aktardı",
+  crm_aktar_hata: "CRM'e aktarılamadı",
 } as const;
 
 export type KayitOlayi = keyof typeof OLAY_ETIKET;

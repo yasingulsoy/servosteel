@@ -1,5 +1,7 @@
 import "server-only";
+import { satisaIletildi, type IletilenIleti } from "@/lib/crm-bag";
 import { sorguSert } from "@/lib/db";
+import { iletildiIsaretle, notEkle } from "@/lib/leads-db";
 import { kayitEkle } from "@/lib/panel-kayit";
 import {
   ekleriIndir,
@@ -25,7 +27,9 @@ import { adresleriAyikla, boyutYaz } from "@/lib/posta-bicim";
  *   - her gönderim ve her başarısızlık panel kaydına düşer (kim, hangi
  *     kutudan, kime, konu) — Kayıtlar sayfasında görünür;
  *   - ekler (yüklenen dosyalar + iletilen iletinin seçilen ekleri) toplam en
- *     çok EK_TOPLAM_EN_COK bayt.
+ *     çok EK_TOPLAM_EN_COK bayt;
+ *   - talep iletildiyse talebe not düşer ve "İletildi" olur; satışa giden
+ *     talep ya da tanıtım yanıtı CRM'e "Yeni talep" olarak aktarılır (crm-bag.ts).
  *
  * Tanıtım e-postasının kuralları (günlük tavan, ısınma, aralık) BURADA YOK:
  * bu bire bir yazışma.
@@ -62,6 +66,10 @@ export type ElleGonderim = {
   ekler?: GidenEk[];
   /** İletilen iletinin gönderime eklenecek ekleri (parça numaraları) */
   iletilenEkler?: { kutu: string; klasor: Klasor; uid: number; parcalar: string[] };
+  /** Talep iletiliyorsa talebin numarası: gidince not, "İletildi" ve CRM */
+  talepId?: number;
+  /** İletilen iletinin kimliği ve göndereni: satışa giden tanıtım yanıtı CRM'e bağlanır */
+  iletilenIleti?: IletilenIleti;
 };
 
 /** `uyari`: gitti ama kopyası Gönderilmiş'e konamadı — form uyarıyı göstermek için yerinde kalır */
@@ -159,11 +167,29 @@ export async function elleGonder(g: ElleGonderim): Promise<ElleSonuc> {
     }
   }
   if (g.taslak && g.taslak.uid > 0) await taslakSil(g.taslak.kutu, g.taslak.uid);
-  return {
-    tamam: true,
-    uyari: Boolean(r.kopyaHatasi),
-    mesaj: r.kopyaHatasi
-      ? `Gönderildi — ama kopyası Gönderilmiş klasörüne konamadı: ${r.kopyaHatasi}`
-      : "Gönderildi. Kopyası Gönderilmiş klasöründe.",
-  };
+
+  /* Talep iletildiyse talebin notlarına iz: kime, hangi kutudan. Not
+     yazılamasa da gönderim geçerli — mail gitti. */
+  const talepId = g.talepId && g.talepId > 0 ? Math.floor(g.talepId) : 0;
+  if (talepId) {
+    const not = `İletildi: ${kime.gecerli.join(", ")}${bilgi.gecerli.length ? ` · bilgi: ${bilgi.gecerli.join(", ")}` : ""} — ${kutu} kutusundan`;
+    await notEkle(talepId, not, g.kim).catch(() => {});
+    await kayitEkle(g.kim, "not", `talep:${talepId}`, `Talep #${talepId} — ${not}`).catch(() => {});
+    /* Yeni talep İletildi'ye geçer; listede ve "yeni talep" sayısında görünsün. */
+    if (await iletildiIsaretle(talepId).catch(() => false)) {
+      await kayitEkle(g.kim, "durum", `talep:${talepId}`, `Talep #${talepId} — Yeni → İletildi`).catch(() => {});
+    }
+  }
+  const crm = await satisaIletildi({
+    kim: g.kim,
+    kutu,
+    alicilar: [...kime.gecerli, ...bilgi.gecerli],
+    talepId: talepId || undefined,
+    iletilenIleti: g.iletilenIleti,
+  });
+
+  const gitti = r.kopyaHatasi
+    ? `Gönderildi — ama kopyası Gönderilmiş klasörüne konamadı: ${r.kopyaHatasi}`
+    : "Gönderildi. Kopyası Gönderilmiş klasöründe.";
+  return { tamam: true, uyari: Boolean(r.kopyaHatasi), mesaj: crm ? `${gitti} ${crm}` : gitti };
 }

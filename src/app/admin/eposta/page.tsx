@@ -369,6 +369,7 @@ export default async function EpostaSayfasi({ searchParams }: { searchParams: Pr
         yanitKlasor={klasor}
         yanitKutu={kutu}
         iletilen={!yanit && secili.ekler.length ? { kutu, klasor, uid: secili.uid, ekler: secili.ekler } : undefined}
+        iletKaynagi={yanit ? undefined : { mesajKimligi: secili.mesajKimligi, kimden: secili.kimdenAdres }}
         kapatHref={kapat}
       />
     );

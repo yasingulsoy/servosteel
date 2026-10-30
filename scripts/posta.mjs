@@ -15,7 +15,7 @@
  *   node scripts/posta.mjs oku <kutu> <uid> [klasör]
  *   node scripts/posta.mjs ek <kutu> <uid> <parça> [--klasor giden] [--dosya yol]   (eki diske indirir)
  *   node scripts/posta.mjs yanitla <kutu> <uid> --metin-dosya yanit.txt [--bilgi a@b.com] [--alintisiz]
- *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt
+ *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt [--talep 37]
  *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden] [--eksiz]
  *
  * <kutu>: "ege" ya da "ege@servosteel.com.tr".
@@ -30,7 +30,7 @@
  */
 import fs from "node:fs";
 
-const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet", "dosya"]);
+const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet", "dosya", "talep"]);
 const konum = [];
 const bayrak = {};
 const argv = process.argv.slice(2);
@@ -125,6 +125,8 @@ async function calis() {
       dene: !bayrak.gonder,
     });
   }
+  /* Talebi satışa iletirken: talebe not, "İletildi" ve CRM kaydı sunucuda olur. */
+  if (islem === "gonder" && bayrak.talep) govde.talep = Number(bayrak.talep);
 
   let cevap;
   try {

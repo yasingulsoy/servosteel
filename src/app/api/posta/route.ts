@@ -79,6 +79,8 @@ type Govde = {
   ekler?: boolean;
   /** "ek": indirilecek parça numarası */
   parca?: string;
+  /** "gonder": iletilen talebin numarası — talebe not, "İletildi" ve CRM (paneldeki "Talebi ilet" gibi) */
+  talep?: number;
 };
 
 /** "ek" işleminde tek ekin en büyük boyutu — JSON içinde base64 gider. */
@@ -205,6 +207,7 @@ export async function POST(istek: NextRequest) {
       konu: metin(g.konu, 300),
       metin: govdeKur(g),
       dene: g.dene === true,
+      talepId: Number.isInteger(g.talep) && Number(g.talep) > 0 ? Number(g.talep) : undefined,
     });
   }
 
@@ -242,6 +245,7 @@ export async function POST(istek: NextRequest) {
         metin: govdeKur(g) + iletBlogu(x),
         dene: g.dene === true,
         iletilenEkler: ekler.length ? { kutu, klasor, uid, parcalar: ekler.map((e) => e.parca) } : undefined,
+        iletilenIleti: { mesajKimligi: x.mesajKimligi, kimden: x.kimdenAdres },
       },
       ekler.map((e) => e.ad)
     );
