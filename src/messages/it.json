@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Chiamaci",
     "floatMail": "E-mail",
+    "waFloatPrefill": "Salve, vi scrivo dal vostro sito web.",
     "floatYoutube": "Guarda i nostri video su YouTube",
     "home": "Home",
     "breadcrumbAria": "Percorso di navigazione",
@@ -881,6 +882,8 @@
     "faxTitle": "Fax",
     "emailTitle": "E-mail",
     "emailNote": "Risposta entro 24 ore",
+    "waTitle": "WhatsApp",
+    "waNote": "Ideale per condividere foto e disegni tecnici",
     "addressTitle": "Sede e Stabilimento",
     "country": "Turchia",
     "hours": "Lunedì – venerdì: 08:30 – 18:00",

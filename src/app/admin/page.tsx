@@ -88,9 +88,10 @@ export default async function AdminSayfasi({
       {/* Sayaçlar — mobilde 2×2, masaüstünde tek sıra.
           Sıfırken de gösteriliyor: "e-posta tuşu hiç tıklanmadı" bilgisi,
           satırın hiç görünmemesinden çok daha işe yarar. */}
-      <section className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <section className="mt-6 grid grid-cols-2 gap-3 lg:grid-cols-5">
         {[
           { etiket: "Telefon tuşu", deger: olay["telefon"] ?? 0, alt: "son 30 gün" },
+          { etiket: "WhatsApp tuşu", deger: olay["whatsapp"] ?? 0, alt: "son 30 gün" },
           { etiket: "E-posta tuşu", deger: olay["eposta"] ?? 0, alt: "son 30 gün" },
           { etiket: "Yeni talep", deger: adet["yeni"] ?? 0, alt: "işlem bekleyen" },
           { etiket: "Gerçek talep", deger: gercek, alt: "spam hariç" },

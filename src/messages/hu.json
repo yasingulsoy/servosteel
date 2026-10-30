@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Hívjon minket",
     "floatMail": "E-mail",
+    "waFloatPrefill": "Jó napot, a weboldalukról írok.",
     "floatYoutube": "Nézze meg videóinkat a YouTube-on",
     "home": "Kezdőlap",
     "breadcrumbAria": "Morzsamenü",
@@ -881,6 +882,8 @@
     "faxTitle": "Fax",
     "emailTitle": "E-mail",
     "emailNote": "Válasz 24 órán belül",
+    "waTitle": "WhatsApp",
+    "waNote": "Ideális műszaki fotók/rajzok megosztásához",
     "addressTitle": "Központ és Gyártóüzem",
     "country": "Törökország",
     "hours": "Hétfő – péntek: 08:30 – 18:00",

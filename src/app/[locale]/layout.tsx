@@ -222,9 +222,9 @@ export default async function LocaleLayout({
             </ViewTransition>
           </main>
           <SiteFooter />
-          {/* Her sayfada telefon + e-posta. WhatsApp tuşu 2026-08-24'te
-              kaldırıldı: 30 günde 20 tıklama aldı ve numarada WhatsApp
-              hesabı hiç açılmadığı için hepsi karşılıksız kaldı. */}
+          {/* Her sayfada telefon, e-posta, WhatsApp. WhatsApp 2026-08-24'te
+              kaldırılmış (sabit hatta hesap yoktu), 2026-10-30'da cep
+              numarasıyla geri geldi. */}
           <ContactFloat />
           {/* Görünmez yardımcılar: kart ışığı + sekme/video dikkat yönetimi */}
           <PointerGlow />

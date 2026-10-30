@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Llámenos",
     "floatMail": "Correo",
+    "waFloatPrefill": "Hola, le escribo desde su sitio web.",
     "floatYoutube": "Vea nuestros vídeos en YouTube",
     "home": "Inicio",
     "breadcrumbAria": "Ruta de navegación",
@@ -881,6 +882,8 @@
     "faxTitle": "Fax",
     "emailTitle": "Correo electrónico",
     "emailNote": "Respuesta en 24 horas",
+    "waTitle": "WhatsApp",
+    "waNote": "Ideal para compartir fotos y planos técnicos",
     "addressTitle": "Sede y Planta de Producción",
     "country": "Turquía",
     "hours": "Lunes – viernes: 08:30 – 18:00",

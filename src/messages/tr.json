@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Bizi Arayın",
     "floatMail": "E-posta",
+    "waFloatPrefill": "Merhaba, web sitenizden yazıyorum.",
     "floatYoutube": "YouTube'da Videolarımızı İzleyin",
     "home": "Ana Sayfa",
     "breadcrumbAria": "Sayfa yolu",
@@ -881,6 +882,8 @@
     "faxTitle": "Faks",
     "emailTitle": "E-posta",
     "emailNote": "24 saat içinde dönüş",
+    "waTitle": "WhatsApp",
+    "waNote": "Teknik fotoğraf/çizim paylaşımı için ideal",
     "addressTitle": "Merkez & Üretim Tesisi",
     "country": "Türkiye",
     "hours": "Pazartesi – Cuma: 08:30 – 18:00",

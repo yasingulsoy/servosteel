@@ -52,10 +52,13 @@ export function Analytics() {
           Yakalama aşamasında dinleniyor ki sayfa terk edilmeden önce gitsin. */}
       <Script id="ga4-contact-clicks" strategy="afterInteractive">
         {`document.addEventListener('click',function(e){
-  var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"]');
-  if(!a||typeof gtag!=='function')return;
+  var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="mailto:"],a[href^="https://wa.me/"]');
+  if(!a)return;
   var h=a.getAttribute('href')||'';
-  gtag('event','click',{
+  var wa=h.indexOf('https://wa.me/')===0;
+  /* wa.me dış bağlantı: GA4 onu outbound_click olarak zaten sayıyor,
+     burada ikinci kez gönderilirse çift sayılır. */
+  if(!wa&&typeof gtag==='function')gtag('event','click',{
     link_url:h,
     link_text:(a.innerText||a.getAttribute('aria-label')||'').trim().slice(0,100),
     contact_type:h.indexOf('tel:')===0?'phone':'email',
@@ -67,7 +70,7 @@ export function Analytics() {
   try{
     if(navigator.sendBeacon){
       navigator.sendBeacon('/api/olay',new Blob([JSON.stringify({
-        tur:h.indexOf('tel:')===0?'telefon':'eposta',
+        tur:wa?'whatsapp':h.indexOf('tel:')===0?'telefon':'eposta',
         yol:location.pathname,
         dil:document.documentElement.lang||''
       })],{type:'application/json'}));

@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Anrufen",
     "floatMail": "E-Mail",
+    "waFloatPrefill": "Hallo, ich schreibe Ihnen über Ihre Website.",
     "floatYoutube": "Unsere Videos auf YouTube ansehen",
     "home": "Startseite",
     "breadcrumbAria": "Brotkrumennavigation",
@@ -881,6 +882,8 @@
     "faxTitle": "Fax",
     "emailTitle": "E-Mail",
     "emailNote": "Antwort innerhalb von 24 Stunden",
+    "waTitle": "WhatsApp",
+    "waNote": "Ideal für Fotos und Zeichnungen",
     "addressTitle": "Zentrale & Produktionswerk",
     "country": "Türkei",
     "hours": "Montag – Freitag: 08:30 – 18:00",

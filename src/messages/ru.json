@@ -43,6 +43,7 @@
   "common": {
     "floatCall": "Позвоните нам",
     "floatMail": "E-mail",
+    "waFloatPrefill": "Здравствуйте, пишу вам с вашего сайта.",
     "floatYoutube": "Смотрите наши видео на YouTube",
     "home": "Главная",
     "breadcrumbAria": "Навигационная цепочка",
@@ -881,6 +882,8 @@
     "faxTitle": "Факс",
     "emailTitle": "E-mail",
     "emailNote": "Ответ в течение 24 часов",
+    "waTitle": "WhatsApp",
+    "waNote": "Идеально для обмена фото и чертежами",
     "addressTitle": "Офис и производство",
     "country": "Турция",
     "hours": "Понедельник – пятница: 08:30 – 18:00",

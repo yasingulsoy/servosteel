@@ -150,7 +150,14 @@ ya da yetki verilince betikle.
   Katalogdaki "Steel Makina Kalıp Ltd. Şti." bu şirket değil (eski ya da ayrı
   tüzel kişilik; 2015 videoları "Steel Makina" adıyla). Dizin kayıtlarında ve
   KVKK sayfasında bu unvan kullanılacak.
-- [ ] **WhatsApp Business numarası — ölçülmüş en yüksek talepli kanal, kapalı.**
+- [x] ~~**WhatsApp Business numarası — ölçülmüş en yüksek talepli kanal, kapalı.**~~
+  **Cevap (2026-10-30): +90 532 164 00 34** (Yasin'in verdiği cep numarası).
+  Geri kondu: sağ alttaki tuş (e-postanın altında, telefonun üstünde) ve
+  iletişim sayfasındaki üçüncü kanal kartı. İkisi de mesajı ziyaretçinin
+  dilinde "sitenizden yazıyorum" diye hazır açıyor (9 dil, eski metinler
+  bffabd0'dan geri alındı). Tıklama GA4'te outbound olarak, panelde
+  "WhatsApp tuşu" sayacında. Formların altındaki ikinci kapı henüz yok.
+  Eski not:
   Hangi cep numarasında WhatsApp Business hesabı açılacak? Hesap açılmadan
   tuş konmayacak (ölü tuşun ne yaptığı §E.14'te). Gerekçe: o tuş çalışmadığı
   hâlde **oturum başına %4,10** tıklanıyordu, telefon + e-posta toplamı %1,57.

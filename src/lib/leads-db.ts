@@ -279,8 +279,8 @@ export async function talepOzeti(): Promise<TalepOzeti> {
        (SELECT count(*) FROM talepler, b WHERE olusturuldu >= b.gun)::int AS bugun,
        (SELECT count(*) FROM talepler WHERE olusturuldu > now() - interval '30 days')::int AS son30,
        (SELECT count(*) FROM talepler WHERE durum = 'yeni')::int AS yeni,
-       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta'))::int AS iletisim,
-       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta') AND olusturuldu > now() - interval '30 days')::int AS iletisim30`
+       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta', 'whatsapp'))::int AS iletisim,
+       (SELECT count(*) FROM olaylar WHERE tur IN ('telefon', 'eposta', 'whatsapp') AND olusturuldu > now() - interval '30 days')::int AS iletisim30`
   );
   return r[0];
 }

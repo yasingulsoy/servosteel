@@ -2,11 +2,17 @@
 
 import { useTranslations } from "next-intl";
 import { Phone, Mail } from "lucide-react";
-import { FaYoutube } from "react-icons/fa6";
+import { FaWhatsapp, FaYoutube } from "react-icons/fa6";
 import { CONTACT, YOUTUBE_URL } from "@/lib/site";
 
 /**
- * Her sayfada duran tuşlar: YouTube + e-posta + telefon.
+ * Her sayfada duran tuşlar: YouTube + e-posta + WhatsApp + telefon.
+ *
+ * WHATSAPP GERİ GELDİ (2026-10-30): Yasin'in verdiği cep numarası, WhatsApp'ı
+ * açık. Aşağıdaki kaldırma notu sabit hat içindi. Vurgusuz
+ * (koyu zemin, yeşil ikon): telefonun altın vurgusuyla yarışmasın. Mesaj
+ * ziyaretçinin dilinde "sitenizden yazıyorum" diye hazır gelir — satış
+ * yazanın siteden geldiğini bilsin.
  *
  * YOUTUBE EN ÜSTTE (2026-09-17, Yasin'in isteği). Kanalda 100'ü aşkın saha
  * videosu var ve alıcının "bu firma gerçekten üretiyor mu" sorusuna en hızlı
@@ -57,6 +63,17 @@ export function ContactFloat() {
       >
         <Mail className="size-5 shrink-0" strokeWidth={2} aria-hidden />
         <span className="hidden text-sm font-semibold sm:inline">{t("floatMail")}</span>
+      </a>
+
+      <a
+        href={`${CONTACT.whatsappHref}?text=${encodeURIComponent(t("waFloatPrefill"))}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`WhatsApp — ${CONTACT.whatsappDisplay}`}
+        className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
+      >
+        <FaWhatsapp className="size-5 shrink-0 text-[#25D366]" aria-hidden />
+        <span className="hidden text-sm font-semibold sm:inline">WhatsApp</span>
       </a>
 
       {/* Telefon altta ve vurgulu: başparmağın en kolay ulaştığı yer ve

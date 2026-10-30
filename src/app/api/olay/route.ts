@@ -38,7 +38,7 @@ function sinirAsildi(ip: string): boolean {
    o maili alan firmanın alan adını taşıyor (bkz. hedef-firma-excel.py
    gonderim_linki) — yani hangi firmanın tıkladığı buradan bilinir. Kendi
    linkimizin kendi parametresi; çerez, IP, kullanıcı kimliği yine yok. */
-const IZINLI = new Set(["telefon", "eposta", "outreach"]);
+const IZINLI = new Set(["telefon", "eposta", "whatsapp", "outreach"]);
 
 export async function POST(req: Request) {
   const ip =

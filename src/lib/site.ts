@@ -68,6 +68,10 @@ export const SITE_DESCRIPTION =
 export const CONTACT = {
   phoneDisplay: "+90 216 415 30 05",
   phoneHref: "tel:+902164153005",
+  /* WhatsApp: Yasin'in verdiği cep numarası (30 Ekim 2026). Sabit hatta
+     WhatsApp hesabı olmadığı için tuş 24 Ağustos'ta kaldırılmıştı. */
+  whatsappDisplay: "+90 532 164 00 34",
+  whatsappHref: "https://wa.me/905321640034",
   /* Eski sitedeki NAP kaydından — parite için korunuyor */
   faxDisplay: "+90 216 415 30 06",
   email: "info@servosteel.com.tr",

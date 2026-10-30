@@ -1,5 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, Clock, Mail, MapPin, Phone, Printer } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, MessageCircle, Phone, Printer } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
 import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
@@ -23,10 +23,13 @@ export default async function IletisimPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
+  const tc = await getTranslations("common");
 
   const channels = [
     { icon: Phone, title: t("phoneTitle"), value: CONTACT.phoneDisplay, href: CONTACT.phoneHref, note: t("phoneNote") },
     { icon: Mail, title: t("emailTitle"), value: CONTACT.email, href: `mailto:${CONTACT.email}`, note: t("emailNote") },
+    /* WhatsApp 2026-10-30'da cep numarasıyla geri geldi (bkz. contact-float.tsx). */
+    { icon: MessageCircle, title: t("waTitle"), value: CONTACT.whatsappDisplay, href: `${CONTACT.whatsappHref}?text=${encodeURIComponent(tc("waFloatPrefill"))}`, note: t("waNote") },
   ];
 
   return (
