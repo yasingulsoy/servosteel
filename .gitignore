@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# CRM — ayrı Next uygulaması (crm/), kendi bağımlılıkları ve derlemesi
+/crm/node_modules
+/crm/.next/
+
 # production
 /build
 

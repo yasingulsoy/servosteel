@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* Sitenin paletinin sade hali: altın vurgu, açık yüzey. */
+:root {
+  --surface: #f6f6f3;
+  --card: #ffffff;
+  --ink: #161616;
+  --muted: #62676e;
+  --line: #e2e1dc;
+}
+
+@theme inline {
+  --color-accent: #e7a300;
+  --color-accent-strong: #c98d00;
+  --color-shell: #0b0c0e;
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Form alanlarının ortak görünümü — her input'a sınıf yazmamak için. */
+.alan {
+  @apply w-full rounded-lg border border-line bg-card px-3 py-2 text-sm outline-none focus:border-accent;
+}
+.etiket {
+  @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-muted;
+}
+.dugme {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-accent-strong disabled:opacity-60;
+}
+.dugme-ikincil {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-line bg-card px-3 py-1.5 text-sm font-medium hover:border-zinc-400;
+}
+.dugme-tehlike {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-red-200 bg-card px-3 py-1.5 text-sm font-medium text-red-700 hover:bg-red-50;
+}
+.kart {
+  @apply rounded-xl border border-line bg-card;
+}

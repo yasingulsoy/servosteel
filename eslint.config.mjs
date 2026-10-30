@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
        elle çalıştırılan CommonJS script'ler. Uygulamanın ESM/TS kuralları
        burada geçerli değil — require() onlar için doğru olan. */
     "belgeler/**",
+    /* CRM ayrı bir Next uygulaması (crm/), kendi eslint ayarıyla denetlenir. */
+    "crm/**",
   ]),
 ]);
 

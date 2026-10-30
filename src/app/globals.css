@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* CRM (crm/) ayrı uygulama; sınıfları sitenin CSS'ine girmesin. */
+@source not "../../crm";
 @plugin "@tailwindcss/typography";
 
 /* Dark mode: .dark sınıfıyla manuel kontrol (ThemeToggle) */

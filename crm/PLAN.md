@@ -1,7 +1,8 @@
 # Servosteel CRM — Plan
 
-> **Durum:** taslak, 27 Ekim 2026. Kod yazılmadan önce kararlar bu belgede netleşecek.
-> En sondaki "Karar bekleyen sorular" cevaplanınca Faz 0'a başlanır.
+> **Durum (30 Ekim 2026):** Faz 0 ve etkinlik odaklı ilk modül yazıldı, yerelde
+> çalışıyor; canlıya çıkması için Dokploy servisi bekleniyor (bkz. [README](README.md)).
+> Ayrıntı en sondaki "Yapılanlar" bölümünde.
 >
 > **Depo herkese açık (public).** Bu klasöre ve CRM koduna müşteri verisi, kişi adı,
 > e-posta adresi, ekran görüntüsü, şifre ya da anahtar girmez. Veri yalnız
@@ -275,8 +276,69 @@ Her faz ayrı yayınlanabilir; bir faz bitmeden sonrakine geçilmez.
 
 ---
 
-## 12. Sonraki adım
+## 12. Yapılanlar (30 Ekim 2026)
 
-Sorular cevaplanınca bu belge güncellenir ve Faz 0 başlar. Faz 0'ın ilk işi kök
-projenin derlemesinden `crm/` klasörünü hariç tutmak; böylece CRM üzerinde çalışırken
-site yayını hiçbir an etkilenmez.
+**Cevaplanan sorular:**
+- Soru 2, adres: ayrı uygulama, `crm.servosteel.com.tr`.
+- Soru 3, giriş: CRM'in kendi kullanıcı tablosu.
+
+Soru 5 de 30 Ekim'de cevaplandı: dosya + özet. Diğer sorular açık.
+
+**Önceliğin değişmesi:** ilk iş fırsat/teklif değil, **etkinlik** oldu. Fuarda
+tanışılan firmalar ve kişiler satışın elinde Excel'de duruyordu. Sıralama şöyle:
+
+1. etkinlik girilir,
+2. o etkinlikte görüşülen firma eklenir (web sitesi, ülke, sektör, ne iş yaptığı, potansiyel),
+3. ilgi alanları işaretlenir,
+4. kurum yetkilisi eklenir,
+5. görüşme kaydı açılır (talep, takip durumu, son temas).
+
+**Kurulanlar:**
+- Kökün tsconfig, eslint ve Tailwind taraması `crm/` klasörünü hariç tutuyor; site yayını CRM'den etkilenmez.
+- Şema `db/migrations/0001_temel.sql`:
+  - `crm_kullanici`, `crm_oturum`
+  - `crm_etkinlik`, `crm_firma`, `crm_kisi`, `crm_ilgi_alani` + `crm_firma_ilgi`
+  - `crm_temas`, `crm_not`, `crm_kayit`
+  - Göç çalıştırıcı: `scripts/goc.mjs`.
+- Giriş:
+  - Oturum veritabanında; çerezde rastgele anahtar, tabloda yalnız karması durur.
+  - 5 hatalı denemede 15 dakika kilit.
+  - Roller: yönetici, satış, pazarlama, görüntüleyici.
+- Ekranlar:
+  - **Pano:** sayılar, bekleyen işler, etkinlikler.
+  - **Etkinlikler:** liste ve oluşturma.
+  - **Etkinlik sayfası:** hızlı firma kaydı ve görüşme tablosu. Takip durumu tek tıkla değişir; tablo duruma göre süzülür.
+  - **Firmalar:** arama, ülke, ilgi alanı, etkinlik, takip ve potansiyel süzgeci.
+  - **Firma kartı:** kişiler, görüşmeler, notlar, ilgi alanları, bilgiler.
+  - **Kullanıcılar.**
+- Mükerrer kontrolü: aynı alan adı (web ya da kurumsal e-posta) ya da aynı ad varsa yeni firma açılmaz; kişi ve görüşme mevcut firmaya eklenir.
+- Toplu aktarma: `scripts/etkinlik-aktar.mjs`, kuru çalıştırılabilir, tekrar çalıştırılabilir.
+  - EuroBLECH 2026 listesi aktarıldı: 56 firma, 58 kişi, 58 görüşme.
+  - Excel'deki "Unvan at Firma" biçimli firma adları firma ve unvan diye ayrıldı.
+
+**Takip durumları:** görüşüldü, e-posta gönderildi, teknik bilgi istendi, çizim
+bekleniyor, teklif verilecek, teklif gönderildi, olumsuz.
+
+**İlgi alanları:** sitenin katalog adlarıyla aynı kodlar. Gruplar:
+- roll form hatları,
+- rulo işleme hatları,
+- makineler,
+- kalıp/merdane, yedek parça/servis, diğer.
+
+**30 Ekim, ikinci adım:**
+- **Teklif — "dosya + özet" (soru 5 cevaplandı):** satış teklifi kendi Excel/Word'ünde hazırlar. CRM'de tutulanlar:
+  - teklif no, konu, tarih, geçerlilik, tutar, döviz (EUR/USD/TRY/GBP)
+  - durum (hazırlanıyor / gönderildi / kabul / red / iptal) ve red sebebi
+  - PDF; dosya veritabanında, en çok 15 MB
+- **Teklifin otomatik etkileri:** gönderilince bağlı görüşme "teklif gönderildi" olur, kabulde firma "müşteri", redde görüşme "olumsuz".
+- **Teklifler sayfası:** duruma göre süzülür, döviz döviz toplam verir.
+- **Kanal:** her görüşmede kanal var (fuar, tanıtım maili, site formu, Europages, telefon, ziyaret, referans, eski müşteri, diğer). Panoda kanal başına firma, görüşme, teklif giden firma ve kabul sayısı görünüyor.
+- **Firma kartında dosyalar:** çizim, katalog. İndirme yalnız oturumla; yalnız PDF tarayıcıda açılır, diğerleri indirilir.
+- **Panelden aktarma:** `scripts/panel-aktar.mjs` ile satışa iletilmiş 26 kayıt aktarıldı: 20 talep ve 6 e-posta yanıtı, 24 yeni firma. Takip durumu "Yeni talep".
+
+## 13. Sonraki adım
+
+1. Dokploy servisi ve DNS (Yasin). İlk yönetici `npm run kullanici-ekle` ile açılır.
+2. Satışın kullanıcıları ve rolleri (soru 1).
+3. ~~Paneldeki "Satışa ilet" düğmesi CRM'e doğrudan yazsın~~ — yapıldı (30 Ekim). `src/lib/crm-bag.ts`, gönderim yolunun sonunda.
+4. Görevler ve hatırlatma: "teklif gönderildi"den 7 gün sonra takip görevi.
