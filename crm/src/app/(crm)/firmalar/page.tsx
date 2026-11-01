@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Plus, Search } from "lucide-react";
+import { Download, Plus, Search } from "lucide-react";
 import { IlgiEtiketleri, PotansiyelRozeti, TakipRozeti } from "@/components/rozet";
 import { sayi, tarih } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
@@ -31,17 +31,26 @@ export default async function FirmaListesi(props: PageProps<"/firmalar">) {
     etkinlikler(),
   ]);
   const filtreli = Object.values(filtre).some(Boolean);
+  /* Excel'e aktarma ekrandaki süzgeçle aynı listeyi verir (sınırsız). */
+  const aktarSorgusu = new URLSearchParams(
+    Object.entries(filtre).flatMap(([k, v]) => (v ? [[k, String(v)]] : []))
+  ).toString();
 
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center gap-3">
         <h1 className="text-xl font-bold">Firmalar</h1>
         <span className="text-sm text-muted">{liste.length}{liste.length === 500 ? "+" : ""} kayıt</span>
-        {yazabilir(ben) ? (
-          <Link href="/firmalar/yeni" className="dugme ml-auto">
-            <Plus size={15} /> Firma ekle
-          </Link>
-        ) : null}
+        <div className="ml-auto flex gap-2">
+          <a href={`/firmalar/disa-aktar${aktarSorgusu ? `?${aktarSorgusu}` : ""}`} className="dugme-ikincil">
+            <Download size={15} /> Excel
+          </a>
+          {yazabilir(ben) ? (
+            <Link href="/firmalar/yeni" className="dugme">
+              <Plus size={15} /> Firma ekle
+            </Link>
+          ) : null}
+        </div>
       </div>
 
       <form className="kart grid gap-3 p-4 sm:grid-cols-2 lg:grid-cols-6">

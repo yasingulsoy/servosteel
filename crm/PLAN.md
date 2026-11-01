@@ -336,9 +336,30 @@ bekleniyor, teklif verilecek, teklif gönderildi, olumsuz.
 - **Firma kartında dosyalar:** çizim, katalog. İndirme yalnız oturumla; yalnız PDF tarayıcıda açılır, diğerleri indirilir.
 - **Panelden aktarma:** `scripts/panel-aktar.mjs` ile satışa iletilmiş 26 kayıt aktarıldı: 20 talep ve 6 e-posta yanıtı, 24 yeni firma. Takip durumu "Yeni talep".
 
+**2 Kasım, A'dan Z'ye (göç `0003_gorev_satis_sonrasi.sql`):**
+- **Görevler:** atanan, son tarih, tamamla/yeniden aç. Sekmeler: benim, gecikenler, herkesin, tamamlananlar. Panoda "bugün ve yarın: görevlerim" bölümü var.
+- **Otomatik görevler** (`src/lib/gorev-oto.ts`):
+  - Görüşme "teklif verilecek" olunca 3 gün sonrasına "Teklif hazırla" açılır, teklif gidince kapanır.
+  - Teklif "gönderildi" olunca 7 gün sonrasına "Teklif takibi" açılır; kabul, red ya da iptalde kapanır.
+  - Aynı kaynaktan ikinci açık görev açılmaz.
+- **Firma sorumlusu:** görevler sorumluya düşer. Hızlı kayıtta sorumlu, kaydı giren kişi olur.
+- **Satış sonrası (soru 7):** sipariş (tekliften "Siparişe çevir" ile), kurulu makine (seri no, kurulum, garanti bitişi) ve servis talebi (arıza, bakım, yedek parça, eğitim). Servis talebinde garanti kapsamı kendiliğinden görünür. Ayrıca bir servis sayfası var.
+- **Firma kartında tek zaman çizelgesi:** CRM kayıtlarının yanında panelin kayıtları da var: tanıtım ve hatırlatma mailleri, gelen yanıtlar, tanıtım mailinden siteye gelişler, panel notları. Panel verisi kopyalanmıyor, kaynağından okunuyor.
+- **Raporlar:**
+  - huni: görüşülen → teklif istenen → teklif giden → kabul → sipariş
+  - ilk görüşmeden teklife ortalama gün, kazanma oranı
+  - döviz döviz teklif tutarları
+  - kanal, ülke ve ilgi alanı kırılımı
+  - kayıp sebepleri, sorumlu başına açık iş
+- **Excel'e aktarma:** firmalar (ekrandaki süzgeçle) ve teklifler. Dosya Türkçe Excel'e uygun; formül gibi başlayan hücreler etkisiz bırakılıyor.
+- **Genel arama:** başlıktaki kutu firma, kişi, e-posta, telefon, teklif no ve seri no arar.
+- **Panelden CRM'e:** talep sayfasında ve hedef firma sayfasında "CRM'de aç" bağlantısı var. Adres sitenin `CRM_ADRESI` değişkeninden okunur, boşsa crm.servosteel.com.tr.
+
 ## 13. Sonraki adım
 
 1. Dokploy servisi ve DNS (Yasin). İlk yönetici `npm run kullanici-ekle` ile açılır.
 2. Satışın kullanıcıları ve rolleri (soru 1).
-3. ~~Paneldeki "Satışa ilet" düğmesi CRM'e doğrudan yazsın~~ — yapıldı (30 Ekim). `src/lib/crm-bag.ts`, gönderim yolunun sonunda.
-4. Görevler ve hatırlatma: "teklif gönderildi"den 7 gün sonra takip görevi.
+3. ~~Paneldeki "Satışa ilet" düğmesi CRM'e doğrudan yazsın~~ — yapıldı (30 Ekim).
+4. ~~Görevler ve hatırlatma~~ — yapıldı (2 Kasım).
+5. Açık: günlük görev özeti e-postası. Zamanlanmış bir uç ister (Dokploy'da cron); kurulursa yapılır.
+6. Açık: satışın kutularının yazışmaları (soru 4: IMAP mi, BCC mi).

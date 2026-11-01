@@ -93,6 +93,34 @@ export const RED_SEBEBI = {
 
 export const DOVIZ = { EUR: "€", USD: "$", TRY: "₺", GBP: "£" } as const;
 
+export const SIPARIS_DURUMU = {
+  uretimde: "Üretimde",
+  sevk_edildi: "Sevk edildi",
+  kuruldu: "Kuruldu",
+  tamamlandi: "Tamamlandı",
+  iptal: "İptal",
+} as const;
+
+export const SERVIS_TURU = {
+  ariza: "Arıza",
+  bakim: "Bakım",
+  yedek_parca: "Yedek parça",
+  egitim: "Eğitim",
+  diger: "Diğer",
+} as const;
+
+export const SERVIS_DURUMU = {
+  acik: "Açık",
+  surecte: "Sürüyor",
+  kapandi: "Kapandı",
+} as const;
+
+export const SERVIS_RENK: Record<keyof typeof SERVIS_DURUMU, string> = {
+  acik: "bg-red-100 text-red-900",
+  surecte: "bg-amber-100 text-amber-900",
+  kapandi: "bg-zinc-100 text-zinc-600",
+};
+
 export const ROL = {
   yonetici: "Yönetici",
   satis: "Satış",

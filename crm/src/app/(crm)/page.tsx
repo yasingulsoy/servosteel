@@ -3,12 +3,20 @@ import { CalendarDays, Plus } from "lucide-react";
 import { IlgiEtiketleri, TakipRozeti } from "@/components/rozet";
 import { tarih, tarihAraligi } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
+import { GorevListesi } from "@/components/gorev-listesi";
 import { KANAL } from "@/lib/sabitler";
-import { bekleyenTemaslar, etkinlikler, kanalOzeti, panoSayilari } from "@/lib/veri";
+import { bekleyenTemaslar, etkinlikler, kanalOzeti, panoSayilari, vadesiGelenGorevler } from "@/lib/veri";
+import { gorevDurum } from "./gorevler/actions";
 
 export default async function Pano() {
   const ben = await oturumZorunlu();
-  const [s, bekleyen, ets, kanallar] = await Promise.all([panoSayilari(), bekleyenTemaslar(), etkinlikler(), kanalOzeti()]);
+  const [s, bekleyen, ets, kanallar, gorevlerim] = await Promise.all([
+    panoSayilari(),
+    bekleyenTemaslar(),
+    etkinlikler(),
+    kanalOzeti(),
+    vadesiGelenGorevler(ben.kullanici),
+  ]);
 
   const kutular = [
     { ad: "Firma", deger: s.firma, href: "/firmalar" },
@@ -42,6 +50,16 @@ export default async function Pano() {
           </Link>
         ))}
       </div>
+
+      <section>
+        <div className="mb-3 flex items-baseline gap-3">
+          <h2 className="text-sm font-bold uppercase tracking-wide text-muted">Bugün ve yarın: görevlerim</h2>
+          <Link href="/gorevler" className="text-xs text-muted hover:underline">
+            hepsi
+          </Link>
+        </div>
+        <GorevListesi gorevler={gorevlerim} durumEylemi={gorevDurum} geri="/" yazabilir={yazabilir(ben)} />
+      </section>
 
       <section>
         <h2 className="mb-3 text-sm font-bold uppercase tracking-wide text-muted">Bekleyen işler</h2>

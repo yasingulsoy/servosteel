@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { alanAdi, epostaAlanAdi, gun, metin, sayi, webAdresi } from "@/lib/bicim";
 import { islem, sorgu, tek } from "@/lib/db";
+import { temasGorevi } from "@/lib/gorev-oto";
 import { kayitEkle } from "@/lib/kayit";
 import { yazarZorunlu, yoneticiZorunlu } from "@/lib/oturum";
 import { FIRMA_DURUMU, gecerli, KANAL, POTANSIYEL, TAKIP } from "@/lib/sabitler";
@@ -82,8 +83,8 @@ export async function hizliKayit(fd: FormData): Promise<void> {
     } else {
       firmaId = (
         await b.query<{ id: number }>(
-          `INSERT INTO crm_firma (ad, web, alan_adi, ulke, bolge, sehir, sektor, faaliyet, potansiyel, olusturan)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id`,
+          `INSERT INTO crm_firma (ad, web, alan_adi, ulke, bolge, sehir, sektor, faaliyet, potansiyel, sorumlu, olusturan)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $10) RETURNING id`,
           [f.ad, f.web, alan, f.ulke, f.bolge, f.sehir, f.sektor, f.faaliyet, f.potansiyel, ben.kullanici]
         )
       ).rows[0].id;
@@ -126,11 +127,14 @@ export async function hizliKayit(fd: FormData): Promise<void> {
     }
 
     if (etkinlikId || talep) {
-      await b.query(
-        `INSERT INTO crm_temas (firma_id, kisi_id, etkinlik_id, tarih, talep, takip, kanal, son_temas, olusturan)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
-        [firmaId, kisiId, etkinlikId, gun(fd, "tarih"), talep, takip, kanal, gun(fd, "son_temas"), ben.kullanici]
-      );
+      const temasId = (
+        await b.query<{ id: number }>(
+          `INSERT INTO crm_temas (firma_id, kisi_id, etkinlik_id, tarih, talep, takip, kanal, son_temas, olusturan)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id`,
+          [firmaId, kisiId, etkinlikId, gun(fd, "tarih"), talep, takip, kanal, gun(fd, "son_temas"), ben.kullanici]
+        )
+      ).rows[0].id;
+      await temasGorevi(b, { id: temasId, firmaId, takip: String(takip) }, ben);
     }
     if (not) {
       await b.query(`INSERT INTO crm_not (firma_id, metin, yazan) VALUES ($1, $2, $3)`, [firmaId, not, ben.kullanici]);
@@ -153,7 +157,7 @@ export async function firmaGuncelle(fd: FormData): Promise<void> {
   await sorgu(
     `UPDATE crm_firma SET ad = $2, web = $3, alan_adi = COALESCE($4, alan_adi), ulke = $5, bolge = $6,
             sehir = $7, sektor = $8, faaliyet = $9, potansiyel = $10, durum = $11, notlar = $12,
-            guncellendi = now()
+            sorumlu = $13, guncellendi = now()
       WHERE id = $1`,
     [
       id,
@@ -168,6 +172,7 @@ export async function firmaGuncelle(fd: FormData): Promise<void> {
       f.potansiyel,
       gecerli(FIRMA_DURUMU, fd.get("durum"), "aday"),
       metin(fd, "notlar", 4000),
+      metin(fd, "sorumlu", 40),
     ]
   );
   await kayitEkle(ben, "firma_guncelle", `firma #${id}`, f.ad);
@@ -254,21 +259,27 @@ export async function temasKaydet(fd: FormData): Promise<void> {
     metin(fd, "notlar", 2000),
     gecerli(KANAL, fd.get("kanal"), etkinlikId ? "fuar" : "diger"),
   ];
-  if (temasId) {
-    await sorgu(
-      `UPDATE crm_temas SET kisi_id = $3, etkinlik_id = $4, tarih = $5, talep = $6, takip = $7,
-              son_temas = $8, notlar = $9, kanal = $10, guncellendi = now()
-        WHERE id = $1 AND firma_id = $2`,
-      [temasId, firmaId, ...d]
-    );
-  } else {
-    await sorgu(
-      `INSERT INTO crm_temas (firma_id, kisi_id, etkinlik_id, tarih, talep, takip, son_temas, notlar, kanal, olusturan)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
-      [firmaId, ...d, ben.kullanici]
-    );
-  }
-  await sorgu(`UPDATE crm_firma SET guncellendi = now() WHERE id = $1`, [firmaId]);
+  await islem(async (b) => {
+    let id = temasId;
+    if (temasId) {
+      await b.query(
+        `UPDATE crm_temas SET kisi_id = $3, etkinlik_id = $4, tarih = $5, talep = $6, takip = $7,
+                son_temas = $8, notlar = $9, kanal = $10, guncellendi = now()
+          WHERE id = $1 AND firma_id = $2`,
+        [temasId, firmaId, ...d]
+      );
+    } else {
+      id = (
+        await b.query<{ id: number }>(
+          `INSERT INTO crm_temas (firma_id, kisi_id, etkinlik_id, tarih, talep, takip, son_temas, notlar, kanal, olusturan)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING id`,
+          [firmaId, ...d, ben.kullanici]
+        )
+      ).rows[0].id;
+    }
+    if (id) await temasGorevi(b, { id, firmaId, takip: String(d[4]) }, ben);
+    await b.query(`UPDATE crm_firma SET guncellendi = now() WHERE id = $1`, [firmaId]);
+  });
   await kayitEkle(ben, temasId ? "temas_guncelle" : "temas_ekle", `firma #${firmaId}`, String(d[4]));
   redirect(fd.get("geri") === "etkinlik" && d[1] ? `/etkinlikler/${d[1]}` : `/firmalar/${firmaId}`);
 }
@@ -279,12 +290,18 @@ export async function takipDegistir(fd: FormData): Promise<void> {
   const temasId = sayi(fd.get("temas_id"));
   if (!temasId) throw new Error("Görüşme yok.");
   const takip = gecerli(TAKIP, fd.get("takip"), "gorusuldu");
-  const r = await tek<{ firma_id: number; etkinlik_id: number | null }>(
-    /* Veritabanı UTC'de; gece yarısından sonra "bugün" İstanbul'a göre olmalı. */
-    `UPDATE crm_temas SET takip = $2, son_temas = (now() AT TIME ZONE 'Europe/Istanbul')::date, guncellendi = now()
-      WHERE id = $1 RETURNING firma_id, etkinlik_id`,
-    [temasId, takip]
-  );
+  const r = await islem(async (b) => {
+    const t = (
+      await b.query<{ firma_id: number }>(
+        /* Veritabanı UTC'de; gece yarısından sonra "bugün" İstanbul'a göre olmalı. */
+        `UPDATE crm_temas SET takip = $2, son_temas = (now() AT TIME ZONE 'Europe/Istanbul')::date, guncellendi = now()
+          WHERE id = $1 RETURNING firma_id`,
+        [temasId, takip]
+      )
+    ).rows[0];
+    if (t) await temasGorevi(b, { id: temasId, firmaId: t.firma_id, takip: String(takip) }, ben);
+    return t;
+  });
   if (!r) throw new Error("Görüşme bulunamadı.");
   await kayitEkle(ben, "takip_degistir", `firma #${r.firma_id}`, String(takip));
   const geri = String(fd.get("geri") ?? "");

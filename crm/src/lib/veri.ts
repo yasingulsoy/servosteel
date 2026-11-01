@@ -1,5 +1,18 @@
 import { sorgu, tek } from "./db";
-import type { DOVIZ, ETKINLIK_TURU, FIRMA_DURUMU, KANAL, POTANSIYEL, RED_SEBEBI, TAKIP, TEKLIF_DURUMU } from "./sabitler";
+import { KANAL as KANAL_ADI } from "./sabitler";
+import type {
+  DOVIZ,
+  ETKINLIK_TURU,
+  FIRMA_DURUMU,
+  KANAL,
+  POTANSIYEL,
+  RED_SEBEBI,
+  SERVIS_DURUMU,
+  SERVIS_TURU,
+  SIPARIS_DURUMU,
+  TAKIP,
+  TEKLIF_DURUMU,
+} from "./sabitler";
 
 /** Okuma sorguları. Yazmalar ilgili sayfanın actions.ts dosyasında. */
 
@@ -29,6 +42,8 @@ export type Firma = {
   potansiyel: keyof typeof POTANSIYEL;
   durum: keyof typeof FIRMA_DURUMU;
   notlar: string | null;
+  sorumlu: string | null;
+  hedef_firma_id: number | null;
   olusturan: string | null;
   olusturuldu: Date;
   guncellendi: Date;
@@ -155,7 +170,8 @@ export type FirmaFiltresi = {
   kanal?: string;
 };
 
-export async function firmalar(f: FirmaFiltresi): Promise<FirmaSatiri[]> {
+/** Liste ekranı 500 satırla sınırlı; Excel'e aktarma sınırsız ister. */
+export async function firmalar(f: FirmaFiltresi, sinir = 500): Promise<FirmaSatiri[]> {
   const kosul: string[] = [];
   const d: unknown[] = [];
   const ekle = (sql: string, v: unknown) => {
@@ -194,7 +210,7 @@ export async function firmalar(f: FirmaFiltresi): Promise<FirmaSatiri[]> {
        ) son ON true
       ${kosul.length ? `WHERE ${kosul.join(" AND ")}` : ""}
       ORDER BY f.guncellendi DESC
-      LIMIT 500`,
+      LIMIT ${Math.max(1, Math.floor(sinir))}`,
     d
   );
 }
@@ -333,4 +349,324 @@ export async function kanalOzeti(): Promise<KanalSatiri[]> {
       LEFT JOIN crm_teklif tk ON tk.firma_id = t.firma_id
      GROUP BY t.kanal
      ORDER BY temas DESC`);
+}
+
+/* ------------------------------------------------------------- kullanıcılar */
+
+/** Atama listeleri için etkin kullanıcılar. */
+export async function kullanicilar(): Promise<{ kullanici: string; ad: string }[]> {
+  return sorgu(`SELECT kullanici, ad FROM crm_kullanici WHERE aktif ORDER BY ad, kullanici`);
+}
+
+/* ------------------------------------------------------------------ görevler */
+
+export type Gorev = {
+  id: number;
+  baslik: string;
+  aciklama: string | null;
+  firma_id: number | null;
+  firma_ad: string | null;
+  teklif_id: number | null;
+  atanan: string | null;
+  son_tarih: string | null;
+  durum: "acik" | "tamam" | "iptal";
+  kaynak: string | null;
+  tamamlayan: string | null;
+  tamamlandi: Date | null;
+  olusturan: string | null;
+  gecikti: boolean;
+};
+
+const GOREV_SECIM = `
+  SELECT g.id, g.baslik, g.aciklama, g.firma_id, f.ad AS firma_ad, g.teklif_id, g.atanan, g.son_tarih, g.durum,
+         g.kaynak, g.tamamlayan, g.tamamlandi, g.olusturan,
+         (g.durum = 'acik' AND g.son_tarih < (now() AT TIME ZONE 'Europe/Istanbul')::date) AS gecikti
+    FROM crm_gorev g LEFT JOIN crm_firma f ON f.id = g.firma_id`;
+
+export type GorevFiltresi = { atanan?: string; durum?: "acik" | "tamam"; gecikmis?: boolean };
+
+export async function gorevler(f: GorevFiltresi): Promise<Gorev[]> {
+  const kosul: string[] = [];
+  const d: unknown[] = [];
+  if (f.atanan) {
+    d.push(f.atanan);
+    kosul.push(`g.atanan = $${d.length}`);
+  }
+  kosul.push(f.durum === "tamam" ? `g.durum = 'tamam'` : `g.durum = 'acik'`);
+  if (f.gecikmis) kosul.push(`g.son_tarih < (now() AT TIME ZONE 'Europe/Istanbul')::date`);
+  return sorgu<Gorev>(
+    `${GOREV_SECIM} WHERE ${kosul.join(" AND ")}
+      ORDER BY ${f.durum === "tamam" ? "g.tamamlandi DESC" : "g.son_tarih NULLS LAST, g.id"} LIMIT 300`,
+    d
+  );
+}
+
+export async function firmaGorevleri(firmaId: number): Promise<Gorev[]> {
+  return sorgu<Gorev>(
+    `${GOREV_SECIM} WHERE g.firma_id = $1 ORDER BY (g.durum = 'acik') DESC, g.son_tarih NULLS LAST, g.id DESC`,
+    [firmaId]
+  );
+}
+
+/** Pano: yarına kadar vadesi gelen açık görevler (kişiye atanmış ya da sahipsiz). */
+export async function vadesiGelenGorevler(kullanici: string): Promise<Gorev[]> {
+  return sorgu<Gorev>(
+    `${GOREV_SECIM}
+      WHERE g.durum = 'acik' AND (g.atanan = $1 OR g.atanan IS NULL)
+        AND (g.son_tarih IS NULL OR g.son_tarih <= (now() AT TIME ZONE 'Europe/Istanbul')::date + 1)
+      ORDER BY g.son_tarih NULLS LAST LIMIT 30`,
+    [kullanici]
+  );
+}
+
+/* ------------------------------------------------------------- satış sonrası */
+
+export type Siparis = {
+  id: number;
+  firma_id: number;
+  teklif_id: number | null;
+  siparis_no: string | null;
+  konu: string | null;
+  tarih: string;
+  tutar: string | null;
+  doviz: keyof typeof DOVIZ;
+  teslim_tarihi: string | null;
+  durum: keyof typeof SIPARIS_DURUMU;
+  notlar: string | null;
+};
+
+export async function firmaSiparisleri(firmaId: number): Promise<Siparis[]> {
+  return sorgu<Siparis>(`SELECT * FROM crm_siparis WHERE firma_id = $1 ORDER BY tarih DESC, id DESC`, [firmaId]);
+}
+
+export type Makine = {
+  id: number;
+  firma_id: number;
+  siparis_id: number | null;
+  ad: string;
+  seri_no: string | null;
+  kurulum_tarihi: string | null;
+  garanti_bitis: string | null;
+  notlar: string | null;
+  garantide: boolean;
+};
+
+export async function firmaMakineleri(firmaId: number): Promise<Makine[]> {
+  return sorgu<Makine>(
+    `SELECT *, (garanti_bitis IS NOT NULL AND garanti_bitis >= (now() AT TIME ZONE 'Europe/Istanbul')::date) AS garantide
+       FROM crm_makine WHERE firma_id = $1 ORDER BY kurulum_tarihi DESC NULLS LAST, id DESC`,
+    [firmaId]
+  );
+}
+
+export type Servis = {
+  id: number;
+  firma_id: number;
+  firma_ad: string;
+  firma_ulke: string | null;
+  makine_id: number | null;
+  makine_ad: string | null;
+  seri_no: string | null;
+  tur: keyof typeof SERVIS_TURU;
+  aciklama: string;
+  durum: keyof typeof SERVIS_DURUMU;
+  atanan: string | null;
+  acildi: string;
+  kapandi: string | null;
+  sonuc: string | null;
+  garantide: boolean | null;
+};
+
+const SERVIS_SECIM = `
+  SELECT s.id, s.firma_id, f.ad AS firma_ad, f.ulke AS firma_ulke, s.makine_id, m.ad AS makine_ad, m.seri_no,
+         s.tur, s.aciklama, s.durum, s.atanan, s.acildi, s.kapandi, s.sonuc,
+         (m.garanti_bitis IS NOT NULL AND m.garanti_bitis >= s.acildi) AS garantide
+    FROM crm_servis s JOIN crm_firma f ON f.id = s.firma_id LEFT JOIN crm_makine m ON m.id = s.makine_id`;
+
+export async function firmaServisleri(firmaId: number): Promise<Servis[]> {
+  return sorgu<Servis>(`${SERVIS_SECIM} WHERE s.firma_id = $1 ORDER BY (s.durum <> 'kapandi') DESC, s.acildi DESC`, [
+    firmaId,
+  ]);
+}
+
+export async function servisler(acik: boolean): Promise<Servis[]> {
+  return sorgu<Servis>(
+    `${SERVIS_SECIM} WHERE ${acik ? "s.durum <> 'kapandi'" : "s.durum = 'kapandi'"}
+      ORDER BY ${acik ? "s.acildi" : "s.kapandi DESC"} LIMIT 300`
+  );
+}
+
+/* ------------------------------------------------------------ zaman çizelgesi */
+
+export type CizelgeOgesi = { zaman: string; tur: string; baslik: string; ayrinti: string | null; kim: string | null };
+
+/**
+ * Firmanın tek zaman çizelgesi: CRM kayıtları + panelin kayıtları (tanıtım
+ * mailleri, gelen yanıtlar, tanıtım mailinden siteye gelişler, panel notları).
+ * Panel verisi kopyalanmaz, kaynağından okunur; panel tabloları yoksa yalnız
+ * CRM kısmı gelir.
+ */
+export async function zamanCizelgesi(f: Pick<Firma, "id" | "hedef_firma_id">): Promise<CizelgeOgesi[]> {
+  const crm = sorgu<CizelgeOgesi>(
+    `SELECT * FROM (
+       SELECT t.olusturuldu::text AS zaman, 'gorusme' AS tur,
+              'Görüşme · ' || COALESCE(e.ad, t.kanal) AS baslik, t.talep AS ayrinti, t.olusturan AS kim
+         FROM crm_temas t LEFT JOIN crm_etkinlik e ON e.id = t.etkinlik_id WHERE t.firma_id = $1
+       UNION ALL
+       SELECT n.olusturuldu::text, 'not', 'Not', n.metin, n.yazan FROM crm_not n WHERE n.firma_id = $1
+       UNION ALL
+       SELECT tk.olusturuldu::text, 'teklif', concat_ws(' ', 'Teklif', tk.teklif_no), tk.konu, tk.olusturan
+         FROM crm_teklif tk WHERE tk.firma_id = $1
+       UNION ALL
+       SELECT g.tamamlandi::text, 'gorev', 'Görev tamamlandı: ' || g.baslik, NULL, g.tamamlayan
+         FROM crm_gorev g WHERE g.firma_id = $1 AND g.durum = 'tamam' AND g.tamamlandi IS NOT NULL
+       UNION ALL
+       SELECT s.olusturuldu::text, 'siparis', concat_ws(' ', 'Sipariş', s.siparis_no), s.konu, s.olusturan
+         FROM crm_siparis s WHERE s.firma_id = $1
+       UNION ALL
+       SELECT sv.olusturuldu::text, 'servis', 'Servis talebi', sv.aciklama, sv.olusturan
+         FROM crm_servis sv WHERE sv.firma_id = $1
+     ) x`,
+    [f.id]
+  );
+  const panel = f.hedef_firma_id
+    ? sorgu<CizelgeOgesi>(
+        `SELECT * FROM (
+           SELECT g.zaman::text AS zaman, 'tanitim' AS tur,
+                  CASE WHEN g.tur = 2 THEN 'Hatırlatma maili gitti' ELSE 'Tanıtım maili gitti' END AS baslik,
+                  g.konu AS ayrinti, g.gonderen AS kim
+             FROM hedef_gonderim g WHERE g.firma_id = $1 AND g.sonuc IN ('ok', 'belirsiz')
+           UNION ALL
+           SELECT e.zaman::text, 'gelen',
+                  CASE e.tur WHEN 'yanit' THEN 'Yanıt geldi' WHEN 'otomatik' THEN 'Otomatik yanıt'
+                             WHEN 'geri_donus' THEN 'Mail ulaşmadı' ELSE 'Gelen mail' END,
+                  concat_ws(' — ', e.konu, e.ozet), e.kimden
+             FROM gelen_eposta e WHERE e.firma_id = $1 AND e.tur IN ('yanit', 'otomatik', 'geri_donus')
+           UNION ALL
+           SELECT o.olusturuldu::text, 'ziyaret', 'Tanıtım mailinden siteye geldi', o.yol, NULL
+             FROM olaylar o JOIN hedef_firmalar h ON h.id = $1
+            WHERE o.tur = 'outreach' AND o.kaynak = split_part(h.anahtar, '|', 1) AND o.etkilesim
+           UNION ALL
+           SELECT n.olusturuldu::text, 'panel_not', 'Panel notu', n.govde, n.yazan
+             FROM hedef_not n WHERE n.firma_id = $1
+         ) x`,
+        [f.hedef_firma_id]
+      ).catch(() => [] as CizelgeOgesi[])
+    : Promise.resolve([] as CizelgeOgesi[]);
+  /* Etkinliksiz görüşmenin başlığında kanal kodu var ("telefon"); ekranda adı yazsın. */
+  const crmOgeleri = (await crm).map((o) =>
+    o.tur === "gorusme" ? { ...o, baslik: o.baslik.replace(/· (\w+)$/, (_, k: string) => `· ${KANAL_ADI[k as keyof typeof KANAL_ADI] ?? k}`) } : o
+  );
+  const tum = [...crmOgeleri, ...(await panel)];
+  return tum.sort((a, b) => (new Date(a.zaman) < new Date(b.zaman) ? 1 : -1)).slice(0, 200);
+}
+
+/* ------------------------------------------------------------------- arama */
+
+export type AramaSonucu = {
+  tur: "firma" | "kisi" | "teklif" | "makine";
+  firma_id: number;
+  baslik: string;
+  ayrinti: string | null;
+};
+
+export async function ara(q: string): Promise<AramaSonucu[]> {
+  const k = `%${q}%`;
+  return sorgu<AramaSonucu>(
+    `(SELECT 'firma' AS tur, f.id AS firma_id, f.ad AS baslik, concat_ws(' · ', f.ulke, f.web) AS ayrinti
+        FROM crm_firma f WHERE f.ad ILIKE $1 OR f.web ILIKE $1 OR f.alan_adi ILIKE $1 LIMIT 30)
+     UNION ALL
+     (SELECT 'kisi', k.firma_id, k.ad, concat_ws(' · ', f.ad, k.unvan, k.eposta, k.telefon)
+        FROM crm_kisi k JOIN crm_firma f ON f.id = k.firma_id
+       WHERE k.ad ILIKE $1 OR k.eposta ILIKE $1 OR k.eposta2 ILIKE $1 OR k.telefon ILIKE $1 LIMIT 30)
+     UNION ALL
+     (SELECT 'teklif', t.firma_id, COALESCE(t.teklif_no, 'Teklif'), concat_ws(' · ', f.ad, t.konu)
+        FROM crm_teklif t JOIN crm_firma f ON f.id = t.firma_id
+       WHERE t.teklif_no ILIKE $1 OR t.konu ILIKE $1 LIMIT 20)
+     UNION ALL
+     (SELECT 'makine', m.firma_id, m.ad, concat_ws(' · ', f.ad, m.seri_no)
+        FROM crm_makine m JOIN crm_firma f ON f.id = m.firma_id
+       WHERE m.ad ILIKE $1 OR m.seri_no ILIKE $1 LIMIT 20)`,
+    [k]
+  );
+}
+
+/* ----------------------------------------------------------------- raporlar */
+
+export type HuniSatiri = { adim: string; firma: number };
+
+/** Huni: görüşülen firma → teklif istenen → teklif giden → kabul → sipariş. */
+export async function huni(): Promise<HuniSatiri[]> {
+  return sorgu<HuniSatiri>(`
+    SELECT 'Görüşülen firma' AS adim, count(DISTINCT firma_id)::int AS firma FROM crm_temas
+    UNION ALL
+    SELECT 'Teklif istenen', count(DISTINCT firma_id)::int FROM (
+      SELECT firma_id FROM crm_temas WHERE takip IN ('teklif_verilecek', 'cizim_bekleniyor', 'teklif_gonderildi')
+      UNION SELECT firma_id FROM crm_teklif) x
+    UNION ALL
+    SELECT 'Teklif giden', count(DISTINCT firma_id)::int FROM (
+      SELECT firma_id FROM crm_teklif WHERE durum IN ('gonderildi', 'kabul', 'red')
+      UNION SELECT firma_id FROM crm_temas WHERE takip = 'teklif_gonderildi') x
+    UNION ALL
+    SELECT 'Kabul', count(DISTINCT firma_id)::int FROM crm_teklif WHERE durum = 'kabul'
+    UNION ALL
+    SELECT 'Sipariş', count(DISTINCT firma_id)::int FROM crm_siparis WHERE durum <> 'iptal'`);
+}
+
+export type KirilimSatiri = { anahtar: string; firma: number; teklif: number; kabul: number };
+
+/** Ülke, ilgi alanı ya da kanal başına: firma, teklif giden firma, kabul. */
+export async function kirilim(boyut: "ulke" | "ilgi" | "kanal"): Promise<KirilimSatiri[]> {
+  const kaynak = {
+    ulke: `SELECT f.id AS firma_id, COALESCE(f.ulke, 'Ülke yok') AS anahtar FROM crm_firma f`,
+    ilgi: `SELECT fi.firma_id, i.ad AS anahtar FROM crm_firma_ilgi fi JOIN crm_ilgi_alani i ON i.kod = fi.ilgi_kod`,
+    kanal: `SELECT DISTINCT firma_id, kanal AS anahtar FROM crm_temas`,
+  }[boyut];
+  return sorgu<KirilimSatiri>(`
+    WITH k AS (${kaynak}),
+         teklifli AS (SELECT firma_id FROM crm_teklif WHERE durum IN ('gonderildi', 'kabul', 'red')
+                      UNION SELECT firma_id FROM crm_temas WHERE takip = 'teklif_gonderildi'),
+         kabullu AS (SELECT firma_id FROM crm_teklif WHERE durum = 'kabul')
+    SELECT k.anahtar, count(DISTINCT k.firma_id)::int AS firma,
+           count(DISTINCT k.firma_id) FILTER (WHERE k.firma_id IN (SELECT firma_id FROM teklifli))::int AS teklif,
+           count(DISTINCT k.firma_id) FILTER (WHERE k.firma_id IN (SELECT firma_id FROM kabullu))::int AS kabul
+      FROM k GROUP BY k.anahtar ORDER BY firma DESC, k.anahtar LIMIT 40`);
+}
+
+export async function redSebepleri(): Promise<{ sebep: keyof typeof RED_SEBEBI; adet: number }[]> {
+  return sorgu(
+    `SELECT red_sebebi AS sebep, count(*)::int AS adet FROM crm_teklif
+      WHERE durum = 'red' AND red_sebebi IS NOT NULL GROUP BY 1 ORDER BY adet DESC`
+  );
+}
+
+export type TeklifHizi = { ort_gun: number | null; teklif: number; sonuclanan: number; kabul: number };
+
+/** İlk görüşmeden ilk teklife ortalama gün; teklif ve sonuç sayıları. */
+export async function teklifHizi(): Promise<TeklifHizi> {
+  return (await tek<TeklifHizi>(`
+    WITH ilk AS (SELECT firma_id, min(COALESCE(tarih, olusturuldu::date)) AS ilk FROM crm_temas GROUP BY firma_id),
+         ilkteklif AS (SELECT firma_id, min(tarih) AS teklif FROM crm_teklif GROUP BY firma_id)
+    SELECT (SELECT round(avg(t.teklif - i.ilk))::int FROM ilkteklif t JOIN ilk i ON i.firma_id = t.firma_id
+             WHERE t.teklif >= i.ilk) AS ort_gun,
+           (SELECT count(*)::int FROM crm_teklif WHERE durum <> 'iptal') AS teklif,
+           (SELECT count(*)::int FROM crm_teklif WHERE durum IN ('kabul', 'red')) AS sonuclanan,
+           (SELECT count(*)::int FROM crm_teklif WHERE durum = 'kabul') AS kabul`))!;
+}
+
+export type SorumluSatiri = { kim: string; firma: number; gorev: number; geciken: number; teklif: number };
+
+/** Sorumlu başına açık iş. */
+export async function sorumluYuku(): Promise<SorumluSatiri[]> {
+  return sorgu<SorumluSatiri>(`
+    WITH kisiler AS (SELECT sorumlu AS kim FROM crm_firma WHERE sorumlu IS NOT NULL
+                     UNION SELECT atanan FROM crm_gorev WHERE atanan IS NOT NULL)
+    SELECT k.kim,
+           (SELECT count(*)::int FROM crm_firma f WHERE f.sorumlu = k.kim) AS firma,
+           (SELECT count(*)::int FROM crm_gorev g WHERE g.atanan = k.kim AND g.durum = 'acik') AS gorev,
+           (SELECT count(*)::int FROM crm_gorev g WHERE g.atanan = k.kim AND g.durum = 'acik'
+               AND g.son_tarih < (now() AT TIME ZONE 'Europe/Istanbul')::date) AS geciken,
+           (SELECT count(*)::int FROM crm_teklif t JOIN crm_firma f ON f.id = t.firma_id
+             WHERE f.sorumlu = k.kim AND t.durum IN ('hazirlaniyor', 'gonderildi')) AS teklif
+      FROM kisiler k ORDER BY gorev DESC, k.kim`);
 }

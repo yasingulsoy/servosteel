@@ -32,7 +32,12 @@ export default async function TeklifListesi(props: PageProps<"/teklifler">) {
 
   return (
     <div className="space-y-5">
-      <h1 className="text-xl font-bold">Teklifler</h1>
+      <div className="flex flex-wrap items-center gap-3">
+        <h1 className="text-xl font-bold">Teklifler</h1>
+        <a href={`/teklifler/disa-aktar${durum ? `?durum=${durum}` : ""}`} className="dugme-ikincil ml-auto">
+          Excel
+        </a>
+      </div>
       <p className="max-w-3xl text-sm text-muted">
         Teklif firma kartından eklenir: satış teklifi kendi dosyasında hazırlar, burada PDF&apos;i, tutarı ve durumu durur.
       </p>

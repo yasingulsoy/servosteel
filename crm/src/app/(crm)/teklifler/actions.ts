@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import type { PoolClient } from "pg";
 import { gun, metin, sayi, tutar } from "@/lib/bicim";
 import { islem, sorgu, tek } from "@/lib/db";
+import { teklifGorevi, temasGorevi } from "@/lib/gorev-oto";
 import { kayitEkle } from "@/lib/kayit";
 import { type Kullanici, yazarZorunlu } from "@/lib/oturum";
 import { DOVIZ, gecerli, RED_SEBEBI, TEKLIF_DURUMU } from "@/lib/sabitler";
@@ -64,6 +65,7 @@ export async function teklifKaydet(fd: FormData): Promise<void> {
       redSebebi,
       metin(fd, "notlar", 2000),
     ];
+    let id = teklifId;
     if (teklifId) {
       await b.query(
         `UPDATE crm_teklif SET temas_id = $3, teklif_no = $4, konu = $5, tarih = $6, gecerlilik = $7, tutar = $8,
@@ -73,14 +75,21 @@ export async function teklifKaydet(fd: FormData): Promise<void> {
         [teklifId, firmaId, ...d, dosyaId]
       );
     } else {
-      await b.query(
-        `INSERT INTO crm_teklif (firma_id, temas_id, teklif_no, konu, tarih, gecerlilik, tutar, doviz, durum,
-                                 red_sebebi, notlar, dosya_id, olusturan)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
-        [firmaId, ...d, dosyaId, ben.kullanici]
-      );
+      id = (
+        await b.query<{ id: number }>(
+          `INSERT INTO crm_teklif (firma_id, temas_id, teklif_no, konu, tarih, gecerlilik, tutar, doviz, durum,
+                                   red_sebebi, notlar, dosya_id, olusturan)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING id`,
+          [firmaId, ...d, dosyaId, ben.kullanici]
+        )
+      ).rows[0].id;
+    }
+    if (id) {
+      await teklifGorevi(b, { id, firmaId, durum: String(durum), tarih, teklifNo: d[1] as string | null }, ben);
     }
     if (temasId && durum === "gonderildi") {
+      /* Teklif gitti: görüşmenin "Teklif hazırla" görevi de kapanır. */
+      await temasGorevi(b, { id: temasId, firmaId, takip: "teklif_gonderildi" }, ben);
       await b.query(
         `UPDATE crm_temas SET takip = 'teklif_gonderildi', son_temas = GREATEST(COALESCE(son_temas, $2::date), $2::date),
                 guncellendi = now()

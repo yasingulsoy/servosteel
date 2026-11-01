@@ -1,7 +1,26 @@
 import { inputTarih } from "@/lib/bicim";
-import { DOVIZ, ETKINLIK_TURU, FIRMA_DURUMU, KANAL, POTANSIYEL, RED_SEBEBI, TAKIP, TEKLIF_DURUMU } from "@/lib/sabitler";
+import {
+  DOVIZ,
+  ETKINLIK_TURU,
+  FIRMA_DURUMU,
+  KANAL,
+  POTANSIYEL,
+  RED_SEBEBI,
+  SERVIS_DURUMU,
+  SERVIS_TURU,
+  SIPARIS_DURUMU,
+  TAKIP,
+  TEKLIF_DURUMU,
+} from "@/lib/sabitler";
 import { BOLGELER, ULKELER } from "@/lib/ulkeler";
-import type { Etkinlik, Firma, IlgiAlani, Kisi, Teklif, Temas } from "@/lib/veri";
+import type { Etkinlik, Firma, Gorev, IlgiAlani, Kisi, Makine, Servis, Siparis, Teklif, Temas } from "@/lib/veri";
+
+/** Atama seçimi için kullanıcı listesi; kayıttaki değer listede yoksa yine görünür. */
+type KullaniciListesi = { kullanici: string; ad: string }[];
+function kisiSecenekleri(liste: KullaniciListesi, mevcut?: string | null): [string, string][] {
+  const s = liste.map((k) => [k.kullanici, k.ad || k.kullanici] as [string, string]);
+  return mevcut && !liste.some((k) => k.kullanici === mevcut) ? [[mevcut, mevcut], ...s] : s;
+}
 import { IlgiSecimi } from "./ilgi-secimi";
 
 /* Sunucu bileşenleri: düz <form> + sunucu eylemi. JavaScript yüklenmeden de çalışır
@@ -207,7 +226,7 @@ export function EtkinlikFormu({ eylem, e }: { eylem: Eylem; e?: Etkinlik | null 
   );
 }
 
-export function FirmaBilgiFormu({ eylem, f }: { eylem: Eylem; f: Firma }) {
+export function FirmaBilgiFormu({ eylem, f, kisiler }: { eylem: Eylem; f: Firma; kisiler: KullaniciListesi }) {
   return (
     <form action={eylem} className="space-y-3">
       <input type="hidden" name="id" value={f.id} />
@@ -226,6 +245,7 @@ export function FirmaBilgiFormu({ eylem, f }: { eylem: Eylem; f: Firma }) {
         <Alan ad="sektor" etiket="Sektör" liste="sektorler" deger={f.sektor} />
         <Secim ad="potansiyel" etiket="Potansiyel" secenekler={POTANSIYEL} deger={f.potansiyel} />
         <Secim ad="durum" etiket="Durum" secenekler={FIRMA_DURUMU} deger={f.durum} />
+        <Secim ad="sorumlu" etiket="Sorumlu" secenekler={kisiSecenekleri(kisiler, f.sorumlu)} deger={f.sorumlu} bos="— sahipsiz —" />
       </div>
       <Metin ad="faaliyet" etiket="Ne iş yapıyor" deger={f.faaliyet} />
       <Metin ad="notlar" etiket="Kalıcı not" deger={f.notlar} />
@@ -372,6 +392,158 @@ export function DosyaFormu({ eylem, firmaId }: { eylem: Eylem; firmaId: number }
       </label>
       <button type="submit" className="dugme">
         Yükle
+      </button>
+    </form>
+  );
+}
+
+const tlTutar = (v: string | null | undefined) => (v ? String(Number(v)).replace(".", ",") : "");
+
+/** Görev. firmaId verilirse firmaya bağlı; firmalar listesi verilirse seçtirilir. */
+export function GorevFormu({
+  eylem,
+  g,
+  firmaId,
+  firmalar,
+  kisiler,
+  varsayilanAtanan,
+  geri,
+}: {
+  eylem: Eylem;
+  g?: Gorev;
+  firmaId?: number;
+  firmalar?: { id: number; ad: string }[];
+  kisiler: KullaniciListesi;
+  varsayilanAtanan?: string;
+  geri?: string;
+}) {
+  const atanan = g ? g.atanan : (varsayilanAtanan ?? null);
+  return (
+    <form action={eylem} className="space-y-3">
+      {g ? <input type="hidden" name="gorev_id" value={g.id} /> : null}
+      {geri ? <input type="hidden" name="geri" value={geri} /> : null}
+      {firmaId ? <input type="hidden" name="firma_id" value={firmaId} /> : null}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Alan ad="baslik" etiket="Ne yapılacak" zorunlu deger={g?.baslik} sinif="sm:col-span-2" />
+        <Secim ad="atanan" etiket="Kime" secenekler={kisiSecenekleri(kisiler, atanan)} deger={atanan} bos="— sahipsiz —" />
+        <Alan ad="son_tarih" etiket="Son tarih" tur="date" deger={inputTarih(g?.son_tarih)} />
+        {!firmaId && firmalar ? (
+          <Secim
+            ad="firma_id"
+            etiket="Firma"
+            secenekler={firmalar.map((f) => [String(f.id), f.ad] as [string, string])}
+            deger={g?.firma_id ?? ""}
+            bos="— firmasız —"
+            sinif="sm:col-span-2"
+          />
+        ) : null}
+      </div>
+      <Metin ad="aciklama" etiket="Açıklama" deger={g?.aciklama} satir={1} />
+      <button type="submit" className="dugme">
+        {g ? "Kaydet" : "Görevi ekle"}
+      </button>
+    </form>
+  );
+}
+
+export function SiparisFormu({ eylem, firmaId, s }: { eylem: Eylem; firmaId: number; s?: Siparis }) {
+  const bugun = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
+  return (
+    <form action={eylem} className="space-y-3">
+      <input type="hidden" name="firma_id" value={firmaId} />
+      {s ? <input type="hidden" name="siparis_id" value={s.id} /> : null}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Alan ad="siparis_no" etiket="Sipariş no" deger={s?.siparis_no} />
+        <Alan ad="konu" etiket="Ne satıldı" deger={s?.konu} sinif="lg:col-span-3" />
+        <Alan ad="tarih" etiket="Sipariş tarihi" tur="date" deger={inputTarih(s?.tarih) || bugun} />
+        <Alan ad="teslim_tarihi" etiket="Teslim tarihi" tur="date" deger={inputTarih(s?.teslim_tarihi)} />
+        <Alan ad="tutar" etiket="Tutar" deger={tlTutar(s?.tutar)} />
+        <Secim ad="doviz" etiket="Döviz" secenekler={Object.keys(DOVIZ).map((d) => [d, d] as [string, string])} deger={s?.doviz ?? "EUR"} />
+        <Secim ad="durum" etiket="Durum" secenekler={SIPARIS_DURUMU} deger={s?.durum ?? "uretimde"} />
+      </div>
+      <Metin ad="notlar" etiket="Not" deger={s?.notlar} satir={1} />
+      <button type="submit" className="dugme">
+        {s ? "Kaydet" : "Siparişi ekle"}
+      </button>
+    </form>
+  );
+}
+
+export function MakineFormu({
+  eylem,
+  firmaId,
+  m,
+  siparisler,
+}: {
+  eylem: Eylem;
+  firmaId: number;
+  m?: Makine;
+  siparisler: Siparis[];
+}) {
+  return (
+    <form action={eylem} className="space-y-3">
+      <input type="hidden" name="firma_id" value={firmaId} />
+      {m ? <input type="hidden" name="makine_id" value={m.id} /> : null}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Alan ad="ad" etiket="Makine / hat" zorunlu deger={m?.ad} sinif="sm:col-span-2" ipucu="Ör. C/Z aşık hattı" />
+        <Alan ad="seri_no" etiket="Seri no" deger={m?.seri_no} />
+        <Secim
+          ad="siparis_id"
+          etiket="Sipariş"
+          secenekler={siparisler.map((s) => [String(s.id), s.siparis_no || s.konu || `#${s.id}`] as [string, string])}
+          deger={m?.siparis_id ?? (siparisler.length === 1 ? siparisler[0].id : "")}
+          bos="—"
+        />
+        <Alan ad="kurulum_tarihi" etiket="Kurulum" tur="date" deger={inputTarih(m?.kurulum_tarihi)} />
+        <Alan ad="garanti_bitis" etiket="Garanti bitişi" tur="date" deger={inputTarih(m?.garanti_bitis)} />
+        <Alan ad="notlar" etiket="Not" deger={m?.notlar} sinif="sm:col-span-2" />
+      </div>
+      <button type="submit" className="dugme">
+        {m ? "Kaydet" : "Makineyi ekle"}
+      </button>
+    </form>
+  );
+}
+
+export function ServisFormu({
+  eylem,
+  firmaId,
+  s,
+  makineler,
+  kisiler,
+  geri,
+}: {
+  eylem: Eylem;
+  firmaId: number;
+  s?: Servis;
+  makineler: Makine[];
+  kisiler: KullaniciListesi;
+  geri?: string;
+}) {
+  const bugun = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
+  return (
+    <form action={eylem} className="space-y-3">
+      <input type="hidden" name="firma_id" value={firmaId} />
+      {s ? <input type="hidden" name="servis_id" value={s.id} /> : null}
+      {geri ? <input type="hidden" name="geri" value={geri} /> : null}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Secim ad="tur" etiket="Tür" secenekler={SERVIS_TURU} deger={s?.tur ?? "ariza"} />
+        <Secim
+          ad="makine_id"
+          etiket="Makine"
+          secenekler={makineler.map((m) => [String(m.id), [m.ad, m.seri_no].filter(Boolean).join(" · ")] as [string, string])}
+          deger={s?.makine_id ?? (makineler.length === 1 ? makineler[0].id : "")}
+          bos="—"
+        />
+        <Secim ad="durum" etiket="Durum" secenekler={SERVIS_DURUMU} deger={s?.durum ?? "acik"} />
+        <Secim ad="atanan" etiket="Kim ilgileniyor" secenekler={kisiSecenekleri(kisiler, s?.atanan)} deger={s?.atanan} bos="—" />
+        <Alan ad="acildi" etiket="Açıldı" tur="date" deger={inputTarih(s?.acildi) || bugun} />
+        <Alan ad="kapandi" etiket="Kapandı" tur="date" deger={inputTarih(s?.kapandi)} />
+      </div>
+      <Metin ad="aciklama" etiket="Ne oldu / ne isteniyor" deger={s?.aciklama} />
+      {s ? <Metin ad="sonuc" etiket="Ne yapıldı" deger={s.sonuc} satir={1} /> : null}
+      <button type="submit" className="dugme">
+        {s ? "Kaydet" : "Servis talebini aç"}
       </button>
     </form>
   );

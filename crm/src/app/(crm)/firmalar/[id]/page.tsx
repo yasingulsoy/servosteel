@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, FileText, Info, Mail, Phone } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText, Info, Mail, Phone, UserRound } from "lucide-react";
 import { DosyaFormu, FirmaBilgiFormu, KisiFormu, TeklifFormu, TemasFormu } from "@/components/formlar";
 import { IlgiSecimi } from "@/components/ilgi-secimi";
 import { IlgiEtiketleri, PotansiyelRozeti, Rozet } from "@/components/rozet";
@@ -14,13 +14,20 @@ import {
   etkinlikler,
   firma,
   firmaDosyalari,
+  firmaGorevleri,
   firmaIlgiKodlari,
   firmaKisileri,
-  firmaNotlari,
+  firmaMakineleri,
+  firmaServisleri,
+  firmaSiparisleri,
   firmaTeklifleri,
   firmaTemaslari,
   ilgiAlanlari,
+  kullanicilar,
+  zamanCizelgesi,
 } from "@/lib/veri";
+import { siparisTekliften } from "../../servis/actions";
+import { Bolum, GorevBolumu, SatisSonrasiBolumu, ZamanCizelgesi } from "./bolumler";
 import {
   firmaGuncelle,
   firmaSil,
@@ -40,13 +47,6 @@ export async function generateMetadata(props: PageProps<"/firmalar/[id]">): Prom
   return { title: f?.ad ?? "Firma" };
 }
 
-const Bolum = ({ baslik, children }: { baslik: string; children: React.ReactNode }) => (
-  <section className="space-y-3">
-    <h2 className="text-sm font-bold uppercase tracking-wide text-muted">{baslik}</h2>
-    {children}
-  </section>
-);
-
 export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
   const ben = await oturumZorunlu();
   const no = sayi((await props.params).id);
@@ -55,16 +55,23 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
   const f = await firma(no);
   if (!f) notFound();
 
-  const [kisiler, temaslar, notlar, secili, ilgiler, ets, teklifListesi, dosyalar] = await Promise.all([
-    firmaKisileri(no),
-    firmaTemaslari(no),
-    firmaNotlari(no),
-    firmaIlgiKodlari(no),
-    ilgiAlanlari(),
-    etkinlikler(),
-    firmaTeklifleri(no),
-    firmaDosyalari(no),
-  ]);
+  const [kisiler, temaslar, secili, ilgiler, ets, teklifListesi, dosyalar, gorevListesi, siparisler, makineler, servisListesi, cizelge, kullanicilarListesi] =
+    await Promise.all([
+      firmaKisileri(no),
+      firmaTemaslari(no),
+      firmaIlgiKodlari(no),
+      ilgiAlanlari(),
+      etkinlikler(),
+      firmaTeklifleri(no),
+      firmaDosyalari(no),
+      firmaGorevleri(no),
+      firmaSiparisleri(no),
+      firmaMakineleri(no),
+      firmaServisleri(no),
+      zamanCizelgesi(f),
+      kullanicilar(),
+    ]);
+  const siparisliTeklifler = new Set(siparisler.map((s) => s.teklif_id));
   const yaz = yazabilir(ben);
   const ilgiAdlari = ilgiler.filter((i) => secili.includes(i.kod)).map((i) => i.ad);
 
@@ -90,6 +97,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
             </a>
           ) : null}
           {f.sektor ? <span>{f.sektor}</span> : null}
+          <span className="inline-flex items-center gap-1">
+            <UserRound size={13} /> {f.sorumlu ?? "sorumlu yok"}
+          </span>
         </p>
         {f.faaliyet ? <p className="mt-2 max-w-3xl whitespace-pre-line text-sm">{f.faaliyet}</p> : null}
         {f.notlar ? (
@@ -205,6 +215,8 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
         ) : null}
       </Bolum>
 
+      <GorevBolumu firmaId={f.id} gorevler={gorevListesi} kisiler={kullanicilarListesi} ben={ben.kullanici} yaz={yaz} />
+
       <Bolum baslik={`Teklifler (${teklifListesi.length})`}>
         {teklifListesi.length === 0 ? <p className="text-sm text-muted">Kayıtlı teklif yok.</p> : null}
         <div className="space-y-3">
@@ -230,6 +242,15 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
                 <a href={`/dosya/${tk.dosya_id}`} target="_blank" className="mt-2 inline-flex items-center gap-1 text-sm hover:underline">
                   <FileText size={14} /> {tk.dosya_ad}
                 </a>
+              ) : null}
+              {yaz && (tk.durum === "kabul" || tk.durum === "gonderildi") && !siparisliTeklifler.has(tk.id) ? (
+                <form action={siparisTekliften} className="mt-3">
+                  <input type="hidden" name="firma_id" value={f.id} />
+                  <input type="hidden" name="teklif_id" value={tk.id} />
+                  <button type="submit" className="dugme-ikincil">
+                    {tk.durum === "kabul" ? "Siparişe çevir" : "Kabul edildi, siparişe çevir"}
+                  </button>
+                </form>
               ) : null}
               {yaz ? (
                 <details className="mt-3">
@@ -258,6 +279,15 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
           </details>
         ) : null}
       </Bolum>
+
+      <SatisSonrasiBolumu
+        firmaId={f.id}
+        siparisler={siparisler}
+        makineler={makineler}
+        servisler={servisListesi}
+        kisiler={kullanicilarListesi}
+        yaz={yaz}
+      />
 
       <Bolum baslik={`Dosyalar (${dosyalar.length})`}>
         {dosyalar.length ? (
@@ -288,7 +318,7 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
         {yaz ? <DosyaFormu eylem={dosyaYukle} firmaId={f.id} /> : null}
       </Bolum>
 
-      <Bolum baslik="Notlar">
+      <Bolum baslik="Zaman çizelgesi">
         {yaz ? (
           <form action={notEkle} className="flex gap-2">
             <input type="hidden" name="firma_id" value={f.id} />
@@ -298,20 +328,10 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
             </button>
           </form>
         ) : null}
-        {notlar.length ? (
-          <ul className="space-y-2">
-            {notlar.map((n) => (
-              <li key={n.id} className="kart p-3 text-sm">
-                <p className="whitespace-pre-line">{n.metin}</p>
-                <p className="mt-1 text-xs text-muted">
-                  {n.yazan} · {zaman(n.olusturuldu)}
-                </p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-sm text-muted">Not yok.</p>
-        )}
+        <p className="text-xs text-muted">
+          Sarı: CRM&apos;de girilenler. Mavi: panelden (tanıtım mailleri, gelen yanıtlar, mailden siteye gelişler).
+        </p>
+        <ZamanCizelgesi ogeler={cizelge} />
       </Bolum>
 
       {yaz ? (
@@ -329,7 +349,7 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
           <details className="kart p-4">
             <summary className="cursor-pointer text-sm font-semibold">Firma bilgilerini düzenle</summary>
             <div className="mt-4">
-              <FirmaBilgiFormu eylem={firmaGuncelle} f={f} />
+              <FirmaBilgiFormu eylem={firmaGuncelle} f={f} kisiler={kullanicilarListesi} />
             </div>
           </details>
         </>
