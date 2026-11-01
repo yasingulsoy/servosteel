@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { ArrowLeft, Forward, Phone, Mail } from "lucide-react";
 import { oturum } from "@/lib/admin-auth";
+import { crmFirmaAdresi } from "@/lib/crm-bag";
 import { DURUMLAR, DURUM_ETIKET, notlar, talep } from "@/lib/leads-db";
 import { talepAcildi } from "@/lib/panel-kayit";
 import { takipOku } from "@/lib/takip";
@@ -27,7 +28,11 @@ export default async function TalepSayfasi({
   const t = await talep(no);
   if (!t) notFound();
   /* Takip sütunları şema kurulumuyla gelir; henüz kurulmadıysa kutu görünmez. */
-  const [n, tk] = await Promise.all([notlar(no), takipOku("talep", no).catch(() => null)]);
+  const [n, tk, crm] = await Promise.all([
+    notlar(no),
+    takipOku("talep", no).catch(() => null),
+    crmFirmaAdresi({ talepId: no }),
+  ]);
   await talepAcildi(ben, no, [t.ad, t.firma].filter(Boolean).join(" · ") || t.eposta || `Talep #${no}`);
 
   const tel = t.telefon.replace(/\s/g, "");
@@ -71,6 +76,14 @@ export default async function TalepSayfasi({
           <span className="font-medium text-red-700">
             {" · "}bildirim maili gitmedi — müşteriye buradan dönün
           </span>
+        ) : null}
+        {crm ? (
+          <>
+            {" · "}
+            <a href={crm} target="_blank" rel="noopener noreferrer" className="font-medium text-accent-ink underline-offset-4 hover:underline">
+              CRM&apos;de aç
+            </a>
+          </>
         ) : null}
       </p>
 

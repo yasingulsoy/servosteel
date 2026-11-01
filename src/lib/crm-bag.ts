@@ -23,6 +23,26 @@ import { kayitEkle } from "@/lib/panel-kayit";
 
 export const SATIS_ADRESLERI = ["info@servosteel.com.tr", "yavuz@servosteel.com.tr", "agil@servosteel.com.tr"];
 
+/** CRM'in adresi (ayrı uygulama). Yerelde denerken CRM_ADRESI=http://localhost:3100. */
+export const CRM_ADRESI = (process.env.CRM_ADRESI?.trim() || "https://crm.servosteel.com.tr").replace(/\/$/, "");
+
+/**
+ * Panelin talebi ya da hedef firması CRM'de hangi firmaya düştü? Bağlantı için;
+ * CRM tabloları yoksa ya da kayıt yoksa null.
+ */
+export async function crmFirmaAdresi(k: { talepId?: number; hedefId?: number }): Promise<string | null> {
+  const havuz = db();
+  if (!havuz) return null;
+  try {
+    const r = k.talepId
+      ? await havuz.query<{ id: number }>(`SELECT firma_id AS id FROM crm_temas WHERE kaynak = $1 LIMIT 1`, [`talep:${k.talepId}`])
+      : await havuz.query<{ id: number }>(`SELECT id FROM crm_firma WHERE hedef_firma_id = $1 ORDER BY id LIMIT 1`, [k.hedefId]);
+    return r.rows[0] ? `${CRM_ADRESI}/firmalar/${r.rows[0].id}` : null;
+  } catch {
+    return null;
+  }
+}
+
 export type IletilenIleti = { mesajKimligi: string; kimden: string };
 
 const UCRETSIZ =

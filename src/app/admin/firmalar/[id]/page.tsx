@@ -22,6 +22,7 @@ import { ayarlariOku, geriDonusEngeli, kutuSec, ulkeUyarisi } from "@/lib/outrea
 import { altbilgiHtmlMetni, iptalAdresi } from "@/lib/outreach";
 import { takipOku } from "@/lib/takip";
 import { goreli, tamTarih } from "@/lib/zaman";
+import { crmFirmaAdresi } from "@/lib/crm-bag";
 import { Kabuk } from "../../kabuk";
 import { TakipKutusu } from "../../takip-kutusu";
 import { engelleEylemi, hedefDurumEylemi, hedefNotEylemi } from "../actions";
@@ -60,7 +61,7 @@ export default async function FirmaSayfasi({
   if (!f) notFound();
 
   const ayar = ayarlariOku(process.env);
-  const [gecmis, notlar, engelli, onceki, kutular, sonraki, gd, talepleri, tk] = await Promise.all([
+  const [gecmis, notlar, engelli, onceki, kutular, sonraki, gd, talepleri, tk, crm] = await Promise.all([
     gonderimler(no),
     hedefNotlar(no),
     engelliMi(f.eposta),
@@ -70,6 +71,7 @@ export default async function FirmaSayfasi({
     geriDonusDurumu(),
     hedefTalepleri(no),
     takipOku("firma", no).catch(() => null),
+    crmFirmaAdresi({ hedefId: no }),
   ]);
 
   /* Düğmeyi kapatan sebep — önce firmaya ait olanlar, sonra güne ait olanlar.
@@ -137,6 +139,11 @@ export default async function FirmaSayfasi({
               yabancı; yazıldığı gibi gösteriliyor. */}
           <h1 className="font-display text-xl font-bold tracking-tight sm:text-2xl">{f.firma}</h1>
           <HedefRozet durum={f.durum} />
+          {crm ? (
+            <a href={crm} target="_blank" rel="noopener noreferrer" className="self-center text-sm font-medium text-accent-ink underline-offset-4 hover:underline">
+              CRM&apos;de aç
+            </a>
+          ) : null}
         </div>
         <p className="mt-1 text-sm text-muted">
           {[f.ulke, f.segmentler, `e-posta dili: ${f.dil}`].filter(Boolean).join(" · ")}
