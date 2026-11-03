@@ -81,6 +81,8 @@ type Govde = {
   parca?: string;
   /** "gonder": iletilen talebin numarası — talebe not, "İletildi" ve CRM (paneldeki "Talebi ilet" gibi) */
   talep?: number;
+  /** "ilet": yalnız bu parçalar eklensin — gömülü görsel de olabilir (ör. müşterinin eskizi) */
+  parcalar?: string[];
 };
 
 /** "ek" işleminde tek ekin en büyük boyutu — JSON içinde base64 gider. */
@@ -234,8 +236,12 @@ export async function POST(istek: NextRequest) {
     const r = await iletiOku(kutu, klasor, uid);
     if (!r.tamam) return hata(r.hata);
     const x = r.ileti;
-    /* Panelin "İlet"i gibi: ekler gider, iletinin içine gömülü görseller (imza logosu) gitmez. */
-    const ekler = g.ekler === false ? [] : x.ekler.filter((e) => !e.satirIci);
+    /* Panelin "İlet"i gibi: ekler gider, iletinin içine gömülü görseller (imza logosu) gitmez.
+       Parça numaraları verildiyse yalnız onlar gider — panelde gömülü görseli elle
+       işaretlemenin karşılığı (müşteri eskizi mailin içine yapıştırmış olabilir). */
+    const secilen = Array.isArray(g.parcalar) ? g.parcalar.map(String).slice(0, 40) : null;
+    const ekler =
+      g.ekler === false ? [] : secilen ? x.ekler.filter((e) => secilen.includes(e.parca)) : x.ekler.filter((e) => !e.satirIci);
     return gonder(
       {
         kutu,

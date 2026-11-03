@@ -16,7 +16,7 @@
  *   node scripts/posta.mjs ek <kutu> <uid> <parça> [--klasor giden] [--dosya yol]   (eki diske indirir)
  *   node scripts/posta.mjs yanitla <kutu> <uid> --metin-dosya yanit.txt [--bilgi a@b.com] [--alintisiz]
  *   node scripts/posta.mjs gonder <kutu> --kime a@b.com --konu "…" --metin-dosya metin.txt [--talep 37]
- *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden] [--eksiz]
+ *   node scripts/posta.mjs ilet <kutu> <uid> --kime a@b.com [--metin "…"] [--klasor giden] [--eksiz] [--parca 6]
  *
  * <kutu>: "ege" ya da "ege@servosteel.com.tr".
  * [klasör]: gelen (varsayılan), giden, taslak, arsiv, onemsiz, cop ya da özel
@@ -30,7 +30,7 @@
  */
 import fs from "node:fs";
 
-const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet", "dosya", "talep"]);
+const ANAHTARLI = new Set(["kime", "bilgi", "konu", "metin", "metin-dosya", "klasor", "adres", "ara", "adet", "dosya", "talep", "parca"]);
 const konum = [];
 const bayrak = {};
 const argv = process.argv.slice(2);
@@ -110,6 +110,8 @@ async function calis() {
   if (["liste", "oku", "ek", "yanitla", "gonder", "ilet"].includes(islem)) govde.kutu = geri[0];
   if (islem === "ek") Object.assign(govde, { uid: Number(geri[1]), parca: geri[2] ?? "", klasor: bayrak.klasor || "gelen" });
   if (islem === "ilet") govde.ekler = !bayrak.eksiz;
+  /* --parca 6 ya da --parca 2,6: yalnız bu parçalar eklenir (gömülü eskiz gibi). */
+  if (islem === "ilet" && typeof bayrak.parca === "string" && bayrak.parca) govde.parcalar = bayrak.parca.split(",").map((x) => x.trim()).filter(Boolean);
   if (islem === "liste")
     Object.assign(govde, { klasor: geri[1] || "gelen", sayfa: Number(geri[2]) || 1, ara: bayrak.ara || "" });
   if (islem === "oku") Object.assign(govde, { uid: Number(geri[1]), klasor: geri[2] || bayrak.klasor || "gelen" });
