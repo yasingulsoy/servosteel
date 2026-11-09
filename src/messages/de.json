@@ -2087,10 +2087,10 @@
       },
       "servo-suruculer": {
         "name": "Servovorschübe",
-        "metaTitle": "Servovorschübe für Pressen: 0,2-4 mm, bis 1.600 mm",
+        "metaTitle": "Servovorschübe und Walzenvorschub für Pressen: 0,2-4 mm",
         "short": "Präziser Schrittvorschub in Pressenlinien; Standard- und Mini-Serie.",
         "hero": "Servovorschübe führen das Blech in millimetergenauen Schritten ins Werkzeug; Schneider-Lexium-Servotechnik liefert hohe Wiederholgenauigkeit, Pressensynchronisation und einfache Rezeptverwaltung.",
-        "meta": "Servovorschübe: Standard- und Mini-Serie für Pressenzuführlinien, präziser Blechvorschub auf Schneider-Lexium-Basis.",
+        "meta": "Servo-Walzenvorschub für Pressenzuführlinien: Standard- und Mini-Serie, präziser Blechvorschub auf Schneider-Lexium-Basis, 0,2-4 mm und bis 1.600 mm Breite.",
         "features": [
           {
             "title": "Millimetergenaue Schritte",
@@ -2122,6 +2122,10 @@
           {
             "q": "Wie wird die Pressensynchronisation eingerichtet?",
             "a": "Das Nockensignal der Presse wird mit dem Vorschub verdrahtet; der Vorschub wird auf den Totpunkt der Presse getaktet, mit Freigabe für die Pilotstifte. Die Inbetriebnahme übernimmt unser Team vor Ort."
+          },
+          {
+            "q": "Was ist ein Servo-Walzenvorschub?",
+            "a": "Ein Servo-Walzenvorschub schiebt das Band zwischen den Pressenhüben in das Werkzeug. Ein Servomotor treibt die Vorschubwalzen an, die Schrittlänge ist also ein Wert in der Steuerung und keine mechanische Einstellung. Dadurch ist der Vorschub wiederholgenau und lässt sich zwischen Aufträgen ohne Umrüsten ändern. Der Antrieb ist Schneider Lexium mit 2 × Ø85 mm Vorschubwalzen und 7-Zoll-Touchscreen."
           }
         ],
         "table": {

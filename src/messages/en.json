@@ -345,7 +345,7 @@
   },
   "boykesme": {
     "metaTitle": "Servo Cut-to-Length Lines: Coil to Sheet Cutting Machine",
-    "metaDesc": "Cut-to-length lines: coil to sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
+    "metaDesc": "Cut to length machines and lines: coil to flat sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
     "eyebrow": "Our expertise",
     "title": "Cut-to-Length Lines",
     "desc": "Complete lines that turn coils into sheets at exactly the length you need: straightening, servo feeding, guillotine and stacking — all built in our facility and managed by a single PLC.",
@@ -412,6 +412,10 @@
       {
         "q": "Who buys a cut-to-length line?",
         "a": "Steel service centres that sell sheet to fixed dimensions, sheet metal processors who buy coil because it is cheaper per tonne than sheet, and manufacturers whose own presses or laser cutters run on blanks. The decision is usually the same one: the coil price is lower, but the sheet has to be cut in-house to use it. We build the line around your coil weight, thickness and sheet size, and commission it on site."
+      },
+      {
+        "q": "Is a cut to length machine the same as a cut-to-length line?",
+        "a": "In practice, yes. Buyers often say cut to length machine, but the job takes several machines working as one: a decoiler, a straightener, a servo feeder, a guillotine and a stacker. We build them as one line because sheet flatness and length accuracy depend on how those units work together, all from a single Schneider PLC."
       }
     ],
     "ctaTitle": "Let's engineer your cut-to-length line",
@@ -1913,7 +1917,7 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapezoidal Sheet and Facade Panel Line",
-        "metaTitle": "Trapezoidal Sheet Roll Forming Machine",
+        "metaTitle": "Trapezoidal Sheet and Roof Panel Roll Forming Machine",
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Range"],
@@ -1928,7 +1932,7 @@
         },
         "short": "Forming, cut-to-length and stacking for roofing and cladding profiles.",
         "hero": "Lines for trapezoidal sheet, standing-seam roofing profile and facade panel used in roofing and cladding. Two things decide this family: flatness across a wide sheet, and getting a painted surface through forming undamaged.",
-        "meta": "Production lines for trapezoidal sheet, standing-seam roofing and facade cladding profiles: forming, cut-to-length, automatic stacking and packing.",
+        "meta": "Roof panel and roofing sheet roll forming machines for trapezoidal, box profile and standing-seam sections: forming, cut-to-length, stacking and packing.",
         "features": [
           {
             "title": "Flatness across a wide sheet",
@@ -1967,6 +1971,18 @@
           {
             "q": "How long does changing the profile section take?",
             "a": "Changing the section means changing the roll tooling, which is a different job from changing the length. Cut length is servo controlled and called from the recipe, so it changes while the line runs. How long a section change takes depends on whether the tooling is built on the line or off it in a cassette."
+          },
+          {
+            "q": "Is this a roofing sheet making machine?",
+            "a": "Yes. A roofing sheet making machine is the equipment this page describes: a roll forming line that takes coil and delivers finished roof or wall sheets cut to length. The series runs 0.3–1.5 mm sheet up to 1,300 mm wide through 16–20 forming stations, with a levelling unit before forming and cut to length, automatic stacking and packing after it. These ranges cover the series; each line is sized to your section, material and capacity."
+          },
+          {
+            "q": "Can it produce IBR or box profile roof sheeting?",
+            "a": "IBR (inverted box rib) and box profile are trapezoidal ribbed sections, so they belong to this line family. The roll set is designed from the profile drawing you send and manufactured in our own facility. Send the drawing with the sheet thickness and coil width, and we will come back with the station count and the line layout."
+          },
+          {
+            "q": "Is this a portable roof panel machine?",
+            "a": "No. This is a fixed production line for a factory, with the decoiler, levelling, forming, cut to length, stacking and packing in one run. Portable roof panel machines are taken to the building site and form panels on the spot. If you supply roof or wall sheet in volume to other companies, the factory line is the one to look at."
           }
         ]
       },
@@ -2194,6 +2210,10 @@
           {
             "q": "What are the three types of press feeder?",
             "a": "Air, mechanical and servo. Air feeders are the simplest and suit short, light work. Mechanical feeders take their motion from the press itself, so feed length is set by the linkage and changing it means changing hardware. Servo feeders drive the rolls independently, which is why the pitch is set in the control instead of on the machine. The trade-off between the last two is worked through on the servo versus mechanical feeding comparison."
+          },
+          {
+            "q": "What is the difference between a servo roll feed and a grip feed?",
+            "a": "A roll feed, also called a roller feeder, moves the strip by pinching it between a pair of driven rolls: the rolls turn through the programmed pitch and then hold. A grip feed clamps the strip in a gripper, pulls it forward on a moving carriage, then releases and returns. Our servo feeders are roll feeds: a Schneider Lexium servo motor drives 2 × Ø85 mm feed rolls, and the pitch is set in the control."
           }
         ],
         "table": {

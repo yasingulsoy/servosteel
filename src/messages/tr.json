@@ -130,7 +130,7 @@
     "title": "Roll Form Hatları",
     "metaTitle": "Rollform Makineleri ve Roll Form Hatları",
     "desc": "Rulodan nihai profile: 7 profil ailesi için açıcıdan istifleyiciye kadar tamamı Servosteel imzalı, projeye özel tasarlanan komple üretim hatları.",
-    "metaDesc": "Kablo kanalı, solar profil, raf, iskele kalası, yol ve gürültü bariyeri, C/Sigma/Omega profilleri için müşteriye özel komple roll form hatları.",
+    "metaDesc": "Rollform makinesi ve komple roll form hatları: kablo kanalı, solar profil, raf, iskele kalası, yol ve gürültü bariyeri, C/Sigma/Omega profilleri için.",
     "flow": ["Rulo Açıcı", "Doğrultma", "Servo Besleme", "Zımba İstasyonları", "Roll Form Makinesi", "Kesme", "İstifleme"],
     "customTitle": "Özel Profil Hattı",
     "customText": "Bu listede olmayan bir kesit mi üreteceksiniz? Merdane tasarımından otomasyona kadar hat, profil çiziminize göre projelendirilir.",
@@ -155,7 +155,7 @@
         "a": "Evet, merdane seti değiştirilerek. Burada belirleyici olan değişim süresidir: çok çeşit üretecekseniz hızlı değişim özelliği doluluk oranını doğrudan etkiler, bu da hattın geri dönüşünü belirler."
       },
       {
-        "q": "Roll form makinesi ile roll form hattı aynı şey mi?",
+        "q": "Rollform makinesi ile roll form hattı aynı şey mi?",
         "a": "Roll form makinesi, şeridi nihai kesitine büken merdane istasyonlarının bulunduğu gövdedir. Roll form hattı ise o makinenin etrafındaki her şeyi kapsar: açıcı, doğrultucu, servo besleme, zımba istasyonları, kesme ünitesi ve çıkış masası. Elinizde hattın geri kalanı varsa yalnızca şekillendirme grubunu da alabilirsiniz; ancak çıkan profilin ölçü toleransı büyük ölçüde onu besleyen üniteye bağlıdır — aksini belirtmediğiniz sürece komple hat üzerinden fiyat veriyoruz."
       }
     ],

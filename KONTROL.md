@@ -287,6 +287,18 @@ sonrası bu tarihten ayrı okunur:
 **Geri alma kuralı:** servo-feeders "servo feeder"da düşerse (28 Eki: 5,8) EN makine
 hub'ının H1'i eski haline döner — iki sayfa "press feeder"da yarışıyor olabilir.
 
+**9 Kasım 2026 yayını: 4 hafta sonra (7 Aralık civarı) ölç.** Kelime listesindeki terimlerin site metninde geçip geçmediği sayıldı; açık çıkanlar kapatıldı. Çatı terimleri ayrıca eklendi, çünkü Heritage Mabati, Kings Mabati, Evermetal ve MoT Panels talepleri bu alıcıdan geldi, İngilizce sitede ise "roofing sheet" ve "roof panel" hiç geçmiyordu. SERP'ler 9 Kasım'da elle bakıldı, hepsi makine üreticisi.
+
+| değişiklik | izlenecek sorgu → beklenen sayfa | 9 Kas öncesi (90 gün, poz. ve gösterim) |
+|---|---|---|
+| EN trapez başlığı, açıklaması, 3 SSS | roof panel roll forming machine, roofing sheet making machine, IBR / box profile → /en/roll-forming-lines/trapezoidal-and-facade-panel | gösterim yok |
+| EN boy kesme açıklaması, SSS | cut to length machine → /en/cut-to-length-lines | gösterim yok |
+| EN servo besleyici SSS | servo roll feed systems · roller feeders for servo presses · roll feed systems · servo roll feed vs grip feed system → /en/machines/servo-feeders | 22,5 (26) · 20,1 (25) · 19,1 (15) · 34,2 (20) |
+| DE servo besleyici başlığı, açıklaması, SSS | walzenvorschub → /de/machines/servo-feeders | gösterim yok |
+| TR roll form hub açıklaması, SSS sorusu | rollform makinesi → /roll-form-hatlari | gösterim yok |
+
+Bu turda 28 Ekim tablosundaki sayfalara (rulo işleme hub'ı, makine hub'ı, TR açıcı, PL servo besleyici) dokunulmadı; o ölçüm 25 Kasım'da temiz okunsun diye.
+
 ### C.3 İzlenen kelimeler — sıralama takibi
 
 ```bash
