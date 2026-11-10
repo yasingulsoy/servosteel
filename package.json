@@ -28,24 +28,22 @@
     "html-to-text": "^10.0.1",
     "imapflow": "^2.0.5",
     "lucide-react": "^1.25.0",
-    "mailparser": "^3.9.28",
+    "mailparser": "^3.14.2",
     "next": "16.4.1",
     "next-intl": "^4.13.3",
     "next-mdx-remote": "^6.0.0",
-    "nodemailer": "^9.0.4",
+    "nodemailer": "^10.3.1",
     "pg": "^8.23.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.7.0",
     "remark-gfm": "^4.0.1",
-    "sanitize-html": "^2.17.7"
+    "sanitize-html": "^2.18.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/html-to-text": "^9.0.4",
-    "@types/mailparser": "^3.4.6",
     "@types/node": "^20",
-    "@types/nodemailer": "^8.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/sanitize-html": "^2.16.1",
@@ -53,5 +51,10 @@
     "eslint-config-next": "16.4.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.5"
+    }
   }
 }
