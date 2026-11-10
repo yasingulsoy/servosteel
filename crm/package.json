@@ -14,11 +14,14 @@
     "kullanici-ekle": "node scripts/kullanici-ekle.mjs"
   },
   "dependencies": {
+    "globe.gl": "^2.46.2",
     "lucide-react": "^1.25.0",
     "next": "16.2.11",
     "pg": "^8.23.0",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -26,6 +29,7 @@
     "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/topojson-client": "^3.1.5",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
     "tailwindcss": "^4",

@@ -11,6 +11,7 @@ const BAGLANTILAR = [
   { href: "/teklifler", ad: "Teklifler" },
   { href: "/servis", ad: "Servis" },
   { href: "/raporlar", ad: "Raporlar" },
+  { href: "/harita", ad: "Harita" },
 ];
 
 export function UstMenu({ yonetici }: { yonetici: boolean }) {
