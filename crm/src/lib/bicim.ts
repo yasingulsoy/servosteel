@@ -42,7 +42,8 @@ export function alanAdi(web: string | null): string | null {
 }
 
 /** E-postanın alan adı (ücretsiz posta servisleri hariç). */
-const UCRETSIZ = /^(gmail|googlemail|yahoo|hotmail|outlook|live|icloud|aol|gmx|web|mail|yandex|ukr|wp|interia|o2|seznam|abv|libero|virgilio|orange|wanadoo|free|t-online)\./;
+const UCRETSIZ =
+  /^(gmail|googlemail|yahoo|ymail|rocketmail|hotmail|outlook|live|msn|icloud|me|mac|aol|gmx|web|mail|yandex|rambler|bk|inbox|list|ukr|wp|interia|o2|onet|seznam|abv|libero|virgilio|orange|wanadoo|laposte|sfr|free|t-online|freenet|zoho|zohomail|proton|protonmail|pm|tutanota|rediffmail|163|126|qq|sina|aliyun|naver|daum|hanmail|bigpond|optusnet|btinternet|sky|comcast|verizon|att|cox)\./;
 export function epostaAlanAdi(eposta: string | null): string | null {
   const a = eposta?.split("@")[1]?.toLowerCase().trim();
   return a && !UCRETSIZ.test(a) ? a : null;

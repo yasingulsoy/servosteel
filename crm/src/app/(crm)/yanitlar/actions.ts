@@ -5,13 +5,15 @@ import { redirect } from "next/navigation";
 import { sayi } from "@/lib/bicim";
 import { yazarZorunlu } from "@/lib/oturum";
 import { crmeAl } from "@/lib/panelden";
+import { talebiCrmeAl } from "@/lib/talepler";
 
-/** Gelen yanıtlar sayfasından: firmayı CRM'e alır, listeye geri döner. */
+/** Gelen talepler sayfasından: tanıtım yanıtını ya da site talebini CRM'e alır, listeye döner. */
 export async function crmeAlEylemi(fd: FormData): Promise<void> {
   const ben = await yazarZorunlu();
   const id = sayi(fd.get("id"));
-  if (!id) throw new Error("Firma yok.");
-  await crmeAl(id, ben);
+  if (!id) throw new Error("Kayıt yok.");
+  if (fd.get("kaynak") === "form") await talebiCrmeAl(id, ben);
+  else await crmeAl(id, ben);
   revalidatePath("/yanitlar");
   revalidatePath("/");
   const g = String(fd.get("geri") ?? "");

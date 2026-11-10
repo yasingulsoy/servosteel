@@ -5,9 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import {
+  Bell,
   Building2,
   CalendarDays,
   ChevronDown,
+  Contact,
   Ellipsis,
   FileText,
   Globe,
@@ -18,6 +20,7 @@ import {
   Menu,
   PieChart,
   Search,
+  SquareKanban,
   Users,
   Wrench,
   X,
@@ -53,7 +56,9 @@ function menuler(yonetici: boolean, yazabilir: boolean): { ana: Oge[]; diger: Og
       { ad: "Pano", simge: LayoutGrid, href: "/" },
       { ad: "Etkinlikler", simge: CalendarDays, href: "/etkinlikler" },
       firmalar,
-      { ad: "Gelen yanıtlar", simge: MailOpen, href: "/yanitlar" },
+      { ad: "Kişiler", simge: Contact, href: "/kisiler" },
+      { ad: "Gelen talepler", simge: MailOpen, href: "/yanitlar" },
+      { ad: "Satış hunisi", simge: SquareKanban, href: "/huni" },
       { ad: "Görevler", simge: ListChecks, href: "/gorevler" },
       { ad: "Teklifler", simge: FileText, href: "/teklifler" },
       { ad: "Servis", simge: Wrench, href: "/servis" },
@@ -75,11 +80,14 @@ const basHarfler = (ad: string) =>
     .map((p) => p[0]!.toLocaleUpperCase("tr"))
     .join("");
 
+export type Bildirim = { geciken: number; bugun: number; gelen: number };
+
 export function Kabuk({
   ad,
   rol,
   yonetici,
   yazabilir,
+  bildirim,
   cikis,
   children,
 }: {
@@ -87,6 +95,7 @@ export function Kabuk({
   rol: string;
   yonetici: boolean;
   yazabilir: boolean;
+  bildirim: Bildirim;
   cikis: () => Promise<void>;
   children: React.ReactNode;
 }) {
@@ -240,12 +249,80 @@ export function Kabuk({
               >
                 <Search size={18} />
               </Link>
+              <Bildirimler b={bildirim} />
               <KullaniciMenusu ad={ad} rol={rol} cikis={cikis} />
             </div>
           </div>
         </header>
         <main className="mx-auto max-w-(--breakpoint-2xl) p-4 md:p-6">{children}</main>
       </div>
+    </div>
+  );
+}
+
+/** Başlıktaki zil: geciken ve bugünkü görevlerim, CRM'e alınmayı bekleyen talepler. */
+function Bildirimler({ b }: { b: Bildirim }) {
+  const [acik, setAcik] = useState(false);
+  const kutu = useRef<HTMLDivElement>(null);
+  const toplam = b.geciken + b.bugun + b.gelen;
+
+  useEffect(() => {
+    if (!acik) return;
+    const disari = (e: MouseEvent) => {
+      if (kutu.current && !kutu.current.contains(e.target as Node)) setAcik(false);
+    };
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setAcik(false);
+    document.addEventListener("mousedown", disari);
+    document.addEventListener("keydown", esc);
+    return () => {
+      document.removeEventListener("mousedown", disari);
+      document.removeEventListener("keydown", esc);
+    };
+  }, [acik]);
+
+  const satirlar = [
+    { ad: "Geciken görevlerim", sayi: b.geciken, href: "/gorevler?g=benim", renk: "bg-error-50 text-error-600" },
+    { ad: "Bugünkü görevlerim", sayi: b.bugun, href: "/gorevler?g=benim", renk: "bg-warning-50 text-warning-600" },
+    { ad: "CRM'e alınmayı bekleyen talep ve yanıt", sayi: b.gelen, href: "/yanitlar", renk: "bg-brand-50 text-brand-500" },
+  ];
+
+  return (
+    <div ref={kutu} className="relative">
+      <button
+        type="button"
+        onClick={() => setAcik((a) => !a)}
+        aria-expanded={acik}
+        aria-label={`Bildirimler${toplam ? `: ${toplam}` : ""}`}
+        className="relative flex size-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 lg:size-11"
+      >
+        <Bell size={20} />
+        {toplam ? (
+          <span className="absolute -top-0.5 -right-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1 text-[10px] font-semibold text-white">
+            {toplam > 99 ? "99+" : toplam}
+          </span>
+        ) : null}
+      </button>
+      {acik ? (
+        <div className="absolute right-0 z-50 mt-[17px] w-[300px] rounded-2xl border border-gray-200 bg-white p-3 shadow-theme-lg">
+          <h3 className="px-2 pb-2 text-theme-sm font-semibold text-gray-800">Bildirimler</h3>
+          <ul className="space-y-1">
+            {satirlar.map((s) => (
+              <li key={s.ad}>
+                <Link
+                  href={s.href}
+                  onClick={() => setAcik(false)}
+                  className="flex items-center justify-between gap-3 rounded-lg px-2 py-2 text-theme-sm text-gray-700 hover:bg-gray-100"
+                >
+                  {s.ad}
+                  <span className={`rounded-full px-2 py-0.5 text-theme-xs font-semibold tabular-nums ${s.sayi ? s.renk : "bg-gray-100 text-gray-400"}`}>
+                    {s.sayi}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 }

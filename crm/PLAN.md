@@ -364,3 +364,7 @@ bekleniyor, teklif verilecek, teklif gönderildi, olumsuz.
 5. Açık: günlük görev özeti e-postası. Zamanlanmış bir uç ister (Dokploy'da cron); kurulursa yapılır.
 6. Açık: satışın kutularının yazışmaları (soru 4: IMAP mi, BCC mi).
 7. ~~Tanıtım mailine yanıt verip satışa iletilmeyenler~~ — yapıldı (10 Kasım): "Gelen yanıtlar" sayfası ve haritadan "CRM'e al" (firma, kişi, "Yeni talep" görüşmesi, ertesi güne görev; kaynak `hedef:<id>`, `panel-aktar.mjs` ile aynı).
+8. ~~Site formundan gelip satışa iletilmeyen talepler~~ — yapıldı (10 Kasım): aynı sayfa "Gelen talepler" oldu; site talebi de "CRM'e al" ile firma, kişi, görüşme (kaynak `talep:<id>`) ve ertesi güne "Site talebine dön" görevi olarak açılır.
+9. ~~Fırsat kanbanı (§7.4)~~ — yapıldı (10 Kasım), ayrı fırsat tablosu yerine görüşmeler üstünde: "Satış hunisi" sayfası, sütunlar takip aşaması, sürükle-bırak (telefonda seçim), otomatik görevler aynı.
+10. ~~Kişiler (§7.3)~~ — yapıldı (10 Kasım): bütün kişiler, arama, Excel'e aktarma.
+11. ~~Uygulama içi bildirim (§7.12)~~ — yapıldı (10 Kasım): başlıkta zil (geciken ve bugünkü görevlerim, CRM'e alınmayı bekleyen talep ve yanıt). Günlük özet e-postası hâlâ açık (madde 5).

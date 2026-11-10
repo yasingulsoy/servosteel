@@ -6,22 +6,24 @@ import { tarih, tarihAraligi } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
 import { GorevListesi } from "@/components/gorev-listesi";
 import { bekleyenYanit, yanitVerenler } from "@/lib/panelden";
+import { bekleyenTalep, gelenTalepler } from "@/lib/talepler";
 import { KANAL } from "@/lib/sabitler";
 import { bekleyenTemaslar, etkinlikler, kanalOzeti, panoSayilari, vadesiGelenGorevler } from "@/lib/veri";
 import { gorevDurum } from "./gorevler/actions";
 
 export default async function Pano() {
   const ben = await oturumZorunlu();
-  const [s, bekleyen, ets, kanallar, gorevlerim, yanitlar] = await Promise.all([
+  const [s, bekleyen, ets, kanallar, gorevlerim, yanitlar, talepler] = await Promise.all([
     panoSayilari(),
     bekleyenTemaslar(),
     etkinlikler(),
     kanalOzeti(),
     vadesiGelenGorevler(ben.kullanici),
     yanitVerenler(),
+    gelenTalepler(),
   ]);
   /* Tanıtım mailine yanıt verip satışa iletilmeden kalanlar. */
-  const yanitSayisi = yanitlar.filter(bekleyenYanit).length;
+  const yanitSayisi = yanitlar.filter(bekleyenYanit).length + talepler.filter(bekleyenTalep).length;
 
   const kutular = [
     { ad: "Firma", deger: s.firma, href: "/firmalar", simge: Building2 },
@@ -29,7 +31,7 @@ export default async function Pano() {
     { ad: "Teklif verilecek", deger: s.teklif_verilecek, href: "/firmalar?takip=teklif_verilecek", simge: FileClock },
     { ad: "Bilgi / çizim bekleyen", deger: s.bilgi_bekleyen, href: "/firmalar?takip=teknik_bilgi_istendi", simge: PencilRuler },
     { ad: "Açık teklif", deger: s.acik_teklif, href: "/teklifler?durum=gonderildi", simge: Send },
-    { ad: "CRM'de olmayan yanıt", deger: yanitSayisi, href: "/yanitlar", simge: MailOpen },
+    { ad: "CRM'de olmayan talep", deger: yanitSayisi, href: "/yanitlar", simge: MailOpen },
   ];
 
   return (
