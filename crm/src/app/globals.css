@@ -388,3 +388,28 @@
 .hk-akis-yeni {
   animation: hk-akis 0.35s ease-out;
 }
+/* Haritanın zaman çizelgesi kaydırıcısı */
+.hk-zaman {
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  accent-color: #ffb43c;
+}
+.hk-zaman::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #ffd166;
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.7);
+  cursor: pointer;
+}
+.hk-zaman::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 9999px;
+  background: #ffd166;
+  cursor: pointer;
+}

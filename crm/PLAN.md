@@ -363,3 +363,4 @@ bekleniyor, teklif verilecek, teklif gönderildi, olumsuz.
 4. ~~Görevler ve hatırlatma~~ — yapıldı (2 Kasım).
 5. Açık: günlük görev özeti e-postası. Zamanlanmış bir uç ister (Dokploy'da cron); kurulursa yapılır.
 6. Açık: satışın kutularının yazışmaları (soru 4: IMAP mi, BCC mi).
+7. ~~Tanıtım mailine yanıt verip satışa iletilmeyenler~~ — yapıldı (10 Kasım): "Gelen yanıtlar" sayfası ve haritadan "CRM'e al" (firma, kişi, "Yeni talep" görüşmesi, ertesi güne görev; kaynak `hedef:<id>`, `panel-aktar.mjs` ile aynı).

@@ -140,67 +140,98 @@ async function konumlar(): Promise<Konumlar> {
   return konumSuruyor;
 }
 
-/** Haritadaki nokta: bir şehir ya da (şehri bilinmeyenler için) ülkenin kendisi. */
-export type HaritaNoktasi = {
+/** Haritadaki yer: bir şehir ya da (şehri bilinmeyenler için) ülkenin kendisi. */
+export type HaritaYeri = {
   ulke: string;
   /** null: bu ülkede şehri bilinmeyen firmalar, ülkenin ortasında gösterilir */
   sehir: string | null;
   lat: number | null;
   lng: number | null;
-  firma: number;
-  yanit: number;
-  olumlu: number;
-  crm: number;
 };
 
-export async function haritaNoktalari(): Promise<HaritaNoktasi[]> {
+import { DURUM_KODU } from "./harita-sabit";
+export { DURUM_KODU };
+
+/**
+ * Haritanın firma tablosu. Tarayıcı süzer ve toplar (durum, segment, zaman),
+ * sunucu yalnız bir kez gönderir. Satır: [yer, durum, segment maskesi, gün];
+ * gün = ilk mailin `baslangic`tan sonraki günü, mail gitmemişse -1.
+ */
+export type HaritaFirmalari = {
+  yerler: HaritaYeri[];
+  firmalar: [number, number, number, number][];
+  segmentler: string[];
+  /** ilk mailin günü (YYYY-MM-DD, İstanbul) */
+  baslangic: string;
+};
+
+const segmentAyir = (s: string | null) =>
+  (s ?? "")
+    .split(/\s*[+;,]\s*/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+
+export async function haritaFirmalari(): Promise<HaritaFirmalari> {
   const [k, panel, crm] = await Promise.all([
     konumlar(),
-    sorgu<{ id: number; ulke: string; durum: string }>(
-      `SELECT h.id, trim(h.ulke) AS ulke, h.durum
+    sorgu<{ id: number; ulke: string; durum: string; segmentler: string; ilk: string | null; sirada: boolean }>(
+      `WITH g AS (
+         SELECT firma_id, min(zaman) AS ilk FROM hedef_gonderim
+          WHERE sonuc IN ('ok', 'belirsiz') AND firma_id IS NOT NULL GROUP BY firma_id
+       )
+       SELECT h.id, trim(h.ulke) AS ulke, h.durum, h.segmentler,
+              to_char(g.ilk AT TIME ZONE 'Europe/Istanbul', 'YYYY-MM-DD') AS ilk,
+              (g.firma_id IS NULL AND h.durum = 'bekliyor' AND h.listede AND h.eposta <> '') AS sirada
          FROM hedef_firmalar h
-        WHERE trim(h.ulke) <> ''
-          AND EXISTS (SELECT 1 FROM hedef_gonderim g WHERE g.firma_id = h.id AND g.sonuc IN ('ok', 'belirsiz'))`,
+         LEFT JOIN g ON g.firma_id = h.id
+        WHERE trim(h.ulke) <> '' AND (g.firma_id IS NOT NULL OR (h.durum = 'bekliyor' AND h.listede AND h.eposta <> ''))`,
     ),
-    sorgu<{ id: number; ulke: string; durum: string }>(
-      `SELECT f.id, trim(f.ulke) AS ulke, f.durum
+    sorgu<{ id: number; ulke: string }>(
+      `SELECT f.id, trim(f.ulke) AS ulke
          FROM crm_firma f
         WHERE coalesce(trim(f.ulke), '') <> ''
           AND (f.hedef_firma_id IS NULL OR NOT EXISTS (
                 SELECT 1 FROM hedef_gonderim g WHERE g.firma_id = f.hedef_firma_id AND g.sonuc IN ('ok', 'belirsiz')))`,
     ),
   ]);
-  const noktalar = new Map<string, HaritaNoktasi>();
-  const ekle = (ulke: string, konum: Konum, d: { yanit: boolean; olumlu: boolean; crm: boolean }) => {
+
+  const yerler: HaritaYeri[] = [];
+  const yerNo = new Map<string, number>();
+  const yer = (ulke: string, konum: Konum) => {
     const anahtar = `${ulke}|${konum?.sehir ?? ""}`;
-    let n = noktalar.get(anahtar);
-    if (!n) {
-      n = {
-        ulke,
-        sehir: konum?.sehir ?? null,
-        lat: konum?.lat ?? null,
-        lng: konum?.lng ?? null,
-        firma: 0,
-        yanit: 0,
-        olumlu: 0,
-        crm: 0,
-      };
-      noktalar.set(anahtar, n);
+    let i = yerNo.get(anahtar);
+    if (i === undefined) {
+      i = yerler.length;
+      yerler.push({ ulke, sehir: konum?.sehir ?? null, lat: konum?.lat ?? null, lng: konum?.lng ?? null });
+      yerNo.set(anahtar, i);
     }
-    n.firma++;
-    if (d.yanit) n.yanit++;
-    if (d.olumlu) n.olumlu++;
-    if (d.crm) n.crm++;
+    return i;
   };
+
+  /* Segmentler sıklık sırasıyla; maske en çok 30 bit. */
+  const sayac = new Map<string, number>();
+  for (const f of panel) for (const sg of segmentAyir(f.segmentler)) sayac.set(sg, (sayac.get(sg) ?? 0) + 1);
+  const segmentler = [...sayac.entries()].sort((a, b) => b[1] - a[1]).slice(0, 30).map(([ad]) => ad);
+  const segBit = new Map(segmentler.map((ad, i) => [ad, 1 << i]));
+  const maske = (s: string) => segmentAyir(s).reduce((m, sg) => m | (segBit.get(sg) ?? 0), 0);
+
+  const baslangic = panel.reduce<string | null>((m, f) => (f.ilk && (!m || f.ilk < m) ? f.ilk : m), null) ?? "2026-09-22";
+  const t0 = Date.parse(`${baslangic}T00:00:00Z`);
+  const gunu = (ilk: string | null) => (ilk ? Math.round((Date.parse(`${ilk}T00:00:00Z`) - t0) / 86_400_000) : -1);
+
+  const firmalar: [number, number, number, number][] = [];
   for (const f of panel) {
-    ekle(f.ulke, k.panel.get(f.id) ?? null, {
-      yanit: f.durum === "yanit" || f.durum === "olumlu" || f.durum === "red",
-      olumlu: f.durum === "olumlu",
-      crm: false,
-    });
+    const durum = f.sirada
+      ? DURUM_KODU.sirada
+      : f.durum === "olumlu"
+        ? DURUM_KODU.olumlu
+        : f.durum === "yanit" || f.durum === "red"
+          ? DURUM_KODU.yanit
+          : DURUM_KODU.mail;
+    firmalar.push([yer(f.ulke, k.panel.get(f.id) ?? null), durum, maske(f.segmentler), gunu(f.ilk)]);
   }
-  for (const f of crm) ekle(f.ulke, k.crm.get(f.id) ?? null, { yanit: false, olumlu: f.durum === "musteri", crm: true });
-  return [...noktalar.values()].sort((a, b) => b.firma - a.firma);
+  for (const f of crm) firmalar.push([yer(f.ulke, k.crm.get(f.id) ?? null), DURUM_KODU.crm, 0, -1]);
+  return { yerler, firmalar, segmentler, baslangic };
 }
 
 /* ---- Canlı akış --------------------------------------------------------- */
@@ -217,25 +248,31 @@ export type AkisOgesi = {
   lng: number | null;
 };
 
-export async function haritaAkisi(): Promise<AkisOgesi[]> {
+/** `son` verilirse yalnız o andan sonrası (haritanın dakikalık yoklaması). */
+export async function haritaAkisi(son?: string): Promise<AkisOgesi[]> {
+  const sonra = son && !Number.isNaN(Date.parse(son)) ? new Date(son).toISOString() : null;
   const [k, giden, gelen] = await Promise.all([
     konumlar(),
     sorgu<{ id: number; firma: string; ulke: string; zaman: string; tur: number }>(
       `SELECT h.id, h.firma, trim(h.ulke) AS ulke, to_char(g.zaman AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS zaman, g.tur
          FROM hedef_gonderim g
          JOIN hedef_firmalar h ON h.id = g.firma_id
-        WHERE g.sonuc IN ('ok', 'belirsiz') AND g.zaman > now() - interval '24 hours' AND trim(h.ulke) <> ''
+        WHERE g.sonuc IN ('ok', 'belirsiz') AND trim(h.ulke) <> ''
+          AND g.zaman > coalesce($1::timestamptz, now() - interval '24 hours')
         ORDER BY g.zaman
         LIMIT 600`,
+      [sonra],
     ),
     sorgu<{ id: number; firma: string; ulke: string; zaman: string }>(
       `SELECT h.id, h.firma, trim(h.ulke) AS ulke,
               to_char(coalesce(e.zaman, e.islendi) AT TIME ZONE 'UTC', 'YYYY-MM-DD"T"HH24:MI:SS"Z"') AS zaman
          FROM gelen_eposta e
          JOIN hedef_firmalar h ON h.id = e.firma_id
-        WHERE e.tur = 'yanit' AND coalesce(e.zaman, e.islendi) > now() - interval '60 days' AND trim(h.ulke) <> ''
+        WHERE e.tur = 'yanit' AND trim(h.ulke) <> ''
+          AND coalesce(e.zaman, e.islendi) > coalesce($1::timestamptz, now() - interval '60 days')
         ORDER BY coalesce(e.zaman, e.islendi)
         LIMIT 80`,
+      [sonra],
     ),
   ]);
   const oge = (f: { id: number; firma: string; ulke: string; zaman: string }, tur: AkisOgesi["tur"]): AkisOgesi => {

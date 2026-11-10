@@ -6,7 +6,8 @@ import type { Feature, Geometry, Position } from "geojson";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import type * as THREEType from "three";
 import { ES_AD, MERKEZ, MERKEZ_OFIS, TURKCE_AD } from "@/lib/dunya-ulkeleri";
-import type { AkisOgesi, HaritaNoktasi, HaritaUlkesi } from "@/lib/harita";
+import type { AkisOgesi, HaritaFirmalari, HaritaUlkesi } from "@/lib/harita";
+import { DURUM_KODU } from "@/lib/harita-sabit";
 
 /**
  * Dönen 3B dünya. Hafif olsun diye ağır işler GPU'ya tek parça gidiyor:
@@ -24,15 +25,25 @@ import type { AkisOgesi, HaritaNoktasi, HaritaUlkesi } from "@/lib/harita";
 
 export type Secim = { ulke: string; sehir: string | null };
 
+/** Hangi firmalar görünsün: durum kodları (DURUM_KODU), segment maskesi (0 = hepsi), gün (null = bugün). */
+export type Suzgec = { durumlar: number[]; segment: number; gun: number | null };
+
 export type KureApi = {
   ucus: (s: Secim) => void;
   dondur: (acik: boolean) => void;
   ev: () => void;
+  /** Zaman çizelgesi: o gün mail giden firmalara yay atar, o günün firma sayısını döner. */
+  gunYaylari: (gun: number) => number;
+  /** Canlı yoklamadan gelen yeni olaylar; sıradakilerden önce oynar. */
+  olayEkle: (o: AkisOgesi[]) => void;
+  /** Zaman çizelgesi oynarken canlı akış tekrarı durur. */
+  akisDuraklat: (d: boolean) => void;
 };
 
 type Props = {
   ulkeler: HaritaUlkesi[];
-  noktalar: HaritaNoktasi[];
+  veri: HaritaFirmalari;
+  suzgec: Suzgec;
   akis: AkisOgesi[];
   secili: Secim | null;
   donme: boolean;
@@ -51,7 +62,20 @@ type UlkeOgesi = {
   alan: number;
   veri: HaritaUlkesi | null;
 };
-type NoktaOgesi = HaritaNoktasi & { nlat: number; nlng: number; renk: string; boyut: number };
+type NoktaOgesi = {
+  ulke: string;
+  sehir: string | null;
+  nlat: number;
+  nlng: number;
+  firma: number;
+  mail: number;
+  yanit: number;
+  olumlu: number;
+  crm: number;
+  sirada: number;
+  renk: string;
+  boyut: number;
+};
 type Etiket = {
   anahtar: string;
   tur: "ulke" | "sehir" | "ad";
@@ -77,6 +101,7 @@ const RENK = {
   yanit: "#3cc8ff",
   olumlu: "#3dff9a",
   crm: "#c07bff",
+  sirada: "#8fa6c8",
   merkez: "#ff4d5e",
 };
 
@@ -137,23 +162,25 @@ function el(sinif: string, ...cocuklar: (Node | string)[]): HTMLDivElement {
   return d;
 }
 
+/* Ölçüm kopyayla: asıl eleman kürenin CSS2D katmanına bağlıyken taşınır ya
+   da stili sıfırlanırsa (position) etiket ekran boyu şerit olur. */
 function etiketBoyutu(e: HTMLDivElement): [number, number] {
-  e.style.visibility = "hidden";
-  e.style.position = "absolute";
-  document.body.appendChild(e);
-  const r: [number, number] = [e.offsetWidth, e.offsetHeight];
-  e.remove();
-  e.style.visibility = "";
-  e.style.position = "";
+  const k = e.cloneNode(true) as HTMLDivElement;
+  k.style.cssText = "position:absolute;left:-9999px;top:0;visibility:hidden;transform:none";
+  document.body.appendChild(k);
+  const r: [number, number] = [k.offsetWidth, k.offsetHeight];
+  k.remove();
   return r;
 }
 
-export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, onHazir, onOlay }: Props) {
+export default function Kure({ ulkeler, veri, suzgec, akis, secili, donme, onSec, onHazir, onOlay }: Props) {
   const kapRef = useRef<HTMLDivElement>(null);
   const ipucuRef = useRef<HTMLDivElement>(null);
   const seciliRef = useRef<Secim | null>(secili);
   const donmeRef = useRef(donme);
+  const suzgecRef = useRef(suzgec);
   const yenileRef = useRef<() => void>(() => {});
+  const uygulaRef = useRef<() => void>(() => {});
   /* Geri çağırmalar her çizimde değişebilir; küre bir kez kuruluyor. */
   const cagriRef = useRef({ onSec, onHazir, onOlay });
   useEffect(() => {
@@ -224,14 +251,44 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         return MERKEZ[ad] ? { lat: MERKEZ[ad][0], lng: MERKEZ[ad][1] } : null;
       };
 
-      const nokta: NoktaOgesi[] = [];
-      for (const n of noktalar) {
-        const k = n.lat != null && n.lng != null ? { lat: n.lat, lng: n.lng } : ulkeNoktasi(n.ulke);
-        if (!k) continue;
-        const renk = n.olumlu ? RENK.olumlu : n.yanit ? RENK.yanit : n.crm ? RENK.crm : RENK.mail;
-        const boyut = n.sehir ? Math.min(26, 5 + 3.2 * Math.sqrt(n.firma)) : Math.min(22, 7 + 1.4 * Math.sqrt(n.firma));
-        nokta.push({ ...n, nlat: k.lat, nlng: k.lng, renk, boyut });
-      }
+      /* Firmaları süzgece göre yer yer topla. Zaman çizelgesinde yalnız o güne
+         kadar mail gidenler ve hepsi "mail" renginde (yanıtın günü bu tabloda yok). */
+      const yerKoord = veri.yerler.map((y) =>
+        y.lat != null && y.lng != null ? { lat: y.lat, lng: y.lng } : ulkeNoktasi(y.ulke),
+      );
+      const topla = (sz: Suzgec): NoktaOgesi[] => {
+        const acik = new Set(sz.durumlar);
+        const yerde = new Map<number, NoktaOgesi>();
+        for (const [yi, durum, maske, gun] of veri.firmalar) {
+          if (!acik.has(durum)) continue;
+          if (sz.segment && !(maske & sz.segment)) continue;
+          if (sz.gun !== null && (gun < 0 || gun > sz.gun)) continue;
+          const k = yerKoord[yi];
+          if (!k) continue;
+          let n = yerde.get(yi);
+          if (!n) {
+            const y = veri.yerler[yi];
+            n = { ulke: y.ulke, sehir: y.sehir, nlat: k.lat, nlng: k.lng, firma: 0, mail: 0, yanit: 0, olumlu: 0, crm: 0, sirada: 0, renk: "", boyut: 0 };
+            yerde.set(yi, n);
+          }
+          n.firma++;
+          const d = sz.gun !== null ? DURUM_KODU.mail : durum;
+          if (d === DURUM_KODU.olumlu) {
+            n.olumlu++;
+            n.yanit++;
+          } else if (d === DURUM_KODU.yanit) n.yanit++;
+          else if (d === DURUM_KODU.crm) n.crm++;
+          else if (d === DURUM_KODU.sirada) n.sirada++;
+          else n.mail++;
+        }
+        const liste = [...yerde.values()];
+        for (const n of liste) {
+          n.renk = n.olumlu ? RENK.olumlu : n.yanit ? RENK.yanit : n.crm ? RENK.crm : n.mail ? RENK.mail : RENK.sirada;
+          n.boyut = n.sehir ? Math.min(26, 5 + 3.2 * Math.sqrt(n.firma)) : Math.min(22, 7 + 1.4 * Math.sqrt(n.firma));
+        }
+        return liste.sort((a, b) => b.firma - a.firma);
+      };
+      let nokta: NoktaOgesi[] = topla(suzgecRef.current);
 
       /* ---- Küre ---- */
       globe = new Globe(kap, {
@@ -371,14 +428,15 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       };
 
       /* Şehir noktaları: tek nokta bulutu, parlayan çekirdek + hale; şehri bilinmeyen ülke payı halka. */
+      const geoKur = (liste: NoktaOgesi[]) => {
       const noktaGeo = new THREE.BufferGeometry();
-      const kon = new Float32Array(nokta.length * 3 + 3);
-      const renk = new Float32Array(nokta.length * 3 + 3);
-      const boy = new Float32Array(nokta.length + 1);
-      const tip = new Float32Array(nokta.length + 1);
-      const faz = new Float32Array(nokta.length + 1);
+      const kon = new Float32Array(liste.length * 3 + 3);
+      const renk = new Float32Array(liste.length * 3 + 3);
+      const boy = new Float32Array(liste.length + 1);
+      const tip = new Float32Array(liste.length + 1);
+      const faz = new Float32Array(liste.length + 1);
       const c = new THREE.Color();
-      nokta.forEach((n, i) => {
+      liste.forEach((n, i) => {
         const p = globe!.getCoords(n.nlat, n.nlng, 0.003);
         kon.set([p.x, p.y, p.z], i * 3);
         c.set(n.renk);
@@ -388,8 +446,8 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         faz[i] = (i * 2.399) % (Math.PI * 2);
       });
       {
-        const i = nokta.length;
-        const p = globe.getCoords(MERKEZ_OFIS.lat, MERKEZ_OFIS.lng, 0.003);
+        const i = liste.length;
+        const p = globe!.getCoords(MERKEZ_OFIS.lat, MERKEZ_OFIS.lng, 0.003);
         kon.set([p.x, p.y, p.z], i * 3);
         c.set(RENK.merkez);
         renk.set([c.r, c.g, c.b], i * 3);
@@ -402,6 +460,8 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       noktaGeo.setAttribute("aBoyut", new THREE.BufferAttribute(boy, 1));
       noktaGeo.setAttribute("aTip", new THREE.BufferAttribute(tip, 1));
       noktaGeo.setAttribute("aFaz", new THREE.BufferAttribute(faz, 1));
+      return noktaGeo;
+      };
       const noktaMalzeme = new THREE.ShaderMaterial({
         uniforms: { uOran: { value: pikselOrani }, uZaman: { value: 0 } },
         vertexShader: `
@@ -436,13 +496,13 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         depthWrite: false,
         blending: THREE.AdditiveBlending,
       });
-      const bulut = new THREE.Points(noktaGeo, noktaMalzeme);
+      const bulut = new THREE.Points(geoKur(nokta), noktaMalzeme);
       bulut.onBeforeRender = () => {
         noktaMalzeme.uniforms.uZaman.value = performance.now() / 1000;
       };
       globe.scene().add(bulut);
       temizlik.push(() => {
-        noktaGeo.dispose();
+        bulut.geometry.dispose();
         noktaMalzeme.dispose();
       });
 
@@ -496,6 +556,8 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       });
       if (!mailler.length) olaylar.push(...yanitlar);
       let olaySira = 0;
+      const oncelikli: AkisOgesi[] = [];
+      let akisDurdu = false;
       const zamanlayicilar = new Set<number>();
       const sonra = (ms: number, f: () => void) => {
         const id = window.setTimeout(() => {
@@ -505,13 +567,10 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         zamanlayicilar.add(id);
       };
       temizlik.push(() => zamanlayicilar.forEach((id) => window.clearTimeout(id)));
-      const olayAt = () => {
-        if (!olaylar.length || document.hidden || !globe) return;
-        const o = olaylar[olaySira++ % olaylar.length];
-        const hedef = o.lat != null && o.lng != null ? { lat: o.lat, lng: o.lng } : ulkeNoktasi(o.ulke);
-        if (!hedef) return;
-        const yanit = o.tur === "yanit";
-        const r = yanit ? "60, 200, 255" : o.tur === "hatirlatma" ? "255, 225, 120" : "255, 180, 60";
+      const yayAt = (hedef: { lat: number; lng: number }, tur: AkisOgesi["tur"]) => {
+        if (!globe) return;
+        const yanit = tur === "yanit";
+        const r = yanit ? "60, 200, 255" : tur === "hatirlatma" ? "255, 225, 120" : "255, 180, 60";
         const [bas, son] = yanit ? [hedef, MERKEZ_OFIS] : [MERKEZ_OFIS, hedef];
         /* three-globe yayın kesiğini sondan başa yürütüyor: uçlar ters verilir ki baştan sona aksın. */
         const yay: Yay = {
@@ -524,7 +583,6 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         };
         yaylar = [...yaylar.slice(-(EN_COK_YAY - 1)), yay];
         globe.arcsData(yaylar);
-        cagriRef.current.onOlay(o);
         sonra(YAY_SURE_MS * 0.95, () => {
           const h: HalkaVeri = { ...son, renk: r, buyuk: yanit ? 3 : 2.2, kalici: false };
           gecici = [...gecici.slice(-8), h];
@@ -539,16 +597,26 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
           globe?.arcsData(yaylar);
         });
       };
+      const olayAt = () => {
+        if (akisDurdu || document.hidden || !globe) return;
+        const o = oncelikli.shift() ?? (olaylar.length ? olaylar[olaySira++ % olaylar.length] : null);
+        if (!o) return;
+        const hedef = o.lat != null && o.lng != null ? { lat: o.lat, lng: o.lng } : ulkeNoktasi(o.ulke);
+        if (!hedef) return;
+        yayAt(hedef, o.tur);
+        cagriRef.current.onOlay(o);
+      };
       const akisSaati = window.setInterval(olayAt, AKIS_ARALIK_MS);
       temizlik.push(() => window.clearInterval(akisSaati));
 
       /* ---- Etiketler ---- */
       /* Ülke adları yalnız yakında; Türkçe adı olmayan küçük bölgeler (Guernsey, Åland…) adsız. */
       const turkceAdlar = new Set(Object.values(TURKCE_AD));
-      const etiketler: Etiket[] = [];
+      const sabitEtiketler: Etiket[] = [];
+      const ulkeSayiEl = new Map<string, HTMLElement>();
       for (const o of ogeler) {
         if (!turkceAdlar.has(o.ad)) continue;
-        etiketler.push({
+        sabitEtiketler.push({
           anahtar: `ad|${o.ad}`,
           tur: "ad",
           el: el("hk-e hk-e-ad", o.ad.toLocaleUpperCase("tr")),
@@ -562,14 +630,14 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         });
       }
       for (const u of ulkeler) {
-        if (u.firma <= 0) continue;
         const k2 = ulkeNoktasi(u.ulke);
         if (!k2) continue;
         const sayi = document.createElement("span");
         const b = document.createElement("i");
         b.textContent = sayiBicim.format(u.firma);
         sayi.append(b, " firma");
-        etiketler.push({
+        ulkeSayiEl.set(u.ulke, b);
+        sabitEtiketler.push({
           anahtar: `ulke|${u.ulke}`,
           tur: "ulke",
           el: el(`hk-e hk-e-ulke${u.ulke === "Türkiye" ? " hk-e-ev" : ""}`, el("hk-e-b", u.ulke), sayi),
@@ -582,13 +650,34 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
           secim: { ulke: u.ulke, sehir: null },
         });
       }
-      for (const n of nokta) {
+      const tikla = (e: Etiket) => {
+        if (!e.secim) return;
+        const s = e.secim;
+        e.el.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          cagriRef.current.onSec(s);
+        });
+      };
+      for (const e of sabitEtiketler) tikla(e);
+      /* Ülke etiketindeki sayı süzgece göre; sayısı 0 olan ülke etiketlenmez. */
+      const ulkeSayisi = new Map<string, number>();
+      const sehirEtiketleri = (liste: NoktaOgesi[]): Etiket[] => {
+        ulkeSayisi.clear();
+        for (const n of liste) ulkeSayisi.set(n.ulke, (ulkeSayisi.get(n.ulke) ?? 0) + n.firma);
+        for (const [ulke, b] of ulkeSayiEl) b.textContent = sayiBicim.format(ulkeSayisi.get(ulke) ?? 0);
+        for (const e of sabitEtiketler) {
+          if (e.tur !== "ulke") continue;
+          e.w = 0;
+          e.oncelik = 1e6 + (ulkeSayisi.get(e.secim?.ulke ?? "") ?? 0);
+        }
+        const cikti: Etiket[] = [];
+      for (const n of liste) {
         if (!n.sehir) continue;
         const sayi = document.createElement("i");
         sayi.textContent = sayiBicim.format(n.firma);
         const e = el("hk-e hk-e-sehir", el("hk-e-s", n.sehir), sayi);
         e.style.setProperty("--r", n.renk);
-        etiketler.push({
+        cikti.push({
           anahtar: `sehir|${n.ulke}|${n.sehir}`,
           tur: "sehir",
           el: e,
@@ -601,14 +690,10 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
           secim: { ulke: n.ulke, sehir: n.sehir },
         });
       }
-      for (const e of etiketler) {
-        if (!e.secim) continue;
-        const s = e.secim;
-        e.el.addEventListener("click", (ev) => {
-          ev.stopPropagation();
-          cagriRef.current.onSec(s);
-        });
-      }
+        for (const e of cikti) tikla(e);
+        return cikti;
+      };
+      let etiketler: Etiket[] = [...sabitEtiketler, ...sehirEtiketleri(nokta)];
       globe
         .htmlLat("lat")
         .htmlLng("lng")
@@ -646,14 +731,15 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
         const secimMi = (e: Etiket) =>
           !!s && !!e.secim && e.secim.ulke === s.ulke && (e.tur === "sehir" ? e.secim.sehir === s.sehir : s.sehir === null && e.tur !== "ad");
         const adaylar = etiketler
+          .filter((e) => !(e.tur === "ulke" && !(ulkeSayisi.get(e.secim?.ulke ?? "") ?? 0)))
           .filter((e) => (yakin ? e.tur !== "ulke" : e.tur === "ulke") || secimMi(e))
           .sort((a, b) => (secimMi(b) ? 1e12 : b.oncelik) - (secimMi(a) ? 1e12 : a.oncelik));
         const secilen: Etiket[] = [];
-        let ulkeSayisi = 0;
+        let yerlesenUlke = 0;
         for (const e of adaylar) {
           if (secilen.length >= 70) break;
           if (aci(e.lat, e.lng, pov) > ufuk) continue;
-          if (e.tur === "ulke" && !secimMi(e) && ulkeSayisi >= ulkeKotasi(irt)) continue;
+          if (e.tur === "ulke" && !secimMi(e) && yerlesenUlke >= ulkeKotasi(irt)) continue;
           if (!e.w) [e.w, e.h] = etiketBoyutu(e.el);
           const p = globe.getScreenCoords(e.lat, e.lng, e.irtifa);
           /* Şehir etiketi noktanın üstünde durur (CSS'te alttan boşluk). */
@@ -665,7 +751,7 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
           if (kutular.some((q) => x0 < q[2] && x1 > q[0] && y0 < q[3] && y1 > q[1])) continue;
           kutular.push([x0, y0, x1, y1]);
           secilen.push(e);
-          if (e.tur === "ulke") ulkeSayisi++;
+          if (e.tur === "ulke") yerlesenUlke++;
         }
         for (const e of etiketler) e.el.classList.toggle("hk-e-secili", secimMi(e));
         const imza = secilen.map((e) => e.anahtar).join("\n");
@@ -676,6 +762,17 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       };
       const yerlesimSaati = window.setInterval(yerlestir, 250);
       temizlik.push(() => window.clearInterval(yerlesimSaati));
+
+      uygulaRef.current = () => {
+        nokta = topla(suzgecRef.current);
+        const eski = bulut.geometry;
+        bulut.geometry = geoKur(nokta);
+        eski.dispose();
+        etiketler = [...sabitEtiketler, ...sehirEtiketleri(nokta)];
+        gosterilen = "";
+        halkalariYenile();
+        yerlestir();
+      };
 
       /* ---- Fare: ipucu, tıklama ---- */
       let ustUlke: UlkeOgesi | null = null;
@@ -860,6 +957,22 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
           kontrol.autoRotate = acik && !seciliRef.current;
         },
         ev: () => globe?.pointOfView(BASLANGIC, 1400),
+        gunYaylari: (gun) => {
+          const ogunku = veri.firmalar.filter((f) => f[3] === gun && f[1] !== DURUM_KODU.crm && f[1] !== DURUM_KODU.sirada);
+          const adim = Math.max(1, Math.floor(ogunku.length / 10));
+          for (let i = 0; i < ogunku.length && i / adim < 10; i += adim) {
+            const k2 = yerKoord[ogunku[i][0]];
+            if (k2) sonra((i / adim) * 70, () => yayAt(k2, "mail"));
+          }
+          return ogunku.length;
+        },
+        olayEkle: (liste) => {
+          oncelikli.push(...liste);
+          olaylar.push(...liste);
+        },
+        akisDuraklat: (d) => {
+          akisDurdu = d;
+        },
       });
     })().catch((e) => console.error("[harita] küre kurulamadı:", e));
 
@@ -867,6 +980,7 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       iptal = true;
       for (const t of temizlik) t();
       yenileRef.current = () => {};
+      uygulaRef.current = () => {};
       if (globe) {
         globe.pauseAnimation();
         globe.renderer().dispose();
@@ -875,13 +989,18 @@ export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, on
       kap.replaceChildren();
     };
     /* Veri sayfa yüklenince bir kez geliyor; değişirse küre baştan kurulur. */
-  }, [ulkeler, noktalar, akis]);
+  }, [ulkeler, veri, akis]);
 
   useEffect(() => {
     seciliRef.current = secili;
     donmeRef.current = donme;
     yenileRef.current();
   }, [secili, donme]);
+
+  useEffect(() => {
+    suzgecRef.current = suzgec;
+    uygulaRef.current();
+  }, [suzgec]);
 
   /* isolate: CSS2D etiketleri derinlik için z-index alıyor; yığın burada
      kapanmazsa etiketler yan panelin üstüne çıkar. */

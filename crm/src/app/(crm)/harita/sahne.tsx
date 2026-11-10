@@ -2,11 +2,26 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ExternalLink, List, LocateFixed, Maximize2, Minimize2, Pause, Play, Search, X } from "lucide-react";
-import type { AkisOgesi, HaritaFirmasi, HaritaNoktasi, HaritaUlkesi } from "@/lib/harita";
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition } from "react";
+import {
+  ArrowLeft,
+  ExternalLink,
+  History,
+  List,
+  LocateFixed,
+  Maximize2,
+  Minimize2,
+  Pause,
+  Play,
+  Plus,
+  Search,
+  X,
+} from "lucide-react";
+import type { AkisOgesi, HaritaFirmalari, HaritaFirmasi, HaritaUlkesi } from "@/lib/harita";
+import { DURUM_KODU } from "@/lib/harita-sabit";
 import { FIRMA_DURUMU } from "@/lib/sabitler";
-import type { KureApi, Secim } from "./kure";
+import { crmeAlHaritadan } from "../yanitlar/actions";
+import type { KureApi, Secim, Suzgec } from "./kure";
 
 const Kure = dynamic(() => import("./kure"), { ssr: false });
 
@@ -17,6 +32,7 @@ const tarih = (g: string | null) =>
 
 function once(iso: string): string {
   const dk = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  if (dk < 1) return "az önce";
   if (dk < 60) return `${dk} dk önce`;
   const sa = Math.round(dk / 60);
   if (sa < 48) return `${sa} sa önce`;
@@ -40,6 +56,19 @@ const AKIS_RENGI: Record<AkisOgesi["tur"], string> = {
 };
 const AKIS_ADI: Record<AkisOgesi["tur"], string> = { mail: "Mail", hatirlatma: "Hatırlatma", yanit: "Yanıt" };
 
+/** Açıklamadaki süzgeç düğmeleri; sıra = DURUM_KODU. */
+const KATMANLAR = [
+  { kod: DURUM_KODU.mail, ad: "Mail gitti", renk: "#ffb43c" },
+  { kod: DURUM_KODU.yanit, ad: "Yanıt", renk: "#3cc8ff" },
+  { kod: DURUM_KODU.olumlu, ad: "Olumlu", renk: "#3dff9a" },
+  { kod: DURUM_KODU.crm, ad: "CRM / fuar", renk: "#c07bff" },
+  { kod: DURUM_KODU.sirada, ad: "Sırada", renk: "#8fa6c8" },
+] as const;
+
+const VARSAYILAN_KATMAN: number[] = [DURUM_KODU.mail, DURUM_KODU.yanit, DURUM_KODU.olumlu, DURUM_KODU.crm];
+const OYNATMA_ADIMI_MS = 380;
+const YOKLAMA_MS = 60_000;
+
 function Sayac({ deger, ad, vurgu }: { deger: number; ad: string; vurgu?: boolean }) {
   return (
     <div className="rounded-lg bg-white/[0.04] px-3 py-2">
@@ -49,23 +78,29 @@ function Sayac({ deger, ad, vurgu }: { deger: number; ad: string; vurgu?: boolea
   );
 }
 
-function Dugme({ onClick, baslik, children }: { onClick: () => void; baslik: string; children: React.ReactNode }) {
+function Dugme({ onClick, baslik, children, etkin }: { onClick: () => void; baslik: string; children: React.ReactNode; etkin?: boolean }) {
   return (
     <button
       type="button"
       onClick={onClick}
       title={baslik}
       aria-label={baslik}
-      className="hk-cam grid size-10 place-items-center rounded-xl text-zinc-200 hover:text-white"
+      aria-pressed={etkin}
+      className={`hk-cam grid size-10 place-items-center rounded-xl hover:text-white ${etkin ? "text-[#ffd166]" : "text-zinc-200"}`}
     >
       {children}
     </button>
   );
 }
 
-type Props = { ulkeler: HaritaUlkesi[]; noktalar: HaritaNoktasi[]; akis: AkisOgesi[] };
+type Props = {
+  ulkeler: HaritaUlkesi[];
+  veri: HaritaFirmalari;
+  akis: AkisOgesi[];
+  yazabilir: boolean;
+};
 
-export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
+export function HaritaSahnesi({ ulkeler, veri, akis, yazabilir }: Props) {
   const api = useRef<KureApi | null>(null);
   const [hazir, setHazir] = useState(false);
   const [secili, setSecili] = useState<Secim | null>(null);
@@ -75,6 +110,13 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
   const [listeAcik, setListeAcik] = useState(false);
   const [sonOlaylar, setSonOlaylar] = useState<(AkisOgesi & { no: number })[]>([]);
   const olayNo = useRef(0);
+  const [katmanlar, setKatmanlar] = useState<number[]>(VARSAYILAN_KATMAN);
+  const [segment, setSegment] = useState(0);
+  /* Zaman çizelgesi: null = bugün (bütün firmalar). */
+  const [gun, setGun] = useState<number | null>(null);
+  const [oynuyor, setOynuyor] = useState(false);
+  const [aliniyor, alimBaslat] = useTransition();
+  const [alinanlar, setAlinanlar] = useState<Record<number, number>>({});
   /* Son yüklenen seçimin firmaları; seçim değişince eşleşmeyen sonuç gösterilmez. */
   const [yuklenen, setYuklenen] = useState<{ anahtar: string; firmalar: HaritaFirmasi[] | null; hata: boolean } | null>(
     null,
@@ -84,26 +126,69 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
   const firmalar = gecerli?.firmalar ?? null;
   const hata = gecerli?.hata ?? false;
 
+  const suzgec = useMemo<Suzgec>(() => ({ durumlar: katmanlar, segment, gun }), [katmanlar, segment, gun]);
+
+  /* Zaman çizelgesi için: son gün ve güne kadar mail giden firma sayısı. */
+  const { sonGun, birikimli } = useMemo(() => {
+    let son = 0;
+    for (const f of veri.firmalar) if (f[3] > son) son = f[3];
+    const gunluk = new Array(son + 1).fill(0) as number[];
+    for (const f of veri.firmalar) if (f[3] >= 0) gunluk[f[3]]++;
+    const b: number[] = [];
+    gunluk.reduce((t, n, i) => (b[i] = t + n), 0);
+    return { sonGun: son, birikimli: b };
+  }, [veri]);
+  const gunTarihi = (g: number) => {
+    const d = new Date(`${veri.baslangic}T12:00:00`);
+    d.setDate(d.getDate() + g);
+    return d.toLocaleDateString("tr-TR", { day: "numeric", month: "short" });
+  };
+
+  const katmanSayisi = useMemo(() => {
+    const s = new Map<number, number>();
+    for (const f of veri.firmalar) if (!segment || f[2] & segment) s.set(f[1], (s.get(f[1]) ?? 0) + 1);
+    return s;
+  }, [veri, segment]);
+
   const ulasilan = useMemo(() => ulkeler.filter((u) => u.firma > 0), [ulkeler]);
   const toplam = useMemo(() => {
-    const t = { firma: 0, yanit: 0, olumlu: 0, sirada: 0, ilk: null as string | null };
+    const t = { firma: 0, yanit: 0, olumlu: 0, sirada: 0 };
     for (const u of ulkeler) {
       t.firma += u.firma;
       t.yanit += u.yanit;
       t.olumlu += u.olumlu;
       t.sirada += u.sirada;
-      if (u.ilk && (!t.ilk || u.ilk < t.ilk)) t.ilk = u.ilk;
     }
     return t;
   }, [ulkeler]);
-  const sehirSayisi = useMemo(() => noktalar.filter((n) => n.sehir).length, [noktalar]);
+  /* Şehir sayısı yalnız ulaşılan firmaların yerleri: sıradakiler sayılmaz. */
+  const sehirSayisi = useMemo(() => {
+    const yerler = new Set<number>();
+    for (const f of veri.firmalar) if (f[1] !== DURUM_KODU.sirada && veri.yerler[f[0]].sehir) yerler.add(f[0]);
+    return yerler.size;
+  }, [veri]);
   const son24 = useMemo(() => akis.filter((a) => a.tur !== "yanit").length, [akis]);
   const enCok = ulasilan[0]?.firma ?? 1;
   const seciliVeri = secili ? ulkeler.find((u) => u.ulke === secili.ulke) : undefined;
-  const seciliSehirler = useMemo(
-    () => (secili ? noktalar.filter((n) => n.ulke === secili.ulke).sort((a, b) => b.firma - a.firma) : []),
-    [noktalar, secili],
-  );
+
+  /* Seçili ülkenin şehirleri, görünen katmanlara göre. */
+  const seciliSehirler = useMemo(() => {
+    if (!secili) return [];
+    const acik = new Set(katmanlar);
+    const yerde = new Map<number, { sehir: string | null; firma: number; yanit: number; olumlu: number }>();
+    for (const [yi, durum, maske, g] of veri.firmalar) {
+      const y = veri.yerler[yi];
+      if (y.ulke !== secili.ulke || !acik.has(durum)) continue;
+      if (segment && !(maske & segment)) continue;
+      if (gun !== null && (g < 0 || g > gun)) continue;
+      const n = yerde.get(yi) ?? { sehir: y.sehir, firma: 0, yanit: 0, olumlu: 0 };
+      n.firma++;
+      if (durum === DURUM_KODU.yanit || durum === DURUM_KODU.olumlu) n.yanit++;
+      if (durum === DURUM_KODU.olumlu) n.olumlu++;
+      yerde.set(yi, n);
+    }
+    return [...yerde.values()].sort((a, b) => b.firma - a.firma);
+  }, [veri, secili, katmanlar, segment, gun]);
   const seciliNokta = secili?.sehir != null ? seciliSehirler.find((n) => (n.sehir ?? "") === secili.sehir) : undefined;
 
   const liste = useMemo(() => {
@@ -132,6 +217,47 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
   useEffect(() => {
     api.current?.dondur(donme);
   }, [donme]);
+
+  /* Zaman çizelgesini oynat: her adımda bir gün ilerle, o günün maillerine yay at. */
+  const gunRef = useRef(gun);
+  useEffect(() => {
+    gunRef.current = gun;
+  }, [gun]);
+  useEffect(() => {
+    if (!oynuyor) return;
+    api.current?.akisDuraklat(true);
+    /* Bugündeyse ya da sondaysa baştan başlar; ortadaysa kaldığı yerden. */
+    let g = gunRef.current === null || gunRef.current >= sonGun ? -1 : gunRef.current;
+    const saat = window.setInterval(() => {
+      g += 1;
+      api.current?.gunYaylari(g);
+      if (g >= sonGun) {
+        setGun(null);
+        setOynuyor(false);
+      } else setGun(g);
+    }, OYNATMA_ADIMI_MS);
+    return () => {
+      window.clearInterval(saat);
+      api.current?.akisDuraklat(false);
+    };
+  }, [oynuyor, sonGun]);
+
+  /* Canlı akış: dakikada bir yeni giden mailleri ve yanıtları sor. */
+  useEffect(() => {
+    let son = akis.reduce((m, a) => (a.zaman > m ? a.zaman : m), new Date(Date.now() - 5 * 60_000).toISOString());
+    const saat = window.setInterval(() => {
+      if (document.hidden) return;
+      fetch(`/harita/akis?son=${encodeURIComponent(son)}`)
+        .then((r) => (r.ok ? (r.json() as Promise<AkisOgesi[]>) : []))
+        .then((yeni) => {
+          if (!yeni.length) return;
+          son = yeni.reduce((m, a) => (a.zaman > m ? a.zaman : m), son);
+          api.current?.olayEkle(yeni);
+        })
+        .catch(() => {});
+    }, YOKLAMA_MS);
+    return () => window.clearInterval(saat);
+  }, [akis]);
 
   useEffect(() => {
     if (!secili) return;
@@ -166,11 +292,25 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
     else void document.documentElement.requestFullscreen?.().catch(() => {});
   };
 
+  const katmanDegistir = (kod: number) =>
+    setKatmanlar((k) => (k.includes(kod) ? (k.length > 1 ? k.filter((x) => x !== kod) : k) : [...k, kod]));
+
+  const crmeAl = (hedefId: number) =>
+    alimBaslat(async () => {
+      try {
+        const { crmId } = await crmeAlHaritadan(hedefId);
+        setAlinanlar((a) => ({ ...a, [hedefId]: crmId }));
+      } catch {
+        setAlinanlar((a) => ({ ...a, [hedefId]: -1 }));
+      }
+    });
+
   return (
     <div className="hk-uzay fixed inset-0 z-50 overflow-hidden text-white">
       <Kure
         ulkeler={ulkeler}
-        noktalar={noktalar}
+        veri={veri}
+        suzgec={suzgec}
         akis={akis}
         secili={secili}
         donme={donme}
@@ -212,18 +352,67 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
         </div>
       </div>
 
+      {/* Üst orta: zaman çizelgesi */}
+      <div
+        data-hk-engel
+        className="hk-cam absolute left-1/2 top-4 hidden w-[min(440px,calc(100vw-48rem))] min-w-[300px] -translate-x-1/2 items-center gap-3 rounded-xl px-3 py-2 lg:flex"
+      >
+        <button
+          type="button"
+          onClick={() => setOynuyor((o) => !o)}
+          className="grid size-8 shrink-0 place-items-center rounded-lg bg-white/10 text-[#ffd166] hover:bg-white/15"
+          aria-label={oynuyor ? "Durdur" : "Geçmişi oynat"}
+          title={oynuyor ? "Durdur" : "Gönderim geçmişini gün gün oynat"}
+        >
+          {oynuyor ? <Pause size={15} /> : <Play size={15} />}
+        </button>
+        <input
+          type="range"
+          min={0}
+          max={sonGun}
+          value={gun ?? sonGun}
+          onChange={(e) => {
+            setOynuyor(false);
+            const g = Number(e.target.value);
+            setGun(g >= sonGun ? null : g);
+          }}
+          className="hk-zaman min-w-0 flex-1"
+          aria-label="Gün"
+        />
+        <div className="w-[104px] shrink-0 text-right text-[11px] leading-tight">
+          <div className="font-semibold text-white">{gun === null ? "Bugün" : gunTarihi(gun)}</div>
+          <div className="tabular-nums text-zinc-400">
+            {sayi(birikimli[gun ?? sonGun] ?? 0)} firmaya mail
+          </div>
+        </div>
+        {gun !== null && (
+          <button
+            type="button"
+            onClick={() => {
+              setOynuyor(false);
+              setGun(null);
+            }}
+            className="text-zinc-400 hover:text-white"
+            aria-label="Bugüne dön"
+            title="Bugüne dön"
+          >
+            <History size={15} />
+          </button>
+        )}
+      </div>
+
       {/* Sol alt: canlı akış */}
       {sonOlaylar.length > 0 && (
         <div
           data-hk-engel
-          className="hk-cam absolute bottom-[4.25rem] left-4 hidden w-[300px] rounded-xl px-3 py-2 sm:block"
+          className="hk-cam absolute bottom-[4.25rem] left-4 hidden w-[330px] rounded-xl px-3 py-2 sm:block"
           aria-live="off"
         >
-          <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Canlı akış (son 24 saat)</div>
+          <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-500">Canlı akış</div>
           <ul className="space-y-0.5">
             {sonOlaylar.map((o, i) => (
               <li key={o.no} className={`flex items-baseline gap-2 text-[11px] ${i === 0 ? "hk-akis-yeni" : "opacity-70"}`}>
-                <span className={`w-16 shrink-0 font-semibold ${AKIS_RENGI[o.tur]}`}>
+                <span className={`w-[5.5rem] shrink-0 whitespace-nowrap font-semibold ${AKIS_RENGI[o.tur]}`}>
                   {o.tur === "yanit" ? "↙" : "↗"} {AKIS_ADI[o.tur]}
                 </span>
                 <span className="min-w-0 flex-1 truncate">
@@ -240,7 +429,7 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
       {/* Sağ: ülke listesi ya da seçili ülke (telefonda alttan açılır) */}
       <aside
         data-hk-engel
-        className={`hk-cam absolute inset-x-3 bottom-[4.25rem] max-h-[52vh] flex-col overflow-hidden rounded-2xl md:inset-x-auto md:bottom-20 md:right-4 md:top-4 md:flex md:max-h-none md:w-80 ${
+        className={`hk-cam absolute inset-x-3 bottom-[4.25rem] max-h-[52vh] flex-col overflow-hidden rounded-2xl md:inset-x-auto md:bottom-[7.5rem] md:right-4 md:top-4 md:flex md:max-h-none md:w-80 ${
           listeAcik ? "flex" : "hidden"
         }`}
       >
@@ -303,7 +492,7 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
                   <button
                     key={n.sehir ?? ""}
                     type="button"
-                    onClick={() => sec({ ulke: n.ulke, sehir: n.sehir ?? "" })}
+                    onClick={() => sec({ ulke: secili.ulke, sehir: n.sehir ?? "" })}
                     className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] hover:border-[#ffd166]/60 hover:text-[#ffd166]"
                   >
                     {n.sehir ?? "Şehri belirsiz"} <b className="ms-0.5 tabular-nums">{n.firma}</b>
@@ -322,12 +511,14 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
                       ? [`CRM · ${FIRMA_DURUMU[f.durum as keyof typeof FIRMA_DURUMU] ?? f.durum}`, "bg-[#c07bff]/20 text-[#dcb6ff]"]
                       : (PANEL_DURUMU[f.durum] ?? [f.durum, "bg-white/10 text-zinc-300"]);
                   const web = f.web ? (/^https?:\/\//i.test(f.web) ? f.web : `https://${f.web}`) : null;
+                  const alinan = f.kaynak === "eposta" ? alinanlar[f.id] : undefined;
+                  const crmId = f.crmId ?? (alinan && alinan > 0 ? alinan : null);
                   return (
                     <li key={`${f.kaynak}-${f.id}`} className="rounded-lg px-2.5 py-2 hover:bg-white/[0.05]">
                       <div className="flex items-start gap-2">
                         <div className="min-w-0 flex-1">
-                          {f.crmId ? (
-                            <Link href={`/firmalar/${f.crmId}`} className="block truncate text-sm font-medium hover:text-[#ffd166]">
+                          {crmId ? (
+                            <Link href={`/firmalar/${crmId}`} className="block truncate text-sm font-medium hover:text-[#ffd166]">
                               {f.ad}
                             </Link>
                           ) : (
@@ -340,18 +531,35 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
                             {f.son && <span className="text-zinc-500">· {tarih(f.son)}</span>}
                           </div>
                         </div>
-                        {web && (
-                          <a
-                            href={web}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="mt-0.5 text-zinc-500 hover:text-white"
-                            title={f.web}
-                            aria-label={`${f.ad} sitesi`}
-                          >
-                            <ExternalLink size={13} />
-                          </a>
-                        )}
+                        <div className="flex shrink-0 items-center gap-2">
+                          {yazabilir && f.kaynak === "eposta" && !crmId ? (
+                            alinan === -1 ? (
+                              <span className="text-[10px] text-red-300">olmadı</span>
+                            ) : (
+                              <button
+                                type="button"
+                                disabled={aliniyor}
+                                onClick={() => crmeAl(f.id)}
+                                className="inline-flex items-center gap-0.5 rounded-md border border-white/15 px-1.5 py-0.5 text-[10px] text-zinc-300 hover:border-[#ffd166]/60 hover:text-[#ffd166] disabled:opacity-50"
+                                title="Bu firmayı CRM'e al (firma, kişi, görüşme ve yarına görev)"
+                              >
+                                <Plus size={11} /> CRM
+                              </button>
+                            )
+                          ) : null}
+                          {web && (
+                            <a
+                              href={web}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className="text-zinc-500 hover:text-white"
+                              title={f.web}
+                              aria-label={`${f.ad} sitesi`}
+                            >
+                              <ExternalLink size={13} />
+                            </a>
+                          )}
+                        </div>
                       </div>
                     </li>
                   );
@@ -434,25 +642,52 @@ export function HaritaSahnesi({ ulkeler, noktalar, akis }: Props) {
         </span>
       </div>
 
-      {/* Alt sağ: açıklama */}
+      {/* Alt sağ: katman ve segment süzgeci */}
       <div
         data-hk-engel
-        className="hk-cam absolute bottom-4 right-4 hidden items-center gap-3 rounded-xl px-3 py-2 text-[11px] text-zinc-300 md:flex"
+        className="hk-cam absolute bottom-4 right-4 hidden w-[min(560px,calc(100vw-24rem))] flex-col gap-2 rounded-xl px-3 py-2 text-[11px] text-zinc-300 md:flex"
       >
-        {[
-          ["#ffb43c", "Mail gitti"],
-          ["#3cc8ff", "Yanıt"],
-          ["#3dff9a", "Olumlu"],
-          ["#c07bff", "CRM / fuar"],
-          ["#ff4d5e", "Servosteel"],
-        ].map(([r, a]) => (
-          <span key={a} className="flex items-center gap-1.5">
-            <span className="size-2 rounded-full" style={{ background: r, boxShadow: `0 0 6px ${r}` }} /> {a}
+        <div className="flex flex-wrap items-center gap-1.5">
+          {KATMANLAR.map((k) => {
+            const acik = katmanlar.includes(k.kod);
+            return (
+              <button
+                key={k.kod}
+                type="button"
+                onClick={() => katmanDegistir(k.kod)}
+                aria-pressed={acik}
+                className={`flex items-center gap-1.5 rounded-full border px-2 py-0.5 transition ${
+                  acik ? "border-white/20 bg-white/[0.06] text-white" : "border-white/5 text-zinc-500 line-through decoration-zinc-600"
+                }`}
+              >
+                <span className="size-2 rounded-full" style={{ background: k.renk, boxShadow: acik ? `0 0 6px ${k.renk}` : "none", opacity: acik ? 1 : 0.35 }} />
+                {k.ad}
+                <span className="tabular-nums text-zinc-500">{sayi(katmanSayisi.get(k.kod) ?? 0)}</span>
+              </button>
+            );
+          })}
+          <span className="ms-auto flex items-center gap-1.5 text-zinc-500">
+            <span className="size-2 rounded-full bg-[#ff4d5e]" /> Servosteel
           </span>
-        ))}
-        <span className="flex items-center gap-1.5 text-zinc-400">
-          <span className="size-2.5 rounded-full border border-[#ffb43c]" /> şehri belirsiz
-        </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <select
+            value={segment}
+            onChange={(e) => setSegment(Number(e.target.value))}
+            className="min-w-0 flex-1 rounded-md border border-white/10 bg-[#060b15] px-2 py-1 text-[11px] text-zinc-200 outline-none focus:border-[#ffb43c]"
+            aria-label="Segment"
+          >
+            <option value={0}>Bütün segmentler</option>
+            {veri.segmentler.map((s, i) => (
+              <option key={s} value={1 << i}>
+                {s}
+              </option>
+            ))}
+          </select>
+          <span className="flex items-center gap-1.5 text-zinc-500">
+            <span className="size-2.5 rounded-full border border-[#ffb43c]" /> şehri belirsiz
+          </span>
+        </div>
       </div>
     </div>
   );

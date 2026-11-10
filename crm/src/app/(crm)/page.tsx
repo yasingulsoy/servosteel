@@ -1,23 +1,27 @@
 import Link from "next/link";
-import { Building2, CalendarDays, FileClock, Inbox, PencilRuler, Plus, Send } from "lucide-react";
+import { Building2, CalendarDays, FileClock, Inbox, MailOpen, PencilRuler, Plus, Send } from "lucide-react";
 import { IlgiEtiketleri, Rozet, TakipRozeti } from "@/components/rozet";
 import { Bos, Panel, SayfaBasligi, SayiKarti } from "@/components/sayfa";
 import { tarih, tarihAraligi } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
 import { GorevListesi } from "@/components/gorev-listesi";
+import { bekleyenYanit, yanitVerenler } from "@/lib/panelden";
 import { KANAL } from "@/lib/sabitler";
 import { bekleyenTemaslar, etkinlikler, kanalOzeti, panoSayilari, vadesiGelenGorevler } from "@/lib/veri";
 import { gorevDurum } from "./gorevler/actions";
 
 export default async function Pano() {
   const ben = await oturumZorunlu();
-  const [s, bekleyen, ets, kanallar, gorevlerim] = await Promise.all([
+  const [s, bekleyen, ets, kanallar, gorevlerim, yanitlar] = await Promise.all([
     panoSayilari(),
     bekleyenTemaslar(),
     etkinlikler(),
     kanalOzeti(),
     vadesiGelenGorevler(ben.kullanici),
+    yanitVerenler(),
   ]);
+  /* Tanıtım mailine yanıt verip satışa iletilmeden kalanlar. */
+  const yanitSayisi = yanitlar.filter(bekleyenYanit).length;
 
   const kutular = [
     { ad: "Firma", deger: s.firma, href: "/firmalar", simge: Building2 },
@@ -25,6 +29,7 @@ export default async function Pano() {
     { ad: "Teklif verilecek", deger: s.teklif_verilecek, href: "/firmalar?takip=teklif_verilecek", simge: FileClock },
     { ad: "Bilgi / çizim bekleyen", deger: s.bilgi_bekleyen, href: "/firmalar?takip=teknik_bilgi_istendi", simge: PencilRuler },
     { ad: "Açık teklif", deger: s.acik_teklif, href: "/teklifler?durum=gonderildi", simge: Send },
+    { ad: "CRM'de olmayan yanıt", deger: yanitSayisi, href: "/yanitlar", simge: MailOpen },
   ];
 
   return (
@@ -45,7 +50,7 @@ export default async function Pano() {
         }
       />
 
-      <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3 xl:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-3 xl:grid-cols-6">
         {kutular.map((k) => (
           <SayiKarti key={k.ad} ad={k.ad} deger={k.deger} simge={k.simge} href={k.href} />
         ))}
