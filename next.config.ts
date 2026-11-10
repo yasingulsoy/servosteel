@@ -139,12 +139,9 @@ const en = (path: string) => `/en${localizeFullPath(path, "en")}`;
 const M = en("/makineler");
 
 const nextConfig: NextConfig = {
-  /* React ViewTransition entegrasyonu — rota geçişlerinde içerik yumuşakça
-     akar (globals.css'teki ::view-transition kuralları). Desteklemeyen
-     tarayıcıda hiçbir şey olmaz, sayfa normal değişir. */
-  experimental: {
-    viewTransition: true,
-  },
+  /* React ViewTransition (rota geçişleri, globals.css'teki ::view-transition
+     kuralları) Next 16.4'ten beri ayarsız çalışıyor; `experimental.viewTransition`
+     bayrağı kaldırıldı, yazılırsa tip hatası verir. */
 
   images: {
     /* Next varsayılanı yalnızca WebP'dir. AVIF tipik olarak WebP'nin de
