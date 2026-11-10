@@ -46,111 +46,130 @@ body {
   @apply rounded-xl border border-line bg-card;
 }
 
-/* Dünya haritası (/harita): uzay zemini, cam paneller, küre üstündeki etiketler. */
+/* Dünya haritası (/harita): uzay zemini, paneller, küre üstündeki etiketler.
+   Paneller bilerek bulanık değil: backdrop-filter her karede yeniden
+   hesaplanıyor ve dönen kürenin üstünde haritayı ağırlaştırıyordu. */
 .hk-uzay {
-  background-color: #02050b;
+  background-color: #01040a;
   background-image:
-    radial-gradient(ellipse at 50% 55%, rgba(40, 90, 160, 0.16), transparent 62%),
-    radial-gradient(1px 1px at 23px 41px, rgba(255, 255, 255, 0.55), transparent 70%),
-    radial-gradient(1px 1px at 97px 13px, rgba(255, 255, 255, 0.35), transparent 70%),
-    radial-gradient(1.5px 1.5px at 151px 119px, rgba(255, 255, 255, 0.6), transparent 70%),
-    radial-gradient(1px 1px at 61px 173px, rgba(200, 220, 255, 0.4), transparent 70%),
-    radial-gradient(1px 1px at 199px 77px, rgba(255, 255, 255, 0.3), transparent 70%),
-    radial-gradient(1px 1px at 131px 211px, rgba(255, 240, 210, 0.45), transparent 70%),
-    radial-gradient(1px 1px at 311px 263px, rgba(255, 255, 255, 0.4), transparent 70%),
-    radial-gradient(1.5px 1.5px at 271px 31px, rgba(200, 220, 255, 0.5), transparent 70%);
-  background-size: 100% 100%, 233px 233px, 233px 233px, 233px 233px, 233px 233px, 233px 233px, 233px 233px, 377px 377px, 377px 377px;
+    radial-gradient(ellipse at 45% 50%, rgba(30, 80, 170, 0.14), transparent 60%),
+    radial-gradient(1px 1px at 23px 41px, rgba(255, 255, 255, 0.5), transparent 70%),
+    radial-gradient(1px 1px at 97px 13px, rgba(255, 255, 255, 0.3), transparent 70%),
+    radial-gradient(1.5px 1.5px at 151px 119px, rgba(255, 255, 255, 0.5), transparent 70%),
+    radial-gradient(1px 1px at 61px 173px, rgba(200, 220, 255, 0.35), transparent 70%),
+    radial-gradient(1px 1px at 199px 77px, rgba(255, 255, 255, 0.25), transparent 70%),
+    radial-gradient(1px 1px at 311px 263px, rgba(255, 255, 255, 0.35), transparent 70%);
+  background-size: 100% 100%, 233px 233px, 233px 233px, 233px 233px, 233px 233px, 233px 233px, 377px 377px;
 }
 .hk-cam {
-  background: rgba(9, 15, 27, 0.74);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  background: rgba(6, 11, 21, 0.9);
+  border: 1px solid rgba(120, 170, 255, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
 }
 .hk-kaydir {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
-.hk-etiket {
-  pointer-events: auto;
-  cursor: pointer;
+.hk-e {
   user-select: none;
   white-space: nowrap;
-  text-align: center;
-  line-height: 1.15;
-  padding: 3px 8px 4px;
-  border-radius: 8px;
-  background: rgba(8, 14, 26, 0.8);
-  border: 1px solid rgba(231, 163, 0, 0.5);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-  color: #fff;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  transition: opacity 0.25s ease, border-color 0.15s ease;
+  line-height: 1.15;
 }
-.hk-etiket:hover {
-  border-color: #ffd166;
+.hk-e-ulke {
+  cursor: pointer;
+  pointer-events: auto;
+  text-align: center;
+  padding: 3px 8px 4px;
+  border-radius: 6px;
+  background: rgba(4, 9, 18, 0.85);
+  border: 1px solid rgba(255, 180, 60, 0.45);
+  color: #fff;
 }
-.hk-etiket .hk-ad {
+.hk-e-ulke .hk-e-b {
   font-size: 10px;
-  letter-spacing: 0.02em;
-  color: #cbd5e1;
+  letter-spacing: 0.03em;
+  color: #c9d6ea;
 }
-.hk-etiket .hk-sayi {
+.hk-e-ulke span {
   font-size: 11px;
-  color: #ffd166;
+  color: #ffc66b;
 }
-.hk-etiket .hk-sayi b {
+.hk-e-ulke i {
+  font-style: normal;
   font-size: 13px;
   font-weight: 700;
 }
-.hk-etiket .hk-ek {
-  display: none;
-  margin-top: 1px;
-  font-size: 10px;
-  color: #86efac;
-}
-.hk-yakin .hk-etiket .hk-ek {
-  display: block;
-}
-.hk-etiket.hk-bos {
-  pointer-events: none;
-  cursor: default;
-  padding: 0 2px;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-.hk-etiket.hk-bos .hk-ad {
-  color: rgba(203, 213, 225, 0.6);
-  text-shadow: 0 1px 3px #000;
-}
-.hk-etiket.hk-ev {
-  border-color: rgba(255, 107, 107, 0.75);
-}
-.hk-etiket.hk-secili {
+.hk-e-ulke:hover,
+.hk-e-ulke.hk-e-secili {
   border-color: #ffd166;
-  background: rgba(46, 33, 4, 0.92);
-  box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.25), 0 4px 18px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.2);
 }
-.hk-etiket.hk-gizli {
-  opacity: 0;
+.hk-e-ulke.hk-e-ev {
+  border-color: rgba(255, 77, 94, 0.7);
+}
+/* Şehir etiketi noktanın hemen üstünde: alttaki boşluk noktaya yer bırakır. */
+.hk-e-sehir {
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding-bottom: 18px;
+  font-size: 11px;
+  color: #e6eefb;
+  text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+.hk-e-sehir i {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--r, #ffb43c);
+}
+.hk-e-sehir:hover .hk-e-s,
+.hk-e-sehir.hk-e-secili .hk-e-s {
+  color: #ffd166;
+}
+.hk-e-ad {
   pointer-events: none;
-}
-.hk-uzay .float-tooltip-kap {
-  padding: 7px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(8, 14, 26, 0.94);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(160, 190, 235, 0.55);
+  text-shadow: 0 1px 2px #000;
 }
 .hk-ipucu {
-  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  pointer-events: none;
   flex-direction: column;
   gap: 2px;
+  max-width: 220px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 170, 255, 0.18);
+  background: rgba(4, 9, 18, 0.94);
   font: 12px ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: #cbd5e1;
+  color: #c9d6ea;
 }
 .hk-ipucu b {
   font-size: 13px;
   color: #ffd166;
+}
+.hk-ipucu span:empty {
+  display: none;
+}
+@keyframes hk-akis {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hk-akis-yeni {
+  animation: hk-akis 0.35s ease-out;
 }

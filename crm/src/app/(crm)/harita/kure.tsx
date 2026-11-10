@@ -2,74 +2,88 @@
 
 import { useEffect, useRef } from "react";
 import type { GlobeInstance } from "globe.gl";
-import type { Feature, Geometry } from "geojson";
+import type { Feature, Geometry, Position } from "geojson";
 import type { GeometryCollection, Topology } from "topojson-specification";
+import type * as THREEType from "three";
 import { ES_AD, MERKEZ, MERKEZ_OFIS, TURKCE_AD } from "@/lib/dunya-ulkeleri";
-import type { HaritaUlkesi } from "@/lib/harita";
+import type { AkisOgesi, HaritaNoktasi, HaritaUlkesi } from "@/lib/harita";
 
 /**
- * Dönen 3B dünya (globe.gl / three.js). Yalnız tarayıcıda çalışır; sahne.tsx
- * bunu `ssr: false` ile yükler.
+ * Dönen 3B dünya. Hafif olsun diye ağır işler GPU'ya tek parça gidiyor:
  *
- * Katmanlar: ülke çokgenleri (ulaşılan ülkeler altın, koyuluğu firma
- * sayısıyla), İstanbul'dan ulaşılan ülkelere akan yaylar, ülke başına sayıyla
- * boyu artan sütun, ülke etiketleri ("Polonya · 33 firma").
- *
- * Etiketler üst üste binmesin diye her 200 ms'de ekranda yerleşim yapılır:
- * büyük sayılı ülke önce yerleşir, çakışan küçükler gizlenir. Yakınlaştıkça
- * ülkeler ekranda açıldığı için daha çok etiket sığar; firma olmayan
- * ülkelerin adları da ancak yakında görünür.
+ * - Kara, deniz ve ülke renkleri bir kez 4096×2048 tuvale boyanıp kürenin
+ *   dokusu oluyor (ülke başına 3B çokgen yok; eski sürüm açılışta bu yüzden donuyordu).
+ * - Sınırlar tek bir çizgi grubu, şehir noktaları tek bir nokta bulutu
+ *   (kendi gölgelendiricisiyle parlıyor, tek çizim çağrısı).
+ * - Canlı akış: son 24 saatte giden mailler ve son yanıtlar sırayla İstanbul'dan
+ *   şehre (yanıt şehirden İstanbul'a) yay olarak uçuyor; aynı anda en çok 12 yay.
+ * - Etiketler: ekrana sığanlar seçilip yalnız onlar DOM'a konuyor (en çok ~60).
+ * - Fare altındaki şehir/ülke kütüphanenin ışın izlemesiyle değil, ekran
+ *   koordinatıyla ve çokgen içi testiyle bulunuyor.
  */
 
+export type Secim = { ulke: string; sehir: string | null };
+
 export type KureApi = {
-  ucus: (ulke: string) => void;
+  ucus: (s: Secim) => void;
   dondur: (acik: boolean) => void;
   ev: () => void;
 };
 
 type Props = {
   ulkeler: HaritaUlkesi[];
-  secili: string | null;
+  noktalar: HaritaNoktasi[];
+  akis: AkisOgesi[];
+  secili: Secim | null;
   donme: boolean;
-  onSec: (ulke: string | null) => void;
+  onSec: (s: Secim | null) => void;
   onHazir: (api: KureApi) => void;
+  onOlay: (o: AkisOgesi) => void;
 };
 
-/** Kullanıcı küreyi bıraktıktan sonra dönme bu kadar bekleyip sürer. */
-const DONME_BEKLEME_MS = 8000;
-
+type Halka = { bbox: [number, number, number, number]; halkalar: Position[][] };
 type UlkeOgesi = {
   ad: string;
   geometry: Geometry;
-  veri: HaritaUlkesi | null;
+  parcalar: Halka[];
   lat: number;
   lng: number;
-  /** ağırlık merkezi alınan kara parçasının yaklaşık alanı (derece²) */
   alan: number;
-  /** 0–1, firma sayısının logaritmik payı */
-  t: number;
+  veri: HaritaUlkesi | null;
 };
-
+type NoktaOgesi = HaritaNoktasi & { nlat: number; nlng: number; renk: string; boyut: number };
 type Etiket = {
-  ad: string;
+  anahtar: string;
+  tur: "ulke" | "sehir" | "ad";
   el: HTMLDivElement;
   lat: number;
   lng: number;
-  yukseklik: number;
+  irtifa: number;
   oncelik: number;
-  veri: boolean;
   w: number;
   h: number;
-  gorunur: boolean;
+  secim: Secim | null;
 };
 
-const BASLANGIC = { lat: 34, lng: 30, altitude: 2.35 };
+const BASLANGIC = { lat: 36, lng: 28, altitude: 2.3 };
 const DONME_HIZI = 0.45;
+const DONME_BEKLEME_MS = 8000;
+const AKIS_ARALIK_MS = 700;
+const YAY_SURE_MS = 1700;
+const EN_COK_YAY = 12;
+
+const RENK = {
+  mail: "#ffb43c",
+  yanit: "#3cc8ff",
+  olumlu: "#3dff9a",
+  crm: "#c07bff",
+  merkez: "#ff4d5e",
+};
+
 const sayiBicim = new Intl.NumberFormat("tr-TR");
 
 /** En büyük kara parçasının düzlemsel ağırlık merkezi: [enlem, boylam, alan]. */
-function agirlikMerkezi(g: Geometry): [number, number, number] | null {
-  const parcalar = g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
+function agirlikMerkezi(parcalar: Position[][][]): [number, number, number] | null {
   let en: [number, number, number] | null = null;
   for (const p of parcalar) {
     const halka = p[0];
@@ -89,69 +103,75 @@ function agirlikMerkezi(g: Geometry): [number, number, number] | null {
   return en;
 }
 
+function cokgenler(g: Geometry): Position[][][] {
+  return g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
+}
+
+function icinde(lng: number, lat: number, halka: Position[]): boolean {
+  let ic = false;
+  for (let i = 0, j = halka.length - 1; i < halka.length; j = i++) {
+    const [xi, yi] = halka[i];
+    const [xj, yj] = halka[j];
+    if (yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) ic = !ic;
+  }
+  return ic;
+}
+
+function ulkedeMi(o: UlkeOgesi, lng: number, lat: number): boolean {
+  for (const p of o.parcalar) {
+    const [a, b, c, d] = p.bbox;
+    if (lng < a || lng > c || lat < b || lat > d) continue;
+    if (icinde(lng, lat, p.halkalar[0]) && !p.halkalar.slice(1).some((h) => icinde(lng, lat, h))) return true;
+  }
+  return false;
+}
+
 function kacisli(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 }
 
-function ipucuHtml(o: UlkeOgesi): string {
-  const v = o.veri;
-  if (!v) return `<div class="hk-ipucu"><b>${kacisli(o.ad)}</b><span>Henüz ulaşılmadı</span></div>`;
-  const satirlar = [
-    v.eposta ? `${sayiBicim.format(v.eposta)} firmaya mail` : null,
-    v.yanit ? `${sayiBicim.format(v.yanit)} yanıt${v.olumlu ? ` · ${sayiBicim.format(v.olumlu)} olumlu` : ""}` : null,
-    v.crm ? `CRM'de ${sayiBicim.format(v.crm)} firma${v.musteri ? ` · ${v.musteri} müşteri` : ""}` : null,
-    v.sirada ? `${sayiBicim.format(v.sirada)} firma sırada` : null,
-  ].filter(Boolean);
-  return `<div class="hk-ipucu"><b>${kacisli(o.ad)} · ${sayiBicim.format(v.firma)} firma</b>${satirlar
-    .map((s) => `<span>${s}</span>`)
-    .join("")}</div>`;
+function el(sinif: string, ...cocuklar: (Node | string)[]): HTMLDivElement {
+  const d = document.createElement("div");
+  d.className = sinif;
+  d.append(...cocuklar);
+  return d;
 }
 
-function etiketElemani(ad: string, v: HaritaUlkesi | null, ev: boolean): HTMLDivElement {
-  const el = document.createElement("div");
-  el.className = `hk-etiket${v ? "" : " hk-bos"}${ev ? " hk-ev" : ""} hk-gizli`;
-  const adEl = document.createElement("div");
-  adEl.className = "hk-ad";
-  adEl.textContent = ev ? `${ad} · merkez` : ad;
-  el.appendChild(adEl);
-  if (v && v.firma > 0) {
-    const s = document.createElement("div");
-    s.className = "hk-sayi";
-    const b = document.createElement("b");
-    b.textContent = sayiBicim.format(v.firma);
-    s.append(b, " firma");
-    el.appendChild(s);
-    if (v.yanit > 0) {
-      const ek = document.createElement("div");
-      ek.className = "hk-ek";
-      ek.textContent = `${v.yanit} yanıt${v.olumlu ? ` · ${v.olumlu} olumlu` : ""}`;
-      el.appendChild(ek);
-    }
-  }
-  return el;
+function etiketBoyutu(e: HTMLDivElement): [number, number] {
+  e.style.visibility = "hidden";
+  e.style.position = "absolute";
+  document.body.appendChild(e);
+  const r: [number, number] = [e.offsetWidth, e.offsetHeight];
+  e.remove();
+  e.style.visibility = "";
+  e.style.position = "";
+  return r;
 }
 
-export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) {
+export default function Kure({ ulkeler, noktalar, akis, secili, donme, onSec, onHazir, onOlay }: Props) {
   const kapRef = useRef<HTMLDivElement>(null);
-  const seciliRef = useRef<string | null>(secili);
+  const ipucuRef = useRef<HTMLDivElement>(null);
+  const seciliRef = useRef<Secim | null>(secili);
   const donmeRef = useRef(donme);
   const yenileRef = useRef<() => void>(() => {});
   /* Geri çağırmalar her çizimde değişebilir; küre bir kez kuruluyor. */
-  const cagriRef = useRef({ onSec, onHazir });
+  const cagriRef = useRef({ onSec, onHazir, onOlay });
   useEffect(() => {
-    cagriRef.current = { onSec, onHazir };
+    cagriRef.current = { onSec, onHazir, onOlay };
   });
 
   useEffect(() => {
     const kap = kapRef.current;
-    if (!kap) return;
+    const ipucu = ipucuRef.current;
+    if (!kap || !ipucu) return;
     let iptal = false;
     let globe: GlobeInstance | null = null;
     const temizlik: (() => void)[] = [];
 
     (async () => {
-      const [{ default: Globe }, { feature }, dunya] = await Promise.all([
+      const [{ default: Globe }, THREE, { feature }, dunya] = await Promise.all([
         import("globe.gl"),
+        import("three"),
         import("topojson-client"),
         fetch("/dunya/countries-50m.json").then(
           (r) => r.json() as Promise<Topology<{ countries: GeometryCollection<{ name: string }> }>>,
@@ -159,231 +179,463 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
       ]);
       if (iptal) return;
 
+      /* ---- Veri ---- */
       const veriHaritasi = new Map(ulkeler.map((u) => [ES_AD[u.ulke] ?? u.ulke, u]));
       const enCok = Math.max(1, ...ulkeler.map((u) => u.firma));
       const pay = (n: number) => (n > 0 ? Math.log1p(n) / Math.log1p(enCok) : 0);
 
       const ogeler: UlkeOgesi[] = [];
-      const fc = feature(dunya, dunya.objects.countries);
-      for (const f of fc.features as Feature<Geometry, { name: string }>[]) {
+      for (const f of feature(dunya, dunya.objects.countries).features as Feature<Geometry, { name: string }>[]) {
         const en = f.properties.name;
         if (en === "Antarctica" || !f.geometry) continue;
         const ad = TURKCE_AD[en] ?? en;
-        const m = agirlikMerkezi(f.geometry);
+        const p = cokgenler(f.geometry);
+        const m = agirlikMerkezi(p);
         if (!m) continue;
         const [lat, lng] = MERKEZ[ad] ?? [m[0], m[1]];
-        const veri = TURKCE_AD[en] ? (veriHaritasi.get(ad) ?? null) : null;
-        ogeler.push({ ad, geometry: f.geometry, veri, lat, lng, alan: m[2], t: pay(veri?.firma ?? 0) });
+        const parcalar = p.map((halkalar) => {
+          let a = 180,
+            b = 90,
+            c = -180,
+            d = -90;
+          for (const [x, y] of halkalar[0]) {
+            a = Math.min(a, x);
+            b = Math.min(b, y);
+            c = Math.max(c, x);
+            d = Math.max(d, y);
+          }
+          return { bbox: [a, b, c, d] as [number, number, number, number], halkalar };
+        });
+        ogeler.push({
+          ad,
+          geometry: f.geometry,
+          parcalar,
+          lat,
+          lng,
+          alan: m[2],
+          veri: TURKCE_AD[en] ? (veriHaritasi.get(ad) ?? null) : null,
+        });
       }
       const ogeAdi = new Map(ogeler.map((o) => [o.ad, o]));
-
-      /* Ulaşılan ülkeler. Haritada çokgeni olmayan (Bahreyn, Singapur, Malta
-         gibi çok küçük) ülke `cokgen: false`: yerine nokta konur. */
-      const noktalar: { ad: string; lat: number; lng: number; t: number; veri: HaritaUlkesi; cokgen: boolean }[] = [];
-      for (const [ad, v] of veriHaritasi) {
+      const ulkeNoktasi = (ulke: string): { lat: number; lng: number } | null => {
+        const ad = ES_AD[ulke] ?? ulke;
         const o = ogeAdi.get(ad);
-        if (o) {
-          if (v.firma > 0) noktalar.push({ ad, lat: o.lat, lng: o.lng, t: o.t, veri: v, cokgen: true });
-        } else if (MERKEZ[ad] && v.firma > 0) {
-          noktalar.push({ ad, lat: MERKEZ[ad][0], lng: MERKEZ[ad][1], t: pay(v.firma), veri: v, cokgen: false });
-        }
-      }
-      const noktaAdi = new Map(noktalar.map((n) => [n.ad, n]));
-
-      let ustunde: UlkeOgesi | null = null;
-      const kapakRengi = (o: UlkeOgesi) => {
-        const s = o.ad === seciliRef.current;
-        const u = o === ustunde;
-        if (o.ad === "Türkiye") return s || u ? "rgba(255, 110, 110, 0.95)" : "rgba(220, 60, 60, 0.8)";
-        if (!o.veri || o.veri.firma === 0) return u ? "rgba(70, 92, 124, 0.95)" : "rgba(34, 48, 70, 0.92)";
-        if (s) return "rgba(255, 214, 102, 1)";
-        const a = 0.32 + o.t * 0.6 + (u ? 0.2 : 0);
-        return `rgba(231, 163, 0, ${Math.min(1, a).toFixed(3)})`;
+        if (o) return { lat: o.lat, lng: o.lng };
+        return MERKEZ[ad] ? { lat: MERKEZ[ad][0], lng: MERKEZ[ad][1] } : null;
       };
-      /* Ulaşılan ülke firma sayısıyla yükselir (3B sütun grafiği gibi);
-         üstüne gelinen ve seçilen biraz daha kalkar. */
-      const taban = (t: number) => 0.007 + t * t * 0.04;
-      const yukseklik = (o: UlkeOgesi) =>
-        (o.veri && o.veri.firma > 0 ? taban(o.t) : 0.004) +
-        (o.ad === seciliRef.current ? 0.014 : o === ustunde ? 0.006 : 0);
 
+      const nokta: NoktaOgesi[] = [];
+      for (const n of noktalar) {
+        const k = n.lat != null && n.lng != null ? { lat: n.lat, lng: n.lng } : ulkeNoktasi(n.ulke);
+        if (!k) continue;
+        const renk = n.olumlu ? RENK.olumlu : n.yanit ? RENK.yanit : n.crm ? RENK.crm : RENK.mail;
+        const boyut = n.sehir ? Math.min(26, 5 + 3.2 * Math.sqrt(n.firma)) : Math.min(22, 7 + 1.4 * Math.sqrt(n.firma));
+        nokta.push({ ...n, nlat: k.lat, nlng: k.lng, renk, boyut });
+      }
+
+      /* ---- Küre ---- */
       globe = new Globe(kap, {
-        animateIn: true,
+        animateIn: false,
         rendererConfig: { antialias: true, alpha: true, powerPreference: "high-performance" },
       });
+      const renderer = globe.renderer();
+      const pikselOrani = Math.min(window.devicePixelRatio || 1, 1.5);
+      renderer.setPixelRatio(pikselOrani);
       globe
         .width(kap.clientWidth)
         .height(kap.clientHeight)
         .backgroundColor("rgba(0,0,0,0)")
+        .showGraticules(false)
         .showAtmosphere(true)
-        .atmosphereColor("#4f9dff")
-        .atmosphereAltitude(0.2)
-        .showGraticules(true);
-      const malzeme = globe.globeMaterial() as unknown as {
-        color: { set: (c: string) => void };
-        emissive: { set: (c: string) => void };
-        shininess: number;
+        .atmosphereColor("#2f7dff")
+        .atmosphereAltitude(0.16)
+        .enablePointerInteraction(false);
+
+      /* Doku: deniz, kara (noktalı desen), ulaşılan ülkelerde hafif ışık, Türkiye kırmızımsı. */
+      const W = Math.min(4096, renderer.capabilities.maxTextureSize);
+      const H = W / 2;
+      const tuval = document.createElement("canvas");
+      tuval.width = W;
+      tuval.height = H;
+      const t = tuval.getContext("2d")!;
+      t.fillStyle = "#030913";
+      t.fillRect(0, 0, W, H);
+      const kara = document.createElement("canvas");
+      kara.width = W;
+      kara.height = H;
+      const k = kara.getContext("2d")!;
+      const ciz = (o: UlkeOgesi) => {
+        let tasti = false;
+        k.beginPath();
+        for (const p of o.parcalar) {
+          for (const halka of p.halkalar) {
+            let onceki = halka[0][0];
+            let kaydir = 0;
+            halka.forEach(([lng, lat], i) => {
+              if (i > 0) {
+                const fark = lng - onceki;
+                if (fark > 180) kaydir -= 360;
+                else if (fark < -180) kaydir += 360;
+              }
+              onceki = lng;
+              if (kaydir) tasti = true;
+              const x = ((lng + kaydir + 180) / 360) * W;
+              const y = ((90 - lat) / 180) * H;
+              if (i) k.lineTo(x, y);
+              else k.moveTo(x, y);
+            });
+            k.closePath();
+          }
+        }
+        const v = o.veri && o.veri.firma > 0 ? pay(o.veri.firma) : -1;
+        k.fillStyle =
+          o.ad === "Türkiye"
+            ? "#4a1a26"
+            : v < 0
+              ? "#111c2e"
+              : `rgb(${Math.round(22 + v * 26)}, ${Math.round(36 + v * 30)}, ${Math.round(60 + v * 34)})`;
+        k.fill("evenodd");
+        if (tasti) {
+          k.save();
+          k.translate(W, 0);
+          k.fill("evenodd");
+          k.translate(-2 * W, 0);
+          k.fill("evenodd");
+          k.restore();
+        }
       };
-      malzeme.color.set("#0a1a30");
-      malzeme.emissive.set("#04101f");
-      malzeme.shininess = 6;
+      for (const o of ogeler) ciz(o);
+      const desen = document.createElement("canvas");
+      desen.width = 6;
+      desen.height = 6;
+      const dg = desen.getContext("2d")!;
+      dg.fillStyle = "rgba(150, 195, 255, 0.16)";
+      dg.beginPath();
+      dg.arc(3, 3, 1, 0, Math.PI * 2);
+      dg.fill();
+      k.globalCompositeOperation = "source-atop";
+      k.fillStyle = k.createPattern(desen, "repeat")!;
+      k.fillRect(0, 0, W, H);
+      t.drawImage(kara, 0, 0);
+      const doku = new THREE.CanvasTexture(tuval);
+      doku.colorSpace = THREE.SRGBColorSpace;
+      doku.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+      globe.globeMaterial(new THREE.MeshPhongMaterial({ map: doku, shininess: 6, specular: new THREE.Color("#0c1626") }));
+      temizlik.push(() => doku.dispose());
 
-      const cokgenleriYenile = () => {
-        globe!.polygonCapColor((o: object) => kapakRengi(o as UlkeOgesi)).polygonAltitude((o: object) => yukseklik(o as UlkeOgesi));
+      /* Sınırlar: bütün ülkeler tek çizgi grubu. */
+      const sinirCizgisi = (liste: UlkeOgesi[], irtifa: number) => {
+        const konum: number[] = [];
+        for (const o of liste) {
+          for (const p of o.parcalar) {
+            for (const halka of p.halkalar) {
+              for (let i = 1; i < halka.length; i++) {
+                const [x0, y0] = halka[i - 1];
+                const [x1, y1] = halka[i];
+                if (Math.abs(x1 - x0) > 180) continue;
+                const a = globe!.getCoords(y0, x0, irtifa);
+                const b = globe!.getCoords(y1, x1, irtifa);
+                konum.push(a.x, a.y, a.z, b.x, b.y, b.z);
+              }
+            }
+          }
+        }
+        const g = new THREE.BufferGeometry();
+        g.setAttribute("position", new THREE.Float32BufferAttribute(konum, 3));
+        return g;
+      };
+      const sinirlar = new THREE.LineSegments(
+        sinirCizgisi(ogeler, 0.0008),
+        new THREE.LineBasicMaterial({ color: "#3f6fae", transparent: true, opacity: 0.45, depthWrite: false }),
+      );
+      globe.scene().add(sinirlar);
+      temizlik.push(() => {
+        sinirlar.geometry.dispose();
+        (sinirlar.material as THREEType.Material).dispose();
+      });
+
+      /* Seçili ve üstündeki ülkenin parlak sınırı */
+      const vurguMalzeme = new THREE.LineBasicMaterial({ color: "#ffd166", transparent: true, opacity: 0.95, depthWrite: false });
+      const ustMalzeme = new THREE.LineBasicMaterial({ color: "#9cc4ff", transparent: true, opacity: 0.8, depthWrite: false });
+      let vurgu: THREEType.LineSegments | null = null;
+      let ustCizgi: THREEType.LineSegments | null = null;
+      const cizgiKoy = (eski: THREEType.LineSegments | null, o: UlkeOgesi | null, m: THREEType.LineBasicMaterial) => {
+        if (eski) {
+          globe!.scene().remove(eski);
+          eski.geometry.dispose();
+        }
+        if (!o) return null;
+        const yeni = new THREE.LineSegments(sinirCizgisi([o], 0.0016), m);
+        globe!.scene().add(yeni);
+        return yeni;
       };
 
-      globe
-        .polygonsData(ogeler)
-        .polygonGeoJsonGeometry("geometry")
-        .polygonSideColor(() => "rgba(4, 10, 20, 0.55)")
-        .polygonStrokeColor(() => "rgba(150, 180, 220, 0.32)")
-        .polygonCapCurvatureResolution(4)
-        .polygonsTransitionDuration(250)
-        .polygonLabel((o: object) => ipucuHtml(o as UlkeOgesi))
-        .onPolygonHover((o: object | null) => {
-          ustunde = (o as UlkeOgesi) ?? null;
-          kap.style.cursor = ustunde?.veri ? "pointer" : "";
-          cokgenleriYenile();
-        })
-        .onPolygonClick((o: object) => {
-          const u = o as UlkeOgesi;
-          cagriRef.current.onSec(u.veri ? u.ad : null);
-        })
-        .onGlobeClick(() => cagriRef.current.onSec(null));
-      cokgenleriYenile();
+      /* Şehir noktaları: tek nokta bulutu, parlayan çekirdek + hale; şehri bilinmeyen ülke payı halka. */
+      const noktaGeo = new THREE.BufferGeometry();
+      const kon = new Float32Array(nokta.length * 3 + 3);
+      const renk = new Float32Array(nokta.length * 3 + 3);
+      const boy = new Float32Array(nokta.length + 1);
+      const tip = new Float32Array(nokta.length + 1);
+      const faz = new Float32Array(nokta.length + 1);
+      const c = new THREE.Color();
+      nokta.forEach((n, i) => {
+        const p = globe!.getCoords(n.nlat, n.nlng, 0.003);
+        kon.set([p.x, p.y, p.z], i * 3);
+        c.set(n.renk);
+        renk.set([c.r, c.g, c.b], i * 3);
+        boy[i] = n.boyut;
+        tip[i] = n.sehir ? 0 : 1;
+        faz[i] = (i * 2.399) % (Math.PI * 2);
+      });
+      {
+        const i = nokta.length;
+        const p = globe.getCoords(MERKEZ_OFIS.lat, MERKEZ_OFIS.lng, 0.003);
+        kon.set([p.x, p.y, p.z], i * 3);
+        c.set(RENK.merkez);
+        renk.set([c.r, c.g, c.b], i * 3);
+        boy[i] = 16;
+        tip[i] = 0;
+        faz[i] = 0;
+      }
+      noktaGeo.setAttribute("position", new THREE.BufferAttribute(kon, 3));
+      noktaGeo.setAttribute("aRenk", new THREE.BufferAttribute(renk, 3));
+      noktaGeo.setAttribute("aBoyut", new THREE.BufferAttribute(boy, 1));
+      noktaGeo.setAttribute("aTip", new THREE.BufferAttribute(tip, 1));
+      noktaGeo.setAttribute("aFaz", new THREE.BufferAttribute(faz, 1));
+      const noktaMalzeme = new THREE.ShaderMaterial({
+        uniforms: { uOran: { value: pikselOrani }, uZaman: { value: 0 } },
+        vertexShader: `
+          attribute vec3 aRenk; attribute float aBoyut; attribute float aTip; attribute float aFaz;
+          uniform float uOran; uniform float uZaman;
+          varying vec3 vRenk; varying float vTip;
+          void main() {
+            vec4 mv = modelViewMatrix * vec4(position, 1.0);
+            float yakin = clamp(260.0 / -mv.z, 0.85, 2.0);
+            float nabiz = 1.0 + 0.1 * sin(uZaman * 2.2 + aFaz);
+            gl_PointSize = aBoyut * yakin * nabiz * uOran;
+            gl_Position = projectionMatrix * mv;
+            vRenk = aRenk; vTip = aTip;
+          }`,
+        fragmentShader: `
+          varying vec3 vRenk; varying float vTip;
+          void main() {
+            float r = length(gl_PointCoord - 0.5) * 2.0;
+            if (r > 1.0) discard;
+            float hale = pow(1.0 - r, 2.4) * 0.6;
+            float a;
+            if (vTip > 0.5) {
+              float halka = smoothstep(0.1, 0.0, abs(r - 0.6));
+              a = max(halka * 0.45, hale * 0.25);
+            } else {
+              float cekirdek = smoothstep(0.38, 0.12, r);
+              a = max(cekirdek, hale);
+            }
+            gl_FragColor = vec4(mix(vRenk, vec3(1.0), vTip > 0.5 ? 0.0 : smoothstep(0.25, 0.0, r) * 0.5), a);
+          }`,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      });
+      const bulut = new THREE.Points(noktaGeo, noktaMalzeme);
+      bulut.onBeforeRender = () => {
+        noktaMalzeme.uniforms.uZaman.value = performance.now() / 1000;
+      };
+      globe.scene().add(bulut);
+      temizlik.push(() => {
+        noktaGeo.dispose();
+        noktaMalzeme.dispose();
+      });
 
-      /* İstanbul'dan ulaşılan ülkelere yaylar. Kalınlık derece cinsinden;
-         yakınlaşınca şerit gibi kalınlaşmasın diye üç basamakta incelir. */
-      const kalinlikBasamagi = (irt: number) => (irt > 1.5 ? 1 : irt > 0.8 ? 0.45 : 0.2);
-      let yayKalinligi = kalinlikBasamagi(BASLANGIC.altitude);
-      const yaylar = noktalar
-        .filter((n) => n.ad !== "Türkiye" && n.veri.eposta + n.veri.crm > 0)
-        .map((n, i) => ({ ...n, bosluk: (i * 0.137) % 1, sure: 2600 + ((i * 397) % 2600) }));
-      globe
-        .arcsData(yaylar)
-        .arcStartLat(() => MERKEZ_OFIS.lat)
-        .arcStartLng(() => MERKEZ_OFIS.lng)
-        .arcEndLat((d: object) => (d as (typeof yaylar)[number]).lat)
-        .arcEndLng((d: object) => (d as (typeof yaylar)[number]).lng)
-        .arcColor(() => ["rgba(231, 163, 0, 0.04)", "rgba(255, 205, 90, 0.9)"])
-        .arcStroke((d: object) => yayKalinligi * (0.12 + (d as (typeof yaylar)[number]).t * 0.38))
-        .arcAltitudeAutoScale(0.38)
-        .arcDashLength(0.42)
-        .arcDashGap(1.3)
-        .arcDashInitialGap((d: object) => (d as (typeof yaylar)[number]).bosluk)
-        .arcDashAnimateTime((d: object) => (d as (typeof yaylar)[number]).sure)
-        .arcsTransitionDuration(0);
-
-      /* Çokgeni olmayan küçük ülkeler için nokta */
-      globe
-        .pointsData(noktalar.filter((n) => !n.cokgen))
-        .pointLat("lat")
-        .pointLng("lng")
-        .pointAltitude(0.012)
-        .pointRadius(0.35)
-        .pointColor(() => "#ffc845")
-        .pointResolution(16)
-        .pointsMerge(true)
-        .pointsTransitionDuration(0);
-
+      /* ---- Halkalar ve canlı yaylar ---- */
+      type HalkaVeri = { lat: number; lng: number; renk: string; buyuk: number; kalici: boolean };
+      let gecici: HalkaVeri[] = [];
       const halkalariYenile = () => {
-        const s = seciliRef.current ? (noktaAdi.get(seciliRef.current) ?? ogeAdi.get(seciliRef.current)) : null;
-        const h: { lat: number; lng: number; ev: boolean }[] = [{ ...MERKEZ_OFIS, ev: true }];
-        if (s) h.push({ lat: s.lat, lng: s.lng, ev: false });
-        globe!
-          .ringsData(h)
-          .ringLat("lat")
-          .ringLng("lng")
-          .ringColor((d: object) => ((t: number) =>
-            (d as { ev: boolean }).ev ? `rgba(255, 100, 100, ${1 - t})` : `rgba(255, 214, 102, ${1 - t})`))
-          .ringMaxRadius((d: object) => ((d as { ev: boolean }).ev ? 3.2 : 5))
-          .ringPropagationSpeed(2.2)
-          .ringRepeatPeriod((d: object) => ((d as { ev: boolean }).ev ? 1500 : 900));
+        const s = seciliRef.current;
+        const kalici: HalkaVeri[] = [{ ...MERKEZ_OFIS, renk: "255, 77, 94", buyuk: 3, kalici: true }];
+        if (s) {
+          const n = s.sehir !== null ? nokta.find((x) => x.ulke === s.ulke && (x.sehir ?? "") === s.sehir) : null;
+          const k2 = n ? { lat: n.nlat, lng: n.nlng } : ulkeNoktasi(s.ulke);
+          if (k2) kalici.push({ ...k2, renk: "255, 209, 102", buyuk: n ? 2.4 : 4.5, kalici: true });
+        }
+        globe!.ringsData([...kalici, ...gecici]);
       };
+      globe
+        .ringLat("lat")
+        .ringLng("lng")
+        .ringColor((d: object) => (t: number) => `rgba(${(d as HalkaVeri).renk}, ${(1 - t) * 0.9})`)
+        .ringMaxRadius((d: object) => (d as HalkaVeri).buyuk)
+        .ringPropagationSpeed((d: object) => ((d as HalkaVeri).kalici ? 1.6 : 3))
+        .ringRepeatPeriod((d: object) => ((d as HalkaVeri).kalici ? 1500 : 5000));
       halkalariYenile();
 
-      /* Etiketler */
-      /* Yalnız Türkçe adı olan ülkeler etiketlenir; küçük bölgeler (Guernsey,
-         Åland…) adsız kalır. Verisi olan ülkenin etiketi yükselen ülkenin üstünde. */
+      type Yay = { id: number; sLat: number; sLng: number; eLat: number; eLng: number; renk: [string, string] };
+      let yaylar: Yay[] = [];
+      let yaySira = 0;
+      globe
+        .arcStartLat("sLat")
+        .arcStartLng("sLng")
+        .arcEndLat("eLat")
+        .arcEndLng("eLng")
+        .arcColor("renk")
+        .arcStroke(0.32)
+        .arcAltitudeAutoScale(0.32)
+        .arcDashLength(0.38)
+        .arcDashGap(3)
+        .arcDashInitialGap(1)
+        .arcDashAnimateTime(YAY_SURE_MS)
+        .arcsTransitionDuration(0)
+        .arcsData([]);
+
+      /* Son 24 saatin mailleri sırayla; her 6 mailde bir, son yanıtlardan biri (yeniden eskiye döner). */
+      const mailler = akis.filter((a) => a.tur !== "yanit").sort((a, b) => a.zaman.localeCompare(b.zaman));
+      const yanitlar = akis.filter((a) => a.tur === "yanit").sort((a, b) => b.zaman.localeCompare(a.zaman));
+      const olaylar: AkisOgesi[] = [];
+      mailler.forEach((m, i) => {
+        olaylar.push(m);
+        if (yanitlar.length && i % 6 === 5) olaylar.push(yanitlar[(i / 6) % yanitlar.length | 0]);
+      });
+      if (!mailler.length) olaylar.push(...yanitlar);
+      let olaySira = 0;
+      const zamanlayicilar = new Set<number>();
+      const sonra = (ms: number, f: () => void) => {
+        const id = window.setTimeout(() => {
+          zamanlayicilar.delete(id);
+          if (!iptal) f();
+        }, ms);
+        zamanlayicilar.add(id);
+      };
+      temizlik.push(() => zamanlayicilar.forEach((id) => window.clearTimeout(id)));
+      const olayAt = () => {
+        if (!olaylar.length || document.hidden || !globe) return;
+        const o = olaylar[olaySira++ % olaylar.length];
+        const hedef = o.lat != null && o.lng != null ? { lat: o.lat, lng: o.lng } : ulkeNoktasi(o.ulke);
+        if (!hedef) return;
+        const yanit = o.tur === "yanit";
+        const r = yanit ? "60, 200, 255" : o.tur === "hatirlatma" ? "255, 225, 120" : "255, 180, 60";
+        const [bas, son] = yanit ? [hedef, MERKEZ_OFIS] : [MERKEZ_OFIS, hedef];
+        /* three-globe yayın kesiğini sondan başa yürütüyor: uçlar ters verilir ki baştan sona aksın. */
+        const yay: Yay = {
+          id: yaySira++,
+          sLat: son.lat,
+          sLng: son.lng,
+          eLat: bas.lat,
+          eLng: bas.lng,
+          renk: [`rgba(${r}, 1)`, `rgba(${r}, 0.15)`],
+        };
+        yaylar = [...yaylar.slice(-(EN_COK_YAY - 1)), yay];
+        globe.arcsData(yaylar);
+        cagriRef.current.onOlay(o);
+        sonra(YAY_SURE_MS * 0.95, () => {
+          const h: HalkaVeri = { ...son, renk: r, buyuk: yanit ? 3 : 2.2, kalici: false };
+          gecici = [...gecici.slice(-8), h];
+          halkalariYenile();
+          sonra(900, () => {
+            gecici = gecici.filter((x) => x !== h);
+            halkalariYenile();
+          });
+        });
+        sonra(YAY_SURE_MS * 1.45, () => {
+          yaylar = yaylar.filter((x) => x !== yay);
+          globe?.arcsData(yaylar);
+        });
+      };
+      const akisSaati = window.setInterval(olayAt, AKIS_ARALIK_MS);
+      temizlik.push(() => window.clearInterval(akisSaati));
+
+      /* ---- Etiketler ---- */
+      /* Ülke adları yalnız yakında; Türkçe adı olmayan küçük bölgeler (Guernsey, Åland…) adsız. */
       const turkceAdlar = new Set(Object.values(TURKCE_AD));
       const etiketler: Etiket[] = [];
       for (const o of ogeler) {
-        if (!turkceAdlar.has(o.ad) || noktaAdi.has(o.ad)) continue;
+        if (!turkceAdlar.has(o.ad)) continue;
         etiketler.push({
-          ad: o.ad,
-          el: etiketElemani(o.ad, o.veri, o.ad === "Türkiye"),
+          anahtar: `ad|${o.ad}`,
+          tur: "ad",
+          el: el("hk-e hk-e-ad", o.ad.toLocaleUpperCase("tr")),
           lat: o.lat,
           lng: o.lng,
-          yukseklik: 0.01,
-          oncelik: o.alan,
-          veri: false,
+          irtifa: 0.002,
+          oncelik: 2e5 + o.alan,
           w: 0,
           h: 0,
-          gorunur: false,
+          secim: o.veri ? { ulke: o.veri.ulke, sehir: null } : null,
         });
       }
-      for (const n of noktalar) {
+      for (const u of ulkeler) {
+        if (u.firma <= 0) continue;
+        const k2 = ulkeNoktasi(u.ulke);
+        if (!k2) continue;
+        const sayi = document.createElement("span");
+        const b = document.createElement("i");
+        b.textContent = sayiBicim.format(u.firma);
+        sayi.append(b, " firma");
         etiketler.push({
-          ad: n.ad,
-          el: etiketElemani(n.ad, n.veri, n.ad === "Türkiye"),
-          lat: n.lat,
-          lng: n.lng,
-          yukseklik: n.cokgen ? taban(n.t) + 0.004 : 0.016,
-          oncelik: 1e6 + n.veri.firma,
-          veri: true,
+          anahtar: `ulke|${u.ulke}`,
+          tur: "ulke",
+          el: el(`hk-e hk-e-ulke${u.ulke === "Türkiye" ? " hk-e-ev" : ""}`, el("hk-e-b", u.ulke), sayi),
+          lat: k2.lat,
+          lng: k2.lng,
+          irtifa: 0.004,
+          oncelik: 1e6 + u.firma,
           w: 0,
           h: 0,
-          gorunur: false,
+          secim: { ulke: u.ulke, sehir: null },
+        });
+      }
+      for (const n of nokta) {
+        if (!n.sehir) continue;
+        const sayi = document.createElement("i");
+        sayi.textContent = sayiBicim.format(n.firma);
+        const e = el("hk-e hk-e-sehir", el("hk-e-s", n.sehir), sayi);
+        e.style.setProperty("--r", n.renk);
+        etiketler.push({
+          anahtar: `sehir|${n.ulke}|${n.sehir}`,
+          tur: "sehir",
+          el: e,
+          lat: n.nlat,
+          lng: n.nlng,
+          irtifa: 0.003,
+          oncelik: n.firma,
+          w: 0,
+          h: 0,
+          secim: { ulke: n.ulke, sehir: n.sehir },
         });
       }
       for (const e of etiketler) {
-        if (e.veri) {
-          e.el.addEventListener("click", (ev) => {
-            ev.stopPropagation();
-            cagriRef.current.onSec(e.ad);
-          });
-        }
+        if (!e.secim) continue;
+        const s = e.secim;
+        e.el.addEventListener("click", (ev) => {
+          ev.stopPropagation();
+          cagriRef.current.onSec(s);
+        });
       }
       globe
-        .htmlElementsData(etiketler)
         .htmlLat("lat")
         .htmlLng("lng")
-        .htmlAltitude("yukseklik")
+        .htmlAltitude("irtifa")
         .htmlElement((d: object) => (d as Etiket).el)
-        /* Arka yüz kontrolünü yerlestir() kendisi yapıyor; kütüphane gizlemesin. */
         .htmlElementVisibilityModifier(() => {})
-        .htmlTransitionDuration(0);
+        .htmlTransitionDuration(0)
+        .htmlElementsData([]);
 
       const rad = Math.PI / 180;
-      /** Kameranın baktığı noktaya açısal uzaklık (radyan). */
       const aci = (lat: number, lng: number, pov: { lat: number; lng: number }) => {
-        const c =
+        const cs =
           Math.sin(lat * rad) * Math.sin(pov.lat * rad) +
           Math.cos(lat * rad) * Math.cos(pov.lat * rad) * Math.cos((lng - pov.lng) * rad);
-        return Math.acos(Math.max(-1, Math.min(1, c)));
+        return Math.acos(Math.max(-1, Math.min(1, cs)));
       };
-      /* Veri etiketleri büyükten küçüğe sıralı; uzaktan bakınca yalnız ilk
-         bu kadarı yarışır, yaklaştıkça hepsi. */
-      const veriSirasi = new Map(
-        etiketler.filter((e) => e.veri).sort((a, b) => b.oncelik - a.oncelik).map((e, i) => [e.ad, i]),
-      );
-      const kotasi = (irt: number) => (irt > 1.9 ? 14 : irt > 1.3 ? 30 : irt > 0.8 ? 70 : Infinity);
-
-      let irtifa = BASLANGIC.altitude;
+      const ulkeKotasi = (irt: number) => (irt > 1.9 ? 10 : irt > 1.4 ? 18 : 30);
+      let gosterilen = "";
       const yerlestir = () => {
         if (!globe) return;
-        const W = kap.clientWidth;
-        const H = kap.clientHeight;
-        const s = seciliRef.current;
+        const W2 = kap.clientWidth;
+        const H2 = kap.clientHeight;
         const pov = globe.pointOfView();
-        irtifa = pov.altitude;
-        /* Ufuk: yüzeyden bakılabilen en uzak nokta; kenara yapışan etiket okunmaz, biraz içeride kes. */
-        const ufuk = Math.acos(1 / (1 + pov.altitude)) * 0.9;
-        const kota = kotasi(irtifa);
-        const sirali = [...etiketler].sort(
-          (a, b) => (b.ad === s ? 1e9 : b.oncelik) - (a.ad === s ? 1e9 : a.oncelik),
-        );
-        /* Cam panellerin altına etiket koyma: yarı saydam oldukları için sızıyor. */
+        const irt = pov.altitude;
+        const yakin = irt <= 1.05;
+        const ufuk = Math.acos(1 / (1 + irt)) * 0.92;
+        const s = seciliRef.current;
         const kapKutu = kap.getBoundingClientRect();
         const kutular: [number, number, number, number][] = [];
         for (const engel of document.querySelectorAll<HTMLElement>("[data-hk-engel]")) {
@@ -391,64 +643,158 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
           if (r.width && r.height)
             kutular.push([r.left - kapKutu.left, r.top - kapKutu.top, r.right - kapKutu.left, r.bottom - kapKutu.top]);
         }
-        for (const e of sirali) {
-          let goster = aci(e.lat, e.lng, pov) < ufuk;
-          if (goster && e.ad !== s) {
-            if (e.veri) goster = (veriSirasi.get(e.ad) ?? 0) < kota;
-            else goster = irtifa < 1.1;
-          }
-          if (goster) {
-            if (!e.w) {
-              e.w = e.el.offsetWidth;
-              e.h = e.el.offsetHeight;
-            }
-            const p = globe.getScreenCoords(e.lat, e.lng, e.yukseklik);
-            const x0 = p.x - e.w / 2 - 4;
-            const y0 = p.y - e.h / 2 - 3;
-            const x1 = p.x + e.w / 2 + 4;
-            const y1 = p.y + e.h / 2 + 3;
-            if (!e.w || x0 < 0 || y0 < 0 || x1 > W || y1 > H) goster = false;
-            else if (kutular.some((k) => x0 < k[2] && x1 > k[0] && y0 < k[3] && y1 > k[1])) goster = false;
-            else kutular.push([x0, y0, x1, y1]);
-          }
-          if (goster !== e.gorunur) {
-            e.gorunur = goster;
-            e.el.classList.toggle("hk-gizli", !goster);
-          }
-          e.el.classList.toggle("hk-secili", e.ad === s);
+        const secimMi = (e: Etiket) =>
+          !!s && !!e.secim && e.secim.ulke === s.ulke && (e.tur === "sehir" ? e.secim.sehir === s.sehir : s.sehir === null && e.tur !== "ad");
+        const adaylar = etiketler
+          .filter((e) => (yakin ? e.tur !== "ulke" : e.tur === "ulke") || secimMi(e))
+          .sort((a, b) => (secimMi(b) ? 1e12 : b.oncelik) - (secimMi(a) ? 1e12 : a.oncelik));
+        const secilen: Etiket[] = [];
+        let ulkeSayisi = 0;
+        for (const e of adaylar) {
+          if (secilen.length >= 70) break;
+          if (aci(e.lat, e.lng, pov) > ufuk) continue;
+          if (e.tur === "ulke" && !secimMi(e) && ulkeSayisi >= ulkeKotasi(irt)) continue;
+          if (!e.w) [e.w, e.h] = etiketBoyutu(e.el);
+          const p = globe.getScreenCoords(e.lat, e.lng, e.irtifa);
+          /* Şehir etiketi noktanın üstünde durur (CSS'te alttan boşluk). */
+          const x0 = p.x - e.w / 2 - 3;
+          const y0 = p.y - e.h / 2 - 2;
+          const x1 = p.x + e.w / 2 + 3;
+          const y1 = p.y + e.h / 2 + 2;
+          if (x0 < 0 || y0 < 0 || x1 > W2 || y1 > H2) continue;
+          if (kutular.some((q) => x0 < q[2] && x1 > q[0] && y0 < q[3] && y1 > q[1])) continue;
+          kutular.push([x0, y0, x1, y1]);
+          secilen.push(e);
+          if (e.tur === "ulke") ulkeSayisi++;
+        }
+        for (const e of etiketler) e.el.classList.toggle("hk-e-secili", secimMi(e));
+        const imza = secilen.map((e) => e.anahtar).join("\n");
+        if (imza !== gosterilen) {
+          gosterilen = imza;
+          globe.htmlElementsData(secilen);
         }
       };
-      const yerlesimSaati = window.setInterval(yerlestir, 200);
+      const yerlesimSaati = window.setInterval(yerlestir, 250);
       temizlik.push(() => window.clearInterval(yerlesimSaati));
 
+      /* ---- Fare: ipucu, tıklama ---- */
+      let ustUlke: UlkeOgesi | null = null;
+      const bul = (x: number, y: number): { nokta: NoktaOgesi | null; ulke: UlkeOgesi | null } => {
+        const pov = globe!.pointOfView();
+        const ufuk = Math.acos(1 / (1 + pov.altitude));
+        let enYakin: NoktaOgesi | null = null;
+        let enUzak = Infinity;
+        for (const n of nokta) {
+          if (aci(n.nlat, n.nlng, pov) > ufuk) continue;
+          const p = globe!.getScreenCoords(n.nlat, n.nlng, 0.003);
+          const d = Math.hypot(p.x - x, p.y - y);
+          const sinir = Math.max(7, n.boyut * 0.55);
+          if (d < sinir && d < enUzak) {
+            enUzak = d;
+            enYakin = n;
+          }
+        }
+        const g = globe!.toGlobeCoords(x, y);
+        const ulke = g ? (ogeler.find((o) => ulkedeMi(o, g.lng, g.lat)) ?? null) : null;
+        return { nokta: enYakin, ulke };
+      };
+      let bekleyen = false;
+      let sonOlay: PointerEvent | null = null;
+      const fareHareket = (ev: PointerEvent) => {
+        sonOlay = ev;
+        if (bekleyen) return;
+        bekleyen = true;
+        requestAnimationFrame(() => {
+          bekleyen = false;
+          const e = sonOlay;
+          if (!e || !globe) return;
+          const r = kap.getBoundingClientRect();
+          const x = e.clientX - r.left;
+          const y = e.clientY - r.top;
+          if ((e.target as HTMLElement).closest?.(".hk-e")) {
+            ipucu.style.display = "none";
+            return;
+          }
+          const { nokta: n, ulke } = bul(x, y);
+          if (ulke !== ustUlke) {
+            ustUlke = ulke;
+            ustCizgi = cizgiKoy(ustCizgi, ulke && ulke.ad !== seciliRef.current?.ulke ? ulke : null, ustMalzeme);
+          }
+          let html = "";
+          if (n) {
+            const satir = [
+              `${sayiBicim.format(n.firma)} firma`,
+              n.yanit ? `${n.yanit} yanıt` : "",
+              n.olumlu ? `${n.olumlu} olumlu` : "",
+              n.crm ? `${n.crm} CRM` : "",
+            ]
+              .filter(Boolean)
+              .join(" · ");
+            html = `<b>${kacisli(n.sehir ?? `${n.ulke} · şehri belirsiz`)}</b><span>${kacisli(n.sehir ? n.ulke : "")}</span><span>${satir}</span>`;
+          } else if (ulke) {
+            const v = ulke.veri;
+            html = v
+              ? `<b>${kacisli(ulke.ad)}</b><span>${sayiBicim.format(v.firma)} firma · ${v.yanit} yanıt · ${v.olumlu} olumlu</span>${
+                  v.sirada ? `<span>${sayiBicim.format(v.sirada)} firma sırada</span>` : ""
+                }`
+              : `<b>${kacisli(ulke.ad)}</b><span>Henüz ulaşılmadı</span>`;
+          }
+          kap.style.cursor = n || ulke?.veri ? "pointer" : "";
+          if (!html) {
+            ipucu.style.display = "none";
+            return;
+          }
+          ipucu.innerHTML = html;
+          ipucu.style.display = "flex";
+          ipucu.style.transform = `translate(${Math.min(x + 14, r.width - 220)}px, ${y + 16}px)`;
+        });
+      };
+      const fareCikti = () => {
+        ipucu.style.display = "none";
+        ustUlke = null;
+        ustCizgi = cizgiKoy(ustCizgi, null, ustMalzeme);
+      };
+      let basma: { x: number; y: number; t: number } | null = null;
+      const bas = (ev: PointerEvent) => {
+        basma = { x: ev.clientX, y: ev.clientY, t: performance.now() };
+      };
+      const birak = (ev: PointerEvent) => {
+        const b0 = basma;
+        basma = null;
+        if (!b0 || !globe) return;
+        if (Math.hypot(ev.clientX - b0.x, ev.clientY - b0.y) > 5 || performance.now() - b0.t > 600) return;
+        if ((ev.target as HTMLElement).closest?.(".hk-e")) return;
+        const r = kap.getBoundingClientRect();
+        const { nokta: n, ulke } = bul(ev.clientX - r.left, ev.clientY - r.top);
+        if (n) cagriRef.current.onSec({ ulke: n.ulke, sehir: n.sehir ?? "" });
+        else if (ulke?.veri) cagriRef.current.onSec({ ulke: ulke.veri.ulke, sehir: null });
+        else cagriRef.current.onSec(null);
+      };
+      kap.addEventListener("pointermove", fareHareket);
+      kap.addEventListener("pointerleave", fareCikti);
+      kap.addEventListener("pointerdown", bas);
+      kap.addEventListener("pointerup", birak);
+      temizlik.push(() => {
+        kap.removeEventListener("pointermove", fareHareket);
+        kap.removeEventListener("pointerleave", fareCikti);
+        kap.removeEventListener("pointerdown", bas);
+        kap.removeEventListener("pointerup", birak);
+      });
+
+      /* ---- Kontroller ---- */
       const kontrol = globe.controls();
       kontrol.autoRotate = donmeRef.current;
       kontrol.autoRotateSpeed = DONME_HIZI;
       kontrol.enableDamping = true;
       kontrol.dampingFactor = 0.08;
-      kontrol.minDistance = 112;
-      kontrol.maxDistance = 620;
-      kontrol.rotateSpeed = 0.55;
+      kontrol.minDistance = 108;
+      kontrol.maxDistance = 600;
+      kontrol.rotateSpeed = 0.5;
       kontrol.zoomSpeed = 0.9;
-
-      const yakinlikSinifi = () => {
-        const yakin = irtifa < 0.75;
-        if (kap.classList.contains("hk-yakin") !== yakin) {
-          kap.classList.toggle("hk-yakin", yakin);
-          for (const e of etiketler) e.w = 0;
-        }
-      };
       globe.onZoom((pov) => {
-        irtifa = pov.altitude;
-        kontrol.autoRotateSpeed = DONME_HIZI * Math.min(1, Math.max(0.12, irtifa / 2.2));
-        yakinlikSinifi();
-        const k = kalinlikBasamagi(irtifa);
-        if (k !== yayKalinligi) {
-          yayKalinligi = k;
-          globe!.arcStroke((d: object) => yayKalinligi * (0.12 + (d as (typeof yaylar)[number]).t * 0.38));
-        }
+        kontrol.autoRotateSpeed = DONME_HIZI * Math.min(1, Math.max(0.1, pov.altitude / 2.2));
+        kontrol.rotateSpeed = Math.min(0.5, Math.max(0.08, pov.altitude * 0.3));
       });
-      /* Kullanıcı tutunca dur, bırakınca biraz bekleyip yeniden dön. */
       let bekleme = 0;
       const tutuldu = () => {
         window.clearTimeout(bekleme);
@@ -468,6 +814,11 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
         kontrol.removeEventListener("end", birakildi);
       });
 
+      /* Sekme arkadayken çizme. */
+      const gorunurluk = () => (document.hidden ? globe?.pauseAnimation() : globe?.resumeAnimation());
+      document.addEventListener("visibilitychange", gorunurluk);
+      temizlik.push(() => document.removeEventListener("visibilitychange", gorunurluk));
+
       /* Geniş ekranda sağda 20rem'lik panel var: küreyi kalan alanın ortasına kaydır. */
       const boyutla = () =>
         globe
@@ -482,19 +833,27 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
       globe.pointOfView(BASLANGIC, 0);
 
       yenileRef.current = () => {
-        cokgenleriYenile();
+        const s = seciliRef.current;
+        vurgu = cizgiKoy(vurgu, s ? (ogeAdi.get(ES_AD[s.ulke] ?? s.ulke) ?? null) : null, vurguMalzeme);
         halkalariYenile();
-        kontrol.autoRotate = donmeRef.current && !seciliRef.current;
+        kontrol.autoRotate = donmeRef.current && !s;
         yerlestir();
       };
+      yenileRef.current();
 
       cagriRef.current.onHazir({
-        ucus: (ad) => {
-          const o = noktaAdi.get(ad) ?? ogeAdi.get(ad);
-          if (!o || !globe) return;
-          const alan = ogeAdi.get(ad)?.alan ?? 1;
-          const hedef = Math.min(1.8, Math.max(0.6, 0.5 + Math.sqrt(alan) / 30));
-          globe.pointOfView({ lat: o.lat, lng: o.lng, altitude: hedef }, 1400);
+        ucus: (s) => {
+          if (!globe) return;
+          const n = s.sehir ? nokta.find((x) => x.ulke === s.ulke && x.sehir === s.sehir) : null;
+          if (n) {
+            globe.pointOfView({ lat: n.nlat, lng: n.nlng, altitude: 0.45 }, 1400);
+            return;
+          }
+          const o = ogeAdi.get(ES_AD[s.ulke] ?? s.ulke);
+          const k2 = ulkeNoktasi(s.ulke);
+          if (!k2) return;
+          const hedef = Math.min(1.8, Math.max(0.6, 0.5 + Math.sqrt(o?.alan ?? 1) / 30));
+          globe.pointOfView({ ...k2, altitude: hedef }, 1400);
         },
         dondur: (acik) => {
           donmeRef.current = acik;
@@ -514,10 +873,9 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
         globe._destructor();
       }
       kap.replaceChildren();
-      kap.classList.remove("hk-yakin");
     };
     /* Veri sayfa yüklenince bir kez geliyor; değişirse küre baştan kurulur. */
-  }, [ulkeler]);
+  }, [ulkeler, noktalar, akis]);
 
   useEffect(() => {
     seciliRef.current = secili;
@@ -527,5 +885,10 @@ export default function Kure({ ulkeler, secili, donme, onSec, onHazir }: Props) 
 
   /* isolate: CSS2D etiketleri derinlik için z-index alıyor; yığın burada
      kapanmazsa etiketler yan panelin üstüne çıkar. */
-  return <div ref={kapRef} className="absolute inset-0 isolate" />;
+  return (
+    <>
+      <div ref={kapRef} className="absolute inset-0 isolate" />
+      <div ref={ipucuRef} className="hk-ipucu" style={{ display: "none" }} />
+    </>
+  );
 }

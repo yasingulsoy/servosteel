@@ -242,3 +242,38 @@ export const MERKEZ: Record<string, [number, number]> = {
 
 /** Servosteel'in yeri (Sancaktepe, İstanbul): yayların çıktığı nokta. */
 export const MERKEZ_OFIS = { lat: 41.0, lng: 29.23 };
+
+/** Türkçe ülke adı → ISO 3166-1 alpha-2 (şehir verisi bu kodla tutuluyor). */
+export const ULKE_KODU: Record<string, string> = {
+  ABD: "US", Afganistan: "AF", Almanya: "DE", Andorra: "AD", Angola: "AO", "Antigua ve Barbuda": "AG",
+  Arjantin: "AR", Arnavutluk: "AL", Avustralya: "AU", Avusturya: "AT", Azerbaycan: "AZ", Bahamalar: "BS",
+  Bahreyn: "BH", Bangladeş: "BD", Barbados: "BB", Belarus: "BY", Belçika: "BE", Belize: "BZ", Benin: "BJ",
+  Butan: "BT", Bolivya: "BO", "Bosna-Hersek": "BA", Botsvana: "BW", Brezilya: "BR", Brunei: "BN",
+  Bulgaristan: "BG", "Burkina Faso": "BF", Burundi: "BI", "Yeşil Burun Adaları": "CV", Kamboçya: "KH",
+  Kamerun: "CM", Kanada: "CA", "Orta Afrika Cumhuriyeti": "CF", Çad: "TD", Şili: "CL", Çin: "CN",
+  Kolombiya: "CO", Komorlar: "KM", Kongo: "CG", "Kosta Rika": "CR", "Fildişi Sahili": "CI", Hırvatistan: "HR",
+  Küba: "CU", Kıbrıs: "CY", Çekya: "CZ", "Kongo DC": "CD", Danimarka: "DK", Cibuti: "DJ", Dominika: "DM",
+  "Dominik Cumhuriyeti": "DO", Ekvador: "EC", Mısır: "EG", "El Salvador": "SV", "Ekvator Ginesi": "GQ",
+  Eritre: "ER", Estonya: "EE", Esvatini: "SZ", Etiyopya: "ET", Fiji: "FJ", Finlandiya: "FI", Fransa: "FR",
+  Gabon: "GA", Gambiya: "GM", Gürcistan: "GE", Gana: "GH", Yunanistan: "GR", Grönland: "GL", Grenada: "GD",
+  Guatemala: "GT", Gine: "GN", "Gine-Bissau": "GW", Guyana: "GY", Haiti: "HT", Honduras: "HN",
+  "Hong Kong": "HK", Macaristan: "HU", İzlanda: "IS", Hindistan: "IN", Endonezya: "ID", İran: "IR",
+  Irak: "IQ", İrlanda: "IE", İsrail: "IL", İtalya: "IT", Jamaika: "JM", Japonya: "JP", Ürdün: "JO",
+  Kazakistan: "KZ", Kenya: "KE", Kosova: "XK", Kuveyt: "KW", Kırgızistan: "KG", Laos: "LA", Letonya: "LV",
+  Lübnan: "LB", Lesotho: "LS", Liberya: "LR", Libya: "LY", Lihtenştayn: "LI", Litvanya: "LT",
+  Lüksemburg: "LU", "Kuzey Makedonya": "MK", Madagaskar: "MG", Malavi: "MW", Malezya: "MY", Maldivler: "MV",
+  Mali: "ML", Malta: "MT", Moritanya: "MR", Mauritius: "MU", Meksika: "MX", Moldova: "MD", Moğolistan: "MN",
+  Karadağ: "ME", Fas: "MA", Mozambik: "MZ", Myanmar: "MM", Namibya: "NA", Nepal: "NP", Hollanda: "NL",
+  "Yeni Kaledonya": "NC", "Yeni Zelanda": "NZ", Nikaragua: "NI", Nijer: "NE", Nijerya: "NG",
+  "Kuzey Kore": "KP", Norveç: "NO", Umman: "OM", Pakistan: "PK", Filistin: "PS", Panama: "PA",
+  "Papua Yeni Gine": "PG", Paraguay: "PY", Peru: "PE", Filipinler: "PH", Polonya: "PL", Portekiz: "PT",
+  "Porto Riko": "PR", Katar: "QA", Romanya: "RO", Rusya: "RU", Ruanda: "RW", "Güney Sudan": "SS",
+  "Suudi Arabistan": "SA", Senegal: "SN", Sırbistan: "RS", "Sierra Leone": "SL", Singapur: "SG",
+  Slovakya: "SK", Slovenya: "SI", "Solomon Adaları": "SB", Somali: "SO", "Güney Afrika": "ZA",
+  "Güney Kore": "KR", İspanya: "ES", "Sri Lanka": "LK", Sudan: "SD", Surinam: "SR", İsveç: "SE",
+  İsviçre: "CH", Suriye: "SY", Tayvan: "TW", Tacikistan: "TJ", Tanzanya: "TZ", Tayland: "TH",
+  "Doğu Timor": "TL", Togo: "TG", Trinidad: "TT", Tunus: "TN", Türkiye: "TR", Türkmenistan: "TM",
+  Uganda: "UG", Ukrayna: "UA", BAE: "AE", "Birleşik Krallık": "GB", Uruguay: "UY", Özbekistan: "UZ",
+  Vanuatu: "VU", Venezuela: "VE", Vietnam: "VN", Yemen: "YE", Zambiya: "ZM", Zimbabve: "ZW",
+  Ermenistan: "AM", "Batı Sahra": "EH",
+};
