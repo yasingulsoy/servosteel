@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { zaman } from "@/lib/bicim";
 import { sorgu } from "@/lib/db";
-import { oturumZorunlu } from "@/lib/oturum";
+import { oturumZorunlu, panelHesaplariniEsle } from "@/lib/oturum";
 import { ROL } from "@/lib/sabitler";
 import { kullaniciEkle, kullaniciGuncelle, parolaSifirla } from "./actions";
 
@@ -16,6 +16,7 @@ type Satir = {
   rol: keyof typeof ROL;
   aktif: boolean;
   son_giris: Date | null;
+  panel_bagli: boolean;
 };
 
 const RolSecimi = ({ deger }: { deger?: string }) => (
@@ -31,8 +32,10 @@ const RolSecimi = ({ deger }: { deger?: string }) => (
 export default async function Kullanicilar() {
   const ben = await oturumZorunlu();
   if (ben.rol !== "yonetici") redirect("/");
+  /* Sitenin panelinde yeni açılan hesaplar listede hemen görünsün. */
+  await panelHesaplariniEsle();
   const liste = await sorgu<Satir>(
-    `SELECT id, kullanici, ad, eposta, rol, aktif, son_giris FROM crm_kullanici ORDER BY aktif DESC, kullanici`
+    `SELECT id, kullanici, ad, eposta, rol, aktif, son_giris, panel_bagli FROM crm_kullanici ORDER BY aktif DESC, kullanici`
   );
 
   return (
@@ -40,7 +43,9 @@ export default async function Kullanicilar() {
       <h1 className="text-xl font-bold">Kullanıcılar</h1>
       <p className="max-w-3xl text-sm text-muted">
         Yönetici her şeyi görür ve kullanıcıları yönetir. Satış ve pazarlama kayıt girer ve düzenler. Görüntüleyici
-        yalnız okur. Pasifleşen kullanıcının açık oturumu hemen kapanır.
+        yalnız okur. Pasifleşen kullanıcının açık oturumu hemen kapanır. Sitenin yönetim paneli hesapları da
+        buraya kendiliğinden gelir ve panel parolasıyla girer (panelin yöneticisi burada yönetici, diğerleri satış
+        olarak başlar; rolü buradan değiştirebilirsiniz). Onların parolası panelden değişir.
       </p>
 
       <div className="space-y-3">
@@ -50,6 +55,9 @@ export default async function Kullanicilar() {
               <span className="font-semibold">{k.kullanici}</span>
               <span className="text-sm">{k.ad}</span>
               <span className="text-sm text-muted">{ROL[k.rol]}</span>
+              {k.panel_bagli ? (
+                <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-900">panel hesabı</span>
+              ) : null}
               {!k.aktif ? <span className="text-xs font-semibold text-red-700">pasif</span> : null}
               <span className="ml-auto text-xs text-muted">
                 {k.son_giris ? `son giriş ${zaman(k.son_giris)}` : "hiç girmedi"}
@@ -79,6 +87,12 @@ export default async function Kullanicilar() {
                   Kaydet
                 </button>
               </form>
+              {k.panel_bagli ? (
+                <p className="text-sm text-muted">
+                  Bu hesap sitenin yönetim paneliyle aynı parolayı kullanır; parola panelin Kullanıcılar sayfasından
+                  değişir.
+                </p>
+              ) : (
               <form action={parolaSifirla} className="space-y-3">
                 <input type="hidden" name="id" value={k.id} />
                 <div>
@@ -89,6 +103,7 @@ export default async function Kullanicilar() {
                   Parolayı değiştir
                 </button>
               </form>
+              )}
             </div>
           </details>
         ))}

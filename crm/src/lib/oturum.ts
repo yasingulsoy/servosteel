@@ -10,7 +10,8 @@ import { sorgu, tek } from "./db";
  * karması. Çıkışta ya da kullanıcı pasifleşince satır silinir ve çerez o an
  * geçersizleşir (imzalı çerezde bu mümkün değildi).
  *
- * Parola karması panelinkiyle aynı biçimde: `scrypt:<tuz>:<karma>`.
+ * Parola karması panelinkiyle aynı biçimde: `scrypt:<tuz>:<karma>`. Sitenin
+ * panel hesapları da CRM'e girer (bkz. panelHesaplariniEsle).
  */
 
 export type Rol = "yonetici" | "satis" | "pazarlama" | "goruntuleyici";
@@ -88,6 +89,50 @@ export async function yoneticiZorunlu(): Promise<Kullanici> {
   return k;
 }
 
+/**
+ * Sitenin yönetim paneli hesapları (`yoneticiler`) CRM'e de girer.
+ *
+ * Panelde olup CRM'de olmayan hesap `panel_bagli` satır olarak açılır:
+ * panelin 'admin'i CRM'de yönetici, diğerleri satış. Rolü sonradan CRM'in
+ * Kullanıcılar sayfasından değiştirilebilir. Parola CRM'de tutulmaz, girişte
+ * panelin güncel karmasıyla doğrulanır. Panelden silinen hesabın CRM satırı
+ * pasifleşir ve açık oturumları kapanır.
+ *
+ * Aynı adla açılmış bir CRM hesabı varsa ona dokunulmaz; o ad CRM'in kendi
+ * parolasıyla girer.
+ */
+export async function panelHesaplariniEsle(): Promise<void> {
+  try {
+    await sorgu(
+      `INSERT INTO crm_kullanici (kullanici, ad, rol, karma, panel_bagli)
+       SELECT lower(y.kullanici), y.kullanici, CASE WHEN y.rol = 'admin' THEN 'yonetici' ELSE 'satis' END, 'panel', true
+         FROM yoneticiler y
+        WHERE lower(y.kullanici) ~ '^[a-z0-9._-]{3,40}$'
+       ON CONFLICT (kullanici) DO NOTHING`
+    );
+    const silinen = await sorgu<{ id: number }>(
+      `UPDATE crm_kullanici k SET aktif = false
+        WHERE k.panel_bagli AND k.aktif
+          AND NOT EXISTS (SELECT 1 FROM yoneticiler y WHERE lower(y.kullanici) = k.kullanici)
+        RETURNING k.id`
+    );
+    for (const s of silinen) await sorgu(`DELETE FROM crm_oturum WHERE kullanici_id = $1`, [s.id]);
+  } catch (e) {
+    /* Panel tablosu yoksa ya da okunamıyorsa CRM'in kendi hesapları yine çalışır. */
+    console.error("[crm] panel hesapları eşlenemedi:", (e as Error).message);
+  }
+}
+
+async function panelKarmasi(kullanici: string): Promise<string | null> {
+  try {
+    return (
+      (await tek<{ karma: string }>(`SELECT karma FROM yoneticiler WHERE lower(kullanici) = $1`, [kullanici]))?.karma ?? null
+    );
+  } catch {
+    return null;
+  }
+}
+
 /** Başarılıysa null, değilse kullanıcıya gösterilecek hata. */
 export async function girisYap(
   kullanici: string,
@@ -96,18 +141,26 @@ export async function girisYap(
   tarayici: string | null
 ): Promise<string | null> {
   const HATA = "Kullanıcı adı ya da parola hatalı.";
-  const k = await tek<{ id: number; karma: string; aktif: boolean; kilitli: boolean }>(
-    `SELECT id, karma, aktif, (kilit_bitis IS NOT NULL AND kilit_bitis > now()) AS kilitli
-       FROM crm_kullanici WHERE kullanici = $1`,
-    [kullanici]
-  );
+  const bul = () =>
+    tek<{ id: number; karma: string; aktif: boolean; kilitli: boolean; panel_bagli: boolean }>(
+      `SELECT id, karma, aktif, panel_bagli, (kilit_bitis IS NOT NULL AND kilit_bitis > now()) AS kilitli
+         FROM crm_kullanici WHERE kullanici = $1`,
+      [kullanici]
+    );
+  let k = await bul();
+  if (!k) {
+    /* Panelde yeni açılmış bir hesap olabilir. */
+    await panelHesaplariniEsle();
+    k = await bul();
+  }
   if (!k) {
     /* Kullanıcı yokken de aynı süreyi harca: ad tahmini zamanlamadan çıkmasın. */
     await parolaKarmala(parola);
     return HATA;
   }
   if (k.kilitli) return `Çok sayıda hatalı deneme. ${KILIT_DK} dakika sonra yeniden deneyin.`;
-  if (!k.aktif || !(await parolaDogru(parola, k.karma))) {
+  const dogruKarma = k.panel_bagli ? await panelKarmasi(kullanici) : k.karma;
+  if (!k.aktif || !dogruKarma || !(await parolaDogru(parola, dogruKarma))) {
     await sorgu(
       `UPDATE crm_kullanici
           SET basarisiz = basarisiz + 1,

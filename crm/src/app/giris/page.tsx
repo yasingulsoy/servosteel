@@ -14,6 +14,7 @@ export default async function GirisSayfasi() {
       <h1 className="mt-1 text-2xl font-bold">CRM</h1>
       <p className="mt-2 text-sm text-muted">Etkinlikler, firmalar, kurum yetkilileri ve takip.</p>
       <GirisFormu />
+      <p className="mt-4 text-xs text-muted">Sitenin yönetim paneli hesabınızla da girebilirsiniz.</p>
     </main>
   );
 }

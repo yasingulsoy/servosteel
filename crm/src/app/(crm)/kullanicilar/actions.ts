@@ -52,9 +52,10 @@ export async function parolaSifirla(fd: FormData): Promise<void> {
   if (!id) throw new Error("Kullanıcı yok.");
   if (parola.length < 10) throw new Error("Parola en az 10 karakter olmalı.");
   const r = await tek<{ kullanici: string }>(
-    `UPDATE crm_kullanici SET karma = $2, basarisiz = 0, kilit_bitis = NULL WHERE id = $1 RETURNING kullanici`,
+    `UPDATE crm_kullanici SET karma = $2, basarisiz = 0, kilit_bitis = NULL WHERE id = $1 AND NOT panel_bagli RETURNING kullanici`,
     [id, await parolaKarmala(parola)]
   );
+  if (!r) throw new Error("Bu hesabın parolası sitenin yönetim panelinden değişir.");
   await sorgu(`DELETE FROM crm_oturum WHERE kullanici_id = $1`, [id]);
   await kayitEkle(ben, "parola_sifirla", r?.kullanici ?? `#${id}`);
   redirect("/kullanicilar");
