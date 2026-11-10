@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 import { Rozet } from "@/components/rozet";
+import { Bos, SayfaBasligi } from "@/components/sayfa";
 import { para, tarih } from "@/lib/bicim";
 import { oturumZorunlu } from "@/lib/oturum";
 import { DOVIZ, RED_SEBEBI, TEKLIF_DURUMU, TEKLIF_RENK } from "@/lib/sabitler";
@@ -31,21 +32,24 @@ export default async function TeklifListesi(props: PageProps<"/teklifler">) {
     .filter((o) => o.adet);
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center gap-3">
-        <h1 className="text-xl font-bold">Teklifler</h1>
-        <a href={`/teklifler/disa-aktar${durum ? `?durum=${durum}` : ""}`} className="dugme-ikincil ml-auto">
-          Excel
-        </a>
-      </div>
-      <p className="max-w-3xl text-sm text-muted">
-        Teklif firma kartından eklenir: satış teklifi kendi dosyasında hazırlar, burada PDF&apos;i, tutarı ve durumu durur.
-      </p>
+    <div className="space-y-4 md:space-y-6">
+      <SayfaBasligi
+        baslik="Teklifler"
+        ek={
+          <a href={`/teklifler/disa-aktar${durum ? `?durum=${durum}` : ""}`} className="dugme-ikincil">
+            <Download size={18} /> Excel
+          </a>
+        }
+      >
+        <p className="max-w-3xl text-sm text-gray-500">
+          Teklif firma kartından eklenir: satış teklifi kendi dosyasında hazırlar, burada PDF&apos;i, tutarı ve durumu durur.
+        </p>
+      </SayfaBasligi>
 
       <div className="flex flex-wrap gap-2">
         <Link
           href="/teklifler"
-          className={`rounded-full px-3 py-1 text-xs font-medium ${durum ? "bg-card ring-1 ring-line" : "bg-shell text-white"}`}
+          className={`cip ${durum ? "bg-white text-gray-700 ring-1 ring-gray-200 hover:bg-gray-50" : "bg-brand-500 text-white"}`}
         >
           Hepsi
         </Link>
@@ -53,7 +57,7 @@ export default async function TeklifListesi(props: PageProps<"/teklifler">) {
           <Link
             key={o.d}
             href={`/teklifler?durum=${o.d}`}
-            className={`rounded-full px-3 py-1 text-xs font-medium ${TEKLIF_RENK[o.d]} ${durum === o.d ? "ring-2 ring-zinc-900" : ""}`}
+            className={`cip ${TEKLIF_RENK[o.d]} ${durum === o.d ? "cip-secili" : ""}`}
           >
             {TEKLIF_DURUMU[o.d]} {o.adet}
             {o.tutar ? ` · ${o.tutar}` : ""}
@@ -62,47 +66,53 @@ export default async function TeklifListesi(props: PageProps<"/teklifler">) {
       </div>
 
       {liste.length === 0 ? (
-        <p className="text-sm text-muted">{durum ? "Bu durumda teklif yok." : "Henüz teklif girilmedi."}</p>
+        <div className="kart">
+          <Bos>{durum ? "Bu durumda teklif yok." : "Henüz teklif girilmedi."}</Bos>
+        </div>
       ) : (
         <div className="kart overflow-x-auto">
-          <table className="w-full min-w-[820px] text-sm">
-            <thead className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
+          <table className="tablo min-w-[820px]">
+            <thead>
               <tr>
-                <th className="p-3">Tarih</th>
-                <th className="p-3">Firma</th>
-                <th className="p-3">Teklif</th>
-                <th className="p-3 text-right">Tutar</th>
-                <th className="p-3">Durum</th>
+                <th>Tarih</th>
+                <th>Firma</th>
+                <th>Teklif</th>
+                <th className="text-right">Tutar</th>
+                <th>Durum</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-line">
+            <tbody className="divide-y divide-gray-100">
               {liste.map((t) => (
                 <tr key={t.id} className="align-top">
-                  <td className="whitespace-nowrap p-3">
+                  <td className="whitespace-nowrap">
                     {tarih(t.tarih)}
-                    {t.gecerlilik ? <div className="text-xs text-muted">geçerlilik {tarih(t.gecerlilik)}</div> : null}
+                    {t.gecerlilik ? <div className="text-theme-xs text-gray-500">geçerlilik {tarih(t.gecerlilik)}</div> : null}
                   </td>
-                  <td className="p-3">
-                    <Link href={`/firmalar/${t.firma_id}`} className="font-semibold hover:underline">
+                  <td>
+                    <Link href={`/firmalar/${t.firma_id}`} className="font-medium text-gray-800 hover:text-brand-500">
                       {t.firma_ad}
                     </Link>
-                    {t.firma_ulke ? <div className="text-xs text-muted">{t.firma_ulke}</div> : null}
+                    {t.firma_ulke ? <div className="text-theme-xs text-gray-500">{t.firma_ulke}</div> : null}
                   </td>
-                  <td className="max-w-sm p-3">
-                    <div className="font-medium">{t.teklif_no ?? "—"}</div>
-                    {t.konu ? <div className="text-xs text-muted">{t.konu}</div> : null}
+                  <td className="max-w-sm">
+                    <div className="font-medium text-gray-800">{t.teklif_no ?? "—"}</div>
+                    {t.konu ? <div className="text-theme-xs text-gray-500">{t.konu}</div> : null}
                     {t.dosya_id ? (
-                      <a href={`/dosya/${t.dosya_id}`} target="_blank" className="mt-1 inline-flex items-center gap-1 text-xs hover:underline">
+                      <a
+                        href={`/dosya/${t.dosya_id}`}
+                        target="_blank"
+                        className="mt-1 inline-flex items-center gap-1 text-theme-xs font-medium text-brand-500 hover:text-brand-600"
+                      >
                         <FileText size={12} /> {t.dosya_ad}
                       </a>
                     ) : null}
                   </td>
-                  <td className="whitespace-nowrap p-3 text-right font-semibold">
+                  <td className="text-right font-medium whitespace-nowrap text-gray-800">
                     {t.tutar ? `${para(t.tutar)} ${DOVIZ[t.doviz]}` : "—"}
                   </td>
-                  <td className="p-3">
+                  <td>
                     <Rozet sinif={TEKLIF_RENK[t.durum]}>{TEKLIF_DURUMU[t.durum]}</Rozet>
-                    {t.red_sebebi ? <div className="mt-0.5 text-xs text-red-800">{RED_SEBEBI[t.red_sebebi]}</div> : null}
+                    {t.red_sebebi ? <div className="mt-1 text-theme-xs text-error-600">{RED_SEBEBI[t.red_sebebi]}</div> : null}
                   </td>
                 </tr>
               ))}

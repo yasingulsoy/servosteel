@@ -16,10 +16,10 @@ export const POTANSIYEL = {
 } as const;
 
 export const POTANSIYEL_RENK: Record<keyof typeof POTANSIYEL, string> = {
-  yuksek: "bg-emerald-600 text-white",
-  var: "bg-emerald-100 text-emerald-900",
-  belirsiz: "bg-zinc-100 text-zinc-700",
-  yok: "bg-red-50 text-red-800",
+  yuksek: "bg-success-500 text-white",
+  var: "bg-success-50 text-success-600",
+  belirsiz: "bg-gray-100 text-gray-700",
+  yok: "bg-error-50 text-error-600",
 };
 
 export const FIRMA_DURUMU = {
@@ -42,14 +42,14 @@ export const TAKIP = {
 } as const;
 
 export const TAKIP_RENK: Record<keyof typeof TAKIP, string> = {
-  yeni: "bg-violet-100 text-violet-900",
-  gorusuldu: "bg-zinc-100 text-zinc-700",
-  eposta_gonderildi: "bg-sky-100 text-sky-900",
-  teknik_bilgi_istendi: "bg-amber-100 text-amber-900",
-  cizim_bekleniyor: "bg-amber-100 text-amber-900",
-  teklif_verilecek: "bg-orange-200 text-orange-950",
-  teklif_gonderildi: "bg-emerald-100 text-emerald-900",
-  olumsuz: "bg-red-50 text-red-800",
+  yeni: "bg-theme-purple-50 text-theme-purple-500",
+  gorusuldu: "bg-gray-100 text-gray-700",
+  eposta_gonderildi: "bg-blue-light-50 text-blue-light-500",
+  teknik_bilgi_istendi: "bg-warning-50 text-warning-600",
+  cizim_bekleniyor: "bg-warning-50 text-warning-600",
+  teklif_verilecek: "bg-orange-50 text-orange-600",
+  teklif_gonderildi: "bg-success-50 text-success-600",
+  olumsuz: "bg-error-50 text-error-600",
 };
 
 export const KANAL = {
@@ -73,11 +73,11 @@ export const TEKLIF_DURUMU = {
 } as const;
 
 export const TEKLIF_RENK: Record<keyof typeof TEKLIF_DURUMU, string> = {
-  hazirlaniyor: "bg-zinc-100 text-zinc-700",
-  gonderildi: "bg-sky-100 text-sky-900",
-  kabul: "bg-emerald-600 text-white",
-  red: "bg-red-50 text-red-800",
-  iptal: "bg-zinc-100 text-zinc-500 line-through",
+  hazirlaniyor: "bg-gray-100 text-gray-700",
+  gonderildi: "bg-blue-light-50 text-blue-light-500",
+  kabul: "bg-success-500 text-white",
+  red: "bg-error-50 text-error-600",
+  iptal: "bg-gray-100 text-gray-500 line-through",
 };
 
 export const RED_SEBEBI = {
@@ -116,9 +116,9 @@ export const SERVIS_DURUMU = {
 } as const;
 
 export const SERVIS_RENK: Record<keyof typeof SERVIS_DURUMU, string> = {
-  acik: "bg-red-100 text-red-900",
-  surecte: "bg-amber-100 text-amber-900",
-  kapandi: "bg-zinc-100 text-zinc-600",
+  acik: "bg-error-50 text-error-600",
+  surecte: "bg-warning-50 text-warning-600",
+  kapandi: "bg-gray-100 text-gray-600",
 };
 
 export const ROL = {

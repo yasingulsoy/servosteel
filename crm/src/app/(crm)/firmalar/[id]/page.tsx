@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, FileText, Info, Mail, Phone, UserRound } from "lucide-react";
+import { Briefcase, ExternalLink, FileText, Info, Mail, MapPin, Phone, UserRound } from "lucide-react";
 import { DosyaFormu, FirmaBilgiFormu, KisiFormu, TeklifFormu, TemasFormu } from "@/components/formlar";
 import { IlgiSecimi } from "@/components/ilgi-secimi";
 import { IlgiEtiketleri, PotansiyelRozeti, Rozet } from "@/components/rozet";
+import { SayfaBasligi, Uyari } from "@/components/sayfa";
 import { TakipSecici } from "@/components/takip-secici";
 import { para, sayi, tarih, zaman } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
@@ -76,69 +77,91 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
   const ilgiAdlari = ilgiler.filter((i) => secili.includes(i.kod)).map((i) => i.ad);
 
   return (
-    <div className="space-y-8">
-      <div>
-        <Link href="/firmalar" className="inline-flex items-center gap-1 text-sm text-muted hover:text-ink">
-          <ArrowLeft size={14} /> Firmalar
-        </Link>
-        <div className="mt-1 flex flex-wrap items-center gap-2">
-          <h1 className="text-xl font-bold">{f.ad}</h1>
-          <PotansiyelRozeti p={f.potansiyel} />
-          <Rozet sinif="bg-zinc-900 text-white">{FIRMA_DURUMU[f.durum]}</Rozet>
-        </div>
-        <p className="mt-1 flex flex-wrap items-center gap-x-3 text-sm text-muted">
-          <span>
-            {[f.sehir, f.ulke].filter(Boolean).join(", ") || "Ülke yok"}
-            {f.bolge ?? bolgesi(f.ulke) ? ` · ${f.bolge ?? bolgesi(f.ulke)}` : ""}
-          </span>
-          {f.web ? (
-            <a href={f.web} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:text-ink">
-              {f.alan_adi ?? f.web} <ExternalLink size={12} />
-            </a>
-          ) : null}
-          {f.sektor ? <span>{f.sektor}</span> : null}
-          <span className="inline-flex items-center gap-1">
-            <UserRound size={13} /> {f.sorumlu ?? "sorumlu yok"}
-          </span>
-        </p>
-        {f.faaliyet ? <p className="mt-2 max-w-3xl whitespace-pre-line text-sm">{f.faaliyet}</p> : null}
-        {f.notlar ? (
-          <p className="mt-2 max-w-3xl whitespace-pre-line rounded-lg bg-amber-50 px-3 py-2 text-sm">{f.notlar}</p>
-        ) : null}
-        <div className="mt-2">
-          <IlgiEtiketleri ilgiler={ilgiAdlari} />
+    <div className="space-y-6 md:space-y-8">
+      <SayfaBasligi
+        baslik={f.ad}
+        yanina={
+          <>
+            <PotansiyelRozeti p={f.potansiyel} />
+            <Rozet sinif="bg-gray-700 text-white">{FIRMA_DURUMU[f.durum]}</Rozet>
+          </>
+        }
+        yol={[{ ad: "Firmalar", href: "/firmalar" }]}
+        konum="Firma kartı"
+      />
+
+      {/* Firma özeti (TailAdmin profil kartı) */}
+      <div className="kart p-5 lg:p-6">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+          <div className="flex size-16 shrink-0 items-center justify-center rounded-full border border-gray-200 bg-brand-50 text-lg font-semibold text-brand-500">
+            {f.ad.trim().slice(0, 2).toLocaleUpperCase("tr")}
+          </div>
+          <div className="min-w-0 flex-1 space-y-3">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm text-gray-500">
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin size={16} className="text-gray-400" />
+                {[f.sehir, f.ulke].filter(Boolean).join(", ") || "Ülke yok"}
+                {f.bolge ?? bolgesi(f.ulke) ? ` · ${f.bolge ?? bolgesi(f.ulke)}` : ""}
+              </span>
+              {f.web ? (
+                <a
+                  href={f.web}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-brand-500 hover:text-brand-600"
+                >
+                  {f.alan_adi ?? f.web} <ExternalLink size={14} />
+                </a>
+              ) : null}
+              {f.sektor ? (
+                <span className="inline-flex items-center gap-1.5">
+                  <Briefcase size={16} className="text-gray-400" /> {f.sektor}
+                </span>
+              ) : null}
+              <span className="inline-flex items-center gap-1.5">
+                <UserRound size={16} className="text-gray-400" /> {f.sorumlu ?? "sorumlu yok"}
+              </span>
+            </div>
+            {f.faaliyet ? <p className="max-w-3xl text-sm whitespace-pre-line text-gray-700">{f.faaliyet}</p> : null}
+            {f.notlar ? (
+              <p className="max-w-3xl rounded-xl border border-warning-200 bg-warning-50 px-4 py-3 text-sm whitespace-pre-line text-gray-700">
+                {f.notlar}
+              </p>
+            ) : null}
+            <IlgiEtiketleri ilgiler={ilgiAdlari} />
+          </div>
         </div>
       </div>
 
       {sp.mevcut ? (
-        <div className="flex items-center gap-2 rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-900">
-          <Info size={16} /> Bu firma zaten kayıtlıydı; yeni kişi ve görüşme bu karta eklendi.
-        </div>
+        <Uyari tur="bilgi" simge={Info}>
+          Bu firma zaten kayıtlıydı; yeni kişi ve görüşme bu karta eklendi.
+        </Uyari>
       ) : null}
 
       <Bolum baslik={`Kurum yetkilileri (${kisiler.length})`}>
         {kisiler.length === 0 ? <p className="text-sm text-muted">Kayıtlı kişi yok.</p> : null}
         <div className="grid gap-3 md:grid-cols-2">
           {kisiler.map((k) => (
-            <div key={k.id} className="kart p-4">
-              <p className="font-semibold">{k.ad}</p>
-              {k.unvan ? <p className="text-sm text-muted">{k.unvan}</p> : null}
-              <div className="mt-2 space-y-0.5 text-sm">
+            <div key={k.id} className="kart p-5">
+              <p className="text-base font-medium text-gray-800">{k.ad}</p>
+              {k.unvan ? <p className="text-sm text-gray-500">{k.unvan}</p> : null}
+              <div className="mt-3 space-y-1 text-sm text-gray-700">
                 {[k.eposta, k.eposta2].filter(Boolean).map((e) => (
-                  <a key={e} href={`mailto:${e}`} className="flex items-center gap-1.5 hover:underline">
-                    <Mail size={13} /> {e}
+                  <a key={e} href={`mailto:${e}`} className="flex items-center gap-2 hover:text-brand-500">
+                    <Mail size={16} className="text-gray-400" /> {e}
                   </a>
                 ))}
                 {k.telefon ? (
-                  <a href={`tel:${k.telefon.replace(/[^\d+]/g, "")}`} className="flex items-center gap-1.5 hover:underline">
-                    <Phone size={13} /> {k.telefon}
+                  <a href={`tel:${k.telefon.replace(/[^\d+]/g, "")}`} className="flex items-center gap-2 hover:text-brand-500">
+                    <Phone size={16} className="text-gray-400" /> {k.telefon}
                   </a>
                 ) : null}
-                {k.notlar ? <p className="text-muted">{k.notlar}</p> : null}
+                {k.notlar ? <p className="text-gray-500">{k.notlar}</p> : null}
               </div>
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle</summary>
+                  <summary className="kucuk-ac">Düzenle</summary>
                   <div className="mt-3 space-y-3">
                     <KisiFormu eylem={kisiKaydet} firmaId={f.id} k={k} />
                     <form action={kisiSil}>
@@ -155,9 +178,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
           ))}
         </div>
         {yaz ? (
-          <details className="kart p-4">
-            <summary className="cursor-pointer text-sm font-semibold">Kişi ekle</summary>
-            <div className="mt-4">
+          <details className="kart p-5">
+            <summary className="kart-baslik">Kişi ekle</summary>
+            <div className="mt-5 border-t border-gray-100 pt-5">
               <KisiFormu eylem={kisiKaydet} firmaId={f.id} />
             </div>
           </details>
@@ -168,28 +191,28 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
         {temaslar.length === 0 ? <p className="text-sm text-muted">Kayıtlı görüşme yok.</p> : null}
         <div className="space-y-3">
           {temaslar.map((t) => (
-            <div key={t.id} className="kart p-4">
+            <div key={t.id} className="kart p-5">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <TakipSecici eylem={takipDegistir} temasId={t.id} takip={t.takip} geri={`/firmalar/${f.id}`} yazabilir={yaz} />
                 {t.etkinlik_ad ? (
-                  <Link href={`/etkinlikler/${t.etkinlik_id}`} className="text-sm font-medium hover:underline">
+                  <Link href={`/etkinlikler/${t.etkinlik_id}`} className="text-sm font-medium text-gray-800 hover:text-brand-500">
                     {t.etkinlik_ad}
                   </Link>
                 ) : (
-                  <span className="text-sm font-medium">{KANAL[t.kanal]}</span>
+                  <span className="text-sm font-medium text-gray-800">{KANAL[t.kanal]}</span>
                 )}
-                {t.kisi_ad ? <span className="text-sm">{t.kisi_ad}</span> : null}
-                <span className="ml-auto text-xs text-muted">
+                {t.kisi_ad ? <span className="text-sm text-gray-500">{t.kisi_ad}</span> : null}
+                <span className="ml-auto text-theme-xs text-gray-500">
                   {t.tarih ? `görüşme ${tarih(t.tarih)}` : ""}
                   {t.tarih && t.son_temas ? " · " : ""}
                   {t.son_temas ? `son temas ${tarih(t.son_temas)}` : ""}
                 </span>
               </div>
-              {t.talep ? <p className="mt-2 whitespace-pre-line text-sm">{t.talep}</p> : null}
-              {t.notlar ? <p className="mt-1 whitespace-pre-line text-sm text-muted">{t.notlar}</p> : null}
+              {t.talep ? <p className="mt-3 text-sm whitespace-pre-line text-gray-700">{t.talep}</p> : null}
+              {t.notlar ? <p className="mt-1 text-sm whitespace-pre-line text-gray-500">{t.notlar}</p> : null}
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle</summary>
+                  <summary className="kucuk-ac">Düzenle</summary>
                   <div className="mt-3 space-y-3">
                     <TemasFormu eylem={temasKaydet} firmaId={f.id} t={t} kisiler={kisiler} etkinlikler={ets} />
                     <form action={temasSil}>
@@ -206,9 +229,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
           ))}
         </div>
         {yaz ? (
-          <details className="kart p-4">
-            <summary className="cursor-pointer text-sm font-semibold">Görüşme ekle</summary>
-            <div className="mt-4">
+          <details className="kart p-5">
+            <summary className="kart-baslik">Görüşme ekle</summary>
+            <div className="mt-5 border-t border-gray-100 pt-5">
               <TemasFormu eylem={temasKaydet} firmaId={f.id} kisiler={kisiler} etkinlikler={ets} />
             </div>
           </details>
@@ -221,26 +244,30 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
         {teklifListesi.length === 0 ? <p className="text-sm text-muted">Kayıtlı teklif yok.</p> : null}
         <div className="space-y-3">
           {teklifListesi.map((tk) => (
-            <div key={tk.id} className="kart p-4">
+            <div key={tk.id} className="kart p-5">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <Rozet sinif={TEKLIF_RENK[tk.durum]}>{TEKLIF_DURUMU[tk.durum]}</Rozet>
-                <span className="font-semibold">{tk.teklif_no ?? "Numarasız teklif"}</span>
+                <span className="font-medium text-gray-800">{tk.teklif_no ?? "Numarasız teklif"}</span>
                 {tk.tutar ? (
-                  <span className="text-sm font-semibold">
+                  <span className="text-sm font-semibold text-gray-800">
                     {para(tk.tutar)} {DOVIZ[tk.doviz]}
                   </span>
                 ) : null}
-                <span className="ml-auto text-xs text-muted">
+                <span className="ml-auto text-theme-xs text-gray-500">
                   {tarih(tk.tarih)}
                   {tk.gecerlilik ? ` · geçerlilik ${tarih(tk.gecerlilik)}` : ""}
                 </span>
               </div>
-              {tk.konu ? <p className="mt-1 text-sm">{tk.konu}</p> : null}
-              {tk.red_sebebi ? <p className="mt-1 text-sm text-red-800">Red sebebi: {RED_SEBEBI[tk.red_sebebi]}</p> : null}
-              {tk.notlar ? <p className="mt-1 text-sm text-muted">{tk.notlar}</p> : null}
+              {tk.konu ? <p className="mt-2 text-sm text-gray-700">{tk.konu}</p> : null}
+              {tk.red_sebebi ? <p className="mt-1 text-sm text-error-600">Red sebebi: {RED_SEBEBI[tk.red_sebebi]}</p> : null}
+              {tk.notlar ? <p className="mt-1 text-sm text-gray-500">{tk.notlar}</p> : null}
               {tk.dosya_id ? (
-                <a href={`/dosya/${tk.dosya_id}`} target="_blank" className="mt-2 inline-flex items-center gap-1 text-sm hover:underline">
-                  <FileText size={14} /> {tk.dosya_ad}
+                <a
+                  href={`/dosya/${tk.dosya_id}`}
+                  target="_blank"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand-500 hover:text-brand-600"
+                >
+                  <FileText size={16} /> {tk.dosya_ad}
                 </a>
               ) : null}
               {yaz && (tk.durum === "kabul" || tk.durum === "gonderildi") && !siparisliTeklifler.has(tk.id) ? (
@@ -254,7 +281,7 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
               ) : null}
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle</summary>
+                  <summary className="kucuk-ac">Düzenle</summary>
                   <div className="mt-3 space-y-3">
                     <TeklifFormu eylem={teklifKaydet} firmaId={f.id} t={tk} temaslar={temaslar} />
                     <form action={teklifSil}>
@@ -271,9 +298,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
           ))}
         </div>
         {yaz ? (
-          <details className="kart p-4">
-            <summary className="cursor-pointer text-sm font-semibold">Teklif ekle</summary>
-            <div className="mt-4">
+          <details className="kart p-5">
+            <summary className="kart-baslik">Teklif ekle</summary>
+            <div className="mt-5 border-t border-gray-100 pt-5">
               <TeklifFormu eylem={teklifKaydet} firmaId={f.id} temaslar={temaslar} />
             </div>
           </details>
@@ -291,20 +318,20 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
 
       <Bolum baslik={`Dosyalar (${dosyalar.length})`}>
         {dosyalar.length ? (
-          <ul className="kart divide-y divide-line">
+          <ul className="kart divide-y divide-gray-100">
             {dosyalar.map((d) => (
-              <li key={d.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 p-3 text-sm">
-                <a href={`/dosya/${d.id}`} target="_blank" className="inline-flex items-center gap-1 font-medium hover:underline">
-                  <FileText size={14} /> {d.ad}
+              <li key={d.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 px-5 py-4 text-sm">
+                <a href={`/dosya/${d.id}`} target="_blank" className="inline-flex items-center gap-2 font-medium text-gray-800 hover:text-brand-500">
+                  <FileText size={16} className="text-gray-400" /> {d.ad}
                 </a>
-                <span className="text-xs text-muted">
+                <span className="text-theme-xs text-gray-500">
                   {Math.max(1, Math.round(d.boyut / 1024))} KB · {d.yukleyen} · {zaman(d.olusturuldu)}
                 </span>
                 {yaz ? (
                   <form action={dosyaSil} className="ml-auto">
                     <input type="hidden" name="firma_id" value={f.id} />
                     <input type="hidden" name="dosya_id" value={d.id} />
-                    <button type="submit" className="text-xs text-red-700 hover:underline">
+                    <button type="submit" className="text-theme-sm font-medium text-error-600 hover:text-error-700">
                       Sil
                     </button>
                   </form>
@@ -328,7 +355,7 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
             </button>
           </form>
         ) : null}
-        <p className="text-xs text-muted">
+        <p className="text-theme-xs text-gray-500">
           Sarı: CRM&apos;de girilenler. Mavi: panelden (tanıtım mailleri, gelen yanıtlar, mailden siteye gelişler).
         </p>
         <ZamanCizelgesi ogeler={cizelge} />
@@ -336,9 +363,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
 
       {yaz ? (
         <>
-          <details className="kart p-4">
-            <summary className="cursor-pointer text-sm font-semibold">İlgi alanlarını düzenle</summary>
-            <form action={ilgiKaydet} className="mt-4 space-y-4">
+          <details className="kart p-5">
+            <summary className="kart-baslik">İlgi alanlarını düzenle</summary>
+            <form action={ilgiKaydet} className="mt-5 border-t border-gray-100 pt-5 space-y-4">
               <input type="hidden" name="id" value={f.id} />
               <IlgiSecimi ilgiler={ilgiler} secili={secili} />
               <button type="submit" className="dugme">
@@ -346,9 +373,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
               </button>
             </form>
           </details>
-          <details className="kart p-4">
-            <summary className="cursor-pointer text-sm font-semibold">Firma bilgilerini düzenle</summary>
-            <div className="mt-4">
+          <details className="kart p-5">
+            <summary className="kart-baslik">Firma bilgilerini düzenle</summary>
+            <div className="mt-5 border-t border-gray-100 pt-5">
               <FirmaBilgiFormu eylem={firmaGuncelle} f={f} kisiler={kullanicilarListesi} />
             </div>
           </details>
@@ -356,9 +383,9 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
       ) : null}
 
       {ben.rol === "yonetici" ? (
-        <details className="rounded-xl border border-red-200 p-4">
-          <summary className="cursor-pointer text-sm font-semibold text-red-700">Firmayı sil</summary>
-          <form action={firmaSil} className="mt-3 flex flex-wrap items-end gap-2">
+        <details className="kart border-error-200 p-5">
+          <summary className="kart-baslik text-error-600 hover:text-error-700">Firmayı sil</summary>
+          <form action={firmaSil} className="mt-5 flex flex-wrap items-end gap-3 border-t border-gray-100 pt-5">
             <input type="hidden" name="id" value={f.id} />
             <div>
               <label className="etiket" htmlFor="onay">
@@ -373,7 +400,7 @@ export default async function FirmaKarti(props: PageProps<"/firmalar/[id]">) {
         </details>
       ) : null}
 
-      <p className="text-xs text-muted">
+      <p className="text-theme-xs text-gray-500">
         Kaydeden {f.olusturan ?? "—"} · {zaman(f.olusturuldu)} · son değişiklik {zaman(f.guncellendi)}
       </p>
     </div>

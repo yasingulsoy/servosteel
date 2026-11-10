@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { EtkinlikFormu, HizliKayitFormu } from "@/components/formlar";
 import { IlgiEtiketleri, PotansiyelRozeti } from "@/components/rozet";
+import { Bos, Panel, SayfaBasligi, Uyari } from "@/components/sayfa";
 import { TakipSecici } from "@/components/takip-secici";
 import { sayi, tarihAraligi } from "@/lib/bicim";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
@@ -41,37 +42,30 @@ export default async function EtkinlikSayfasi(props: PageProps<"/etkinlikler/[id
   const yaz = yazabilir(ben);
 
   return (
-    <div className="space-y-6">
-      <div>
-        <Link href="/etkinlikler" className="inline-flex items-center gap-1 text-sm text-muted hover:text-ink">
-          <ArrowLeft size={14} /> Etkinlikler
-        </Link>
-        <h1 className="mt-1 text-xl font-bold">{e.ad}</h1>
-        <p className="text-sm text-muted">
+    <div className="space-y-4 md:space-y-6">
+      <SayfaBasligi baslik={e.ad} yol={[{ ad: "Etkinlikler", href: "/etkinlikler" }]} konum="Etkinlik">
+        <p className="text-sm text-gray-500">
           {ETKINLIK_TURU[e.tur]} · {tarihAraligi(e.baslangic, e.bitis)}
           {e.sehir ? ` · ${e.sehir}` : ""}
           {e.ulke ? `, ${e.ulke}` : ""}
           {e.yer ? ` · ${e.yer}` : ""}
         </p>
-        {e.aciklama ? <p className="mt-2 max-w-3xl whitespace-pre-line text-sm">{e.aciklama}</p> : null}
-      </div>
+        {e.aciklama ? <p className="max-w-3xl text-sm whitespace-pre-line text-gray-600">{e.aciklama}</p> : null}
+      </SayfaBasligi>
 
       {eklenen ? (
-        <div className="flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
-          <CheckCircle2 size={16} />
-          <span>
-            {sp.mevcut ? "Mevcut firmaya eklendi: " : "Kaydedildi: "}
-            <Link href={`/firmalar/${eklenen.id}`} className="font-semibold underline">
-              {eklenen.ad}
-            </Link>
-          </span>
-        </div>
+        <Uyari tur="basari" simge={CheckCircle2}>
+          {sp.mevcut ? "Mevcut firmaya eklendi: " : "Kaydedildi: "}
+          <Link href={`/firmalar/${eklenen.id}`} className="font-semibold text-gray-800 underline hover:text-brand-500">
+            {eklenen.ad}
+          </Link>
+        </Uyari>
       ) : null}
 
       {yaz ? (
-        <details className="kart p-4" open={temaslar.length === 0 || Boolean(eklenen)}>
-          <summary className="cursor-pointer text-sm font-semibold">Firma ekle</summary>
-          <div className="mt-4">
+        <details className="kart p-5" open={temaslar.length === 0 || Boolean(eklenen)}>
+          <summary className="kart-baslik">Firma ekle</summary>
+          <div className="mt-5 border-t border-gray-100 pt-5">
             <HizliKayitFormu
               eylem={hizliKayit}
               ilgiler={ilgiler}
@@ -83,69 +77,65 @@ export default async function EtkinlikSayfasi(props: PageProps<"/etkinlikler/[id
         </details>
       ) : null}
 
-      <section className="space-y-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <h2 className="mr-2 text-sm font-bold uppercase tracking-wide text-muted">
-            {firmaSayisi} firma · {temaslar.length} görüşme
-          </h2>
-          <Link
-            href={`/etkinlikler/${e.id}`}
-            className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${filtre ? "bg-card ring-1 ring-line" : "bg-shell text-white"}`}
-          >
-            Hepsi
-          </Link>
-          {(Object.keys(TAKIP) as (keyof typeof TAKIP)[])
-            .filter((k) => sayac.get(k))
-            .map((k) => (
-              <Link
-                key={k}
-                href={`/etkinlikler/${e.id}?takip=${k}`}
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${TAKIP_RENK[k]} ${filtre === k ? "ring-2 ring-zinc-900" : ""}`}
-              >
-                {TAKIP[k]} {sayac.get(k)}
-              </Link>
-            ))}
-        </div>
-
+      <Panel
+        baslik={`${firmaSayisi} firma · ${temaslar.length} görüşme`}
+        ek={
+          <>
+            <Link
+              href={`/etkinlikler/${e.id}`}
+              className={`cip ${filtre ? "bg-white text-gray-700 ring-1 ring-gray-200 hover:bg-gray-50" : "bg-brand-500 text-white"}`}
+            >
+              Hepsi
+            </Link>
+            {(Object.keys(TAKIP) as (keyof typeof TAKIP)[])
+              .filter((k) => sayac.get(k))
+              .map((k) => (
+                <Link key={k} href={`/etkinlikler/${e.id}?takip=${k}`} className={`cip ${TAKIP_RENK[k]} ${filtre === k ? "cip-secili" : ""}`}>
+                  {TAKIP[k]} {sayac.get(k)}
+                </Link>
+              ))}
+          </>
+        }
+      >
         {gorunen.length === 0 ? (
-          <p className="text-sm text-muted">Bu etkinlikte kayıtlı görüşme yok.</p>
+          <Bos>Bu etkinlikte kayıtlı görüşme yok.</Bos>
         ) : (
-          <div className="kart overflow-x-auto">
-            <table className="w-full min-w-[860px] text-sm">
-              <thead className="border-b border-line text-left text-xs uppercase tracking-wide text-muted">
+          <div className="overflow-x-auto">
+            <table className="tablo min-w-[860px]">
+              <thead>
                 <tr>
-                  <th className="p-3">Firma</th>
-                  <th className="p-3">Kurum yetkilisi</th>
-                  <th className="p-3">İlgi / talep</th>
-                  <th className="p-3">Takip</th>
+                  <th>Firma</th>
+                  <th>Kurum yetkilisi</th>
+                  <th>İlgi / talep</th>
+                  <th>Takip</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-line">
+              <tbody className="divide-y divide-gray-100">
                 {gorunen.map((t) => (
                   <tr key={t.id} className="align-top">
-                    <td className="p-3">
-                      <Link href={`/firmalar/${t.firma_id}`} className="font-semibold hover:underline">
+                    <td>
+                      <Link href={`/firmalar/${t.firma_id}`} className="font-medium text-gray-800 hover:text-brand-500">
                         {t.firma_ad}
                       </Link>
-                      <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-muted">
+                      <div className="mt-1 flex flex-wrap items-center gap-1.5 text-theme-xs text-gray-500">
                         {t.firma_ulke ?? "ülke yok"}
                         <PotansiyelRozeti p={t.potansiyel} />
                       </div>
                     </td>
-                    <td className="p-3">
-                      <div>{t.kisi_ad ?? <span className="text-muted">—</span>}</div>
-                      {t.kisi_unvan ? <div className="text-xs text-muted">{t.kisi_unvan}</div> : null}
+                    <td>
+                      <div className="text-gray-700">{t.kisi_ad ?? <span className="text-gray-400">—</span>}</div>
+                      {t.kisi_unvan ? <div className="text-theme-xs text-gray-500">{t.kisi_unvan}</div> : null}
                       {t.kisi_eposta ? (
-                        <a href={`mailto:${t.kisi_eposta}`} className="block text-xs text-muted hover:underline">
+                        <a href={`mailto:${t.kisi_eposta}`} className="block text-theme-xs text-gray-500 hover:text-brand-500">
                           {t.kisi_eposta}
                         </a>
                       ) : null}
                     </td>
-                    <td className="max-w-md p-3">
+                    <td className="max-w-md">
                       <IlgiEtiketleri ilgiler={t.ilgiler} />
-                      {t.talep ? <p className="mt-1">{t.talep}</p> : null}
+                      {t.talep ? <p className="mt-1 text-gray-600">{t.talep}</p> : null}
                     </td>
-                    <td className="p-3">
+                    <td>
                       <TakipSecici
                         eylem={takipDegistir}
                         temasId={t.id}
@@ -160,12 +150,12 @@ export default async function EtkinlikSayfasi(props: PageProps<"/etkinlikler/[id
             </table>
           </div>
         )}
-      </section>
+      </Panel>
 
       {yaz ? (
-        <details className="kart p-4">
-          <summary className="cursor-pointer text-sm font-semibold">Etkinlik bilgilerini düzenle</summary>
-          <div className="mt-4 space-y-4">
+        <details className="kart p-5">
+          <summary className="kart-baslik">Etkinlik bilgilerini düzenle</summary>
+          <div className="mt-5 border-t border-gray-100 pt-5 space-y-4">
             <EtkinlikFormu eylem={etkinlikKaydet} e={e} />
             {ben.rol === "yonetici" && temaslar.length === 0 ? (
               <form action={etkinlikSil}>

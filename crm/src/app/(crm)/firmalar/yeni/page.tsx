@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { HizliKayitFormu } from "@/components/formlar";
+import { SayfaBasligi } from "@/components/sayfa";
 import { sayi } from "@/lib/bicim";
 import { yazarZorunlu } from "@/lib/oturum";
 import { etkinlikler, ilgiAlanlari } from "@/lib/veri";
@@ -14,14 +13,9 @@ export default async function YeniFirma(props: PageProps<"/firmalar/yeni">) {
   const sp = await props.searchParams;
   const [ilgiler, ets] = await Promise.all([ilgiAlanlari(), etkinlikler()]);
   return (
-    <div className="space-y-5">
-      <div>
-        <Link href="/firmalar" className="inline-flex items-center gap-1 text-sm text-muted hover:text-ink">
-          <ArrowLeft size={14} /> Firmalar
-        </Link>
-        <h1 className="mt-1 text-xl font-bold">Firma ekle</h1>
-      </div>
-      <div className="kart p-4">
+    <div className="space-y-4 md:space-y-6">
+      <SayfaBasligi baslik="Firma ekle" yol={[{ ad: "Firmalar", href: "/firmalar" }]} />
+      <div className="kart p-5 sm:p-6">
         <HizliKayitFormu
           eylem={hizliKayit}
           ilgiler={ilgiler}

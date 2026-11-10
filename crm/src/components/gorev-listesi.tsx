@@ -15,20 +15,24 @@ export function GorevListesi({
   geri,
   firmaGoster = true,
   yazabilir,
+  cerceve = true,
 }: {
   gorevler: Gorev[];
   durumEylemi: Eylem;
   geri: string;
   firmaGoster?: boolean;
   yazabilir: boolean;
+  /** false: başlıklı bir kartın (Panel) içinde, kendi çerçevesi olmadan. */
+  cerceve?: boolean;
 }) {
-  if (!gorevler.length) return <p className="text-sm text-muted">Görev yok.</p>;
+  if (!gorevler.length)
+    return <p className={`px-5 py-4 text-sm text-gray-500 sm:px-6 ${cerceve ? "kart" : ""}`}>Görev yok.</p>;
   return (
-    <ul className="kart divide-y divide-line">
+    <ul className={`divide-y divide-gray-100 ${cerceve ? "kart" : ""}`}>
       {gorevler.map((g) => {
         const tamam = g.durum === "tamam";
         return (
-          <li key={g.id} className="flex items-start gap-3 p-3">
+          <li key={g.id} className="flex items-start gap-3 px-5 py-4 sm:px-6">
             {yazabilir ? (
               <form action={durumEylemi}>
                 <input type="hidden" name="gorev_id" value={g.id} />
@@ -37,8 +41,8 @@ export function GorevListesi({
                 <button
                   type="submit"
                   title={tamam ? "Yeniden aç" : "Tamamlandı"}
-                  className={`mt-0.5 flex size-5 items-center justify-center rounded border ${
-                    tamam ? "border-emerald-600 bg-emerald-600 text-white" : "border-zinc-400 hover:border-emerald-600"
+                  className={`mt-0.5 flex size-5 items-center justify-center rounded-md border ${
+                    tamam ? "border-brand-500 bg-brand-500 text-white" : "border-gray-300 bg-white hover:border-brand-500"
                   }`}
                 >
                   {tamam ? <RotateCcw size={11} /> : <Check size={12} className="opacity-0 hover:opacity-60" />}
@@ -46,14 +50,14 @@ export function GorevListesi({
               </form>
             ) : null}
             <div className="min-w-0 flex-1">
-              <p className={`text-sm font-medium ${tamam ? "text-muted line-through" : ""}`}>
+              <p className={`text-theme-sm font-medium ${tamam ? "text-gray-400 line-through" : "text-gray-800"}`}>
                 {g.baslik}
-                {g.kaynak ? <span className="ml-2 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-semibold text-zinc-500">otomatik</span> : null}
+                {g.kaynak ? <span className="ml-2 rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-600">otomatik</span> : null}
               </p>
-              <p className="text-xs text-muted">
+              <p className="mt-0.5 text-theme-xs text-gray-500">
                 {firmaGoster && g.firma_ad ? (
                   <>
-                    <Link href={`/firmalar/${g.firma_id}`} className="font-medium text-ink hover:underline">
+                    <Link href={`/firmalar/${g.firma_id}`} className="font-medium text-gray-700 hover:text-brand-500">
                       {g.firma_ad}
                     </Link>
                     {" · "}
@@ -65,7 +69,11 @@ export function GorevListesi({
               {g.aciklama ? <p className="mt-0.5 text-sm text-muted">{g.aciklama}</p> : null}
             </div>
             {g.son_tarih && !tamam ? (
-              <span className={`whitespace-nowrap text-xs font-semibold ${g.gecikti ? "text-red-700" : "text-muted"}`}>
+              <span
+                className={`rounded-full px-2.5 py-0.5 text-theme-xs font-medium whitespace-nowrap ${
+                  g.gecikti ? "bg-error-50 text-error-600" : "bg-gray-100 text-gray-600"
+                }`}
+              >
                 {g.gecikti ? "gecikti · " : ""}
                 {tarih(g.son_tarih)}
               </span>

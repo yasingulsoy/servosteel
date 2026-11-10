@@ -125,7 +125,7 @@ export function Listeler({ sektorler = [] }: { sektorler?: string[] }) {
 }
 
 const Baslik = ({ children }: { children: React.ReactNode }) => (
-  <h3 className="text-sm font-bold text-ink">{children}</h3>
+  <h3 className="text-base font-medium text-gray-800">{children}</h3>
 );
 
 /** Firma + kurum yetkilisi + görüşme tek formda. Etkinlik sayfasında ve "Yeni firma"da. */
@@ -146,9 +146,9 @@ export function HizliKayitFormu({
     <form action={eylem} className="space-y-6">
       <input type="hidden" name="geri" value={geri} />
 
-      <section className="space-y-3">
+      <section className="space-y-4">
         <Baslik>Firma</Baslik>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Alan ad="firma_ad" etiket="Firma adı" zorunlu sinif="lg:col-span-2" />
           <Alan ad="web" etiket="Web sitesi" ipucu="firma.com" sinif="lg:col-span-2" />
           <Alan ad="ulke" etiket="Ülke" liste="ulkeler" />
@@ -159,14 +159,14 @@ export function HizliKayitFormu({
         <Metin ad="faaliyet" etiket="Ne iş yapıyor" ipucu="Ürettikleri, kullandıkları profiller…" />
       </section>
 
-      <section className="space-y-3">
+      <section className="space-y-4">
         <Baslik>İlgi alanları</Baslik>
         <IlgiSecimi ilgiler={ilgiler} />
       </section>
 
-      <section className="space-y-3">
+      <section className="space-y-4">
         <Baslik>Kurum yetkilisi</Baslik>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Alan ad="kisi_ad" etiket="Ad soyad" />
           <Alan ad="unvan" etiket="Unvan" />
           <Alan ad="eposta" etiket="E-posta" tur="email" />
@@ -174,9 +174,9 @@ export function HizliKayitFormu({
         </div>
       </section>
 
-      <section className="space-y-3">
+      <section className="space-y-4">
         <Baslik>Görüşme</Baslik>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <Secim
             ad="etkinlik_id"
             etiket="Etkinlik"
@@ -197,7 +197,7 @@ export function HizliKayitFormu({
         <button type="submit" className="dugme">
           Kaydet
         </button>
-        <p className="text-xs text-muted">
+        <p className="text-theme-xs text-gray-500">
           Aynı web sitesi ya da aynı adla kayıtlı firma varsa yenisi açılmaz; kişi ve görüşme ona eklenir.
         </p>
       </div>
@@ -207,9 +207,9 @@ export function HizliKayitFormu({
 
 export function EtkinlikFormu({ eylem, e }: { eylem: Eylem; e?: Etkinlik | null }) {
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       {e ? <input type="hidden" name="id" value={e.id} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="ad" etiket="Etkinlik adı" zorunlu deger={e?.ad} sinif="sm:col-span-2" />
         <Secim ad="tur" etiket="Tür" secenekler={ETKINLIK_TURU} deger={e?.tur ?? "fuar"} />
         <Alan ad="yer" etiket="Salon / stand / adres" deger={e?.yer} />
@@ -228,9 +228,9 @@ export function EtkinlikFormu({ eylem, e }: { eylem: Eylem; e?: Etkinlik | null 
 
 export function FirmaBilgiFormu({ eylem, f, kisiler }: { eylem: Eylem; f: Firma; kisiler: KullaniciListesi }) {
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="id" value={f.id} />
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="firma_ad" etiket="Firma adı" zorunlu deger={f.ad} sinif="sm:col-span-2" />
         <Alan ad="web" etiket="Web sitesi" deger={f.web} sinif="sm:col-span-2" />
         <Alan ad="ulke" etiket="Ülke" liste="ulkeler" deger={f.ulke} />
@@ -258,10 +258,10 @@ export function FirmaBilgiFormu({ eylem, f, kisiler }: { eylem: Eylem; f: Firma;
 
 export function KisiFormu({ eylem, firmaId, k }: { eylem: Eylem; firmaId: number; k?: Kisi }) {
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {k ? <input type="hidden" name="kisi_id" value={k.id} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Alan ad="kisi_ad" etiket="Ad soyad" deger={k?.ad} zorunlu />
         <Alan ad="unvan" etiket="Unvan" deger={k?.unvan} />
         <Alan ad="telefon" etiket="Telefon / WhatsApp" tur="tel" deger={k?.telefon} />
@@ -290,10 +290,10 @@ export function TemasFormu({
   etkinlikler: Pick<Etkinlik, "id" | "ad">[];
 }) {
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {t ? <input type="hidden" name="temas_id" value={t.id} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
         <Secim
           ad="kisi_id"
           etiket="Kişi"
@@ -338,11 +338,11 @@ export function TeklifFormu({
 }) {
   const bugun = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {t ? <input type="hidden" name="teklif_id" value={t.id} /> : null}
       {geri ? <input type="hidden" name="geri" value={geri} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="teklif_no" etiket="Teklif no" deger={t?.teklif_no} />
         <Alan ad="konu" etiket="Ne teklif edildi" deger={t?.konu} ipucu="Ör. C/Z aşık hattı, 3,5 mm" sinif="lg:col-span-3" />
         <Alan ad="tarih" etiket="Tarih" tur="date" deger={inputTarih(t?.tarih) || bugun} zorunlu />
@@ -366,7 +366,7 @@ export function TeklifFormu({
           sinif="lg:col-span-2"
         />
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="etiket">
             {t?.dosya_ad ? `PDF (yüklü: ${t.dosya_ad}; yenisini seçerseniz değişir)` : "Teklif dosyası (PDF, en çok 15 MB)"}
@@ -419,11 +419,11 @@ export function GorevFormu({
 }) {
   const atanan = g ? g.atanan : (varsayilanAtanan ?? null);
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       {g ? <input type="hidden" name="gorev_id" value={g.id} /> : null}
       {geri ? <input type="hidden" name="geri" value={geri} /> : null}
       {firmaId ? <input type="hidden" name="firma_id" value={firmaId} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="baslik" etiket="Ne yapılacak" zorunlu deger={g?.baslik} sinif="sm:col-span-2" />
         <Secim ad="atanan" etiket="Kime" secenekler={kisiSecenekleri(kisiler, atanan)} deger={atanan} bos="— sahipsiz —" />
         <Alan ad="son_tarih" etiket="Son tarih" tur="date" deger={inputTarih(g?.son_tarih)} />
@@ -449,10 +449,10 @@ export function GorevFormu({
 export function SiparisFormu({ eylem, firmaId, s }: { eylem: Eylem; firmaId: number; s?: Siparis }) {
   const bugun = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {s ? <input type="hidden" name="siparis_id" value={s.id} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="siparis_no" etiket="Sipariş no" deger={s?.siparis_no} />
         <Alan ad="konu" etiket="Ne satıldı" deger={s?.konu} sinif="lg:col-span-3" />
         <Alan ad="tarih" etiket="Sipariş tarihi" tur="date" deger={inputTarih(s?.tarih) || bugun} />
@@ -481,10 +481,10 @@ export function MakineFormu({
   siparisler: Siparis[];
 }) {
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {m ? <input type="hidden" name="makine_id" value={m.id} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Alan ad="ad" etiket="Makine / hat" zorunlu deger={m?.ad} sinif="sm:col-span-2" ipucu="Ör. C/Z aşık hattı" />
         <Alan ad="seri_no" etiket="Seri no" deger={m?.seri_no} />
         <Secim
@@ -522,11 +522,11 @@ export function ServisFormu({
 }) {
   const bugun = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
   return (
-    <form action={eylem} className="space-y-3">
+    <form action={eylem} className="space-y-4">
       <input type="hidden" name="firma_id" value={firmaId} />
       {s ? <input type="hidden" name="servis_id" value={s.id} /> : null}
       {geri ? <input type="hidden" name="geri" value={geri} /> : null}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Secim ad="tur" etiket="Tür" secenekler={SERVIS_TURU} deger={s?.tur ?? "ariza"} />
         <Secim
           ad="makine_id"

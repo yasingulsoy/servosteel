@@ -13,8 +13,8 @@ import { makineKaydet, makineSil, servisKaydet, servisSil, siparisKaydet, sipari
 type KullaniciListesi = { kullanici: string; ad: string }[];
 
 export const Bolum = ({ baslik, children }: { baslik: string; children: React.ReactNode }) => (
-  <section className="space-y-3">
-    <h2 className="text-sm font-bold uppercase tracking-wide text-muted">{baslik}</h2>
+  <section className="space-y-4">
+    <h2 className="bolum-baslik">{baslik}</h2>
     {children}
   </section>
 );
@@ -40,23 +40,23 @@ export function GorevBolumu({
       <GorevListesi gorevler={acik} durumEylemi={gorevDurum} geri={geri} firmaGoster={false} yazabilir={yaz} />
       {biten.length ? (
         <details>
-          <summary className="cursor-pointer text-xs font-semibold text-muted">Tamamlananlar ({biten.length})</summary>
+          <summary className="kucuk-ac">Tamamlananlar ({biten.length})</summary>
           <div className="mt-2">
             <GorevListesi gorevler={biten} durumEylemi={gorevDurum} geri={geri} firmaGoster={false} yazabilir={yaz} />
           </div>
         </details>
       ) : null}
       {yaz ? (
-        <details className="kart p-4">
-          <summary className="cursor-pointer text-sm font-semibold">Görev ekle</summary>
-          <div className="mt-4">
+        <details className="kart p-5">
+          <summary className="kart-baslik">Görev ekle</summary>
+          <div className="mt-5 border-t border-gray-100 pt-5">
             <GorevFormu eylem={gorevKaydet} firmaId={firmaId} kisiler={kisiler} varsayilanAtanan={ben} geri={geri} />
           </div>
         </details>
       ) : null}
       {yaz && acik.length ? (
         <details>
-          <summary className="cursor-pointer text-xs font-semibold text-muted">Görev düzenle / sil</summary>
+          <summary className="kucuk-ac">Görev düzenle / sil</summary>
           <div className="mt-2 space-y-3">
             {acik.map((g) => (
               <div key={g.id} className="kart space-y-3 p-4">
@@ -96,20 +96,20 @@ export function SatisSonrasiBolumu({
     <Bolum baslik={`Sipariş, makine ve servis`}>
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="space-y-3">
-          <h3 className="flex items-center gap-1.5 text-sm font-bold">
-            <Package size={15} /> Siparişler ({siparisler.length})
+          <h3 className="flex items-center gap-2 text-base font-medium text-gray-800">
+            <Package size={18} className="text-gray-500" /> Siparişler ({siparisler.length})
           </h3>
           {siparisler.map((s) => (
-            <div key={s.id} className="kart p-4 text-sm">
+            <div key={s.id} className="kart p-5 text-sm">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <Rozet sinif="bg-zinc-900 text-white">{SIPARIS_DURUMU[s.durum]}</Rozet>
-                <span className="font-semibold">{s.siparis_no ?? "Sipariş"}</span>
+                <Rozet sinif="bg-gray-700 text-white">{SIPARIS_DURUMU[s.durum]}</Rozet>
+                <span className="font-medium text-gray-800">{s.siparis_no ?? "Sipariş"}</span>
                 {s.tutar ? (
                   <span className="font-semibold">
                     {para(s.tutar)} {DOVIZ[s.doviz]}
                   </span>
                 ) : null}
-                <span className="ml-auto text-xs text-muted">
+                <span className="ml-auto text-theme-xs text-gray-500">
                   {tarih(s.tarih)}
                   {s.teslim_tarihi ? ` · teslim ${tarih(s.teslim_tarihi)}` : ""}
                 </span>
@@ -118,7 +118,7 @@ export function SatisSonrasiBolumu({
               {s.notlar ? <p className="mt-1 text-muted">{s.notlar}</p> : null}
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle</summary>
+                  <summary className="kucuk-ac">Düzenle</summary>
                   <div className="mt-3 space-y-3">
                     <SiparisFormu eylem={siparisKaydet} firmaId={firmaId} s={s} />
                     <form action={siparisSil}>
@@ -134,33 +134,33 @@ export function SatisSonrasiBolumu({
             </div>
           ))}
           {yaz ? (
-            <details className="kart p-4">
-              <summary className="cursor-pointer text-sm font-semibold">Sipariş ekle</summary>
-              <div className="mt-4">
+            <details className="kart p-5">
+              <summary className="kart-baslik">Sipariş ekle</summary>
+              <div className="mt-5 border-t border-gray-100 pt-5">
                 <SiparisFormu eylem={siparisKaydet} firmaId={firmaId} />
               </div>
             </details>
           ) : null}
 
-          <h3 className="flex items-center gap-1.5 pt-2 text-sm font-bold">
-            <Wrench size={15} /> Kurulu makineler ({makineler.length})
+          <h3 className="flex items-center gap-2 pt-2 text-base font-medium text-gray-800">
+            <Wrench size={18} className="text-gray-500" /> Kurulu makineler ({makineler.length})
           </h3>
           {makineler.map((m) => (
-            <div key={m.id} className="kart p-4 text-sm">
+            <div key={m.id} className="kart p-5 text-sm">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="font-semibold">{m.ad}</span>
+                <span className="font-medium text-gray-800">{m.ad}</span>
                 {m.seri_no ? <span className="text-muted">SN {m.seri_no}</span> : null}
                 {m.garanti_bitis ? (
-                  <Rozet sinif={m.garantide ? "bg-emerald-100 text-emerald-900" : "bg-zinc-100 text-zinc-600"}>
+                  <Rozet sinif={m.garantide ? "bg-success-50 text-success-600" : "bg-gray-100 text-gray-600"}>
                     {m.garantide ? "garantide" : "garanti bitti"} · {tarih(m.garanti_bitis)}
                   </Rozet>
                 ) : null}
-                {m.kurulum_tarihi ? <span className="ml-auto text-xs text-muted">kurulum {tarih(m.kurulum_tarihi)}</span> : null}
+                {m.kurulum_tarihi ? <span className="ml-auto text-theme-xs text-gray-500">kurulum {tarih(m.kurulum_tarihi)}</span> : null}
               </div>
               {m.notlar ? <p className="mt-1 text-muted">{m.notlar}</p> : null}
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle</summary>
+                  <summary className="kucuk-ac">Düzenle</summary>
                   <div className="mt-3 space-y-3">
                     <MakineFormu eylem={makineKaydet} firmaId={firmaId} m={m} siparisler={siparisler} />
                     <form action={makineSil}>
@@ -176,9 +176,9 @@ export function SatisSonrasiBolumu({
             </div>
           ))}
           {yaz ? (
-            <details className="kart p-4">
-              <summary className="cursor-pointer text-sm font-semibold">Makine ekle</summary>
-              <div className="mt-4">
+            <details className="kart p-5">
+              <summary className="kart-baslik">Makine ekle</summary>
+              <div className="mt-5 border-t border-gray-100 pt-5">
                 <MakineFormu eylem={makineKaydet} firmaId={firmaId} siparisler={siparisler} />
               </div>
             </details>
@@ -186,27 +186,27 @@ export function SatisSonrasiBolumu({
         </div>
 
         <div className="space-y-3">
-          <h3 className="flex items-center gap-1.5 text-sm font-bold">
-            <Wrench size={15} /> Servis talepleri ({servisler.filter((s) => s.durum !== "kapandi").length} açık)
+          <h3 className="flex items-center gap-2 text-base font-medium text-gray-800">
+            <Wrench size={18} className="text-gray-500" /> Servis talepleri ({servisler.filter((s) => s.durum !== "kapandi").length} açık)
           </h3>
           {servisler.map((s) => (
-            <div key={s.id} className="kart p-4 text-sm">
+            <div key={s.id} className="kart p-5 text-sm">
               <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                 <Rozet sinif={SERVIS_RENK[s.durum]}>{SERVIS_DURUMU[s.durum]}</Rozet>
-                <span className="font-semibold">{SERVIS_TURU[s.tur]}</span>
+                <span className="font-medium text-gray-800">{SERVIS_TURU[s.tur]}</span>
                 {s.makine_ad ? <span className="text-muted">{s.makine_ad}</span> : null}
-                {s.garantide ? <Rozet sinif="bg-emerald-100 text-emerald-900">garanti kapsamında</Rozet> : null}
-                <span className="ml-auto text-xs text-muted">
+                {s.garantide ? <Rozet sinif="bg-success-50 text-success-600">garanti kapsamında</Rozet> : null}
+                <span className="ml-auto text-theme-xs text-gray-500">
                   {tarih(s.acildi)}
                   {s.kapandi ? ` → ${tarih(s.kapandi)}` : ""}
                 </span>
               </div>
               <p className="mt-1 whitespace-pre-line">{s.aciklama}</p>
               {s.sonuc ? <p className="mt-1 text-muted">Yapılan: {s.sonuc}</p> : null}
-              {s.atanan ? <p className="mt-1 text-xs text-muted">İlgilenen: {s.atanan}</p> : null}
+              {s.atanan ? <p className="mt-1 text-theme-xs text-gray-500">İlgilenen: {s.atanan}</p> : null}
               {yaz ? (
                 <details className="mt-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-muted">Düzenle / kapat</summary>
+                  <summary className="kucuk-ac">Düzenle / kapat</summary>
                   <div className="mt-3 space-y-3">
                     <ServisFormu eylem={servisKaydet} firmaId={firmaId} s={s} makineler={makineler} kisiler={kisiler} />
                     <form action={servisSil}>
@@ -222,9 +222,9 @@ export function SatisSonrasiBolumu({
             </div>
           ))}
           {yaz ? (
-            <details className="kart p-4">
-              <summary className="cursor-pointer text-sm font-semibold">Servis talebi aç</summary>
-              <div className="mt-4">
+            <details className="kart p-5">
+              <summary className="kart-baslik">Servis talebi aç</summary>
+              <div className="mt-5 border-t border-gray-100 pt-5">
                 <ServisFormu eylem={servisKaydet} firmaId={firmaId} makineler={makineler} kisiler={kisiler} />
               </div>
             </details>
@@ -260,14 +260,14 @@ export function ZamanCizelgesi({ ogeler }: { ogeler: CizelgeOgesi[] }) {
           <li key={`${o.tur}-${o.zaman}-${i}`} className="relative">
             <span
               className={`absolute -start-[29px] top-0.5 flex size-[18px] items-center justify-center rounded-full ring-4 ring-surface ${
-                panelden ? "bg-sky-100 text-sky-800" : "bg-amber-100 text-amber-900"
+                panelden ? "bg-blue-light-100 text-blue-light-600" : "bg-warning-100 text-warning-700"
               }`}
             >
               <Simge size={11} />
             </span>
             <p className="text-sm">
-              <span className="font-medium">{o.baslik}</span>
-              <span className="ms-2 text-xs text-muted">
+              <span className="font-medium text-gray-800">{o.baslik}</span>
+              <span className="ms-2 text-theme-xs text-gray-500">
                 {zaman(o.zaman)}
                 {o.kim ? ` · ${o.kim}` : ""}
                 {panelden ? " · panel" : ""}

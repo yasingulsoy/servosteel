@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GorevFormu } from "@/components/formlar";
 import { GorevListesi } from "@/components/gorev-listesi";
+import { SayfaBasligi } from "@/components/sayfa";
 import { sorgu } from "@/lib/db";
 import { oturumZorunlu, yazabilir } from "@/lib/oturum";
 import { gorevler, kullanicilar } from "@/lib/veri";
@@ -36,29 +37,26 @@ export default async function GorevSayfasi(props: PageProps<"/gorevler">) {
   const geri = `/gorevler?g=${sekme}`;
 
   return (
-    <div className="space-y-5">
-      <h1 className="text-xl font-bold">Görevler</h1>
-      <p className="max-w-3xl text-sm text-muted">
+    <div className="space-y-4 md:space-y-6">
+      <SayfaBasligi baslik="Görevler" yol={[]}>
+      <p className="max-w-3xl text-sm text-gray-500">
         Teklif gönderilince 7 gün sonrasına &quot;Teklif takibi&quot;, görüşme &quot;teklif verilecek&quot;e geçince 3
         gün sonrasına &quot;Teklif hazırla&quot; görevi kendiliğinden açılır; iş ilerleyince kendiliğinden kapanır.
         Görev firmanın sorumlusuna düşer.
       </p>
-      <div className="flex flex-wrap gap-2">
+      </SayfaBasligi>
+      <div className="sekmeler">
         {SEKMELER.map((s) => (
-          <Link
-            key={s.kod}
-            href={`/gorevler?g=${s.kod}`}
-            className={`rounded-full px-3 py-1 text-xs font-medium ${sekme === s.kod ? "bg-shell text-white" : "bg-card ring-1 ring-line"}`}
-          >
+          <Link key={s.kod} href={`/gorevler?g=${s.kod}`} className={`sekme ${sekme === s.kod ? "sekme-etkin" : ""}`}>
             {s.ad}
           </Link>
         ))}
       </div>
       <GorevListesi gorevler={liste} durumEylemi={gorevDurum} geri={geri} yazabilir={yazabilir(ben)} />
       {yazabilir(ben) ? (
-        <details className="kart p-4">
-          <summary className="cursor-pointer text-sm font-semibold">Yeni görev</summary>
-          <div className="mt-4">
+        <details className="kart p-5">
+          <summary className="kart-baslik">Yeni görev</summary>
+          <div className="mt-5 border-t border-gray-100 pt-5">
             <GorevFormu eylem={gorevKaydet} firmalar={firmalar} kisiler={kisiler} varsayilanAtanan={ben.kullanici} geri={geri} />
           </div>
         </details>

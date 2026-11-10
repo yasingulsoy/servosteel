@@ -1,49 +1,264 @@
 @import "tailwindcss";
 
-/* Sitenin paletinin sade hali: altın vurgu, açık yüzey. */
-:root {
-  --surface: #f6f6f3;
-  --card: #ffffff;
-  --ink: #161616;
-  --muted: #62676e;
-  --line: #e2e1dc;
+/* Görsel dil: dekoartizan yönetim panelinin (TailAdmin) paleti, tipografisi
+   ve gölgeleri. Sayfalar renkleri buradaki adlarla kullanır; eski anlamsal
+   adlar (surface, card, ink, muted, line, accent) aynı palete bağlı kalır. */
+@theme {
+  --text-theme-xs: 12px;
+  --text-theme-xs--line-height: 18px;
+  --text-theme-sm: 14px;
+  --text-theme-sm--line-height: 20px;
+  --text-theme-xl: 20px;
+  --text-theme-xl--line-height: 30px;
+  --text-title-sm: 30px;
+  --text-title-sm--line-height: 38px;
+  --text-title-md: 36px;
+  --text-title-md--line-height: 44px;
+
+  --color-brand-25: #f2f7ff;
+  --color-brand-50: #ecf3ff;
+  --color-brand-100: #dde9ff;
+  --color-brand-200: #c2d6ff;
+  --color-brand-300: #9cb9ff;
+  --color-brand-400: #7592ff;
+  --color-brand-500: #465fff;
+  --color-brand-600: #3641f5;
+  --color-brand-700: #2a31d8;
+  --color-brand-800: #252dae;
+  --color-brand-900: #262e89;
+  --color-brand-950: #161950;
+
+  --color-blue-light-50: #f0f9ff;
+  --color-blue-light-100: #e0f2fe;
+  --color-blue-light-500: #0ba5ec;
+  --color-blue-light-600: #0086c9;
+
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f2f4f7;
+  --color-gray-200: #e4e7ec;
+  --color-gray-300: #d0d5dd;
+  --color-gray-400: #98a2b3;
+  --color-gray-500: #667085;
+  --color-gray-600: #475467;
+  --color-gray-700: #344054;
+  --color-gray-800: #1d2939;
+  --color-gray-900: #101828;
+  --color-gray-950: #0c111d;
+
+  --color-orange-50: #fff6ed;
+  --color-orange-100: #ffead5;
+  --color-orange-500: #fb6514;
+  --color-orange-600: #ec4a0a;
+
+  --color-success-50: #ecfdf3;
+  --color-success-100: #d1fadf;
+  --color-success-200: #a6f4c5;
+  --color-success-500: #12b76a;
+  --color-success-600: #039855;
+  --color-success-700: #027a48;
+
+  --color-error-50: #fef3f2;
+  --color-error-100: #fee4e2;
+  --color-error-200: #fecdca;
+  --color-error-300: #fda29b;
+  --color-error-500: #f04438;
+  --color-error-600: #d92d20;
+  --color-error-700: #b42318;
+
+  --color-warning-50: #fffaeb;
+  --color-warning-100: #fef0c7;
+  --color-warning-200: #fedf89;
+  --color-warning-500: #f79009;
+  --color-warning-600: #dc6803;
+  --color-warning-700: #b54708;
+
+  --color-theme-purple-50: #f4f3ff;
+  --color-theme-purple-500: #7a5af8;
+
+  --shadow-theme-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-theme-sm: 0px 1px 3px 0px rgba(16, 24, 40, 0.1), 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  --shadow-theme-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  --shadow-theme-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 }
 
 @theme inline {
-  --color-accent: #e7a300;
-  --color-accent-strong: #c98d00;
-  --color-shell: #0b0c0e;
-  --color-surface: var(--surface);
-  --color-card: var(--card);
-  --color-ink: var(--ink);
-  --color-muted: var(--muted);
-  --color-line: var(--line);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  --color-accent: var(--color-brand-500);
+  --color-accent-strong: var(--color-brand-600);
+  --color-shell: var(--color-brand-950);
+  --color-surface: var(--color-gray-50);
+  --color-card: #ffffff;
+  --color-ink: var(--color-gray-800);
+  --color-muted: var(--color-gray-500);
+  --color-line: var(--color-gray-200);
 }
 
-body {
-  background: var(--surface);
-  color: var(--ink);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  body {
+    @apply bg-gray-50 font-normal text-gray-800;
+  }
 }
 
-/* Form alanlarının ortak görünümü — her input'a sınıf yazmamak için. */
-.alan {
-  @apply w-full rounded-lg border border-line bg-card px-3 py-2 text-sm outline-none focus:border-accent;
+/* Ortak parçalar — her öğeye uzun sınıf dizisi yazmamak için. Katman içinde:
+   sayfadaki tek tek yardımcı sınıflar (p-5, w-full…) bunları ezebilir. */
+@layer components {
+  /* Kart: TailAdmin'in ComponentCard'ı */
+  .kart {
+    @apply rounded-2xl border border-gray-200 bg-white;
+  }
+  /* Açılır kartın başlığı (details > summary) */
+  .kart-baslik {
+    @apply flex cursor-pointer list-none items-center justify-between gap-3 text-base font-medium text-gray-800 select-none hover:text-brand-500;
+  }
+  .kart-baslik::-webkit-details-marker {
+    display: none;
+  }
+  .kart-baslik::after,
+  .kucuk-ac::after {
+    content: "";
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M4.79 7.4 10 12.6l5.21-5.2' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+    transition: transform 0.2s;
+  }
+  details[open] > .kart-baslik::after,
+  details[open] > .kucuk-ac::after {
+    transform: rotate(180deg);
+  }
+  /* Kart içindeki küçük "Düzenle" açıcısı */
+  .kucuk-ac {
+    @apply inline-flex cursor-pointer list-none items-center gap-0.5 text-theme-sm font-medium text-brand-500 select-none hover:text-brand-600;
+  }
+  .kucuk-ac::-webkit-details-marker {
+    display: none;
+  }
+  .kucuk-ac::after {
+    width: 1rem;
+    height: 1rem;
+  }
+  /* Bölüm başlığı (RecentOrders'daki gibi) */
+  .bolum-baslik {
+    @apply text-lg font-semibold text-gray-800;
+  }
+
+  /* Form alanları: InputField / Select / TextArea / FileInput */
+  .alan {
+    @apply h-11 w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs outline-none placeholder:text-gray-400 focus:border-brand-300 focus:ring-3 focus:ring-brand-500/10;
+  }
+  textarea.alan {
+    @apply h-auto min-h-11;
+  }
+  select.alan {
+    appearance: none;
+    padding-right: 2.75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M4.79 7.4 10 12.6l5.21-5.2' stroke='%23667085' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.875rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+  }
+  input[type="file"].alan {
+    @apply overflow-hidden p-0 text-gray-500 file:mr-4 file:h-full file:cursor-pointer file:border-0 file:border-r file:border-solid file:border-gray-200 file:bg-gray-50 file:px-4 file:text-sm file:text-gray-700 hover:file:bg-gray-100;
+  }
+  .etiket {
+    @apply mb-1.5 block text-sm font-medium text-gray-700;
+  }
+
+  /* Düğmeler: Button (primary / outline) */
+  .dugme {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-4 py-3 text-sm font-medium text-white shadow-theme-xs transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:bg-brand-300;
+  }
+  .dugme-ikincil {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs ring-1 ring-gray-300 transition ring-inset hover:bg-gray-50 hover:text-gray-800;
+  }
+  /* Kart başlığındaki küçük düğme ("Tümünü gör") */
+  .dugme-kucuk {
+    @apply inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-theme-sm font-medium text-gray-700 shadow-theme-xs transition hover:bg-gray-50 hover:text-gray-800;
+  }
+  .dugme-tehlike {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-medium text-error-600 shadow-theme-xs ring-1 ring-error-300 transition ring-inset hover:bg-error-50;
+  }
+
+  /* Tablo: BasicTable / RecentOrders */
+  .tablo {
+    @apply w-full text-theme-sm;
+  }
+  .tablo thead tr {
+    @apply border-b border-gray-100;
+  }
+  .tablo th {
+    @apply px-5 py-3 text-start text-theme-xs font-medium whitespace-nowrap text-gray-500;
+  }
+  .tablo td {
+    @apply px-5 py-4 text-gray-500;
+  }
+
+  /* Sekmeler: ChartTab (gri zeminde beyaz seçili) */
+  .sekmeler {
+    @apply inline-flex flex-wrap items-center gap-0.5 rounded-lg bg-gray-100 p-0.5;
+  }
+  .sekme {
+    @apply rounded-md px-3 py-2 text-theme-sm font-medium text-gray-500 hover:text-gray-900;
+  }
+  .sekme-etkin {
+    @apply bg-white text-gray-900 shadow-theme-xs;
+  }
+  /* Süzgeç çipi (renkli durum sayaçları) */
+  .cip {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-theme-xs font-medium;
+  }
+  .cip-secili {
+    @apply ring-2 ring-brand-500 ring-offset-1;
+  }
+
+  /* Kenar menü: AppSidebar */
+  .menu-item {
+    @apply relative flex w-full items-center gap-3 rounded-lg px-3 py-2 text-theme-sm font-medium;
+  }
+  .menu-item-active {
+    @apply bg-brand-50 text-brand-500;
+  }
+  .menu-item-inactive {
+    @apply text-gray-700 hover:bg-gray-100 hover:text-gray-700;
+  }
+  .menu-item-icon-active {
+    @apply text-brand-500;
+  }
+  .menu-item-icon-inactive {
+    @apply text-gray-500 group-hover:text-gray-700;
+  }
+  .menu-dropdown-item {
+    @apply relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-theme-sm font-medium;
+  }
+  .menu-dropdown-item-active {
+    @apply bg-brand-50 text-brand-500;
+  }
+  .menu-dropdown-item-inactive {
+    @apply text-gray-700 hover:bg-gray-100;
+  }
 }
-.etiket {
-  @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-muted;
-}
-.dugme {
-  @apply inline-flex items-center justify-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-zinc-950 hover:bg-accent-strong disabled:opacity-60;
-}
-.dugme-ikincil {
-  @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-line bg-card px-3 py-1.5 text-sm font-medium hover:border-zinc-400;
-}
-.dugme-tehlike {
-  @apply inline-flex items-center justify-center gap-1.5 rounded-lg border border-red-200 bg-card px-3 py-1.5 text-sm font-medium text-red-700 hover:bg-red-50;
-}
-.kart {
-  @apply rounded-xl border border-line bg-card;
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Dünya haritası (/harita): uzay zemini, paneller, küre üstündeki etiketler.
