@@ -365,6 +365,78 @@
       "Riavvolgitore o cesoia di taglio a misura",
       "Impilatore (uscita in fogli)"
     ],
+    "stepsTitle": "Come funziona una linea di perforazione",
+    "steps": [
+      {
+        "title": "Svolgimento",
+        "text": "L'aspo sostiene il coil e alimenta il nastro in linea con tensione controllata; aspo idraulico o meccanico secondo il peso del coil."
+      },
+      {
+        "title": "Raddrizzatura",
+        "text": "I rulli raddrizzatori eliminano la curvatura del coil. Un nastro piano è indispensabile perché le file di fori restino allineate lungo il foglio."
+      },
+      {
+        "title": "Alimentazione servo",
+        "text": "L'alimentatore servo fa avanzare il nastro del passo dello schema a ogni colpo di pressa. La ripetizione dello schema e la distanza tra le file dipendono da questo passo."
+      },
+      {
+        "title": "Perforazione",
+        "text": "Uno stampo a punzoni multipli apre una o più file di fori per colpo. Il gioco tra punzone e matrice si regola su spessore e materiale."
+      },
+      {
+        "title": "Uscita",
+        "text": "Il nastro forato viene riavvolto oppure tagliato a misura con una cesoia e impilato in fogli."
+      }
+    ],
+    "patternsTitle": "Schemi di fori e percentuale di vuoto",
+    "patternsIntro": "Tre elementi definiscono una lamiera forata: forma del foro, distanza tra i fori e disposizione. Insieme determinano la percentuale di vuoto, cioè la quota di superficie occupata dai fori.",
+    "patterns": [
+      {
+        "title": "Foro tondo",
+        "text": "Lo schema più diffuso, per pannelli acustici, filtri ed elementi di ventilazione; i punzoni sono semplici e durevoli."
+      },
+      {
+        "title": "Foro quadro",
+        "text": "A parità di passo offre più vuoto del foro tondo. Comune in pannelli di protezione, griglie e superfici decorative."
+      },
+      {
+        "title": "Foro asolato",
+        "text": "Per ventilazione, vagli e passerelle portacavi. L'orientamento del lato lungo, lungo o attraverso il nastro, cambia la resistenza della lamiera."
+      },
+      {
+        "title": "Schemi decorativi",
+        "text": "Fori sagomati e schemi sfumati per facciate e interni. Lo stampo è progettato per lo schema specifico."
+      }
+    ],
+    "openArea": "Più i fori sono ravvicinati, maggiore è il vuoto e più leggera la lamiera, ma minore la resistenza. La disposizione sfalsata offre una resistenza più equilibrata delle file dritte a parità di vuoto, ed è per questo la più usata. Indicateci la percentuale di vuoto desiderata e l'impiego della lamiera: vi proporremo schema e stampo.",
+    "usesTitle": "Dove si usa la lamiera forata",
+    "uses": [
+      {
+        "title": "Pannelli acustici e barriere antirumore",
+        "text": "La superficie forata lascia passare il suono verso il materiale fonoassorbente retrostante; pannello frontale delle barriere antirumore stradali e industriali."
+      },
+      {
+        "title": "Ventilazione e filtri",
+        "text": "Involucri, griglie e cartucce filtranti attraversati da aria o liquidi."
+      },
+      {
+        "title": "Facciate e controsoffitti",
+        "text": "Pannelli di facciata e controsoffitti che regolano luce naturale e visibilità."
+      },
+      {
+        "title": "Passerelle portacavi forate",
+        "text": "Fori di ventilazione e fissaggio nelle passerelle; possono essere ricavati anche all'interno della linea della passerella."
+      },
+      {
+        "title": "Scaffalature e magazzini",
+        "text": "Fori di collegamento in montanti e ripiani."
+      },
+      {
+        "title": "Vagli e parti di macchine",
+        "text": "Vagli e superfici di essiccazione e separazione in macchine agricole e alimentari."
+      }
+    ],
+    "usesNote": "In profili come le passerelle portacavi i fori possono essere ricavati anche nella linea di profilatura, senza una linea di perforazione separata. Volumi di produzione e schema dei fori decidono la soluzione giusta.",
     "faqEyebrow": "Domande frequenti",
     "faqTitle": "Domande sulle linee di perforazione",
     "faq": [

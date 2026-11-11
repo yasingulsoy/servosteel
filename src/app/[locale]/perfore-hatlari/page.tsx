@@ -1,5 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { Check, Crosshair, Grip, Layers, MonitorCog } from "lucide-react";
+import { ArrowRight, Check, Crosshair, Grip, Layers, MonitorCog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { sayfaMeta } from "@/i18n/seo";
 import { PageHero } from "@/components/page-hero";
@@ -32,6 +32,36 @@ const BILESEN_SAYFASI: Record<number, string> = {
   0: "/makineler/rulo-acicilar",
 };
 
+/* Kullanım alanı kartından ilgili roll form hattına — `perfore.uses` SIRASINA
+   göre (9 dilde aynı sıra): gürültü bariyeri, kablo kanalı, ağır raf. */
+const KULLANIM_SAYFASI: Record<number, string> = {
+  0: "/roll-form-hatlari/gurultu-bariyeri",
+  3: "/roll-form-hatlari/kablo-kanali",
+  4: "/roll-form-hatlari/agir-raf",
+};
+
+/** Delik deseni kartlarının küçük çizimi — `perfore.patterns` sırasıyla:
+ *  yuvarlak, kare, oblong, dekoratif. Şaşırtmalı dizilim. */
+function DesenIkonu({ i }: { i: number }) {
+  const noktalar: [number, number][] = [];
+  for (let y = 0; y < 3; y++) for (let x = 0; x < 4; x++) noktalar.push([8 + x * 12 + (y % 2) * 6, 8 + y * 11]);
+  return (
+    <svg viewBox="0 0 60 32" className="h-8 w-16 text-accent" aria-hidden>
+      {noktalar.map(([x, y], k) =>
+        i === 0 ? (
+          <circle key={k} cx={x} cy={y} r={3} fill="currentColor" />
+        ) : i === 1 ? (
+          <rect key={k} x={x - 3} y={y - 3} width={6} height={6} fill="currentColor" />
+        ) : i === 2 ? (
+          <rect key={k} x={x - 4.5} y={y - 2} width={9} height={4} rx={2} fill="currentColor" />
+        ) : (
+          <path key={k} d={`M${x} ${y - 3.5}L${x + 3.5} ${y}L${x} ${y + 3.5}L${x - 3.5} ${y}Z`} fill="currentColor" />
+        )
+      )}
+    </svg>
+  );
+}
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "perfore" });
@@ -51,6 +81,9 @@ export default async function PerforeHatlariPage({ params }: Props) {
   const paras = t.raw("paras") as string[];
   const components = t.raw("components") as string[];
   const faq = t.raw("faq") as FaqItem[];
+  const steps = t.raw("steps") as { title: string; text: string }[];
+  const patterns = t.raw("patterns") as { title: string; text: string }[];
+  const uses = t.raw("uses") as { title: string; text: string }[];
 
   return (
     <>
@@ -125,6 +158,85 @@ export default async function PerforeHatlariPage({ params }: Props) {
             </Reveal>
           </aside>
         </div>
+      </section>
+
+      {/* Açıklayıcı bölümler (Yasin, 11 Kas: "içerisine bilgiler de ekle") */}
+      <section className="border-y border-line bg-surface-alt">
+        <div className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+          <Reveal>
+            <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">{t("stepsTitle")}</h2>
+          </Reveal>
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {steps.map((s, i) => (
+              <Reveal key={s.title} delay={i * 80}>
+                <li className="h-full rounded-2xl border border-line bg-card p-5">
+                  <span className="flex size-9 items-center justify-center rounded-full bg-accent font-display text-sm font-bold text-zinc-950">
+                    {i + 1}
+                  </span>
+                  <h3 className="mt-4 font-semibold text-ink">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
+        <Reveal>
+          <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">{t("patternsTitle")}</h2>
+          <p className="mt-4 max-w-3xl leading-relaxed text-muted">{t("patternsIntro")}</p>
+        </Reveal>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {patterns.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <div className="h-full rounded-2xl border border-line bg-card p-5">
+                <DesenIkonu i={i} />
+                <h3 className="mt-4 font-semibold text-ink">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal>
+          <p className="mt-6 max-w-3xl rounded-2xl border-s-4 border-accent bg-surface-alt px-5 py-4 text-sm leading-relaxed text-ink">
+            {t("openArea")}
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <h2 className="font-display mt-16 text-2xl font-bold uppercase tracking-tight text-ink">{t("usesTitle")}</h2>
+        </Reveal>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {uses.map((u, i) => {
+            const href = KULLANIM_SAYFASI[i];
+            const govde = (
+              <>
+                <h3 className="flex items-center gap-1.5 font-semibold text-ink">
+                  {u.title}
+                  {href ? (
+                    <ArrowRight className="size-4 text-accent-ink transition-transform group-hover:translate-x-0.5 rtl:rotate-180" strokeWidth={2} aria-hidden />
+                  ) : null}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{u.text}</p>
+              </>
+            );
+            return (
+              <Reveal key={u.title} delay={i * 60}>
+                {href ? (
+                  <Link href={href} className="group block h-full rounded-2xl border border-line bg-card p-5 transition-colors hover:border-accent/50">
+                    {govde}
+                  </Link>
+                ) : (
+                  <div className="h-full rounded-2xl border border-line bg-card p-5">{govde}</div>
+                )}
+              </Reveal>
+            );
+          })}
+        </div>
+        <Reveal>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-muted">{t("usesNote")}</p>
+        </Reveal>
       </section>
 
       <FaqSection eyebrow={t("faqEyebrow")} title={t("faqTitle")} items={faq} />

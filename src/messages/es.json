@@ -365,6 +365,78 @@
       "Rebobinadora o cizalla de corte a medida",
       "Apilador (salida en chapa)"
     ],
+    "stepsTitle": "Cómo funciona una línea de perforado",
+    "steps": [
+      {
+        "title": "Desbobinado",
+        "text": "La desbobinadora sostiene la bobina y alimenta la banda a la línea con tensión controlada; se elige hidráulica o mecánica según el peso de la bobina."
+      },
+      {
+        "title": "Enderezado",
+        "text": "Los rodillos enderezadores eliminan la curvatura de la bobina. La banda plana es imprescindible para que las filas de agujeros queden alineadas a lo largo de la chapa."
+      },
+      {
+        "title": "Alimentación servo",
+        "text": "El alimentador servo avanza la banda el paso del patrón en cada golpe de prensa. La repetición del patrón y la distancia entre filas dependen de este paso."
+      },
+      {
+        "title": "Perforado",
+        "text": "Un troquel de punzones múltiples abre una o varias filas de agujeros por golpe. La holgura entre punzón y matriz se ajusta al espesor y al material."
+      },
+      {
+        "title": "Salida",
+        "text": "La banda perforada se rebobina, o se corta a medida en una cizalla y se apila en chapas."
+      }
+    ],
+    "patternsTitle": "Patrones de agujeros y área abierta",
+    "patternsIntro": "Tres cosas definen una chapa perforada: la forma del agujero, la distancia entre agujeros y su disposición. Juntas determinan el área abierta, es decir, la proporción de la superficie ocupada por agujeros.",
+    "patterns": [
+      {
+        "title": "Agujero redondo",
+        "text": "El patrón más común, en paneles acústicos, filtros y elementos de ventilación; sus punzones son sencillos y duraderos."
+      },
+      {
+        "title": "Agujero cuadrado",
+        "text": "Da más área abierta que el redondo con la misma separación. Habitual en paneles de protección, rejillas y superficies decorativas."
+      },
+      {
+        "title": "Agujero oblongo",
+        "text": "Para ventilación, cribas y bandejas portacables. Que el lado largo vaya a lo largo o a lo ancho de la banda influye en la resistencia de la chapa."
+      },
+      {
+        "title": "Patrones decorativos",
+        "text": "Agujeros con formas especiales y patrones graduados para fachadas e interiores. El troquel se diseña para cada patrón."
+      }
+    ],
+    "openArea": "Cuanto más juntos los agujeros, mayor el área abierta y más ligera la chapa, pero menor su resistencia. La disposición al tresbolillo da una resistencia más equilibrada que las filas rectas con la misma área abierta; por eso es la más utilizada. Indíquenos el área abierta deseada y el uso de la chapa, y le propondremos el patrón y el troquel.",
+    "usesTitle": "Dónde se usa la chapa perforada",
+    "uses": [
+      {
+        "title": "Paneles acústicos y barreras antirruido",
+        "text": "La cara perforada deja pasar el sonido al material absorbente de detrás; se usa como panel frontal en barreras antirruido de carreteras e instalaciones."
+      },
+      {
+        "title": "Ventilación y filtros",
+        "text": "Carcasas, rejillas y cartuchos filtrantes por los que debe pasar aire o líquido."
+      },
+      {
+        "title": "Fachadas y techos",
+        "text": "Paneles de fachada y falsos techos que controlan la luz natural y la vista."
+      },
+      {
+        "title": "Bandejas portacables perforadas",
+        "text": "Agujeros de ventilación y fijación en bandejas portacables; también pueden perforarse dentro de la propia línea de la bandeja."
+      },
+      {
+        "title": "Estanterías y almacenaje",
+        "text": "Agujeros de unión en puntales y baldas."
+      },
+      {
+        "title": "Cribas y piezas de máquinas",
+        "text": "Cribas y superficies de secado y separación en maquinaria agrícola y alimentaria."
+      }
+    ],
+    "usesNote": "En perfiles como las bandejas portacables, los agujeros también pueden perforarse dentro de la línea de perfilado, sin necesidad de una línea de perforado aparte. El volumen de producción y el patrón deciden qué opción conviene.",
     "faqEyebrow": "Preguntas frecuentes",
     "faqTitle": "Preguntas sobre las líneas de perforado",
     "faq": [

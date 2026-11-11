@@ -365,6 +365,78 @@
       "Nawijarka lub nożyce do cięcia na długość",
       "Układarka (przy wyjściu w arkuszach)"
     ],
+    "stepsTitle": "Jak działa linia perforująca",
+    "steps": [
+      {
+        "title": "Odwijanie",
+        "text": "Odwijak utrzymuje krąg i podaje taśmę do linii z kontrolowanym naciągiem; hydrauliczny lub mechaniczny — zależnie od masy kręgu."
+      },
+      {
+        "title": "Prostowanie",
+        "text": "Rolki prostujące usuwają skrzywienie z kręgu. Płaska taśma jest warunkiem, by rzędy otworów pozostały w jednej linii wzdłuż arkusza."
+      },
+      {
+        "title": "Podawanie serwo",
+        "text": "Podajnik serwo przesuwa taśmę o podziałkę wzoru przy każdym skoku prasy. Od tego kroku zależy powtarzalność wzoru i odstęp między rzędami."
+      },
+      {
+        "title": "Perforowanie",
+        "text": "Narzędzie wielostemplowe wykrawa w jednym skoku jeden lub kilka rzędów otworów. Luz między stemplem a matrycą dobiera się do grubości i materiału."
+      },
+      {
+        "title": "Wyjście",
+        "text": "Perforowana taśma jest ponownie nawijana albo cięta na długość na nożycach i układana w arkusze."
+      }
+    ],
+    "patternsTitle": "Wzory otworów i prześwit",
+    "patternsIntro": "Blachę perforowaną określają trzy rzeczy: kształt otworu, odstęp między otworami i ich układ. Razem wyznaczają prześwit, czyli udział otworów w całej powierzchni.",
+    "patterns": [
+      {
+        "title": "Otwór okrągły",
+        "text": "Najczęstszy wzór — w panelach akustycznych, filtrach i elementach wentylacji; stemple są proste i trwałe."
+      },
+      {
+        "title": "Otwór kwadratowy",
+        "text": "Przy tej samej podziałce daje większy prześwit niż okrągły. Typowy dla paneli osłonowych, kratek i powierzchni dekoracyjnych."
+      },
+      {
+        "title": "Otwór podłużny",
+        "text": "Do wentylacji, sit i korytek kablowych. To, czy dłuższy bok biegnie wzdłuż, czy w poprzek taśmy, wpływa na wytrzymałość blachy."
+      },
+      {
+        "title": "Wzory dekoracyjne",
+        "text": "Otwory kształtowe i wzory przejściowe na elewacje i do wnętrz. Narzędzie projektuje się pod konkretny wzór."
+      }
+    ],
+    "openArea": "Im gęściej rozmieszczone otwory, tym większy prześwit i lżejsza blacha, ale mniejsza wytrzymałość. Układ przestawny daje przy tym samym prześwicie bardziej zrównoważoną wytrzymałość niż rzędy proste i dlatego jest najczęściej stosowany. Prosimy podać docelowy prześwit i miejsce zastosowania blachy — zaproponujemy wzór i narzędzie.",
+    "usesTitle": "Gdzie stosuje się blachę perforowaną",
+    "uses": [
+      {
+        "title": "Panele akustyczne i ekrany akustyczne",
+        "text": "Perforowana powierzchnia przepuszcza dźwięk do materiału pochłaniającego za nią; płyta czołowa ekranów akustycznych przy drogach i zakładach."
+      },
+      {
+        "title": "Wentylacja i filtry",
+        "text": "Obudowy, kratki i wkłady filtracyjne, przez które ma przepływać powietrze lub ciecz."
+      },
+      {
+        "title": "Elewacje i sufity",
+        "text": "Architektoniczne panele elewacyjne i sufity podwieszane, które regulują światło dzienne i widoczność."
+      },
+      {
+        "title": "Perforowane korytka kablowe",
+        "text": "Otwory wentylacyjne i montażowe w korytkach; można je wykrawać także bezpośrednio w linii do korytek."
+      },
+      {
+        "title": "Regały i systemy magazynowe",
+        "text": "Otwory łączące w słupach regałowych i półkach."
+      },
+      {
+        "title": "Sita i części maszyn",
+        "text": "Sita oraz powierzchnie suszące i separujące w maszynach rolniczych i spożywczych."
+      }
+    ],
+    "usesNote": "W profilach takich jak korytka kablowe otwory można wykrawać także w linii profilującej — osobna linia perforująca nie jest wtedy potrzebna. O wyborze decydują wielkość produkcji i wzór otworów.",
     "faqEyebrow": "Często zadawane pytania",
     "faqTitle": "Pytania o linie perforujące",
     "faq": [

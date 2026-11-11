@@ -385,6 +385,78 @@
       "Recoiler or cut-to-length shear",
       "Stacker (for sheet output)"
     ],
+    "stepsTitle": "How a perforating line works",
+    "steps": [
+      {
+        "title": "Decoiling",
+        "text": "The decoiler carries the coil and feeds the strip into the line under controlled tension; a hydraulic or mechanical decoiler is chosen by coil weight."
+      },
+      {
+        "title": "Straightening",
+        "text": "Straightener rolls remove coil set. Flat strip is essential for hole rows to stay aligned along the sheet."
+      },
+      {
+        "title": "Servo feeding",
+        "text": "The servo feeder advances the strip by the pattern pitch on every press stroke. The repeat of the pattern and the spacing between rows are set by this pitch."
+      },
+      {
+        "title": "Perforating",
+        "text": "A multi-punch die opens one or several rows of holes per stroke. Punch-to-die clearance is set for the sheet thickness and material."
+      },
+      {
+        "title": "Exit",
+        "text": "The perforated strip is either recoiled, or cut to length on a shear and stacked as sheets."
+      }
+    ],
+    "patternsTitle": "Hole patterns and open area",
+    "patternsIntro": "Three things define a perforated sheet: hole shape, hole spacing and arrangement. Together they set the open area — the share of the surface taken up by holes.",
+    "patterns": [
+      {
+        "title": "Round holes",
+        "text": "The most common pattern, used in acoustic panels, filters and ventilation elements; the punches are simple and durable."
+      },
+      {
+        "title": "Square holes",
+        "text": "Give more open area than round holes at the same spacing. Common in guard panels, grilles and decorative surfaces."
+      },
+      {
+        "title": "Slotted holes",
+        "text": "Used in ventilation, screens and cable trays. Whether the long side runs along or across the strip affects the sheet's strength."
+      },
+      {
+        "title": "Decorative patterns",
+        "text": "Shaped holes and graded patterns for facades and interiors. The die is designed for the specific pattern."
+      }
+    ],
+    "openArea": "Closer holes mean more open area and a lighter sheet, but lower strength. A staggered arrangement gives more balanced strength than straight rows at the same open area, which is why it is the most widely used. Tell us the target open area and where the sheet will be used, and we will propose the pattern and die accordingly.",
+    "usesTitle": "Where perforated sheet is used",
+    "uses": [
+      {
+        "title": "Acoustic panels and noise barriers",
+        "text": "The perforated face lets sound through to the absorbing material behind it; used as the front panel of road and plant noise barriers."
+      },
+      {
+        "title": "Ventilation and filter elements",
+        "text": "Housings, grilles and filter cartridges that must let air or liquid through."
+      },
+      {
+        "title": "Facade and ceiling cladding",
+        "text": "Architectural facade panels and suspended ceilings that control daylight and view."
+      },
+      {
+        "title": "Perforated cable trays",
+        "text": "Ventilation and fixing holes in cable trays; they can also be punched inside the tray line itself."
+      },
+      {
+        "title": "Shelving and storage systems",
+        "text": "Connection holes in rack uprights and shelves."
+      },
+      {
+        "title": "Screens and machine parts",
+        "text": "Screens, drying and separating surfaces in agricultural and food machinery."
+      }
+    ],
+    "usesNote": "For profiles such as cable trays, the holes can also be punched inside the roll forming line, so no separate perforating line is needed. Production volume and the hole pattern decide which approach fits.",
     "faqEyebrow": "Frequently asked",
     "faqTitle": "Questions about coil perforating lines",
     "faq": [

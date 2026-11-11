@@ -365,6 +365,78 @@
       "Sarıcı ya da boy kesme makası",
       "İstifleme (levha çıkışında)"
     ],
+    "stepsTitle": "Perfore hattı nasıl çalışır?",
+    "steps": [
+      {
+        "title": "Rulo sac açma",
+        "text": "Açıcı rulo sacı taşır ve gerginliği kontrol ederek hatta verir; hidrolik ya da mekanik açıcı rulo ağırlığına göre seçilir."
+      },
+      {
+        "title": "Doğrultma",
+        "text": "Rulo sacın kıvrım hafızası doğrultma merdaneleriyle alınır. Düz sac, delik sıralarının levha boyunca aynı hizada kalması için şarttır."
+      },
+      {
+        "title": "Servo besleme",
+        "text": "Servo besleme sacı her pres vuruşunda desenin adımı kadar ilerletir. Desenin tekrarı ve sıralar arası mesafe bu adımla belirlenir."
+      },
+      {
+        "title": "Perfore",
+        "text": "Çok zımbalı kalıp her vuruşta bir ya da birkaç sıra deliği birlikte açar. Zımba ile kalıp arasındaki boşluk sac kalınlığına ve malzemesine göre ayarlanır."
+      },
+      {
+        "title": "Çıkış",
+        "text": "Perfore sac ya sarıcıda yeniden rulo yapılır ya da boy kesme makasında ölçülü levhaya kesilip istiflenir."
+      }
+    ],
+    "patternsTitle": "Delik desenleri ve açık alan oranı",
+    "patternsIntro": "Perfore sacı üç şey tanımlar: delik şekli, delikler arası mesafe ve dizilim. Bu üçü birlikte sacın açık alan oranını, yani deliklerin toplam yüzeye oranını belirler.",
+    "patterns": [
+      {
+        "title": "Yuvarlak delik",
+        "text": "En yaygın desen. Akustik paneller, filtreler ve havalandırma elemanlarında kullanılır; zımbası basit ve dayanıklıdır."
+      },
+      {
+        "title": "Kare delik",
+        "text": "Aynı aralıkta yuvarlak delikten daha yüksek açık alan verir. Koruma panelleri, ızgaralar ve dekoratif yüzeylerde tercih edilir."
+      },
+      {
+        "title": "Oblong delik",
+        "text": "Havalandırma, elek ve kablo kanallarında kullanılır. Uzun kenarın sac boyunca mı, enine mi durduğu sacın dayanımını etkiler."
+      },
+      {
+        "title": "Dekoratif desenler",
+        "text": "Cephe ve iç mimaride özel şekilli delikler ve geçişli desenler. Kalıp desene özel tasarlanır."
+      }
+    ],
+    "openArea": "Delikler sıklaştıkça açık alan oranı artar, sac hafifler ama dayanımı düşer. Şaşırtmalı dizilim aynı açık alanda düz sıralara göre daha dengeli bir dayanım verir; bu yüzden en çok kullanılan dizilimdir. Hedef açık alan oranını ve sacın nerede kullanılacağını bildirirseniz deseni ve kalıbı buna göre öneririz.",
+    "usesTitle": "Perfore sacın kullanıldığı yerler",
+    "uses": [
+      {
+        "title": "Akustik paneller ve gürültü bariyerleri",
+        "text": "Delikli yüzey sesi arkadaki yalıtım malzemesine geçirir; yol ve tesis gürültü bariyerlerinde ön panel olarak kullanılır."
+      },
+      {
+        "title": "Havalandırma ve filtre elemanları",
+        "text": "Hava ya da sıvı geçişi istenen gövde, ızgara ve filtre kartuşlarında."
+      },
+      {
+        "title": "Cephe ve tavan kaplamaları",
+        "text": "Gün ışığını ve görüşü kontrol eden mimari cephe panelleri ve asma tavanlarda."
+      },
+      {
+        "title": "Delikli kablo kanalları",
+        "text": "Kablo kanallarının havalandırma ve bağlantı delikleri; kanal hattının içinde de açılabilir."
+      },
+      {
+        "title": "Raf ve depolama sistemleri",
+        "text": "Raf dikmeleri ve raf katlarının bağlantı delikleri."
+      },
+      {
+        "title": "Elek ve makine parçaları",
+        "text": "Tarım ve gıda makinelerinin elekleri, kurutma ve ayırma yüzeyleri."
+      }
+    ],
+    "usesNote": "Kablo kanalı gibi profillerde delikler roll form hattının içinde de açılabilir; bu durumda ayrı bir perfore hattı gerekmez. Hangisinin uygun olduğunu üretim adedi ve delik deseni belirler.",
     "faqEyebrow": "Sık sorulanlar",
     "faqTitle": "Rulo sac perfore hatları hakkında merak edilenler",
     "faq": [

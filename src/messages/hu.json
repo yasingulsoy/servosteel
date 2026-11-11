@@ -365,6 +365,78 @@
       "Feltekercselő vagy keresztvágó olló",
       "Rakatoló (tábla kimenetnél)"
     ],
+    "stepsTitle": "Így működik a perforáló sor",
+    "steps": [
+      {
+        "title": "Letekercselés",
+        "text": "A letekercselő tartja a tekercset és szabályozott húzással vezeti a szalagot a sorba; a tekercs súlya szerint hidraulikus vagy mechanikus."
+      },
+      {
+        "title": "Egyengetés",
+        "text": "Az egyengető hengerek kiveszik a tekercsgörbületet. Sík szalag nélkül a lyuksorok nem maradnak egy vonalban a tábla mentén."
+      },
+      {
+        "title": "Szervóadagolás",
+        "text": "A szervóadagoló minden préslöketnél a minta osztásával viszi előre a szalagot. A minta ismétlődését és a sorok távolságát ez a lépés határozza meg."
+      },
+      {
+        "title": "Perforálás",
+        "text": "A többlyukasztós szerszám löketenként egy vagy több lyuksort üt ki. A vágórést a lemezvastagsághoz és az anyaghoz állítják."
+      },
+      {
+        "title": "Kimenet",
+        "text": "A perforált szalagot visszacsévélik, vagy ollóval hosszra vágják és táblákba rakják."
+      }
+    ],
+    "patternsTitle": "Lyukminták és nyitott felület",
+    "patternsIntro": "Három dolog határozza meg a perforált lemezt: a lyuk alakja, a lyukak távolsága és az elrendezés. Ezek együtt adják a nyitott felületet, vagyis a lyukak arányát a teljes felülethez képest.",
+    "patterns": [
+      {
+        "title": "Kerek lyuk",
+        "text": "A leggyakoribb minta akusztikai panelekhez, szűrőkhöz és szellőzőelemekhez; a lyukasztók egyszerűek és tartósak."
+      },
+      {
+        "title": "Négyzetes lyuk",
+        "text": "Azonos osztásnál nagyobb nyitott felületet ad, mint a kerek. Védőpaneleknél, rácsoknál és díszfelületeknél gyakori."
+      },
+      {
+        "title": "Hosszúkás lyuk",
+        "text": "Szellőzéshez, rostákhoz és kábeltálcákhoz. Az, hogy a hosszú oldal a szalaggal párhuzamos vagy arra merőleges, befolyásolja a lemez szilárdságát."
+      },
+      {
+        "title": "Dekoratív minták",
+        "text": "Formás lyukak és átmenetes minták homlokzatokhoz és belsőépítészethez. A szerszámot az adott mintához tervezik."
+      }
+    ],
+    "openArea": "Minél sűrűbbek a lyukak, annál nagyobb a nyitott felület és könnyebb a lemez, de annál kisebb a szilárdsága. Az eltolt elrendezés azonos nyitott felület mellett kiegyensúlyozottabb szilárdságot ad, mint az egyenes sorok, ezért ez a legelterjedtebb. Adja meg a kívánt nyitott felületet és a felhasználás helyét, és ennek alapján javasolunk mintát és szerszámot.",
+    "usesTitle": "Hol használják a perforált lemezt",
+    "uses": [
+      {
+        "title": "Akusztikai panelek és zajvédő falak",
+        "text": "A perforált felület átengedi a hangot a mögötte lévő elnyelő anyaghoz; utak és üzemek zajvédő falainak előlapja."
+      },
+      {
+        "title": "Szellőző- és szűrőelemek",
+        "text": "Házak, rácsok és szűrőbetétek, amelyeken levegőnek vagy folyadéknak kell átáramolnia."
+      },
+      {
+        "title": "Homlokzat- és mennyezetburkolatok",
+        "text": "Építészeti homlokzatpanelek és álmennyezetek, amelyek a fényt és a rálátást szabályozzák."
+      },
+      {
+        "title": "Perforált kábeltálcák",
+        "text": "Szellőző- és rögzítőlyukak kábeltálcákban; ezek a tálcagyártó soron belül is kilyukaszthatók."
+      },
+      {
+        "title": "Polc- és tárolórendszerek",
+        "text": "Csatlakozó lyukak polcoszlopokban és polclapokban."
+      },
+      {
+        "title": "Rosták és gépalkatrészek",
+        "text": "Mezőgazdasági és élelmiszeripari gépek rostái, szárító- és elválasztófelületei."
+      }
+    ],
+    "usesNote": "Kábeltálcához hasonló profiloknál a lyukak a profilozó soron belül is kilyukaszthatók, így nincs szükség külön perforáló sorra. Hogy melyik megoldás illik, azt a gyártott mennyiség és a lyukminta dönti el.",
     "faqEyebrow": "Gyakori kérdések",
     "faqTitle": "Kérdések a perforáló sorokról",
     "faq": [

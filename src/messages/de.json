@@ -365,6 +365,78 @@
       "Aufwickler oder Querteilschere",
       "Stapler (bei Tafelausgabe)"
     ],
+    "stepsTitle": "So arbeitet eine Perforieranlage",
+    "steps": [
+      {
+        "title": "Abwickeln",
+        "text": "Die Haspel trägt das Coil und führt das Band mit kontrolliertem Zug in die Anlage; je nach Coilgewicht hydraulisch oder mechanisch."
+      },
+      {
+        "title": "Richten",
+        "text": "Richtwalzen nehmen die Coilkrümmung heraus. Ebenes Band ist Voraussetzung dafür, dass die Lochreihen über die Tafel in einer Flucht bleiben."
+      },
+      {
+        "title": "Servovorschub",
+        "text": "Der Servovorschub bewegt das Band bei jedem Pressenhub um die Teilung des Lochbilds. Wiederholung und Reihenabstand werden durch diesen Schritt bestimmt."
+      },
+      {
+        "title": "Perforieren",
+        "text": "Ein Mehrfachstempel-Werkzeug stanzt pro Hub eine oder mehrere Lochreihen. Der Schneidspalt wird nach Blechdicke und Werkstoff eingestellt."
+      },
+      {
+        "title": "Auslauf",
+        "text": "Das gelochte Band wird wieder aufgewickelt oder an der Schere auf Länge geschnitten und als Tafeln gestapelt."
+      }
+    ],
+    "patternsTitle": "Lochbilder und freier Querschnitt",
+    "patternsIntro": "Drei Dinge bestimmen ein Lochblech: Lochform, Lochabstand und Anordnung. Zusammen ergeben sie den freien Querschnitt – den Anteil der Löcher an der Gesamtfläche.",
+    "patterns": [
+      {
+        "title": "Rundlochung",
+        "text": "Das häufigste Lochbild, für Akustikpaneele, Filter und Lüftungselemente; die Stempel sind einfach und langlebig."
+      },
+      {
+        "title": "Quadratlochung",
+        "text": "Ergibt bei gleichem Abstand mehr freien Querschnitt als Rundlochung. Üblich bei Schutzgittern, Rosten und dekorativen Flächen."
+      },
+      {
+        "title": "Langlochung",
+        "text": "Für Lüftung, Siebe und Kabelrinnen. Ob die lange Seite längs oder quer zum Band liegt, beeinflusst die Festigkeit."
+      },
+      {
+        "title": "Dekorlochung",
+        "text": "Formlöcher und verlaufende Lochbilder für Fassaden und Innenausbau. Das Werkzeug wird für das jeweilige Lochbild konstruiert."
+      }
+    ],
+    "openArea": "Je dichter die Löcher, desto größer der freie Querschnitt und desto leichter das Blech – aber desto geringer die Festigkeit. Eine versetzte Anordnung ergibt bei gleichem freiem Querschnitt eine ausgewogenere Festigkeit als gerade Reihen und ist deshalb am weitesten verbreitet. Nennen Sie uns den angestrebten freien Querschnitt und den Einsatzort, dann schlagen wir Lochbild und Werkzeug vor.",
+    "usesTitle": "Wo Lochblech eingesetzt wird",
+    "uses": [
+      {
+        "title": "Akustikpaneele und Lärmschutzwände",
+        "text": "Die gelochte Oberfläche lässt den Schall zum Dämmstoff dahinter durch; Frontplatte von Lärmschutzwänden an Straßen und Anlagen."
+      },
+      {
+        "title": "Lüftungs- und Filterelemente",
+        "text": "Gehäuse, Gitter und Filterkartuschen, durch die Luft oder Flüssigkeit strömen soll."
+      },
+      {
+        "title": "Fassaden- und Deckenverkleidungen",
+        "text": "Architektonische Fassadenpaneele und abgehängte Decken, die Tageslicht und Sicht steuern."
+      },
+      {
+        "title": "Gelochte Kabelrinnen",
+        "text": "Lüftungs- und Befestigungslöcher in Kabelrinnen; sie können auch direkt in der Rinnenanlage gestanzt werden."
+      },
+      {
+        "title": "Regal- und Lagersysteme",
+        "text": "Anschlusslöcher in Regalstützen und Fachböden."
+      },
+      {
+        "title": "Siebe und Maschinenteile",
+        "text": "Siebe, Trocknungs- und Trennflächen in Land- und Lebensmittelmaschinen."
+      }
+    ],
+    "usesNote": "Bei Profilen wie Kabelrinnen können die Löcher auch in der Rollformanlage selbst gestanzt werden; eine eigene Perforieranlage ist dann nicht nötig. Welcher Weg passt, entscheiden Stückzahl und Lochbild.",
     "faqEyebrow": "Häufige Fragen",
     "faqTitle": "Fragen zu Perforieranlagen",
     "faq": [
