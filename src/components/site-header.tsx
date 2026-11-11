@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, ChevronDown, Cog, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, ChevronDown, Cog, Menu, Phone, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { SocialIcons } from "@/components/social-icons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -71,25 +71,33 @@ const OGE =
   "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-2 text-sm font-medium text-ink transition-colors hover:bg-surface-alt xl:px-3";
 
 /**
- * Masaüstü menünün göründüğü genişlik. Menü yalnız 1280 px ve üstünde
- * açılıyordu; küçük dizüstülerde (pencere daraltılmış ya da ekran ölçekli,
- * 1100–1279 px) yalnız hamburger görünüyordu (Yasin, 28 Eki 2026).
- * Ölçülen en küçük genişlik (logo + 7 öğe + sağ düğmeler, daraltılmış
- * boşlukla): ar 998, tr 1034, hu 1054, pl 1077, en 1107, it 1126, es 1152,
- * de 1162 px. Eşikler bunun 15-45 px üstünde. Rusça "Производственные линии"
- * ile 1280'de 63 px taşıyordu; menü etiketi "Линии" oldu (panel başlıkları
- * zaten "Линии профилирования…"). Etiket değişirse yeniden ölç. Sınıflar tam
- * yazılı — Tailwind kaynağı tarar.
+ * Masaüstü menünün göründüğü genişlik. Altında hamburger açılır.
+ *
+ * 2026-11-11 (Yasin): menü sekiz öğe — Makineler, Pres Besleme Sistemleri,
+ * Roll Form Hatları, Üretim Hatları, Sektörler, Hakkımızda (+ Fuarlar),
+ * İletişim, Akademi. Çubuk 1280 px'le sınırlıyken Türkçe bile sığmıyordu;
+ * çubuk 1536 px'ten itibaren 1440 px'e kadar genişler, menü yazısı 1536
+ * altında 13 px. Her dil 1100–1920 px arasında 10 px adımla tarandı, en az
+ * 8 px pay kalan ilk genişlik: ar 1150, hu 1190, tr 1200, pl 1220, ru 1240,
+ * en 1250, it 1310, de ve es 1540. Eşikler bunun ~10 px üstünde. Almanca ve
+ * İspanyolca etiketler uzun; 1536 altındaki dizüstülerde hamburger görürler.
+ * Etiket değişirse yeniden ölç (scratchpad'deki tarama betiği: viewport'u
+ * 1100'den 1920'ye kaydırıp çubuktaki boşluğu ölçer). Sınıflar tam yazılı —
+ * Tailwind kaynağı tarar.
  */
 const MASAUSTU: Record<string, { goster: string; gizle: string }> = {
-  ru: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
-  de: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
-  es: { goster: "min-[1180px]:flex", gizle: "min-[1180px]:hidden" },
-  en: { goster: "min-[1150px]:flex", gizle: "min-[1150px]:hidden" },
-  it: { goster: "min-[1150px]:flex", gizle: "min-[1150px]:hidden" },
+  ar: { goster: "min-[1160px]:flex", gizle: "min-[1160px]:hidden" },
+  hu: { goster: "min-[1200px]:flex", gizle: "min-[1200px]:hidden" },
+  tr: { goster: "min-[1210px]:flex", gizle: "min-[1210px]:hidden" },
+  pl: { goster: "min-[1230px]:flex", gizle: "min-[1230px]:hidden" },
+  ru: { goster: "min-[1250px]:flex", gizle: "min-[1250px]:hidden" },
+  en: { goster: "min-[1260px]:flex", gizle: "min-[1260px]:hidden" },
+  it: { goster: "min-[1320px]:flex", gizle: "min-[1320px]:hidden" },
+  de: { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" },
+  es: { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" },
 };
 function masaustuSiniflari(locale: string) {
-  return MASAUSTU[locale] ?? { goster: "min-[1100px]:flex", gizle: "min-[1100px]:hidden" };
+  return MASAUSTU[locale] ?? { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" };
 }
 
 /* Etkin sayfanın altın alt çizgisi */
@@ -289,20 +297,21 @@ function MakinePaneli({
 }
 
 /**
- * "Üretim Hatları" — roll form hatları, rulo işleme (dilme, boy kesme) ve
- * özel profil kartı. Panel çubuğun tamamı genişliğinde açılır.
+ * "Roll Form Hatları" — roll form hatları ve özel profil kartı. Panel
+ * çubuğun tamamı genişliğinde açılır.
  *
  * 2026-09-17'de dört ayrı menü öğesi tek "Ürünler" panelinde toplanmıştı:
  * menü sekiz öğeye çıkınca yazı 12 px'e inmiş, teklif tuşuna yer kalmamıştı.
- * 2026-10-28'de makineler kendi menüsüne çıktı ve "Ürünler" bu paneli oldu;
- * menü yedi öğe. Bağlantıların hepsi HTML'de — panel CSS ile gizleniyor —
- * arama motorunun gördüğü site içi bağlantılar azalmadı.
+ * 2026-10-28'de makineler kendi menüsüne çıktı ve "Ürünler" bu paneli oldu.
+ * 2026-11-11 (Yasin): menü adı "Üretim Hatları" → "Roll Form Hatları";
+ * rulo sac işleme, dilme ve boy kesme ayrı "Çözümler" menüsüne taşındı.
+ * Bağlantıların hepsi HTML'de — panel CSS ile gizleniyor — arama motorunun
+ * gördüğü site içi bağlantılar azalmadı.
  */
 function HatPaneli({
   label,
   active,
   roll,
-  hatlar,
   rollBaslik,
   seeAll,
   featured,
@@ -310,7 +319,6 @@ function HatPaneli({
   label: string;
   active: boolean;
   roll: MegaItem[];
-  hatlar: MegaItem[];
   rollBaslik: string;
   seeAll: string;
   featured: Featured;
@@ -323,21 +331,15 @@ function HatPaneli({
     <div className="group/mm flex h-full items-center" {...grupProps}>
       <Tetik label={label} active={active} kapali={kapali} />
       <div className={`absolute inset-x-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
-        <div className="grid grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_240px] gap-2 rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
+        <div className="grid grid-cols-[minmax(0,1fr)_240px] gap-2 rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
           <div>
             <PanelBaslik>{rollBaslik}</PanelBaslik>
-            <div className="grid grid-cols-2 gap-0.5">
+            <div className="grid grid-cols-3 gap-0.5">
               {roll.map((item) => (
                 <MegaItemCard key={item.href} item={item} />
               ))}
             </div>
             <SeeAll href="/roll-form-hatlari" label={seeAll} />
-          </div>
-
-          <div className="border-s border-line ps-2">
-            {hatlar.map((item) => (
-              <MegaItemCard key={item.href} item={item} />
-            ))}
           </div>
 
           <div className="relative flex flex-col justify-between overflow-hidden rounded-xl bg-gradient-to-br from-accent to-accent-strong p-5 text-zinc-950">
@@ -370,23 +372,26 @@ function KucukPanel({
   items,
   seeAll,
   active,
+  dar = false,
 }: {
   label: string;
-  hubHref: string;
+  hubHref?: string;
   items: MegaItem[];
-  seeAll: string;
+  seeAll?: string;
   active: boolean;
+  /** Kısa listeler (Hakkımızda + Fuarlar) için dar panel */
+  dar?: boolean;
 }) {
   const { kapali, grupProps } = usePanelKapat();
   return (
     <div className="group/mm relative flex h-full items-center" {...grupProps}>
       <Tetik label={label} active={active} kapali={kapali} />
       <div className={`absolute start-0 top-full pt-2 ${kapali ? PANEL_GIZLI : PANEL}`}>
-        <div className="w-[420px] rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5">
+        <div className={`${dar ? "w-64" : "w-[420px]"} rounded-2xl border border-line bg-card p-2.5 shadow-2xl shadow-black/20 ring-1 ring-black/5`}>
           {items.map((item) => (
             <MegaItemCard key={item.href} item={item} />
           ))}
-          <SeeAll href={hubHref} label={seeAll} />
+          {hubHref && seeAll ? <SeeAll href={hubHref} label={seeAll} /> : null}
         </div>
       </div>
     </div>
@@ -468,6 +473,19 @@ export function SiteHeader() {
     desc: tMach(`${i.slug}.short`),
     img: pageImageOf(i.slug),
   }));
+  /* Hakkımızda + Fuarlar tek menüde (Yasin, 11 Kas: "birleştir, yukarıda alan açılsın") */
+  const kurumsalMega: MegaItem[] = [
+    {
+      label: t("about"),
+      href: "/hakkimizda",
+      node: <Building2 className="size-5 text-muted transition-colors group-hover/i:text-accent" strokeWidth={1.6} aria-hidden />,
+    },
+    {
+      label: tFair("title"),
+      href: "/fuarlar",
+      node: <CalendarDays className="size-5 text-muted transition-colors group-hover/i:text-accent" strokeWidth={1.6} aria-hidden />,
+    },
+  ];
   /* Uygulama sektörleri — alıcı makineyi değil kendi sektörünü arıyor,
      o yüzden menüde ürünlerle aynı seviyede duruyor (bkz. lib/sectors.ts). */
   const sectorMega: MegaItem[] = sectors.map((s) => ({
@@ -476,11 +494,9 @@ export function SiteHeader() {
     desc: tSec(`items.${s.slug}.short`),
   }));
 
-  const hatlarAktif =
-    isActive("/roll-form-hatlari") ||
-    isActive("/rulo-isleme-hatlari") ||
-    isActive("/dilme-hatlari") ||
-    isActive("/boy-kesme-hatlari");
+  const hatlarAktif = isActive("/roll-form-hatlari");
+  const cozumAktif =
+    isActive("/rulo-isleme-hatlari") || isActive("/dilme-hatlari") || isActive("/boy-kesme-hatlari");
 
   const mobilSatir = "block rounded-lg px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt";
   const mobilAlt = "block rounded-lg px-3 py-2 text-sm text-ink hover:bg-surface-alt";
@@ -537,7 +553,6 @@ export function SiteHeader() {
             label={t("lines")}
             active={hatlarAktif}
             roll={rollFormMega}
-            hatlar={hatMega}
             rollBaslik={t("rollform")}
             seeAll={t("seeAll")}
             featured={{
@@ -547,6 +562,14 @@ export function SiteHeader() {
               href: "/teklif-al",
             }}
           />
+          {/* "Üretim Hatları": rulo sac işleme, dilme, boy kesme (Yasin, 11 Kas) */}
+          <KucukPanel
+            label={t("solutions")}
+            hubHref="/rulo-isleme-hatlari"
+            items={hatMega}
+            seeAll={t("seeAll")}
+            active={cozumAktif}
+          />
           <KucukPanel
             label={t("sectors")}
             hubHref="/uygulamalar"
@@ -554,8 +577,12 @@ export function SiteHeader() {
             seeAll={t("seeAll")}
             active={isActive("/uygulamalar")}
           />
-          <NavLink href="/fuarlar" label={tFair("title")} active={isActive("/fuarlar")} />
-          <NavLink href="/hakkimizda" label={t("about")} active={isActive("/hakkimizda")} />
+          <KucukPanel
+            label={t("about")}
+            items={kurumsalMega}
+            active={isActive("/hakkimizda") || isActive("/fuarlar")}
+            dar
+          />
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} />
           {/* Akademi en sonda (Yasin, 28 Eki) */}
           <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} />
@@ -651,21 +678,29 @@ export function SiteHeader() {
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
               </summary>
               <ul className="mb-2 ms-3 border-s border-line ps-3">
-                {hatMega.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} onClick={kapat} className={`${mobilAlt} font-medium`}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
                 <li>
-                  <Link href="/roll-form-hatlari" onClick={kapat} className={`${mobilAlt} mt-1 font-medium`}>
+                  <Link href="/roll-form-hatlari" onClick={kapat} className={`${mobilAlt} font-medium`}>
                     {t("rollform")}
                   </Link>
                 </li>
                 {rollFormMega.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} onClick={kapat} className={`${mobilAlt} ps-6`}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
+            <details className="group/d">
+              <summary className={ozet}>
+                {t("solutions")}
+                <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
+              </summary>
+              <ul className="mb-2 ms-3 border-s border-line ps-3">
+                {hatMega.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={kapat} className={`${mobilAlt} font-medium`}>
                       {item.label}
                     </Link>
                   </li>
@@ -687,12 +722,21 @@ export function SiteHeader() {
                 ))}
               </ul>
             </details>
-            <Link href="/fuarlar" onClick={kapat} className={mobilSatir}>
-              {tFair("title")}
-            </Link>
-            <Link href="/hakkimizda" onClick={kapat} className={mobilSatir}>
-              {t("about")}
-            </Link>
+            <details className="group/d">
+              <summary className={ozet}>
+                {t("about")}
+                <ChevronDown className="size-3.5 transition-transform duration-200 group-open/d:rotate-180" strokeWidth={1.8} aria-hidden />
+              </summary>
+              <ul className="mb-2 ms-3 border-s border-line ps-3">
+                {kurumsalMega.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} onClick={kapat} className={mobilAlt}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </details>
             <Link href="/iletisim" onClick={kapat} className={mobilSatir}>
               {t("contact")}
             </Link>

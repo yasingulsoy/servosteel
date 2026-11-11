@@ -9,10 +9,11 @@
   },
   "nav": {
     "rollform": "Roll Form Hatları",
-    "slitting": "Dilme Hatları",
-    "ctl": "Boy Kesme Hatları",
+    "slitting": "Rulo Sac Dilme Hatları",
+    "ctl": "Rulo Sac Boy Kesme Hatları",
     "machines": "Makineler",
     "lines": "Roll Form Hatları",
+    "solutions": "Üretim Hatları",
     "sectors": "Sektörler",
     "about": "Hakkımızda",
     "contact": "İletişim",
@@ -84,11 +85,11 @@
       },
       "slitting": {
         "title": "Rulo Sac Dilme Hatları",
-        "desc": "Geniş ruloyu istenen ölçüde şeritlere dilen hafif ve ağır seri hatlar: 1.500–15.000 kg kapasite, 0,5–5 mm kalınlık aralığı."
+        "desc": "Geniş rulo sacı istenen ölçüde şeritlere dilen hafif ve ağır seri hatlar: 1.500–15.000 kg kapasite, 0,5–5 mm kalınlık aralığı."
       },
       "ctl": {
         "title": "Rulo Sac Boy Kesme Hatları",
-        "desc": "Rulodan plakaya hassas kesim: doğrultma, servo besleme ve giyotin tek noktadan PLC ile kontrol edilen komple çözüm."
+        "desc": "Rulo sacdan plakaya hassas kesim: doğrultma, servo besleme ve giyotin tek noktadan PLC ile kontrol edilen komple çözüm."
       }
     },
     "rollformEyebrow": "Roll form hatları",
@@ -270,7 +271,7 @@
     "ctaText": "Rulo ağırlığı, sac kalınlığı ve şerit ölçülerinizi iletin; size uygun seriyi ve hat yerleşimini birlikte netleştirelim."
   },
   "ruloIsleme": {
-    "nav": "Rulo İşleme Hatları",
+    "nav": "Rulo Sac İşleme Hatları",
     "short": "Dilme, boy kesme ve roll form hatlarının tamamı tek sayfada.",
     "metaTitle": "Rulo İşleme Hatları: Rulodan Şeride, Levhaya ve Profile",
     "metaDesc": "Rulodan şeride, levhaya ya da profile: dilme, boy kesme ve roll form hatları; açıcı, doğrultucu, servo besleyici ve istifleyiciyle birlikte İstanbul'da üretilir.",
