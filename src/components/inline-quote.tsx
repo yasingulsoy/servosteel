@@ -22,8 +22,10 @@ import { CONTACT } from "@/lib/site";
  * `name` verilirse başlık "{ürün} için teklif alın" olur ve ürün adı talebe
  * gizli alan olarak eklenir. Yeni çeviri anahtarı yok: `detail.quoteTitle`,
  * `home.quick*` ve `quote.form.*` dokuz dilde zaten var.
+ *
+ * `prefill`: sayfadaki araç (hesaplayıcılar) formu ölçülerle doldurabilir.
  */
-export function InlineQuote({ name }: { name?: string }) {
+export function InlineQuote({ name, prefill }: { name?: string; prefill?: boolean }) {
   const t = useTranslations("quote.form");
   const td = useTranslations("detail");
   const th = useTranslations("home");
@@ -42,7 +44,7 @@ export function InlineQuote({ name }: { name?: string }) {
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">{th("quickText")}</p>
 
           <div className="mt-6">
-            <QuickQuoteForm product={name} />
+            <QuickQuoteForm product={name} prefill={prefill} />
           </div>
 
           {/* Telefon formun altında ama duruyor: iletişim tuşu ölçümünde

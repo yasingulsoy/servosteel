@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Mühendislik"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["rulo hesabı", "sac işleme", "hat seçimi"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "Rulo ağırlığı halka alanı × genişlik × yoğunlukla bulunur: Ağırlık (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000; çaplar ve genişlik mm, yoğunluk g/cm³ cinsindendir. Şerit uzunluğu ise halka alanının sac kalınlığına bölünmesidir. Örneğin 1.400 mm dış çap, 508 mm göbek, 1.250 mm genişlik ve 2 mm kalınlıktaki çelik rulo yaklaşık 13,1 ton ve 668 metredir."
 faq:
   - q: "Rulo ağırlığı formülündeki 1.000.000 neden var?"
@@ -83,7 +83,7 @@ A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
-Yani yaklaşık **13,1 ton**. Bu rulo için 15 tonluk bir açıcı gerekir; 12 tonluk seri yetmez.
+Yani yaklaşık **13,1 ton**. Bu rulo sac için 15 tonluk bir [hidrolik açıcı](/makineler/rulo-acicilar/hidrolik-rulo-acicilar) gerekir; 10 tonluk sınıf yetmez.
 
 **3. Şerit uzunluğu**
 
@@ -125,6 +125,16 @@ L (m) = Ağırlık (kg) / (W (m) × t (m) × ρ (kg/m³))
 ```
 
 Aynı sonuç — hesabın tutarlı olduğunun kanıtı. İki yoldan da aynı sayıya varmak, girdilerinizi doğrulamanın en pratik yoludur.
+
+## Ağırlıktan dış çapa: rulo sac açıcıya sığar mı?
+
+Sertifikada çoğu zaman ağırlık, genişlik ve kalınlık yazar; dış çap yazmaz. Oysa açıcıyı sınırlayan ölçülerden biri dış çaptır. Ağırlık formülünü dış çap için çözmek yeterlidir:
+
+```
+OD = √(ID² + 4 × Ağırlık × 1.000.000 / (π × W × ρ))
+```
+
+10 ton, 1.500 mm genişlik ve 610 mm göbekli bir çelik rulo sac için OD ≈ 1.206 mm çıkar; dış çap sınırı 1.600 mm olan bir açıcıya rahatça sığar. [Hesaplayıcı](/hesaplayicilar) bunu "Ağırlıktan" seçeneğiyle yapar; dilme sonrası şerit ağırlıklarını ve rulo saca uygun açıcı sınıfını da gösterir.
 
 ## Özet
 

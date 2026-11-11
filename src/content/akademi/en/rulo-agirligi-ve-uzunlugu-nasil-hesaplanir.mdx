@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["coil calculation", "sheet processing", "line selection"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "Coil weight is annulus area × width × density: Weight (kg) = π/4 × (OD² − ID²) × W × ρ / 1,000,000, with diameters and width in mm and density in g/cm³. Strip length is the annulus area divided by sheet thickness. For example, a steel coil with 1,400 mm OD, 508 mm core, 1,250 mm width and 2 mm thickness weighs about 13.1 tonnes and holds about 668 m of strip."
 faq:
   - q: "Why does the coil weight formula divide by 1,000,000?"
@@ -83,7 +83,7 @@ A = π/4 × 1,701,936 ≈ 1,336,697 mm²
 1,336,697 × 1,250 × 7.85 / 1,000,000 ≈ 13,116 kg
 ```
 
-About **13.1 tonnes**. This coil calls for a 15-tonne decoiler; the 12-tonne series will not do.
+About **13.1 tonnes**. This coil calls for a 15-tonne [hydraulic decoiler](/makineler/rulo-acicilar/hidrolik-rulo-acicilar); the 10-tonne class will not do.
 
 **3. Strip length**
 
@@ -125,6 +125,16 @@ For steel, ρ = 7,850 kg/m³. Let us test it against the example above:
 ```
 
 The same answer — proof that the calculation is consistent. Arriving at the same number by two routes is the most practical way to validate your inputs.
+
+## From weight to outer diameter: will the coil fit the decoiler?
+
+Mill certificates usually state weight, width and thickness but not the outer diameter, and the outer diameter is one of the limits of a decoiler. Solving the weight formula for OD is enough:
+
+```
+OD = √(ID² + 4 × Weight × 1,000,000 / (π × W × ρ))
+```
+
+A 10-tonne steel coil, 1,500 mm wide on a 610 mm core, gives OD ≈ 1,206 mm, comfortably inside a decoiler with a 1,600 mm OD limit. The [calculator](/hesaplayicilar) does this with its "From weight" option and also shows the weight of each slit strip and the matching decoiler class.
 
 ## Summary
 

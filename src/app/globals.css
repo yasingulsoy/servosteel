@@ -688,3 +688,23 @@ body {
     animation-delay: 0s !important;
   }
 }
+
+/* Rulo sac hesap raporu (coil-calculator.tsx > Rapor). Ekranda hiç görünmez;
+   "Yazdır / PDF" tuşu <html>'e rulo-yazdir sınıfını ekleyip yazdırınca
+   sayfanın geri kalanı gizlenir, yalnızca rapor basılır. Sınıf yokken
+   (tarayıcının kendi Ctrl+P'si) sayfa her zamanki gibi basılır. */
+#rulo-rapor {
+  display: none;
+}
+@media print {
+  html.rulo-yazdir body > :not(#rulo-rapor) {
+    display: none !important;
+  }
+  html.rulo-yazdir,
+  html.rulo-yazdir body {
+    background: #fff !important;
+  }
+  html.rulo-yazdir #rulo-rapor {
+    display: block;
+  }
+}

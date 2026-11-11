@@ -49,8 +49,9 @@ export default async function HesaplayicilarPage({ params }: Props) {
 
         {/* Hesaplayıcı sitenin en çok gösterim alan sayfası, formu yoktu; hesabı
             yapan kişi sıradaki adımı (teklif) sayfadan çıkmadan atabilsin.
-            Gerekçe: inline-quote.tsx ve calculators.tsx > Related. */}
-        <InlineQuote />
+            Gerekçe: inline-quote.tsx ve calculators.tsx > Related.
+            `prefill`: rulo sac aracındaki "teklif iste" tuşu ölçüleri buraya yazar. */}
+        <InlineQuote prefill />
       </section>
 
       {/* Formul, cozumlu ornek, yogunluk tablosu: aramanin cevabi HTML'de hazir (bkz. calculator-guide.tsx) */}

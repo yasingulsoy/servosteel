@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["Coilberechnung", "Bandverarbeitung", "Anlagenauswahl"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "Das Coilgewicht ist Ringfläche × Breite × Dichte: Gewicht (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, mit OD, ID und W in Millimetern und ρ in g/cm³. Die Bandlänge ist die Ringfläche geteilt durch die Blechdicke. Ein Stahlcoil mit 1.400 mm Außendurchmesser, 508 mm Kern, 1.250 mm Breite und 2 mm Dicke wiegt rund 13,1 Tonnen und enthält etwa 668 m Band."
 faq:
   - q: "Warum wird in der Gewichtsformel durch 1.000.000 geteilt?"
@@ -83,7 +83,7 @@ A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
-Rund **13,1 Tonnen**. Dieses Coil verlangt eine 15-Tonnen-Haspel; die 12-Tonnen-Baureihe reicht nicht.
+Rund **13,1 Tonnen**. Dieses Coil verlangt eine [hydraulische Haspel](/makineler/rulo-acicilar/hidrolik-rulo-acicilar) mit 15 Tonnen; die 10-Tonnen-Klasse reicht nicht.
 
 **3. Bandlänge**
 
@@ -125,6 +125,16 @@ Für Stahl gilt ρ = 7.850 kg/m³. Prüfen wir es am Beispiel oben:
 ```
 
 Dasselbe Ergebnis — der Beweis, dass die Rechnung konsistent ist. Auf zwei Wegen zur selben Zahl zu kommen, ist die praktischste Art, die Eingaben zu prüfen.
+
+## Vom Gewicht zum Außendurchmesser: passt das Coil auf die Haspel?
+
+Im Werkszeugnis stehen meist Gewicht, Breite und Dicke, nicht aber der Außendurchmesser – und gerade der begrenzt die Haspel. Es genügt, die Gewichtsformel nach OD aufzulösen:
+
+```
+OD = √(ID² + 4 × Gewicht × 1.000.000 / (π × W × ρ))
+```
+
+Ein Stahlcoil mit 10 Tonnen, 1.500 mm Breite und 610 mm Innendurchmesser ergibt OD ≈ 1.206 mm und passt bequem auf eine Haspel mit 1.600 mm Außendurchmesser-Grenze. Der [Rechner](/hesaplayicilar) erledigt das über die Option „Aus Gewicht“ und zeigt zusätzlich das Gewicht jedes Spaltbands und die passende Haspelklasse.
 
 ## Zusammenfassung
 
