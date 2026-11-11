@@ -17,12 +17,6 @@ import { getAkademiUi } from "@/lib/akademi-ui";
 import { CONTACT } from "@/lib/site";
 
 type MegaItem = { label: string; href: string; desc?: string; icon?: string; node?: React.ReactNode; img?: string };
-
-/**
- * Çubuğun alt kenarında ince altın okuma çizgisi — sayfanın ne kadarının
- * kaydırıldığını gösterir. rAF ile kısılır; state değil doğrudan transform
- * yazılır, yani kaydırma sırasında React yeniden çizim yapmaz.
- */
 function ScrollProgress() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -66,33 +60,34 @@ function useIsActive() {
 }
 
 /* Menü öğesinin yazı/zemin sınıfı — çubuk her yerde beyaz, yazı koyu.
-   1280 px altında yazı 13 px, yan boşluk 6 px; üstünde 14 px / 8 px — sekiz öğe küçük
+   1440 px altında yazı 13 px, yan boşluk 6 px; üstünde 14 px / 8 px — sekiz öğe küçük
    dizüstülerde de sığsın diye (bkz. MASAUSTU). */
 const OGE =
-  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-1.5 text-[13px] font-medium text-ink transition-colors hover:bg-surface-alt xl:px-2 xl:text-sm";
+  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-1.5 text-[13px] font-medium text-ink transition-colors hover:bg-surface-alt min-[1440px]:px-2 min-[1440px]:text-sm";
 
 /**
  * Masaüstü menünün göründüğü genişlik. Altında hamburger açılır.
  *
  * 2026-11-11 (Yasin): menü sekiz öğe — Makineler, Roll Form Hatları,
  * Üretim Hatları, Sektörler, Hakkımızda (+ Fuarlar), İletişim, Hesaplama
- * Aracı, Akademi. Sığması için menü öğelerinin ve dil düğmesinin 1280 px'te
- * büyüyen iç boşluğu kaldırıldı (xl:px-3 öğe başına 8 px, toplam ~70 px)
- * ve çubuk 1536 px'ten itibaren 88rem'e kadar açılır. Her dil 10 px adımla
- * tarandı; en az 8 px pay kalan ilk genişlik: ar 1100, hu 1120, tr 1180,
- * en ve pl 1190, de ve ru 1240, it 1270, es 1300. Eşikler bunun ~15 px
- * üstünde. Etiket değişirse yeniden ölç (scratchpad'deki tarama betiği:
- * viewport'u kaydırıp çubuktaki boş alanı ölçer). Sınıflar tam yazılı —
- * Tailwind kaynağı tarar.
+ * Aracı, Akademi. Sığması için: çubuk 1280 px'ten itibaren 88rem'e kadar
+ * açılır; menü yazısı 1440 px altında 13 px / yan boşluk 6 px (bkz. OGE);
+ * dil düğmesi her genişlikte dar. Her dil 1100–1920 px arasında tarandı
+ * (dil seçici dahil, yalnız hamburger hariç), en az 8 px pay kalan ilk
+ * genişlik: ar 1110, hu 1140, tr 1190, en ve pl 1200, de ve ru 1250,
+ * it 1270, es 1300. Eşikler bunun ~15 px üstünde. ÖNCEKİ tarama dil
+ * düğmesini yanlışlıkla gizliyordu (aria-expanded seçicisi), ~60 px eksik
+ * ölçmüştü. Etiket değişirse yeniden ölç. Sınıflar tam yazılı — Tailwind
+ * kaynağı tarar.
  */
 const MASAUSTU: Record<string, { goster: string; gizle: string }> = {
-  ar: { goster: "min-[1115px]:flex", gizle: "min-[1115px]:hidden" },
-  hu: { goster: "min-[1135px]:flex", gizle: "min-[1135px]:hidden" },
-  tr: { goster: "min-[1195px]:flex", gizle: "min-[1195px]:hidden" },
-  en: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
-  pl: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
-  de: { goster: "min-[1255px]:flex", gizle: "min-[1255px]:hidden" },
-  ru: { goster: "min-[1255px]:flex", gizle: "min-[1255px]:hidden" },
+  ar: { goster: "min-[1125px]:flex", gizle: "min-[1125px]:hidden" },
+  hu: { goster: "min-[1155px]:flex", gizle: "min-[1155px]:hidden" },
+  tr: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
+  en: { goster: "min-[1215px]:flex", gizle: "min-[1215px]:hidden" },
+  pl: { goster: "min-[1215px]:flex", gizle: "min-[1215px]:hidden" },
+  de: { goster: "min-[1265px]:flex", gizle: "min-[1265px]:hidden" },
+  ru: { goster: "min-[1265px]:flex", gizle: "min-[1265px]:hidden" },
   it: { goster: "min-[1285px]:flex", gizle: "min-[1285px]:hidden" },
   es: { goster: "min-[1315px]:flex", gizle: "min-[1315px]:hidden" },
 };
