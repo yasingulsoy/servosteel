@@ -72,6 +72,8 @@ export default async function VariantPage({ params }: Props) {
   const hasTable = t.has("table");
   const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
   const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
+  const genisTablo = tableHead.length > 5;
+  const hucre = genisTablo ? "px-3 py-3 whitespace-nowrap" : "px-5 py-3.5";
   /* Kardeş varyantlar — aynı makinenin diğer tipleri */
   const kardesler = variantsOf(slug).filter((v) => v.slug !== varyant);
   /* Bu varyantı A ya da B sütununda anan karşılaştırma yazısı */
@@ -161,12 +163,14 @@ export default async function VariantPage({ params }: Props) {
                 <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
                   {t("table.title")}
                 </h2>
+                {/* Geniş tablo (hidrolik açıcı: 9 sütun, Yasin 11 Kas): hücreler sıkışır,
+                    satırlar kırılmaz; sığmazsa tablo kendi kutusunda yatay kayar. */}
                 <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
-                  <table className="w-full min-w-[420px] text-left text-sm">
+                  <table className={`w-full text-left ${genisTablo ? "min-w-[760px] text-[13px]" : "min-w-[420px] text-sm"}`}>
                     <thead className="bg-surface-alt">
                       <tr>
                         {tableHead.map((h) => (
-                          <th key={h} className="px-5 py-3.5 font-semibold text-ink">{h}</th>
+                          <th key={h} className={`${genisTablo ? "px-3 py-3 align-bottom leading-snug" : "px-5 py-3.5"} font-semibold text-ink`}>{h}</th>
                         ))}
                       </tr>
                     </thead>
@@ -176,7 +180,7 @@ export default async function VariantPage({ params }: Props) {
                           {row.map((cell, ci) => (
                             <td
                               key={ci}
-                              className={`px-5 py-3.5 ${ci === 0 ? "font-medium text-ink" : "text-muted"}`}
+                              className={`${hucre} ${ci === 0 ? "font-medium text-ink" : "text-muted"}`}
                             >
                               {cell}
                             </td>

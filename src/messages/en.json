@@ -839,7 +839,7 @@
         "rows": [
           {
             "label": "Capacity range",
-            "a": "6 – 20 tonnes",
+            "a": "4 – 15 tonnes",
             "b": "500 – 4,000 kg"
           },
           {
@@ -1170,48 +1170,163 @@
             "Servosteel hydraulic decoiler with coil car, unwinding steel strip",
             "Servosteel hydraulic decoiler and coil car, close-up"
           ],
-          "metaTitle": "Hydraulic Decoiler — 6,000-20,000 kg",
-          "meta": "Hydraulic decoilers from 6,000 to 20,000 kg: strip width up to 1,600 mm, hydraulic mandrel expansion, laser sensor loop control.",
+          "metaTitle": "Hydraulic Decoiler — 4,000-15,000 kg",
+          "meta": "Hydraulic decoilers from 4,000 to 15,000 kg: strip width up to 1,600 mm, 470–570 mm inner diameter, hydraulic mandrel expansion, laser sensor loop control.",
           "short": "For heavy coils and wide strip; hydraulic mandrel, motor driven.",
-          "hero": "Our hydraulic decoilers carry coils from 6,000 kg to 20,000 kg and run strip widths up to 1,600 mm. Mandrel expansion is hydraulic; a pneumatic hold-down arm and laser sensor loop control come as standard.",
+          "hero": "Our hydraulic decoilers carry coils from 4,000 kg to 15,000 kg and run strip widths up to 1,600 mm. Mandrel expansion is hydraulic; a pneumatic hold-down arm and laser sensor loop control come as standard.",
           "table": {
-            "title": "Capacity and width",
+            "title": "Models and specifications",
             "head": [
-              "Coil weight",
-              "Material width"
+              "Model",
+              "Material width (mm)",
+              "Inner dia. min. (mm)",
+              "Inner dia. max. (mm)",
+              "Outer dia. (mm)",
+              "Capacity",
+              "Inner dia. clamping",
+              "Motor",
+              "Hold-down system"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "4,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "4,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
                 "6,000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1,000 mm"
+                "Hydraulic",
+                "+",
+                "Standard"
               ],
               [
-                "8,000 kg",
-                "80 – 800 / 80 – 1,000 / 80 – 1,200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "6,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1,000",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "6,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
                 "10,000 kg",
-                "80 – 1,000 / 80 – 1,200 / 80 – 1,300 mm"
+                "Hydraulic",
+                "+",
+                "Standard"
               ],
               [
-                "12,000 kg",
-                "80 – 800 / 80 – 1,300 mm"
+                "SRV10000HA/1000",
+                "100 – 1,000",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "10,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1,300",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "10,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1,500",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "10,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1,000",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
                 "15,000 kg",
-                "80 – 1,500 mm"
+                "Hydraulic",
+                "+",
+                "Standard"
               ],
               [
-                "20,000 kg",
-                "80 – 1,600 mm"
+                "SRV15000HA/1300",
+                "120 – 1,300",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "15,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1,600",
+                "470",
+                "570",
+                "Ø 1,400 / 1,600",
+                "15,000 kg",
+                "Hydraulic",
+                "+",
+                "Standard"
               ]
             ]
           },
-          "tableNote": "All models: coil outer diameter 1,600 mm, inner diameter 450–560 mm (640 mm with adapter). Hydraulic mandrel expansion and hold-down arm are standard. Brake-instead-of-motor configurations are available.",
+          "tableNote": "All models: coil inner diameter 470–570 mm, outer diameter Ø 1,400 / 1,600 mm. Hydraulic inner diameter clamping, motor driven, hold-down system standard. Brake-instead-of-motor configurations are available.",
           "features": [
             {
               "title": "Hydraulic mandrel expansion",
-              "text": "A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. On 6–20 t coils no operator effort is needed to clamp."
+              "text": "A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. On 4–15 t coils no operator effort is needed to clamp."
             },
             {
               "title": "Pneumatic hold-down arm",
@@ -1229,19 +1344,19 @@
           "faq": [
             {
               "q": "What is a hydraulic decoiler?",
-              "a": "A machine that carries a heavy coil on a mandrel and unwinds it into the line at a controlled speed. A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. Servosteel's hydraulic series carries coils from 6,000 to 20,000 kg."
+              "a": "A machine that carries a heavy coil on a mandrel and unwinds it into the line at a controlled speed. A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. Servosteel's hydraulic series carries coils from 4,000 to 15,000 kg."
             },
             {
               "q": "What capacity and strip width does a hydraulic decoiler handle?",
-              "a": "Models are 6,000, 8,000, 10,000, 12,000, 15,000 and 20,000 kg. Material width starts at 80 mm on every model and goes up to 1,000 mm on the 6 t, 1,300 mm on the 10 t, 1,500 mm on the 15 t and 1,600 mm on the 20 t model."
+              "a": "Capacities are 4,000, 6,000, 10,000 and 15,000 kg, each with models in several widths. Material width is 70–600 mm at 4 t, 70–1,000 mm at 6 t, 70–1,500 mm at 10 t and 100–1,600 mm at 15 t. Every model is in the table."
             },
             {
               "q": "Which coil diameters does a hydraulic decoiler accept?",
-              "a": "On every hydraulic model the coil outer diameter is up to 1,600 mm and the inner diameter 450–560 mm; coils with a 640 mm inner diameter fit with an adapter."
+              "a": "On every hydraulic model the coil inner diameter is 470–570 mm and the outer diameter Ø 1,400 / 1,600 mm."
             },
             {
               "q": "Should I choose a hydraulic or a mechanical decoiler?",
-              "a": "Coil weight decides. The mechanical series goes up to 4,000 kg; heavier coils, wide strip and frequent coil changes call for a hydraulic decoiler. On heavy lines we recommend it together with a hydraulic coil car."
+              "a": "Coil weight decides. The mechanical series carries 500–4,000 kg, the hydraulic series 4,000–15,000 kg. Above 4 t, on wide strip and with frequent coil changes, choose a hydraulic decoiler; at 4 t both series exist and the hydraulic one takes clamping off the operator. On heavy lines we recommend it together with a hydraulic coil car."
             },
             {
               "q": "What do you need for a hydraulic decoiler quotation?",
@@ -2370,10 +2485,10 @@
         "clips": ["Decoiler with coil car in a compact press feeding line"],
         "types": [{"label":"Hydraulic decoiler","alt":"Servosteel hydraulic decoiler with coil car, unwinding steel strip"},{"label":"Mechanical decoiler","alt":"Servosteel mechanical decoilers lined up in the factory"},{"label":"Double-head decoiler","alt":"Servosteel double-head decoiler with two mandrels, front view"}],
         "galleryAlt": ["Servosteel double-head decoiler, side view"],
-        "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
-        "short": "Hydraulic 6-20 t and mechanical 500-4,000 kg decoiling solutions.",
+        "metaTitle": "Decoilers: Hydraulic 4-15 t, Mechanical 500-4,000 kg",
+        "short": "Hydraulic 4-15 t and mechanical 500-4,000 kg decoiling solutions.",
         "hero": "The first link of every line: hydraulic and mechanical decoiler machines that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",
-        "meta": "Hydraulic (6-20 t) and mechanical (500-4,000 kg) decoilers and uncoilers: custom solutions for press feeding and coil processing lines.",
+        "meta": "Hydraulic (4-15 t) and mechanical (500-4,000 kg) decoilers and uncoilers: custom solutions for press feeding and coil processing lines.",
         "features": [
           {
             "title": "Hydraulic mandrel expansion",
@@ -2392,11 +2507,11 @@
         "faq": [
           {
             "q": "What is the difference between hydraulic and mechanical decoilers?",
-            "a": "The mechanical series carries 500–2500 kg coils on a handwheel-tightened mandrel, with a conical mandrel on the 3000 and 4000 kg models; the hydraulic series reaches 6–20 tons with hydraulic mandrel expansion and braking. For heavy coils and high line speeds, hydraulic is the safe choice."
+            "a": "The mechanical series carries 500–2500 kg coils on a handwheel-tightened mandrel, with a conical mandrel on the 3000 and 4000 kg models; the hydraulic series reaches 4–15 tons with hydraulic mandrel expansion and braking. For heavy coils and high line speeds, hydraulic is the safe choice."
           },
           {
             "q": "What capacity should I choose?",
-            "a": "Leave one step of margin above your heaviest coil: 6 tons for a 5-ton coil, 10 tons for an 8-ton coil. We verify the choice against coil width and inner diameter (450–560 mm) together."
+            "a": "Leave one step of margin above your heaviest coil: 6 tons for a 5-ton coil, 10 tons for an 8-ton coil. We verify the choice against coil width and inner diameter (470–570 mm on the hydraulic series) together."
           },
           {
             "q": "What does bidirectional operation provide?",
@@ -2424,16 +2539,16 @@
           },
           {
             "q": "What determines decoiler prices?",
-            "a": "There is no list price; a decoiler is sized to the coil it will carry. Four things set the price: coil weight (a 500 kg mechanical decoiler and a 20 t hydraulic decoiler are different classes of machine), coil width and inner diameter, whether the mandrel expands mechanically or hydraulically, and the automation level: loading car, brake, bidirectional operation. Send us your coil weight, width and the press or line speed, and we will quote to that capacity."
+            "a": "There is no list price; a decoiler is sized to the coil it will carry. Four things set the price: coil weight (a 500 kg mechanical decoiler and a 15 t hydraulic decoiler are different classes of machine), coil width and inner diameter, whether the mandrel expands mechanically or hydraulically, and the automation level: loading car, brake, bidirectional operation. Send us your coil weight, width and the press or line speed, and we will quote to that capacity."
           }
         ],
         "table": {
           "title": "Technical specifications",
           "head": ["Specification", "Mechanical", "Hydraulic"],
           "rows": [
-            ["Models", "500 · 750 · 1,500 · 2,500 · 3,000 · 4,000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Coil width", "30 – 1,200 mm", "80 – 1,600 mm"],
-            ["Coil inner diameter", "300 – 550 mm", "450 – 560 mm"],
+            ["Models", "500 · 750 · 1,500 · 2,500 · 3,000 · 4,000 kg", "4 · 6 · 10 · 15 t"],
+            ["Coil width", "30 – 1,200 mm", "70 – 1,600 mm"],
+            ["Coil inner diameter", "300 – 550 mm", "470 – 570 mm"],
             ["Coil outer diameter (max.)", "1,600 mm", "1,600 mm"],
             ["Mandrel expansion", "Mechanical", "Hydraulic"],
             ["Control", "Speed control + brake system", "Schneider PLC"]

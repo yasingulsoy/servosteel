@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Kapasite aralığı",
-            "a": "6 – 20 ton",
+            "a": "4 – 15 ton",
             "b": "500 – 4.000 kg"
           },
           {
@@ -1134,48 +1134,163 @@
             "Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken",
             "Servosteel hidrolik rulo açıcı ve rulo arabası, yakından"
           ],
-          "metaTitle": "Hidrolik Rulo Açıcı — 6.000-20.000 kg",
-          "meta": "6.000-20.000 kg kapasiteli hidrolik rulo açıcılar: 1.600 mm'ye kadar sac genişliği, hidrolik mandren sıkma, lazer sensörlü loop kontrol.",
+          "metaTitle": "Hidrolik Rulo Açıcı — 4.000-15.000 kg",
+          "meta": "4.000-15.000 kg kapasiteli hidrolik rulo açıcılar: 1.600 mm'ye kadar sac genişliği, 470–570 mm iç çap, hidrolik mandren sıkma, lazer sensörlü loop kontrol.",
           "short": "Ağır rulolar ve geniş sac için; hidrolik mandren ve motorlu tahrik.",
-          "hero": "Hidrolik rulo açıcılarımız 6.000 kg'dan 20.000 kg'a kadar rulo taşır ve 1.600 mm'ye kadar sac genişliğinde çalışır. Mandren sıkma hidroliktir; pnömatik üst baskı kolu ve lazer sensörlü loop kontrol standart gelir.",
+          "hero": "Hidrolik rulo açıcılarımız 4.000 kg'dan 15.000 kg'a kadar rulo sac taşır ve 1.600 mm'ye kadar sac genişliğinde çalışır. Mandren sıkma hidroliktir; pnömatik üst baskı kolu ve lazer sensörlü loop kontrol standart gelir.",
           "table": {
-            "title": "Kapasite ve genişlik",
+            "title": "Modeller ve teknik değerler",
             "head": [
-              "Rulo ağırlığı",
-              "Malzeme genişliği"
+              "Model",
+              "Malzeme genişliği (mm)",
+              "İç çap min. (mm)",
+              "İç çap maks. (mm)",
+              "Dış çap (mm)",
+              "Kapasite",
+              "İç çap sıkma",
+              "Motor",
+              "Üst baskı sistemi"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Hidrolik",
+                "+",
+                "Standart"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Hidrolik",
+                "+",
+                "Standart"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Hidrolik",
+                "+",
+                "Standart"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidrolik",
+                "+",
+                "Standart"
               ]
             ]
           },
-          "tableNote": "Tüm modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 640 mm). Mandren sıkma hidrolik, üst baskı kolu standart. Motor yerine fren istenen konfigürasyonlar mevcuttur.",
+          "tableNote": "Bütün modellerde rulo sac iç çapı 470–570 mm, dış çapı Ø 1.400 / 1.600 mm. İç çap sıkma hidrolik, açıcı motorlu, üst baskı sistemi standart. Motor yerine fren istenen konfigürasyonlar mevcuttur.",
           "features": [
             {
               "title": "Hidrolik mandren genişletme",
-              "text": "Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. 6–20 tonluk rulo sacta sıkma için operatör gücüne ihtiyaç kalmaz."
+              "text": "Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. 4–15 tonluk rulo sacta sıkma için operatör gücüne ihtiyaç kalmaz."
             },
             {
               "title": "Pnömatik üst baskı kolu",
@@ -1193,19 +1308,19 @@
           "faq": [
             {
               "q": "Hidrolik rulo açıcı nedir?",
-              "a": "Ağır rulo sacı mandren üzerinde taşıyan ve hatta kontrollü hızla açan makinedir. Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. Servosteel'in hidrolik serisi 6.000–20.000 kg rulo sac taşır."
+              "a": "Ağır rulo sacı mandren üzerinde taşıyan ve hatta kontrollü hızla açan makinedir. Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. Servosteel'in hidrolik serisi 4.000–15.000 kg rulo sac taşır."
             },
             {
               "q": "Hidrolik rulo açıcı kaç ton taşır, hangi genişlikte çalışır?",
-              "a": "Modeller 6.000, 8.000, 10.000, 12.000, 15.000 ve 20.000 kg'dır. Malzeme genişliği bütün modellerde 80 mm'den başlar; 6 tonda 1.000 mm'ye, 10 tonda 1.300 mm'ye, 15 tonda 1.500 mm'ye, 20 tonda 1.600 mm'ye kadar çıkar."
+              "a": "Kapasiteler 4.000, 6.000, 10.000 ve 15.000 kg'dır; her kapasitede farklı genişlikte modeller vardır. Malzeme genişliği 4 tonda 70–600 mm, 6 tonda 70–1.000 mm, 10 tonda 70–1.500 mm, 15 tonda 100–1.600 mm aralığındadır. Bütün modeller tabloda."
             },
             {
               "q": "Hidrolik rulo açıcı hangi rulo sac çapına uyar?",
-              "a": "Bütün hidrolik modellerde rulo sac dış çapı 1.600 mm'ye kadar, iç çapı 450–560 mm'dir; adaptörle 640 mm iç çaplı rulo sac da takılır."
+              "a": "Bütün hidrolik modellerde rulo sac iç çapı 470–570 mm, dış çapı Ø 1.400 / 1.600 mm'dir."
             },
             {
               "q": "Hidrolik mi, mekanik rulo açıcı mı seçmeliyim?",
-              "a": "Belirleyen rulo sac ağırlığıdır. Mekanik seri 4.000 kg'a kadar çıkar; daha ağır rulo sacta, geniş bantta ve sık rulo sac değişiminde hidrolik açıcı seçilir. Ağır hatlarda hidrolik yükleme arabasıyla birlikte öneririz."
+              "a": "Belirleyen rulo sac ağırlığıdır. Mekanik seri 500–4.000 kg, hidrolik seri 4.000–15.000 kg taşır. 4 tonun üstünde, geniş bantta ve sık rulo sac değişiminde hidrolik açıcı seçilir; 4 tonda iki seri de vardır, hidrolik olan sıkmayı operatörden alır. Ağır hatlarda hidrolik yükleme arabasıyla birlikte öneririz."
             },
             {
               "q": "Hidrolik rulo açıcı teklifi için hangi bilgiler gerekir?",
@@ -2324,9 +2439,9 @@
         "types": [{"label":"Hidrolik rulo açıcı","alt":"Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken"},{"label":"Mekanik rulo açıcı","alt":"Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"},{"label":"Çift kafa rulo açıcı","alt":"Servosteel çift kafa rulo açıcı, iki mandrenli, önden görünüm"}],
         "galleryAlt": ["Servosteel çift kafa rulo açıcı, yandan görünüm"],
         "metaTitle": "Rulo Açıcı ve Rulo Sac Açma Makinesi: Hidrolik, Mekanik",
-        "short": "Hidrolik 6-20 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
+        "short": "Hidrolik 4-15 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
         "hero": "Rulo sac açma makinesi olarak da bilinen rulo açıcı, her hattın ilk halkasıdır: ruloyu güvenle taşır, gerginliği kontrol ederek açar. Hidrolik ve mekanik modeller kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
-        "meta": "Rulo açıcı (rulo sac açma makinesi) ruloyu taşır, hatta kontrollü gerginlikle açar. Hidrolik 6-20 ton, mekanik 500-4.000 kg; 48 saatte projeye özel fiyat.",
+        "meta": "Rulo açıcı (rulo sac açma makinesi) rulo sacı taşır, hatta kontrollü gerginlikle açar. Hidrolik 4-15 ton, mekanik 500-4.000 kg; 48 saatte projeye özel fiyat.",
         "features": [
           {
             "title": "Hidrolik mandren genişletme",
@@ -2345,11 +2460,11 @@
         "faq": [
           {
             "q": "Hidrolik ve mekanik rulo açıcı arasındaki fark nedir?",
-            "a": "Mekanik seri 500–2500 kg ruloları volanla sıkılan göbekle taşır, 3000 ve 4000 kg modeller konik mandrenlidir; hidrolik seri 6–20 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo ve yüksek hat hızında güvenli seçim hidroliktir."
+            "a": "Mekanik seri 500–2500 kg rulo sacları volanla sıkılan göbekle taşır, 3000 ve 4000 kg modeller konik mandrenlidir; hidrolik seri 4–15 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo sac ve yüksek hat hızında güvenli seçim hidroliktir."
           },
           {
             "q": "Kaç ton kapasiteli açıcı seçmeliyim?",
-            "a": "En ağır rulonuzun üzerine bir kademe pay bırakın: 5 tonluk rulo için 6 ton, 8 tonluk için 10 ton gibi. Seçimi rulo genişliği ve iç çapla (450–560 mm) birlikte doğruluyoruz."
+            "a": "En ağır rulo sacınızın üzerine bir kademe pay bırakın: 5 tonluk rulo sac için 6 ton, 8 tonluk için 10 ton gibi. Seçimi bant genişliği ve rulo sac iç çapıyla (hidrolik seride 470–570 mm) birlikte doğruluyoruz."
           },
           {
             "q": "Çift yönlü çalışma ne sağlar?",
@@ -2361,16 +2476,16 @@
           },
           {
             "q": "Rulo açıcı fiyatları neye göre değişir?",
-            "a": "Liste fiyatı yok; açıcı, taşıyacağı ruloya göre projelendirilir. Fiyatı dört şey belirler: rulo ağırlığı (500 kg'lık mekanik açıcı ile 20 tonluk hidrolik açıcı ayrı sınıftır), rulo genişliği ve iç çapı, mandrenin mekanik mi hidrolik mi genişlediği ve otomasyon seviyesi: yükleme arabası, fren, çift yönlü çalışma. Rulo ağırlığınızı, genişliğini ve pres ya da hat hızınızı yazın; teklifi o kapasiteye göre hazırlayalım."
+            "a": "Liste fiyatı yok; açıcı, taşıyacağı rulo saca göre projelendirilir. Fiyatı dört şey belirler: rulo ağırlığı (500 kg'lık mekanik açıcı ile 15 tonluk hidrolik açıcı ayrı sınıftır), rulo genişliği ve iç çapı, mandrenin mekanik mi hidrolik mi genişlediği ve otomasyon seviyesi: yükleme arabası, fren, çift yönlü çalışma. Rulo ağırlığınızı, genişliğini ve pres ya da hat hızınızı yazın; teklifi o kapasiteye göre hazırlayalım."
           }
         ],
         "table": {
           "title": "Teknik özellikler",
           "head": ["Özellik", "Mekanik", "Hidrolik"],
           "rows": [
-            ["Modeller", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 ton"],
-            ["Rulo genişliği", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Rulo iç çapı", "300 – 550 mm", "450 – 560 mm"],
+            ["Modeller", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 ton"],
+            ["Rulo genişliği", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Rulo iç çapı", "300 – 550 mm", "470 – 570 mm"],
             ["Rulo dış çapı (maks.)", "1.600 mm", "1.600 mm"],
             ["Mandren genişletme", "Mekanik", "Hidrolik"],
             ["Kontrol", "Hız kontrol + fren sistemi", "Schneider PLC"]
