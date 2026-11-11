@@ -66,32 +66,38 @@ function useIsActive() {
 }
 
 /* Menü öğesinin yazı/zemin sınıfı — çubuk her yerde beyaz, yazı koyu.
-   1280 px altında yan boşluk daralır, yazı boyu aynı kalır (bkz. MASAUSTU). */
+   1280 px altında yazı 13 px, yan boşluk 6 px; üstünde 14 px / 8 px — sekiz öğe küçük
+   dizüstülerde de sığsın diye (bkz. MASAUSTU). */
 const OGE =
-  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-2 text-sm font-medium text-ink transition-colors hover:bg-surface-alt xl:px-3";
+  "relative flex h-10 items-center gap-1 whitespace-nowrap rounded-lg px-1.5 text-[13px] font-medium text-ink transition-colors hover:bg-surface-alt xl:px-2 xl:text-sm";
 
 /**
  * Masaüstü menünün göründüğü genişlik. Altında hamburger açılır.
  *
- * 2026-11-11 (Yasin): menü yedi öğe — Makineler, Roll Form Hatları,
- * Üretim Hatları (rulo sac işleme, dilme, boy kesme), Sektörler, Hakkımızda
- * (+ Fuarlar), İletişim, Akademi. Her dil 1100–1920 px arasında 10 px
- * adımla tarandı; en az 8 px pay kalan ilk genişlik: tr, hu, ar 1100,
- * en ve pl 1110, ru 1140, de 1170, it 1180, es 1190. Eşikler bunun ~15 px
- * üstünde; listede olmayan dil 1100'de açılır. Rusçada iki menü adı kısa
- * tutuldu ("Профилирование", "Линии"). Etiket değişirse yeniden ölç.
- * Sınıflar tam yazılı — Tailwind kaynağı tarar.
+ * 2026-11-11 (Yasin): menü sekiz öğe — Makineler, Roll Form Hatları,
+ * Üretim Hatları, Sektörler, Hakkımızda (+ Fuarlar), İletişim, Hesaplama
+ * Aracı, Akademi. Sığması için menü öğelerinin ve dil düğmesinin 1280 px'te
+ * büyüyen iç boşluğu kaldırıldı (xl:px-3 öğe başına 8 px, toplam ~70 px)
+ * ve çubuk 1536 px'ten itibaren 88rem'e kadar açılır. Her dil 10 px adımla
+ * tarandı; en az 8 px pay kalan ilk genişlik: ar 1100, hu 1120, tr 1180,
+ * en ve pl 1190, de ve ru 1240, it 1270, es 1300. Eşikler bunun ~15 px
+ * üstünde. Etiket değişirse yeniden ölç (scratchpad'deki tarama betiği:
+ * viewport'u kaydırıp çubuktaki boş alanı ölçer). Sınıflar tam yazılı —
+ * Tailwind kaynağı tarar.
  */
 const MASAUSTU: Record<string, { goster: string; gizle: string }> = {
-  en: { goster: "min-[1125px]:flex", gizle: "min-[1125px]:hidden" },
-  pl: { goster: "min-[1125px]:flex", gizle: "min-[1125px]:hidden" },
-  ru: { goster: "min-[1155px]:flex", gizle: "min-[1155px]:hidden" },
-  de: { goster: "min-[1185px]:flex", gizle: "min-[1185px]:hidden" },
-  it: { goster: "min-[1195px]:flex", gizle: "min-[1195px]:hidden" },
-  es: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
+  ar: { goster: "min-[1115px]:flex", gizle: "min-[1115px]:hidden" },
+  hu: { goster: "min-[1135px]:flex", gizle: "min-[1135px]:hidden" },
+  tr: { goster: "min-[1195px]:flex", gizle: "min-[1195px]:hidden" },
+  en: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
+  pl: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
+  de: { goster: "min-[1255px]:flex", gizle: "min-[1255px]:hidden" },
+  ru: { goster: "min-[1255px]:flex", gizle: "min-[1255px]:hidden" },
+  it: { goster: "min-[1285px]:flex", gizle: "min-[1285px]:hidden" },
+  es: { goster: "min-[1315px]:flex", gizle: "min-[1315px]:hidden" },
 };
 function masaustuSiniflari(locale: string) {
-  return MASAUSTU[locale] ?? { goster: "min-[1100px]:flex", gizle: "min-[1100px]:hidden" };
+  return MASAUSTU[locale] ?? { goster: "min-[1315px]:flex", gizle: "min-[1315px]:hidden" };
 }
 
 /* Etkin sayfanın altın alt çizgisi */
@@ -533,7 +539,7 @@ export function SiteHeader() {
         üstünde duruyor ve bulanıklık oynayan videoda her karede yeniden
         hesaplanırdı — zayıf cihazda takılmaya katkı yapar.
       */}
-      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 rounded-2xl border border-line bg-surface px-3 shadow-lg shadow-black/10 sm:px-4 2xl:gap-4">
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 rounded-2xl xl:max-w-[88rem] border border-line bg-surface px-3 shadow-lg shadow-black/10 sm:px-4 2xl:gap-4">
         <Link href="/" aria-label={t("homeAria")} className="relative shrink-0">
           {/* Açık zeminde: orijinal logo (altın + koyu yazı). `priority` yok —
               ürettiği preload farklı genişlik istediği için kullanılmıyordu. */}
@@ -598,13 +604,14 @@ export function SiteHeader() {
             dar
           />
           <NavLink href="/iletisim" label={t("contact")} active={isActive("/iletisim")} />
-          {/* Akademi en sonda (Yasin, 28 Eki) */}
+          {/* Hesaplama aracı (Yasin, 11 Kas) — Akademi'den önce; Akademi en sonda (28 Eki) */}
+          <NavLink href="/hesaplayicilar" label={t("calculator")} active={isActive("/hesaplayicilar")} />
           <NavLink href="/akademi" label={ak.nav} active={isActive("/akademi")} />
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <LanguageSwitcher
-            buttonClassName="rounded-lg border border-line px-2 py-1.5 text-sm text-ink transition-colors hover:bg-surface-alt xl:px-3 xl:py-2"
+            buttonClassName="rounded-lg border border-line px-2 py-1.5 text-sm text-ink transition-colors hover:bg-surface-alt"
           />
           <ThemeToggle
             className="size-10 text-ink transition-colors hover:bg-surface-alt"
@@ -753,6 +760,9 @@ export function SiteHeader() {
             </details>
             <Link href="/iletisim" onClick={kapat} className={mobilSatir}>
               {t("contact")}
+            </Link>
+            <Link href="/hesaplayicilar" onClick={kapat} className={mobilSatir}>
+              {t("calculator")}
             </Link>
             <Link href="/akademi" onClick={kapat} className={mobilSatir}>
               {ak.nav}
