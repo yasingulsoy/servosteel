@@ -972,10 +972,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Acél súlykalkulátor: lemez, lemezlap és tekercs súlya",
+    "metaTitle": "Acél súlykalkulátor: lemez és tekercs",
     "metaDesc": "Ingyenes acél súlykalkulátor: lemez és lemezlap súlya, tekercs súlya és hossza külső Ø-ből, súlyból vagy hosszból, szalagsúlyok, illő letekercselő, mm/kg vagy hüvelyk/font.",
     "eyebrow": "Mérnöki eszközök",
-    "title": "Acél súlykalkulátor: lemez, lemezlap és tekercs",
+    "title": "Servosteel Acél súlykalkulátor: lemez, lemezlap és tekercs",
     "desc": "A Servosteel tekercssúly- és szalaghossz-kalkulátor külső átmérőből, súlyból vagy szalaghosszból dolgozik, és megadja a hosszvágás utáni szalagok súlyát, valamint a tekercshez illő letekercselőt is. Alatta lemez- és lemezlapsúly, illetve présadagolói teljesítmény számítható; minden eredmény a geometriából és az anyagsűrűségből adódik.",
     "disclaimer": "Ezek az eszközök előzetes felméréshez valók; az eredmények geometriából és anyagsűrűségből számítanak. Pontos sorméretezéshez forduljon mérnöki csapatunkhoz.",
     "material": "Anyag",

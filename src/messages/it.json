@@ -972,10 +972,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Calcolo peso lamiera e acciaio: lamiere, piastre e coil",
+    "metaTitle": "Calcolo peso lamiera, piastre e coil",
     "metaDesc": "Calcolatore gratuito del peso dell'acciaio: lamiere e piastre, peso e lunghezza coil da Ø esterno, peso o lunghezza, peso dei nastri, svolgitore adatto, in mm/kg o pollici/lb.",
     "eyebrow": "Strumenti tecnici",
-    "title": "Calcolo peso lamiera, piastra e coil in acciaio",
+    "title": "Servosteel Calcolo peso lamiera, piastra e coil in acciaio",
     "desc": "Il calcolatore Servosteel di peso e lunghezza coil parte da diametro esterno, peso o lunghezza del nastro e fornisce anche il peso di ogni nastro tagliato e lo svolgitore adatto. Sotto trovate il peso di lamiere e piastre e la produzione dell'alimentatore; ogni risultato deriva dalla geometria e dalla densità del materiale.",
     "disclaimer": "Questi strumenti servono a una valutazione preliminare; i risultati sono calcolati da geometria e densità del materiale. Per il dimensionamento esatto contattate il nostro ufficio tecnico.",
     "material": "Materiale",

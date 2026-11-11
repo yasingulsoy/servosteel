@@ -972,10 +972,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Calculadora de peso de acero: chapa, placa y bobina",
+    "metaTitle": "Calculadora de peso: chapa, placa y bobina",
     "metaDesc": "Calculadora gratuita de peso de acero: chapa y placa, peso y longitud de bobina desde Ø exterior, peso o longitud, peso de flejes, desbobinadora adecuada, en mm/kg o pulg./lb.",
     "eyebrow": "Herramientas de ingeniería",
-    "title": "Calculadora de peso de acero: chapa, placa y bobina",
+    "title": "Servosteel Calculadora de peso de acero: chapa, placa y bobina",
     "desc": "La calculadora Servosteel de peso y longitud de bobina parte del diámetro exterior, el peso o la longitud de banda, y da además el peso de cada fleje cortado y la desbobinadora adecuada. Debajo están el peso de chapa y placa y la producción del alimentador; todo resultado sale de la geometría y la densidad del material.",
     "disclaimer": "Estas herramientas son para una evaluación preliminar; los resultados se calculan a partir de la geometría y la densidad del material. Para el dimensionado exacto, consulte a nuestro equipo de ingeniería.",
     "material": "Material",

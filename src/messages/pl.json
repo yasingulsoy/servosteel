@@ -972,10 +972,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Kalkulator wagi blachy i stali — arkusz, płyta, krąg",
+    "metaTitle": "Kalkulator wagi blachy: arkusz, płyta, krąg",
     "metaDesc": "Darmowy kalkulator wagi stali: arkusz i płyta, masa i długość kręgu z Ø zewn., masy lub długości, masy taśm po cięciu, dobór odwijaka, w mm/kg lub calach/funtach.",
     "eyebrow": "Narzędzia inżynierskie",
-    "title": "Kalkulator wagi blachy i stali: arkusz, płyta, krąg",
+    "title": "Servosteel Kalkulator wagi blachy i stali: arkusz, płyta, krąg",
     "desc": "Kalkulator Servosteel masy i długości kręgu liczy ze średnicy zewnętrznej, masy lub długości taśmy, a do tego podaje masę każdej taśmy po cięciu i pasujący odwijak. Poniżej: waga arkusza i płyty oraz wydajność podajnika; każdy wynik wynika z geometrii i gęstości materiału.",
     "disclaimer": "Narzędzia służą wstępnej ocenie; wyniki liczone są z geometrii i gęstości materiału. Po dokładny dobór linii skontaktuj się z naszym działem inżynieryjnym.",
     "material": "Materiał",

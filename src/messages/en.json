@@ -1008,10 +1008,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Metal Weight Calculator: Steel Plate, Sheet & Coil",
+    "metaTitle": "Metal Weight Calculator: Plate, Sheet & Coil",
     "metaDesc": "Free metal weight calculator for steel plate, sheet and coil: coil weight and length from OD, weight or length, slit strip weights, a matching decoiler, in mm/kg or in/lb.",
     "eyebrow": "Engineering tools",
-    "title": "Metal Weight Calculator: Steel Plate, Sheet and Coil",
+    "title": "Servosteel Metal Weight Calculator: Steel Plate, Sheet and Coil",
     "desc": "The Servosteel coil weight and length calculator works from outer diameter, weight or strip length, and also gives the weight of every slit strip and the decoiler that fits the coil. Below it are sheet and plate weight and press feed output; every result comes from geometry and material density.",
     "disclaimer": "These tools are for preliminary assessment; results are computed from geometry and material density. For exact line sizing, consult our engineering team.",
     "material": "Material",

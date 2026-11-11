@@ -972,10 +972,10 @@
     }
   },
   "calc": {
-    "metaTitle": "Gewichtsrechner Stahl: Blech- und Coilgewicht berechnen",
+    "metaTitle": "Gewichtsrechner: Blech- und Coilgewicht",
     "metaDesc": "Kostenloser Gewichtsrechner für Stahl: Blech- und Plattengewicht, Coilgewicht und Bandlänge aus Außen-Ø, Gewicht oder Länge, Spaltbandgewichte, passende Haspel, mm/kg oder Zoll/lb.",
     "eyebrow": "Engineering-Werkzeuge",
-    "title": "Gewichtsrechner Stahl: Blech, Platte und Coil",
+    "title": "Servosteel Gewichtsrechner Stahl: Blech, Platte und Coil",
     "desc": "Der Servosteel Coilgewicht- und Bandlängenrechner arbeitet mit Außendurchmesser, Gewicht oder Bandlänge und liefert auch das Gewicht jedes Spaltbands sowie die passende Haspel. Darunter folgen Blech- und Plattengewicht und die Vorschubleistung; alle Ergebnisse folgen aus Geometrie und Werkstoffdichte.",
     "disclaimer": "Diese Werkzeuge dienen der Vorbewertung; die Ergebnisse werden aus Geometrie und Materialdichte berechnet. Für die genaue Anlagenauslegung wenden Sie sich an unser Engineering.",
     "material": "Werkstoff",
