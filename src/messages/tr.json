@@ -273,10 +273,10 @@
   "ruloIsleme": {
     "nav": "Rulo Sac İşleme Hatları",
     "short": "Dilme, boy kesme ve roll form hatlarının tamamı tek sayfada.",
-    "metaTitle": "Rulo İşleme Hatları: Rulodan Şeride, Levhaya ve Profile",
-    "metaDesc": "Rulodan şeride, levhaya ya da profile: dilme, boy kesme ve roll form hatları; açıcı, doğrultucu, servo besleyici ve istifleyiciyle birlikte İstanbul'da üretilir.",
+    "metaTitle": "Rulo Sac İşleme Hatları: Şeride, Levhaya ve Profile",
+    "metaDesc": "Rulo sacdan şeride, levhaya ya da profile: dilme, boy kesme ve roll form hatları; açıcı, doğrultucu, servo besleyici ve istifleyiciyle birlikte İstanbul'da üretilir.",
     "eyebrow": "Hatlar",
-    "title": "Rulo İşleme Hatları",
+    "title": "Rulo Sac İşleme Hatları",
     "desc": "Rulo sacı işleyen her hat aynı yerde başlar: açıcı, doğrultucu, besleme. Sonrası ürüne göre ayrışır — şerit, levha ya da profil. Üç aileyi de tasarlayıp üretiyoruz; hat profilinize, kalınlığınıza ve kapasitenize göre boyutlandırılır.",
     "familiesTitle": "Üç hat ailesi",
     "families": {
@@ -302,7 +302,7 @@
       }
     ],
     "faqEyebrow": "Sık sorulanlar",
-    "faqTitle": "Rulo işleme hatları hakkında",
+    "faqTitle": "Rulo sac işleme hatları hakkında",
     "faq": [
       {
         "q": "Rulo işleme hattı nedir?",
@@ -323,6 +323,69 @@
     ],
     "ctaTitle": "Hattınızı birlikte boyutlandıralım",
     "ctaText": "Profil çiziminizi ya da kapasite ihtiyacınızı gönderin; 48 saat içinde hat yerleşimi ve teknik teklifle dönelim."
+  },
+  "perfore": {
+    "nav": "Rulo Sac Perfore Hatları",
+    "short": "Rulo sacı istenen delik deseniyle perfore eden hatlar; çıkış rulo ya da ölçülü levha.",
+    "metaTitle": "Rulo Sac Perfore Hatları ve Perfore Sac Makinesi",
+    "metaDesc": "Rulo sac perfore hatları: rulo sacı açar, doğrultur, servo beslemeyle prese verir ve istenen delik deseninde perfore eder. Çıkış rulo ya da ölçülü levha.",
+    "eyebrow": "Uzmanlık alanımız",
+    "title": "Rulo Sac Perfore Hatları",
+    "desc": "Rulo sacı istediğiniz delik deseniyle perfore eden komple hatlar: açıcı, doğrultma, servo besleme, perfore presi ve çıkışta sarıcı ya da boy kesme makası. Hat; delik deseninize, sac kalınlığınıza ve hızınıza göre projelendirilir.",
+    "highlights": [
+      {
+        "title": "Desen hassasiyeti",
+        "text": "Servo besleme sacı her vuruşta aynı adımla ilerletir; delik sıraları levha boyunca kaymadan devam eder."
+      },
+      {
+        "title": "Çok zımbalı kalıp",
+        "text": "Delik deseni tek vuruşta birden çok zımbayla açılır; kalıp deseninize ve sac kalınlığınıza göre tasarlanır."
+      },
+      {
+        "title": "Rulo ya da levha çıkışı",
+        "text": "Perfore edilen sac yeniden sarılabilir ya da hat sonunda ölçülü levha olarak kesilip istiflenebilir."
+      },
+      {
+        "title": "Tek noktadan kontrol",
+        "text": "Açıcıdan çıkışa kadar hat tek PLC ve operatör panelinden yönetilir; desen ve adım reçeteleri HMI'da saklanır."
+      }
+    ],
+    "whyTitle": "Neden Servosteel perfore hattı?",
+    "paras": [
+      "Perfore hattının ilk halkaları — <b>rulo açıcı, doğrultucu ve servo besleme</b> — Servosteel'in kendi ürünleridir. Hattı bu ünitelerin üzerine, perfore presi ve kalıbıyla birlikte tek proje olarak kuruyoruz; her ünite bir sonrakine göre boyutlandırılır.",
+      "Perfore sac; akustik paneller, havalandırma ve filtre elemanları, cephe kaplamaları, delikli kablo kanalları ve raf sistemlerinde kullanılır. Delik çapı, delikler arası mesafe ve açık alan oranı ürüne göre değişir; hat da buna göre seçilir: pres kuvveti, besleme adımı ve kalıp düzeni desene göre belirlenir.",
+      "Teklif için sac malzemesini, kalınlık ve genişlik aralığını, delik deseninin çizimini, istenen hızı ve çıkış biçimini (rulo ya da levha) gönderin; hattı bu bilgilerle boyutlandıralım."
+    ],
+    "components": [
+      "Rulo açıcı",
+      "Doğrultma ünitesi",
+      "Servo besleme",
+      "Perfore presi ve çok zımbalı kalıp",
+      "Sarıcı ya da boy kesme makası",
+      "İstifleme (levha çıkışında)"
+    ],
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Rulo sac perfore hatları hakkında merak edilenler",
+    "faq": [
+      {
+        "q": "Perfore hattı ne işe yarar?",
+        "a": "Rulo sacı açar, doğrultur ve preste istenen delik desenini sürekli olarak açar. Çıkışta perfore sac yeniden sarılır ya da ölçülü levha olarak kesilip istiflenir."
+      },
+      {
+        "q": "Hangi delik desenleri yapılabilir?",
+        "a": "Yuvarlak, kare, oblong ve dekoratif delikler; düz ya da şaşırtmalı sıralarda. Deseni kalıp belirler; kalıp delik ölçüsüne, delikler arası mesafeye ve sac kalınlığına göre tasarlanır. Desen çiziminizi gönderin, uygunluğunu değerlendirelim."
+      },
+      {
+        "q": "Perfore sac rulo olarak mı, levha olarak mı çıkar?",
+        "a": "İkisi de mümkün. Rulo çıkış için hat sonuna sarıcı, levha çıkış için boy kesme makası ve istifleme ünitesi eklenir. Hangisinin uygun olduğu, müşterinizin sacı nasıl kullandığına bağlıdır."
+      },
+      {
+        "q": "Perfore hattı teklifi için hangi bilgiler gerekir?",
+        "a": "Sac malzemesi, kalınlık ve genişlik aralığı, rulo ağırlığı, delik deseninin çizimi (delik ölçüsü, delikler arası mesafe, açık alan oranı), istenen hız ve çıkış biçimi."
+      }
+    ],
+    "ctaTitle": "Perfore hattınızı projelendirelim",
+    "ctaText": "Sac malzemesi, kalınlık aralığı ve delik deseninizi iletin; hat yerleşimi ve teknik teklifle dönelim."
   },
   "boykesme": {
     "metaTitle": "Rulo Sac Boy Kesme Hatları ve Levha Kesme Makinesi",

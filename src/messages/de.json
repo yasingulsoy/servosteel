@@ -324,6 +324,69 @@
     "ctaTitle": "Lassen Sie uns Ihre Anlage auslegen",
     "ctaText": "Senden Sie uns Ihre Profilzeichnung oder Ihren Kapazitätsbedarf; innerhalb von 48 Stunden antworten wir mit Layout und technischem Angebot."
   },
+  "perfore": {
+    "nav": "Perforieranlagen",
+    "short": "Anlagen, die Coils nach Ihrem Lochbild perforieren; Ausgabe als Coil oder Tafel.",
+    "metaTitle": "Perforieranlagen: Lochblech vom Coil",
+    "metaDesc": "Perforieranlagen: Coil abwickeln, richten, per Servovorschub zuführen und nach Ihrem Lochbild perforieren, anschließend aufwickeln oder auf Länge schneiden.",
+    "eyebrow": "Unsere Kompetenz",
+    "title": "Perforieranlagen",
+    "desc": "Komplette Anlagen, die Coils nach Ihrem Lochbild perforieren: Haspel, Richtmaschine, Servovorschub, Perforierpresse und am Auslauf Aufwickler oder Querteilschere. Jede Anlage wird nach Lochbild, Blechdicke und Geschwindigkeit ausgelegt.",
+    "highlights": [
+      {
+        "title": "Genaues Lochbild",
+        "text": "Der Servovorschub bewegt das Band bei jedem Hub um denselben Schritt; die Lochreihen laufen über die ganze Tafel gerade."
+      },
+      {
+        "title": "Mehrfachstempel-Werkzeug",
+        "text": "Das Lochbild wird mit mehreren Stempeln in einem Hub gestanzt; das Werkzeug wird für Ihr Lochbild und Ihre Blechdicke ausgelegt."
+      },
+      {
+        "title": "Coil- oder Tafelausgabe",
+        "text": "Das gelochte Band kann wieder aufgewickelt oder am Ende der Anlage auf Länge geschnitten und gestapelt werden."
+      },
+      {
+        "title": "Zentrale Steuerung",
+        "text": "Von der Haspel bis zum Auslauf wird die Anlage über eine SPS und ein Bedienpanel geführt; Lochbild- und Schrittrezepte werden im HMI gespeichert."
+      }
+    ],
+    "whyTitle": "Warum eine Perforieranlage von Servosteel?",
+    "paras": [
+      "Die ersten Stationen einer Perforieranlage — <b>Haspel, Richtmaschine und Servovorschub</b> — sind Servosteel-Eigenprodukte. Wir bauen die Anlage um sie herum, zusammen mit Perforierpresse und Werkzeug, als ein Projekt; jede Einheit ist auf die nächste abgestimmt.",
+      "Lochblech wird für Akustikpaneele, Lüftungs- und Filterelemente, Fassadenverkleidungen, gelochte Kabelrinnen und Regalsysteme verwendet. Lochdurchmesser, Teilung und freier Querschnitt hängen vom Produkt ab – und damit auch die Anlage: Pressenkraft, Vorschubschritt und Werkzeugaufbau folgen dem Lochbild.",
+      "Für ein Angebot senden Sie Werkstoff, Dicken- und Breitenbereich, eine Zeichnung des Lochbilds, die gewünschte Geschwindigkeit und die Ausgabeform (Coil oder Tafel); danach legen wir die Anlage aus."
+    ],
+    "components": [
+      "Haspel",
+      "Richtmaschine",
+      "Servovorschub",
+      "Perforierpresse mit Mehrfachstempel-Werkzeug",
+      "Aufwickler oder Querteilschere",
+      "Stapler (bei Tafelausgabe)"
+    ],
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Fragen zu Perforieranlagen",
+    "faq": [
+      {
+        "q": "Was macht eine Perforieranlage?",
+        "a": "Sie wickelt das Band ab, richtet es und stanzt das Lochbild fortlaufend in der Presse. Am Auslauf wird das gelochte Band wieder aufgewickelt oder auf Länge geschnitten und als Tafeln gestapelt."
+      },
+      {
+        "q": "Welche Lochbilder sind möglich?",
+        "a": "Rund-, Quadrat-, Langloch- und Dekorlochungen, in geraden oder versetzten Reihen. Das Lochbild bestimmt das Werkzeug, das nach Lochgröße, Teilung und Blechdicke ausgelegt wird. Senden Sie uns Ihre Lochbild-Zeichnung, wir prüfen sie."
+      },
+      {
+        "q": "Kommt das Lochblech als Coil oder als Tafel heraus?",
+        "a": "Beides ist möglich. Für die Coil-Ausgabe kommt ein Aufwickler ans Anlagenende, für Tafeln eine Querteilschere mit Stapler. Was passt, hängt davon ab, wie Ihre Kunden das Blech verarbeiten."
+      },
+      {
+        "q": "Welche Angaben brauchen Sie für ein Angebot?",
+        "a": "Werkstoff, Dicken- und Breitenbereich, Coilgewicht, eine Zeichnung des Lochbilds (Lochgröße, Teilung, freier Querschnitt), die gewünschte Geschwindigkeit und die Ausgabeform."
+      }
+    ],
+    "ctaTitle": "Lassen Sie uns Ihre Perforieranlage auslegen",
+    "ctaText": "Senden Sie Werkstoff, Dickenbereich und Lochbild; wir melden uns mit Anlagenlayout und technischem Angebot."
+  },
   "boykesme": {
     "metaTitle": "Querteilanlagen: Coil zu Blechtafel schneiden",
     "metaDesc": "Querteilanlagen: präzises Schneiden vom Coil zur Tafel. Richten, Servovorschub, Tafelschere und Stapeln über eine zentrale SPS. Schneider-Steuerungen.",

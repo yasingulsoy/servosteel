@@ -324,6 +324,69 @@
     "ctaTitle": "Dobierzmy razem Państwa linię",
     "ctaText": "Proszę przesłać rysunek profilu albo potrzebną wydajność; w ciągu 48 godzin odpowiemy układem linii i ofertą techniczną."
   },
+  "perfore": {
+    "nav": "Linie Perforujące",
+    "short": "Linie perforujące kręgi według wzoru otworów; wyjście w kręgu lub w arkuszach.",
+    "metaTitle": "Linie Perforujące: Blacha Perforowana z Kręgu",
+    "metaDesc": "Linie perforujące: rozwijają, prostują, podają serwem i perforują taśmę według wzoru otworów, a następnie nawijają ją lub tną na długość.",
+    "eyebrow": "Nasza specjalizacja",
+    "title": "Linie Perforujące",
+    "desc": "Kompletne linie perforujące kręgi według Państwa wzoru otworów: odwijak, prostownica, podajnik serwo, prasa perforująca, a na wyjściu nawijarka lub nożyce do cięcia na długość. Każda linia jest dobierana do wzoru, grubości blachy i prędkości.",
+    "highlights": [
+      {
+        "title": "Dokładność wzoru",
+        "text": "Podajnik serwo przesuwa taśmę o ten sam krok przy każdym skoku; rzędy otworów biegną równo wzdłuż arkusza."
+      },
+      {
+        "title": "Narzędzie wielostemplowe",
+        "text": "Wzór wykrawany jest kilkoma stemplami w jednym skoku; narzędzie projektuje się pod Państwa wzór i grubość blachy."
+      },
+      {
+        "title": "Wyjście w kręgu lub w arkuszach",
+        "text": "Perforowaną taśmę można ponownie nawinąć albo na końcu linii pociąć na długość i ułożyć w arkusze."
+      },
+      {
+        "title": "Sterowanie z jednego miejsca",
+        "text": "Od odwijaka do wyjścia linią steruje jeden sterownik PLC i panel operatora; receptury wzoru i kroku zapisywane są w HMI."
+      }
+    ],
+    "whyTitle": "Dlaczego linia perforująca Servosteel?",
+    "paras": [
+      "Pierwsze stacje linii perforującej — <b>odwijak, prostownica i podajnik serwo</b> — to własne produkty Servosteel. Linię budujemy wokół nich, razem z prasą i narzędziem, jako jeden projekt; każde urządzenie dobierane jest do następnego.",
+      "Blacha perforowana trafia do paneli akustycznych, elementów wentylacji i filtrów, okładzin elewacyjnych, perforowanych korytek kablowych i regałów. Średnica otworu, podziałka i procent prześwitu zależą od produktu, a wraz z nimi linia: siła prasy, krok podawania i układ narzędzia wynikają ze wzoru.",
+      "Do oferty prosimy przesłać materiał, zakres grubości i szerokości, rysunek wzoru otworów, wymaganą prędkość i formę wyjścia (krąg lub arkusze); na tej podstawie dobierzemy linię."
+    ],
+    "components": [
+      "Odwijak",
+      "Prostownica",
+      "Podajnik serwo",
+      "Prasa perforująca z narzędziem wielostemplowym",
+      "Nawijarka lub nożyce do cięcia na długość",
+      "Układarka (przy wyjściu w arkuszach)"
+    ],
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Pytania o linie perforujące",
+    "faq": [
+      {
+        "q": "Do czego służy linia perforująca?",
+        "a": "Rozwija i prostuje taśmę, a następnie w sposób ciągły wykrawa w prasie wzór otworów. Na wyjściu perforowana taśma jest ponownie nawijana albo cięta na długość i układana w arkusze."
+      },
+      {
+        "q": "Jakie wzory otworów można wykonać?",
+        "a": "Otwory okrągłe, kwadratowe, podłużne i dekoracyjne, w rzędach prostych lub przestawnych. Wzór określa narzędzie, projektowane pod wielkość otworu, podziałkę i grubość. Prosimy przesłać rysunek wzoru — ocenimy go."
+      },
+      {
+        "q": "Czy blacha perforowana wychodzi w kręgu, czy w arkuszach?",
+        "a": "Oba warianty są możliwe. Przy wyjściu w kręgu na końcu linii montuje się nawijarkę, przy arkuszach — nożyce do cięcia na długość i układarkę. Wybór zależy od tego, jak Państwa klienci wykorzystują blachę."
+      },
+      {
+        "q": "Jakich danych potrzebujecie do oferty?",
+        "a": "Materiał, zakres grubości i szerokości, masa kręgu, rysunek wzoru (wielkość otworu, podziałka, prześwit), wymagana prędkość i forma wyjścia."
+      }
+    ],
+    "ctaTitle": "Dobierzmy Państwa linię perforującą",
+    "ctaText": "Prosimy przesłać materiał, zakres grubości i wzór otworów; odpowiemy układem linii i ofertą techniczną."
+  },
   "boykesme": {
     "metaTitle": "Linie Cięcia Poprzecznego",
     "metaDesc": "Linie cięcia poprzecznego: z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i sztaplowanie na jednym sterowniku Schneider.",

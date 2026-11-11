@@ -324,6 +324,69 @@
     "ctaTitle": "Dimensioniamo insieme la vostra linea",
     "ctaText": "Inviate il disegno del profilo o la capacità che vi serve; rispondiamo entro 48 ore con layout e offerta tecnica."
   },
+  "perfore": {
+    "nav": "Linee di Perforazione",
+    "short": "Linee che perforano il coil secondo il vostro schema di fori; uscita in coil o in fogli.",
+    "metaTitle": "Linee di Perforazione Coil: Lamiera Forata",
+    "metaDesc": "Linee di perforazione: svolgono, raddrizzano, alimentano con servo e perforano il nastro secondo il vostro schema di fori, poi riavvolgono o tagliano a misura.",
+    "eyebrow": "La nostra specializzazione",
+    "title": "Linee di Perforazione",
+    "desc": "Linee complete che perforano il coil secondo il vostro schema di fori: aspo, raddrizzatrice, alimentatore servo, pressa di perforazione e, in uscita, riavvolgitore o cesoia di taglio a misura. Ogni linea è dimensionata su schema, spessore e velocità.",
+    "highlights": [
+      {
+        "title": "Precisione dello schema",
+        "text": "L'alimentatore servo fa avanzare il nastro dello stesso passo a ogni colpo; le file di fori restano allineate lungo tutto il foglio."
+      },
+      {
+        "title": "Stampo a punzoni multipli",
+        "text": "Lo schema viene forato con più punzoni in un solo colpo; lo stampo è progettato per il vostro schema e spessore."
+      },
+      {
+        "title": "Uscita in coil o in fogli",
+        "text": "Il nastro forato può essere riavvolto oppure tagliato a misura e impilato in fogli a fine linea."
+      },
+      {
+        "title": "Controllo centralizzato",
+        "text": "Dall'aspo all'uscita la linea è gestita da un PLC e un pannello operatore; le ricette di schema e passo sono salvate nell'HMI."
+      }
+    ],
+    "whyTitle": "Perché una linea di perforazione Servosteel?",
+    "paras": [
+      "Le prime stazioni di una linea di perforazione — <b>aspo, raddrizzatrice e alimentatore servo</b> — sono prodotti Servosteel. Costruiamo la linea attorno a esse, insieme a pressa e stampo, come un unico progetto; ogni unità è dimensionata sulla successiva.",
+      "La lamiera forata si usa in pannelli acustici, elementi di ventilazione e filtrazione, rivestimenti di facciata, passerelle portacavi forate e scaffalature. Diametro, passo e percentuale di vuoto cambiano con il prodotto, e così la linea: forza della pressa, passo di alimentazione e disposizione dello stampo seguono lo schema.",
+      "Per un'offerta inviate materiale, gamma di spessori e larghezze, il disegno dello schema di fori, la velocità richiesta e il formato di uscita (coil o fogli); dimensioneremo la linea su questi dati."
+    ],
+    "components": [
+      "Aspo",
+      "Raddrizzatrice",
+      "Alimentatore servo",
+      "Pressa di perforazione con stampo a punzoni multipli",
+      "Riavvolgitore o cesoia di taglio a misura",
+      "Impilatore (uscita in fogli)"
+    ],
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande sulle linee di perforazione",
+    "faq": [
+      {
+        "q": "A cosa serve una linea di perforazione?",
+        "a": "Svolge e raddrizza il nastro, poi perfora lo schema di fori in continuo nella pressa. In uscita il nastro forato viene riavvolto oppure tagliato a misura e impilato in fogli."
+      },
+      {
+        "q": "Quali schemi di fori si possono realizzare?",
+        "a": "Fori tondi, quadrati, asolati e decorativi, in file dritte o sfalsate. Lo schema è definito dallo stampo, progettato per dimensione del foro, passo e spessore. Inviateci il disegno dello schema e lo valutiamo."
+      },
+      {
+        "q": "La lamiera forata esce in coil o in fogli?",
+        "a": "Entrambe le soluzioni. Per l'uscita in coil si aggiunge un riavvolgitore a fine linea; per i fogli una cesoia di taglio a misura e un impilatore. La scelta dipende da come i vostri clienti usano la lamiera."
+      },
+      {
+        "q": "Quali dati servono per un'offerta?",
+        "a": "Materiale, gamma di spessori e larghezze, peso del coil, il disegno dello schema (dimensione dei fori, passo, percentuale di vuoto), la velocità richiesta e il formato di uscita."
+      }
+    ],
+    "ctaTitle": "Dimensioniamo la vostra linea di perforazione",
+    "ctaText": "Inviate materiale, gamma di spessori e schema di fori; vi risponderemo con layout della linea e offerta tecnica."
+  },
   "boykesme": {
     "metaTitle": "Linee di Taglio a Misura",
     "metaDesc": "Linee di taglio a misura: taglio di precisione da coil a foglio. Raddrizzatura, alimentazione servo, ghigliottina e impilaggio gestiti da un unico PLC.",

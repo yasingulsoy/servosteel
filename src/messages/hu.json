@@ -324,6 +324,69 @@
     "ctaTitle": "Méretezzük együtt a sorukat",
     "ctaText": "Küldjék el a profilrajzot vagy a szükséges kapacitást; 48 órán belül elrendezéssel és műszaki ajánlattal válaszolunk."
   },
+  "perfore": {
+    "nav": "Perforáló Sorok",
+    "short": "Tekercset a kívánt lyukmintával perforáló sorok; kimenet tekercs vagy tábla.",
+    "metaTitle": "Perforáló Sorok: Perforált Lemez Tekercsből",
+    "metaDesc": "Perforáló sorok: a tekercset letekercselik, egyengetik, szervóadagolóval a présbe vezetik és a kívánt lyukmintával perforálják, majd visszacsévélik vagy hosszra vágják.",
+    "eyebrow": "Szakterületünk",
+    "title": "Perforáló Sorok",
+    "desc": "Komplett sorok, amelyek a tekercset az Ön lyukmintájával perforálják: letekercselő, egyengető, szervóadagoló, perforáló prés, a kimeneten pedig feltekercselő vagy keresztvágó olló. Minden sort a lyukmintához, a lemezvastagsághoz és a sebességhez méretezünk.",
+    "highlights": [
+      {
+        "title": "Pontos lyukminta",
+        "text": "A szervóadagoló minden löketnél ugyanazzal a lépéssel viszi előre a szalagot; a lyuksorok végig egyenesek maradnak."
+      },
+      {
+        "title": "Többlyukasztós szerszám",
+        "text": "A lyukmintát egy löketben több lyukasztó üti ki; a szerszámot az Ön mintájához és lemezvastagságához tervezik."
+      },
+      {
+        "title": "Tekercs vagy tábla kimenet",
+        "text": "A perforált szalag visszacsévélhető, vagy a sor végén hosszra vágható és táblákba rakható."
+      },
+      {
+        "title": "Központi vezérlés",
+        "text": "A letekercselőtől a kimenetig a sort egy PLC és egy kezelőpanel irányítja; a minta- és lépésreceptek a HMI-n tárolódnak."
+      }
+    ],
+    "whyTitle": "Miért Servosteel perforáló sor?",
+    "paras": [
+      "A perforáló sor első egységei — <b>letekercselő, egyengető és szervóadagoló</b> — a Servosteel saját termékei. A sort ezekre építjük, a perforáló présszel és a szerszámmal együtt, egyetlen projektként; minden egység a következőhöz van méretezve.",
+      "A perforált lemezt akusztikai panelekben, szellőző- és szűrőelemekben, homlokzatburkolatokban, perforált kábeltálcákban és polcrendszerekben használják. A lyukátmérő, az osztás és a nyitott felület termékenként változik, és vele a sor is: a préserő, az adagolási lépés és a szerszám kialakítása a mintát követi.",
+      "Ajánlathoz küldje el az anyagot, a vastagság- és szélességtartományt, a lyukminta rajzát, a kívánt sebességet és a kimenet formáját (tekercs vagy tábla); ezek alapján méretezzük a sort."
+    ],
+    "components": [
+      "Letekercselő",
+      "Egyengető egység",
+      "Szervóadagoló",
+      "Perforáló prés többlyukasztós szerszámmal",
+      "Feltekercselő vagy keresztvágó olló",
+      "Rakatoló (tábla kimenetnél)"
+    ],
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Kérdések a perforáló sorokról",
+    "faq": [
+      {
+        "q": "Mire szolgál a perforáló sor?",
+        "a": "Letekercseli és egyengeti a szalagot, majd a présben folyamatosan kilyukasztja a mintát. A kimeneten a perforált szalagot visszacsévélik, vagy hosszra vágva táblákba rakják."
+      },
+      {
+        "q": "Milyen lyukminták készíthetők?",
+        "a": "Kerek, négyzetes, hosszúkás és dekoratív lyukak, egyenes vagy eltolt sorokban. A mintát a szerszám határozza meg, amelyet a lyukméretre, az osztásra és a vastagságra terveznek. Küldje el a minta rajzát, megvizsgáljuk."
+      },
+      {
+        "q": "Tekercsként vagy táblaként jön ki a perforált lemez?",
+        "a": "Mindkettő lehetséges. Tekercs kimenethez feltekercselő kerül a sor végére, táblához keresztvágó olló és rakatoló. Hogy melyik illik, az attól függ, hogyan használják a vevői a lemezt."
+      },
+      {
+        "q": "Milyen adatok kellenek az ajánlathoz?",
+        "a": "Anyag, vastagság- és szélességtartomány, tekercssúly, a lyukminta rajza (lyukméret, osztás, nyitott felület), a kívánt sebesség és a kimenet formája."
+      }
+    ],
+    "ctaTitle": "Méretezzük együtt a perforáló sorát",
+    "ctaText": "Küldje el az anyagot, a vastagságtartományt és a lyukmintát; sorelrendezéssel és műszaki ajánlattal jelentkezünk."
+  },
   "boykesme": {
     "metaTitle": "Keresztvágó Sorok",
     "metaDesc": "Keresztvágó sorok: pontos vágás tekercsből táblává. Egyengetés, szervoadagolás, olló és rakatolás egyetlen PLC-ről vezérelve. Schneider vezérlés.",

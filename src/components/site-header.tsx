@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, Building2, CalendarDays, ChevronDown, Cog, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, ChevronDown, Cog, Grip, Menu, Phone, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { SocialIcons } from "@/components/social-icons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -400,6 +400,7 @@ export function SiteHeader() {
   const tSec = useTranslations("sectors");
   const tHome = useTranslations("home");
   const tRulo = useTranslations("ruloIsleme");
+  const tPerf = useTranslations("perfore");
   const tFair = useTranslations("fairs");
   const locale = useLocale();
   const ak = getAkademiUi(locale);
@@ -460,6 +461,13 @@ export function SiteHeader() {
       desc: tHome("solutions.ctl.desc"),
       node: <SolutionIcon name="ctl" className="size-6 text-muted transition-colors group-hover/i:text-accent" />,
     },
+    /* Rulo sac perfore hatları (Yasin, 11 Kas) */
+    {
+      label: tPerf("nav"),
+      href: "/perfore-hatlari",
+      desc: tPerf("short"),
+      node: <Grip className="size-5 text-muted transition-colors group-hover/i:text-accent" strokeWidth={1.6} aria-hidden />,
+    },
   ];
   const machineMega: MegaItem[] = machineItems.map((i) => ({
     label: tMach(`${i.slug}.name`),
@@ -490,7 +498,10 @@ export function SiteHeader() {
 
   const hatlarAktif = isActive("/roll-form-hatlari");
   const cozumAktif =
-    isActive("/rulo-isleme-hatlari") || isActive("/dilme-hatlari") || isActive("/boy-kesme-hatlari");
+    isActive("/rulo-isleme-hatlari") ||
+    isActive("/dilme-hatlari") ||
+    isActive("/boy-kesme-hatlari") ||
+    isActive("/perfore-hatlari");
 
   const mobilSatir = "block rounded-lg px-3 py-2.5 text-sm font-medium text-ink hover:bg-surface-alt";
   const mobilAlt = "block rounded-lg px-3 py-2 text-sm text-ink hover:bg-surface-alt";

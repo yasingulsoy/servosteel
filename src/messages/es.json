@@ -324,6 +324,69 @@
     "ctaTitle": "Dimensionemos su línea juntos",
     "ctaText": "Envíe su plano de perfil o la capacidad que necesita; respondemos en 48 horas con un layout de línea y una oferta técnica."
   },
+  "perfore": {
+    "nav": "Líneas de Perforado",
+    "short": "Líneas que perforan la bobina según su patrón de agujeros; salida en bobina o en chapas.",
+    "metaTitle": "Líneas de Perforado de Bobinas: Chapa Perforada",
+    "metaDesc": "Líneas de perforado: desbobinan, enderezan, alimentan con servo y perforan la banda según su patrón de agujeros; después rebobinan o cortan a medida.",
+    "eyebrow": "Nuestra especialidad",
+    "title": "Líneas de Perforado",
+    "desc": "Líneas completas que perforan la bobina según su patrón de agujeros: desbobinadora, enderezadora, alimentador servo, prensa de perforado y, a la salida, rebobinadora o cizalla de corte a medida. Cada línea se dimensiona según el patrón, el espesor y la velocidad.",
+    "highlights": [
+      {
+        "title": "Precisión del patrón",
+        "text": "El alimentador servo avanza la banda con el mismo paso en cada golpe; las filas de agujeros se mantienen alineadas a lo largo de la chapa."
+      },
+      {
+        "title": "Troquel de punzones múltiples",
+        "text": "El patrón se perfora con varios punzones en un solo golpe; el troquel se diseña para su patrón y su espesor de chapa."
+      },
+      {
+        "title": "Salida en bobina o en chapa",
+        "text": "La banda perforada puede rebobinarse, o cortarse a medida y apilarse como chapas al final de la línea."
+      },
+      {
+        "title": "Control centralizado",
+        "text": "Desde la desbobinadora hasta la salida, la línea se maneja con un PLC y un panel de operador; las recetas de patrón y paso se guardan en el HMI."
+      }
+    ],
+    "whyTitle": "¿Por qué una línea de perforado de Servosteel?",
+    "paras": [
+      "Las primeras estaciones de una línea de perforado — <b>desbobinadora, enderezadora y alimentador servo</b> — son productos propios de Servosteel. Construimos la línea a su alrededor, junto con la prensa y el troquel, como un solo proyecto; cada unidad se dimensiona según la siguiente.",
+      "La chapa perforada se usa en paneles acústicos, elementos de ventilación y filtros, revestimientos de fachada, bandejas portacables perforadas y estanterías. El diámetro, el paso y el área abierta cambian según el producto, y la línea también: la fuerza de prensa, el paso de alimentación y el diseño del troquel siguen al patrón.",
+      "Para una oferta, envíe el material, el rango de espesor y ancho, un plano del patrón de agujeros, la velocidad deseada y el formato de salida (bobina o chapa); dimensionaremos la línea a partir de ahí."
+    ],
+    "components": [
+      "Desbobinadora",
+      "Enderezadora",
+      "Alimentador servo",
+      "Prensa de perforado con troquel de punzones múltiples",
+      "Rebobinadora o cizalla de corte a medida",
+      "Apilador (salida en chapa)"
+    ],
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas sobre las líneas de perforado",
+    "faq": [
+      {
+        "q": "¿Qué hace una línea de perforado?",
+        "a": "Desbobina y endereza la banda y perfora el patrón de agujeros de forma continua en la prensa. A la salida, la banda perforada se rebobina o se corta a medida y se apila en chapas."
+      },
+      {
+        "q": "¿Qué patrones de agujeros se pueden hacer?",
+        "a": "Agujeros redondos, cuadrados, oblongos y decorativos, en filas rectas o al tresbolillo. El patrón lo define el troquel, diseñado según el tamaño del agujero, el paso y el espesor. Envíenos el plano de su patrón y lo evaluamos."
+      },
+      {
+        "q": "¿La chapa perforada sale en bobina o en chapas?",
+        "a": "Ambas opciones. Para salida en bobina se añade una rebobinadora al final de la línea; para chapas, una cizalla de corte a medida y un apilador. La adecuada depende de cómo usan la chapa sus clientes."
+      },
+      {
+        "q": "¿Qué datos necesitan para una oferta?",
+        "a": "Material, rango de espesor y ancho, peso de bobina, un plano del patrón (tamaño de agujero, paso, área abierta), la velocidad deseada y el formato de salida."
+      }
+    ],
+    "ctaTitle": "Dimensionemos su línea de perforado",
+    "ctaText": "Envíe el material, el rango de espesor y el patrón de agujeros; le responderemos con la disposición de la línea y una oferta técnica."
+  },
   "boykesme": {
     "metaTitle": "Líneas de Corte a Medida",
     "metaDesc": "Líneas de corte a medida: corte de precisión de bobina a chapa. Enderezado, alimentación servo, guillotina y apilado gestionados por un único PLC.",

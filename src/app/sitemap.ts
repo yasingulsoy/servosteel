@@ -14,6 +14,7 @@ const paths = [
   { path: "/roll-form-hatlari", priority: 0.9 },
   { path: "/dilme-hatlari", priority: 0.9 },
   { path: "/boy-kesme-hatlari", priority: 0.9 },
+  { path: "/perfore-hatlari", priority: 0.8 },
   { path: "/makineler", priority: 0.8 },
   { path: "/hakkimizda", priority: 0.6 },
   { path: "/referanslar", priority: 0.6 },

@@ -32,6 +32,7 @@ export const ROUTE_SLUGS = {
   "rulo-isleme-hatlari": "coil-processing-lines",
   "dilme-hatlari": "coil-slitting-lines",
   "boy-kesme-hatlari": "cut-to-length-lines",
+  "perfore-hatlari": "coil-perforating-lines",
   "roll-form-hatlari": "roll-forming-lines",
   makineler: "machines",
   hakkimizda: "about-us",

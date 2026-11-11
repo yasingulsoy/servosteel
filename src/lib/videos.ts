@@ -377,6 +377,8 @@ export function embedUrl(id: string): string {
 const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/dilme-hatlari": ["h7aPJ6rJc_U", "JOHZwMBLqKo"],
   "/boy-kesme-hatlari": ["4QETxHS-CD4", "mwZx6X1mV0c"],
+  /* Perfore sayfasının hat fotoğrafı yok; dilme + punch delik delme hattı (Yasin, 11 Kas) */
+  "/perfore-hatlari": ["hc_Znq2u8MI"],
   "/roll-form-hatlari": ["MaJswAJo8JQ", "3xmcJvv6LNc"],
   "/roll-form-hatlari/kablo-kanali": ["MaJswAJo8JQ", "ooxTQBK7wII"],
   "/roll-form-hatlari/solar-profil": ["3xmcJvv6LNc", "tm520w7WsBI"],

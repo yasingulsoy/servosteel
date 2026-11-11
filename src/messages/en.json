@@ -344,6 +344,69 @@
     "ctaTitle": "Let's size your line together",
     "ctaText": "Send your profile drawing or the capacity you need; we come back within 48 hours with a line layout and a technical offer."
   },
+  "perfore": {
+    "nav": "Coil Perforating Lines",
+    "short": "Lines that perforate coil to your hole pattern; output as coil or cut sheets.",
+    "metaTitle": "Coil Perforating Lines: Perforated Sheet from Coil",
+    "metaDesc": "Coil perforating lines: decoil, straighten, servo-feed and perforate the strip to your hole pattern, then recoil or cut to length. Engineered around your pattern.",
+    "eyebrow": "Our expertise",
+    "title": "Coil Perforating Lines",
+    "desc": "Complete lines that perforate coil to your hole pattern: decoiler, straightener, servo feeder, perforating press, and a recoiler or cut-to-length shear at the exit. Each line is engineered around your pattern, sheet thickness and speed.",
+    "highlights": [
+      {
+        "title": "Pattern accuracy",
+        "text": "The servo feeder advances the strip by the same pitch on every stroke, so hole rows run true along the sheet."
+      },
+      {
+        "title": "Multi-punch die",
+        "text": "The hole pattern is punched with several punches in one stroke; the die is designed for your pattern and sheet thickness."
+      },
+      {
+        "title": "Coil or sheet output",
+        "text": "The perforated strip can be recoiled, or cut to length and stacked as sheets at the end of the line."
+      },
+      {
+        "title": "Single-point control",
+        "text": "From decoiler to exit, the line runs from one PLC and operator panel; pattern and pitch recipes are stored on the HMI."
+      }
+    ],
+    "whyTitle": "Why a Servosteel perforating line?",
+    "paras": [
+      "The first stations of a perforating line — <b>decoiler, straightener and servo feeder</b> — are Servosteel's own products. We build the line around them, together with the perforating press and die, as one project, with every unit sized to the next.",
+      "Perforated sheet goes into acoustic panels, ventilation and filter elements, facade cladding, perforated cable trays and shelving. Hole diameter, pitch and open area vary by product, and so does the line: press force, feed pitch and die layout follow the pattern.",
+      "For a quotation, send the material, thickness and width range, a drawing of the hole pattern, the required speed and the output format (coil or sheet); we will size the line from there."
+    ],
+    "components": [
+      "Decoiler",
+      "Straightening unit",
+      "Servo feeder",
+      "Perforating press with multi-punch die",
+      "Recoiler or cut-to-length shear",
+      "Stacker (for sheet output)"
+    ],
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Questions about coil perforating lines",
+    "faq": [
+      {
+        "q": "What does a perforating line do?",
+        "a": "It decoils and straightens the strip, then punches the hole pattern continuously in the press. At the exit the perforated strip is recoiled, or cut to length and stacked as sheets."
+      },
+      {
+        "q": "Which hole patterns can be produced?",
+        "a": "Round, square, slotted and decorative holes, in straight or staggered rows. The pattern is set by the die, which is designed for hole size, pitch and sheet thickness. Send us your pattern drawing and we will assess it."
+      },
+      {
+        "q": "Does perforated sheet come out as coil or as sheets?",
+        "a": "Either. A recoiler is added at the end of the line for coil output; a cut-to-length shear and stacker for sheet output. Which one fits depends on how your customers use the sheet."
+      },
+      {
+        "q": "What do you need for a perforating line quotation?",
+        "a": "Material, thickness and width range, coil weight, a drawing of the hole pattern (hole size, pitch, open area), the required speed and the output format."
+      }
+    ],
+    "ctaTitle": "Let's engineer your perforating line",
+    "ctaText": "Send your material, thickness range and hole pattern; we will come back with a line layout and technical offer."
+  },
   "boykesme": {
     "metaTitle": "Servo Cut-to-Length Lines: Coil to Sheet Cutting Machine",
     "metaDesc": "Cut to length machines and lines: coil to flat sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",
