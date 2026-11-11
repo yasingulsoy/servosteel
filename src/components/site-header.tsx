@@ -73,31 +73,25 @@ const OGE =
 /**
  * Masaüstü menünün göründüğü genişlik. Altında hamburger açılır.
  *
- * 2026-11-11 (Yasin): menü sekiz öğe — Makineler, Pres Besleme Sistemleri,
- * Roll Form Hatları, Üretim Hatları, Sektörler, Hakkımızda (+ Fuarlar),
- * İletişim, Akademi. Çubuk 1280 px'le sınırlıyken Türkçe bile sığmıyordu;
- * çubuk 1536 px'ten itibaren 1440 px'e kadar genişler, menü yazısı 1536
- * altında 13 px. Her dil 1100–1920 px arasında 10 px adımla tarandı, en az
- * 8 px pay kalan ilk genişlik: ar 1150, hu 1190, tr 1200, pl 1220, ru 1240,
- * en 1250, it 1310, de ve es 1540. Eşikler bunun ~10 px üstünde. Almanca ve
- * İspanyolca etiketler uzun; 1536 altındaki dizüstülerde hamburger görürler.
- * Etiket değişirse yeniden ölç (scratchpad'deki tarama betiği: viewport'u
- * 1100'den 1920'ye kaydırıp çubuktaki boşluğu ölçer). Sınıflar tam yazılı —
- * Tailwind kaynağı tarar.
+ * 2026-11-11 (Yasin): menü yedi öğe — Makineler, Roll Form Hatları,
+ * Üretim Hatları (rulo sac işleme, dilme, boy kesme), Sektörler, Hakkımızda
+ * (+ Fuarlar), İletişim, Akademi. Her dil 1100–1920 px arasında 10 px
+ * adımla tarandı; en az 8 px pay kalan ilk genişlik: tr, hu, ar 1100,
+ * en ve pl 1110, ru 1140, de 1170, it 1180, es 1190. Eşikler bunun ~15 px
+ * üstünde; listede olmayan dil 1100'de açılır. Rusçada iki menü adı kısa
+ * tutuldu ("Профилирование", "Линии"). Etiket değişirse yeniden ölç.
+ * Sınıflar tam yazılı — Tailwind kaynağı tarar.
  */
 const MASAUSTU: Record<string, { goster: string; gizle: string }> = {
-  ar: { goster: "min-[1160px]:flex", gizle: "min-[1160px]:hidden" },
-  hu: { goster: "min-[1200px]:flex", gizle: "min-[1200px]:hidden" },
-  tr: { goster: "min-[1210px]:flex", gizle: "min-[1210px]:hidden" },
-  pl: { goster: "min-[1230px]:flex", gizle: "min-[1230px]:hidden" },
-  ru: { goster: "min-[1250px]:flex", gizle: "min-[1250px]:hidden" },
-  en: { goster: "min-[1260px]:flex", gizle: "min-[1260px]:hidden" },
-  it: { goster: "min-[1320px]:flex", gizle: "min-[1320px]:hidden" },
-  de: { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" },
-  es: { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" },
+  en: { goster: "min-[1125px]:flex", gizle: "min-[1125px]:hidden" },
+  pl: { goster: "min-[1125px]:flex", gizle: "min-[1125px]:hidden" },
+  ru: { goster: "min-[1155px]:flex", gizle: "min-[1155px]:hidden" },
+  de: { goster: "min-[1185px]:flex", gizle: "min-[1185px]:hidden" },
+  it: { goster: "min-[1195px]:flex", gizle: "min-[1195px]:hidden" },
+  es: { goster: "min-[1205px]:flex", gizle: "min-[1205px]:hidden" },
 };
 function masaustuSiniflari(locale: string) {
-  return MASAUSTU[locale] ?? { goster: "min-[1540px]:flex", gizle: "min-[1540px]:hidden" };
+  return MASAUSTU[locale] ?? { goster: "min-[1100px]:flex", gizle: "min-[1100px]:hidden" };
 }
 
 /* Etkin sayfanın altın alt çizgisi */
