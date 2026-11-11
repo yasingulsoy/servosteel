@@ -324,11 +324,11 @@
     "ctaText": "Profil çiziminizi ya da kapasite ihtiyacınızı gönderin; 48 saat içinde hat yerleşimi ve teknik teklifle dönelim."
   },
   "boykesme": {
-    "metaTitle": "Boy Kesme Hatları: Rulodan Levha Kesme Makinesi",
-    "metaDesc": "Boy kesme hatları: rulodan plakaya hassas kesim. Doğrultma, servo besleme, giyotin ve istifleme tek PLC üzerinden yönetilir. Schneider kontrol sistemleri.",
+    "metaTitle": "Rulo Sac Boy Kesme Hatları ve Levha Kesme Makinesi",
+    "metaDesc": "Rulo sac boy kesme hatları: rulo sacı ölçülü plakaya keser. Doğrultma, servo besleme, giyotin ve istifleme tek PLC'den yönetilir; Schneider kontrol.",
     "eyebrow": "Uzmanlık alanımız",
-    "title": "Boy Kesme Hatları",
-    "desc": "Ruloyu istediğiniz boyda plakaya dönüştüren komple hatlar: doğrultma, servo besleme, giyotin ve istifleme — tamamı kendi tesisimizde üretilir, tek PLC üzerinden yönetilir.",
+    "title": "Rulo Sac Boy Kesme Hatları",
+    "desc": "Rulo sacı istediğiniz boyda plakaya dönüştüren komple hatlar: doğrultma, servo besleme, giyotin ve istifleme — tamamı kendi tesisimizde üretilir, tek PLC üzerinden yönetilir.",
     "highlights": [
       {
         "title": "Boy hassasiyeti",
@@ -363,7 +363,7 @@
       "Otomatik PVC folyo uygulama sistemi"
     ],
     "faqEyebrow": "Sık sorulanlar",
-    "faqTitle": "Boy kesme hatları hakkında merak edilenler",
+    "faqTitle": "Rulo sac boy kesme hatları hakkında merak edilenler",
     "faq": [
       {
         "q": "Boy kesme hattı ne işe yarar?",
