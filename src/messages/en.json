@@ -1184,7 +1184,7 @@
               "Outer dia. (mm)",
               "Capacity",
               "Inner dia. clamping",
-              "Motor",
+              "Motor power",
               "Hold-down system"
             ],
             "rows": [
@@ -1218,7 +1218,7 @@
                 "Ø 1,400 / 1,600",
                 "6,000 kg",
                 "Hydraulic",
-                "+",
+                "6 kW",
                 "Standard"
               ],
               [
@@ -1229,7 +1229,7 @@
                 "Ø 1,400 / 1,600",
                 "6,000 kg",
                 "Hydraulic",
-                "+",
+                "6 kW",
                 "Standard"
               ],
               [
@@ -1240,7 +1240,7 @@
                 "Ø 1,400 / 1,600",
                 "6,000 kg",
                 "Hydraulic",
-                "+",
+                "6 kW",
                 "Standard"
               ],
               [

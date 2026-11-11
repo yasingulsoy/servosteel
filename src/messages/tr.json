@@ -1148,7 +1148,7 @@
               "Dış çap (mm)",
               "Kapasite",
               "İç çap sıkma",
-              "Motor",
+              "Motor gücü",
               "Üst baskı sistemi"
             ],
             "rows": [
@@ -1182,7 +1182,7 @@
                 "Ø 1.400 / 1.600",
                 "6.000 kg",
                 "Hidrolik",
-                "+",
+                "6 kW",
                 "Standart"
               ],
               [
@@ -1193,7 +1193,7 @@
                 "Ø 1.400 / 1.600",
                 "6.000 kg",
                 "Hidrolik",
-                "+",
+                "6 kW",
                 "Standart"
               ],
               [
@@ -1204,7 +1204,7 @@
                 "Ø 1.400 / 1.600",
                 "6.000 kg",
                 "Hidrolik",
-                "+",
+                "6 kW",
                 "Standart"
               ],
               [

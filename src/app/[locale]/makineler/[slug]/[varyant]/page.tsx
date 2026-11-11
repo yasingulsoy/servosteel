@@ -167,10 +167,11 @@ export default async function VariantPage({ params }: Props) {
                     satırlar kırılmaz; sığmazsa tablo kendi kutusunda yatay kayar. */}
                 <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
                   <table className={`w-full text-left ${genisTablo ? "min-w-[760px] text-[13px]" : "min-w-[420px] text-sm"}`}>
-                    <thead className="bg-surface-alt">
+                    {/* Başlık satırı marka sarısı (Yasin, 11 Kas) — koyu yazı iki temada da okunur */}
+                    <thead className="bg-accent">
                       <tr>
                         {tableHead.map((h) => (
-                          <th key={h} className={`${genisTablo ? "px-3 py-3 align-bottom leading-snug" : "px-5 py-3.5"} font-semibold text-ink`}>{h}</th>
+                          <th key={h} className={`${genisTablo ? "px-3 py-3 align-bottom leading-snug" : "px-5 py-3.5"} font-semibold text-zinc-950`}>{h}</th>
                         ))}
                       </tr>
                     </thead>
