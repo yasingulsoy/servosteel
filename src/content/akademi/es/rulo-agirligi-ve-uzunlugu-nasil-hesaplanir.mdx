@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["cálculo de bobina", "procesamiento de chapa", "selección de línea"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "El peso de una bobina es área de corona × ancho × densidad: Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, con OD, ID y W en milímetros y ρ en g/cm³. La longitud es el área de corona dividida por el espesor. Por ejemplo, una bobina de acero de 1.400 mm de diámetro exterior, núcleo de 508 mm, 1.250 mm de ancho y 2 mm de espesor pesa unas 13,1 toneladas y contiene unos 668 m de fleje."
 faq:
   - q: "¿Por qué la fórmula del peso divide entre 1.000.000?"
@@ -83,7 +83,7 @@ A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
-Unas **13,1 toneladas**. Esta bobina exige una desbobinadora de 15 toneladas; la serie de 12 no basta.
+Unas **13,1 toneladas**. Esta bobina exige una [desbobinadora hidráulica](/makineler/rulo-acicilar/hidrolik-rulo-acicilar) de 15 toneladas; la clase de 10 no basta.
 
 **3. Longitud de fleje**
 
@@ -125,6 +125,16 @@ Para el acero, ρ = 7.850 kg/m³. Comprobémoslo con el ejemplo anterior:
 ```
 
 El mismo resultado: prueba de que el cálculo es coherente. Llegar al mismo número por dos vías es la forma más práctica de validar los datos de entrada.
+
+## Del peso al diámetro exterior: ¿cabe la bobina en la desbobinadora?
+
+El certificado suele indicar peso, ancho y espesor, pero no el diámetro exterior, que es uno de los límites de la desbobinadora. Basta con despejar el diámetro exterior de la fórmula del peso:
+
+```
+OD = √(ID² + 4 × Peso × 1.000.000 / (π × W × ρ))
+```
+
+Una bobina de acero de 10 toneladas, 1.500 mm de ancho y núcleo de 610 mm da OD ≈ 1.206 mm: cabe con holgura en una desbobinadora limitada a 1.600 mm de diámetro exterior. La [calculadora](/hesaplayicilar) lo hace con la opción «Desde peso» y muestra además el peso de cada fleje cortado y la clase de desbobinadora adecuada.
 
 ## Resumen
 

@@ -1,11 +1,12 @@
 "use client";
 
-import { useId } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Send } from "lucide-react";
 import { SpecularButton } from "@/components/specular-button";
 import { LeadSent, HoneyPot } from "@/components/lead-sent";
 import { useLeadSubmit } from "@/components/use-lead-submit";
+import { TEKLIF_DOLDUR, type TeklifDoldurDetay } from "@/lib/teklif-doldur";
 
 const inputClass =
   "w-full rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors focus:border-accent focus:bg-card focus:ring-2 focus:ring-accent/25";
@@ -26,13 +27,46 @@ const yalin = (s: string) => s.replace(/\s*\*\s*$/, "");
  *
  * `product` verilirse gizli alan olarak gider: e-posta konusu "Teklif talebi —
  * {ürün}" olur, satış ekibi hangi makine için yazıldığını açmadan görür.
+ *
+ * `prefill` verilirse sayfadaki bir aracın (rulo sac hesaplayıcısı) gönderdiği
+ * ölçüleri mesaj kutusuna yazar — bkz. lib/teklif-doldur.ts.
  */
-export function QuickQuoteForm({ product, idPrefix }: { product?: string; idPrefix?: string }) {
+export function QuickQuoteForm({
+  product,
+  idPrefix,
+  prefill,
+}: {
+  product?: string;
+  idPrefix?: string;
+  prefill?: boolean;
+}) {
   const t = useTranslations("quote.form");
   const th = useTranslations("home");
   const { status, submit } = useLeadSubmit("rfq");
   const otomatik = useId();
   const id = (ad: string) => `${idPrefix ?? otomatik}-${ad}`;
+  const [urun, setUrun] = useState(product);
+  const adKutusu = useRef<HTMLInputElement>(null);
+  const mesajKutusu = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (!prefill) return;
+    const doldur = (e: Event) => {
+      const d = (e as CustomEvent<TeklifDoldurDetay>).detail;
+      const kutu = mesajKutusu.current;
+      if (kutu) {
+        kutu.value = d.message;
+        /* Ölçü listesi dört satırlık kutuya sığmıyor; ziyaretçi neyi
+           gönderdiğini kaydırmadan görsün. */
+        kutu.rows = Math.min(14, Math.max(4, d.message.split("\n").length + 1));
+      }
+      if (d.product) setUrun(d.product);
+      /* Sayfayı aracın kendisi kaydırıyor; burada yalnızca imleç ilk boş alana. */
+      adKutusu.current?.focus({ preventScroll: true });
+    };
+    window.addEventListener(TEKLIF_DOLDUR, doldur);
+    return () => window.removeEventListener(TEKLIF_DOLDUR, doldur);
+  }, [prefill]);
 
   const etiket = (ad: string, zorunlu: boolean) =>
     zorunlu ? (
@@ -48,12 +82,12 @@ export function QuickQuoteForm({ product, idPrefix }: { product?: string; idPref
   return (
     <form onSubmit={submit} className="grid gap-4 sm:grid-cols-2">
       <HoneyPot />
-      {product ? <input type="hidden" name="product" value={product} /> : null}
+      {urun ? <input type="hidden" name="product" value={urun} /> : null}
       <div className="sm:col-span-2">
         <label htmlFor={id("name")} className="mb-1.5 block text-sm font-medium text-ink">
           {etiket(t("name"), true)}
         </label>
-        <input id={id("name")} name="name" required autoComplete="name" className={inputClass} placeholder={t("namePh")} />
+        <input ref={adKutusu} id={id("name")} name="name" required autoComplete="name" className={inputClass} placeholder={t("namePh")} />
       </div>
       <div>
         <label htmlFor={id("email")} className="mb-1.5 block text-sm font-medium text-ink">
@@ -71,7 +105,7 @@ export function QuickQuoteForm({ product, idPrefix }: { product?: string; idPref
         <label htmlFor={id("message")} className="mb-1.5 block text-sm font-medium text-ink">
           {etiket(t("message"), false)}
         </label>
-        <textarea id={id("message")} name="message" rows={4} className={inputClass} placeholder={t("messagePh")} />
+        <textarea ref={mesajKutusu} id={id("message")} name="message" rows={4} className={inputClass} placeholder={t("messagePh")} />
       </div>
 
       <div className="flex flex-col gap-3 sm:col-span-2">

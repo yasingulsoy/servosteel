@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["calcolo coil", "lavorazione lamiera", "scelta linea"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "Il peso del coil è dato da area della corona × larghezza × densità: Peso (kg) = π/4 × (OD² − ID²) × W × ρ / 1.000.000, con diametri e larghezza in mm e densità in g/cm³. La lunghezza del nastro è l'area della corona divisa per lo spessore. Ad esempio, un coil in acciaio con diametro esterno 1.400 mm, anima da 508 mm, larghezza 1.250 mm e spessore 2 mm pesa circa 13,1 tonnellate e contiene circa 668 m di nastro."
 faq:
   - q: "Perché la formula del peso del coil divide per 1.000.000?"
@@ -83,7 +83,7 @@ A = π/4 × 1.701.936 ≈ 1.336.697 mm²
 1.336.697 × 1.250 × 7,85 / 1.000.000 ≈ 13.116 kg
 ```
 
-Circa **13,1 tonnellate**. Questo coil richiede uno svolgitore da 15 tonnellate; la serie da 12 non basta.
+Circa **13,1 tonnellate**. Questo coil richiede uno [svolgitore idraulico](/makineler/rulo-acicilar/hidrolik-rulo-acicilar) da 15 tonnellate; la classe da 10 non basta.
 
 **3. Lunghezza del nastro**
 
@@ -125,6 +125,16 @@ Per l'acciaio ρ = 7.850 kg/m³. Verifichiamo con l'esempio sopra:
 ```
 
 Stesso risultato: prova che il calcolo è coerente. Arrivare allo stesso numero per due vie è il modo più pratico per validare i dati inseriti.
+
+## Dal peso al diametro esterno: il coil entra nello svolgitore?
+
+Il certificato riporta di solito peso, larghezza e spessore, ma non il diametro esterno, che è uno dei limiti dello svolgitore. Basta ricavare il diametro esterno dalla formula del peso:
+
+```
+OD = √(ID² + 4 × Peso × 1.000.000 / (π × W × ρ))
+```
+
+Un coil d'acciaio da 10 tonnellate, largo 1.500 mm, con anima da 610 mm dà OD ≈ 1.206 mm: entra con margine in uno svolgitore limitato a 1.600 mm di diametro esterno. Il [calcolatore](/hesaplayicilar) lo fa con l'opzione «Da peso» e mostra anche il peso di ogni nastro tagliato e la classe di svolgitore adatta.
 
 ## In sintesi
 

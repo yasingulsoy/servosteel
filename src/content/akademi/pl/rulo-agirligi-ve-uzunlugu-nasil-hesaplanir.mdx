@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["obliczenia kręgu", "obróbka blach", "dobór linii"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "Masa kręgu to pole pierścienia × szerokość × gęstość: Masa (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000, przy OD, ID i W w milimetrach oraz ρ w g/cm³. Długość taśmy to pole pierścienia podzielone przez grubość blachy. Przykładowo stalowy krąg o średnicy zewnętrznej 1400 mm, średnicy rdzenia 508 mm, szerokości 1250 mm i grubości 2 mm waży około 13,1 tony i zawiera około 668 m taśmy."
 faq:
   - q: "Dlaczego we wzorze na masę kręgu dzieli się przez 1 000 000?"
@@ -83,7 +83,7 @@ A = π/4 × 1 701 936 ≈ 1 336 697 mm²
 1 336 697 × 1250 × 7,85 / 1 000 000 ≈ 13 116 kg
 ```
 
-Około **13,1 tony**. Ten krąg wymaga odwijaka 15-tonowego; seria 12-tonowa nie wystarczy.
+Około **13,1 tony**. Ten krąg wymaga 15-tonowego [odwijaka hydraulicznego](/makineler/rulo-acicilar/hidrolik-rulo-acicilar); klasa 10-tonowa nie wystarczy.
 
 **3. Długość taśmy**
 
@@ -125,6 +125,16 @@ Dla stali ρ = 7850 kg/m³. Sprawdźmy na powyższym przykładzie:
 ```
 
 Ten sam wynik — dowód, że obliczenie jest spójne. Dojście do tej samej liczby dwiema drogami to najbardziej praktyczny sposób weryfikacji danych wejściowych.
+
+## Z masy na średnicę zewnętrzną: czy krąg zmieści się na odwijaku?
+
+Atest zwykle podaje masę, szerokość i grubość, ale nie średnicę zewnętrzną — a to ona jest jednym z ograniczeń odwijaka. Wystarczy przekształcić wzór na masę względem OD:
+
+```
+OD = √(ID² + 4 × Masa × 1 000 000 / (π × W × ρ))
+```
+
+Dla stalowego kręgu 10 t o szerokości 1500 mm na rdzeniu 610 mm wychodzi OD ≈ 1206 mm, czyli krąg z zapasem mieści się na odwijaku z limitem 1600 mm średnicy zewnętrznej. [Kalkulator](/hesaplayicilar) robi to opcją „Z masy” i pokazuje też masę każdej taśmy po cięciu oraz pasującą klasę odwijaka.
 
 ## Podsumowanie
 

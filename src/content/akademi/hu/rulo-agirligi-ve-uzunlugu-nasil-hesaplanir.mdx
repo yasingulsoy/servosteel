@@ -5,7 +5,7 @@ date: "2026-08-02"
 author: "Servosteel Engineering"
 cover: "/gorseller/rulo-acicilar.jpg"
 tags: ["tekercsszámítás", "lemezfeldolgozás", "sorválasztás"]
-updated: "2026-09-17"
+updated: "2026-11-11"
 summary: "A tekercssúly a gyűrűterület, a szélesség és a sűrűség szorzata: Súly (kg) = π/4 × (OD² − ID²) × W × ρ / 1 000 000, ahol az OD, ID és W milliméterben, a ρ g/cm³-ben értendő. A szalaghossz a gyűrűterület osztva a lemezvastagsággal. Egy 1 400 mm külső és 508 mm belső átmérőjű, 1 250 mm széles, 2 mm vastag acéltekercs például nagyjából 13,1 tonna, és kb. 668 m szalagot tartalmaz."
 faq:
   - q: "Miért osztunk egymillióval a tekercssúly képletében?"
@@ -83,7 +83,7 @@ A = π/4 × 1 701 936 ≈ 1 336 697 mm²
 1 336 697 × 1 250 × 7,85 / 1 000 000 ≈ 13 116 kg
 ```
 
-Nagyjából **13,1 tonna**. Ehhez a tekercshez 15 tonnás lecsévélő kell; a 12 tonnás széria nem elég.
+Nagyjából **13,1 tonna**. Ehhez a tekercshez 15 tonnás [hidraulikus letekercselő](/makineler/rulo-acicilar/hidrolik-rulo-acicilar) kell; a 10 tonnás osztály nem elég.
 
 **3. Szalaghossz**
 
@@ -125,6 +125,16 @@ Acélra ρ = 7 850 kg/m³. Ellenőrizzük a fenti példán:
 ```
 
 Ugyanaz az eredmény — bizonyíték arra, hogy a számítás konzisztens. Két úton ugyanahhoz a számhoz jutni a legpraktikusabb módja a bemenetek ellenőrzésének.
+
+## Súlyból külső átmérőre: elfér a tekercs a letekercselőn?
+
+A műbizonylat többnyire a súlyt, a szélességet és a vastagságot adja meg, a külső átmérőt nem — pedig ez a letekercselő egyik korlátja. Elég a súlyképletet OD-re rendezni:
+
+```
+OD = √(ID² + 4 × Súly × 1 000 000 / (π × W × ρ))
+```
+
+Egy 10 tonnás, 1 500 mm széles, 610 mm-es magú acéltekercsnél OD ≈ 1 206 mm, vagyis kényelmesen elfér egy 1 600 mm-es külsőátmérő-határú letekercselőn. A [kalkulátor](/hesaplayicilar) ezt a „Súlyból” lehetőséggel végzi el, és megmutatja a hosszvágás utáni szalagok súlyát és az illő letekercselő-osztályt is.
 
 ## Összefoglalás
 

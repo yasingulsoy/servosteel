@@ -7,6 +7,7 @@ type Rehber = {
   sheet: Bolum;
   coil: Bolum;
   length: Bolum;
+  od: Bolum;
   densH: string;
   densP: string;
   densHead: string[];
@@ -30,7 +31,9 @@ export async function CalculatorGuide() {
   const g = t.raw("guide") as Rehber;
   const sayi = new Intl.NumberFormat(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-  const bolumler = [g.sheet, g.coil, g.length];
+  /* `od` (ağırlıktan dış çap) 2026-11-11'de eklendi; örnek sayılar
+     scripts/hesap-test.mjs'teki 7. testle aynı. */
+  const bolumler = [g.sheet, g.coil, g.length, g.od];
 
   return (
     <section className="mx-auto max-w-3xl px-4 pb-16 lg:pb-20">
