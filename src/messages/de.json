@@ -992,6 +992,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Hydraulische Haspeln",
+          "photoAlt": ["Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband","Hydraulische Haspel von Servosteel mit Coilwagen, Nahaufnahme"],
           "metaTitle": "Hydraulische Haspeln: 6-20 t, bis 1.600 mm",
           "meta": "Hydraulische Haspeln von 6.000 bis 20.000 kg: Bandbreite bis 1.600 mm, hydraulische Dornaufweitung, Schlaufenregelung mit Lasersensor.",
           "short": "Für schwere Bunde und breites Band; hydraulischer Dorn, motorisch.",
@@ -1033,6 +1034,7 @@
         },
         "mekanik": {
           "name": "Mechanische Haspeln",
+          "photoAlt": ["Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"],
           "metaTitle": "Mechanische Haspel — 500-4.000 kg",
           "meta": "Mechanische Haspeln von 500 bis 4.000 kg: 30-1.200 mm Bandbreite, Dornklemmung, Drehzahlregelung und Bremsbelagsystem.",
           "short": "Wirtschaftlich für leichte und mittlere Bunde; mechanischer Dorn.",
@@ -2035,6 +2037,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Abwickelhaspeln",
+        "types": [{"label":"Hydraulische Haspel","alt":"Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband"},{"label":"Mechanische Haspel","alt":"Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"},{"label":"Doppelkopf-Haspel","alt":"Doppelkopf-Haspel von Servosteel mit zwei Dornen, Vorderansicht"}],
+        "galleryAlt": ["Doppelkopf-Haspel von Servosteel, Seitenansicht"],
         "metaTitle": "Abwickelhaspeln: hydraulisch 6-20 t, mechanisch 500-4.000 kg",
         "short": "Hydraulisch 6-20 t, mechanisch 500-4.000 kg.",
         "hero": "Das erste Glied jeder Anlage: hydraulische und mechanische Haspeln, die das Coil sicher tragen und mit kontrollierter Spannung abwickeln. Ausgelegt nach Kapazität, Blechbreite und Automatisierungsgrad.",

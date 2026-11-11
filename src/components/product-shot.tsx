@@ -4,7 +4,7 @@ type Props = {
   src: string;
   alt: string;
   /** Görüntü oranı: hat/roll-form fotoğrafları için "video" (16:9), makine stüdyo çekimleri için "4/3". */
-  ratio?: "video" | "4/3" | "square";
+  ratio?: "video" | "4/3" | "square" | "3/4";
   /** "cover" kırpar (fabrika sahnesi), "contain" tüm makineyi gösterir (beyaz zeminli stüdyo çekimi). */
   fit?: "cover" | "contain";
   /** Ekran üstündeki ana görsel için true (LCP). */
@@ -25,7 +25,13 @@ export function ProductShot({
   sizes = "(max-width: 1280px) 100vw, 1216px",
 }: Props) {
   const ratioClass =
-    ratio === "square" ? "aspect-square" : ratio === "4/3" ? "aspect-[4/3]" : "aspect-video";
+    ratio === "square"
+      ? "aspect-square"
+      : ratio === "4/3"
+        ? "aspect-[4/3]"
+        : ratio === "3/4"
+          ? "aspect-[3/4]"
+          : "aspect-video";
   const fitClass = fit === "contain" ? "object-contain" : "object-cover";
 
   return (

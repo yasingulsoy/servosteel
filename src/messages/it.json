@@ -992,6 +992,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Aspi Idraulici",
+          "photoAlt": ["Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro","Aspo idraulico Servosteel e carrello portacoil, primo piano"],
           "metaTitle": "Aspo Idraulico — 6.000-20.000 kg",
           "meta": "Aspi idraulici da 6.000 a 20.000 kg: larghezza nastro fino a 1.600 mm, espansione idraulica del mandrino, controllo anello con sensore laser.",
           "short": "Per coil pesanti e nastro largo; mandrino idraulico, motorizzato.",
@@ -1033,6 +1034,7 @@
         },
         "mekanik": {
           "name": "Aspi Meccanici",
+          "photoAlt": ["Aspi meccanici Servosteel allineati in officina"],
           "metaTitle": "Aspo Meccanico — 500-4.000 kg",
           "meta": "Aspi meccanici da 500 a 4.000 kg: larghezza nastro 30-1.200 mm, bloccaggio del nucleo con mandrino, controllo velocità e sistema frenante.",
           "short": "Soluzione economica per coil leggeri e medi; mandrino meccanico.",
@@ -2035,6 +2037,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Svolgitori",
+        "types": [{"label":"Aspo idraulico","alt":"Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro"},{"label":"Aspo meccanico","alt":"Aspi meccanici Servosteel allineati in officina"},{"label":"Aspo a doppia testa","alt":"Aspo a doppia testa Servosteel con due mandrini, vista frontale"}],
+        "galleryAlt": ["Aspo a doppia testa Servosteel, vista laterale"],
         "metaTitle": "Svolgitori: idraulici 6-20 t, meccanici 500-4.000 kg",
         "short": "Idraulici 6-20 t e meccanici 500-4.000 kg.",
         "hero": "Il primo anello di ogni linea: svolgitori idraulici e meccanici che sostengono il coil in sicurezza e lo svolgono a tensione controllata. Progettati su capacità, larghezza lamiera e livello di automazione.",

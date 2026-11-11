@@ -13,7 +13,8 @@ import { ProductShot } from "@/components/product-shot";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
 import { Vitrin } from "@/components/vitrin";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf } from "@/lib/catalog";
+import { TipSeridi } from "@/components/tip-seridi";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf, typesOf, hidesVideos } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -65,6 +66,8 @@ export default async function MachinePage({ params }: Props) {
   const galeriAlt = t.has("galleryAlt") ? (t.raw("galleryAlt") as string[]) : [];
   const vitrin = showcaseOf(slug);
   const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
+  const tipler = typesOf(slug);
+  const tipMetin = t.has("types") ? (t.raw("types") as { label: string; alt: string }[]) : [];
   const anaFoto = hasPhoto(slug) && !hidesMainPhoto(slug);
   const gorsel = pageImageOf(slug);
   /* Kullanım çipleri: bağlantısı olan çip hat sayfasına gider (bkz. usageLinksOf,
@@ -143,9 +146,19 @@ export default async function MachinePage({ params }: Props) {
       <Vitrin
         fotolar={vitrin.map((v, i) => ({ src: `/gorseller/${v.file}`, alt: vitrinAlt[i] ?? t("name"), width: v.width, height: v.height }))}
       />
+      <TipSeridi
+        tipler={tipler.map((v, i) => ({
+          src: `/gorseller/${v.file}`,
+          alt: tipMetin[i]?.alt ?? t("name"),
+          etiket: tipMetin[i]?.label ?? t("name"),
+          href: v.href,
+          konum: v.konum,
+        }))}
+      />
       {/* Sahadan videolar üstte: vitrin varsa hemen altında, yoksa başlığın altında
-          (Yasin, 27 Eki: "tüm makineler için görsellerden sonra videoları koyalım") */}
-      <RelatedVideos path={`/makineler/${slug}`} ust />
+          (Yasin, 27 Eki: "tüm makineler için görsellerden sonra videoları koyalım").
+          Rulo açıcılarda yok (Yasin, 11 Kas) — bkz. hidesVideos. */}
+      {!hidesVideos(slug) && <RelatedVideos path={`/makineler/${slug}`} ust />}
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">

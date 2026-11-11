@@ -992,6 +992,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Hidrolik Rulo Açıcılar",
+          "photoAlt": ["Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken","Servosteel hidrolik rulo açıcı ve rulo arabası, yakından"],
           "metaTitle": "Hidrolik Rulo Açıcı — 6.000-20.000 kg",
           "meta": "6.000-20.000 kg kapasiteli hidrolik rulo açıcılar: 1.600 mm'ye kadar sac genişliği, hidrolik mandren sıkma, lazer sensörlü loop kontrol.",
           "short": "Ağır rulolar ve geniş sac için; hidrolik mandren ve motorlu tahrik.",
@@ -1033,6 +1034,7 @@
         },
         "mekanik": {
           "name": "Mekanik Rulo Açıcılar",
+          "photoAlt": ["Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"],
           "metaTitle": "Mekanik Rulo Açıcı — 500-4.000 kg",
           "meta": "500-4.000 kg kapasiteli mekanik rulo açıcılar: 30-1.200 mm sac genişliği, mandrenle göbek sıkma, hız kontrol ve fren balata sistemi.",
           "short": "Hafif ve orta rulolar için ekonomik çözüm; mekanik mandren.",
@@ -2048,6 +2050,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Rulo Açıcılar",
+        "types": [{"label":"Hidrolik rulo açıcı","alt":"Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken"},{"label":"Mekanik rulo açıcı","alt":"Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"},{"label":"Çift kafa rulo açıcı","alt":"Servosteel çift kafa rulo açıcı, iki mandrenli, önden görünüm"}],
+        "galleryAlt": ["Servosteel çift kafa rulo açıcı, yandan görünüm"],
         "metaTitle": "Rulo Açıcı ve Rulo Sac Açma Makinesi: Hidrolik, Mekanik",
         "short": "Hidrolik 6-20 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
         "hero": "Rulo sac açma makinesi olarak da bilinen rulo açıcı, her hattın ilk halkasıdır: ruloyu güvenle taşır, gerginliği kontrol ederek açar. Hidrolik ve mekanik modeller kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",

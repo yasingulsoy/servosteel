@@ -992,6 +992,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Hidraulikus Letekercselők",
+          "photoAlt": ["Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben","Servosteel hidraulikus letekercselő és tekercsszállító kocsi közelről"],
           "metaTitle": "Hidraulikus Letekercselő — 6.000-20.000 kg",
           "meta": "Hidraulikus letekercselők 6.000-20.000 kg között: szalagszélesség 1.600 mm-ig, hidraulikus tüskefeszítés, lézerszenzoros hurokvezérlés.",
           "short": "Nehéz tekercsekhez és széles szalaghoz; hidraulikus tüske, motoros.",
@@ -1033,6 +1034,7 @@
         },
         "mekanik": {
           "name": "Mechanikus Letekercselők",
+          "photoAlt": ["Sorban álló Servosteel mechanikus letekercselők a gyárban"],
           "metaTitle": "Mechanikus Letekercselő — 500-4.000 kg",
           "meta": "Mechanikus letekercselők 500-4.000 kg között: 30-1.200 mm szalagszélesség, tüskés magszorítás, fordulatszám-szabályozás és fékbetétes rendszer.",
           "short": "Gazdaságos megoldás könnyű és közepes tekercsekhez; mechanikus tüske.",
@@ -2035,6 +2037,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Lecsévélők",
+        "types": [{"label":"Hidraulikus letekercselő","alt":"Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben"},{"label":"Mechanikus letekercselő","alt":"Sorban álló Servosteel mechanikus letekercselők a gyárban"},{"label":"Kétfejes letekercselő","alt":"Servosteel kétfejes letekercselő két tüskével, elölnézet"}],
+        "galleryAlt": ["Servosteel kétfejes letekercselő, oldalnézet"],
         "metaTitle": "Lecsévélők: hidraulikus 6-20 t, mechanikus 500-4000 kg",
         "short": "Hidraulikus 6-20 t, mechanikus 500-4.000 kg.",
         "hero": "Minden sor első láncszeme: hidraulikus és mechanikus lecsévélők, amelyek biztonságosan tartják a tekercset és szabályozott feszültséggel csévélik le. Kapacitásra, lemezszélességre és automatizáltsági szintre tervezve.",

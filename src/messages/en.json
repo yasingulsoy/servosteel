@@ -1028,6 +1028,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Hydraulic Decoilers",
+          "photoAlt": ["Servosteel hydraulic decoiler with coil car, unwinding steel strip","Servosteel hydraulic decoiler and coil car, close-up"],
           "metaTitle": "Hydraulic Decoiler — 6,000-20,000 kg",
           "meta": "Hydraulic decoilers from 6,000 to 20,000 kg: strip width up to 1,600 mm, hydraulic mandrel expansion, laser sensor loop control.",
           "short": "For heavy coils and wide strip; hydraulic mandrel, motor driven.",
@@ -1069,6 +1070,7 @@
         },
         "mekanik": {
           "name": "Mechanical Decoilers",
+          "photoAlt": ["Servosteel mechanical decoilers lined up in the factory"],
           "metaTitle": "Mechanical Decoiler — 500-4,000 kg",
           "meta": "Mechanical decoilers from 500 to 4,000 kg: 30-1,200 mm strip width, mandrel hub clamping, speed control and brake lining system.",
           "short": "Economical choice for light and medium coils; mechanical mandrel.",
@@ -2095,6 +2097,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Decoilers",
+        "types": [{"label":"Hydraulic decoiler","alt":"Servosteel hydraulic decoiler with coil car, unwinding steel strip"},{"label":"Mechanical decoiler","alt":"Servosteel mechanical decoilers lined up in the factory"},{"label":"Double-head decoiler","alt":"Servosteel double-head decoiler with two mandrels, front view"}],
+        "galleryAlt": ["Servosteel double-head decoiler, side view"],
         "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
         "short": "Hydraulic 6-20 t and mechanical 500-4,000 kg decoiling solutions.",
         "hero": "The first link of every line: hydraulic and mechanical decoiler machines that carry the coil safely and pay it off under controlled tension. Engineered to your capacity, sheet width and automation level.",

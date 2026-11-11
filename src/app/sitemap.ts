@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
-import { rollFormItems, machineItems, machineVariants } from "@/lib/catalog";
+import { rollFormItems, machineItems, machineVariants, pageImagesOf } from "@/lib/catalog";
 import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
 import { localePath, X_DEFAULT_LOCALE } from "@/i18n/seo";
 import { getAllPostParams, getPostLocales, getPosts } from "@/lib/akademi";
@@ -66,11 +66,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
     languages["x-default"] = `${SITE_URL}${localePath(X_DEFAULT_LOCALE, path)}`;
 
+    /* Ürün sayfalarında görünen fotoğraflar — Google Görseller için */
+    const images = pageImagesOf(path).map((g) => `${SITE_URL}${g}`);
+
     return routing.locales.map((l) => ({
       url: `${SITE_URL}${localePath(l, path)}`,
       changeFrequency: "weekly" as const,
       priority,
       alternates: { languages },
+      ...(images.length ? { images } : {}),
     }));
   });
 

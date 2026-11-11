@@ -11,7 +11,8 @@ import { Reveal } from "@/components/reveal";
 import { InlineQuote } from "@/components/inline-quote";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
-import { hasPhoto, isMachineVariant, machineVariants, variantsOf } from "@/lib/catalog";
+import { ProductShot } from "@/components/product-shot";
+import { hasPhoto, hidesVideos, isMachineVariant, machineVariants, variantPhotosOf, variantsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 /**
@@ -41,10 +42,12 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug, varyant } = await params;
   if (!isMachineVariant(slug, varyant)) return {};
   const t = await getTranslations({ locale, namespace: ns(slug, varyant) });
+  /* Paylaşım görseli: varyantın kendi fotoğrafı, yoksa üst makinenin */
+  const kendi = variantPhotosOf(slug, varyant)[0];
   return sayfaMeta(locale as AppLocale, `/makineler/${slug}/${varyant}`, {
     baslik: t.has("metaTitle") ? t("metaTitle") : t("name"),
     aciklama: t("meta"),
-    gorsel: hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
+    gorsel: kendi ? `/gorseller/${kendi.file}` : hasPhoto(slug) ? `/gorseller/${slug}.jpg` : undefined,
   });
 }
 
@@ -65,6 +68,8 @@ export default async function VariantPage({ params }: Props) {
   const tableRows = t.raw("table.rows") as string[][];
   /* Kardeş varyantlar — aynı makinenin diğer tipleri */
   const kardesler = variantsOf(slug).filter((v) => v.slug !== varyant);
+  const fotolar = variantPhotosOf(slug, varyant);
+  const fotoAlt = t.has("photoAlt") ? (t.raw("photoAlt") as string[]) : [];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -82,6 +87,7 @@ export default async function VariantPage({ params }: Props) {
       description: t("meta"),
       brand: { "@type": "Brand", name: SITE_NAME },
       manufacturer: { "@id": `${SITE_URL}/#organization` },
+      ...(fotolar.length ? { image: fotolar.map((f) => `${SITE_URL}/gorseller/${f.file}`) } : {}),
       additionalProperty: tableRows.map((row) => ({
         "@type": "PropertyValue",
         name: row[0],
@@ -107,7 +113,7 @@ export default async function VariantPage({ params }: Props) {
       />
 
       {/* Üst makinenin sahadan videoları başlığın hemen altında — makine sayfalarıyla aynı düzen */}
-      <RelatedVideos path={`/makineler/${slug}`} ust />
+      {!hidesVideos(slug) && <RelatedVideos path={`/makineler/${slug}`} ust />}
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
@@ -175,6 +181,21 @@ export default async function VariantPage({ params }: Props) {
           </div>
 
           <aside className="space-y-6">
+            {fotolar.length > 0 && (
+              <Reveal>
+                <div className="space-y-4">
+                  {fotolar.map((f, i) => (
+                    <ProductShot
+                      key={f.file}
+                      src={`/gorseller/${f.file}`}
+                      alt={fotoAlt[i] ?? t("name")}
+                      ratio={f.height > f.width ? "3/4" : "4/3"}
+                      sizes="(max-width: 1024px) 100vw, 400px"
+                    />
+                  ))}
+                </div>
+              </Reveal>
+            )}
             <Reveal>
               <div className="rounded-2xl bg-shell p-7 text-white">
                 <h2 className="font-display text-lg font-bold uppercase tracking-tight">

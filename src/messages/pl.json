@@ -992,6 +992,7 @@
       "rulo-acicilar": {
         "hidrolik": {
           "name": "Odwijaki Hydrauliczne",
+          "photoAlt": ["Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej","Odwijak hydrauliczny Servosteel i wózek do kręgów, zbliżenie"],
           "metaTitle": "Odwijak Hydrauliczny — 6.000-20.000 kg",
           "meta": "Odwijaki hydrauliczne od 6.000 do 20.000 kg: szerokość taśmy do 1.600 mm, hydrauliczne rozprężanie trzpienia, kontrola pętli z czujnikiem laserowym.",
           "short": "Do ciężkich kręgów i szerokiej taśmy; trzpień hydrauliczny, napęd silnikowy.",
@@ -1033,6 +1034,7 @@
         },
         "mekanik": {
           "name": "Odwijaki Mechaniczne",
+          "photoAlt": ["Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"],
           "metaTitle": "Odwijak Mechaniczny — 500-4.000 kg",
           "meta": "Odwijaki mechaniczne od 500 do 4.000 kg: szerokość taśmy 30-1.200 mm, mocowanie rdzenia trzpieniem, regulacja prędkości i układ hamulcowy.",
           "short": "Ekonomiczne rozwiązanie do lekkich i średnich kręgów; trzpień mechaniczny.",
@@ -2035,6 +2037,8 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Odwijaki",
+        "types": [{"label":"Odwijak hydrauliczny","alt":"Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej"},{"label":"Odwijak mechaniczny","alt":"Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"},{"label":"Odwijak dwugłowicowy","alt":"Odwijak dwugłowicowy Servosteel z dwoma trzpieniami, widok z przodu"}],
+        "galleryAlt": ["Odwijak dwugłowicowy Servosteel, widok z boku"],
         "metaTitle": "Odwijaki: hydrauliczne 6-20 t, mechaniczne 500-4000 kg",
         "short": "Hydrauliczne 6-20 t i mechaniczne 500-4.000 kg.",
         "hero": "Pierwsze ogniwo każdej linii: odwijaki hydrauliczne i mechaniczne, które bezpiecznie utrzymują krąg i rozwijają go z kontrolowanym naprężeniem. Projektowane pod wydajność, szerokość blachy i poziom automatyzacji.",

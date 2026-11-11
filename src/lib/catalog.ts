@@ -44,6 +44,21 @@ export const machineItems = [
     /* "Kullanım alanları" çiplerinin bağlantısı, `sectors` SIRASINA göre (bkz.
        usageLinksOf): Pres besleme, Dilme, Boy kesme, Roll form — 9 dilde aynı sıra */
     usageLinks: ["/makineler", "/dilme-hatlari", "/boy-kesme-hatlari", "/roll-form-hatlari"],
+    /* Başlığın altındaki tip şeridi (bkz. typesOf): her tip ayrı etiketle,
+       sayfası olan tipe bağlantı. Etiket ve alt metinleri mesaj dosyasında
+       `products.machines.rulo-acicilar.types`, aynı sırayla. `konum`: kare
+       kutuda kırpılırken makinenin kalacağı yer (CSS object-position). */
+    types: [
+      { file: "hidrolik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/hidrolik", konum: "45% 50%" },
+      { file: "mekanik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/mekanik", konum: "30% 50%" },
+      { file: "cift-kafa-rulo-acici.jpg", konum: "50% 62%" },
+    ],
+    /* Yan sütun (bkz. galleryOf): çift kafanın yandan görünümü — bu tipin
+       kendi sayfası yok, ikinci fotoğrafı burada. */
+    gallery: [{ file: "cift-kafa-rulo-acici-2.jpg", ratio: "3/4" }],
+    /* Başlığın altındaki video şeridi bu sayfada ve varyantlarında yok
+       (Yasin, 11 Kas): yerini tip şeridi aldı. Videolar /videolar'da duruyor. */
+    hideVideos: true,
   },
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
@@ -95,8 +110,22 @@ export const machineItems = [
  * ayrışırsa routing.ts açılışta hata fırlatır.
  */
 export const machineVariants = [
-  { parent: "rulo-acicilar", slug: "hidrolik" },
-  { parent: "rulo-acicilar", slug: "mekanik" },
+  /* photos: sayfanın yan sütunundaki fotoğraflar (bkz. variantPhotosOf); alt
+     metinleri `products.variants.<parent>.<slug>.photoAlt`, aynı sırayla.
+     Yeni fotoğraf gelince diziye eklemek yeter. */
+  {
+    parent: "rulo-acicilar",
+    slug: "hidrolik",
+    photos: [
+      { file: "hidrolik-rulo-acici.jpg", width: 1536, height: 1137 },
+      { file: "hidrolik-rulo-acici-2.jpg", width: 1066, height: 1600 },
+    ],
+  },
+  {
+    parent: "rulo-acicilar",
+    slug: "mekanik",
+    photos: [{ file: "mekanik-rulo-acici.jpg", width: 1600, height: 1066 }],
+  },
   { parent: "servo-suruculer", slug: "mini" },
   { parent: "servo-suruculer", slug: "kasali" },
   { parent: "dogrultmali-servo-suruculer", slug: "mini" },
@@ -107,6 +136,16 @@ export type MachineVariant = (typeof machineVariants)[number];
 
 export function isMachineVariant(parent: string, slug: string): boolean {
   return machineVariants.some((v) => v.parent === parent && v.slug === slug);
+}
+
+type UrunFoto = { file: string; width: number; height: number };
+
+/** Varyant sayfasının fotoğrafları (`public/gorseller/`); yoksa boş dizi. */
+export function variantPhotosOf(parent: string, slug: string): readonly UrunFoto[] {
+  const v = (machineVariants as ReadonlyArray<{ parent: string; slug: string; photos?: readonly UrunFoto[] }>).find(
+    (x) => x.parent === parent && x.slug === slug
+  );
+  return v?.photos ?? [];
 }
 
 /** Bir makinenin varyantları (yoksa boş dizi). */
@@ -144,7 +183,23 @@ export function hasPhoto(slug: string): boolean {
   return !all.find((i) => i.slug === slug)?.noPhoto;
 }
 
-type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" };
+type GaleriFoto = { file: string; ratio: "4/3" | "square" | "video" | "3/4" };
+
+type TipFoto = { file: string; href?: string; konum?: string };
+
+/**
+ * Ürün sayfasında başlığın altındaki tip şeridi (bkz. components/tip-seridi.tsx):
+ * makinenin tipleri yan yana, her biri kendi etiketiyle.
+ */
+export function typesOf(slug: string): readonly TipFoto[] {
+  const all = machineItems as ReadonlyArray<{ slug: string; types?: readonly TipFoto[] }>;
+  return all.find((i) => i.slug === slug)?.types ?? [];
+}
+
+/** Başlığın altındaki video şeridi bu makinede (ve varyantlarında) basılmasın mı. */
+export function hidesVideos(slug: string): boolean {
+  return !!(machineItems as ReadonlyArray<{ slug: string; hideVideos?: boolean }>).find((i) => i.slug === slug)?.hideVideos;
+}
 
 /**
  * Makinenin ana fotoğrafının altında gösterilen ek fotoğraflar (`public/gorseller/`).
@@ -201,6 +256,30 @@ export function pageImageOf(slug: string): string | undefined {
   if (!hasPhoto(slug)) return undefined;
   const vitrin = showcaseOf(slug);
   return hidesMainPhoto(slug) && vitrin.length ? `/gorseller/${vitrin[0].file}` : `/gorseller/${slug}.jpg`;
+}
+
+/**
+ * Ürün sayfasında GÖRÜNEN fotoğraflar (site kökünden yol) — site haritasının
+ * görsel etiketleri için (`<image:image>`), Google Görseller'in sayfayla
+ * eşleştirmesi için. Sayfada gösterilmeyen ana fotoğraf (hideMainPhoto) girmez.
+ *
+ * `path` dahili yol: `/makineler/rulo-acicilar`, `/makineler/rulo-acicilar/hidrolik`,
+ * `/roll-form-hatlari/solar-profil`. Ürün sayfası değilse boş dizi.
+ */
+export function pageImagesOf(path: string): string[] {
+  const [bolum, slug, varyant] = path.split("/").filter(Boolean);
+  if (bolum === "makineler" && slug && varyant) {
+    return variantPhotosOf(slug, varyant).map((f) => `/gorseller/${f.file}`);
+  }
+  const urun = (bolum === "makineler" && isMachineSlug(slug ?? "")) || (bolum === "roll-form-hatlari" && isRollFormSlug(slug ?? ""));
+  if (!urun || !slug) return [];
+  const dosyalar = [
+    ...(hasPhoto(slug) && !hidesMainPhoto(slug) ? [`${slug}.jpg`] : []),
+    ...showcaseOf(slug).map((v) => v.file),
+    ...typesOf(slug).map((v) => v.file),
+    ...galleryOf(slug).map((g) => g.file),
+  ];
+  return [...new Set(dosyalar)].map((f) => `/gorseller/${f}`);
 }
 
 export function rollFormIcon(slug: string) {
