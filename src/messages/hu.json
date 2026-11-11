@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Kapacitástartomány",
-            "a": "6 – 20 tonna",
+            "a": "4 – 15 tonna",
             "b": "500 – 4 000 kg"
           },
           {
@@ -1130,49 +1130,209 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Hidraulikus Letekercselők",
-          "photoAlt": ["Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben","Servosteel hidraulikus letekercselő és tekercsszállító kocsi közelről"],
-          "metaTitle": "Hidraulikus Letekercselő — 6.000-20.000 kg",
-          "meta": "Hidraulikus letekercselők 6.000-20.000 kg között: szalagszélesség 1.600 mm-ig, hidraulikus tüskefeszítés, lézerszenzoros hurokvezérlés.",
+          "photoAlt": [
+            "Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben",
+            "Servosteel hidraulikus letekercselő és tekercsszállító kocsi közelről"
+          ],
+          "metaTitle": "Hidraulikus Letekercselő — 4.000-15.000 kg",
+          "meta": "Hidraulikus letekercselők 4.000-15.000 kg között: szalagszélesség 1.600 mm-ig, 470–570 mm belső átmérő, hidraulikus tüskefeszítés, lézerszenzoros hurokvezérlés.",
           "short": "Nehéz tekercsekhez és széles szalaghoz; hidraulikus tüske, motoros.",
-          "hero": "Hidraulikus letekercselőink 6.000 kg-tól 20.000 kg-ig bírnak tekercset, és 1.600 mm-ig terjedő szalagszélességgel dolgoznak. A tüskefeszítés hidraulikus; a pneumatikus leszorítókar és a lézerszenzoros hurokvezérlés alapfelszereltség.",
+          "hero": "Hidraulikus letekercselőink 4.000 kg-tól 15.000 kg-ig bírnak tekercset, és 1.600 mm-ig terjedő szalagszélességgel dolgoznak. A tüskefeszítés hidraulikus; a pneumatikus leszorítókar és a lézerszenzoros hurokvezérlés alapfelszereltség.",
           "table": {
-            "title": "Kapacitás és szélesség",
+            "title": "Modellek és műszaki adatok",
             "head": [
-              "Tekercs tömege",
-              "Anyagszélesség"
+              "Modell",
+              "Anyagszélesség (mm)",
+              "Belső átmérő min. (mm)",
+              "Belső átmérő max. (mm)",
+              "Külső átmérő (mm)",
+              "Kapacitás",
+              "Belső befogás",
+              "Motorteljesítmény",
+              "Leszorító"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidraulikus",
+                "4 kW",
+                "Alap"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidraulikus",
+                "4 kW",
+                "Alap"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Hidraulikus",
+                "6 kW",
+                "Alap"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidraulikus",
+                "6 kW",
+                "Alap"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidraulikus",
+                "6 kW",
+                "Alap"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Hidraulikus",
+                "10 kW",
+                "Alap"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidraulikus",
+                "10 kW",
+                "Alap"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidraulikus",
+                "10 kW",
+                "Alap"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidraulikus",
+                "10 kW",
+                "Alap"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Hidraulikus",
+                "15 kW",
+                "Alap"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidraulikus",
+                "15 kW",
+                "Alap"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidraulikus",
+                "15 kW",
+                "Alap"
               ]
             ]
           },
-          "tableNote": "Minden modell: tekercs külső átmérő 1.600 mm, belső 450–560 mm (adapterrel 640 mm). A hidraulikus tüskefeszítés és a leszorítókar alapfelszereltség. Motor helyett fékes kivitel is rendelhető."
+          "tableNote": "Minden modell: tekercs belső átmérő 470–570 mm, külső Ø 1.400 / 1.600 mm. Hidraulikus belső befogás, motoros hajtás, leszorító rendszer alapfelszereltség. Motor helyett fékes kivitel is rendelhető.",
+          "features": [
+            {
+              "title": "Hidraulikus tüskefeszítés",
+              "text": "A hidraulikus henger kifeszíti a tüskét, amely a tekercset a belső átmérőjénél fogva rögzíti. 4–15 tonnás tekercseknél a rögzítéshez nincs szükség a kezelő erejére."
+            },
+            {
+              "title": "Pneumatikus leszorítókar",
+              "text": "A leszorítókar a tekercs külső menetére nyom, így a pánt elvágásakor a tekercs nem lazul meg és nem nyílik szét. Minden hidraulikus modellen alapfelszereltség."
+            },
+            {
+              "title": "Lézerszenzoros hurokvezérlés",
+              "text": "Lézerszenzor méri a hurkot a letekercselő és a következő egység között, és a letekercselő sebességét a sorhoz igazítja; a szalag nem feszül meg és nem ér a padlóhoz."
+            },
+            {
+              "title": "Motoros vagy fékes",
+              "text": "A hidraulikus letekercselő motoros. Ahol a szalagot maga a sor húzza, motor helyett fékes kivitel is rendelhető."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mi az a hidraulikus letekercselő?",
+              "a": "Olyan gép, amely a nehéz tekercset tüskén hordozza, és szabályozott sebességgel tekercseli le a sorba. A hidraulikus henger kifeszíti a tüskét, amely a tekercset a belső átmérőjénél fogva rögzíti. A Servosteel hidraulikus szériája 4.000–15.000 kg-os tekercseket hordoz."
+            },
+            {
+              "q": "Mekkora a hidraulikus letekercselő teherbírása és szalagszélessége?",
+              "a": "A kapacitások 4.000, 6.000, 10.000 és 15.000 kg, mindegyiknél több szélességű modellel. Az anyagszélesség a 4 tonnásnál 70–600 mm, a 6 tonnásnál 70–1.000 mm, a 10 tonnásnál 70–1.500 mm, a 15 tonnásnál 100–1.600 mm. Minden modell megtalálható a táblázatban."
+            },
+            {
+              "q": "Milyen átmérőjű tekercshez való a hidraulikus letekercselő?",
+              "a": "Minden hidraulikus modellnél a tekercs belső átmérője 470–570 mm, külső átmérője Ø 1.400 / 1.600 mm."
+            },
+            {
+              "q": "Hidraulikus vagy mechanikus letekercselőt válasszak?",
+              "a": "A tekercs tömege dönt. A mechanikus széria 500–4.000 kg-os, a hidraulikus 4.000–15.000 kg-os tekercset hordoz. 4 tonna fölött, széles szalagnál és gyakori tekercscserénél hidraulikus letekercselőt válasszon; 4 tonnánál mindkét széria létezik, és a hidraulikus leveszi a kezelőről a befogás terhét. Nehéz sorokon hidraulikus tekercsszállító kocsival együtt ajánljuk."
+            },
+            {
+              "q": "Milyen adatok kellenek a hidraulikus letekercselő ajánlatához?",
+              "a": "A legnehezebb tekercs tömege, a szalagszélesség és a vastagságtartomány, a tekercs belső és külső átmérője, a sor, amelyet a letekercselő kiszolgál (présadagolás, hasítás, keresztvágás vagy profilozás), valamint a sorsebesség. Azt is jelezze, kér-e tekercsszállító kocsit."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Mechanikus Letekercselők",
-          "photoAlt": ["Sorban álló Servosteel mechanikus letekercselők a gyárban"],
+          "photoAlt": [
+            "Sorban álló Servosteel mechanikus letekercselők a gyárban"
+          ],
           "metaTitle": "Mechanikus Letekercselő — 500-4.000 kg",
           "meta": "Mechanikus letekercselők 500-4.000 kg között: 30-1.200 mm szalagszélesség, tüskés magszorítás, fordulatszám-szabályozás és fékbetétes rendszer.",
           "short": "Gazdaságos megoldás könnyű és közepes tekercsekhez; mechanikus tüske.",
@@ -1217,7 +1377,47 @@
               ]
             ]
           },
-          "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm. A 3.000 és 4.000 kg-os modelleknél a tekercs külső átmérője 1.600 mm, belső átmérője 450–560 mm (adapterrel 630 mm), a tüskefeszítés mechanikus. A 3.000–4.000 kg-os kúpos tüskéjű letekercselők 5 mm-ig terjedő lemezvastagsággal dolgoznak."
+          "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm. A 3.000 és 4.000 kg-os modelleknél a tekercs külső átmérője 1.600 mm, belső átmérője 450–560 mm (adapterrel 630 mm), a tüskefeszítés mechanikus. A 3.000–4.000 kg-os kúpos tüskéjű letekercselők 5 mm-ig terjedő lemezvastagsággal dolgoznak.",
+          "features": [
+            {
+              "title": "Tüskés magszorítás",
+              "text": "Az 500–2.500 kg-os modelleknél a magot kézikerékkel szorítják; a 3.000 és 4.000 kg-os modellek kúpos tüskések."
+            },
+            {
+              "title": "Fordulatszám-szabályozás és fékbetét",
+              "text": "A letekercselési sebesség állítható, a fékbetétes rendszer pedig megakadályozza, hogy a tekercs magától letekeredjen. Mindkettő alapfelszereltség."
+            },
+            {
+              "title": "Kétirányú letekercselés",
+              "text": "A tengely mindkét irányba forog: a szalag felülről vagy alulról is adagolható, a bármelyik irányban csévélt tekercsek pedig a sorelrendezés módosítása nélkül futnak."
+            },
+            {
+              "title": "Három típus: A, LA, F",
+              "text": "Az A motoros, a leszorítókar opcionális. Az LA motoros, 1.600 mm-es tekercs külső átmérővel és alapfelszereltségű leszorítókarral. Az F fékes, a leszorítókar alapfelszereltség."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mi az a mechanikus letekercselő?",
+              "a": "Olyan gép, amely a könnyű és közepes tekercseket tüskén hordozza, és a sorba tekercseli le őket; a mag szorítása mechanikus. A Servosteel mechanikus szériája 500–4.000 kg-os tekercseket hordoz."
+            },
+            {
+              "q": "Mekkora a mechanikus letekercselő teherbírása és szalagszélessége?",
+              "a": "A modellek 500, 750, 1.500, 2.500, 3.000 és 4.000 kg-osak. Az anyagszélesség az 500 és 750 kg-os modelleknél 30–300 mm, az 1.500 kg-osnál 30–400 mm, a 2.500 kg-osnál 30–500 mm, a 3.000 kg-osnál 80–800 mm, a 4.000 kg-osnál 100–1.200 mm."
+            },
+            {
+              "q": "Mi a különbség az A, LA és F modellek között?",
+              "a": "Az A motoros, a leszorítókar opcionális. Az LA motoros, 1.600 mm külső átmérőig fogad tekercset, és a leszorítókar alapfelszereltség. Az F motor helyett fékkel működik, a leszorítókar alapfelszereltség. Az A és F modelleknél a tekercs külső átmérője 1.300 mm."
+            },
+            {
+              "q": "Használható mechanikus letekercselő vastag anyaghoz?",
+              "a": "A 3.000 és 4.000 kg-os kúpos tüskéjű modellek 5 mm-ig terjedő lemezvastagsággal dolgoznak. Nehezebb tekercshez vagy szélesebb szalaghoz a hidraulikus szériára kell váltani."
+            },
+            {
+              "q": "Milyen belső átmérőjű tekercshez való a mechanikus letekercselő?",
+              "a": "Az 500 kg-osnál 300–550 mm, a 750 kg-osnál 350–550 mm, az 1.500 kg-osnál 400–550 mm, a 2.500 kg-osnál 450–550 mm; a 3.000 és 4.000 kg-os modelleknél 450–560 mm, adapterrel 630 mm."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Kétfejes Letekercselők",
@@ -2225,10 +2425,10 @@
         "clips": ["Letekercselő tekercsszállító kocsival, kompakt présadagoló sorban"],
         "types": [{"label":"Hidraulikus letekercselő","alt":"Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben"},{"label":"Mechanikus letekercselő","alt":"Sorban álló Servosteel mechanikus letekercselők a gyárban"},{"label":"Kétfejes letekercselő","alt":"Servosteel kétfejes letekercselő két tüskével, elölnézet"}],
         "galleryAlt": ["Servosteel kétfejes letekercselő, oldalnézet"],
-        "metaTitle": "Lecsévélők: hidraulikus 6-20 t, mechanikus 500-4000 kg",
-        "short": "Hidraulikus 6-20 t, mechanikus 500-4.000 kg.",
+        "metaTitle": "Lecsévélők: hidraulikus 4-15 t, mechanikus 500-4000 kg",
+        "short": "Hidraulikus 4-15 t, mechanikus 500-4.000 kg.",
         "hero": "Minden sor első láncszeme: hidraulikus és mechanikus lecsévélők, amelyek biztonságosan tartják a tekercset és szabályozott feszültséggel csévélik le. Kapacitásra, lemezszélességre és automatizáltsági szintre tervezve.",
-        "meta": "Hidraulikus (6-20 t) és mechanikus (500-4.000 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
+        "meta": "Hidraulikus (4-15 t) és mechanikus (500-4.000 kg) lecsévélők: egyedi megoldások présadagoló és tekercsfeldolgozó sorokhoz.",
         "features": [
           {
             "title": "Hidraulikus tüskefeszítés",
@@ -2247,11 +2447,11 @@
         "faq": [
           {
             "q": "Mi a különbség a hidraulikus és a mechanikus lecsévélő között?",
-            "a": "A mechanikus széria 500–2500 kg-os tekercseket hordoz kézikerékkel feszített tüskén, a 3000 és 4000 kg-os modellek kúpos tüskén; a hidraulikus 6–20 tonnáig terjed, hidraulikus tüsketágítással és fékkel. Nehéz tekercsnél és gyors soron a hidraulikus a biztonságos választás."
+            "a": "A mechanikus széria 500–2500 kg-os tekercseket hordoz kézikerékkel feszített tüskén, a 3000 és 4000 kg-os modellek kúpos tüskén; a hidraulikus 4–15 tonnáig terjed, hidraulikus tüsketágítással és fékkel. Nehéz tekercsnél és gyors soron a hidraulikus a biztonságos választás."
           },
           {
             "q": "Mekkora kapacitást válasszak?",
-            "a": "Hagyjon egy lépcsőnyi tartalékot a legnehezebb tekercse fölött: 5 tonnás tekercshez 6 tonnát, 8 tonnáshoz 10-et. A választást a tekercsszélességgel és a belső átmérővel (450–560 mm) együtt ellenőrizzük."
+            "a": "Hagyjon egy lépcsőnyi tartalékot a legnehezebb tekercse fölött: 5 tonnás tekercshez 6 tonnát, 8 tonnáshoz 10-et. A választást a tekercsszélességgel és a belső átmérővel (a hidraulikus szériánál 470–570 mm) együtt ellenőrizzük."
           },
           {
             "q": "Mit ad a kétirányú működés?",
@@ -2266,9 +2466,9 @@
           "title": "Műszaki adatok",
           "head": ["Jellemző", "Mechanikus", "Hidraulikus"],
           "rows": [
-            ["Modellek", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Tekercsszélesség", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Tekercs belső átmérő", "300 – 550 mm", "450 – 560 mm"],
+            ["Modellek", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 t"],
+            ["Tekercsszélesség", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Tekercs belső átmérő", "300 – 550 mm", "470 – 570 mm"],
             ["Tekercs külső átmérő (max.)", "1.600 mm", "1.600 mm"],
             ["Tüsketágítás", "Mechanikus", "Hidraulikus"],
             ["Vezérlés", "Fordulatszám-szabályzás + fék", "Schneider PLC"]

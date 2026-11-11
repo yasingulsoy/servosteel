@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Rango de capacidad",
-            "a": "6 – 20 toneladas",
+            "a": "4 – 15 toneladas",
             "b": "500 – 4.000 kg"
           },
           {
@@ -1130,49 +1130,209 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Desbobinadoras Hidráulicas",
-          "photoAlt": ["Desbobinadora hidráulica Servosteel con carro portabobinas, desenrollando fleje de acero","Desbobinadora hidráulica Servosteel y carro portabobinas, primer plano"],
-          "metaTitle": "Desbobinadora Hidráulica — 6.000-20.000 kg",
-          "meta": "Desbobinadoras hidráulicas de 6.000 a 20.000 kg: ancho de banda hasta 1.600 mm, expansión hidráulica del mandril, control de lazo por sensor láser.",
+          "photoAlt": [
+            "Desbobinadora hidráulica Servosteel con carro portabobinas, desenrollando fleje de acero",
+            "Desbobinadora hidráulica Servosteel y carro portabobinas, primer plano"
+          ],
+          "metaTitle": "Desbobinadora Hidráulica — 4.000-15.000 kg",
+          "meta": "Desbobinadoras hidráulicas de 4.000 a 15.000 kg: ancho de banda hasta 1.600 mm, diámetro interior 470–570 mm, expansión hidráulica del mandril, control de lazo por sensor láser.",
           "short": "Para bobinas pesadas y banda ancha; mandril hidráulico y motorizado.",
-          "hero": "Nuestras desbobinadoras hidráulicas soportan bobinas de 6.000 kg a 20.000 kg y trabajan anchos de banda de hasta 1.600 mm. La expansión del mandril es hidráulica; el brazo prensor neumático y el control de lazo por sensor láser son de serie.",
+          "hero": "Nuestras desbobinadoras hidráulicas soportan bobinas de 4.000 kg a 15.000 kg y trabajan anchos de banda de hasta 1.600 mm. La expansión del mandril es hidráulica; el brazo prensor neumático y el control de lazo por sensor láser son de serie.",
           "table": {
-            "title": "Capacidad y ancho",
+            "title": "Modelos y datos técnicos",
             "head": [
-              "Peso de bobina",
-              "Ancho de material"
+              "Modelo",
+              "Ancho de material (mm)",
+              "Diámetro interior mín. (mm)",
+              "Diámetro interior máx. (mm)",
+              "Diámetro exterior (mm)",
+              "Capacidad",
+              "Sujeción interior",
+              "Potencia del motor",
+              "Pisador"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidráulica",
+                "4 kW",
+                "Estándar"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hidráulica",
+                "4 kW",
+                "Estándar"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Hidráulica",
+                "6 kW",
+                "Estándar"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidráulica",
+                "6 kW",
+                "Estándar"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hidráulica",
+                "6 kW",
+                "Estándar"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Hidráulica",
+                "10 kW",
+                "Estándar"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidráulica",
+                "10 kW",
+                "Estándar"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidráulica",
+                "10 kW",
+                "Estándar"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hidráulica",
+                "10 kW",
+                "Estándar"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Hidráulica",
+                "15 kW",
+                "Estándar"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidráulica",
+                "15 kW",
+                "Estándar"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hidráulica",
+                "15 kW",
+                "Estándar"
               ]
             ]
           },
-          "tableNote": "Todos los modelos: diámetro exterior de bobina 1.600 mm, interior 450–560 mm (640 mm con adaptador). Expansión hidráulica del mandril y brazo prensor de serie. Hay configuraciones con freno en lugar de motor."
+          "tableNote": "Todos los modelos: diámetro interior de bobina 470–570 mm, exterior Ø 1.400 / 1.600 mm. Sujeción interior hidráulica, accionamiento por motor y pisador de serie. Hay configuraciones con freno en lugar de motor.",
+          "features": [
+            {
+              "title": "Expansión hidráulica del mandril",
+              "text": "Un cilindro hidráulico expande el mandril y sujeta la bobina por su diámetro interior. En bobinas de 4–15 t el operario no tiene que hacer fuerza para sujetarla."
+            },
+            {
+              "title": "Brazo prensor neumático",
+              "text": "El brazo prensor presiona la espira exterior de la bobina y evita que se suelte al cortar el zuncho. De serie en todos los modelos hidráulicos."
+            },
+            {
+              "title": "Control de lazo por sensor láser",
+              "text": "Un sensor láser mide el lazo entre la desbobinadora y la unidad siguiente y ajusta la velocidad de la desbobinadora a la de la línea; la banda avanza sin estirarse ni tocar el suelo."
+            },
+            {
+              "title": "Motorizada o con freno",
+              "text": "Las desbobinadoras hidráulicas son motorizadas. Cuando es la propia línea la que tira de la banda, se ofrece una configuración con freno en lugar de motor."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Qué es una desbobinadora hidráulica?",
+              "a": "Es una máquina que soporta una bobina pesada sobre un mandril y la desenrolla hacia la línea a velocidad controlada. Un cilindro hidráulico expande el mandril y sujeta la bobina por su diámetro interior. La serie hidráulica de Servosteel soporta bobinas de 4.000 a 15.000 kg."
+            },
+            {
+              "q": "¿Qué capacidad y ancho de banda admite una desbobinadora hidráulica?",
+              "a": "Las capacidades son 4.000, 6.000, 10.000 y 15.000 kg, cada una con modelos de varios anchos. El ancho de material es de 70–600 mm en 4 t, 70–1.000 mm en 6 t, 70–1.500 mm en 10 t y 100–1.600 mm en 15 t. Todos los modelos están en la tabla."
+            },
+            {
+              "q": "¿Qué diámetros de bobina admite una desbobinadora hidráulica?",
+              "a": "En todos los modelos hidráulicos el diámetro interior de bobina es de 470–570 mm y el exterior Ø 1.400 / 1.600 mm."
+            },
+            {
+              "q": "¿Desbobinadora hidráulica o mecánica: cuál elegir?",
+              "a": "Lo decide el peso de la bobina. La serie mecánica soporta 500–4.000 kg y la hidráulica 4.000–15.000 kg. Por encima de 4 t, con banda ancha y cambios de bobina frecuentes, elija una desbobinadora hidráulica; en 4 t existen las dos series y la hidráulica le ahorra al operario la sujeción. En líneas pesadas la recomendamos junto con un carro portabobinas hidráulico."
+            },
+            {
+              "q": "¿Qué datos necesitan para una oferta de desbobinadora hidráulica?",
+              "a": "El peso de su bobina más pesada, el ancho de banda y el rango de espesores, los diámetros interior y exterior de la bobina, la línea que alimentará la desbobinadora (alimentación de prensas, corte longitudinal, corte transversal o perfilado) y la velocidad de línea. Indíquenos también si necesita carro portabobinas."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Desbobinadoras Mecánicas",
-          "photoAlt": ["Desbobinadoras mecánicas Servosteel alineadas en la fábrica"],
+          "photoAlt": [
+            "Desbobinadoras mecánicas Servosteel alineadas en la fábrica"
+          ],
           "metaTitle": "Desbobinadora Mecánica — 500-4.000 kg",
           "meta": "Desbobinadoras mecánicas de 500 a 4.000 kg: ancho de banda 30-1.200 mm, sujeción del núcleo por mandril, control de velocidad y sistema de freno.",
           "short": "Solución económica para bobinas ligeras y medias; mandril mecánico.",
@@ -1217,7 +1377,47 @@
               ]
             ]
           },
-          "tableNote": "Sufijos de modelo: A motorizado (brazo prensor opcional) · LA motorizado, diámetro exterior 1.600 mm y brazo prensor de serie · F con freno, brazo prensor de serie. En los modelos A y F el diámetro exterior es de 1.300 mm. En los modelos de 3.000 y 4.000 kg el diámetro exterior de bobina es 1.600 mm, el interior 450–560 mm (630 mm con adaptador) y la expansión del mandril es mecánica. Las desbobinadoras de mandril cónico de 3.000–4.000 kg trabajan espesores de hasta 5 mm."
+          "tableNote": "Sufijos de modelo: A motorizado (brazo prensor opcional) · LA motorizado, diámetro exterior 1.600 mm y brazo prensor de serie · F con freno, brazo prensor de serie. En los modelos A y F el diámetro exterior es de 1.300 mm. En los modelos de 3.000 y 4.000 kg el diámetro exterior de bobina es 1.600 mm, el interior 450–560 mm (630 mm con adaptador) y la expansión del mandril es mecánica. Las desbobinadoras de mandril cónico de 3.000–4.000 kg trabajan espesores de hasta 5 mm.",
+          "features": [
+            {
+              "title": "Sujeción del núcleo por mandril",
+              "text": "En los modelos de 500–2.500 kg el núcleo se sujeta con volante; los modelos de 3.000 y 4.000 kg llevan mandril cónico."
+            },
+            {
+              "title": "Control de velocidad y freno de zapata",
+              "text": "La velocidad de desbobinado es regulable y el sistema de freno de zapata impide que la bobina se desenrolle por sí sola. Ambos son de serie."
+            },
+            {
+              "title": "Desbobinado en ambos sentidos",
+              "text": "El eje gira en los dos sentidos: la banda puede alimentarse por arriba o por abajo, y las bobinas enrolladas en cualquier dirección trabajan sin cambiar la disposición de la línea."
+            },
+            {
+              "title": "Tres tipos: A, LA, F",
+              "text": "A motorizada, brazo prensor opcional. LA motorizada, con diámetro exterior de bobina de 1.600 mm y brazo prensor de serie. F con freno, brazo prensor de serie."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Qué es una desbobinadora mecánica?",
+              "a": "Es una máquina que soporta bobinas ligeras y medias sobre un mandril y las desenrolla hacia la línea; el núcleo se sujeta mecánicamente. La serie mecánica de Servosteel soporta bobinas de 500 a 4.000 kg."
+            },
+            {
+              "q": "¿Qué capacidad y ancho de banda admite una desbobinadora mecánica?",
+              "a": "Los modelos son de 500, 750, 1.500, 2.500, 3.000 y 4.000 kg. El ancho de material es de 30–300 mm en los de 500 y 750 kg, 30–400 mm en el de 1.500 kg, 30–500 mm en el de 2.500 kg, 80–800 mm en el de 3.000 kg y 100–1.200 mm en el de 4.000 kg."
+            },
+            {
+              "q": "¿Qué diferencia hay entre los modelos A, LA y F?",
+              "a": "A es motorizada, con brazo prensor opcional. LA es motorizada, admite bobinas de hasta 1.600 mm de diámetro exterior y lleva el brazo prensor de serie. F funciona con freno en lugar de motor, con brazo prensor de serie. En los modelos A y F el diámetro exterior de bobina es de 1.300 mm."
+            },
+            {
+              "q": "¿Sirve una desbobinadora mecánica para material grueso?",
+              "a": "Los modelos de 3.000 y 4.000 kg con mandril cónico trabajan espesores de hasta 5 mm. Para bobinas más pesadas o banda más ancha se pasa a la serie hidráulica."
+            },
+            {
+              "q": "¿Qué diámetros interiores de bobina admite una desbobinadora mecánica?",
+              "a": "300–550 mm en el de 500 kg, 350–550 mm en el de 750 kg, 400–550 mm en el de 1.500 kg, 450–550 mm en el de 2.500 kg; 450–560 mm en los modelos de 3.000 y 4.000 kg, 630 mm con adaptador."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Desbobinadoras de Doble Cabezal",
@@ -2225,10 +2425,10 @@
         "clips": ["Desbobinadora con carro portabobinas en una línea compacta de alimentación de prensa"],
         "types": [{"label":"Desbobinadora hidráulica","alt":"Desbobinadora hidráulica Servosteel con carro portabobinas, desenrollando fleje de acero"},{"label":"Desbobinadora mecánica","alt":"Desbobinadoras mecánicas Servosteel alineadas en la fábrica"},{"label":"Desbobinadora de doble cabezal","alt":"Desbobinadora de doble cabezal Servosteel con dos mandriles, vista frontal"}],
         "galleryAlt": ["Desbobinadora de doble cabezal Servosteel, vista lateral"],
-        "metaTitle": "Desbobinadoras: hidráulicas 6-20 t, mecánicas 500-4.000 kg",
-        "short": "Hidráulicas de 6-20 t y mecánicas de 500-4.000 kg.",
+        "metaTitle": "Desbobinadoras: hidráulicas 4-15 t, mecánicas 500-4.000 kg",
+        "short": "Hidráulicas de 4-15 t y mecánicas de 500-4.000 kg.",
         "hero": "El primer eslabón de toda línea: desbobinadoras hidráulicas y mecánicas que sostienen la bobina con seguridad y la desenrollan con tensión controlada. Se proyectan según capacidad, ancho de chapa y nivel de automatización.",
-        "meta": "Desbobinadoras hidráulicas (6-20 t) y mecánicas (500-4.000 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
+        "meta": "Desbobinadoras hidráulicas (4-15 t) y mecánicas (500-4.000 kg): soluciones a medida para alimentación de prensas y líneas de bobina.",
         "features": [
           {
             "title": "Expansión hidráulica del mandril",
@@ -2247,11 +2447,11 @@
         "faq": [
           {
             "q": "¿Cuál es la diferencia entre desbobinadoras hidráulicas y mecánicas?",
-            "a": "La serie mecánica maneja bobinas de 500–2500 kg con mandril apretado por volante, y los modelos de 3000 y 4000 kg con mandril cónico; la hidráulica llega a 6–20 toneladas con expansión de mandril y freno hidráulicos. Con bobinas pesadas y líneas rápidas, la hidráulica es la opción segura."
+            "a": "La serie mecánica maneja bobinas de 500–2500 kg con mandril apretado por volante, y los modelos de 3000 y 4000 kg con mandril cónico; la hidráulica llega a 4–15 toneladas con expansión de mandril y freno hidráulicos. Con bobinas pesadas y líneas rápidas, la hidráulica es la opción segura."
           },
           {
             "q": "¿Qué capacidad debo elegir?",
-            "a": "Deje un escalón de margen sobre su bobina más pesada: 6 toneladas para una bobina de 5, 10 para una de 8. Verificamos la elección junto con el ancho y el diámetro interior (450–560 mm)."
+            "a": "Deje un escalón de margen sobre su bobina más pesada: 6 toneladas para una bobina de 5, 10 para una de 8. Verificamos la elección junto con el ancho y el diámetro interior (470–570 mm en la serie hidráulica)."
           },
           {
             "q": "¿Qué aporta el funcionamiento bidireccional?",
@@ -2266,9 +2466,9 @@
           "title": "Especificaciones técnicas",
           "head": ["Característica", "Mecánico", "Hidráulico"],
           "rows": [
-            ["Modelos", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Ancho de bobina", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Diámetro interior de bobina", "300 – 550 mm", "450 – 560 mm"],
+            ["Modelos", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 t"],
+            ["Ancho de bobina", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Diámetro interior de bobina", "300 – 550 mm", "470 – 570 mm"],
             ["Diámetro exterior (máx.)", "1.600 mm", "1.600 mm"],
             ["Expansión del mandril", "Mecánico", "Hidráulico"],
             ["Control", "Control de velocidad + freno", "Schneider PLC"]

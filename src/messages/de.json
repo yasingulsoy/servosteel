@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Kapazitätsbereich",
-            "a": "6 – 20 Tonnen",
+            "a": "4 – 15 Tonnen",
             "b": "500 – 4.000 kg"
           },
           {
@@ -1130,59 +1130,219 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Hydraulische Haspeln",
-          "photoAlt": ["Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband","Hydraulische Haspel von Servosteel mit Coilwagen, Nahaufnahme"],
-          "metaTitle": "Hydraulische Haspeln: 6-20 t, bis 1.600 mm",
-          "meta": "Hydraulische Haspeln von 6.000 bis 20.000 kg: Bandbreite bis 1.600 mm, hydraulische Dornaufweitung, Schlaufenregelung mit Lasersensor.",
-          "short": "Für schwere Bunde und breites Band; hydraulischer Dorn, motorisch.",
-          "hero": "Unsere hydraulischen Haspeln tragen Bunde von 6.000 kg bis 20.000 kg und verarbeiten Bandbreiten bis 1.600 mm. Die Dornaufweitung erfolgt hydraulisch; pneumatischer Niederhalter und Schlaufenregelung mit Lasersensor sind serienmäßig.",
+          "photoAlt": [
+            "Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband",
+            "Hydraulische Haspel von Servosteel mit Coilwagen, Nahaufnahme"
+          ],
+          "metaTitle": "Hydraulische Haspeln: 4-15 t, bis 1.600 mm",
+          "meta": "Hydraulische Haspeln von 4.000 bis 15.000 kg: Bandbreite bis 1.600 mm, Innendurchmesser 470–570 mm, hydraulische Dornaufweitung, Schlaufenregelung mit Lasersensor.",
+          "short": "Für schwere Coils und breites Band; hydraulischer Dorn, motorisch.",
+          "hero": "Unsere hydraulischen Haspeln tragen Coils von 4.000 kg bis 15.000 kg und verarbeiten Bandbreiten bis 1.600 mm. Die Dornaufweitung erfolgt hydraulisch; pneumatischer Niederhalter und Schlaufenregelung mit Lasersensor sind serienmäßig.",
           "table": {
-            "title": "Kapazität und Breite",
+            "title": "Modelle und technische Daten",
             "head": [
-              "Bundgewicht",
-              "Materialbreite"
+              "Modell",
+              "Materialbreite (mm)",
+              "Coil-Innendurchmesser min. (mm)",
+              "Coil-Innendurchmesser max. (mm)",
+              "Coil-Außendurchmesser (mm)",
+              "Kapazität",
+              "Innenspannung",
+              "Motorleistung",
+              "Niederhalter"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hydraulisch",
+                "4 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hydraulisch",
+                "4 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Hydraulisch",
+                "6 kW",
+                "Serienmäßig"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hydraulisch",
+                "6 kW",
+                "Serienmäßig"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hydraulisch",
+                "6 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Hydraulisch",
+                "10 kW",
+                "Serienmäßig"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydraulisch",
+                "10 kW",
+                "Serienmäßig"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydraulisch",
+                "10 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydraulisch",
+                "10 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Hydraulisch",
+                "15 kW",
+                "Serienmäßig"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hydraulisch",
+                "15 kW",
+                "Serienmäßig"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hydraulisch",
+                "15 kW",
+                "Serienmäßig"
               ]
             ]
           },
-          "tableNote": "Alle Modelle: Bund-Außendurchmesser 1.600 mm, Innendurchmesser 450–560 mm (mit Adapter 640 mm). Hydraulische Dornaufweitung und Niederhalter serienmäßig. Ausführungen mit Bremse statt Motor sind verfügbar."
+          "tableNote": "Alle Modelle: Coil-Innendurchmesser 470–570 mm, Außendurchmesser Ø 1.400 / 1.600 mm. Hydraulische Innenspannung, motorisch angetrieben, Niederhalter serienmäßig. Ausführungen mit Bremse statt Motor sind verfügbar.",
+          "features": [
+            {
+              "title": "Hydraulische Dornaufweitung",
+              "text": "Ein Hydraulikzylinder weitet den Dorn auf und spannt das Coil am Innendurchmesser. Bei Coils von 4–15 t muss der Bediener zum Spannen keine Kraft aufwenden."
+            },
+            {
+              "title": "Pneumatischer Niederhalter",
+              "text": "Der Niederhalter drückt auf die äußere Windung des Coils und verhindert, dass es beim Aufschneiden des Umreifungsbandes aufspringt. Serienmäßig bei allen hydraulischen Modellen."
+            },
+            {
+              "title": "Schlaufenregelung mit Lasersensor",
+              "text": "Ein Lasersensor misst die Schlaufe zwischen Haspel und nachfolgender Einheit und passt die Geschwindigkeit der Haspel an die Linie an, sodass das Band weder gedehnt wird noch den Boden berührt."
+            },
+            {
+              "title": "Motorisch oder mit Bremse",
+              "text": "Hydraulische Haspeln sind motorisch angetrieben. Wo die Linie das Band selbst zieht, ist eine Ausführung mit Bremse statt Motor verfügbar."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Was ist eine hydraulische Haspel?",
+              "a": "Eine hydraulische Haspel trägt ein schweres Coil auf einem Dorn und wickelt es mit kontrollierter Geschwindigkeit in die Linie ab. Ein Hydraulikzylinder weitet den Dorn auf und spannt das Coil am Innendurchmesser. Die hydraulische Baureihe von Servosteel trägt Coils von 4.000 bis 15.000 kg."
+            },
+            {
+              "q": "Welche Tragfähigkeit und Bandbreite hat eine hydraulische Haspel?",
+              "a": "Die Kapazitäten sind 4.000, 6.000, 10.000 und 15.000 kg, jeweils mit Modellen in mehreren Breiten. Die Materialbreite beträgt 70–600 mm bei 4 t, 70–1.000 mm bei 6 t, 70–1.500 mm bei 10 t und 100–1.600 mm bei 15 t. Alle Modelle stehen in der Tabelle."
+            },
+            {
+              "q": "Welche Coildurchmesser nimmt eine hydraulische Haspel auf?",
+              "a": "Bei allen hydraulischen Modellen beträgt der Coil-Innendurchmesser 470–570 mm und der Außendurchmesser Ø 1.400 / 1.600 mm."
+            },
+            {
+              "q": "Hydraulische oder mechanische Haspel: Welche soll ich wählen?",
+              "a": "Entscheidend ist das Coilgewicht. Die mechanische Baureihe trägt 500–4.000 kg, die hydraulische 4.000–15.000 kg. Über 4 t, bei breitem Band und häufigen Coilwechseln wählen Sie eine hydraulische Haspel; bei 4 t gibt es beide Baureihen, und die hydraulische nimmt dem Bediener das Spannen ab. Für schwere Linien empfehlen wir sie zusammen mit einem hydraulischen Coilwagen."
+            },
+            {
+              "q": "Welche Angaben brauchen Sie für ein Angebot über eine hydraulische Haspel?",
+              "a": "Das Gewicht Ihres schwersten Coils, Bandbreite und Dickenbereich, Innen- und Außendurchmesser des Coils, die Linie, die die Haspel speist (Pressenzuführung, Längsteilen, Querteilen oder Rollformen), und die Liniengeschwindigkeit. Teilen Sie uns außerdem mit, ob Sie einen Coilwagen benötigen."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Mechanische Haspeln",
-          "photoAlt": ["Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"],
+          "photoAlt": [
+            "Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"
+          ],
           "metaTitle": "Mechanische Haspel — 500-4.000 kg",
           "meta": "Mechanische Haspeln von 500 bis 4.000 kg: 30-1.200 mm Bandbreite, Dornklemmung, Drehzahlregelung und Bremsbelagsystem.",
-          "short": "Wirtschaftlich für leichte und mittlere Bunde; mechanischer Dorn.",
-          "hero": "Unsere mechanischen Haspeln tragen Bunde von 500 kg bis 4.000 kg. Der Bundkern wird über den Dorn geklemmt; Drehzahlregelung und Bremsbelagsystem sind serienmäßig, das Abwickeln ist in beide Richtungen möglich.",
+          "short": "Wirtschaftlich für leichte und mittlere Coils; mechanischer Dorn.",
+          "hero": "Unsere mechanischen Haspeln tragen Coils von 500 kg bis 4.000 kg. Das Coil wird über den Dorn geklemmt; Drehzahlregelung und Bremsbelagsystem sind serienmäßig, das Abwickeln ist in beide Richtungen möglich.",
           "table": {
             "title": "Kapazität, Breite und Innendurchmesser",
             "head": [
-              "Bundgewicht",
+              "Coilgewicht",
               "Materialbreite",
-              "Bund-Innendurchmesser"
+              "Coil-Innendurchmesser"
             ],
             "rows": [
               [
@@ -1217,7 +1377,47 @@
               ]
             ]
           },
-          "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Bund-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Bund-Außendurchmesser 1.300 mm. Bei den Modellen 3.000 und 4.000 kg beträgt der Bund-Außendurchmesser 1.600 mm, der Innendurchmesser 450–560 mm (mit Adapter 630 mm), die Dornaufweitung ist mechanisch. Haspeln mit Konusdorn von 3.000–4.000 kg verarbeiten Blechdicken bis 5 mm."
+          "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Coil-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Coil-Außendurchmesser 1.300 mm. Bei den Modellen 3.000 und 4.000 kg beträgt der Coil-Außendurchmesser 1.600 mm, der Innendurchmesser 450–560 mm (mit Adapter 630 mm), die Dornaufweitung ist mechanisch. Haspeln mit Konusdorn von 3.000–4.000 kg verarbeiten Blechdicken bis 5 mm.",
+          "features": [
+            {
+              "title": "Klemmung über den Dorn",
+              "text": "Bei den Modellen von 500–2.500 kg wird das Coil per Handrad geklemmt; die Modelle mit 3.000 und 4.000 kg haben einen Konusdorn."
+            },
+            {
+              "title": "Drehzahlregelung und Bremsbelag",
+              "text": "Die Abwickelgeschwindigkeit ist einstellbar, und das Bremsbelagsystem verhindert, dass sich das Coil von selbst abwickelt. Beides ist serienmäßig."
+            },
+            {
+              "title": "Abwickeln in beide Richtungen",
+              "text": "Die Welle dreht in beide Richtungen: Das Band kann von oben oder von unten zugeführt werden, und Coils beider Wickelrichtungen laufen ohne Änderung des Linienlayouts."
+            },
+            {
+              "title": "Drei Typen: A, LA, F",
+              "text": "A motorisch, Niederhalter optional. LA motorisch, mit 1.600 mm Coil-Außendurchmesser und serienmäßigem Niederhalter. F mit Bremse, Niederhalter serienmäßig."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Was ist eine mechanische Haspel?",
+              "a": "Eine mechanische Haspel trägt leichte und mittelschwere Coils auf einem Dorn und wickelt sie in die Linie ab; das Coil wird mechanisch geklemmt. Die mechanische Baureihe von Servosteel trägt Coils von 500 bis 4.000 kg."
+            },
+            {
+              "q": "Welche Tragfähigkeit und Bandbreite hat eine mechanische Haspel?",
+              "a": "Die Modelle sind für 500, 750, 1.500, 2.500, 3.000 und 4.000 kg ausgelegt. Die Materialbreite beträgt 30–300 mm bei 500 und 750 kg, 30–400 mm bei 1.500 kg, 30–500 mm bei 2.500 kg, 80–800 mm bei 3.000 kg und 100–1.200 mm bei 4.000 kg."
+            },
+            {
+              "q": "Was ist der Unterschied zwischen den Modellen A, LA und F?",
+              "a": "A ist motorisch angetrieben, der Niederhalter ist optional. LA ist motorisch angetrieben, nimmt Coils bis 1.600 mm Außendurchmesser auf und hat den Niederhalter serienmäßig. F arbeitet mit Bremse statt Motor, der Niederhalter ist serienmäßig. Bei A- und F-Modellen beträgt der Coil-Außendurchmesser 1.300 mm."
+            },
+            {
+              "q": "Eignet sich eine mechanische Haspel für dickes Material?",
+              "a": "Die Konusdorn-Modelle mit 3.000 und 4.000 kg verarbeiten Blechdicken bis 5 mm. Für schwerere Coils oder breiteres Band wechselt man zur hydraulischen Baureihe."
+            },
+            {
+              "q": "Welche Coil-Innendurchmesser nimmt eine mechanische Haspel auf?",
+              "a": "300–550 mm bei 500 kg, 350–550 mm bei 750 kg, 400–550 mm bei 1.500 kg, 450–550 mm bei 2.500 kg; bei den Modellen mit 3.000 und 4.000 kg 450–560 mm, mit Adapter 630 mm."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Doppelkopf-Haspeln",
@@ -2225,10 +2425,10 @@
         "clips": ["Haspel mit Coilwagen in einer kompakten Pressenzuführanlage"],
         "types": [{"label":"Hydraulische Haspel","alt":"Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband"},{"label":"Mechanische Haspel","alt":"Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"},{"label":"Doppelkopf-Haspel","alt":"Doppelkopf-Haspel von Servosteel mit zwei Dornen, Vorderansicht"}],
         "galleryAlt": ["Doppelkopf-Haspel von Servosteel, Seitenansicht"],
-        "metaTitle": "Abwickelhaspeln: hydraulisch 6-20 t, mechanisch 500-4.000 kg",
-        "short": "Hydraulisch 6-20 t, mechanisch 500-4.000 kg.",
+        "metaTitle": "Abwickelhaspeln: hydraulisch 4-15 t, mechanisch 500-4.000 kg",
+        "short": "Hydraulisch 4-15 t, mechanisch 500-4.000 kg.",
         "hero": "Das erste Glied jeder Anlage: hydraulische und mechanische Haspeln, die das Coil sicher tragen und mit kontrollierter Spannung abwickeln. Ausgelegt nach Kapazität, Blechbreite und Automatisierungsgrad.",
-        "meta": "Hydraulische (6-20 t) und mechanische (500-4.000 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
+        "meta": "Hydraulische (4-15 t) und mechanische (500-4.000 kg) Abwickelhaspeln: kundenspezifische Lösungen für Pressenzuführung und Coil-Anlagen.",
         "features": [
           {
             "title": "Hydraulische Dornspreizung",
@@ -2247,11 +2447,11 @@
         "faq": [
           {
             "q": "Was unterscheidet hydraulische von mechanischen Abwickelhaspeln?",
-            "a": "Die mechanische Serie trägt Coils von 500–2500 kg auf einem per Handrad gespannten Dorn, die Modelle mit 3000 und 4000 kg auf einem Konusdorn; die hydraulische Serie reicht bis 6–20 Tonnen mit hydraulischer Dornspreizung und Bremse. Bei schweren Coils und hohen Liniengeschwindigkeiten ist Hydraulik die sichere Wahl."
+            "a": "Die mechanische Serie trägt Coils von 500–2500 kg auf einem per Handrad gespannten Dorn, die Modelle mit 3000 und 4000 kg auf einem Konusdorn; die hydraulische Serie reicht bis 4–15 Tonnen mit hydraulischer Dornspreizung und Bremse. Bei schweren Coils und hohen Liniengeschwindigkeiten ist Hydraulik die sichere Wahl."
           },
           {
             "q": "Welche Kapazität sollte ich wählen?",
-            "a": "Planen Sie eine Stufe Reserve über Ihrem schwersten Coil ein: 6 Tonnen für ein 5-Tonnen-Coil, 10 Tonnen für ein 8-Tonnen-Coil. Wir prüfen die Wahl gemeinsam anhand von Coilbreite und Innendurchmesser (450–560 mm)."
+            "a": "Planen Sie eine Stufe Reserve über Ihrem schwersten Coil ein: 6 Tonnen für ein 5-Tonnen-Coil, 10 Tonnen für ein 8-Tonnen-Coil. Wir prüfen die Wahl gemeinsam anhand von Coilbreite und Innendurchmesser (470–570 mm bei der hydraulischen Serie)."
           },
           {
             "q": "Was bringt der Zweirichtungsbetrieb?",
@@ -2266,9 +2466,9 @@
           "title": "Technische Daten",
           "head": ["Merkmal", "Mechanisch", "Hydraulisch"],
           "rows": [
-            ["Modelle", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Bundbreite", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Bund-Innendurchmesser", "300 – 550 mm", "450 – 560 mm"],
+            ["Modelle", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 t"],
+            ["Bundbreite", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Bund-Innendurchmesser", "300 – 550 mm", "470 – 570 mm"],
             ["Bund-Außendurchmesser (max.)", "1.600 mm", "1.600 mm"],
             ["Dornaufweitung", "Mechanisch", "Hydraulisch"],
             ["Steuerung", "Drehzahlregelung + Bremse", "Schneider PLC"]

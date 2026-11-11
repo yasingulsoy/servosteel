@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Zakres udźwigu",
-            "a": "6 – 20 ton",
+            "a": "4 – 15 ton",
             "b": "500 – 4 000 kg"
           },
           {
@@ -1130,49 +1130,209 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Odwijaki Hydrauliczne",
-          "photoAlt": ["Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej","Odwijak hydrauliczny Servosteel i wózek do kręgów, zbliżenie"],
-          "metaTitle": "Odwijak Hydrauliczny — 6.000-20.000 kg",
-          "meta": "Odwijaki hydrauliczne od 6.000 do 20.000 kg: szerokość taśmy do 1.600 mm, hydrauliczne rozprężanie trzpienia, kontrola pętli z czujnikiem laserowym.",
+          "photoAlt": [
+            "Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej",
+            "Odwijak hydrauliczny Servosteel i wózek do kręgów, zbliżenie"
+          ],
+          "metaTitle": "Odwijak Hydrauliczny — 4.000-15.000 kg",
+          "meta": "Odwijaki hydrauliczne od 4.000 do 15.000 kg: szerokość taśmy do 1.600 mm, średnica wewnętrzna 470–570 mm, hydrauliczne rozprężanie trzpienia, kontrola pętli z czujnikiem laserowym.",
           "short": "Do ciężkich kręgów i szerokiej taśmy; trzpień hydrauliczny, napęd silnikowy.",
-          "hero": "Nasze odwijaki hydrauliczne przenoszą kręgi od 6.000 kg do 20.000 kg i pracują z taśmą o szerokości do 1.600 mm. Rozprężanie trzpienia jest hydrauliczne; pneumatyczne ramię dociskowe i kontrola pętli z czujnikiem laserowym są w standardzie.",
+          "hero": "Nasze odwijaki hydrauliczne przenoszą kręgi od 4.000 kg do 15.000 kg i pracują z taśmą o szerokości do 1.600 mm. Rozprężanie trzpienia jest hydrauliczne; pneumatyczne ramię dociskowe i kontrola pętli z czujnikiem laserowym są w standardzie.",
           "table": {
-            "title": "Nośność i szerokość",
+            "title": "Modele i dane techniczne",
             "head": [
-              "Masa kręgu",
-              "Szerokość materiału"
+              "Model",
+              "Szerokość materiału (mm)",
+              "Średnica wewnętrzna min. (mm)",
+              "Średnica wewnętrzna maks. (mm)",
+              "Średnica zewnętrzna (mm)",
+              "Udźwig",
+              "Mocowanie wewnętrzne",
+              "Moc silnika",
+              "Docisk"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hydrauliczne",
+                "4 kW",
+                "Standard"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Hydrauliczne",
+                "4 kW",
+                "Standard"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Hydrauliczne",
+                "6 kW",
+                "Standard"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hydrauliczne",
+                "6 kW",
+                "Standard"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Hydrauliczne",
+                "6 kW",
+                "Standard"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Hydrauliczne",
+                "10 kW",
+                "Standard"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydrauliczne",
+                "10 kW",
+                "Standard"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydrauliczne",
+                "10 kW",
+                "Standard"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Hydrauliczne",
+                "10 kW",
+                "Standard"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Hydrauliczne",
+                "15 kW",
+                "Standard"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hydrauliczne",
+                "15 kW",
+                "Standard"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Hydrauliczne",
+                "15 kW",
+                "Standard"
               ]
             ]
           },
-          "tableNote": "Wszystkie modele: średnica zewnętrzna kręgu 1.600 mm, wewnętrzna 450–560 mm (z adapterem 640 mm). Hydrauliczne rozprężanie trzpienia i ramię dociskowe w standardzie. Dostępne są wersje z hamulcem zamiast silnika."
+          "tableNote": "Wszystkie modele: średnica wewnętrzna kręgu 470–570 mm, zewnętrzna Ø 1.400 / 1.600 mm. Hydrauliczne mocowanie wewnętrzne, napęd silnikowy, system docisku w standardzie. Dostępne są wersje z hamulcem zamiast silnika.",
+          "features": [
+            {
+              "title": "Hydrauliczne rozprężanie trzpienia",
+              "text": "Cylinder hydrauliczny rozpręża trzpień i zaciska krąg od strony średnicy wewnętrznej. Przy kręgach 4–15 t zaciśnięcie nie wymaga siły operatora."
+            },
+            {
+              "title": "Pneumatyczne ramię dociskowe",
+              "text": "Ramię dociskowe naciska na zewnętrzny zwój kręgu i nie pozwala, by krąg rozluźnił się i rozwinął po przecięciu taśmy spinającej. Standard we wszystkich modelach hydraulicznych."
+            },
+            {
+              "title": "Kontrola pętli z czujnikiem laserowym",
+              "text": "Czujnik laserowy mierzy pętlę między odwijakiem a kolejnym urządzeniem i dopasowuje prędkość odwijaka do linii; taśma nie jest naprężana i nie dotyka podłogi."
+            },
+            {
+              "title": "Napęd silnikowy lub hamulec",
+              "text": "Odwijaki hydrauliczne mają napęd silnikowy. Gdy taśmę ciągnie sama linia, dostępna jest wersja z hamulcem zamiast silnika."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Co to jest odwijak hydrauliczny?",
+              "a": "To maszyna, która przenosi ciężki krąg na trzpieniu i odwija go do linii z kontrolowaną prędkością. Cylinder hydrauliczny rozpręża trzpień i zaciska krąg od strony średnicy wewnętrznej. Seria hydrauliczna Servosteel przenosi kręgi od 4.000 do 15.000 kg."
+            },
+            {
+              "q": "Jaki udźwig i szerokość taśmy ma odwijak hydrauliczny?",
+              "a": "Udźwigi to 4.000, 6.000, 10.000 i 15.000 kg, każdy z modelami o różnych szerokościach. Szerokość materiału wynosi 70–600 mm przy 4 t, 70–1.000 mm przy 6 t, 70–1.500 mm przy 10 t i 100–1.600 mm przy 15 t. Wszystkie modele są w tabeli."
+            },
+            {
+              "q": "Jakie średnice kręgu przyjmuje odwijak hydrauliczny?",
+              "a": "We wszystkich modelach hydraulicznych średnica wewnętrzna kręgu wynosi 470–570 mm, a zewnętrzna Ø 1.400 / 1.600 mm."
+            },
+            {
+              "q": "Odwijak hydrauliczny czy mechaniczny: który wybrać?",
+              "a": "Decyduje masa kręgu. Seria mechaniczna przenosi 500–4.000 kg, hydrauliczna 4.000–15.000 kg. Powyżej 4 t, przy szerokiej taśmie i częstych zmianach kręgów wybierz odwijak hydrauliczny; przy 4 t dostępne są obie serie, a hydrauliczna zdejmuje z operatora konieczność zaciskania. Na ciężkich liniach zalecamy go razem z hydraulicznym wózkiem do kręgów."
+            },
+            {
+              "q": "Jakie dane są potrzebne do oferty na odwijak hydrauliczny?",
+              "a": "Masa najcięższego kręgu, szerokość taśmy i zakres grubości, średnica wewnętrzna i zewnętrzna kręgu, linia, którą odwijak będzie zasilał (podawanie do pras, cięcie wzdłużne, cięcie poprzeczne lub profilowanie), oraz prędkość linii. Napisz też, czy potrzebujesz wózka do kręgów."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Odwijaki Mechaniczne",
-          "photoAlt": ["Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"],
+          "photoAlt": [
+            "Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"
+          ],
           "metaTitle": "Odwijak Mechaniczny — 500-4.000 kg",
           "meta": "Odwijaki mechaniczne od 500 do 4.000 kg: szerokość taśmy 30-1.200 mm, mocowanie rdzenia trzpieniem, regulacja prędkości i układ hamulcowy.",
           "short": "Ekonomiczne rozwiązanie do lekkich i średnich kręgów; trzpień mechaniczny.",
@@ -1217,7 +1377,47 @@
               ]
             ]
           },
-          "tableNote": "Sufiksy modeli: A napęd silnikowy (ramię dociskowe opcjonalne) · LA napęd silnikowy, średnica zewnętrzna 1.600 mm i ramię dociskowe w standardzie · F z hamulcem, ramię dociskowe w standardzie. W modelach A i F średnica zewnętrzna wynosi 1.300 mm. W modelach 3.000 i 4.000 kg średnica zewnętrzna kręgu wynosi 1.600 mm, wewnętrzna 450–560 mm (630 mm z adapterem), a rozprężanie trzpienia jest mechaniczne. Odwijaki z trzpieniem stożkowym 3.000–4.000 kg pracują z blachą do 5 mm."
+          "tableNote": "Sufiksy modeli: A napęd silnikowy (ramię dociskowe opcjonalne) · LA napęd silnikowy, średnica zewnętrzna 1.600 mm i ramię dociskowe w standardzie · F z hamulcem, ramię dociskowe w standardzie. W modelach A i F średnica zewnętrzna wynosi 1.300 mm. W modelach 3.000 i 4.000 kg średnica zewnętrzna kręgu wynosi 1.600 mm, wewnętrzna 450–560 mm (630 mm z adapterem), a rozprężanie trzpienia jest mechaniczne. Odwijaki z trzpieniem stożkowym 3.000–4.000 kg pracują z blachą do 5 mm.",
+          "features": [
+            {
+              "title": "Mocowanie rdzenia trzpieniem",
+              "text": "W modelach 500–2.500 kg rdzeń zaciska się pokrętłem; modele 3.000 i 4.000 kg mają trzpień stożkowy."
+            },
+            {
+              "title": "Regulacja prędkości i okładziny hamulcowe",
+              "text": "Prędkość odwijania jest regulowana, a układ hamulcowy z okładzinami zapobiega samoczynnemu rozwijaniu się kręgu. Oba rozwiązania są w standardzie."
+            },
+            {
+              "title": "Odwijanie dwukierunkowe",
+              "text": "Wał obraca się w obu kierunkach: taśmę można podawać od góry lub od dołu, a kręgi nawinięte w dowolną stronę pracują bez zmiany układu linii."
+            },
+            {
+              "title": "Trzy typy: A, LA, F",
+              "text": "A z napędem silnikowym, ramię dociskowe opcjonalne. LA z napędem silnikowym, średnica zewnętrzna kręgu 1.600 mm i ramię dociskowe w standardzie. F z hamulcem, ramię dociskowe w standardzie."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Co to jest odwijak mechaniczny?",
+              "a": "To maszyna, która przenosi lekkie i średnie kręgi na trzpieniu i odwija je do linii; rdzeń jest zaciskany mechanicznie. Seria mechaniczna Servosteel przenosi kręgi od 500 do 4.000 kg."
+            },
+            {
+              "q": "Jaki udźwig i szerokość taśmy ma odwijak mechaniczny?",
+              "a": "Modele mają udźwig 500, 750, 1.500, 2.500, 3.000 i 4.000 kg. Szerokość materiału wynosi 30–300 mm w modelach 500 i 750 kg, 30–400 mm w modelu 1.500 kg, 30–500 mm w modelu 2.500 kg, 80–800 mm w modelu 3.000 kg i 100–1.200 mm w modelu 4.000 kg."
+            },
+            {
+              "q": "Czym różnią się modele A, LA i F?",
+              "a": "A ma napęd silnikowy, ramię dociskowe jest opcjonalne. LA ma napęd silnikowy, przyjmuje kręgi o średnicy zewnętrznej do 1.600 mm i ma ramię dociskowe w standardzie. F pracuje z hamulcem zamiast silnika, ramię dociskowe jest w standardzie. W modelach A i F średnica zewnętrzna kręgu wynosi 1.300 mm."
+            },
+            {
+              "q": "Czy odwijak mechaniczny nadaje się do grubego materiału?",
+              "a": "Modele 3.000 i 4.000 kg z trzpieniem stożkowym pracują z blachą o grubości do 5 mm. Przy cięższych kręgach lub szerszej taśmie przechodzi się na serię hydrauliczną."
+            },
+            {
+              "q": "Jakie średnice wewnętrzne kręgu przyjmuje odwijak mechaniczny?",
+              "a": "300–550 mm w modelu 500 kg, 350–550 mm w modelu 750 kg, 400–550 mm w modelu 1.500 kg, 450–550 mm w modelu 2.500 kg; 450–560 mm w modelach 3.000 i 4.000 kg, z adapterem 630 mm."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Odwijaki Dwugłowicowe",
@@ -2225,10 +2425,10 @@
         "clips": ["Odwijak z wózkiem do kręgów w kompaktowej linii podawania prasy"],
         "types": [{"label":"Odwijak hydrauliczny","alt":"Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej"},{"label":"Odwijak mechaniczny","alt":"Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"},{"label":"Odwijak dwugłowicowy","alt":"Odwijak dwugłowicowy Servosteel z dwoma trzpieniami, widok z przodu"}],
         "galleryAlt": ["Odwijak dwugłowicowy Servosteel, widok z boku"],
-        "metaTitle": "Odwijaki: hydrauliczne 6-20 t, mechaniczne 500-4000 kg",
-        "short": "Hydrauliczne 6-20 t i mechaniczne 500-4.000 kg.",
+        "metaTitle": "Odwijaki: hydrauliczne 4-15 t, mechaniczne 500-4000 kg",
+        "short": "Hydrauliczne 4-15 t i mechaniczne 500-4.000 kg.",
         "hero": "Pierwsze ogniwo każdej linii: odwijaki hydrauliczne i mechaniczne, które bezpiecznie utrzymują krąg i rozwijają go z kontrolowanym naprężeniem. Projektowane pod wydajność, szerokość blachy i poziom automatyzacji.",
-        "meta": "Odwijaki hydrauliczne (6-20 t) i mechaniczne (500-4.000 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
+        "meta": "Odwijaki hydrauliczne (4-15 t) i mechaniczne (500-4.000 kg): rozwiązania na zamówienie do podawania do pras i linii kręgów.",
         "features": [
           {
             "title": "Hydrauliczne rozpieranie trzpienia",
@@ -2247,11 +2447,11 @@
         "faq": [
           {
             "q": "Czym różnią się odwijaki hydrauliczne od mechanicznych?",
-            "a": "Seria mechaniczna obsługuje kręgi 500–2500 kg na trzpieniu rozprężanym pokrętłem, a modele 3000 i 4000 kg na trzpieniu stożkowym; hydrauliczna sięga 6–20 ton z hydraulicznym rozprężaniem trzpienia i hamulcem. Przy ciężkich kręgach i szybkich liniach bezpiecznym wyborem jest hydraulika."
+            "a": "Seria mechaniczna obsługuje kręgi 500–2500 kg na trzpieniu rozprężanym pokrętłem, a modele 3000 i 4000 kg na trzpieniu stożkowym; hydrauliczna sięga 4–15 ton z hydraulicznym rozprężaniem trzpienia i hamulcem. Przy ciężkich kręgach i szybkich liniach bezpiecznym wyborem jest hydraulika."
           },
           {
             "q": "Jaki udźwig wybrać?",
-            "a": "Zostaw jeden stopień zapasu ponad najcięższy krąg: 6 ton dla kręgu 5-tonowego, 10 ton dla 8-tonowego. Wybór weryfikujemy razem z szerokością kręgu i średnicą wewnętrzną (450–560 mm)."
+            "a": "Zostaw jeden stopień zapasu ponad najcięższy krąg: 6 ton dla kręgu 5-tonowego, 10 ton dla 8-tonowego. Wybór weryfikujemy razem z szerokością kręgu i średnicą wewnętrzną (470–570 mm w serii hydraulicznej)."
           },
           {
             "q": "Co daje praca dwukierunkowa?",
@@ -2266,9 +2466,9 @@
           "title": "Dane techniczne",
           "head": ["Parametr", "Mechaniczne", "Hydrauliczne"],
           "rows": [
-            ["Modele", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Szerokość kręgu", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Średnica wewnętrzna kręgu", "300 – 550 mm", "450 – 560 mm"],
+            ["Modele", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 t"],
+            ["Szerokość kręgu", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Średnica wewnętrzna kręgu", "300 – 550 mm", "470 – 570 mm"],
             ["Średnica zewnętrzna (maks.)", "1.600 mm", "1.600 mm"],
             ["Rozprężanie trzpienia", "Mechaniczne", "Hydrauliczne"],
             ["Sterowanie", "Regulacja prędkości + hamulec", "Schneider PLC"]

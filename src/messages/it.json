@@ -803,7 +803,7 @@
         "rows": [
           {
             "label": "Campo di capacità",
-            "a": "6 – 20 tonnellate",
+            "a": "4 – 15 tonnellate",
             "b": "500 – 4.000 kg"
           },
           {
@@ -1130,49 +1130,209 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Aspi Idraulici",
-          "photoAlt": ["Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro","Aspo idraulico Servosteel e carrello portacoil, primo piano"],
-          "metaTitle": "Aspo Idraulico — 6.000-20.000 kg",
-          "meta": "Aspi idraulici da 6.000 a 20.000 kg: larghezza nastro fino a 1.600 mm, espansione idraulica del mandrino, controllo anello con sensore laser.",
+          "photoAlt": [
+            "Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro",
+            "Aspo idraulico Servosteel e carrello portacoil, primo piano"
+          ],
+          "metaTitle": "Aspo Idraulico — 4.000-15.000 kg",
+          "meta": "Aspi idraulici da 4.000 a 15.000 kg: larghezza nastro fino a 1.600 mm, diametro interno 470–570 mm, espansione idraulica del mandrino, controllo anello con sensore laser.",
           "short": "Per coil pesanti e nastro largo; mandrino idraulico, motorizzato.",
-          "hero": "I nostri aspi idraulici sostengono coil da 6.000 kg a 20.000 kg e lavorano larghezze fino a 1.600 mm. L'espansione del mandrino è idraulica; braccio pressore pneumatico e controllo anello con sensore laser sono di serie.",
+          "hero": "I nostri aspi idraulici sostengono coil da 4.000 kg a 15.000 kg e lavorano larghezze fino a 1.600 mm. L'espansione del mandrino è idraulica; braccio pressore pneumatico e controllo anello con sensore laser sono di serie.",
           "table": {
-            "title": "Capacità e larghezza",
+            "title": "Modelli e dati tecnici",
             "head": [
-              "Peso coil",
-              "Larghezza materiale"
+              "Modello",
+              "Larghezza materiale (mm)",
+              "Diametro interno min. (mm)",
+              "Diametro interno max. (mm)",
+              "Diametro esterno (mm)",
+              "Capacità",
+              "Serraggio interno",
+              "Potenza motore",
+              "Pressore"
             ],
             "rows": [
               [
+                "SRV4000HA/400",
+                "70 – 400",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Idraulico",
+                "4 kW",
+                "Di serie"
+              ],
+              [
+                "SRV4000HA/600",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "4.000 kg",
+                "Idraulico",
+                "4 kW",
+                "Di serie"
+              ],
+              [
+                "SRV6000HA/400",
+                "70 – 600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "6.000 kg",
-                "80 – 600 / 80 – 800 / 80 – 1.000 mm"
+                "Idraulico",
+                "6 kW",
+                "Di serie"
               ],
               [
-                "8.000 kg",
-                "80 – 800 / 80 – 1.000 / 80 – 1.200 mm"
+                "SRV6000HA/600",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Idraulico",
+                "6 kW",
+                "Di serie"
               ],
               [
+                "SRV6000HA/1000",
+                "70 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "6.000 kg",
+                "Idraulico",
+                "6 kW",
+                "Di serie"
+              ],
+              [
+                "SRV10000HA/800",
+                "70 – 800",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "10.000 kg",
-                "80 – 1.000 / 80 – 1.200 / 80 – 1.300 mm"
+                "Idraulico",
+                "10 kW",
+                "Di serie"
               ],
               [
-                "12.000 kg",
-                "80 – 800 / 80 – 1.300 mm"
+                "SRV10000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Idraulico",
+                "10 kW",
+                "Di serie"
               ],
               [
+                "SRV10000HA/1300",
+                "100 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Idraulico",
+                "10 kW",
+                "Di serie"
+              ],
+              [
+                "SRV10000HA/1500",
+                "120 – 1.500",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "10.000 kg",
+                "Idraulico",
+                "10 kW",
+                "Di serie"
+              ],
+              [
+                "SRV15000HA/1000",
+                "100 – 1.000",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
                 "15.000 kg",
-                "80 – 1.500 mm"
+                "Idraulico",
+                "15 kW",
+                "Di serie"
               ],
               [
-                "20.000 kg",
-                "80 – 1.600 mm"
+                "SRV15000HA/1300",
+                "120 – 1.300",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Idraulico",
+                "15 kW",
+                "Di serie"
+              ],
+              [
+                "SRV15000HA/1600",
+                "120 – 1.600",
+                "470",
+                "570",
+                "Ø 1.400 / 1.600",
+                "15.000 kg",
+                "Idraulico",
+                "15 kW",
+                "Di serie"
               ]
             ]
           },
-          "tableNote": "Tutti i modelli: diametro esterno coil 1.600 mm, interno 450–560 mm (640 mm con adattatore). Espansione idraulica del mandrino e braccio pressore di serie. Sono disponibili configurazioni con freno anziché motore."
+          "tableNote": "Tutti i modelli: diametro interno coil 470–570 mm, esterno Ø 1.400 / 1.600 mm. Serraggio interno idraulico, azionamento a motore e pressore di serie. Sono disponibili configurazioni con freno anziché motore.",
+          "features": [
+            {
+              "title": "Espansione idraulica del mandrino",
+              "text": "Un cilindro idraulico espande il mandrino e blocca il coil dal diametro interno. Su coil da 4–15 t il serraggio non richiede alcuno sforzo all'operatore."
+            },
+            {
+              "title": "Braccio pressore pneumatico",
+              "text": "Il braccio pressore preme sulla spira esterna del coil e ne impedisce l'apertura quando si taglia la reggia. Di serie su tutti i modelli idraulici."
+            },
+            {
+              "title": "Controllo anello con sensore laser",
+              "text": "Un sensore laser misura l'anello tra l'aspo e l'unità successiva e adegua la velocità dell'aspo a quella della linea; il nastro avanza senza tendersi né toccare il pavimento."
+            },
+            {
+              "title": "Motorizzato o con freno",
+              "text": "Gli aspi idraulici sono motorizzati. Dove è la linea stessa a tirare il nastro, è disponibile una configurazione con freno anziché motore."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Cos'è un aspo idraulico?",
+              "a": "È una macchina che sostiene un coil pesante su un mandrino e lo svolge in linea a velocità controllata. Un cilindro idraulico espande il mandrino e blocca il coil dal diametro interno. La serie idraulica Servosteel sostiene coil da 4.000 a 15.000 kg."
+            },
+            {
+              "q": "Che portata e che larghezza di nastro ha un aspo idraulico?",
+              "a": "Le capacità sono 4.000, 6.000, 10.000 e 15.000 kg, ciascuna con modelli in diverse larghezze. La larghezza materiale è 70–600 mm sui modelli da 4 t, 70–1.000 mm su quelli da 6 t, 70–1.500 mm su quelli da 10 t e 100–1.600 mm su quelli da 15 t. Tutti i modelli sono in tabella."
+            },
+            {
+              "q": "Quali diametri di coil accetta un aspo idraulico?",
+              "a": "Su tutti i modelli idraulici il diametro interno coil è 470–570 mm e quello esterno Ø 1.400 / 1.600 mm."
+            },
+            {
+              "q": "Aspo idraulico o meccanico: quale scegliere?",
+              "a": "Decide il peso del coil. La serie meccanica sostiene 500–4.000 kg, quella idraulica 4.000–15.000 kg. Sopra le 4 t, con nastro largo e cambi coil frequenti, scegliete un aspo idraulico; a 4 t esistono entrambe le serie e quella idraulica solleva l'operatore dal serraggio. Sulle linee pesanti lo consigliamo insieme a un carrello portacoil idraulico."
+            },
+            {
+              "q": "Quali dati servono per un'offerta di aspo idraulico?",
+              "a": "Il peso del coil più pesante, larghezza del nastro e campo di spessori, diametro interno ed esterno del coil, la linea che l'aspo alimenterà (alimentazione presse, taglio longitudinale, taglio a misura o profilatura) e la velocità di linea. Indicateci anche se vi serve un carrello portacoil."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Aspi Meccanici",
-          "photoAlt": ["Aspi meccanici Servosteel allineati in officina"],
+          "photoAlt": [
+            "Aspi meccanici Servosteel allineati in officina"
+          ],
           "metaTitle": "Aspo Meccanico — 500-4.000 kg",
           "meta": "Aspi meccanici da 500 a 4.000 kg: larghezza nastro 30-1.200 mm, bloccaggio del nucleo con mandrino, controllo velocità e sistema frenante.",
           "short": "Soluzione economica per coil leggeri e medi; mandrino meccanico.",
@@ -1217,7 +1377,47 @@
               ]
             ]
           },
-          "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm. Nei modelli da 3.000 e 4.000 kg il diametro esterno coil è 1.600 mm, l'interno 450–560 mm (630 mm con adattatore) e l'espansione del mandrino è meccanica. Gli aspi a mandrino conico da 3.000–4.000 kg lavorano spessori fino a 5 mm."
+          "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm. Nei modelli da 3.000 e 4.000 kg il diametro esterno coil è 1.600 mm, l'interno 450–560 mm (630 mm con adattatore) e l'espansione del mandrino è meccanica. Gli aspi a mandrino conico da 3.000–4.000 kg lavorano spessori fino a 5 mm.",
+          "features": [
+            {
+              "title": "Bloccaggio del nucleo con mandrino",
+              "text": "Nei modelli da 500–2.500 kg il nucleo si serra con volantino; i modelli da 3.000 e 4.000 kg hanno mandrino conico."
+            },
+            {
+              "title": "Controllo velocità e freno a ceppi",
+              "text": "La velocità di svolgimento è regolabile e il sistema frenante a ceppi impedisce al coil di svolgersi da solo. Entrambi sono di serie."
+            },
+            {
+              "title": "Svolgimento bidirezionale",
+              "text": "L'albero ruota in entrambi i sensi: il nastro può essere alimentato dall'alto o dal basso e i coil avvolti in qualsiasi direzione lavorano senza modificare il layout della linea."
+            },
+            {
+              "title": "Tre tipi: A, LA, F",
+              "text": "A motorizzato, braccio pressore opzionale. LA motorizzato, con diametro esterno coil di 1.600 mm e braccio pressore di serie. F con freno, braccio pressore di serie."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Cos'è un aspo meccanico?",
+              "a": "È una macchina che sostiene coil leggeri e medi su un mandrino e li svolge in linea; il nucleo viene bloccato meccanicamente. La serie meccanica Servosteel sostiene coil da 500 a 4.000 kg."
+            },
+            {
+              "q": "Che portata e che larghezza di nastro ha un aspo meccanico?",
+              "a": "I modelli sono da 500, 750, 1.500, 2.500, 3.000 e 4.000 kg. La larghezza materiale è 30–300 mm sui modelli da 500 e 750 kg, 30–400 mm sul 1.500 kg, 30–500 mm sul 2.500 kg, 80–800 mm sul 3.000 kg e 100–1.200 mm sul 4.000 kg."
+            },
+            {
+              "q": "Che differenza c'è tra i modelli A, LA e F?",
+              "a": "A è motorizzato, con braccio pressore opzionale. LA è motorizzato, accetta coil fino a 1.600 mm di diametro esterno e ha il braccio pressore di serie. F lavora con freno anziché motore, con braccio pressore di serie. Nei modelli A e F il diametro esterno coil è 1.300 mm."
+            },
+            {
+              "q": "Si può usare un aspo meccanico per materiale spesso?",
+              "a": "I modelli da 3.000 e 4.000 kg a mandrino conico lavorano spessori fino a 5 mm. Per coil più pesanti o nastro più largo si passa alla serie idraulica."
+            },
+            {
+              "q": "Quali diametri interni coil accetta un aspo meccanico?",
+              "a": "300–550 mm sul 500 kg, 350–550 mm sul 750 kg, 400–550 mm sul 1.500 kg, 450–550 mm sul 2.500 kg; 450–560 mm sui modelli da 3.000 e 4.000 kg, 630 mm con adattatore."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Aspi a Doppia Testa",
@@ -2225,10 +2425,10 @@
         "clips": ["Aspo con carrello portacoil in una linea compatta di alimentazione pressa"],
         "types": [{"label":"Aspo idraulico","alt":"Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro"},{"label":"Aspo meccanico","alt":"Aspi meccanici Servosteel allineati in officina"},{"label":"Aspo a doppia testa","alt":"Aspo a doppia testa Servosteel con due mandrini, vista frontale"}],
         "galleryAlt": ["Aspo a doppia testa Servosteel, vista laterale"],
-        "metaTitle": "Svolgitori: idraulici 6-20 t, meccanici 500-4.000 kg",
-        "short": "Idraulici 6-20 t e meccanici 500-4.000 kg.",
+        "metaTitle": "Svolgitori: idraulici 4-15 t, meccanici 500-4.000 kg",
+        "short": "Idraulici 4-15 t e meccanici 500-4.000 kg.",
         "hero": "Il primo anello di ogni linea: svolgitori idraulici e meccanici che sostengono il coil in sicurezza e lo svolgono a tensione controllata. Progettati su capacità, larghezza lamiera e livello di automazione.",
-        "meta": "Svolgitori idraulici (6-20 t) e meccanici (500-4.000 kg): soluzioni su misura per alimentazione presse e linee coil.",
+        "meta": "Svolgitori idraulici (4-15 t) e meccanici (500-4.000 kg): soluzioni su misura per alimentazione presse e linee coil.",
         "features": [
           {
             "title": "Espansione idraulica del mandrino",
@@ -2247,11 +2447,11 @@
         "faq": [
           {
             "q": "Che differenza c'è tra svolgitori idraulici e meccanici?",
-            "a": "La serie meccanica gestisce coil da 500–2500 kg con mandrino serrato a volantino, e i modelli da 3000 e 4000 kg con mandrino conico; quella idraulica arriva a 6–20 tonnellate con espansione del mandrino e freno idraulici. Con coil pesanti e linee veloci, l'idraulico è la scelta sicura."
+            "a": "La serie meccanica gestisce coil da 500–2500 kg con mandrino serrato a volantino, e i modelli da 3000 e 4000 kg con mandrino conico; quella idraulica arriva a 4–15 tonnellate con espansione del mandrino e freno idraulici. Con coil pesanti e linee veloci, l'idraulico è la scelta sicura."
           },
           {
             "q": "Quale capacità dovrei scegliere?",
-            "a": "Lasciate un gradino di margine sopra il coil più pesante: 6 tonnellate per un coil da 5, 10 per uno da 8. Verifichiamo la scelta insieme a larghezza e diametro interno (450–560 mm)."
+            "a": "Lasciate un gradino di margine sopra il coil più pesante: 6 tonnellate per un coil da 5, 10 per uno da 8. Verifichiamo la scelta insieme a larghezza e diametro interno (470–570 mm sulla serie idraulica)."
           },
           {
             "q": "Cosa offre il funzionamento bidirezionale?",
@@ -2266,9 +2466,9 @@
           "title": "Specifiche tecniche",
           "head": ["Caratteristica", "Meccanico", "Idraulico"],
           "rows": [
-            ["Modelli", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "6 · 8 · 10 · 12 · 15 · 20 t"],
-            ["Larghezza coil", "30 – 1.200 mm", "80 – 1.600 mm"],
-            ["Diametro interno coil", "300 – 550 mm", "450 – 560 mm"],
+            ["Modelli", "500 · 750 · 1.500 · 2.500 · 3.000 · 4.000 kg", "4 · 6 · 10 · 15 t"],
+            ["Larghezza coil", "30 – 1.200 mm", "70 – 1.600 mm"],
+            ["Diametro interno coil", "300 – 550 mm", "470 – 570 mm"],
             ["Diametro esterno (max.)", "1.600 mm", "1.600 mm"],
             ["Espansione mandrino", "Meccanico", "Idraulico"],
             ["Controllo", "Controllo velocità + freno", "Schneider PLC"]
