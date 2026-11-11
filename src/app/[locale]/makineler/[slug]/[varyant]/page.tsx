@@ -104,7 +104,9 @@ export default async function VariantPage({ params }: Props) {
         ? {
             additionalProperty: tableRows.map((row) => ({
               "@type": "PropertyValue",
-              name: row[0],
+              /* Aynı model adı birden çok genişlikte olabilir (SRV6000HA ×3,
+                 Yasin 11 Kas: "/400 sonrası silinecek") — ad genişlikle ayrışır */
+              name: tableRows.filter((r) => r[0] === row[0]).length > 1 ? `${row[0]} · ${row[1]}` : row[0],
               value: row.slice(1).filter(Boolean).join(" / "),
             })),
           }
@@ -177,7 +179,7 @@ export default async function VariantPage({ params }: Props) {
                     </thead>
                     <tbody>
                       {tableRows.map((row) => (
-                        <tr key={row[0]} className="border-t border-line">
+                        <tr key={row.join("|")} className="border-t border-line">
                           {row.map((cell, ci) => (
                             <td
                               key={ci}
