@@ -2567,16 +2567,16 @@
         "galleryAlt": ["Servosteel çift kafa rulo açıcı, yandan görünüm"],
         "metaTitle": "Rulo Açıcı ve Rulo Sac Açma Makinesi: Hidrolik, Mekanik",
         "short": "Hidrolik 4-15 ton, mekanik 500-4.000 kg rulo açma çözümleri.",
-        "hero": "Rulo sac açma makinesi olarak da bilinen rulo açıcı, her hattın ilk halkasıdır: ruloyu güvenle taşır, gerginliği kontrol ederek açar. Hidrolik ve mekanik modeller kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
+        "hero": "Rulo sac açma makinesi olarak da bilinen rulo açıcı, her hattın ilk halkasıdır: rulo sacı güvenle taşır, gerginliği kontrol ederek açar. Hidrolik (4–15 ton), mekanik (500–4.000 kg) ve çift kafa modeller; kapasite, sac genişliği ve otomasyon seviyesine göre projelendirilir.",
         "meta": "Rulo açıcı (rulo sac açma makinesi) rulo sacı taşır, hatta kontrollü gerginlikle açar. Hidrolik 4-15 ton, mekanik 500-4.000 kg; 48 saatte projeye özel fiyat.",
         "features": [
           {
             "title": "Hidrolik mandren genişletme",
-            "text": "Ağır serilerde rulo iç çapı hidrolik olarak sıkılır; yükleme hızlı ve güvenlidir."
+            "text": "Ağır serilerde rulo sac iç çapından hidrolik olarak sıkılır; yükleme hızlı ve güvenlidir."
           },
           {
             "title": "Yükleme arabası opsiyonu",
-            "text": "Ağır ruloların vinç beklemeden hatta alınması için hidrolik yükleme arabası eklenebilir."
+            "text": "Ağır rulo sacın vinç beklemeden hatta alınması için hidrolik yükleme arabası eklenebilir."
           },
           {
             "title": "Hat senkronizasyonu",
@@ -2586,6 +2586,10 @@
         "sectors": ["Pres besleme", "Dilme hatları", "Boy kesme hatları", "Roll form hatları"],
         "faq": [
           {
+            "q": "Rulo açıcı nedir?",
+            "a": "Rulo açıcı (rulo sac açma makinesi), hattın başında rulo sacı taşıyan ve hatta kontrollü gerginlikle açan makinedir. Rulo sac, iç çapına karşı genişleyen bir mandrene oturur; hat sacı çektikçe mandren döner, fren geri gerginliği tutar ve rulo sac boşalıp gevşemez. Pres besleme, dilme, boy kesme ve roll form hatlarının ilk ünitesidir."
+          },
+          {
             "q": "Hidrolik ve mekanik rulo açıcı arasındaki fark nedir?",
             "a": "Mekanik seri 500–2500 kg rulo sacları volanla sıkılan göbekle taşır, 3000 ve 4000 kg modeller konik mandrenlidir; hidrolik seri 4–15 ton kapasiteye çıkar, göbek genişletme ve fren hidroliktir. Ağır rulo sac ve yüksek hat hızında güvenli seçim hidroliktir."
           },
@@ -2594,12 +2598,28 @@
             "a": "En ağır rulo sacınızın üzerine bir kademe pay bırakın: 5 tonluk rulo sac için 6 ton, 8 tonluk için 10 ton gibi. Seçimi bant genişliği ve rulo sac iç çapıyla (hidrolik seride 470–570 mm) birlikte doğruluyoruz."
           },
           {
+            "q": "Rulo açıcı, rulo açma makinesi ve dekoiler aynı makine mi?",
+            "a": "Evet. Rulo açıcı, rulo sac açma makinesi, rulo açma makinası ve İngilizceden gelen dekoiler ya da uncoiler aynı makineyi anlatır: hattın başında rulo sacı taşıyıp kontrollü gerginlikle açan ünite. Bu sayfadaki her şey, hangi adla aradıysanız onun için geçerlidir."
+          },
+          {
+            "q": "Elle çalışan (manuel) rulo açıcı var mı?",
+            "a": "Genelde manuel açıcı denen tip mekanik seridir: 500–2.500 kg modellerde mandren hidrolikle değil volanla sıkılır, rulo sac gerginliği hız kontrollü bir frenle tutulur. 3.000 ve 4.000 kg mekanik modeller konik mandrenlidir. Daha ağır rulo sacta hidrolik seri devreye girer; mandren genişletme ve frenleme güçle yapılır, rulo sacı yükleme arabası oturtur."
+          },
+          {
             "q": "Çift yönlü çalışma ne sağlar?",
-            "a": "Şaft iki yöne de dönebildiğinden sac üstten veya alttan verilebilir; farklı sarım yönündeki rulolarla hat yerleşimini değiştirmeden çalışırsınız."
+            "a": "Şaft iki yöne de dönebildiğinden sac üstten veya alttan verilebilir; farklı sarım yönündeki rulo saclarla hat yerleşimini değiştirmeden çalışırsınız."
           },
           {
             "q": "Yükleme arabası ne zaman gerekli olur?",
-            "a": "Ağır rulolarda forkliftle şafta rulo takmak riskli ve yavaştır; hidrolik yükleme arabası ruloyu hizalar ve göbeğe saniyeler içinde oturtur. 6 ton üzeri hatlarda standart öneririz."
+            "a": "Ağır rulo sacı forkliftle şafta takmak riskli ve yavaştır; hidrolik yükleme arabası rulo sacı hizalar ve göbeğe saniyeler içinde oturtur. 6 ton üzeri hatlarda standart öneririz."
+          },
+          {
+            "q": "Rulo açma, doğrultma ve besleme tek makinede birleşebilir mi?",
+            "a": "Evet, kompakt hat budur: açıcı, doğrultucu ve servo besleme tek şaside durur, tek operatör panelinden yönetilir; klasik hat dizilimine yeri olmayan atölyeler içindir. Rulo sac ağırsa ya da hat yerleşimi sabitse, ayrı bir açıcının doğrultmalı servo sürücüyü beslemesi daha iyi düzendir."
+          },
+          {
+            "q": "Çift kafa rulo açıcı ne zaman gerekir?",
+            "a": "Rulo sacın sık değiştiği hatlarda. Çift kafa rulo açıcı döner bir gövde üzerinde iki mandren taşır: biri hatta rulo sac açarken diğerine sıradaki rulo sac yüklenir, gövde döner ve hat rulo sac değişimi için daha az bekler."
           },
           {
             "q": "Rulo açıcı fiyatları neye göre değişir?",

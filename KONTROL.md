@@ -284,6 +284,8 @@ sonrası bu tarihten ayrı okunur:
 | PL servo sürücü başlığına "podajniki walcowe" | "podajniki walcowe", "podajnik walcowy" | 9,8 (34) · 18,5 (13) |
 | Hat ↔ makine çapraz bağlantıları, TR Akademi girişlerinden ürüne bağlantı, 9 dilde kombine dilme/boy kesme SSS'si | "dilme hattı" → /dilme-hatlari (Akademi değil) | Akademi 5,8, ürün 15 |
 
+**11 Kasım: TR açıcı satırı artık temiz okunmaz.** Yasin'in kararıyla (11 Kas, "şimdi yap") /makineler/rulo-acicilar 25 Kasım'ı beklemeden değişti: başta tip şeridi (hidrolik / mekanik / çift kafa fotoğrafları), YouTube şeridi yerine saha klibi, hidrolik seri 4–15 t (SRV…HA tablosu), SSS 5→10 ("rulo açıcı nedir", "rulo açma makinesi aynı mı", manuel, kompakt, çift kafa). Alt sayfalar yeni adreste (`…/hidrolik-rulo-acicilar`, `…/mekanik-rulo-acicilar`, `…/cift-kafa-rulo-acicilar`), 4 özellik + 5 SSS ile. "hidrolik rulo açıcı" artık alt sayfaya gitmeli. Bu satır için 25 Kasım'da başlık etkisini değil 11 Kasım sonrasını oku: "rulo açıcı" (11 Kas öncesi 90 gün: 18,1 / 242 gös.), "hidrolik rulo açıcı" (18,7 / 185), "rulo açıcı nedir" (3,5 / 63 gös. / 0 tık), DE "hydraulische haspel(s)" (19–25 / 249).
+
 **Geri alma kuralı:** servo-feeders "servo feeder"da düşerse (28 Eki: 5,8) EN makine
 hub'ının H1'i eski haline döner — iki sayfa "press feeder"da yarışıyor olabilir.
 

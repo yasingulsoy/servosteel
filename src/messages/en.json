@@ -2658,11 +2658,15 @@
           },
           {
             "q": "Do you supply manual decoilers?",
-            "a": "The mechanical series is what is usually meant by a manual decoiler: the mandrel is tightened by handwheel rather than hydraulically, and coil tension is held by a brake with speed control. It covers coils from 500 to 2,500 kg. Above that the hydraulic series takes over, where mandrel expansion and braking are both powered and a loading car handles seating the coil."
+            "a": "The mechanical series is what is usually meant by a manual decoiler: on the 500–2,500 kg models the mandrel is tightened by handwheel rather than hydraulically, and coil tension is held by a brake with speed control. The 3,000 and 4,000 kg mechanical models have a conical mandrel. For heavier coils the hydraulic series takes over, where mandrel expansion and braking are both powered and a loading car handles seating the coil."
           },
           {
             "q": "Can decoiling, straightening and feeding be combined in one machine?",
             "a": "Yes — that is what a compact line is: decoiler, straightener and servo feeder on a single platform, managed from one HMI, for shops without the floor space for a classic layout. Where coils are heavy or the line layout is already fixed, a separate decoiler feeding a straightener servo feeder is the better arrangement."
+          },
+          {
+            "q": "When do you need a double-head decoiler?",
+            "a": "On lines where coils change often. A double-head decoiler carries two mandrels on a rotating body: one pays off into the line while the next coil is loaded on the other, then the body turns and the line waits less for the coil change."
           },
           {
             "q": "What determines decoiler prices?",
