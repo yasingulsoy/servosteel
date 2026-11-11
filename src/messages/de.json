@@ -2037,6 +2037,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Abwickelhaspeln",
+        "clips": ["Haspel mit Coilwagen in einer kompakten Pressenzuführanlage"],
         "types": [{"label":"Hydraulische Haspel","alt":"Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband"},{"label":"Mechanische Haspel","alt":"Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"},{"label":"Doppelkopf-Haspel","alt":"Doppelkopf-Haspel von Servosteel mit zwei Dornen, Vorderansicht"}],
         "galleryAlt": ["Doppelkopf-Haspel von Servosteel, Seitenansicht"],
         "metaTitle": "Abwickelhaspeln: hydraulisch 6-20 t, mechanisch 500-4.000 kg",
@@ -2295,6 +2296,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompaktanlagen",
+        "clips": ["Kompaktanlage mit Coilwagen in der Fertigungshalle"],
         "metaTitle": "Kompaktanlagen: 3-in-1, 0,5-6 mm, 40-1.300 mm",
         "short": "Haspel + Richtmaschine + Vorschub auf einer Plattform.",
         "hero": "Kompaktanlagen vereinen Abwickeln, Richten und Servovorschub auf einer Plattform; entwickelt für Betriebe, die volle Pressenzuführung auf begrenzter Fläche brauchen.",

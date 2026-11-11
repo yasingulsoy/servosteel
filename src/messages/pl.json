@@ -2037,6 +2037,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Odwijaki",
+        "clips": ["Odwijak z wózkiem do kręgów w kompaktowej linii podawania prasy"],
         "types": [{"label":"Odwijak hydrauliczny","alt":"Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej"},{"label":"Odwijak mechaniczny","alt":"Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"},{"label":"Odwijak dwugłowicowy","alt":"Odwijak dwugłowicowy Servosteel z dwoma trzpieniami, widok z przodu"}],
         "galleryAlt": ["Odwijak dwugłowicowy Servosteel, widok z boku"],
         "metaTitle": "Odwijaki: hydrauliczne 6-20 t, mechaniczne 500-4000 kg",
@@ -2291,6 +2292,7 @@
       },
       "kompakt-hatlar": {
         "name": "Linie Kompaktowe",
+        "clips": ["Linia kompaktowa z wózkiem do kręgów w hali produkcyjnej"],
         "metaTitle": "Linie podające kompaktowe 3 w 1: 0,5-6 mm, 40-1.300 mm",
         "short": "Odwijak + prostownica + podajnik na jednej platformie.",
         "hero": "Linie kompaktowe łączą odwijanie, prostowanie i podawanie serwo na jednej platformie; przeznaczone dla zakładów, które chcą pełne podawanie do pras na ograniczonej powierzchni.",

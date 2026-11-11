@@ -56,9 +56,14 @@ export const machineItems = [
     /* Yan sütun (bkz. galleryOf): çift kafanın yandan görünümü — bu tipin
        kendi sayfası yok, ikinci fotoğrafı burada. */
     gallery: [{ file: "cift-kafa-rulo-acici-2.jpg", ratio: "3/4" }],
-    /* Başlığın altındaki video şeridi bu sayfada ve varyantlarında yok
-       (Yasin, 11 Kas): yerini tip şeridi aldı. Videolar /videolar'da duruyor. */
+    /* Başlığın altındaki YouTube şeridi bu sayfada ve varyantlarında yok
+       (Yasin, 11 Kas): yerini tip şeridi ve sitenin kendi klibi aldı.
+       YouTube videoları /videolar'da duruyor. */
     hideVideos: true,
+    /* Sahadan klip (bkz. clipsOf): kompakt hattaki rulo arabalı açıcı, yatay */
+    clips: [
+      { src: "/kompakt-hat-yatay.mp4", poster: "/kompakt-hat-yatay-poster.jpg", width: 848, height: 480, sec: 19, tarih: "2026-11-11" },
+    ],
   },
   { slug: "servo-suruculer" },
   { slug: "dogrultmali-servo-suruculer" },
@@ -66,6 +71,10 @@ export const machineItems = [
     slug: "kompakt-hatlar",
     /* Vitrin fotoğrafı (bkz. showcaseOf): pres besleme hattı — doğrultmalı sürücü, açıcı, rulo arabası */
     showcase: [{ file: "kompakt-hatlar-pres-besleme.jpg", width: 1600, height: 764 }],
+    /* Kaldırılan "Kompakt hat testi" YouTube videosunun yerine dikey saha klibi */
+    clips: [
+      { src: "/kompakt-hat-dikey.mp4", poster: "/kompakt-hat-dikey-poster.jpg", width: 480, height: 848, sec: 15, tarih: "2026-11-11" },
+    ],
   },
   {
     slug: "servo-punch-pres",
@@ -196,7 +205,18 @@ export function typesOf(slug: string): readonly TipFoto[] {
   return all.find((i) => i.slug === slug)?.types ?? [];
 }
 
-/** Başlığın altındaki video şeridi bu makinede (ve varyantlarında) basılmasın mı. */
+type Klip = { src: string; poster: string; width: number; height: number; sec: number; tarih: string };
+
+/**
+ * Sitede barındırılan saha klipleri (public/ altında, sessiz, döngü) —
+ * "Sahadan görüntüler" bölümünde YouTube kartlarından sonra gelir.
+ * Başlıkları mesaj dosyasında `products.machines.<slug>.clips`, aynı sırayla.
+ */
+export function clipsOf(slug: string): readonly Klip[] {
+  return (machineItems as ReadonlyArray<{ slug: string; clips?: readonly Klip[] }>).find((i) => i.slug === slug)?.clips ?? [];
+}
+
+/** Başlığın altındaki YouTube şeridi bu makinede (ve varyantlarında) basılmasın mı. */
 export function hidesVideos(slug: string): boolean {
   return !!(machineItems as ReadonlyArray<{ slug: string; hideVideos?: boolean }>).find((i) => i.slug === slug)?.hideVideos;
 }

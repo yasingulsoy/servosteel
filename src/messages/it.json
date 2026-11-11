@@ -2037,6 +2037,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Svolgitori",
+        "clips": ["Aspo con carrello portacoil in una linea compatta di alimentazione pressa"],
         "types": [{"label":"Aspo idraulico","alt":"Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro"},{"label":"Aspo meccanico","alt":"Aspi meccanici Servosteel allineati in officina"},{"label":"Aspo a doppia testa","alt":"Aspo a doppia testa Servosteel con due mandrini, vista frontale"}],
         "galleryAlt": ["Aspo a doppia testa Servosteel, vista laterale"],
         "metaTitle": "Svolgitori: idraulici 6-20 t, meccanici 500-4.000 kg",
@@ -2291,6 +2292,7 @@
       },
       "kompakt-hatlar": {
         "name": "Linee Compatte",
+        "clips": ["Linea compatta con carrello portacoil, in officina"],
         "metaTitle": "Linee compatte 3 in 1: 0,5-6 mm, 40-1.300 mm",
         "short": "Svolgitore + raddrizzatrice + alimentatore su una piattaforma.",
         "hero": "Le linee compatte riuniscono svolgimento, raddrizzatura e alimentazione servo su un'unica piattaforma; pensate per le aziende che vogliono un'alimentazione presse completa in spazi ridotti.",

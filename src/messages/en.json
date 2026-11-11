@@ -2097,6 +2097,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Decoilers",
+        "clips": ["Decoiler with coil car in a compact press feeding line"],
         "types": [{"label":"Hydraulic decoiler","alt":"Servosteel hydraulic decoiler with coil car, unwinding steel strip"},{"label":"Mechanical decoiler","alt":"Servosteel mechanical decoilers lined up in the factory"},{"label":"Double-head decoiler","alt":"Servosteel double-head decoiler with two mandrels, front view"}],
         "galleryAlt": ["Servosteel double-head decoiler, side view"],
         "metaTitle": "Decoilers: Hydraulic 6-20 t, Mechanical 500-4,000 kg",
@@ -2387,6 +2388,7 @@
       },
       "kompakt-hatlar": {
         "name": "Compact Lines",
+        "clips": ["Compact line with coil car, in the factory"],
         "metaTitle": "Compact Lines: 3-in-1 Coil Feeder 0.5-6 mm, 40-1,300 mm",
         "short": "Decoiler + straightener + feeder on one platform: the tight-space solution.",
         "hero": "Compact lines combine decoiling, straightening and servo feeding on a single platform; designed for businesses that want full-featured press feeding in limited space.",

@@ -2037,6 +2037,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Desbobinadoras",
+        "clips": ["Desbobinadora con carro portabobinas en una línea compacta de alimentación de prensa"],
         "types": [{"label":"Desbobinadora hidráulica","alt":"Desbobinadora hidráulica Servosteel con carro portabobinas, desenrollando fleje de acero"},{"label":"Desbobinadora mecánica","alt":"Desbobinadoras mecánicas Servosteel alineadas en la fábrica"},{"label":"Desbobinadora de doble cabezal","alt":"Desbobinadora de doble cabezal Servosteel con dos mandriles, vista frontal"}],
         "galleryAlt": ["Desbobinadora de doble cabezal Servosteel, vista lateral"],
         "metaTitle": "Desbobinadoras: hidráulicas 6-20 t, mecánicas 500-4.000 kg",
@@ -2291,6 +2292,7 @@
       },
       "kompakt-hatlar": {
         "name": "Líneas Compactas",
+        "clips": ["Línea compacta con carro portabobinas, en la fábrica"],
         "metaTitle": "Líneas compactas 3 en 1: 0,5-6 mm, 40-1.300 mm",
         "short": "Desbobinador + enderezadora + alimentador en una plataforma.",
         "hero": "Las líneas compactas reúnen desbobinado, enderezado y alimentación servo en una sola plataforma; pensadas para empresas que quieren alimentación de prensa completa en un espacio limitado.",

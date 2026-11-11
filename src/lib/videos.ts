@@ -385,7 +385,8 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/makineler/rulo-acicilar": ["AqcEyDbbWtA", "v9_1snhusMY"],
   "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow"],
   "/makineler/dogrultmali-servo-suruculer": ["P3zbB3c6NBY", "bc5nAkQXJTw"],
-  "/makineler/kompakt-hatlar": ["ONmiUo8vtvk", "7RcuUmfN7QE"],
+  /* "Kompakt hat testi" (7RcuUmfN7QE) kaldırıldı — yerinde sitenin kendi dikey klibi (Yasin, 11 Kas; bkz. catalog clips) */
+  "/makineler/kompakt-hatlar": ["ONmiUo8vtvk"],
   "/makineler/servo-punch-pres": ["ooxTQBK7wII", "UCeR9epppK8"],
   "/makineler/otomatik-istifleyici": ["UCeR9epppK8", "kQbK5kXquaY"],
 };

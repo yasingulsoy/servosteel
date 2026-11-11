@@ -2037,6 +2037,7 @@
     "machines": {
       "rulo-acicilar": {
         "name": "Lecsévélők",
+        "clips": ["Letekercselő tekercsszállító kocsival, kompakt présadagoló sorban"],
         "types": [{"label":"Hidraulikus letekercselő","alt":"Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben"},{"label":"Mechanikus letekercselő","alt":"Sorban álló Servosteel mechanikus letekercselők a gyárban"},{"label":"Kétfejes letekercselő","alt":"Servosteel kétfejes letekercselő két tüskével, elölnézet"}],
         "galleryAlt": ["Servosteel kétfejes letekercselő, oldalnézet"],
         "metaTitle": "Lecsévélők: hidraulikus 6-20 t, mechanikus 500-4000 kg",
@@ -2291,6 +2292,7 @@
       },
       "kompakt-hatlar": {
         "name": "Kompakt Sorok",
+        "clips": ["Kompakt sor tekercsszállító kocsival a gyárban"],
         "metaTitle": "Kompakt présadagoló sor: 0,5-6 mm, 40-1.300 mm",
         "short": "Lecsévélő + egyengető + adagoló egy platformon.",
         "hero": "A kompakt sorok a lecsévélést, egyengetést és szervoadagolást egyetlen platformon egyesítik; olyan üzemeknek, amelyek korlátozott helyen teljes értékű présadagolást szeretnének.",

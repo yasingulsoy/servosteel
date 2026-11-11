@@ -14,7 +14,7 @@ import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
 import { Vitrin } from "@/components/vitrin";
 import { TipSeridi } from "@/components/tip-seridi";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf, typesOf, hidesVideos } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf, typesOf, hidesVideos, clipsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -68,6 +68,7 @@ export default async function MachinePage({ params }: Props) {
   const vitrinAlt = t.has("showcaseAlt") ? (t.raw("showcaseAlt") as string[]) : [];
   const tipler = typesOf(slug);
   const tipMetin = t.has("types") ? (t.raw("types") as { label: string; alt: string }[]) : [];
+  const klipBaslik = t.has("clips") ? (t.raw("clips") as string[]) : [];
   const anaFoto = hasPhoto(slug) && !hidesMainPhoto(slug);
   const gorsel = pageImageOf(slug);
   /* Kullanım çipleri: bağlantısı olan çip hat sayfasına gider (bkz. usageLinksOf,
@@ -157,8 +158,14 @@ export default async function MachinePage({ params }: Props) {
       />
       {/* Sahadan videolar üstte: vitrin varsa hemen altında, yoksa başlığın altında
           (Yasin, 27 Eki: "tüm makineler için görsellerden sonra videoları koyalım").
-          Rulo açıcılarda yok (Yasin, 11 Kas) — bkz. hidesVideos. */}
-      {!hidesVideos(slug) && <RelatedVideos path={`/makineler/${slug}`} ust />}
+          Rulo açıcılarda YouTube yok, yalnız sitenin kendi klibi (Yasin, 11 Kas) —
+          bkz. hidesVideos, clipsOf. */}
+      <RelatedVideos
+        path={`/makineler/${slug}`}
+        ust
+        youtube={!hidesVideos(slug)}
+        klipler={clipsOf(slug).map((k, i) => ({ ...k, baslik: klipBaslik[i] ?? t("name") }))}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-3">
