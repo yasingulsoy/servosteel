@@ -112,7 +112,7 @@ export const CONTENT_SLUGS = {
 
 /**
  * ÜÇÜNCÜ seviye — bir ürün sayfasının varyantları.
- * `/makineler/rulo-acicilar/hidrolik` -> `/machines/decoilers/hydraulic`
+ * `/makineler/rulo-acicilar/hidrolik-rulo-acicilar` -> `/machines/decoilers/hydraulic-decoilers`
  *
  * Anahtar, iki segmentlik ÜST yoldur (Türkçe). Böylece aynı varyant adı farklı
  * ürünlerin altında tekrar edebilir; yol üretilirken hangi ürünün altında
@@ -123,9 +123,13 @@ export const CONTENT_SLUGS = {
  * karıştırmak o çözümü bozardı.
  */
 export const VARIANT_SLUGS = {
+  /* 2026-11-11: `hidrolik`/`mekanik` (`hydraulic`/`mechanical`) açıklayıcı
+     slug'a taşındı, çift kafa eklendi. Eski adresler next.config.ts'te
+     (ESKI_ACICI_VARYANTLARI) yeni adrese kalıcı yönlenir. */
   "makineler/rulo-acicilar": {
-    hidrolik: "hydraulic",
-    mekanik: "mechanical",
+    "hidrolik-rulo-acicilar": "hydraulic-decoilers",
+    "mekanik-rulo-acicilar": "mechanical-decoilers",
+    "cift-kafa-rulo-acicilar": "double-head-decoilers",
   },
   /* `mini` ve `kasali` iki ürünün altında birden geçiyor; ikisinde de aynı
      İngilizce karşılığa bağlı olduğu için düzleştirmede çakışma olmuyor. */

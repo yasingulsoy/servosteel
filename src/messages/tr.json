@@ -992,7 +992,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Hidrolik Rulo Açıcılar",
           "photoAlt": ["Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken","Servosteel hidrolik rulo açıcı ve rulo arabası, yakından"],
           "metaTitle": "Hidrolik Rulo Açıcı — 6.000-20.000 kg",
@@ -1034,7 +1034,7 @@
           },
           "tableNote": "Tüm modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 640 mm). Mandren sıkma hidrolik, üst baskı kolu standart. Motor yerine fren istenen konfigürasyonlar mevcuttur."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Mekanik Rulo Açıcılar",
           "photoAlt": ["Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"],
           "metaTitle": "Mekanik Rulo Açıcı — 500-4.000 kg",
@@ -1082,6 +1082,53 @@
             ]
           },
           "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir. 3.000 ve 4.000 kg modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 630 mm) ve mandren sıkma mekaniktir. 3.000–4.000 kg konik mandrenli açıcılar 5 mm'ye kadar sac kalınlığında çalışır."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Çift Kafa Rulo Açıcılar",
+          "photoAlt": [
+            "Servosteel çift kafa rulo açıcı, iki mandrenli, önden görünüm",
+            "Servosteel çift kafa rulo açıcı, yandan görünüm"
+          ],
+          "metaTitle": "Çift Kafa Rulo Açıcı — Hat Çalışırken Yükleme",
+          "meta": "Çift kafa rulo açıcı: döner gövdede iki mandren. Bir rulo sac hatta açılırken ikincisi yüklenir; rulo sac değişiminde hattın duruşu kısalır.",
+          "short": "İki mandrenli döner gövde; sıradaki rulo sac hat çalışırken yüklenir.",
+          "hero": "Çift kafa rulo açıcı, döner bir gövde üzerinde iki mandren taşır: biri hatta rulo sac açarken diğerine sıradaki rulo sac yüklenir. Hattaki rulo sac bittiğinde gövde döner ve yeni rulo sac açma konumuna gelir; hattın rulo sac değişimi için beklediği süre kısalır.",
+          "features": [
+            {
+              "title": "İki mandren, döner gövde",
+              "text": "Gövde üzerinde iki mandren karşılıklı durur. Biri hat tarafında rulo sac açar, diğeri yükleme tarafında bekler; gövde döndürülünce yerleri değişir."
+            },
+            {
+              "title": "Yükleme hat çalışırken",
+              "text": "Sıradaki rulo sac, hat durmadan boştaki mandrene takılır ve sıkılır. Rulo sac bittiğinde duruş, gövdenin dönüşü ve sac ucunun hatta geçirilmesiyle sınırlı kalır."
+            },
+            {
+              "title": "Sık rulo sac değişen hatlar için",
+              "text": "Dar şeritte, yüksek hızda ya da hafif rulo sacla çalışan hatlarda rulo sac çabuk tükenir ve günün toplam duruşunu değişim süreleri belirler. Çift kafa her değişimi kısaltır."
+            },
+            {
+              "title": "İki malzeme hazırda",
+              "text": "İki mandrene farklı kalınlıkta ya da kalitede rulo sac takılabilir. İş değiştiğinde gövde döndürülerek diğer malzemeye geçilir; rulo sacı mandrenden indirip yenisini takmak gerekmez."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Çift kafa rulo açıcı nasıl çalışır?",
+              "a": "Döner gövdedeki iki mandrenden biri hatta rulo sac açar. Bu sırada operatör sıradaki rulo sacı boştaki mandrene takar ve sıkar. Hattaki rulo sac bitince hat durur, gövde döner ve yeni rulo sacı açma konumuna getirir; sac ucu hatta geçirilir ve hat yeniden çalışır. Boşalan mandren bir sonraki yükleme için hazırdır."
+            },
+            {
+              "q": "Tek kafalı açıcıya ve yükleme arabasına göre farkı ne?",
+              "a": "Tek kafalı açıcıda yeni rulo sac ancak eskisi bittikten sonra takılabilir; yükleme süresince hat bekler. Yükleme arabası bu işi hızlandırır ve güvenli hale getirir, ama yükleme yine hat dururken yapılır. Çift kafada yükleme hattın çalıştığı zamana kayar; duruşta yalnız gövde döner ve sac ucu geçirilir."
+            },
+            {
+              "q": "Hangi hatlarda tercih edilir?",
+              "a": "Rulo sacın çabuk tükendiği ve sık değiştiği hatlarda: dar şeritle çalışan pres besleme hatları, yüksek hızlı roll form hatları ve gün içinde farklı malzemeler arasında geçiş yapan hatlar. Rulo sacın uzun süre dayandığı, seyrek değişen hatlarda tek kafalı hidrolik ya da mekanik açıcı çoğu zaman yeterlidir."
+            },
+            {
+              "q": "Teklif için hangi bilgiler gerekiyor?",
+              "a": "En ağır rulo sacınızın ağırlığı, sac genişliği ve kalınlığı, rulo sacın iç ve dış çapı, hat hızınız ve günde kaç rulo sac değiştirdiğiniz. Mandren tipi ve kapasite bu verilere göre belirlenir; bilgileri yazın, çift kafa açıcıyı hattınıza göre tekliflendirelim."
+            }
+          ]
         }
       },
       "servo-suruculer": {

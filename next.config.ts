@@ -49,14 +49,33 @@ const MEKANIK = [
   ...[500, 750, 1500, 2500].map((k) => `${k}-kg-mechanical-decoiler`),
 ];
 
+/* Açıcı varyant sayfalarının DAHİLİ yolları. Tüm eski adres kuralları buraya
+   bakar; slug bir daha değişirse tek yerden değişir, zincir oluşmaz. */
+const HIDROLIK_SAYFA = "/makineler/rulo-acicilar/hidrolik-rulo-acicilar";
+const MEKANIK_SAYFA = "/makineler/rulo-acicilar/mekanik-rulo-acicilar";
+
+/**
+ * Varyant sayfalarının 11 Kasım 2026'ya kadarki slug'ları: [eski tr, eski en,
+ * yeni dahili yol]. Sayfalar bu adreslerle indekslendi (ör. GSC'de
+ * `/de/machines/decoilers/hydraulic`); dokuz dilde de kalıcı yönlenirler.
+ * Yeni karşılıklar src/i18n/slugs.ts VARIANT_SLUGS'ta.
+ */
+const ESKI_ACICI_VARYANTLARI: [string, string, string][] = [
+  ["hidrolik", "hydraulic", HIDROLIK_SAYFA],
+  ["mekanik", "mechanical", MEKANIK_SAYFA],
+];
+
+/* Önekli diller (tr kökte, öneksiz) */
+const ONEKLI_DILLER = "en|de|es|it|hu|pl|ru|ar";
+
 /**
  * Eski `/en/{slug}` adreslerinin hedefleri — bkz. redirects() içindeki açıklama.
  * Ton/kg varyantları hidrolik/mekanik varyant sayfasına, mini seriler mini
  * varyantına gider.
  */
 const EN_ONEKLI: [string, string][] = [
-  ...HIDROLIK.map((s): [string, string] => [s, "/makineler/rulo-acicilar/hidrolik"]),
-  ...MEKANIK.map((s): [string, string] => [s, "/makineler/rulo-acicilar/mekanik"]),
+  ...HIDROLIK.map((s): [string, string] => [s, HIDROLIK_SAYFA]),
+  ...MEKANIK.map((s): [string, string] => [s, MEKANIK_SAYFA]),
   ["servo-feeders", "/makineler/servo-suruculer"],
   ["mini-servo-feeders", "/makineler/servo-suruculer/mini"],
   ["straightener-servo-feeders", "/makineler/dogrultmali-servo-suruculer"],
@@ -267,6 +286,27 @@ const nextConfig: NextConfig = {
       p("/makineler/kalip-ve-merdane", "/makineler"),
       p("/:locale(en|de|es|it|hu|pl|ru|ar)/machines/dies-and-rollers", "/:locale/machines"),
 
+      /**
+       * --- Açıcı varyantlarının eski slug'ları (2026-11-11) ---
+       *
+       * `/makineler/rulo-acicilar/hidrolik` -> `.../hidrolik-rulo-acicilar`,
+       * `/en/machines/decoilers/hydraulic` -> `.../hydraulic-decoilers` (mekanik
+       * de aynı). Dört kaynak biçimi: Türkçe kök, `/tr` önekli Türkçe, önekli
+       * dillerin görünen İngilizce yolu ve önekli dillerin Türkçe dahili yolu
+       * (next-intl bunu eskiden görünen yola çeviriyordu; artık eşleşecek
+       * şablon yok, kural olmasa 404). Hedef doğrudan yeni sayfa — zincir yok.
+       */
+      ...ESKI_ACICI_VARYANTLARI.flatMap(([eskiTr, eskiEn, yeni]) => {
+        const hedefEn = `/:locale${localizeFullPath(yeni, "en")}`;
+        const ustEn = localizeFullPath("/makineler/rulo-acicilar", "en");
+        return [
+          p(`/makineler/rulo-acicilar/${eskiTr}`, yeni),
+          p(`/tr/makineler/rulo-acicilar/${eskiTr}`, yeni),
+          p(`/:locale(${ONEKLI_DILLER})${ustEn}/${eskiEn}`, hedefEn),
+          p(`/:locale(${ONEKLI_DILLER})/makineler/rulo-acicilar/${eskiTr}`, hedefEn),
+        ];
+      }),
+
       /* --- WordPress artıkları (canlıda 200 dönüyorlar, yenide 404 olurlardı) --- */
       p("/author/:slug", "/en"),
       p("/feed", "/en"),
@@ -274,15 +314,15 @@ const nextConfig: NextConfig = {
       p("/:path*/feed", "/en"),
 
       /* --- Makineler --- */
-      ...many(HIDROLIK, en("/makineler/rulo-acicilar/hidrolik")),
-      ...many(MEKANIK, en("/makineler/rulo-acicilar/mekanik")),
+      ...many(HIDROLIK, en(HIDROLIK_SAYFA)),
+      ...many(MEKANIK, en(MEKANIK_SAYFA)),
       p("/decoiler", en("/makineler/rulo-acicilar")),
       p("/product/decoiler", en("/makineler/rulo-acicilar")),
       p("/decoilers", en("/makineler/rulo-acicilar")),
       p("/product/decoilers", en("/makineler/rulo-acicilar")),
       p("/product-category/machines/decoilers", en("/makineler/rulo-acicilar")),
-      p("/product-category/machines/decoilers/hydraulic-decoilers", en("/makineler/rulo-acicilar/hidrolik")),
-      p("/product-category/machines/decoilers/mechanical-decoilers", en("/makineler/rulo-acicilar/mekanik")),
+      p("/product-category/machines/decoilers/hydraulic-decoilers", en(HIDROLIK_SAYFA)),
+      p("/product-category/machines/decoilers/mechanical-decoilers", en(MEKANIK_SAYFA)),
 
       ...many(["servo-feeders"], en("/makineler/servo-suruculer")),
       ...many(["mini-servo-feeders"], en("/makineler/servo-suruculer/mini")),
@@ -341,8 +381,8 @@ const nextConfig: NextConfig = {
       p("/contact", en("/iletisim")),
 
       /* --- tr.* kopyasının Türkçe slug'ları (bkz. TR_* tabloları) --- */
-      ...many(TR_HIDROLIK, "/makineler/rulo-acicilar/hidrolik"),
-      ...many(TR_MEKANIK, "/makineler/rulo-acicilar/mekanik"),
+      ...many(TR_HIDROLIK, HIDROLIK_SAYFA),
+      ...many(TR_MEKANIK, MEKANIK_SAYFA),
       p("/rulo-acicilar", "/makineler/rulo-acicilar"),
       ...many(TR_SERVO, "/makineler/servo-suruculer"),
       ...many(["mini-servo-suruculer"], "/makineler/servo-suruculer/mini"),

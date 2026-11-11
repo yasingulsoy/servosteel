@@ -1028,7 +1028,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Hydraulic Decoilers",
           "photoAlt": ["Servosteel hydraulic decoiler with coil car, unwinding steel strip","Servosteel hydraulic decoiler and coil car, close-up"],
           "metaTitle": "Hydraulic Decoiler — 6,000-20,000 kg",
@@ -1070,7 +1070,7 @@
           },
           "tableNote": "All models: coil outer diameter 1,600 mm, inner diameter 450–560 mm (640 mm with adapter). Hydraulic mandrel expansion and hold-down arm are standard. Brake-instead-of-motor configurations are available."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Mechanical Decoilers",
           "photoAlt": ["Servosteel mechanical decoilers lined up in the factory"],
           "metaTitle": "Mechanical Decoiler — 500-4,000 kg",
@@ -1118,6 +1118,53 @@
             ]
           },
           "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models. On the 3,000 and 4,000 kg models the coil outer diameter is 1,600 mm, inner diameter 450–560 mm (630 mm with adapter) and mandrel expansion is mechanical. Conical plunger decoilers of 3,000–4,000 kg run sheet thickness up to 5 mm."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Double-Head Decoilers",
+          "photoAlt": [
+            "Servosteel double-head decoiler with two mandrels, front view",
+            "Servosteel double-head decoiler, side view"
+          ],
+          "metaTitle": "Double-Head Decoiler — Load While the Line Runs",
+          "meta": "Double-head decoiler: two mandrels on a rotating base. One coil pays off into the line while the next is loaded, cutting the line stop at every coil change.",
+          "short": "Two mandrels on a rotating base; the next coil is loaded while the line runs.",
+          "hero": "A double-head decoiler, also called a double-mandrel or dual decoiler, carries two mandrels on a rotating base: one pays off into the line while the next coil is loaded on the other. When the running coil ends, the base turns and the fresh coil is in position, so the line waits far less for a coil change.",
+          "features": [
+            {
+              "title": "Two mandrels, rotating base",
+              "text": "The two mandrels sit opposite each other on the base. One pays off on the line side, the other waits on the loading side; turning the base swaps them."
+            },
+            {
+              "title": "Loading while the line runs",
+              "text": "The next coil is mounted and clamped on the free mandrel without stopping the line. When the coil runs out, the stop is limited to turning the base and threading the strip end into the line."
+            },
+            {
+              "title": "For lines that change coils often",
+              "text": "Narrow strip, high line speed or light coils mean coils run out fast, and coil changes decide the day's total downtime. A double head shortens every one of them."
+            },
+            {
+              "title": "Two materials on standby",
+              "text": "The two mandrels can hold coils of different thickness or grade. When the job changes, turning the base switches material, with no unloading one coil to mount another."
+            }
+          ],
+          "faq": [
+            {
+              "q": "How does a double-head decoiler work?",
+              "a": "One of the two mandrels on the rotating base pays off strip into the line. Meanwhile the operator mounts the next coil on the free mandrel and clamps it. When the running coil ends, the line stops, the base turns and brings the fresh coil into the payoff position; the strip end is threaded and the line restarts. The emptied mandrel is ready for the next load."
+            },
+            {
+              "q": "How does it compare with a single decoiler and a coil car?",
+              "a": "On a single decoiler the new coil can only go on once the old one has ended, and the line waits while it is loaded. A coil car makes loading faster and safer, but loading still happens with the line stopped. A double head moves loading into running time; during the stop only the base turns and the strip is threaded."
+            },
+            {
+              "q": "Which lines is it used on?",
+              "a": "Lines where coils run out quickly and change often: press feeding lines on narrow strip, high-speed roll forming lines, and lines that switch between materials during the day. Where a coil lasts a long time and changes are rare, a single hydraulic or mechanical decoiler is usually enough."
+            },
+            {
+              "q": "What do you need for a quote?",
+              "a": "The weight of your heaviest coil, strip width and thickness, coil inner and outer diameter, line speed and how many coils you change per day. Mandrel type and capacity are set from these; send them and we will quote a double-head decoiler for your line."
+            }
+          ]
         }
       },
       "servo-suruculer": {

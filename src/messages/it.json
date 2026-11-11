@@ -992,7 +992,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Aspi Idraulici",
           "photoAlt": ["Aspo idraulico Servosteel con carrello portacoil durante lo svolgimento del nastro","Aspo idraulico Servosteel e carrello portacoil, primo piano"],
           "metaTitle": "Aspo Idraulico — 6.000-20.000 kg",
@@ -1034,7 +1034,7 @@
           },
           "tableNote": "Tutti i modelli: diametro esterno coil 1.600 mm, interno 450–560 mm (640 mm con adattatore). Espansione idraulica del mandrino e braccio pressore di serie. Sono disponibili configurazioni con freno anziché motore."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Aspi Meccanici",
           "photoAlt": ["Aspi meccanici Servosteel allineati in officina"],
           "metaTitle": "Aspo Meccanico — 500-4.000 kg",
@@ -1082,6 +1082,53 @@
             ]
           },
           "tableNote": "Suffissi di modello: A motorizzato (braccio pressore opzionale) · LA motorizzato, diametro esterno 1.600 mm e braccio pressore di serie · F con freno, braccio pressore di serie. Nei modelli A e F il diametro esterno è 1.300 mm. Nei modelli da 3.000 e 4.000 kg il diametro esterno coil è 1.600 mm, l'interno 450–560 mm (630 mm con adattatore) e l'espansione del mandrino è meccanica. Gli aspi a mandrino conico da 3.000–4.000 kg lavorano spessori fino a 5 mm."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Aspi a Doppia Testa",
+          "photoAlt": [
+            "Aspo a doppia testa Servosteel con due mandrini, vista frontale",
+            "Aspo a doppia testa Servosteel, vista laterale"
+          ],
+          "metaTitle": "Aspo a Doppia Testa — Carico a Linea in Marcia",
+          "meta": "Aspo a doppia testa: due mandrini su base girevole. Un coil alimenta la linea mentre si carica il successivo; fermo più breve a ogni cambio coil.",
+          "short": "Due mandrini su base girevole; il coil successivo si carica a linea in marcia.",
+          "hero": "L'aspo a doppia testa, detto anche aspo doppio o a doppio mandrino, porta due mandrini su una base girevole: uno svolge in linea mentre sull'altro si carica il coil successivo. Quando il coil in lavorazione finisce, la base ruota e il nuovo coil è in posizione; la linea aspetta molto meno a ogni cambio coil.",
+          "features": [
+            {
+              "title": "Due mandrini, base girevole",
+              "text": "I due mandrini sono contrapposti sulla base. Uno svolge sul lato linea, l'altro attende sul lato carico; ruotando la base si scambiano di posto."
+            },
+            {
+              "title": "Carico a linea in marcia",
+              "text": "Il coil successivo viene montato e serrato sul mandrino libero senza fermare la linea. A fine coil il fermo si limita alla rotazione della base e all'imbocco della testa del nastro."
+            },
+            {
+              "title": "Per linee con cambi frequenti",
+              "text": "Con nastro stretto, alta velocità o coil leggeri, i coil finiscono presto e i cambi determinano il fermo totale della giornata. La doppia testa accorcia ognuno di essi."
+            },
+            {
+              "title": "Due materiali pronti",
+              "text": "I due mandrini possono portare coil di spessore o qualità diversi. Quando cambia la commessa, basta ruotare la base per passare all'altro materiale, senza smontare un coil per montarne un altro."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Come funziona un aspo a doppia testa?",
+              "a": "Uno dei due mandrini sulla base girevole svolge il nastro verso la linea. Nel frattempo l'operatore monta il coil successivo sul mandrino libero e lo serra. Quando il coil in lavorazione finisce, la linea si ferma, la base ruota e porta il nuovo coil in posizione di svolgimento; si imbocca la testa del nastro e la linea riparte. Il mandrino vuoto è pronto per il carico successivo."
+            },
+            {
+              "q": "Che differenza c'è con un aspo singolo e carrello di carico?",
+              "a": "Su un aspo singolo il nuovo coil si può montare solo quando il precedente è finito, e la linea attende durante il carico. Il carrello di carico rende il carico più rapido e sicuro, ma avviene comunque a linea ferma. La doppia testa sposta il carico nel tempo di marcia; durante il fermo si ruota solo la base e si imbocca il nastro."
+            },
+            {
+              "q": "Su quali linee si usa?",
+              "a": "Sulle linee in cui i coil si esauriscono in fretta e si cambiano spesso: alimentazione presse con nastro stretto, linee di profilatura ad alta velocità e linee che alternano materiali durante la giornata. Se un coil dura a lungo e i cambi sono rari, di solito basta un aspo idraulico o meccanico singolo."
+            },
+            {
+              "q": "Quali dati servono per un'offerta?",
+              "a": "Il peso del coil più pesante, larghezza e spessore del nastro, diametro interno ed esterno del coil, velocità di linea e quanti coil cambiate al giorno. Tipo di mandrino e portata si definiscono su questi dati; inviateceli e vi faremo un'offerta per un aspo a doppia testa adatto alla vostra linea."
+            }
+          ]
         }
       },
       "servo-suruculer": {

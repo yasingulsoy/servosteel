@@ -49,12 +49,13 @@ export const machineItems = [
        `products.machines.rulo-acicilar.types`, aynı sırayla. `konum`: kare
        kutuda kırpılırken makinenin kalacağı yer (CSS object-position). */
     types: [
-      { file: "hidrolik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/hidrolik", konum: "45% 50%" },
-      { file: "mekanik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/mekanik", konum: "30% 50%" },
-      { file: "cift-kafa-rulo-acici.jpg", konum: "50% 62%" },
+      { file: "hidrolik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/hidrolik-rulo-acicilar", konum: "45% 50%" },
+      { file: "mekanik-rulo-acici.jpg", href: "/makineler/rulo-acicilar/mekanik-rulo-acicilar", konum: "30% 50%" },
+      { file: "cift-kafa-rulo-acici.jpg", href: "/makineler/rulo-acicilar/cift-kafa-rulo-acicilar", konum: "50% 62%" },
     ],
-    /* Yan sütun (bkz. galleryOf): çift kafanın yandan görünümü — bu tipin
-       kendi sayfası yok, ikinci fotoğrafı burada. */
+    /* Yan sütun (bkz. galleryOf): çift kafanın yandan görünümü. Tipin kendi
+       sayfası da var (11 Kas); fotoğraf hub'da da kalıyor — hidroliğin ilk
+       fotoğrafının tip şeridinde ve varyant sayfasında birlikte durması gibi. */
     gallery: [{ file: "cift-kafa-rulo-acici-2.jpg", ratio: "3/4" }],
     /* Başlığın altındaki YouTube şeridi bu sayfada ve varyantlarında yok
        (Yasin, 11 Kas): yerini tip şeridi ve sitenin kendi klibi aldı.
@@ -109,7 +110,7 @@ export const machineItems = [
 
 /**
  * Makine varyantları — bir makine sayfasının altındaki alt sayfalar.
- * `/makineler/rulo-acicilar/hidrolik`
+ * `/makineler/rulo-acicilar/hidrolik-rulo-acicilar`
  *
  * Üst sayfa hub olarak KALIR: "rulo açıcılar" kelimesinde 7. sırada ve
  * içeriği duruyor. Varyantlar onun yerine geçmiyor, altına derinlik ekliyor —
@@ -124,7 +125,7 @@ export const machineVariants = [
      Yeni fotoğraf gelince diziye eklemek yeter. */
   {
     parent: "rulo-acicilar",
-    slug: "hidrolik",
+    slug: "hidrolik-rulo-acicilar",
     photos: [
       { file: "hidrolik-rulo-acici.jpg", width: 1536, height: 1137 },
       { file: "hidrolik-rulo-acici-2.jpg", width: 1066, height: 1600 },
@@ -132,8 +133,18 @@ export const machineVariants = [
   },
   {
     parent: "rulo-acicilar",
-    slug: "mekanik",
+    slug: "mekanik-rulo-acicilar",
     photos: [{ file: "mekanik-rulo-acici.jpg", width: 1600, height: 1066 }],
+  },
+  /* Firmadan kapasite/genişlik verisi gelmedi: sayfada model tablosu yok
+     (şablon tabloyu isteğe bağlı basıyor), yalnız genel anlatım. */
+  {
+    parent: "rulo-acicilar",
+    slug: "cift-kafa-rulo-acicilar",
+    photos: [
+      { file: "cift-kafa-rulo-acici.jpg", width: 1066, height: 1600 },
+      { file: "cift-kafa-rulo-acici-2.jpg", width: 1066, height: 1600 },
+    ],
   },
   { parent: "servo-suruculer", slug: "mini" },
   { parent: "servo-suruculer", slug: "kasali" },
@@ -283,7 +294,7 @@ export function pageImageOf(slug: string): string | undefined {
  * görsel etiketleri için (`<image:image>`), Google Görseller'in sayfayla
  * eşleştirmesi için. Sayfada gösterilmeyen ana fotoğraf (hideMainPhoto) girmez.
  *
- * `path` dahili yol: `/makineler/rulo-acicilar`, `/makineler/rulo-acicilar/hidrolik`,
+ * `path` dahili yol: `/makineler/rulo-acicilar`, `/makineler/rulo-acicilar/hidrolik-rulo-acicilar`,
  * `/roll-form-hatlari/solar-profil`. Ürün sayfası değilse boş dizi.
  */
 export function pageImagesOf(path: string): string[] {

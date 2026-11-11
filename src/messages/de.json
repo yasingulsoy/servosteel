@@ -992,7 +992,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Hydraulische Haspeln",
           "photoAlt": ["Hydraulische Haspel von Servosteel mit Coilwagen beim Abwickeln von Stahlband","Hydraulische Haspel von Servosteel mit Coilwagen, Nahaufnahme"],
           "metaTitle": "Hydraulische Haspeln: 6-20 t, bis 1.600 mm",
@@ -1034,7 +1034,7 @@
           },
           "tableNote": "Alle Modelle: Bund-Außendurchmesser 1.600 mm, Innendurchmesser 450–560 mm (mit Adapter 640 mm). Hydraulische Dornaufweitung und Niederhalter serienmäßig. Ausführungen mit Bremse statt Motor sind verfügbar."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Mechanische Haspeln",
           "photoAlt": ["Mechanische Haspeln von Servosteel in einer Reihe in der Fertigungshalle"],
           "metaTitle": "Mechanische Haspel — 500-4.000 kg",
@@ -1082,6 +1082,53 @@
             ]
           },
           "tableNote": "Modellsuffixe: A motorisch (Niederhalter optional) · LA motorisch, 1.600 mm Bund-Außendurchmesser und Niederhalter serienmäßig · F mit Bremse, Niederhalter serienmäßig. Bei A- und F-Modellen beträgt der Bund-Außendurchmesser 1.300 mm. Bei den Modellen 3.000 und 4.000 kg beträgt der Bund-Außendurchmesser 1.600 mm, der Innendurchmesser 450–560 mm (mit Adapter 630 mm), die Dornaufweitung ist mechanisch. Haspeln mit Konusdorn von 3.000–4.000 kg verarbeiten Blechdicken bis 5 mm."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Doppelkopf-Haspeln",
+          "photoAlt": [
+            "Doppelkopf-Haspel von Servosteel mit zwei Dornen, Vorderansicht",
+            "Doppelkopf-Haspel von Servosteel, Seitenansicht"
+          ],
+          "metaTitle": "Doppelkopf-Haspel: Laden bei laufender Linie",
+          "meta": "Doppelkopf-Haspel (Wendehaspel): zwei Dorne auf drehbarem Grundrahmen. Ein Coil läuft ab, das nächste wird geladen; kürzerer Stillstand beim Coilwechsel.",
+          "short": "Zwei Dorne auf drehbarem Grundrahmen; das nächste Coil wird bei laufender Linie geladen.",
+          "hero": "Eine Doppelkopf-Haspel, auch Doppel- oder Wendehaspel genannt, trägt zwei Dorne auf einem drehbaren Grundrahmen: Einer wickelt in die Linie ab, auf den anderen wird das nächste Coil geladen. Ist das laufende Coil zu Ende, dreht der Grundrahmen und das neue Coil steht bereit; die Linie wartet beim Coilwechsel deutlich kürzer.",
+          "features": [
+            {
+              "title": "Zwei Dorne, drehbarer Grundrahmen",
+              "text": "Die beiden Dorne sitzen sich auf dem Grundrahmen gegenüber. Einer wickelt auf der Linienseite ab, der andere wartet auf der Ladeseite; eine Drehung tauscht ihre Plätze."
+            },
+            {
+              "title": "Laden bei laufender Linie",
+              "text": "Das nächste Coil wird auf den freien Dorn gesetzt und gespannt, ohne die Linie anzuhalten. Ist das Coil zu Ende, beschränkt sich der Stillstand auf die Drehung und das Einfädeln des Bandanfangs."
+            },
+            {
+              "title": "Für Linien mit häufigem Coilwechsel",
+              "text": "Schmales Band, hohe Liniengeschwindigkeit oder leichte Coils bedeuten: Die Coils sind schnell verbraucht, und die Wechselzeiten bestimmen den Stillstand des Tages. Die Doppelkopf-Haspel verkürzt jeden einzelnen Wechsel."
+            },
+            {
+              "title": "Zwei Materialien in Bereitschaft",
+              "text": "Die beiden Dorne können Coils unterschiedlicher Dicke oder Güte tragen. Wechselt der Auftrag, wird durch Drehen auf das andere Material umgestellt, ohne ein Coil abzunehmen und ein anderes aufzusetzen."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Wie funktioniert eine Doppelkopf-Haspel?",
+              "a": "Einer der beiden Dorne auf dem drehbaren Grundrahmen wickelt Band in die Linie ab. Währenddessen setzt der Bediener das nächste Coil auf den freien Dorn und spannt es. Ist das laufende Coil zu Ende, hält die Linie an, der Grundrahmen dreht und bringt das neue Coil in Abwickelposition; der Bandanfang wird eingefädelt und die Linie läuft wieder an. Der leere Dorn ist für die nächste Beladung bereit."
+            },
+            {
+              "q": "Was ist der Unterschied zur Einzelhaspel mit Ladewagen?",
+              "a": "An einer Einzelhaspel kann das neue Coil erst aufgesetzt werden, wenn das alte zu Ende ist; während des Ladens steht die Linie. Ein Ladewagen macht das Laden schneller und sicherer, doch es geschieht weiterhin bei stehender Linie. Die Doppelkopf-Haspel verlegt das Laden in die Laufzeit; im Stillstand wird nur gedreht und eingefädelt."
+            },
+            {
+              "q": "Für welche Linien eignet sie sich?",
+              "a": "Für Linien, in denen Coils schnell verbraucht und oft gewechselt werden: Pressenzuführungen mit schmalem Band, schnelle Rollformanlagen und Linien, die im Tagesverlauf zwischen Materialien wechseln. Hält ein Coil lange und wird selten gewechselt, reicht meist eine einfache hydraulische oder mechanische Haspel."
+            },
+            {
+              "q": "Welche Angaben brauchen Sie für ein Angebot?",
+              "a": "Gewicht Ihres schwersten Coils, Bandbreite und -dicke, Innen- und Außendurchmesser des Coils, Liniengeschwindigkeit und die Zahl der Coilwechsel pro Tag. Danach richten sich Dornausführung und Tragfähigkeit; senden Sie uns die Angaben, und wir erstellen ein Angebot für eine Doppelkopf-Haspel passend zu Ihrer Linie."
+            }
+          ]
         }
       },
       "servo-suruculer": {

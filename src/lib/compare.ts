@@ -29,8 +29,8 @@ export const compareItems: CompareItem[] = [
   { slug: "dilme-vs-boy-kesme", hrefA: "/dilme-hatlari", hrefB: "/boy-kesme-hatlari", rows: 5 },
   {
     slug: "hidrolik-vs-mekanik-acici",
-    hrefA: "/makineler/rulo-acicilar/hidrolik",
-    hrefB: "/makineler/rulo-acicilar/mekanik",
+    hrefA: "/makineler/rulo-acicilar/hidrolik-rulo-acicilar",
+    hrefB: "/makineler/rulo-acicilar/mekanik-rulo-acicilar",
     rows: 5,
   },
 ];

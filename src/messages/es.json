@@ -992,7 +992,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Desbobinadoras Hidráulicas",
           "photoAlt": ["Desbobinadora hidráulica Servosteel con carro portabobinas, desenrollando fleje de acero","Desbobinadora hidráulica Servosteel y carro portabobinas, primer plano"],
           "metaTitle": "Desbobinadora Hidráulica — 6.000-20.000 kg",
@@ -1034,7 +1034,7 @@
           },
           "tableNote": "Todos los modelos: diámetro exterior de bobina 1.600 mm, interior 450–560 mm (640 mm con adaptador). Expansión hidráulica del mandril y brazo prensor de serie. Hay configuraciones con freno en lugar de motor."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Desbobinadoras Mecánicas",
           "photoAlt": ["Desbobinadoras mecánicas Servosteel alineadas en la fábrica"],
           "metaTitle": "Desbobinadora Mecánica — 500-4.000 kg",
@@ -1082,6 +1082,53 @@
             ]
           },
           "tableNote": "Sufijos de modelo: A motorizado (brazo prensor opcional) · LA motorizado, diámetro exterior 1.600 mm y brazo prensor de serie · F con freno, brazo prensor de serie. En los modelos A y F el diámetro exterior es de 1.300 mm. En los modelos de 3.000 y 4.000 kg el diámetro exterior de bobina es 1.600 mm, el interior 450–560 mm (630 mm con adaptador) y la expansión del mandril es mecánica. Las desbobinadoras de mandril cónico de 3.000–4.000 kg trabajan espesores de hasta 5 mm."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Desbobinadoras de Doble Cabezal",
+          "photoAlt": [
+            "Desbobinadora de doble cabezal Servosteel con dos mandriles, vista frontal",
+            "Desbobinadora de doble cabezal Servosteel, vista lateral"
+          ],
+          "metaTitle": "Desbobinadora de Doble Cabezal: Carga en Marcha",
+          "meta": "Desbobinadora de doble cabezal: dos mandriles sobre una base giratoria. Una bobina alimenta la línea mientras se carga la siguiente; menos parada en cada cambio.",
+          "short": "Dos mandriles sobre base giratoria; la siguiente bobina se carga con la línea en marcha.",
+          "hero": "Una desbobinadora de doble cabezal, también llamada desbobinadora doble o de doble mandril, lleva dos mandriles sobre una base giratoria: uno alimenta la línea mientras en el otro se carga la siguiente bobina. Cuando la bobina en curso se termina, la base gira y la nueva queda en posición; la línea espera mucho menos en cada cambio de bobina.",
+          "features": [
+            {
+              "title": "Dos mandriles, base giratoria",
+              "text": "Los dos mandriles están enfrentados sobre la base. Uno desenrolla del lado de la línea y el otro espera del lado de carga; al girar la base intercambian su posición."
+            },
+            {
+              "title": "Carga con la línea en marcha",
+              "text": "La siguiente bobina se monta y se fija en el mandril libre sin detener la línea. Cuando la bobina se acaba, la parada se limita al giro de la base y al enhebrado de la punta del fleje."
+            },
+            {
+              "title": "Para líneas con cambios frecuentes",
+              "text": "Con fleje estrecho, alta velocidad o bobinas ligeras, las bobinas se agotan pronto y los cambios marcan la parada total del día. El doble cabezal acorta cada uno de ellos."
+            },
+            {
+              "title": "Dos materiales preparados",
+              "text": "Los dos mandriles pueden llevar bobinas de distinto espesor o calidad. Cuando cambia el trabajo, basta girar la base para pasar al otro material, sin desmontar una bobina para montar otra."
+            }
+          ],
+          "faq": [
+            {
+              "q": "¿Cómo funciona una desbobinadora de doble cabezal?",
+              "a": "Uno de los dos mandriles de la base giratoria desenrolla el fleje hacia la línea. Mientras tanto, el operario monta la siguiente bobina en el mandril libre y la fija. Cuando la bobina en curso se acaba, la línea se detiene, la base gira y lleva la nueva bobina a la posición de desbobinado; se enhebra la punta del fleje y la línea vuelve a arrancar. El mandril vacío queda listo para la siguiente carga."
+            },
+            {
+              "q": "¿En qué se diferencia de una desbobinadora simple con carro de carga?",
+              "a": "En una desbobinadora simple la nueva bobina solo puede montarse cuando la anterior se ha terminado, y la línea espera durante la carga. El carro de carga hace la carga más rápida y segura, pero sigue haciéndose con la línea parada. El doble cabezal traslada la carga al tiempo de marcha; en la parada solo gira la base y se enhebra el fleje."
+            },
+            {
+              "q": "¿En qué líneas se utiliza?",
+              "a": "En líneas donde las bobinas se agotan rápido y se cambian a menudo: alimentación de prensas con fleje estrecho, líneas de perfilado de alta velocidad y líneas que alternan materiales durante el día. Si una bobina dura mucho y los cambios son raros, una desbobinadora hidráulica o mecánica simple suele bastar."
+            },
+            {
+              "q": "¿Qué datos necesitan para una oferta?",
+              "a": "El peso de su bobina más pesada, ancho y espesor del fleje, diámetros interior y exterior de la bobina, velocidad de línea y cuántas bobinas cambia al día. El tipo de mandril y la capacidad se definen con estos datos; envíenoslos y le haremos una oferta de desbobinadora de doble cabezal para su línea."
+            }
+          ]
         }
       },
       "servo-suruculer": {
