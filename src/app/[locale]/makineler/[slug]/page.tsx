@@ -230,7 +230,8 @@ export default async function MachinePage({ params }: Props) {
                 <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">
                   {td("variantsTitle")}
                 </h2>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {/* Üç tip: ikili ızgarada üçüncüsü tek kalıyordu */}
+                <div className={`mt-6 grid gap-4 sm:grid-cols-2 ${varyantlar.length === 3 ? "lg:grid-cols-3" : ""}`}>
                   {varyantlar.map((v) => (
                     <Link
                       key={v.slug}
@@ -244,7 +245,8 @@ export default async function MachinePage({ params }: Props) {
                         {tv(`${slug}.${v.slug}.short`)}
                       </p>
                       <span className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
-                        {td("variantsCta")}
+                        {/* Model tablosu olmayan tipte (çift kafa) "Modelleri incele" yanıltıcı */}
+                        {tv.has(`${slug}.${v.slug}.table`) ? td("variantsCta") : td("variantsCtaInfo")}
                         <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} aria-hidden />
                       </span>
                     </Link>

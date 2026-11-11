@@ -173,6 +173,7 @@
   "detail": {
     "variantsTitle": "Típusok",
     "variantsCta": "Modellek megtekintése",
+    "variantsCtaInfo": "Részletek",
     "features": "Fő jellemzők",
     "components": "Sor részegységei",
     "componentsNote": "Minden részegység a Servosteel üzemében készül; a teljes sort szállítás előtt gyárilag teszteljük.",
