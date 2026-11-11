@@ -383,8 +383,8 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/roll-form-hatlari/agir-raf": ["J-O8xfI2ovA"],
   "/roll-form-hatlari/c-sigma-omega": ["qmWM1NgcACw", "5vVTpg3hltE"],
   "/makineler/rulo-acicilar": ["AqcEyDbbWtA", "v9_1snhusMY"],
-  /* 3. video EcRm89gy_xs: Yasin, 11 Kas */
-  "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow", "EcRm89gy_xs"],
+  /* 3. ve 4. video (EcRm89gy_xs, bc5nAkQXJTw): Yasin, 11 Kas. bc5nAkQXJTw doğrultmalıda da duruyor. */
+  "/makineler/servo-suruculer": ["2tgCtC8n_1E", "a7W3BzFYiow", "EcRm89gy_xs", "bc5nAkQXJTw"],
   "/makineler/dogrultmali-servo-suruculer": ["P3zbB3c6NBY", "bc5nAkQXJTw"],
   /* "Kompakt hat testi" (7RcuUmfN7QE) kaldırıldı — yerinde sitenin kendi dikey klibi (Yasin, 11 Kas; bkz. catalog clips) */
   "/makineler/kompakt-hatlar": ["ONmiUo8vtvk"],
