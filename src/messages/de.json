@@ -460,6 +460,133 @@
     "ctaTitle": "Lassen Sie uns Ihre Perforieranlage auslegen",
     "ctaText": "Senden Sie Werkstoff, Dickenbereich und Lochbild; wir melden uns mit Anlagenlayout und technischem Angebot."
   },
+  "asmaTavan": {
+    "nav": "Anlagen für abgehängte Decken",
+    "short": "Produktionsanlagen für T-Profil-Raster, CD/UD-Deckenprofile und Metalldeckenplatten.",
+    "metaTitle": "Anlagen für abgehängte Decken: T-Profile und Deckenplatten",
+    "metaDesc": "Anlagen für abgehängte Decken vom Coil: Rollformanlagen für T-Profil-Raster und CD/UD-Profile, Pressenlinien für Klemm- und Einlegedecken aus Metall.",
+    "eyebrow": "Unsere Kompetenz",
+    "title": "Anlagen für abgehängte Decken",
+    "desc": "Anlagen, die die Metallteile einer abgehängten Decke vom Coil fertigen: das T-Profil-Raster (Tragprofil, Querprofil, Wandwinkel) und die CD/UD-Profile von Trockenbaudecken auf einer Rollformanlage; Metalldeckenplatten für Klemm- und Einlegedecken auf einer Pressenlinie mit Servovorschub, wo sie perforiert, geschnitten und gekantet werden. Jede Anlage wird nach Ihrem Querschnitt und Ihrer Stückzahl ausgelegt.",
+    "highlights": [
+      {
+        "title": "Genaue Loch- und Schlitzabstände",
+        "text": "Der Servovorschub bewegt das Band bei jedem Hub um denselben Schritt; Abhängerlöcher und Querprofilschlitze bleiben über die ganze Profillänge gleichmäßig verteilt, das Raster sitzt auf der Baustelle rechtwinklig."
+      },
+      {
+        "title": "Rollensatz für Ihren Querschnitt",
+        "text": "Die Rollformstationen werden für den T-, C- oder U-Querschnitt ausgelegt; Stationszahl und Rollenanordnung richten sich danach, dass dünnes Band maßhaltig umgeformt wird."
+      },
+      {
+        "title": "Vom Profil zur Platte",
+        "text": "Tragprofile laufen auf einer Rollformanlage, Klemm- und Einlegeplatten auf einer Pressenlinie; am Anfang stehen bei beiden Haspel, Richtmaschine und Servovorschub."
+      },
+      {
+        "title": "Zentrale Steuerung",
+        "text": "Von der Haspel bis zum Stapler wird die Anlage über eine SPS und ein Bedienpanel geführt; Profillängen und Lochrezepte werden im HMI gespeichert."
+      }
+    ],
+    "whyTitle": "Warum eine Deckenanlage von Servosteel?",
+    "paras": [
+      "Die ersten Stationen einer Deckenanlage — <b>Haspel, Richtmaschine und Servovorschub</b> — sind Servosteel-Eigenprodukte, ebenso die <b>Rollformanlage</b>, die die Profile formt, und der <b>automatische Stapler</b> am Auslauf. Wir bauen die Anlage um diese Einheiten herum, für Ihren Querschnitt, als ein Projekt; jede Einheit ist auf die nächste abgestimmt.",
+      "Eine abgehängte Decke ist kein einzelnes Produkt, sondern ein System: das T-Profil-Raster, die CD- und UD-Profile von Trockenbaudecken und Metallplatten, die ins Raster eingelegt oder an Tragprofile geklemmt werden. Jedes Teil braucht eine andere Anlage. Tragprofile sind ein durchgehender Querschnitt und werden rollgeformt; Platten sind flache Teile mit gekanteten Rändern und werden auf einer Pressenlinie mit Servovorschub perforiert, geschnitten und umgeformt.",
+      "Für ein Angebot senden Sie uns die Zeichnung des Profilquerschnitts oder der Platte, Werkstoff und Beschichtung, den Dickenbereich, die Produktlängen, das Loch- und Schlitzbild und Ihre Zielstückzahl; danach legen wir die Anlage aus."
+    ],
+    "components": [
+      "Haspel (zwei bei T-Profilen mit Deckband)",
+      "Richtmaschine",
+      "Servovorschub",
+      "Inline-Stanzen",
+      "Rollformstationen",
+      "Ablängeinheit (fliegend oder stehend)",
+      "Automatisches Stapeln und Verpacken"
+    ],
+    "stepsTitle": "So arbeitet eine Deckenprofil-Anlage",
+    "steps": [
+      {
+        "title": "Abwickeln",
+        "text": "Die Haspel trägt das Coil und führt das Band mit kontrolliertem Zug in die Anlage. Bei T-Profilen mit Deckband führt eine zweite Haspel das vorlackierte Deckband separat zu."
+      },
+      {
+        "title": "Richten und Servovorschub",
+        "text": "Die Richtrollen nehmen die Coilkrümmung heraus; der Servovorschub schiebt das Band bei jedem Hub um einen genauen Schritt in das Stanzwerkzeug."
+      },
+      {
+        "title": "Inline-Stanzen",
+        "text": "Abhängerlöcher, Querprofilschlitze und Verbindungslöcher werden vor dem Umformen ins flache Band gestanzt. Ihr Abstand entscheidet, ob das Raster auf der Baustelle rechtwinklig sitzt."
+      },
+      {
+        "title": "Rollformen",
+        "text": "Die Rollstationen biegen das Band schrittweise. Beim T-Profil wird der Steg doppelt gefaltet und das Deckband um den unteren Flansch gelegt; C- und U-Profile sind in weniger Stationen fertig."
+      },
+      {
+        "title": "Ablängen und Stapeln",
+        "text": "Das Profil wird auf Länge geschnitten; die Endlaschen der Querprofile werden meist im Schneidwerkzeug geformt. Der automatische Stapler legt die Profile in Paketordnung ab."
+      }
+    ],
+    "typesTitle": "Produkttypen für abgehängte Decken",
+    "typesIntro": "Ein Deckensystem besteht aus zwei Teilefamilien: den Profilen, die die Decke tragen, und den Platten, die die sichtbare Fläche bilden. Profile sind ein durchgehender Querschnitt, Platten flache Teile mit gekanteten Rändern. Dieser Unterschied bestimmt die Art der Anlage.",
+    "types": [
+      {
+        "title": "T-Profil-Raster",
+        "text": "Tragprofile, Querprofile und Wandwinkel; die Tragprofile hängen an Abhängern von der Rohdecke, die Platten liegen im Raster. Der Grundkörper ist meist verzinkter Stahl, die sichtbare Unterseite ein vorlackiertes Deckband."
+      },
+      {
+        "title": "Trockenbau-Deckenprofile",
+        "text": "Das CD-Profil, an das die Gipskartonplatte geschraubt wird, und das UD-Profil am Wandanschluss. Einfache offene Querschnitte; die Oberflächen sind meist für Schraubenhalt und Steifigkeit gerändelt."
+      },
+      {
+        "title": "Klemmdeckenplatten (Clip-in)",
+        "text": "Kassettenplatten, deren gekantete Ränder an ein Tragprofil geklemmt werden; von unten ist kein Raster zu sehen. Für die Akustik häufig perforiert."
+      },
+      {
+        "title": "Einlegeplatten (Lay-in)",
+        "text": "Kassettenplatten, die auf den Flanschen des T-Profil-Rasters aufliegen und sich zur Wartung herausnehmen lassen. Der Rand kann glatt oder abgesetzt (Tegular) sein."
+      }
+    ],
+    "typesNote": "Raster, Platten und Abhänger sind über Maße miteinander verbunden: Der Schlitzabstand des T-Profils folgt dem Plattenraster, die Randform der Platte dem Tragprofil. Bei der Auslegung der Anlage möchten wir deshalb die Zeichnung des ganzen Systems sehen, nicht nur eines Profils.",
+    "linesTitle": "Welches Produkt braucht welche Anlage?",
+    "lines": [
+      {
+        "title": "T-Profil-Raster",
+        "line": "Rollformanlage mit zwei Haspeln und Inline-Stanzen",
+        "text": "Für den doppelstegigen Querschnitt mit Deckband werden Grundband und Deckband von zwei getrennten Haspeln zugeführt. Abhängerlöcher und Schlitze werden inline gestanzt, die Endlaschen der Querprofile im Schneidwerkzeug geformt."
+      },
+      {
+        "title": "CD- und UD-Profile",
+        "line": "Rollformanlage mit fliegender Schere und automatischem Stapler",
+        "text": "Ein einfacher offener Querschnitt braucht weniger Stationen. Weil diese Profile in hohen Stückzahlen laufen, bestimmen meist Ablängen und Stapeln am Auslauf das Tempo; Stapeln und Verpacken von Hand wird zum Engpass."
+      },
+      {
+        "title": "Klemm- und Einlegeplatten",
+        "line": "Pressenlinie mit Servovorschub",
+        "text": "Das Band wird gerichtet und per Servovorschub der Presse zugeführt, bei Bedarf perforiert, zu Zuschnitten geschnitten, an den Ecken ausgeklinkt und an den Rändern gekantet. Lochbilder und freier Querschnitt werden auf der Seite zu Perforieranlagen erklärt."
+      }
+    ],
+    "linesNote": "Unterschiedliche Querschnitte lassen sich auf einer Anlage durch Wechsel von Rollensatz und Schneidwerkzeug fertigen; Familien mit unterschiedlichem Tempo und Lochbild, etwa T-Profile und Trockenbauprofile, laufen aber meist auf getrennten Anlagen. Ihr Produktspektrum und Ihre Stückzahl entscheiden, welcher Weg passt.",
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Fragen zu Anlagen für abgehängte Decken",
+    "faq": [
+      {
+        "q": "Was fertigt eine Anlage für abgehängte Decken?",
+        "a": "Die Metallteile eines Deckensystems: das T-Profil-Raster (Tragprofil, Querprofil, Wandwinkel), die CD- und UD-Profile von Trockenbaudecken sowie Klemm- oder Einlegeplatten aus Metall. Profile entstehen auf einer Rollformanlage, Platten auf einer Pressenlinie mit Servovorschub."
+      },
+      {
+        "q": "Worin unterscheidet sich eine T-Profil-Anlage von einer Anlage für Trockenbauprofile?",
+        "a": "Das T-Profil ist ein doppelstegiger Querschnitt mit Deckband; meist braucht es zwei Haspeln, Inline-Stanzen und ein Schneidwerkzeug, das die Endlaschen formt. CD- und UD-Profile sind einfachere offene Querschnitte; die Anlage ist schlichter, entscheidend sind Ablängtempo sowie Stapeln und Verpacken."
+      },
+      {
+        "q": "Werden Metalldeckenplatten auf einer Rollformanlage gefertigt?",
+        "a": "Quadratische und rechteckige Klemm- und Einlegeplatten nicht: Es sind flache, an vier Rändern gekantete Teile, die auf einer Pressenlinie mit Servovorschub perforiert, geschnitten, ausgeklinkt und gekantet werden. Lange Paneele für Lineardecken sind dagegen ein durchgehender Querschnitt und lassen sich rollformen."
+      },
+      {
+        "q": "Was brauchen Sie für ein Angebot?",
+        "a": "Die Zeichnung des Profilquerschnitts oder der Platte, Werkstoff und Beschichtung (verzinkt, vorlackiert), Dicken- und Breitenbereich, Produktlängen oder Plattenmaße, das Loch- und Schlitzbild, die Zielstückzahl und die Verpackungsart."
+      }
+    ],
+    "ctaTitle": "Lassen Sie uns Ihre Deckenanlage auslegen",
+    "ctaText": "Senden Sie uns Ihre Produktzeichnungen, den Werkstoff und die Zielstückzahl; wir melden uns mit Anlagenlayout und technischem Angebot."
+  },
   "boykesme": {
     "metaTitle": "Querteilanlagen: Coil zu Blechtafel schneiden",
     "metaDesc": "Querteilanlagen: präzises Schneiden vom Coil zur Tafel. Richten, Servovorschub, Tafelschere und Stapeln über eine zentrale SPS. Schneider-Steuerungen.",

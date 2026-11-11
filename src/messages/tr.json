@@ -460,6 +460,133 @@
     "ctaTitle": "Perfore hattınızı projelendirelim",
     "ctaText": "Sac malzemesi, kalınlık aralığı ve delik deseninizi iletin; hat yerleşimi ve teknik teklifle dönelim."
   },
+  "asmaTavan": {
+    "nav": "Asma Tavan Hatları",
+    "short": "T profil ızgara, alçıpan C/U profilleri ve metal tavan panelleri için üretim hatları.",
+    "metaTitle": "Asma Tavan Hatları: T Profil ve Tavan Paneli Makinesi",
+    "metaDesc": "Asma tavan hatları: T profil ızgara, alçıpan C/U profilleri ve clip-in, lay-in metal tavan panelleri için rulo sacdan başlayan roll form ve pres hatları.",
+    "eyebrow": "Uzmanlık alanımız",
+    "title": "Asma Tavan Hatları",
+    "desc": "Asma tavan sisteminin metal parçalarını rulo sacdan üreten hatlar: T profil ızgara (ana taşıyıcı, ara taşıyıcı, duvar profili) ve alçıpan asma tavanın C/U profilleri roll form hattında; clip-in ve lay-in metal tavan panelleri servo beslemeli pres hattında perfore edilir, kesilir ve form alır. Hat; ürününüzün kesitine ve üretim adedinize göre projelendirilir.",
+    "highlights": [
+      {
+        "title": "Delik ve yuva hassasiyeti",
+        "text": "Servo besleme sacı her vuruşta aynı adımla ilerletir; askı delikleri ve ara taşıyıcı yuvaları profil boyunca aynı aralıkta kalır, ızgara sahada kare oturur."
+      },
+      {
+        "title": "Kesite özel merdane seti",
+        "text": "Roll form istasyonları T, C ya da U kesitine göre tasarlanır; istasyon sayısı ve merdane düzeni, ince sacın kesit ölçüsünde şekillenmesine göre belirlenir."
+      },
+      {
+        "title": "Profilden panele",
+        "text": "Taşıyıcı profiller roll form hattında, clip-in ve lay-in paneller pres hattında üretilir; ikisinin de başında rulo açıcı, doğrultma ve servo besleme durur."
+      },
+      {
+        "title": "Tek noktadan kontrol",
+        "text": "Açıcıdan istife kadar hat tek PLC ve operatör panelinden yönetilir; profil boyu ve delik reçeteleri HMI'da saklanır."
+      }
+    ],
+    "whyTitle": "Neden Servosteel asma tavan hattı?",
+    "paras": [
+      "Asma tavan hattının ilk halkaları — <b>rulo açıcı, doğrultucu ve servo besleme</b> — Servosteel'in kendi ürünleridir; profilleri şekillendiren <b>roll form hattı</b> ve hat sonundaki <b>otomatik istifleyici</b> de öyle. Hattı bu ünitelerin üzerine, ürününüzün kesitine göre tek proje olarak kuruyoruz; her ünite bir sonrakine göre boyutlandırılır.",
+      "Asma tavan tek bir ürün değil, bir sistemdir: T profil ızgara, alçıpan tavanın C ve U profilleri, ızgaraya oturan ya da klipslenen metal paneller. Her biri farklı bir hat ister. Taşıyıcı profiller sürekli bir kesit olduğu için roll form hattında üretilir; paneller ise kenarları bükülen düz parçalar olduğu için servo beslemeli pres hattında perfore edilir, kesilir ve form alır.",
+      "Teklif için profil kesitinin ya da panelin çizimini, sac malzemesini ve kaplamasını, kalınlık aralığını, ürün boylarını, delik ve yuva düzenini ve hedef üretim adedinizi gönderin; hattı bu bilgilerle boyutlandıralım."
+    ],
+    "components": [
+      "Rulo açıcı (kapaklı T profilde iki adet)",
+      "Doğrultma ünitesi",
+      "Servo besleme",
+      "Hat içi delme ve zımbalama",
+      "Roll form istasyonları",
+      "Kesme ünitesi (uçan ya da duran)",
+      "Otomatik istif ve paketleme"
+    ],
+    "stepsTitle": "Asma tavan profil hattı nasıl çalışır?",
+    "steps": [
+      {
+        "title": "Rulo sac açma",
+        "text": "Açıcı rulo sacı taşır ve gerginliği kontrol ederek hatta verir. Kapaklı T profilde ikinci bir açıcı, boyalı kapak şeridini ayrıca besler."
+      },
+      {
+        "title": "Doğrultma ve servo besleme",
+        "text": "Doğrultma merdaneleri rulo sacın kıvrım hafızasını alır; servo besleme sacı delme kalıbına her vuruşta ölçülü bir adımla verir."
+      },
+      {
+        "title": "Hat içi delme",
+        "text": "Askı delikleri, ara taşıyıcı yuvaları ve bağlantı delikleri düz sacta, şekillendirmeden önce açılır. Delik aralığı ızgaranın sahada kare oturmasını belirler."
+      },
+      {
+        "title": "Roll form",
+        "text": "Merdane istasyonları sacı kademeli olarak büker. T profilde gövde çift kat katlanır ve kapak şeridi alt kanadın üzerine kıvrılır; C ve U profiller daha az istasyonda tamamlanır."
+      },
+      {
+        "title": "Kesme ve istif",
+        "text": "Profil istenen boyda kesilir; ara taşıyıcıların uç bağlantı dilleri çoğunlukla kesme kalıbında form alır. Otomatik istifleyici profilleri paket düzeninde toplar."
+      }
+    ],
+    "typesTitle": "Asma tavan ürün tipleri",
+    "typesIntro": "Asma tavan sistemi iki parça ailesinden oluşur: tavanı taşıyan profiller ve görünen yüzeyi oluşturan paneller. Profiller sürekli bir kesittir, paneller ise kenarları bükülmüş düz parçalardır; bu fark hattın tipini belirler.",
+    "types": [
+      {
+        "title": "T profil ızgara sistemi",
+        "text": "Ana taşıyıcı, ara taşıyıcı ve duvar profilinden oluşur; ana taşıyıcılar askı teliyle tavana asılır, paneller ızgaraya oturur. Gövde çoğunlukla galvaniz sacdan, görünen alt yüz boyalı kapak şeridinden yapılır."
+      },
+      {
+        "title": "Alçıpan asma tavan profilleri",
+        "text": "Alçıpan levhanın vidalandığı C taşıyıcı profil ile çevre duvarlara sabitlenen U profil. Açık ve basit kesitlerdir; yüzeyleri vida tutuşu ve rijitlik için çoğunlukla tırtıllıdır."
+      },
+      {
+        "title": "Clip-in metal panel",
+        "text": "Bükülmüş kenarları taşıyıcı profile klipslenen kaset panel; taşıyıcı ızgara alttan görünmez. Akustik amaçla çoğunlukla perfore edilir."
+      },
+      {
+        "title": "Lay-in metal panel",
+        "text": "T profil ızgaranın kanatlarına oturan kaset panel; bakım için yerinden kaldırılabilir. Kenar formu düz ya da kademeli (tegular) olabilir."
+      }
+    ],
+    "typesNote": "Izgara, panel ve askı elemanları birbirine ölçüyle bağlıdır: T profilin yuva aralığı panel modülünü, panelin kenar formu taşıyıcının kesitini izler. Hattı tasarlarken yalnızca tek bir profilin değil, sistemin tamamının çizimini görmek isteriz.",
+    "linesTitle": "Hangi ürün, hangi hattı gerektirir?",
+    "lines": [
+      {
+        "title": "T profil ızgara",
+        "line": "Roll form hattı: iki açıcılı, hat içi delmeli",
+        "text": "Kapaklı ve çift kat gövdeli kesitte gövde ve kapak şeridi iki ayrı açıcıdan beslenir. Askı delikleri ve yuvalar hat içinde açılır, ara taşıyıcıların uç dilleri kesme kalıbında form alır."
+      },
+      {
+        "title": "Alçıpan C ve U profilleri",
+        "line": "Roll form hattı: uçan kesme ve otomatik istifle",
+        "text": "Basit açık kesit daha az istasyon ister. Bu profiller yüksek adetlerde üretildiği için hattın hızını çoğunlukla kesme ve hat sonundaki istif belirler; elle istif ve paketleme darboğaz olur."
+      },
+      {
+        "title": "Clip-in ve lay-in paneller",
+        "line": "Servo beslemeli pres hattı",
+        "text": "Rulo sac doğrultulup servo beslemeyle prese verilir; gerekiyorsa perfore edilir, levhaya kesilir, köşeleri kesilir ve kenarlarına form verilir. Delik deseni ve açık alan oranı perfore hatları sayfasında anlatılıyor."
+      }
+    ],
+    "linesNote": "Farklı kesitler aynı hatta merdane seti ve kesme kalıbı değiştirilerek de üretilebilir; ancak T profil ile alçıpan profili gibi hızı ve delme düzeni farklı aileler genellikle ayrı hatlarda üretilir. Hangisinin uygun olduğunu ürün çeşitliliğiniz ve üretim adediniz belirler.",
+    "faqEyebrow": "Sık sorulanlar",
+    "faqTitle": "Asma tavan hatları hakkında merak edilenler",
+    "faq": [
+      {
+        "q": "Asma tavan hattı ne üretir?",
+        "a": "Asma tavan sisteminin metal parçalarını: T profil ızgara (ana taşıyıcı, ara taşıyıcı, duvar profili), alçıpan asma tavanın C ve U profilleri ve clip-in ya da lay-in metal tavan panelleri. Profiller roll form hattında, paneller servo beslemeli pres hattında üretilir."
+      },
+      {
+        "q": "T profil hattı ile alçıpan profil hattı arasındaki fark ne?",
+        "a": "T profil kapaklı, çift kat gövdeli bir kesittir; çoğunlukla iki açıcı, hat içi delme ve uç dillerini şekillendiren bir kesme kalıbı gerekir. Alçıpan C ve U profilleri daha basit açık kesitlerdir; hat daha sadedir, belirleyici olan kesme hızı ile istif ve paketlemedir."
+      },
+      {
+        "q": "Metal tavan panelleri roll form hattında üretilir mi?",
+        "a": "Kare ve dikdörtgen clip-in ve lay-in paneller hayır: dört kenarı bükülen düz parçalar oldukları için servo beslemeli pres hattında perfore edilir, kesilir, köşeleri kesilir ve kenarlarına form verilir. Uzun lineer (şerit) tavan panelleri ise sürekli bir kesit olduğu için roll form hattında üretilebilir."
+      },
+      {
+        "q": "Asma tavan hattı teklifi için hangi bilgiler gerekir?",
+        "a": "Profil kesitinin ya da panelin çizimi, sac malzemesi ve kaplaması (galvaniz, boyalı), kalınlık ve genişlik aralığı, ürün boyları ya da panel ölçüleri, delik ve yuva düzeni, hedef üretim adedi ve paketleme biçimi."
+      }
+    ],
+    "ctaTitle": "Asma tavan hattınızı projelendirelim",
+    "ctaText": "Ürün çizimlerinizi, sac malzemesini ve hedef üretim adedinizi iletin; hat yerleşimi ve teknik teklifle dönelim."
+  },
   "boykesme": {
     "metaTitle": "Rulo Sac Boy Kesme Hatları ve Levha Kesme Makinesi",
     "metaDesc": "Rulo sac boy kesme hatları: rulo sacı ölçülü plakaya keser. Doğrultma, servo besleme, giyotin ve istifleme tek PLC'den yönetilir; Schneider kontrol.",

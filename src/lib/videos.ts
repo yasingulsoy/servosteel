@@ -379,6 +379,10 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/boy-kesme-hatlari": ["4QETxHS-CD4", "mwZx6X1mV0c"],
   /* Perfore sayfasının hat fotoğrafı yok; dilme + punch delik delme hattı (Yasin, 11 Kas) */
   "/perfore-hatlari": ["hc_Znq2u8MI"],
+  /* Kanalda "Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri"
+     başlıklı tek kayıt; küratörlü 24'te değil, katalogdan gelir (bkz.
+     videosForProduct). Başlık YouTube'daki gibi, çevrilmez. */
+  "/asma-tavan-hatlari": ["EQ54wWjqJHM"],
   "/roll-form-hatlari": ["MaJswAJo8JQ", "3xmcJvv6LNc"],
   "/roll-form-hatlari/kablo-kanali": ["MaJswAJo8JQ", "ooxTQBK7wII"],
   "/roll-form-hatlari/solar-profil": ["3xmcJvv6LNc", "tm520w7WsBI"],
@@ -397,10 +401,12 @@ const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
 
 const VIDEO_BY_ID = new Map(allVideos.map((v) => [v.id, v]));
 
-/** Bir ürün yolunun doğrulanmış videoları; eşleme yoksa boş dizi. */
+/** Bir ürün yolunun doğrulanmış videoları; eşleme yoksa boş dizi.
+ *  Küratörlü seçkide olmayan kimlik kanal kataloğundan çözülür (gerçek
+ *  tarih/süreyle); ikisinde de yoksa düşer. */
 export function videosForProduct(path: string): VideoItem[] {
   return (PRODUCT_VIDEO_IDS[path] ?? [])
-    .map((id) => VIDEO_BY_ID.get(id))
+    .map((id) => VIDEO_BY_ID.get(id) ?? videoMeta(id))
     .filter((v): v is VideoItem => Boolean(v));
 }
 

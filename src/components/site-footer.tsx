@@ -15,6 +15,7 @@ export function SiteFooter() {
   const tSus = useTranslations("sustain");
   const tRulo = useTranslations("ruloIsleme");
   const tPerf = useTranslations("perfore");
+  const tTavan = useTranslations("asmaTavan");
   const tFair = useTranslations("fairs");
   const ak = getAkademiUi(useLocale());
 
@@ -24,6 +25,7 @@ export function SiteFooter() {
     { label: t("slitting"), href: "/dilme-hatlari" },
     { label: tn("ctl"), href: "/boy-kesme-hatlari" },
     { label: tPerf("nav"), href: "/perfore-hatlari" },
+    { label: tTavan("nav"), href: "/asma-tavan-hatlari" },
     { label: tn("machines"), href: "/makineler" },
     /* Sektör sayfaları ürün listesinde — arama niyeti ürüne değil uygulamaya
        göre geldiği için (bkz. lib/sectors.ts) burada durmaları doğru. */

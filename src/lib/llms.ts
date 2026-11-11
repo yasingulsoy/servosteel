@@ -28,6 +28,7 @@ const M = en as unknown as {
   dilme: { metaDesc: string; desc: string; tableHead: string[]; tableRows: string[][]; tableNote: string; faq: Faq[] };
   boykesme: { metaDesc: string; desc: string; faq: Faq[] };
   perfore: { metaDesc: string; desc: string; faq: Faq[] };
+  asmaTavan: { metaDesc: string; desc: string; faq: Faq[] };
   calc: { metaDesc: string };
   compare: { items: Record<string, { name: string; aName: string; bName: string; verdict: string; rows: { label: string; a: string; b: string }[] }> };
   sectors: { items: Record<string, { name: string; short: string; faq?: Faq[] }> };
@@ -116,6 +117,7 @@ ${line("Roll Forming Lines", "/roll-form-hatlari", M.hub.metaDesc)}
 ${line("Coil Slitting Lines", "/dilme-hatlari", M.dilme.metaDesc)}
 ${line("Cut-to-Length Lines", "/boy-kesme-hatlari", M.boykesme.metaDesc)}
 ${line("Coil Perforating Lines", "/perfore-hatlari", M.perfore.metaDesc)}
+${line("Suspended Ceiling Lines", "/asma-tavan-hatlari", M.asmaTavan.metaDesc)}
 
 ## Roll forming line types
 ${rollforms.join("\n")}
@@ -187,6 +189,8 @@ ${faqBlock(M.hub.faq)}`);
   parts.push(["## Cut-to-length lines", `Source: ${url("/boy-kesme-hatlari")}`, M.boykesme.desc, faqBlock(M.boykesme.faq)].join("\n\n"));
 
   parts.push(["## Coil perforating lines", `Source: ${url("/perfore-hatlari")}`, M.perfore.desc, faqBlock(M.perfore.faq)].join("\n\n"));
+
+  parts.push(["## Suspended ceiling lines", `Source: ${url("/asma-tavan-hatlari")}`, M.asmaTavan.desc, faqBlock(M.asmaTavan.faq)].join("\n\n"));
 
   parts.push("## Machines");
   for (const i of machineItems) {
