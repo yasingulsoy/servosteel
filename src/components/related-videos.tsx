@@ -64,19 +64,23 @@ export async function RelatedVideos({
     </Link>
   );
 
-  /* Dikey klip telefonda ekran boyu kadar uzamasın: dar sütunda ortalanır. */
+  /* Dikey klip telefonda ekran genişliğini doldurur ama ekran boyunu aşmaz. */
   const klip = (k: SahaKlipVerisi) => (
-    <div key={k.src} className={k.height > k.width ? "mx-auto w-full max-w-xs sm:max-w-none" : undefined}>
+    <div key={k.src} className={k.height > k.width ? "mx-auto w-full max-w-sm sm:max-w-none" : undefined}>
       <SahaKlibi src={k.src} poster={k.poster} width={k.width} height={k.height} baslik={k.baslik} />
     </div>
   );
 
-  /* İki öğe ve aralarında klip varsa sütunlar öğelerin en-boy oranıyla
-     bölünür: yatay YouTube kartı ile dikey klip aynı boyda durur. */
+  /* İki öğe ve aralarında klip varsa sütun payları ayrı verilir. Dikey klip
+     yatay kartla aynı boya indirildiğinde çok daralıyordu (1216 px'te 295 px
+     genişlik, 520 px boy); Yasin "dik olan daha büyük olacak" dedi (11 Kas).
+     Yatay 1,9 pay, dikey 1 pay: dikey klip ~410 px genişlik, ~720 px boy;
+     yatay kart yanında dikeyde ortalanır. Yatay–yatay ikilide paylar eşit. */
   const oranli = toplam === 2 && klipler.length > 0;
+  const dikeyVar = klipler.some((k) => k.height > k.width);
   const kolon = oranli
-    ? [...items.map(() => 16 / 9), ...klipler.map((k) => k.width / k.height)]
-        .map((o) => `minmax(0,${o.toFixed(3)}fr)`)
+    ? [...items.map(() => (dikeyVar ? 1.9 : 1)), ...klipler.map((k) => (k.height > k.width || !dikeyVar ? 1 : 1.9))]
+        .map((o) => `minmax(0,${o}fr)`)
         .join(" ")
     : undefined;
 
@@ -107,7 +111,7 @@ export async function RelatedVideos({
           {oranli ? (
             <Reveal>
               <div
-                className="mt-6 grid gap-6 sm:grid-cols-(--kolon)"
+                className="mt-6 grid items-center gap-6 sm:grid-cols-(--kolon)"
                 style={{ "--kolon": kolon } as CSSProperties}
               >
                 {items.map((v) => (
@@ -117,7 +121,8 @@ export async function RelatedVideos({
               </div>
             </Reveal>
           ) : (
-            <Reveal group className="mt-6 grid gap-6 sm:grid-cols-2">
+            /* Üç video: ikili ızgarada üçüncüsü tek başına yarım satır kalıyordu */
+            <Reveal group className={`mt-6 grid gap-6 sm:grid-cols-2 ${toplam === 3 ? "lg:grid-cols-3" : ""}`}>
               {items.map((v) => (
                 <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
               ))}
