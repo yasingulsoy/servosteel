@@ -460,6 +460,133 @@
     "ctaTitle": "Dimensionemos su línea de perforado",
     "ctaText": "Envíe el material, el rango de espesor y el patrón de agujeros; le responderemos con la disposición de la línea y una oferta técnica."
   },
+  "asmaTavan": {
+    "nav": "Líneas para Falsos Techos",
+    "short": "Líneas de producción para perfilería T, perfiles de techo para placa de yeso y bandejas metálicas.",
+    "metaTitle": "Líneas para Falsos Techos: Perfilería T y Bandejas Metálicas",
+    "metaDesc": "Líneas para falsos techos desde bobina: perfiladoras para perfilería T y perfiles C/U de placa de yeso, y líneas de prensa para bandejas metálicas clip-in y lay-in.",
+    "eyebrow": "Nuestra especialidad",
+    "title": "Líneas para Falsos Techos",
+    "desc": "Líneas que fabrican desde bobina las piezas metálicas de un falso techo: la perfilería T (primario, secundario, angular perimetral) y los perfiles C/U de los techos de placa de yeso en una línea de perfilado; las bandejas metálicas clip-in y lay-in en una línea de prensa con alimentador servo, donde se perforan, cortan y conforman. Cada línea se diseña según su sección y su volumen de producción.",
+    "highlights": [
+      {
+        "title": "Precisión de agujeros y ranuras",
+        "text": "El alimentador servo avanza la banda el mismo paso en cada golpe; los agujeros de cuelgue y las ranuras de los secundarios quedan equidistantes a lo largo del perfil y la retícula queda a escuadra en obra."
+      },
+      {
+        "title": "Rodillos para su sección",
+        "text": "Las estaciones de perfilado se diseñan para la sección T, C o U; el número de estaciones y la disposición de los rodillos se fijan para que la banda fina se conforme a la medida de la sección."
+      },
+      {
+        "title": "Del perfil a la bandeja",
+        "text": "Los perfiles portantes se fabrican en una línea de perfilado y las bandejas clip-in y lay-in en una línea de prensa; ambas empiezan con desbobinadora, enderezadora y alimentador servo."
+      },
+      {
+        "title": "Control centralizado",
+        "text": "Desde la desbobinadora hasta el apilador, la línea se gestiona desde un PLC y un panel de operador; las longitudes de perfil y las recetas de agujeros se guardan en la HMI."
+      }
+    ],
+    "whyTitle": "¿Por qué una línea para falsos techos de Servosteel?",
+    "paras": [
+      "Las primeras estaciones de la línea — <b>desbobinadora, enderezadora y alimentador servo</b> — son productos propios de Servosteel, igual que la <b>línea de perfilado</b> que da forma a los perfiles y el <b>apilador automático</b> de la salida. Construimos la línea en torno a estas unidades, para su sección, como un solo proyecto; cada unidad se dimensiona según la siguiente.",
+      "Un falso techo no es un producto sino un sistema: la perfilería T, los perfiles C y U de los techos de placa de yeso y las bandejas metálicas que se apoyan en la retícula o se clipan a ella. Cada pieza necesita una línea distinta. Los perfiles portantes son una sección continua y se perfilan; las bandejas son piezas planas con bordes plegados y se perforan, cortan y conforman en una línea de prensa con alimentador servo.",
+      "Para una oferta, envíenos el plano de la sección del perfil o de la bandeja, el material y el recubrimiento, el rango de espesores, las longitudes, la disposición de agujeros y ranuras y su producción objetivo; con eso dimensionamos la línea."
+    ],
+    "components": [
+      "Desbobinadora (dos para perfilería T con tapa)",
+      "Enderezadora",
+      "Alimentador servo",
+      "Punzonado en línea",
+      "Estaciones de perfilado",
+      "Unidad de corte (volante o con parada)",
+      "Apilado y empaquetado automático"
+    ],
+    "stepsTitle": "Cómo funciona una línea de perfiles para techos",
+    "steps": [
+      {
+        "title": "Desbobinado",
+        "text": "La desbobinadora soporta la bobina y alimenta la banda a la línea con tensión controlada. En la perfilería T con tapa, una segunda desbobinadora alimenta por separado la banda prelacada de la tapa."
+      },
+      {
+        "title": "Enderezado y alimentación servo",
+        "text": "Los rodillos enderezadores eliminan la curvatura de bobina; el alimentador servo introduce la banda en el troquel de punzonado con un paso medido en cada golpe."
+      },
+      {
+        "title": "Punzonado en línea",
+        "text": "Los agujeros de cuelgue, las ranuras de los secundarios y los agujeros de unión se punzonan en la banda plana, antes del perfilado. Su separación decide que la retícula quede a escuadra en obra."
+      },
+      {
+        "title": "Perfilado",
+        "text": "Las estaciones de rodillos doblan la banda paso a paso. En la perfilería T el alma se pliega doble y la tapa se envuelve sobre el ala inferior; los perfiles C y U se completan en menos estaciones."
+      },
+      {
+        "title": "Corte y apilado",
+        "text": "El perfil se corta a medida; las pestañas de unión de los secundarios suelen conformarse en el troquel de corte. El apilador automático reúne los perfiles en orden de paquete."
+      }
+    ],
+    "typesTitle": "Tipos de producto para falsos techos",
+    "typesIntro": "Un falso techo tiene dos familias de piezas: los perfiles que lo sostienen y las bandejas que forman la superficie vista. Los perfiles son una sección continua; las bandejas, piezas planas con bordes plegados. Esa diferencia decide el tipo de línea.",
+    "types": [
+      {
+        "title": "Perfilería T",
+        "text": "Primarios, secundarios y angulares perimetrales; los primarios cuelgan del forjado con varillas o alambres y las placas se apoyan en la retícula. El cuerpo suele ser de acero galvanizado y la cara vista, una tapa prelacada."
+      },
+      {
+        "title": "Perfiles para techos de placa de yeso",
+        "text": "El perfil C (maestra) al que se atornilla la placa y el perfil U (canal) que se fija en el perímetro. Secciones abiertas y sencillas; las superficies suelen ir moleteadas para el agarre del tornillo y la rigidez."
+      },
+      {
+        "title": "Bandejas metálicas clip-in",
+        "text": "Bandejas cuyos bordes plegados se clipan a un perfil portante, sin retícula vista desde abajo. A menudo perforadas por acústica."
+      },
+      {
+        "title": "Bandejas metálicas lay-in",
+        "text": "Bandejas que se apoyan sobre las alas de la perfilería T y se retiran para mantenimiento. El borde puede ser recto o rebajado (tegular)."
+      }
+    ],
+    "typesNote": "Retícula, bandejas y cuelgues están ligados por medidas: la separación de ranuras de la perfilería T sigue el módulo de la bandeja y el borde de la bandeja sigue la sección del portante. Al diseñar la línea queremos ver el plano del sistema completo, no de un solo perfil.",
+    "linesTitle": "¿Qué producto necesita qué línea?",
+    "lines": [
+      {
+        "title": "Perfilería T",
+        "line": "Línea de perfilado con dos desbobinadoras y punzonado en línea",
+        "text": "Para la sección de alma doble con tapa, el cuerpo y la tapa se alimentan desde dos desbobinadoras separadas. Los agujeros de cuelgue y las ranuras se punzonan en línea, y las pestañas de los secundarios se conforman en el troquel de corte."
+      },
+      {
+        "title": "Perfiles C y U de placa de yeso",
+        "line": "Línea de perfilado con corte volante y apilado automático",
+        "text": "Una sección abierta sencilla necesita menos estaciones. Como estos perfiles se fabrican en grandes volúmenes, la velocidad suele depender del corte y del apilado en la salida; apilar y empaquetar a mano se convierte en el cuello de botella."
+      },
+      {
+        "title": "Bandejas clip-in y lay-in",
+        "line": "Línea de prensa con alimentador servo",
+        "text": "La banda se endereza y entra en la prensa con alimentador servo; se perfora si hace falta, se corta en formatos, se entallan las esquinas y se pliegan los bordes. Los patrones de agujeros y el área abierta se explican en la página de líneas de perforado."
+      }
+    ],
+    "linesNote": "Distintas secciones pueden fabricarse en una misma línea cambiando el juego de rodillos y el troquel de corte, pero familias con velocidades y punzonados distintos, como la perfilería T y los perfiles de placa de yeso, suelen fabricarse en líneas separadas. Su gama de productos y su volumen deciden qué opción conviene.",
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqTitle": "Preguntas sobre las líneas para falsos techos",
+    "faq": [
+      {
+        "q": "¿Qué fabrica una línea para falsos techos?",
+        "a": "Las piezas metálicas de un sistema de falso techo: la perfilería T (primario, secundario, angular perimetral), los perfiles C y U de los techos de placa de yeso y las bandejas metálicas clip-in o lay-in. Los perfiles se fabrican en una línea de perfilado y las bandejas en una línea de prensa con alimentador servo."
+      },
+      {
+        "q": "¿En qué se diferencia una línea de perfilería T de una de perfiles para placa de yeso?",
+        "a": "La perfilería T es una sección de alma doble con tapa; suele necesitar dos desbobinadoras, punzonado en línea y un troquel de corte que conforme las pestañas. Los perfiles C y U son secciones abiertas más sencillas; la línea es más simple y lo decisivo es la velocidad de corte y el apilado y empaquetado."
+      },
+      {
+        "q": "¿Las bandejas metálicas se fabrican en una línea de perfilado?",
+        "a": "Las bandejas clip-in y lay-in cuadradas o rectangulares, no: son piezas planas plegadas en sus cuatro bordes, por lo que se perforan, cortan, entallan y pliegan en una línea de prensa con alimentador servo. Los paneles lineales largos (techos de lamas), en cambio, son una sección continua y pueden perfilarse."
+      },
+      {
+        "q": "¿Qué datos necesitan para una oferta?",
+        "a": "El plano de la sección del perfil o de la bandeja, el material y el recubrimiento (galvanizado, prelacado), el rango de espesores y anchos, las longitudes o medidas de bandeja, la disposición de agujeros y ranuras, la producción objetivo y la forma de empaquetado."
+      }
+    ],
+    "ctaTitle": "Dimensionemos su línea para falsos techos",
+    "ctaText": "Envíenos los planos de sus productos, el material y la producción objetivo; le responderemos con la disposición de la línea y una oferta técnica."
+  },
   "boykesme": {
     "metaTitle": "Líneas de Corte a Medida",
     "metaDesc": "Líneas de corte a medida: corte de precisión de bobina a chapa. Enderezado, alimentación servo, guillotina y apilado gestionados por un único PLC.",

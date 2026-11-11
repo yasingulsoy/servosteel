@@ -460,6 +460,133 @@
     "ctaTitle": "Dobierzmy Państwa linię perforującą",
     "ctaText": "Prosimy przesłać materiał, zakres grubości i wzór otworów; odpowiemy układem linii i ofertą techniczną."
   },
+  "asmaTavan": {
+    "nav": "Linie do Sufitów Podwieszanych",
+    "short": "Linie produkcyjne do rusztu T, profili CD/UD do sufitów z płyt g-k i metalowych paneli sufitowych.",
+    "metaTitle": "Linie do Sufitów Podwieszanych: Profile T i Panele Metalowe",
+    "metaDesc": "Linie do sufitów podwieszanych z kręgu: profilarki do rusztu T i profili CD/UD do płyt g-k oraz linie prasowe do metalowych paneli clip-in i lay-in.",
+    "eyebrow": "Nasza specjalizacja",
+    "title": "Linie do Sufitów Podwieszanych",
+    "desc": "Linie, które z kręgu wytwarzają metalowe elementy sufitu podwieszanego: ruszt T (profil główny, poprzeczka, profil przyścienny) i profile CD/UD do sufitów z płyt g-k na linii profilującej; metalowe panele clip-in i lay-in na linii prasowej z podajnikiem serwo, gdzie są perforowane, cięte i gięte. Każdą linię projektujemy pod Państwa przekrój i wielkość produkcji.",
+    "highlights": [
+      {
+        "title": "Dokładny rozstaw otworów i szczelin",
+        "text": "Podajnik serwo przesuwa taśmę o ten sam skok przy każdym suwie; otwory na wieszaki i szczeliny na poprzeczki zachowują równy rozstaw na całej długości profilu, a ruszt na budowie trzyma kąt prosty."
+      },
+      {
+        "title": "Zestaw rolek pod przekrój",
+        "text": "Stacje profilujące projektujemy pod przekrój T, C lub U; liczbę stacji i układ rolek dobieramy tak, aby cienka taśma uzyskała wymiar przekroju."
+      },
+      {
+        "title": "Od profilu do panelu",
+        "text": "Profile nośne powstają na linii profilującej, panele clip-in i lay-in na linii prasowej; obie zaczynają się od odwijaka, prostownicy i podajnika serwo."
+      },
+      {
+        "title": "Sterowanie z jednego miejsca",
+        "text": "Od odwijaka po układarkę linią steruje jeden PLC i jeden panel operatora; długości profili i receptury otworów zapisane są w HMI."
+      }
+    ],
+    "whyTitle": "Dlaczego linia do sufitów podwieszanych Servosteel?",
+    "paras": [
+      "Pierwsze stacje linii — <b>odwijak, prostownica i podajnik serwo</b> — to własne produkty Servosteel, podobnie jak <b>linia profilująca</b>, która formuje profile, i <b>automatyczna układarka</b> na wyjściu. Linię budujemy wokół tych urządzeń, pod Państwa przekrój, jako jeden projekt; każde urządzenie dobierane jest do następnego.",
+      "Sufit podwieszany to nie jeden produkt, lecz system: ruszt T, profile C i U do sufitów z płyt g-k oraz metalowe panele kładzione na ruszt lub zatrzaskiwane na nim. Każdy element wymaga innej linii. Profile nośne są ciągłym przekrojem, więc się je profiluje; panele to płaskie elementy z giętymi krawędziami, więc perforuje się je, tnie i formuje na linii prasowej z podajnikiem serwo.",
+      "Do oferty prosimy przesłać rysunek przekroju profilu lub panelu, materiał i powłokę, zakres grubości, długości wyrobów, układ otworów i szczelin oraz docelową wydajność; na tej podstawie dobierzemy linię."
+    ],
+    "components": [
+      "Odwijak (dwa przy ruszcie T z nakładką)",
+      "Prostownica",
+      "Podajnik serwo",
+      "Wykrawanie w linii",
+      "Stacje profilujące",
+      "Zespół cięcia (latający lub ze stopem)",
+      "Automatyczne układanie i pakowanie"
+    ],
+    "stepsTitle": "Jak działa linia do profili sufitowych",
+    "steps": [
+      {
+        "title": "Odwijanie",
+        "text": "Odwijak utrzymuje krąg i podaje taśmę do linii z kontrolowanym naciągiem. Przy ruszcie T z nakładką drugi odwijak podaje osobno lakierowaną taśmę nakładki."
+      },
+      {
+        "title": "Prostowanie i podawanie serwo",
+        "text": "Rolki prostujące usuwają krzywiznę z kręgu; podajnik serwo wprowadza taśmę do narzędzia wykrawającego o odmierzony skok przy każdym suwie."
+      },
+      {
+        "title": "Wykrawanie w linii",
+        "text": "Otwory na wieszaki, szczeliny na poprzeczki i otwory łączeniowe wykrawa się w płaskiej taśmie, przed profilowaniem. Ich rozstaw decyduje, czy ruszt na budowie zachowa kąt prosty."
+      },
+      {
+        "title": "Profilowanie",
+        "text": "Stacje rolkowe stopniowo gną taśmę. W ruszcie T środnik jest składany podwójnie, a nakładka zawijana na dolną półkę; profile C i U powstają w mniejszej liczbie stacji."
+      },
+      {
+        "title": "Cięcie i układanie",
+        "text": "Profil jest cięty na długość; zaczepy na końcach poprzeczek formuje zwykle narzędzie tnące. Automatyczna układarka zbiera profile w układzie paczki."
+      }
+    ],
+    "typesTitle": "Rodzaje wyrobów do sufitów podwieszanych",
+    "typesIntro": "System sufitu podwieszanego składa się z dwóch rodzin elementów: profili, które niosą sufit, i paneli, które tworzą widoczną powierzchnię. Profile to ciągły przekrój, panele to płaskie elementy z giętymi krawędziami. Ta różnica decyduje o rodzaju linii.",
+    "types": [
+      {
+        "title": "Ruszt T",
+        "text": "Profile główne, poprzeczki i profile przyścienne; profile główne wiszą na wieszakach pod stropem, a płyty leżą w ruszcie. Korpus to zwykle stal ocynkowana, a widoczny spód — lakierowana nakładka."
+      },
+      {
+        "title": "Profile do sufitów z płyt g-k",
+        "text": "Profil CD, do którego przykręca się płytę, i profil UD mocowany na obwodzie przy ścianach. Proste, otwarte przekroje; powierzchnie są zwykle radełkowane dla lepszego trzymania wkrętów i sztywności."
+      },
+      {
+        "title": "Metalowe panele clip-in",
+        "text": "Kasetony, których gięte krawędzie zatrzaskuje się na profilu nośnym; od dołu nie widać rusztu. Często perforowane ze względów akustycznych."
+      },
+      {
+        "title": "Metalowe panele lay-in",
+        "text": "Kasetony leżące na półkach rusztu T, wyjmowane przy konserwacji. Krawędź może być prosta lub schodkowa (tegular)."
+      }
+    ],
+    "typesNote": "Ruszt, panele i wieszaki łączą wymiary: rozstaw szczelin w ruszcie T wynika z modułu panelu, a kształt krawędzi panelu z przekroju profilu nośnego. Projektując linię, chcemy zobaczyć rysunek całego systemu, a nie jednego profilu.",
+    "linesTitle": "Który wyrób wymaga której linii?",
+    "lines": [
+      {
+        "title": "Ruszt T",
+        "line": "Linia profilująca z dwoma odwijakami i wykrawaniem w linii",
+        "text": "Przy dwuściankowym przekroju z nakładką korpus i nakładka są podawane z dwóch osobnych odwijaków. Otwory na wieszaki i szczeliny wykrawa się w linii, a zaczepy poprzeczek formuje narzędzie tnące."
+      },
+      {
+        "title": "Profile CD i UD do płyt g-k",
+        "line": "Linia profilująca z latającym cięciem i automatyczną układarką",
+        "text": "Prosty, otwarty przekrój wymaga mniej stacji. Ponieważ te profile produkuje się w dużych ilościach, tempo wyznacza zwykle cięcie oraz układanie na wyjściu; ręczne układanie i pakowanie staje się wąskim gardłem."
+      },
+      {
+        "title": "Panele clip-in i lay-in",
+        "line": "Linia prasowa z podajnikiem serwo",
+        "text": "Taśma jest prostowana i podawana serwo do prasy; w razie potrzeby perforowana, cięta na formatki, wycinana w narożnikach i gięta na krawędziach. Wzory otworów i prześwit opisuje strona o liniach perforujących."
+      }
+    ],
+    "linesNote": "Różne przekroje można produkować na jednej linii, wymieniając zestaw rolek i narzędzie tnące, ale rodziny o różnym tempie i układzie otworów, jak ruszt T i profile do płyt g-k, zwykle produkuje się na osobnych liniach. O wyborze decyduje gama wyrobów i wielkość produkcji.",
+    "faqEyebrow": "Często zadawane pytania",
+    "faqTitle": "Pytania o linie do sufitów podwieszanych",
+    "faq": [
+      {
+        "q": "Co produkuje linia do sufitów podwieszanych?",
+        "a": "Metalowe elementy systemu sufitowego: ruszt T (profil główny, poprzeczka, profil przyścienny), profile CD i UD do sufitów z płyt g-k oraz metalowe panele clip-in lub lay-in. Profile powstają na linii profilującej, panele na linii prasowej z podajnikiem serwo."
+      },
+      {
+        "q": "Czym różni się linia do rusztu T od linii do profili g-k?",
+        "a": "Ruszt T to dwuściankowy przekrój z nakładką; zwykle wymaga dwóch odwijaków, wykrawania w linii i narzędzia tnącego, które formuje zaczepy. Profile CD i UD to prostsze, otwarte przekroje; linia jest prostsza, a decydujące są szybkość cięcia oraz układanie i pakowanie."
+      },
+      {
+        "q": "Czy metalowe panele sufitowe produkuje się na linii profilującej?",
+        "a": "Kwadratowych i prostokątnych paneli clip-in i lay-in — nie: to płaskie elementy gięte na czterech krawędziach, więc perforuje się je, tnie, wycina w narożnikach i gnie na linii prasowej z podajnikiem serwo. Długie panele liniowe (sufity lamelowe) to natomiast ciągły przekrój i można je profilować."
+      },
+      {
+        "q": "Jakie dane są potrzebne do oferty?",
+        "a": "Rysunek przekroju profilu lub panelu, materiał i powłoka (ocynk, powłoka lakierowana), zakres grubości i szerokości, długości wyrobów lub wymiary paneli, układ otworów i szczelin, docelowa wydajność i sposób pakowania."
+      }
+    ],
+    "ctaTitle": "Dobierzmy Państwa linię do sufitów podwieszanych",
+    "ctaText": "Prosimy przesłać rysunki wyrobów, materiał i docelową wydajność; odpowiemy układem linii i ofertą techniczną."
+  },
   "boykesme": {
     "metaTitle": "Linie Cięcia Poprzecznego",
     "metaDesc": "Linie cięcia poprzecznego: z kręgu na arkusz. Prostowanie, podawanie serwo, gilotyna i sztaplowanie na jednym sterowniku Schneider.",

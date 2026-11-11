@@ -460,6 +460,133 @@
     "ctaTitle": "Méretezzük együtt a perforáló sorát",
     "ctaText": "Küldje el az anyagot, a vastagságtartományt és a lyukmintát; sorelrendezéssel és műszaki ajánlattal jelentkezünk."
   },
+  "asmaTavan": {
+    "nav": "Álmennyezeti Gyártósorok",
+    "short": "Gyártósorok T-profilos álmennyezeti rácshoz, gipszkarton CD/UD profilokhoz és fém álmennyezeti panelekhez.",
+    "metaTitle": "Álmennyezeti Gyártósorok: T-profilok és Fém Panelek",
+    "metaDesc": "Álmennyezeti gyártósorok tekercsből: profilozó sorok T-profilos rácshoz és CD/UD gipszkarton profilokhoz, présvonalak clip-in és lay-in fém panelekhez.",
+    "eyebrow": "Szakterületünk",
+    "title": "Álmennyezeti Gyártósorok",
+    "desc": "Sorok, amelyek tekercsből gyártják az álmennyezet fém elemeit: a T-profilos rácsot (főtartó, kereszttartó, falszegély) és a gipszkarton álmennyezetek CD/UD profiljait profilozó soron; a clip-in és lay-in fém álmennyezeti paneleket szervóadagolós présvonalon, ahol perforálják, vágják és hajlítják őket. Minden sort az Ön szelvényéhez és darabszámához tervezünk.",
+    "highlights": [
+      {
+        "title": "Pontos lyuk- és résosztás",
+        "text": "A szervóadagoló minden löketnél ugyanazzal a lépéssel tolja előre a szalagot; a függesztőlyukak és a kereszttartó-rések a profil teljes hosszán egyenletes osztásban maradnak, a rács a helyszínen derékszögben ül."
+      },
+      {
+        "title": "Szelvényre tervezett görgőkészlet",
+        "text": "A profilozó állomásokat a T-, C- vagy U-szelvényhez tervezzük; az állomások száma és a görgők elrendezése úgy készül, hogy a vékony szalag méretpontosan formálódjon."
+      },
+      {
+        "title": "Profiltól a panelig",
+        "text": "A tartóprofilok profilozó soron, a clip-in és lay-in panelek présvonalon készülnek; mindkettő letekercselővel, egyengetővel és szervóadagolóval indul."
+      },
+      {
+        "title": "Központi vezérlés",
+        "text": "A letekercselőtől a rakatolóig a sort egy PLC és egy kezelőpanel irányítja; a profilhosszakat és a lyukasztási recepteket a HMI tárolja."
+      }
+    ],
+    "whyTitle": "Miért Servosteel álmennyezeti gyártósor?",
+    "paras": [
+      "A sor első egységei — <b>letekercselő, egyengető és szervóadagoló</b> — a Servosteel saját termékei, csakúgy, mint a profilokat formázó <b>profilozó sor</b> és a kimeneti <b>automata rakatoló</b>. A sort ezekre az egységekre építjük, az Ön szelvényéhez, egyetlen projektként; minden egység a következőhöz van méretezve.",
+      "Az álmennyezet nem egyetlen termék, hanem rendszer: a T-profilos rács, a gipszkarton álmennyezetek C- és U-profiljai, valamint a rácsba fektetett vagy rápattintott fém panelek. Mindegyik más sort igényel. A tartóprofilok folytonos szelvények, ezért profilozással készülnek; a panelek hajlított szélű lapos alkatrészek, ezért szervóadagolós présvonalon perforálják, vágják és alakítják őket.",
+      "Ajánlathoz küldje el a profilszelvény vagy a panel rajzát, az anyagot és a bevonatot, a vastagságtartományt, a termékhosszakat, a lyuk- és réskiosztást és a célzott darabszámot; ezek alapján méretezzük a sort."
+    ],
+    "components": [
+      "Letekercselő (fedőszalagos T-profilnál kettő)",
+      "Egyengető egység",
+      "Szervóadagoló",
+      "Soron belüli lyukasztás",
+      "Profilozó állomások",
+      "Vágóegység (repülő vagy álló)",
+      "Automata rakatolás és csomagolás"
+    ],
+    "stepsTitle": "Így működik az álmennyezeti profilsor",
+    "steps": [
+      {
+        "title": "Letekercselés",
+        "text": "A letekercselő tartja a tekercset, és szabályozott húzással adja a szalagot a sorba. Fedőszalagos T-profilnál egy második letekercselő külön adagolja az előfestett fedőszalagot."
+      },
+      {
+        "title": "Egyengetés és szervóadagolás",
+        "text": "Az egyengető görgők kiveszik a tekercsgörbületet; a szervóadagoló minden löketnél mért lépéssel adja a szalagot a lyukasztószerszámba."
+      },
+      {
+        "title": "Soron belüli lyukasztás",
+        "text": "A függesztőlyukakat, a kereszttartó-réseket és a kötőlyukakat a sík szalagba lyukasztják, még a profilozás előtt. Osztásuk dönti el, hogy a rács a helyszínen derékszögben ül-e."
+      },
+      {
+        "title": "Profilozás",
+        "text": "A görgőállomások fokozatosan hajlítják a szalagot. A T-profilnál a gerinc duplán hajlik, a fedőszalag pedig az alsó övre fordul; a C- és U-profilok kevesebb állomáson készülnek el."
+      },
+      {
+        "title": "Vágás és rakatolás",
+        "text": "A profilt méretre vágják; a kereszttartók végén lévő csatlakozófüleket többnyire a vágószerszám alakítja ki. Az automata rakatoló csomagrendbe gyűjti a profilokat."
+      }
+    ],
+    "typesTitle": "Álmennyezeti terméktípusok",
+    "typesIntro": "Az álmennyezeti rendszer két alkatrészcsaládból áll: a mennyezetet tartó profilokból és a látható felületet adó panelekből. A profil folytonos szelvény, a panel hajlított szélű lapos alkatrész. Ez a különbség határozza meg a sor típusát.",
+    "types": [
+      {
+        "title": "T-profilos rácsrendszer",
+        "text": "Főtartók, kereszttartók és falszegélyek; a főtartók függesztőkkel lógnak a födémről, a panelek a rácsba fekszenek. A test többnyire horganyzott acél, a látható alsó oldal előfestett fedőszalag."
+      },
+      {
+        "title": "Gipszkarton álmennyezeti profilok",
+        "text": "A CD-profil, amelyre a gipszkartont csavarozzák, és a kerület mentén a falra rögzített UD-profil. Egyszerű nyitott szelvények; felületük a csavartartás és a merevség miatt többnyire recézett."
+      },
+      {
+        "title": "Clip-in fém panelek",
+        "text": "Tálca alakú panelek, amelyek hajlított széle tartóprofilra pattan; alulról nem látszik rács. Akusztikai célból gyakran perforáltak."
+      },
+      {
+        "title": "Lay-in fém panelek",
+        "text": "A T-profilos rács övein fekvő tálca alakú panelek, karbantartáshoz kiemelhetők. A szél lehet egyenes vagy lépcsős (tegular)."
+      }
+    ],
+    "typesNote": "A rács, a panelek és a függesztők méretekkel kapcsolódnak egymáshoz: a T-profil résosztása a panel moduljához, a panel szélformája a tartó szelvényéhez igazodik. A sor tervezésekor ezért a teljes rendszer rajzát szeretnénk látni, nem csak egyetlen profilét.",
+    "linesTitle": "Melyik termékhez melyik sor kell?",
+    "lines": [
+      {
+        "title": "T-profilos rács",
+        "line": "Profilozó sor két letekercselővel és soron belüli lyukasztással",
+        "text": "A dupla gerincű, fedőszalagos szelvénynél a testet és a fedőszalagot két külön letekercselő adagolja. A függesztőlyukakat és a réseket soron belül lyukasztják, a kereszttartók füleit a vágószerszám alakítja."
+      },
+      {
+        "title": "Gipszkarton CD- és UD-profilok",
+        "line": "Profilozó sor repülő vágással és automata rakatolással",
+        "text": "Az egyszerű nyitott szelvény kevesebb állomást igényel. Mivel ezek a profilok nagy darabszámban futnak, a tempót többnyire a vágás és a kimeneti rakatolás szabja meg; a kézi rakatolás és csomagolás szűk keresztmetszetté válik."
+      },
+      {
+        "title": "Clip-in és lay-in panelek",
+        "line": "Szervóadagolós présvonal",
+        "text": "A szalagot egyengetik, és szervóadagolóval a présbe vezetik; szükség esetén perforálják, lapokra vágják, a sarkokat kivágják és a széleket hajlítják. A lyukmintákat és a nyitott felületet a perforáló sorok oldala ismerteti."
+      }
+    ],
+    "linesNote": "Különböző szelvények egy soron is gyárthatók görgőkészlet- és vágószerszám-cserével, de az eltérő tempójú és lyukasztású családokat, például a T-profilt és a gipszkarton profilt, többnyire külön sorokon gyártják. A termékkínálat és a darabszám dönti el, melyik megoldás illik Önhöz.",
+    "faqEyebrow": "Gyakori kérdések",
+    "faqTitle": "Kérdések az álmennyezeti gyártósorokról",
+    "faq": [
+      {
+        "q": "Mit gyárt egy álmennyezeti gyártósor?",
+        "a": "Az álmennyezeti rendszer fém elemeit: a T-profilos rácsot (főtartó, kereszttartó, falszegély), a gipszkarton álmennyezetek CD- és UD-profiljait, valamint a clip-in vagy lay-in fém paneleket. A profilok profilozó soron, a panelek szervóadagolós présvonalon készülnek."
+      },
+      {
+        "q": "Miben különbözik a T-profil sor a gipszkarton profilsortól?",
+        "a": "A T-profil dupla gerincű, fedőszalagos szelvény; többnyire két letekercselő, soron belüli lyukasztás és a füleket kialakító vágószerszám kell hozzá. A CD- és UD-profilok egyszerűbb nyitott szelvények; a sor egyszerűbb, a döntő a vágási tempó, valamint a rakatolás és csomagolás."
+      },
+      {
+        "q": "Profilozó soron készülnek a fém álmennyezeti panelek?",
+        "a": "A négyzetes és téglalap alakú clip-in és lay-in panelek nem: négy szélükön hajlított lapos alkatrészek, ezért szervóadagolós présvonalon perforálják, vágják, sarkazzák és hajlítják őket. A hosszú lineáris (lamellás) mennyezeti panelek viszont folytonos szelvények, így profilozhatók."
+      },
+      {
+        "q": "Milyen adatok kellenek az ajánlathoz?",
+        "a": "A profilszelvény vagy a panel rajza, az anyag és a bevonat (horganyzott, előfestett), a vastagság- és szélességtartomány, a termékhosszak vagy panelméretek, a lyuk- és réskiosztás, a célzott darabszám és a csomagolás módja."
+      }
+    ],
+    "ctaTitle": "Méretezzük együtt az álmennyezeti gyártósorát",
+    "ctaText": "Küldje el a termékrajzokat, az anyagot és a célzott darabszámot; sorelrendezéssel és műszaki ajánlattal válaszolunk."
+  },
   "boykesme": {
     "metaTitle": "Keresztvágó Sorok",
     "metaDesc": "Keresztvágó sorok: pontos vágás tekercsből táblává. Egyengetés, szervoadagolás, olló és rakatolás egyetlen PLC-ről vezérelve. Schneider vezérlés.",

@@ -480,6 +480,133 @@
     "ctaTitle": "Let's engineer your perforating line",
     "ctaText": "Send your material, thickness range and hole pattern; we will come back with a line layout and technical offer."
   },
+  "asmaTavan": {
+    "nav": "Suspended Ceiling Lines",
+    "short": "Production lines for T-grid, drywall C/U ceiling profiles and metal ceiling panels.",
+    "metaTitle": "Suspended Ceiling Lines: T-Grid and Ceiling Panel Machines",
+    "metaDesc": "Suspended ceiling lines from coil: roll forming lines for T-grid and drywall C/U profiles, and press lines for clip-in and lay-in metal ceiling panels.",
+    "eyebrow": "Our expertise",
+    "title": "Suspended Ceiling Lines",
+    "desc": "Lines that make the metal parts of a suspended ceiling from coil: the T-grid (main tee, cross tee, wall angle) and the C/U profiles of drywall ceilings on a roll forming line; clip-in and lay-in metal ceiling panels on a servo-fed press line, where they are perforated, cut and formed. Each line is engineered around your section and output volume.",
+    "highlights": [
+      {
+        "title": "Hole and slot accuracy",
+        "text": "The servo feeder advances the strip by the same pitch on every stroke, so hanger holes and cross-tee slots stay evenly spaced along the profile and the grid sits square on site."
+      },
+      {
+        "title": "Section-specific roll tooling",
+        "text": "Roll forming stations are designed for the T, C or U section; the number of stations and the roll layout are set so that thin strip forms true to the section."
+      },
+      {
+        "title": "From profile to panel",
+        "text": "Carrier profiles run on a roll forming line, clip-in and lay-in panels on a press line; both start with a decoiler, straightener and servo feeder."
+      },
+      {
+        "title": "Single-point control",
+        "text": "From decoiler to stacker, the line runs from one PLC and operator panel; profile length and hole recipes are stored on the HMI."
+      }
+    ],
+    "whyTitle": "Why a Servosteel suspended ceiling line?",
+    "paras": [
+      "The first stations of a ceiling line — <b>decoiler, straightener and servo feeder</b> — are Servosteel's own products, and so are the <b>roll forming line</b> that shapes the profiles and the <b>automatic stacker</b> at the exit. We build the line around these units, for your section, as one project, with every unit sized to the next.",
+      "A suspended ceiling is not one product but a system: the T-grid, the C and U profiles of drywall ceilings, and metal panels that either lay into the grid or clip onto it. Each needs a different line. Carrier profiles are a continuous section, so they are roll formed; panels are flat parts with folded edges, so they are perforated, cut and formed on a servo-fed press line.",
+      "For a quotation, send a drawing of the profile section or panel, the material and coating, the thickness range, product lengths, the hole and slot layout and your target output; we will size the line from there."
+    ],
+    "components": [
+      "Decoiler (two for capped T-grid)",
+      "Straightening unit",
+      "Servo feeder",
+      "In-line punching",
+      "Roll forming stations",
+      "Cut-off unit (flying or stop-to-cut)",
+      "Automatic stacking and packing"
+    ],
+    "stepsTitle": "How a ceiling profile line works",
+    "steps": [
+      {
+        "title": "Decoiling",
+        "text": "The decoiler carries the coil and feeds the strip into the line under controlled tension. On capped T-grid a second decoiler feeds the pre-painted cap strip separately."
+      },
+      {
+        "title": "Straightening and servo feeding",
+        "text": "Straightener rolls remove coil set; the servo feeder then indexes the strip into the punching die by a measured pitch on every stroke."
+      },
+      {
+        "title": "In-line punching",
+        "text": "Hanger holes, cross-tee slots and connection holes are punched in the flat strip before forming. Their spacing decides whether the grid sits square on site."
+      },
+      {
+        "title": "Roll forming",
+        "text": "Roll stations bend the strip step by step. On T-grid the web is folded double and the cap strip is wrapped over the bottom flange; C and U profiles are completed in fewer stations."
+      },
+      {
+        "title": "Cut-off and stacking",
+        "text": "The profile is cut to length; the end tabs of cross tees are usually formed in the cut-off die. The automatic stacker collects the profiles in pack order."
+      }
+    ],
+    "typesTitle": "Suspended ceiling product types",
+    "typesIntro": "A suspended ceiling system has two families of parts: the profiles that carry the ceiling and the panels that form the visible surface. Profiles are a continuous section; panels are flat parts with folded edges. That difference decides the type of line.",
+    "types": [
+      {
+        "title": "T-grid system",
+        "text": "Main tees, cross tees and wall angles; the main tees hang from the soffit on hanger wires and the panels sit in the grid. The body is usually galvanized steel and the visible underside a pre-painted cap strip."
+      },
+      {
+        "title": "Drywall ceiling profiles",
+        "text": "The C carrier profile that the plasterboard is screwed to, and the U perimeter profile fixed to the walls. Simple open sections; the surfaces are usually knurled for screw grip and stiffness."
+      },
+      {
+        "title": "Clip-in metal panels",
+        "text": "Tray panels whose folded edges clip onto a carrier profile, leaving no grid visible from below. Often perforated for acoustics."
+      },
+      {
+        "title": "Lay-in metal panels",
+        "text": "Tray panels that sit on the flanges of the T-grid and lift out for maintenance. The edge can be square or stepped (tegular)."
+      }
+    ],
+    "typesNote": "Grid, panels and hangers are tied together by dimensions: the slot spacing of the T-grid follows the panel module, and the edge form of the panel follows the carrier section. When we design the line we want to see a drawing of the whole system, not just one profile.",
+    "linesTitle": "Which product needs which line?",
+    "lines": [
+      {
+        "title": "T-grid",
+        "line": "Roll forming line with two decoilers and in-line punching",
+        "text": "For a capped, double-web section the body and cap strip are fed from two separate decoilers. Hanger holes and slots are punched in-line, and the cross-tee end tabs are formed in the cut-off die."
+      },
+      {
+        "title": "Drywall C and U profiles",
+        "line": "Roll forming line with flying cut-off and automatic stacking",
+        "text": "A simple open section needs fewer stations. Because these profiles run in high volumes, line speed is usually set by the cut-off and by stacking at the exit; stacking and packing by hand becomes the bottleneck."
+      },
+      {
+        "title": "Clip-in and lay-in panels",
+        "line": "Servo-fed press line",
+        "text": "The strip is straightened and servo-fed into the press, perforated where required, cut into blanks, corner-notched and edge-formed. Hole patterns and open area are covered on the perforating lines page."
+      }
+    ],
+    "linesNote": "Different sections can be run on one line by changing the roll set and cut-off die, but families with different speeds and punching layouts, such as T-grid and drywall profiles, are usually produced on separate lines. Your product range and output volume decide which approach fits.",
+    "faqEyebrow": "Frequently asked",
+    "faqTitle": "Questions about suspended ceiling lines",
+    "faq": [
+      {
+        "q": "What does a suspended ceiling line produce?",
+        "a": "The metal parts of a suspended ceiling system: the T-grid (main tee, cross tee, wall angle), the C and U profiles of drywall ceilings, and clip-in or lay-in metal ceiling panels. Profiles are made on a roll forming line, panels on a servo-fed press line."
+      },
+      {
+        "q": "How does a T-grid line differ from a drywall profile line?",
+        "a": "T-grid is a capped, double-web section; it usually needs two decoilers, in-line punching and a cut-off die that forms the end tabs. Drywall C and U profiles are simpler open sections; the line is plainer, and what matters most is cut-off speed and stacking and packing."
+      },
+      {
+        "q": "Are metal ceiling panels made on a roll forming line?",
+        "a": "Square and rectangular clip-in and lay-in panels are not: they are flat parts folded on four edges, so they are perforated, cut, corner-notched and edge-formed on a servo-fed press line. Long linear (strip) ceiling panels, however, are a continuous section and can be roll formed."
+      },
+      {
+        "q": "What do you need for a ceiling line quotation?",
+        "a": "A drawing of the profile section or panel, material and coating (galvanized, pre-painted), thickness and width range, product lengths or panel sizes, the hole and slot layout, target output and the packing format."
+      }
+    ],
+    "ctaTitle": "Let's engineer your suspended ceiling line",
+    "ctaText": "Send your product drawings, material and target output; we will come back with a line layout and technical offer."
+  },
   "boykesme": {
     "metaTitle": "Servo Cut-to-Length Lines: Coil to Sheet Cutting Machine",
     "metaDesc": "Cut to length machines and lines: coil to flat sheet with precision. Straightening, servo feeding, guillotine and stacking on a single Schneider PLC.",

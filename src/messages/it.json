@@ -460,6 +460,133 @@
     "ctaTitle": "Dimensioniamo la vostra linea di perforazione",
     "ctaText": "Inviate materiale, gamma di spessori e schema di fori; vi risponderemo con layout della linea e offerta tecnica."
   },
+  "asmaTavan": {
+    "nav": "Linee per Controsoffitti",
+    "short": "Linee di produzione per orditure a T, profili per controsoffitti in cartongesso e pannelli metallici.",
+    "metaTitle": "Linee per Controsoffitti: Profili a T e Pannelli Metallici",
+    "metaDesc": "Linee per controsoffitti da coil: profilatrici per orditure a T e profili C/U per cartongesso, linee pressa per pannelli metallici clip-in e lay-in.",
+    "eyebrow": "La nostra specializzazione",
+    "title": "Linee per Controsoffitti",
+    "desc": "Linee che producono da coil le parti metalliche di un controsoffitto: l'orditura a T (portante, traverso, angolare perimetrale) e i profili C/U dei controsoffitti in cartongesso su una linea di profilatura; i pannelli metallici clip-in e lay-in su una linea pressa con alimentatore servo, dove vengono forati, tagliati e piegati. Ogni linea è progettata sulla vostra sezione e sui vostri volumi.",
+    "highlights": [
+      {
+        "title": "Precisione di fori e asole",
+        "text": "L'alimentatore servo avanza il nastro dello stesso passo a ogni colpo; i fori per i pendini e le asole per i traversi restano equidistanti lungo il profilo e l'orditura risulta in squadra in cantiere."
+      },
+      {
+        "title": "Rulli dedicati alla sezione",
+        "text": "Le stazioni di profilatura sono progettate per la sezione a T, C o U; numero di stazioni e disposizione dei rulli sono definiti perché il nastro sottile si formi a misura."
+      },
+      {
+        "title": "Dal profilo al pannello",
+        "text": "I profili portanti si producono su una linea di profilatura, i pannelli clip-in e lay-in su una linea pressa; entrambe iniziano con aspo, raddrizzatrice e alimentatore servo."
+      },
+      {
+        "title": "Controllo centralizzato",
+        "text": "Dall'aspo all'impilatore la linea è gestita da un PLC e da un pannello operatore; lunghezze dei profili e ricette di foratura sono salvate sull'HMI."
+      }
+    ],
+    "whyTitle": "Perché una linea per controsoffitti Servosteel?",
+    "paras": [
+      "Le prime stazioni della linea — <b>aspo, raddrizzatrice e alimentatore servo</b> — sono prodotti Servosteel, come la <b>linea di profilatura</b> che forma i profili e <b>l'impilatore automatico</b> in uscita. Costruiamo la linea attorno a queste unità, sulla vostra sezione, come un unico progetto; ogni unità è dimensionata sulla successiva.",
+      "Un controsoffitto non è un prodotto ma un sistema: l'orditura a T, i profili C e U dei controsoffitti in cartongesso e i pannelli metallici appoggiati sull'orditura o agganciati a clip. Ogni parte richiede una linea diversa. I profili portanti sono una sezione continua e si profilano; i pannelli sono pezzi piani con bordi piegati e si forano, tagliano e piegano su una linea pressa con alimentatore servo.",
+      "Per un'offerta inviateci il disegno della sezione del profilo o del pannello, materiale e rivestimento, campo di spessori, lunghezze, schema di fori e asole e volume obiettivo; dimensioneremo la linea su questi dati."
+    ],
+    "components": [
+      "Aspo (due per profili a T con copertura)",
+      "Raddrizzatrice",
+      "Alimentatore servo",
+      "Punzonatura in linea",
+      "Stazioni di profilatura",
+      "Unità di taglio (volante o con arresto)",
+      "Impilaggio e imballaggio automatico"
+    ],
+    "stepsTitle": "Come funziona una linea per profili da controsoffitto",
+    "steps": [
+      {
+        "title": "Svolgimento",
+        "text": "L'aspo sostiene il coil e alimenta il nastro nella linea con tensione controllata. Nei profili a T con copertura un secondo aspo alimenta separatamente il nastro di copertura preverniciato."
+      },
+      {
+        "title": "Raddrizzatura e alimentazione servo",
+        "text": "I rulli raddrizzatori eliminano la curvatura del coil; l'alimentatore servo porta il nastro nello stampo di punzonatura con un passo misurato a ogni colpo."
+      },
+      {
+        "title": "Punzonatura in linea",
+        "text": "Fori per i pendini, asole per i traversi e fori di collegamento si punzonano sul nastro piano, prima della profilatura. La loro distanza decide se l'orditura risulta in squadra in cantiere."
+      },
+      {
+        "title": "Profilatura",
+        "text": "Le stazioni di rulli piegano il nastro per gradi. Nel profilo a T l'anima viene piegata doppia e la copertura avvolta sull'ala inferiore; i profili C e U si completano in meno stazioni."
+      },
+      {
+        "title": "Taglio e impilaggio",
+        "text": "Il profilo viene tagliato a misura; le linguette di aggancio dei traversi si formano di solito nello stampo di taglio. L'impilatore automatico raccoglie i profili in ordine di pacco."
+      }
+    ],
+    "typesTitle": "Tipi di prodotto per controsoffitti",
+    "typesIntro": "Un controsoffitto ha due famiglie di parti: i profili che lo sostengono e i pannelli che formano la superficie a vista. I profili sono una sezione continua, i pannelli pezzi piani con bordi piegati. Questa differenza decide il tipo di linea.",
+    "types": [
+      {
+        "title": "Orditura a T",
+        "text": "Portanti, traversi e angolari perimetrali; i portanti sono appesi al solaio con pendini e i pannelli appoggiano sull'orditura. Il corpo è di solito in acciaio zincato, la faccia a vista un nastro di copertura preverniciato."
+      },
+      {
+        "title": "Profili per controsoffitti in cartongesso",
+        "text": "Il profilo a C su cui si avvita la lastra e la guida a U fissata lungo il perimetro. Sezioni aperte e semplici; le superfici sono di solito zigrinate per la tenuta delle viti e la rigidità."
+      },
+      {
+        "title": "Pannelli metallici clip-in",
+        "text": "Pannelli a vassoio i cui bordi piegati si agganciano a un profilo portante, senza orditura a vista. Spesso forati per l'acustica."
+      },
+      {
+        "title": "Pannelli metallici lay-in",
+        "text": "Pannelli a vassoio appoggiati sulle ali dell'orditura a T, rimovibili per la manutenzione. Il bordo può essere dritto o ribassato (tegular)."
+      }
+    ],
+    "typesNote": "Orditura, pannelli e pendini sono legati da misure: il passo delle asole dell'orditura segue il modulo del pannello, il bordo del pannello segue la sezione del portante. Nel progettare la linea vogliamo vedere il disegno dell'intero sistema, non di un solo profilo.",
+    "linesTitle": "Quale prodotto richiede quale linea?",
+    "lines": [
+      {
+        "title": "Orditura a T",
+        "line": "Linea di profilatura con due aspi e punzonatura in linea",
+        "text": "Per la sezione ad anima doppia con copertura, corpo e nastro di copertura arrivano da due aspi separati. Fori e asole si punzonano in linea, le linguette dei traversi si formano nello stampo di taglio."
+      },
+      {
+        "title": "Profili C e U per cartongesso",
+        "line": "Linea di profilatura con taglio volante e impilaggio automatico",
+        "text": "Una sezione aperta semplice richiede meno stazioni. Poiché questi profili si producono in grandi volumi, la velocità dipende di solito dal taglio e dall'impilaggio in uscita; impilare e imballare a mano diventa il collo di bottiglia."
+      },
+      {
+        "title": "Pannelli clip-in e lay-in",
+        "line": "Linea pressa con alimentatore servo",
+        "text": "Il nastro viene raddrizzato e portato in pressa dall'alimentatore servo; si fora se serve, si taglia in formati, si spuntano gli angoli e si piegano i bordi. Schemi di foratura e percentuale di vuoto sono spiegati nella pagina delle linee di perforazione."
+      }
+    ],
+    "linesNote": "Sezioni diverse possono girare sulla stessa linea cambiando rulli e stampo di taglio, ma famiglie con velocità e forature diverse, come l'orditura a T e i profili per cartongesso, si producono di solito su linee separate. La vostra gamma e i vostri volumi decidono la soluzione.",
+    "faqEyebrow": "Domande frequenti",
+    "faqTitle": "Domande sulle linee per controsoffitti",
+    "faq": [
+      {
+        "q": "Che cosa produce una linea per controsoffitti?",
+        "a": "Le parti metalliche di un sistema di controsoffitto: l'orditura a T (portante, traverso, angolare perimetrale), i profili C e U dei controsoffitti in cartongesso e i pannelli metallici clip-in o lay-in. I profili si producono su una linea di profilatura, i pannelli su una linea pressa con alimentatore servo."
+      },
+      {
+        "q": "Che differenza c'è tra una linea per orditura a T e una per profili da cartongesso?",
+        "a": "L'orditura a T è una sezione ad anima doppia con copertura; di solito servono due aspi, punzonatura in linea e uno stampo di taglio che forma le linguette. I profili C e U sono sezioni aperte più semplici; la linea è più semplice e contano soprattutto velocità di taglio, impilaggio e imballaggio."
+      },
+      {
+        "q": "I pannelli metallici si producono su una linea di profilatura?",
+        "a": "I pannelli clip-in e lay-in quadrati o rettangolari no: sono pezzi piani piegati sui quattro bordi, quindi si forano, tagliano, spuntano e piegano su una linea pressa con alimentatore servo. I pannelli lineari lunghi (controsoffitti a doghe) sono invece una sezione continua e si possono profilare."
+      },
+      {
+        "q": "Quali dati servono per un'offerta?",
+        "a": "Disegno della sezione del profilo o del pannello, materiale e rivestimento (zincato, preverniciato), campo di spessori e larghezze, lunghezze o misure dei pannelli, schema di fori e asole, volume obiettivo e tipo di imballaggio."
+      }
+    ],
+    "ctaTitle": "Dimensioniamo la vostra linea per controsoffitti",
+    "ctaText": "Inviateci i disegni dei prodotti, il materiale e il volume obiettivo; vi risponderemo con il layout della linea e un'offerta tecnica."
+  },
   "boykesme": {
     "metaTitle": "Linee di Taglio a Misura",
     "metaDesc": "Linee di taglio a misura: taglio di precisione da coil a foglio. Raddrizzatura, alimentazione servo, ghigliottina e impilaggio gestiti da un unico PLC.",
