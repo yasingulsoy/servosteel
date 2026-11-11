@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import { ArrowLeft, Check, Cog } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Cog } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { localePath, sayfaMeta } from "@/i18n/seo";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
@@ -14,6 +14,7 @@ import { RelatedVideos } from "@/components/related-videos";
 import { ProductShot } from "@/components/product-shot";
 import { hasPhoto, hidesVideos, isMachineVariant, machineVariants, variantPhotosOf, variantsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { compareItems } from "@/lib/compare";
 
 /**
  * Makine varyant sayfası — `/makineler/rulo-acicilar/hidrolik-rulo-acicilar`
@@ -73,6 +74,10 @@ export default async function VariantPage({ params }: Props) {
   const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
   /* Kardeş varyantlar — aynı makinenin diğer tipleri */
   const kardesler = variantsOf(slug).filter((v) => v.slug !== varyant);
+  /* Bu varyantı A ya da B sütununda anan karşılaştırma yazısı */
+  const buYol = `/makineler/${slug}/${varyant}`;
+  const karsilastirma = compareItems.find((c) => c.hrefA === buYol || c.hrefB === buYol);
+  const tc = await getTranslations("compare");
   const fotolar = variantPhotosOf(slug, varyant);
   const fotoAlt = t.has("photoAlt") ? (t.raw("photoAlt") as string[]) : [];
 
@@ -231,6 +236,21 @@ export default async function VariantPage({ params }: Props) {
                 </SpecularButton>
               </div>
             </Reveal>
+
+            {/* Karşılaştırma yazısı bu sayfaya bağlanıyordu, bu sayfa ona
+                bağlanmıyordu. "Hidrolik mi mekanik mi?" sorusunun cevabı tek
+                tıkta (SEO/GEO, Yasin 11 Kas). */}
+            {karsilastirma && (
+              <Reveal delay={90}>
+                <Link
+                  href={`/karsilastirma/${karsilastirma.slug}`}
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-card p-5 text-sm font-semibold text-ink transition-colors hover:border-accent hover:bg-accent/5"
+                >
+                  {tc(`items.${karsilastirma.slug}.name`)}
+                  <ArrowRight className="size-4 shrink-0 text-accent-ink transition-transform group-hover:translate-x-0.5 rtl:rotate-180" strokeWidth={2} aria-hidden />
+                </Link>
+              </Reveal>
+            )}
 
             {kardesler.length > 0 && (
               <Reveal delay={120}>

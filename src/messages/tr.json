@@ -1130,7 +1130,10 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Hidrolik Rulo Açıcılar",
-          "photoAlt": ["Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken","Servosteel hidrolik rulo açıcı ve rulo arabası, yakından"],
+          "photoAlt": [
+            "Rulo arabalı Servosteel hidrolik rulo açıcı, sac şerit çözülürken",
+            "Servosteel hidrolik rulo açıcı ve rulo arabası, yakından"
+          ],
           "metaTitle": "Hidrolik Rulo Açıcı — 6.000-20.000 kg",
           "meta": "6.000-20.000 kg kapasiteli hidrolik rulo açıcılar: 1.600 mm'ye kadar sac genişliği, hidrolik mandren sıkma, lazer sensörlü loop kontrol.",
           "short": "Ağır rulolar ve geniş sac için; hidrolik mandren ve motorlu tahrik.",
@@ -1168,11 +1171,53 @@
               ]
             ]
           },
-          "tableNote": "Tüm modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 640 mm). Mandren sıkma hidrolik, üst baskı kolu standart. Motor yerine fren istenen konfigürasyonlar mevcuttur."
+          "tableNote": "Tüm modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 640 mm). Mandren sıkma hidrolik, üst baskı kolu standart. Motor yerine fren istenen konfigürasyonlar mevcuttur.",
+          "features": [
+            {
+              "title": "Hidrolik mandren genişletme",
+              "text": "Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. 6–20 tonluk rulo sacta sıkma için operatör gücüne ihtiyaç kalmaz."
+            },
+            {
+              "title": "Pnömatik üst baskı kolu",
+              "text": "Üst baskı kolu rulo sacın dış sarımını bastırır; bağ kesildiğinde rulo sacın gevşeyip açılmasını önler. Bütün hidrolik modellerde standarttır."
+            },
+            {
+              "title": "Lazer sensörlü loop kontrol",
+              "text": "Lazer sensör açıcı ile sonraki ünite arasındaki sarkma payını ölçer ve açıcının hızını hatta uydurur; sac gerilmeden ve yere değmeden ilerler."
+            },
+            {
+              "title": "Motorlu ya da frenli",
+              "text": "Hidrolik açıcı motorlu gelir. Sacı hattın kendisinin çektiği uygulamalar için motor yerine frenli yapılandırma da verilir."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Hidrolik rulo açıcı nedir?",
+              "a": "Ağır rulo sacı mandren üzerinde taşıyan ve hatta kontrollü hızla açan makinedir. Mandren hidrolik silindirle genişler ve rulo sacı iç çapından sıkar. Servosteel'in hidrolik serisi 6.000–20.000 kg rulo sac taşır."
+            },
+            {
+              "q": "Hidrolik rulo açıcı kaç ton taşır, hangi genişlikte çalışır?",
+              "a": "Modeller 6.000, 8.000, 10.000, 12.000, 15.000 ve 20.000 kg'dır. Malzeme genişliği bütün modellerde 80 mm'den başlar; 6 tonda 1.000 mm'ye, 10 tonda 1.300 mm'ye, 15 tonda 1.500 mm'ye, 20 tonda 1.600 mm'ye kadar çıkar."
+            },
+            {
+              "q": "Hidrolik rulo açıcı hangi rulo sac çapına uyar?",
+              "a": "Bütün hidrolik modellerde rulo sac dış çapı 1.600 mm'ye kadar, iç çapı 450–560 mm'dir; adaptörle 640 mm iç çaplı rulo sac da takılır."
+            },
+            {
+              "q": "Hidrolik mi, mekanik rulo açıcı mı seçmeliyim?",
+              "a": "Belirleyen rulo sac ağırlığıdır. Mekanik seri 4.000 kg'a kadar çıkar; daha ağır rulo sacta, geniş bantta ve sık rulo sac değişiminde hidrolik açıcı seçilir. Ağır hatlarda hidrolik yükleme arabasıyla birlikte öneririz."
+            },
+            {
+              "q": "Hidrolik rulo açıcı teklifi için hangi bilgiler gerekir?",
+              "a": "En ağır rulo sacınızın ağırlığı, bant genişliği ve kalınlık aralığı, rulo sac iç ve dış çapı, açıcının bağlanacağı hat (pres besleme, dilme, boy kesme ya da roll form) ve hat hızı. Yükleme arabası isteyip istemediğinizi de belirtin."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Mekanik Rulo Açıcılar",
-          "photoAlt": ["Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"],
+          "photoAlt": [
+            "Fabrikada yan yana dizili Servosteel mekanik rulo açıcılar"
+          ],
           "metaTitle": "Mekanik Rulo Açıcı — 500-4.000 kg",
           "meta": "500-4.000 kg kapasiteli mekanik rulo açıcılar: 30-1.200 mm sac genişliği, mandrenle göbek sıkma, hız kontrol ve fren balata sistemi.",
           "short": "Hafif ve orta rulolar için ekonomik çözüm; mekanik mandren.",
@@ -1217,7 +1262,47 @@
               ]
             ]
           },
-          "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir. 3.000 ve 4.000 kg modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 630 mm) ve mandren sıkma mekaniktir. 3.000–4.000 kg konik mandrenli açıcılar 5 mm'ye kadar sac kalınlığında çalışır."
+          "tableNote": "Model sonekleri: A motorlu (üst baskı kolu opsiyonel) · LA motorlu, rulo dış çapı 1.600 mm ve üst baskı kolu standart · F frenli, üst baskı kolu standart. A ve F modellerinde rulo dış çapı 1.300 mm'dir. 3.000 ve 4.000 kg modellerde rulo dış çapı 1.600 mm, iç çapı 450–560 mm (adaptörle 630 mm) ve mandren sıkma mekaniktir. 3.000–4.000 kg konik mandrenli açıcılar 5 mm'ye kadar sac kalınlığında çalışır.",
+          "features": [
+            {
+              "title": "Mandrenle göbek sıkma",
+              "text": "500–2.500 kg modellerde göbek volanla sıkılır; 3.000 ve 4.000 kg modeller konik mandrenlidir."
+            },
+            {
+              "title": "Hız kontrol ve fren balata",
+              "text": "Açma hızı ayarlanır, fren balata sistemi rulo sacın kendiliğinden boşalmasını önler. İkisi de standarttır."
+            },
+            {
+              "title": "Çift yönlü açma",
+              "text": "Şaft iki yöne de döner; sac üstten ya da alttan verilir, farklı sarım yönündeki rulo saclarda hat yerleşimi değişmez."
+            },
+            {
+              "title": "Üç tip: A, LA, F",
+              "text": "A motorlu, üst baskı kolu opsiyonel. LA motorlu; rulo sac dış çapı 1.600 mm ve üst baskı kolu standart. F frenli, üst baskı kolu standart."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Mekanik rulo açıcı nedir?",
+              "a": "Hafif ve orta ağırlıktaki rulo sacı göbek üzerinde taşıyıp hatta açan makinedir; göbek mekanik olarak sıkılır. Servosteel'in mekanik serisi 500–4.000 kg rulo sac taşır."
+            },
+            {
+              "q": "Mekanik rulo açıcı kaç kg taşır, hangi genişlikte çalışır?",
+              "a": "Modeller 500, 750, 1.500, 2.500, 3.000 ve 4.000 kg'dır. Malzeme genişliği 500 ve 750 kg'da 30–300 mm, 1.500 kg'da 30–400 mm, 2.500 kg'da 30–500 mm, 3.000 kg'da 80–800 mm, 4.000 kg'da 100–1.200 mm'dir."
+            },
+            {
+              "q": "A, LA ve F modelleri arasındaki fark nedir?",
+              "a": "A motorludur, üst baskı kolu opsiyoneldir. LA motorludur; rulo sac dış çapı 1.600 mm'ye çıkar ve üst baskı kolu standarttır. F motor yerine frenle çalışır, üst baskı kolu standarttır. A ve F modellerinde rulo sac dış çapı 1.300 mm'dir."
+            },
+            {
+              "q": "Kalın sac için mekanik rulo açıcı kullanılabilir mi?",
+              "a": "3.000 ve 4.000 kg'lık konik mandrenli modeller 5 mm'ye kadar sac kalınlığında çalışır. Daha ağır rulo sac ya da daha geniş bant için hidrolik seriye geçilir."
+            },
+            {
+              "q": "Mekanik rulo açıcı hangi rulo sac iç çapına uyar?",
+              "a": "500 kg'da 300–550 mm, 750 kg'da 350–550 mm, 1.500 kg'da 400–550 mm, 2.500 kg'da 450–550 mm; 3.000 ve 4.000 kg modellerde 450–560 mm, adaptörle 630 mm."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Çift Kafa Rulo Açıcılar",

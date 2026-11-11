@@ -1166,7 +1166,10 @@
       "rulo-acicilar": {
         "hidrolik-rulo-acicilar": {
           "name": "Hydraulic Decoilers",
-          "photoAlt": ["Servosteel hydraulic decoiler with coil car, unwinding steel strip","Servosteel hydraulic decoiler and coil car, close-up"],
+          "photoAlt": [
+            "Servosteel hydraulic decoiler with coil car, unwinding steel strip",
+            "Servosteel hydraulic decoiler and coil car, close-up"
+          ],
           "metaTitle": "Hydraulic Decoiler — 6,000-20,000 kg",
           "meta": "Hydraulic decoilers from 6,000 to 20,000 kg: strip width up to 1,600 mm, hydraulic mandrel expansion, laser sensor loop control.",
           "short": "For heavy coils and wide strip; hydraulic mandrel, motor driven.",
@@ -1204,11 +1207,53 @@
               ]
             ]
           },
-          "tableNote": "All models: coil outer diameter 1,600 mm, inner diameter 450–560 mm (640 mm with adapter). Hydraulic mandrel expansion and hold-down arm are standard. Brake-instead-of-motor configurations are available."
+          "tableNote": "All models: coil outer diameter 1,600 mm, inner diameter 450–560 mm (640 mm with adapter). Hydraulic mandrel expansion and hold-down arm are standard. Brake-instead-of-motor configurations are available.",
+          "features": [
+            {
+              "title": "Hydraulic mandrel expansion",
+              "text": "A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. On 6–20 t coils no operator effort is needed to clamp."
+            },
+            {
+              "title": "Pneumatic hold-down arm",
+              "text": "The hold-down arm presses on the outer wrap of the coil and stops it springing loose when the strap is cut. Standard on every hydraulic model."
+            },
+            {
+              "title": "Laser sensor loop control",
+              "text": "A laser sensor measures the loop between the decoiler and the next unit and matches decoiler speed to the line, so the strip neither stretches nor touches the floor."
+            },
+            {
+              "title": "Motor driven or brake type",
+              "text": "Hydraulic decoilers are motor driven. Where the line itself pulls the strip, a brake-instead-of-motor configuration is available."
+            }
+          ],
+          "faq": [
+            {
+              "q": "What is a hydraulic decoiler?",
+              "a": "A machine that carries a heavy coil on a mandrel and unwinds it into the line at a controlled speed. A hydraulic cylinder expands the mandrel and clamps the coil from its inner diameter. Servosteel's hydraulic series carries coils from 6,000 to 20,000 kg."
+            },
+            {
+              "q": "What capacity and strip width does a hydraulic decoiler handle?",
+              "a": "Models are 6,000, 8,000, 10,000, 12,000, 15,000 and 20,000 kg. Material width starts at 80 mm on every model and goes up to 1,000 mm on the 6 t, 1,300 mm on the 10 t, 1,500 mm on the 15 t and 1,600 mm on the 20 t model."
+            },
+            {
+              "q": "Which coil diameters does a hydraulic decoiler accept?",
+              "a": "On every hydraulic model the coil outer diameter is up to 1,600 mm and the inner diameter 450–560 mm; coils with a 640 mm inner diameter fit with an adapter."
+            },
+            {
+              "q": "Should I choose a hydraulic or a mechanical decoiler?",
+              "a": "Coil weight decides. The mechanical series goes up to 4,000 kg; heavier coils, wide strip and frequent coil changes call for a hydraulic decoiler. On heavy lines we recommend it together with a hydraulic coil car."
+            },
+            {
+              "q": "What do you need for a hydraulic decoiler quotation?",
+              "a": "The weight of your heaviest coil, strip width and thickness range, coil inner and outer diameter, the line the decoiler will feed (press feeding, slitting, cut-to-length or roll forming) and line speed. Also tell us whether you need a coil car."
+            }
+          ]
         },
         "mekanik-rulo-acicilar": {
           "name": "Mechanical Decoilers",
-          "photoAlt": ["Servosteel mechanical decoilers lined up in the factory"],
+          "photoAlt": [
+            "Servosteel mechanical decoilers lined up in the factory"
+          ],
           "metaTitle": "Mechanical Decoiler — 500-4,000 kg",
           "meta": "Mechanical decoilers from 500 to 4,000 kg: 30-1,200 mm strip width, mandrel hub clamping, speed control and brake lining system.",
           "short": "Economical choice for light and medium coils; mechanical mandrel.",
@@ -1253,7 +1298,47 @@
               ]
             ]
           },
-          "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models. On the 3,000 and 4,000 kg models the coil outer diameter is 1,600 mm, inner diameter 450–560 mm (630 mm with adapter) and mandrel expansion is mechanical. Conical plunger decoilers of 3,000–4,000 kg run sheet thickness up to 5 mm."
+          "tableNote": "Model suffixes: A motor driven (hold-down arm optional) · LA motor driven, 1,600 mm coil outer diameter and hold-down arm standard · F brake type, hold-down arm standard. Coil outer diameter is 1,300 mm on A and F models. On the 3,000 and 4,000 kg models the coil outer diameter is 1,600 mm, inner diameter 450–560 mm (630 mm with adapter) and mandrel expansion is mechanical. Conical plunger decoilers of 3,000–4,000 kg run sheet thickness up to 5 mm.",
+          "features": [
+            {
+              "title": "Mandrel hub clamping",
+              "text": "On 500–2,500 kg models the hub is clamped with a handwheel; the 3,000 and 4,000 kg models have a conical mandrel."
+            },
+            {
+              "title": "Speed control and brake lining",
+              "text": "Unwinding speed is adjustable and the brake lining system stops the coil from running loose. Both are standard."
+            },
+            {
+              "title": "Bidirectional unwinding",
+              "text": "The shaft turns both ways, so the strip can be fed from the top or the bottom and coils wound in either direction run without changing the line layout."
+            },
+            {
+              "title": "Three types: A, LA, F",
+              "text": "A is motor driven, hold-down arm optional. LA is motor driven with 1,600 mm coil outer diameter and hold-down arm as standard. F is brake type, hold-down arm standard."
+            }
+          ],
+          "faq": [
+            {
+              "q": "What is a mechanical decoiler?",
+              "a": "A machine that carries light and medium coils on a hub and unwinds them into the line; the hub is clamped mechanically. Servosteel's mechanical series carries coils from 500 to 4,000 kg."
+            },
+            {
+              "q": "What capacity and strip width does a mechanical decoiler handle?",
+              "a": "Models are 500, 750, 1,500, 2,500, 3,000 and 4,000 kg. Material width is 30–300 mm on the 500 and 750 kg models, 30–400 mm on 1,500 kg, 30–500 mm on 2,500 kg, 80–800 mm on 3,000 kg and 100–1,200 mm on 4,000 kg."
+            },
+            {
+              "q": "What is the difference between the A, LA and F models?",
+              "a": "A is motor driven with an optional hold-down arm. LA is motor driven, takes coils up to 1,600 mm outer diameter and has the hold-down arm as standard. F uses a brake instead of a motor, with the hold-down arm as standard. Coil outer diameter is 1,300 mm on A and F models."
+            },
+            {
+              "q": "Can a mechanical decoiler handle thick material?",
+              "a": "The 3,000 and 4,000 kg conical mandrel models run sheet thickness up to 5 mm. For heavier coils or wider strip, move to the hydraulic series."
+            },
+            {
+              "q": "Which coil inner diameters does a mechanical decoiler accept?",
+              "a": "300–550 mm on 500 kg, 350–550 mm on 750 kg, 400–550 mm on 1,500 kg, 450–550 mm on 2,500 kg; 450–560 mm on the 3,000 and 4,000 kg models, 630 mm with an adapter."
+            }
+          ]
         },
         "cift-kafa-rulo-acicilar": {
           "name": "Double-Head Decoilers",
