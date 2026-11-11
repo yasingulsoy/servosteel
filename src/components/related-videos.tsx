@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -64,40 +63,42 @@ export async function RelatedVideos({
     </Link>
   );
 
-  /* Dikey klip telefonda ekran genişliğini doldurur ama ekran boyunu aşmaz. */
+  /* Dikey klip: telefonda ekran genişliğini doldurur, geniş ekranda ~420 px
+     genişlik / ~740 px boy ("dik olan daha büyük olacak", Yasin 11 Kas). */
   const klip = (k: SahaKlipVerisi) => (
-    <div key={k.src} className={k.height > k.width ? "mx-auto w-full max-w-sm sm:max-w-none" : undefined}>
+    <div key={k.src} className={k.height > k.width ? "mx-auto w-full max-w-sm sm:max-w-[420px]" : undefined}>
       <SahaKlibi src={k.src} poster={k.poster} width={k.width} height={k.height} baslik={k.baslik} />
     </div>
   );
 
-  /* İki öğe ve aralarında klip varsa sütun payları ayrı verilir. Dikey klip
-     yatay kartla aynı boya indirildiğinde çok daralıyordu (1216 px'te 295 px
-     genişlik, 520 px boy); Yasin "dik olan daha büyük olacak" dedi (11 Kas).
-     Yatay 1,9 pay, dikey 1 pay: dikey klip ~410 px genişlik, ~720 px boy;
-     yatay kart yanında dikeyde ortalanır. Yatay–yatay ikilide paylar eşit. */
-  const oranli = toplam === 2 && klipler.length > 0;
+  /* Dikey klip varsa videolar ALT ALTA durur: önce yatay videolar, altında
+     dikey klip (Yasin, 11 Kas: "dik video yatay videonun altında olsun").
+     Solda başlık sütunu, sağda video sütunu — tek video düzeninin aynısı;
+     uzun video sütununda başlık geniş ekranda yapışık kalır. */
   const dikeyVar = klipler.some((k) => k.height > k.width);
-  const kolon = oranli
-    ? [...items.map(() => (dikeyVar ? 1.9 : 1)), ...klipler.map((k) => (k.height > k.width || !dikeyVar ? 1 : 1.9))]
-        .map((o) => `minmax(0,${o}fr)`)
-        .join(" ")
-    : undefined;
 
   /* ust: sayfanın başında — ürün sayfalarında üst fotoğrafların, fotoğraf
      yoksa başlığın hemen altında. Alttaki bölümün boşluğu yerine üst boşluk. */
   return (
     <section className={`mx-auto max-w-7xl px-4 ${ust ? "pt-10 lg:pt-14" : "pb-16 lg:pb-20"}`}>
-      {toplam === 1 ? (
+      {toplam === 1 || dikeyVar ? (
         /* Tek video: ikili ızgarada yarısı boş kalıyordu. Solda başlık, sağda büyük video. */
-        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12">
-          <Reveal>
+        <div
+          className={`grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12 ${toplam === 1 ? "items-center" : "items-start"}`}
+        >
+          <Reveal className={toplam === 1 ? undefined : "lg:sticky lg:top-28"}>
             {baslik}
             <p className="mt-3 max-w-md leading-relaxed text-muted">{t("desc")}</p>
             <div className="mt-5">{arsiv}</div>
           </Reveal>
           <Reveal delay={90}>
-            {items.length ? <VideoCard id={items[0].id} title={titleOf(items[0].id)} sec={items[0].sec} /> : klip(klipler[0])}
+            <div className="space-y-6">
+              {items.map((v) => (
+                <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
+              ))}
+              {klipler.filter((k) => k.width >= k.height).map(klip)}
+              {klipler.filter((k) => k.height > k.width).map(klip)}
+            </div>
           </Reveal>
         </div>
       ) : (
@@ -108,27 +109,13 @@ export async function RelatedVideos({
               {arsiv}
             </div>
           </Reveal>
-          {oranli ? (
-            <Reveal>
-              <div
-                className="mt-6 grid items-center gap-6 sm:grid-cols-(--kolon)"
-                style={{ "--kolon": kolon } as CSSProperties}
-              >
-                {items.map((v) => (
-                  <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
-                ))}
-                {klipler.map(klip)}
-              </div>
-            </Reveal>
-          ) : (
-            /* Üç video: ikili ızgarada üçüncüsü tek başına yarım satır kalıyordu */
-            <Reveal group className={`mt-6 grid gap-6 sm:grid-cols-2 ${toplam === 3 ? "lg:grid-cols-3" : ""}`}>
-              {items.map((v) => (
-                <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
-              ))}
-              {klipler.map(klip)}
-            </Reveal>
-          )}
+          {/* Üç video: ikili ızgarada üçüncüsü tek başına yarım satır kalıyordu */}
+          <Reveal group className={`mt-6 grid gap-6 sm:grid-cols-2 ${toplam === 3 ? "lg:grid-cols-3" : ""}`}>
+            {items.map((v) => (
+              <VideoCard key={v.id} id={v.id} title={titleOf(v.id)} sec={v.sec} />
+            ))}
+            {klipler.map(klip)}
+          </Reveal>
         </>
       )}
       <VideoSchema items={items} titleOf={titleOf} />
