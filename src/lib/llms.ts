@@ -199,7 +199,7 @@ ${faqBlock(M.hub.faq)}`);
     for (const v of machineVariants.filter((x) => x.parent === i.slug)) {
       const vi = P.variants[v.parent][v.slug];
       parts.push(
-        [`#### ${vi.name}`, `Source: ${url(`/makineler/${v.parent}/${v.slug}`)}`, vi.hero ?? vi.short, tableBlock(vi.table)]
+        [`#### ${vi.name}`, `Source: ${url(`/makineler/${v.parent}/${v.slug}`)}`, vi.hero ?? vi.short, tableBlock(vi.table), faqBlock(vi.faq)]
           .filter(Boolean)
           .join("\n\n")
       );

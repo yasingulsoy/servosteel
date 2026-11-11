@@ -16,7 +16,7 @@ import { hasPhoto, hidesVideos, isMachineVariant, machineVariants, variantPhotos
 import { routing, type AppLocale } from "@/i18n/routing";
 
 /**
- * Makine varyant sayfası — `/makineler/rulo-acicilar/hidrolik`
+ * Makine varyant sayfası — `/makineler/rulo-acicilar/hidrolik-rulo-acicilar`
  *
  * Neden ayrı sayfa: üst sayfadaki özet tablo iki seriyi tek sütunda anlatmak
  * zorundaydı ve katalogdaki model listeleri (13 hidrolik, 12 mekanik) oraya
@@ -26,6 +26,10 @@ import { routing, type AppLocale } from "@/i18n/routing";
  * Üst sayfa DOKUNULMADAN kalır — "rulo açıcılar" kelimesinde 7. sırada ve
  * hub görevini sürdürüyor. Bu sayfa onun yerine geçmiyor, altına iniyor;
  * ikisi de birbirine link veriyor.
+ *
+ * Model tablosu İSTEĞE BAĞLI (`table` mesajı yoksa bölüm basılmaz, şemada
+ * `additionalProperty` de olmaz): çift kafa açıcı için firmadan kapasite verisi
+ * gelmedi, uydurma tablo yerine yalnız genel anlatım duruyor.
  */
 
 type Props = { params: Promise<{ locale: string; slug: string; varyant: string }> };
@@ -64,8 +68,9 @@ export default async function VariantPage({ params }: Props) {
   const features = t.has("features") ? (t.raw("features") as { title: string; text: string }[]) : [];
   const why = td.raw("why") as string[];
   const faq = t.has("faq") ? (t.raw("faq") as FaqItem[]) : [];
-  const tableHead = t.raw("table.head") as string[];
-  const tableRows = t.raw("table.rows") as string[][];
+  const hasTable = t.has("table");
+  const tableHead = hasTable ? (t.raw("table.head") as string[]) : [];
+  const tableRows = hasTable ? (t.raw("table.rows") as string[][]) : [];
   /* Kardeş varyantlar — aynı makinenin diğer tipleri */
   const kardesler = variantsOf(slug).filter((v) => v.slug !== varyant);
   const fotolar = variantPhotosOf(slug, varyant);
@@ -88,13 +93,38 @@ export default async function VariantPage({ params }: Props) {
       brand: { "@type": "Brand", name: SITE_NAME },
       manufacturer: { "@id": `${SITE_URL}/#organization` },
       ...(fotolar.length ? { image: fotolar.map((f) => `${SITE_URL}/gorseller/${f.file}`) } : {}),
-      additionalProperty: tableRows.map((row) => ({
-        "@type": "PropertyValue",
-        name: row[0],
-        value: row.slice(1).filter(Boolean).join(" / "),
-      })),
+      ...(tableRows.length
+        ? {
+            additionalProperty: tableRows.map((row) => ({
+              "@type": "PropertyValue",
+              name: row[0],
+              value: row.slice(1).filter(Boolean).join(" / "),
+            })),
+          }
+        : {}),
     },
   };
+
+  const ozellikler = features.length > 0 && (
+    <>
+      <Reveal>
+        <h2 className={`font-display ${hasTable ? "mt-14 " : ""}text-2xl font-bold uppercase tracking-tight text-ink`}>
+          {td("features")}
+        </h2>
+      </Reveal>
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        {features.map((fe, i) => (
+          <Reveal key={fe.title} delay={i * 90}>
+            <div className="h-full rounded-2xl border border-line bg-card p-6">
+              <Cog className="size-8 text-accent" strokeWidth={1.8} aria-hidden />
+              <h3 className="mt-4 font-semibold text-ink">{fe.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{fe.text}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </>
+  );
 
   return (
     <>
@@ -121,63 +151,50 @@ export default async function VariantPage({ params }: Props) {
               min-w-[...] değeri sütunu mobil ekrandan geniş tutuyor, sağ taraf
               (özellik kartları, form) kesiliyordu; tablo kendi kutusunda kaysın. */}
           <div className="min-w-0 lg:col-span-2">
-            <Reveal>
-              <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
-                {t("table.title")}
-              </h2>
-              <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
-                <table className="w-full min-w-[420px] text-left text-sm">
-                  <thead className="bg-surface-alt">
-                    <tr>
-                      {tableHead.map((h) => (
-                        <th key={h} className="px-5 py-3.5 font-semibold text-ink">{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tableRows.map((row) => (
-                      <tr key={row[0]} className="border-t border-line">
-                        {row.map((cell, ci) => (
-                          <td
-                            key={ci}
-                            className={`px-5 py-3.5 ${ci === 0 ? "font-medium text-ink" : "text-muted"}`}
-                          >
-                            {cell}
-                          </td>
+            {hasTable && (
+              <Reveal>
+                <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">
+                  {t("table.title")}
+                </h2>
+                <div className="mt-6 overflow-x-auto rounded-2xl border border-line">
+                  <table className="w-full min-w-[420px] text-left text-sm">
+                    <thead className="bg-surface-alt">
+                      <tr>
+                        {tableHead.map((h) => (
+                          <th key={h} className="px-5 py-3.5 font-semibold text-ink">{h}</th>
                         ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              {t.has("tableNote") && (
-                <p className="mt-3 text-sm leading-relaxed text-muted">{t("tableNote")}</p>
-              )}
-            </Reveal>
+                    </thead>
+                    <tbody>
+                      {tableRows.map((row) => (
+                        <tr key={row[0]} className="border-t border-line">
+                          {row.map((cell, ci) => (
+                            <td
+                              key={ci}
+                              className={`px-5 py-3.5 ${ci === 0 ? "font-medium text-ink" : "text-muted"}`}
+                            >
+                              {cell}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {t.has("tableNote") && (
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{t("tableNote")}</p>
+                )}
+              </Reveal>
+            )}
+
+            {/* Tablo yoksa özellikler başa geçer, teklif formu onların altına —
+                makine sayfasındaki sırayla aynı. */}
+            {!hasTable && ozellikler}
 
             {/* Teklif formu model tablosunun hemen altında — bkz. inline-quote.tsx */}
             <InlineQuote name={t("name")} />
 
-            {features.length > 0 && (
-              <>
-                <Reveal>
-                  <h2 className="font-display mt-14 text-2xl font-bold uppercase tracking-tight text-ink">
-                    {td("features")}
-                  </h2>
-                </Reveal>
-                <div className="mt-8 grid gap-6 sm:grid-cols-2">
-                  {features.map((fe, i) => (
-                    <Reveal key={fe.title} delay={i * 90}>
-                      <div className="h-full rounded-2xl border border-line bg-card p-6">
-                        <Cog className="size-8 text-accent" strokeWidth={1.8} aria-hidden />
-                        <h3 className="mt-4 font-semibold text-ink">{fe.title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-muted">{fe.text}</p>
-                      </div>
-                    </Reveal>
-                  ))}
-                </div>
-              </>
-            )}
+            {hasTable && ozellikler}
           </div>
 
           <aside className="space-y-6">

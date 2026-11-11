@@ -1055,7 +1055,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Hidraulikus Letekercselők",
           "photoAlt": ["Servosteel hidraulikus letekercselő tekercsszállító kocsival, acélszalag letekercselése közben","Servosteel hidraulikus letekercselő és tekercsszállító kocsi közelről"],
           "metaTitle": "Hidraulikus Letekercselő — 6.000-20.000 kg",
@@ -1097,7 +1097,7 @@
           },
           "tableNote": "Minden modell: tekercs külső átmérő 1.600 mm, belső 450–560 mm (adapterrel 640 mm). A hidraulikus tüskefeszítés és a leszorítókar alapfelszereltség. Motor helyett fékes kivitel is rendelhető."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Mechanikus Letekercselők",
           "photoAlt": ["Sorban álló Servosteel mechanikus letekercselők a gyárban"],
           "metaTitle": "Mechanikus Letekercselő — 500-4.000 kg",
@@ -1145,6 +1145,53 @@
             ]
           },
           "tableNote": "Modell-utótagok: A motoros (leszorítókar opcionális) · LA motoros, 1.600 mm külső átmérő és leszorítókar alapfelszereltség · F fékes, leszorítókar alapfelszereltség. Az A és F modelleknél a külső átmérő 1.300 mm. A 3.000 és 4.000 kg-os modelleknél a tekercs külső átmérője 1.600 mm, belső átmérője 450–560 mm (adapterrel 630 mm), a tüskefeszítés mechanikus. A 3.000–4.000 kg-os kúpos tüskéjű letekercselők 5 mm-ig terjedő lemezvastagsággal dolgoznak."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Kétfejes Letekercselők",
+          "photoAlt": [
+            "Servosteel kétfejes letekercselő két tüskével, elölnézet",
+            "Servosteel kétfejes letekercselő, oldalnézet"
+          ],
+          "metaTitle": "Kétfejes Letekercselő — Betöltés Menet Közben",
+          "meta": "Kétfejes letekercselő: két tüske forgatható alapkereten. Az egyik tekercs a sorba fut, közben a következőt betöltik; rövidebb állás tekercscserénél.",
+          "short": "Két tüske forgatható alapkereten; a következő tekercset menet közben töltik be.",
+          "hero": "A kétfejes letekercselő, más néven kéttüskés vagy dupla letekercselő, két tüskét hordoz egy forgatható alapkereten: az egyik a sorba tekercsel le, a másikra közben a következő tekercset töltik be. Amikor a futó tekercs elfogy, az alapkeret elfordul, és az új tekercs a helyén van; a sor tekercscserénél jóval rövidebb ideig áll.",
+          "features": [
+            {
+              "title": "Két tüske, forgatható alapkeret",
+              "text": "A két tüske egymással szemben áll az alapkereten. Az egyik a sor felőli oldalon tekercsel le, a másik a betöltő oldalon vár; az alapkeret elfordításával helyet cserélnek."
+            },
+            {
+              "title": "Betöltés menet közben",
+              "text": "A következő tekercset a szabad tüskére helyezik és rögzítik anélkül, hogy a sor leállna. Amikor a tekercs elfogy, az állás az alapkeret elfordítására és a szalagvég befűzésére korlátozódik."
+            },
+            {
+              "title": "Gyakori tekercscseréjű sorokhoz",
+              "text": "Keskeny szalagnál, nagy sebességnél vagy könnyű tekercseknél a tekercsek hamar elfogynak, és a napi állásidőt a cserék adják. A kétfejes kivitel mindegyiket lerövidíti."
+            },
+            {
+              "title": "Két anyag készenlétben",
+              "text": "A két tüskén eltérő vastagságú vagy minőségű tekercs lehet. Ha a munka változik, az alapkeret elfordításával át lehet állni a másik anyagra, tekercs le- és felrakása nélkül."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Hogyan működik a kétfejes letekercselő?",
+              "a": "A forgatható alapkeret két tüskéje közül az egyik a sorba tekercseli le a szalagot. Közben a kezelő a következő tekercset a szabad tüskére helyezi és rögzíti. Amikor a futó tekercs elfogy, a sor megáll, az alapkeret elfordul, és az új tekercset letekercselő helyzetbe hozza; a szalagvéget befűzik, és a sor újraindul. A kiürült tüske kész a következő betöltésre."
+            },
+            {
+              "q": "Miben különbözik az egyfejes letekercselőtől és a betöltőkocsitól?",
+              "a": "Egyfejes letekercselőn az új tekercs csak akkor tehető fel, ha a régi elfogyott; a betöltés alatt a sor áll. A betöltőkocsi gyorsabbá és biztonságosabbá teszi a betöltést, de az továbbra is álló sor mellett történik. A kétfejes kivitel a betöltést a futási időre teszi át; az állás alatt csak az alapkeret fordul el, és a szalagot befűzik."
+            },
+            {
+              "q": "Milyen sorokon használják?",
+              "a": "Ahol a tekercsek gyorsan elfogynak és gyakran cserélődnek: keskeny szalaggal dolgozó présadagoló sorokon, nagy sebességű profilozó sorokon és olyan sorokon, amelyek a nap folyamán anyagot váltanak. Ha egy tekercs sokáig kitart és ritka a csere, többnyire elég egy egyfejes hidraulikus vagy mechanikus letekercselő."
+            },
+            {
+              "q": "Milyen adatok kellenek az ajánlathoz?",
+              "a": "A legnehezebb tekercs súlya, a szalag szélessége és vastagsága, a tekercs belső és külső átmérője, a sorsebesség, valamint hogy naponta hány tekercset cserélnek. A tüske típusa és a teherbírás ezekből adódik; küldje el az adatokat, és a sorához illő kétfejes letekercselőre adunk ajánlatot."
+            }
+          ]
         }
       },
       "servo-suruculer": {

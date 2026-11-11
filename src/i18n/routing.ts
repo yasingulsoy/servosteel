@@ -37,7 +37,7 @@ function buildPathnames(): Record<string, Record<string, string> | string> {
     }
   }
 
-  /* Üçüncü seviye: /makineler/rulo-acicilar/hidrolik
+  /* Üçüncü seviye: /makineler/rulo-acicilar/hidrolik-rulo-acicilar
      Üst yolun İngilizcesi yukarıda zaten üretildi; onu yeniden hesaplamak yerine
      haritadan okuyoruz — iki yerde ayrı hesaplanırsa ayrışabilirler. */
   for (const [trParent, children] of Object.entries(VARIANT_SLUGS)) {

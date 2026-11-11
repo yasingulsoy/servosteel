@@ -1055,7 +1055,7 @@
   "products": {
     "variants": {
       "rulo-acicilar": {
-        "hidrolik": {
+        "hidrolik-rulo-acicilar": {
           "name": "Odwijaki Hydrauliczne",
           "photoAlt": ["Odwijak hydrauliczny Servosteel z wózkiem do kręgów podczas odwijania taśmy stalowej","Odwijak hydrauliczny Servosteel i wózek do kręgów, zbliżenie"],
           "metaTitle": "Odwijak Hydrauliczny — 6.000-20.000 kg",
@@ -1097,7 +1097,7 @@
           },
           "tableNote": "Wszystkie modele: średnica zewnętrzna kręgu 1.600 mm, wewnętrzna 450–560 mm (z adapterem 640 mm). Hydrauliczne rozprężanie trzpienia i ramię dociskowe w standardzie. Dostępne są wersje z hamulcem zamiast silnika."
         },
-        "mekanik": {
+        "mekanik-rulo-acicilar": {
           "name": "Odwijaki Mechaniczne",
           "photoAlt": ["Odwijaki mechaniczne Servosteel ustawione w rzędzie w hali produkcyjnej"],
           "metaTitle": "Odwijak Mechaniczny — 500-4.000 kg",
@@ -1145,6 +1145,53 @@
             ]
           },
           "tableNote": "Sufiksy modeli: A napęd silnikowy (ramię dociskowe opcjonalne) · LA napęd silnikowy, średnica zewnętrzna 1.600 mm i ramię dociskowe w standardzie · F z hamulcem, ramię dociskowe w standardzie. W modelach A i F średnica zewnętrzna wynosi 1.300 mm. W modelach 3.000 i 4.000 kg średnica zewnętrzna kręgu wynosi 1.600 mm, wewnętrzna 450–560 mm (630 mm z adapterem), a rozprężanie trzpienia jest mechaniczne. Odwijaki z trzpieniem stożkowym 3.000–4.000 kg pracują z blachą do 5 mm."
+        },
+        "cift-kafa-rulo-acicilar": {
+          "name": "Odwijaki Dwugłowicowe",
+          "photoAlt": [
+            "Odwijak dwugłowicowy Servosteel z dwoma trzpieniami, widok z przodu",
+            "Odwijak dwugłowicowy Servosteel, widok z boku"
+          ],
+          "metaTitle": "Odwijak Dwugłowicowy — Załadunek przy Pracującej Linii",
+          "meta": "Odwijak dwugłowicowy: dwa trzpienie na obrotowej podstawie. Jeden krąg zasila linię, a kolejny jest w tym czasie ładowany; krótszy postój przy zmianie kręgu.",
+          "short": "Dwa trzpienie na obrotowej podstawie; kolejny krąg ładuje się przy pracującej linii.",
+          "hero": "Odwijak dwugłowicowy, nazywany też odwijakiem podwójnym lub dwutrzpieniowym, ma dwa trzpienie na obrotowej podstawie: jeden odwija taśmę do linii, a na drugi ładuje się w tym czasie kolejny krąg. Gdy bieżący krąg się kończy, podstawa obraca się i nowy krąg jest na miejscu; linia czeka na zmianę kręgu znacznie krócej.",
+          "features": [
+            {
+              "title": "Dwa trzpienie, obrotowa podstawa",
+              "text": "Dwa trzpienie stoją naprzeciw siebie na podstawie. Jeden odwija po stronie linii, drugi czeka po stronie załadunku; obrót podstawy zamienia je miejscami."
+            },
+            {
+              "title": "Załadunek przy pracującej linii",
+              "text": "Kolejny krąg zakłada się i zaciska na wolnym trzpieniu bez zatrzymywania linii. Gdy krąg się skończy, postój ogranicza się do obrotu podstawy i wprowadzenia początku taśmy do linii."
+            },
+            {
+              "title": "Do linii z częstą zmianą kręgów",
+              "text": "Przy wąskiej taśmie, dużej prędkości lub lekkich kręgach kręgi szybko się kończą, a zmiany decydują o łącznym postoju w ciągu dnia. Odwijak dwugłowicowy skraca każdą z nich."
+            },
+            {
+              "title": "Dwa materiały w gotowości",
+              "text": "Na obu trzpieniach mogą być kręgi o różnej grubości lub gatunku. Gdy zmienia się zlecenie, obrót podstawy przełącza na drugi materiał, bez zdejmowania jednego kręgu i zakładania innego."
+            }
+          ],
+          "faq": [
+            {
+              "q": "Jak działa odwijak dwugłowicowy?",
+              "a": "Jeden z dwóch trzpieni na obrotowej podstawie odwija taśmę do linii. W tym czasie operator zakłada kolejny krąg na wolny trzpień i go zaciska. Gdy bieżący krąg się skończy, linia staje, podstawa się obraca i ustawia nowy krąg w pozycji odwijania; początek taśmy zostaje wprowadzony i linia rusza ponownie. Pusty trzpień jest gotowy na kolejny załadunek."
+            },
+            {
+              "q": "Czym różni się od odwijaka pojedynczego z wózkiem załadowczym?",
+              "a": "Na odwijaku pojedynczym nowy krąg można założyć dopiero po zakończeniu poprzedniego, a linia czeka w czasie załadunku. Wózek załadowczy przyspiesza załadunek i czyni go bezpieczniejszym, ale nadal odbywa się on przy zatrzymanej linii. Odwijak dwugłowicowy przenosi załadunek na czas pracy; podczas postoju tylko obraca się podstawa i wprowadza się taśmę."
+            },
+            {
+              "q": "Na jakich liniach się go stosuje?",
+              "a": "Na liniach, na których kręgi szybko się kończą i często zmieniają: w podawaniu do pras przy wąskiej taśmie, na szybkich liniach profilujących i na liniach przełączających się w ciągu dnia między materiałami. Gdy krąg starcza na długo, a zmiany są rzadkie, zwykle wystarcza pojedynczy odwijak hydrauliczny lub mechaniczny."
+            },
+            {
+              "q": "Jakie dane są potrzebne do oferty?",
+              "a": "Masa najcięższego kręgu, szerokość i grubość taśmy, średnica wewnętrzna i zewnętrzna kręgu, prędkość linii oraz liczba zmian kręgów na dzień. Typ trzpienia i udźwig dobiera się na podstawie tych danych; prześlij je, a przygotujemy ofertę odwijaka dwugłowicowego dopasowanego do Twojej linii."
+            }
+          ]
         }
       },
       "servo-suruculer": {
