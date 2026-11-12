@@ -68,6 +68,9 @@ async function urunBilgisi(locale: string, yol: string | undefined): Promise<Uru
 
 /* Açıklamadaki ürün cümlesi: ürünün sitedeki kısa tanımı. Hat ailesi
    sayfalarının girişi 200+ karakter, açıklamayı taşırır — orada yalnız ad. */
+/* Ürünü olmayan videoda özet boş kalır ve şablonda "başlık.  Servosteel" diye
+   çift boşluk oluşur (12 Kas taraması, 9 sayfa) — çağıran yer boşlukları
+   tekler. */
 function ozet(urun: Urun | undefined): string {
   if (!urun) return "";
   return urun.ozet.length <= 140 ? urun.ozet : `${urun.ad}.`;
@@ -82,7 +85,7 @@ export async function generateMetadata({ params }: Props) {
   const title = t(`items.${v.id}`);
   return sayfaMeta(locale as AppLocale, `/videolar/${slug}`, {
     baslik: t("watch.metaTitle", { title }),
-    aciklama: t("watch.metaDesc", { title, summary: ozet(urun), duration: humanDuration(v.sec) }),
+    aciklama: t("watch.metaDesc", { title, summary: ozet(urun), duration: humanDuration(v.sec) }).replace(/\s{2,}/g, " "),
     gorsel: thumbUrl(v.id),
   });
 }
@@ -116,7 +119,7 @@ export default async function VideoIzlemePage({ params }: Props) {
         izlemeSayfasi
         items={[v]}
         titleOf={() => title}
-        description={t("watch.metaDesc", { title, summary: ozet(urun), duration: humanDuration(v.sec) })}
+        description={t("watch.metaDesc", { title, summary: ozet(urun), duration: humanDuration(v.sec) }).replace(/\s{2,}/g, " ")}
       />
 
       <PageHero

@@ -18,7 +18,8 @@ import { sectors } from "@/lib/sectors";
 import { SolutionIcon } from "@/components/solution-icon";
 import { rollFormItems, machineItems, hasPhoto } from "@/lib/catalog";
 import { thumbUrl, watchUrl } from "@/lib/videos";
-import type { AppLocale } from "@/i18n/routing";
+import { routing, localeHreflang, type AppLocale } from "@/i18n/routing";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 /** "Hatlarımızı çalışırken izleyin" bölümündeki video: pres besleme sistemleri tanıtımı. */
 const HOME_VIDEO = "2tgCtC8n_1E";
@@ -79,6 +80,25 @@ export default async function Home({ params }: Props) {
         posterin yarışı kazanması gerekir. Next bu link'i <head>'e taşır.
       */}
       <link rel="preload" as="image" href="/hero-poster.jpg" fetchPriority="high" />
+
+      {/* WebSite şeması — Google arama sonucundaki site adını ("Servosteel")
+          ana sayfadaki bu kayıttan okur; yoksa alan adını yazabilir (12 Kas
+          taramasında eksik çıktı). Sitede arama olmadığı için SearchAction yok. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            name: SITE_NAME,
+            alternateName: ["Servo Steel", "ServoSteel", "servosteel.com.tr"],
+            url: `${SITE_URL}/`,
+            inLanguage: routing.locales.map((l) => localeHreflang[l]),
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
 
       {/* HERO — tam ekran arka plan videosu */}
       <HeroVideo />

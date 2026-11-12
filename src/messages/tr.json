@@ -286,6 +286,7 @@
       "ctl": "Ruloyu ölçüsünde levhaya çevirir: doğrultma, servo besleme, giyotin ve istifleme tek PLC üzerinde.",
       "rollform": "Profili doğrudan rulodan çıkarır: kablo kanalı, solar profil, raf, iskele kalası, yol bariyeri, C/Sigma/Omega."
     },
+    "moreTitle": "Diğer rulo sac hatları",
     "machinesTitle": "Hattın üniteleri",
     "machinesText": "Hattın girişindeki ve çıkışındaki makineleri de kendimiz üretiyoruz. Tek tek de veriliyor, çalışan bir hatta da ekleniyor.",
     "stepsTitle": "Hat nasıl kurulur",

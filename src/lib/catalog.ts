@@ -44,6 +44,10 @@ export const machineItems = [
     /* "Kullanım alanları" çiplerinin bağlantısı, `sectors` SIRASINA göre (bkz.
        usageLinksOf): Pres besleme, Dilme, Boy kesme, Roll form — 9 dilde aynı sıra */
     usageLinks: ["/makineler", "/dilme-hatlari", "/boy-kesme-hatlari", "/roll-form-hatlari"],
+    /* Bu dört çipin ARKASINA eklenen hat çipleri (bkz. moreLinesOf): perfore ve
+       asma tavan sayfaları bileşen listesinde rulo açıcıyı sayıyor ve buraya
+       bağlanıyor; karşı yön eksikti (12 Kas: iki sayfaya içerikten hiç link yok). */
+    moreLines: ["/perfore-hatlari", "/asma-tavan-hatlari"],
     /* Başlığın altındaki tip şeridi (bkz. typesOf): her tip ayrı etiketle,
        sayfası olan tipe bağlantı. Etiket ve alt metinleri mesaj dosyasında
        `products.machines.rulo-acicilar.types`, aynı sırayla. `konum`: kare
@@ -241,7 +245,12 @@ export function galleryOf(slug: string): readonly GaleriFoto[] {
   return all.find((i) => i.slug === slug)?.gallery ?? [];
 }
 
-type BaglantiliMakine = { slug: string; usageLinks?: readonly string[]; lines?: readonly string[] };
+type BaglantiliMakine = {
+  slug: string;
+  usageLinks?: readonly string[];
+  lines?: readonly string[];
+  moreLines?: readonly string[];
+};
 
 /**
  * Makine sayfasındaki "Kullanım alanları" çiplerinin bağlantıları —
@@ -250,6 +259,11 @@ type BaglantiliMakine = { slug: string; usageLinks?: readonly string[]; lines?: 
  */
 export function usageLinksOf(slug: string): readonly string[] {
   return (machineItems as ReadonlyArray<BaglantiliMakine>).find((i) => i.slug === slug)?.usageLinks ?? [];
+}
+
+/** Kullanım çiplerinin ARKASINA eklenen hat sayfaları (ana kullanım önde kalsın). */
+export function moreLinesOf(slug: string): readonly string[] {
+  return (machineItems as ReadonlyArray<BaglantiliMakine>).find((i) => i.slug === slug)?.moreLines ?? [];
 }
 
 /** Makinenin sonuna takıldığı hat sayfaları — kullanım çiplerinin önünde bağlantılı çip. */

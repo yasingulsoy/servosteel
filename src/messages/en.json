@@ -306,6 +306,7 @@
       "ctl": "Turns coil into cut sheets: straightening, servo feeding, guillotine and stacking on one PLC.",
       "rollform": "Forms the profile straight from coil: cable tray, solar profile, racking, scaffolding plank, guardrail, C/Sigma/Omega."
     },
+    "moreTitle": "More coil lines",
     "machinesTitle": "Units on the line",
     "machinesText": "We build the units at both ends of the line as well. They are supplied on their own too, and added to lines already running.",
     "stepsTitle": "How a line is put together",

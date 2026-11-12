@@ -18,7 +18,10 @@ KONTROL = [
     ("/akademi/roll-form-nedir", "yeni yazi 200", lambda s, h: s == 200),
     ("/akademi/roll-form-nedir", "yazi basligi", lambda s, h: "Roll Form Nedir" in h),
     ("/dilme-hatlari", "video bolumu (ytimg)", lambda s, h: "i.ytimg.com/vi/" in h),
-    ("/dilme-hatlari", "VideoObject semasi", lambda s, h: '"VideoObject"' in h),
+    # 11 Eki: izleme sayfasi olan video semasini YALNIZ kendi sayfasinda tasir
+    # (video-schema.tsx); urun sayfasinda VideoObject aranmaz.
+    ("/videolar/rulo-sac-dilme-hatti-komple-hat", "VideoObject semasi (izleme sayfasi)", lambda s, h: '"VideoObject"' in h),
+    ("/perfore-hatlari", "saha klibi VideoObject", lambda s, h: "perfore-presi.mp4" in h and '"VideoObject"' in h),
     ("/roll-form-hatlari/kablo-kanali", "video 1 adet", lambda s, h: h.count("i.ytimg.com/vi/") >= 1),
     ("/roll-form-hatlari/yol-bariyeri", "video YOK (durust eslesme)", lambda s, h: "i.ytimg.com/vi/" not in h),
     ("/roll-form-hatlari", "TR hub title", lambda s, h: "Rollform Makineleri ve Roll Form" in h),

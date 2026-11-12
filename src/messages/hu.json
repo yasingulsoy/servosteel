@@ -286,6 +286,7 @@
       "ctl": "A tekercsből méretre vágott táblát készít: egyengetés, szervo adagolás, olló és rakatolás egyetlen PLC-n.",
       "rollform": "A profilt közvetlenül tekercsből formázza: kábeltálca, napelemes profil, polc, állványpalló, szalagkorlát, C/Szigma/Omega."
     },
+    "moreTitle": "További tekercsfeldolgozó sorok",
     "machinesTitle": "A sor egységei",
     "machinesText": "A sor elején és végén álló gépeket is mi gyártjuk. Külön is szállítjuk őket, és már működő sorba is beépíthetők.",
     "stepsTitle": "Hogyan áll össze egy sor",

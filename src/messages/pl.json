@@ -286,6 +286,7 @@
       "ctl": "Zamienia krąg w arkusze na wymiar: prostowanie, podawanie serwo, nożyce i układanie na jednym PLC.",
       "rollform": "Formuje profil prosto z kręgu: koryta kablowe, profile fotowoltaiczne, regały, podesty rusztowaniowe, bariery drogowe, C/Sigma/Omega."
     },
+    "moreTitle": "Inne linie do przetwarzania kręgów",
     "machinesTitle": "Zespoły linii",
     "machinesText": "Maszyny na początku i na końcu linii również budujemy sami. Dostarczamy je osobno i wbudowujemy w linie już pracujące.",
     "stepsTitle": "Jak powstaje linia",

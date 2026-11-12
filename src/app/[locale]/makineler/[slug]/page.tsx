@@ -14,7 +14,7 @@ import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
 import { Vitrin } from "@/components/vitrin";
 import { TipSeridi } from "@/components/tip-seridi";
-import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf, typesOf, hidesVideos, clipsOf } from "@/lib/catalog";
+import { machineItems, isMachineSlug, hasPhoto, variantsOf, galleryOf, showcaseOf, hidesMainPhoto, pageImageOf, usageLinksOf, linesOf, moreLinesOf, typesOf, hidesVideos, clipsOf } from "@/lib/catalog";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -78,10 +78,13 @@ export default async function MachinePage({ params }: Props) {
     "/dilme-hatlari": (await getTranslations("dilme"))("title"),
     "/boy-kesme-hatlari": (await getTranslations("boykesme"))("title"),
     "/roll-form-hatlari": (await getTranslations("hub"))("title"),
+    "/perfore-hatlari": (await getTranslations("perfore"))("title"),
+    "/asma-tavan-hatlari": (await getTranslations("asmaTavan"))("title"),
   };
   const ciplar = [
     ...linesOf(slug).map((href) => ({ label: hatAdi[href], href })),
     ...sectors.map((label, i) => ({ label, href: kullanimBag[i] as string | undefined })),
+    ...moreLinesOf(slug).map((href) => ({ label: hatAdi[href], href })),
   ];
 
   /**

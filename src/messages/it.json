@@ -286,6 +286,7 @@
       "ctl": "Trasforma il coil in fogli a misura: raddrizzatura, alimentazione servo, cesoia e impilaggio su un unico PLC.",
       "rollform": "Forma il profilo direttamente dal coil: passerelle portacavi, profili fotovoltaici, scaffalature, tavole da ponteggio, guardrail, C/Sigma/Omega."
     },
+    "moreTitle": "Altre linee da coil",
     "machinesTitle": "Unità della linea",
     "machinesText": "Costruiamo anche le unità all'ingresso e all'uscita della linea. Vengono fornite singolarmente e si inseriscono in linee già in funzione.",
     "stepsTitle": "Come nasce una linea",

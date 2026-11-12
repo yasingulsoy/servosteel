@@ -286,6 +286,7 @@
       "ctl": "Macht aus dem Coil Tafeln auf Maß: Richten, Servovorschub, Schere und Stapeln auf einer SPS.",
       "rollform": "Formt das Profil direkt aus dem Coil: Kabelrinnen, Solarprofile, Regale, Gerüstbohlen, Leitplanken, C-/Sigma-/Omega-Profile."
     },
+    "moreTitle": "Weitere Coilanlagen",
     "machinesTitle": "Einheiten der Anlage",
     "machinesText": "Die Einheiten am Anfang und am Ende der Anlage bauen wir ebenfalls selbst. Sie sind auch einzeln erhältlich und lassen sich in laufende Anlagen einbinden.",
     "stepsTitle": "So entsteht eine Anlage",

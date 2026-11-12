@@ -286,6 +286,7 @@
       "ctl": "Convierte la bobina en chapas a medida: enderezado, alimentación servo, guillotina y apilado en un solo PLC.",
       "rollform": "Forma el perfil directamente desde la bobina: bandeja portacables, perfil solar, estantería, plataforma de andamio, barrera vial, C/Sigma/Omega."
     },
+    "moreTitle": "Otras líneas de bobina",
     "machinesTitle": "Unidades de la línea",
     "machinesText": "También fabricamos las unidades de entrada y de salida. Se suministran por separado y se integran en líneas que ya están trabajando.",
     "stepsTitle": "Cómo se arma una línea",

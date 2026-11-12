@@ -37,6 +37,12 @@ const AILELER = [
   { anahtar: "rollform", href: "/roll-form-hatlari", gorsel: "/gorseller/roll-form-hatlari.jpg" },
 ] as const;
 
+/* Üç ailenin altında, görselsiz iki kart: perfore ve asma tavan hatları. */
+const DIGER_HATLAR = [
+  { ns: "perfore", href: "/perfore-hatlari" },
+  { ns: "asmaTavan", href: "/asma-tavan-hatlari" },
+] as const;
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "ruloIsleme" });
@@ -60,6 +66,12 @@ export default async function RuloIslemeHatlariPage({ params }: Props) {
     (await getTranslations("boykesme"))("title"),
     (await getTranslations("hub"))("title"),
   ];
+  const digerBasliklar = await Promise.all(
+    DIGER_HATLAR.map(async (h) => {
+      const td = await getTranslations(h.ns);
+      return { title: td("title"), desc: td("metaDesc") };
+    })
+  );
   const steps = t.raw("steps") as { title: string; text: string }[];
   const faq = t.raw("faq") as FaqItem[];
 
@@ -105,6 +117,31 @@ export default async function RuloIslemeHatlariPage({ params }: Props) {
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
                   </span>
                 </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Perfore ve asma tavan bu sayfanın alt sayfası (ekmek kırıntısı buraya
+            döner) ama gövdede hiç anılmıyordu; 12 Kas'ta ikisine de menü dışında
+            içerikten link yoktu, Google İngilizce sürümleri hâlâ bilmiyordu.
+            Başlık ve metin sayfaların kendi çevirisi — yeni iddia yok. */}
+        <Reveal>
+          <h2 className="mt-12 font-display text-lg font-bold uppercase tracking-tight text-ink">{t("moreTitle")}</h2>
+        </Reveal>
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
+          {DIGER_HATLAR.map((h, i) => (
+            <Reveal key={h.href} delay={i * 90}>
+              <Link
+                href={h.href}
+                className="group flex h-full flex-col rounded-2xl border border-line bg-card p-6 transition-colors hover:border-accent/50"
+              >
+                <span className="font-semibold text-ink">{digerBasliklar[i].title}</span>
+                <span className="mt-2 flex-1 text-sm leading-relaxed text-muted">{digerBasliklar[i].desc}</span>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-ink">
+                  {tc("details")}
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1 rtl:rotate-180" aria-hidden />
+                </span>
               </Link>
             </Reveal>
           ))}
