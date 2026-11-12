@@ -334,6 +334,12 @@
     "eyebrow": "La nostra specializzazione",
     "title": "Linee di Perforazione",
     "desc": "Linee complete che perforano il coil secondo il vostro schema di fori: aspo, raddrizzatrice, alimentatore servo, pressa di perforazione e, in uscita, riavvolgitore o cesoia di taglio a misura. Ogni linea è dimensionata su schema, spessore e velocità.",
+    "clips": [
+      "Linea di perforazione da coil, dall'aspo alla pressa, in stabilimento",
+      "Pressa di perforazione con alimentazione da coil, in funzione",
+      "Stampo di perforazione che fora il nastro, primo piano"
+    ],
+    "photoAlt": "Lamiere forate sulla linea di perforazione: fori tondi con bordo non forato",
     "highlights": [
       {
         "title": "Precisione dello schema",
@@ -469,6 +475,9 @@
     "eyebrow": "La nostra specializzazione",
     "title": "Linee per Controsoffitti",
     "desc": "Linee che producono da coil le parti metalliche di un controsoffitto: l'orditura a T (portante, traverso, angolare perimetrale) e i profili C/U dei controsoffitti in cartongesso su una linea di profilatura; i pannelli metallici clip-in e lay-in su una linea pressa con alimentatore servo, dove vengono forati, tagliati e piegati. Ogni linea è progettata sulla vostra sezione e sui vostri volumi.",
+    "clips": [
+      "Linea per pannelli da controsoffitto in funzione"
+    ],
     "highlights": [
       {
         "title": "Precisione di fori e asole",

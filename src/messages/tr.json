@@ -334,6 +334,12 @@
     "eyebrow": "Uzmanlık alanımız",
     "title": "Rulo Sac Perfore Hatları",
     "desc": "Rulo sacı istediğiniz delik deseniyle perfore eden komple hatlar: açıcı, doğrultma, servo besleme, perfore presi ve çıkışta sarıcı ya da boy kesme makası. Hat; delik deseninize, sac kalınlığınıza ve hızınıza göre projelendirilir.",
+    "clips": [
+      "Rulo sac perfore hattı: açıcıdan prese, fabrikada",
+      "Perfore presi ve rulo sac besleme, çalışırken",
+      "Perfore kalıbı sacı delerken, yakın çekim"
+    ],
+    "photoAlt": "Perfore hattında delinmiş sac levhalar: yuvarlak delikler, kenar şeridi deliksiz",
     "highlights": [
       {
         "title": "Desen hassasiyeti",
@@ -469,6 +475,9 @@
     "eyebrow": "Uzmanlık alanımız",
     "title": "Asma Tavan Hatları",
     "desc": "Asma tavan sisteminin metal parçalarını rulo sacdan üreten hatlar: T profil ızgara (ana taşıyıcı, ara taşıyıcı, duvar profili) ve alçıpan asma tavanın C/U profilleri roll form hattında; clip-in ve lay-in metal tavan panelleri servo beslemeli pres hattında perfore edilir, kesilir ve form alır. Hat; ürününüzün kesitine ve üretim adedinize göre projelendirilir.",
+    "clips": [
+      "Asma tavan paneli hattı çalışırken"
+    ],
     "highlights": [
       {
         "title": "Delik ve yuva hassasiyeti",

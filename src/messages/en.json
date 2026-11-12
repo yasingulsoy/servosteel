@@ -354,6 +354,12 @@
     "eyebrow": "Our expertise",
     "title": "Coil Perforating Lines",
     "desc": "Complete lines that perforate coil to your hole pattern: decoiler, straightener, servo feeder, perforating press, and a recoiler or cut-to-length shear at the exit. Each line is engineered around your pattern, sheet thickness and speed.",
+    "clips": [
+      "Coil perforating line from decoiler to press, in the factory",
+      "Perforating press with coil feeding, running",
+      "Perforating die punching the strip, close-up"
+    ],
+    "photoAlt": "Sheets punched on a perforating line: round holes with an unperforated border",
     "highlights": [
       {
         "title": "Pattern accuracy",
@@ -489,6 +495,9 @@
     "eyebrow": "Our expertise",
     "title": "Suspended Ceiling Lines",
     "desc": "Lines that make the metal parts of a suspended ceiling from coil: the T-grid (main tee, cross tee, wall angle) and the C/U profiles of drywall ceilings on a roll forming line; clip-in and lay-in metal ceiling panels on a servo-fed press line, where they are perforated, cut and formed. Each line is engineered around your section and output volume.",
+    "clips": [
+      "Suspended ceiling panel line in operation"
+    ],
     "highlights": [
       {
         "title": "Hole and slot accuracy",

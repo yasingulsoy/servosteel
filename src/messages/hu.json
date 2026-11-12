@@ -334,6 +334,12 @@
     "eyebrow": "Szakterületünk",
     "title": "Perforáló Sorok",
     "desc": "Komplett sorok, amelyek a tekercset az Ön lyukmintájával perforálják: letekercselő, egyengető, szervóadagoló, perforáló prés, a kimeneten pedig feltekercselő vagy keresztvágó olló. Minden sort a lyukmintához, a lemezvastagsághoz és a sebességhez méretezünk.",
+    "clips": [
+      "Perforáló sor a letekercselőtől a présig, a gyárban",
+      "Perforáló prés tekercsadagolással, működés közben",
+      "Perforáló szerszám lyukasztja a szalagot, közelkép"
+    ],
+    "photoAlt": "Perforáló soron lyukasztott lemezek: kerek lyukak, lyukasztatlan szegély",
     "highlights": [
       {
         "title": "Pontos lyukminta",
@@ -469,6 +475,9 @@
     "eyebrow": "Szakterületünk",
     "title": "Álmennyezeti Gyártósorok",
     "desc": "Sorok, amelyek tekercsből gyártják az álmennyezet fém elemeit: a T-profilos rácsot (főtartó, kereszttartó, falszegély) és a gipszkarton álmennyezetek CD/UD profiljait profilozó soron; a clip-in és lay-in fém álmennyezeti paneleket szervóadagolós présvonalon, ahol perforálják, vágják és hajlítják őket. Minden sort az Ön szelvényéhez és darabszámához tervezünk.",
+    "clips": [
+      "Álmennyezeti panelgyártó sor működés közben"
+    ],
     "highlights": [
       {
         "title": "Pontos lyuk- és résosztás",

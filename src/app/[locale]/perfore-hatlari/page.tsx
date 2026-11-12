@@ -8,6 +8,7 @@ import { Reveal } from "@/components/reveal";
 import { InlineQuote } from "@/components/inline-quote";
 import { FaqSection, type FaqItem } from "@/components/faq-section";
 import { RelatedVideos } from "@/components/related-videos";
+import { ProductShot } from "@/components/product-shot";
 import type { AppLocale } from "@/i18n/routing";
 
 /**
@@ -15,8 +16,9 @@ import type { AppLocale } from "@/i18n/routing";
  * hatlarına eklenecek").
  *
  * Boy kesme sayfasının düzeni; iki fark:
- *  - Hat fotoğrafı yok. Başlığın altında kanaldaki dilme + punch delik delme
- *    videosu duruyor (lib/videos.ts "/perfore-hatlari").
+ *  - Üst fotoğraf yok. Başlığın altında kanaldaki dilme + punch delik delme
+ *    videosu (lib/videos.ts "/perfore-hatlari") ve fabrikadan üç saha klibi
+ *    duruyor; perfore sac fotoğrafı delik desenleri bölümünde (12 Kas).
  *  - Teknik tablo YOK: firmadan kapasite, kalınlık, hız verisi gelmedi;
  *    uydurma değer yazılmadı. Veri gelince tablo boy kesme/dilme gibi eklenir.
  */
@@ -24,6 +26,16 @@ import type { AppLocale } from "@/i18n/routing";
 type Props = { params: Promise<{ locale: string }> };
 
 const icons = [Crosshair, Grip, Layers, MonitorCog];
+
+/* Fabrikadan saha klipleri (Yasin, 12 Kas — Telegram'dan). Sessiz, döngü; kaynak
+   dosyanın görüntüsüne dokunulmadı, yalnız ses izi çıkarıldı. Başlıklar
+   `perfore.clips`, aynı sırayla. */
+const KLIPLER = [
+  { src: "/perfore-hatti.mp4", poster: "/perfore-hatti-poster.jpg", width: 848, height: 464, sec: 35, tarih: "2026-11-12" },
+  { src: "/perfore-presi.mp4", poster: "/perfore-presi-poster.jpg", width: 848, height: 480, sec: 59, tarih: "2026-11-12" },
+  { src: "/perfore-kalibi.mp4", poster: "/perfore-kalibi-poster.jpg", width: 848, height: 480, sec: 52, tarih: "2026-11-12" },
+];
+const FOTO = "/gorseller/perfore-sac.jpg";
 
 /* Ayrı satılan makineye bağlanan bileşen — `perfore.components` SIRASINA göre
    (9 dilde aynı sıra). Servo beslemenin sattığımız servo sürücüyle aynı ürün
@@ -68,6 +80,7 @@ export async function generateMetadata({ params }: Props) {
   return sayfaMeta(locale as AppLocale, "/perfore-hatlari", {
     baslik: t("metaTitle"),
     aciklama: t("metaDesc"),
+    gorsel: FOTO,
   });
 }
 
@@ -84,6 +97,7 @@ export default async function PerforeHatlariPage({ params }: Props) {
   const steps = t.raw("steps") as { title: string; text: string }[];
   const patterns = t.raw("patterns") as { title: string; text: string }[];
   const uses = t.raw("uses") as { title: string; text: string }[];
+  const klipBaslik = t.raw("clips") as string[];
 
   return (
     <>
@@ -97,8 +111,12 @@ export default async function PerforeHatlariPage({ params }: Props) {
         description={t("desc")}
       />
 
-      {/* Fotoğraf yerine sahadan video, başlığın hemen altında */}
-      <RelatedVideos path="/perfore-hatlari" ust />
+      {/* Fotoğraf yerine sahadan video, başlığın hemen altında: kanal videosu + fabrika klipleri */}
+      <RelatedVideos
+        path="/perfore-hatlari"
+        ust
+        klipler={KLIPLER.map((k, i) => ({ ...k, baslik: klipBaslik[i] ?? t("title") }))}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -183,10 +201,19 @@ export default async function PerforeHatlariPage({ params }: Props) {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
-        <Reveal>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">{t("patternsTitle")}</h2>
-          <p className="mt-4 max-w-3xl leading-relaxed text-muted">{t("patternsIntro")}</p>
-        </Reveal>
+        {/* Solda desen girişi, sağda hattan çıkmış perfore sac fotoğrafı */}
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <Reveal>
+            <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-ink">{t("patternsTitle")}</h2>
+            <p className="mt-4 max-w-3xl leading-relaxed text-muted">{t("patternsIntro")}</p>
+          </Reveal>
+          <Reveal delay={90}>
+            <figure>
+              <ProductShot src={FOTO} alt={t("photoAlt")} ratio="4/3" sizes="(max-width: 1024px) 100vw, 600px" />
+              <figcaption className="mt-3 text-sm text-muted">{t("photoAlt")}</figcaption>
+            </figure>
+          </Reveal>
+        </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {patterns.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>

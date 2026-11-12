@@ -334,6 +334,12 @@
     "eyebrow": "Nasza specjalizacja",
     "title": "Linie Perforujące",
     "desc": "Kompletne linie perforujące kręgi według Państwa wzoru otworów: odwijak, prostownica, podajnik serwo, prasa perforująca, a na wyjściu nawijarka lub nożyce do cięcia na długość. Każda linia jest dobierana do wzoru, grubości blachy i prędkości.",
+    "clips": [
+      "Linia perforująca od odwijaka do prasy, w zakładzie",
+      "Prasa perforująca z podawaniem z kręgu, w pracy",
+      "Narzędzie perforujące dziurkuje taśmę, zbliżenie"
+    ],
+    "photoAlt": "Blachy perforowane na linii: okrągłe otwory z nieperforowanym brzegiem",
     "highlights": [
       {
         "title": "Dokładność wzoru",
@@ -469,6 +475,9 @@
     "eyebrow": "Nasza specjalizacja",
     "title": "Linie do Sufitów Podwieszanych",
     "desc": "Linie, które z kręgu wytwarzają metalowe elementy sufitu podwieszanego: ruszt T (profil główny, poprzeczka, profil przyścienny) i profile CD/UD do sufitów z płyt g-k na linii profilującej; metalowe panele clip-in i lay-in na linii prasowej z podajnikiem serwo, gdzie są perforowane, cięte i gięte. Każdą linię projektujemy pod Państwa przekrój i wielkość produkcji.",
+    "clips": [
+      "Linia do paneli sufitów podwieszanych w pracy"
+    ],
     "highlights": [
       {
         "title": "Dokładny rozstaw otworów i szczelin",

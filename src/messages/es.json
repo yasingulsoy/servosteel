@@ -334,6 +334,12 @@
     "eyebrow": "Nuestra especialidad",
     "title": "Líneas de Perforado",
     "desc": "Líneas completas que perforan la bobina según su patrón de agujeros: desbobinadora, enderezadora, alimentador servo, prensa de perforado y, a la salida, rebobinadora o cizalla de corte a medida. Cada línea se dimensiona según el patrón, el espesor y la velocidad.",
+    "clips": [
+      "Línea de perforado de bobina, de la desbobinadora a la prensa, en fábrica",
+      "Prensa de perforado con alimentación desde bobina, en marcha",
+      "Troquel de perforado punzonando la banda, primer plano"
+    ],
+    "photoAlt": "Chapas perforadas en la línea: agujeros redondos con borde sin perforar",
     "highlights": [
       {
         "title": "Precisión del patrón",
@@ -469,6 +475,9 @@
     "eyebrow": "Nuestra especialidad",
     "title": "Líneas para Falsos Techos",
     "desc": "Líneas que fabrican desde bobina las piezas metálicas de un falso techo: la perfilería T (primario, secundario, angular perimetral) y los perfiles C/U de los techos de placa de yeso en una línea de perfilado; las bandejas metálicas clip-in y lay-in en una línea de prensa con alimentador servo, donde se perforan, cortan y conforman. Cada línea se diseña según su sección y su volumen de producción.",
+    "clips": [
+      "Línea de paneles para falso techo en funcionamiento"
+    ],
     "highlights": [
       {
         "title": "Precisión de agujeros y ranuras",

@@ -334,6 +334,12 @@
     "eyebrow": "Unsere Kompetenz",
     "title": "Perforieranlagen",
     "desc": "Komplette Anlagen, die Coils nach Ihrem Lochbild perforieren: Haspel, Richtmaschine, Servovorschub, Perforierpresse und am Auslauf Aufwickler oder Querteilschere. Jede Anlage wird nach Lochbild, Blechdicke und Geschwindigkeit ausgelegt.",
+    "clips": [
+      "Perforieranlage vom Haspel bis zur Presse, im Werk",
+      "Perforierpresse mit Coilzuführung im Betrieb",
+      "Perforierwerkzeug beim Lochen des Bandes, Nahaufnahme"
+    ],
+    "photoAlt": "Auf der Perforieranlage gelochte Bleche: Rundlochung mit ungelochtem Rand",
     "highlights": [
       {
         "title": "Genaues Lochbild",
@@ -469,6 +475,9 @@
     "eyebrow": "Unsere Kompetenz",
     "title": "Anlagen für abgehängte Decken",
     "desc": "Anlagen, die die Metallteile einer abgehängten Decke vom Coil fertigen: das T-Profil-Raster (Tragprofil, Querprofil, Wandwinkel) und die CD/UD-Profile von Trockenbaudecken auf einer Rollformanlage; Metalldeckenplatten für Klemm- und Einlegedecken auf einer Pressenlinie mit Servovorschub, wo sie perforiert, geschnitten und gekantet werden. Jede Anlage wird nach Ihrem Querschnitt und Ihrer Stückzahl ausgelegt.",
+    "clips": [
+      "Anlage für Deckenpaneele (abgehängte Decke) im Betrieb"
+    ],
     "highlights": [
       {
         "title": "Genaue Loch- und Schlitzabstände",

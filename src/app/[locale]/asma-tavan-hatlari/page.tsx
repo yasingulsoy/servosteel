@@ -16,7 +16,7 @@ import type { AppLocale } from "@/i18n/routing";
  *
  * Perfore sayfasının düzeni:
  *  - Hat fotoğrafı yok. Başlığın altında kanaldaki "Asma Tavan Hattı" videosu
- *    duruyor (lib/videos.ts "/asma-tavan-hatlari").
+ *    (lib/videos.ts "/asma-tavan-hatlari") ve fabrikadan bir saha klibi (12 Kas).
  *  - Teknik tablo YOK: firmadan kapasite, kalınlık, hız verisi gelmedi;
  *    uydurma değer yazılmadı. Veri gelince tablo boy kesme/dilme gibi eklenir.
  *  - Desen bölümünün yerinde ürün tipleri (T profil, alçıpan C/U, clip-in,
@@ -26,6 +26,12 @@ import type { AppLocale } from "@/i18n/routing";
 type Props = { params: Promise<{ locale: string }> };
 
 const icons = [Crosshair, Layers, LayoutGrid, MonitorCog];
+
+/* Fabrikadan saha klibi (Yasin, 12 Kas — Telegram'dan). Sessiz, döngü; kaynak
+   dosyanın görüntüsüne dokunulmadı, yalnız ses izi çıkarıldı. Başlık `asmaTavan.clips`. */
+const KLIPLER = [
+  { src: "/asma-tavan-hatti.mp4", poster: "/asma-tavan-hatti-poster.jpg", width: 640, height: 352, sec: 73, tarih: "2026-11-12" },
+];
 
 /* Ayrı satılan ürüne bağlanan bileşen — `asmaTavan.components` SIRASINA göre
    (9 dilde aynı sıra): rulo açıcı, roll form istasyonları, istifleme. Servo
@@ -89,6 +95,7 @@ export default async function AsmaTavanHatlariPage({ params }: Props) {
   const steps = t.raw("steps") as { title: string; text: string }[];
   const types = t.raw("types") as { title: string; text: string }[];
   const lines = t.raw("lines") as { title: string; line: string; text: string }[];
+  const klipBaslik = t.raw("clips") as string[];
 
   /* Kartın altındaki bağlantı yazısı, gittiği sayfanın kendi başlığı —
      dokuz dilde menüyle aynı ad, yeni çeviri anahtarı yok. */
@@ -110,8 +117,12 @@ export default async function AsmaTavanHatlariPage({ params }: Props) {
         description={t("desc")}
       />
 
-      {/* Fotoğraf yerine sahadan video, başlığın hemen altında */}
-      <RelatedVideos path="/asma-tavan-hatlari" ust />
+      {/* Fotoğraf yerine sahadan video, başlığın hemen altında: kanal videosu + fabrika klibi */}
+      <RelatedVideos
+        path="/asma-tavan-hatlari"
+        ust
+        klipler={KLIPLER.map((k, i) => ({ ...k, baslik: klipBaslik[i] ?? t("title") }))}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

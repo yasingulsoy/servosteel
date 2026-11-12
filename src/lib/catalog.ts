@@ -297,7 +297,14 @@ export function pageImageOf(slug: string): string | undefined {
  * `path` dahili yol: `/makineler/rulo-acicilar`, `/makineler/rulo-acicilar/hidrolik-rulo-acicilar`,
  * `/roll-form-hatlari/solar-profil`. Ürün sayfası değilse boş dizi.
  */
+/* Ürün kataloğunda olmayan sayfaların fotoğrafları (site haritası görsel girdisi). */
+const SAYFA_GORSELLERI: Record<string, readonly string[]> = {
+  "/perfore-hatlari": ["perfore-sac.jpg"],
+};
+
 export function pageImagesOf(path: string): string[] {
+  const sabit = SAYFA_GORSELLERI[path];
+  if (sabit) return sabit.map((f) => `/gorseller/${f}`);
   const [bolum, slug, varyant] = path.split("/").filter(Boolean);
   if (bolum === "makineler" && slug && varyant) {
     return variantPhotosOf(slug, varyant).map((f) => `/gorseller/${f.file}`);
