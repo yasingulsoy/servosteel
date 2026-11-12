@@ -320,6 +320,27 @@ hub'ının H1'i eski haline döner — iki sayfa "press feeder"da yarışıyor o
 
 Bu turda 28 Ekim tablosundaki sayfalara (rulo işleme hub'ı, makine hub'ı, TR açıcı, PL servo besleyici) dokunulmadı; o ölçüm 25 Kasım'da temiz okunsun diye.
 
+**12 Kasım 2026 yayını: 4 hafta sonra (10 Aralık civarı) ölç.** Search Console (API + arayüz) baştan okundu. Teknik taraf temiz: 611 sayfa dizinde, manuel işlem yok, içerik haritası ve video şemasında hata 0. Dizinde olmayan 468'in dağılımı:
+- 272 eski site yönlendirmesi.
+- 112 "keşfedildi" sayfanın HEPSİ 9 dildeki video izleme sayfası.
+- 38 adet 404. Bunlar o dilde yazısı olmayan Akademi adresleri; middleware'in hreflang başlığı 11 Eki'de kapatılmıştı, Google 13–15 Eki'de taramış. Bugün hiçbir sayfa onlara link vermiyor.
+- 35 "tarandı, dizine eklenmedi". Eski /product/… adresleri doğru yönleniyor. Gerçek kayıp yalnız ES bariyer, ES gürültü bariyeri, ES C/Sigma/Omega ve IT bariyer sayfaları.
+
+Video raporu: 124 video dizinde; dizinde olmayan 123'ü ürün sayfalarındaki saha klibi ("izleme sayfasında değil"), tasarım gereği.
+
+Dizine ekleme isteği: TR asma tavan kabul edildi, sonrasında kota doldu. EN perfore ve EN asma tavan sırada; EN perfore bu arada "keşfedildi"ye geçti.
+
+| değişiklik | izlenecek sorgu → beklenen sayfa | 12 Kas öncesi |
+|---|---|---|
+| TR trapez: H1 "Trapez Sac Makinesi ve Cephe Paneli Hattı" (yeni opsiyonel `h1` anahtarı; `name` menüde kısa kalıyor), açıklama tablodaki değerlerle, giriş cümlesi; TR "roll form hattı maliyeti" ve "roll form nedir" yazılarından editoryal link | trapez sac makinesi (~480/ay), trapez sac makinesi fiyatları → /roll-form-hatlari/trapez-cephe-paneli | 90 günde gösterim YOK; Google'da elle bakıldı, ilk 30'da yokuz (SERP: makinecim, makinaturkiye, sahibinden, mtfirma + dmmet, gungormak). "mini trapez makinası" 7,9 (27 gös.) |
+| ES ve IT "roll form hattı maliyeti" yazılarından C/Sigma/Omega, yol bariyeri ve gürültü bariyeri sayfalarına editoryal link (§E.20) | dizin durumu: /es/roll-forming-lines/guard-rail, …/noise-barrier, …/c-sigma-omega-profiles, /it/roll-forming-lines/guard-rail | 9 Kas raporunda "tarandı, dizine eklenmedi" |
+
+Beklemede, dondurulmuş sayfalarda kalan fırsatlar (25 Kasım / 7 Aralık ölçümünden sonra):
+- "coil preparation line(s)": 25–30. sırada, 41 gösterim, /en/coil-processing-lines.
+- "paslanmaz çelik dilme": 50. sırada, 25 gösterim, /dilme-hatlari.
+- "coilanlagen": 19,1. sırada, 85 gösterim.
+- "dar tolerans boy kesme": 26,8. sırada, 26 gösterim. Sayısal tolerans değeri mühendisten gelmeden sayfaya yazılmaz (§A).
+
 ### C.3 İzlenen kelimeler — sıralama takibi
 
 ```bash

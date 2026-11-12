@@ -2432,6 +2432,7 @@
       },
       "trapez-cephe-paneli": {
         "name": "Trapez Sac ve Cephe Paneli Hattı",
+        "h1": "Trapez Sac Makinesi ve Cephe Paneli Hattı",
         "table": {
           "title": "Teknik değerler",
           "head": ["Değer", "Aralık"],
@@ -2446,8 +2447,8 @@
         },
         "metaTitle": "Trapez Sac Makinesi ve Cephe Paneli Hattı",
         "short": "Çatı ve cephe kaplama profilleri için form verme, boy kesme ve istif.",
-        "hero": "Çatı ve cephe kaplamasında kullanılan trapez sac, kenet çatı profili ve cephe paneli üretimi için hatlar. Bu ailede belirleyici olan iki şey var: geniş sacda düzlem kalitesi ve boyanmış yüzeyin şekillendirme boyunca zarar görmemesi.",
-        "meta": "Trapez sac, kenet çatı ve cephe kaplama profili üretim hatları: form verme, boy kesme, otomatik istif ve paketleme.",
+        "hero": "Çatı ve cephe kaplamasında kullanılan trapez sac, kenet çatı profili ve cephe paneli için trapez sac makinesi ve rulodan pakete komple üretim hatları. Bu ailede belirleyici olan iki şey var: geniş sacda düzlem kalitesi ve boyanmış yüzeyin şekillendirme boyunca zarar görmemesi.",
+        "meta": "Trapez sac makinesi ve kenet çatı, cephe paneli hatları: 0,3–1,5 mm sac, 1.300 mm'ye kadar genişlik, 15–60 m/dk. Açıcıdan istif ve paketlemeye komple hat.",
         "features": [
           {
             "title": "Geniş sacda düzlem",

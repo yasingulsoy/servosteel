@@ -79,7 +79,10 @@ export default async function RollFormLinePage({ params }: Props) {
           { label: tRoll(`${slug}.name`), href: `/roll-form-hatlari/${slug}` },
         ]}
         eyebrow={td("eyebrowLine")}
-        title={t("name")}
+        /* h1 opsiyonel: `name` menüde ve kartlarda kısa kalsın, başlık aranan
+           terimi taşısın. 12 Kas: TR trapez "trapez sac makinesi" (~480/ay)
+           için 90 günde hiç gösterim almamıştı; title'da vardı, H1'de yoktu. */
+        title={t.has("h1") ? t("h1") : t("name")}
         description={t("hero")}
       />
 
