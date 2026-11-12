@@ -3,7 +3,7 @@
 **Yalnızca açık işler.** Kapanan madde buradan silinir; kalıcı olması gereken
 bilgi §E'ye taşınır. Strateji ve ölçüm arka planı: [SEO.md](SEO.md)
 
-**Güncelleme:** 2026-09-07
+**Güncelleme:** 2026-11-12
 
 | bölüm | kimde |
 |---|---|
@@ -218,6 +218,25 @@ python scripts/ic-link-kontrol.py      # sayfaların İÇİNDEKİ linkler, ~3 dk
 ve Clarity script'leri. İkinci betik her sayfanın her iç linkini çağırır — ilki
 yalnızca site haritasındaki sayfalara bakar, içlerindeki kırık linki görmez (§E.30). Hepsi OK ise ve **yeni URL** eklendiyse:
 
+> **Tam tarama, 2026-11-12:** **757 adresin 757'si 200**; noindex, çift/eksik
+> H1, eksik breadcrumb, paylaşım görseli ve alt metin eksiği yok; içerikteki iç
+> linklerde 200 dışı 0. Bulunan ve aynı gün kapatılanlar (d2ef1d9):
+> • Ana sayfada **WebSite şeması yoktu** (Google arama sonucundaki site adını
+>   buradan okur) → eklendi.
+> • **Perfore ve asma tavan sayfalarına menü dışında içerikten link yoktu**;
+>   Google EN perfore, iki asma tavan ve açıcı alt sayfalarını "bilinmiyor"
+>   diyordu → rulo işleme hub'ına "Diğer rulo sac hatları" kartları, açıcı
+>   sayfasına iki hat çipi. Site haritası GSC'ye yeniden gönderildi (son okuma
+>   5 Kas'tı, 730 adres).
+> • Ürünsüz video sayfalarında açıklamada çift boşluk (9 sayfa) → teklendi.
+> • 200+ karakterlik 10 Akademi açıklaması ≤161'e indirildi.
+>
+> Bilerek bırakılanlar: 44 sayfada açıklama 166-191 karakter (son birkaç
+> kelime kesilir, Google zaten çoğunu yeniden yazar); 28 video sayfası
+> başlığı 66-88 karakter (" — Video" eki); Akademi yazılarında hreflang
+> 3-7 (yazı yalnız o dillerde var, doğru); kök adreste canonical sonda "/"
+> olmadan (aynı adres).
+>
 > **Tam tarama, 2026-09-20:** site haritasındaki **470 adresin 470'i 200**
 > döndü; yönlendirme, `noindex`, eksik/çift H1, boş ya da tekrar eden başlık
 > ve site haritası dışına düşen hreflang hedefi **yok**. Kritik TR/EN/DE/IT/PL/
