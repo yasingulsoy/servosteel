@@ -335,6 +335,22 @@ Dizine ekleme isteği: TR asma tavan kabul edildi, sonrasında kota doldu. EN pe
 | TR trapez: H1 "Trapez Sac Makinesi ve Cephe Paneli Hattı" (yeni opsiyonel `h1` anahtarı; `name` menüde kısa kalıyor), açıklama tablodaki değerlerle, giriş cümlesi; TR "roll form hattı maliyeti" ve "roll form nedir" yazılarından editoryal link | trapez sac makinesi (~480/ay), trapez sac makinesi fiyatları → /roll-form-hatlari/trapez-cephe-paneli | 90 günde gösterim YOK; Google'da elle bakıldı, ilk 30'da yokuz (SERP: makinecim, makinaturkiye, sahibinden, mtfirma + dmmet, gungormak). "mini trapez makinası" 7,9 (27 gös.) |
 | ES ve IT "roll form hattı maliyeti" yazılarından C/Sigma/Omega, yol bariyeri ve gürültü bariyeri sayfalarına editoryal link (§E.20) | dizin durumu: /es/roll-forming-lines/guard-rail, …/noise-barrier, …/c-sigma-omega-profiles, /it/roll-forming-lines/guard-rail | 9 Kas raporunda "tarandı, dizine eklenmedi" |
 
+**13 Kasım 2026: hesaplayıcının Türkçe adresi değişti** (0a5cebf). Değişiklik firmanın isteğiyle yapıldı: adreste, menüde ve başlıkta "rulo sac" geçecek.
+- **Adres:** /hesaplayicilar → **/rulo-sac-hesaplama**. Eski adres 308 ile yönleniyor, sorgu dizesi korunuyor. Dahili yol /hesaplayicilar olarak kaldı (slugs.ts TR_GORUNEN_YOL). Diğer diller /<dil>/calculators'ta, değişmedi.
+- **Başlık:** "Rulo Sac Hesaplama ve Sac Ağırlık Hesaplama". H1 "Servosteel Rulo Sac Hesaplama ve Sac Ağırlık Hesaplama", menüdeki ad "Rulo Sac Hesaplama".
+- **Metin:** Aynı gün sayfada "rulo" tek başına geçmeyecek şekilde düzeltildi (5a2f9be). Perfore sayfasındaki dilme + delme videosu kaldırıldı. "Üretim Hatları" menüsünün başına "Pres Besleme Hatları" (kompakt hatlar) eklendi (6e9a5b2).
+- **Ölçüm:** 4 hafta sonra (11 Aralık civarı) ölç. Adres değişikliği geçici bir sıra oynaması getirebilir.
+
+| sorgu → beklenen sayfa | 13 Kas öncesi (28 gün, poz. ve gösterim) |
+|---|---|
+| rulo ağırlık hesaplama → /rulo-sac-hesaplama ya da Akademi yazısı | 7,3 (51); Akademi 29, hesaplayıcı 14 gösterim |
+| sac ağırlık hesaplama | 16,0 (20) |
+| saç kilo hesaplama | 10,5 (26) |
+| sac hesaplama | 9,7 (13) |
+| rulo sac hesaplama | gösterim yok |
+
+GSC: yeni adres için dizine ekleme isteği gönderilecek (13 Kas gecesi kota yenilenince, EN perfore ve EN asma tavanla birlikte).
+
 Beklemede, dondurulmuş sayfalarda kalan fırsatlar (25 Kasım / 7 Aralık ölçümünden sonra):
 - "coil preparation line(s)": 25–30. sırada, 41 gösterim, /en/coil-processing-lines.
 - "paslanmaz çelik dilme": 50. sırada, 25 gösterim, /dilme-hatlari.
