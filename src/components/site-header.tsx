@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, Building2, CalendarDays, ChevronDown, Cog, Grip, LayoutGrid, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Building2, CalendarDays, ChevronDown, Cog, Grip, Layers, LayoutGrid, Menu, Phone, X } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { SocialIcons } from "@/components/social-icons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -444,7 +444,16 @@ export function SiteHeader() {
     icon: i.icon,
   }));
   const hatMega: MegaItem[] = [
-    /* Üst sayfa başta: "coil processing line" arayan alıcı önce üçünün farkını
+    /* En başta pres besleme hatları = kompakt hatlar grubu (firma, 13 Kas:
+       "en baştaki pres besleme hatları olacak, yani kompakt hatlar grubu").
+       Sayfa makineler altında kalıyor; burada hat olarak da listeleniyor. */
+    {
+      label: t("pressLines"),
+      href: "/makineler/kompakt-hatlar",
+      desc: tMach("kompakt-hatlar.short"),
+      node: <Layers className="size-5 text-muted transition-colors group-hover/i:text-accent" strokeWidth={1.6} aria-hidden />,
+    },
+    /* Üst sayfa: "coil processing line" arayan alıcı önce üçünün farkını
        öğrenmek istiyor (bkz. rulo-isleme-hatlari/page.tsx) */
     {
       label: tRulo("nav"),
