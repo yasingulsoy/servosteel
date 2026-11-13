@@ -194,6 +194,21 @@ for (const [tr, en] of Object.entries(ALL_SLUGS)) {
   seen[en] = tr;
 }
 
+/**
+ * Türkçede GÖRÜNEN adresi dahili yoldan farklı olan sayfalar (tam yol).
+ *
+ * Dahili yol (klasör adı, `Link` href'leri, MDX bağlantıları) aynı kalır;
+ * yalnızca Türkçe ziyaretçinin ve Google'ın gördüğü adres değişir. routing.ts
+ * `pathnames`in tr girdisini, localizeFullPath canonical/hreflang/sitemap'i
+ * buradan alır; eski adres next.config.ts'te kalıcı yönlenir.
+ *
+ * 2026-11-13 (Yasin): hesaplayıcının adresinde "rulo sac" geçmeli —
+ * /hesaplayicilar -> /rulo-sac-hesaplama.
+ */
+export const TR_GORUNEN_YOL: Record<string, string> = {
+  "/hesaplayicilar": "/rulo-sac-hesaplama",
+};
+
 /** Bu locale Türkçe slug mı kullanıyor? (yalnızca varsayılan dil) */
 function usesTurkish(locale: string) {
   return locale === SLUG_BASE_LOCALE;
@@ -208,7 +223,7 @@ function usesTurkish(locale: string) {
  * onu `pathnames` hallediyor.
  */
 export function localizeFullPath(path: string, locale: AppLocale | string): string {
-  if (usesTurkish(locale)) return path;
+  if (usesTurkish(locale)) return TR_GORUNEN_YOL[path] ?? path;
   return path
     .split("/")
     .map((seg) => ALL_SLUGS[seg] ?? seg)

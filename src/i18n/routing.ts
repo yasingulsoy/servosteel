@@ -1,5 +1,5 @@
 import { defineRouting } from "next-intl/routing";
-import { ROUTE_SLUGS, CONTENT_SLUGS, VARIANT_SLUGS, SLUG_BASE_LOCALE } from "./slugs";
+import { ROUTE_SLUGS, CONTENT_SLUGS, VARIANT_SLUGS, SLUG_BASE_LOCALE, TR_GORUNEN_YOL } from "./slugs";
 
 const LOCALES = ["tr", "en", "de", "es", "it", "hu", "pl", "ru", "ar"] as const;
 
@@ -52,6 +52,16 @@ function buildPathnames(): Record<string, Record<string, string> | string> {
         `${enParent}/${enSlug}`
       );
     }
+  }
+
+  /* Türkçede görünen adresi dahili yoldan farklı sayfalar (bkz. slugs.ts
+     TR_GORUNEN_YOL): yalnız tr girdisi değişir, dahili anahtar aynı kalır. */
+  for (const [dahili, gorunen] of Object.entries(TR_GORUNEN_YOL)) {
+    const girdi = map[dahili];
+    if (typeof girdi !== "object") {
+      throw new Error(`routing.ts: "${dahili}" pathnames'te yok — TR_GORUNEN_YOL anahtarı yanlış`);
+    }
+    girdi[SLUG_BASE_LOCALE] = gorunen;
   }
 
   return map;

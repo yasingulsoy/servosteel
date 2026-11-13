@@ -297,13 +297,14 @@ def ek_sutunlar(segler, satir):
 
 
 def hesap_linki(satir):
-    """Metal agirlik hesaplayicisi (/hesaplayicilar, digerlerinde /<dil>/calculators) —
+    """Metal agirlik hesaplayicisi (/rulo-sac-hesaplama, digerlerinde /<dil>/calculators) —
     ikinci turdaki faydali baglanti. utm_term=hesaplayici: GA4'te hatirlatma
-    e-postasindan gelen tiklama teklif formundan ayrilir."""
+    e-postasindan gelen tiklama teklif formundan ayrilir. Turkce adres 13 Kas'ta
+    /hesaplayicilar'dan tasindi (eski adres 301 ile yonlenir)."""
     dil = satir_dili(satir)
     if dil not in SITE_DILLERI:
         dil = "en"
-    yol = "/hesaplayicilar" if dil == "tr" else "/%s/calculators" % dil
+    yol = "/rulo-sac-hesaplama" if dil == "tr" else "/%s/calculators" % dil
     m = re.search(r"https?://(?:www\.)?([^/\s|]+)", str(satir[2] or ""))
     icerik = re.sub(r"[^a-z0-9.-]", "", (m.group(1) if m else sade(satir[0])).lower())[:40]
     return ("%s%s?utm_source=outreach&utm_medium=email&utm_campaign=hatirlatma"

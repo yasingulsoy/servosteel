@@ -287,6 +287,17 @@ const nextConfig: NextConfig = {
       p("/:locale(en|de|es|it|hu|pl|ru|ar)/machines/dies-and-rollers", "/:locale/machines"),
 
       /**
+       * --- Hesaplayıcının Türkçe adresi (2026-11-13) ---
+       *
+       * Yasin: adreste "rulo sac" geçmeli. Dahili yol /hesaplayicilar kaldı
+       * (slugs.ts TR_GORUNEN_YOL); Türkçe görünen adres /rulo-sac-hesaplama.
+       * Eski adres ve /tr önekli hali kalıcı yönlenir; sorgu dizesi (UTM)
+       * korunur. Diğer diller /<dil>/calculators'ta, değişmedi.
+       */
+      p("/hesaplayicilar", "/rulo-sac-hesaplama"),
+      p("/tr/hesaplayicilar", "/rulo-sac-hesaplama"),
+
+      /**
        * --- Açıcı varyantlarının eski slug'ları (2026-11-11) ---
        *
        * `/makineler/rulo-acicilar/hidrolik` -> `.../hidrolik-rulo-acicilar`,
