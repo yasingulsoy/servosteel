@@ -111,7 +111,8 @@ export default async function PerforeHatlariPage({ params }: Props) {
         description={t("desc")}
       />
 
-      {/* Fotoğraf yerine sahadan video, başlığın hemen altında: kanal videosu + fabrika klipleri */}
+      {/* Fotoğraf yerine sahadan video, başlığın hemen altında: fabrika klipleri
+          (kanal videosu 13 Kas'ta kaldırıldı, bkz. lib/videos.ts) */}
       <RelatedVideos
         path="/perfore-hatlari"
         ust

@@ -1071,15 +1071,15 @@
       },
       "coil": {
         "h": "Rulo sac ağırlığı nasıl hesaplanır",
-        "p": "Yandan bakıldığında rulo bir halkadır. Halka alanı rulo genişliğiyle çarpılınca, şerit kalınlığı ne olursa olsun metalin hacmi bulunur.",
+        "p": "Yandan bakıldığında rulo sac bir halkadır. Halka alanı rulo sac genişliğiyle çarpılınca, şerit kalınlığı ne olursa olsun metalin hacmi bulunur.",
         "formula": "Ağırlık (kg) = π ÷ 4 × (dış çap² − iç çap²) × genişlik × yoğunluk ÷ 1.000.000   (ölçüler mm)",
-        "example": "Örnek: dış çapı 1400 mm, göbeği 508 mm, genişliği 1250 mm olan çelik rulo π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1.000.000 ≈ 13.116 kg gelir. 1,5 mm kalınlıkta açıldığında yaklaşık 891 m şerit verir."
+        "example": "Örnek: dış çapı 1400 mm, göbeği 508 mm, genişliği 1250 mm olan çelik rulo sac π ÷ 4 × (1400² − 508²) × 1250 × 7,85 ÷ 1.000.000 ≈ 13.116 kg gelir. 1,5 mm kalınlıkta açıldığında yaklaşık 891 m şerit verir."
       },
       "length": {
-        "h": "Ağırlıktan rulo uzunluğu nasıl bulunur",
-        "p": "Rulo ağırlığı sertifikadan biliniyorsa şerit uzunluğu aynı hacimden çıkar.",
+        "h": "Ağırlıktan rulo sac uzunluğu nasıl bulunur",
+        "p": "Rulo sac ağırlığı sertifikadan biliniyorsa şerit uzunluğu aynı hacimden çıkar.",
         "formula": "Uzunluk (m) = ağırlık (kg) ÷ (genişlik (m) × kalınlık (m) × yoğunluk (kg/m³))",
-        "example": "Örnek: 10 ton, 1250 mm genişlik, 1 mm kalınlıkta çelik rulo: 10.000 ÷ (1,25 × 0,001 × 7.850) ≈ 1.019 m."
+        "example": "Örnek: 10 ton, 1250 mm genişlik, 1 mm kalınlıkta çelik rulo sac: 10.000 ÷ (1,25 × 0,001 × 7.850) ≈ 1.019 m."
       },
       "od": {
         "h": "Ağırlıktan rulo sac dış çapı nasıl bulunur",
@@ -1104,19 +1104,19 @@
       },
       {
         "q": "Rulo sac ağırlığı nasıl hesaplanır?",
-        "a": "Halka alanını π ÷ 4 × (dış çap² − iç çap²) ile bulun, rulo genişliği ve 7,85 ile çarpın, tüm ölçüler milimetreyken 1.000.000'a bölün. Ağırlık için şerit kalınlığı gerekmez; kalınlık yalnızca uzunluk hesabında kullanılır."
+        "a": "Halka alanını π ÷ 4 × (dış çap² − iç çap²) ile bulun, rulo sac genişliği ve 7,85 ile çarpın, tüm ölçüler milimetreyken 1.000.000'a bölün. Ağırlık için şerit kalınlığı gerekmez; kalınlık yalnızca uzunluk hesabında kullanılır."
       },
       {
-        "q": "Hesaplanan rulo ağırlığı neden sertifikadan farklı?",
-        "a": "Formül tam yuvarlak ve sıkı sarılmış bir rulo varsayar. Gerçek rulolar küçük boşluklarla sarılır ve dış sarımın üstünden ölçülür; bu yüzden hesap bir tahmindir, satın almada referans sertifikadaki ağırlıktır."
+        "q": "Hesaplanan rulo sac ağırlığı neden sertifikadan farklı?",
+        "a": "Formül tam yuvarlak ve sıkı sarılmış bir rulo sac varsayar. Gerçek rulo saclar küçük boşluklarla sarılır ve dış sarımın üstünden ölçülür; bu yüzden hesap bir tahmindir, satın almada referans sertifikadaki ağırlıktır."
       },
       {
         "q": "Paslanmaz ve alüminyum sonucu değiştirir mi?",
         "a": "Yalnızca yoğunluk üzerinden. Paslanmaz çelik (7,9 g/cm³) neredeyse karbon çeliği kadar ağırdır; alüminyum (2,7 g/cm³) yaklaşık üçte biri kadar gelir. Malzemeyi seçtiğinizde hesaplayıcı doğru değeri kullanır."
       },
       {
-        "q": "Bir rulo presimde ne kadar gider?",
-        "a": "Pres besleme hesaplayıcısını kullanın: adım boyu × dakikadaki strok saatte tüketilen metreyi verir; rulo uzunluğunu bu sayıya bölmek rulonun ne kadar yeteceğini gösterir — hattın ne sıklıkla rulo değişimi için duracağını belirleyen sayı budur."
+        "q": "Bir rulo sac presimde ne kadar gider?",
+        "a": "Pres besleme hesaplayıcısını kullanın: adım boyu × dakikadaki strok saatte tüketilen metreyi verir; rulo sac uzunluğunu bu sayıya bölmek rulo sacın ne kadar yeteceğini gösterir — hattın ne sıklıkla rulo sac değişimi için duracağını belirleyen sayı budur."
       }
     ]
   },

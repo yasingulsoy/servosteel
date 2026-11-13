@@ -377,8 +377,9 @@ export function embedUrl(id: string): string {
 const PRODUCT_VIDEO_IDS: Record<string, string[]> = {
   "/dilme-hatlari": ["h7aPJ6rJc_U", "JOHZwMBLqKo"],
   "/boy-kesme-hatlari": ["4QETxHS-CD4", "mwZx6X1mV0c"],
-  /* Perfore sayfasının hat fotoğrafı yok; dilme + punch delik delme hattı (Yasin, 11 Kas) */
-  "/perfore-hatlari": ["hc_Znq2u8MI"],
+  /* Perfore sayfasında kanal videosu YOK: "dilme + punch delik delme hattı"
+     (hc_Znq2u8MI) 11 Kas'ta konmuştu, 13 Kas'ta Yasin kaldırttı ("buradan bu
+     kalkıyor"). Sayfada yalnız fabrika klipleri var (perfore-hatlari/page.tsx). */
   /* Kanalda "Asma Tavan Hattı / Servo Sürücü Ve Rulo Sac Açma Sistemleri"
      başlıklı tek kayıt; küratörlü 24'te değil, katalogdan gelir (bkz.
      videosForProduct). Başlık YouTube'daki gibi, çevrilmez. */
