@@ -351,6 +351,19 @@ Dizine ekleme isteği: TR asma tavan kabul edildi, sonrasında kota doldu. EN pe
 
 GSC: yeni adres için dizine ekleme isteği gönderilecek (13 Kas gecesi kota yenilenince, EN perfore ve EN asma tavanla birlikte).
 
+**16 Kasım 2026 ara bakış (GSC, günlük gösterim):**
+- **TR hesaplayıcı yükseldi.** 11 Kas'a kadar günde ~100 gösterim alıyordu; 12–13 Kas'ta ~530'a çıktı. 14–15 Kas'taki ~290 hafta sonu düşüşü.
+  - "sac ağırlık hesaplama" 16,0 → 7,1–7,2. Yalnız bu sorgu 12–13 Kas'ta 365 gösterim aldı, ama hiç tık gelmedi (CTR bakılacak).
+  - Google hâlâ eski /hesaplayicilar adresini gösteriyor; o adresi en son 12 Kas'ta taradı, yani yönlendirmeyi henüz görmedi. Yeni adres dizinde ama günde 1–3 gösterim alıyor. Eski adres tarandığında yer değiştirmesi bekleniyor.
+- **Rusça hesaplayıcı düştü.** /ru/calculators günde ~450 gösterimden 13 Kas'tan itibaren ~10'a indi. Diğer RU sayfaları da 30'dan ~0'a indi.
+  - Düşüş Rusça konuşulan bütün ülkelerde aynı gün başladı (RU, KZ, BY, UZ, UA, KG).
+  - Teknik bir sorun yok: sayfalar 200 dönüyor, dizinde, canonical ve hreflang doğru.
+  - Sorgular çoğunlukla 25–35. sıradaki genel "калькулятор веса листового металла" türündendi. Tık kaybı günde ~2.
+  - Olası iki neden var:
+    - Google'ın 10 Kas'ta başlayan Kasım 2026 çekirdek güncellemesi. Bütün dillerde geçerli, ~24 Kas'a kadar sürecek.
+    - 11 Kas'ta rulo sac aracının sac/levha hesabının önüne alınması. Sayfa 12 Kas 15:50'de yeniden tarandı.
+  - **Güncelleme bitene kadar RU hesaplayıcıya dokunma.** 25 Kas'ta yeniden bak; düşüş kalıcıysa RU'da sac/levha hesabını öne almayı düşün.
+
 Beklemede, dondurulmuş sayfalarda kalan fırsatlar (25 Kasım / 7 Aralık ölçümünden sonra):
 - "coil preparation line(s)": 25–30. sırada, 41 gösterim, /en/coil-processing-lines.
 - "paslanmaz çelik dilme": 50. sırada, 25 gösterim, /dilme-hatlari.
