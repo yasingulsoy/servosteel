@@ -364,6 +364,21 @@ GSC: yeni adres için dizine ekleme isteği gönderilecek (13 Kas gecesi kota ye
     - 11 Kas'ta rulo sac aracının sac/levha hesabının önüne alınması. Sayfa 12 Kas 15:50'de yeniden tarandı.
   - **Güncelleme bitene kadar RU hesaplayıcıya dokunma.** 25 Kas'ta yeniden bak; düşüş kalıcıysa RU'da sac/levha hesabını öne almayı düşün.
 
+**16 Kasım 2026: TR hesaplayıcının başlığı ve açıklaması değişti (22a6252).**
+- **Neden:** 28 günde 1.495 gösterim, 1 tık. Gösterimlerin neredeyse hepsi sac/levha ağırlığı aramalarından. Başlık ve açıklama ise rulo sacla açılıyordu.
+- **Başlık:** "Sac Ağırlık Hesaplama ve Rulo Sac Hesaplama | Servosteel".
+- **Açıklama:** önce sac aracı (boy, en, kalınlık → kg), sonra rulo sac aracı.
+- **Değişmeyenler:** H1, adres, menü.
+- **Yayın:** 16 Kas 22:27'de canlıda. IndexNow gönderildi. GSC dizine ekleme isteği Chrome bağlanınca gönderilecek; sıradaki EN asma tavan ve ES bariyerin önünde.
+- **Ölçüm:** 11 Aralık civarı, aynı sorgularla.
+
+| sorgu | 16 Kas öncesi (28 gün: gösterim, tık, poz.) |
+|---|---|
+| sac ağırlık hesaplama | 700, 0, 7,6 |
+| sac kg hesaplama | 122, 0, 8,3 |
+| sac hesaplama | 110, 0, 7,9 |
+| sayfa toplamı (sorgu düzeyinde) | 1.495, 1 |
+
 Beklemede, dondurulmuş sayfalarda kalan fırsatlar (25 Kasım / 7 Aralık ölçümünden sonra):
 - "coil preparation line(s)": 25–30. sırada, 41 gösterim, /en/coil-processing-lines.
 - "paslanmaz çelik dilme": 50. sırada, 25 gösterim, /dilme-hatlari.
