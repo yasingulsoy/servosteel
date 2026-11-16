@@ -983,8 +983,8 @@
     }
   },
   "calc": {
-    "metaTitle": "Rulo Sac Hesaplama ve Sac Ağırlık Hesaplama",
-    "metaDesc": "Ücretsiz rulo sac hesaplama ve sac ağırlık hesaplama: dış çap, ağırlık ya da uzunluktan rulo sac hesabı, dilme sonrası şerit ağırlıkları, uygun açıcı.",
+    "metaTitle": "Sac Ağırlık Hesaplama ve Rulo Sac Hesaplama",
+    "metaDesc": "Ücretsiz sac ağırlık hesaplama: boy, en ve kalınlığı girin, levhanın kaç kg olduğunu görün. Rulo sac hesaplama: dış çap, ağırlık ya da uzunluktan rulo sac hesabı.",
     "eyebrow": "Mühendislik araçları",
     "title": "Servosteel Rulo Sac Hesaplama ve Sac Ağırlık Hesaplama",
     "desc": "Servosteel rulo sac ağırlık ve uzunluk hesaplayıcısı dış çap, ağırlık ya da şerit uzunluğundan çalışır; dilme sonrası şerit ağırlıklarını ve rulo saca uygun açıcıyı da verir. Altında sac ve plaka ağırlığı ile pres besleme hesapları var; tüm sonuçlar geometriden ve malzeme yoğunluğundan türetilir.",
