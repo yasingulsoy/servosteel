@@ -146,6 +146,8 @@ export const ULKE_DILIMI: Record<string, string> = {
   Tayvan: "Asia/Taipei",
   Togo: "Africa/Lome",
   "Trinidad ve Tobago": "America/Port_of_Spain",
+  // hedef-firma-excel.py ulke_duzelt() " ve "den bölüyor: veritabanında ad "Trinidad" (17 Kas 2026)
+  Trinidad: "America/Port_of_Spain",
   Tunus: "Africa/Tunis",
   Türkiye: "Europe/Istanbul",
   Türkmenistan: "Asia/Ashgabat",
