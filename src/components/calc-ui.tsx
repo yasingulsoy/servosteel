@@ -53,8 +53,11 @@ export function NumField({
   computed,
   badge,
   large,
+  sembol,
 }: {
   label: string;
+  /** Etiketin önünde, yanındaki çizimdeki harf (rulo sac şemasında D, d, B, t) */
+  sembol?: string;
   unit?: string;
   value: number;
   onChange: (v: number) => void;
@@ -91,6 +94,14 @@ export function NumField({
   return (
     <div className={hucre}>
       <label htmlFor={id} className={`${etiketCls} ${badge ? "flex flex-wrap items-baseline justify-between gap-x-2" : ""}`}>
+        {sembol && (
+          <span
+            aria-hidden
+            className="font-display me-1.5 inline-grid min-w-5 place-items-center rounded bg-ink px-1 text-[11px] font-bold leading-5 text-surface"
+          >
+            {sembol}
+          </span>
+        )}
         {label}
         {badge && (
           <span
