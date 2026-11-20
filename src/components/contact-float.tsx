@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Phone, Mail } from "lucide-react";
 import { FaWhatsapp, FaYoutube } from "react-icons/fa6";
 import { CONTACT, YOUTUBE_URL } from "@/lib/site";
+import { usePathname } from "@/i18n/navigation";
 
 /**
  * Her sayfada duran tuşlar: YouTube + e-posta + WhatsApp + telefon.
@@ -13,6 +14,11 @@ import { CONTACT, YOUTUBE_URL } from "@/lib/site";
  * (koyu zemin, yeşil ikon): telefonun altın vurgusuyla yarışmasın. Mesaj
  * ziyaretçinin dilinde "sitenizden yazıyorum" diye hazır gelir — satış
  * yazanın siteden geldiğini bilsin.
+ *
+ * HESAPLAYICIDA YALNIZ SİMGE (2026-11-20, Yasin): yazılı tuşlar rulo sac
+ * aracının sonuç kutusunun üstüne biniyordu ("bu sayfada telefon, YouTube
+ * falan ikona dönsün"). usePathname dahili yolu verir (/hesaplayicilar), dil
+ * ve görünen adres (/rulo-sac-hesaplama, /en/calculators) fark etmez.
  *
  * YOUTUBE TELEFONUN YANINDA (2026-11-20, satıştan gelen video): en üstteki en
  * geniş tuştu ("YouTube'da Videolarımızı İzleyin"); dört tuşluk sütunu uzatıp
@@ -46,6 +52,8 @@ import { CONTACT, YOUTUBE_URL } from "@/lib/site";
  */
 export function ContactFloat() {
   const t = useTranslations("common");
+  /* Hesaplayıcı sayfasında yazılar gizli, yalnız simgeler */
+  const yazi = usePathname() === "/hesaplayicilar" ? "hidden" : "hidden text-sm font-semibold sm:inline";
 
   return (
     /* z-40: header (z-50) altında kalsın ki mobil menü açıkken üstüne
@@ -57,7 +65,7 @@ export function ContactFloat() {
         className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
       >
         <Mail className="size-5 shrink-0" strokeWidth={2} aria-hidden />
-        <span className="hidden text-sm font-semibold sm:inline">{t("floatMail")}</span>
+        <span className={yazi}>{t("floatMail")}</span>
       </a>
 
       <a
@@ -68,7 +76,7 @@ export function ContactFloat() {
         className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
       >
         <FaWhatsapp className="size-5 shrink-0 text-[#25D366]" aria-hidden />
-        <span className="hidden text-sm font-semibold sm:inline">WhatsApp</span>
+        <span className={yazi}>WhatsApp</span>
       </a>
 
       {/* En alt sıra: YouTube + telefon yan yana. Telefon köşede ve vurgulu:
@@ -82,7 +90,7 @@ export function ContactFloat() {
           className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
         >
           <FaYoutube className="size-5 shrink-0 text-[#FF0000]" aria-hidden />
-          <span className="hidden text-sm font-semibold sm:inline">{t("floatYoutube")}</span>
+          <span className={yazi}>{t("floatYoutube")}</span>
         </a>
 
         <a
@@ -91,7 +99,7 @@ export function ContactFloat() {
           className="group flex items-center gap-2.5 rounded-full bg-accent py-3.5 ps-3.5 pe-4 text-zinc-950 shadow-lg shadow-accent/30 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none motion-reduce:hover:scale-100"
         >
           <Phone className="size-6 shrink-0" strokeWidth={2} aria-hidden />
-          <span className="hidden text-sm font-semibold sm:inline">{t("floatCall")}</span>
+          <span className={yazi}>{t("floatCall")}</span>
         </a>
       </div>
     </div>
