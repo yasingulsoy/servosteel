@@ -14,6 +14,12 @@ import { CONTACT, YOUTUBE_URL } from "@/lib/site";
  * ziyaretçinin dilinde "sitenizden yazıyorum" diye hazır gelir — satış
  * yazanın siteden geldiğini bilsin.
  *
+ * YOUTUBE TELEFONUN YANINDA (2026-11-20, satıştan gelen video): en üstteki en
+ * geniş tuştu ("YouTube'da Videolarımızı İzleyin"); dört tuşluk sütunu uzatıp
+ * sayfanın sağ kenarını, hesaplayıcının sonuç kutusunu kapatıyordu — "sayfayı
+ * kapatıyor, Bizi Arayın'la yan yana olsun". Artık en alt sırada, telefonun
+ * solunda (RTL'de sağında); telefon köşede kalıyor. Sütun bir tuş kısaldı.
+ *
  * YOUTUBE EN ÜSTTE (2026-09-17, Yasin'in isteği). Kanalda 100'ü aşkın saha
  * videosu var ve alıcının "bu firma gerçekten üretiyor mu" sorusuna en hızlı
  * cevap orası. İletişim tuşu değil, güven tuşu — bu yüzden vurgusuz (e-postayla
@@ -46,17 +52,6 @@ export function ContactFloat() {
        binmesin. print:hidden — çıktıda anlamsız. */
     <div className="fixed bottom-5 end-5 z-40 flex flex-col items-end gap-2.5 print:hidden">
       <a
-        href={YOUTUBE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={t("floatYoutube")}
-        className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
-      >
-        <FaYoutube className="size-5 shrink-0 text-[#FF0000]" aria-hidden />
-        <span className="hidden text-sm font-semibold sm:inline">{t("floatYoutube")}</span>
-      </a>
-
-      <a
         href={`mailto:${CONTACT.email}`}
         aria-label={t("floatMail")}
         className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
@@ -76,16 +71,29 @@ export function ContactFloat() {
         <span className="hidden text-sm font-semibold sm:inline">WhatsApp</span>
       </a>
 
-      {/* Telefon altta ve vurgulu: başparmağın en kolay ulaştığı yer ve
-          sektörde en çok istenen kanal. */}
-      <a
-        href={CONTACT.phoneHref}
-        aria-label={`${t("floatCall")} — ${CONTACT.phoneDisplay}`}
-        className="group flex items-center gap-2.5 rounded-full bg-accent py-3.5 ps-3.5 pe-4 text-zinc-950 shadow-lg shadow-accent/30 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none motion-reduce:hover:scale-100"
-      >
-        <Phone className="size-6 shrink-0" strokeWidth={2} aria-hidden />
-        <span className="hidden text-sm font-semibold sm:inline">{t("floatCall")}</span>
-      </a>
+      {/* En alt sıra: YouTube + telefon yan yana. Telefon köşede ve vurgulu:
+          başparmağın en kolay ulaştığı yer ve sektörde en çok istenen kanal. */}
+      <div className="flex items-center gap-2.5">
+        <a
+          href={YOUTUBE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={t("floatYoutube")}
+          className="group flex items-center gap-2.5 rounded-full bg-shell py-3 ps-3 pe-4 text-white shadow-lg shadow-black/25 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shell motion-reduce:transition-none motion-reduce:hover:scale-100"
+        >
+          <FaYoutube className="size-5 shrink-0 text-[#FF0000]" aria-hidden />
+          <span className="hidden text-sm font-semibold sm:inline">{t("floatYoutube")}</span>
+        </a>
+
+        <a
+          href={CONTACT.phoneHref}
+          aria-label={`${t("floatCall")} — ${CONTACT.phoneDisplay}`}
+          className="group flex items-center gap-2.5 rounded-full bg-accent py-3.5 ps-3.5 pe-4 text-zinc-950 shadow-lg shadow-accent/30 transition-all hover:scale-105 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none motion-reduce:hover:scale-100"
+        >
+          <Phone className="size-6 shrink-0" strokeWidth={2} aria-hidden />
+          <span className="hidden text-sm font-semibold sm:inline">{t("floatCall")}</span>
+        </a>
+      </div>
     </div>
   );
 }
