@@ -372,7 +372,7 @@ GSC: yeni adres için dizine ekleme isteği gönderilecek (13 Kas gecesi kota ye
 - **Yayın:** 16 Kas 22:27'de canlıda. IndexNow gönderildi. GSC dizine ekleme isteği Chrome bağlanınca gönderilecek; sıradaki EN asma tavan ve ES bariyerin önünde.
 - **Ölçüm:** 11 Aralık civarı, aynı sorgularla.
 - **18 Kas:** yeni adres /rulo-sac-hesaplama kendiliğinden tarandı ve dizinde. Eski /hesaplayicilar için GSC isteği gönderildi (aramada hâlâ o çıkıyordu).
-- **20 Kas: rulo sac aracı tek form + Hesapla düğmesi (1a0f8ae).** Satıştan gelen video: araç Töre Makine'nin masaüstü programıyla karşılaştırıldı, "dış çap nerede, Hesapla nerede, neye göre hesaplıyor" dendi. Arama görünümü (başlık, açıklama, adres) değişmedi; 11 Aralık ölçümünü etkilemez. Aynı gün yüzen YouTube tuşu telefonun yanına indi (09f069f).
+- **20 Kas: rulo sac aracı tek form + Hesapla düğmesi (1a0f8ae).** Satıştan gelen video: araç Töre Makine'nin masaüstü programıyla karşılaştırıldı, "dış çap nerede, Hesapla nerede, neye göre hesaplıyor" dendi. Arama görünümü (başlık, açıklama, adres) değişmedi; 11 Aralık ölçümünü etkilemez. Aynı gün yüzen YouTube tuşu telefonun yanına indi (09f069f). Öğleden sonra ikinci adım (2917259): Yasin "rakiplere bak, basit ama anlaşılır, Töre programı gibi" dedi → tek panel (D/d/B/t çizimi + tek sütun ölçü + Hesapla + hemen altında sonuç), sekmeler dış çap / ağırlık / uzunluk (sarımdan hesap kalktı), ek sonuçlar ve dilme kapalı açılır kutuda. Bu sayfada yüzen tuşlar yalnız simge (aa39bba).
 
 | sorgu | 16 Kas öncesi (28 gün: gösterim, tık, poz.) |
 |---|---|
