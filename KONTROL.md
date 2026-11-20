@@ -371,6 +371,8 @@ GSC: yeni adres için dizine ekleme isteği gönderilecek (13 Kas gecesi kota ye
 - **Değişmeyenler:** H1, adres, menü.
 - **Yayın:** 16 Kas 22:27'de canlıda. IndexNow gönderildi. GSC dizine ekleme isteği Chrome bağlanınca gönderilecek; sıradaki EN asma tavan ve ES bariyerin önünde.
 - **Ölçüm:** 11 Aralık civarı, aynı sorgularla.
+- **18 Kas:** yeni adres /rulo-sac-hesaplama kendiliğinden tarandı ve dizinde. Eski /hesaplayicilar için GSC isteği gönderildi (aramada hâlâ o çıkıyordu).
+- **20 Kas: rulo sac aracı tek form + Hesapla düğmesi (1a0f8ae).** Satıştan gelen video: araç Töre Makine'nin masaüstü programıyla karşılaştırıldı, "dış çap nerede, Hesapla nerede, neye göre hesaplıyor" dendi. Arama görünümü (başlık, açıklama, adres) değişmedi; 11 Aralık ölçümünü etkilemez. Aynı gün yüzen YouTube tuşu telefonun yanına indi (09f069f).
 
 | sorgu | 16 Kas öncesi (28 gün: gösterim, tık, poz.) |
 |---|---|
