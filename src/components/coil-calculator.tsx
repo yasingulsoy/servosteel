@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowRight, Check, Copy, Disc3, Info, Package, Printer, Scissors, Send } from "lucide-react";
+import { ArrowRight, Calculator, Check, Copy, Disc3, Info, Package, Printer, Scissors, Send } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SpecularButton } from "@/components/specular-button";
 import { NumField, Related, Result, Row, field, useFmt } from "@/components/calc-ui";
@@ -37,11 +37,21 @@ import { CONTACT } from "@/lib/site";
  * çalışır, ve en sonda "bu ruloyu hangi açıcı taşır". Hepsi aynı geometriden
  * çıkıyor (lib/calc.ts); araç yalnızca bunları tek yerde topluyor.
  *
- * Dış çap, ağırlık, uzunluk ve sarım sayısı BAĞLI alanlardır (Yasin,
- * 2026-11-11: "hangisini bilip yazarsa öteki değerler ondan hesaplansın"):
- * en son yazılan bilinen sayılır, öteki üçü ondan doldurulur ve farklı
- * zeminle "hesaplanan" diye işaretlenir. İç çap, genişlik, kalınlık ve
- * malzeme her zaman girilir.
+ * Dış çap, ağırlık, uzunluk ve sarım sayısı BAĞLI büyüklüklerdir (Yasin,
+ * 2026-11-11: "hangisini bilip yazarsa öteki değerler ondan hesaplansın").
+ *
+ * TEK FORM + HESAPLA DÜĞMESİ (2026-11-20, satıştan gelen video): ilk sürümde
+ * dört bağlı alan sağdaki sonuç kutusunda yazılabilir kutulardı ve hesap
+ * canlıydı. Sahada bunu kullanan kişi anlamadı: "dış çapı yazıyorum, kendi
+ * kendine hesaplıyor ama neye göre?", "dış çap nerede, Hesapla butonu nerede?"
+ * Karşılaştırdığı Töre Makine'nin masaüstü programı: dış çap, iç çap, rulo
+ * genişliği, sac kalınlığı → HESAPLA. Şimdi:
+ *   - bütün girdiler solda tek formda, o sırayla; bağlı dört büyüklükten
+ *     hangisinin bilindiği "Bildiğiniz değer" seçiminden (varsayılan dış çap);
+ *   - sonuç YALNIZ "Hesapla"ya (ya da Enter'a) basınca değişir, sağda salt
+ *     okunur durur ve altında hangi değerlerle hesaplandığı yazar;
+ *   - hesaptan sonra form değişirse sonuç soluklaşır ve "Hesapla'ya basın" der.
+ * Dilme ve açıcı kutuları, kopyala / yazdır / teklif de son hesaba dayanır.
  *
  * Hesap her zaman mm / kg / m'de yapılır; inç sistemi yalnızca giriş ve
  * gösterim katmanıdır.
@@ -55,6 +65,22 @@ type Satir = [etiket: string, deger: string];
 type Gosterim = { label: string; value: string; unit: string };
 
 const BAGLI: Mod[] = ["od", "weight", "length", "turns"];
+/* Sonuç kutusunda sıra: ağırlık en başta, iri — sorulan ilk şey "kaç ton" */
+const SONUC_SIRASI: Mod[] = ["weight", "od", "length", "turns"];
+
+/** Formdaki değerler, GÖSTERİLEN birimde (mm ya da inç…) */
+type Girdi = { od: number; id: number; width: number; thickness: number; weight: number; length: number; turns: number };
+
+const BASLANGIC: Girdi = { od: 1400, id: 508, width: 1250, thickness: 1, weight: 10000, length: 1000, turns: 446 };
+
+/** Sonucun dayandığı girdiler: "Hesapla"ya basıldığı andaki form, mm / kg / m'de */
+type Hesap = {
+  mod: Mod;
+  /** Bilinen değer — dış çap mm, ağırlık kg, uzunluk m ya da sarım adedi */
+  bilinen: number;
+  kesit: { id: number; width: number; thickness: number; density: number };
+  malzeme: Malzeme;
+};
 
 const BIRIM = {
   metric: { boy: "mm", kutle: "kg", uzun: "m", perL: "kg/m", perW: "kg/mm", alan: "m²", ad: "mm · kg" },
@@ -70,11 +96,40 @@ const yuvarla = (x: number, basamak: number) => {
   return Math.round(x * k) / k;
 };
 
+const dayanak = (mod: Mod, g: Girdi, sistem: Sistem, malzeme: Malzeme, ozelYogunluk: number): Hesap => {
+  const c = carpan(sistem);
+  const bilinenCarpan = { od: c.boy, weight: c.kutle, length: c.uzun, turns: 1 }[mod];
+  return {
+    mod,
+    bilinen: g[mod] * bilinenCarpan,
+    kesit: {
+      id: g.id * c.boy,
+      width: g.width * c.boy,
+      thickness: g.thickness * c.boy,
+      density: malzeme === "custom" ? ozelYogunluk : DENSITIES[malzeme],
+    },
+    malzeme,
+  };
+};
+
+const hesapla = ({ mod, bilinen, kesit }: Hesap): CoilResult | null =>
+  mod === "od"
+    ? coilCalc({ ...kesit, od: bilinen })
+    : mod === "weight"
+      ? coilFromWeight({ ...kesit, weight: bilinen })
+      : mod === "length"
+        ? coilFromLength({ ...kesit, length: bilinen })
+        : coilFromTurns({ ...kesit, turns: bilinen });
+
 /** Küçük sayıda bir ondalık, büyükte tam sayı — 13.116 kg ama 8,4 kg */
 const bas = (x: number) => (Math.abs(x) < 100 ? 1 : 0);
 
 const ikincilTus =
   "inline-flex items-center justify-center gap-2 rounded-lg border border-line bg-card px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-accent/50 hover:text-accent-ink disabled:pointer-events-none disabled:opacity-50";
+
+const kartBasligi = "font-display flex items-center gap-2.5 text-base font-bold uppercase tracking-tight text-ink";
+/* "1 Ölçüler → 2 Sonuç": iki kutunun okunma sırası */
+const adimNo = "grid size-6 shrink-0 place-items-center rounded-full bg-ink text-xs font-bold text-surface";
 
 const segment = (secili: boolean) =>
   `rounded-lg px-2 py-2 text-xs font-semibold leading-tight transition-colors sm:px-3 sm:text-sm ${
@@ -93,7 +148,12 @@ export function CoilCalculator() {
   const [ozelYogunluk, setOzelYogunluk] = useState(7.85);
   /* Girdiler GÖSTERİLEN birimde tutulur (mm ya da inç…) — ziyaretçinin
      yazdığı sayı, yuvarlanıp geri çevrilerek bozulmasın. */
-  const [g, setG] = useState({ od: 1400, id: 508, width: 1250, thickness: 1, weight: 10000, length: 1000, turns: 446 });
+  const [g, setG] = useState<Girdi>(BASLANGIC);
+  /* Ekrandaki sonuç bu dayanaktan; açılışta varsayılan ölçülerle hesaplı gelir */
+  const [hesap, setHesap] = useState<Hesap>(() => dayanak("od", BASLANGIC, "metric", "steel", 7.85));
+  /* Son hesaptan sonra form değişti mi — sonuç o zaman "eski" gösterilir */
+  const [bayat, setBayat] = useState(false);
+  const sonucKutusu = useRef<HTMLDivElement>(null);
   const [dil, setDil] = useState({ stripWidth: 120, trim: 10 });
   const [kopya, setKopya] = useState<"ok" | "hata" | null>(null);
   const kopyaZaman = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -102,17 +162,10 @@ export function CoilCalculator() {
 
   const c = carpan(sistem);
   const u = BIRIM[sistem];
-  const yogunluk = malzeme === "custom" ? ozelYogunluk : DENSITIES[malzeme];
-  const kesit = { id: g.id * c.boy, width: g.width * c.boy, thickness: g.thickness * c.boy, density: yogunluk };
-
-  const res: CoilResult | null =
-    mod === "od"
-      ? coilCalc({ ...kesit, od: g.od * c.boy })
-      : mod === "weight"
-        ? coilFromWeight({ ...kesit, weight: g.weight * c.kutle })
-        : mod === "length"
-          ? coilFromLength({ ...kesit, length: g.length * c.uzun })
-          : coilFromTurns({ ...kesit, turns: g.turns });
+  /* Sonuçla ilgili her şey (dilme, açıcı, rapor) son hesabın dayanağından */
+  const kesit = hesap.kesit;
+  const yogunluk = kesit.density;
+  const res = hesapla(hesap);
 
   const slit = res
     ? slitCalc({
@@ -162,28 +215,52 @@ export function CoilCalculator() {
     setSistem(yeni);
   };
 
-  const malzemeAdi = malzeme === "custom" ? t("custom") : t(malzeme);
+  const malzemeAdi = hesap.malzeme === "custom" ? t("custom") : t(hesap.malzeme);
 
-  /* ---------- bağlı dört alan: dış çap, ağırlık, uzunluk, sarım ----------
-     Ziyaretçi hangisine yazarsa o BİLİNEN olur (mod), öteki üçü sonuçtan
-     doldurulur — masaüstü programlardaki iki yönlü hesap. Hesaplanan alanın
-     değeri gösterim basamağına yuvarlanır; ziyaretçi ona yazmaya başlarsa
-     yazdığı sayı bilinen olur. */
+  /* ---------- bağlı dört büyüklük: dış çap, ağırlık, uzunluk, sarım ----------
+     Formda hangisi "bilinen" seçiliyse (mod) o girilir; öteki üçü sonuç
+     kutusunda okunur — masaüstü programlardaki iki yönlü hesap. `deger`
+     son hesabın sonucu, gösterilen birimde. */
   const bagli: Record<Mod, { label: string; unit: string; basamak: number; deger: number | null }> = {
     od: { label: t("od"), unit: u.boy, basamak: capBasamak, deger: res && goster.boy(res.od) },
     weight: { label: t("weight"), unit: u.kutle, basamak: res ? bas(goster.kutle(res.weight)) : 0, deger: res && goster.kutle(res.weight) },
     length: { label: t("clength"), unit: u.uzun, basamak: res ? bas(goster.uzun(res.length)) : 0, deger: res && goster.uzun(res.length) },
     turns: { label: t("turns"), unit: "", basamak: 1, deger: res && res.turns },
   };
-  const alanDegeri = (k: Mod) => {
-    if (k === mod) return g[k];
+
+  /* ---------- form ---------- */
+  const girdi = (yeni: Partial<Girdi>) => {
+    setG({ ...g, ...yeni });
+    setBayat(true);
+  };
+
+  /* Bilinen değer değişince: form son hesapla aynıysa yeni alan o hesabın
+     sonucuyla dolar (aynı rulo sac, başka yönden) ve sonuç eskimez. Form
+     zaten değişmişse yalnızca seçim değişir. */
+  const modSec = (k: Mod) => {
+    if (k === mod) return;
+    setMod(k);
     const d = bagli[k].deger;
-    return d === null ? NaN : yuvarla(d, bagli[k].basamak);
+    if (bayat || d === null) return;
+    const yeni = { ...g, [k]: yuvarla(d, bagli[k].basamak) };
+    setG(yeni);
+    setHesap(dayanak(k, yeni, sistem, malzeme, ozelYogunluk));
+  };
+
+  const hesaplaTikla = () => {
+    setHesap(dayanak(mod, g, sistem, malzeme, ozelYogunluk));
+    setBayat(false);
+    /* Telefonda sonuç formun altında kalıyor: ekranda değilse oraya kay */
+    const kutu = sonucKutusu.current;
+    if (kutu) {
+      const r = kutu.getBoundingClientRect();
+      if (r.top > window.innerHeight - 120 || r.bottom < 0) kutu.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   /* ---------- sonuç listeleri: pano, teklif ve rapor aynı listeden ---------- */
   const anaSonuclar: Gosterim[] = res
-    ? BAGLI.filter((k) => k !== mod).map((k) => ({
+    ? SONUC_SIRASI.filter((k) => k !== hesap.mod).map((k) => ({
         label: bagli[k].label,
         value: fmt(bagli[k].deger ?? NaN, bagli[k].basamak),
         unit: bagli[k].unit,
@@ -236,7 +313,7 @@ export function CoilCalculator() {
   const aciciNotlari: string[] =
     res && acici
       ? [
-          ...(model && !acici.idFits ? [t("decoIdNote", { id: `${fmt(g.id, capBasamak)} ${u.boy}` })] : []),
+          ...(model && !acici.idFits ? [t("decoIdNote", { id: `${fmt(goster.boy(kesit.id), capBasamak)} ${u.boy}` })] : []),
           ...(!acici.odFits
             ? [t("decoOdNote", { od: `${fmt(goster.boy(res.od), capBasamak)} ${u.boy}`, max: `${fmt(DECOILER_OD_MAX, 0)} mm` })]
             : []),
@@ -245,12 +322,18 @@ export function CoilCalculator() {
   /* Ekranda "seri dışı" metni kutunun kendisinde duruyor; pano ve raporda notlara girer */
   const raporNotlari = res && !model ? [t("decoNone"), ...aciciNotlari] : aciciNotlari;
 
+  /* Hesabın dayandığı değerler: sonuç kutusunda "şu değerlerle hesaplandı",
+     raporda "girilen değerler" */
+  const bilinenGoster = { od: goster.boy, weight: goster.kutle, length: goster.uzun, turns: (x: number) => x }[hesap.mod](
+    hesap.bilinen,
+  );
+  const bilinenBirim = bagli[hesap.mod].unit;
   const girdiSatirlari: Satir[] = [
     [t("material"), `${malzemeAdi} (${fmt(yogunluk, 2)} g/cm³)`],
-    [bagli[mod].label, `${fmt(g[mod], 3)}${bagli[mod].unit ? ` ${bagli[mod].unit}` : ""}`],
-    [t("id"), `${fmt(g.id, 3)} ${u.boy}`],
-    [t("cwidth"), `${fmt(g.width, 3)} ${u.boy}`],
-    [t("thickness"), `${fmt(g.thickness, 4)} ${u.boy}`],
+    [bagli[hesap.mod].label, `${fmt(bilinenGoster, 3)}${bilinenBirim ? ` ${bilinenBirim}` : ""}`],
+    [t("id"), `${fmt(goster.boy(kesit.id), 3)} ${u.boy}`],
+    [t("cwidth"), `${fmt(goster.boy(kesit.width), 3)} ${u.boy}`],
+    [t("thickness"), `${fmt(goster.boy(kesit.thickness), 4)} ${u.boy}`],
   ];
   const satir = (s: Gosterim): Satir => [s.label, `${s.value}${s.unit ? ` ${s.unit}` : ""}`];
   const bloklar: { baslik: string; satirlar: Satir[] }[] = [
@@ -358,11 +441,34 @@ export function CoilCalculator() {
         </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-8">
-          {/* ---------- Girdiler ---------- */}
-          <div className="space-y-4">
+          {/* ---------- 1. Girdiler: Töre programındaki sırayla, tek formda ----------
+              Sonuç kutusuyla aynı ağırlıkta kart: eskiden düz zeminde duran
+              girdiler sağdaki renkli kutunun yanında "sönük" kalıyordu. */}
+          <form
+            noValidate
+            onSubmit={(e) => {
+              e.preventDefault();
+              hesaplaTikla();
+            }}
+            className="flex flex-col gap-4 rounded-xl border border-line bg-surface-alt p-4 sm:p-5"
+          >
+            <h3 className={kartBasligi}>
+              <span className={adimNo} aria-hidden>
+                1
+              </span>
+              {t("inputsTitle")}
+            </h3>
+
             <div className={`grid gap-x-3 gap-y-4 ${malzeme === "custom" ? "grid-cols-2" : "grid-cols-1"}`}>
               <Row label={t("material")}>
-                <select value={malzeme} onChange={(e) => setMalzeme(e.target.value as Malzeme)} className={field}>
+                <select
+                  value={malzeme}
+                  onChange={(e) => {
+                    setMalzeme(e.target.value as Malzeme);
+                    setBayat(true);
+                  }}
+                  className={field}
+                >
                   {(Object.keys(DENSITIES) as MaterialKey[]).map((k) => (
                     <option key={k} value={k}>
                       {t(k)} — {fmt(DENSITIES[k], 2)} g/cm³
@@ -372,59 +478,131 @@ export function CoilCalculator() {
                 </select>
               </Row>
               {malzeme === "custom" && (
-                <NumField label={t("density")} unit="g/cm³" value={ozelYogunluk} onChange={setOzelYogunluk} />
+                <NumField
+                  label={t("density")}
+                  unit="g/cm³"
+                  value={ozelYogunluk}
+                  onChange={(v) => {
+                    setOzelYogunluk(v);
+                    setBayat(true);
+                  }}
+                />
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
-              <NumField label={t("id")} unit={u.boy} value={g.id} onChange={(v) => setG({ ...g, id: v })} />
-              <NumField label={t("cwidth")} unit={u.boy} value={g.width} onChange={(v) => setG({ ...g, width: v })} />
-              <NumField label={t("thickness")} unit={u.boy} value={g.thickness} onChange={(v) => setG({ ...g, thickness: v })} />
+            <div>
+              <p id="rulo-bilinen" className="mb-1.5 text-sm font-medium leading-snug text-ink">
+                {t("known")}
+              </p>
+              <div
+                role="group"
+                aria-labelledby="rulo-bilinen"
+                className="grid grid-cols-2 gap-1 rounded-xl border border-line bg-card p-1 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4"
+              >
+                {BAGLI.map((k) => (
+                  <button key={k} type="button" aria-pressed={mod === k} onClick={() => modSec(k)} className={segment(mod === k)}>
+                    {bagli[k].label}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-1.5 text-xs leading-relaxed text-muted">{t("linkedHint")}</p>
             </div>
 
+            <div className="grid grid-cols-2 gap-x-3 gap-y-4">
+              {/* key: seçim değişince kutu kendi yazılı metnini taşımasın */}
+              <NumField
+                key={mod}
+                label={bagli[mod].label}
+                unit={bagli[mod].unit || undefined}
+                value={g[mod]}
+                onChange={(v) => girdi({ [mod]: v })}
+              />
+              <NumField label={t("id")} unit={u.boy} value={g.id} onChange={(v) => girdi({ id: v })} />
+              <NumField label={t("cwidth")} unit={u.boy} value={g.width} onChange={(v) => girdi({ width: v })} />
+              <NumField label={t("thickness")} unit={u.boy} value={g.thickness} onChange={(v) => girdi({ thickness: v })} />
+            </div>
+
+            {/* Videodaki gözlem: "kalınlığı 1 de yazsan 3 de yazsan aynı tonajı çıkarıyor" —
+                doğru, ağırlık ve dış çap kalınlıktan bağımsız; bunu baştan söyle. */}
+            {(mod === "od" || mod === "weight") && (
+              <p className="flex items-start gap-2 text-xs leading-relaxed text-muted">
+                <Info className="mt-0.5 size-4 shrink-0 text-accent" strokeWidth={1.8} aria-hidden />
+                {t("thickHint")}
+              </p>
+            )}
             {malzeme === "galvanized" && (
               <p className="flex items-start gap-2 text-xs leading-relaxed text-muted">
                 <Info className="mt-0.5 size-4 shrink-0 text-accent" strokeWidth={1.8} aria-hidden />
                 {t("galvNote")}
               </p>
             )}
-          </div>
 
-          {/* ---------- Sonuçlar ---------- */}
-          <div className="rounded-xl bg-surface-alt p-4 sm:p-5">
-            <p className="text-xs leading-relaxed text-muted">{t("linkedHint")}</p>
-            <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-4">
-              {BAGLI.map((k) => (
-                <NumField
-                  key={k}
-                  large
-                  label={bagli[k].label}
-                  unit={bagli[k].unit || undefined}
-                  value={alanDegeri(k)}
-                  computed={k !== mod}
-                  badge={k === mod ? t("entered") : t("computed")}
-                  onChange={(v) => {
-                    setMod(k);
-                    setG({ ...g, [k]: v });
-                  }}
-                />
-              ))}
-            </div>
+            <SpecularButton type="submit" variant="gold" size="lg" className="mt-auto w-full">
+              <Calculator className="size-5" strokeWidth={2} aria-hidden />
+              {t("calcBtn")}
+            </SpecularButton>
+          </form>
+
+          {/* ---------- 2. Sonuç: salt okunur, altında neyle hesaplandığı ---------- */}
+          <div ref={sonucKutusu} aria-live="polite" className="scroll-mt-28 rounded-xl border border-line bg-surface-alt p-4 sm:p-5">
+            <h3 className={kartBasligi}>
+              <span className={adimNo} aria-hidden>
+                2
+              </span>
+              {t("resultsTitle")}
+            </h3>
+
+            {bayat && (
+              <p className="mt-3 flex items-start gap-2 rounded-lg border border-accent/60 bg-accent/10 px-3 py-2 text-sm leading-snug text-ink">
+                <Info className="mt-0.5 size-4 shrink-0 text-accent-ink" strokeWidth={2} aria-hidden />
+                {t("stale")}
+              </p>
+            )}
+
             {res ? (
-              /* Telefonda çizim üstte ortada, ek sonuçlar tam genişlikte altında
-                 (yan yana dururken etiketler üç satıra kırılıyordu) */
-              <div className="mt-4 flex flex-col items-center gap-2 border-t border-line pt-3 sm:flex-row sm:gap-4 sm:pt-2">
-                <div className="order-last w-full min-w-0 flex-1 sm:order-none">
-                  {ekSonuclar.map((s) => (
-                    <Result key={s.label} {...s} />
+              <div className={`transition-opacity motion-reduce:transition-none ${bayat ? "opacity-40" : ""}`}>
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  {anaSonuclar.map((s, i) => (
+                    <div
+                      key={s.label}
+                      className={`rounded-lg border px-3 py-2.5 ${i === 0 ? "col-span-2 border-accent/50 bg-accent/10" : "border-line bg-card"}`}
+                    >
+                      <p className="text-sm text-muted">{s.label}</p>
+                      <p className={`font-display font-bold tabular-nums text-ink ${i === 0 ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"}`}>
+                        {s.value}
+                        {s.unit && <span className="ms-1.5 text-sm font-semibold text-muted">{s.unit}</span>}
+                      </p>
+                    </div>
                   ))}
                 </div>
-                <RuloCizim
-                  od={res.od}
-                  id={kesit.id}
-                  odEtiket={`${t("od")} Ø ${fmt(goster.boy(res.od), capBasamak)} ${u.boy}`}
-                  idEtiket={`${t("id")} Ø ${fmt(g.id, capBasamak)} ${u.boy}`}
-                />
+
+                {/* "Bunu neye göre hesaplıyorsun?" sorusunun cevabı sonucun hemen altında */}
+                <div className="mt-3">
+                  <p className="text-xs font-medium text-muted">{t("basis")}</p>
+                  <ul className="mt-1.5 flex flex-wrap gap-1.5">
+                    {girdiSatirlari.map(([k, v]) => (
+                      <li key={k} className="rounded-full border border-line bg-card px-2.5 py-1 text-xs leading-tight text-ink">
+                        <span className="text-muted">{k}:</span> <span className="font-semibold tabular-nums">{v}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Telefonda çizim üstte ortada, ek sonuçlar tam genişlikte altında
+                    (yan yana dururken etiketler üç satıra kırılıyordu) */}
+                <div className="mt-4 flex flex-col items-center gap-2 border-t border-line pt-3 sm:flex-row sm:gap-4 sm:pt-2">
+                  <div className="order-last w-full min-w-0 flex-1 sm:order-none">
+                    {ekSonuclar.map((s) => (
+                      <Result key={s.label} {...s} />
+                    ))}
+                  </div>
+                  <RuloCizim
+                    od={res.od}
+                    id={kesit.id}
+                    odEtiket={`${t("od")} Ø ${fmt(goster.boy(res.od), capBasamak)} ${u.boy}`}
+                    idEtiket={`${t("id")} Ø ${fmt(goster.boy(kesit.id), capBasamak)} ${u.boy}`}
+                  />
+                </div>
               </div>
             ) : (
               <p className="mt-4 text-sm text-muted">{t("invalid")}</p>
